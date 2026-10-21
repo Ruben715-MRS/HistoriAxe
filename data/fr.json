@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 847,
-  "totalEvents": 25321,
+  "totalThemes": 848,
+  "totalEvents": 25449,
   "categories": [
     {
       "nom": "Culture générale",
@@ -153663,9 +153663,29 @@
                 "Tsars",
                 "Romanov",
                 "Kremlin",
-                "Sibérie"
+                "Sibérie",
+                "Biélorusse",
+                "Biélorussie",
+                "Minsk"
               ],
               "events": [
+                {
+                  "id": "pan_ru_euphrosyne",
+                  "axe": "Littérature et pensée",
+                  "date": 1104,
+                  "titre": "Naissance d'Euphrosyne de Polotsk",
+                  "description": "Euphrosyne de Polotsk (vers 1104-1167) est une princesse biélorusse de la principauté de Polotsk, devenue moniale puis higoumène. Elle fonde à Polotsk un monastère où l'on copie des livres et où l'on enseigne aux jeunes filles, et elle fait bâtir l'église de la Transfiguration. Canonisée par l'Église orthodoxe, elle est vénérée comme la patronne de la Biélorussie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Euphrosyne%20de%20Polotsk",
+                  "pays": "BY",
+                  "classement": "Polotsk, Euphrosyne de",
+                  "image": {
+                    "src": "assets/portraits/pan_ru_euphrosyne.jpg",
+                    "legende": "Euphrosyne de Polotsk, icône vers 1910",
+                    "auteur": "anonimus",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Euphrosyne_of_Polatsk_(icon).jpg"
+                  }
+                },
                 {
                   "id": "pan_ru_nevski",
                   "axe": "Guerres et résistances",
@@ -153717,6 +153737,40 @@
                   }
                 },
                 {
+                  "id": "pan_ru_skaryna",
+                  "axe": "Littérature et pensée",
+                  "date": 1486,
+                  "titre": "Naissance de Francysk Skaryna",
+                  "description": "Francysk Skaryna (vers 1486-1541) est un médecin et humaniste biélorusse, né à Polotsk, premier imprimeur de livres en langue slave orientale. Docteur en médecine de Padoue, il imprime à Prague, à partir de 1517, une Bible en slavon ruthénien, puis un recueil de textes religieux à Vilnius. Il est considéré comme le père de la culture biélorusse imprimée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Francysk%20Skaryna",
+                  "pays": "BY",
+                  "classement": "Skaryna, Francysk",
+                  "image": {
+                    "src": "assets/portraits/pan_ru_skaryna.jpg",
+                    "legende": "François Skaryna, gravure de son édition de la Bible (1517)",
+                    "auteur": "Francišak Skaryna",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Franci%C5%A1ak_Skaryna.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ru_budny",
+                  "axe": "Littérature et pensée",
+                  "date": 1530,
+                  "titre": "Naissance de Szymon Budny",
+                  "description": "Szymon Budny (1530-1593) est un théologien, traducteur et imprimeur biélorusse de la Réforme, né dans le grand-duché de Lituanie. Pasteur antitrinitaire, il publie à Niasvij en 1562 un catéchisme en ruthénien et en 1572 une Bible en polonais. Il est l'un des principaux acteurs de la Réforme radicale dans le grand-duché de Lituanie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Szymon%20Budny",
+                  "pays": "BY",
+                  "classement": "Budny, Szymon",
+                  "image": {
+                    "src": "assets/portraits/pan_ru_budny.jpg",
+                    "legende": "Szymon Budny, détail d'une gravure sur cuivre de Giovanni Battista de' Cavalieri (1595)",
+                    "auteur": "Giovanni Battista de' Cavalieri",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Symon_Budny.png"
+                  }
+                },
+                {
                   "id": "pan_ru_ivan4",
                   "axe": "Chefs d'État et dirigeants",
                   "date": 1530,
@@ -153731,6 +153785,23 @@
                     "licence": "Domaine public",
                     "source": "https://commons.wikimedia.org/wiki/File:Ivan_grozny_frame.jpg",
                     "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_ru_sapieha",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1557,
+                  "titre": "Naissance de Lew Sapieha",
+                  "description": "Lew Sapieha (1557-1633) est un grand chancelier du grand-duché de Lituanie, issu d'une famille de magnats biélorusses. Il dirige la rédaction du troisième Statut de Lituanie (1588), code de lois qui reste en vigueur pendant plus de deux siècles. Il est aussi grand hetman puis voïvode de Vilnius, et joue un rôle diplomatique majeur dans les guerres contre Moscou.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lew%20Sapieha",
+                  "pays": "BY",
+                  "classement": "Sapieha, Lew",
+                  "image": {
+                    "src": "assets/portraits/pan_ru_sapieha.jpg",
+                    "legende": "Lew Sapieha, portrait de 1616-1617",
+                    "auteur": "anonymous",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Le%C5%AD_Sapieha._%D0%9B%D0%B5%D1%9E_%D0%A1%D0%B0%D0%BF%D0%B5%D0%B3%D0%B0_(1616).jpg"
                   }
                 },
                 {
@@ -154137,6 +154208,23 @@
                   }
                 },
                 {
+                  "id": "pan_ru_orda",
+                  "axe": "Beaux-arts",
+                  "date": 1807,
+                  "titre": "Naissance de Napoleon Orda",
+                  "description": "Napoleon Orda (1807-1883) est un peintre, pianiste et compositeur né près de Pinsk, dans une famille de la noblesse polono-lituanienne. Après l'insurrection de 1830-1831, il s'exile en France et compose des polonaises et des mazurkas. Il dessine pendant ses voyages les châteaux et les ruines de Pologne, de Lituanie, de Biélorussie et d'Ukraine, dans un album resté célèbre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Napoleon%20Orda",
+                  "pays": "BY",
+                  "classement": "Orda, Napoleon",
+                  "image": {
+                    "src": "assets/portraits/pan_ru_orda.jpg",
+                    "legende": "Napoleon Orda, portrait d'Aleksander Regulski (1883)",
+                    "auteur": "Aleksander Regulski",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Napaleon_Orda._%D0%9D%D0%B0%D0%BF%D0%B0%D0%BB%D0%B5%D0%BE%D0%BD_%D0%9E%D1%80%D0%B4%D0%B0_(A._Regulski,_1883).jpg"
+                  }
+                },
+                {
                   "id": "pan_ru_gogol",
                   "axe": "Littérature et pensée",
                   "date": 1809,
@@ -154425,6 +154513,23 @@
                     "auteur": "Ilia Répine (1844–1930)",
                     "licence": "Domaine public",
                     "source": "https://commons.wikimedia.org/wiki/File:Kramskoi_by_Repin.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ru_kalinowski",
+                  "axe": "Guerres et résistances",
+                  "date": 1838,
+                  "titre": "Naissance de Kastous Kalinowski",
+                  "description": "Kastous Kalinowski (1838-1864) est un écrivain et révolutionnaire biélorusse, l'un des chefs de l'insurrection de janvier 1863 contre l'Empire russe en Lituanie et en Biélorussie. Il publie la « Vérité paysanne », un journal clandestin en biélorusse qui s'adresse aux paysans et défend leurs droits. Arrêté, il est pendu à Vilnius en 1864, à vingt-six ans, et il est devenu un héros de la mémoire nationale.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kastous%20Kalinowski",
+                  "pays": "BY",
+                  "classement": "Kalinowski, Kastous",
+                  "image": {
+                    "src": "assets/portraits/pan_ru_kalinowski.jpg",
+                    "legende": "Kastous Kalinowski, portrait de 1862",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kastu%C5%9B_Kalino%C5%ADski._%D0%9A%D0%B0%D1%81%D1%82%D1%83%D1%81%D1%8C_%D0%9A%D0%B0%D0%BB%D1%96%D0%BD%D0%BE%D1%9E%D1%81%D0%BA%D1%96_(1862).jpg"
                   }
                 },
                 {
@@ -155036,6 +155141,23 @@
                   }
                 },
                 {
+                  "id": "pan_ru_dzerjinski",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1877,
+                  "titre": "Naissance de Félix Dzerjinski",
+                  "description": "Félix Dzerjinski (1877-1926) est un révolutionnaire bolchevik d'origine polonaise, né près d'Ivianets, en Biélorussie. Il fonde en décembre 1917 la Tchéka, la police politique du régime, et dirige la Terreur rouge pendant la guerre civile. Il reste à la tête de la police politique soviétique, devenue GPU puis OGPU, jusqu'à sa mort en 1926.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/F%C3%A9lix%20Dzerjinski",
+                  "pays": "BY",
+                  "classement": "Dzerjinski, Félix",
+                  "image": {
+                    "src": "assets/portraits/pan_ru_dzerjinski.jpg",
+                    "legende": "Félix Dzerjinski, photographie de Moïsseï Nappelbaum (1919)",
+                    "auteur": "M.S. Nappelbaum",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Feliks_Dzier%C5%BCy%C5%84ski.jpg"
+                  }
+                },
+                {
                   "id": "pan_ru_kustodiev",
                   "axe": "Beaux-arts",
                   "date": 1878,
@@ -155132,6 +155254,40 @@
                   }
                 },
                 {
+                  "id": "pan_ru_kolas",
+                  "axe": "Littérature et pensée",
+                  "date": 1882,
+                  "titre": "Naissance d'Iakoub Kolas",
+                  "description": "Iakoub Kolas (1882-1956) est un poète et romancier biélorusse, de son vrai nom Kanstantsin Mitskievitch, né près de Minsk. Son poème épique « La Terre nouvelle » (1923), qui décrit la vie des paysans, est considéré comme un sommet de la littérature biélorusse. Académicien, il reste avec Koupala l'un des deux « classiques » de la littérature biélorusse.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Iakoub%20Kolas",
+                  "pays": "BY",
+                  "classement": "Kolas, Iakoub",
+                  "image": {
+                    "src": "assets/portraits/pan_ru_kolas.jpg",
+                    "legende": "Iakoub Kolas, photographie d'avant 1925",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kanstantyn_Mickievi%C4%8D_(Jakub_Ko%C5%82as)._%D0%9A%D0%B0%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D1%8B%D0%BD_%D0%9C%D1%96%D1%86%D0%BA%D0%B5%D0%B2%D1%96%D1%87_(%D0%AF%D0%BA%D1%83%D0%B1_%D0%9A%D0%BE%D0%BB%D0%B0%D1%81)_(1925).jpg"
+                  }
+                },
+                {
+                  "id": "pan_ru_kupala",
+                  "axe": "Littérature et pensée",
+                  "date": 1882,
+                  "titre": "Naissance d'Ianka Koupala",
+                  "description": "Ianka Koupala (1882-1942) est un poète biélorusse, de son vrai nom Ivan Loutsévitch, considéré comme le fondateur de la langue littéraire biélorusse moderne. Son recueil « La Flûte de roseau » (1908) et son poème « Et qui va là ? » (1910) expriment l'éveil national de son peuple. Il meurt à Moscou en 1942, dans une chute d'escalier d'hôtel aux circonstances discutées.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ianka%20Koupala",
+                  "pays": "BY",
+                  "classement": "Koupala, Ianka",
+                  "image": {
+                    "src": "assets/portraits/pan_ru_kupala.jpg",
+                    "legende": "Ianka Koupala, photographie de 1925",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jan_Lucevi%C4%8D_(Janka_Kupala)._%D0%AF%D0%BD_%D0%9B%D1%83%D1%86%D1%8D%D0%B2%D1%96%D1%87_(%D0%AF%D0%BD%D0%BA%D0%B0_%D0%9A%D1%83%D0%BF%D0%B0%D0%BB%D0%B0)_(1925).jpg"
+                  }
+                },
+                {
                   "id": "pan_ru_stravinsky",
                   "axe": "Musique, spectacle et sport",
                   "date": 1882,
@@ -155209,6 +155365,23 @@
                     "auteur": "Vladimir Savostianov (TASS)",
                     "licence": "Domaine public",
                     "source": "https://commons.wikimedia.org/wiki/File:Boris_Pasternak_1958_photo.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ru_bahdanovitch",
+                  "axe": "Littérature et pensée",
+                  "date": 1891,
+                  "titre": "Naissance de Maksim Bahdanovitch",
+                  "description": "Maksim Bahdanovitch (1891-1917) est un poète biélorusse, né à Minsk, qui introduit dans sa langue les formes de la poésie symboliste européenne. Son unique recueil publié, « La Couronne » (1913), contient des sonnets et des vers d'une grande perfection. Atteint de tuberculose, il meurt à Yalta à vingt-cinq ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Maksim%20Bahdanovitch",
+                  "pays": "BY",
+                  "classement": "Bahdanovitch, Maksim",
+                  "image": {
+                    "src": "assets/portraits/pan_ru_bahdanovitch.jpg",
+                    "legende": "Maksim Bahdanovitch, photographie vers 1910-1911",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bagdanovich_M_2.jpg"
                   }
                 },
                 {
@@ -155356,6 +155529,23 @@
                   }
                 },
                 {
+                  "id": "pan_ru_soukhoi",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1895,
+                  "titre": "Naissance de Pavel Soukhoï",
+                  "description": "Pavel Soukhoï (1895-1975) est un ingénieur soviétique d'origine biélorusse, né à Hlybokaïe, et le fondateur du bureau d'études qui porte son nom. Il conçoit des avions de combat, dont le Su-7, le Su-9 et le Su-15, qui équipent l'aviation soviétique. Après sa mort, son bureau d'études produit la famille des Su-27.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pavel%20Soukho%C3%AF",
+                  "pays": "BY",
+                  "classement": "Soukhoï, Pavel",
+                  "image": {
+                    "src": "assets/portraits/pan_ru_soukhoi.jpg",
+                    "legende": "Pavel Soukhoï, photographie",
+                    "auteur": "Autor nieznany",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pawie%C5%82_Suchoj.png"
+                  }
+                },
+                {
                   "id": "pan_ru_joukov",
                   "axe": "Guerres et résistances",
                   "date": 1896,
@@ -155386,6 +155576,23 @@
                     "auteur": "Auteur inconnu",
                     "licence": "CC BY 4.0",
                     "source": "https://commons.wikimedia.org/wiki/File:%D0%9C%D0%B0%D1%80%D1%88%D0%B0%D0%BB_%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%A1%D0%BE%D1%8E%D0%B7%D0%B0_%D0%B4%D0%B2%D0%B0%D0%B6%D0%B4%D1%8B_%D0%93%D0%B5%D1%80%D0%BE%D0%B9_%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%A1%D0%BE%D1%8E%D0%B7%D0%B0_%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD_%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD%D0%BE%D0%B2%D0%B8%D1%87_%D0%A0%D0%BE%D0%BA%D0%BE%D1%81%D1%81%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ru_vygotski",
+                  "axe": "Littérature et pensée",
+                  "date": 1896,
+                  "titre": "Naissance de Lev Vygotski",
+                  "description": "Lev Vygotski (1896-1934) est un psychologue soviétique, né à Orcha, en Biélorussie. Il élabore la théorie historico-culturelle du développement de l'enfant, selon laquelle la pensée se forme par le langage et les échanges sociaux, et il définit la « zone proximale de développement ». Sa mort de la tuberculose à trente-sept ans laisse son livre « Pensée et langage » (1934) comme testament.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lev%20Vygotski",
+                  "pays": "BY",
+                  "classement": "Vygotski, Lev",
+                  "image": {
+                    "src": "assets/portraits/pan_ru_vygotski.jpg",
+                    "legende": "Lev Vygotski, photographie vers 1925",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Lev-Semyonovich-Vygotsky-1896-1934.jpg"
                   }
                 },
                 {
@@ -155533,6 +155740,40 @@
                   }
                 },
                 {
+                  "id": "pan_ru_gromyko",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1909,
+                  "titre": "Naissance d'Andreï Gromyko",
+                  "description": "Andreï Gromyko (1909-1989) est un diplomate soviétique d'origine biélorusse, ministre des Affaires étrangères de l'URSS de 1957 à 1985. Surnommé « Monsieur Niet », il négocie avec les États-Unis les accords de limitation des armements stratégiques. Il préside ensuite le Præsidium du Soviet suprême, de 1985 à 1988.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Andre%C3%AF%20Gromyko",
+                  "pays": "BY",
+                  "classement": "Gromyko, Andreï",
+                  "image": {
+                    "src": "assets/portraits/pan_ru_gromyko.jpg",
+                    "legende": "Andreï Gromyko à Schiphol, photographie de Rob Mieremet (Anefo, 1972)",
+                    "auteur": "Mieremet, Rob / Anefo",
+                    "licence": "CC BY-SA 3.0 NL",
+                    "source": "https://commons.wikimedia.org/wiki/File:Andrei_Gromyko_1972.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ru_heniouch",
+                  "axe": "Littérature et pensée",
+                  "date": 1910,
+                  "titre": "Naissance de Laryssa Héniouch",
+                  "description": "Laryssa Héniouch (1910-1983) est une poétesse biélorusse, née dans la région de Grodno. Installée à Prague, elle publie des recueils de poèmes patriotiques, puis elle est arrêtée par les Soviétiques en 1948 et passe huit ans au Goulag. Libérée en 1956, elle vit à Zelva jusqu'à sa mort en 1983, et ses poèmes sont publiés à l'étranger.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Laryssa%20H%C3%A9niouch",
+                  "pays": "BY",
+                  "classement": "Héniouch, Laryssa",
+                  "image": {
+                    "src": "assets/portraits/pan_ru_heniouch.jpg",
+                    "legende": "Laryssa Héniouch, photographie des années 1930",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%C5%81arysa_Hieniju%C5%A1._%D0%9B%D0%B0%D1%80%D1%8B%D1%81%D0%B0_%D0%93%D0%B5%D0%BD%D1%96%D1%8E%D1%88_(1930-39).jpg"
+                  }
+                },
+                {
                   "id": "pan_ru_oulanova",
                   "axe": "Musique, spectacle et sport",
                   "date": 1910,
@@ -155562,6 +155803,23 @@
                     "auteur": "Gueorgui Zelma",
                     "licence": "CC BY 4.0",
                     "source": "https://commons.wikimedia.org/wiki/File:Vasili_Z%C3%A1itsev.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ru_macherov",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1918,
+                  "titre": "Naissance de Piotr Macherov",
+                  "description": "Piotr Macherov (1918-1980) est premier secrétaire du Parti communiste de Biélorussie de 1965 à sa mort, ancien chef de partisans pendant la Seconde Guerre mondiale. Il reconstruit l'économie de la république et reste très populaire pour son souci des habitants et son style simple. Il meurt dans un accident de la route en 1980, dont les circonstances ont fait naître des soupçons.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Piotr%20Macherov",
+                  "pays": "BY",
+                  "classement": "Macherov, Piotr",
+                  "image": {
+                    "src": "assets/portraits/pan_ru_macherov.jpg",
+                    "legende": "Piotr Macherov, timbre biélorusse de 2018",
+                    "auteur": "Ya. Biadonik / Белпочта",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pyotr_Masherov_2018_stamp_of_Belarus.jpg"
                   }
                 },
                 {
@@ -155629,6 +155887,23 @@
                   }
                 },
                 {
+                  "id": "pan_ru_bykov",
+                  "axe": "Littérature et pensée",
+                  "date": 1924,
+                  "titre": "Naissance de Vassil Bykov",
+                  "description": "Vassil Bykov (1924-2003) est un écrivain biélorusse, ancien officier de l'Armée rouge, né dans la région de Vitebsk. Ses récits sur la Seconde Guerre mondiale, comme « Sotnikov » (1970), mettent en scène des choix moraux extrêmes et sont adaptés au cinéma. Opposant au régime de Loukachenko, il vit en exil en Finlande et en Allemagne, avant de mourir près de Minsk en 2003.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vassil%20Bykov",
+                  "pays": "BY",
+                  "classement": "Bykov, Vassil",
+                  "image": {
+                    "src": "assets/portraits/pan_ru_bykov.jpg",
+                    "legende": "Vassil Bykov, photographie prise en Roumanie en 1944",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Vasil_Bykov_(cropped).jpg"
+                  }
+                },
+                {
                   "id": "pan_ru_rostropovitch",
                   "axe": "Musique, spectacle et sport",
                   "date": 1927,
@@ -155658,6 +155933,40 @@
                     "auteur": "Ron Kroon (Anefo)",
                     "licence": "CC BY-SA 3.0 NL",
                     "source": "https://commons.wikimedia.org/wiki/File:Lev_Yashin.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ru_alferov",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1930,
+                  "titre": "Naissance de Jaurès Alferov",
+                  "description": "Jaurès Alferov (1930-2019) est un physicien soviétique puis russe, né à Vitebsk, en Biélorussie. Il met au point les hétérostructures à semi-conducteurs, à la base des lasers, des diodes électroluminescentes et des cellules solaires. Il reçoit en 2000 le prix Nobel de physique, avec Herbert Kroemer et Jack Kilby.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jaur%C3%A8s%20Alferov",
+                  "pays": "BY",
+                  "classement": "Alferov, Jaurès",
+                  "image": {
+                    "src": "assets/portraits/pan_ru_alferov.jpg",
+                    "legende": "Jaurès Alferov, photographie d'avril 2016",
+                    "auteur": "Рустем Кадыров",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Zhores_Alferov_April_2016.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ru_karatkievitch",
+                  "axe": "Littérature et pensée",
+                  "date": 1930,
+                  "titre": "Naissance d'Ouladzimir Karatkievitch",
+                  "description": "Ouladzimir Karatkievitch (1930-1984) est un écrivain biélorusse, né à Orcha, romancier, poète et scénariste. Ses romans historiques, comme « La Chasse sauvage du roi Stakh » (1964) et « Les Épis sous ta faucille » (1968), ont renouvelé l'image du passé de la Biélorussie. Il meurt à Minsk en 1984, à cinquante-trois ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ouladzimir%20Karatkievitch",
+                  "pays": "BY",
+                  "classement": "Karatkievitch, Ouladzimir",
+                  "image": {
+                    "src": "assets/portraits/pan_ru_karatkievitch.jpg",
+                    "legende": "Ouladzimir Karatkievitch étudiant, photographie",
+                    "auteur": "dont know",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Karatkievich_student.jpg"
                   }
                 },
                 {
@@ -155706,6 +156015,23 @@
                     "auteur": "Boris Baldin (1929–2005)",
                     "licence": "CC BY-SA 4.0",
                     "source": "https://commons.wikimedia.org/wiki/File:Andrei_Tarkovsky_by_Boris_Baldin.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ru_chouchkievitch",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1934,
+                  "titre": "Naissance de Stanislaw Chouchkievitch",
+                  "description": "Stanislaw Chouchkievitch (1934-2022) est un physicien et homme d'État biélorusse, premier chef de l'État de la Biélorussie indépendante, de 1991 à 1994. Il signe le 8 décembre 1991, avec Boris Eltsine et Leonid Kravtchouk, l'accord de Belovej qui dissout l'Union soviétique. Écarté du pouvoir en 1994, il devient ensuite un opposant à Loukachenko.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Stanislaw%20Chouchkievitch",
+                  "pays": "BY",
+                  "classement": "Chouchkievitch, Stanislaw",
+                  "image": {
+                    "src": "assets/portraits/pan_ru_chouchkievitch.jpg",
+                    "legende": "Stanislaw Chouchkievitch, photographie de 2009",
+                    "auteur": "Saligorsk.org",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:%C5%A0u%C5%A1kievi%C4%8D_bchd.jpg"
                   }
                 },
                 {
@@ -155790,6 +156116,23 @@
                   }
                 },
                 {
+                  "id": "pan_ru_mouliavine",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1941,
+                  "titre": "Naissance de Vladimir Mouliavine",
+                  "description": "Vladimir Mouliavine (1941-2003) est un chanteur et compositeur soviétique et biélorusse, né à Sverdlovsk. Il fonde et dirige l'ensemble « Pesniary », qui mêle le folklore biélorusse au rock et à la musique de variété, et connaît une immense popularité dans toute l'URSS. Il meurt à Moscou en 2003.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vladimir%20Mouliavine",
+                  "pays": "BY",
+                  "classement": "Mouliavine, Vladimir",
+                  "image": {
+                    "src": "assets/portraits/pan_ru_mouliavine.jpg",
+                    "legende": "Vladimir Mouliavine sur scène, photographie",
+                    "auteur": "Boris Semenov (1939–2000)",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Vladimir_Muliavin_1.jpg"
+                  }
+                },
+                {
                   "id": "pan_ru_politkovskaia",
                   "axe": "Guerres et résistances",
                   "date": 1958,
@@ -155848,6 +156191,7 @@
               ],
               "essentiel": [
                 "pan_ru_nevski",
+                "pan_ru_skaryna",
                 "pan_ru_ivan4",
                 "pan_ru_pierre1",
                 "pan_ru_lomonossov",
@@ -161562,6 +161906,1794 @@
                 "pan_tr_yasarkemal",
                 "pan_tr_ozal",
                 "pan_tr_barismanco"
+              ]
+            },
+            {
+              "id": "pan_ua",
+              "nom": "Grandes figures d'Ukraine",
+              "difficulte": "Intermédiaire",
+              "motsCles": [
+                "Ukrainien",
+                "Ukrainienne",
+                "Ukraine",
+                "Kiev",
+                "Rus de Kiev",
+                "Rus’ de Kiev",
+                "Cosaque",
+                "Cosaques",
+                "Hetman",
+                "Zaporogue",
+                "Sitch",
+                "Galicie",
+                "Lviv",
+                "Volhynie",
+                "Crimée",
+                "Donbass",
+                "Dniepr",
+                "Poltava",
+                "Kharkiv",
+                "Odessa",
+                "Holodomor",
+                "Maïdan",
+                "République populaire ukrainienne",
+                "OUN",
+                "UPA"
+              ],
+              "events": [
+                {
+                  "id": "pan_ua_olga",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 890,
+                  "titre": "Naissance d'Olga de Kiev",
+                  "description": "Olga de Kiev (vers 890-969) est la régente de la Rus' de Kiev à partir de 945, après l'assassinat de son mari Igor par les Drevlianes. Elle punit durement ce peuple, organise la collecte du tribut et se fait baptiser à Constantinople vers 957. Canonisée par l'Église orthodoxe, elle est la grand-mère de Vladimir Ier, qui convertira la Rus'.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Olga%20de%20Kiev",
+                  "classement": "Kiev, Olga de",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_olga.jpg",
+                    "legende": "Olga de Kiev, esquisse de Mikhaïl Nesterov pour la cathédrale Saint-Vladimir de Kiev (1892)",
+                    "auteur": "Mikhail Nesterov (1862–1942)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:St_Olga_by_Nesterov_in_1892.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_sviatoslav",
+                  "axe": "Guerres et résistances",
+                  "date": 942,
+                  "titre": "Naissance de Sviatoslav Ier",
+                  "description": "Sviatoslav Ier (vers 942-972) est grand-prince de Kiev à partir de 945, un chef de guerre resté fidèle à la religion païenne. Il détruit le khaganat des Khazars, puis mène campagne en Bulgarie contre Byzance, mais doit se replier après le siège de Dorostolon en 971. Il est tué par les Petchenègues sur les rapides du Dniepr, au printemps 972.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sviatoslav%20Ier",
+                  "classement": "Sviatoslav Ier",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_sviatoslav.jpg",
+                    "legende": "Sviatoslav Ier, portrait du Livre des titres du tsar (1672) : une image imaginée, sept siècles après sa mort",
+                    "auteur": "collective",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Titulyarnik_-_Sviatoslav.png"
+                  }
+                },
+                {
+                  "id": "pan_ua_vladimir1",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 958,
+                  "titre": "Naissance de Vladimir Ier",
+                  "description": "Vladimir Ier (vers 958-1015) est grand-prince de Kiev de 980 à sa mort, et le souverain qui convertit la Rus' au christianisme. Il se fait baptiser vers 988 et épouse Anne, sœur de l'empereur byzantin Basile II, puis il fait baptiser les habitants de Kiev dans le Dniepr. Vénéré comme saint, il est revendiqué comme fondateur par l'Ukraine, la Russie et la Biélorussie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vladimir%20Ier",
+                  "classement": "Vladimir Ier",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_vladimir1.jpg",
+                    "legende": "Vladimir Ier, portrait du Livre des titres du tsar (1672) : une image imaginée, plus de six siècles après sa mort",
+                    "auteur": "Anonymous illumination",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Vladimir_I_of_Kiev.PNG"
+                  }
+                },
+                {
+                  "id": "pan_ua_iaroslav",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 978,
+                  "titre": "Naissance d'Iaroslav le Sage",
+                  "description": "Iaroslav le Sage (vers 978-1054) est grand-prince de Kiev de 1019 à sa mort, au sommet de la puissance de la Rus' de Kiev. Il fait bâtir la cathédrale Sainte-Sophie de Kiev et la Porte d'or, et il fait mettre par écrit le premier code de lois de la Rus', la « Rous'ka Pravda ». Ses filles épousent des rois de France, de Norvège et de Hongrie, dont Anne de Kiev, épouse d'Henri Ier.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Iaroslav%20le%20Sage",
+                  "classement": "Sage, Iaroslav le",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_iaroslav.jpg",
+                    "legende": "Iaroslav le Sage, portrait du Livre des titres du tsar (1672) : une image imaginée, six siècles après sa mort",
+                    "auteur": "Александр Митин Евгеньевич",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%AF%D1%80%D0%BE%D1%81%D0%BB%D0%B0%D0%B2_%D0%9C%D1%83%D0%B4%D1%80%D1%8B%D0%B9.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_monomaque",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1053,
+                  "titre": "Naissance de Vladimir II Monomaque",
+                  "description": "Vladimir II Monomaque (1053-1125) est grand-prince de Kiev de 1113 à sa mort, appelé au trône par les Kiéviens après la révolte qui suit la mort de Sviatopolk II. Il adoucit la condition des débiteurs et rassemble les princes pour combattre les Coumans. Il laisse l'« Enseignement » à ses enfants, texte célèbre de la littérature de la Rus'.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vladimir%20II%20Monomaque",
+                  "classement": "Vladimir II Monomaque",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_monomaque.jpg",
+                    "legende": "Vladimir II Monomaque, portrait du Livre des titres du tsar (1672) : une image imaginée, plus de cinq siècles après sa mort",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Vladimir_monomakh.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_daniel",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1201,
+                  "titre": "Naissance de Daniel de Galicie",
+                  "description": "Daniel de Galicie (1201-1264) est prince de Galicie-Volhynie, qu'il réunit sous son autorité après la mort de son père Roman le Grand. Il fonde Lviv vers 1256, qu'il nomme en l'honneur de son fils Lev, et il se fait couronner roi en 1253 avec l'accord du pape. Contraint de reconnaître l'autorité des Mongols de la Horde d'or, il laisse la principauté la plus puissante de l'Ukraine médiévale.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Daniel%20de%20Galicie",
+                  "classement": "Galicie, Daniel de",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_daniel.jpg",
+                    "legende": "Daniel de Galicie, miniature de la Chronique enluminée du XVIᵉ siècle, qui le montre dans une scène de serment des boyards",
+                    "auteur": "Auteur inconnu (Chronique enluminée, XVIᵉ siècle)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%94%D0%B0%D0%BD%D0%B8%D0%B8%D0%BB_%D0%93%D0%B0%D0%BB%D0%B8%D1%86%D0%BA%D0%B8%D0%B9.png"
+                  }
+                },
+                {
+                  "id": "pan_ua_ostrogski",
+                  "axe": "Guerres et résistances",
+                  "date": 1460,
+                  "titre": "Naissance de Constantin Ostrogski",
+                  "description": "Constantin Ostrogski (vers 1460-1530) est un prince ruthène, grand hetman de Lituanie et le plus puissant des magnats du grand-duché. Capturé par les Moscovites à la bataille de la Vedrocha en 1500, il revient pour vaincre les Tatars, puis il écrase les troupes de Moscou à Orcha en 1514. Orthodoxe, il protège l'Église et les écoles ruthènes, et son fils Constantin Vassili fonde l'académie d'Ostroh.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Constantin%20Ostrogski",
+                  "classement": "Ostrogski, Constantin",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_ostrogski.jpg",
+                    "legende": "Constantin Ostrogski, portrait du XVIIIᵉ siècle d'un peintre inconnu",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kanstantyn_Astroski._%D0%9A%D0%B0%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D1%8B%D0%BD_%D0%90%D1%81%D1%82%D1%80%D0%BE%D1%81%D0%BA%D1%96_(XVIII).jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_nalyvaiko",
+                  "axe": "Guerres et résistances",
+                  "date": 1560,
+                  "titre": "Naissance de Severyn Nalyvaïko",
+                  "description": "Severyn Nalyvaïko (vers 1560-1597) est un chef cosaque qui conduit en 1594-1596 l'une des grandes révoltes contre la Pologne-Lituanie. Ses troupes parcourent l'Ukraine et la Biélorussie, mais elles sont battues à Solonytsia. Fait prisonnier, il est exécuté à Varsovie en avril 1597, et il devient un héros des chants cosaques.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Severyn%20Nalyva%C3%AFko",
+                  "classement": "Nalyvaïko, Severyn",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_nalyvaiko.jpg",
+                    "legende": "Severyn Nalyvaïko, portrait imaginaire du XIXᵉ siècle d'un peintre inconnu",
+                    "auteur": "Unknown 19th century artist. Original uploader was Alex Bakharev at en.wikipedia",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nalivajko_severin.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_sahaidatchnyi",
+                  "axe": "Guerres et résistances",
+                  "date": 1570,
+                  "titre": "Naissance de Petro Sahaïdatchnyi",
+                  "description": "Petro Sahaïdatchnyi (vers 1570-1622) est hetman des cosaques zaporogues de 1614 à sa mort. Il organise l'armée cosaque, conduit des raids sur la mer Noire, dont la prise de Caffa en 1616, et participe à la victoire de Khotin contre les Ottomans en 1621. Il fait rétablir en 1620 la hiérarchie orthodoxe de Kiev, avec l'aide du patriarche de Jérusalem, et meurt des suites de ses blessures.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Petro%20Saha%C3%AFdatchnyi",
+                  "classement": "Sahaïdatchnyi, Petro",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_sahaidatchnyi.jpg",
+                    "legende": "Petro Sahaïdatchnyi, portrait de Havrylo Vasko (milieu du XIXᵉ siècle), d'après un modèle ancien",
+                    "auteur": "Havrylo Vasko (1820–) Alternative names Gavrilo Vasko; Gavrila A. Vasko",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Petro_Konashevych-Sahaidachny_(Portrait,_mid_19th_century,_Havrylo_Vasko).jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_khmelnytsky",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1595,
+                  "titre": "Naissance de Bogdan Khmelnitski",
+                  "description": "Bogdan Khmelnitski (vers 1595-1657) est hetman des cosaques zaporogues, qui conduit à partir de 1648 la grande révolte contre la Pologne-Lituanie. Vainqueur à Jovti Vody, à Korsoun et à Piliavtsi, il fonde le hetmanat cosaque, mais la guerre s'accompagne de massacres de Juifs et de Polonais. Par le traité de Pereïaslav (1654), il place les cosaques sous la protection du tsar de Moscou.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bogdan%20Khmelnitski",
+                  "classement": "Khmelnitski, Bogdan",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_khmelnytsky.jpg",
+                    "legende": "Bogdan Khmelnitski, gravure de Willem Hondius (1651)",
+                    "auteur": "Willem Hondius (circa 1598/1599–1658/1660)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hondius_Bohdan_Khmelnytsky.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_mohyla",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1596,
+                  "titre": "Naissance de Petro Mohyla",
+                  "description": "Petro Mohyla (1596-1646) est métropolite orthodoxe de Kiev de 1633 à sa mort, fils d'un prince de Moldavie. Il fonde en 1632 le collège de Kiev, devenu l'académie Mohyla, où l'on enseigne le latin et les sciences, et il rédige une confession de foi orthodoxe. Il réforme l'Église ruthène et restaure la cathédrale Sainte-Sophie de Kiev.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pierre%20Movil%C4%83",
+                  "classement": "Mohyla, Petro",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_mohyla.jpg",
+                    "legende": "Petro Mohyla, portrait du XVIIIᵉ siècle d'un peintre inconnu",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mohyla_Petro.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_vyhovsky",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1608,
+                  "titre": "Naissance d'Ivan Vyhovsky",
+                  "description": "Ivan Vyhovsky (vers 1608-1664) est hetman des cosaques d'Ukraine de 1657 à 1659, successeur de Khmelnitski. Il s'allie à la Pologne par le traité d'Hadiatch (1658), qui érige la Rus' en troisième membre de la république des Deux Nations, et il bat les Moscovites à Konotop en 1659. Contesté par une partie des cosaques, il abdique, puis il est fusillé par les Polonais en 1664.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ivan%20Vyhovsky",
+                  "classement": "Vyhovsky, Ivan",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_vyhovsky.jpg",
+                    "legende": "Ivan Vyhovsky, portrait de Havrylo Vasko, d'après une miniature ancienne (XIXᵉ siècle)",
+                    "auteur": "Havrylo Vasko (1820–) Alternative names Gavrilo Vasko; Gavrila A. Vasko",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ivan_Vyhovsky_(Portrait,_19th_century,_after_restoration).jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_bohun",
+                  "axe": "Guerres et résistances",
+                  "date": 1618,
+                  "titre": "Naissance d'Ivan Bohun",
+                  "description": "Ivan Bohun (vers 1618-1664) est un colonel cosaque, compagnon de Khmelnitski. Il se distingue à Batih en 1652, où il détruit l'armée polonaise de Marcin Kalinowski, mais il s'oppose ensuite au traité de Pereïaslav avec la Russie. Il est tué en 1664 par les Polonais, après avoir pris le parti des adversaires de Moscou.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ivan%20Bohun",
+                  "classement": "Bohun, Ivan",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_bohun.jpg",
+                    "legende": "Ivan Bohun, lithographie de Iakiv Madeïevsky (1884)",
+                    "auteur": "Madeevskiy",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ivan_Bohun_(1884).jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_doroshenko",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1627,
+                  "titre": "Naissance de Petro Dorochenko",
+                  "description": "Petro Dorochenko (1627-1698) est hetman de l'Ukraine de la rive droite du Dniepr de 1665 à 1676. Il veut unir les deux rives du fleuve et se met sous la protection de l'Empire ottoman, avec l'appui des Tatars de Crimée. Contraint de se rendre aux Russes en 1676, il finit sa vie à Iaropolets, près de Moscou.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Petro%20Dorochenko",
+                  "classement": "Dorochenko, Petro",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_doroshenko.jpg",
+                    "legende": "Petro Dorochenko, portrait du XIXᵉ siècle d'un peintre inconnu",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Petro_Doroshenko_19.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_mazepa",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1639,
+                  "titre": "Naissance d'Ivan Mazepa",
+                  "description": "Ivan Mazepa (1639-1709) est hetman des cosaques d'Ukraine de 1687 à sa mort, et un mécène du baroque. Il fait bâtir ou restaurer des églises à Kiev, soutient l'académie Mohyla et s'attache à l'autonomie du hetmanat. En 1708, il se range aux côtés de Charles XII de Suède contre Pierre le Grand, est vaincu à Poltava en 1709 et meurt en exil à Bender.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ivan%20Mazepa",
+                  "classement": "Mazepa, Ivan",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_mazepa.jpg",
+                    "legende": "Ivan Mazepa, portrait du XIXᵉ siècle d'un peintre inconnu",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portret_Mazepa.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_skovoroda",
+                  "axe": "Littérature et pensée",
+                  "date": 1722,
+                  "titre": "Naissance de Grigori Skovoroda",
+                  "description": "Grigori Skovoroda (1722-1794) est un philosophe, poète et pédagogue ukrainien, surnommé le « Socrate ukrainien ». Il refuse les honneurs et les charges, parcourt l'Ukraine à pied et enseigne un christianisme fondé sur la connaissance de soi et la vie simple. Ses « Fables de Kharkiv » et ses dialogues philosophiques circulent en manuscrit de son vivant.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Grigori%20Skovoroda",
+                  "classement": "Skovoroda, Grigori",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_skovoroda.jpg",
+                    "legende": "Grigori Skovoroda, portrait du XIXᵉ siècle d'un peintre inconnu",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D0%B8%D0%B9_%D0%A1%D0%BA%D0%BE%D0%B2%D0%BE%D1%80%D0%BE%D0%B4%D0%B0.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_honta",
+                  "axe": "Guerres et résistances",
+                  "date": 1740,
+                  "titre": "Naissance d'Ivan Gonta",
+                  "description": "Ivan Gonta (vers 1740-1768) est un capitaine cosaque au service d'un magnat polonais, qui commande la milice d'Ouman. Pendant la révolte des Haïdamaks de 1768, il passe à leurs côtés et prend part au massacre d'Ouman, où périssent de nombreux Polonais et Juifs. Livré par les Russes, il est exécuté, et Chevtchenko en fait un héros du poème « Haïdamaky ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ivan%20Gonta",
+                  "classement": "Gonta, Ivan",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_honta.jpg",
+                    "legende": "Ivan Gonta, gravure de 1802",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ivan_Gonta.png"
+                  }
+                },
+                {
+                  "id": "pan_ua_berezovsky",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1745,
+                  "titre": "Naissance de Maxime Berezovsky",
+                  "description": "Maxime Berezovsky (1745-1777) est un compositeur ukrainien né à Hloukhiv, formé à Saint-Pétersbourg puis à Bologne auprès du père Martini. Il compose des concertos sacrés pour chœur a cappella, et un opéra, « Démophon », créé à Livourne en 1773. Il meurt à Saint-Pétersbourg en 1777, probablement par suicide.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Maxime%20Berezovsky",
+                  "classement": "Berezovsky, Maxime",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_berezovsky.jpg",
+                    "legende": "Maxime Berezovsky, effigie en relief sur une médaille commémorative",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Berezovsky,_Maksim_Sozontovich.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_bortnianski",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1751,
+                  "titre": "Naissance de Dmitri Bortnianski",
+                  "description": "Dmitri Bortnianski (1751-1825) est un compositeur d'origine ukrainienne né à Hloukhiv, formé en Italie auprès de Galuppi. Directeur de la chapelle de la cour de Saint-Pétersbourg à partir de 1796, il écrit une trentaine de concertos sacrés pour chœur. Ses œuvres religieuses ont marqué la musique orthodoxe.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dmitri%20Bortnianski",
+                  "classement": "Bortnianski, Dmitri",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_bortnianski.jpg",
+                    "legende": "Dmitri Bortnianski, portrait de Mikhaïl Belski (1788)",
+                    "auteur": "Mikhail Ivanovich Belsky (1753–1794) Description Russian painter",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%91%D0%BE%D1%80%D1%82%D0%BD%D1%8F%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_(1788).jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_borovikovski",
+                  "axe": "Beaux-arts",
+                  "date": 1757,
+                  "titre": "Naissance de Vladimir Borovikovski",
+                  "description": "Vladimir Borovikovski (1757-1825) est un peintre né à Mirgorod, en Ukraine, et l'un des grands portraitistes de la cour de Russie. Installé à Saint-Pétersbourg en 1788, il y peint Catherine II, Paul Ier et la haute société dans un style sentimental. Son « Portrait de Maria Lopoukhina » (1797) est l'une des images les plus connues de la peinture russe.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vladimir%20Borovikovski",
+                  "classement": "Borovikovski, Vladimir",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_borovikovski.jpg",
+                    "legende": "Vladimir Borovikovski, portrait d'Ivan Bougaïevski-Blagodarny (1824)",
+                    "auteur": "Ivan Bugaevsky-Blagodarny (–1860)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Borovikovsky_By_Bugaevsky_Blagodatny.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_kotliarevsky",
+                  "axe": "Littérature et pensée",
+                  "date": 1769,
+                  "titre": "Naissance d'Ivan Kotliarevsky",
+                  "description": "Ivan Kotliarevsky (1769-1838) est un poète et dramaturge, considéré comme le fondateur de la littérature ukrainienne moderne. Son « Énéide », parodie de Virgile publiée en 1798 en langue populaire, met sur scène les cosaques et la vie des campagnes de Poltava. Il dirige aussi le théâtre de Poltava, où il fait jouer sa pièce « Natalka Poltavka ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ivan%20Kotliarevsky",
+                  "classement": "Kotliarevsky, Ivan",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_kotliarevsky.jpg",
+                    "legende": "Ivan Kotliarevsky, portrait ancien",
+                    "auteur": "Іван_Котляревський.jpg : unknown derivative work: Gnesener1900",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%86%D0%B2%D0%B0%D0%BD_%D0%9A%D0%BE%D1%82%D0%BB%D1%8F%D1%80%D0%B5%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_cropped.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_kvitka",
+                  "axe": "Littérature et pensée",
+                  "date": 1778,
+                  "titre": "Naissance de Hryhoriy Kvitka-Osnovianenko",
+                  "description": "Hryhoriy Kvitka-Osnovianenko (1778-1843) est un écrivain et dramaturge de Kharkiv, considéré comme le fondateur de la prose littéraire ukrainienne. Il publie à partir de 1833 des récits en ukrainien, dont « Marousia », et il écrit aussi en russe. Son théâtre populaire et ses nouvelles ouvrent la voie aux réalistes de la génération suivante.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hryhoriy%20Kvitka-Osnovianenko",
+                  "classement": "Kvitka-Osnovianenko, Hryhoriy",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_kvitka.jpg",
+                    "legende": "Hryhoriy Kvitka-Osnovianenko, lithographie ancienne",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%B2%D1%96%D1%82%D0%BA%D0%B0-%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%27%D1%8F%D0%BD%D0%B5%D0%BD%D0%BA%D0%BE.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_hrebinka",
+                  "axe": "Littérature et pensée",
+                  "date": 1812,
+                  "titre": "Naissance de Yevhen Hrebinka",
+                  "description": "Yevhen Hrebinka (1812-1848) est un écrivain et poète, qui écrit en ukrainien et en russe. Il publie à Saint-Pétersbourg des fables en ukrainien (1834), puis un almanach, « L'Hirondelle » (1841), où paraissent les premiers poèmes de Chevtchenko. Il compose aussi le poème « Les Yeux noirs », devenu une romance célèbre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Yevhen%20Hrebinka",
+                  "classement": "Hrebinka, Yevhen",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_hrebinka.jpg",
+                    "legende": "Yevhen Hrebinka, portrait d'Apollon Mokritski (1841)",
+                    "auteur": "Apollon Mokritsky",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%93%D1%80%D0%B5%D0%B1%D1%96%D0%BD%D0%BA%D0%B0_%D0%84.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_hulak",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1813,
+                  "titre": "Naissance de Semen Houlak-Artemovsky",
+                  "description": "Semen Houlak-Artemovsky (1813-1873) est un compositeur, baryton et dramaturge ukrainien. Il chante à l'Opéra de Saint-Pétersbourg et compose « Le Cosaque zaporogue au-delà du Danube » (1863), considéré comme le premier opéra national ukrainien. Formé à Florence, il enseigne et chante aussi à la cour de Russie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Semen%20Houlak-Artemovsky",
+                  "classement": "Houlak-Artemovsky, Semen",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_hulak.jpg",
+                    "legende": "Semen Houlak-Artemovsky, portrait ancien",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Semen_Hulak-Artemovsky.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_shevchenko",
+                  "axe": "Littérature et pensée",
+                  "date": 1814,
+                  "titre": "Naissance de Taras Chevtchenko",
+                  "description": "Taras Chevtchenko (1814-1861) est le poète national de l'Ukraine, serf devenu peintre, dont le recueil « Kobzar » (1840) fonde la littérature ukrainienne moderne. Racheté de son servage en 1838 par des artistes de Saint-Pétersbourg, il écrit contre le tsarisme et le servage, ce qui lui vaut dix ans d'exil militaire après son arrestation en 1847. Il meurt à Saint-Pétersbourg, et son tombeau à Kaniv est devenu un lieu de pèlerinage.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Taras%20Chevtchenko",
+                  "classement": "Chevtchenko, Taras",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_shevchenko.jpg",
+                    "legende": "Taras Chevtchenko, autoportrait à l'huile (1840-1841)",
+                    "auteur": "Taras Shevchenko (1814–1861)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Taras_Shevchenko_selfportrait_oil_1840.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_kostomarov",
+                  "axe": "Littérature et pensée",
+                  "date": 1817,
+                  "titre": "Naissance de Nikolaï Kostomarov",
+                  "description": "Nikolaï Kostomarov (1817-1885) est un historien, ethnographe et écrivain d'ascendance russe et ukrainienne. Il est l'un des fondateurs de la confrérie de Cyrille et Méthode, à Kiev, dont les membres sont arrêtés en 1847. Ses travaux sur Khmelnitski et les cosaques, écrits en russe, présentent le peuple, et non les princes, comme sujet de l'histoire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nikola%C3%AF%20Kostomarov",
+                  "classement": "Kostomarov, Nikolaï",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_kostomarov.jpg",
+                    "legende": "Nikolaï Kostomarov, photographie vers 1880",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kostomarov_7.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_kulish",
+                  "axe": "Littérature et pensée",
+                  "date": 1819,
+                  "titre": "Naissance de Panteleïmon Koulich",
+                  "description": "Panteleïmon Koulich (1819-1897) est un écrivain, historien et traducteur ukrainien. Il publie en 1857 le premier roman historique en ukrainien, « Tchorna Rada », et il établit l'alphabet ukrainien dit « kulichivka », ancêtre de l'orthographe actuelle. Il traduit en ukrainien Shakespeare et la Bible, et soutient Chevtchenko.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pantele%C3%AFmon%20Koulich",
+                  "classement": "Koulich, Panteleïmon",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_kulish.jpg",
+                    "legende": "Panteleïmon Koulich, photographie vers 1869",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Panteleimon_Kulish.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_hlibov",
+                  "axe": "Littérature et pensée",
+                  "date": 1827,
+                  "titre": "Naissance de Leonid Hlibov",
+                  "description": "Leonid Hlibov (1827-1893) est un fabuliste et poète ukrainien, installé à Tchernihiv. Ses « Fables » en ukrainien, publiées à partir de 1863, sont longtemps lues à l'école, et plusieurs de ses poèmes sont chantés comme des chansons populaires. Il édite aussi le journal « Le Bulletin de Tchernihiv ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Leonid%20Hlibov",
+                  "classement": "Hlibov, Leonid",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_hlibov.jpg",
+                    "legende": "Leonid Hlibov, photographie ancienne",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%93%D0%BB%D1%96%D0%B1%D0%BE%D0%B2_%D0%9B.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_vovchok",
+                  "axe": "Littérature et pensée",
+                  "date": 1833,
+                  "titre": "Naissance de Marko Vovtchok",
+                  "description": "Marko Vovtchok (1833-1907) est le pseudonyme de Maria Vilinska, une écrivaine et traductrice de langue ukrainienne et russe. Son recueil « Récits populaires » (1857) dénonce le servage, et Chevtchenko, dont elle est proche, lui adresse un poème. Elle traduit aussi Jules Verne et d'autres auteurs européens en russe et en ukrainien.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Marko%20Vovtchok",
+                  "classement": "Vovtchok, Marko",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_vovchok.jpg",
+                    "legende": "Marko Vovtchok, photographie de la fin du XIXᵉ siècle",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Marko_Vovchok.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_nechuy",
+                  "axe": "Littérature et pensée",
+                  "date": 1838,
+                  "titre": "Naissance d'Ivan Netchouï-Levytsky",
+                  "description": "Ivan Netchouï-Levytsky (1838-1918) est un romancier ukrainien, maître du réalisme. Il écrit « Les Kaidachev » et « Les Nuages », qui décrivent la vie des paysans et celle de l'intelligentsia, et il publie un essai sur la nécessité de la langue ukrainienne. Il meurt dans la pauvreté à Kiev, à quatre-vingts ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ivan%20Netchou%C3%AF-Levytsky",
+                  "classement": "Netchouï-Levytsky, Ivan",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_nechuy.jpg",
+                    "legende": "Ivan Netchouï-Levytsky, portrait peint par Ivan Trouch (1900)",
+                    "auteur": "Ivan Trush (1869–1941)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%9F%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_%D0%9D%D0%B5%D1%87%D1%83%D1%8F-%D0%9B%D0%B5%D0%B2%D0%B8%D1%86%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE_(%D0%A2%D1%80%D1%83%D1%88).jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_drahomanov",
+                  "axe": "Littérature et pensée",
+                  "date": 1841,
+                  "titre": "Naissance de Mykhaïlo Drahomanov",
+                  "description": "Mykhaïlo Drahomanov (1841-1895) est un historien, philosophe et théoricien politique ukrainien, partisan d'un socialisme fédéraliste. Chassé de l'université de Kiev en 1875, il s'exile à Genève, où il publie une revue en ukrainien et défend une Ukraine autonome dans une fédération libre. Professeur à Sofia dès 1889, il y meurt en 1895.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mykha%C3%AFlo%20Drahomanov",
+                  "classement": "Drahomanov, Mykhaïlo",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_drahomanov.jpg",
+                    "legende": "Mykhaïlo Drahomanov, photographie des années 1870",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mykhailo_Petrovych_Drahomanov,_1870s.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_kuindzhi",
+                  "axe": "Beaux-arts",
+                  "date": 1841,
+                  "titre": "Naissance d'Arkhip Kouïndji",
+                  "description": "Arkhip Kouïndji (1841-1910) est un peintre paysagiste né près de Marioupol, dans une famille d'origine grecque. Il se fait connaître par ses effets de lumière, dont « Nuit de lune sur le Dniepr » (1880), qui attire des foules à Saint-Pétersbourg. Professeur à l'Académie impériale des arts, il forme de nombreux paysagistes, puis lègue ses biens à la Société qui porte son nom.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Arkhip%20Kou%C3%AFndji",
+                  "classement": "Kouïndji, Arkhip",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_kuindzhi.jpg",
+                    "legende": "Arkhip Kouïndji, portrait d'Ivan Kramskoï (1872)",
+                    "auteur": "Ivan Kramskoi (1837–1887)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kuindzhi_by_I.Kramskoy_(1872,_GTG).jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_lysenko",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1842,
+                  "titre": "Naissance de Mykola Lyssenko",
+                  "description": "Mykola Lyssenko (1842-1912) est le fondateur de la musique classique ukrainienne. Pianiste, chef de chœur et ethnomusicologue, il collecte des chants populaires, met en musique les poèmes de Chevtchenko et compose des opéras, dont « Taras Boulba » et « Natalka Poltavka ». Il fonde en 1904 à Kiev une école de musique et de théâtre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mykola%20Lyssenko",
+                  "classement": "Lyssenko, Mykola",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_lysenko.jpg",
+                    "legende": "Mykola Lyssenko, photographie ancienne",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%9B%D0%B8%D1%81%D0%B5%D0%BD%D0%BA%D0%BE_%D0%9C%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_metchnikov",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1845,
+                  "titre": "Naissance d'Ilya Ilitch Metchnikov",
+                  "description": "Ilya Ilitch Metchnikov (1845-1916) est un zoologiste et immunologiste né près de Kharkiv, qui découvre la phagocytose, le rôle des globules blancs dans la défense de l'organisme. Il rejoint l'Institut Pasteur à Paris en 1888 et reçoit en 1908 le prix Nobel de physiologie ou médecine, avec Paul Ehrlich. Il s'intéresse aussi au vieillissement et aux bactéries lactiques, ce qui fait de lui l'un des précurseurs des probiotiques.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ilya%20Ilitch%20Metchnikov",
+                  "classement": "Metchnikov, Ilya Ilitch",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_metchnikov.jpg",
+                    "legende": "Ilya Ilitch Metchnikov, photographie de Nadar, vers 1908",
+                    "auteur": "Nadar (1820–1910)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ilya_Mechnikov_nobel.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_puluj",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1845,
+                  "titre": "Naissance d'Ivan Puluj",
+                  "description": "Ivan Puluj (1845-1918) est un physicien et inventeur né en Galicie, professeur à Vienne puis à Prague. Il met au point des tubes à vide qui émettent des rayons X, décrits dès 1881 avant la découverte de Röntgen, et il étudie les décharges électriques dans les gaz. Il participe aussi à la traduction de la Bible en ukrainien, et il est enterré à Prague.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ivan%20Puluj",
+                  "classement": "Puluj, Ivan",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_puluj.jpg",
+                    "legende": "Ivan Puluj, photographie des années 1910",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%86%D0%B2%D0%B0%D0%BD_%D0%9F%D1%83%D0%BB%D1%8E%D0%B9.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_yaroshenko",
+                  "axe": "Beaux-arts",
+                  "date": 1846,
+                  "titre": "Naissance de Nikolaï Iarochenko",
+                  "description": "Nikolaï Iarochenko (1846-1898) est un peintre réaliste né à Poltava, membre des Ambulants. Il peint des portraits de l'intelligentsia et des tableaux sociaux, dont « La Vie est partout » (1888) et « L'Étudiante » (1883). Officier de formation, il meurt à Kislovodsk en 1898.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nikola%C3%AF%20Iarochenko",
+                  "classement": "Iarochenko, Nikolaï",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_yaroshenko.jpg",
+                    "legende": "Nikolaï Iarochenko, dernière photographie, avant sa mort en 1898",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nikolaj_A._Jaro%C5%A1enko.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_vasylkivsky",
+                  "axe": "Beaux-arts",
+                  "date": 1854,
+                  "titre": "Naissance de Sergueï Vassilkovski",
+                  "description": "Sergueï Vassilkovski (1854-1917) est un peintre paysagiste et ornemaniste de Kharkiv, né à Izioum. Il peint les paysages de la steppe ukrainienne et les villages cosaques, et il publie un album de motifs populaires ukrainiens. Il conçoit aussi l'hôtel des zemstvos de Poltava, bâti dans le style néo-ukrainien au début du XXe siècle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sergue%C3%AF%20Vassilkovski",
+                  "classement": "Vassilkovski, Sergueï",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_vasylkivsky.jpg",
+                    "legende": "Sergueï Vassilkovski, photographie vers 1900",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Vasylkivsky_Serhiy.png"
+                  }
+                },
+                {
+                  "id": "pan_ua_franko",
+                  "axe": "Littérature et pensée",
+                  "date": 1856,
+                  "titre": "Naissance d'Ivan Franko",
+                  "description": "Ivan Franko (1856-1916) est un écrivain, poète, journaliste et militant socialiste de Galicie, alors autrichienne. Il traduit Goethe, Dante et Shakespeare, écrit des poèmes, des romans et des études sur l'histoire de la littérature, et il porte l'idée d'une Ukraine unie. Il est l'un des principaux fondateurs de la culture ukrainienne moderne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ivan%20Franko",
+                  "classement": "Franko, Ivan",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_franko.jpg",
+                    "legende": "Ivan Franko, photographie de M. Nikopoli (1896)",
+                    "auteur": "M. Nikopoli",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%86%D0%B2%D0%B0%D0%BD_%D0%AF%D0%BA%D0%BE%D0%B2%D0%B8%D1%87_%D0%A4%D1%80%D0%B0%D0%BD%D0%BA%D0%BE.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_pymonenko",
+                  "axe": "Beaux-arts",
+                  "date": 1862,
+                  "titre": "Naissance de Mykola Pymonenko",
+                  "description": "Mykola Pymonenko (1862-1912) est un peintre réaliste ukrainien, professeur à l'Institut d'art de Kiev. Ses scènes de la vie rurale, comme « Victime du fanatisme » (1899), montrent les traditions et les superstitions des villages. Il est l'un des peintres les plus populaires de l'Ukraine de son temps.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nikola%C3%AF%20Pimonenko",
+                  "classement": "Pymonenko, Mykola",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_pymonenko.jpg",
+                    "legende": "Mykola Pymonenko, autoportrait (1886)",
+                    "auteur": "Mykola Pymonenko (1862–1912)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mykola_Pymonenko-Avtoportret.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_hrinchenko",
+                  "axe": "Littérature et pensée",
+                  "date": 1863,
+                  "titre": "Naissance de Borys Hrintchenko",
+                  "description": "Borys Hrintchenko (1863-1910) est un écrivain, lexicographe et pédagogue ukrainien. Son « Dictionnaire de la langue ukrainienne » en quatre volumes (1907-1909) est le premier grand dictionnaire de la langue. Il anime la société « Prosvita » de Kiev et meurt en Italie, en 1910.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Borys%20Hrintchenko",
+                  "classement": "Hrintchenko, Borys",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_hrinchenko.jpg",
+                    "legende": "Borys Hrintchenko à Kharkiv, photographie vers 1885",
+                    "auteur": "Трофімов Єлисей Федорович або Трофімов Федір Іванович (малоймовірно)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%93%D1%80%D1%96%D0%BD%D1%87%D0%B5%D0%BD%D0%BA%D0%BE_%D0%91%D0%BE%D1%80%D0%B8%D1%812.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_kobylianska",
+                  "axe": "Littérature et pensée",
+                  "date": 1863,
+                  "titre": "Naissance d'Olha Kobylianska",
+                  "description": "Olha Kobylianska (1863-1942) est une romancière de Bucovine, d'abord de langue allemande, qui écrit ensuite en ukrainien. Dans « La Princesse » (1895) et « La Terre », elle défend l'émancipation des femmes et dépeint la vie des paysans. Elle meurt à Tchernivtsi en 1942.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Olha%20Kobylianska",
+                  "classement": "Kobylianska, Olha",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_kobylianska.jpg",
+                    "legende": "Olha Kobylianska, photographie de 1899",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Olha-kobylyanska.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_kotsiubynsky",
+                  "axe": "Littérature et pensée",
+                  "date": 1864,
+                  "titre": "Naissance de Mykhaïlo Kotsioubynsky",
+                  "description": "Mykhaïlo Kotsioubynsky (1864-1913) est un écrivain ukrainien, auteur de nouvelles et de romans qui renouvellent la prose ukrainienne. Son récit « Les Ombres des ancêtres oubliés » (1911), qui met en scène les Houtsouls des Carpates, inspire le film de Paradjanov, « Les Chevaux de feu ». Fonctionnaire à Tchernihiv, il y meurt en 1913.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mykha%C3%AFlo%20Kotsioubynsky",
+                  "classement": "Kotsioubynsky, Mykhaïlo",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_kotsiubynsky.jpg",
+                    "legende": "Mykhaïlo Kotsioubynsky, photographie de Volodymyr Goldfein, avant 1913",
+                    "auteur": "Володимир Юхимович Гольдфайн",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D1%86%D1%8E%D0%B1%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_sheptytsky",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1865,
+                  "titre": "Naissance d'André Cheptytsky",
+                  "description": "André Cheptytsky (1865-1944) est métropolite de l'Église grecque-catholique ukrainienne de 1901 à sa mort, né dans une famille noble polonaise et ruthène. Il fonde le Musée national de Lviv en 1905, finance les arts et les études, et fait de son Église une force nationale. Pendant la Seconde Guerre mondiale, il cache des Juifs, ce qui lui vaut d'être reconnu Juste parmi les nations en 2012.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Andr%C3%A9%20Cheptytsky",
+                  "classement": "Cheptytsky, André",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_sheptytsky.jpg",
+                    "legende": "André Cheptytsky à Rome, photographie de 1921",
+                    "auteur": "unknown-anonymous",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Andrzej_Szeptycki_(a).jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_hrushevsky",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1866,
+                  "titre": "Naissance de Mykhaïlo Hrouchevsky",
+                  "description": "Mykhaïlo Hrouchevsky (1866-1934) est un historien, auteur d'une monumentale « Histoire de l'Ukraine-Rus' » en dix volumes, et président de la Rada centrale en 1917-1918. Il fait de l'Ukraine un sujet de l'histoire, séparé de la Russie, et dirige la proclamation de l'indépendance en janvier 1918. De retour en Ukraine soviétique en 1924, il est persécuté et meurt à Kislovodsk en 1934.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mykha%C3%AFlo%20Hrouchevsky",
+                  "classement": "Hrouchevsky, Mykhaïlo",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_hrushevsky.jpg",
+                    "legende": "Mykhaïlo Hrouchevsky, photographie des années 1910",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hrushevskyi_Mykhailo_XX.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_trush",
+                  "axe": "Beaux-arts",
+                  "date": 1869,
+                  "titre": "Naissance d'Ivan Trouch",
+                  "description": "Ivan Trouch (1869-1941) est un peintre impressionniste de Galicie, installé à Lviv. Il peint des portraits de Franko, de Lessia Oukraïnka et d'autres figures de la culture ukrainienne, ainsi que des paysages des Carpates. Il fonde des associations d'artistes et contribue à mieux faire connaître la peinture ukrainienne en Europe.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ivan%20Trouch",
+                  "classement": "Trouch, Ivan",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_trush.jpg",
+                    "legende": "Ivan Trouch pendant ses études à l'Académie des beaux-arts de Cracovie, photographie",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ivan_Trush.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_paton1",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1870,
+                  "titre": "Naissance de Yevhen Paton",
+                  "description": "Yevhen Paton (1870-1953) est un ingénieur spécialiste des ponts, né à Nice, fils du consul de Russie. Il fonde à Kiev l'Institut de soudage électrique et applique le soudage à l'arc aux ponts métalliques. Le pont qui porte son nom, au-dessus du Dniepr à Kiev, est achevé en 1953.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Yevhen%20Paton",
+                  "classement": "Paton, Yevhen",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_paton1.jpg",
+                    "legende": "Yevhen Paton en enseignant de l'Institut polytechnique de Kiev, photographie d'avant 1917",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D0%B8%D0%B9_%D0%9E%D1%81%D0%BA%D0%B0%D1%80%D0%BE%D0%B2%D0%B8%D1%87_%D0%9F%D0%B0%D1%82%D0%BE%D0%BD_1910-%D0%B5.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_lesyaukrainka",
+                  "axe": "Littérature et pensée",
+                  "date": 1871,
+                  "titre": "Naissance de Lessia Oukraïnka",
+                  "description": "Lessia Oukraïnka (1871-1913) est une poétesse, dramaturge et traductrice ukrainienne, de son vrai nom Larissa Kossatch-Kvitka. Elle écrit des poèmes et des drames comme « La Chanson de la forêt » (1911), et elle défend l'émancipation des femmes et la liberté nationale. Atteinte de tuberculose osseuse depuis l'enfance, elle meurt à quarante-deux ans en Géorgie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lessia%20Oukra%C3%AFnka",
+                  "classement": "Oukraïnka, Lessia",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_lesyaukrainka.jpg",
+                    "legende": "Lessia Oukraïnka, photographie de Johann Krzanowski (1901)",
+                    "auteur": "Johann Krzanowski",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Lesya_Ukrainka_1901_(facecrop).jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_stefanyk",
+                  "axe": "Littérature et pensée",
+                  "date": 1871,
+                  "titre": "Naissance de Vassyl Stefanyk",
+                  "description": "Vassyl Stefanyk (1871-1936) est un écrivain de Galicie, maître de la nouvelle brève et tragique. Ses recueils, comme « Le Livre bleu » (1899), décrivent la misère des paysans qui émigrent en Amérique. Élu député à Vienne en 1908, il vit ensuite dans son village de Roussiv.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vassyl%20Stefanyk",
+                  "classement": "Stefanyk, Vassyl",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_stefanyk.jpg",
+                    "legende": "Vassyl Stefanyk, photographie d'avant 1936",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Vasyl_Stefanyk.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_krushelnytska",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1872,
+                  "titre": "Naissance de Solomiya Krushelnytska",
+                  "description": "Solomiya Krushelnytska (1872-1952) est une soprano ukrainienne, née en Galicie, l'une des grandes voix d'opéra du début du XXe siècle. Elle triomphe à la Scala de Milan, à Naples et à Buenos Aires, et chante en 1904 le rôle-titre de « Madame Butterfly » à Brescia, devant Puccini. Elle revient s'installer à Lviv, où elle enseigne le chant.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Solomiya%20Krushelnytska",
+                  "classement": "Krushelnytska, Solomiya",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_krushelnytska.jpg",
+                    "legende": "Solomiya Krushelnytska, photographie de Mario Nunes Vais (vers 1905-1910)",
+                    "auteur": "Mario Nunes Vais (1856–1932)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Solomiya_Krushelnytska_06.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_novakivsky",
+                  "axe": "Beaux-arts",
+                  "date": 1872,
+                  "titre": "Naissance d'Oleksa Novakivskyi",
+                  "description": "Oleksa Novakivskyi (1872-1935) est un peintre de Galicie, impressionniste puis symboliste, né près de Vinnytsia. Il fonde en 1923 à Lviv une école d'art qui porte aujourd'hui son nom. Il y forme des générations d'artistes ukrainiens.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Oleksa%20Novakivskyi",
+                  "classement": "Novakivskyi, Oleksa",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_novakivsky.jpg",
+                    "legende": "Oleksa Novakivskyi, autoportrait (1911)",
+                    "auteur": "Oleksa Novakivsky (1872–1935)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%9D%D0%BE%D0%B2%D0%B0%D0%BA%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%9E.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_skrypnyk",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1872,
+                  "titre": "Naissance de Mykola Skrypnyk",
+                  "description": "Mykola Skrypnyk (1872-1933) est un bolchevik ukrainien, commissaire du peuple à l'Éducation de la République socialiste soviétique d'Ukraine de 1927 à 1933. Il dirige la politique d'ukrainisation, qui étend l'usage de l'ukrainien dans l'école, l'édition et l'administration. Attaqué par Staline, qui le soupçonne de nationalisme, il se suicide le 7 juillet 1933.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mykola%20Skrypnyk",
+                  "classement": "Skrypnyk, Mykola",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_skrypnyk.jpg",
+                    "legende": "Mykola Skrypnyk, photographie d'avant 1933",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%A1%D0%BA%D1%80%D0%B8%D0%BF%D0%BD%D0%B8%D0%BA_%D0%9C%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_mikhnovsky",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1873,
+                  "titre": "Naissance de Mykola Mikhnovsky",
+                  "description": "Mykola Mikhnovsky (1873-1924) est un avocat et théoricien du nationalisme ukrainien. Son pamphlet « L'Ukraine indépendante » (1900) est le premier texte à demander l'indépendance complète du pays, et il fonde le Parti populaire ukrainien en 1902. Il forme en 1917 le régiment Polouboktok, puis il est retrouvé pendu à Kiev en 1924.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mykola%20Mikhnovsky",
+                  "classement": "Mikhnovsky, Mykola",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_mikhnovsky.jpg",
+                    "legende": "Mykola Mikhnovsky, photographie du début du XXᵉ siècle",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mihnovsky.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_skoropadsky",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1873,
+                  "titre": "Naissance de Pavlo Skoropadsky",
+                  "description": "Pavlo Skoropadsky (1873-1945) est un général de l'armée russe devenu hetman de l'État ukrainien en 1918. Porté au pouvoir par un coup d'État avec l'appui de l'Allemagne, il gouverne de façon autoritaire, mais il fait fonder des universités, une académie des sciences et une armée. Il est renversé en décembre 1918 par le Directoire et meurt en Allemagne, blessé par un bombardement en 1945.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pavlo%20Skoropadsky",
+                  "classement": "Skoropadsky, Pavlo",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_skoropadsky.jpg",
+                    "legende": "Pavlo Skoropadsky, photographie vers 1920",
+                    "auteur": "The original uploader was Irpen at English Wikipedia .",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pavlo_Skoropadsky.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_filatov",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1875,
+                  "titre": "Naissance de Vladimir Filatov",
+                  "description": "Vladimir Filatov (1875-1956) est un ophtalmologue, né à Saransk, en Russie, et installé à Odessa. Il pratique en 1931 la première greffe de cornée à partir de la cornée d'un cadavre, et il met au point la « thérapie tissulaire ». Il fonde l'Institut des maladies oculaires d'Odessa, qui porte son nom.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vladimir%20Filatov",
+                  "classement": "Filatov, Vladimir",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_filatov.jpg",
+                    "legende": "Vladimir Filatov, photographie du XXᵉ siècle",
+                    "auteur": "Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nlm_nlmuid-101414991-img.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_koshyts",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1875,
+                  "titre": "Naissance d'Alexander Kochetz",
+                  "description": "Alexander Kochetz (1875-1944) est un chef d'orchestre et chef de chœur ukrainien. À la tête du chœur de la République ukrainienne, il fait la tournée de l'Europe puis de l'Amérique en 1919-1921, et fait connaître la musique ukrainienne, jusqu'à Carnegie Hall. Installé aux États-Unis, il meurt à Winnipeg en 1944.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alexander%20Kochetz",
+                  "classement": "Kochetz, Alexander",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_koshyts.jpg",
+                    "legende": "Alexander Kochetz, photographie de l'agence Bain",
+                    "auteur": "Bain News Service, publisher",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Oleksander_Koshetz.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_murashko",
+                  "axe": "Beaux-arts",
+                  "date": 1875,
+                  "titre": "Naissance d'Oleksandr Mourachko",
+                  "description": "Oleksandr Mourachko (1875-1919) est un peintre ukrainien, né à Kiev. Formé à Munich et à Paris, il peint des portraits et des scènes de la vie quotidienne, dont le célèbre « Portrait de la femme de l'artiste », et il fonde à Kiev sa propre école. Il est assassiné à Kiev en janvier 1919, au cours de la guerre civile.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Oleksandr%20Mourachko",
+                  "classement": "Mourachko, Oleksandr",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_murashko.jpg",
+                    "legende": "Oleksandr Mourachko, autoportrait (1918)",
+                    "auteur": "Oleksandr Murashko (1875–1919)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%9C%D1%83%D1%80%D0%B0%D1%88%D0%BA%D0%BE_%D0%90%D0%B2%D1%82%D0%BE%D0%BF%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_1918.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_leontovych",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1877,
+                  "titre": "Naissance de Mykola Léontovytch",
+                  "description": "Mykola Léontovytch (1877-1921) est un compositeur et chef de chœur ukrainien, auteur de l'arrangement du chant populaire « Chtchedryk » (1916). Cette mélodie, adaptée en anglais sous le titre « Carol of the Bells », est devenue un chant de Noël mondialement connu. Il est assassiné par un agent de la Tchéka dans son village de Markivka, en 1921.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mykola%20L%C3%A9ontovytch",
+                  "classement": "Léontovytch, Mykola",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_leontovych.jpg",
+                    "legende": "Mykola Léontovytch, photographie ancienne",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mykola_leontovych.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_oles",
+                  "axe": "Littérature et pensée",
+                  "date": 1878,
+                  "titre": "Naissance d'Alexandre Olès",
+                  "description": "Alexandre Olès (1878-1944) est un poète symboliste et dramaturge ukrainien, de son vrai nom Alexandre Kandyba. Ses recueils, d'inspiration patriotique, expriment l'idée nationale dans une langue musicale, et plusieurs de ses poèmes sont devenus des chansons. Émigré en 1919, il s'installe en Tchécoslovaquie et meurt à Prague en 1944.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alexandre%20Ol%C3%A8s",
+                  "classement": "Olès, Alexandre",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_oles.jpg",
+                    "legende": "Alexandre Olès, photographie du début du XXᵉ siècle",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Oles_Oleksandr.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_krychevsky",
+                  "axe": "Beaux-arts",
+                  "date": 1879,
+                  "titre": "Naissance de Fédir Krytchevsky",
+                  "description": "Fédir Krytchevsky (1879-1947) est un peintre ukrainien, dont le triptyque « La Vie » (1925-1927) est son œuvre la plus célèbre. Professeur à l'Institut d'art de Kiev, il en devient le directeur dans les années 1930. Sa peinture, d'inspiration symboliste, évoque la vie des paysans ukrainiens.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/F%C3%A9dir%20Krytchevsky",
+                  "classement": "Krytchevsky, Fédir",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_krychevsky.jpg",
+                    "legende": "Fédir Krytchevsky, autoportrait",
+                    "auteur": "Кричевський Федір Григорович",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Krichevskiy.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_petliura",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1879,
+                  "titre": "Naissance de Symon Petlioura",
+                  "description": "Symon Petlioura (1879-1926) est le chef du Directoire de la République populaire ukrainienne et commandant en chef de son armée en 1919-1920. Après la défaite face aux bolcheviks, il signe en 1920 une alliance avec Józef Piłsudski contre l'Armée rouge, mais il perd Kiev. Réfugié à Paris, il y est assassiné le 25 mai 1926 par Samuel Schwartzbard, qui le tient pour responsable des pogroms commis par ses troupes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Symon%20Petlioura",
+                  "classement": "Petlioura, Symon",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_petliura.jpg",
+                    "legende": "Symon Petlioura à Kamianets-Podilskyï, photographie de l'été 1919",
+                    "auteur": "н.",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Symon_Petlura_%E2%80%93_1919.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_bohomazov",
+                  "axe": "Beaux-arts",
+                  "date": 1880,
+                  "titre": "Naissance d'Oleksandr Bohomazov",
+                  "description": "Oleksandr Bohomazov (1880-1930) est un peintre d'avant-garde ukrainien, représentant du cubo-futurisme. Dans son traité « La Peinture et les éléments » (1914), il expose sa théorie du mouvement, du rythme et de la couleur. Il enseigne à Kiev après la révolution, et meurt de la tuberculose en 1930.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Oleksandr%20Bohomazov",
+                  "classement": "Bohomazov, Oleksandr",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_bohomazov.jpg",
+                    "legende": "Oleksandr Bohomazov, autoportrait (1911)",
+                    "auteur": "Alexander Bogomazov (1880–1930)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bogomazov_Avtoportret_1911.JPG"
+                  }
+                },
+                {
+                  "id": "pan_ua_vynnychenko",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1880,
+                  "titre": "Naissance de Volodymyr Vynnytchenko",
+                  "description": "Volodymyr Vynnytchenko (1880-1951) est un écrivain et homme d'État, chef du premier gouvernement de l'Ukraine autonome en 1917. Il préside le Directoire de la République populaire ukrainienne de décembre 1918 à février 1919, avant de rompre avec Petlioura. Exilé en Europe, il écrit des romans et un journal, et meurt à Mougins en France en 1951.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Volodymyr%20Vynnytchenko",
+                  "classement": "Vynnytchenko, Volodymyr",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_vynnychenko.jpg",
+                    "legende": "Volodymyr Vynnytchenko, photographie des années 1910",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Vynnychenko.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_bogomolets",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1881,
+                  "titre": "Naissance d'Alexandre Bogomolets",
+                  "description": "Alexandre Bogomolets (1881-1946) est un médecin et physiologiste né à Kiev, président de l'Académie des sciences d'Ukraine de 1930 à sa mort. Il étudie le tissu conjonctif et met au point un sérum cytotoxique, présenté comme un moyen de prolonger la vie. Il fonde à Kiev l'Institut de physiologie qui porte son nom.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alexandre%20Bogomolets",
+                  "classement": "Bogomolets, Alexandre",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_bogomolets.jpg",
+                    "legende": "Alexandre Bogomolets, photographie d'avant 1944",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87_%D0%91%D0%BE%D0%B3%D0%BE%D0%BC%D0%BE%D0%BB%D0%B5%D1%86_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_boichuk",
+                  "axe": "Beaux-arts",
+                  "date": 1882,
+                  "titre": "Naissance de Mykhaïlo Boïtchouk",
+                  "description": "Mykhaïlo Boïtchouk (1882-1937) est un peintre ukrainien, fondateur du « boïtchoukisme », une école de peinture monumentale. Il s'inspire des icônes byzantines et de la peinture murale du Moyen Âge pour décorer des bâtiments publics, comme le sanatorium Tchervonyi Prapor d'Odessa. Arrêté en 1937 comme « nationaliste », il est fusillé le 13 juillet 1937 à Kiev.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mykha%C3%AFlo%20Bo%C3%AFtchouk",
+                  "classement": "Boïtchouk, Mykhaïlo",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_boichuk.jpg",
+                    "legende": "Mykhaïlo Boïtchouk, photographie d'avant 1938",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bojchuk_M.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_stetsenko",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1882,
+                  "titre": "Naissance de Kyrylo Stetsenko",
+                  "description": "Kyrylo Stetsenko (1882-1922) est un prêtre et compositeur ukrainien, élève de Lyssenko. Il écrit de la musique chorale, dont des chants liturgiques, ainsi que des mélodies sur des poèmes de Chevtchenko. Il fait partie de l'Église orthodoxe autocéphale et meurt à quarante ans, de pneumonie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kyrylo%20Stetsenko",
+                  "classement": "Stetsenko, Kyrylo",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_stetsenko.jpg",
+                    "legende": "Kyrylo Stetsenko, photographie prise entre 1911 et 1922",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%B8%D1%80%D0%B8%D0%BB%D0%BE_%D0%A1%D1%82%D0%B5%D1%86%D0%B5%D0%BD%D0%BA%D0%BE_1.png"
+                  }
+                },
+                {
+                  "id": "pan_ua_dontsov",
+                  "axe": "Littérature et pensée",
+                  "date": 1883,
+                  "titre": "Naissance de Dmytro Dontsov",
+                  "description": "Dmytro Dontsov (1883-1973) est un théoricien du nationalisme ukrainien, né à Melitopol. Dans « Le Nationalisme » (1926), il prône la volonté, l'action et l'intransigeance, et ses idées influencent les générations de l'OUN. Émigré en Amérique du Nord après la guerre, il meurt à Montréal en 1973.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dmytro%20Dontsov",
+                  "classement": "Dontsov, Dmytro",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_dontsov.jpg",
+                    "legende": "Dmytro Dontsov, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Dmytro_Doncow.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_celebicihan",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1885,
+                  "titre": "Naissance de Noman Çelebicihan",
+                  "description": "Noman Çelebicihan (1885-1918) est un homme politique et poète tatar de Crimée, premier mufti de Crimée élu. Il préside en décembre 1917 la république populaire de Crimée, proclamée par le Kurultaï, premier État démocratique des Tatars. Arrêté par les bolcheviks à Sébastopol, il est fusillé le 23 février 1918.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Noman%20%C3%87elebicihan",
+                  "classement": "Çelebicihan, Noman",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_celebicihan.jpg",
+                    "legende": "Noman Çelebicihan, photographie d'avant 1918",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Noman_Chelebicihan.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_narbut",
+                  "axe": "Beaux-arts",
+                  "date": 1886,
+                  "titre": "Naissance de Gueorgui Narbout",
+                  "description": "Gueorgui Narbout (1886-1920) est un peintre graphiste ukrainien, né à Narboutivka. Il illustre l'« Abécédaire ukrainien en images » (1917) et dessine les premiers billets de banque et les timbres de la République populaire ukrainienne. Il enseigne à l'Académie d'art de Kiev et meurt du typhus en 1920, à trente-quatre ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gueorgui%20Narbout",
+                  "classement": "Narbout, Gueorgui",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_narbut.jpg",
+                    "legende": "Gueorgui Narbout, photographie d'avant 1920",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Narbut2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_kourbas",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1887,
+                  "titre": "Naissance de Les Kourbas",
+                  "description": "Les Kourbas (1887-1937) est un metteur en scène ukrainien, né à Sambir, en Galicie. Il fonde à Kiev en 1922 le théâtre « Berezil », laboratoire de recherche qui fait de la scène ukrainienne l'une des avant-gardes de l'Europe. Arrêté en 1933 comme nationaliste, il est fusillé le 3 novembre 1937 à Sandarmokh, en Carélie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Les%20Kourbas",
+                  "classement": "Kourbas, Les",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_kourbas.jpg",
+                    "legende": "Les Kourbas, photographie d'avant 1933",
+                    "auteur": "The original uploader was Irpen at English Wikipedia .; original author unknown",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Curbas.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_makhno",
+                  "axe": "Guerres et résistances",
+                  "date": 1888,
+                  "titre": "Naissance de Nestor Makhno",
+                  "description": "Nestor Makhno (1888-1934) est un anarchiste ukrainien, chef de l'armée insurrectionnelle révolutionnaire d'Ukraine pendant la guerre civile russe. Installé à Gouliaï-Polié, il y met en pratique des idées libertaires, combat les Blancs et les Rouges, avec lesquels il s'allie un temps contre Wrangel. Réfugié en France après 1921, il meurt à Paris en 1934, dans la misère.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nestor%20Makhno",
+                  "classement": "Makhno, Nestor",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_makhno.jpg",
+                    "legende": "Nestor Makhno en 1921, photographie prise en Roumanie",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:1921._%D0%9D%D0%B5%D1%81%D1%82%D0%BE%D1%80_%D0%9C%D0%B0%D1%85%D0%BD%D0%BE_%D0%B2_%D0%BB%D0%B0%D0%B3%D0%B5%D1%80%D0%B5_%D0%B4%D0%BB%D1%8F_%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%BD%D1%8B%D1%85_%D0%BB%D0%B8%D1%86_%D0%B2_%D0%A0%D1%83%D0%BC%D1%8B%D0%BD%D0%B8%D0%B8.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_vyshnia",
+                  "axe": "Littérature et pensée",
+                  "date": 1889,
+                  "titre": "Naissance d'Ostap Vyshnia",
+                  "description": "Ostap Vyshnia (1889-1956) est un écrivain humoriste ukrainien, de son vrai nom Pavlo Goubenko. Ses « feuilletons » et ses récits satiriques, très populaires dans les années 1920, se moquent des travers de la société soviétique. Arrêté en 1933 et déporté au Goulag, il est libéré en 1943 et publie de nouveau jusqu'à sa mort.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ostap%20Vyshnia",
+                  "classement": "Vyshnia, Ostap",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_vyshnia.jpg",
+                    "legende": "Ostap Vyshnia, photographie d'O. Korenevytch (1928)",
+                    "auteur": "О. Кореневич",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ostap_Vyshnya.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_zerov",
+                  "axe": "Littérature et pensée",
+                  "date": 1890,
+                  "titre": "Naissance de Mykola Zerov",
+                  "description": "Mykola Zerov (1890-1937) est un poète, traducteur et critique ukrainien, chef de file des « néoclassiques » de Kiev. Il traduit les poètes latins et français, et publie en 1926 un recueil d'essais sur la littérature ukrainienne. Arrêté en 1934, il est fusillé à Sandarmokh, en Carélie, le 3 novembre 1937.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mykola%20Zerov",
+                  "classement": "Zerov, Mykola",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_zerov.jpg",
+                    "legende": "Mykola Zerov, photographie des années 1920",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mykola_Zerov._1920-s.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_konovalets",
+                  "axe": "Guerres et résistances",
+                  "date": 1891,
+                  "titre": "Naissance de Yevhen Konovalets",
+                  "description": "Yevhen Konovalets (1891-1938) est un colonel des Tireurs de la Sitch, fondateur en 1929 et premier chef de l'Organisation des nationalistes ukrainiens (OUN). Il commande les Tireurs de la Sitch en 1917-1919 pour l'indépendance de l'Ukraine, puis dirige l'organisation depuis l'exil. Il est assassiné à Rotterdam en 1938, par un agent soviétique, Pavel Soudoplatov, qui lui remet une boîte piégée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Yevhen%20Konovalets",
+                  "classement": "Konovalets, Yevhen",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_konovalets.jpg",
+                    "legende": "Yevhen Konovalets, photographie des années 1920",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%84%D0%B2%D0%B3%D0%B5%D0%BD_%D0%9A%D0%BE%D0%BD%D0%BE%D0%B2%D0%B0%D0%BB%D0%B5%D1%86%D1%8C.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_tychyna",
+                  "axe": "Littérature et pensée",
+                  "date": 1891,
+                  "titre": "Naissance de Pavlo Tytchyna",
+                  "description": "Pavlo Tytchyna (1891-1967) est un poète ukrainien, dont le recueil « Des clarinettes solaires » (1918) marque l'entrée de l'ukrainien dans l'avant-garde poétique. Il se rallie ensuite au régime soviétique et devient ministre de l'Éducation de la république, écrivant des vers de commande. Son œuvre garde l'empreinte de ses débuts symbolistes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pavlo%20Tytchyna",
+                  "classement": "Tytchyna, Pavlo",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_tychyna.jpg",
+                    "legende": "Pavlo Tytchyna, photographie de 1928",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pavlo_Tychyna.png"
+                  }
+                },
+                {
+                  "id": "pan_ua_kravtchouk",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1892,
+                  "titre": "Naissance de Mykhaïlo Kravtchouk",
+                  "description": "Mykhaïlo Kravtchouk (1892-1942) est un mathématicien ukrainien, né en Volhynie, fondateur de l'école de mathématiques de Kiev. Auteur de travaux sur l'algèbre, les équations différentielles et la théorie des nombres, il laisse son nom aux polynômes de Kravtchouk. Arrêté en 1938 et condamné pour « nationalisme », il meurt en 1942 dans un camp de la Kolyma.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mykha%C3%AFlo%20Kravtchouk",
+                  "classement": "Kravtchouk, Mykhaïlo",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_kravtchouk.jpg",
+                    "legende": "Mykhaïlo Kravtchouk, photographie d'avant 1930",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE_%D0%9A%D1%80%D0%B0%D0%B2%D1%87%D1%83%D0%BA.png"
+                  }
+                },
+                {
+                  "id": "pan_ua_slipyj",
+                  "axe": "Guerres et résistances",
+                  "date": 1892,
+                  "titre": "Naissance de Josyf Slipyj",
+                  "description": "Josyf Slipyj (1892-1984) est le métropolite grec-catholique de Lviv qui succède à Andreï Cheptytsky en 1944. Arrêté par les Soviétiques en 1945 pour avoir refusé de rejoindre l'Église orthodoxe russe, il passe dix-huit ans en prison et dans les camps. Libéré en 1963 par l'intervention de Jean XXIII, il est créé cardinal en 1965 et passe le reste de sa vie à Rome.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Josyf%20Slipyj",
+                  "classement": "Slipyj, Josyf",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_slipyj.jpg",
+                    "legende": "Le cardinal Josyf Slipyj, photographie de 1968",
+                    "auteur": "Pkravchenko",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Cardinal_Josyp_Slipyj.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_khvylovy",
+                  "axe": "Littérature et pensée",
+                  "date": 1893,
+                  "titre": "Naissance de Mykola Khvyliovy",
+                  "description": "Mykola Khvyliovy (1893-1933) est un écrivain et polémiste ukrainien, figure de proue de la « Renaissance fusillée » des années 1920. Ses nouvelles et son slogan « Loin de Moscou ! » défendent une culture ukrainienne indépendante du modèle russe. Pris pour cible par Staline, il se suicide à Kharkiv le 13 mai 1933.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mykola%20Khvyliovy",
+                  "classement": "Khvyliovy, Mykola",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_khvylovy.jpg",
+                    "legende": "Mykola Khvyliovy, photographie d'O. Korenevytch (1928)",
+                    "auteur": "О. Кореневич",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mykola_Khvylovy.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_dovjenko",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1894,
+                  "titre": "Naissance d'Aleksandr Dovjenko",
+                  "description": "Aleksandr Dovjenko (1894-1956) est un cinéaste soviétique ukrainien, l'un des maîtres du cinéma muet. Ses films « Zvenigora » (1928), « Arsenal » (1929) et « La Terre » (1930) mêlent lyrisme et mythes paysans, et ouvrent la voie au cinéma poétique. Écarté par Staline, qui lui reproche son nationalisme, il tourne ses derniers films à Moscou et y meurt.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Aleksandr%20Dovjenko",
+                  "classement": "Dovjenko, Aleksandr",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_dovjenko.jpg",
+                    "legende": "Aleksandr Dovjenko, photographie dédicacée",
+                    "auteur": "Na",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Alexander_Dovzhenko.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_liatochinski",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1894,
+                  "titre": "Naissance de Boris Liatochinski",
+                  "description": "Boris Liatochinski (1894-1968) est un compositeur ukrainien, né à Jytomyr. Il écrit cinq symphonies, des quatuors, et l'opéra « L'Anneau d'or » (1930), et il fait du post-romantisme et de l'avant-garde un langage ukrainien. Professeur au conservatoire de Kiev, il a formé Valentyn Silvestrov, Leonid Hrabovsky et de nombreux autres compositeurs.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Boris%20Liatochinski",
+                  "classement": "Liatochinski, Boris",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_liatochinski.jpg",
+                    "legende": "Boris Liatochinski, photographie",
+                    "auteur": "Boguslav",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Borys_Mykolayovych_Lyatoshynsky.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_rylsky",
+                  "axe": "Littérature et pensée",
+                  "date": 1895,
+                  "titre": "Naissance de Maxime Rylski",
+                  "description": "Maxime Rylski (1895-1964) est un poète et traducteur ukrainien, l'un des « néoclassiques » de Kiev dans les années 1920. Il est arrêté en 1931, puis libéré, et il adhère ensuite à la ligne officielle. Il traduit en ukrainien Mickiewicz, Pouchkine, Molière et Victor Hugo, et dirige l'Institut d'art populaire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Maxime%20Rylski",
+                  "classement": "Rylski, Maxime",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_rylsky.jpg",
+                    "legende": "Maxime Rylski, photographie d'O. Korenevytch (1928)",
+                    "auteur": "О. Кореневич",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Maksym_Rylskyiy.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_kondratiouk",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1897,
+                  "titre": "Naissance d'Iouri Kondratiouk",
+                  "description": "Iouri Kondratiouk (1897-1942) est un ingénieur ukrainien, né à Poltava sous le nom d'Alexandre Chargueï, et pionnier de l'astronautique. Dans son livre « La Conquête de l'espace interplanétaire » (1929), il décrit la manœuvre du rendez-vous en orbite lunaire, que la NASA retient pour les missions Apollo. Mobilisé, il disparaît au front pendant l'hiver 1942.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alexandre%20Chargue%C3%AF",
+                  "classement": "Kondratiouk, Iouri",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_kondratiouk.jpg",
+                    "legende": "Iouri Kondratiouk, photographie de 1941",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BD%D0%B4%D1%80%D0%B0%D1%82%D1%8E%D0%BA,_%D0%AE%D1%80%D0%B8%D0%B9.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_sosiura",
+                  "axe": "Littérature et pensée",
+                  "date": 1898,
+                  "titre": "Naissance de Volodymyr Sossioura",
+                  "description": "Volodymyr Sossioura (1898-1965) est un poète lyrique ukrainien, né dans le Donbass. Combattant de la guerre civile, il publie des poèmes d'amour et de patriotisme, et son poème « Aime l'Ukraine » (1944) est condamné par les autorités en 1951. Il connaît la gloire populaire de son vivant.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Volodymyr%20Sossioura",
+                  "classement": "Sossioura, Volodymyr",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_sosiura.jpg",
+                    "legende": "Volodymyr Sossioura dans les années 1950, photographie de Mykola Dachkiev (1956)",
+                    "auteur": "Микола Дашкієв",
+                    "licence": "Image non libre",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%BE%D0%BB%D0%BE%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%A1%D0%BE%D1%81%D1%8E%D1%80%D0%B0_%D1%83_1950-%D1%82%D1%96.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_bilokur",
+                  "axe": "Beaux-arts",
+                  "date": 1900,
+                  "titre": "Naissance de Kateryna Bilokour",
+                  "description": "Kateryna Bilokour (1900-1961) est une peintre autodidacte, née dans le village de Bohdanivka, en Ukraine centrale. Elle peint des bouquets de fleurs et des natures mortes d'une précision extrême, malgré l'hostilité de sa famille, qui lui reproche de ne pas travailler aux champs. Reconnue après 1940, elle reçoit le titre d'artiste du peuple d'Ukraine en 1956.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kateryna%20Bilokour",
+                  "classement": "Bilokour, Kateryna",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_bilokur.jpg",
+                    "legende": "Kateryna Bilokour au travail à Bohdanivka, photographie de Iakiv Pavolotski (1954)",
+                    "auteur": "Я. Паволоцький",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%91%D1%96%D0%BB%D0%BE%D0%BA%D1%83%D1%80_%D0%9A%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%96%D0%B2%D0%BD%D0%B0_%D1%85%D1%83%D0%B4%D0%BE%D0%B6%D0%BD%D0%B8%D0%BA_1954.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_lypa",
+                  "axe": "Littérature et pensée",
+                  "date": 1900,
+                  "titre": "Naissance de Youriï Lypa",
+                  "description": "Youriï Lypa (1900-1944) est un médecin, poète et penseur nationaliste ukrainien, né à Odessa. Il publie des recueils de poèmes et un essai géopolitique, « La Mission de l'Ukraine » (1938), qui défend le rôle de la mer Noire. Il est tué en 1944, près de Lviv, à l'arrivée de l'Armée rouge.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Youri%C3%AF%20Lypa",
+                  "classement": "Lypa, Youriï",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_lypa.jpg",
+                    "legende": "Youriï Lypa, photographie des années 1910",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Lupa2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_bahrianyi",
+                  "axe": "Littérature et pensée",
+                  "date": 1906,
+                  "titre": "Naissance d'Ivan Bagriany",
+                  "description": "Ivan Bagriany (1906-1963) est un écrivain et dissident ukrainien, condamné en 1932 au Goulag. Après la guerre, il se réfugie en Allemagne, où il écrit « Le Jardin de Gethsémani » (1950), roman sur les prisons soviétiques, et « Les Chasseurs de tigres » (1944). Il meurt à Neu-Ulm en 1963.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ivan%20Bagriany",
+                  "classement": "Bagriany, Ivan",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_bahrianyi.jpg",
+                    "legende": "Ivan Bagriany, profil gravé sur la pièce commémorative émise par la Banque nationale d'Ukraine (2007)",
+                    "auteur": "English: National Bank of Ukraine Русский: Национальный банк Украины",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Coin_of_Ukraine_Bahrianyi_r.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_grigorenko",
+                  "axe": "Guerres et résistances",
+                  "date": 1907,
+                  "titre": "Naissance de Piotr Grigorenko",
+                  "description": "Piotr Grigorenko (1907-1987) est un général soviétique d'origine ukrainienne devenu dissident. Critique du régime à partir de 1961, il est interné dans des hôpitaux psychiatriques de 1969 à 1974, et il fonde le groupe Helsinki de Moscou, puis celui d'Ukraine. Déchu de sa nationalité en 1978 pendant un séjour aux États-Unis, il meurt à New York en 1987.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Piotr%20Grigorenko",
+                  "classement": "Grigorenko, Piotr",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_grigorenko.jpg",
+                    "legende": "Piotr Grigorenko, profil gravé sur la pièce commémorative émise par la Banque nationale d'Ukraine",
+                    "auteur": "Banque nationale d'Ukraine",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Coin_of_Ukraine_Hryhorenko_r.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_shukhevych",
+                  "axe": "Guerres et résistances",
+                  "date": 1907,
+                  "titre": "Naissance de Roman Choukhevytch",
+                  "description": "Roman Choukhevytch (1907-1950) est le commandant en chef de l'Armée insurrectionnelle ukrainienne (UPA) à partir de 1943, officier de l'OUN. Il conduit la lutte armée contre les Allemands puis contre les Soviétiques, après avoir servi dans une unité liée à la Wehrmacht en 1941. Il est tué par le NKVD le 5 mars 1950 près de Lviv, et sa mémoire reste très disputée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Roman%20Choukhevytch",
+                  "classement": "Choukhevytch, Roman",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_shukhevych.jpg",
+                    "legende": "Roman Choukhevytch, photographie de 1944",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rom%C3%A1n_Shuj%C3%A9vych.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_prymachenko",
+                  "axe": "Beaux-arts",
+                  "date": 1908,
+                  "titre": "Naissance de Maria Primatchenko",
+                  "description": "Maria Primatchenko (1908-1997) est une peintre d'art naïf, née à Bolotnia et décédée dans le même village, au nord de Kiev. Elle peint des animaux fantastiques et des fleurs aux couleurs vives, admirés par Picasso, qui voit son travail à l'exposition de Paris de 1966. Plusieurs de ses œuvres ont brûlé avec le musée d'Ivankiv en 2022.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Maria%20Primatchenko",
+                  "classement": "Primatchenko, Maria",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_prymachenko.jpg",
+                    "legende": "Maria Primatchenko, effigie gravée sur la pièce commémorative émise par la Banque nationale d'Ukraine",
+                    "auteur": "English: National Bank of Ukraine Русский: Национальный банк Украины",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Coin_of_Ukraine_Prymachenko_r.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_shelest",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1908,
+                  "titre": "Naissance de Petro Chelest",
+                  "description": "Petro Chelest (1908-1996) est premier secrétaire du Parti communiste d'Ukraine de 1963 à 1972, et membre du Politburo. Il défend l'autonomie économique et la culture de la république, et son livre « Ô Ukraine, notre sainte terre soviétique » (1970) lui vaut des accusations de nationalisme. Écarté de la direction en 1972, il passe la fin de sa vie en retrait.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Petro%20Chelest",
+                  "classement": "Chelest, Petro",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_shelest.jpg",
+                    "legende": "Petro Chelest, photographie en gros plan",
+                    "auteur": "Richard Nixon Presidential Library - Photo Gallery",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Petro_Shelest.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_antonych",
+                  "axe": "Littérature et pensée",
+                  "date": 1909,
+                  "titre": "Naissance de Bohdan-Ihor Antonytch",
+                  "description": "Bohdan-Ihor Antonytch (1909-1937) est un poète lemko de Galicie, auteur de recueils comme « Salut à la vie » (1931). Il célèbre la nature des Carpates et les cycles de la vie dans des poèmes d'une grande musicalité. Mort à vingt-sept ans à Lviv, il n'a publié que trois recueils de son vivant.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bohdan-Ihor%20Antonytch",
+                  "classement": "Antonytch, Bohdan-Ihor",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_antonych.jpg",
+                    "legende": "Bohdan-Ihor Antonytch, photographie ancienne",
+                    "auteur": "н.",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%90%D0%BD%D1%82%D0%BE%D0%BD%D0%B8%D1%87_%D0%91.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_bandera",
+                  "axe": "Guerres et résistances",
+                  "date": 1909,
+                  "titre": "Naissance de Stepan Bandera",
+                  "description": "Stepan Bandera (1909-1959) est le chef de la branche radicale de l'Organisation des nationalistes ukrainiens, l'OUN-B, née de la scission de 1940. Condamné à la prison à vie en Pologne pour l'assassinat du ministre Bronisław Pieracki (1934), il proclame à Lviv, le 30 juin 1941, un État ukrainien que les Allemands écrasent aussitôt, et il est interné à Sachsenhausen jusqu'en 1944. Assassiné à Munich en 1959 par un agent du KGB, il reste une figure très controversée, héros pour les uns, et pour les autres chef d'un mouvement accusé de violences contre les Polonais et les Juifs.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Stepan%20Bandera",
+                  "classement": "Bandera, Stepan",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_bandera.jpg",
+                    "legende": "Stepan Bandera, photographie",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Stepan_Bandera_photo.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_rebet",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1912,
+                  "titre": "Naissance de Lev Rebet",
+                  "description": "Lev Rebet (1912-1957) est un juriste et journaliste ukrainien, l'un des dirigeants de l'OUN. Il siège au gouvernement proclamé à Lviv en 1941, et passe ensuite plusieurs années en prison allemande. Opposé au culte de Bandera, il est tué à Munich le 12 octobre 1957 par Bohdan Stachynski, un agent du KGB.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lev%20Rebet",
+                  "classement": "Rebet, Lev",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_rebet.jpg",
+                    "legende": "Lev Rebet à Auschwitz, photographie de 1941",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Lev_Rebet_in_Auschwitz.png"
+                  }
+                },
+                {
+                  "id": "pan_ua_stetsko",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1912,
+                  "titre": "Naissance de Iaroslav Stetsko",
+                  "description": "Iaroslav Stetsko (1912-1986) est un dirigeant nationaliste ukrainien, adjoint de Stepan Bandera au sein de l'OUN. Le 30 juin 1941, il est proclamé chef du gouvernement de l'État ukrainien de Lviv, puis il est interné à Sachsenhausen par les Allemands. Exilé à Munich après la guerre, il préside le Bloc des nations antibolcheviques jusqu'à sa mort en 1986.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Iaroslav%20Stetsko",
+                  "classement": "Stetsko, Iaroslav",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_stetsko.jpg",
+                    "legende": "Iaroslav Stetsko, photographie",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Stecko.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_amossov",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1913,
+                  "titre": "Naissance de Nikolaï Amossov",
+                  "description": "Nikolaï Amossov (1913-2002) est un chirurgien cardiaque né en Russie et installé à Kiev. Il pratique à partir de 1955 des opérations du cœur et du poumon, qu'il fait connaître en URSS, et crée à Kiev un grand institut de chirurgie cardiovasculaire. Il publie aussi des essais de philosophie sur la santé et la longévité.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nikola%C3%AF%20Amossov",
+                  "classement": "Amossov, Nikolaï",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_amossov.jpg",
+                    "legende": "Nikolaï Amossov, photographie de la revue « Vie soviétique » (octobre 1984)",
+                    "auteur": "Auteur inconnu (Soviet Life, 1984)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nikolai_Amosov_-_Soviet_Life,_October_1984.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_honchar",
+                  "axe": "Littérature et pensée",
+                  "date": 1918,
+                  "titre": "Naissance d'Oles Hontchar",
+                  "description": "Oles Hontchar (1918-1995) est un écrivain soviétique et ukrainien, auteur de la trilogie « Le Porte-drapeau » sur la Seconde Guerre mondiale. Son roman « La Cathédrale » (1968) défend le patrimoine ukrainien et lui vaut une campagne de critiques officielles. Président de l'Union des écrivains d'Ukraine, il soutient l'indépendance de 1991.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Oles%20Hontchar",
+                  "classement": "Hontchar, Oles",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_honchar.jpg",
+                    "legende": "Oles Hontchar, photographie des années 1945-1950",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%9E%D0%BB%D0%B5%D1%81%D1%8C_%D0%93%D0%BE%D0%BD%D1%87%D0%B0%D1%80.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_paton",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1918,
+                  "titre": "Naissance de Borys Paton",
+                  "description": "Borys Paton (1918-2020) est un ingénieur spécialiste du soudage, né à Kiev, président de l'Académie nationale des sciences d'Ukraine de 1962 à sa mort. Il dirige l'Institut de soudage électrique fondé par son père, et ses recherches permettent de souder dans l'espace. Il meurt en 2020, à l'âge de cent un ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Borys%20Paton",
+                  "classement": "Paton, Borys",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_paton.jpg",
+                    "legende": "Borys Paton, photographie du 18 juin 2010",
+                    "auteur": "Russian Presidential Press and Information Office",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Boris_Paton.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_shcherbytsky",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1918,
+                  "titre": "Naissance de Volodymyr Chtcherbytskiï",
+                  "description": "Volodymyr Chtcherbytskiï (1918-1990) est premier secrétaire du Parti communiste d'Ukraine de 1972 à 1989, membre du Politburo, et un proche de Léonid Brejnev. Il mène une politique de russification et de répression des dissidents. Pendant la catastrophe de Tchernobyl en 1986, il maintient le défilé du 1er mai à Kiev, et il est écarté en 1989.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Volodymyr%20Chtcherbytski%C3%AF",
+                  "classement": "Chtcherbytskiï, Volodymyr",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_shcherbytsky.jpg",
+                    "legende": "Volodymyr Chtcherbytskiï, photographie",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Volodimir_Scherbitski_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_glouchkov",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1923,
+                  "titre": "Naissance de Viktor Glouchkov",
+                  "description": "Viktor Glouchkov (1923-1982) est un mathématicien et informaticien soviétique, né à Rostov-sur-le-Don et installé à Kiev. Il dirige l'Institut de cybernétique d'Ukraine et conçoit des ordinateurs soviétiques, comme les machines MIR. Son projet de réseau national de gestion de l'économie, l'OGAS, ne se réalise pas.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Viktor%20Glouchkov",
+                  "classement": "Glouchkov, Viktor",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_glouchkov.jpg",
+                    "legende": "Viktor Glouchkov, photographie",
+                    "auteur": "althistory.fandom.com",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%92%D1%96%D0%BA%D1%82%D0%BE%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87_%D0%93%D0%BB%D1%83%D1%88%D0%BA%D0%BE%D0%B2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_bykov",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1928,
+                  "titre": "Naissance de Leonid Bykov",
+                  "description": "Leonid Bykov (1928-1979) est un acteur et réalisateur soviétique ukrainien, né à Tcherkaske, dans le Donbass. Son film « Seuls les vieux vont au combat » (1973), où il joue un commandant d'escadrille pendant la Seconde Guerre mondiale, devient un classique du cinéma soviétique. Il meurt dans un accident de la route le 11 avril 1979, près de Kiev.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Leonid%20Bykov",
+                  "classement": "Bykov, Leonid",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_bykov.jpg",
+                    "legende": "Leonid Bykov dans « Le Dompteur de tigres » (1955), photographie du studio Lenfilm",
+                    "auteur": "Apollinariy Dudko, Lenfilm",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Leonid_Bykov_-_Tamer_of_Tigers_-_03.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_lukyanenko",
+                  "axe": "Guerres et résistances",
+                  "date": 1928,
+                  "titre": "Naissance de Levko Loukianenko",
+                  "description": "Levko Loukianenko (1928-2018) est un juriste et dissident ukrainien. Condamné à mort en 1961 pour avoir voulu créer une organisation clandestine, il voit sa peine commuée en quinze ans de camp, et il est l'un des fondateurs du groupe Helsinki d'Ukraine en 1976. Député en 1990, il est l'un des auteurs de l'Acte d'indépendance du 24 août 1991.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Levko%20Loukianenko",
+                  "classement": "Loukianenko, Levko",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_lukyanenko.jpg",
+                    "legende": "Levko Loukianenko lors de la remise du prix national Chevtchenko, photographie de 2016",
+                    "auteur": "Presidential Administration of Ukraine",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Shevchenko_National_Prize_award_ceremony_2016_Levko_Lukyanenko_cropped.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_kravchuk",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1934,
+                  "titre": "Naissance de Leonid Kravtchouk",
+                  "description": "Leonid Kravtchouk (1934-2022) est le premier président de l'Ukraine indépendante, de 1991 à 1994, après avoir été idéologue du Parti communiste ukrainien. Élu le 1er décembre 1991, le jour du référendum qui confirme l'indépendance, il signe une semaine plus tard avec Boris Eltsine et Stanislaw Chouchkievitch l'accord de Belovej, qui dissout l'URSS. Il accepte en 1994 de transférer à la Russie les armes nucléaires soviétiques stationnées en Ukraine.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Leonid%20Kravtchouk",
+                  "classement": "Kravtchouk, Leonid",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_kravchuk.jpg",
+                    "legende": "Leonid Kravtchouk à Belovej, après la signature de l'accord de dissolution de l'URSS, photographie de Iouri Ivanov (18 décembre 1991)",
+                    "auteur": "Yuriy Ivanov / Юрий Иванов",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Leonid_Kravchuk_(1).jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_symonenko",
+                  "axe": "Littérature et pensée",
+                  "date": 1935,
+                  "titre": "Naissance de Vassyl Symonenko",
+                  "description": "Vassyl Symonenko (1935-1963) est un poète et journaliste ukrainien, figure des « soixantards », la génération qui renoue avec la culture nationale. Ses poèmes, qui circulent dans le samizdat, protestent contre le mensonge et la russification, et il dénonce l'inhumation secrète de victimes de la Grande Terreur à Bykivnia. Battu par la police en 1962, il meurt d'un cancer à vingt-huit ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vassyl%20Symonenko",
+                  "classement": "Symonenko, Vassyl",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_symonenko.jpg",
+                    "legende": "Vassyl Symonenko, portrait d'un timbre ukrainien (2015)",
+                    "auteur": "Укпошта",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Stamp_of_Ukraine_s1421_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_chornovil",
+                  "axe": "Guerres et résistances",
+                  "date": 1937,
+                  "titre": "Naissance de Viatcheslav Tchornovil",
+                  "description": "Viatcheslav Tchornovil (1937-1999) est un journaliste, dissident et homme politique ukrainien. Emprisonné pendant quinze ans sous le régime soviétique, il dirige à partir de 1989 le Roukh, le mouvement populaire pour l'indépendance, et obtient près d'un quart des voix à la présidentielle de décembre 1991. Il meurt dans un accident de voiture le 25 mars 1999, dans des circonstances jamais élucidées.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Viatcheslav%20Tchornovil",
+                  "classement": "Tchornovil, Viatcheslav",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_chornovil.jpg",
+                    "legende": "Viatcheslav Tchornovil, photographie de la Rada suprême d'Ukraine (1998)",
+                    "auteur": "Верховна Рада України",
+                    "licence": "Image non libre",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%9D%D0%94%D0%A3_3_%D0%A7%D0%BE%D1%80%D0%BD%D0%BE%D0%B2%D1%96%D0%BB_%D0%92%D1%8F%D1%87%D0%B5%D1%81%D0%BB%D0%B0%D0%B2_%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_skoryk",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1938,
+                  "titre": "Naissance de Myroslav Skoryk",
+                  "description": "Myroslav Skoryk (1938-2020) est un compositeur ukrainien, né à Lviv. Sa « Mélodie » (1982), écrite pour le film « Le Haut Col », est devenue l'une des pièces les plus jouées de la musique ukrainienne. Il compose aussi des opéras, des concertos, un « Triptyque houtsoul » et dirige l'Opéra de Lviv.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Myroslav%20Skoryk",
+                  "classement": "Skoryk, Myroslav",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_skoryk.jpg",
+                    "legende": "Myroslav Skoryk, photographie de Grigori Ganzbourg (2015)",
+                    "auteur": "Григорий Ганзбург",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Skoryk3_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_stus",
+                  "axe": "Littérature et pensée",
+                  "date": 1938,
+                  "titre": "Naissance de Vassyl Stous",
+                  "description": "Vassyl Stous (1938-1985) est un poète et traducteur ukrainien, l'un des principaux dissidents soviétiques. Arrêté en 1972 puis en 1980 pour ses poèmes et son rôle dans le groupe Helsinki d'Ukraine, il est condamné à quinze ans de camp et de relégation. Il meurt dans le camp de Perm-36 le 4 septembre 1985, et son œuvre n'est publiée en Ukraine qu'après 1989.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vassyl%20Stous",
+                  "classement": "Stous, Vassyl",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_stus.jpg",
+                    "legende": "Vassyl Stous, photographie du KGB prise lors de son arrestation (1972)",
+                    "auteur": "Official KGB photo from Stus file after arrest 1972",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Stus_KGB_photo_1980_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_lobanovski",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1939,
+                  "titre": "Naissance de Valeri Lobanovski",
+                  "description": "Valeri Lobanovski (1939-2002) est un footballeur, puis un entraîneur ukrainien, longtemps associé au Dynamo Kiev. Il mène le club à deux Coupes des coupes (1975 et 1986), et l'équipe d'URSS à la finale de l'Euro 1988. Pionnier de l'analyse scientifique du football, il meurt en 2002, après un accident vasculaire cérébral survenu sur le banc de touche.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Valeri%20Lobanovski",
+                  "classement": "Lobanovski, Valeri",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_lobanovski.jpg",
+                    "legende": "Valeri Lobanovski, photographie du 16 septembre 1985",
+                    "auteur": "Auteur inconnu",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Valeri_Lobanovsky.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_mykolaitchouk",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1941,
+                  "titre": "Naissance d'Ivan Mykolaïtchouk",
+                  "description": "Ivan Mykolaïtchouk (1941-1987) est un acteur et cinéaste soviétique ukrainien, né en Bucovine. Il se fait connaître dans « Les Chevaux de feu » (1965), de Paradjanov, puis réalise « Babylone XX » (1979). Représentant du cinéma poétique ukrainien, il meurt d'un cancer à quarante-six ans, à Kiev.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ivan%20Mykola%C3%AFtchouk",
+                  "classement": "Mykolaïtchouk, Ivan",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_mykolaitchouk.jpg",
+                    "legende": "Ivan Mykolaïtchouk, buste dans son village natal de Tchertoria",
+                    "auteur": "Melnikov v n",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%91%D1%8E%D1%81%D1%82_%D0%98%D0%B2%D0%B0%D0%BD%D0%B0_%D0%9C%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9%D1%87%D1%83%D0%BA%D0%B0_%D0%B2_%D0%A7%D0%B5%D1%80%D1%82%D0%BE%D1%80%D0%B8%D0%B8.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ua_stoupka",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1941,
+                  "titre": "Naissance de Bohdan Stoupka",
+                  "description": "Bohdan Stoupka (1941-2012) est un acteur ukrainien, l'un des plus grands du théâtre et du cinéma de son pays. Au théâtre Ivan-Franko de Kiev, il interprète Shakespeare et Gogol, et il joue Khmelnitski dans « Par le fer et par le feu » (1999). Ministre de la Culture de 2003 à 2005, il meurt à Kiev en 2012.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bohdan%20Stoupka",
+                  "classement": "Stoupka, Bohdan",
+                  "image": {
+                    "src": "assets/portraits/pan_ua_stoupka.jpg",
+                    "legende": "Bohdan Stoupka, photographie publiée par le journal « Culture et vie » (2012)",
+                    "auteur": "ДП «Національне газетно-журнальне видавництво», редакція газети «Культура і життя»",
+                    "licence": "CC BY 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Culture_and_life,_30-2012._(cropped_page_2_1).jpg"
+                  }
+                }
+              ],
+              "axeOrder": [
+                "Chefs d'État et dirigeants",
+                "Guerres et résistances",
+                "Littérature et pensée",
+                "Beaux-arts",
+                "Musique, spectacle et sport",
+                "Sciences, techniques et innovation"
+              ],
+              "essentiel": [
+                "pan_ua_vladimir1",
+                "pan_ua_iaroslav",
+                "pan_ua_khmelnytsky",
+                "pan_ua_mazepa",
+                "pan_ua_shevchenko",
+                "pan_ua_lysenko",
+                "pan_ua_metchnikov",
+                "pan_ua_franko",
+                "pan_ua_hrushevsky",
+                "pan_ua_lesyaukrainka",
+                "pan_ua_petliura",
+                "pan_ua_dovjenko",
+                "pan_ua_prymachenko",
+                "pan_ua_kravchuk",
+                "pan_ua_stus",
+                "pan_ua_lobanovski"
               ]
             }
           ]

@@ -90,7 +90,7 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
     await expect(page.locator('#theme-screen-title')).toHaveText('Panthéons');
     await expect(page.locator('#theme-screen-note-text')).toContainText('né dans les frontières actuelles');
     // Panthéons de pays et de blocs se rangent par leur nom de source — « Afrique centrale », « Afrique de l'Ouest », « Afrique du Sud », « Allemagne, Autriche et Suisse »,
-    // « Amérique hispanique », « Asie centrale et Afghanistan », « Australie », « Balkans », « Benelux », « Brésil », « Canada », « Chine », « Égypte », « Espagne », « États-Unis », « Éthiopie », « Europe centrale », « France », « Grèce », « Indonésie », « Iran », « Israël », « Italie », « Japon », « Machrek et péninsule Arabique », « Maghreb », « Malaisie, Singapour, Brunei et Timor oriental », « Nouvelle-Zélande et Pacifique », « Pays baltes », « Portugal », « Royaume-Uni », « Russie », « Scandinavie », « Sous-continent indien », « Turquie » — et non par
+    // « Amérique hispanique », « Asie centrale et Afghanistan », « Australie », « Balkans », « Benelux », « Brésil », « Canada », « Chine », « Égypte », « Espagne », « États-Unis », « Éthiopie », « Europe centrale », « France », « Grèce », « Indonésie », « Iran », « Israël », « Italie », « Japon », « Machrek et péninsule Arabique », « Maghreb », « Malaisie, Singapour, Brunei et Timor oriental », « Nouvelle-Zélande et Pacifique », « Pays baltes », « Portugal », « Royaume-Uni », « Russie », « Scandinavie », « Sous-continent indien », « Turquie », « Ukraine » — et non par
     // « Grandes figures d'… » / « … de » / « … des » / « … du ».
     await expect(page.locator('#themes-container .data-card-title'))
         .toHaveText(["Grandes figures d'Afrique australe", "Grandes figures d'Afrique centrale", "Grandes figures d'Afrique de l'Est et de la Corne", "Grandes figures d'Afrique de l'Ouest", "Grandes figures d'Afrique du Sud", "Grandes figures d'Allemagne, d'Autriche et de Suisse", "Grandes figures d'Amérique hispanique",
@@ -98,7 +98,7 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
             "Grandes figures d'Égypte", "Grandes figures d'Espagne", 'Grandes figures des États-Unis', "Grandes figures d'Éthiopie", "Grandes figures d'Europe centrale",
             'Grandes figures de France', 'Grandes figures de Grèce', "Grandes figures d'Indochine", "Grandes figures d'Indonésie", "Grandes figures d'Iran", "Grandes figures d'Israël", "Grandes figures d'Italie", 'Grandes figures du Japon',
             'Grandes figures du Machrek et de la péninsule Arabique', 'Grandes figures du Maghreb', 'Grandes figures du monde malais', 'Grandes figures de Mongolie', 'Grandes figures de Nouvelle-Zélande et du Pacifique', "Grandes figures de l'océan Indien occidental", 'Grandes figures des pays baltes', 'Grandes figures des Philippines', 'Grandes figures de Pologne', 'Grandes figures du Portugal',
-            'Grandes figures du Royaume-Uni', 'Grandes figures de Russie', 'Grandes figures de Scandinavie', 'Grandes figures du sous-continent indien', 'Grandes figures de Thaïlande et de Birmanie', 'Grandes figures de Turquie']);
+            'Grandes figures du Royaume-Uni', 'Grandes figures de Russie', 'Grandes figures de Scandinavie', 'Grandes figures du sous-continent indien', 'Grandes figures de Thaïlande et de Birmanie', 'Grandes figures de Turquie', "Grandes figures d'Ukraine"]);
 });
 
 test('la fiche d’un personnage montre son portrait, sa légende, son crédit et sa biographie', async ({ page }) => {
@@ -593,12 +593,12 @@ test('la Grèce : chacune de ses figures a son portrait, de Solon à Vangelis, e
     await expect(page.locator('#modal-bio-btn')).toBeVisible();
 });
 
-test('la Russie : chacune de ses figures a son portrait, d’Ivan III à Alexeï Navalny, et la fiche n’affiche aucun pays', async ({ page }) => {
+test('la Russie : chacune de ses figures a son portrait, d’Ivan III à Alexeï Navalny, et les invités biélorusses disent leur pays', async ({ page }) => {
     await openThemeById(page, 'pan_ru');
     await page.locator('#mode-card-discovery').click();
     await expect(page.locator('#screen-game')).toBeVisible();
     const nombre = await page.evaluate(() => getCurrentTheme().events.length);
-    expect(nombre).toBe(135);
+    expect(nombre).toBe(155);
     await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
     await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
 
@@ -613,6 +613,13 @@ test('la Russie : chacune de ses figures a son portrait, d’Ivan III à Alexeï
         await page.locator('#modal-details .close-btn').click();
         await expect(page.locator('#modal-details')).toBeHidden();
     }
+
+    // Vingt invités de la Biélorussie : la fiche dit leur pays.
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Francysk Skaryna' }).click();
+    await expect(page.locator('#modal-details')).toBeVisible();
+    await expect(page.locator('#modal-pays')).toBeVisible();
+    await page.locator('#modal-details .close-btn').click();
+    await expect(page.locator('#modal-details')).toBeHidden();
 
     // Huit figures ont aussi leur biographie dans l'appli : le bouton y mène.
     const avecBiographie = await page.evaluate(() => getCurrentTheme().events.filter(e => e.biographie).length);
@@ -2567,4 +2574,36 @@ test('sans aucun portrait dans la base, « Découvrir » pioche un événement d
     await page.locator('#btn-discover').click();
     await expect(page.locator('#discover-picker')).toBeHidden();
     await expect(page.locator('#modal-details')).toBeVisible();
+});
+
+test('l’Ukraine : chacune de ses figures a son portrait, d’Olga de Kiev à Valeri Lobanovski, et la fiche n’affiche aucun pays', async ({ page }) => {
+    await openThemeById(page, 'pan_ua');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBe(108);
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    // Une régente de la Rus' de Kiev, le poète national, un entraîneur de football.
+    for (const titre of ['Naissance d\'Olga de Kiev', 'Naissance de Taras Chevtchenko', 'Naissance de Valeri Lobanovski']) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toBeHidden();
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await expect(page.locator('#modal-portrait-caption')).not.toBeEmpty();
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+});
+
+test('la recherche — « ukraine », « ukrainien », « kiev », « cosaque », « hetman » — mène au panthéon de l’Ukraine', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    for (const mot of ['ukraine', 'ukrainien', 'kiev', 'cosaque', 'hetman', 'zaporogue', 'galicie']) {
+        await page.locator('#theme-search-input').fill(mot);
+        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Ukraine" });
+        await expect(resultat, `« ${mot} » doit mener au panthéon de l'Ukraine`).toHaveCount(1);
+        await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
+    }
 });

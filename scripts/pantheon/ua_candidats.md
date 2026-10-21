@@ -1,6 +1,6 @@
 # Ukraine (et Biélorussie invitée de la Russie) — candidats examinés
 
-> **État** : liste examinée, **pas encore validée**. Rien n'est écrit : ni `ua.json`, ni les invités de `ru.json`. Le panthéon de la Russie (`pan_ru`, 135 figures) n'a aucun invité pour l'instant.
+> **État** : liste validée par l'éditeur et **écrite** : `pan_ua` (108 figures) et 20 invités biélorusses dans `pan_ru` (155 figures) ; voir « Un pays à part : l'Ukraine, et la Biélorussie invitée de la Russie » dans `docs/personnages-illustres.md`. Décisions : Malevitch, Répine et Gogol restent en Russie ; ni diaspora ni autres nationalités (Archipenko, Bourliouk, Cisyk et Sikorsky compris) ; images comme pour l'Afrique.
 
 Méthode : 187 candidats (titres anglais puis français de Wikipédia → identifiant Wikidata → naissance, décès, `P18`, article français → page de fichier de Commons : licence, taille). Conditions habituelles : **mort**, **naissance datée**, **article en français**, **portrait libre** (petites images acceptées ; « image non libre » possible en exception). Dates de Wikidata à recouper avec l'article français.
 

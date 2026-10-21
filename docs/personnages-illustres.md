@@ -1447,16 +1447,17 @@ Ba Jin, celui-ci est demandé en 960 px (`largeur`).
 
 ### Un pays à part : la Russie
 
-`pan_ru`, « Grandes figures de Russie » (code `ru`, pays) : **135 personnages**, d'Alexandre Nevski (1220) à
-Alexeï Navalny (1976). Par axe : 31 Littérature et pensée, 23 Chefs d'État et dirigeants, 22 Guerres et
-résistances, 21 Musique, spectacle et sport, 20 Sciences, techniques et innovation, 18 Beaux-arts ; 37 ⭐ et
+`pan_ru`, « Grandes figures de Russie » (code `ru`, pays) : **155 personnages**, dont **20 invités de la Biélorussie** (voir plus bas), d'Euphrosyne de Polotsk (vers 1104) à
+Alexeï Navalny (1976). Par axe : 41 Littérature et pensée, 28 Chefs d'État et dirigeants, 23 Guerres et
+résistances, 22 Musique, spectacle et sport, 22 Sciences, techniques et innovation, 19 Beaux-arts ; 38 ⭐ et
 8 biographies liées (Pierre le Grand, Catherine II, Koutouzov, Joukov, Dostoïevski, Tolstoï, Mendeleïev,
-Gagarine). 135 portraits : 108 du domaine public, 2 CC0, 11 CC BY et 14 CC BY-SA. Pas d'axe « Économie et
+Gagarine). 155 portraits : 123 du domaine public, 2 CC0, 12 CC BY et 18 CC BY-SA (versions 2.0 à 4.0). Pas d'axe « Économie et
 entreprise » : les mécènes (Tretiakov) et le joaillier Fabergé sont rangés aux Beaux-arts.
 
-- **Un pays, pas un bloc** : `pan_ru`, aucun champ `pays`, et « Pendant ce temps, ailleurs… » le compte
-  comme `thm_ru` et `thm_urss`. La Biélorussie et l'Ukraine n'y sont pas associées : elles attendent leurs
-  propres thèmes (voir plus bas, « L'Europe et les Amériques qui manquent »).
+- **Un pays, pas un bloc** : `pan_ru`, et « Pendant ce temps, ailleurs… » le compte
+  comme `thm_ru` et `thm_urss`. Les figures russes n'ont pas de champ `pays` ; les **vingt invités biélorusses**
+  portent `pays: "BY"`, comme Monaco chez la France, et la fiche dit leur pays. L'Ukraine a son propre panthéon
+  (voir « Un pays à part : l'Ukraine »).
 - **Le pays qui honore, pas l'état civil.** Sont ici des figures nées hors des frontières actuelles mais
   honorées avant tout en Russie, et la fiche le dit : Trotski (Ianovka), Brejnev, Berdiaev, Boulgakov,
   Akhmatova, Répine, Prokofiev et Korolev (Ukraine), Gogol et Malevitch (que l'Ukraine revendique aussi),
@@ -2553,6 +2554,41 @@ la République des Deux Nations, les partages, les insurrections de 1830, 1863 e
   les autres thèmes : le script lit la licence déclarée, non le statut américain.
 - **Les listes de candidats** sont dans `scripts/pantheon/pl_candidats.md`.
 
+### Un pays à part : l'Ukraine, et la Biélorussie invitée de la Russie
+
+`pan_ua`, « Grandes figures d'Ukraine » (code `ua`, pays ; rangé sous « Ukraine », après la Turquie) : **108 personnages**, d'Olga de Kiev (vers 890) à Ivan Mykolaïtchouk et Bohdan Stoupka (1941). Par axe :
+31 Littérature et pensée, 23 Chefs d'État et dirigeants, 16 Musique, spectacle et sport, 14 Beaux-arts, 14 Guerres et résistances, 10 Sciences, techniques et innovation ; 16 ⭐ — Vladimir Ier, Iaroslav le Sage, Bogdan
+Khmelnitski, Ivan Mazepa, Symon Petlioura, Mykhaïlo Hrouchevsky, Leonid Kravtchouk, Taras Chevtchenko, Ivan Franko, Lessia Oukraïnka, Vassyl Stous, Mykola Lyssenko, Maria Primatchenko, Aleksandr Dovjenko, Valeri
+Lobanovski et Ilya Metchnikov — et **aucune biographie liée**. 108 portraits : 95 du domaine public, 1 CC0, 4 CC BY 4.0, 1 CC BY 3.0, 3 CC BY-SA 4.0, 2 CC BY-SA 3.0 et **2 images non libres** (voir plus bas). Sept figures sont nées avant 1500,
+quinze de 1500 à 1799, quatre-vingt-six depuis 1800.
+
+- **Un pays, pas un bloc.** `pan_ua`, aucun champ `pays` — pas d'invité — et « Pendant ce temps, ailleurs… » le compte comme `thm_ua`, l'« Histoire de l'Ukraine ». Un test le vérifie (`tests/simultaneity.test.js`).
+- **Le pays qui honore, pas l'état civil — et ce qu'on a laissé en Russie.** Sont restés au panthéon de la Russie, qui les avait déjà : Gogol, Boulgakov, Akhmatova, Trotski, Brejnev, Korolev, Prokofiev, Vernadski,
+  Aïvazovski (né en Crimée), **Malevitch et Répine** (que l'Ukraine revendique : l'éditeur a décidé de les laisser en Russie). Sont ici des figures nées hors des frontières actuelles mais honorées en Ukraine : Amossov, Filatov (né à Saransk, installé à Odessa), Glouchkov (Rostov-sur-le-Don) et Kostomarov (près de Voronej).
+- **La diaspora et les autres nationalités sont exclues** : Babel, Cholem Aleikhem, Joseph Roth, Paul Celan, Sacher-Masoch, Oïstrakh, Gilels, Horowitz, Stern, Milstein, Nijinski, Lifar, Richter, Glière, Sonia Delaunay,
+  Gamow, Timoshenko, Zworykin, Waksman, Dahl, mais aussi Archipenko, Bourliouk, Kvitka Cisyk et Sikorsky : ils relèvent d'Israël, des États-Unis, de la France, de la Pologne, de l'Autriche ou de la Russie, ou n'ont de
+  l'Ukraine que la naissance.
+- **Les figures controversées sont écrites comme telles** : Bandera est ici pour sa place dans l'histoire nationale, avec l'OUN, la prison allemande et son assassinat par le KGB ; sa mémoire est disputée, et la fiche le dit ;
+  et la fiche de Choukhevytch dit qu'il a servi dans une unité liée à la Wehrmacht en 1941 et que sa mémoire est disputée ; celle de Petlioura dit qu'il a été tenu pour responsable des pogroms ; celle de Makhno que ses troupes
+  ont combattu les Blancs et les Rouges. Les vivants restent dehors (Moustafa Djemilev) et les figures sans date de décès (Larissa Latynina, Volodymyr Ivassiouk) aussi.
+- **Écartés** : Dmytro Vychnevetsky (naissance inconnue), Ivan Sirko, Andriy Melnyk, Mykola Kapustianski, Iouri Tioutiounnyk, Ihor Kostetsky, Les Taniouk, Volodymyr Svidzinsky, Mykola Kondratenko, Hryhoriy Pysarenko, Mykhailo Ostrohradsky,
+  Mykola Bernstein, Oleksandr Smakula, Oleg Antonov et Anatol Petrytsky : pas d'article français, de portrait libre ou de date de naissance.
+- **Deux images non libres, exception assumée** : Viatcheslav Tchornovil (photographie de la Rada suprême d'Ukraine, 1998, licence « Attribution » seule) et Volodymyr Sossioura (photographie de 1956, GFDL seule) n'avaient aucune
+  image acceptée par le script ; leur licence s'écrit « Image non libre » dans les données (`image.licence`), `image.source` renvoie à la page du fichier. **À remplacer dès qu'une image libre existe, ou à faire valider.**
+- **Des portraits souvent indirects**, et les légendes le disent : les princes de Kiev (Sviatoslav, Vladimir, Iaroslav, Vladimir Monomaque) sont des portraits imaginaires du Livre des titres du tsar (1672), Daniel de Galicie une
+  miniature de la Chronique enluminée (recadrée) ; Grigorenko, Bagriany et Primatchenko ne sont connus que par l'effigie d'une pièce commémorative de la Banque nationale d'Ukraine, Berezovsky par une médaille, Symonenko par un
+  timbre, Mykolaïtchouk par un buste ; **Iaroslav le Sage n'a plus la pièce** mais le portrait de 1672. L'image de Chtcherbytskiï est floue et petite : à remplacer.
+- **Dates incertaines.** Olga (vers 890), Sviatoslav (vers 942), Vladimir (vers 958), Iaroslav (vers 978), Khmelnitski (vers 1595), Sahaïdatchnyi (vers 1570, Wikidata dit 1582), Gonta (vers 1740, Wikidata dit 1721), Bohun,
+  Vyhovsky et Ostrogski portent la date de l'article français.
+- **Les noms.** Les noms suivent le titre de l'article français (« Bogdan Khmelnitski », « Taras Chevtchenko ») ; Pierre Movilă s'écrit « Petro Mohyla », et l'article de Kondratiouk est sous son état civil, Alexandre Chargueï.
+
+La Biélorussie est **invitée du panthéon de la Russie**, comme Monaco l'est de celui de la France : **20 figures** portent `pays: "BY"` dans `scripts/pantheon/ru.json`, et la fiche dit leur pays. D'Euphrosyne de Polotsk (vers 1104) à
+Jaurès Alferov (1930) : 10 Littérature et pensée (Euphrosyne de Polotsk, Francysk Skaryna, Szymon Budny, Koupala, Kolas, Bahdanovitch, Héniouch, Karatkievitch, Bykov, Vygotski), 5 Chefs d'État et dirigeants (Sapieha, Macherov,
+Chouchkievitch, Gromyko, Dzerjinski), 2 Sciences (Soukhoï, Alferov), 1 Beaux-arts (Napoleon Orda), 1 Guerres et résistances (Kalinowski), 1 Musique (Mouliavine) ; 1 ⭐ (Skaryna). 20 portraits : 15 du domaine public, 2 CC BY 4.0, 1 CC BY-SA 4.0,
+1 CC BY-SA 3.0 et 1 CC BY-SA 3.0 NL. Tadeusz Kościuszko et Stanisław Moniuszko, nés en Biélorussie, restent au panthéon de la Pologne ; Marc Chagall et Chaïm Soutine à celui de la France, Simon Kuznets à celui des États-Unis.
+Napoleon Orda, Lew Sapieha et Szymon Budny, nés dans le grand-duché de Lituanie, sont invités de la Russie faute de panthéon biélorusse. Ivan Khroutski, Dvartchanine, Savitsky et Louchenok n'ont pas d'article français.
+Les listes de candidats sont dans `scripts/pantheon/ua_candidats.md`.
+
 ### Un bloc : l'Europe centrale (Hongrie, Tchéquie, Slovaquie et Slovénie)
 
 `pan_europecentrale`, « Grandes figures d'Europe centrale » (code `europecentrale`, bloc ; rangé sous « Europe centrale », entre les États-Unis et la France) : **123 personnages de quatre pays** — Hongrie 48, Tchéquie 42, Slovaquie 17,
@@ -2934,7 +2970,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Éthiopie, l'Afrique de l'Est et la Corne, l'Afrique australe, l'océan Indien occidental, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée, la Pologne, l'Europe centrale sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Éthiopie, l'Afrique de l'Est et la Corne, l'Afrique australe, l'océan Indien occidental, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée, la Pologne, l'Europe centrale, l'Ukraine (avec la Biélorussie invitée de la Russie) sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -2957,7 +2993,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
      Nouvelle-Zélande et le Pacifique »). Les pays baltes sont écrits (voir « Un bloc : les pays baltes »).
   4. **L'Europe et les Amériques qui manquent** : **le Portugal est écrit** (voir « Un pays à part : le Portugal »,
      qui a repris Magellan et Viriathe), Byzance (au-delà des cinq figures déjà au panthéon de la Grèce),
-     la Pologne et l'Europe centrale (écrites : voir « Un pays à part : la Pologne » et « Un bloc : l'Europe centrale »), la Slovénie (dans le bloc d'Europe centrale), l'Ukraine et la Biélorussie, les Caraïbes non
+     la Pologne et l'Europe centrale (écrites : voir « Un pays à part : la Pologne » et « Un bloc : l'Europe centrale »), la Slovénie (dans le bloc d'Europe centrale), l'Ukraine (écrite : voir « Un pays à part : l'Ukraine », avec la Biélorussie invitée de la Russie), les Caraïbes non
      hispaniques.
 
   Les images décideront de la taille de chacun : pour l'Afrique subsaharienne et l'Asie du

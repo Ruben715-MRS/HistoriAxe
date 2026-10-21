@@ -690,7 +690,7 @@ test('« Grandes figures de Russie » : les ancres sont la Russie, comme « Hist
     const theme = allThemes().find(t => t.id === 'pan_ru');
     assert.ok(theme, 'thème pan_ru absent du pack français');
     const index = S.buildTagIndex(frData.categories, { countryByTheme: geoMap });
-    theme.events.forEach(e => assert.equal(index[e.id], 'pays:RU', `étiquette de ${e.id}`));
+    theme.events.forEach(e => assert.equal(index[e.id], e.pays ? 'pays:' + e.pays : 'pays:RU', `étiquette de ${e.id}`));
     const histoire = allThemes().find(t => t.id === 'thm_ru');
     assert.equal(index[histoire.events[0].id], 'pays:RU', 'pan_ru doit être le même pays que thm_ru');
     const urss = allThemes().find(t => t.id === 'thm_urss');
@@ -700,8 +700,8 @@ test('« Grandes figures de Russie » : les ancres sont la Russie, comme « Hist
     assert.equal(session.length, S.SESSION_ROUNDS);
     session.forEach(q => {
         assert.ok(!/^pan_/.test(q.correct.themeId), 'la bonne réponse ne peut pas venir d’un panthéon');
-        assert.notEqual(q.correct.tag, 'pays:RU',
-            `« ${q.correct.titre} » est russe : ce n’est pas un « ailleurs » pour « ${q.anchor.titre} »`);
+        assert.notEqual(q.correct.tag, q.anchor.tag,
+            `« ${q.correct.titre} » est du même pays que « ${q.anchor.titre} » : ce n’est pas un « ailleurs »`);
     });
 });
 
@@ -771,6 +771,25 @@ test('« Grandes figures du Canada » : les ancres sont le Canada, comme « Hist
     theme.events.forEach(e => assert.equal(index[e.id], e.pays ? 'pays:' + e.pays : 'pays:CA', `étiquette de ${e.id}`));
     const histoire = allThemes().find(t => t.id === 'thm_ca');
     assert.equal(index[histoire.events[0].id], 'pays:CA', 'pan_ca doit être le même pays que thm_ca');
+    const anchors = theme.events.map(e => Object.assign({}, e, { tag: index[e.id], themeName: theme.nom }));
+    const session = S.buildSession(anchors, realPool, { rng: seededRng(5), count: S.SESSION_ROUNDS });
+    assert.equal(session.length, S.SESSION_ROUNDS);
+    session.forEach(q => {
+        assert.ok(!/^pan_/.test(q.correct.themeId), 'la bonne réponse ne peut pas venir d’un panthéon');
+        assert.notEqual(q.correct.tag, q.anchor.tag,
+            `« ${q.correct.titre} » a la même étiquette que « ${q.anchor.titre} » : ce n’est pas un « ailleurs »`);
+    });
+});
+
+test('« Grandes figures d’Ukraine » : les ancres sont l’Ukraine, comme « Histoire de l’Ukraine », et la session se joue', () => {
+    // `pan_ua` est le panthéon d'un PAYS : ses figures portent l'étiquette de « Histoire de l'Ukraine » (`thm_ua`) ;
+    // aucune n'est un invité d'un autre État.
+    const theme = allThemes().find(t => t.id === 'pan_ua');
+    assert.ok(theme, 'thème pan_ua absent du pack français');
+    const index = S.buildTagIndex(frData.categories, { countryByTheme: geoMap });
+    theme.events.forEach(e => assert.equal(index[e.id], e.pays ? 'pays:' + e.pays : 'pays:UA', `étiquette de ${e.id}`));
+    const histoire = allThemes().find(t => t.id === 'thm_ua');
+    assert.equal(index[histoire.events[0].id], 'pays:UA', 'pan_ua doit être le même pays que thm_ua');
     const anchors = theme.events.map(e => Object.assign({}, e, { tag: index[e.id], themeName: theme.nom }));
     const session = S.buildSession(anchors, realPool, { rng: seededRng(5), count: S.SESSION_ROUNDS });
     assert.equal(session.length, S.SESSION_ROUNDS);
