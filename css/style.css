@@ -4470,6 +4470,15 @@ textarea.form-input {
     background: var(--border-soft);
 }
 
+/* Boutons « Tout sélectionner / Tout désélectionner » au-dessus des axes */
+.axes-bulk {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
 /* STYLE POUR LA SÉLECTION D'AXE THÉMATIQUE */
 .axis-card {
     background: var(--surface);

@@ -208,6 +208,21 @@ function renderAxesScreen() {
         ? t('axes.subtitle_selected', { theme: theme.nom, count: totalCount })
         : t('axes.subtitle_select_one', { theme: theme.nom });
     document.getElementById('axes-continue-btn').disabled = selectedAxes.size === 0;
+
+    // « Tout sélectionner » / « Tout désélectionner » : l'état courant est
+    // celui du bouton enfoncé, comme pour le sélecteur de longueur de manche.
+    const allSelected = selectedAxes.size === currentThemeAxes.length;
+    const noneSelected = selectedAxes.size === 0;
+    [['axes-select-all', allSelected, () => new Set(currentThemeAxes)],
+     ['axes-select-none', noneSelected, () => new Set()]].forEach(([id, active, next]) => {
+        const btn = document.getElementById(id);
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+        btn.onclick = () => {
+            selectedAxes = next();
+            A11y.keepFocus(document.getElementById('screen-axes'), renderAxesScreen);
+        };
+    });
 }
 
 function confirmAxesSelection() {
