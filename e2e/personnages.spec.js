@@ -106,9 +106,9 @@ test('la fiche d’un personnage montre son portrait, sa légende, son crédit e
     await page.locator('#mode-card-discovery').click();
     await expect(page.locator('#screen-game')).toBeVisible();
 
-    // Cent cinquante-deux repères, chacun avec sa pastille : « un portrait pour chaque événement ».
-    await expect(page.locator('#timeline .entry')).toHaveCount(152);
-    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(152);
+    // Cent soixante-dix repères, chacun avec sa pastille : « un portrait pour chaque événement ».
+    await expect(page.locator('#timeline .entry')).toHaveCount(170);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(170);
 
     await page.locator('#timeline .entry', { hasText: 'Naissance de Victor Hugo' }).click();
     await expect(page.locator('#modal-details')).toBeVisible();
@@ -156,6 +156,31 @@ test('Monaco et le Liechtenstein sont invités : la fiche dit leur pays, la gale
 
 });
 
+test('l\'outre-mer est au panthéon de la France : la fiche dit le territoire, la galerie le filtre à part', async ({ page }) => {
+    // Martinique, Guadeloupe, Guyane, La Réunion et Mayotte sont la France : leurs figures n'ont pas de
+    // thème propre (l'océan Indien occidental les exclut), mais la fiche dit leur territoire d'origine.
+    await openThemeById(page, PANTHEON);
+    await page.locator('#mode-card-discovery').click();
+    for (const [titre, territoire] of [["Naissance d'Aimé Césaire", 'Martinique'], ['Naissance de Roland Garros', 'Réunion'], ['Naissance de Félix Éboué', 'Guyane']]) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toContainText(territoire);
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+});
+
+test('la galerie propose chaque territoire d\'outre-mer à part', async ({ page }) => {
+    await ouvrirLaGalerie(page);
+    const pays = page.locator('#gallery-filter-country');
+    for (const [nom, n] of [['Martinique', 4], ['Guadeloupe', 4], ['Guyane', 4], ['Réunion', 5], ['Mayotte', 1]]) {
+        await expect(pays.locator('option', { hasText: nom })).toHaveText(new RegExp(`${nom}[^(]*\\(${n}\\)`));
+    }
+});
+
 test('la galerie filtre Monaco et le Liechtenstein à part, et la France garde ses 143 figures (dont Montcalm, invité du Canada)', async ({ page }) => {
     await ouvrirLaGalerie(page);
     const pays = page.locator('#gallery-filter-country');
@@ -178,7 +203,7 @@ test('Joséphine Baker, née aux États-Unis et devenue française, est au panth
     await expect(page.locator('#modal-bio-btn')).toBeVisible();
 });
 
-test('la France, de Philippe Auguste à Jean Monnet : cent cinquante-deux figures dont dix de Monaco, des portraits qui chargent, vingt-neuf biographies', async ({ page }) => {
+test('la France, de Philippe Auguste à Jean Monnet : cent soixante-dix figures dont dix de Monaco et dix-huit d’outre-mer, des portraits qui chargent, vingt-neuf biographies', async ({ page }) => {
     await openThemeById(page, PANTHEON);
     await page.locator('#mode-card-discovery').click();
     await expect(page.locator('#screen-game')).toBeVisible();

@@ -179,12 +179,12 @@ accueilli dans « Musique, spectacle et sport », pour les sportifs de portée h
 
 | Axe | Contenu | France | États-Unis |
 |---|---|---|---|
-| Chefs d'État et dirigeants | souverains, présidents, chefs de gouvernement | 33 | 21 |
-| Guerres et résistances | chefs militaires, résistants, héros d'indépendance, combats pour les droits | 18 | 24 |
-| Littérature et pensée | écrivains, poètes, philosophes | 31 | 25 |
+| Chefs d'État et dirigeants | souverains, présidents, chefs de gouvernement | 37 | 21 |
+| Guerres et résistances | chefs militaires, résistants, héros d'indépendance, combats pour les droits | 20 | 24 |
+| Littérature et pensée | écrivains, poètes, philosophes | 39 | 25 |
 | Beaux-arts | peinture, sculpture, architecture | 19 | 12 |
-| Musique, spectacle et sport | compositeurs, interprètes, cinéma, théâtre, sport | 18 | 22 |
-| Sciences, techniques et innovation | savants, ingénieurs, inventeurs, explorateurs | 21 | 16 |
+| Musique, spectacle et sport | compositeurs, interprètes, cinéma, théâtre, sport | 20 | 22 |
+| Sciences, techniques et innovation | savants, ingénieurs, inventeurs, explorateurs | 23 | 16 |
 | Économie et entreprise | fondateurs d'entreprises, industriels, banquiers, marchands | 12 | 9 |
 
 Les règles de rédaction, vérifiées par script et par test (voir plus bas) :
@@ -209,10 +209,10 @@ Les règles de rédaction, vérifiées par script et par test (voir plus bas) :
   de la fiche) doivent porter la *même* date. Les dates des soixante et une premières ont été
   comparées une à une à la phrase d'ouverture de l'article Wikipédia, celles des 72 figures
   ajoutées ensuite (voir « La France, de 68 à 140 figures ») au résumé de leur article.
-- **⭐ Incontournables** (`essentiel`) : 39 sur 152 pour la France, 39 sur 129 pour les États-Unis,
+- **⭐ Incontournables** (`essentiel`) : 42 sur 170 pour la France, 39 sur 129 pour les États-Unis,
   56 sur 149 pour l'Allemagne, l'Autriche et la Suisse, 51 sur 151 pour le Royaume-Uni, 36 sur 132 pour l'Espagne.
 
-Quantités visées : 68 personnages pour la France (portés à 152, voir plus bas), 52 pour l'Égypte, 129 pour les
+Quantités visées : 68 personnages pour la France (portés à 170, voir plus bas), 52 pour l'Égypte, 129 pour les
 États-Unis (85 proposés, portés à 123 : « mieux vaut plus que moins », puis à 129 avec l'axe Économie et entreprise), 127 pour
 l'Italie (126 proposés, plus Enzo Ferrari), 80 à 100
 pour l'Amérique hispanique (dix-neuf pays, de 1 à 19 figures chacun), 58 pour le
@@ -1281,11 +1281,12 @@ alternatifs), ce qui laissait dix-huit portraits sans crédit.
 
 `pan_fr` était le plus mince des panthéons de pays, en comparaison de l'Italie (127),
 des États-Unis (129), de l'Espagne (132), de l'Allemagne-Autriche-Suisse (149) et du
-Royaume-Uni (151). Il passe de 68 à **152 personnages**, de Vercingétorix (vers 82 av. J.-C.) à
-Serge Gainsbourg (1928) : 72 figures ajoutées, plus 10 invités de Monaco (voir « Les micro-États ») , Pétain et Rachi.
-Par axe : 33 Chefs d'État et dirigeants, 31 Littérature et pensée, 21 Sciences, techniques et
-innovation, 19 Beaux-arts, 18 Guerres et résistances, 18 Musique, spectacle et sport, 12
-Économie et entreprise ; 39 ⭐ et 29 biographies
+Royaume-Uni (151). Il passe de 68 à **170 personnages**, de Vercingétorix (vers 82 av. J.-C.) à
+Serge Gainsbourg (1928) : 72 figures ajoutées, plus 10 invités de Monaco (voir « Les micro-États »), Pétain, Rachi et 18
+figures d'outre-mer (voir plus bas).
+Par axe : 37 Chefs d'État et dirigeants, 39 Littérature et pensée, 23 Sciences, techniques et
+innovation, 19 Beaux-arts, 20 Guerres et résistances, 20 Musique, spectacle et sport, 12
+Économie et entreprise ; 42 ⭐ et 29 biographies
 liées (Sartre, Gainsbourg et Alexandra David-Néel s'ajoutent aux 26 d'avant).
 
 - **Les ajouts, par axe** : Philippe Auguste, Philippe le Bel, Louis XI, Colbert, Louis XVI,
@@ -1319,6 +1320,21 @@ liées (Sartre, Gainsbourg et Alexandra David-Néel s'ajoutent aux 26 d'avant).
   « vers 1040 » ; son portrait est une gravure sur bois imaginaire de 1539, et la légende le dit. Un
   événement de même titre existe dans le thème d'histoire juive : les deux fiches partagent le même
   point sur la carte (Troyes), comme l'exige la règle des faits liés.
+- **L'outre-mer : la France, avec son territoire dit.** La Martinique, la Guadeloupe, la Guyane, La
+  Réunion et Mayotte sont des départements français : leurs figures sont au panthéon de la France, et non
+  dans un thème à part (le panthéon de l'océan Indien occidental exclut La Réunion et Mayotte pour cette
+  raison). Chacune porte un `pays` — `MQ`, `GP`, `GF`, `RE`, `YT` — comme les invités de Monaco : la
+  fiche affiche le drapeau et le nom du territoire sous la date, et la galerie les filtre à part. La
+  Simultanéité les compte donc comme un « ailleurs » face à la France métropolitaine, ce qui est
+  géographiquement juste. **18 figures** : Martinique (4) Césaire, Fanon, Glissant, Joséphine de
+  Beauharnais ; Guadeloupe (4) le chevalier de Saint-George, Louis Delgrès, Saint-John Perse, Maryse
+  Condé ; Guyane (4) Félix Éboué, Gaston Monnerville, Léon-Gontran Damas, Henri Salvador ; La Réunion
+  (5) Parny, Leconte de Lisle, Edmond Albius, Roland Garros, Raymond Barre ; Mayotte (1) Younoussa
+  Bamana. Delgrès, né à Saint-Pierre (Martinique) mais héros de la résistance guadeloupéenne de 1802,
+  est rangé en Guadeloupe, où on l'honore. Écartés : Zéna M'Déré (née « entre 1917 et 1922 ») et le roi
+  Andriantsoly (naissance inconnue), dont l'année manque ; Mayotte n'a donc qu'une figure, à étoffer.
+  Le portrait de Delgrès est un buste (faute de portrait d'époque), celui d'Edmond Albius un dessin
+  retouché ; Saint-George est montré par une gravure de 1788.
 - **Des figures contestées, dont la fiche dit ce qu'on leur reproche** : Colbert (le Code noir,
   préparé sous son ministère), Philippe le Bel (les Templiers), Turenne (le Palatinat), Napoléon
   III (le coup d'État), Mitterrand (Vichy, Bousquet), Degas (l'affaire Dreyfus), Gauguin (ses
@@ -2937,7 +2953,7 @@ faute de licence établie), remplacés l'un par une photographie de 1933 aux
 deux balises, l'autre par un cliché de 1959 de la Bibliothèque du Congrès.
 
 **Poids** : JPEG de 320 × 400, 25 Ko en moyenne (62 au plus), soit 1,8 Mo pour
-les 152 de la France, 2,5 Mo pour les 97 de l'Amérique hispanique, 1,7 Mo
+les 170 de la France, 2,5 Mo pour les 97 de l'Amérique hispanique, 1,7 Mo
 pour les 58 du Maghreb, 1,4 Mo pour les 52 de l'Égypte et 3,1 Mo pour les 129
 des États-Unis — de
 l'ordre de 20 Mo pour 800 portraits, quand `assets/` en pèse déjà 38. Le WebP
