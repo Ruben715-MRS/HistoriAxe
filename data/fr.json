@@ -3,7 +3,7 @@
   "lang": "fr",
   "name": "Français (Intégral)",
   "totalThemes": 851,
-  "totalEvents": 25711,
+  "totalEvents": 25729,
   "categories": [
     {
       "nom": "Culture générale",
@@ -130912,6 +130912,7 @@
                 "Monte-Carlo",
                 "Grimaldi"
               ],
+              "note": "Les départements d'outre-mer (Martinique, Guadeloupe, Guyane, La Réunion, Mayotte) sont ici : la fiche de chacun de leurs personnages indique son territoire. Les collectivités du Pacifique (Polynésie française, Nouvelle-Calédonie, Wallis-et-Futuna), en revanche, ont une identité locale très liée à l'Océanie, leur propre statut, et utilisent le franc Pacifique plutôt que l'euro : leurs figures sont à chercher dans « Grandes figures de Nouvelle-Zélande et du Pacifique ».",
               "events": [
                 {
                   "id": "pan_fr_vercingetorix",
@@ -131704,6 +131705,23 @@
                   }
                 },
                 {
+                  "id": "pan_fr_saintgeorge",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1745,
+                  "titre": "Naissance de Joseph Bologne de Saint-George",
+                  "description": "Joseph Bologne de Saint-George (1745-1799) est un compositeur, violoniste et escrimeur né en Guadeloupe, fils d'un planteur et d'une esclave. Virtuose, chef de l'orchestre du Concert des Amateurs, il écrit des concertos, des quatuors et des opéras, et fait jouer ses œuvres à Paris. Colonel de la Légion franche des Américains et du Midi, formée de volontaires noirs et métis, il se range dans le camp de la Révolution et meurt à Paris en 1799.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Joseph_Bologne_de_Saint-George",
+                  "pays": "GP",
+                  "classement": "Saint-George, Joseph Bologne de",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_saintgeorge.jpg",
+                    "legende": "Joseph Bologne de Saint-George, gravure de William Ward d'après Mather Brown (vers 1788)",
+                    "auteur": "William Ward, d'après Mather Brown",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mather_Brown,_William_Ward_-_Monsieur_de_St_George,_1788,_NPG_D4132,_London.png"
+                  }
+                },
+                {
                   "id": "pan_fr_david",
                   "axe": "Beaux-arts",
                   "date": 1748,
@@ -131769,6 +131787,23 @@
                   }
                 },
                 {
+                  "id": "pan_fr_parny",
+                  "axe": "Littérature et pensée",
+                  "date": 1753,
+                  "titre": "Naissance d'Évariste de Parny",
+                  "description": "Évariste de Parny (1753-1814) est un poète né à Saint-Paul, à l'île Bourbon (La Réunion), maître de l'élégie amoureuse au XVIIIe siècle. Ses Poésies érotiques (1778) et ses Chansons madécasses (1787), proses poétiques inspirées de chants malgaches qui dénoncent l'esclavage, sont lues et imitées jusqu'au romantisme, et Ravel met ces dernières en musique en 1926. Élu à l'Académie française en 1803, il meurt à Paris en 1814.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89variste_de_Parny",
+                  "pays": "RE",
+                  "classement": "Parny, Évariste de",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_parny.jpg",
+                    "legende": "Évariste de Parny, lithographie ancienne d'auteur inconnu",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Evariste-de-Parny.jpg"
+                  }
+                },
+                {
                   "id": "pan_fr_louis16",
                   "axe": "Chefs d'État et dirigeants",
                   "date": 1754,
@@ -131830,6 +131865,40 @@
                     "auteur": "Auteur inconnu",
                     "licence": "CC0 (domaine public)",
                     "source": "https://commons.wikimedia.org/wiki/File:Robespierre.jpg"
+                  }
+                },
+                {
+                  "id": "pan_fr_josephine",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1763,
+                  "titre": "Naissance de Joséphine de Beauharnais",
+                  "description": "Joséphine de Beauharnais (1763-1814) est la première épouse de Napoléon Bonaparte et impératrice des Français de 1804 à 1809, née aux Trois-Îlets, en Martinique, dans une famille de planteurs. Veuve du vicomte de Beauharnais, guillotiné en 1794, elle épouse Bonaparte en 1796 et est couronnée par lui à Notre-Dame en 1804. Répudiée en 1809 faute d'héritier, elle se retire à la Malmaison, où elle réunit des collections de plantes et de roses, et meurt en 1814.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jos%C3%A9phine_de_Beauharnais",
+                  "pays": "MQ",
+                  "classement": "Beauharnais, Joséphine de",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_josephine.jpg",
+                    "legende": "Joséphine en costume de couronnement, portrait peint par François Gérard",
+                    "auteur": "François Gérard",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Baron_Fran%C3%A7ois_G%C3%A9rard_-_Jos%C3%A9phine_in_coronation_costume_-_Google_Art_Project.jpg"
+                  }
+                },
+                {
+                  "id": "pan_fr_delgres",
+                  "axe": "Guerres et résistances",
+                  "date": 1766,
+                  "titre": "Naissance de Louis Delgrès",
+                  "description": "Louis Delgrès (1766-1802) est un officier de couleur né à Saint-Pierre, en Martinique, devenu en Guadeloupe le symbole de la résistance au rétablissement de l'esclavage. En mai 1802, quand Bonaparte envoie une armée rétablir l'esclavage, il se retranche à Matouba avec plusieurs centaines de partisans et lance son appel « À l'univers entier, le dernier cri de l'innocence et du désespoir ». Assiégé, il se fait sauter avec ses compagnons le 28 mai 1802 plutôt que de se rendre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Louis_Delgr%C3%A8s",
+                  "pays": "GP",
+                  "classement": "Delgrès, Louis",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_delgres.jpg",
+                    "legende": "Louis Delgrès, buste à Petit-Bourg (Guadeloupe), faute de portrait d'époque connu",
+                    "auteur": "LPLT",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Buste_Louis_Delgr%C3%A8s_%C3%A0_Petit-Bourg.JPG"
                   }
                 },
                 {
@@ -132172,6 +132241,23 @@
                   }
                 },
                 {
+                  "id": "pan_fr_leconte",
+                  "axe": "Littérature et pensée",
+                  "date": 1818,
+                  "titre": "Naissance de Leconte de Lisle",
+                  "description": "Leconte de Lisle (1818-1894) est un poète né à Saint-Paul, à La Réunion, chef de file du Parnasse. Ses Poèmes antiques (1852) et ses Poèmes barbares (1862) font de la beauté impassible de l'art et de l'érudition un idéal, à l'écart du lyrisme romantique. Élu à l'Académie française en 1886 au fauteuil de Victor Hugo, il meurt en 1894 à Louveciennes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Leconte_de_Lisle",
+                  "pays": "RE",
+                  "classement": "Leconte de Lisle",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_leconte.jpg",
+                    "legende": "Leconte de Lisle, photographie des années 1850-1860",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Leconte_de_Lisle-1850-60.jpg"
+                  }
+                },
+                {
                   "id": "pan_fr_courbet",
                   "axe": "Beaux-arts",
                   "date": 1819,
@@ -132266,6 +132352,23 @@
                     "auteur": "Nadar",
                     "licence": "Domaine public",
                     "source": "https://commons.wikimedia.org/wiki/File:F%C3%A9lix_Nadar_1820-1910_portraits_Jules_Verne.jpg"
+                  }
+                },
+                {
+                  "id": "pan_fr_albius",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1829,
+                  "titre": "Naissance d'Edmond Albius",
+                  "description": "Edmond Albius (1829-1880) est un esclave né à Sainte-Suzanne, à La Réunion, célèbre pour avoir mis au point la pollinisation manuelle de la vanille. En 1841, à douze ans, il découvre le geste qui permet de féconder la fleur à la main, ce qui rend possible la culture de la vanille hors du Mexique et assure la fortune de l'île. Libéré en 1848, il meurt pauvre en 1880 dans sa commune natale, sans avoir tiré profit de sa découverte.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Edmond_Albius",
+                  "pays": "RE",
+                  "classement": "Albius, Edmond",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_albius.jpg",
+                    "legende": "Edmond Albius, dessin d'Antoine Roussin (XIXe siècle), retouché",
+                    "auteur": "Antoine Roussin ; retouche Ambre Troizat",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Edmond-Albius-Antoine-Roussin-modifi%C3%A9.png"
                   }
                 },
                 {
@@ -132979,6 +133082,23 @@
                   }
                 },
                 {
+                  "id": "pan_fr_eboue",
+                  "axe": "Guerres et résistances",
+                  "date": 1884,
+                  "titre": "Naissance de Félix Éboué",
+                  "description": "Félix Éboué (1884-1944) est un administrateur colonial né à Cayenne, en Guyane, descendant d'esclaves, premier Noir nommé gouverneur dans les colonies françaises (Guadeloupe, 1936). Gouverneur du Tchad, il rallie en août 1940 la colonie à la France libre du général de Gaulle, ce qui entraîne l'Afrique-Équatoriale française. Gouverneur général de l'AEF, il meurt au Caire en 1944, et ses cendres entrent au Panthéon en 1949.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/F%C3%A9lix_%C3%89bou%C3%A9",
+                  "pays": "GF",
+                  "classement": "Éboué, Félix",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_eboue.jpg",
+                    "legende": "Félix Éboué en uniforme de gouverneur général, photographie de presse (Keystone-France)",
+                    "auteur": "Keystone-France",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:F%C3%A9lix_%C3%89bou%C3%A9.jpg"
+                  }
+                },
+                {
                   "id": "pan_fr_marcbloch",
                   "axe": "Guerres et résistances",
                   "date": 1886,
@@ -132992,6 +133112,40 @@
                     "auteur": "Auteur inconnu",
                     "licence": "Domaine public",
                     "source": "https://commons.wikimedia.org/wiki/File:Marc_Bloch_(1886%E2%80%931944).jpg"
+                  }
+                },
+                {
+                  "id": "pan_fr_saintjohnperse",
+                  "axe": "Littérature et pensée",
+                  "date": 1887,
+                  "titre": "Naissance de Saint-John Perse",
+                  "description": "Saint-John Perse (1887-1975) est un poète et diplomate né à Pointe-à-Pitre, en Guadeloupe, de son vrai nom Alexis Leger. Secrétaire général du Quai d'Orsay de 1933 à 1940, il est déchu de sa nationalité par le régime de Vichy et s'exile aux États-Unis. Auteur d'Éloges (1911), d'Anabase (1924) et d'Exil (1942), il reçoit le prix Nobel de littérature en 1960.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Saint-John_Perse",
+                  "pays": "GP",
+                  "classement": "Saint-John Perse",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_saintjohnperse.jpg",
+                    "legende": "Saint-John Perse en 1960, photographie d'auteur inconnu",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Saint-John_Perse_1960.jpg"
+                  }
+                },
+                {
+                  "id": "pan_fr_garros",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1888,
+                  "titre": "Naissance de Roland Garros",
+                  "description": "Roland Garros (1888-1918) est un aviateur né à Saint-Denis, à La Réunion. Le 23 septembre 1913, il réussit la première traversée de la Méditerranée en avion, de Fréjus à Bizerte, puis, pilote de chasse pendant la Première Guerre mondiale, met au point avec Morane-Saulnier un dispositif qui permet de tirer à travers l'hélice. Abattu le 5 octobre 1918, la veille de ses trente ans, il donne son nom au stade de tennis de Paris.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Roland_Garros",
+                  "pays": "RE",
+                  "classement": "Garros, Roland",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_garros.jpg",
+                    "legende": "Roland Garros en 1910, photographie de presse de l'agence Meurisse",
+                    "auteur": "Agence Meurisse",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Roland_Garros_1910.jpg"
                   }
                 },
                 {
@@ -133041,6 +133195,23 @@
                     "auteur": "Georges Chevalier",
                     "licence": "CC BY 4.0",
                     "source": "https://commons.wikimedia.org/wiki/File:1930_Marcel_Dassault.jpg"
+                  }
+                },
+                {
+                  "id": "pan_fr_monnerville",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1897,
+                  "titre": "Naissance de Gaston Monnerville",
+                  "description": "Gaston Monnerville (1897-1991) est un avocat et homme politique né à Cayenne, en Guyane. Député, puis sous-secrétaire d'État aux Colonies, il préside de 1947 à 1968 le Conseil de la République, devenu Sénat, ce qui fait de lui pendant plus de vingt ans la deuxième personnalité de l'État. Opposé au général de Gaulle, il dénonce en 1962 la révision de la Constitution par référendum et siège ensuite au Conseil constitutionnel.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gaston_Monnerville",
+                  "pays": "GF",
+                  "classement": "Monnerville, Gaston",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_monnerville.jpg",
+                    "legende": "Gaston Monnerville, photographie d'auteur inconnu",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Gaston_Monnerville.jpg"
                   }
                 },
                 {
@@ -133226,6 +133397,23 @@
                   }
                 },
                 {
+                  "id": "pan_fr_damas",
+                  "axe": "Littérature et pensée",
+                  "date": 1912,
+                  "titre": "Naissance de Léon-Gontran Damas",
+                  "description": "Léon-Gontran Damas (1912-1978) est un poète né à Cayenne, en Guyane, cofondateur avec Aimé Césaire et Léopold Sédar Senghor du mouvement de la Négritude, dont il publie le premier recueil, Pigments (1937). Ses poèmes, au rythme inspiré du jazz et de la parole, dénoncent le racisme et la colonisation. Député de la Guyane de 1948 à 1951, il enseigne ensuite aux États-Unis et meurt à Washington en 1978.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/L%C3%A9on-Gontran_Damas",
+                  "pays": "GF",
+                  "classement": "Damas, Léon-Gontran",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_damas.jpg",
+                    "legende": "Léon-Gontran Damas, détail d'une photographie d'auteur inconnu",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:CLR_James_and_L%C3%A9on_Damas,_2nd_Congress_of_African_People,_San_Diego,_1972_(cropped).jpg"
+                  }
+                },
+                {
                   "id": "pan_fr_camus",
                   "axe": "Littérature et pensée",
                   "date": 1913,
@@ -133240,6 +133428,23 @@
                     "auteur": "United Press International",
                     "licence": "Domaine public",
                     "source": "https://commons.wikimedia.org/wiki/File:Albert_Camus,_gagnant_de_prix_Nobel,_portrait_en_buste,_pos%C3%A9_au_bureau,_faisant_face_%C3%A0_gauche,_cigarette_de_tabagisme.jpg"
+                  }
+                },
+                {
+                  "id": "pan_fr_cesaire",
+                  "axe": "Littérature et pensée",
+                  "date": 1913,
+                  "titre": "Naissance d'Aimé Césaire",
+                  "description": "Aimé Césaire (1913-2008) est un poète, dramaturge et homme politique né à Basse-Pointe, en Martinique, cofondateur du mouvement de la Négritude. Son Cahier d'un retour au pays natal (1939) et son Discours sur le colonialisme (1950) font de lui l'une des grandes voix de l'anticolonialisme. Maire de Fort-de-France de 1945 à 2001 et député, il est le rapporteur de la loi de 1946 qui fait de la Martinique, de la Guadeloupe, de la Guyane et de la Réunion des départements français.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Aim%C3%A9_C%C3%A9saire",
+                  "pays": "MQ",
+                  "classement": "Césaire, Aimé",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_cesaire.jpg",
+                    "legende": "Aimé Césaire en 2003, photographie de Jean-Baptiste Devaux",
+                    "auteur": "Jean-Baptiste Devaux",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Aime_Cesaire_2003.jpg"
                   }
                 },
                 {
@@ -133273,6 +133478,23 @@
                     "auteur": "Rob Croes (Anefo)",
                     "licence": "CC0 (domaine public)",
                     "source": "https://commons.wikimedia.org/wiki/File:President_Mitterand_bij_slotzitting_Europa_Congres_Mitterand,_kop,_Bestanddeelnr_934-2444_(portrait_crop).jpg"
+                  }
+                },
+                {
+                  "id": "pan_fr_salvador",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1917,
+                  "titre": "Naissance d'Henri Salvador",
+                  "description": "Henri Salvador (1917-2008) est un chanteur, guitariste et humoriste né à Cayenne, en Guyane. Pionnier du rock en France avec Rock and roll mops (1956), il laisse aussi Syracuse, Le Lion est mort ce soir et Jardin d'hiver, des chansons mêlant jazz, humour et tendresse. À quatre-vingt-trois ans, son album Chambre avec vue (2000) connaît un succès inattendu et lui vaut une Victoire de la musique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Henri_Salvador",
+                  "pays": "GF",
+                  "classement": "Salvador, Henri",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_salvador.jpg",
+                    "legende": "Henri Salvador en 1946, photographie du Studio Harcourt",
+                    "auteur": "Studio Harcourt",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Salvador_Harcourt_1946_2.jpg"
                   }
                 },
                 {
@@ -133325,6 +133547,40 @@
                   }
                 },
                 {
+                  "id": "pan_fr_barre",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1924,
+                  "titre": "Naissance de Raymond Barre",
+                  "description": "Raymond Barre (1924-2007) est un économiste et homme d'État né à Saint-Denis, à La Réunion. Professeur d'économie puis vice-président de la Commission européenne, il est Premier ministre de Valéry Giscard d'Estaing de 1976 à 1981 et mène contre l'inflation une politique de rigueur, le « plan Barre ». Député puis maire de Lyon de 1995 à 2001, il est candidat à l'élection présidentielle de 1988.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Raymond_Barre",
+                  "pays": "RE",
+                  "classement": "Barre, Raymond",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_barre.jpg",
+                    "legende": "Raymond Barre en 1980, photographie de Koen Suyk (Anefo)",
+                    "auteur": "Koen Suyk (Anefo)",
+                    "licence": "CC BY-SA 3.0 NL",
+                    "source": "https://commons.wikimedia.org/wiki/File:Raymond_Barre_1980_(cropped_2).jpg"
+                  }
+                },
+                {
+                  "id": "pan_fr_fanon",
+                  "axe": "Littérature et pensée",
+                  "date": 1925,
+                  "titre": "Naissance de Frantz Fanon",
+                  "description": "Frantz Fanon (1925-1961) est un psychiatre et essayiste né à Fort-de-France, en Martinique. Auteur de Peau noire, masques blancs (1952) et des Damnés de la terre (1961), il analyse l'aliénation coloniale et soutient la lutte du FLN pendant la guerre d'Algérie, après avoir exercé à l'hôpital de Blida. Atteint d'une leucémie, il meurt aux États-Unis à trente-six ans, et son œuvre marque les mouvements de décolonisation.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Frantz_Fanon",
+                  "pays": "MQ",
+                  "classement": "Fanon, Frantz",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_fanon.jpg",
+                    "legende": "Frantz Fanon, photographie publiée dans Peau noire, masques blancs",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Photograph_of_Frantz_Fanon_from_Black_Skin_White_Masks_(1967)_dust_jacket.webp"
+                  }
+                },
+                {
                   "id": "pan_fr_veil",
                   "axe": "Guerres et résistances",
                   "date": 1927,
@@ -133359,6 +133615,23 @@
                   }
                 },
                 {
+                  "id": "pan_fr_glissant",
+                  "axe": "Littérature et pensée",
+                  "date": 1928,
+                  "titre": "Naissance d'Édouard Glissant",
+                  "description": "Édouard Glissant (1928-2011) est un écrivain et penseur né à Sainte-Marie, en Martinique. Romancier (La Lézarde, prix Renaudot 1958), poète et essayiste, il développe dans Le Discours antillais (1981) et dans sa Poétique de la Relation les idées d'antillanité, de créolisation puis de « Tout-monde ». Sa réflexion sur la diversité des cultures marque la pensée contemporaine.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89douard_Glissant",
+                  "pays": "MQ",
+                  "classement": "Glissant, Édouard",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_glissant.jpg",
+                    "legende": "Édouard Glissant, photographie de YEHKRI.COM",
+                    "auteur": "YEHKRI.COM / A.C.C.",
+                    "licence": "CC BY 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:EdouardGlissant.jpg"
+                  }
+                },
+                {
                   "id": "pan_fr_gracekelly",
                   "axe": "Musique, spectacle et sport",
                   "date": 1929,
@@ -133390,6 +133663,40 @@
                     "licence": "CC BY-SA 3.0 NL",
                     "source": "https://commons.wikimedia.org/wiki/File:Fran%C3%A7ois_Truffaut_(1965).jpg"
                   }
+                },
+                {
+                  "id": "pan_fr_conde",
+                  "axe": "Littérature et pensée",
+                  "date": 1934,
+                  "titre": "Naissance de Maryse Condé",
+                  "description": "Maryse Condé (1934-2024) est une romancière née à Pointe-à-Pitre, en Guadeloupe, l'une des grandes voix de la littérature antillaise. Auteure de Ségou (1984-1985) et de Moi, Tituba sorcière noire de Salem (1986), elle a enseigné en Afrique et aux États-Unis, et mêle dans ses romans histoire, mémoire de l'esclavage et fiction. Elle reçoit en 2018 le Nouveau prix de littérature, dit Nobel alternatif, et meurt en France en 2024.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Maryse_Cond%C3%A9",
+                  "pays": "GP",
+                  "classement": "Condé, Maryse",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_conde.jpg",
+                    "legende": "Maryse Condé, photographie du Medef",
+                    "auteur": "MEDEF",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Maryse_Cond%C3%A9.jpg"
+                  }
+                },
+                {
+                  "id": "pan_fr_bamana",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1935,
+                  "titre": "Naissance de Younoussa Bamana",
+                  "description": "Younoussa Bamana (1935-2007) est un homme politique né à Kani-Kéli, à Mayotte, figure du mouvement qui a voulu garder l'île dans la République française. Dirigeant du Mouvement populaire mahorais, il s'oppose à l'indépendance des Comores, que les Mahorais rejettent par référendum en 1974, et préside le conseil général de Mayotte de 1977 à 2004. Il meurt à Mamoudzou en 2007.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Younoussa_Bamana",
+                  "pays": "YT",
+                  "classement": "Bamana, Younoussa",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_bamana.jpg",
+                    "legende": "Younoussa Bamana, photographie de Rayanibosslemahorais976",
+                    "auteur": "Rayanibosslemahorais976",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Younoussa_Bamana.jpg"
+                  }
                 }
               ],
               "axeOrder": [
@@ -133417,6 +133724,7 @@
                 "pan_fr_rousseau",
                 "pan_fr_louis16",
                 "pan_fr_robespierre",
+                "pan_fr_delgres",
                 "pan_fr_napoleon",
                 "pan_fr_balzac",
                 "pan_fr_dumas",
@@ -133436,8 +133744,10 @@
                 "pan_fr_lumiere",
                 "pan_fr_curie",
                 "pan_fr_chanel",
+                "pan_fr_eboue",
                 "pan_fr_degaulle",
                 "pan_fr_moulin",
+                "pan_fr_cesaire",
                 "pan_fr_piaf",
                 "pan_fr_rainier3monaco",
                 "pan_fr_gracekelly"

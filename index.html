@@ -363,6 +363,12 @@
             aria-label="Retour aux thèmes" data-i18n-attr="aria-label:nav.back">‹</button>
         <h2 class="header-title" data-i18n="axes.title">Filtrer par axe thématique</h2>
         <div id="essentiel-zone"></div>
+        <!-- Note facultative du thème (champ `note`), par exemple un renvoi vers un autre panthéon :
+             remplie par renderAxesScreen (js/app/axes-rounds.js). -->
+        <div id="axes-theme-note" class="subcategory-note hidden">
+            <div class="subcategory-note-title" data-i18n="subcategories.note_title">Note importante</div>
+            <p id="axes-theme-note-text"></p>
+        </div>
         <p id="axes-subtitle" style="font-size:14px; color:var(--muted-text); margin-bottom:20px;"></p>
         <div class="grid-cards" id="axes-container"></div>
         <div style="margin-top: 30px; margin-bottom: 50px; display:flex; gap:15px; justify-content:center;">
@@ -1966,6 +1972,27 @@
 
 
 
+            <!-- COMPTE (voir js/auth.js) : rempli par renderAccountSettings() selon l'état de connexion -->
+            <div class="settings-group" id="settings-account">
+                <div class="settings-label" data-i18n="account.section">Compte</div>
+                <div id="settings-account-out">
+                    <button class="btn" style="width:100%;" onclick="openAccountModal()"
+                        data-i18n="account.open_btn">Se connecter ou créer un compte</button>
+                    <p class="settings-hint" data-i18n="account.why_hint">Retrouvez vos scores et votre série sur
+                        tous vos appareils. Facultatif : vous pouvez continuer à jouer sans compte.</p>
+                </div>
+                <div id="settings-account-in" class="hidden">
+                    <p class="settings-hint" style="margin-top:0;"><span data-i18n="account.signed_in_as">Connecté :</span>
+                        <strong id="settings-account-email"></strong></p>
+                    <button class="btn btn-secondary" style="width:100%; margin-bottom:12px;" onclick="accountSignOut()"
+                        data-i18n="account.sign_out_btn">Se déconnecter</button>
+                    <button class="btn" style="width:100%; background:var(--danger-red);" onclick="accountDelete()"
+                        data-i18n="account.delete_btn">Supprimer mon compte</button>
+                </div>
+                <p class="settings-hint"><a href="confidentialite.html" target="_blank" rel="noopener"
+                    data-i18n="account.privacy_link">Règles de confidentialité</a></p>
+            </div>
+
             <div class="settings-group">
                 <div class="settings-label" data-i18n="settings.data_section">Données de jeu</div>
                 <button class="btn btn-secondary" style="width:100%; margin-bottom:12px;" onclick="openScoringInfo()"
@@ -1979,6 +2006,52 @@
                     progression de déverrouillage des modes Chrono/Expert. Vos réglages d'affichage (orientation,
                     apparence) sont conservés.</p>
             </div>
+        </div>
+    </div>
+
+    <!-- CONNEXION / CRÉATION DE COMPTE (voir js/auth.js) -->
+    <div id="modal-account" class="modal-overlay hidden" onclick="if(event.target===this)closeAccountModal()">
+        <div class="modal-content" style="max-width:400px;">
+            <span class="close-btn" role="button" tabindex="0" aria-label="Fermer"
+                data-i18n-attr="aria-label:nav.close" onclick="closeAccountModal()">×</span>
+            <h2 style="font-size:20px; margin-bottom:8px; color:var(--text-dark);" data-i18n="account.title">Votre compte</h2>
+            <p class="settings-hint" style="margin-bottom:16px;" data-i18n="account.why_hint">Retrouvez vos scores et
+                votre série sur tous vos appareils. Facultatif : vous pouvez continuer à jouer sans compte.</p>
+
+            <div id="account-form">
+                <button type="button" class="btn btn-secondary" id="account-google-btn" style="width:100%; margin-bottom:16px;"
+                    onclick="accountGoogle()" data-i18n="account.google_btn">Continuer avec Google</button>
+
+                <label class="form-label" for="account-email" data-i18n="account.email_label">Adresse e-mail</label>
+                <input type="email" id="account-email" class="form-input" autocomplete="email" inputmode="email"
+                    style="margin-bottom:12px;">
+                <label class="form-label" for="account-password" data-i18n="account.password_label">Mot de passe</label>
+                <input type="password" id="account-password" class="form-input" autocomplete="current-password"
+                    minlength="8" style="margin-bottom:6px;">
+                <p class="settings-hint" style="margin-top:0;" data-i18n="account.password_hint">8 caractères minimum.</p>
+
+                <button type="button" class="btn" style="width:100%; margin:8px 0;" onclick="accountSignIn()"
+                    data-i18n="account.sign_in_btn">Se connecter</button>
+                <button type="button" class="btn btn-secondary" style="width:100%; margin-bottom:12px;" onclick="accountSignUp()"
+                    data-i18n="account.sign_up_btn">Créer un compte</button>
+
+                <p class="settings-hint" style="text-align:center;">
+                    <a href="#" onclick="accountMagicLink(); return false;" data-i18n="account.magic_link">Recevoir un
+                        lien de connexion par e-mail (sans mot de passe)</a><br>
+                    <a href="#" onclick="accountForgotPassword(); return false;" data-i18n="account.forgot">Mot de passe
+                        oublié ?</a>
+                </p>
+            </div>
+
+            <div id="account-new-password" class="hidden">
+                <label class="form-label" for="account-new-password-input" data-i18n="account.new_password_label">Nouveau mot de passe</label>
+                <input type="password" id="account-new-password-input" class="form-input" autocomplete="new-password"
+                    minlength="8" style="margin-bottom:12px;">
+                <button type="button" class="btn" style="width:100%;" onclick="accountSaveNewPassword()"
+                    data-i18n="account.new_password_btn">Enregistrer le mot de passe</button>
+            </div>
+
+            <p id="account-message" class="settings-hint" role="status" aria-live="polite" style="min-height:1.2em;"></p>
         </div>
     </div>
 
@@ -2003,6 +2076,7 @@
     <script src="js/pathLessons.js"></script>
     <script src="js/rewardsCore.js"></script>
     <script src="js/apiClient.js"></script>
+    <script src="js/auth.js"></script>
     <script src="js/daily.js"></script>
     <script src="js/weekly.js"></script>
     <script src="js/pack.js"></script>

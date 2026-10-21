@@ -44,6 +44,8 @@ function copyRecursiveSync(src, dest) {
 // n'est plus copié dans www/.
 const itemsToCopy = [
     'index.html',
+    'confidentialite.html',
+    'conditions.html',
     'manifest.webmanifest',
     'sw.js',
     'apple_icon.jpg',

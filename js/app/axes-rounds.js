@@ -197,6 +197,12 @@ function renderAxesScreen() {
         container.appendChild(card);
     });
     const totalCount = theme.events.filter(e => selectedAxes.has(e.axe)).length;
+    // Note du thème (renvoi vers un autre panthéon, par exemple) : le premier écran qu'on voit en l'ouvrant.
+    const noteBox = document.getElementById('axes-theme-note');
+    if (noteBox) {
+        document.getElementById('axes-theme-note-text').innerText = theme.note || '';
+        noteBox.classList.toggle('hidden', !theme.note);
+    }
     const subtitle = document.getElementById('axes-subtitle');
     subtitle.innerText = selectedAxes.size > 0
         ? t('axes.subtitle_selected', { theme: theme.nom, count: totalCount })

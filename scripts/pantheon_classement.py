@@ -53,7 +53,7 @@ KEEP_AS_WRITTEN = {
     'Dominique de Guzmán', 'Ignace de Loyola', 'François Xavier', 'Jean de la Croix',
     'Garcilaso de la Vega', 'Lope de Vega', 'Tirso de Molina', 'Camarón de la Isla', 'Paco de Lucía',
     # France : deux rois rangés par leur prénom, une princesse de Monaco aussi.
-    'Philippe Auguste', 'Philippe le Bel', 'Charlotte de Monaco',
+    'Philippe Auguste', 'Philippe le Bel', 'Charlotte de Monaco', 'Leconte de Lisle', 'Saint-John Perse',
     # Machrek : empereurs, califes et souverains rangés par leur nom d'usage ou leur prénom, noms à « ibn ».
     "Philippe l'Arabe", 'Apollodore de Damas', 'Julia Domna', 'Sévère Alexandre', 'Abou Bakr', 'Othman ibn Affan',
     'Omar ibn al-Khattab', 'Ali ibn Abi Talib', 'Abd al-Malik', 'Jean Damascène', 'Abou Nouwas', 'Harun al-Rashid',
@@ -328,6 +328,7 @@ EXCEPTIONS = {
     'Le Greco': 'Greco',
     # France : un nom à particule majuscule, et un nom d'usage qui ne range pas sous le dernier mot.
     'André Le Nôtre': 'Le Nôtre, André',
+    'Joseph Bologne de Saint-George': 'Saint-George, Joseph Bologne de',
     'Philippe Leclerc de Hauteclocque': 'Leclerc de Hauteclocque, Philippe',
     # Machrek : noms arabes à article, rangés sous le nom sans l'article, l'article passant à la fin.
     'Oussama Ibn Mounqidh': 'Ibn Mounqidh, Oussama',

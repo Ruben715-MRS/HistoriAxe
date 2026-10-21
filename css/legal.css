@@ -1,0 +1,40 @@
+/* Pages légales (confidentialite.html, conditions.html) : page de lecture
+   simple, indépendante du reste de l'app — mêmes couleurs que css/style.css. */
+:root {
+    --bg: #F2F4F7;
+    --surface: #FFFFFF;
+    --text: #141d23;
+    --muted: #646464;
+    --accent: #001a4b;
+    --link: #1a4fa0;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0d1420;
+        --surface: #16202f;
+        --text: #e6ebf2;
+        --muted: #9aa4ad;
+        --accent: #d4a017;
+        --link: #8db7ff;
+    }
+}
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.6;
+}
+main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+}
+h1 { color: var(--accent); font-size: 1.8rem; margin: 8px 0 4px; }
+h2 { color: var(--accent); font-size: 1.15rem; margin-top: 32px; }
+a { color: var(--link); }
+ul { padding-left: 20px; }
+li { margin-bottom: 6px; }
+.updated, .back { color: var(--muted); font-size: 0.9rem; }
+.footer-links { margin-top: 40px; border-top: 1px solid var(--muted); padding-top: 16px; }

@@ -6,11 +6,13 @@
 // bundle local (scheme https://localhost), donc les appels vers ce backend
 // sont par nature cross-origin. L'API ne repose sur aucun cookie de session
 // (identité = device_id applicatif dans le corps de la requête), autoriser
-// toute origine n'expose donc pas plus que l'API elle-même.
+// toute origine n'expose donc pas plus que l'API elle-même. Les comptes
+// (api/account.js) passent leur jeton dans l'en-tête Authorization, jamais
+// dans un cookie : même raisonnement.
 function setCors(res) {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     res.setHeader('Access-Control-Max-Age', '86400');
 }
 

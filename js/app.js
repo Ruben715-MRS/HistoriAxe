@@ -4,44 +4,54 @@
 // =========================================================================
 // === SYNCHRONISATION CLOUD DE LA PROGRESSION (best-effort) ===
 // =========================================================================
-// Modèle volontairement simple pour cette première version (voir
-// api/sync.js) : si l'appareil n'a localement AUCUNE progression (premier
-// lancement après réinstallation, ou nouvel appareil), on restaure celle
-// sauvegardée dans le cloud sous ce device_id. Sinon, la progression
-// locale reste la source de vérité et on se contente de la pousser vers
-// le cloud (sauvegarde de secours). Ni l'un ni l'autre ne bloque le
-// lancement de l'app : en cas d'échec réseau, tout continue localement.
+// La progression locale reste la source de vérité immédiate ; le cloud
+// (api/sync.js) sert de sauvegarde et de lien entre les appareils d'un même
+// compte (voir js/auth.js). À chaque synchronisation : on lit le cloud ; si
+// un autre appareil l'a modifié depuis notre dernier passage, on fusionne
+// (storage.js: mergeSyncableStates — rien ne se perd, la série la plus
+// récente gagne), puis on renvoie le résultat. Rien ne bloque le jeu : en
+// cas d'échec réseau, tout continue localement.
 function hasAnyLocalProgress() {
     return SYNC_KEYS.some(key => {
         try { return localStorage.getItem(key) != null; } catch (e) { return false; }
     });
 }
 
+let syncInFlight = null;
+
+// Renvoie une promesse résolue en true si la progression locale a changé
+// (fusion ou restauration depuis le cloud), false sinon.
+function syncProgress() {
+    if (typeof HistoriAxeAPI === 'undefined' || !HistoriAxeAPI.isConfigured()) return Promise.resolve(false);
+    // Une seule synchronisation à la fois : la suivante repart de l'état fusionné.
+    if (syncInFlight) return syncInFlight.then(() => syncProgress());
+    const deviceId = getOrCreateDeviceId();
+    syncInFlight = HistoriAxeAPI.pullProgress(deviceId).then(res => {
+        if (!res.ok || !res.data) return false;
+        const cloud = res.data.data;
+        let changed = false;
+        if (cloud && res.data.updatedAt !== syncMetaLoad()) {
+            const merged = hasAnyLocalProgress() ? mergeSyncableStates(exportSyncableState(), cloud) : cloud;
+            importSyncableState(merged);
+            if (res.data.pseudo && !pseudoLoad()) pseudoSave(res.data.pseudo);
+            changed = true;
+        }
+        const pseudo = pseudoLoad() || null;
+        return HistoriAxeAPI.pushProgress(deviceId, pseudo, exportSyncableState()).then(r => {
+            if (r.ok && r.data) syncMetaSave(r.data.updatedAt);
+            return changed;
+        });
+    }).catch(() => false).finally(() => { syncInFlight = null; });
+    return syncInFlight;
+}
+
+// Appelée après chaque partie et après une réinitialisation.
 function syncPushProgress() {
-    if (typeof HistoriAxeAPI === 'undefined' || !HistoriAxeAPI.isConfigured()) return;
-    try {
-        const deviceId = getOrCreateDeviceId();
-        const pseudo = (typeof pseudoLoad === 'function' ? pseudoLoad() : '') || null;
-        HistoriAxeAPI.pushProgress(deviceId, pseudo, exportSyncableState());
-    } catch (e) { }
+    try { syncProgress(); } catch (e) { }
 }
 
 function syncOnAppStart() {
-    if (typeof HistoriAxeAPI === 'undefined' || !HistoriAxeAPI.isConfigured()) return;
-    const deviceId = getOrCreateDeviceId();
-    const localAlreadyHasProgress = hasAnyLocalProgress();
-
-    HistoriAxeAPI.pullProgress(deviceId).then(res => {
-        if (!res.ok || !res.data) return;
-        if (!localAlreadyHasProgress && res.data.data) {
-            importSyncableState(res.data.data);
-            if (res.data.pseudo) pseudoSave(res.data.pseudo);
-        } else {
-            // La progression locale prime : on (re)pousse pour que le
-            // cloud reflète le dernier état connu de cet appareil.
-            syncPushProgress();
-        }
-    });
+    syncProgress();
 }
 
 window.onload = async () => {
@@ -60,7 +70,9 @@ window.onload = async () => {
         initCategories();
     }
 
-    syncOnAppStart();
+    // Retour d'une connexion (Google, lien reçu par e-mail) : Auth s'occupe de la synchronisation.
+    const authRedirect = typeof Auth !== 'undefined' && Auth.init();
+    if (!authRedirect) syncOnAppStart();
 
     // Duels asynchrones entre amis (voir js/duels.js) : lien entrant
     // (?duel=xxx) et vérification best-effort des duels perdus depuis la

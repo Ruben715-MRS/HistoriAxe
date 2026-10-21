@@ -9409,3 +9409,10 @@ input:not([type="range"]), label, select, summary, textarea {
     color: var(--muted-text);
     text-align: center;
 }
+
+/* Compte (js/auth.js) : les liens de la fenêtre de connexion et des réglages restent visibles comme liens. */
+#modal-account a,
+#settings-account a {
+    color: inherit;
+    text-decoration: underline;
+}
