@@ -8,9 +8,9 @@ const W = require('../js/calendarWheel.js');
 const root = path.resolve(__dirname, '..');
 const uiFr = JSON.parse(fs.readFileSync(path.join(root, 'ui', 'fr.json'), 'utf8'));
 
-test('huit calendriers : chrétien, juif, musulman et les civils de cinq pays', () => {
+test('dix calendriers : chrétien, juif, musulman et les civils de sept pays', () => {
     assert.deepEqual(W.CALENDARS.map((c) => c.id),
-        ['chretien', 'juif', 'musulman', 'france', 'royaumeuni', 'etatsunis', 'allemagne', 'espagne']);
+        ['chretien', 'juif', 'musulman', 'france', 'royaumeuni', 'etatsunis', 'allemagne', 'espagne', 'italie', 'japon']);
 });
 
 test('chaque calendrier a douze mois distincts, un titre et une introduction', () => {
@@ -67,6 +67,8 @@ test('les dates sûres : Noël en décembre, Pâques en mars ou avril, Hanoucca 
     assert.ok(W.accepts(ev('france', 'fetenationale'), 7));
     assert.ok(W.accepts(ev('etatsunis', 'thanksgiving'), 11));
     assert.ok(W.accepts(ev('allemagne', 'einheit'), 10));
+    assert.ok(W.accepts(ev('italie', 'liberazione'), 4));
+    assert.ok(W.accepts(ev('japon', 'tanabata'), 7));
 });
 
 test('shuffle et deal : mêmes éléments, ordre mêlé, jamais celui du calendrier, liste d\'origine intacte', () => {

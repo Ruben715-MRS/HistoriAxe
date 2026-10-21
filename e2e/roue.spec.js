@@ -32,11 +32,11 @@ test('le bouton du mini-jeu n\'apparaît que sur le niveau 4 du Monde 0', async 
     await expect(page.locator('#path-sheet-wheel')).toBeVisible();
 });
 
-test('la roue : douze mois sur la jante, huit calendriers, fêtes dans le désordre', async ({ page }) => {
+test('la roue : douze mois sur la jante, dix calendriers, fêtes dans le désordre', async ({ page }) => {
     await ouvrirRoue(page);
     expect(await visibleScreen(page)).toBe('screen-wheel');
     await expect(page.locator('#wheel-svg .wheel-month')).toHaveCount(12);
-    await expect(page.locator('#wheel-tabs .wheel-tab')).toHaveCount(8);
+    await expect(page.locator('#wheel-tabs .wheel-tab')).toHaveCount(10);
     const total = await page.evaluate(() => CalendarWheel.find('chretien').events.length);
     await expect(page.locator('#wheel-tray .wheel-chip')).toHaveCount(total);
     const mois = await page.locator('#wheel-svg .wheel-month').allTextContents();

@@ -2,8 +2,8 @@
 // === LA ROUE DES FÊTES — DONNÉES ET RÈGLES (mini-jeu du Monde 0, niveau 4 « Calendriers et fêtes ») ===
 // =========================================================================
 // Un calendrier = douze mois (les « parts de pizza » de la roue) et des fêtes à ranger dans le bon mois.
-// Huit calendriers : chrétien, juif, musulman, puis les jours fériés et fêtes civiles de la France, du
-// Royaume-Uni, des États-Unis, de l'Allemagne et de l'Espagne.
+// Dix calendriers : chrétien, juif, musulman, puis les jours fériés et fêtes civiles de la France, du
+// Royaume-Uni, des États-Unis, de l'Allemagne, de l'Espagne, de l'Italie et du Japon.
 //
 // Format d'une fête : { id, name, local?, icon, months, when, explain }
 //  - `months` : les numéros (1 à 12, dans l'ordre des mois du calendrier) où la fête est acceptée. Presque
@@ -209,6 +209,58 @@
                 { id: 'constitucion', name: 'Fête de la Constitution', local: 'Día de la Constitución', icon: '📜', months: [12], when: '6 décembre', explain: "La Constitution est approuvée par référendum le 6 décembre 1978, trois ans après la mort de Franco : elle fonde la démocratie espagnole." },
                 { id: 'inmaculada', name: 'Immaculée Conception', local: 'Inmaculada Concepción', icon: '🙏', months: [12], when: '8 décembre', explain: "Une fête chrétienne qui est aussi un jour férié ; c'est souvent le pont de décembre." },
                 { id: 'navidad', name: 'Noël', local: 'Navidad', icon: '🎄', months: [12], when: '25 décembre', explain: "Le grand repas a lieu la veille, la Nochebuena ; le 25, on se retrouve en famille." }
+            ]
+        },
+        {
+            id: 'italie',
+            title: 'Italie',
+            short: 'Italie',
+            icon: '🇮🇹',
+            intro: "Les fêtes italiennes mêlent calendrier catholique et fêtes civiles. Plusieurs fériés rappellent la fin de la Seconde Guerre mondiale (25 avril) et la naissance de la République en 1946 (2 juin).",
+            months: CIVIL_MONTHS,
+            events: [
+                { id: 'capodanno', name: "Jour de l'An", local: 'Capodanno', icon: '🎆', months: [1], when: '1er janvier', explain: "Dans la nuit du 31, on mange des lentilles, symbole d'argent et de chance pour l'année qui vient." },
+                { id: 'memoria', name: 'Jour de la Mémoire', local: 'Giorno della Memoria', icon: '🕯️', months: [1], when: '27 janvier', explain: "Hommage aux victimes de la Shoah, le jour de la libération d'Auschwitz par l'Armée rouge en 1945. L'Italie l'a institué par une loi de 2000." },
+                { id: 'epifania', name: 'Épiphanie', local: 'Epifania', icon: '🧹', months: [1], when: '6 janvier', explain: "La Befana, une vieille dame bienveillante à balai, apporte des bonbons aux enfants sages (et du « charbon » en sucre aux autres). Jour férié." },
+                { id: 'carnevale', name: 'Carnaval de Venise', local: 'Carnevale', icon: '🎭', months: [2, 3], when: 'Avant le Carême (fête mobile)', explain: "Masques et costumes dans les rues de Venise pendant les deux semaines qui précèdent le Mardi gras. Sa date change avec celle de Pâques." },
+                { id: 'papa', name: 'Fête des pères', local: 'Festa del Papà', icon: '👨', months: [3], when: '19 mars', explain: "On la fête à la Saint-Joseph, le père de Jésus, avec des beignets : les zeppole." },
+                { id: 'pasquetta', name: 'Lundi de Pâques', local: 'Pasquetta', icon: '🧺', months: [3, 4], when: 'Lendemain de Pâques (fête mobile)', explain: "Un jour férié consacré au pique-nique en famille ou entre amis, à la campagne ou au bord de la mer." },
+                { id: 'liberazione', name: 'Fête de la Libération', local: 'Festa della Liberazione', icon: '🕊️', months: [4], when: '25 avril', explain: "Elle rappelle la libération de l'Italie du nazisme et du fascisme : le 25 avril 1945, le Comité de libération ordonne l'insurrection dans le nord du pays." },
+                { id: 'lavoro', name: 'Fête du Travail', local: 'Festa dei Lavoratori', icon: '🌷', months: [5], when: '1er mai', explain: "Un jour férié, avec un grand concert gratuit à Rome, sur la place Saint-Jean-de-Latran." },
+                { id: 'repubblica', name: 'Fête de la République', local: 'Festa della Repubblica', icon: '🇮🇹', months: [6], when: '2 juin', explain: "Elle rappelle le référendum du 2 juin 1946, où les Italiens choisissent la République et chassent la monarchie." },
+                { id: 'ferragosto', name: 'Mi-août', local: 'Ferragosto', icon: '🏖️', months: [8], when: '15 août', explain: "Un très ancien jour de repos : il vient des feriae Augusti, instituées par l'empereur Auguste. C'est aujourd'hui le cœur des vacances d'été, qui vide les villes." },
+                { id: 'ognissanti', name: 'Toussaint', local: 'Ognissanti', icon: '🍂', months: [11], when: '1er novembre', explain: "Fête de tous les saints, jour férié ; le lendemain, on honore les défunts." },
+                { id: 'ambrogio', name: 'Saint-Ambroise', local: "Sant'Ambrogio", icon: '🎼', months: [12], when: '7 décembre', explain: "Fête du saint patron de Milan : c'est le soir de l'ouverture de la saison de la Scala, l'opéra de la ville." },
+                { id: 'immacolata', name: 'Immaculée Conception', local: 'Immacolata', icon: '🙏', months: [12], when: '8 décembre', explain: "Une fête catholique et un jour férié : on y dresse en général l'arbre de Noël et la crèche." },
+                { id: 'natale', name: 'Noël', local: 'Natale', icon: '🎄', months: [12], when: '25 décembre', explain: "La crèche (presepe), très ancienne tradition italienne, a une place d'honneur à côté du sapin." },
+                { id: 'santostefano', name: 'Saint-Étienne', local: 'Santo Stefano', icon: '🎁', months: [12], when: '26 décembre', explain: "Lendemain de Noël et jour férié, pour prolonger la fête en famille." }
+            ]
+        },
+        {
+            id: 'japon',
+            title: 'Japon',
+            short: 'Japon',
+            icon: '🇯🇵',
+            intro: "Le Japon utilise le calendrier grégorien depuis 1873, mais compte aussi les années par ères impériales (depuis 2019, l'ère Reiwa). Beaucoup de fêtes traditionnelles viennent de l'ancien calendrier luni-solaire : leur date a pu changer ou dépendre des régions.",
+            months: CIVIL_MONTHS,
+            events: [
+                { id: 'shogatsu', name: 'Nouvel An', local: 'Shōgatsu', icon: '🎍', months: [1], when: '1er au 3 janvier', explain: "La plus grande fête de l'année : on visite un sanctuaire (hatsumōde), on mange les plats de fête (osechi) et des galettes de riz (mochi)." },
+                { id: 'seijin', name: 'Jour de la majorité', local: 'Seijin no hi', icon: '👘', months: [1], when: '2e lundi de janvier', explain: "Les jeunes qui deviennent adultes défilent en kimono ou en costume. La majorité légale est à 18 ans depuis 2022, mais la cérémonie reste liée aux 20 ans." },
+                { id: 'setsubun', name: 'Fête du changement de saison', local: 'Setsubun', icon: '👹', months: [2], when: '3 février', explain: "La veille du début du printemps dans l'ancien calendrier : on lance des haricots de soja pour chasser les démons (oni)." },
+                { id: 'hinamatsuri', name: 'Fête des poupées', local: 'Hina-matsuri', icon: '🎎', months: [3], when: '3 mars', explain: "La fête des filles : on expose des poupées de la cour impériale sur des étagères rouges, avec des vœux de bonheur." },
+                { id: 'hanami', name: 'Contemplation des cerisiers', local: 'Hanami', icon: '🌸', months: [3, 4], when: 'Selon la floraison (à cheval sur deux mois)', explain: "Pique-nique sous les cerisiers en fleurs. La floraison remonte du sud au nord : fin mars à Tokyo, plus tard au nord." },
+                { id: 'showa', name: 'Jour de Shōwa', local: 'Shōwa no hi', icon: '🌿', months: [4], when: '29 avril', explain: "L'anniversaire de l'empereur Shōwa (Hirohito). Il ouvre la « Golden Week », une série de jours fériés fin avril-début mai." },
+                { id: 'kenpo', name: 'Jour de la Constitution', local: 'Kenpō kinenbi', icon: '📜', months: [5], when: '3 mai', explain: "Elle rappelle l'entrée en vigueur de la Constitution de 1947, qui fait de l'empereur un symbole et renonce à la guerre. Fête de la Golden Week." },
+                { id: 'kodomo', name: 'Fête des enfants', local: 'Kodomo no hi', icon: '🎏', months: [5], when: '5 mai', explain: "On hisse des carpes en tissu (koinobori) devant les maisons, pour souhaiter aux enfants force et réussite. C'était autrefois la fête des garçons." },
+                { id: 'tanabata', name: 'Fête des étoiles', local: 'Tanabata', icon: '🎋', months: [7], when: '7 juillet', explain: "Deux étoiles amoureuses, Orihime et Hikoboshi, ne se retrouvent qu'une nuit par an. On accroche des vœux écrits sur du papier à des branches de bambou." },
+                { id: 'obon', name: 'Fête des morts', local: 'Obon', icon: '🏮', months: [7, 8], when: '13 au 16 août, ou mi-juillet dans certaines régions (à cheval sur deux mois)', explain: "Les âmes des ancêtres reviennent voir leur famille : on allume des lanternes, on nettoie les tombes et on danse le bon-odori." },
+                { id: 'keiro', name: 'Jour des Aînés', local: 'Keirō no hi', icon: '👴', months: [9], when: '3e lundi de septembre', explain: "Un jour férié pour honorer les personnes âgées, dans un pays où elles sont très nombreuses." },
+                { id: 'tsukimi', name: 'Contemplation de la lune', local: 'Tsukimi', icon: '🌕', months: [9, 10], when: "Pleine lune d'automne (fête mobile)", explain: "On regarde la pleine lune de l'automne en mangeant des boulettes de riz (dango) et en admirant l'herbe de pampa. La date suit l'ancien calendrier lunaire." },
+                { id: 'sports', name: 'Jour des Sports', local: 'Supōtsu no hi', icon: '🏃', months: [10], when: '2e lundi d\'octobre', explain: "Il rappelle l'ouverture des Jeux olympiques de Tokyo, le 10 octobre 1964, les premiers de l'histoire en Asie." },
+                { id: 'bunka', name: 'Jour de la Culture', local: 'Bunka no hi', icon: '🎨', months: [11], when: '3 novembre', explain: "Un jour férié consacré aux arts et à la paix ; il tombe le jour de l'anniversaire de l'empereur Meiji (né en 1852)." },
+                { id: 'shichigosan', name: 'Fête des 3, 5 et 7 ans', local: 'Shichi-go-san', icon: '🎀', months: [11], when: '15 novembre', explain: "Les enfants de 3, 5 et 7 ans vont au sanctuaire en kimono pour remercier de leur bonne santé, avec des bonbons « de longue vie » (chitose-ame)." },
+                { id: 'omisoka', name: 'Réveillon du Nouvel An', local: 'Ōmisoka', icon: '🔔', months: [12], when: '31 décembre', explain: "Les temples sonnent 108 coups de cloche et l'on mange des nouilles de sarrasin (toshikoshi soba) pour « passer d'une année à l'autre »." },
+                { id: 'kurisumasu', name: 'Noël', local: 'Kurisumasu', icon: '🍰', months: [12], when: '25 décembre', explain: "Pas férié et peu religieux : une fête commerciale, avec un gâteau à la fraise et un repas de poulet frit entre amis ou en couple." }
             ]
         }
     ];
