@@ -186,7 +186,7 @@ test('la galerie filtre Monaco et le Liechtenstein à part, et la France garde s
     const pays = page.locator('#gallery-filter-country');
     await expect(pays.locator('option', { hasText: 'Monaco' })).toHaveText(/🇲🇨 Monaco \(10\)/);
     await expect(pays.locator('option', { hasText: 'Liechtenstein' })).toHaveText(/🇱🇮 Liechtenstein \(4\)/);
-    await expect(pays.locator('option', { hasText: 'France' })).toHaveText(/🇫🇷 France \(143\)/);
+    await expect(pays.locator('option', { hasText: 'France' })).toHaveText(/🇫🇷 France métropolitaine \(143\)/);
 });
 
 test('Joséphine Baker, née aux États-Unis et devenue française, est au panthéon de la France avec son portrait et sa biographie', async ({ page }) => {
@@ -1966,10 +1966,10 @@ test('les filtres pays et domaine se combinent, et chaque option annonce son eff
     // Sept domaines communs à tous les panthéons, plus « Guerres, résistances et exploration » (la Scandinavie) ;
     // chaque pays d'un bloc a son entrée.
     await expect(domaine.locator('option')).toHaveCount(9);
-    await expect(pays.locator('option', { hasText: 'France' })).toHaveText(/🇫🇷 France \(143\)/);
+    await expect(pays.locator('option', { hasText: 'France' })).toHaveText(/🇫🇷 France métropolitaine \(143\)/);
     await expect(pays.locator('option', { hasText: 'Venezuela' })).toHaveCount(1);
 
-    await pays.selectOption({ label: '🇫🇷 France (143)' });
+    await pays.selectOption({ label: '🇫🇷 France métropolitaine (143)' });
     await expect(page.locator('#gallery-container .gallery-card')).toHaveCount(143);
     await expect(page.locator('#gallery-subtitle')).toHaveText(`143 portraits sur ${total}`);
 

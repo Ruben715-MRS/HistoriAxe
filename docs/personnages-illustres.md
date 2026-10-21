@@ -1335,6 +1335,9 @@ liées (Sartre, Gainsbourg et Alexandra David-Néel s'ajoutent aux 26 d'avant).
   Andriantsoly (naissance inconnue), dont l'année manque ; Mayotte n'a donc qu'une figure, à étoffer.
   Le portrait de Delgrès est un buste (faute de portrait d'époque), celui d'Edmond Albius un dessin
   retouché ; Saint-George est montré par une gravure de 1788.
+  Dans la galerie, la France se lit « France métropolitaine (143) » (clé `gallery.country_fr`, traduite
+  dans les six langues) : elle ne contient pas l'outre-mer, qui a ses entrées (Martinique, Guadeloupe,
+  Guyane, La Réunion, Mayotte) triées à leur place alphabétique.
 - **Des figures contestées, dont la fiche dit ce qu'on leur reproche** : Colbert (le Code noir,
   préparé sous son ministère), Philippe le Bel (les Templiers), Turenne (le Palatinat), Napoléon
   III (le coup d'État), Mitterrand (Vichy, Bousquet), Degas (l'affaire Dreyfus), Gauguin (ses

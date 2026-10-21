@@ -236,7 +236,10 @@ function currentGalleryPantheon() {
 // « 🇫🇷 France (68) » : le pays, avec le nombre de portraits qu'il apporte.
 function galleryCountryLabel(iso, count) {
     const flag = typeof isoToFlagEmoji === 'function' ? isoToFlagEmoji(iso) + ' ' : '';
-    const name = typeof countryDisplayName === 'function' ? countryDisplayName(iso) : iso;
+    // La France est dite « métropolitaine » : l'outre-mer (Martinique, Guadeloupe, Guyane, La Réunion,
+    // Mayotte) a ses propres entrées, et « France (143) » ne les contient pas.
+    const name = iso === 'FR' && typeof t === 'function' ? t('gallery.country_fr')
+        : typeof countryDisplayName === 'function' ? countryDisplayName(iso) : iso;
     return `${flag}${name} (${count})`;
 }
 
