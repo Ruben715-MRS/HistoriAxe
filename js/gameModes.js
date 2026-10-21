@@ -443,7 +443,8 @@
 
     // Une image où le nom est écrit (une inscription peinte, un badge de combinaison, une légende dans la
     // gravure) donne la réponse : `image.nomVisible` la retire du jeu. La galerie, elle, la garde — elle
-    // montre les visages avec leurs noms. Voir scripts/pantheon/*.json (portrait.nomVisible).
+    // montre les visages avec leurs noms. Même retrait pour une figure sans visage connu (le manuscrit de Pietru
+    // Caxaro), qu'aucun joueur ne pourrait reconnaître. Voir scripts/pantheon/*.json (portrait.nomVisible).
     function nameIsHidden(evt) {
         return !(evt.image && evt.image.nomVisible);
     }
