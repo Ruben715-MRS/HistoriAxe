@@ -16,6 +16,12 @@ const PATH_MIN_EVENTS = 8;
 // padTop laisse la place du monument qui garde la fin du monde (voir js/pathScenery.js) au-dessus de la pastille du boss.
 const PATH_MAP = { width: 300, step: 100, padTop: 250, padBottom: 70, amplitude: 78 };
 
+// Les mini-jeux qui accompagnent un niveau du Monde 0 (la roue des fêtes, au niveau 4, a son propre bouton).
+const PATH_SIDE_GAMES = {
+    3: { label: 'eras.entry', open: 'openEras' },
+    5: { label: 'tetris.entry', open: 'openTetris' }
+};
+
 let pathCache = null; // { bdd, size, pools, byId }
 let pathSelectedId = null;
 
@@ -129,6 +135,20 @@ function renderPathCard(container) {
     card.querySelector('.resume-card-title').textContent = sub;
     card.onclick = () => openPath();
     container.appendChild(card);
+    const arcade = document.createElement('button');
+    arcade.type = 'button';
+    arcade.className = 'resume-card arcade-entry';
+    arcade.id = 'btn-arcade';
+    arcade.innerHTML = `
+        <span class="resume-card-icon" aria-hidden="true">🕹️</span>
+        <span class="resume-card-text">
+            <small class="resume-card-kicker"></small>
+            <strong class="resume-card-title"></strong>
+        </span>`;
+    arcade.querySelector('.resume-card-kicker').textContent = t('arcade.card_kicker');
+    arcade.querySelector('.resume-card-title').textContent = t('arcade.title');
+    arcade.onclick = () => openArcade();
+    container.appendChild(arcade);
 }
 
 // --- Le paysage ------------------------------------------------------------------
@@ -429,6 +449,15 @@ function pathOpenSheet(levelId) {
 
     // Le niveau 4 du Monde 0 a un mini-jeu à côté (js/app/wheel.js) : ouvert à tous, même avant le niveau.
     document.getElementById('path-sheet-wheel').classList.toggle('hidden', !(world.id === 'monde0' && level.n === 4 && !level.boss));
+    // Les autres mini-jeux du Monde 0 : le convertisseur d'ères (niveau 3, js/app/eras.js) et le Tetris des siècles
+    // (niveau 5, js/app/arcade.js).
+    const side = world.id === 'monde0' && !level.boss ? PATH_SIDE_GAMES[level.n] : null;
+    const sideBtn = document.getElementById('path-sheet-game');
+    sideBtn.classList.toggle('hidden', !side);
+    if (side) {
+        sideBtn.innerText = t(side.label);
+        sideBtn.onclick = () => window[side.open]('screen-path');
+    }
 
     const sheet = document.getElementById('path-sheet');
     sheet.classList.remove('hidden');

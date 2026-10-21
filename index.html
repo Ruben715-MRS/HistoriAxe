@@ -678,6 +678,7 @@
             <p class="path-sheet-lock hidden" id="path-sheet-lock"></p>
             <button type="button" class="btn path-sheet-play" id="path-sheet-play"></button>
             <button type="button" class="path-sheet-side hidden" id="path-sheet-wheel" onclick="openWheel('screen-path')" data-i18n="wheel.entry">🎡 Mini-jeu : la roue des fêtes</button>
+            <button type="button" class="path-sheet-side hidden" id="path-sheet-game"></button>
         </div>
     </div>
 
@@ -709,6 +710,121 @@
             </div>
         </div>
         <p class="wheel-intro" id="wheel-intro"></p>
+    </div>
+
+    <!-- ÉCRAN : SALLE D'ARCADE (menu des jeux d'adresse — js/app/arcade.js, js/arcadeCore.js) -->
+    <div id="screen-arcade" class="list-screen hidden">
+        <button class="back-btn" onclick="arcadeBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="arcade.title">Salle d'arcade</h2>
+        <p class="modes-header-subtitle" data-i18n="arcade.subtitle">Des jeux d'adresse pour réviser les dates.</p>
+        <div class="arcade-menu">
+            <button type="button" class="arcade-card" onclick="openSnake('screen-arcade')">
+                <span class="arcade-card-icon" aria-hidden="true">🐍</span>
+                <span class="arcade-card-text">
+                    <strong data-i18n="snake.title">Snake chronologique</strong>
+                    <small data-i18n="snake.desc">Mangez les événements du plus ancien au plus récent.</small>
+                    <small class="arcade-best" id="arcade-best-snake"></small>
+                </span>
+            </button>
+            <button type="button" class="arcade-card" onclick="openTetris('screen-arcade')">
+                <span class="arcade-card-icon" aria-hidden="true">🧱</span>
+                <span class="arcade-card-text">
+                    <strong data-i18n="tetris.title">Tetris des siècles</strong>
+                    <small data-i18n="tetris.desc">Rangez chaque événement qui tombe dans sa période.</small>
+                    <small class="arcade-best" id="arcade-best-tetris"></small>
+                </span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ÉCRAN : SNAKE CHRONOLOGIQUE (js/app/arcade.js) -->
+    <div id="screen-snake" class="list-screen hidden">
+        <button class="back-btn" onclick="snakeBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="snake.title">Snake chronologique</h2>
+        <p class="modes-header-subtitle" id="snake-status" role="status"></p>
+        <p class="arcade-rule" data-i18n="snake.rule">Mangez les pastilles dans l'ordre chronologique, de l'événement le plus ancien au plus récent. Une erreur, un mur ou votre queue : une vie en moins.</p>
+        <div class="arcade-board" id="snake-board">
+            <canvas id="snake-canvas" class="arcade-canvas" role="img" aria-label="Plateau du Snake" data-i18n-attr="aria-label:snake.board_aria"></canvas>
+            <button type="button" class="btn arcade-start" id="snake-start" onclick="snakeStart()" data-i18n="arcade.play">Jouer</button>
+        </div>
+        <ol class="snake-legend" id="snake-legend"></ol>
+        <div class="arcade-dpad" role="group" aria-label="Directions" data-i18n-attr="aria-label:snake.dpad_aria">
+            <button type="button" class="arcade-key arcade-key-up" onclick="snakeTurnTo('up')" aria-label="Haut" data-i18n-attr="aria-label:snake.up">▲</button>
+            <button type="button" class="arcade-key arcade-key-left" onclick="snakeTurnTo('left')" aria-label="Gauche" data-i18n-attr="aria-label:snake.left">◀</button>
+            <button type="button" class="arcade-key arcade-key-down" onclick="snakeTurnTo('down')" aria-label="Bas" data-i18n-attr="aria-label:snake.down">▼</button>
+            <button type="button" class="arcade-key arcade-key-right" onclick="snakeTurnTo('right')" aria-label="Droite" data-i18n-attr="aria-label:snake.right">▶</button>
+        </div>
+        <div class="arcade-over hidden" id="snake-over">
+            <h3 data-i18n="arcade.over">Partie terminée</h3>
+            <p id="snake-over-text"></p>
+            <ul class="arcade-mistakes" id="snake-over-list"></ul>
+            <button type="button" class="btn" onclick="snakeStart()" data-i18n="arcade.replay">Rejouer</button>
+        </div>
+    </div>
+
+    <!-- ÉCRAN : TETRIS DES SIÈCLES (js/app/arcade.js) -->
+    <div id="screen-tetris" class="list-screen hidden">
+        <button class="back-btn" onclick="tetrisBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="tetris.title">Tetris des siècles</h2>
+        <p class="modes-header-subtitle" id="tetris-status" role="status"></p>
+        <p class="tetris-banner" id="tetris-banner" role="status"></p>
+        <div class="tetris-heads" id="tetris-heads"></div>
+        <div class="arcade-board" id="tetris-board">
+            <canvas id="tetris-canvas" class="arcade-canvas" role="img" aria-label="Plateau du Tetris" data-i18n-attr="aria-label:tetris.board_aria"></canvas>
+            <button type="button" class="btn arcade-start" id="tetris-start" onclick="tetrisStart()" data-i18n="arcade.play">Jouer</button>
+        </div>
+        <div class="arcade-controls">
+            <button type="button" class="arcade-key" onclick="tetrisShift(-1)" aria-label="Colonne de gauche" data-i18n-attr="aria-label:tetris.left">◀</button>
+            <button type="button" class="arcade-key arcade-key-wide" onclick="tetrisDropNow()" data-i18n="tetris.drop">⏬ Lâcher</button>
+            <button type="button" class="arcade-key" onclick="tetrisShift(1)" aria-label="Colonne de droite" data-i18n-attr="aria-label:tetris.right">▶</button>
+        </div>
+        <p class="wheel-hint" data-i18n="tetris.hint">Touchez une colonne (ou une période) pour y envoyer le bloc.</p>
+        <div class="arcade-over hidden" id="tetris-over">
+            <h3 data-i18n="arcade.over">Partie terminée</h3>
+            <p id="tetris-over-text"></p>
+            <ul class="arcade-mistakes" id="tetris-over-list"></ul>
+            <button type="button" class="btn" onclick="tetrisStart()" data-i18n="arcade.replay">Rejouer</button>
+        </div>
+    </div>
+
+    <!-- ÉCRAN : CONVERTISSEUR D'ÈRES (mini-jeu du niveau 3 du Monde 0 — js/app/eras.js, js/eraConverter.js) -->
+    <div id="screen-eras" class="list-screen hidden">
+        <button class="back-btn" onclick="erasBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="eras.title">Le convertisseur d'ères</h2>
+        <p class="modes-header-subtitle" id="eras-status" role="status"></p>
+        <div id="eras-play">
+            <p class="eras-question" id="eras-question"></p>
+            <div class="eras-ruler" role="group" aria-label="Règle des années" data-i18n-attr="aria-label:eras.ruler_aria">
+                <div class="eras-row eras-greg" id="eras-greg"></div>
+                <div class="eras-link" aria-hidden="true">↕</div>
+                <div class="eras-row eras-era" id="eras-era-row"></div>
+                <p class="eras-era-name" id="eras-era-name"></p>
+            </div>
+            <div class="eras-steppers" role="group" aria-label="Choisir l'année" data-i18n-attr="aria-label:eras.steppers_aria">
+                <button type="button" class="arcade-key" data-step="-100" onclick="erasStep(-100)">−100</button>
+                <button type="button" class="arcade-key" data-step="-10" onclick="erasStep(-10)">−10</button>
+                <button type="button" class="arcade-key" onclick="erasStep(-1)" aria-label="Moins un" data-i18n-attr="aria-label:eras.minus_one">−1</button>
+                <output class="eras-value" id="eras-value"></output>
+                <button type="button" class="arcade-key" onclick="erasStep(1)" aria-label="Plus un" data-i18n-attr="aria-label:eras.plus_one">+1</button>
+                <button type="button" class="arcade-key" data-step="10" onclick="erasStep(10)">+10</button>
+                <button type="button" class="arcade-key" data-step="100" onclick="erasStep(100)">+100</button>
+            </div>
+            <input type="range" class="eras-slider" id="eras-slider" step="1" oninput="erasSlide(this.value)" aria-label="Année de l'ère" data-i18n-attr="aria-label:eras.slider_aria">
+            <button type="button" class="btn eras-check" id="eras-check" onclick="erasCheck()" data-i18n="eras.check">Valider</button>
+            <div class="wheel-feedback hidden" id="eras-feedback" role="status">
+                <strong id="eras-feedback-title"></strong>
+                <p id="eras-feedback-text"></p>
+                <button type="button" class="btn" id="eras-next" onclick="erasNext()"></button>
+            </div>
+        </div>
+        <div class="wheel-done hidden" id="eras-done">
+            <div class="wheel-done-stars" id="eras-done-stars" aria-hidden="true"></div>
+            <p id="eras-done-text"></p>
+            <div class="wheel-done-actions">
+                <button type="button" class="btn" onclick="erasRestart()" data-i18n="arcade.replay">Rejouer</button>
+                <button type="button" class="final-link" onclick="erasBack()" data-i18n="eras.leave">Retour</button>
+            </div>
+        </div>
     </div>
 
     <!-- ÉCRAN : ÉQUIPE DE CLASSE (coffre commun, membres — voir js/app/team.js et api/team.js) -->
@@ -2165,6 +2281,8 @@
     <script src="js/pathScenery.js"></script>
     <script src="js/pathLessons.js"></script>
     <script src="js/calendarWheel.js"></script>
+    <script src="js/eraConverter.js"></script>
+    <script src="js/arcadeCore.js"></script>
     <script src="js/rewardsCore.js"></script>
     <script src="js/clioCore.js"></script>
     <script src="js/apiClient.js"></script>
@@ -2211,6 +2329,8 @@
     <script src="js/app/lesson.js"></script>
     <script src="js/app/path.js"></script>
     <script src="js/app/wheel.js"></script>
+    <script src="js/app/eras.js"></script>
+    <script src="js/app/arcade.js"></script>
     <script src="js/app/rewards.js"></script>
     <script src="js/app/clio.js"></script>
     <script src="js/app/team.js"></script>

@@ -9835,3 +9835,339 @@ input:not([type="range"]), label, select, summary, textarea {
     letter-spacing: 6px;
     color: var(--favorite-yellow);
 }
+
+/* --- SALLE D'ARCADE, SNAKE, TETRIS, CONVERTISSEUR D'ÈRES (js/app/arcade.js, js/app/eras.js) --- */
+.arcade-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 520px;
+}
+
+.arcade-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    background: var(--surface);
+    color: var(--text-dark);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    box-shadow: var(--card-shadow);
+}
+
+.arcade-card-icon {
+    flex: none;
+    font-size: 32px;
+}
+
+.arcade-card-text small {
+    display: block;
+    margin-top: 2px;
+    font-size: 13px;
+    color: var(--muted-text);
+}
+
+.arcade-best {
+    font-weight: 700;
+}
+
+.arcade-rule {
+    flex: 0 0 auto;
+    max-width: 520px;
+    margin: 0 0 10px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--muted-text);
+}
+
+.arcade-board {
+    position: relative;
+    flex: 0 0 auto;
+    width: min(100%, 360px);
+}
+
+.arcade-canvas {
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+}
+
+.arcade-start {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 140px;
+}
+
+.arcade-start.hidden,
+.arcade-over.hidden {
+    display: none;
+}
+
+.snake-legend {
+    flex: 0 0 auto;
+    list-style: none;
+    margin: 12px 0 0;
+    padding: 0;
+    width: 100%;
+    max-width: 520px;
+}
+
+.snake-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 4px 0;
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+.snake-legend-item.is-eaten {
+    color: var(--muted-text);
+}
+
+.snake-dot {
+    flex: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arcade-dpad {
+    flex: 0 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 56px);
+    grid-template-areas: ". up ." "left down right";
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.arcade-key-up { grid-area: up; }
+.arcade-key-left { grid-area: left; }
+.arcade-key-down { grid-area: down; }
+.arcade-key-right { grid-area: right; }
+
+.arcade-key {
+    min-width: 48px;
+    min-height: 48px;
+    padding: 0 12px;
+    border: 1px solid var(--border-soft);
+    border-radius: 14px;
+    background: var(--surface);
+    color: var(--text-dark);
+    font: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.arcade-key:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.arcade-key.hidden {
+    display: none;
+}
+
+.arcade-key-wide {
+    flex: 1;
+}
+
+.arcade-controls {
+    flex: 0 0 auto;
+    display: flex;
+    gap: 10px;
+    width: min(100%, 360px);
+    margin-top: 10px;
+}
+
+.arcade-over {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 520px;
+    box-sizing: border-box;
+    margin-top: 14px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid var(--border-soft);
+    background: var(--surface);
+    color: var(--text-dark);
+    text-align: center;
+}
+
+.arcade-over h3 {
+    margin: 0 0 6px;
+}
+
+.arcade-mistakes {
+    margin: 8px 0 12px;
+    padding-left: 18px;
+    text-align: left;
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--muted-text);
+}
+
+.tetris-banner {
+    flex: 0 0 auto;
+    min-height: 40px;
+    max-width: 520px;
+    margin: 0 0 8px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.tetris-heads {
+    flex: 0 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: min(100%, 360px);
+    gap: 0;
+}
+
+.tetris-head {
+    padding: 4px 2px;
+    border: 0;
+    background: none;
+    color: var(--text-dark);
+    font: inherit;
+    text-align: center;
+    cursor: pointer;
+}
+
+.tetris-head strong {
+    display: block;
+    font-size: 11px;
+    line-height: 1.15;
+}
+
+.tetris-head small {
+    display: block;
+    font-size: 10px;
+    color: var(--muted-text);
+}
+
+.eras-question {
+    flex: 0 0 auto;
+    max-width: 520px;
+    margin: 0 0 12px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--text-dark);
+}
+
+#eras-play {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 520px;
+}
+
+.eras-ruler {
+    width: 100%;
+    padding: 10px 6px;
+    border: 1px solid var(--border-soft);
+    border-radius: 14px;
+    background: var(--surface);
+    box-sizing: border-box;
+}
+
+.eras-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    text-align: center;
+}
+
+.eras-cell {
+    padding: 8px 0;
+    font-size: 14px;
+    color: var(--muted-text);
+    border-left: 1px solid var(--border-soft);
+}
+
+.eras-cell:first-child {
+    border-left: 0;
+}
+
+.eras-cell.is-center {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--text-dark);
+    background: var(--selected-tint);
+    border-radius: 8px;
+}
+
+.eras-link {
+    text-align: center;
+    font-size: 18px;
+    color: var(--muted-text);
+}
+
+.eras-era-name {
+    margin: 6px 0 0;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--muted-text);
+}
+
+.eras-steppers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+}
+
+.eras-value {
+    flex: 0 0 100%;
+    order: -1;
+    min-width: 72px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
+.eras-slider {
+    width: 100%;
+    margin: 12px 0;
+}
+
+.eras-check {
+    min-width: 160px;
+}
+
+#eras-play .wheel-feedback {
+    margin-top: 12px;
+}
+
+#eras-feedback strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+#eras-feedback p {
+    margin: 0 0 10px;
+}

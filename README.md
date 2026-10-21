@@ -503,6 +503,28 @@ est gardé sur l'appareil (`historiaxe_wheel_v1`, hors synchronisation). Pour aj
 tableau `CALENDARS` de `js/calendarWheel.js` (douze mois, un emoji unique par fête : `tests/calendarWheel.test.js`
 le vérifie). **Tout ce contenu est à relire par un enseignant.**
 
+**Autres mini-jeux du Monde 0** (tous facultatifs, sans étoiles au Chemin, dans la fiche du niveau) :
+
+- **Le convertisseur d'ères** (niveau 3, `js/app/eras.js`, `js/eraConverter.js`) : une année de notre calendrier est donnée, on
+  fait coulisser la règle d'une autre ère (juive, Hégire, républicaine, romaine, bouddhique, persane, ères japonaises Meiji à
+  Reiwa) jusqu'à l'année correspondante. Là où l'ère change en cours d'année (juive, républicaine, persane), les deux réponses
+  valent ; l'Hégire (années lunaires) accepte un an d'écart. La règle de conversion est expliquée après chaque réponse. 8 questions,
+  3 étoiles jusqu'à 1 erreur, meilleur résultat gardé sur l'appareil (`historiaxe_eras_v1`).
+- **Le Tetris des siècles** (niveau 5, et salle d'arcade) : des événements tombent dans cinq colonnes (Antiquité, Moyen Âge,
+  Temps modernes, 1789-1914, depuis 1914) ; on choisit la colonne (boutons, tap, flèches). Bien rangé : vert ; sinon rouge, et le
+  bloc reste. Une ligne de cinq blocs verts disparaît. Les années proches de 476 et de 1453-1492 sont exclues (bornes discutées).
+
+**La salle d'arcade** (`js/app/arcade.js`, `js/arcadeCore.js`, écran `#screen-arcade`) : une carte sous « Le Chemin du Temps » sur
+l'écran des catégories. Deux jeux d'adresse sur les événements connus du pack chargé (incontournables, un seul par fait) :
+
+- **Snake chronologique** : quatre pastilles lettrées (couleur *et* lettre) et leur légende ; il faut les manger du plus ancien
+  au plus récent. Une erreur, un mur ou sa queue : une vie en moins (3). Flèches, boutons ou glisser du doigt.
+- **Tetris des siècles** (ci-dessus).
+
+Les règles sont pures (`ArcadeCore`, testées sans minuteur) ; l'écran ne fait que cadencer et dessiner. Meilleurs scores sur l'appareil
+(`historiaxe_arcade_v1`, hors synchronisation). Pas de `touch-action: none` (interdit par `tests/a11y.test.js`) : le glisser du
+Snake retient le défilement par un écouteur `touchmove` non passif, seulement sur le plateau.
+
 Les **leçons** sont une nouvelle sorte d'épreuve (`js/app/lesson.js`, écran `#screen-lesson`) : des questions
 **rédigées à la main** (`js/pathLessons.js` : 9 séries, 71 questions, la première réponse est la bonne et
 l'ordre est mélangé à l'affichage). Après chaque réponse, juste ou fausse, l'**explication** s'affiche ; une
