@@ -490,6 +490,19 @@ Un monde déjà commencé n'est jamais reverrouillé.
 | 7. Où commence une période ? | leçon (bornes et critères : 476/496, 1453/1492, Le Goff) + frise des bornes du thème « Périodisation historique » |
 | Boss · L'épreuve du temps | révision de toutes les leçons + frise + remise en ordre |
 
+**Mini-jeu du niveau 4 : la roue des fêtes** (`js/app/wheel.js`, écran `#screen-wheel`, données et règles dans
+`js/calendarWheel.js`). Un bouton de la fiche du niveau 4 l'ouvre, même avant que le niveau soit débloqué ; il est
+**à côté** du niveau : il ne donne pas d'étoiles au Chemin et ne bloque rien. Un cercle de douze parts (les douze
+mois d'un calendrier, écrits à plat sur la jante) et, dessous, les fêtes dans le désordre : on touche une fête, puis le
+mois où elle tombe. On tourne la roue en la glissant horizontalement, avec les boutons ↺ ↻ ou les flèches du clavier.
+Huit roues : calendriers chrétien, juif (mois de Tichri à Elloul) et musulman (mois de l'Hégire), puis les fêtes et
+jours fériés de la France, du Royaume-Uni, des États-Unis, de l'Allemagne et de l'Espagne. Une **fête mobile** (Pâques,
+Pentecôte, Rosenmontag…) accepte deux mois consécutifs, la date changeant chaque année. Après deux erreurs sur la
+même fête, le jeu en donne la date. 3 étoiles jusqu'à 1 erreur, 2 jusqu'à 4, 1 ensuite ; le meilleur résultat de chaque roue
+est gardé sur l'appareil (`historiaxe_wheel_v1`, hors synchronisation). Pour ajouter un calendrier ou une fête : le
+tableau `CALENDARS` de `js/calendarWheel.js` (douze mois, un emoji unique par fête : `tests/calendarWheel.test.js`
+le vérifie). **Tout ce contenu est à relire par un enseignant.**
+
 Les **leçons** sont une nouvelle sorte d'épreuve (`js/app/lesson.js`, écran `#screen-lesson`) : des questions
 **rédigées à la main** (`js/pathLessons.js` : 9 séries, 71 questions, la première réponse est la bonne et
 l'ordre est mélangé à l'affichage). Après chaque réponse, juste ou fausse, l'**explication** s'affiche ; une

@@ -677,7 +677,38 @@
             <p class="path-sheet-best hidden" id="path-sheet-best"></p>
             <p class="path-sheet-lock hidden" id="path-sheet-lock"></p>
             <button type="button" class="btn path-sheet-play" id="path-sheet-play"></button>
+            <button type="button" class="path-sheet-side hidden" id="path-sheet-wheel" onclick="openWheel('screen-path')" data-i18n="wheel.entry">🎡 Mini-jeu : la roue des fêtes</button>
         </div>
+    </div>
+
+    <!-- ÉCRAN : LA ROUE DES FÊTES (mini-jeu du niveau 4 du Monde 0 — js/app/wheel.js, js/calendarWheel.js) -->
+    <div id="screen-wheel" class="list-screen hidden">
+        <button class="back-btn" onclick="wheelBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="wheel.title">La roue des fêtes</h2>
+        <p class="modes-header-subtitle" id="wheel-subtitle"></p>
+        <div class="wheel-tabs" id="wheel-tabs" role="tablist" aria-label="Calendriers" data-i18n-attr="aria-label:wheel.tabs_aria"></div>
+        <p class="wheel-current" id="wheel-current" role="status"></p>
+        <div class="wheel-stage" id="wheel-stage">
+            <svg id="wheel-svg" class="wheel-svg" viewBox="-200 -200 400 400" role="group"></svg>
+        </div>
+        <div class="wheel-controls">
+            <button type="button" class="wheel-spin" onclick="wheelSpin(-30)" aria-label="Tourner la roue vers la gauche" data-i18n-attr="aria-label:wheel.spin_left">↺</button>
+            <button type="button" class="wheel-spin wheel-spin-reset" onclick="wheelResetRotation()" data-i18n="wheel.reset">Remettre droit</button>
+            <button type="button" class="wheel-spin" onclick="wheelSpin(30)" aria-label="Tourner la roue vers la droite" data-i18n-attr="aria-label:wheel.spin_right">↻</button>
+        </div>
+        <p class="wheel-hint" data-i18n="wheel.hint">Glissez la roue pour la tourner et lire les mois à l'endroit.</p>
+        <div class="wheel-feedback hidden" id="wheel-feedback" role="status"></div>
+        <p class="wheel-tray-label" id="wheel-tray-label" data-i18n="wheel.tray_label">Fêtes à placer</p>
+        <div class="wheel-tray" id="wheel-tray"></div>
+        <div class="wheel-done hidden" id="wheel-done">
+            <div class="wheel-done-stars" id="wheel-done-stars" aria-hidden="true"></div>
+            <p id="wheel-done-text"></p>
+            <div class="wheel-done-actions">
+                <button type="button" class="btn" onclick="wheelNextCalendar()" data-i18n="wheel.next">Calendrier suivant</button>
+                <button type="button" class="final-link" onclick="wheelRestart()" data-i18n="wheel.replay">Rejouer cette roue</button>
+            </div>
+        </div>
+        <p class="wheel-intro" id="wheel-intro"></p>
     </div>
 
     <!-- ÉCRAN : ÉQUIPE DE CLASSE (coffre commun, membres — voir js/app/team.js et api/team.js) -->
@@ -2133,6 +2164,7 @@
     <script src="js/pathSprites.js"></script>
     <script src="js/pathScenery.js"></script>
     <script src="js/pathLessons.js"></script>
+    <script src="js/calendarWheel.js"></script>
     <script src="js/rewardsCore.js"></script>
     <script src="js/clioCore.js"></script>
     <script src="js/apiClient.js"></script>
@@ -2178,6 +2210,7 @@
     <script src="js/app/expedition.js"></script>
     <script src="js/app/lesson.js"></script>
     <script src="js/app/path.js"></script>
+    <script src="js/app/wheel.js"></script>
     <script src="js/app/rewards.js"></script>
     <script src="js/app/clio.js"></script>
     <script src="js/app/team.js"></script>

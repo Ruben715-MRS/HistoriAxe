@@ -427,6 +427,9 @@ function pathOpenSheet(levelId) {
     play.innerText = stars > 0 ? t('path.replay') : t('path.play');
     play.onclick = () => pathStartLevel(level.id);
 
+    // Le niveau 4 du Monde 0 a un mini-jeu à côté (js/app/wheel.js) : ouvert à tous, même avant le niveau.
+    document.getElementById('path-sheet-wheel').classList.toggle('hidden', !(world.id === 'monde0' && level.n === 4 && !level.boss));
+
     const sheet = document.getElementById('path-sheet');
     sheet.classList.remove('hidden');
     (unlocked ? play : document.getElementById('path-sheet-close')).focus();

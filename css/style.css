@@ -9554,3 +9554,284 @@ input:not([type="range"]), label, select, summary, textarea {
 }
 .clio-marker.on-left .clio-marker-bubble { left: 0; }
 .clio-marker.on-right .clio-marker-bubble { right: 0; }
+
+/* --- LA ROUE DES FÊTES (js/app/wheel.js) : mini-jeu du niveau 4 du Monde 0 --- */
+.path-sheet-side {
+    display: block;
+    margin: 10px auto 0;
+    padding: 8px 14px;
+    border: 1px dashed var(--border-soft);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text-dark);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.wheel-tabs {
+    flex: 0 0 auto;
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    max-width: 520px;
+    margin-bottom: 10px;
+    padding-bottom: 4px;
+    overflow-x: auto;
+}
+
+.wheel-tab {
+    flex: 0 0 auto;
+    padding: 8px 12px;
+    border: 1px solid var(--border-soft);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text-dark);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.wheel-tab.is-active {
+    background: var(--primary-blue);
+    border-color: var(--primary-blue);
+    color: var(--text-light);
+}
+
+.wheel-tab-stars {
+    color: var(--favorite-yellow);
+}
+
+.wheel-intro,
+.wheel-hint {
+    flex: 0 0 auto;
+    max-width: 520px;
+    margin: 10px 0 0;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--muted-text);
+}
+
+.wheel-hint {
+    margin: 4px 0 0;
+}
+
+.wheel-current {
+    flex: 0 0 auto;
+    max-width: 520px;
+    min-height: 22px;
+    margin: 0 0 6px;
+    text-align: center;
+    font-size: 15px;
+    color: var(--text-dark);
+}
+
+.wheel-current.hidden {
+    display: none;
+}
+
+.wheel-stage {
+    flex: 0 0 auto;
+    width: min(100%, 440px);
+    /* Le glissement horizontal tourne la roue ; le vertical reste à la page. */
+    touch-action: pan-y;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.wheel-svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.wheel-slice {
+    fill: var(--surface);
+    stroke: var(--border-soft);
+    stroke-width: 1;
+    cursor: pointer;
+}
+
+.wheel-slice.is-odd {
+    fill: var(--surface-2);
+}
+
+.wheel-slice:hover {
+    fill: var(--selected-tint);
+}
+
+.wheel-rim {
+    fill: #1f3a73;
+    stroke: var(--surface);
+    stroke-width: 1;
+    pointer-events: none;
+}
+
+.wheel-rim.is-odd {
+    fill: #001a4b;
+}
+
+.wheel-month {
+    fill: #ffffff;
+    font-weight: 700;
+    pointer-events: none;
+}
+
+.wheel-token circle {
+    fill: var(--surface);
+    stroke: var(--progress-green);
+    stroke-width: 2;
+}
+
+.wheel-token {
+    cursor: pointer;
+}
+
+.wheel-hub {
+    fill: var(--primary-blue);
+    stroke: var(--surface);
+    stroke-width: 2;
+    pointer-events: none;
+}
+
+.wheel-pointer {
+    fill: var(--favorite-yellow);
+    stroke: var(--text-dark);
+    stroke-width: 1;
+    pointer-events: none;
+}
+
+.wheel-svg :focus-visible {
+    outline: none;
+    stroke: var(--focus-ring);
+    stroke-width: 4;
+}
+
+.wheel-controls {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.wheel-spin {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 14px;
+    border: 1px solid var(--border-soft);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text-dark);
+    font: inherit;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.wheel-spin-reset {
+    font-size: 14px;
+}
+
+.wheel-feedback {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 520px;
+    box-sizing: border-box;
+    margin: 8px 0 0;
+    padding: 12px 16px;
+    border-radius: 14px;
+    border: 1px solid var(--border-soft);
+    border-left: 5px solid var(--progress-green);
+    background: var(--surface);
+    color: var(--text-dark);
+    font-size: 14px;
+    line-height: 1.45;
+    box-shadow: var(--card-shadow);
+}
+
+.wheel-feedback.is-wrong {
+    border-left-color: var(--danger-red);
+}
+
+.wheel-tray-label {
+    flex: 0 0 auto;
+    margin: 14px 0 6px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted-text);
+}
+
+.wheel-tray {
+    flex: 0 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 520px;
+}
+
+.wheel-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 44px;
+    padding: 6px 12px;
+    border: 1px solid var(--border-soft);
+    border-radius: 14px;
+    background: var(--surface);
+    color: var(--text-dark);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+}
+
+.wheel-chip.is-selected {
+    border-color: var(--primary-blue);
+    background: var(--selected-tint);
+    box-shadow: 0 0 0 2px var(--primary-blue);
+}
+
+.wheel-chip-icon {
+    font-size: 20px;
+}
+
+.wheel-chip-local {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--muted-text);
+}
+
+.wheel-done {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 520px;
+    margin-top: 14px;
+    text-align: center;
+    color: var(--text-dark);
+}
+
+.wheel-done-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.wheel-done-stars {
+    font-size: 40px;
+    letter-spacing: 6px;
+    color: var(--favorite-yellow);
+}

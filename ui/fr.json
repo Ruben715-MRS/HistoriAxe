@@ -1341,6 +1341,28 @@
       "depuis-1991": "Tenue connectée"
     }
   },
+  "wheel": {
+    "entry": "🎡 Mini-jeu : la roue des fêtes",
+    "title": "La roue des fêtes",
+    "tabs_aria": "Calendriers",
+    "tab_stars": "{count} étoiles",
+    "aria": "Roue des mois du {calendar}",
+    "slice_aria": "Mois de {month} : poser ici la fête choisie",
+    "progress": "{placed} / {total} placées · {errors} erreurs",
+    "pick": "Touchez une fête, en bas, puis le mois où elle tombe.",
+    "place": "À placer :",
+    "pick_first": "Choisissez d'abord une fête dans la liste, en bas. Mois touché : {month}.",
+    "wrong": "{event} ne tombe pas en {month}. Essayez un autre mois.",
+    "wrong_hint": "Toujours pas : {event} n'est pas en {month}. Indice : {when}.",
+    "tray_label": "Fêtes à placer",
+    "spin_left": "Tourner la roue vers la gauche",
+    "spin_right": "Tourner la roue vers la droite",
+    "reset": "Remettre droit",
+    "hint": "Glissez la roue pour la tourner et lire les mois à l'endroit.",
+    "done": "Roue du {calendar} terminée, avec {errors} erreurs. Touchez une pastille pour relire l'explication de la fête.",
+    "next": "Calendrier suivant",
+    "replay": "Rejouer cette roue"
+  },
   "lesson": {
     "stage_title": "Leçon · {title}",
     "review_title": "Leçon · Révision générale",
