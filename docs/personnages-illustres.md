@@ -11,7 +11,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Éthiopie, l'Afrique de l'Est et la Corne, l'Afrique australe, l'océan Indien occidental, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée, la Pologne, l'Europe centrale) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Éthiopie, l'Afrique de l'Est et la Corne, l'Afrique australe, l'océan Indien occidental, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée, la Pologne, l'Europe centrale, la Caraïbe non hispanique, l'Irlande) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -545,21 +545,22 @@ Les choix qui ne vont pas de soi :
 ### Le cinquième bloc : le Machrek et la péninsule Arabique
 
 `pan_machrek`, « Grandes figures du Machrek et de la péninsule Arabique » (code `machrek`) :
-**103 personnages de dix pays** — Liban 25, Syrie 21, Irak 19, Palestine 15, Arabie saoudite 12,
-Jordanie, Yémen 3 chacun, Émirats arabes unis et Koweït 2 chacun, Oman 1 — de Assurbanipal
-(vers 685 av. J.-C.) à Shireen Abu Akleh (1971). Par axe : 46 Chefs d'État et dirigeants, 33
-Littérature et pensée, 12 Guerres et résistances, 6 Sciences, techniques et innovation, 4
+**108 personnages de douze pays** — Liban 25, Syrie 21, Irak 19, Palestine 15, Arabie saoudite 12,
+Jordanie, Yémen et Qatar 3 chacun, Émirats arabes unis, Koweït et Bahreïn 2 chacun, Oman 1 — de Assurbanipal
+(vers 685 av. J.-C.) à Shireen Abu Akleh (1971). Par axe : 50 Chefs d'État et dirigeants, 33
+Littérature et pensée, 12 Guerres et résistances, 6 Sciences, techniques et innovation, 5
 Musique, spectacle et sport, 2 Beaux-arts ; 25 ⭐ et 2 biographies liées (Saladin et Ibn
-al-Haytham). Le Liban, le plus fourni, pèse 24 % du bloc, sous le seuil de 40 % du
+al-Haytham). Le Liban, le plus fourni, pèse 23 % du bloc, sous le seuil de 40 % du
 constructeur. Les mots-clés du thème portent les noms des pays, de Babylone à Bagdad, si bien
 que « irak », « liban » ou « yémen » mènent au Machrek dans la recherche.
 
 Les choix qui ne vont pas de soi :
 
-- **Le périmètre.** Douze pays étaient prévus : Liban, Syrie, Irak, Jordanie, Palestine,
-  Arabie saoudite, Yémen, Oman, Émirats, Koweït, Qatar et Bahreïn. Les deux derniers n'ont
-  aucune figure avec un portrait libre exploitable et ne sont donc pas dans la liste des
-  pays du bloc (le constructeur refuse un pays déclaré sans personnage). L'Égypte a son thème
+- **Le périmètre.** Douze pays : Liban, Syrie, Irak, Jordanie, Palestine,
+  Arabie saoudite, Yémen, Oman, Émirats, Koweït, Qatar et Bahreïn. **Le Qatar et Bahreïn ont été ajoutés après coup** (cinq figures : les émirs
+  Ahmad ben Ali Al Thani et Khalifa ben Hamad Al Thani, l'acteur Abdulaziz Jassim, l'émir Issa ben Salmane Al Khalifa et le Premier ministre
+  Khalifa ben Salmane Al Khalifa), parce que les articles français de leurs autres souverains (Jassim, Abdallah, Hamad Ier…) n'existent pas ; **deux images sont non libres** (Ahmad et Khalifa ben Hamad, photographies de Wikipédia
+  en anglais sous usage équitable, `licence` « Image non libre » et `source` vers la page du fichier : à remplacer ou à faire valider). L'Égypte a son thème
   (voir plus bas), la Libye est au Maghreb ; Israël a **son thème** (voir « Un pays à part : Israël »),
   les figures juives de la diaspora restent dans le panthéon de leur pays.
 - **L'Antiquité par pays actuel.** Huit figures d'avant l'islam — Assurbanipal et Hammurabi
@@ -1102,7 +1103,7 @@ Les choix qui ne vont pas de soi :
 - **Les quatre nations dedans** : Wallace et Robert Bruce pour l'Écosse, Russell,
   Siddons, Wallace (le naturaliste) et Lawrence pour le pays de Galles, Kelvin, né à Belfast,
   pour l'Irlande du Nord. Les Irlandais de la République (Wilde, Swift, Shackleton) sont
-  laissés à un futur panthéon irlandais ; Wellington, né à Dublin sous la couronne
+  rangés dans le panthéon de l'Irlande ; Wellington, né à Dublin sous la couronne
   britannique, reste ici.
 - **Celui qui honore le plus.** Nés ailleurs, rangés ici : Guillaume le Conquérant (Falaise,
   duc de Normandie devenu roi d'Angleterre), Kipling (Bombay), Orwell (Motihari), Tolkien
@@ -2639,6 +2640,31 @@ Chouchkievitch, Gromyko, Dzerjinski), 2 Sciences (Soukhoï, Alferov), 1 Beaux-ar
 Napoleon Orda, Lew Sapieha et Szymon Budny, nés dans le grand-duché de Lituanie, sont invités de la Russie faute de panthéon biélorusse. Ivan Khroutski, Dvartchanine, Savitsky et Louchenok n'ont pas d'article français.
 Les listes de candidats sont dans `scripts/pantheon/ua_candidats.md`.
 
+### Un pays à part : l'Irlande
+
+`pan_ie`, « Grandes figures d'Irlande » (code `ie`, pays ; rangé sous « Irlande », entre l'Iran et Israël) : **107 personnages**, de Patrick d'Irlande (vers 385) à Dolores O'Riordan (1971). Par axe : 40 Littérature et pensée,
+18 Chefs d'État et dirigeants, 18 Guerres et résistances, 14 Musique, spectacle et sport, 12 Sciences, techniques et innovation, 5 Beaux-arts ; 20 ⭐ et **une biographie liée** (Ernest Shackleton, `bio_ernestshackleton`).
+107 portraits : 78 du domaine public, 2 CC0, 19 CC BY ou CC BY-SA et **8 images non libres** (voir plus bas). Sept figures sont nées avant 1500, vingt-cinq de 1500 à 1799, quarante-six de 1800 à 1899, vingt-neuf depuis 1900.
+Les mots-clés portent l'Irlande et ses provinces (Ulster, Munster, Leinster, Connacht), Dublin, Cork, Galway, Belfast et Derry, la Grande Famine, le Home Rule, la Ligue agraire, Pâques 1916, le Sinn Féin, l'IRA, l'État libre
+d'Irlande, le Dáil, le Taoiseach, le Fianna Fáil et le Fine Gael, l'Abbey Theatre, le Celtic Revival, les Oies sauvages, les Irlandais unis, l'accord du Vendredi saint et saint Patrick.
+
+- **Le pays qui honore, pas l'état civil.** L'Irlande a le panthéon que le Royaume-Uni lui avait laissé (« Wilde, Swift, Shackleton… ») : les figures nées sur l'île et honorées par la République y sont, y compris celles de l'Irlande du
+  Nord que l'Irlande revendique (Seamus Heaney, Brian Friel, Flann O'Brien, John Hume, Bobby Sands). Les figures nées ailleurs et honorées en Irlande aussi : de Valera (New York), Seán MacBride (Paris), James Connolly (Édimbourg),
+  Constance Markievicz et Erskine Childers (Londres), Maud Gonne et Shane MacGowan (Angleterre), Mary Lavin (Massachusetts), Phil Lynott (West Bromwich), Maria Edgeworth (Angleterre).
+- **Ce qui reste au Royaume-Uni** : Wellington (né à Dublin), Lord Kelvin (Belfast), et les Nord-Irlandais que le Royaume-Uni honore d'abord — George Best, Alex Higgins, Joey Dunlop, David Trimble, Louis MacNeice. **Francis Bacon** (peintre britannique né
+  à Dublin), Francis Beaufort, Edward Sabine, Kathleen Lonsdale, Laurence Sterne et James Barry, que l'article français dit « britanniques », n'ont pas été retenus.
+- **Deux saints partagés** : Colomban de Luxeuil (honoré aussi en France et en Italie) est ici, parce qu'aucun autre panthéon ne l'a ; Patrick d'Irlande (« vers 385 », date incertaine d'un personnage semi-légendaire) y entre comme saint patron de l'île.
+- **Dates retenues** : Patrick (vers 385), Jean Scot Érigène (vers 800), Brian Boru (vers 941), Grace O'Malley (vers 1530), Hugh O'Neill (vers 1550), Owen Roe O'Neill (vers 1590), suivant l'article français ; Oliver Plunkett naît en 1629 (non 1625),
+  Máirtín Ó Cadhain en 1905 (l'article hésite avec 1906), Arthur Griffith en 1871 (l'article dit aussi 1872). Les dates viennent de l'article français, non recoupées une à une.
+- **Deux figures controversées** : Charles Haughey (scandale des paiements secrets) et Bobby Sands (militant de l'IRA mort en grève de la faim) ; les fiches disent les faits.
+- **Huit images non libres, exception acceptée par l'éditeur** (une règle désormais permanente : à défaut d'image libre, une image non libre est acceptée, signalée par `licence` « Image non libre » et par `source`, page du fichier sur
+  Wikipédia en anglais) : Bobby Sands, Patrick Kavanagh (portrait peint par Patrick Swift), Flann O'Brien, John McGahern, Máirtín Ó Cadhain, Mary Lavin, Nicholas Callan et Luke Kelly. À remplacer dès qu'une image libre existe.
+- **Des portraits souvent indirects** : peintures (Brigitte, Colomba, Hugh O'Neill, Sarsfield, Plunkett, Swift, Berkeley, Burke, Guinness, Nagle, Hamilton, Orpen et O'Conor en autoportrait, O'Carolan), gravures (Brian Boru, Owen Roe O'Neill, Goldsmith, Sheridan, Wolfe Tone,
+  Grattan, Field, Patrick), enluminures et dessins de manuscrits (Diarmait Mac Murchada, Jean Scot Érigène), une peinture murale (Colomban), un vitrail (Hugh Roe O'Donnell), une miniature (Robert Emmet) et une statue (Grace O'Malley).
+  **Trois images écrivent un nom** et sont marquées `nomVisible` : la xylographie de Patrick (« Patricius eps »), le négatif de Shaw et la dédicace de Shackleton. Quatre sont recadrées : Colomba, Brian Boru, Berkeley et Behan.
+- **Écartés** : les figures sans article en français (Edmund Rice, William Dargan, William Thompson), celles sans portrait convenable (Louis le Brocquy, Paul Henry, Robert Graves) et les vivants (Roddy Doyle, Colm Tóibín, Mary Robinson, Van Morrison, Bono…).
+- **Statut américain des images : à relire**, comme pour les blocs précédents. Les listes de candidats sont dans `scripts/pantheon/ie_candidats.md`.
+
 ### Un bloc : l'Europe centrale (Hongrie, Tchéquie, Slovaquie et Slovénie)
 
 `pan_europecentrale`, « Grandes figures d'Europe centrale » (code `europecentrale`, bloc ; rangé sous « Europe centrale », entre les États-Unis et la France) : **123 personnages de quatre pays** — Hongrie 48, Tchéquie 42, Slovaquie 17,
@@ -2677,6 +2703,44 @@ Les mots-clés portent les quatre pays et leurs adjectifs, Budapest, Prague, Bra
 - **Statut américain des images : à relire.** Quatre-vingt-douze portraits sont du « domaine public », dont beaucoup de photographies d'agence ou d'État que Commons étiquette « US ? » (modèles « PD-anon-70-EU », « PD-CzechGov », « PD-UKGov ») ;
   même décision que pour les autres thèmes : le script lit la licence déclarée, non le statut américain.
 - **Les listes de candidats** sont dans `scripts/pantheon/europecentrale_candidats.md`.
+
+### Un bloc : la Caraïbe non hispanique (Haïti, Jamaïque, Trinité-et-Tobago, Barbade, Bahamas, Antigua-et-Barbuda, Dominique, Sainte-Lucie, Saint-Vincent, Grenade, Belize, Guyana et Suriname)
+
+`pan_caraibes`, « Grandes figures de la Caraïbe non hispanique » (code `caraibes`, bloc ; rangé sous « Caraïbe non hispanique », entre le Canada et le Caucase) : **78 personnages de quatorze pays** — Haïti 20, Jamaïque 19,
+Trinité-et-Tobago 8, Barbade 6, Suriname 6, Guyana 4, Grenade 3, Bahamas, Belize, Dominique, Saint-Christophe-et-Niévès et Sainte-Lucie 2 chacun, Antigua-et-Barbuda et Saint-Vincent 1 chacun — de Nanny des Marrons (vers 1685) à Andy Palacio (1960).
+Par axe : 30 Chefs d'État et dirigeants, 20 Littérature et pensée, 13 Musique, spectacle et sport, 10 Guerres et résistances, 3 Beaux-arts, 2 Sciences, techniques et innovation ; 23 ⭐ et **deux biographies liées**
+(Toussaint Louverture, `bio_toussaint`, et Bob Marley, `bio_bobmarley`). 78 portraits : 52 du domaine public, 6 CC0, 18 CC BY ou CC BY-SA et **2 images non libres** (Bradshaw et Southwell). Dix figures sont nées avant 1800, dix-neuf de 1800 à 1899, quarante-sept depuis 1900.
+Les mots-clés portent les treize pays et leurs adjectifs, les anciens noms (Saint-Domingue, Honduras britannique, Guyane britannique, Surinam), les capitales, la CARICOM et la Fédération des Indes occidentales, la révolution
+haïtienne, les Marrons, les Garifunas, le rastafari, le reggae et le calypso.
+
+- **Le nom : « Caraïbe non hispanique ».** Il reprend la logique d'« Amérique hispanique », qui contient déjà Cuba, la République dominicaine et Porto Rico. « Antilles » aurait exclu le Belize, le Guyana et le Suriname, qui sont
+  pourtant membres de la CARICOM et partagent l'histoire des plantations ; « Amérique non hispanique » aurait englobé le Brésil, le Canada, les États-Unis et la France, qui ont leur propre thème.
+- **Les dépendances restent à leur métropole** : la Martinique, la Guadeloupe et la Guyane vont à la France, Aruba, Curaçao et Sint Maarten au Benelux, les Caïmans, les Bermudes ou Anguilla au Royaume-Uni, les îles Vierges
+  américaines aux États-Unis. Aucun candidat n'en vient. **Le panthéon de la France n'a encore aucun Antillais ni Guyanais** (Césaire, Fanon, Glissant, Delgrès, Solitude, Éboué, Monnerville, Saint-John Perse, Joséphine de
+  Beauharnais) : ils sont à y ajouter. Jean-Baptiste Belley, né à Gorée et député de Saint-Domingue, est un révolutionnaire français ; Thomas-Alexandre Dumas, né à Saint-Domingue, un général français : ni l'un ni l'autre n'est ici.
+  Alexander Hamilton, né à Nevis, reste aux États-Unis.
+- **Saint-Kitts-et-Nevis** n'est représenté que par ses deux premiers chefs de gouvernement, Robert Bradshaw (1916-1978) et Paul Southwell (1913-1979), né à la Dominique : leurs seules photographies viennent d'un site
+  patrimonial local (historicstkitts.kn), sans licence, et sont donc **des images non libres** (`source` vers leur page) ; Commons n'en a aucune sous licence libre pour Southwell, et seulement un buste (CC BY-SA) pour Bradshaw.
+  Antigua-et-Barbuda (Vere Bird) et Saint-Vincent (Chatoyer) n'ont qu'une figure.
+- **Un équilibre sans pays dominant** : Haïti (26 %) et la Jamaïque (24 %) sont sous le seuil de 40 % ; aucun `partMaxPays`. Les quatorze pays sont tous représentés parmi les ancres de « Pendant ce temps, ailleurs… » (un test le vérifie).
+- **Le pays qui honore, pas l'état civil.** Sidney Poitier (né à Miami, élevé aux Bahamas, ambassadeur des Bahamas), V. S. Naipaul et Jean Rhys, écrivains britanniques nés à Trinité et en Dominique, Claude McKay (naturalisé américain)
+  et Maurice Bishop (né à Aruba) sont rangés ici : aucun autre panthéon ne les a, et leur pays natal les honore. Ellie Mannette, installé aux États-Unis, reste à Trinité.
+- **Deux figures très controversées sont retenues** : François Duvalier (Haïti, 1907-1971) et Desi Bouterse (Suriname, 1945-2024, condamné pour les assassinats de décembre 1982), parce qu'un panthéon national n'efface pas ses
+  dictateurs (voir Franco, Staline, Pétain) ; leurs fiches disent les faits sans les excuser. **À valider par l'éditeur.**
+- **Dates retenues** : Nanny des Marrons (« vers 1685 » ; son existence repose surtout sur la tradition orale), Joseph Chatoyer (« vers 1750 »), Toussaint Louverture (« vers 1743 »), George William Gordon (« vers 1820 ») ;
+  Charlemagne Péralte est daté de 1885 (l'article dit « 1885 ou 1886 », et sa première phrase 1885). Mighty Sparrow (1935-2026) et Jimmy Cliff (1944-2025) sont morts récemment, d'après l'article français ; Vere Bird est daté de 1910, comme dans l'article. Les dates viennent de l'article français, non recoupées une à une.
+- **Des portraits souvent indirects**, et les légendes le disent : peintures posthumes ou d'époque (Toussaint Louverture, Dessalines par Louis Rigaud, Henri Christophe par Richard Evans, Seacole par Challen, Prescod dans un tableau de
+  Haydon), gravures (Pétion, Soulouque, Janvier, Gordon, Chatoyer d'après Brunias), un timbre haïtien de 1954 (Boisrond-Tonnerre), une statue (Paul Bogle à Morant Bay) et deux bustes (Nanny des Marrons, Walter Rodney).
+  **Trois images écrivent le nom** et sont marquées `nomVisible` : l'inscription de la gravure de Pétion, le timbre de Boisrond-Tonnerre et la plaque du buste de Nanny ; « Qui est-ce ? » les écarte, la galerie les garde.
+  Dix portraits sont recadrés (Christophe, Chatoyer, Rodney, Rhys, Garvey, Bustamante, Marson, Mannette, Janvier, Obin) : `recadrage`, avec une miniature plus large que 500 pixels quand le visage est petit.
+- **Deux images non libres (Saint-Christophe-et-Niévès, voir plus haut).** Plusieurs autres images sont petites ou de faible qualité, à remplacer dès qu'une meilleure existe : Maurice Bishop (113 × 148 px), Frank Worrell (193 × 242), Hector Hyppolite
+  (225 × 288), George Cadle Price (225 × 266, de profil), Ellie Mannette, Michael Manley, Una Marson.
+- **Écartés après examen**, voir `scripts/pantheon/caraibes_candidats.md` : **Samuel Sharpe** (la seule image trouvée est le portrait d'un homonyme, l'égyptologue britannique ; il n'a pas de portrait libre), Ebenezer Joshua (photographie
+  trop sombre), Winifred Atwell, Cazabon, Milo Butler, Roland Symonette, Tim Hector, George Walter, Louise Bennett, Préfète Duffaut, Philip Goldson (image sous licence hors liste), Janet Jagan, Arthur Chung (idem) ;
+  **vingt-huit figures sans article français** (Bedward, Cipriani, Tubal Uriah Butler, Fédon, Marryshow, Soberanis, Mittelholzer, Critchlow, Luckhoo, Huiswoud…) ; et les vivants. Six figures avaient en fait un article sous
+  un autre titre (Sanité Belair, Dantès Louis Bellegarde, Louis Boisrond-Tonnerre, Samuel Selvon, Cecil Wallace Whitfield, Ebenezer Joshua) : trois sont dans le bloc (Bellegarde, Boisrond-Tonnerre, Selvon), Belair et Wallace Whitfield n'ont pas d'image libre.
+- **Statut américain des images : à relire**, comme pour les blocs précédents. Une vingtaine de photographies de presse ou d'État sont étiquetées « US ? » sur Commons.
+- **Les listes de candidats** sont dans `scripts/pantheon/caraibes_candidats.md`.
 
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
@@ -3020,7 +3084,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Éthiopie, l'Afrique de l'Est et la Corne, l'Afrique australe, l'océan Indien occidental, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée, la Pologne, l'Europe centrale, l'Ukraine (avec la Biélorussie invitée de la Russie) sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Éthiopie, l'Afrique de l'Est et la Corne, l'Afrique australe, l'océan Indien occidental, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée, la Pologne, l'Europe centrale, l'Ukraine (avec la Biélorussie invitée de la Russie), la Caraïbe non hispanique, l'Irlande sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -3043,13 +3107,15 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
      Nouvelle-Zélande et le Pacifique »). Les pays baltes sont écrits (voir « Un bloc : les pays baltes »).
   4. **L'Europe et les Amériques qui manquent** : **le Portugal est écrit** (voir « Un pays à part : le Portugal »,
      qui a repris Magellan et Viriathe), Byzance (au-delà des cinq figures déjà au panthéon de la Grèce),
-     la Pologne et l'Europe centrale (écrites : voir « Un pays à part : la Pologne » et « Un bloc : l'Europe centrale »), la Slovénie (dans le bloc d'Europe centrale), l'Ukraine (écrite : voir « Un pays à part : l'Ukraine », avec la Biélorussie invitée de la Russie), les Caraïbes non
-     hispaniques.
+     la Pologne et l'Europe centrale (écrites : voir « Un pays à part : la Pologne » et « Un bloc : l'Europe centrale »), la Slovénie (dans le bloc d'Europe centrale), l'Ukraine (écrite : voir « Un pays à part : l'Ukraine », avec la Biélorussie invitée de la Russie), la Caraïbe non
+     hispanique (écrite : voir « Un bloc : la Caraïbe non hispanique »).
 
   Les images décideront de la taille de chacun : pour l'Afrique subsaharienne et l'Asie du
   Sud-Est, on vérifiera les portraits sur Commons **avant** de valider la liste. Les figures
   disputées entre deux thèmes (Avicenne et al-Biruni, Rûmî, Babur, Kubilai Khan, Bruce Lee,
   Eusébio) se règlent par la règle « celui qui l'honore le plus ».
+- **Pays encore sans figure dans aucun panthéon** (193 États de l'ONU, plus le Vatican et la Palestine) : **Chypre** et **Malte** (il faut un panthéon, ou un bloc « Chypre et Malte »), **Andorre** et **Saint-Marin** (en attente de portraits, voir « Les micro-États »),
+  **le Vatican** (aucune figure propre, par choix), **Kiribati** et **le Vanuatu** (aucune image libre ; la règle des images non libres permet désormais de les ajouter au panthéon du Pacifique). Ce sont les seuls pays à n'avoir encore aucune figure.
 - **Des figures de l'Allemagne, de l'Autriche et de la Suisse à améliorer ou à rediscuter** :
   les vingt et un candidats écartés (voir « Ce que les images ont changé en Allemagne, en
   Autriche et en Suisse ») ; les images d'Hitler, de Marlene Dietrich, d'Hedy Lamarr et de

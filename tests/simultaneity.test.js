@@ -409,9 +409,9 @@ test('« Grandes figures du Maghreb » : chaque ancre porte le pays de son évé
 });
 
 test('« Grandes figures du Machrek et de la péninsule Arabique » : chaque ancre porte le pays de son événement, et la session se joue', () => {
-    // Dix pays, dont plusieurs (Oman, les Émirats, le Koweït) n'ont qu'une ou deux figures : aucun
+    // Douze pays, dont plusieurs (Oman, les Émirats, le Koweït, Bahreïn) n'ont qu'une ou deux figures : aucun
     // ne doit manquer parmi les ancres, et le Liban (le plus fourni) ne doit pas tout couvrir.
-    verifierPantheonDeBloc('pan_machrek', 19, 10);
+    verifierPantheonDeBloc('pan_machrek', 19, 12);
 });
 
 test('« Grandes figures d’Afrique de l’Est et de la Corne » : chaque ancre porte le pays de son événement, et la session se joue', () => {
@@ -446,6 +446,11 @@ test('« Grandes figures d’Afrique de l’Ouest » : chaque ancre porte le pay
 test('« Grandes figures de l’océan Indien occidental » : chaque ancre porte le pays de son événement, et la session se joue', () => {
     // Quatre pays, dont deux (les Comores, les Seychelles) n'ont que quatre ou deux figures face à Madagascar (18) : aucun ne doit manquer parmi les ancres.
     verifierPantheonDeBloc('pan_oceanindien', 73, 4);
+});
+
+test('« Grandes figures de la Caraïbe non hispanique » : chaque ancre porte le pays de son événement, et la session se joue', () => {
+    // Quatorze pays, dont plusieurs (Antigua-et-Barbuda, Saint-Vincent) n'ont qu'une figure face à Haïti (20) et à la Jamaïque (19) : aucun ne doit manquer parmi les ancres.
+    verifierPantheonDeBloc('pan_caraibes', 79, 14);
 });
 
 test('« Grandes figures d’Afrique australe » : chaque ancre porte le pays de son événement, et la session se joue', () => {
@@ -778,6 +783,25 @@ test('« Grandes figures du Canada » : les ancres sont le Canada, comme « Hist
     assert.equal(index[histoire.events[0].id], 'pays:CA', 'pan_ca doit être le même pays que thm_ca');
     const anchors = theme.events.map(e => Object.assign({}, e, { tag: index[e.id], themeName: theme.nom }));
     const session = S.buildSession(anchors, realPool, { rng: seededRng(5), count: S.SESSION_ROUNDS });
+    assert.equal(session.length, S.SESSION_ROUNDS);
+    session.forEach(q => {
+        assert.ok(!/^pan_/.test(q.correct.themeId), 'la bonne réponse ne peut pas venir d’un panthéon');
+        assert.notEqual(q.correct.tag, q.anchor.tag,
+            `« ${q.correct.titre} » a la même étiquette que « ${q.anchor.titre} » : ce n’est pas un « ailleurs »`);
+    });
+});
+
+test('« Grandes figures d’Irlande » : les ancres sont l’Irlande, comme « Histoire de l’Irlande », et la session se joue', () => {
+    // `pan_ie` est le panthéon d'un PAYS : ses figures portent l'étiquette de « Histoire de l'Irlande » (`thm_ie`) ;
+    // aucune n'est un invité d'un autre État.
+    const theme = allThemes().find(t => t.id === 'pan_ie');
+    assert.ok(theme, 'thème pan_ie absent du pack français');
+    const index = S.buildTagIndex(frData.categories, { countryByTheme: geoMap });
+    theme.events.forEach(e => assert.equal(index[e.id], e.pays ? 'pays:' + e.pays : 'pays:IE', `étiquette de ${e.id}`));
+    const histoire = allThemes().find(t => t.id === 'thm_ie');
+    assert.equal(index[histoire.events[0].id], 'pays:IE', 'pan_ie doit être le même pays que thm_ie');
+    const anchors = theme.events.map(e => Object.assign({}, e, { tag: index[e.id], themeName: theme.nom }));
+    const session = S.buildSession(anchors, realPool, { rng: seededRng(7), count: S.SESSION_ROUNDS });
     assert.equal(session.length, S.SESSION_ROUNDS);
     session.forEach(q => {
         assert.ok(!/^pan_/.test(q.correct.themeId), 'la bonne réponse ne peut pas venir d’un panthéon');
