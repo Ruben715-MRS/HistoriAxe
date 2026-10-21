@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 850,
-  "totalEvents": 25604,
+  "totalThemes": 851,
+  "totalEvents": 25711,
   "categories": [
     {
       "nom": "Culture générale",
@@ -137711,6 +137711,1807 @@
                 "pan_ir_kiarostami",
                 "pan_ir_shajarian",
                 "pan_ir_mirzakhani"
+              ]
+            },
+            {
+              "id": "pan_ie",
+              "nom": "Grandes figures d'Irlande",
+              "difficulte": "Intermédiaire",
+              "motsCles": [
+                "Irlande",
+                "Irlandais",
+                "Irlandaise",
+                "Éire",
+                "Dublin",
+                "Cork",
+                "Galway",
+                "Ulster",
+                "Munster",
+                "Leinster",
+                "Connacht",
+                "Irlande du Nord",
+                "Belfast",
+                "Derry",
+                "Pâques 1916",
+                "Insurrection de Pâques",
+                "Sinn Féin",
+                "IRA",
+                "Home Rule",
+                "Grande Famine",
+                "Gaélique",
+                "Gaélique irlandais",
+                "Celtique",
+                "Vikings",
+                "Normands",
+                "Oies sauvages",
+                "Wild Geese",
+                "Abbey Theatre",
+                "Trinity College",
+                "Accord du Vendredi saint",
+                "État libre d'Irlande",
+                "Dáil",
+                "Taoiseach",
+                "Fianna Fáil",
+                "Fine Gael",
+                "Ligue agraire",
+                "Celtic Revival",
+                "Saint Patrick",
+                "Hibernia",
+                "Irish",
+                "Anglo-irlandais",
+                "Émancipation des catholiques",
+                "Union de 1801",
+                "Irlandais unis",
+                "Guerre d'indépendance irlandaise",
+                "Guerre civile irlandaise"
+              ],
+              "events": [
+                {
+                  "id": "pan_ie_patrick",
+                  "axe": "Littérature et pensée",
+                  "date": 385,
+                  "titre": "Naissance de Patrick d'Irlande",
+                  "description": "Patrick d'Irlande (vers 385-vers 461) est le saint patron de l'Irlande, probablement originaire de la Bretagne romaine et vivant dans la première moitié du Ve siècle. Enlevé adolescent par des pirates et réduit en esclavage en Irlande, il y revient comme missionnaire et passe pour l'évangélisateur de l'île et le fondateur du christianisme irlandais. Sa vie, connue par sa « Confession » et par une abondante hagiographie, tient en partie de la légende ; sa fête, le 17 mars, est la fête nationale de l'Irlande.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Patrick%20d%27Irlande",
+                  "classement": "d'Irlande, Patrick",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_patrick.jpg",
+                    "legende": "Patrick d'Irlande, gravure de la Chronique de Nuremberg, 1493",
+                    "auteur": "Michel Wolgemut, Wilhelm Pleydenwurff (Text: Hartmann Schedel )",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nuremberg_chronicles_f_145v_4.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_ie_brigitte",
+                  "axe": "Littérature et pensée",
+                  "date": 451,
+                  "titre": "Naissance de Brigitte de Kildare",
+                  "description": "Brigitte de Kildare (451-vers 525) est une sainte irlandaise, née à Faughart, près de Dundalk, dans le comté de Louth, d'un chef païen et d'une esclave chrétienne. Elle fonde à Kildare un monastère qui devient un grand centre religieux de l'île. Avec Patrick et Colomba, elle est l'une des trois saints patrons de l'Irlande, fêtée le 1er février.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Brigitte%20d%27Irlande",
+                  "classement": "Kildare, Brigitte de",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_brigitte.jpg",
+                    "legende": "Brigitte de Kildare, peinture de Patrick Joseph Tuohy",
+                    "auteur": "Patrick Joseph Tuohy",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Saint_Brigid_by_Patrick_Joseph_Tuohy.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_colomba",
+                  "axe": "Littérature et pensée",
+                  "date": 521,
+                  "titre": "Naissance de Colomba d'Iona",
+                  "description": "Colomba d'Iona (521-597) est un moine et missionnaire irlandais, né à Gartan, dans le comté de Donegal. Il fonde en 563 le monastère d'Iona, dans les Hébrides, d'où il évangélise les Pictes d'Écosse et prépare la christianisation du nord de l'Angleterre. Il meurt à Iona en 597, et la tradition place sa tombe à Downpatrick, auprès de celles de Patrick et de Brigitte.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Colomba%20d%27Iona",
+                  "classement": "d'Iona, Colomba",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_colomba.jpg",
+                    "legende": "Colomba d'Iona convertissant les Pictes, peinture",
+                    "auteur": "William Hole",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Saint_Columba_converting_the_Picts.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_colomban",
+                  "axe": "Littérature et pensée",
+                  "date": 543,
+                  "titre": "Naissance de Colomban de Luxeuil",
+                  "description": "Colomban de Luxeuil (543-615) est un moine irlandais, né à Myshall, dans le Leinster, qui évangélise les campagnes de la Gaule, de l'Alémanie, de l'Helvétie et de l'Italie. Il fonde les monastères d'Annegray, de Luxeuil et de Fontaine, dans le royaume franc, puis celui de Bobbio, en Italie, et répand ainsi la règle monastique irlandaise sur le continent. Il meurt à Bobbio le 23 novembre 615.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Colomban%20de%20Luxeuil",
+                  "classement": "Luxeuil, Colomban de",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_colomban.jpg",
+                    "legende": "Colomban, peinture murale médiévale",
+                    "auteur": "Medieval author.",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:SaintColumbanus.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_erigene",
+                  "axe": "Littérature et pensée",
+                  "date": 800,
+                  "titre": "Naissance de Jean Scot Érigène",
+                  "description": "Jean Scot Érigène (vers 800-vers 877) est un philosophe et théologien irlandais du IXe siècle, qui vit sur le continent, à la cour de Charles le Chauve. Traducteur du grec, il écrit le « Periphyseon », vaste synthèse de pensée néoplatonicienne sur la nature divisée en quatre formes. La date et le lieu de sa mort restent incertains.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jean%20Scot%20%C3%89rig%C3%A8ne",
+                  "classement": "Érigène, Jean Scot",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_erigene.jpg",
+                    "legende": "Jean Scot Érigène, dessin d'un manuscrit médiéval",
+                    "auteur": "http://www.hs-augsburg.de/~harsch/Chronologia/Lspost09/Eriugena/eri_intr.html",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Johannes_Scottus_Eriugena.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_brianboru",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 941,
+                  "titre": "Naissance de Brian Boru",
+                  "description": "Brian Boru (vers 941-1014) est un roi irlandais, né dans le Thomond, qui règne sur l'ensemble de l'île au début du XIe siècle. Vainqueur des Vikings de Limerick en 976, il soumet le Munster, le Leinster et le royaume de Dublin, et tente d'unifier l'Irlande. Il est tué à la bataille de Clontarf, en 1014, dont son armée sort victorieuse contre les Vikings et leurs alliés du Leinster.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Brian%20Boru",
+                  "classement": "Boru, Brian",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_brianboru.jpg",
+                    "legende": "Brian Boru, gravure de 1723",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Brian_B%C3%B3ruma_mac_Cenn%C3%A9tig_(1723)_(crop).jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_diarmait",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1110,
+                  "titre": "Naissance de Diarmait Mac Murchada",
+                  "description": "Diarmait Mac Murchada (1110-1171) est roi de Leinster de 1126 à 1171, et roi de Dublin à deux reprises. Chassé de son royaume en 1166, il demande l'aide d'Henri II d'Angleterre, ce qui ouvre en 1169 l'invasion normande de l'Irlande. Il donne sa fille Aoife à Richard de Clare, qui l'aide à reconquérir ses terres et lui succède.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Diarmait%20Mac%20Murchada",
+                  "classement": "Murchada, Diarmait Mac",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_diarmait.jpg",
+                    "legende": "Diarmait Mac Murchada, enluminure de l'« Expugnatio Hibernica »",
+                    "auteur": "Giraldus Cambrensis",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Diarmaid_Mac_Murrough_Expugnatio_Hibernica.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_graceomalley",
+                  "axe": "Guerres et résistances",
+                  "date": 1530,
+                  "titre": "Naissance de Grace O'Malley",
+                  "description": "Grace O'Malley (vers 1530-vers 1603) est une cheffe de clan et femme pirate du Connacht, appelée Gráinne Ní Mháille en irlandais, née dans le comté de Mayo, fille d'un chef de clan. Maîtresse de la mer sur la côte ouest de l'Irlande, elle commande ses navires depuis ses châteaux et résiste à la mainmise des Tudors. En 1593, elle obtient d'Élisabeth Ire, à Greenwich, la libération de ses proches.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Grace%20O%27Malley",
+                  "classement": "O'Malley, Grace",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_graceomalley.jpg",
+                    "legende": "Grace O'Malley, statue",
+                    "auteur": "Suzanne Mischyshyn",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Grainne_Mhaol_Ni_Mhaille_Statue.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_hughoneill",
+                  "axe": "Guerres et résistances",
+                  "date": 1550,
+                  "titre": "Naissance d'Hugh O'Neill",
+                  "description": "Hugh O'Neill (vers 1550-1616) est le comte de Tyrone, Aodh Mór Ó Néill en irlandais, né en Ulster, qui mène la guerre de Neuf Ans contre les Tudors. Allié de Hugh Roe O'Donnell et soutenu par l'Espagne, il remporte la bataille du Yellow Ford en 1598 avant d'être vaincu à Kinsale en 1601. Il quitte l'Irlande lors de la « fuite des comtes », en 1607, et meurt à Rome en 1616.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hugh%20O%27Neill",
+                  "classement": "O'Neill, Hugh",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_hughoneill.jpg",
+                    "legende": "Hugh O'Neill, portrait peint",
+                    "auteur": "Anonymous Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hugh_O%27Neill,_1608.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_redhugh",
+                  "axe": "Guerres et résistances",
+                  "date": 1572,
+                  "titre": "Naissance d'Hugh Roe O'Donnell",
+                  "description": "Hugh Roe O'Donnell (1572-1602) est le prince de Tyrconnell, né dans le Donegal, qui prend en 1593 la tête d'une rébellion contre le gouvernement anglais. Évadé du château de Dublin, où il était retenu prisonnier, il devient avec Hugh O'Neill l'un des chefs de la guerre de Neuf Ans. Parti demander du renfort à l'Espagne après la défaite de Kinsale, il y meurt en septembre 1602.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hugh%20Roe%20O%27Donnell",
+                  "classement": "O'Donnell, Hugh Roe",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_redhugh.jpg",
+                    "legende": "Hugh Roe O'Donnell, représenté sur un vitrail",
+                    "auteur": "Richard King",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hugh_Roe_O%27Donnell,_depiction_in_stained-glass_window_by_Richard_King_(cropped).png"
+                  }
+                },
+                {
+                  "id": "pan_ie_owenroe",
+                  "axe": "Guerres et résistances",
+                  "date": 1590,
+                  "titre": "Naissance d'Owen Roe O'Neill",
+                  "description": "Owen Roe O'Neill (vers 1590-1649) est un officier irlandais, neveu de Hugh O'Neill, qui grandit aux Pays-Bas espagnols et sert près de quarante ans dans le régiment irlandais de l'armée d'Espagne. De retour en Irlande en 1642, il commande l'armée catholique d'Ulster et bat les troupes parlementaires à Benburb en 1646. Il meurt en novembre 1649, alors que Cromwell débarque dans l'île.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Owen%20Roe%20O%27Neill",
+                  "classement": "O'Neill, Owen Roe",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_owenroe.jpg",
+                    "legende": "Owen Roe O'Neill, gravure",
+                    "auteur": "Unknown, Van Brugens",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Owen_Roe_O%27Neill.JPG"
+                  }
+                },
+                {
+                  "id": "pan_ie_boyle",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1627,
+                  "titre": "Naissance de Robert Boyle",
+                  "description": "Robert Boyle (1627-1691) est un physicien et chimiste anglo-irlandais, né au château de Lismore, dans le comté de Waterford, septième fils du comte de Cork. Il énonce la loi qui relie la pression et le volume d'un gaz, et sépare la chimie de l'alchimie dans « Le Chimiste sceptique » (1661). Il meurt à Londres en 1691, à soixante-quatre ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Robert%20Boyle",
+                  "classement": "Boyle, Robert",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_boyle.jpg",
+                    "legende": "Robert Boyle, portrait peint",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Robert_boyle.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_plunkett",
+                  "axe": "Littérature et pensée",
+                  "date": 1629,
+                  "titre": "Naissance d'Oliver Plunkett",
+                  "description": "Oliver Plunkett (1629-1681) est un archevêque d'Armagh, né en Irlande et formé à Rome, primat d'Irlande à partir de 1669. Arrêté en 1679, au moment de la panique du « complot papiste », il est pendu et écartelé à Tyburn en 1681. Dernier catholique exécuté en Angleterre pour sa foi, il est canonisé en 1975.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Olivier%20Plunket",
+                  "classement": "Plunkett, Oliver",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_plunkett.jpg",
+                    "legende": "Oliver Plunkett, portrait d'Edward Luttrell",
+                    "auteur": "Edward Luttrell (1650–1724)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Oliver_Plunket_by_Edward_Luttrell.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_sarsfield",
+                  "axe": "Guerres et résistances",
+                  "date": 1655,
+                  "titre": "Naissance de Patrick Sarsfield",
+                  "description": "Patrick Sarsfield (1655-1693) est un officier irlandais du parti jacobite, né à Lucan, qui sert Jacques II puis Louis XIV. Il organise en 1690 la résistance de Limerick contre les troupes de Guillaume d'Orange, puis conduit en France, après le traité de 1691, les soldats irlandais du « vol des Oies sauvages ». Blessé à la bataille de Neerwinden, il meurt à Huy en août 1693.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Patrick%20Sarsfield",
+                  "classement": "Sarsfield, Patrick",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_sarsfield.jpg",
+                    "legende": "Patrick Sarsfield, portrait peint (National Gallery of Ireland)",
+                    "auteur": "Anonyme, XVIIe siècle",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_Patrick_Sarsfield,_Earl_of_Lucan_NGI.4328.PNG"
+                  }
+                },
+                {
+                  "id": "pan_ie_swift",
+                  "axe": "Littérature et pensée",
+                  "date": 1667,
+                  "titre": "Naissance de Jonathan Swift",
+                  "description": "Jonathan Swift (1667-1745) est un écrivain, satiriste et ecclésiastique anglo-irlandais, né à Dublin, doyen de la cathédrale Saint-Patrick. Il publie « Les Voyages de Gulliver » (1726) et « Une modeste proposition » (1729), pamphlet qui dénonce par l'ironie la misère de l'Irlande. Probablement le plus grand satiriste en prose de la langue anglaise, il meurt à Dublin en 1745.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jonathan%20Swift",
+                  "classement": "Swift, Jonathan",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_swift.jpg",
+                    "legende": "Jonathan Swift, portrait de Charles Jervas (détail)",
+                    "auteur": "Charles Jervas (1675–1739)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jonathan_Swift_by_Charles_Jervas_detail.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_ocarolan",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1670,
+                  "titre": "Naissance de Turlough O'Carolan",
+                  "description": "Turlough O'Carolan (1670-1738) est l'un des derniers harpistes professionnels et compositeurs d'Irlande, né près de Nobber, dans le comté de Meath. Devenu aveugle après la variole, vers dix-huit ans, il parcourt le pays en jouant chez ses protecteurs, pour lesquels il compose plus de deux cents airs. Il meurt en 1738 à Alderford, chez sa protectrice.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Turlough%20O%27Carolan",
+                  "classement": "O'Carolan, Turlough",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_ocarolan.jpg",
+                    "legende": "Turlough O'Carolan, portrait peint",
+                    "auteur": "From R.B. Armstrong \"The Irish and Highland Harps\" , Edinburgh, David Douglas, 1904.",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Maurice_O%27Connor.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_berkeley",
+                  "axe": "Littérature et pensée",
+                  "date": 1685,
+                  "titre": "Naissance de George Berkeley",
+                  "description": "George Berkeley (1685-1753) est un philosophe et évêque anglican irlandais, né à Kilkenny. Il défend l'immatérialisme, résumé par la formule « être, c'est être perçu ou percevoir », et se range parmi les empiristes après John Locke et avant David Hume. Il meurt à Oxford en 1753.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/George%20Berkeley",
+                  "classement": "Berkeley, George",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_berkeley.jpg",
+                    "legende": "George Berkeley, portrait de John Smibert",
+                    "auteur": "John Smibert (1688–1751)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:George_Berkeley_by_Jonh_Smibert.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_nagle",
+                  "axe": "Littérature et pensée",
+                  "date": 1718,
+                  "titre": "Naissance de Nano Nagle",
+                  "description": "Nano Nagle (1718-1784) est une religieuse catholique irlandaise, de son vrai nom Honora Nagle, née près de Cork. À une époque où les lois pénales interdisent aux catholiques d'enseigner, elle ouvre en secret des écoles pour les enfants pauvres de Cork. Elle fonde en 1775 les sœurs de la Présentation de la Bienheureuse Vierge Marie, et le pape François la déclare vénérable en 2013.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nano%20Nagle",
+                  "classement": "Nagle, Nano",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_nagle.jpg",
+                    "legende": "Nano Nagle, portrait peint",
+                    "auteur": "Attribué à James Barry",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nano_Nagle.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_guinness",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1725,
+                  "titre": "Naissance d'Arthur Guinness",
+                  "description": "Arthur Guinness (1725-1803) est un brasseur et homme d'affaires irlandais, né à Celbridge, dans le comté de Kildare. Il fonde en 1759 la brasserie de Saint James's Gate, à Dublin, dont il prend le bail pour neuf mille ans. Sa bière brune devient l'un des produits les plus connus d'Irlande, et il meurt à Dublin en 1803.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Arthur%20Guinness",
+                  "classement": "Guinness, Arthur",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_guinness.jpg",
+                    "legende": "Arthur Guinness, portrait peint",
+                    "auteur": "User Morrison1917 on en.wikipedia",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Arthur_Guinness.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_goldsmith",
+                  "axe": "Littérature et pensée",
+                  "date": 1728,
+                  "titre": "Naissance d'Oliver Goldsmith",
+                  "description": "Oliver Goldsmith (1728-1774) est un écrivain irlandais, né à Elphin, dans le comté de Roscommon, fils d'un pasteur. Romancier, poète, dramaturge et essayiste, il écrit « Le Vicaire de Wakefield » (1766) et la comédie « She Stoops to Conquer » (1773). Il meurt à Londres en 1774.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Oliver%20Goldsmith",
+                  "classement": "Goldsmith, Oliver",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_goldsmith.jpg",
+                    "legende": "Oliver Goldsmith, gravure",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Oliver_Goldsmith_sephia.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_burke",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1729,
+                  "titre": "Naissance d'Edmund Burke",
+                  "description": "Edmund Burke (1729-1797) est un homme politique et philosophe anglo-irlandais, né à Dublin, longtemps député whig à la Chambre des communes britannique. Il soutient les colons américains dans leur révolte, sans approuver leur indépendance, et s'oppose avec force à la Révolution française dans ses « Réflexions » (1790). Il meurt à Beaconsfield en 1797.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Edmund%20Burke",
+                  "classement": "Burke, Edmund",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_burke.jpg",
+                    "legende": "Edmund Burke, portrait de Joshua Reynolds",
+                    "auteur": "Joshua Reynolds (1723–1792)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sir_Joshua_Reynolds_-_Edmund_Burke,_1729_-_1797._Statesman,_orator_and_author_-_PG_2362_-_National_Galleries_of_Scotland.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_grattan",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1746,
+                  "titre": "Naissance d'Henry Grattan",
+                  "description": "Henry Grattan (1746-1820) est un homme politique irlandais, formé au Trinity College de Dublin, membre de la Chambre des communes irlandaise. Chef du mouvement patriote, il fait accorder à l'Irlande l'indépendance législative en 1782. Il s'oppose ensuite à l'Acte d'Union de 1800, qui fusionne les royaumes d'Irlande et de Grande-Bretagne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Henry%20Grattan",
+                  "classement": "Grattan, Henry",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_grattan.jpg",
+                    "legende": "Henry Grattan, gravure",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Henry_Grattan.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_sheridan",
+                  "axe": "Littérature et pensée",
+                  "date": 1751,
+                  "titre": "Naissance de Richard Brinsley Sheridan",
+                  "description": "Richard Brinsley Sheridan (1751-1816) est un dramaturge et homme politique irlandais, né à Dublin, fils d'un directeur de théâtre. Il écrit « Les Rivaux » (1775) et « L'École du scandale » (1777), comédies de mœurs devenues des classiques du théâtre anglais. Directeur du théâtre de Drury Lane, il est aussi député whig et meurt à Londres en 1816.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Richard%20Brinsley%20Sheridan",
+                  "classement": "Sheridan, Richard Brinsley",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_sheridan.jpg",
+                    "legende": "Richard Brinsley Sheridan, gravure",
+                    "auteur": "Robert Hicks ( fl. 1800–1836) Description British engraver",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Richard_Sheridan.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_wolfetone",
+                  "axe": "Guerres et résistances",
+                  "date": 1763,
+                  "titre": "Naissance de Theobald Wolfe Tone",
+                  "description": "Theobald Wolfe Tone (1763-1798) est un homme politique irlandais, né à Dublin dans une famille protestante, considéré comme l'initiateur du nationalisme républicain irlandais. Cofondateur des Irlandais unis, il cherche l'appui de la France révolutionnaire et prend part à l'expédition de 1798. Arrêté, il se donne la mort en prison, à Dublin, en novembre 1798.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Theobald%20Wolfe%20Tone",
+                  "classement": "Tone, Theobald Wolfe",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_wolfetone.jpg",
+                    "legende": "Theobald Wolfe Tone, gravure de profil",
+                    "auteur": "Edward Scriven (1775–1841)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_Theobald_Wolfe_Tone_(4672711).jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_edgeworth",
+                  "axe": "Littérature et pensée",
+                  "date": 1768,
+                  "titre": "Naissance de Maria Edgeworth",
+                  "description": "Maria Edgeworth (1768-1849) est une romancière née à Black Bourton, en Angleterre, et installée à Edgeworthstown, dans le comté de Longford, auprès de son père irlandais. Elle publie « Castle Rackrent » (1800), l'un des premiers romans régionaux et historiques de la littérature de langue anglaise, puis des romans éducatifs. Elle meurt à Edgeworthstown en 1849.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Maria%20Edgeworth",
+                  "classement": "Edgeworth, Maria",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_edgeworth.jpg",
+                    "legende": "Maria Edgeworth, portrait de John Downman, 1807",
+                    "auteur": "John Downman (1750-1824)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Maria_Edgeworth_by_John_Downman_1807.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_oconnell",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1775,
+                  "titre": "Naissance de Daniel O'Connell",
+                  "description": "Daniel O'Connell (1775-1847) est un homme politique irlandais surnommé le « Libérateur », né à Carhan, dans le comté de Kerry. Il obtient en 1829 l'émancipation des catholiques, qui leur permet de siéger au Parlement, et défend un nationalisme non violent, notamment par ses grandes réunions publiques en faveur de l'abrogation de l'Union. Il meurt à Gênes en 1847, en route pour Rome.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Daniel%20O%27Connell",
+                  "classement": "O'Connell, Daniel",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_oconnell.jpg",
+                    "legende": "Daniel O'Connell, portrait peint",
+                    "auteur": "Bernard Mulrenin (1803–1868)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Daniel_O%27Connell.png"
+                  }
+                },
+                {
+                  "id": "pan_ie_emmet",
+                  "axe": "Guerres et résistances",
+                  "date": 1778,
+                  "titre": "Naissance de Robert Emmet",
+                  "description": "Robert Emmet (1778-1803) est un chef nationaliste irlandais, né à Dublin, qui dirige en 1803 une insurrection avortée contre le gouvernement britannique. Arrêté, il prononce au procès un discours resté célèbre, où il demande que son épitaphe ne soit écrite que lorsque l'Irlande aura pris sa place parmi les nations. Il est pendu à Dublin le 20 septembre 1803.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Robert%20Emmet",
+                  "classement": "Emmet, Robert",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_emmet.jpg",
+                    "legende": "Robert Emmet, miniature aquarellée",
+                    "auteur": "John Comerford",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:RobertEmmetWatercolor.png"
+                  }
+                },
+                {
+                  "id": "pan_ie_mcauley",
+                  "axe": "Littérature et pensée",
+                  "date": 1778,
+                  "titre": "Naissance de Catherine McAuley",
+                  "description": "Catherine McAuley (1778-1841) est une religieuse irlandaise, née à Dublin dans une famille aisée, orpheline de père à cinq ans. Héritière d'une fortune, elle l'emploie à ouvrir à Dublin une maison pour les pauvres, les malades et les jeunes filles sans emploi. Elle y fonde en 1831 les Sœurs de la Miséricorde, et meurt à Dublin en 1841.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Catherine%20McAuley",
+                  "classement": "McAuley, Catherine",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_mcauley.jpg",
+                    "legende": "Catherine McAuley, photographie",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Photo_mcauley.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_moore",
+                  "axe": "Littérature et pensée",
+                  "date": 1779,
+                  "titre": "Naissance de Thomas Moore",
+                  "description": "Thomas Moore (1779-1852) est un poète et chansonnier irlandais, né à Dublin. Ses « Irish Melodies » (1808-1834), qui donnent des paroles aux airs traditionnels du pays, font de lui le poète national de l'Irlande de son temps. Ami de Byron, dont il écrit la vie, il meurt dans le Wiltshire en 1852.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Thomas%20Moore",
+                  "classement": "Moore, Thomas",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_moore.jpg",
+                    "legende": "Thomas Moore, d'après un portrait de Thomas Lawrence",
+                    "auteur": "After Thomas Lawrence (1769–1830)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Thomas_Moore,_after_Thomas_Lawrence.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_field",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1782,
+                  "titre": "Naissance de John Field",
+                  "description": "John Field (1782-1837) est un pianiste et compositeur irlandais, né à Dublin, élève de Muzio Clementi. Installé en Russie, à Saint-Pétersbourg puis à Moscou, il invente le nocturne pour piano, genre que Chopin portera à sa perfection. Il meurt à Moscou en 1837.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/John%20Field",
+                  "classement": "Field, John",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_field.jpg",
+                    "legende": "John Field, gravure",
+                    "auteur": "Anton Wachsmann",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:John_field.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_mathew",
+                  "axe": "Littérature et pensée",
+                  "date": 1790,
+                  "titre": "Naissance de Theobald Mathew",
+                  "description": "Theobald Mathew (1790-1856) est un prêtre capucin irlandais, connu comme le Père Mathew, né à Thomastown, dans le comté de Kilkenny. Apôtre de la tempérance, il fait signer à partir de 1838 l'engagement de renoncer à l'alcool à des centaines de milliers d'Irlandais. Il meurt à Cobh en 1856.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Theobald%20Mathew",
+                  "classement": "Mathew, Theobald",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_mathew.jpg",
+                    "legende": "Theobald Mathew, portrait d'Edward Daniel Leahy",
+                    "auteur": "Edward Leahy (1797–1875)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Theobald_MathewTheobald_Mathew_by_Edward_Daniel_Leahy.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_callan",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1799,
+                  "titre": "Naissance de Nicholas Callan",
+                  "description": "Nicholas Callan (1799-1864) est un prêtre et scientifique irlandais, né à Darver, dans le comté de Louth. Professeur de philosophie naturelle au collège Saint-Patrick de Maynooth à partir de 1834, il invente la bobine d'induction, ancêtre des transformateurs. Il meurt à Maynooth en 1864.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nicholas%20Callan",
+                  "classement": "Callan, Nicholas",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_callan.jpg",
+                    "legende": "Nicholas Callan, portrait",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Image non libre",
+                    "source": "https://en.wikipedia.org/wiki/File:Nicholas_Callan.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_rosse",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1800,
+                  "titre": "Naissance de William Parsons",
+                  "description": "William Parsons (1800-1867) est un astronome irlandais, troisième comte de Rosse, né à York, installé au château de Birr. Il fait construire en 1845 un télescope de 1,80 mètre, le « Léviathan de Birr », le plus grand du monde pendant plus de soixante-dix ans, et y observe la forme spirale de la galaxie M51. Il meurt en 1867.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/William%20Parsons",
+                  "classement": "Parsons, William",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_rosse.jpg",
+                    "legende": "William Parsons, comte de Rosse, photographie",
+                    "auteur": "Maull and Polyblank",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:William_Parsons,_3rd_Earl_of_Rosse_by_Maull_and_Polyblank_crop.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_hamilton",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1805,
+                  "titre": "Naissance de William Rowan Hamilton",
+                  "description": "William Rowan Hamilton (1805-1865) est un mathématicien, physicien et astronome irlandais, né à Dublin, astronome royal d'Irlande à vingt-deux ans. Il découvre en 1843 les quaternions, qu'il grave, selon la tradition, sur le pont de Broom Bridge, et renouvelle la mécanique avec le formalisme qui porte son nom. Ses travaux se révéleront importants pour la mécanique quantique, et il meurt à Dublin en 1865.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/William%20Rowan%20Hamilton",
+                  "classement": "Hamilton, William Rowan",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_hamilton.jpg",
+                    "legende": "William Rowan Hamilton, portrait peint",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:William_Rowan_Hamilton_painting.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_balfe",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1808,
+                  "titre": "Naissance de Michael William Balfe",
+                  "description": "Michael William Balfe (1808-1870) est un baryton et compositeur irlandais, né à Dublin. Il chante à Paris et en Italie, puis triomphe à Londres avec l'opéra « La Bohémienne » (1843), son œuvre la plus connue. Il meurt dans le Hertfordshire en 1870.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Michael%20William%20Balfe",
+                  "classement": "Balfe, Michael William",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_balfe.jpg",
+                    "legende": "Michael William Balfe, photographie de l'atelier Nadar",
+                    "auteur": "Atelier Nadar",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Michael_William_Balfe_-_Atelier_Nadar.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_lefanu",
+                  "axe": "Littérature et pensée",
+                  "date": 1814,
+                  "titre": "Naissance de Joseph Sheridan Le Fanu",
+                  "description": "Joseph Sheridan Le Fanu (1814-1873) est un écrivain irlandais, né à Dublin, d'une vieille famille normande et huguenote. Journaliste puis romancier, il publie « Oncle Silas » (1864) et des récits fantastiques, dont « Carmilla » (1872), nouvelle de vampire qui précède « Dracula ». Il meurt à Dublin en 1873.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sheridan%20Le%20Fanu",
+                  "classement": "Fanu, Joseph Sheridan Le",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_lefanu.jpg",
+                    "legende": "Joseph Sheridan Le Fanu, photographie",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sheridan_Le_Fanu_002.png"
+                  }
+                },
+                {
+                  "id": "pan_ie_alexander",
+                  "axe": "Littérature et pensée",
+                  "date": 1818,
+                  "titre": "Naissance de Cecil Frances Alexander",
+                  "description": "Cecil Frances Alexander (1818-1895) est une poète et hymnographe anglo-irlandaise, née à Dublin, épouse d'un évêque anglican. Elle écrit « All Things Bright and Beautiful », « There Is a Green Hill Far Away » et le chant de Noël « Once in Royal David's City ». Elle meurt à Derry en 1895.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Cecil%20Frances%20Alexander",
+                  "classement": "Alexander, Cecil Frances",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_alexander.jpg",
+                    "legende": "Cecil Frances Alexander, photographie",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Cecil_F_Alexander.PNG"
+                  }
+                },
+                {
+                  "id": "pan_ie_tyndall",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1820,
+                  "titre": "Naissance de John Tyndall",
+                  "description": "John Tyndall (1820-1893) est un physicien irlandais, né à Leighlinbridge, dans le comté de Carlow. Il explique la couleur bleue du ciel par la diffusion de la lumière, un effet qui porte son nom, et montre le rôle de certains gaz dans l'effet de serre. Professeur à la Royal Institution, à Londres, il meurt dans le Surrey en 1893.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/John%20Tyndall",
+                  "classement": "Tyndall, John",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_tyndall.jpg",
+                    "legende": "John Tyndall, photographie",
+                    "auteur": "Tucker Collection",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:John_Tyndall_portrait_mid_career.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_holland",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1841,
+                  "titre": "Naissance de John Philip Holland",
+                  "description": "John Philip Holland (1841-1914) est un ingénieur irlandais, né à Liscannor, dans le comté de Clare. Il met au point les premiers sous-marins de l'US Navy, de la Royal Navy et de la marine impériale japonaise, avec le soutien d'abord des Fenians. Il meurt aux États-Unis en 1914.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/John%20Philip%20Holland",
+                  "classement": "Holland, John Philip",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_holland.jpg",
+                    "legende": "John Philip Holland, photographie",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:PortraitJohnPhilipHolland.JPG"
+                  }
+                },
+                {
+                  "id": "pan_ie_clerke",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1842,
+                  "titre": "Naissance d'Agnes Clerke",
+                  "description": "Agnes Clerke (1842-1907) est une astronome et historienne des sciences irlandaise, née à Skibbereen, dans le comté de Cork. Autrice d'« A Popular History of Astronomy during the Nineteenth Century » (1885), elle est élue membre honoraire de la Royal Astronomical Society. Elle meurt à Londres en 1907.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Agnes%20Mary%20Clerke",
+                  "classement": "Clerke, Agnes",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_clerke.jpg",
+                    "legende": "Agnes Clerke, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Agnes_Mary_Clerke.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_davitt",
+                  "axe": "Guerres et résistances",
+                  "date": 1846,
+                  "titre": "Naissance de Michael Davitt",
+                  "description": "Michael Davitt (1846-1906) est un homme politique irlandais, né à Straide, dans le comté de Mayo, pendant la Grande Famine. Sa famille, expulsée de ses terres, émigre en Angleterre, où il perd un bras dans une usine à onze ans. Fondateur de la Ligue agraire irlandaise, partisan du Home Rule et opposant à l'impérialisme britannique, il soutient aussi les Boers et meurt à Dublin en 1906.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Michael%20Davitt",
+                  "classement": "Davitt, Michael",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_davitt.jpg",
+                    "legende": "Michael Davitt, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Michael_davitt.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_parnell",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1846,
+                  "titre": "Naissance de Charles Stewart Parnell",
+                  "description": "Charles Stewart Parnell (1846-1891) est un homme politique irlandais surnommé « le roi sans couronne d'Irlande », né à Avondale, dans le comté de Wicklow, dans une famille de propriétaires terriens protestants. Chef du Parti parlementaire irlandais, il mène à la Chambre des communes la lutte pour le Home Rule et soutient la Ligue agraire. Un scandale de divorce, en 1890, ruine sa carrière, et il meurt à Brighton en 1891.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Charles%20Stewart%20Parnell",
+                  "classement": "Parnell, Charles Stewart",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_parnell.jpg",
+                    "legende": "Charles Stewart Parnell, photographie",
+                    "auteur": "Mathew Benjamin Brady (1822–1896)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Charles_Stewart_Parnell_(Portrait).jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_stoker",
+                  "axe": "Littérature et pensée",
+                  "date": 1847,
+                  "titre": "Naissance de Bram Stoker",
+                  "description": "Bram Stoker (1847-1912) est un écrivain irlandais, né à Clontarf, un quartier de Dublin, installé à Londres. Gérant du Lyceum Theatre auprès de l'acteur Henry Irving, il publie en 1897 « Dracula », roman épistolaire qui fixe la figure moderne du vampire. Il meurt à Londres en 1912.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bram%20Stoker",
+                  "classement": "Stoker, Bram",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_stoker.jpg",
+                    "legende": "Bram Stoker, en 1906",
+                    "auteur": "unidentified photographer",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bram_Stoker_1906.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_georgefitzgerald",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1851,
+                  "titre": "Naissance de George FitzGerald",
+                  "description": "George Francis FitzGerald (1851-1901) est un physicien irlandais, né à Dublin, professeur de philosophie naturelle et expérimentale au Trinity College pendant le dernier quart du XIXe siècle. Il propose en 1889 que les corps se contractent dans le sens de leur mouvement, idée qui prépare la théorie de la relativité. Il meurt à Dublin en 1901.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/George%20FitzGerald%20(physicien)",
+                  "classement": "FitzGerald, George Francis",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_georgefitzgerald.jpg",
+                    "legende": "George Francis FitzGerald, photographie",
+                    "auteur": "Hollinger and Rockey photographers, New York.",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:George_Francis_FitzGerald.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_gregory",
+                  "axe": "Littérature et pensée",
+                  "date": 1852,
+                  "titre": "Naissance d'Augusta Gregory",
+                  "description": "Augusta Gregory (1852-1932) est une dramaturge irlandaise, dite Lady Gregory, née Isabella Augusta Persse. Elle cofonde avec William Butler Yeats l'Irish Literary Theatre puis l'Abbey Theatre, pour lesquels elle écrit de nombreuses petites pièces. Elle recueille aussi les légendes de l'ouest de l'Irlande, et meurt à Coole Park en 1932.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Isabella%20Augusta%20Gregory",
+                  "classement": "Gregory, Augusta",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_gregory.jpg",
+                    "legende": "Augusta Gregory, photographie",
+                    "auteur": "Filiocht",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Lady_gregory.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_stanford",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1852,
+                  "titre": "Naissance de Charles Villiers Stanford",
+                  "description": "Charles Villiers Stanford (1852-1924) est un compositeur britannique irlandais, né à Dublin, fils d'un juriste. Professeur de composition au Royal College of Music, à Londres, il forme notamment Vaughan Williams, Holst et Bridge, et écrit des opéras, des symphonies et des « Irish Rhapsodies ». Il meurt à Londres en 1924.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Charles%20Villiers%20Stanford",
+                  "classement": "Stanford, Charles Villiers",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_stanford.jpg",
+                    "legende": "Charles Villiers Stanford, photographie",
+                    "auteur": "Unknown author Unknown author (W. & D. Downey)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Charles_Villiers_Stanford_c1894bw.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_wilde",
+                  "axe": "Littérature et pensée",
+                  "date": 1854,
+                  "titre": "Naissance d'Oscar Wilde",
+                  "description": "Oscar Wilde (1854-1900) est un écrivain et dramaturge irlandais, né à Dublin, esthète célèbre pour son esprit. Auteur du « Portrait de Dorian Gray » (1890) et de comédies comme « L'Importance d'être constant » (1895), il est condamné en 1895 à deux ans de travaux forcés pour « grossière indécence ». Ruiné et exilé, il meurt à Paris en 1900.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Oscar%20Wilde",
+                  "classement": "Wilde, Oscar",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_wilde.jpg",
+                    "legende": "Oscar Wilde, photographie de 1889",
+                    "auteur": "W. & D. Downey Alternative names William & Daniel Downey",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Oscar_Wilde_(1854-1900)_1889,_May_23._Picture_by_W._and_D._Downey.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_ocriomhthain",
+                  "axe": "Littérature et pensée",
+                  "date": 1856,
+                  "titre": "Naissance de Tomás Ó Criomhthain",
+                  "description": "Tomás Ó Criomhthain (1856-1937) est un pêcheur et écrivain irlandais, né sur l'île Blasket, au large du Kerry. Il écrit en irlandais, vers 1925, sous forme de lettres à un ami, « L'Insulaire », qui raconte la vie des cent soixante habitants de cette « dernière île d'Europe ». Il meurt sur son île en 1937.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tom%C3%A1s%20%C3%93%20Criomhthain",
+                  "classement": "Criomhthain, Tomás Ó",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_ocriomhthain.jpg",
+                    "legende": "Tomás Ó Criomhthain, photographie",
+                    "auteur": "Carl Wilhelm von Sydow",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tom%C3%A1s_%C3%93_Criomhthain_(cropped).png"
+                  }
+                },
+                {
+                  "id": "pan_ie_shaw",
+                  "axe": "Littérature et pensée",
+                  "date": 1856,
+                  "titre": "Naissance de George Bernard Shaw",
+                  "description": "George Bernard Shaw (1856-1950) est un dramaturge, critique et essayiste irlandais, né à Dublin, qui vit surtout à Londres. Socialiste fabien, il écrit « Pygmalion » (1913) et « Sainte Jeanne » (1923), et reçoit le prix Nobel de littérature en 1925. Il meurt à Ayot St Lawrence, en Angleterre, en 1950.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/George%20Bernard%20Shaw",
+                  "classement": "Shaw, George Bernard",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_shaw.jpg",
+                    "legende": "George Bernard Shaw, photographie de presse",
+                    "auteur": "Bain News Service, publisher",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:G.B._Shaw_LCCN2014683900.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_ie_clarke",
+                  "axe": "Guerres et résistances",
+                  "date": 1858,
+                  "titre": "Naissance de Tom Clarke",
+                  "description": "Tom Clarke (1858-1916) est un révolutionnaire irlandais, né sur l'île de Wight de parents irlandais, dont la famille s'établit ensuite à Dungannon, dans le comté de Tyrone. Membre de l'Irish Republican Brotherhood, il passe quinze ans dans les prisons britanniques pour une campagne de dynamitage, puis prépare l'insurrection de Pâques 1916. Premier signataire de la proclamation de la République, il est fusillé à Kilmainham le 3 mai 1916.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tom%20Clarke",
+                  "classement": "Clarke, Tom",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_clarke.jpg",
+                    "legende": "Tom Clarke, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Thomas_Clarke_the_brave.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_hyde",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1860,
+                  "titre": "Naissance de Douglas Hyde",
+                  "description": "Douglas Hyde (1860-1949) est un poète, universitaire et homme d'État irlandais, fils de pasteur, premier président d'Irlande de 1938 à 1945. Fondateur de la Ligue gaélique en 1893, il appelle à « désanglicaniser » l'Irlande et à faire revivre la langue irlandaise. Il meurt à Dublin en 1949.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Douglas%20Hyde",
+                  "classement": "Hyde, Douglas",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_hyde.jpg",
+                    "legende": "Douglas Hyde, vers 1940",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Douglas_Hyde,_circa_1940.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_oconor",
+                  "axe": "Beaux-arts",
+                  "date": 1860,
+                  "titre": "Naissance de Roderic O'Conor",
+                  "description": "Roderic O'Conor (1860-1940) est un peintre et graveur irlandais, né dans le comté de Roscommon, actif en France. Il étudie à Dublin, à Anvers puis à Paris, subit l'influence de l'impressionnisme et du postimpressionnisme et fréquente Gauguin à Pont-Aven. Il meurt à Nueil-sur-Layon, en Maine-et-Loire, en 1940.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Roderic%20O%27Conor",
+                  "classement": "O'Conor, Roderic",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_oconor.jpg",
+                    "legende": "Roderic O'Conor, autoportrait",
+                    "auteur": "Roderic O'Conor (1860–1940)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Self-Portrait_-_Roderic_O%27Conor.PNG"
+                  }
+                },
+                {
+                  "id": "pan_ie_casement",
+                  "axe": "Guerres et résistances",
+                  "date": 1864,
+                  "titre": "Naissance de Roger Casement",
+                  "description": "Roger Casement (1864-1916) est un diplomate britannique et révolutionnaire irlandais, né à Sandycove, près de Dublin. Ses rapports dénoncent les abus du système colonial dans l'État indépendant du Congo et au Putumayo, en Amazonie. Venu chercher des armes en Allemagne pour l'insurrection de 1916, il est arrêté, jugé pour trahison et pendu à Londres le 3 août 1916.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Roger%20Casement",
+                  "classement": "Casement, Roger",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_casement.jpg",
+                    "legende": "Roger Casement, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Casement_Roger.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_yeats",
+                  "axe": "Littérature et pensée",
+                  "date": 1865,
+                  "titre": "Naissance de William Butler Yeats",
+                  "description": "William Butler Yeats (1865-1939) est un poète et dramaturge irlandais, né à Sandymount, près de Dublin, fils du peintre John Butler Yeats. Figure du Celtic Revival et cofondateur de l'Abbey Theatre, il publie « The Tower » (1928) et « The Winding Stair » (1933), et reçoit le prix Nobel de littérature en 1923. Sénateur de l'État libre d'Irlande, il meurt à Roquebrune-Cap-Martin, en France, en 1939.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/William%20Butler%20Yeats",
+                  "classement": "Yeats, William Butler",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_yeats.jpg",
+                    "legende": "William Butler Yeats, photographie",
+                    "auteur": "Alice Boughton (1866–1943)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Yeats_Boughton.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_gonne",
+                  "axe": "Guerres et résistances",
+                  "date": 1866,
+                  "titre": "Naissance de Maud Gonne",
+                  "description": "Maud Gonne (1866-1953) est une comédienne et militante nationaliste irlandaise, née à Tongham, en Angleterre, féministe et engagée pour l'indépendance de l'Irlande. Fondatrice des Daughters of Ireland, elle défend les prisonniers politiques. Muse de William Butler Yeats, qui lui dédie de nombreux poèmes, elle épouse John MacBride, fusillé en 1916, et meurt à Clonskeagh en 1953.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Maud%20Gonne",
+                  "classement": "Gonne, Maud",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_gonne.jpg",
+                    "legende": "Maud Gonne, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Maudgonne.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_connolly",
+                  "axe": "Guerres et résistances",
+                  "date": 1868,
+                  "titre": "Naissance de James Connolly",
+                  "description": "James Connolly (1868-1916) est un syndicaliste et révolutionnaire socialiste irlandais, né à Édimbourg de parents irlandais. Organisateur des ouvriers de Dublin et fondateur de l'Irish Citizen Army, il signe la proclamation de la République et commande les insurgés de Dublin en 1916. Grièvement blessé, il est fusillé assis sur une chaise, à Kilmainham, le 12 mai 1916.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/James%20Connolly",
+                  "classement": "Connolly, James",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_connolly.jpg",
+                    "legende": "James Connolly, photographie",
+                    "auteur": "David Granville",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:James_Connolly2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_markievicz",
+                  "axe": "Guerres et résistances",
+                  "date": 1868,
+                  "titre": "Naissance de Constance Markievicz",
+                  "description": "Constance Markievicz (1868-1927) est une révolutionnaire irlandaise, née Constance Gore-Booth à Londres, dans l'aristocratie anglo-irlandaise. Elle prend les armes pendant l'insurrection de Pâques 1916 et est condamnée à mort, peine commuée en prison. Élue à Westminster en 1918, première femme élue à la Chambre des communes britannique, elle refuse d'y siéger et devient ministre du Travail du gouvernement du Dáil.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Constance%20Markievicz",
+                  "classement": "Markievicz, Constance",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_markievicz.jpg",
+                    "legende": "Constance Markievicz en uniforme, photographie",
+                    "auteur": "Keogh Brothers Ltd.",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Countess_Constance_Markiewicz-1.1.2_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_childers",
+                  "axe": "Littérature et pensée",
+                  "date": 1870,
+                  "titre": "Naissance de Robert Erskine Childers",
+                  "description": "Erskine Childers (1870-1922) est un écrivain et nationaliste irlandais, né à Londres. Auteur du roman d'espionnage « L'Énigme des sables » (1903), il transporte en 1914, sur son yacht Asgard, des armes destinées aux Irish Volunteers. Opposé au traité de 1921, il est fusillé par les autorités de l'État libre d'Irlande le 24 novembre 1922.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Robert%20Erskine%20Childers",
+                  "classement": "Childers, Erskine",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_childers.jpg",
+                    "legende": "Erskine Childers, photographie",
+                    "auteur": "ChildersFamily",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:RobertErskineChilders.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_griffith",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1871,
+                  "titre": "Naissance d'Arthur Griffith",
+                  "description": "Arthur Griffith (1871-1922) est un journaliste et homme d'État irlandais, né à Dublin, formé comme imprimeur. Fondateur du Sinn Féin, il dirige avec Michael Collins la délégation chargée de négocier le traité anglo-irlandais de 1921. Président du Dáil Éireann en 1922, il meurt d'une hémorragie cérébrale en août de la même année.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Arthur%20Griffith",
+                  "classement": "Griffith, Arthur",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_griffith.jpg",
+                    "legende": "Arthur Griffith, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Arthur_Griffith_(1871-1922)_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_jackyeats",
+                  "axe": "Beaux-arts",
+                  "date": 1871,
+                  "titre": "Naissance de Jack Butler Yeats",
+                  "description": "Jack Butler Yeats (1871-1957) est un artiste irlandais, né à Londres, frère du poète William Butler Yeats, surtout connu comme peintre et illustrateur. Installé à Dublin, il évolue d'une peinture réaliste de la vie irlandaise vers un expressionnisme aux couleurs vives. Il est aujourd'hui l'un des artistes irlandais les plus marquants du XXe siècle, et il meurt à Dublin en 1957.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jack%20Butler%20Yeats",
+                  "classement": "Yeats, Jack Butler",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_jackyeats.jpg",
+                    "legende": "Jack Butler Yeats, photographie",
+                    "auteur": "Alice Boughton (1866–1943)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jack_Butler_Yeats.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_synge",
+                  "axe": "Littérature et pensée",
+                  "date": 1871,
+                  "titre": "Naissance de John Millington Synge",
+                  "description": "John Millington Synge (1871-1909) est un dramaturge irlandais, né à Rathfarnham, près de Dublin, l'un des artisans du Celtic Revival. Cofondateur de l'Abbey Theatre, il écrit « Riders to the Sea » (1904) et « The Playboy of the Western World » (1907), dont la représentation provoque des émeutes à Dublin. Il meurt à Dublin à trente-sept ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/John%20Millington%20Synge",
+                  "classement": "Synge, John Millington",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_synge.jpg",
+                    "legende": "John Millington Synge, portrait dessiné",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:John_Millington_Synge_-_Project_Gutenberg_eText_19028.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_sayers",
+                  "axe": "Littérature et pensée",
+                  "date": 1873,
+                  "titre": "Naissance de Peig Sayers",
+                  "description": "Peig Sayers (1873-1958) est une conteuse et mémorialiste irlandaise, née près de Dún Chaoin, dans le Kerry, en pays de langue irlandaise. Établie sur la Grande Blasket, elle dicte ses souvenirs et ses contes, publiés en 1936 sous le titre « Peig », devenus une lecture scolaire. Elle meurt à Dingle en 1958.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Peig%20Sayers",
+                  "classement": "Sayers, Peig",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_sayers.jpg",
+                    "legende": "Peig Sayers, vers 1945",
+                    "auteur": "Anonymous Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Peig_Sayers_c1945.png"
+                  }
+                },
+                {
+                  "id": "pan_ie_shackleton",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1874,
+                  "titre": "Naissance d'Ernest Shackleton",
+                  "description": "Ernest Shackleton (1874-1922) est un explorateur anglo-irlandais, né à Kilkea, dans le comté de Kildare, l'une des principales figures de l'âge héroïque de l'exploration de l'Antarctique. Il dirige l'expédition Nimrod (1907-1909), qui s'arrête à moins de deux cents kilomètres du pôle Sud, puis l'expédition Endurance (1914-1917), dont il sauve tous les hommes après la perte du navire. Il meurt en Géorgie du Sud en 1922.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ernest%20Shackleton",
+                  "classement": "Shackleton, Ernest",
+                  "biographie": "bio_ernestshackleton",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_shackleton.jpg",
+                    "legende": "Ernest Shackleton, photographie dédicacée",
+                    "auteur": "George Charles Beresford (1864–1938)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ernest_Shackleton_before_1909.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_ie_crean",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1877,
+                  "titre": "Naissance de Tom Crean",
+                  "description": "Tom Crean (1877-1938) est un marin et explorateur irlandais, né à Annascaul, dans le comté de Kerry. Il participe à trois des quatre grandes expéditions britanniques en Antarctique, avec Scott puis Shackleton, et parcourt seul en 1912 plus de cinquante kilomètres pour sauver un officier. Il meurt à Cork en 1938.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Thomas%20Crean",
+                  "classement": "Crean, Tom",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_crean.jpg",
+                    "legende": "Tom Crean, photographie",
+                    "auteur": "Frank Hurley (1885–1962)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tom_Crean2b.JPG"
+                  }
+                },
+                {
+                  "id": "pan_ie_sheehy",
+                  "axe": "Guerres et résistances",
+                  "date": 1877,
+                  "titre": "Naissance d'Hanna Sheehy-Skeffington",
+                  "description": "Hanna Sheehy-Skeffington (1877-1946) est une suffragette et nationaliste irlandaise, née Hanna Sheehy. Avec son mari Francis et les époux Cousins, elle fonde en 1908 l'Irish Women's Franchise League, pour obtenir le droit de vote des femmes. Après l'assassinat de son mari par un officier britannique, en 1916, elle devient une militante républicaine, et elle meurt à Dublin en 1946.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hanna%20Sheehy-Skeffington",
+                  "classement": "Sheehy-Skeffington, Hanna",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_sheehy.jpg",
+                    "legende": "Hanna Sheehy-Skeffington, vers 1920",
+                    "auteur": "Underwood & Underwood, New York",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hanna_Sheehy-Skeffington,_circa_1920.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_eileengray",
+                  "axe": "Beaux-arts",
+                  "date": 1878,
+                  "titre": "Naissance d'Eileen Gray",
+                  "description": "Eileen Gray (1878-1976) est une designer et architecte irlandaise, née à Enniscorthy, dans le comté de Wexford, installée à Paris. Elle apprend la laque auprès d'un maître japonais et crée des paravents, des tables et le fauteuil Bibendum. Elle conçoit entre 1926 et 1929 la villa E-1027, sur la Côte d'Azur, manifeste de l'architecture moderne, et meurt à Paris en 1976.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Eileen%20Gray",
+                  "classement": "Gray, Eileen",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_eileengray.jpg",
+                    "legende": "Eileen Gray, photographie de profil",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Eileen_Gray.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_orpen",
+                  "axe": "Beaux-arts",
+                  "date": 1878,
+                  "titre": "Naissance de William Orpen",
+                  "description": "William Orpen (1878-1931) est un peintre portraitiste irlandais, né à Stillorgan, près de Dublin, formé à la Metropolitan School et à la Slade School de Londres. Peintre de guerre officiel pendant la Première Guerre mondiale, il peint aussi les portraits de la haute société britannique et irlandaise. Il meurt à Londres en 1931.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/William%20Orpen",
+                  "classement": "Orpen, William",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_orpen.jpg",
+                    "legende": "William Orpen, autoportrait",
+                    "auteur": "William Orpen (1878–1931)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:William_Orpen_Self-portrait_with_glasses.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_pearse",
+                  "axe": "Guerres et résistances",
+                  "date": 1879,
+                  "titre": "Naissance de Patrick Pearse",
+                  "description": "Patrick Pearse (1879-1916) est un enseignant, poète et avocat irlandais, né à Dublin, l'un des chefs de l'insurrection de Pâques 1916. Fondateur de l'école bilingue de Saint Enda, il lit le 24 avril 1916, devant la poste centrale de Dublin, la proclamation de la République irlandaise. Condamné à mort après l'échec de l'insurrection, il est fusillé à la prison de Kilmainham le 3 mai 1916.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Patrick%20Pearse",
+                  "classement": "Pearse, Patrick",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_pearse.jpg",
+                    "legende": "Patrick Pearse, photographie",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Patrick_Pearse.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_cosgrave",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1880,
+                  "titre": "Naissance de William T. Cosgrave",
+                  "description": "William Thomas Cosgrave (1880-1965) est un homme d'État irlandais, né à Dublin, successeur de Michael Collins à la tête du gouvernement provisoire en août 1922. Premier président du Conseil exécutif de l'État libre d'Irlande, de 1922 à 1932, il consolide le jeune État pendant la guerre civile et fonde le Fine Gael. Il quitte le pouvoir en 1932, battu par de Valera.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/William%20T.%20Cosgrave",
+                  "classement": "Cosgrave, William Thomas",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_cosgrave.jpg",
+                    "legende": "William Thomas Cosgrave, photographie",
+                    "auteur": "George Grantham Bain Collection (Library of Congress)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:William_Thomas_Cosgrave.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_ocasey",
+                  "axe": "Littérature et pensée",
+                  "date": 1880,
+                  "titre": "Naissance de Seán O'Casey",
+                  "description": "Seán O'Casey (1880-1964) est un dramaturge irlandais, né à Dublin sous le nom de John Casey, dans un quartier pauvre. Pour l'Abbey Theatre, il écrit « Juno and the Paycock » (1924) et « The Plough and the Stars » (1926), qui montrent la vie des taudis de Dublin pendant la révolution. Brouillé avec l'Irlande, il s'installe en Angleterre et meurt à Torquay en 1964.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Se%C3%A1n%20O%27Casey",
+                  "classement": "O'Casey, Seán",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_ocasey.jpg",
+                    "legende": "Seán O'Casey, en 1924",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sean_ocasey_1924.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_devalera",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1882,
+                  "titre": "Naissance d'Éamon de Valera",
+                  "description": "Éamon de Valera (1882-1975) est un homme d'État irlandais, né à New York, considéré comme le père de la nation libre d'Irlande. Commandant lors de l'insurrection de Pâques 1916, il refuse le traité de 1921, dirige le camp républicain pendant la guerre civile, puis fonde le Fianna Fáil. Chef du gouvernement à plusieurs reprises, il fait adopter la Constitution de 1937 et est président de la République de 1959 à 1973.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89amon%20de%20Valera",
+                  "classement": "Valera, Éamon de",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_devalera.jpg",
+                    "legende": "Éamon de Valera, photographie",
+                    "auteur": "National Photo Company",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Eamon_de_Valera_c_1922-30.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_joyce",
+                  "axe": "Littérature et pensée",
+                  "date": 1882,
+                  "titre": "Naissance de James Joyce",
+                  "description": "James Joyce (1882-1941) est un romancier et poète irlandais, né à Dublin, qui vit en exil à Trieste, à Paris et à Zurich. Auteur de « Gens de Dublin » (1914), d'« Ulysse » (1922) et de « Finnegans Wake » (1939), il est l'un des écrivains les plus influents du XXe siècle. Il meurt à Zurich en 1941.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/James%20Joyce",
+                  "classement": "Joyce, James",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_joyce.jpg",
+                    "legende": "James Joyce, à Paris",
+                    "auteur": "Berenice Abbott (1898–1991)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:James_Joyce_in_Paris.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_okelly",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1882,
+                  "titre": "Naissance de Seán T. O'Kelly",
+                  "description": "Seán O'Kelly (1882-1966) est un homme d'État irlandais, né à Dublin, membre fondateur du Sinn Féin en 1905 et secrétaire général de la Ligue gaélique. Cofondateur du Fianna Fáil avec de Valera, il occupe plusieurs ministères. Deuxième président d'Irlande de 1945 à 1959, il meurt à Dublin en 1966.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Se%C3%A1n%20T.%20O%27Kelly",
+                  "classement": "O'Kelly, Seán",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_okelly.jpg",
+                    "legende": "Seán O'Kelly, photographie",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Se%C3%A1n_%C3%93_Ceallaigh,_1910.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_mccormack",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1884,
+                  "titre": "Naissance de John McCormack",
+                  "description": "John McCormack (1884-1945) est un ténor irlandais, né à Athlone. Il débute à l'opéra, puis devient l'un des premiers grands chanteurs de disques, célèbre pour son répertoire de chansons irlandaises. Naturalisé américain en 1919, il rentre en Irlande et meurt à Dublin en 1945.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/John%20McCormack",
+                  "classement": "McCormack, John",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_mccormack.jpg",
+                    "legende": "John McCormack, photographie",
+                    "auteur": "Miscellaneous Items in High Demand, PPOC, Library of Congress",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:John_McCormack,_1884-1945_LCCN2003677331.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_harryclarke",
+                  "axe": "Beaux-arts",
+                  "date": 1889,
+                  "titre": "Naissance d'Harry Clarke",
+                  "description": "Harry Clarke (1889-1931) est un peintre-verrier et illustrateur irlandais, né à Dublin, figure importante du mouvement Arts and Crafts en Irlande. Influencé par le symbolisme et l'Art nouveau, il réalise des vitraux pour des églises et illustre les « Histoires extraordinaires » de Poe. Il meurt à Coire, en Suisse, en 1931.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Harry%20Clarke",
+                  "classement": "Clarke, Harry",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_harryclarke.jpg",
+                    "legende": "Harry Clarke, photographie",
+                    "auteur": "Lafayette Ltd",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Harry_Clarke_(photo).jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_collins",
+                  "axe": "Guerres et résistances",
+                  "date": 1890,
+                  "titre": "Naissance de Michael Collins",
+                  "description": "Michael Collins (1890-1922) est un chef révolutionnaire irlandais, né à Woodfield, dans le comté de Cork, ministre des Finances de la République irlandaise et directeur des services secrets de l'IRA. Pendant la guerre d'indépendance, il organise la lutte contre l'administration britannique, puis négocie à Londres le traité de 1921. Chef du gouvernement provisoire, il est tué dans une embuscade en août 1922, pendant la guerre civile.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Michael%20Collins%20(homme%20politique)",
+                  "classement": "Collins, Michael",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_collins.jpg",
+                    "legende": "Michael Collins, photographie de 1921",
+                    "auteur": "Agence de presse Meurisse Alternative names Agence Meurisse",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Michael_Collins_1921.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_bowen",
+                  "axe": "Littérature et pensée",
+                  "date": 1899,
+                  "titre": "Naissance d'Elizabeth Bowen",
+                  "description": "Elizabeth Bowen (1899-1973) est une romancière et nouvelliste irlandaise, née à Dublin dans une famille anglo-irlandaise. Elle publie « The House in Paris » (1935) et « The Death of the Heart » (1938), romans d'une grande finesse psychologique. Elle meurt à Londres en 1973.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Elizabeth%20Bowen",
+                  "classement": "Bowen, Elizabeth",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_bowen.jpg",
+                    "legende": "Elizabeth Bowen, photographie",
+                    "auteur": "Unknown photographer",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Elizabeth_Bowen.png"
+                  }
+                },
+                {
+                  "id": "pan_ie_lemass",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1899,
+                  "titre": "Naissance de Seán Lemass",
+                  "description": "Seán Lemass (1899-1971) est un homme d'État irlandais, né à Dublin, vétéran de l'insurrection de Pâques 1916, de la guerre d'indépendance et de la guerre civile. Ministre de l'Industrie et du Commerce, il mène une politique d'industrialisation, puis, chef du gouvernement de 1959 à 1966, il ouvre l'économie du pays. Il dépose en 1961 la candidature de l'Irlande à la Communauté économique européenne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Se%C3%A1n%20Lemass",
+                  "classement": "Lemass, Seán",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_lemass.jpg",
+                    "legende": "Seán Lemass, en 1966",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Se%C3%A1n_Lemass,_1966.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_barry",
+                  "axe": "Guerres et résistances",
+                  "date": 1902,
+                  "titre": "Naissance de Kevin Barry",
+                  "description": "Kevin Barry (1902-1920) est un étudiant et nationaliste irlandais, né à Dublin, membre des Irish Volunteers. À dix-huit ans, il participe à une attaque contre un convoi britannique, au cours de laquelle trois soldats sont tués. Condamné à mort et pendu à la prison de Mountjoy le 1er novembre 1920, il est le premier républicain exécuté par les Britanniques depuis 1916.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kevin%20Barry%20(nationaliste)",
+                  "classement": "Barry, Kevin",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_barry.jpg",
+                    "legende": "Kevin Barry, photographie",
+                    "auteur": "Keogh Brothers Ltd, Dublin",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kevin_Barry.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_walton",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1903,
+                  "titre": "Naissance d'Ernest Walton",
+                  "description": "Ernest Walton (1903-1995) est un physicien irlandais, né à Dungarvan, dans le comté de Waterford, fils d'un pasteur méthodiste. Avec John Cockcroft, il réalise à Cambridge en 1932 la première transmutation de noyaux atomiques par des particules accélérées artificiellement. Prix Nobel de physique en 1951, il enseigne ensuite au Trinity College de Dublin.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ernest%20Walton",
+                  "classement": "Walton, Ernest",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_walton.jpg",
+                    "legende": "Ernest Walton, photographie",
+                    "auteur": "Nobel foundation",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ernest_Walton.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_kavanagh",
+                  "axe": "Littérature et pensée",
+                  "date": 1904,
+                  "titre": "Naissance de Patrick Kavanagh",
+                  "description": "Patrick Kavanagh (1904-1967) est un poète et romancier irlandais, né à Inniskeen, dans le comté de Monaghan, d'abord fermier. Il décrit la vie paysanne dans le poème « The Great Hunger » (1942), le roman « Tarry Flynn » et la chanson « On Raglan Road ». Il meurt à Dublin en 1967.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Patrick%20Kavanagh",
+                  "classement": "Kavanagh, Patrick",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_kavanagh.jpg",
+                    "legende": "Patrick Kavanagh, portrait peint par Patrick Swift",
+                    "auteur": "Patrick Swift",
+                    "licence": "Image non libre",
+                    "source": "https://en.wikipedia.org/wiki/File:Patrick.Kavanagh.by.Patrick.Swift.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_macbride",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1904,
+                  "titre": "Naissance de Seán MacBride",
+                  "description": "Seán MacBride (1904-1988) est un avocat et homme politique irlandais, né à Paris, fils de Maud Gonne. Ancien chef d'état-major de l'IRA, puis ministre des Affaires étrangères, il est le premier président d'Amnesty International. Il reçoit le prix Nobel de la paix en 1974 et meurt à Dublin en 1988.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Se%C3%A1n%20MacBride",
+                  "classement": "MacBride, Seán",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_macbride.jpg",
+                    "legende": "Seán MacBride, en 1984",
+                    "auteur": "Bogaerts, Rob / Anefo",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Se%C3%A1n_MacBride_1984.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_ocadhain",
+                  "axe": "Littérature et pensée",
+                  "date": 1905,
+                  "titre": "Naissance de Máirtín Ó Cadhain",
+                  "description": "Máirtín Ó Cadhain (1905-1970) est l'un des écrivains de langue irlandaise les plus importants du XXe siècle, né dans le Connemara. Instituteur, interné pendant la guerre pour son engagement républicain, il écrit « Cré na Cille » (1949), roman où les morts d'un cimetière se disputent. Il enseigne ensuite l'irlandais à Trinity College, et meurt à Dublin en 1970.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/M%C3%A1irt%C3%ADn%20%C3%93%20Cadhain",
+                  "classement": "Cadhain, Máirtín Ó",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_ocadhain.jpg",
+                    "legende": "Máirtín Ó Cadhain, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Image non libre",
+                    "source": "https://en.wikipedia.org/wiki/File:M%C3%A1irt%C3%ADn_%C3%93_Cadhain.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_beckett",
+                  "axe": "Littérature et pensée",
+                  "date": 1906,
+                  "titre": "Naissance de Samuel Beckett",
+                  "description": "Samuel Beckett (1906-1989) est un écrivain irlandais d'expression française et anglaise, né à Foxrock, près de Dublin, installé en France à partir de 1937. Auteur du roman « Molloy » et des pièces « En attendant Godot » (1952) et « Fin de partie » (1957), il conduit le théâtre vers le dépouillement. Prix Nobel de littérature en 1969, il meurt à Paris en 1989.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Samuel%20Beckett",
+                  "classement": "Beckett, Samuel",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_beckett.jpg",
+                    "legende": "Samuel Beckett, photographie",
+                    "auteur": "Roger Pic (1920–2001) Alternative names Birth name: Roger Lucien Pinard; Roger Pinard",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Samuel_Beckett,_Pic,_1_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_flannobrien",
+                  "axe": "Littérature et pensée",
+                  "date": 1911,
+                  "titre": "Naissance de Flann O'Brien",
+                  "description": "Flann O'Brien (1911-1966) est un écrivain et chroniqueur irlandais, nom de plume de Brian O'Nolan, né à Strabane, dans le comté de Tyrone. Auteur du roman « At Swim-Two-Birds » (1939) et du « Troisième Policier », écrit en 1940 mais publié après sa mort, il tient aussi dans l'Irish Times une chronique satirique. Il meurt à Dublin en 1966.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Flann%20O%27Brien",
+                  "classement": "O'Brien, Flann",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_flannobrien.jpg",
+                    "legende": "Flann O'Brien, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Image non libre",
+                    "source": "https://en.wikipedia.org/wiki/File:Brian_O%27Nolan.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_lavin",
+                  "axe": "Littérature et pensée",
+                  "date": 1912,
+                  "titre": "Naissance de Mary Lavin",
+                  "description": "Mary Lavin (1912-1996) est une écrivaine irlandaise, née à Walpole, dans le Massachusetts, et élevée en Irlande à partir de dix ans. Nouvelliste, elle raconte les problèmes complexes mais bien définis des familles rurales irlandaises dans plusieurs recueils. Elle meurt à Dublin en 1996.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mary%20Lavin",
+                  "classement": "Lavin, Mary",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_lavin.jpg",
+                    "legende": "Mary Lavin, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Image non libre",
+                    "source": "https://en.wikipedia.org/wiki/File:Mary_Lavin.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_lynch",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1917,
+                  "titre": "Naissance de Jack Lynch",
+                  "description": "Jack Lynch (1917-1999) est un homme d'État irlandais, né à Cork, joueur de hurling et de football gaélique avant d'entrer en politique. Chef du Fianna Fáil, il est Premier ministre de 1966 à 1973, puis de 1977 à 1979. Sous son gouvernement, l'Irlande adhère à la Communauté européenne, en 1973.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jack%20Lynch",
+                  "classement": "Lynch, Jack",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_lynch.jpg",
+                    "legende": "Jack Lynch, photographie",
+                    "auteur": "Evers, Joost / Anefo",
+                    "licence": "CC BY-SA 3.0 NL",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jack_Lynch_1967_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_ring",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1920,
+                  "titre": "Naissance de Christy Ring",
+                  "description": "Christy Ring (1920-1979) est un joueur de hurling irlandais, né à Cloyne, dans le comté de Cork. Il joue pour Cloyne puis pour Glen Rovers de 1941 à 1967, et remporte huit titres de champion d'Irlande avec Cork. Considéré comme le plus grand joueur de l'histoire de ce sport, il meurt en 1979.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Christy%20Ring",
+                  "classement": "Ring, Christy",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_ring.jpg",
+                    "legende": "Christy Ring, en 1956",
+                    "auteur": "Clonroad Ennis Ireland",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Christy_Ring_visits_(1)_1956_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_behan",
+                  "axe": "Littérature et pensée",
+                  "date": 1923,
+                  "titre": "Naissance de Brendan Behan",
+                  "description": "Brendan Behan (1923-1964) est un écrivain irlandais, né à Dublin, qui écrit en anglais et en irlandais. Emprisonné à seize ans pour ses activités dans l'IRA, il en tire « Borstal Boy » (1958), et il écrit la pièce « The Quare Fellow » (1954). Alcoolique notoire, il meurt à Dublin à quarante et un ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Brendan%20Behan",
+                  "classement": "Behan, Brendan",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_behan.jpg",
+                    "legende": "Brendan Behan, photographie",
+                    "auteur": "New York World-Telegram and the Sun staff photographer: Albertin, Walter, photographer.",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Brendan_Behan_and_Jackie_Gleason_NYWTS.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_haughey",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1925,
+                  "titre": "Naissance de Charles Haughey",
+                  "description": "Charles Haughey (1925-2006) est un homme d'État irlandais, né à Castlebar, dans le comté de Mayo, trois fois Premier ministre entre 1979 et 1992. Chef du Fianna Fáil, il domine la vie politique des années 1980, mais des enquêtes révèlent après son départ les paiements secrets que lui versaient des hommes d'affaires. Il meurt à Kinsealy, près de Dublin, en 2006.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Charles%20James%20Haughey",
+                  "classement": "Haughey, Charles",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_haughey.jpg",
+                    "legende": "Charles Haughey, en 1989",
+                    "auteur": "Christian Lambiotte / European Communities",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Charles_Haughey_1989_(cropped_larger).png"
+                  }
+                },
+                {
+                  "id": "pan_ie_fitzgerald",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1926,
+                  "titre": "Naissance de Garret FitzGerald",
+                  "description": "Garret FitzGerald (1926-2011) est un homme d'État irlandais, né à Dublin, universitaire et économiste de formation, chef du Fine Gael. Premier ministre de 1981 à 1982 puis de 1982 à 1987, il signe avec Margaret Thatcher l'accord anglo-irlandais de 1985, qui donne à Dublin un rôle consultatif sur l'Irlande du Nord. Il meurt à Dublin en 2011.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Garret%20FitzGerald",
+                  "classement": "FitzGerald, Garret",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_fitzgerald.jpg",
+                    "legende": "Garret FitzGerald, photographie",
+                    "auteur": "Christian Lambiotte",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Garret_FitzGerald_1975_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_friel",
+                  "axe": "Littérature et pensée",
+                  "date": 1929,
+                  "titre": "Naissance de Brian Friel",
+                  "description": "Brian Friel (1929-2015) est un dramaturge nord-irlandais, né à Omagh, dans le comté de Tyrone, installé à Greencastle, dans le Donegal. Cofondateur de la Field Day Theatre Company, il écrit « Philadelphia, Here I Come! » (1964), « Translations » (1980) et « Dancing at Lughnasa » (1990). Considéré comme le plus grand dramaturge irlandais de la seconde moitié du XXe siècle, il meurt en 2015.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Brian%20Friel",
+                  "classement": "Friel, Brian",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_friel.jpg",
+                    "legende": "Brian Friel, photographie",
+                    "auteur": "Thebogsideartists",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Brian_Friel.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_ednaobrien",
+                  "axe": "Littérature et pensée",
+                  "date": 1930,
+                  "titre": "Naissance d'Edna O'Brien",
+                  "description": "Edna O'Brien (1930-2024) est une romancière, nouvelliste et dramaturge irlandaise, née à Tuamgraney, dans le comté de Clare. Son premier roman, « The Country Girls » (1960), qui dit l'intimité des femmes, est interdit en Irlande. Installée à Londres, elle meurt en 2024.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Edna%20O%27Brien",
+                  "classement": "O'Brien, Edna",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_ednaobrien.jpg",
+                    "legende": "Edna O'Brien, en 2016",
+                    "auteur": "Andrew Lih (User:Fuzheado)",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Edna_O%27Brien_(2016).jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_oriada",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1931,
+                  "titre": "Naissance de Seán Ó Riada",
+                  "description": "Seán Ó Riada (1931-1971) est un compositeur et chef d'orchestre irlandais, né John Reidy à Cork. Il participe à la renaissance de la musique traditionnelle irlandaise dans les années 1960, avec le groupe Ceoltóirí Chualann, dont sortiront les Chieftains, et compose la musique du film « Mise Éire » (1959). Il meurt à Londres en 1971.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Se%C3%A1n%20%C3%93%20Riada",
+                  "classement": "Riada, Seán Ó",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_oriada.jpg",
+                    "legende": "Seán Ó Riada, photographie",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Seanoriada.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_reynolds",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1932,
+                  "titre": "Naissance d'Albert Reynolds",
+                  "description": "Albert Reynolds (1932-2014) est un homme d'affaires et homme d'État irlandais, né à Rooskey, dans le comté de Roscommon, Premier ministre de 1992 à 1994. Chef du Fianna Fáil, il signe avec John Major la déclaration de Downing Street de 1993, qui ouvre la voie au cessez-le-feu de l'IRA en 1994. Il meurt à Dublin en 2014.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Albert%20Reynolds",
+                  "classement": "Reynolds, Albert",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_reynolds.jpg",
+                    "legende": "Albert Reynolds, photographie",
+                    "auteur": "Sharon Farmer (1951–) Alternative names Sharon Camille Farmer",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Albert_Reynolds_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_drew",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1934,
+                  "titre": "Naissance de Ronnie Drew",
+                  "description": "Ronnie Drew (1934-2008) est un chanteur et musicien de folk irlandais, né à Dún Laoghaire, dans l'agglomération de Dublin. Sa voix grave et rocailleuse fait la renommée internationale des Dubliners, dont il est chanteur pendant cinquante ans. Il meurt à Dublin en 2008.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ronnie%20Drew",
+                  "classement": "Drew, Ronnie",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_drew.jpg",
+                    "legende": "Ronnie Drew, en concert, 2004",
+                    "auteur": "Maelor",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ronnie_drew_2004.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_mcgahern",
+                  "axe": "Littérature et pensée",
+                  "date": 1934,
+                  "titre": "Naissance de John McGahern",
+                  "description": "John McGahern (1934-2006) est un écrivain irlandais, né à Knockanroe, dans le comté de Leitrim, fils d'un policier. Son roman « The Dark » (1965) est interdit par la censure irlandaise, ce qui lui coûte son poste d'instituteur. Il écrit ensuite « Amongst Women » (1990), et il meurt à Dublin en 2006.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/John%20McGahern",
+                  "classement": "McGahern, John",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_mcgahern.jpg",
+                    "legende": "John McGahern, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Image non libre",
+                    "source": "https://en.wikipedia.org/wiki/File:John_McGahern.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_hume",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1937,
+                  "titre": "Naissance de John Hume",
+                  "description": "John Hume (1937-2020) est un homme politique nord-irlandais, né à Derry, ancien enseignant. Cofondateur et chef du SDLP, il défend les droits civiques des catholiques et une solution négociée au conflit d'Irlande du Nord. Il reçoit en 1998, avec David Trimble, le prix Nobel de la paix pour l'accord du Vendredi saint, et meurt à Derry en 2020.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/John%20Hume",
+                  "classement": "Hume, John",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_hume.jpg",
+                    "legende": "John Hume, en 2008",
+                    "auteur": "The original uploader was Óli Gneisti at English Wikipedia .",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:John_Hume_2008.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_moloney",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1938,
+                  "titre": "Naissance de Paddy Moloney",
+                  "description": "Paddy Moloney (1938-2021) est un musicien irlandais, né à Donnycarney, un faubourg de Dublin, joueur de cornemuse irlandaise et de flûte. Fondateur du groupe The Chieftains, il participe à chacun de ses albums et fait connaître la musique traditionnelle irlandaise dans le monde entier. Il meurt à Dublin en octobre 2021.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Paddy%20Moloney",
+                  "classement": "Moloney, Paddy",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_moloney.jpg",
+                    "legende": "Paddy Moloney, photographie",
+                    "auteur": "Dean+Barb",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Paddy_Moloney.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_heaney",
+                  "axe": "Littérature et pensée",
+                  "date": 1939,
+                  "titre": "Naissance de Seamus Heaney",
+                  "description": "Seamus Heaney (1939-2013) est un poète irlandais, né à Castledawson, dans le comté de Derry, en Irlande du Nord. Sa poésie lie l'évocation sensuelle de la campagne à la mémoire des violences d'Ulster, de « Death of a Naturalist » (1966) à « North » (1975), et il traduit « Beowulf ». Prix Nobel de littérature en 1995, il meurt à Dublin en 2013.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Seamus%20Heaney",
+                  "classement": "Heaney, Seamus",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_heaney.jpg",
+                    "legende": "Seamus Heaney, photographie",
+                    "auteur": "Flickr user Sean O'Connor",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Seamus_Heaney_Photograph_Edit.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_lukekelly",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1940,
+                  "titre": "Naissance de Luke Kelly",
+                  "description": "Luke Kelly (1940-1984) est un chanteur et banjoïste de folk irlandais, né à Dublin dans une famille modeste. Il fonde en 1962 le groupe The Dubliners, avec Ciarán Bourke, Ronnie Drew et Barney McKenna, et donne sa voix à des classiques comme « Raglan Road ». Il meurt à Dublin en 1984.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Luke%20Kelly",
+                  "classement": "Kelly, Luke",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_lukekelly.jpg",
+                    "legende": "Luke Kelly, en concert, 1980",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Image non libre",
+                    "source": "https://en.wikipedia.org/wiki/File:Luke_Kelly_1980.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_boland",
+                  "axe": "Littérature et pensée",
+                  "date": 1944,
+                  "titre": "Naissance d'Eavan Boland",
+                  "description": "Eavan Boland (1944-2020) est une poétesse irlandaise, née à Dublin, qui passe une partie de son enfance à Londres et à New York. Ses poèmes donnent aux femmes et à la vie domestique une place dans la tradition poétique irlandaise, notamment dans « In a Time of Violence » (1994). Professeure à l'université Stanford, elle meurt à Dublin en 2020.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Eavan%20Boland",
+                  "classement": "Boland, Eavan",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_boland.jpg",
+                    "legende": "Eavan Boland, en 1996",
+                    "auteur": "Auteur inconnu",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Eavan_Boland_in_1996.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_gallagher",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1948,
+                  "titre": "Naissance de Rory Gallagher",
+                  "description": "Rory Gallagher (1948-1995) est un guitariste, chanteur et compositeur irlandais de blues rock, né à Ballyshannon, dans le comté de Donegal. Fondateur du groupe Taste puis soliste, il se fait connaître par des concerts passionnés, jusque dans le Belfast des années 1970, en plein conflit. Il meurt à Londres en 1995.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rory%20Gallagher",
+                  "classement": "Gallagher, Rory",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_gallagher.jpg",
+                    "legende": "Rory Gallagher, en 1982",
+                    "auteur": "Harry Potts",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rory_Gallagher_1982.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_lynott",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1949,
+                  "titre": "Naissance de Phil Lynott",
+                  "description": "Phil Lynott (1949-1986) est un musicien irlandais, né à West Bromwich, en Angleterre, et élevé à Dublin, chanteur et bassiste du groupe Thin Lizzy. Il écrit des textes d'une grande finesse et fait de Thin Lizzy l'une des grandes formations du hard rock, avec « Whiskey in the Jar » et « The Boys Are Back in Town ». Il meurt à Salisbury en 1986, à trente-six ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Phil%20Lynott",
+                  "classement": "Lynott, Phil",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_lynott.jpg",
+                    "legende": "Phil Lynott, en concert",
+                    "auteur": "Helge Øverås",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Thin_lizzy_22041980_01_400.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_sands",
+                  "axe": "Guerres et résistances",
+                  "date": 1954,
+                  "titre": "Naissance de Bobby Sands",
+                  "description": "Bobby Sands (1954-1981) est un militant républicain irlandais, né à Newtownabbey, près de Belfast, membre de l'IRA provisoire. Condamné à quatorze ans de prison, il mène en 1981 une grève de la faim dans la prison de Maze, pour obtenir le statut de prisonnier politique. Élu député de Fermanagh et South Tyrone un mois avant sa mort, il meurt le 5 mai 1981, après soixante-six jours.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bobby%20Sands",
+                  "classement": "Sands, Bobby",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_sands.jpg",
+                    "legende": "Bobby Sands, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Image non libre",
+                    "source": "https://en.wikipedia.org/wiki/File:Bobbysandslongkesh1973.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_macgowan",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1957,
+                  "titre": "Naissance de Shane MacGowan",
+                  "description": "Shane MacGowan (1957-2023) est un musicien irlandais, né à Pembury, dans le Kent, de parents irlandais, chanteur du groupe The Pogues. Mêlant la musique traditionnelle irlandaise au punk, il écrit « Fairytale of New York » (1987), devenu un classique de Noël. Il meurt à Dublin le 30 novembre 2023.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Shane%20MacGowan",
+                  "classement": "MacGowan, Shane",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_macgowan.jpg",
+                    "legende": "Shane MacGowan, en concert, 2008",
+                    "auteur": "Marcus Lynam from Dublin",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Shane_MacGowan_2008.jpg"
+                  }
+                },
+                {
+                  "id": "pan_ie_oriordan",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1971,
+                  "titre": "Naissance de Dolores O'Riordan",
+                  "description": "Dolores O'Riordan (1971-2018) est une auteure-compositrice-interprète de rock irlandaise, née à Ballybricken, dans le comté de Limerick. Chanteuse et leader des Cranberries à partir de 1990, elle connaît un succès mondial avec « Linger » et « Zombie ». Elle meurt à Londres en janvier 2018.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dolores%20O%27Riordan",
+                  "classement": "O'Riordan, Dolores",
+                  "image": {
+                    "src": "assets/portraits/pan_ie_oriordan.jpg",
+                    "legende": "Dolores O'Riordan, en 2016",
+                    "auteur": "Bart Notermans from Rotterdam, The Netherlands",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Dolores_O%27Riordan_2016_(cropped).jpeg"
+                  }
+                }
+              ],
+              "axeOrder": [
+                "Chefs d'État et dirigeants",
+                "Guerres et résistances",
+                "Littérature et pensée",
+                "Beaux-arts",
+                "Musique, spectacle et sport",
+                "Sciences, techniques et innovation"
+              ],
+              "essentiel": [
+                "pan_ie_patrick",
+                "pan_ie_brianboru",
+                "pan_ie_graceomalley",
+                "pan_ie_boyle",
+                "pan_ie_swift",
+                "pan_ie_wolfetone",
+                "pan_ie_oconnell",
+                "pan_ie_hamilton",
+                "pan_ie_parnell",
+                "pan_ie_wilde",
+                "pan_ie_shaw",
+                "pan_ie_yeats",
+                "pan_ie_shackleton",
+                "pan_ie_eileengray",
+                "pan_ie_pearse",
+                "pan_ie_devalera",
+                "pan_ie_joyce",
+                "pan_ie_collins",
+                "pan_ie_beckett",
+                "pan_ie_heaney"
               ]
             },
             {
