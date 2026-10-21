@@ -2340,6 +2340,30 @@ noms (Rhodésie, Nyassaland, Sud-Ouest africain, Bechuanaland, Basutoland, Swazi
 - **Statut américain des images : à relire**, comme pour l'Éthiopie et l'Afrique de l'Est. Le téléchargement a de nouveau exigé le détour par les miniatures directes de `upload.wikimedia.org`, Wikimedia limitant le débit pendant
   des heures.
 
+### Un bloc : le Caucase (Géorgie, Arménie, Azerbaïdjan)
+
+`pan_caucase`, « Grandes figures du Caucase » (code `caucase`, bloc ; rangé sous « Caucase », entre le Canada et la Chine) : **72 personnages de trois pays** — Arménie 25, Azerbaïdjan 24, Géorgie 23 — de Tigrane II
+(vers 140 av. J.-C.) à Lotfi Zadeh (1921). Par axe : 28 Littérature et pensée, 14 Chefs d'État et dirigeants, 14 Musique, spectacle et sport, 7 Guerres et résistances, 5 Beaux-arts, 4 Sciences, techniques et innovation ;
+24 ⭐ et aucune biographie liée. Chaque pays pèse environ un tiers du bloc (35 % au plus : le seuil de 40 % n'est pas en jeu). 72 portraits, tous libres : domaine public, CC BY 2.0, CC BY 4.0, CC BY-SA 3.0 et 4.0, CC0.
+Les mots-clés portent les trois pays, leurs villes (Tbilissi, Tiflis, Erevan, Bakou, Gandja, Choucha), le Haut-Karabagh, le Nakhitchevan, les alphabets, les républiques de 1918 et la révolution des Roses.
+
+- **Le périmètre** : les trois États du Caucase du Sud. **Le Caucase du Nord** (Tchétchénie, Daghestan, Ossétie du Nord, Circassiens…) relève de la Russie et n'est pas ici.
+- **Un personnage, un seul thème** : Staline (né à Gori), Bagration, Aïvazovski, Rostropovitch (né à Bakou) et Borodine sont à la Russie, Charles Aznavour à la France, Tamara Khanum à l'Asie centrale, Yousuf Karsh au Canada,
+  Ara Güler à la Turquie, Chah Ismaïl Ier et Shahriar à l'Iran : ils n'ont pas été redoublés.
+- **Le pays que le bloc donne à chacun, non l'état civil.** Les Arméniens de l'Empire ottoman honorés à Erevan (Komitas, né à Kütahya, Varoujan, Andranik) sont en Arménie, comme Khatchatourian (né à Tiflis), Paradjanov (né à Tbilissi)
+  ou Ambartsoumian ; Mikoïan, Bagramian et Kerimov, soviétiques d'origine caucasienne, y figurent avec une fiche qui dit ce qu'ils furent. **Lotfi Zadeh**, né à Bakou, élevé en Iran, américain, est un cas disputé, écrit comme tel.
+- **Nizami** écrit en persan : l'Azerbaïdjan et l'Iran le revendiquent, la fiche le dit. Les figures contestées (Heydar Aliyev, Chevardnadze, Gamsakhourdia, Mikoïan, Rassoulzadé et ses contacts avec l'Allemagne nazie)
+  sont écrites avec ce qu'on leur reproche, sans l'éluder.
+- **Dates retenues quand les sources divergent** : Tamar (« vers 1160 »), David IV (« vers 1073 »), Roustavéli (« vers 1172-vers 1216 »), Kétévan (« vers 1565 »), Grégoire de Narek (« vers 951 »), Nassimi (« vers 1369-1417 »).
+  Écartés pour une date contestée : Fuzûlî (vers 1483 ou 1494), Hasan bey Zardabi (1837 ou 1842), Mkhitar Gosh (vers 1120 ou 1130), Zarifa Aliyeva (1923 ou 1924), Mikayil Mouchfig (mort en 1938 ou 1939), Zabel Yessayan (décès incertain).
+- **Sans article en français, donc écartés** (la fiche renvoie à fr.wikipedia) : Jalil Mammadguloutzadé, Lado Goudiachvili, Ivané Beritachvili, Abbasgulu Bakikhanov, Mirza Chafi Vazeh.
+- **Écartés faute d'image exploitable** : Sayat-Nova, Toros Roslin, Avétik Issahakian, Alexandre Spendiarov, Vardan Mamikonian (statues, timbres ou images minuscules), Tenguiz Abouladzé et Merab Mamardachvili (aucune photographie libre),
+  Fikret Amirov (fichier signalé à la suppression), Sattar Bahlulzadé (le portrait de Commons n'est pas sûrement le sien) et Artem Alikhanian (seul un bas-relief).
+- **Des portraits indirects, et les légendes le disent** : Tigrane II par une monnaie, Kétévan par un panneau d'azulejos de Lisbonne, Roustavéli par un détail de fresque, Nassimi par un portrait imaginaire, les médiévaux par des miniatures
+  ou des icônes. **Kerimov est montré sur un timbre qui écrit son nom** (`nomVisible`) : il est écarté de « Qui est-ce ? », comme les autres portraits à inscription. Six portraits ont été recadrés (`recadrage`).
+- **Statut américain des images : à relire**, comme pour les blocs précédents ; le téléchargement a de nouveau exigé le détour par les miniatures directes de `upload.wikimedia.org`.
+- La liste examinée et les écartés sont dans `scripts/pantheon/caucase_candidats.md`.
+
 ### Un bloc : le monde malais (Malaisie, Singapour, Brunei et Timor oriental)
 
 `pan_malais`, « Grandes figures du monde malais » (code `malais`, bloc ; rangé sous « Monde malais »,

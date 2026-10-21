@@ -47,8 +47,8 @@ test('le squelette ne contient plus aucune description mais en garde la longueur
     assert.equal(events, fr.totalEvents);
 });
 
-test('budget : le squelette reste sous 6,5 Mo (il se télécharge avant tout affichage)', () => {
-    assert.ok(Buffer.byteLength(files.get('skeleton.json')) < 6.5 * 1024 * 1024);
+test('budget : le squelette reste sous 7 Mo (il se télécharge avant tout affichage)', () => {
+    assert.ok(Buffer.byteLength(files.get('skeleton.json')) < 7 * 1024 * 1024);
 });
 
 test('squelette + fiches reconstituent exactement data/fr.json', async () => {

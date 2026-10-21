@@ -453,6 +453,11 @@ test('« Grandes figures d’Afrique australe » : chaque ancre porte le pays de
     verifierPantheonDeBloc('pan_afriqueaustrale', 71, 9);
 });
 
+test('« Grandes figures du Caucase » : chaque ancre porte le pays de son événement, et la session se joue', () => {
+    // Trois pays d'un tiers du bloc chacun : aucun ne doit manquer parmi les ancres.
+    verifierPantheonDeBloc('pan_caucase', 47, 3);
+});
+
 test('« Grandes figures d’Afrique centrale » : chaque ancre porte le pays de son événement, et la session se joue', () => {
     // Dix pays, dont plusieurs (São Tomé-et-Príncipe, la Guinée équatoriale, le Tchad) n'ont que quelques
     // figures : la RDC (20) et le Cameroun (11) ne doivent pas les faire disparaître parmi les ancres.
