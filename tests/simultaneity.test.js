@@ -448,6 +448,11 @@ test('« Grandes figures de l’océan Indien occidental » : chaque ancre porte
     verifierPantheonDeBloc('pan_oceanindien', 73, 4);
 });
 
+test('« Grandes figures de la Caraïbe non hispanique » : chaque ancre porte le pays de son événement, et la session se joue', () => {
+    // Treize pays, dont plusieurs (Antigua-et-Barbuda, Saint-Vincent) n'ont qu'une figure face à Haïti (20) et à la Jamaïque (19) : aucun ne doit manquer parmi les ancres.
+    verifierPantheonDeBloc('pan_caraibes', 79, 13);
+});
+
 test('« Grandes figures d’Afrique australe » : chaque ancre porte le pays de son événement, et la session se joue', () => {
     // Neuf pays, dont plusieurs (l'Eswatini, le Malawi) n'ont que deux ou quatre figures : aucun ne doit manquer parmi les ancres.
     verifierPantheonDeBloc('pan_afriqueaustrale', 71, 9);

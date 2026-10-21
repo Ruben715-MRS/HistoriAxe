@@ -92,7 +92,7 @@
       "biographie": "bio_toussaint",
       "portrait": {
         "fichier": "Général Toussaint Louverture.jpg",
-        "legende": "À écrire",
+        "legende": "Toussaint Louverture, portrait peint du XIXe siècle",
         "licence": "Domaine public",
         "auteur": "Unknown author Unknown author"
       }
@@ -110,7 +110,7 @@
       "essentiel": true,
       "portrait": {
         "fichier": "Jean Jacques Dessalines.jpg",
-        "legende": "À écrire",
+        "legende": "Jean-Jacques Dessalines, portrait peint par Louis Rigaud",
         "licence": "Domaine public",
         "auteur": "Louis Rigaud"
       }
@@ -127,8 +127,17 @@
       "pays": "HT",
       "essentiel": true,
       "portrait": {
-        "fichier": "Henri Christophe.jpg",
-        "legende": "À écrire"
+        "fichier": "Henri Christophe, Bulletin de l'ISPAN n° 38.png",
+        "legende": "Henri Christophe, portrait peint par Richard Evans, vers 1816",
+        "recadrage": [
+          0.35,
+          0.02,
+          0.85,
+          0.5
+        ],
+        "largeur": 960,
+        "licence": "Domaine public",
+        "auteur": "Richard Evans (1784–1871) Description English portrait painter"
       }
     },
     {
@@ -144,7 +153,10 @@
       "essentiel": true,
       "portrait": {
         "fichier": "Portrait du président Alexandre Pétion.jpg",
-        "legende": "À écrire"
+        "legende": "Alexandre Pétion, gravure en médaillon",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author",
+        "nomVisible": true
       }
     },
     {
@@ -159,7 +171,9 @@
       "pays": "HT",
       "portrait": {
         "fichier": "President Jean-Pierre Boyer of Haiti (Hispaniola Unification Regime) Portrait.jpg",
-        "legende": "À écrire"
+        "legende": "Jean-Pierre Boyer, portrait colorié du XIXe siècle",
+        "licence": "Domaine public",
+        "auteur": "B.C. (Name unknown, beyond these initials)"
       }
     },
     {
@@ -174,7 +188,9 @@
       "pays": "HT",
       "portrait": {
         "fichier": "Faustin Soulouque.jpg",
-        "legende": "À écrire"
+        "legende": "Faustin Soulouque, gravure de C. Dietrich",
+        "licence": "Domaine public",
+        "auteur": "C. Dietrich"
       }
     },
     {
@@ -189,7 +205,9 @@
       "pays": "HT",
       "portrait": {
         "fichier": "François Capois dit Capois-la-Mort.jpg",
-        "legende": "À écrire"
+        "legende": "François Capois, dit Capois-la-Mort, portrait gravé",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
       }
     },
     {
@@ -204,7 +222,9 @@
       "pays": "HT",
       "portrait": {
         "fichier": "Charlemagne Péralte.jpg",
-        "legende": "À écrire"
+        "legende": "Charlemagne Péralte, photographie",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
       }
     },
     {
@@ -219,7 +239,9 @@
       "pays": "HT",
       "portrait": {
         "fichier": "Antenor Firmin.jpg",
-        "legende": "À écrire"
+        "legende": "Anténor Firmin, photographie en habit de cérémonie",
+        "licence": "Domaine public",
+        "auteur": "C. Liebert"
       }
     },
     {
@@ -232,10 +254,11 @@
       "description": "Jean Price-Mars (1876-1969) est un médecin, ethnologue et homme d'État haïtien, né à Grande-Rivière-du-Nord. Son livre « Ainsi parla l'oncle » (1928), qui réhabilite le folklore et les croyances du peuple haïtien, lance le mouvement indigéniste. Diplomate et professeur, il meurt à Pétion-Ville en 1969.",
       "wikipedia": "Jean Price Mars",
       "pays": "HT",
-      "essentiel": true,
       "portrait": {
         "fichier": "Jean Price-Mars.jpg",
-        "legende": "À écrire"
+        "legende": "Jean Price-Mars, photographie",
+        "licence": "CC BY-SA 1.0",
+        "auteur": "CIDIHCA, D.R"
       }
     },
     {
@@ -251,7 +274,9 @@
       "essentiel": true,
       "portrait": {
         "fichier": "Jacques Roumain.jpg",
-        "legende": "À écrire"
+        "legende": "Jacques Roumain, photographie",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
       }
     },
     {
@@ -266,7 +291,9 @@
       "pays": "HT",
       "portrait": {
         "fichier": "Portrait de Jacques Stéphen Alexis dans le hall de l'Hôtel Moskva le 24 mai 1959.jpg",
-        "legende": "À écrire"
+        "legende": "Jacques Stephen Alexis, photographie",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Florocky"
       }
     },
     {
@@ -281,7 +308,9 @@
       "pays": "HT",
       "portrait": {
         "fichier": "O. Durand.jpg",
-        "legende": "À écrire"
+        "legende": "Oswald Durand, portrait",
+        "licence": "Domaine public",
+        "auteur": "Stanthemanpean"
       }
     },
     {
@@ -296,7 +325,15 @@
       "pays": "HT",
       "portrait": {
         "fichier": "Louis-Joseph Janvier.jpg",
-        "legende": "À écrire"
+        "legende": "Louis-Joseph Janvier, gravure",
+        "recadrage": [
+          0,
+          0,
+          1,
+          0.9
+        ],
+        "licence": "Domaine public",
+        "auteur": "Louis-Joseph Janvier"
       }
     },
     {
@@ -311,7 +348,9 @@
       "pays": "HT",
       "portrait": {
         "fichier": "Jean-Pierre Basilic Dantor Franck Étienne d'Argent.jpg",
-        "legende": "À écrire"
+        "legende": "Frankétienne, photographie",
+        "licence": "Domaine public",
+        "auteur": "Jean Laposte"
       }
     },
     {
@@ -327,7 +366,9 @@
       "essentiel": true,
       "portrait": {
         "fichier": "Hector Hyppolite.jpg",
-        "legende": "À écrire"
+        "legende": "Hector Hyppolite, photographie",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
       }
     },
     {
@@ -342,7 +383,15 @@
       "pays": "HT",
       "portrait": {
         "fichier": "Philomé Obin.jpg",
-        "legende": "À écrire"
+        "legende": "Philomé Obin dans son atelier, en 1983",
+        "recadrage": [
+          0.35,
+          0,
+          1,
+          1
+        ],
+        "licence": "Domaine public",
+        "auteur": "en:User:Manno05"
       }
     },
     {
@@ -357,7 +406,9 @@
       "pays": "HT",
       "portrait": {
         "fichier": "François Duvalier (cropped).jpg",
-        "legende": "À écrire"
+        "legende": "François Duvalier, photographie",
+        "licence": "Domaine public",
+        "auteur": "Unknown artist Unknown artist"
       }
     },
     {
@@ -372,7 +423,10 @@
       "pays": "HT",
       "portrait": {
         "fichier": "Louis Boisrond-Tonnerre.jpg",
-        "legende": "À écrire"
+        "legende": "Louis Boisrond-Tonnerre, sur un timbre haïtien de 1954",
+        "licence": "Domaine public",
+        "auteur": "Portrait datant du XIXe siècle",
+        "nomVisible": true
       }
     },
     {
@@ -387,7 +441,9 @@
       "pays": "HT",
       "portrait": {
         "fichier": "Dantès Bellegarde.jpg",
-        "legende": "À écrire"
+        "legende": "Dantès Bellegarde, portrait",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
       }
     },
     {
@@ -403,7 +459,16 @@
       "essentiel": true,
       "portrait": {
         "fichier": "Marcus Garvey 1924-08-05.jpg",
-        "legende": "À écrire"
+        "legende": "Marcus Garvey, photographie de 1924",
+        "recadrage": [
+          0.1,
+          0.1,
+          0.8,
+          0.55
+        ],
+        "largeur": 960,
+        "licence": "Domaine public",
+        "auteur": "from George Grantham Bain Collection"
       }
     },
     {
@@ -420,7 +485,9 @@
       "biographie": "bio_bobmarley",
       "portrait": {
         "fichier": "Bob Marley 1976 press photo.jpg",
-        "legende": "À écrire"
+        "legende": "Bob Marley, photographie de presse de Dennis Morris, 1976",
+        "licence": "Domaine public",
+        "auteur": "Dennis Morris; Distributed by Island Records"
       }
     },
     {
@@ -436,7 +503,10 @@
       "essentiel": true,
       "portrait": {
         "fichier": "Nanny of the Maroons.jpg",
-        "legende": "À écrire"
+        "legende": "Nanny des Marrons, buste commémoratif",
+        "licence": "CC0 (domaine public)",
+        "auteur": "Jamaica1962",
+        "nomVisible": true
       }
     },
     {
@@ -452,7 +522,9 @@
       "essentiel": true,
       "portrait": {
         "fichier": "PaulBogle-MorantBay.jpg",
-        "legende": "À écrire"
+        "legende": "Paul Bogle, statue de Morant Bay",
+        "licence": "CC BY 2.0",
+        "auteur": "dubdem sound system"
       }
     },
     {
@@ -467,23 +539,9 @@
       "pays": "JM",
       "portrait": {
         "fichier": "George William Gordon.jpg",
-        "legende": "À écrire"
-      }
-    },
-    {
-      "slug": "sharpe",
-      "nom": "Samuel Sharpe",
-      "classement": "Sharpe, Samuel",
-      "titre": "Naissance de Samuel Sharpe",
-      "axe": "Guerres et résistances",
-      "naissance": 1801,
-      "description": "Samuel Sharpe (1801-1832) est un esclave et diacre baptiste jamaïcain, né près de Montego Bay. Il organise fin 1831 la « guerre baptiste », grève générale des esclaves qui tourne à l'insurrection et touche tout l'ouest de l'île. Pendu à Montego Bay le 23 mai 1832, il est devenu héros national, et le soulèvement a hâté l'abolition de l'esclavage dans l'Empire britannique, en 1833.",
-      "wikipedia": "Samuel Sharpe",
-      "pays": "JM",
-      "essentiel": true,
-      "portrait": {
-        "fichier": "Samuel Sharpe by Matilda Sharpe.jpg",
-        "legende": "À écrire"
+        "legende": "George William Gordon, gravure de T. Howney",
+        "licence": "Domaine public",
+        "auteur": "T. Howney"
       }
     },
     {
@@ -499,7 +557,16 @@
       "essentiel": true,
       "portrait": {
         "fichier": "President John F. Kennedy with Prime Minister of Jamaica, Sir Alexander Bustamante (02).jpg",
-        "legende": "À écrire"
+        "legende": "Alexander Bustamante, à gauche, reçu par le président Kennedy, 1962",
+        "recadrage": [
+          0,
+          0.2,
+          0.36,
+          0.65
+        ],
+        "largeur": 960,
+        "licence": "Domaine public",
+        "auteur": "Robert Knudsen, photographies de la Maison-Blanche"
       }
     },
     {
@@ -512,10 +579,11 @@
       "description": "Norman Manley (1893-1969) est un avocat et homme d'État jamaïcain, né à Roxborough, boursier Rhodes à Oxford. Fondateur du People's National Party en 1938, il dirige le gouvernement de 1955 à 1962 et retire la Jamaïque de la Fédération des Indes occidentales par le référendum de 1961, ce qui prépare l'indépendance. Héros national, il meurt à Kingston en 1969.",
       "wikipedia": "Norman Manley",
       "pays": "JM",
-      "essentiel": true,
       "portrait": {
         "fichier": "Norman Manley, The Miami Herald 1955 08 04 (cropped).jpg",
-        "legende": "À écrire"
+        "legende": "Norman Manley, photographie de presse, 1955",
+        "licence": "Domaine public",
+        "auteur": "Miami Herald Staff"
       }
     },
     {
@@ -530,7 +598,9 @@
       "pays": "JM",
       "portrait": {
         "fichier": "Michael Manley 1977 cropped.png",
-        "legende": "À écrire"
+        "legende": "Michael Manley, photographie de 1977",
+        "licence": "Domaine public",
+        "auteur": "White House Staff Photographer"
       }
     },
     {
@@ -545,7 +615,9 @@
       "pays": "JM",
       "portrait": {
         "fichier": "Seaga at AFB Andrews (cropped).jpeg",
-        "legende": "À écrire"
+        "legende": "Edward Seaga, photographie",
+        "licence": "Domaine public",
+        "auteur": "A1C Virgil C. Zurbruegg, Andrews Air Force Base"
       }
     },
     {
@@ -561,7 +633,9 @@
       "essentiel": true,
       "portrait": {
         "fichier": "Claude McKay 1920.jpg",
-        "legende": "À écrire"
+        "legende": "Claude McKay, photographie de 1920",
+        "licence": "Domaine public",
+        "auteur": "Unknown artist Unknown artist"
       }
     },
     {
@@ -576,7 +650,16 @@
       "pays": "JM",
       "portrait": {
         "fichier": "Una Marson - BBC - WWII.jpg",
-        "legende": "À écrire"
+        "legende": "Una Marson, à la BBC pendant la Seconde Guerre mondiale",
+        "recadrage": [
+          0.35,
+          0.1,
+          1,
+          0.95
+        ],
+        "largeur": 0,
+        "licence": "Domaine public",
+        "auteur": "Anonymous Unknown author"
       }
     },
     {
@@ -592,7 +675,9 @@
       "essentiel": true,
       "portrait": {
         "fichier": "Seacole - Challen.jpg",
-        "legende": "À écrire"
+        "legende": "Mary Seacole, portrait peint par Albert Charles Challen, 1869",
+        "licence": "Domaine public",
+        "auteur": "Albert Charles Challen (1847–1881) Description painter"
       }
     },
     {
@@ -606,8 +691,11 @@
       "wikipedia": "Peter Tosh",
       "pays": "JM",
       "portrait": {
-        "fichier": "PeterToshWithRobbieShakespeare1978.jpg",
-        "legende": "À écrire"
+        "fichier": "BushDoctor1978 (cropped2).jpg",
+        "legende": "Peter Tosh en concert, 1978",
+        "largeur": 0,
+        "licence": "CC BY 3.0",
+        "auteur": "TimDuncan"
       }
     },
     {
@@ -622,7 +710,9 @@
       "pays": "JM",
       "portrait": {
         "fichier": "Jimmy Cliff - Festival du Bout du Monde 2012 - 022.jpg",
-        "legende": "À écrire"
+        "legende": "Jimmy Cliff en concert, 2012",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Thesupermat"
       }
     },
     {
@@ -637,7 +727,9 @@
       "pays": "JM",
       "portrait": {
         "fichier": "Toots-Hibbert (cropped).jpg",
-        "legende": "À écrire"
+        "legende": "Toots Hibbert en concert",
+        "licence": "CC BY-SA 2.0",
+        "auteur": "Karl Simpson"
       }
     },
     {
@@ -652,7 +744,9 @@
       "pays": "JM",
       "portrait": {
         "fichier": "Lee scratch perry 2009.jpg",
-        "legende": "À écrire"
+        "legende": "Lee Perry, en 2009",
+        "licence": "CC BY 2.0",
+        "auteur": "marco annunziata from Italy"
       }
     },
     {
@@ -666,8 +760,10 @@
       "wikipedia": "George Headley",
       "pays": "JM",
       "portrait": {
-        "fichier": "George Headley photo.jpg",
-        "legende": "À écrire"
+        "fichier": "George Headley.jpg",
+        "legende": "George Headley, photographie",
+        "licence": "Domaine public",
+        "auteur": "National Library of Australia"
       }
     },
     {
@@ -682,7 +778,9 @@
       "pays": "JM",
       "portrait": {
         "fichier": "Arthur Wint 1948.jpg",
-        "legende": "À écrire"
+        "legende": "Arthur Wint aux Jeux olympiques de Londres, en 1948",
+        "licence": "Domaine public",
+        "auteur": "Unknown (Associated Press)"
       }
     },
     {
@@ -697,7 +795,9 @@
       "pays": "JM",
       "portrait": {
         "fichier": "Edna Manley 1955 press photo (cropped).jpg",
-        "legende": "À écrire"
+        "legende": "Edna Manley, photographie de presse, 1955",
+        "licence": "Domaine public",
+        "auteur": "Associated Press"
       }
     },
     {
@@ -713,7 +813,9 @@
       "essentiel": true,
       "portrait": {
         "fichier": "Eric Williams (cropped).jpg",
-        "legende": "À écrire"
+        "legende": "Eric Williams, photographie",
+        "licence": "CC0 (domaine public)",
+        "auteur": "Joop van Bilsen for Anefo"
       }
     },
     {
@@ -728,8 +830,10 @@
       "pays": "TT",
       "essentiel": true,
       "portrait": {
-        "fichier": "V.S. Naipaul (cropped).jpg",
-        "legende": "À écrire"
+        "fichier": "VS Naipaul 2016 Dhaka (cropped).jpg",
+        "legende": "V. S. Naipaul, en 2016",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Faizul Latif Chowdhury"
       }
     },
     {
@@ -745,7 +849,9 @@
       "essentiel": true,
       "portrait": {
         "fichier": "CLR James, 1938.jpg",
-        "legende": "À écrire"
+        "legende": "C. L. R. James, photographie de 1938",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
       }
     },
     {
@@ -760,7 +866,28 @@
       "pays": "TT",
       "portrait": {
         "fichier": "Learie Constantine in Australia.jpg",
-        "legende": "À écrire"
+        "legende": "Learie Constantine, photographie",
+        "largeur": 330,
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "selvon",
+      "nom": "Samuel Selvon",
+      "classement": "Selvon, Samuel",
+      "titre": "Naissance de Samuel Selvon",
+      "axe": "Littérature et pensée",
+      "naissance": 1923,
+      "description": "Samuel Selvon (1923-1994) est un écrivain indo-caribéen de langue anglaise, né à San Fernando, à Trinité. Installé à Londres en 1950, il y publie « The Lonely Londoners » (1956), roman des immigrés antillais de la génération Windrush, qui fait de l'anglais créole une langue de littérature. Il meurt à Port-d'Espagne en 1994.",
+      "wikipedia": "Samuel Selvon",
+      "pays": "TT",
+      "portrait": {
+        "fichier": "Sam Selvon, 1952 (cropped).jpg",
+        "legende": "Samuel Selvon, photographie de 1952",
+        "largeur": 0,
+        "licence": "Domaine public",
+        "auteur": "BBC UK Government"
       }
     },
     {
@@ -775,7 +902,15 @@
       "pays": "TT",
       "portrait": {
         "fichier": "Ellie Mannette.jpg",
-        "legende": "À écrire"
+        "legende": "Ellie Mannette travaillant un fût de steel pan",
+        "recadrage": [
+          0,
+          0,
+          0.75,
+          0.9
+        ],
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Jake Lambuth"
       }
     },
     {
@@ -790,7 +925,9 @@
       "pays": "TT",
       "portrait": {
         "fichier": "Mighty Sparrow 2015 (profile).jpg",
-        "legende": "À écrire"
+        "legende": "Mighty Sparrow, en 2015",
+        "licence": "Domaine public",
+        "auteur": "U.S. Embassy Trinidad and Tobago"
       }
     },
     {
@@ -805,7 +942,10 @@
       "pays": "TT",
       "portrait": {
         "fichier": "Albert Gomes.png",
-        "legende": "À écrire"
+        "legende": "Albert Gomes, photographie de presse, 1950",
+        "largeur": 330,
+        "licence": "Domaine public",
+        "auteur": "The Barbados Advocate"
       }
     },
     {
@@ -818,10 +958,11 @@
       "description": "Errol Barrow (1920-1987) est un avocat et homme d'État barbadien, né à Saint Lucy, fils d'un pasteur anglican. Fondateur du Democratic Labour Party en 1955, il dirige le gouvernement de 1961 à 1976 et mène la Barbade à l'indépendance, le 30 novembre 1966. Revenu au pouvoir en 1986, il meurt en fonction en 1987, et il est aujourd'hui l'un des héros nationaux du pays.",
       "wikipedia": "Errol Barrow",
       "pays": "BB",
-      "essentiel": true,
       "portrait": {
         "fichier": "Errol Barrow 1968.png",
-        "legende": "À écrire"
+        "legende": "Errol Barrow, en 1968",
+        "licence": "CC BY 3.0",
+        "auteur": "White House Naval Photographic Unit."
       }
     },
     {
@@ -836,7 +977,10 @@
       "pays": "BB",
       "portrait": {
         "fichier": "Grantley Herbert Adams 1951.png",
-        "legende": "À écrire"
+        "legende": "Grantley Adams, photographie de 1951",
+        "largeur": 330,
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
       }
     },
     {
@@ -849,10 +993,11 @@
       "description": "Frank Worrell (1924-1967) est un joueur de cricket barbadien, né à Saint Michael, l'un des « trois W » avec Everton Weekes et Clyde Walcott. Capitaine des Indes occidentales en 1960-1961, il soude une équipe réunissant des joueurs de plusieurs îles, et sa tournée en Australie s'achève par un adieu triomphal à Melbourne. Sénateur de Jamaïque, il meurt d'une leucémie à Kingston en 1967.",
       "wikipedia": "Frank Worrell",
       "pays": "BB",
-      "essentiel": true,
       "portrait": {
         "fichier": "Frank Worrell.jpg",
-        "legende": "À écrire"
+        "legende": "Frank Worrell, photographie de presse",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
       }
     },
     {
@@ -867,7 +1012,9 @@
       "pays": "BB",
       "portrait": {
         "fichier": "Everton Weekes, 1956.jpg",
-        "legende": "À écrire"
+        "legende": "Everton Weekes, en 1956",
+        "licence": "Domaine public",
+        "auteur": "Unidentified photographer"
       }
     },
     {
@@ -882,7 +1029,9 @@
       "pays": "BB",
       "portrait": {
         "fichier": "SamuelJackmanPrescod.jpg",
-        "legende": "À écrire"
+        "legende": "Samuel Jackman Prescod, détail d'un tableau de Benjamin Haydon, 1840",
+        "licence": "Domaine public",
+        "auteur": "Benjamin Haydon (1786–1846)"
       }
     },
     {
@@ -897,7 +1046,9 @@
       "pays": "BB",
       "portrait": {
         "fichier": "George Lamming 1988 (cropped).jpg",
-        "legende": "À écrire"
+        "legende": "George Lamming, en 1988",
+        "licence": "Domaine public",
+        "auteur": "Bernard Gotfryd"
       }
     },
     {
@@ -910,10 +1061,11 @@
       "description": "Lynden Pindling (1930-2000) est un avocat et homme d'État bahaméen, né à Nassau, généralement considéré comme le « Père de la Nation ». Chef du Parti libéral progressiste de 1965 à 1997, il dirige le gouvernement de 1967 à 1992 et mène les Bahamas à l'indépendance en 1973. Son long pouvoir est assombri par des accusations répétées de corruption.",
       "wikipedia": "Lynden Pindling",
       "pays": "BS",
-      "essentiel": true,
       "portrait": {
         "fichier": "Lynden Pindling headshot 1971.jpg",
-        "legende": "À écrire"
+        "legende": "Lynden Pindling, en 1971",
+        "licence": "Domaine public",
+        "auteur": "AP Newsfeatures"
       }
     },
     {
@@ -929,7 +1081,9 @@
       "essentiel": true,
       "portrait": {
         "fichier": "Sidney Poitier 1968.jpg",
-        "legende": "À écrire"
+        "legende": "Sidney Poitier, en 1968",
+        "licence": "Domaine public",
+        "auteur": "Unknown photographer"
       }
     },
     {
@@ -944,7 +1098,9 @@
       "pays": "AG",
       "portrait": {
         "fichier": "Vere Bird 1986 (cropped).jpg",
-        "legende": "À écrire"
+        "legende": "Vere Bird, en 1986",
+        "licence": "Domaine public",
+        "auteur": "Pete Souza, White House"
       }
     },
     {
@@ -957,10 +1113,11 @@
       "description": "Eugenia Charles (1919-2005) est une avocate et femme d'État dominiquaise, née à Pointe-Michel, fille d'un planteur d'agrumes. Première femme à diriger un gouvernement dans la Caraïbe, elle est Première ministre de 1980 à 1995, et soutient l'intervention américaine à la Grenade en 1983. Elle meurt à Saint-Pierre, en Martinique, en 2005.",
       "wikipedia": "Eugenia Charles",
       "pays": "DM",
-      "essentiel": true,
       "portrait": {
         "fichier": "Eugenia Charles.jpg",
-        "legende": "À écrire"
+        "legende": "Eugenia Charles, photographie",
+        "licence": "Domaine public",
+        "auteur": "U.S. Government"
       }
     },
     {
@@ -975,8 +1132,17 @@
       "pays": "DM",
       "essentiel": true,
       "portrait": {
-        "fichier": "Jean Rhys (left, in hat) with Mollie Stoner, Velthams, 1970s B (cropped).jpg",
-        "legende": "À écrire"
+        "fichier": "Jean Rhys (left, in hat) with Mollie Stoner, Velthams, 1970s B.jpg",
+        "legende": "Jean Rhys, dans les années 1970",
+        "recadrage": [
+          0.02,
+          0.36,
+          0.52,
+          0.74
+        ],
+        "largeur": 500,
+        "licence": "CC BY-SA 3.0",
+        "auteur": "G88keeper"
       }
     },
     {
@@ -992,7 +1158,9 @@
       "essentiel": true,
       "portrait": {
         "fichier": "Derek Walcott Festival de Poesía Granada.jpg",
-        "legende": "À écrire"
+        "legende": "Derek Walcott lors d'un festival de poésie",
+        "licence": "CC BY 2.0",
+        "auteur": "Jorge Mejía peralta"
       }
     },
     {
@@ -1007,7 +1175,10 @@
       "pays": "LC",
       "portrait": {
         "fichier": "John Compton 1986.png",
-        "legende": "À écrire"
+        "legende": "John Compton, en 1986",
+        "largeur": 330,
+        "licence": "Domaine public",
+        "auteur": "Reagan Library"
       }
     },
     {
@@ -1020,25 +1191,18 @@
       "description": "Joseph Chatoyer (vers 1750-1795) est un chef garifuna de Saint-Vincent, héros national de Saint-Vincent-et-les-Grenadines. Il mène en 1772 une révolte contre le gouvernement colonial britannique, puis se soulève de nouveau en 1795, avec l'appui de la France révolutionnaire. Tué au combat par le général Alexander Leith le 14 mars 1795, il laisse un peuple que les Britanniques déportent ensuite vers la côte d'Amérique centrale.",
       "wikipedia": "Joseph Chatoyer",
       "pays": "VC",
-      "essentiel": true,
       "portrait": {
-        "fichier": "Satuye(Chatoyer)-with his wives by Agostion Brunias ca.1765-68.jpg",
-        "legende": "À écrire"
-      }
-    },
-    {
-      "slug": "joshua",
-      "nom": "Ebenezer Joshua",
-      "classement": "Joshua, Ebenezer",
-      "titre": "Naissance d'Ebenezer Joshua",
-      "axe": "Chefs d'État et dirigeants",
-      "naissance": 1908,
-      "description": "Ebenezer Joshua (1908-1991) est un enseignant et homme politique vincentais, né à Kingstown. Premier ministre en chef de Saint-Vincent de 1956 à 1967, il est le principal dirigeant de l'île à l'époque de la Fédération des Indes occidentales. Il meurt en 1991.",
-      "wikipedia": "Ebenezer Joshua",
-      "pays": "VC",
-      "portrait": {
-        "fichier": "Ebenezer Joshua 1952.png",
-        "legende": "À écrire"
+        "fichier": "Chatoyer the Chief of the Black Charaibes in St. Vincent with his five Wives., 1796. 03044001.jpg",
+        "legende": "Joseph Chatoyer et les siens, estampe d'après Agostino Brunias, 1772",
+        "recadrage": [
+          0.15,
+          0.12,
+          0.9,
+          0.86
+        ],
+        "largeur": 960,
+        "licence": "Domaine public",
+        "auteur": "Agostino Brunias (1730–1796)"
       }
     },
     {
@@ -1051,10 +1215,11 @@
       "description": "Eric Gairy (1922-1997) est un syndicaliste et homme d'État grenadin, né à Dunfermline, dans la paroisse de Saint John. Chef du gouvernement de 1961 à 1962 puis de 1967 à 1979, il mène la Grenade à l'indépendance, en 1974. Renversé par le coup d'État de Maurice Bishop en mars 1979, il meurt à Grand Anse en 1997.",
       "wikipedia": "Eric Gairy",
       "pays": "GD",
-      "essentiel": true,
       "portrait": {
         "fichier": "Eric Gairy Profile.jpg",
-        "legende": "À écrire"
+        "legende": "Eric Gairy, photographie",
+        "licence": "Domaine public",
+        "auteur": "Jack E. Kightlinger, White House photographer"
       }
     },
     {
@@ -1070,7 +1235,9 @@
       "essentiel": true,
       "portrait": {
         "fichier": "Maurice Bishop 1982-06-11.jpg",
-        "legende": "À écrire"
+        "legende": "Maurice Bishop, en 1982",
+        "licence": "CC BY-SA 3.0 DE",
+        "auteur": "Häßler, Ulrich"
       }
     },
     {
@@ -1085,7 +1252,9 @@
       "pays": "GD",
       "portrait": {
         "fichier": "Herbert Blaize 1986 (cropped).jpg",
-        "legende": "À écrire"
+        "legende": "Herbert Blaize, en 1986",
+        "licence": "Domaine public",
+        "auteur": "White House Photographic Office"
       }
     },
     {
@@ -1098,10 +1267,12 @@
       "description": "George Cadle Price (1919-2011) est un homme d'État bélizien, né à Belize City, considéré comme le « Père de la Nation ». Chef du People's United Party, il dirige le gouvernement de 1961 à 1984 puis de 1989 à 1993, et mène le pays, ancien Honduras britannique, à l'indépendance en 1981. Il meurt à Belize City en 2011.",
       "wikipedia": "George Cadle Price",
       "pays": "BZ",
-      "essentiel": true,
       "portrait": {
         "fichier": "George C. Price Cropped.jpg",
-        "legende": "À écrire"
+        "legende": "George Cadle Price, photographie",
+        "largeur": 0,
+        "licence": "CC BY 3.0",
+        "auteur": "Carptrash"
       }
     },
     {
@@ -1116,7 +1287,9 @@
       "pays": "BZ",
       "portrait": {
         "fichier": "Andy Palacio.jpg",
-        "legende": "À écrire"
+        "legende": "Andy Palacio en concert",
+        "licence": "CC BY 2.0",
+        "auteur": "John Leeson"
       }
     },
     {
@@ -1132,7 +1305,9 @@
       "essentiel": true,
       "portrait": {
         "fichier": "Cheddi Jagan Anefo.jpg",
-        "legende": "À écrire"
+        "legende": "Cheddi Jagan, photographie",
+        "licence": "CC0 (domaine public)",
+        "auteur": "Unknown author Unknown author"
       }
     },
     {
@@ -1145,10 +1320,11 @@
       "description": "Forbes Burnham (1923-1985) est un avocat et homme d'État guyanien, né à Georgetown, fondateur du Congrès national du peuple. Vainqueur de l'élection de 1964, il négocie à Londres l'indépendance du pays, obtenue en 1966, puis proclame la République coopérative en 1970. Président à partir de 1980, il exerce un pouvoir autoritaire jusqu'à sa mort en 1985.",
       "wikipedia": "Forbes Burnham",
       "pays": "GY",
-      "essentiel": true,
       "portrait": {
         "fichier": "Forbes Burnham (1966).jpg",
-        "legende": "À écrire"
+        "legende": "Forbes Burnham, en 1966",
+        "licence": "CC0 (domaine public)",
+        "auteur": "Fotograaf Onbekend / Anefo"
       }
     },
     {
@@ -1164,7 +1340,16 @@
       "essentiel": true,
       "portrait": {
         "fichier": "Walter Rodney ZOMACHI.jpg",
-        "legende": "À écrire"
+        "legende": "Walter Rodney, buste commémoratif",
+        "recadrage": [
+          0.5,
+          0.0,
+          1.0,
+          0.36
+        ],
+        "largeur": 960,
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Ursula Engelhardt"
       }
     },
     {
@@ -1179,7 +1364,9 @@
       "pays": "GY",
       "portrait": {
         "fichier": "Desmond Hoyte.jpg",
-        "legende": "À écrire"
+        "legende": "Desmond Hoyte, photographie",
+        "licence": "CC0 (domaine public)",
+        "auteur": "People's National Congress"
       }
     },
     {
@@ -1195,7 +1382,9 @@
       "essentiel": true,
       "portrait": {
         "fichier": "Anton de Kom (cropped).jpg",
-        "legende": "À écrire"
+        "legende": "Anton de Kom, photographie",
+        "licence": "Domaine public",
+        "auteur": "Gustav Adolph Rheingans (1888–1960) Description photographer"
       }
     },
     {
@@ -1210,7 +1399,9 @@
       "pays": "SR",
       "portrait": {
         "fichier": "Johan Adolf Pengel 1963.jpg",
-        "legende": "À écrire"
+        "legende": "Johan Adolf Pengel, en 1963",
+        "licence": "CC BY-SA 3.0 NL",
+        "auteur": "Jack de Nijs for Anefo"
       }
     },
     {
@@ -1223,10 +1414,11 @@
       "description": "Henck Arron (1936-2000) est un homme d'État surinamais, né à Paramaribo. Vainqueur des élections de 1973, il mène le Suriname à l'indépendance, le 25 novembre 1975, et dirige le gouvernement jusqu'en 1980, quand il est renversé par le « coup d'État des sergents » de Desi Bouterse. Il meurt à Alphen-sur-le-Rhin, aux Pays-Bas, en 2000.",
       "wikipedia": "Henck Arron",
       "pays": "SR",
-      "essentiel": true,
       "portrait": {
         "fichier": "Henck Arron Schiphol persconferentie 1988 (cropped).jpg",
-        "legende": "À écrire"
+        "legende": "Henck Arron, en 1988",
+        "licence": "CC0 (domaine public)",
+        "auteur": "Rob Croes / Anefo"
       }
     },
     {
@@ -1241,7 +1433,9 @@
       "pays": "SR",
       "portrait": {
         "fichier": "Desi Bouterse (cropped).jpg",
-        "legende": "À écrire"
+        "legende": "Desi Bouterse, photographie",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "We El at Dutch Wikipedia"
       }
     },
     {
@@ -1256,7 +1450,9 @@
       "pays": "SR",
       "portrait": {
         "fichier": "Trefossa.jpg",
-        "legende": "À écrire"
+        "legende": "Trefossa, photographie",
+        "licence": "Domaine public",
+        "auteur": "Michiel van Kempen"
       }
     },
     {
@@ -1271,7 +1467,9 @@
       "pays": "SR",
       "portrait": {
         "fichier": "Albert Helman (Lou Lichtveld).jpg",
-        "legende": "À écrire"
+        "legende": "Albert Helman, photographie",
+        "licence": "Domaine public",
+        "auteur": "Michiel van Kempen"
       }
     }
   ]
