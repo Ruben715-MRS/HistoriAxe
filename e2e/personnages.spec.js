@@ -211,6 +211,13 @@ test('la galerie filtre Monaco et le Liechtenstein à part, et la France garde s
     await expect(pays.locator('option', { hasText: 'France' })).toHaveText(/🇫🇷 France métropolitaine \(147\)/);
 });
 
+test('la galerie filtre Andorre (invitée de l’Espagne) et Saint-Marin (invité de l’Italie) à part', async ({ page }) => {
+    await ouvrirLaGalerie(page);
+    const pays = page.locator('#gallery-filter-country');
+    await expect(pays.locator('option', { hasText: 'Andorre' })).toHaveText(/Andorre \(2\)/);
+    await expect(pays.locator('option', { hasText: 'Saint-Marin' })).toHaveText(/Saint-Marin \(3\)/);
+});
+
 test('Joséphine Baker, née aux États-Unis et devenue française, est au panthéon de la France avec son portrait et sa biographie', async ({ page }) => {
     // Le pays d'un panthéon est celui qui honore, pas celui de l'état civil : Baker est au Panthéon
     // de Paris depuis 2021. Elle n'est donc pas dans « Grandes figures des États-Unis ».
@@ -822,7 +829,7 @@ test('la Nouvelle-Zélande et le Pacifique : chacune de ses figures a son portra
     await page.locator('#mode-card-discovery').click();
     await expect(page.locator('#screen-game')).toBeVisible();
     const nombre = await page.evaluate(() => getCurrentTheme().events.length);
-    expect(nombre).toBe(88);
+    expect(nombre).toBe(91);
     await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
     await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
 

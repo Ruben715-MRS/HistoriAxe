@@ -599,7 +599,7 @@ test('« Grandes figures d’Italie » : toutes les ancres sont l’Italie, et l
     const theme = allThemes().find(t => t.id === 'pan_it');
     assert.ok(theme, 'thème pan_it absent du pack français');
     const index = S.buildTagIndex(frData.categories, { countryByTheme: geoMap });
-    theme.events.forEach(e => assert.equal(index[e.id], 'pays:IT', `étiquette de ${e.id}`));
+    theme.events.forEach(e => assert.equal(index[e.id], e.pays ? 'pays:' + e.pays : 'pays:IT', `étiquette de ${e.id}`));
     const histoire = allThemes().find(t => t.id === 'thm_it');
     assert.equal(index[histoire.events[0].id], 'pays:IT', 'pan_it doit être le même pays que thm_it');
     const anchors = theme.events.map(e => Object.assign({}, e, { tag: index[e.id], themeName: theme.nom }));
@@ -607,8 +607,8 @@ test('« Grandes figures d’Italie » : toutes les ancres sont l’Italie, et l
     assert.equal(session.length, S.SESSION_ROUNDS);
     session.forEach(q => {
         assert.ok(!/^pan_/.test(q.correct.themeId), 'la bonne réponse ne peut pas venir d’un panthéon');
-        assert.notEqual(q.correct.tag, 'pays:IT',
-            `« ${q.correct.titre} » est italien : ce n’est pas un « ailleurs » pour « ${q.anchor.titre} »`);
+        assert.notEqual(q.correct.tag, q.anchor.tag,
+            `« ${q.correct.titre} » a la même étiquette que « ${q.anchor.titre} » : ce n’est pas un « ailleurs »`);
     });
 });
 
@@ -641,7 +641,7 @@ test('« Grandes figures d’Espagne » : toutes les ancres sont l’Espagne, et
     const theme = allThemes().find(t => t.id === 'pan_es');
     assert.ok(theme, 'thème pan_es absent du pack français');
     const index = S.buildTagIndex(frData.categories, { countryByTheme: geoMap });
-    theme.events.forEach(e => assert.equal(index[e.id], 'pays:ES', `étiquette de ${e.id}`));
+    theme.events.forEach(e => assert.equal(index[e.id], e.pays ? 'pays:' + e.pays : 'pays:ES', `étiquette de ${e.id}`));
     const histoire = allThemes().find(t => t.id === 'thm_es');
     assert.equal(index[histoire.events[0].id], 'pays:ES', 'pan_es doit être le même pays que thm_es');
     const anchors = theme.events.map(e => Object.assign({}, e, { tag: index[e.id], themeName: theme.nom }));
@@ -649,8 +649,8 @@ test('« Grandes figures d’Espagne » : toutes les ancres sont l’Espagne, et
     assert.equal(session.length, S.SESSION_ROUNDS);
     session.forEach(q => {
         assert.ok(!/^pan_/.test(q.correct.themeId), 'la bonne réponse ne peut pas venir d’un panthéon');
-        assert.notEqual(q.correct.tag, 'pays:ES',
-            `« ${q.correct.titre} » est espagnol : ce n’est pas un « ailleurs » pour « ${q.anchor.titre} »`);
+        assert.notEqual(q.correct.tag, q.anchor.tag,
+            `« ${q.correct.titre} » a la même étiquette que « ${q.anchor.titre} » : ce n’est pas un « ailleurs »`);
     });
 });
 

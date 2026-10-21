@@ -967,7 +967,7 @@ photographies de presse ou de studio.
 
 ### Un pays à part : l'Italie
 
-`pan_it`, « Grandes figures d'Italie » : **128 personnages**, d'Archimède (vers 287
+`pan_it`, « Grandes figures d'Italie » : **131 personnages** (dont trois invités de Saint-Marin), d'Archimède (vers 287
 av. J.-C.) à Paolo Borsellino (1940). Par axe : 31 Littérature et pensée, 24
 Beaux-arts, 25 Musique, spectacle et sport, 19 Sciences, techniques et innovation, 18 Chefs d'État et
 dirigeants, 11 Guerres et résistances ; 42 ⭐ et 13 biographies liées (Scipion,
@@ -1176,7 +1176,7 @@ demandé à Commons en 330 px de large (`largeur`).
 
 ### Un pays à part : l'Espagne
 
-`pan_es`, « Grandes figures d'Espagne » : **132 personnages**, de Trajan (53) à Margarita
+`pan_es`, « Grandes figures d'Espagne » : **134 personnages** (dont deux invités d'Andorre), de Trajan (53) à Margarita
 Salas (1938). Par axe : 44 Littérature et pensée, 20 Chefs d'État et dirigeants, 18
 Beaux-arts, 17 Musique, spectacle et sport, 17 Sciences, techniques et innovation, 16 Guerres
 et résistances ; 36 ⭐ et 11 biographies liées (Isabelle Ire de Castille, le Cid, Ibárruri,
@@ -1397,11 +1397,15 @@ pays que son hôte.
   honore, il n'est pas leur lieu de naissance. Alois II et François Ier, sans fiche solide, sont restés
   dehors. Le thème garde son titre « Allemagne, Autriche et Suisse » ; la recherche « liechtenstein »
   ou « vaduz » y mène par ses `motsCles`.
-- **En attente : Saint-Marin et Andorre**, faute de portrait libre. Pour Saint-Marin : Bartolomeo
-  Borghesi (1781, numismate, né en Italie), Giovanni Battista Belluzzi (1506, architecte, sans portrait
-  sur Commons) ; saint Marin, légendaire, n'a pas de date de naissance fiable. Pour Andorre : Guillem
-  d'Areny-Plandolit (1822) et Francesc Cairat (1880), sans portrait libre vérifié. Ils rejoindraient
-  `pan_it` et `pan_es`.
+- **Saint-Marin (3)**, dans `pan_it` : saint Marin (vers 275, fondateur légendaire, tailleur de pierre venu de Dalmatie ; sa date de
+  naissance est une tradition), Giovanni Battista Belluzzi (1506, architecte militaire, montré par la page de titre de son traité de 1598,
+  `nomVisible`) et Bartolomeo Borghesi (1781, numismate né à Savignano, installé sur le mont Titano à partir de 1821). Les capitaines-régents
+  de l'article français sont presque tous des vivants ou des contemporains : aucun n'a été retenu.
+- **Andorre (2)**, dans `pan_es` : Boris Skossyreff (1896), aventurier russe qui se proclame « roi d'Andorre » en 1934 (une curiosité,
+  pas un dirigeant), et Juan Benlloch y Vivó (1864), évêque d'Urgell, cardinal et coprince de 1907 à 1919, né à Valence : un Espagnol que
+  l'Andorre honore (statue et place d'Andorre-la-Vieille). **Liste très mince** : Guillem d'Areny-Plandolit et Francesc Cairat n'ont pas
+  d'article français ; Antoni Fiter i Rossell (le « Manual Digest », 1748) en a un, mais aucun portrait ni image convenable ; Joan Martí
+  Alanis (1928-2009), évêque-coprince, n'a pas d'image. À étoffer si un article ou une image apparaît.
 - **Vatican : aucune figure propre.** Les papes sont déjà rangés par leur nationalité (Jean XXIII
   dans `pan_it`, François dans `pan_hispam`), et un pape italien n'est pas né au Vatican.
 
@@ -1761,11 +1765,11 @@ Hérat et les grandes dynasties (Timourides, Samanides, Seldjoukides, Ghaznévid
 
 ### Un bloc : la Nouvelle-Zélande et le Pacifique
 
-`pan_pacifique`, « Grandes figures de Nouvelle-Zélande et du Pacifique » (code `pacifique`, bloc) : **88 personnages de 21 pays et
+`pan_pacifique`, « Grandes figures de Nouvelle-Zélande et du Pacifique » (code `pacifique`, bloc) : **91 personnages de 23 pays et
 territoires** — Nouvelle-Zélande 51, Polynésie française 5, Samoa 5, Fidji 4, Tonga 3, îles Cook 2, Micronésie 2, Nouvelle-Calédonie 2,
-Wallis-et-Futuna 2, et un chacun pour les Samoa américaines, la Papouasie-Nouvelle-Guinée, les îles Salomon, Nauru, les îles Marshall,
-les Palaos, Guam, les îles Mariannes du Nord, Pitcairn, Rapa Nui, Niue et Tuvalu — du navigateur Tupaia (vers 1725) au rugbyman Jonah
-Lomu (1975). Par axe : 39 Chefs d'État et dirigeants, 17 Guerres et résistances, 12 Littérature et pensée, 9 Sciences, techniques et
+Vanuatu 2, Wallis-et-Futuna 2, et un chacun pour les Samoa américaines, la Papouasie-Nouvelle-Guinée, les îles Salomon, Nauru, les îles Marshall,
+les Palaos, Guam, les îles Mariannes du Nord, Pitcairn, Rapa Nui, Niue, Tuvalu et Kiribati — du navigateur Tupaia (vers 1725) au rugbyman Jonah
+Lomu (1975). Par axe : 42 Chefs d'État et dirigeants, 17 Guerres et résistances, 12 Littérature et pensée, 9 Sciences, techniques et
 innovation, 6 Beaux-arts, 5 Musique, spectacle et sport ; 20 ⭐, aucune biographie liée. 88 portraits (2 Mo) : 53 du domaine public, 2 CC0,
 12 CC BY, 20 CC BY-SA et un « image non libre » (voir plus bas). Les mots-clés du thème portent tous les noms de pays et de territoires,
 les adjectifs (néo-zélandais, māori, hawaïen, kanak), l'Océanie, la Polynésie, la Mélanésie, la Micronésie, Wellington, Auckland,
@@ -1810,11 +1814,10 @@ Waitangi, Honolulu et Papeete.
   Kalanianaʻole, David Malo, Apolosi Nawai, Yali Singina, Paliau Maloat, Jacob Vouza et Antonio Won Pat.
 - **Écartés faute d'image libre convenable**, à réintégrer si l'une apparaît : Norman Kirk (la seule photographie de lui, de 1966, porte
   un bandeau de suppression sur Commons), Jean-Marie Tjibaou, Beatrice Tinsley, Haunani-Kay Trask, Henri Hiro, Nidoïsh Naisseline, Merata Mita, Sylvia Ashton-Warner, Vincent Eri, John Guise,
-  Robert Rex, Toaripi Lauti, Yeiwéné Yeiwéné et Solomon Mamaloni ; Eddie Aikau (seule une plaque commémorative), Walter Lini (un profil
-  que le cadre coupe) et Burt Munro (sa moto, sans lui). Teatao Teannaki (Kiribati) et Faimalaga Luka (Tuvalu) n'ont que des
-  photographies sous une licence « Attribution » d'un site officiel taïwanais, hors de la liste.
-- **Des territoires sans figure.** Kiribati, Tokelau, l'île Norfolk et le Vanuatu n'ont aucun personnage : aucun des dirigeants
-  historiques de ces pays n'a à la fois une date de mort, un article en français et une image libre exploitable. Tuvalu n'est
+  Robert Rex, Toaripi Lauti, Yeiwéné Yeiwéné et Solomon Mamaloni ; Eddie Aikau (seule une plaque commémorative) et Burt Munro (sa moto, sans lui). Faimalaga Luka (Tuvalu) n'a que des
+  photographies sous une licence « Attribution » d'un site officiel taïwanais, hors de la liste ; Walter Lini et Teatao Teannaki y sont entrés plus tard, par la règle des images non libres (voir plus bas).
+- **Des territoires sans figure.** Tokelau et l'île Norfolk n'ont aucun personnage : aucun de leurs dirigeants
+  historiques n'a à la fois une date de mort, un article en français et une image libre exploitable. **Kiribati (1) et le Vanuatu (2)** ont été ajoutés ensuite : Teatao Teannaki (1936, président de 1991 à 1994, photographie « Attribution » du MOFA Quarterly, classée **image non libre**), Walter Lini (1942, père de l'indépendance du Vanuatu, image non libre tirée de Wikipédia en anglais) et Donald Kalpokas (1943, CC BY 4.0, photographie floue, à remplacer). Jimmy Stevens (sans image), Ati George Sokomanu et Fred Timakata (dates de mort incertaines dans l'article) et Roi Mata (dates inconnues) sont restés dehors. Le panthéon passe à 91 personnages de 23 pays. Tuvalu n'est
   représenté que par Ionatana Ionatana, dont la seule image libre mesure 100 × 130 pixels.
 - **Laissés de côté pour tenir l'équilibre**, avec leur image : Joseph Ward et Keith Holyoake (deux Premiers ministres de plus),
   Kamehameha II, Lunalilo et Kapiʻolani (Hawaï est déjà bien fourni), George Tupou II, Tupua Tamasese Lealofi IV, Bernard
@@ -3139,8 +3142,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
   Sud-Est, on vérifiera les portraits sur Commons **avant** de valider la liste. Les figures
   disputées entre deux thèmes (Avicenne et al-Biruni, Rûmî, Babur, Kubilai Khan, Bruce Lee,
   Eusébio) se règlent par la règle « celui qui l'honore le plus ».
-- **Pays encore sans figure dans aucun panthéon** (193 États de l'ONU, plus le Vatican et la Palestine) : **Andorre** et **Saint-Marin** (en attente de portraits, voir « Les micro-États »),
-  **le Vatican** (aucune figure propre, par choix), **Kiribati** et **le Vanuatu** (aucune image libre ; la règle des images non libres permet désormais de les ajouter au panthéon du Pacifique). Ce sont les seuls pays à n'avoir encore aucune figure.
+- **Pays encore sans figure dans aucun panthéon** (193 États de l'ONU, plus le Vatican et la Palestine) : **le Vatican** (aucune figure propre, par choix). C'est le seul État à n'avoir encore aucune figure : Kiribati et le Vanuatu sont désormais dans le panthéon du Pacifique, Andorre et Saint-Marin parmi les invités de l'Espagne et de l'Italie.
 - **Des figures de l'Allemagne, de l'Autriche et de la Suisse à améliorer ou à rediscuter** :
   les vingt et un candidats écartés (voir « Ce que les images ont changé en Allemagne, en
   Autriche et en Suisse ») ; les images d'Hitler, de Marlene Dietrich, d'Hedy Lamarr et de
