@@ -8,27 +8,30 @@ const W = require('../js/calendarWheel.js');
 const root = path.resolve(__dirname, '..');
 const uiFr = JSON.parse(fs.readFileSync(path.join(root, 'ui', 'fr.json'), 'utf8'));
 
-const RELIGIEUX = ['bouddhisme', 'chretien', 'hindouisme', 'juif', 'musulman', 'zoroastrisme'];
+const RELIGIEUX = ['bahai', 'bouddhisme', 'chretien', 'hindouisme', 'juif', 'musulman', 'sikh', 'zoroastrisme'];
 const CIVILS = ['afriquedusud', 'allemagne', 'argentine', 'australie', 'autriche', 'bresil', 'canada', 'chine', 'colombie', 'rdc', 'egypte',
     'espagne', 'etatsunis', 'france', 'inde', 'indonesie', 'italie', 'japon', 'mexique', 'nigeria', 'royaumeuni', 'russie', 'suisse',
-    'turquie', 'vietnam'];
+    'turquie', 'vietnam', 'algerie', 'coree', 'grece', 'maroc', 'tunisie'];
 
-test('trente et un calendriers : six religieux et vingt-cinq civils', () => {
-    assert.equal(W.CALENDARS.length, 31);
+test('trente-huit calendriers : huit religieux et trente civils', () => {
+    assert.equal(W.CALENDARS.length, 38);
     assert.deepEqual(W.CALENDARS.filter((c) => c.kind === 'religieux').map((c) => c.id).sort(), RELIGIEUX.slice().sort());
     assert.deepEqual(W.CALENDARS.filter((c) => c.kind === 'civil').map((c) => c.id).sort(), CIVILS.slice().sort());
     assert.deepEqual(W.KINDS, ['religieux', 'civil']);
     assert.ok(W.CALENDARS.every((c) => W.KINDS.includes(c.kind)));
-    assert.equal(new Set(W.CALENDARS.map((c) => c.id)).size, 31);
+    assert.equal(new Set(W.CALENDARS.map((c) => c.id)).size, 38);
 });
 
 test('byKind : chaque famille est rangée par ordre alphabétique (les accents ne comptent pas : Égypte à E)', () => {
     const rel = W.byKind('religieux').map((c) => c.short);
-    assert.deepEqual(rel, ['Bouddhisme', 'Christianisme', 'Hindouisme', 'Islam', 'Judaïsme', 'Zoroastrisme']);
+    assert.deepEqual(rel, ['Bahaïsme', 'Bouddhisme', 'Christianisme', 'Hindouisme', 'Islam', 'Judaïsme', 'Sikhisme', 'Zoroastrisme']);
     const civ = W.byKind('civil').map((c) => c.short);
-    assert.equal(civ.length, 25);
+    assert.equal(civ.length, 30);
     assert.deepEqual(civ, civ.slice().sort((a, b) => a.localeCompare(b, 'fr')));
-    assert.equal(civ[0], 'Afrique du Sud');
+    assert.deepEqual(civ.slice(0, 3), ['Afrique du Sud', 'Algérie', 'Allemagne']);
+    assert.ok(civ.indexOf('Corée du Sud') === civ.indexOf('Congo (RDC)') + 1, 'Corée du Sud suit Congo (RDC)');
+    assert.ok(civ.indexOf('Maroc') > civ.indexOf('Japon') && civ.indexOf('Maroc') < civ.indexOf('Mexique'));
+    assert.ok(civ.indexOf('Tunisie') > civ.indexOf('Suisse') && civ.indexOf('Tunisie') < civ.indexOf('Turquie'));
     assert.ok(civ.indexOf('Égypte') > civ.indexOf('Congo (RDC)') && civ.indexOf('Égypte') < civ.indexOf('Espagne'), civ.join(', '));
     assert.ok(civ.indexOf('États-Unis') > civ.indexOf('Espagne') && civ.indexOf('États-Unis') < civ.indexOf('France'));
     assert.deepEqual(W.byKind('inconnue'), []);

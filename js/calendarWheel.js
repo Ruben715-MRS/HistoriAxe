@@ -2,9 +2,9 @@
 // === LA ROUE DES FÊTES — DONNÉES ET RÈGLES (mini-jeu du Monde 0, niveau 4 « Calendriers et fêtes ») ===
 // =========================================================================
 // Un calendrier = douze mois (les « parts de pizza » de la roue) et des fêtes à ranger dans le bon mois.
-// Trente et un calendriers, en deux familles (`kind`) :
-//  - « religieux » : chrétien, juif, musulman, hindou, bouddhiste, zoroastrien ;
-//  - « civil » : les jours fériés et fêtes civiles de vingt-cinq pays.
+// Trente-huit calendriers, en deux familles (`kind`) :
+//  - « religieux » : chrétien, juif, musulman, hindou, bouddhiste, zoroastrien, sikh, bahaï ;
+//  - « civil » : les jours fériés et fêtes civiles de trente pays.
 //
 // Format d'un calendrier : { id, title, short, icon, kind, intro, months, events } ; `short` est le nom du choix dans
 // la liste (rangée par ordre alphabétique, voir `byKind`).
@@ -773,6 +773,170 @@
                 { id: "teachers", name: "Fête des enseignants", local: "Ngày Nhà giáo Việt Nam", icon: "📚", months: [11], when: "20 novembre", explain: "Les élèves et leurs parents offrent des fleurs aux enseignants." },
                 { id: "army", name: "Fête de l'armée", local: "Ngày Quân đội nhân dân", icon: "🎖️", months: [12], when: "22 décembre", explain: "Elle rappelle la création de l'armée populaire vietnamienne, en 1944." },
                 { id: "noel", name: "Noël", local: "Giáng sinh", icon: "🎄", months: [12], when: "25 décembre", explain: "Pas férié, mais très fêté dans les villes, avec des décorations et des sapins devant les cathédrales." }
+            ]
+        },
+        {
+            id: "sikh",
+            title: "Calendrier sikh",
+            short: "Sikhisme",
+            icon: "☬",
+            kind: "religieux",
+            intro: "Le calendrier Nanakshahi, adopté en 2003 par l'autorité religieuse sikhe (SGPC), est solaire : les années se comptent depuis la naissance de Guru Nanak, en 1469, et chaque mois commence vers le 14 ou le 15 du mois grégorien. Quelques fêtes (Bandi Chhor Divas, l'anniversaire de Guru Nanak) suivent encore l'ancien calendrier lunaire, ce qui les rend mobiles.",
+            months: ["Chet", "Vaisakh", "Jeth", "Harh", "Sawan", "Bhadon", "Assu", "Katik", "Maghar", "Poh", "Magh", "Phagun"],
+            events: [
+                { id: "holamohalla", name: "Hola Mohalla", icon: "🥋", months: [1], when: "1er Chet (14 mars)", explain: "Trois jours de fête à Anandpur Sahib, au lendemain de Holi : démonstrations d'arts martiaux, de chevaux et de combats rituels, instituées par Guru Gobind Singh." },
+                { id: "vaisakhi", name: "Vaisakhi", icon: "🌾", months: [2], when: "1er Vaisakh (14 avril)", explain: "La fête des moissons du Pendjab, et le jour de 1699 où Guru Gobind Singh fonde la communauté des Khalsa, les Sikhs initiés." },
+                { id: "arjan", name: "Martyre de Guru Arjan", local: "Shaheedi Purab", icon: "🕯️", months: [4], when: "2 Harh (16 juin)", explain: "Le cinquième gourou, qui avait compilé l'Adi Granth et fait construire le Temple d'or, meurt en 1606 sous la torture, sur l'ordre de l'empereur moghol Jahangir." },
+                { id: "prakash", name: "Première installation du Guru Granth Sahib", local: "Prakash Utsav", icon: "📖", months: [6], when: "17 Bhadon (1er septembre)", explain: "En 1604, le livre saint est installé pour la première fois dans le Harmandir Sahib, à Amritsar. Il devient plus tard le gourou éternel des Sikhs." },
+                { id: "ramdas", name: "Naissance de Guru Ram Das", local: "Parkash Purab", icon: "💧", months: [7], when: "9 Assu (24 septembre)", explain: "Le quatrième gourou (né en 1534) fonde la ville d'Amritsar et fait creuser le bassin sacré autour duquel sera bâti le Temple d'or." },
+                { id: "bandichhor", name: "Bandi Chhor Divas", icon: "🪔", months: [8], when: "Jour de Diwali (octobre-novembre)", explain: "Le « jour de la libération des prisonniers » : en 1619, Guru Hargobind sort de la prison de Gwalior avec 52 rois captifs. On illumine le Temple d'or." },
+                { id: "gurpurabnanak", name: "Anniversaire de Guru Nanak", local: "Gurpurab", icon: "🌕", months: [8, 9], when: "Pleine lune de Katik (fête mobile)", explain: "La naissance du fondateur de la religion sikhe (1469) : processions, lectures ininterrompues du Guru Granth Sahib et repas gratuits (langar)." },
+                { id: "tegbahadur", name: "Martyre de Guru Tegh Bahadur", local: "Shaheedi Purab", icon: "🛡️", months: [9], when: "10 Maghar (24 novembre)", explain: "Le neuvième gourou est décapité à Delhi en 1675 par ordre de l'empereur Aurangzeb, après avoir défendu la liberté de religion des hindous." },
+                { id: "sahibzade", name: "Martyre des quatre fils du gourou", local: "Chaar Sahibzaade", icon: "🧒", months: [10], when: "Fin décembre", explain: "Les quatre fils de Guru Gobind Singh meurent en décembre 1704 : les deux aînés au combat à Chamkaur, les deux plus jeunes (7 et 9 ans) emmurés vivants à Sirhind pour avoir refusé de se convertir. Une semaine de commémoration." },
+                { id: "gobindsingh", name: "Naissance de Guru Gobind Singh", local: "Parkash Purab", icon: "🦅", months: [10], when: "23 Poh (5 janvier)", explain: "Le dixième et dernier gourou humain (né en 1666), fondateur des Khalsa, qui désigne le livre saint comme successeur." },
+                { id: "maghi", name: "Maghi", icon: "💦", months: [11], when: "2 Magh (14 janvier)", explain: "Elle rappelle la bataille de Muktsar, en 1705, où quarante Sikhs (les « Quarante libérés ») tombent pour défendre Guru Gobind Singh. On se baigne dans le bassin sacré de Muktsar." }
+            ]
+        },
+        {
+            id: "bahai",
+            title: "Calendrier bahaï",
+            short: "Bahaïsme",
+            icon: "🌟",
+            kind: "religieux",
+            intro: "Le calendrier bahaï (Badí‘) compte 19 mois de 19 jours, plus quelques jours supplémentaires, et l'année commence à l'équinoxe de printemps. Comme la roue n'a que douze parts, les fêtes sont rangées dans les mois grégoriens. Neuf jours saints sont chômés ; les fêtes jumelles de la naissance du Báb et de Bahá'u'lláh suivent la Lune : elles changent d'une année à l'autre.",
+            months: CIVIL_MONTHS,
+            events: [
+                { id: "religionday", name: "Journée mondiale de la religion", icon: "🌍", months: [1], when: "3e dimanche de janvier", explain: "Une journée lancée en 1950 par les bahaïs des États-Unis, pour rappeler que les grandes religions ont une même origine spirituelle." },
+                { id: "ayyamiha", name: "Ayyám-i-Há", icon: "🎁", months: [2, 3], when: "26 février au 1er mars (à cheval sur deux mois)", explain: "Quatre ou cinq jours « hors des mois » consacrés à l'hospitalité, aux cadeaux et à la charité, juste avant le Jeûne." },
+                { id: "fast", name: "Le Jeûne", icon: "🌅", months: [3], when: "2 au 20 mars", explain: "Pendant les 19 jours du mois d'‘Alá, les adultes ne mangent ni ne boivent entre le lever et le coucher du soleil." },
+                { id: "nawruz", name: "Naw-Rúz", icon: "🌱", months: [3], when: "20 ou 21 mars", explain: "Le Nouvel An bahaï, à l'équinoxe de printemps : il met fin au Jeûne et se fête avec des repas, des prières et de la musique. Jour saint chômé." },
+                { id: "ridvan", name: "Ridván", icon: "🌹", months: [4, 5], when: "21 avril au 2 mai (à cheval sur deux mois)", explain: "Les douze jours où Bahá'u'lláh a annoncé sa mission, en 1863, dans le jardin de Ridván à Bagdad. Le 1er, le 9e et le 12e jours sont chômés." },
+                { id: "declarationbab", name: "Déclaration du Báb", icon: "📣", months: [5], when: "23 mai", explain: "En 1844, à Shiraz, le Báb annonce la venue prochaine d'un nouveau messager de Dieu. Cette date marque pour les bahaïs le début de leur ère. Jour saint chômé." },
+                { id: "ascensionbaha", name: "Ascension de Bahá'u'lláh", icon: "🕯️", months: [5], when: "29 mai", explain: "Bahá'u'lláh, fondateur de la foi bahaïe, meurt en 1892 près de Saint-Jean-d'Acre. Jour saint chômé." },
+                { id: "martyrebab", name: "Martyre du Báb", icon: "⚖️", months: [7], when: "9 juillet", explain: "En 1850, à Tabriz, le Báb est fusillé publiquement. Il est considéré comme le précurseur de Bahá'u'lláh." },
+                { id: "naissancebab", name: "Naissance du Báb", icon: "👶", months: [10, 11], when: "Fête jumelle (fête mobile)", explain: "Le Báb est né en 1819 à Shiraz. Depuis 2015, la fête de sa naissance tombe en octobre ou en novembre, selon la Lune, avec celle de Bahá'u'lláh." },
+                { id: "naissancebaha", name: "Naissance de Bahá'u'lláh", icon: "🎂", months: [10, 11], when: "Fête jumelle (fête mobile)", explain: "Bahá'u'lláh est né en 1817 à Téhéran. Cette fête, le lendemain de celle du Báb, est un jour saint chômé." },
+                { id: "covenant", name: "Jour de l'Alliance", icon: "🤝", months: [11], when: "26 novembre", explain: "On honore ‘Abdu'l-Bahá, fils et successeur de Bahá'u'lláh, qui a dirigé la communauté et voyagé en Europe et en Amérique. Ce n'est pas un jour chômé." },
+                { id: "ascensionabdul", name: "Ascension de ‘Abdu'l-Bahá", icon: "🕊️", months: [11], when: "28 novembre", explain: "‘Abdu'l-Bahá meurt à Haïfa en 1921. On se réunit pour lire ses prières et ses écrits ; ce n'est pas un jour chômé." }
+            ]
+        },
+        {
+            id: "algerie",
+            title: "Algérie",
+            short: "Algérie",
+            icon: "🇩🇿",
+            kind: "civil",
+            intro: "Les fêtes civiles algériennes tournent autour de la guerre d'indépendance (1954-1962), terminée par l'indépendance du 5 juillet 1962. Certaines sont des jours fériés, d'autres des journées de commémoration. Les fêtes musulmanes, mobiles, ne figurent pas ici.",
+            months: CIVIL_MONTHS,
+            events: [
+                { id: "yennayer", name: "Yennayer", icon: "🌾", months: [1], when: "12 janvier", explain: "Le Nouvel An berbère (amazigh), férié depuis 2018 : on mange un grand repas, souvent du couscous, et l'on prépare des gâteaux." },
+                { id: "chahid", name: "Journée du Chahid", icon: "🕯️", months: [2], when: "18 février", explain: "On rend hommage aux « chouhada », les martyrs de la guerre d'indépendance." },
+                { id: "victoire", name: "Fête de la Victoire", icon: "🏆", months: [3], when: "19 mars", explain: "Elle rappelle le cessez-le-feu du 19 mars 1962, qui découle des accords d'Évian entre la France et le FLN." },
+                { id: "savoir", name: "Journée du savoir", local: "Youm el-ilm", icon: "📚", months: [4], when: "16 avril", explain: "Elle rappelle la mort du cheikh Abdelhamid Ben Badis, le 16 avril 1940, réformateur qui a défendu la langue arabe et l'enseignement." },
+                { id: "travail", name: "Fête du Travail", icon: "🌷", months: [5], when: "1er mai", explain: "Un jour férié, avec des manifestations syndicales." },
+                { id: "setif", name: "Journée de la mémoire (8 mai 1945)", icon: "🕊️", months: [5], when: "8 mai", explain: "Elle rappelle les massacres de Sétif, Guelma et Kherrata, en 1945, quand l'armée française réprime des manifestations nationalistes : des milliers de morts." },
+                { id: "etudiant", name: "Journée de l'étudiant", icon: "🎓", months: [5], when: "19 mai", explain: "Elle rappelle la grève des étudiants algériens, le 19 mai 1956, qui ont quitté les bancs pour rejoindre le maquis." },
+                { id: "independance", name: "Fête de l'Indépendance", icon: "🇩🇿", months: [7], when: "5 juillet", explain: "Le 5 juillet 1962, l'Algérie devient indépendante, après 132 ans de présence française. Défilé militaire à Alger." },
+                { id: "moudjahid", name: "Journée du Moudjahid", icon: "🎖️", months: [8], when: "20 août", explain: "Une double date : l'offensive du Nord-Constantinois (1955) et le congrès de la Soummam (1956), deux moments clés de la guerre d'indépendance." },
+                { id: "emigration", name: "Journée de l'émigration", icon: "🌉", months: [10], when: "17 octobre", explain: "Elle rappelle la manifestation d'Algériens à Paris, le 17 octobre 1961, réprimée violemment par la police : des dizaines de morts." },
+                { id: "toussaintrouge", name: "Début de la Révolution", local: "Premier Novembre", icon: "🔥", months: [11], when: "1er novembre", explain: "Le 1er novembre 1954, le FLN lance une série d'attentats sur tout le territoire (la « Toussaint rouge »), début de la guerre d'indépendance. Jour férié." },
+                { id: "manif1960", name: "Manifestations du 11 décembre 1960", icon: "✊", months: [12], when: "11 décembre", explain: "Des milliers d'Algériens défilent dans les rues d'Alger et d'autres villes pour demander l'indépendance, au moment de la visite du général de Gaulle." }
+            ]
+        },
+        {
+            id: "coree",
+            title: "Corée du Sud",
+            short: "Corée du Sud",
+            icon: "🇰🇷",
+            kind: "civil",
+            intro: "En Corée du Sud, le calendrier grégorien règle la vie civile, mais les grandes fêtes traditionnelles (Seollal, Chuseok) suivent le calendrier luni-solaire : elles changent de date d'une année à l'autre et acceptent deux mois.",
+            months: CIVIL_MONTHS,
+            events: [
+                { id: "seollal", name: "Nouvel An lunaire", local: "Seollal", icon: "🧧", months: [1, 2], when: "Nouvel An lunaire (fête mobile)", explain: "La plus grande fête de l'année : on porte le hanbok (costume traditionnel), on fait une révérence aux aînés (sebae) et l'on mange une soupe de galettes de riz (tteokguk)." },
+                { id: "daeboreum", name: "Première pleine lune", local: "Daeboreum", icon: "🔥", months: [2, 3], when: "15e jour du 1er mois lunaire (fête mobile)", explain: "On mange des noix et du riz aux cinq céréales, et l'on fait tourner des boîtes de braises (jwibulnori) pour chasser les mauvais esprits." },
+                { id: "samiljeol", name: "Fête du Mouvement du 1er mars", local: "Samiljeol", icon: "🇰🇷", months: [3], when: "1er mars", explain: "Elle rappelle la grande manifestation non violente du 1er mars 1919 contre l'occupation japonaise." },
+                { id: "seokga", name: "Anniversaire du Bouddha", local: "Seokga Tansinil", icon: "🪷", months: [4, 5], when: "8e jour du 4e mois lunaire (fête mobile)", explain: "Un jour férié : les temples se couvrent de lanternes de lotus, et un défilé de lanternes (Yeondeunghoe) précède la fête." },
+                { id: "children", name: "Fête des enfants", local: "Eorininal", icon: "🧒", months: [5], when: "5 mai", explain: "Un jour férié où les parents offrent des cadeaux et sortent en famille ; les parcs d'attractions sont pleins." },
+                { id: "parents", name: "Fête des parents", local: "Eobeinal", icon: "🌺", months: [5], when: "8 mai", explain: "On offre un œillet à ses parents, et aux aînés qui ont été des maîtres. Ce n'est pas un jour férié." },
+                { id: "dano", name: "Fête de Dano", local: "Dano", icon: "🌿", months: [5, 6], when: "5e jour du 5e mois lunaire (fête mobile)", explain: "Une fête de printemps ancienne : les femmes se lavent les cheveux à l'eau d'iris et l'on organise des luttes de ssireum." },
+                { id: "memorial", name: "Jour du Souvenir", local: "Hyeonchungil", icon: "🕯️", months: [6], when: "6 juin", explain: "On honore les soldats et les civils morts pour la patrie, surtout pendant la guerre de Corée (1950-1953). Une minute de silence est observée à 10 h." },
+                { id: "gwangbok", name: "Fête de la Libération", local: "Gwangbokjeol", icon: "🎌", months: [8], when: "15 août", explain: "Elle rappelle la libération de la Corée du joug japonais, le 15 août 1945 : un jour férié." },
+                { id: "chuseok", name: "Fête de la récolte", local: "Chuseok", icon: "🌕", months: [9, 10], when: "15e jour du 8e mois lunaire (fête mobile)", explain: "Le « Thanksgiving coréen » : trois jours de congé, durant lesquels on rend hommage à ses ancêtres, on mange des galettes de riz (songpyeon) et l'on regarde la pleine lune." },
+                { id: "foundation", name: "Fête de la Fondation nationale", local: "Gaecheonjeol", icon: "🏔️", months: [10], when: "3 octobre", explain: "Elle célèbre la fondation légendaire du premier royaume coréen par Dangun, en 2333 av. J.-C." },
+                { id: "hangul", name: "Jour du Hangeul", local: "Hangeul-nal", icon: "🔤", months: [10], when: "9 octobre", explain: "Elle rappelle la publication de l'alphabet coréen, le hangeul, en 1446, par le roi Sejong le Grand." },
+                { id: "suneung", name: "Examen d'entrée à l'université", local: "Suneung", icon: "✏️", months: [11], when: "Jeudi de mi-novembre", explain: "Un jour décisif pour des centaines de milliers de lycéens : le pays se met en sourdine, les avions n'atterrissent pas pendant l'épreuve d'anglais et les bureaux ouvrent plus tard pour libérer les routes." },
+                { id: "dongji", name: "Solstice d'hiver", local: "Dongji", icon: "🥣", months: [12], when: "21 ou 22 décembre", explain: "On mange une soupe de haricots rouges (patjuk), dont la couleur rouge est censée repousser les mauvais esprits." },
+                { id: "christmas", name: "Noël", local: "Seongtanjeol", icon: "🎄", months: [12], when: "25 décembre", explain: "Un jour férié, plus fêté en couple qu'en famille, avec des décorations lumineuses dans les rues." }
+            ]
+        },
+        {
+            id: "grece",
+            title: "Grèce",
+            short: "Grèce",
+            icon: "🇬🇷",
+            kind: "civil",
+            intro: "L'Église orthodoxe grecque fête ses fixes selon le calendrier grégorien (adopté en 1923), mais calcule Pâques selon le calendrier julien : Pâques orthodoxe tombe donc souvent après Pâques catholique, et ses fêtes mobiles aussi.",
+            months: CIVIL_MONTHS,
+            events: [
+                { id: "protochronia", name: "Nouvel An", local: "Protochronia", icon: "🎆", months: [1], when: "1er janvier", explain: "On mange la vassilopita, un gâteau où se cache une pièce porte-bonheur, et l'on fête saint Basile, qui apporte les cadeaux." },
+                { id: "theophania", name: "Épiphanie", local: "Theofania", icon: "✝️", months: [1], when: "6 janvier", explain: "On bénit les eaux : un prêtre jette une croix à la mer, et des jeunes gens plongent pour la rattraper." },
+                { id: "kathara", name: "Lundi pur", local: "Kathara Deftera", icon: "🪁", months: [2, 3], when: "Début du Carême (fête mobile)", explain: "Le premier jour du Carême orthodoxe : un jour férié où l'on fait voler des cerfs-volants et où l'on mange des plats sans viande, comme le pain lagana." },
+                { id: "independence", name: "Fête de l'Indépendance", local: "Ikosti Pempti Martiou", icon: "🇬🇷", months: [3], when: "25 mars", explain: "Elle rappelle le début de la guerre d'indépendance contre l'Empire ottoman, le 25 mars 1821 (jour de l'Annonciation) : défilés partout dans le pays." },
+                { id: "pascha", name: "Pâques orthodoxe", local: "Pascha", icon: "🥚", months: [4, 5], when: "Fête mobile (calendrier julien)", explain: "La plus grande fête de l'année : à minuit, chacun allume sa bougie à la flamme sainte, on casse des œufs rouges et l'on mange l'agneau rôti." },
+                { id: "labour", name: "Fête du Travail", local: "Protomagia", icon: "🌸", months: [5], when: "1er mai", explain: "On cueille des fleurs pour tresser des couronnes, accrochées aux portes. Le jour est aussi férié." },
+                { id: "dormition", name: "Dormition de la Vierge", local: "Dekapentavgoustos", icon: "☀️", months: [8], when: "15 août", explain: "Le jour de grande fête en été : à Tinos, un pèlerinage rassemble des milliers de fidèles." },
+                { id: "ohi", name: "Jour du « Non »", local: "Ohi", icon: "✋", months: [10], when: "28 octobre", explain: "Elle rappelle le refus du dictateur grec Metaxás, le 28 octobre 1940, de l'ultimatum de Mussolini. Défilés d'élèves et fête nationale." },
+                { id: "polytechnic", name: "Soulèvement de l'École polytechnique", local: "Polytechneio", icon: "🎓", months: [11], when: "17 novembre", explain: "Elle rappelle la révolte d'étudiants contre la dictature des colonels, en 1973, réprimée par l'armée dans les rues d'Athènes." },
+                { id: "marathon", name: "Marathon d'Athènes", local: "Athens Marathon", icon: "🏃", months: [11], when: "Début novembre", explain: "Une course sur le parcours historique de Marathon à Athènes, la légende de Philippidès apportant la nouvelle de la victoire sur les Perses (490 av. J.-C.)." },
+                { id: "agiosnikolaos", name: "Saint-Nicolas", local: "Agios Nikolaos", icon: "⚓", months: [12], when: "6 décembre", explain: "Le saint patron des marins, très fêté dans un pays de navigateurs : on décore de petits bateaux (karavakia) et l'on illumine les ports." },
+                { id: "christmas", name: "Noël", local: "Christougenna", icon: "🎄", months: [12], when: "25 décembre", explain: "En Grèce, on fête Noël le 25 décembre, comme en Occident, bien que l'Église soit orthodoxe : on mange des mélomakarona et des kourabiedes." }
+            ]
+        },
+        {
+            id: "maroc",
+            title: "Maroc",
+            short: "Maroc",
+            icon: "🇲🇦",
+            kind: "civil",
+            intro: "Les fêtes civiles marocaines rappellent les étapes de l'indépendance (1956) et la monarchie. Le Nouvel An berbère est férié depuis 2023. Les fêtes musulmanes, mobiles, ne figurent pas ici.",
+            months: CIVIL_MONTHS,
+            events: [
+                { id: "manifeste", name: "Manifeste de l'indépendance", icon: "📜", months: [1], when: "11 janvier", explain: "En 1944, des nationalistes remettent au sultan Mohammed V un texte qui réclame l'indépendance : c'est le début de la lutte pour la fin du protectorat." },
+                { id: "yennayer", name: "Nouvel An amazigh", local: "Yennayer", icon: "🌾", months: [1], when: "13 ou 14 janvier", explain: "Le Nouvel An berbère, férié depuis 2023 : on mange un grand repas de couscous, avec des fruits secs et des gâteaux." },
+                { id: "marathon", name: "Marathon des Sables", icon: "🏜️", months: [4], when: "Début avril", explain: "Une course à pied de 250 km en six jours dans le désert du sud du pays, avec une charge sur le dos." },
+                { id: "travail", name: "Fête du Travail", icon: "🌷", months: [5], when: "1er mai", explain: "Un jour férié, avec des défilés des syndicats." },
+                { id: "roses", name: "Festival des roses", local: "Kelâat M'Gouna", icon: "🌹", months: [5], when: "Début mai", explain: "Dans la vallée des Roses, on célèbre la récolte des roses de Damas, dont on tire l'eau de rose : élection d'une reine et défilés." },
+                { id: "gnaoua", name: "Festival Gnaoua", local: "Gnaoua World Music", icon: "🥁", months: [6], when: "Fin juin", explain: "À Essaouira, des maîtres gnaouas, descendants d'esclaves subsahariens, jouent leur musique de transe avec des musiciens du monde entier." },
+                { id: "trone", name: "Fête du Trône", icon: "👑", months: [7], when: "30 juillet", explain: "Elle célèbre l'accession au trône de Mohammed VI, en 1999, par un discours du roi et une cérémonie d'allégeance." },
+                { id: "oueddahab", name: "Récupération d'Oued Eddahab", icon: "🏞️", months: [8], when: "14 août", explain: "Elle rappelle le rattachement de la région d'Oued Eddahab (Dakhla) au Maroc, en 1979, après le retrait de la Mauritanie." },
+                { id: "revolution", name: "Révolution du Roi et du Peuple", icon: "✊", months: [8], when: "20 août", explain: "En 1953, la France exile le sultan Mohammed V ; la population se soulève, et il revient en 1955." },
+                { id: "jeunesse", name: "Fête de la Jeunesse", icon: "🧑", months: [8], when: "21 août", explain: "Le lendemain de la Révolution du Roi et du Peuple, elle célèbre l'anniversaire de Hassan II et les jeunes." },
+                { id: "imilchil", name: "Moussem d'Imilchil", icon: "💍", months: [9], when: "Septembre", explain: "Un grand rassemblement berbère dans le Haut Atlas, où des couples se promettent le mariage à la fin de la récolte." },
+                { id: "dattes", name: "Fête des dattes", local: "Erfoud", icon: "🌴", months: [10], when: "Octobre", explain: "Dans l'oasis d'Erfoud, on célèbre la récolte des dattes par des marchés, des concours et des danses." },
+                { id: "marcheverte", name: "Marche verte", icon: "🌿", months: [11], when: "6 novembre", explain: "En 1975, plus de 300 000 Marocains marchent vers le Sahara occidental, alors espagnol, pour le réclamer." },
+                { id: "independance", name: "Fête de l'Indépendance", icon: "🇲🇦", months: [11], when: "18 novembre", explain: "Elle célèbre l'indépendance : revenu d'exil en novembre 1955, le sultan Mohammed V annonce la fin du protectorat français, qui est signée en 1956." }
+            ]
+        },
+        {
+            id: "tunisie",
+            title: "Tunisie",
+            short: "Tunisie",
+            icon: "🇹🇳",
+            kind: "civil",
+            intro: "La Tunisie est indépendante de la France depuis 1956 et république depuis 1957. Ses fêtes civiles rappellent l'indépendance, la libération des femmes et, depuis 2011, la révolution. Les fêtes musulmanes, mobiles, ne figurent pas ici.",
+            months: CIVIL_MONTHS,
+            events: [
+                { id: "nouvelan", name: "Jour de l'An", icon: "🎆", months: [1], when: "1er janvier", explain: "Un jour férié, avec des réveillons dans les hôtels et les maisons." },
+                { id: "chuteben", name: "Chute de Ben Ali", icon: "✊", months: [1], when: "14 janvier", explain: "Le 14 janvier 2011, le président Ben Ali quitte le pays après un mois de manifestations : c'est la première chute d'un dirigeant du « printemps arabe »." },
+                { id: "independance", name: "Fête de l'Indépendance", icon: "🇹🇳", months: [3], when: "20 mars", explain: "En 1956, la France reconnaît l'indépendance de la Tunisie, après des années de lutte menée par Habib Bourguiba." },
+                { id: "martyrs", name: "Journée des martyrs", icon: "🕯️", months: [4], when: "9 avril", explain: "Elle rappelle la répression sanglante de manifestants à Tunis, le 9 avril 1938, par la police coloniale." },
+                { id: "travail", name: "Fête du Travail", icon: "🌷", months: [5], when: "1er mai", explain: "Un jour férié, avec des manifestations syndicales." },
+                { id: "republique", name: "Fête de la République", icon: "🏛️", months: [7], when: "25 juillet", explain: "En 1957, l'Assemblée abolit la monarchie des beys et proclame la République, avec Bourguiba pour président." },
+                { id: "carthage", name: "Festival de Carthage", icon: "🎭", months: [7, 8], when: "Juillet - août (à cheval sur deux mois)", explain: "Des concerts et des spectacles dans le théâtre romain de Carthage, un des plus anciens festivals du monde arabe, depuis 1964." },
+                { id: "femme", name: "Fête de la Femme", icon: "👩", months: [8], when: "13 août", explain: "En 1956, le Code du statut personnel interdit la polygamie et donne aux femmes des droits très rares dans le monde arabe de l'époque." },
+                { id: "evacuation", name: "Fête de l'Évacuation", icon: "⚓", months: [10], when: "15 octobre", explain: "Elle rappelle le départ des dernières troupes françaises de Bizerte, en 1963, après des combats meurtriers." },
+                { id: "revolution", name: "Début de la révolution", icon: "🔥", months: [12], when: "17 décembre", explain: "Le 17 décembre 2010, Mohamed Bouazizi, marchand ambulant de Sidi Bouzid, s'immole par le feu : ce geste déclenche la révolution." },
+                { id: "douz", name: "Festival international du Sahara", local: "Douz", icon: "🐪", months: [12], when: "Fin décembre", explain: "À Douz, aux portes du désert, des courses de chameaux, des défilés de cavaliers et des danses nomades." }
             ]
         }
     ];

@@ -46,11 +46,11 @@ test('la roue : douze mois sur la jante, deux familles, fêtes dans le désordre
     await expect(page.locator('#wheel-kinds .wheel-kind')).toHaveText(['Religieux', 'Civil']);
     await expect(page.locator('#wheel-choices')).toBeHidden();
     await page.locator('#wheel-kind-religieux').click();
-    await expect(page.locator('#wheel-choices .wheel-choice')).toHaveCount(6);
+    await expect(page.locator('#wheel-choices .wheel-choice')).toHaveCount(8);
     const religieux = await page.locator('#wheel-choices .wheel-choice').allTextContents();
-    expect(religieux.map(t => t.trim().replace(/^\S+\s/, ''))).toEqual(['Bouddhisme', 'Christianisme', 'Hindouisme', 'Islam', 'Judaïsme', 'Zoroastrisme']);
+    expect(religieux.map(t => t.trim().replace(/^\S+\s/, ''))).toEqual(['Bahaïsme', 'Bouddhisme', 'Christianisme', 'Hindouisme', 'Islam', 'Judaïsme', 'Sikhisme', 'Zoroastrisme']);
     await page.locator('#wheel-kind-civil').click();
-    await expect(page.locator('#wheel-choices .wheel-choice')).toHaveCount(25);
+    await expect(page.locator('#wheel-choices .wheel-choice')).toHaveCount(30);
     const civils = (await page.locator('#wheel-choices .wheel-choice').allTextContents()).map(t => t.trim().replace(/^\S+\s/, ''));
     expect(civils).toEqual([...civils].sort((a, b) => a.localeCompare(b, 'fr')));
     // Toucher de nouveau le bouton referme la liste.
