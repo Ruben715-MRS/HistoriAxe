@@ -303,8 +303,8 @@ test('le Machrek : chacune de ses figures a son portrait et son pays, de l’Ira
     await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
     await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
 
-    // Les dix pays du bloc, chacun par une de ses figures — Oman, le Koweït et les Émirats,
-    // les moins fournis, compris.
+    // Les douze pays du bloc, chacun par une de ses figures — Oman, le Koweït, les Émirats,
+    // Bahreïn et le Qatar, les moins fournis, compris.
     const figures = [
         ['Naissance de Saladin', '🇮🇶', 'Irak'],
         ['Naissance de Fakhreddine II', '🇱🇧', 'Liban'],
@@ -316,6 +316,8 @@ test('le Machrek : chacune de ses figures a son portrait et son pays, de l’Ira
         ['Naissance de Qabus ibn Saïd', '🇴🇲', 'Oman'],
         ['Naissance de Moubarak Al-Sabah', '🇰🇼', 'Koweït'],
         ['Naissance de Khalifa ben Zayed Al Nahyane', '🇦🇪'],
+        ['Naissance de Khalifa ben Hamad Al Thani', '🇶🇦', 'Qatar'],
+        ['Naissance d\'Issa ben Salmane Al Khalifa', '🇧🇭', 'Bahreïn'],
     ];
     for (const [titre, drapeau, pays] of figures) {
         await page.locator('#timeline .entry', { hasText: titre }).click();
@@ -1058,13 +1060,14 @@ test('la Caraïbe non hispanique : chacune de ses figures a son portrait et son 
     await page.locator('#mode-card-discovery').click();
     await expect(page.locator('#screen-game')).toBeVisible();
     const nombre = await page.evaluate(() => getCurrentTheme().events.length);
-    expect(nombre).toBe(76);
+    expect(nombre).toBe(78);
     await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
     await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
 
-    // Quatre pays du bloc, chacun par une de ses figures : la fiche dit le pays que le bloc lui donne.
+    // Cinq pays du bloc, chacun par une de ses figures : la fiche dit le pays que le bloc lui donne.
     const figures = [
         ['Naissance de Toussaint Louverture', '🇭🇹', 'Haïti'],
+        ['Naissance de Robert Bradshaw', '🇰🇳', 'Saint-Christophe-et-Niévès'],
         ['Naissance de Bob Marley', '🇯🇲', 'Jamaïque'],
         ['Naissance de Derek Walcott', '🇱🇨', 'Sainte-Lucie'],
         ['Naissance d\'Anton de Kom', '🇸🇷', 'Suriname'],

@@ -409,9 +409,9 @@ test('« Grandes figures du Maghreb » : chaque ancre porte le pays de son évé
 });
 
 test('« Grandes figures du Machrek et de la péninsule Arabique » : chaque ancre porte le pays de son événement, et la session se joue', () => {
-    // Dix pays, dont plusieurs (Oman, les Émirats, le Koweït) n'ont qu'une ou deux figures : aucun
+    // Douze pays, dont plusieurs (Oman, les Émirats, le Koweït, Bahreïn) n'ont qu'une ou deux figures : aucun
     // ne doit manquer parmi les ancres, et le Liban (le plus fourni) ne doit pas tout couvrir.
-    verifierPantheonDeBloc('pan_machrek', 19, 10);
+    verifierPantheonDeBloc('pan_machrek', 19, 12);
 });
 
 test('« Grandes figures d’Afrique de l’Est et de la Corne » : chaque ancre porte le pays de son événement, et la session se joue', () => {
@@ -449,8 +449,8 @@ test('« Grandes figures de l’océan Indien occidental » : chaque ancre porte
 });
 
 test('« Grandes figures de la Caraïbe non hispanique » : chaque ancre porte le pays de son événement, et la session se joue', () => {
-    // Treize pays, dont plusieurs (Antigua-et-Barbuda, Saint-Vincent) n'ont qu'une figure face à Haïti (20) et à la Jamaïque (19) : aucun ne doit manquer parmi les ancres.
-    verifierPantheonDeBloc('pan_caraibes', 79, 13);
+    // Quatorze pays, dont plusieurs (Antigua-et-Barbuda, Saint-Vincent) n'ont qu'une figure face à Haïti (20) et à la Jamaïque (19) : aucun ne doit manquer parmi les ancres.
+    verifierPantheonDeBloc('pan_caraibes', 79, 14);
 });
 
 test('« Grandes figures d’Afrique australe » : chaque ancre porte le pays de son événement, et la session se joue', () => {

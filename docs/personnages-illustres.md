@@ -545,21 +545,22 @@ Les choix qui ne vont pas de soi :
 ### Le cinquième bloc : le Machrek et la péninsule Arabique
 
 `pan_machrek`, « Grandes figures du Machrek et de la péninsule Arabique » (code `machrek`) :
-**103 personnages de dix pays** — Liban 25, Syrie 21, Irak 19, Palestine 15, Arabie saoudite 12,
-Jordanie, Yémen 3 chacun, Émirats arabes unis et Koweït 2 chacun, Oman 1 — de Assurbanipal
-(vers 685 av. J.-C.) à Shireen Abu Akleh (1971). Par axe : 46 Chefs d'État et dirigeants, 33
-Littérature et pensée, 12 Guerres et résistances, 6 Sciences, techniques et innovation, 4
+**108 personnages de douze pays** — Liban 25, Syrie 21, Irak 19, Palestine 15, Arabie saoudite 12,
+Jordanie, Yémen et Qatar 3 chacun, Émirats arabes unis, Koweït et Bahreïn 2 chacun, Oman 1 — de Assurbanipal
+(vers 685 av. J.-C.) à Shireen Abu Akleh (1971). Par axe : 50 Chefs d'État et dirigeants, 33
+Littérature et pensée, 12 Guerres et résistances, 6 Sciences, techniques et innovation, 5
 Musique, spectacle et sport, 2 Beaux-arts ; 25 ⭐ et 2 biographies liées (Saladin et Ibn
-al-Haytham). Le Liban, le plus fourni, pèse 24 % du bloc, sous le seuil de 40 % du
+al-Haytham). Le Liban, le plus fourni, pèse 23 % du bloc, sous le seuil de 40 % du
 constructeur. Les mots-clés du thème portent les noms des pays, de Babylone à Bagdad, si bien
 que « irak », « liban » ou « yémen » mènent au Machrek dans la recherche.
 
 Les choix qui ne vont pas de soi :
 
-- **Le périmètre.** Douze pays étaient prévus : Liban, Syrie, Irak, Jordanie, Palestine,
-  Arabie saoudite, Yémen, Oman, Émirats, Koweït, Qatar et Bahreïn. Les deux derniers n'ont
-  aucune figure avec un portrait libre exploitable et ne sont donc pas dans la liste des
-  pays du bloc (le constructeur refuse un pays déclaré sans personnage). L'Égypte a son thème
+- **Le périmètre.** Douze pays : Liban, Syrie, Irak, Jordanie, Palestine,
+  Arabie saoudite, Yémen, Oman, Émirats, Koweït, Qatar et Bahreïn. **Le Qatar et Bahreïn ont été ajoutés après coup** (cinq figures : les émirs
+  Ahmad ben Ali Al Thani et Khalifa ben Hamad Al Thani, l'acteur Abdulaziz Jassim, l'émir Issa ben Salmane Al Khalifa et le Premier ministre
+  Khalifa ben Salmane Al Khalifa), parce que les articles français de leurs autres souverains (Jassim, Abdallah, Hamad Ier…) n'existent pas ; **deux images sont non libres** (Ahmad et Khalifa ben Hamad, photographies de Wikipédia
+  en anglais sous usage équitable, `licence` « Image non libre » et `source` vers la page du fichier : à remplacer ou à faire valider). L'Égypte a son thème
   (voir plus bas), la Libye est au Maghreb ; Israël a **son thème** (voir « Un pays à part : Israël »),
   les figures juives de la diaspora restent dans le panthéon de leur pays.
 - **L'Antiquité par pays actuel.** Huit figures d'avant l'islam — Assurbanipal et Hammurabi
@@ -2654,10 +2655,10 @@ Les mots-clés portent les quatre pays et leurs adjectifs, Budapest, Prague, Bra
 
 ### Un bloc : la Caraïbe non hispanique (Haïti, Jamaïque, Trinité-et-Tobago, Barbade, Bahamas, Antigua-et-Barbuda, Dominique, Sainte-Lucie, Saint-Vincent, Grenade, Belize, Guyana et Suriname)
 
-`pan_caraibes`, « Grandes figures de la Caraïbe non hispanique » (code `caraibes`, bloc ; rangé sous « Caraïbe non hispanique », entre le Canada et le Caucase) : **76 personnages de treize pays** — Haïti 20, Jamaïque 19,
-Trinité-et-Tobago 8, Barbade 6, Suriname 6, Guyana 4, Grenade 3, Bahamas, Belize, Dominique et Sainte-Lucie 2 chacun, Antigua-et-Barbuda et Saint-Vincent 1 chacun — de Nanny des Marrons (vers 1685) à Andy Palacio (1960).
-Par axe : 28 Chefs d'État et dirigeants, 20 Littérature et pensée, 13 Musique, spectacle et sport, 10 Guerres et résistances, 3 Beaux-arts, 2 Sciences, techniques et innovation ; 23 ⭐ et **deux biographies liées**
-(Toussaint Louverture, `bio_toussaint`, et Bob Marley, `bio_bobmarley`). 76 portraits : 52 du domaine public, 6 CC0, 18 CC BY ou CC BY-SA. Dix figures sont nées avant 1800, dix-neuf de 1800 à 1899, quarante-sept depuis 1900.
+`pan_caraibes`, « Grandes figures de la Caraïbe non hispanique » (code `caraibes`, bloc ; rangé sous « Caraïbe non hispanique », entre le Canada et le Caucase) : **78 personnages de quatorze pays** — Haïti 20, Jamaïque 19,
+Trinité-et-Tobago 8, Barbade 6, Suriname 6, Guyana 4, Grenade 3, Bahamas, Belize, Dominique, Saint-Christophe-et-Niévès et Sainte-Lucie 2 chacun, Antigua-et-Barbuda et Saint-Vincent 1 chacun — de Nanny des Marrons (vers 1685) à Andy Palacio (1960).
+Par axe : 30 Chefs d'État et dirigeants, 20 Littérature et pensée, 13 Musique, spectacle et sport, 10 Guerres et résistances, 3 Beaux-arts, 2 Sciences, techniques et innovation ; 23 ⭐ et **deux biographies liées**
+(Toussaint Louverture, `bio_toussaint`, et Bob Marley, `bio_bobmarley`). 78 portraits : 52 du domaine public, 6 CC0, 18 CC BY ou CC BY-SA et **2 images non libres** (Bradshaw et Southwell). Dix figures sont nées avant 1800, dix-neuf de 1800 à 1899, quarante-sept depuis 1900.
 Les mots-clés portent les treize pays et leurs adjectifs, les anciens noms (Saint-Domingue, Honduras britannique, Guyane britannique, Surinam), les capitales, la CARICOM et la Fédération des Indes occidentales, la révolution
 haïtienne, les Marrons, les Garifunas, le rastafari, le reggae et le calypso.
 
@@ -2667,9 +2668,10 @@ haïtienne, les Marrons, les Garifunas, le rastafari, le reggae et le calypso.
   américaines aux États-Unis. Aucun candidat n'en vient. **Le panthéon de la France n'a encore aucun Antillais ni Guyanais** (Césaire, Fanon, Glissant, Delgrès, Solitude, Éboué, Monnerville, Saint-John Perse, Joséphine de
   Beauharnais) : ils sont à y ajouter. Jean-Baptiste Belley, né à Gorée et député de Saint-Domingue, est un révolutionnaire français ; Thomas-Alexandre Dumas, né à Saint-Domingue, un général français : ni l'un ni l'autre n'est ici.
   Alexander Hamilton, né à Nevis, reste aux États-Unis.
-- **Saint-Kitts-et-Nevis n'est pas dans la liste des pays** : le constructeur refuse un pays sans figure, et Robert Bradshaw et Paul Southwell n'ont aucune image libre exploitable. Antigua-et-Barbuda (Vere Bird) et Saint-Vincent
-  (Chatoyer) n'ont qu'une figure.
-- **Un équilibre sans pays dominant** : Haïti (26 %) et la Jamaïque (25 %) sont sous le seuil de 40 % ; aucun `partMaxPays`. Les treize pays sont tous représentés parmi les ancres de « Pendant ce temps, ailleurs… » (un test le vérifie).
+- **Saint-Kitts-et-Nevis** n'est représenté que par ses deux premiers chefs de gouvernement, Robert Bradshaw (1916-1978) et Paul Southwell (1913-1979), né à la Dominique : leurs seules photographies viennent d'un site
+  patrimonial local (historicstkitts.kn), sans licence, et sont donc **des images non libres** (`source` vers leur page) ; Commons n'en a aucune sous licence libre pour Southwell, et seulement un buste (CC BY-SA) pour Bradshaw.
+  Antigua-et-Barbuda (Vere Bird) et Saint-Vincent (Chatoyer) n'ont qu'une figure.
+- **Un équilibre sans pays dominant** : Haïti (26 %) et la Jamaïque (24 %) sont sous le seuil de 40 % ; aucun `partMaxPays`. Les quatorze pays sont tous représentés parmi les ancres de « Pendant ce temps, ailleurs… » (un test le vérifie).
 - **Le pays qui honore, pas l'état civil.** Sidney Poitier (né à Miami, élevé aux Bahamas, ambassadeur des Bahamas), V. S. Naipaul et Jean Rhys, écrivains britanniques nés à Trinité et en Dominique, Claude McKay (naturalisé américain)
   et Maurice Bishop (né à Aruba) sont rangés ici : aucun autre panthéon ne les a, et leur pays natal les honore. Ellie Mannette, installé aux États-Unis, reste à Trinité.
 - **Deux figures très controversées sont retenues** : François Duvalier (Haïti, 1907-1971) et Desi Bouterse (Suriname, 1945-2024, condamné pour les assassinats de décembre 1982), parce qu'un panthéon national n'efface pas ses
@@ -2680,7 +2682,7 @@ haïtienne, les Marrons, les Garifunas, le rastafari, le reggae et le calypso.
   Haydon), gravures (Pétion, Soulouque, Janvier, Gordon, Chatoyer d'après Brunias), un timbre haïtien de 1954 (Boisrond-Tonnerre), une statue (Paul Bogle à Morant Bay) et deux bustes (Nanny des Marrons, Walter Rodney).
   **Trois images écrivent le nom** et sont marquées `nomVisible` : l'inscription de la gravure de Pétion, le timbre de Boisrond-Tonnerre et la plaque du buste de Nanny ; « Qui est-ce ? » les écarte, la galerie les garde.
   Dix portraits sont recadrés (Christophe, Chatoyer, Rodney, Rhys, Garvey, Bustamante, Marson, Mannette, Janvier, Obin) : `recadrage`, avec une miniature plus large que 500 pixels quand le visage est petit.
-- **Une image non libre au sens strict : aucune.** Mais plusieurs images sont petites ou de faible qualité, à remplacer dès qu'une meilleure existe : Maurice Bishop (113 × 148 px), Frank Worrell (193 × 242), Hector Hyppolite
+- **Deux images non libres (Saint-Christophe-et-Niévès, voir plus haut).** Plusieurs autres images sont petites ou de faible qualité, à remplacer dès qu'une meilleure existe : Maurice Bishop (113 × 148 px), Frank Worrell (193 × 242), Hector Hyppolite
   (225 × 288), George Cadle Price (225 × 266, de profil), Ellie Mannette, Michael Manley, Una Marson.
 - **Écartés après examen**, voir `scripts/pantheon/caraibes_candidats.md` : **Samuel Sharpe** (la seule image trouvée est le portrait d'un homonyme, l'égyptologue britannique ; il n'a pas de portrait libre), Ebenezer Joshua (photographie
   trop sombre), Winifred Atwell, Cazabon, Milo Butler, Roland Symonette, Tim Hector, George Walter, Louise Bennett, Préfète Duffaut, Philip Goldson (image sous licence hors liste), Janet Jagan, Arthur Chung (idem) ;
@@ -3062,8 +3064,8 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
   disputées entre deux thèmes (Avicenne et al-Biruni, Rûmî, Babur, Kubilai Khan, Bruce Lee,
   Eusébio) se règlent par la règle « celui qui l'honore le plus ».
 - **Pays encore sans figure dans aucun panthéon** (193 États de l'ONU, plus le Vatican et la Palestine) : **Irlande** (les Irlandais de la République sont « laissés à un futur panthéon irlandais », voir le Royaume-Uni),
-  **Chypre** et **Malte** (il faut un panthéon, ou un bloc « Chypre et Malte »), **Saint-Kitts-et-Nevis** (aucune image libre pour Bradshaw ou Southwell), **Andorre** et **Saint-Marin** (en attente de portraits, voir « Les micro-États »),
-  **le Vatican** (aucune figure propre, par choix), **Qatar** et **Bahreïn** (aucune figure avec un portrait libre), **Kiribati** et **le Vanuatu** (idem). Ce sont les seuls pays à n'avoir encore aucune figure.
+  **Chypre** et **Malte** (il faut un panthéon, ou un bloc « Chypre et Malte »), **Andorre** et **Saint-Marin** (en attente de portraits, voir « Les micro-États »),
+  **le Vatican** (aucune figure propre, par choix), **Kiribati** et **le Vanuatu** (aucune figure avec un portrait libre). Ce sont les seuls pays à n'avoir encore aucune figure.
 - **Des figures de l'Allemagne, de l'Autriche et de la Suisse à améliorer ou à rediscuter** :
   les vingt et un candidats écartés (voir « Ce que les images ont changé en Allemagne, en
   Autriche et en Suisse ») ; les images d'Hitler, de Marlene Dietrich, d'Hedy Lamarr et de

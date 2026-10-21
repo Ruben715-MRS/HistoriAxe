@@ -3,7 +3,7 @@
   "lang": "fr",
   "name": "Français (Intégral)",
   "totalThemes": 850,
-  "totalEvents": 25597,
+  "totalEvents": 25604,
   "categories": [
     {
       "nom": "Culture générale",
@@ -117578,6 +117578,40 @@
                   }
                 },
                 {
+                  "id": "pan_caraibes_southwell",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1913,
+                  "titre": "Naissance de Paul Southwell",
+                  "description": "Paul Southwell (1913-1979) est un homme politique christophien, né à la Dominique, entré en 1938 dans la police des îles Sous-le-Vent, où il sert à Antigua. Premier ministre à deux reprises, de 1960 à 1966 puis de mai 1978 à sa mort, il succède à Robert Bradshaw après la mort de celui-ci. Il meurt en fonction, un an plus tard, le 18 mai 1979.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Paul%20Southwell",
+                  "pays": "KN",
+                  "classement": "Southwell, Paul",
+                  "image": {
+                    "src": "assets/portraits/pan_caraibes_southwell.jpg",
+                    "legende": "Paul Southwell, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Image non libre",
+                    "source": "https://historicstkitts.kn/people/calen-azariah-paul-southwell"
+                  }
+                },
+                {
+                  "id": "pan_caraibes_bradshaw",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1916,
+                  "titre": "Naissance de Robert Bradshaw",
+                  "description": "Robert Bradshaw (1916-1978) est un homme d'État christophien, né dans la paroisse de Saint-Paul Capisterre, à Saint-Christophe. Défenseur des travailleurs du sucre, ministre dès 1956 puis ministre des Finances de la Fédération des Indes occidentales, il devient en 1967 le premier Premier ministre de l'État associé à la couronne britannique. Il souhaite l'indépendance du pays, obtenue en 1983, cinq ans après sa mort à Basseterre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Robert%20Llewellyn%20Bradshaw",
+                  "pays": "KN",
+                  "classement": "Bradshaw, Robert",
+                  "image": {
+                    "src": "assets/portraits/pan_caraibes_bradshaw.jpg",
+                    "legende": "Robert Bradshaw, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Image non libre",
+                    "source": "https://historicstkitts.kn/people/robert-llewelyn-bradshaw"
+                  }
+                },
+                {
                   "id": "pan_caraibes_pengel",
                   "axe": "Chefs d'État et dirigeants",
                   "date": 1916,
@@ -142737,7 +142771,14 @@
                 "Bagdad",
                 "Damas",
                 "Beyrouth",
-                "Jérusalem"
+                "Jérusalem",
+                "Qatar",
+                "Qatari",
+                "Qatarien",
+                "Doha",
+                "Bahreïn",
+                "Bahreïni",
+                "Manama"
               ],
               "events": [
                 {
@@ -143950,6 +143991,23 @@
                   }
                 },
                 {
+                  "id": "pan_machrek_ahmadalithani",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1917,
+                  "titre": "Naissance d'Ahmad ben Ali Al Thani",
+                  "description": "Ahmad ben Ali Al Thani (1917-1977) est un émir du Qatar, né à Doha, au pouvoir de 1960 à 1972. Il voit l'indépendance du pays, proclamée le 3 septembre 1971 après le retrait britannique. Destitué en février 1972 par son cousin Khalifa ben Hamad Al Thani, il meurt à Londres en novembre 1977.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ahmad%20ben%20Ali%20Al%20Thani",
+                  "pays": "QA",
+                  "classement": "Thani, Ahmad ben Ali Al",
+                  "image": {
+                    "src": "assets/portraits/pan_machrek_ahmadalithani.jpg",
+                    "legende": "Ahmad ben Ali Al Thani, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Image non libre",
+                    "source": "https://en.wikipedia.org/wiki/File:Ahmad_bin_Ali_Al_Thani.jpg"
+                  }
+                },
+                {
                   "id": "pan_machrek_joumblatt",
                   "axe": "Chefs d'État et dirigeants",
                   "date": 1917,
@@ -144205,6 +144263,23 @@
                   }
                 },
                 {
+                  "id": "pan_machrek_khalifahamad",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1932,
+                  "titre": "Naissance de Khalifa ben Hamad Al Thani",
+                  "description": "Khalifa ben Hamad Al Thani (1932-2016) est un émir du Qatar, né à Al Rayyan, fils d'un prince héritier mort en 1948. Héritier du trône depuis 1960, il prend le pouvoir le 22 février 1972 en destituant son cousin Ahmad, et dirige le pays jusqu'en 1995, quand son fils Hamad ben Khalifa le renverse. Il meurt à Doha le 23 octobre 2016.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Khalifa%20ben%20Hamad%20Al%20Thani",
+                  "pays": "QA",
+                  "classement": "Thani, Khalifa ben Hamad Al",
+                  "image": {
+                    "src": "assets/portraits/pan_machrek_khalifahamad.jpg",
+                    "legende": "Khalifa ben Hamad Al Thani, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Image non libre",
+                    "source": "https://en.wikipedia.org/wiki/File:Khalifa_bin_Hamad_Al_Thani.jpg"
+                  }
+                },
+                {
                   "id": "pan_machrek_fakhri",
                   "axe": "Musique, spectacle et sport",
                   "date": 1933,
@@ -144219,6 +144294,23 @@
                     "auteur": "Auteur inconnu",
                     "licence": "Domaine public",
                     "source": "https://commons.wikimedia.org/wiki/File:Sabah_Fakhri.png"
+                  }
+                },
+                {
+                  "id": "pan_machrek_issasalmane",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1933,
+                  "titre": "Naissance d'Issa ben Salmane Al Khalifa",
+                  "description": "Issa ben Salmane Al Khalifa (1933-1999) est le onzième souverain de Bahreïn à partir de 1961, puis son premier émir de 1971 à sa mort. Sous son règne, le pays obtient son indépendance du Royaume-Uni en 1971, adopte une constitution parlementaire et tient en 1973 ses premières élections, avant que le Parlement soit dissous en 1975. Opposé à la peine de mort, il laisse le trône à son fils Hamad en mars 1999.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Issa%20ben%20Salmane%20Al%20Khalifa",
+                  "pays": "BH",
+                  "classement": "Khalifa, Issa ben Salmane Al",
+                  "image": {
+                    "src": "assets/portraits/pan_machrek_issasalmane.jpg",
+                    "legende": "Issa ben Salmane Al Khalifa, en 1998",
+                    "auteur": "Helene C. Stikkel Description American photographer",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Isa_bin_Salman_Al_Khalifa_1998.jpg"
                   }
                 },
                 {
@@ -144270,6 +144362,23 @@
                     "auteur": "Helene C. Stikkel - First uploader was Wikifreund at de.wikipedia",
                     "licence": "Domaine public",
                     "source": "https://commons.wikimedia.org/wiki/File:HusseinJordanien.jpg"
+                  }
+                },
+                {
+                  "id": "pan_machrek_khalifasalmane",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1935,
+                  "titre": "Naissance de Khalifa ben Salmane Al Khalifa",
+                  "description": "Khalifa ben Salmane Al Khalifa (1935-2020) est un homme d'État bahreïnien, deuxième fils du souverain Salman II. Après avoir dirigé l'éducation, les finances et la municipalité de Manama, il est Premier ministre du 10 janvier 1970 à sa mort, et son règne de chef du gouvernement bat un record mondial de longévité. Il meurt le 11 novembre 2020 à Rochester, aux États-Unis.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Khalifa%20ben%20Salmane%20Al%20Khalifa",
+                  "pays": "BH",
+                  "classement": "Khalifa, Khalifa ben Salmane Al",
+                  "image": {
+                    "src": "assets/portraits/pan_machrek_khalifasalmane.jpg",
+                    "legende": "Khalifa ben Salmane Al Khalifa",
+                    "auteur": "Government of Thailand",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Khalifa_ibn_Salman_Al_Khalifa_(cropped).jpg"
                   }
                 },
                 {
@@ -144474,6 +144583,23 @@
                     "auteur": "Casa Rosada Argentina",
                     "licence": "CC BY-SA 2.5",
                     "source": "https://commons.wikimedia.org/wiki/File:Sheikh_Khalifa.jpg"
+                  }
+                },
+                {
+                  "id": "pan_machrek_abdulazizjassim",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1957,
+                  "titre": "Naissance d'Abdulaziz Jassim",
+                  "description": "Abdulaziz Jassim (1957-2018) est un acteur qatari, né à Doha. Il commence sa carrière en 1977 au théâtre Al Sadd, puis forme avec Ghanem al-Sulaiti un duo comique célèbre pendant de nombreuses années. Il meurt à Bangkok le 14 octobre 2018.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abdulaziz%20Jassim",
+                  "pays": "QA",
+                  "classement": "Jassim, Abdulaziz",
+                  "image": {
+                    "src": "assets/portraits/pan_machrek_abdulazizjassim.jpg",
+                    "legende": "Abdulaziz Jassim, photographie de 2009",
+                    "auteur": "يوسف أشكناني",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Abdul_Aziz_Jassim.jpg"
                   }
                 },
                 {

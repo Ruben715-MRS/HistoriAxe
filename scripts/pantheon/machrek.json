@@ -3,12 +3,14 @@
   "nom": "Machrek et péninsule Arabique",
   "pays": [
     "AE",
+    "BH",
     "IQ",
     "JO",
     "KW",
     "LB",
     "OM",
     "PS",
+    "QA",
     "SA",
     "SY",
     "YE"
@@ -45,7 +47,14 @@
       "Bagdad",
       "Damas",
       "Beyrouth",
-      "Jérusalem"
+      "Jérusalem",
+      "Qatar",
+      "Qatari",
+      "Qatarien",
+      "Doha",
+      "Bahreïn",
+      "Bahreïni",
+      "Manama"
     ]
   },
   "axes": [
@@ -1860,6 +1869,94 @@
         "legende": "Shireen Abu Akleh, photographie diffusée par Al Jazeera (avant mai 2022)",
         "licence": "CC BY-SA 4.0",
         "auteur": "Al Jazeera Media Network"
+      }
+    },
+    {
+      "slug": "ahmadalithani",
+      "nom": "Ahmad ben Ali Al Thani",
+      "classement": "Thani, Ahmad ben Ali Al",
+      "titre": "Naissance d'Ahmad ben Ali Al Thani",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1917,
+      "pays": "QA",
+      "description": "Ahmad ben Ali Al Thani (1917-1977) est un émir du Qatar, né à Doha, au pouvoir de 1960 à 1972. Il voit l'indépendance du pays, proclamée le 3 septembre 1971 après le retrait britannique. Destitué en février 1972 par son cousin Khalifa ben Hamad Al Thani, il meurt à Londres en novembre 1977.",
+      "wikipedia": "Ahmad ben Ali Al Thani",
+      "portrait": {
+        "fichier": "Ahmad_bin_Ali_Al_Thani.jpg",
+        "legende": "Ahmad ben Ali Al Thani, photographie",
+        "licence": "Image non libre",
+        "auteur": "Auteur inconnu",
+        "source": "https://en.wikipedia.org/wiki/File:Ahmad_bin_Ali_Al_Thani.jpg"
+      }
+    },
+    {
+      "slug": "khalifahamad",
+      "nom": "Khalifa ben Hamad Al Thani",
+      "classement": "Thani, Khalifa ben Hamad Al",
+      "titre": "Naissance de Khalifa ben Hamad Al Thani",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1932,
+      "pays": "QA",
+      "description": "Khalifa ben Hamad Al Thani (1932-2016) est un émir du Qatar, né à Al Rayyan, fils d'un prince héritier mort en 1948. Héritier du trône depuis 1960, il prend le pouvoir le 22 février 1972 en destituant son cousin Ahmad, et dirige le pays jusqu'en 1995, quand son fils Hamad ben Khalifa le renverse. Il meurt à Doha le 23 octobre 2016.",
+      "wikipedia": "Khalifa ben Hamad Al Thani",
+      "portrait": {
+        "fichier": "Khalifa_bin_Hamad_Al_Thani.jpg",
+        "legende": "Khalifa ben Hamad Al Thani, photographie",
+        "licence": "Image non libre",
+        "auteur": "Auteur inconnu",
+        "source": "https://en.wikipedia.org/wiki/File:Khalifa_bin_Hamad_Al_Thani.jpg"
+      }
+    },
+    {
+      "slug": "abdulazizjassim",
+      "nom": "Abdulaziz Jassim",
+      "classement": "Jassim, Abdulaziz",
+      "titre": "Naissance d'Abdulaziz Jassim",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1957,
+      "pays": "QA",
+      "description": "Abdulaziz Jassim (1957-2018) est un acteur qatari, né à Doha. Il commence sa carrière en 1977 au théâtre Al Sadd, puis forme avec Ghanem al-Sulaiti un duo comique célèbre pendant de nombreuses années. Il meurt à Bangkok le 14 octobre 2018.",
+      "wikipedia": "Abdulaziz Jassim",
+      "portrait": {
+        "fichier": "Abdul Aziz Jassim.jpg",
+        "legende": "Abdulaziz Jassim, photographie de 2009",
+        "licence": "CC BY 2.0",
+        "auteur": "يوسف أشكناني"
+      }
+    },
+    {
+      "slug": "issasalmane",
+      "nom": "Issa ben Salmane Al Khalifa",
+      "classement": "Khalifa, Issa ben Salmane Al",
+      "titre": "Naissance d'Issa ben Salmane Al Khalifa",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1933,
+      "pays": "BH",
+      "description": "Issa ben Salmane Al Khalifa (1933-1999) est le onzième souverain de Bahreïn à partir de 1961, puis son premier émir de 1971 à sa mort. Sous son règne, le pays obtient son indépendance du Royaume-Uni en 1971, adopte une constitution parlementaire et tient en 1973 ses premières élections, avant que le Parlement soit dissous en 1975. Opposé à la peine de mort, il laisse le trône à son fils Hamad en mars 1999.",
+      "wikipedia": "Issa ben Salmane Al Khalifa",
+      "portrait": {
+        "fichier": "Isa bin Salman Al Khalifa 1998.jpg",
+        "legende": "Issa ben Salmane Al Khalifa, en 1998",
+        "largeur": 330,
+        "licence": "Domaine public",
+        "auteur": "Helene C. Stikkel Description American photographer"
+      }
+    },
+    {
+      "slug": "khalifasalmane",
+      "nom": "Khalifa ben Salmane Al Khalifa",
+      "classement": "Khalifa, Khalifa ben Salmane Al",
+      "titre": "Naissance de Khalifa ben Salmane Al Khalifa",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1935,
+      "pays": "BH",
+      "description": "Khalifa ben Salmane Al Khalifa (1935-2020) est un homme d'État bahreïnien, deuxième fils du souverain Salman II. Après avoir dirigé l'éducation, les finances et la municipalité de Manama, il est Premier ministre du 10 janvier 1970 à sa mort, et son règne de chef du gouvernement bat un record mondial de longévité. Il meurt le 11 novembre 2020 à Rochester, aux États-Unis.",
+      "wikipedia": "Khalifa ben Salmane Al Khalifa",
+      "portrait": {
+        "fichier": "Khalifa ibn Salman Al Khalifa (cropped).jpg",
+        "legende": "Khalifa ben Salmane Al Khalifa",
+        "licence": "CC BY 2.0",
+        "auteur": "Government of Thailand"
       }
     }
   ]
