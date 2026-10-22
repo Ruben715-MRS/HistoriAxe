@@ -7243,6 +7243,8 @@ input:not([type="range"]), label, select, summary, textarea {
 
 #challenge-picker .challenge-picker-btn {
     min-width: 0;
+    justify-content: center;
+    text-align: center;
 }
 
 .portrait-day-title {
