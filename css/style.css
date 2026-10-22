@@ -11108,3 +11108,116 @@ input:not([type="range"]), label, select, summary, textarea {
 .tool-table tr > th:first-child {
     font-weight: 800;
 }
+
+/* --- L'ATLAS DES PAYS (js/app/countries.js) --- */
+.tool-countries-search {
+    position: relative;
+}
+
+.tool-countries-results {
+    list-style: none;
+    margin: 4px 0 0;
+    padding: 4px;
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    background: var(--surface);
+    box-shadow: var(--card-shadow);
+}
+
+.tool-countries-hit {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    min-height: 44px;
+    padding: 8px 10px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text-dark);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.tool-countries-hit small {
+    color: var(--muted-text);
+}
+
+.tool-countries-none {
+    padding: 10px;
+    font-size: 14px;
+    color: var(--muted-text);
+}
+
+.tool-countries-map {
+    width: 100%;
+    height: min(52vh, 420px);
+    min-height: 260px;
+    border: 1px solid var(--border-soft);
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--surface-2);
+}
+
+.tool-countries-credit {
+    font-size: 12px;
+}
+
+.tool-countries-name {
+    margin: 0;
+    font-size: 22px;
+    color: var(--text-dark);
+}
+
+.tool-countries-badge {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--muted-text);
+}
+
+.tool-countries-facts {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 6px 14px;
+    margin: 0;
+    font-size: 14px;
+}
+
+.tool-countries-facts dt {
+    font-weight: 700;
+    color: var(--muted-text);
+}
+
+.tool-countries-facts dd {
+    margin: 0;
+    color: var(--text-dark);
+}
+
+.tool-countries-facts dd small {
+    color: var(--muted-text);
+}
+
+.tool-countries-event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.tool-countries-event {
+    min-height: 44px;
+    padding: 8px 12px;
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    background: var(--surface-2);
+    color: var(--text-dark);
+    font: inherit;
+    font-size: 14px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.tool-countries-event strong {
+    margin-right: 4px;
+}

@@ -607,7 +607,7 @@ Snake retient le défilement par un écouteur `touchmove` non passif, seulement 
 **La boîte à outils** (`js/toolsCore.js`, `js/app/tools.js`, écrans `#screen-tools` et `#screen-tool-*`) : une carte « Boîte à outils » sous la salle de
 jeux, sur l'écran des catégories. Des utilitaires, pas des jeux : pas d'étoiles, rien n'est enregistré, le résultat s'affiche à mesure qu'on tape
 (`oninput`). Les calculs sont purs et testés (`tests/toolsCore.test.js`) ; tout ce qui vient de la saisie passe par `textContent`. Le contenu écrit à la main
-(leçon, périodes, notes sur les calendriers) est **à relire par un enseignant**. Six outils :
+(leçon, périodes, notes sur les calendriers, fiches des pays) est **à relire par un enseignant**. Sept outils :
 
 | Outil | Ce qu'il fait |
 |---|---|
@@ -617,6 +617,7 @@ jeux, sur l'écran des catégories. Des utilitaires, pas des jeux : pas d'étoil
 | **Calculateur de durées** | Années entre deux années, et année ± un nombre d'années, **sans an 0** (de 44 av. J.-C. à 14 : 57 ans). |
 | **Une date dans les autres calendriers** | Un jour grégorien (de 1583 à 2500) en julien (calcul exact), juif, musulman, persan, bouddhique, japonais, copte (via `Intl`, le calendrier du navigateur) et républicain (calculé ici : 1792-1805, les débuts d'année sont dans `REPUBLICAN_STARTS`). Le calendrier musulman est arithmétique : le vrai dépend de l'observation de la lune et peut différer d'un ou deux jours, ce que l'écran dit. |
 | **Repères de périodes** | Préhistoire, Antiquité, Moyen Âge, Temps modernes, 1789-1914, depuis 1914 : bornes, ce qui est discuté (476 ; 1453-1492…), et la période d'une année saisie. |
+| **Atlas des pays** | Une carte du monde actuelle (`js/app/countries.js`, `js/countriesCore.js`) : on touche un pays, ou on le cherche par son nom ou sa capitale (sans accent), et la fiche donne le drapeau (un emoji, aucune image), la capitale, les langues, la monnaie, la population **avec son année** (estimation 2024 arrondie) et la région. Les statuts disputés (Taïwan, Kosovo, Palestine, Sahara occidental) et les territoires dépendants sont dits. La fiche liste aussi les événements de l'app situés dans le pays (les points de l'Atlas des événements, retrouvés par leur position dans le contour) et en ouvre la fiche. La carte est **autonome** : les contours (`assets/geo/countries.json`, Natural Earth 1:50 m, domaine public, simplifiés, 215 entités) sont locaux, donc elle marche hors-ligne ; seuls les noms écrits sur la carte demandent le réseau (polices d'OpenFreeMap). Les fiches sont dans `assets/geo/countries-facts.json` (écrites à la main, **à relire** ; les populations sont à actualiser chaque année). Sans WebGL, la recherche et les fiches marchent quand même. |
 
 Pour ajouter un outil : une fonction pure dans `ToolsCore` (avec ses tests), un écran `screen-tool-…` dans `index.html`, ses textes dans `ui/fr.json` (groupe `tools`),
 une entrée dans `TOOL_SCREENS` et une carte dans `#screen-tools`. Un outil se lance avec `openTool(id, écranDeRetour)` ; depuis le Chemin, il rend la main au Chemin

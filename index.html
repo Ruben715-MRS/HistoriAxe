@@ -1287,6 +1287,10 @@
                 <span class="arcade-card-icon" aria-hidden="true">🧭</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.periods_title"></strong><small data-i18n="tools.periods_desc"></small></span>
             </button>
+            <button type="button" class="arcade-card" onclick="openTool('countries', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">🌍</span>
+                <span class="arcade-card-text"><strong data-i18n="tools.countries_title"></strong><small data-i18n="tools.countries_desc"></small></span>
+            </button>
         </div>
         <p class="tools-review" data-i18n="tools.review">Contenu à relire par un enseignant.</p>
     </div>
@@ -1455,6 +1459,26 @@
             </div>
             <div class="tool-result" id="tool-per-result" role="status"></div>
             <div class="tool-rows" id="tool-per-list"></div>
+        </div>
+    </div>
+
+    <div id="screen-tool-countries" class="list-screen hidden">
+        <button class="back-btn" onclick="toolBack('countries')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="tools.countries_title">Atlas des pays</h2>
+        <p class="modes-header-subtitle" data-i18n="tools.countries_intro"></p>
+        <div class="tool-panel">
+            <div class="tool-field tool-countries-search">
+                <label for="tool-countries-input" data-i18n="tools.countries_search_label">Chercher un pays ou une capitale</label>
+                <input type="search" id="tool-countries-input" class="tool-input" autocomplete="off" autocapitalize="off" spellcheck="false"
+                    enterkeyhint="search" aria-controls="tool-countries-results" aria-expanded="false"
+                    placeholder="France, Tokyo…" data-i18n-attr="placeholder:tools.countries_search_placeholder"
+                    oninput="toolCountriesSearch()" onkeydown="toolCountriesInputKey(event)">
+                <ul class="tool-countries-results hidden" id="tool-countries-results"></ul>
+            </div>
+            <p class="tool-msg" id="tool-countries-status" role="status"></p>
+            <div id="tool-countries-map" class="tool-countries-map" role="application" aria-label="Carte du monde : touchez un pays" data-i18n-attr="aria-label:tools.countries_map_label"></div>
+            <p class="tool-small tool-countries-credit" data-i18n="tools.countries_credit"></p>
+            <div class="tool-result tool-countries-fiche" id="tool-countries-fiche" role="region" aria-live="polite" aria-label="Fiche du pays" data-i18n-attr="aria-label:tools.countries_fiche_label"></div>
         </div>
     </div>
 
@@ -2971,7 +2995,9 @@
     <script src="js/app/minigames.js"></script>
     <script src="js/app/arcade-extra.js"></script>
     <script src="js/toolsCore.js"></script>
+    <script src="js/countriesCore.js"></script>
     <script src="js/app/tools.js"></script>
+    <script src="js/app/countries.js"></script>
     <script src="js/app/rewards.js"></script>
     <script src="js/app/clio.js"></script>
     <script src="js/app/team.js"></script>

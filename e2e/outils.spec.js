@@ -18,10 +18,10 @@ async function ouvrir(page, texte) {
     await page.locator('#screen-tools .arcade-card', { hasText: texte }).click();
 }
 
-test('la boîte à outils s\'ouvre depuis les catégories, propose six outils et revient', async ({ page }) => {
+test('la boîte à outils s\'ouvre depuis les catégories, propose sept outils et revient', async ({ page }) => {
     await page.locator('#btn-tools').click();
     expect(await visibleScreen(page)).toBe('screen-tools');
-    await expect(page.locator('#screen-tools .arcade-card')).toHaveCount(6);
+    await expect(page.locator('#screen-tools .arcade-card')).toHaveCount(7);
     await page.locator('#screen-tools .arcade-card', { hasText: 'Chiffres romains' }).click();
     expect(await visibleScreen(page)).toBe('screen-tool-roman');
     await page.locator('#screen-tool-roman .back-btn').click();
@@ -151,4 +151,38 @@ test('depuis le Chemin : le niveau 3 propose l\'outil des ères, le niveau 5 cel
     expect(await visibleScreen(page)).toBe('screen-tool-roman');
     await page.locator('#screen-tool-roman .back-btn').click();
     expect(await visibleScreen(page)).toBe('screen-path');
+});
+
+test('atlas des pays : la recherche donne la fiche, avec drapeau, capitale, population et année ; les événements de l\'app s\'ouvrent', async ({ page }) => {
+    await page.waitForFunction(() => window.bdd && window.bdd.some(c => (c.themes || []).some(t => t.id === 'thm_aut')), null, { timeout: 45_000 });
+    await ouvrir(page, 'Atlas des pays');
+    expect(await visibleScreen(page)).toBe('screen-tool-countries');
+    await page.waitForFunction(() => typeof countriesData !== 'undefined' && countriesData !== null);
+    await expect(page.locator('#tool-countries-fiche')).toContainText('Touchez un pays');
+    await page.locator('#tool-countries-input').fill('japon');
+    await page.locator('.tool-countries-hit', { hasText: 'Japon' }).click();
+    const fiche = page.locator('#tool-countries-fiche');
+    await expect(fiche.locator('.tool-countries-name')).toContainText('🇯🇵');
+    await expect(fiche).toContainText('Tokyo');
+    await expect(fiche).toContainText('japonais');
+    await expect(fiche).toContainText('yen (JPY)');
+    await expect(fiche).toContainText('estimation 2024');
+    // les événements de l'app situés au Japon, repérés par leur position
+    await expect(fiche.locator('.tool-countries-event').first()).toBeVisible({ timeout: 30_000 });
+    expect(await fiche.locator('.tool-countries-event').count()).toBeLessThanOrEqual(10);
+    await fiche.locator('.tool-countries-event').first().click();
+    await expect(page.locator('#modal-details')).toBeVisible();
+});
+
+test('atlas des pays : une capitale se cherche aussi, et un statut contesté est dit', async ({ page }) => {
+    await ouvrir(page, 'Atlas des pays');
+    await page.waitForFunction(() => typeof countriesData !== 'undefined' && countriesData !== null);
+    await page.locator('#tool-countries-input').fill('Brasilia');
+    await page.locator('.tool-countries-hit', { hasText: 'Brésil' }).click();
+    await expect(page.locator('#tool-countries-fiche')).toContainText('portugais');
+    await page.locator('#tool-countries-input').fill('taiwan');
+    await page.locator('.tool-countries-hit', { hasText: 'Taïwan' }).click();
+    await expect(page.locator('.tool-countries-badge')).toContainText('Statut contesté');
+    await page.locator('#tool-countries-input').fill('zzzzz');
+    await expect(page.locator('.tool-countries-none')).toBeVisible();
 });
