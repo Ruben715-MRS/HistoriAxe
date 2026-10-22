@@ -1741,15 +1741,17 @@
             <h2 data-i18n="multiplayer.title">Mode Multijoueurs</h2>
         </div>
         <div class="multiplayer-setup-container">
-            <label for="multi-player-count" data-i18n="multiplayer.player_count_label">Nombre de joueurs :</label>
-            <select id="multi-player-count" onchange="renderMultiplayerNameInputs()">
-                <option value="2" data-i18n="multiplayer.player_count_option" data-i18n-params='{"n":2}'>2 Joueurs
-                </option>
-                <option value="3" data-i18n="multiplayer.player_count_option" data-i18n-params='{"n":3}'>3 Joueurs
-                </option>
-                <option value="4" data-i18n="multiplayer.player_count_option" data-i18n-params='{"n":4}'>4 Joueurs
-                </option>
-            </select>
+            <div class="multi-count-row">
+                <label for="multi-player-count" data-i18n="multiplayer.player_count_label">Nombre de joueurs :</label>
+                <select id="multi-player-count" onchange="renderMultiplayerNameInputs()">
+                    <option value="2" data-i18n="multiplayer.player_count_option" data-i18n-params='{"n":2}'>2 Joueurs
+                    </option>
+                    <option value="3" data-i18n="multiplayer.player_count_option" data-i18n-params='{"n":3}'>3 Joueurs
+                    </option>
+                    <option value="4" data-i18n="multiplayer.player_count_option" data-i18n-params='{"n":4}'>4 Joueurs
+                    </option>
+                </select>
+            </div>
             <div id="multi-player-names">
                 <!-- Inputs générés dynamiquement -->
             </div>

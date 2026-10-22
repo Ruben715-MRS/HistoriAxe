@@ -5340,6 +5340,28 @@ textarea.form-input {
     color: #141d23 !important;
 }
 
+/* « Nombre de joueurs : » et son choix sur une seule ligne, pour ne pas confondre ce choix avec les champs de noms. */
+.multi-count-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 0 0 18px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.multi-count-row label {
+    text-align: left;
+    font-weight: 600;
+}
+
+.multiplayer-setup-container .multi-count-row select {
+    width: auto;
+    min-width: 130px;
+    margin: 0;
+}
+
 .multiplayer-setup-container input::placeholder {
     color: #8B93A0 !important;
     opacity: 1;
