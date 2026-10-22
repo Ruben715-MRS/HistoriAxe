@@ -1618,6 +1618,14 @@
         <p class="class-error hidden" id="team-error" role="alert"></p>
     </div>
 
+    <!-- ÉCRAN : COLONNE DES GRADES (tous les niveaux, du socle au chapiteau — voir js/app/ranks.js) -->
+    <div id="screen-ranks" class="list-screen hidden">
+        <button class="back-btn" onclick="ranksBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="gamification.ranks_title">La colonne des grades</h2>
+        <p class="modes-header-subtitle" data-i18n="gamification.ranks_subtitle">Du premier grade au sommet : votre XP fait monter la colonne.</p>
+        <div class="ranks-column" id="ranks-column"></div>
+    </div>
+
     <!-- ÉCRAN : AMIS (identifiant d'ami, demandes, liste — voir js/app/friends.js et api/friends.js) -->
     <div id="screen-friends" class="list-screen hidden">
         <button class="back-btn" onclick="friendsBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
@@ -2629,6 +2637,8 @@
                 <div class="profile-hero-xp-needed" id="profile-hero-xp-needed">500 XP avant Apprenti Chroniqueur</div>
             </div>
 
+            <button type="button" class="btn btn-secondary profile-ranks-btn" onclick="openRanks()" data-i18n="gamification.ranks_btn">Voir tous les grades</button>
+
             <div class="profile-stats-grid">
                 <div class="profile-stat-box">
                     <span class="profile-stat-val" id="profile-stat-total-xp">0</span>
@@ -3134,6 +3144,7 @@
     <script src="js/app/team.js"></script>
     <script src="js/app/team-social.js"></script>
     <script src="js/app/friends.js"></script>
+    <script src="js/app/ranks.js"></script>
     <script src="js/classroom.js"></script>
     <script src="js/app.js"></script>
 

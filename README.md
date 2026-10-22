@@ -881,6 +881,10 @@ Fichiers : `api/team.js` (endpoint), `api/_lib/team.js` (règles pures), `api/_l
 transactionnel), `js/app/team.js` (écran), tables `class_teams` / `team_members` (+ `players.team_points`,
 `class_sessions.team_code`, `class_players.credited`). Tests : `tests/team.test.js`, `e2e/equipe.spec.js`.
 
+## La colonne des grades
+
+Depuis la fenêtre du profil, « Voir tous les grades » ouvre une grande colonne romaine (`js/app/ranks.js`) : le premier grade à son pied, le dernier sous le chapiteau. Le fût se remplit comme un thermomètre, avec une ligne qui monte avec l'XP. Les grades ne sont pas espacés selon l'XP (le dernier en demande 42 000) : chacun a la même hauteur et la ligne monte de façon continue à l'intérieur du grade courant, signalé « Vous êtes ici ». Seuils et titres viennent de `RANKS` (`js/gamification.js`). Test : `e2e/grades.spec.js`.
+
 ## Amis
 
 Un joueur **avec un compte** (e-mail, Google ou Apple) a un **identifiant d'ami** : huit caractères tirés au hasard,
