@@ -10080,10 +10080,13 @@ input:not([type="range"]), label, select, summary, textarea {
 }
 
 .arcade-start {
+    /* Centré sans `transform` : `.btn:active` pose `transform: scale(0.96) !important`, qui écraserait un translate(-50%, -50%) et ferait
+       sauter le bouton vers le bas-droite sous le doigt, avant que le clic n'ait lieu. */
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    inset: 0;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
     min-width: 140px;
 }
 
