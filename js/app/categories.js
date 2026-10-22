@@ -268,6 +268,19 @@ const PROGRAMMES_PAYS_IMAGES = {
     'tunisie': 'prog_tunisie.webp',
 };
 
+// Images des régions de « Histoires nationales » (clé : nom de la région en minuscules).
+const HISTOIRES_NATIONALES_REGIONS_IMAGES = {
+    "europe de l'ouest": 'prog_france.webp',
+    "europe du sud": 'prog_italie.webp',
+    "amérique du nord": 'prog_etats_unis.webp',
+    "amérique centrale & caraïbes": 'prog_colombie.webp',
+    "amérique du sud": 'prog_argentine.webp',
+    "asie de l'est": 'prog_japon.webp',
+    "asie du sud": 'prog_inde.webp',
+    "afrique du nord": 'prog_maroc.webp',
+    "afrique australe": 'prog_afrique_du_sud.webp',
+};
+
 // INIT SOUS-CATÉGORIES (régions, niveaux scolaires, etc. — potentiellement imbriquées)
 function initSubcategories() {
     const container = document.getElementById('subcategories-container');
@@ -350,7 +363,12 @@ function initSubcategories() {
         // (« Afrique du Sud » contient « afrique » et prendrait sinon l'image du continent).
         const progPays = category.nom.toLowerCase().includes('scolaire') && node === category
             ? PROGRAMMES_PAYS_IMAGES[nomLower] : null;
+        // « Histoires nationales » : régions (sous-continents) illustrées par un pays emblématique
+        // quand une image adaptée existe ; sinon on retombe sur l'image du continent.
+        const natRegion = category.nom.toLowerCase().includes('nationale') && node !== category
+            ? HISTOIRES_NATIONALES_REGIONS_IMAGES[nomLower] : null;
         if (progPays) bgImg = 'assets/images/' + progPays;
+        else if (natRegion) bgImg = 'assets/images/' + natRegion;
         else if (nomLower === 'panthéons' || nomLower === 'pantheons') bgImg = 'assets/images/sub_themes_generaux.webp';
         else if (nomLower === 'biographies') bgImg = 'assets/images/cat_biographies.webp';
         else if (nomLower.includes('europe')) bgImg = 'assets/images/sub_europe.webp';
