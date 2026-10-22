@@ -1342,15 +1342,17 @@
     }
   },
   "arcade": {
-    "title": "Salle d'arcade",
-    "subtitle": "Des jeux d'adresse pour réviser les dates.",
-    "card_kicker": "Jeux d'adresse · Snake, Tetris, Pac-Man, Invaders",
+    "title": "Salle de jeux",
+    "subtitle": "Mini-jeux, jeux d'arcade et jeux de réflexion pour réviser les dates.",
+    "card_kicker": "Mini-jeux · Arcade · Réflexion",
     "best": "Meilleur score : {score}",
     "no_best": "Pas encore joué",
     "play": "Jouer",
     "replay": "Rejouer",
     "over": "Partie terminée",
-    "empty": "Il n'y a pas assez d'événements dans cette langue pour ce jeu."
+    "empty": "Il n'y a pas assez d'événements dans cette langue pour ce jeu.",
+    "wheel_progress": "{done} / {total} calendriers terminés",
+    "stars_best": "Meilleur résultat : {stars}"
   },
   "pacman": {
     "title": "Pac-Man de la frise",
@@ -1430,7 +1432,8 @@
     "next": "Question suivante",
     "finish": "Voir le résultat",
     "done": "{total} questions, dont {errors} erreur(s).",
-    "leave": "Retour"
+    "leave": "Retour",
+    "desc": "Faites coulisser la règle d'une autre ère jusqu'à la bonne année."
   },
   "wheel": {
     "entry": "🎡 Mini-jeu : la roue des fêtes",
@@ -1457,7 +1460,8 @@
     "hint": "Glissez la roue pour la tourner et lire les mois à l'endroit.",
     "done": "Roue du {calendar} terminée, avec {errors} erreurs. Touchez une pastille pour relire l'explication de la fête.",
     "next": "Calendrier suivant",
-    "replay": "Rejouer cette roue"
+    "replay": "Rejouer cette roue",
+    "desc": "Rangez les fêtes d'un calendrier religieux ou civil dans le bon mois."
   },
   "lesson": {
     "stage_title": "Leçon · {title}",
@@ -1654,5 +1658,50 @@
         "0": "Il te manque {missing} 🪙 pour le costume « {name} »."
       }
     }
+  },
+  "games": {
+    "mini_title": "Mini-jeux",
+    "mini_desc": "Courts et liés au cours : calendriers, ères, périodes.",
+    "arcade_title": "Jeux d'arcade",
+    "arcade_desc": "De l'adresse et des réflexes, avec un score à battre.",
+    "reflexion_title": "Jeux de réflexion",
+    "reflexion_desc": "Sans minuteur : on prend le temps de réfléchir."
+  },
+  "memory": {
+    "title": "Memory chronologique",
+    "desc": "Retrouvez les paires événement–date.",
+    "rule": "Retournez deux cartes : un événement et sa date forment une paire.",
+    "grid_aria": "Cartes du Memory",
+    "status": "Paires : {matched} / {pairs} · Erreurs : {errors}",
+    "card_hidden": "Carte {n}, face cachée",
+    "card_event": "Carte {n} : événement « {text} »",
+    "card_date": "Carte {n} : date {text}",
+    "match": "✓ {year} — {title}",
+    "miss_pair": "« {title} » ne date pas de {year}.",
+    "miss_same": "Il faut un événement ET une date, pas deux cartes du même genre.",
+    "won": "Toutes les paires !",
+    "over_text": "{errors} erreurs, {score} points."
+  },
+  "who": {
+    "title": "Qui suis-je ?",
+    "loading": "Choix des figures…",
+    "desc": "Devinez la figure historique, avec des indices qui s'ajoutent un à un.",
+    "status": "Manche {n} / {total} · {score} pts",
+    "more": "Un indice de plus (−{cost} pts)",
+    "more_last": "Dernier indice",
+    "clue_axis": "Domaine : {axis}",
+    "clue_country": "Pays : {country}",
+    "clue_period": "Époque : {label}",
+    "clue_portrait": "Son portrait, juste dessous.",
+    "worth": "Trouver maintenant vaut {points} pts.",
+    "right": "Bien joué ! +{points} pts",
+    "lost": "Raté…",
+    "answer": "C'était {name}.",
+    "next": "Manche suivante",
+    "finish": "Voir le résultat",
+    "empty": "Il n'y a pas assez de figures avec portrait dans cette langue pour ce jeu.",
+    "found": "{found} figures trouvées sur {total}, {score} points.",
+    "result_found": "{name} — {points} pts",
+    "result_lost": "{name} — pas trouvé"
   }
 }

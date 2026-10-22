@@ -70,8 +70,7 @@ function openWheel(fromScreen) {
 
 function wheelBack() {
     wheelStopSpin();
-    showScreen(wheelReturn, 'back');
-    if (wheelReturn === 'screen-path' && typeof renderPath === 'function') renderPath();
+    gamesBackTo(wheelReturn);
 }
 
 function wheelSelectCalendar(id) {

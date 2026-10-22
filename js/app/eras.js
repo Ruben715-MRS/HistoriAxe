@@ -28,8 +28,7 @@ function openEras(fromScreen) {
 }
 
 function erasBack() {
-    showScreen(erasReturn, 'back');
-    if (erasReturn === 'screen-path' && typeof renderPath === 'function') renderPath();
+    gamesBackTo(erasReturn);
 }
 
 function erasRestart() {

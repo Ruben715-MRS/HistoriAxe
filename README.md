@@ -522,8 +522,19 @@ le vérifie). **Tout ce contenu est à relire par un enseignant.**
   Temps modernes, 1789-1914, depuis 1914) ; on choisit la colonne (boutons, tap, flèches). Bien rangé : vert ; sinon rouge, et le
   bloc reste. Une ligne de cinq blocs verts disparaît. Les années proches de 476 et de 1453-1492 sont exclues (bornes discutées).
 
-**La salle d'arcade** (`js/app/arcade.js`, `js/arcadeCore.js`, écran `#screen-arcade`) : une carte sous « Le Chemin du Temps » sur
-l'écran des catégories. Quatre jeux d'adresse sur les événements connus du pack chargé (incontournables, un seul par fait) :
+**La salle de jeux** (`js/app/arcade.js`, écran `#screen-arcade` : l'identifiant a gardé l'ancien nom « salle d'arcade ») : une carte sous
+« Le Chemin du Temps » sur l'écran des catégories. Un seul écran, trois sections, huit jeux, et sur chaque carte ce que le joueur y a fait
+(meilleur score, étoiles, calendriers terminés) :
+
+| Section | Jeux | Principe |
+|---|---|---|
+| **Mini-jeux** | la roue des fêtes, le convertisseur d'ères | courts, liés à une notion du cours, avec des étoiles (aussi proposés dans la fiche de leur niveau du Monde 0) |
+| **Jeux d'arcade** | Snake, Tetris, Pac-Man, Space Invaders | de l'adresse en temps réel, un score à battre |
+| **Jeux de réflexion** | Memory, Qui suis-je ? | au tour par tour, sans minuteur |
+
+Les jeux d'arcade portent sur les événements connus du pack chargé (incontournables, un seul par fait) ; les deux jeux de réflexion sont décrits plus bas.
+Un jeu rend la main à l'écran d'où on l'a ouvert (`gamesBackTo` : la salle de jeux, ou le Chemin). Pour ajouter un jeu : une carte dans la section
+voulue de `#screen-arcade`, ses textes dans `ui/fr.json`, et sa ligne dans `renderGamesHub`.
 
 - **Snake chronologique** : quatre pastilles lettrées (couleur *et* lettre) et leur légende ; il faut les manger du plus ancien
   au plus récent. Une erreur, un mur ou sa queue : une vie en moins (3). Flèches, boutons ou glisser du doigt.
@@ -535,6 +546,18 @@ l'écran des catégories. Quatre jeux d'adresse sur les événements connus du p
   vaisseau sur une voie et on tire sur la carte la plus basse ; il faut abattre les événements HORS de la période et laisser passer
   les autres (tirer sur un événement de la période, ou en laisser passer un hors période, coûte une vie). Chaque tir ou carte
   passée est expliqué en une phrase. Le temps est un flottant (secondes) : `invStep(état, dt)` est pur et testé avec des `dt` simulés.
+
+**Jeux de réflexion** (`js/reflexionCore.js`, `js/app/reflexion.js`) :
+
+- **Memory chronologique** : douze cartes face cachée, six événements aux années différentes, chacun une fois en titre et une fois en date.
+  Deux cartes qui ne vont pas ensemble (deux événements, deux dates, ou une mauvaise date) comptent une erreur et se recachent. 100 points par
+  paire, −25 par erreur.
+- **Qui suis-je ?** : six figures à portrait (celles des panthéons : `GameModes.whoCandidates`), à trouver parmi quatre noms voisins en date et en
+  domaine. Les indices s'ajoutent un à un : domaine et pays, siècle, deux phrases de la notice, puis le portrait. **Le nom est caché** dans les
+  phrases (chaque mot du nom et du nom de classement, avec ou sans accent) : un test le vérifie sur toutes les figures du pack français. On marque
+  100, 80, 60, 40 ou 20 points selon le nombre d'indices vus ; une mauvaise réponse retire l'option et dévoile l'indice suivant. Les notices d'un pack
+  découpé arrivent thème par thème (`Pack.ensureDescriptions`) : une figure dont la notice ne se charge pas (hors ligne) est écartée. Limite connue :
+  une notice qui donne un autre nom de la figure (nom de scène, nom de naissance) le laisse passer.
 
 Les règles sont pures (`ArcadeCore`, testées sans minuteur) ; l'écran ne fait que cadencer et dessiner. Meilleurs scores sur l'appareil
 (`historiaxe_arcade_v1`, hors synchronisation). Pas de `touch-action: none` (interdit par `tests/a11y.test.js`) : le glisser du

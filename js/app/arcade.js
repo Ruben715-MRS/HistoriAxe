@@ -73,14 +73,33 @@ function arcadeBindSwipe(el, onDir) {
     el.addEventListener('touchend', () => { start = null; }, { passive: true });
 }
 
-// --- Le menu ------------------------------------------------------------------------------------------
+// --- La salle de jeux : le menu ----------------------------------------------------------------------
+// L'écran garde son ancien identifiant (`screen-arcade`). Trois sections — mini-jeux, arcade, réflexion — et, sur
+// chaque carte, ce que le joueur y a fait : meilleur score, étoiles, calendriers terminés.
 function openArcade() {
     showScreen('screen-arcade', 'forward');
+    renderGamesHub();
+}
+
+function renderGamesHub() {
     const best = arcadeBest();
-    ['snake', 'tetris', 'pacman', 'invaders'].forEach(game => {
+    ['snake', 'tetris', 'pacman', 'invaders', 'memory', 'who'].forEach(game => {
         document.getElementById('arcade-best-' + game).textContent = best[game] > 0
             ? t('arcade.best', { score: best[game] }) : t('arcade.no_best');
     });
+    const done = Object.keys(wheelProgress()).length;
+    document.getElementById('arcade-best-wheel').textContent = done > 0
+        ? t('arcade.wheel_progress', { done, total: CalendarWheel.CALENDARS.length }) : t('arcade.no_best');
+    const eras = erasProgress();
+    document.getElementById('arcade-best-eras').textContent = eras
+        ? t('arcade.stars_best', { stars: '★'.repeat(eras.stars) + '☆'.repeat(EraConverter.MAX_STARS - eras.stars) }) : t('arcade.no_best');
+}
+
+// Le retour d'un jeu vers l'écran d'où on l'a ouvert (la salle de jeux, ou le Chemin), mis à jour.
+function gamesBackTo(screenId) {
+    showScreen(screenId, 'back');
+    if (screenId === 'screen-arcade') renderGamesHub();
+    else if (screenId === 'screen-path' && typeof renderPath === 'function') renderPath();
 }
 
 function arcadeBack() {
@@ -136,9 +155,7 @@ function openSnake(fromScreen) {
 
 function snakeBack() {
     snakeStop();
-    showScreen(snakeReturn, 'back');
-    if (snakeReturn === 'screen-arcade') openArcade();
-    else if (snakeReturn === 'screen-path' && typeof renderPath === 'function') renderPath();
+    gamesBackTo(snakeReturn);
 }
 
 function snakeStop() {
@@ -302,9 +319,7 @@ function openTetris(fromScreen) {
 
 function tetrisBack() {
     tetrisStop();
-    showScreen(tetrisReturn, 'back');
-    if (tetrisReturn === 'screen-arcade') openArcade();
-    else if (tetrisReturn === 'screen-path' && typeof renderPath === 'function') renderPath();
+    gamesBackTo(tetrisReturn);
 }
 
 function tetrisStop() {
@@ -480,8 +495,7 @@ function openPacman(fromScreen) {
 
 function pacmanBack() {
     pacmanStop();
-    showScreen(pacReturn, 'back');
-    if (pacReturn === 'screen-arcade') openArcade();
+    gamesBackTo(pacReturn);
 }
 
 function pacmanStop() {
@@ -650,8 +664,7 @@ function openInvaders(fromScreen) {
 
 function invadersBack() {
     invadersStop();
-    showScreen(invReturn, 'back');
-    if (invReturn === 'screen-arcade') openArcade();
+    gamesBackTo(invReturn);
 }
 
 function invadersStop() {

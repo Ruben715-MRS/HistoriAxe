@@ -7,7 +7,7 @@ const { test, expect, visibleScreen } = require('./fixtures');
 test.beforeEach(async ({ page }) => {
     await page.evaluate(() => {
         markRecapShownThisWeek();
-        ['historiaxe_arcade_v1', 'historiaxe_eras_v1'].forEach(k => localStorage.removeItem(k));
+        ['historiaxe_arcade_v1', 'historiaxe_eras_v1', 'historiaxe_wheel_v1'].forEach(k => localStorage.removeItem(k));
         localStorage.setItem('historiaxe_path_v1', JSON.stringify({ levels: {}, skipped: [] }));
         showScreen('screen-categories');
         initCategories();
@@ -187,4 +187,86 @@ test('Space Invaders : une période, des cartes qui descendent, un tir sur un an
     expect(await page.evaluate(() => invGame.lane)).toBe(0);
     await page.evaluate(() => { invGame.lives = 0; invGame.over = true; invadersFinish(); });
     await expect(page.locator('#invaders-over')).toBeVisible();
+});
+
+test('la salle de jeux : trois sections, huit jeux, des mini-jeux qui reviennent au menu', async ({ page }) => {
+    await page.locator('#btn-arcade').click();
+    await expect(page.locator('#screen-arcade h2')).toHaveText('Salle de jeux');
+    await expect(page.locator('#screen-arcade .games-section h3')).toHaveText(['Mini-jeux', "Jeux d'arcade", 'Jeux de réflexion']);
+    await expect(page.locator('#screen-arcade .arcade-card')).toHaveCount(8);
+    // Les cartes du menu disent où l'on en est.
+    await expect(page.locator('#arcade-best-wheel')).toContainText('Pas encore joué');
+    await page.evaluate(() => {
+        localStorage.setItem('historiaxe_wheel_v1', JSON.stringify({ juif: { stars: 3, errors: 0 }, sikh: { stars: 2, errors: 3 } }));
+        localStorage.setItem('historiaxe_eras_v1', JSON.stringify({ stars: 2, errors: 3 }));
+    });
+    // Un mini-jeu : la roue s'ouvre depuis le menu et y revient, avec sa progression à jour.
+    await page.locator('.arcade-card', { hasText: 'La roue des fêtes' }).click();
+    expect(await visibleScreen(page)).toBe('screen-wheel');
+    await page.locator('#screen-wheel .back-btn').click();
+    expect(await visibleScreen(page)).toBe('screen-arcade');
+    await expect(page.locator('#arcade-best-wheel')).toContainText('2 / 38 calendriers terminés');
+    await expect(page.locator('#arcade-best-eras')).toContainText('★★☆');
+    await page.locator('.arcade-card', { hasText: "convertisseur d'ères" }).click();
+    expect(await visibleScreen(page)).toBe('screen-eras');
+    await page.locator('#screen-eras .back-btn').click();
+    expect(await visibleScreen(page)).toBe('screen-arcade');
+});
+
+test('Memory : douze cartes, une erreur recachée, toutes les paires, un meilleur score au menu', async ({ page }) => {
+    await page.locator('#btn-arcade').click();
+    await page.locator('.arcade-card', { hasText: 'Memory' }).click();
+    expect(await visibleScreen(page)).toBe('screen-memory');
+    await expect(page.locator('#memory-grid .memory-card')).toHaveCount(12);
+    await expect(page.locator('#memory-status')).toContainText('0 / 6');
+    // Deux événements ne font pas une paire : message, erreur, puis les cartes se recachent.
+    const events = await page.evaluate(() => memoryGame.cards.map((c, i) => c.side === 'event' ? i : -1).filter(i => i >= 0));
+    await page.locator('#memory-grid .memory-card').nth(events[0]).click();
+    await page.locator('#memory-grid .memory-card').nth(events[1]).click();
+    await expect(page.locator('#memory-message')).toContainText('un événement ET une date');
+    await expect(page.locator('#memory-status')).toContainText('Erreurs : 1');
+    await expect(page.locator('#memory-grid .memory-card.is-up')).toHaveCount(2);
+    await expect(page.locator('#memory-grid .memory-card.is-up')).toHaveCount(0);
+    // Les six paires.
+    for (let pair = 0; pair < 6; pair++) {
+        const idx = await page.evaluate((pair) => [memoryGame.cards.findIndex(c => c.pair === pair && c.side === 'event'), memoryGame.cards.findIndex(c => c.pair === pair && c.side === 'date')], pair);
+        await page.locator('#memory-grid .memory-card').nth(idx[0]).click();
+        await page.locator('#memory-grid .memory-card').nth(idx[1]).click();
+        await expect(page.locator('#memory-message')).toContainText('✓');
+    }
+    await expect(page.locator('#memory-over')).toBeVisible();
+    await expect(page.locator('#memory-over-text')).toContainText('1 erreurs, 575 points');
+    await page.locator('#screen-memory .back-btn').click();
+    await expect(page.locator('#arcade-best-memory')).toContainText('575');
+});
+
+test('Qui suis-je ? : des indices un à un, une mauvaise réponse dévoile le suivant, six manches', async ({ page }) => {
+    await page.locator('#btn-arcade').click();
+    await page.locator('.arcade-card', { hasText: 'Qui suis-je' }).click();
+    expect(await visibleScreen(page)).toBe('screen-who');
+    await expect(page.locator('#who-status')).toContainText('Manche 1 / 6');
+    await expect(page.locator('#who-options .who-option')).toHaveCount(4);
+    // Un seul indice au départ ; « Un indice de plus » en ajoute un, sans le portrait avant la fin.
+    await expect(page.locator('#who-clues .who-clue')).toHaveCount(1);
+    await expect(page.locator('#who-portrait')).toBeHidden();
+    await page.locator('#who-more').click();
+    await expect(page.locator('#who-clues .who-clue')).toHaveCount(2);
+    // Une mauvaise réponse : l'option est retirée et un indice de plus apparaît.
+    const wrong = await page.evaluate(() => { const q = ReflexionCore.whoQuestion(whoGame); return q.options.find(o => o.id !== q.correctId).name; });
+    await page.locator('#who-options .who-option', { hasText: wrong }).first().click();
+    await expect(page.locator('#who-clues .who-clue')).toHaveCount(3);
+    await expect(page.locator('#who-options .who-option.wrong')).toHaveCount(1);
+    // Les six manches, en trouvant à chaque fois.
+    for (let round = 0; round < 6; round++) {
+        const name = await page.evaluate(() => ReflexionCore.whoQuestion(whoGame).name);
+        await page.locator('#who-options .who-option:not([disabled])', { hasText: name }).first().click();
+        await expect(page.locator('#who-feedback')).toBeVisible();
+        await expect(page.locator('#who-portrait')).toBeVisible();
+        await page.locator('#who-next').click();
+    }
+    await expect(page.locator('#who-over')).toBeVisible();
+    await expect(page.locator('#who-over-text')).toContainText('6 figures trouvées sur 6');
+    expect(await page.evaluate(() => JSON.parse(localStorage.getItem('historiaxe_arcade_v1')).who)).toBeGreaterThan(0);
+    await page.locator('#screen-who .back-btn').click();
+    await expect(page.locator('#arcade-best-who')).toContainText('Meilleur score');
 });

@@ -717,45 +717,93 @@
         <p class="wheel-intro" id="wheel-intro"></p>
     </div>
 
-    <!-- ÉCRAN : SALLE D'ARCADE (menu des jeux d'adresse — js/app/arcade.js, js/arcadeCore.js) -->
+    <!-- ÉCRAN : SALLE DE JEUX (mini-jeux, jeux d'arcade, jeux de réflexion — js/app/arcade.js ; l'identifiant garde l'ancien nom) -->
     <div id="screen-arcade" class="list-screen hidden">
         <button class="back-btn" onclick="arcadeBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
-        <h2 class="header-title" data-i18n="arcade.title">Salle d'arcade</h2>
-        <p class="modes-header-subtitle" data-i18n="arcade.subtitle">Des jeux d'adresse pour réviser les dates.</p>
-        <div class="arcade-menu">
+        <h2 class="header-title" data-i18n="arcade.title">Salle de jeux</h2>
+        <p class="modes-header-subtitle" data-i18n="arcade.subtitle">Mini-jeux, jeux d'arcade et jeux de réflexion pour réviser les dates.</p>
+        <section class="games-section" aria-labelledby="games-h-mini">
+            <h3 id="games-h-mini" data-i18n="games.mini_title">Mini-jeux</h3>
+            <p class="games-section-desc" data-i18n="games.mini_desc"></p>
+            <div class="arcade-menu">
+            <button type="button" class="arcade-card" onclick="openWheel('screen-arcade')">
+                <span class="arcade-card-icon" aria-hidden="true">🎡</span>
+                <span class="arcade-card-text">
+                    <strong data-i18n="wheel.title"></strong>
+                    <small data-i18n="wheel.desc"></small>
+                    <small class="arcade-best" id="arcade-best-wheel"></small>
+                </span>
+            </button>
+            <button type="button" class="arcade-card" onclick="openEras('screen-arcade')">
+                <span class="arcade-card-icon" aria-hidden="true">📏</span>
+                <span class="arcade-card-text">
+                    <strong data-i18n="eras.title"></strong>
+                    <small data-i18n="eras.desc"></small>
+                    <small class="arcade-best" id="arcade-best-eras"></small>
+                </span>
+            </button>
+            </div>
+        </section>
+        <section class="games-section" aria-labelledby="games-h-arcade">
+            <h3 id="games-h-arcade" data-i18n="games.arcade_title">Jeux d'arcade</h3>
+            <p class="games-section-desc" data-i18n="games.arcade_desc"></p>
+            <div class="arcade-menu">
             <button type="button" class="arcade-card" onclick="openSnake('screen-arcade')">
                 <span class="arcade-card-icon" aria-hidden="true">🐍</span>
                 <span class="arcade-card-text">
-                    <strong data-i18n="snake.title">Snake chronologique</strong>
-                    <small data-i18n="snake.desc">Mangez les événements du plus ancien au plus récent.</small>
+                    <strong data-i18n="snake.title"></strong>
+                    <small data-i18n="snake.desc"></small>
                     <small class="arcade-best" id="arcade-best-snake"></small>
                 </span>
             </button>
             <button type="button" class="arcade-card" onclick="openTetris('screen-arcade')">
                 <span class="arcade-card-icon" aria-hidden="true">🧱</span>
                 <span class="arcade-card-text">
-                    <strong data-i18n="tetris.title">Tetris des siècles</strong>
-                    <small data-i18n="tetris.desc">Rangez chaque événement qui tombe dans sa période.</small>
+                    <strong data-i18n="tetris.title"></strong>
+                    <small data-i18n="tetris.desc"></small>
                     <small class="arcade-best" id="arcade-best-tetris"></small>
                 </span>
             </button>
             <button type="button" class="arcade-card" onclick="openPacman('screen-arcade')">
                 <span class="arcade-card-icon" aria-hidden="true">🟡</span>
                 <span class="arcade-card-text">
-                    <strong data-i18n="pacman.title">Pac-Man de la frise</strong>
-                    <small data-i18n="pacman.desc">Mangez la date de l'événement demandé, fuyez les fantômes.</small>
+                    <strong data-i18n="pacman.title"></strong>
+                    <small data-i18n="pacman.desc"></small>
                     <small class="arcade-best" id="arcade-best-pacman"></small>
                 </span>
             </button>
             <button type="button" class="arcade-card" onclick="openInvaders('screen-arcade')">
                 <span class="arcade-card-icon" aria-hidden="true">👾</span>
                 <span class="arcade-card-text">
-                    <strong data-i18n="invaders.title">Space Invaders des anachronismes</strong>
-                    <small data-i18n="invaders.desc">Abattez les événements qui n'appartiennent pas à la période.</small>
+                    <strong data-i18n="invaders.title"></strong>
+                    <small data-i18n="invaders.desc"></small>
                     <small class="arcade-best" id="arcade-best-invaders"></small>
                 </span>
             </button>
-        </div>
+            </div>
+        </section>
+        <section class="games-section" aria-labelledby="games-h-reflexion">
+            <h3 id="games-h-reflexion" data-i18n="games.reflexion_title">Jeux de réflexion</h3>
+            <p class="games-section-desc" data-i18n="games.reflexion_desc"></p>
+            <div class="arcade-menu">
+            <button type="button" class="arcade-card" onclick="openMemory('screen-arcade')">
+                <span class="arcade-card-icon" aria-hidden="true">🃏</span>
+                <span class="arcade-card-text">
+                    <strong data-i18n="memory.title"></strong>
+                    <small data-i18n="memory.desc"></small>
+                    <small class="arcade-best" id="arcade-best-memory"></small>
+                </span>
+            </button>
+            <button type="button" class="arcade-card" onclick="openWho('screen-arcade')">
+                <span class="arcade-card-icon" aria-hidden="true">🕵️</span>
+                <span class="arcade-card-text">
+                    <strong data-i18n="who.title"></strong>
+                    <small data-i18n="who.desc"></small>
+                    <small class="arcade-best" id="arcade-best-who"></small>
+                </span>
+            </button>
+            </div>
+        </section>
     </div>
 
     <!-- ÉCRAN : SNAKE CHRONOLOGIQUE (js/app/arcade.js) -->
@@ -855,6 +903,48 @@
             <p id="invaders-over-text"></p>
             <ul class="arcade-mistakes" id="invaders-over-list"></ul>
             <button type="button" class="btn" onclick="invadersStart()" data-i18n="arcade.replay">Rejouer</button>
+        </div>
+    </div>
+
+    <!-- ÉCRAN : MEMORY CHRONOLOGIQUE (js/app/reflexion.js, js/reflexionCore.js) -->
+    <div id="screen-memory" class="list-screen hidden">
+        <button class="back-btn" onclick="memoryBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="memory.title">Memory chronologique</h2>
+        <p class="modes-header-subtitle" id="memory-status" role="status"></p>
+        <p class="arcade-rule" data-i18n="memory.rule">Retournez deux cartes : un événement et sa date forment une paire.</p>
+        <div class="memory-grid" id="memory-grid" role="group" aria-label="Cartes du Memory" data-i18n-attr="aria-label:memory.grid_aria"></div>
+        <p class="wheel-feedback hidden arcade-message" id="memory-message" role="status"></p>
+        <div class="arcade-over hidden" id="memory-over">
+            <h3 data-i18n="memory.won">Toutes les paires !</h3>
+            <p id="memory-over-text"></p>
+            <button type="button" class="btn" onclick="memoryStart()" data-i18n="arcade.replay">Rejouer</button>
+        </div>
+    </div>
+
+    <!-- ÉCRAN : QUI SUIS-JE ? (js/app/reflexion.js) -->
+    <div id="screen-who" class="list-screen hidden">
+        <button class="back-btn" onclick="whoBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="who.title">Qui suis-je ?</h2>
+        <p class="modes-header-subtitle" id="who-status" role="status"></p>
+        <div id="who-play">
+            <ol class="who-clues" id="who-clues" aria-live="polite"></ol>
+            <figure class="whois-portrait hidden" id="who-portrait">
+                <img id="who-portrait-img" class="whois-portrait-img" alt="" width="200" height="250" decoding="async">
+                <figcaption class="modal-portrait-credit whois-portrait-credit" id="who-portrait-credit"></figcaption>
+            </figure>
+            <button type="button" class="btn who-more" id="who-more" onclick="whoMore()"></button>
+            <div class="quiz-options who-options" id="who-options"></div>
+            <div class="wheel-feedback hidden" id="who-feedback" role="status">
+                <strong id="who-feedback-title"></strong>
+                <p id="who-feedback-text"></p>
+                <button type="button" class="btn" id="who-next" onclick="whoContinue()"></button>
+            </div>
+        </div>
+        <div class="arcade-over hidden" id="who-over">
+            <h3 data-i18n="arcade.over">Partie terminée</h3>
+            <p id="who-over-text"></p>
+            <ul class="arcade-mistakes" id="who-over-list"></ul>
+            <button type="button" class="btn" onclick="whoStart()" data-i18n="arcade.replay">Rejouer</button>
         </div>
     </div>
 
@@ -2354,6 +2444,7 @@
     <script src="js/calendarWheel.js"></script>
     <script src="js/eraConverter.js"></script>
     <script src="js/arcadeCore.js"></script>
+    <script src="js/reflexionCore.js"></script>
     <script src="js/rewardsCore.js"></script>
     <script src="js/clioCore.js"></script>
     <script src="js/apiClient.js"></script>
@@ -2402,6 +2493,7 @@
     <script src="js/app/wheel.js"></script>
     <script src="js/app/eras.js"></script>
     <script src="js/app/arcade.js"></script>
+    <script src="js/app/reflexion.js"></script>
     <script src="js/app/rewards.js"></script>
     <script src="js/app/clio.js"></script>
     <script src="js/app/team.js"></script>

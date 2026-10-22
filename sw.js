@@ -12,7 +12,7 @@
 // 'install' recharge tout depuis le réseau. Un pack de langue ou un texte
 // d'UI modifié qui ne s'affiche pas malgré un déploiement réussi est
 // généralement le signe que l'un de ces deux numéros n'a pas été incrémenté.
-const CACHE_VERSION = '1.4.136';
+const CACHE_VERSION = '1.4.137';
 const APP_SHELL_CACHE = `historiaxe-shell-v${CACHE_VERSION}`;
 const DATA_CACHE = 'historiaxe-data-v1.0.99';
 
@@ -66,6 +66,7 @@ const APP_SHELL_FILES = [
     './js/calendarWheel.js',
     './js/eraConverter.js',
     './js/arcadeCore.js',
+    './js/reflexionCore.js',
     './js/rewardsCore.js',
     './js/clioCore.js',
     './js/apiClient.js',
@@ -114,6 +115,7 @@ const APP_SHELL_FILES = [
     './js/app/wheel.js',
     './js/app/eras.js',
     './js/app/arcade.js',
+    './js/app/reflexion.js',
     './js/app/rewards.js',
     './js/app/clio.js',
     './js/app/team.js',
