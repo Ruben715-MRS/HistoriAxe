@@ -21,11 +21,15 @@
     "loading": "Wird geladen…"
   },
   "categories": {
+    "resume": "Fortsetzen",
+    "resume_none": "Starte zuerst ein Spiel: „Fortsetzen“ bringt dich dorthin zurück.",
     "search_placeholder": "Thema suchen…",
     "search_empty": "Kein Thema entspricht Ihrer Suche.",
     "special_favorites": "Favoriten",
     "special_discover": "Entdecken",
+    "special_challenges": "Challenges",
     "special_daily": "Tages-Herausforderung",
+    "special_weekly": "Wöchentliche Challenge",
     "special_revision": "Wiederholen",
     "special_atlas": "Atlas",
     "themes_count": "{count} Themen",
@@ -62,6 +66,8 @@
   },
   "axes": {
     "title": "Thematische Schwerpunkte",
+    "essential_title": "Die Unverzichtbaren",
+    "essential_desc": "{count} Schlüsselereignisse",
     "subtitle_selected": "{theme} — {count} Ereignisse ausgewählt",
     "subtitle_select_one": "{theme} — wählen Sie mindestens einen Schwerpunkt",
     "continue_btn": "Mit diesen Schwerpunkten fortfahren",
@@ -70,7 +76,14 @@
     "bulk_label": "Auswahl der Schwerpunkte"
   },
   "modes": {
+    "play": "Spielen",
+    "play_sub": "Modus: {mode}",
+    "group_frise": "Die Zeitleiste",
+    "group_express": "Blitz-Challenges",
+    "group_explore": "Entdecken",
+    "group_tools": "Werkzeuge",
     "choose_mode": "Wählen Sie einen Spielmodus",
+    "essential_summary_subtitle": "⭐ Die Unverzichtbaren ({count} Ereignisse)",
     "discovery": {
       "title": "Entdeckung",
       "desc": "Durchstöbern Sie die Zeitleiste ohne Lebensverlust."
@@ -135,9 +148,18 @@
     "cannot_generate": "Für dieses Thema können keine Fragen erstellt werden.",
     "cannot_generate_dates": "Für dieses Thema können keine Fragen erstellt werden (alle Daten sind identisch).",
     "no_events_daily": "Für die heutige Herausforderung sind keine Ereignisse verfügbar.",
+    "no_events_weekly": "Für die wöchentliche Challenge sind keine Ereignisse verfügbar.",
     "select_at_least_one": "Du musst mindestens ein Ereignis auswählen, um zu spielen."
   },
   "game": {
+    "announce_correct": "Richtig. {title}, {date}. Eingeordnet {slot}.",
+    "announce_wrong": "Verfehlt. {title} stammt aus {date}: Es gehört {direction}.",
+    "announce_higher": "weiter oben in der Zeitleiste",
+    "announce_lower": "weiter unten in der Zeitleiste",
+    "announce_lives": "Noch {count} Leben übrig.",
+    "announce_lives_one": "Noch ein Leben übrig.",
+    "announce_no_lives": "Keine Leben mehr.",
+    "announce_next": "Zu platzierende Karte: {title}.",
     "score": "Punktzahl: {val}",
     "combo": "×{val}",
     "lives": "Leben",
@@ -198,6 +220,7 @@
     "victory_periodes": "Bravo! Epochen & Jahrhunderte gemeistert!",
     "victory_ecart": "Bravo! Alle Abstände erraten!",
     "victory_daily": "Bravo! Tages-Herausforderung bestanden!",
+    "victory_weekly": "Bravo! Wöchentliche Challenge gemeistert!",
     "final_score": "Punktzahl: {val} Punkte",
     "final_time": "Dauer: {val} s",
     "streak_banner": "🔥 Aktuelle Serie: {count} Tage",
@@ -220,7 +243,8 @@
     "victory_blitz": "Zeit abgelaufen! {right} richtige Antworten.",
     "victory_curseur": "Bravo! Jedes Mal ein sicheres Auge!",
     "victory_intrus": "Bravo! Keiner ist Ihnen entgangen!",
-    "victory_whois": "Bravo! Kein Gesicht ist Ihnen entgangen!"
+    "victory_whois": "Bravo! Kein Gesicht ist Ihnen entgangen!",
+    "victory_chronogeo": "Bravo! Raum und Zeit gemeistert!"
   },
   "daily": {
     "title_win": "🌍 Tages-Herausforderung bestanden!",
@@ -235,14 +259,42 @@
     "submit_loading": "Wird gesendet…",
     "submit_success": "Punktzahl übermittelt! Platz #{rank} von {total} weltweit.",
     "submit_error": "Punktzahl konnte nicht gesendet werden. Bitte erneut versuchen.",
+    "replay_note": "Training: Nur dein erster Versuch des Tages wird gewertet ({score} Pkt.).",
+    "submit_already": "Dein erster Versuch des Tages wurde schon gewertet: {score} Pkt., Platz {rank} von {total} weltweit.",
     "submit_offline": "Weltrangliste ist offline nicht verfügbar.",
     "leaderboard_title": "🏆 Heutige Rangliste",
     "leaderboard_empty": "Heute noch keine Punkte eingereicht. Seien Sie der Erste!",
     "leaderboard_loading": "Rangliste wird geladen…",
     "leaderboard_error": "Rangliste vorübergehend nicht verfügbar."
   },
+  "weekly": {
+    "title_win": "🌍 Wöchentliche Challenge gemeistert!",
+    "title_over": "🌍 Wöchentliche Challenge beendet",
+    "score_stat": "Punkte",
+    "time_stat": "Zeit",
+    "streak_stat": "Serie",
+    "countdown_label": "Nächste Challenge in",
+    "pseudo_label": "Dein Spitzname (Weltrangliste)",
+    "pseudo_placeholder": "z. B. ChronoMaster",
+    "submit_btn": "Punktzahl senden",
+    "submit_loading": "Wird gesendet …",
+    "submit_success": "Punktzahl gesendet! Platz {rank} von {total} weltweit.",
+    "submit_error": "Die Punktzahl kann gerade nicht gesendet werden. Versuche es erneut.",
+    "submit_offline": "Die Weltrangliste ist offline nicht verfügbar.",
+    "leaderboard_title": "🏆 Rangliste der Woche",
+    "leaderboard_empty": "Noch keine Punktzahl gesendet. Sei der Erste!",
+    "leaderboard_loading": "Rangliste wird geladen …",
+    "leaderboard_error": "Rangliste vorübergehend nicht verfügbar."
+  },
   "revision": {
     "hub_title": "Schwachstellen wiederholen",
+    "tab_due": "Fällig",
+    "due_session_title": "📅 Heutige Sitzung",
+    "due_session_desc": "Ereignisse, deren Wiederholungstermin gekommen ist – die schwächsten zuerst. Rechtzeitig richtig beantwortet, kommen sie immer später wieder; bei Fehlern schon morgen.",
+    "due_subtitle": "{count} Ereignisse heute zu wiederholen",
+    "due_subtitle_overdue": "{count} Ereignisse heute zu wiederholen, davon {overdue} überfällig",
+    "due_empty": "Heute gibt es nichts zu wiederholen. Ereignisse, die du spielst, erscheinen hier, sobald sie fällig sind.",
+    "due_empty_tomorrow": "Heute gibt es nichts zu wiederholen 🎉 — morgen werden {count} Ereignisse fällig.",
     "tab_weak": "Schwachstellen",
     "tab_progress": "Fortschritt",
     "weak_empty": "Aktuell keine Schwachstellen erkannt. Bei Fehlern in Partien erscheinen Ereignisse hier zur Wiederholung.",
@@ -333,6 +385,10 @@
         "name": "Ewige Flamme",
         "desc": "Eine Serie von 7 aufeinanderfolgenden Tagen bei der Tagesherausforderung halten."
       },
+      "pilier_hebdomadaire": {
+        "name": "Wochensäule",
+        "desc": "Vier Wochen in Folge an der wöchentlichen Challenge teilnehmen."
+      },
       "eclair_temporel": {
         "name": "Zeitblitz",
         "desc": "Einen Chrono-, Experten- oder Tagesherausforderungs-Durchgang in unter 30 Sekunden abschließen."
@@ -351,6 +407,8 @@
     "hero_level_line": "Level {level} • {xp} XP"
   },
   "settings": {
+    "play_mode_label": "Modus der Schaltfläche „Spielen“",
+    "play_mode_hint": "Die Schaltfläche „Spielen“ auf dem Modusbildschirm startet diesen Modus. Ist er bei einem Thema nicht verfügbar (z. B. Chrono oder Experte noch gesperrt), startet stattdessen der klassische Modus.",
     "title": "Einstellungen",
     "orientation_label": "Ausrichtung der Zeitleiste",
     "orientation_auto": "Auto",
@@ -566,6 +624,8 @@
     "revise_axis": "Diesen Strang wiederholen: {axe}"
   },
   "notifications": {
+    "review_title": "🧠 Heutige Wiederholung",
+    "review_body": "{count} Ereignisse heute zu wiederholen – fünf Minuten genügen.",
     "streak_title": "🔥 Deine Serie ist in Gefahr",
     "streak_body": "Deine {days}-Tage-Serie endet heute Abend. Spiele die Tagesherausforderung, um sie zu erhalten!",
     "daily_title": "🌍 Die heutige Tagesherausforderung ist verfügbar",
@@ -780,6 +840,684 @@
     "preset_modern": "Frühe Neuzeit",
     "preset_contemporary": "Zeitgeschichte"
   },
+  "chronogeo": {
+    "mode_title": "🧭 Chrono-Geo",
+    "mode_subtitle": "Auf der Karte platzieren, dann datieren.",
+    "year_kicker": "In welchem Jahr ungefähr? (±{tolerance} Jahre zählen noch)",
+    "share": "🧭 HistoriAxe — Chrono-Geo · {label}\n📍 {km} km · ⏳ {years} Jahre im Schnitt\n🏆 Punktzahl: {score} Punkte\n\nSpiel auf HistoriAxe!"
+  },
+  "expedition": {
+    "title": "Expedition",
+    "desc": "8 Prüfungen hintereinander, 3 Leben für den ganzen Weg und unterwegs verdiente Joker.",
+    "subtitle": "Prüfung {n} von {total} · 3 Leben für den ganzen Weg",
+    "stage_kicker": "Prüfung {n} / {total}",
+    "go": "Prüfung starten",
+    "quit_aria": "Expedition verlassen",
+    "confirm_quit": "Expedition abbrechen? Der laufende Weg geht verloren.",
+    "lives_aria": "Noch {count} Leben",
+    "not_enough": "Für eine Expedition braucht das Thema mindestens {count} Ereignisse.",
+    "joker_skip": "⏭ Prüfung überspringen ({count})",
+    "joker_life": "❤️ Leben zurückgewinnen ({count})",
+    "joker_earned_skip": "Joker verdient: Du kannst eine Prüfung ohne Abzug überspringen.",
+    "joker_earned_life": "Joker verdient: Du kannst ein Leben zurückgewinnen.",
+    "won_title": "Expedition geschafft!",
+    "lost_title": "Expedition abgebrochen",
+    "final_text": "{done} von {total} Prüfungen bestanden ({skipped} übersprungen) · {score} Punkte · {lives} Leben übrig.",
+    "share_btn": "Teilen",
+    "replay": "Neue Expedition",
+    "leave": "Zurück",
+    "share": "🧭 HistoriAxe — Expedition · {theme}\n{row}\n🏆 {score} Punkte · ❤️ {lives}\n\nSpiel auf HistoriAxe!"
+  },
+  "path": {
+    "title": "Der Pfad der Zeit",
+    "subtitle": "{stars} ★ von {max}",
+    "card_next": "Level {n} · {title}",
+    "card_done": "Der ganze Pfad ist geschafft – spiele erneut für die 3 Sterne",
+    "coming_soon": "Der Pfad geht weiter: Neue Welten sind unterwegs.",
+    "level_n": "Level {n}",
+    "range": "Von {from} bis {to}",
+    "boss_range": "Der Boss: {count} Marksteine aus der ganzen Welt „{world}“.",
+    "best": "Bestleistung {score}",
+    "play": "Spielen",
+    "replay": "Level wiederholen",
+    "next_level": "Nächstes Level",
+    "back_to_map": "Zurück zur Karte",
+    "node_aria": "Level {n}: {title}, {stars} von 3 Sternen",
+    "node_locked_aria": "Level {n}: {title}, gesperrt",
+    "locked_level": "Schließe das vorherige Level ab, um es zu öffnen.",
+    "locked_boss": "Sammle {need} Sterne über die {count} Level, um den Boss herauszufordern (du hast {have}).",
+    "not_enough": "Dieses Level braucht mindestens {count} Ereignisse im geladenen Paket.",
+    "level_won": "Level geschafft!",
+    "boss_won": "Boss besiegt!",
+    "level_lost": "Level verfehlt – keine Leben mehr",
+    "stars_aria": "{count} von {max} Sternen",
+    "final_xp": "+{xp} XP.",
+    "unlocked_next": "Ein neues Level wartet auf dich.",
+    "share": "🗺️ HistoriAxe — Der Pfad der Zeit\n{level} {stars}\n🏆 {score} Punkte\n\nSpiel auf HistoriAxe!",
+    "worlds": {
+      "monde0": {
+        "title": "Welt 0 · Die Zeit der Historiker",
+        "boss": "Die Prüfung der Zeit",
+        "done": "Du kannst die Zeit lesen: Die Antike wartet!",
+        "levels": {
+          "1": "Erste Schritte auf der Zeitleiste",
+          "2": "Vor und nach Christus",
+          "3": "Jahre zählen",
+          "4": "Kalender und Feste",
+          "5": "Jahrhunderte und Jahrtausende",
+          "6": "Die Namen der Epochen",
+          "7": "Wo beginnt eine Epoche?"
+        }
+      },
+      "prehistoire": {
+        "title": "Die Vorgeschichte",
+        "boss": "Der Wächter der Höhlen",
+        "done": "Die Vorgeschichte hat keine Geheimnisse mehr für dich!",
+        "levels": {
+          "1": "Die ersten Werkzeuge und das Feuer",
+          "2": "Die ersten Künstler",
+          "3": "Die Zeit der Dörfer"
+        }
+      },
+      "orient": {
+        "title": "Ägypten und der Alte Orient",
+        "boss": "Das Wiegen der Seelen",
+        "done": "Du hast dreitausend Jahre Alter Orient durchquert!",
+        "levels": {
+          "1": "Narmer und die Erfindung der Schrift",
+          "2": "Das Zeitalter der Pyramiden",
+          "3": "Hammurabi und Gilgamesch",
+          "4": "Echnaton und Tutanchamun",
+          "5": "Ramses II. und die Zeit der Richter",
+          "6": "David, Salomo und Karthago"
+        }
+      },
+      "grece": {
+        "title": "Das antike Griechenland",
+        "boss": "Das Orakel von Delphi",
+        "done": "Griechenland hat keine Geheimnisse mehr für dich!",
+        "levels": {
+          "1": "Olympia und die griechischen Kolonien",
+          "2": "Solon und Kleisthenes",
+          "3": "Die Perserkriege",
+          "4": "Perikles und der Parthenon",
+          "5": "Die Pest und der Peloponnesische Krieg",
+          "6": "Die Niederlage Athens",
+          "7": "Sokrates, Platon und ihre Schulen",
+          "8": "Philipp, Aristoteles und Alexander"
+        }
+      },
+      "rome1": {
+        "title": "Rom, die Geburt eines Imperiums",
+        "boss": "Der römische Triumph",
+        "done": "Rom ist Herrin des Mittelmeers geworden!",
+        "levels": {
+          "1": "Romulus und die Könige Roms",
+          "2": "Die Republik entsteht",
+          "3": "Die Plünderung Roms und die Eroberung Italiens",
+          "4": "Hannibal gegen Rom",
+          "5": "Karthago zerstört, die Gracchen",
+          "6": "Sulla, Caesar und Gallien",
+          "7": "Von den Iden des März bis Augustus"
+        }
+      },
+      "rome2": {
+        "title": "Rom, das Ende eines Imperiums",
+        "boss": "Der letzte Kaiser",
+        "done": "Du bist Rom bis zu seinem Untergang gefolgt!",
+        "levels": {
+          "1": "Augustus und die ersten Kaiser",
+          "2": "Nero, Titus und Pompeji",
+          "3": "Hadrian und Mark Aurel",
+          "4": "Caracalla und die Soldatenkaiserzeit",
+          "5": "Diokletian und Konstantin",
+          "6": "Nicäa und Konstantinopel",
+          "7": "Theodosius und die Teilung des Reiches",
+          "8": "Die Plünderung Roms und der Untergang"
+        }
+      },
+      "haut-moyen-age": {
+        "title": "Frankreich vor Frankreich",
+        "boss": "Die Herausforderung Karls des Großen",
+        "done": "Das frühe Mittelalter liegt hinter dir!",
+        "levels": {
+          "1": "Chlodwig und Justinian",
+          "2": "Hagia Sophia und die Langobarden",
+          "3": "Die Hidschra und die arabischen Eroberungen",
+          "4": "Der Islam erreicht Spanien",
+          "5": "Karl Martell und Pippin der Jüngere",
+          "6": "Bagdad, Lindisfarne und Roncesvalles",
+          "7": "Karl der Große wird Kaiser",
+          "8": "Kyrill und Method bei den Slawen"
+        }
+      },
+      "feodalites": {
+        "title": "Feudalismen",
+        "boss": "Das Turnier der Herren",
+        "done": "Du beherrschst die Feudalordnung!",
+        "levels": {
+          "1": "Cluny und die Normannen",
+          "2": "Otto, Hugo Capet und Wladimir",
+          "3": "Das Jahr Tausend",
+          "4": "Das Schisma von 1054",
+          "5": "Hastings und Toledo",
+          "6": "Der Aufruf zum Kreuzzug",
+          "7": "Die Kirche reformiert Europa",
+          "8": "Barbarossa und Thomas Becket"
+        }
+      },
+      "capetiens": {
+        "title": "Das goldene Zeitalter der Kapetinger",
+        "boss": "Die Prüfung der Kathedralen",
+        "done": "Das goldene Zeitalter der Kapetinger hat keine Geheimnisse mehr für dich!",
+        "levels": {
+          "1": "Philipp II. August und Saladin",
+          "2": "Der Vierte Kreuzzug",
+          "3": "Bouvines und Chartres",
+          "4": "Ludwig der Heilige und die Sorbonne",
+          "5": "Marco Polo und Thomas von Aquin",
+          "6": "Dante, Avignon und das Jubeljahr"
+        }
+      },
+      "cent-ans": {
+        "title": "Die Zeit des Hundertjährigen Krieges",
+        "boss": "Die Belagerung von Orléans",
+        "done": "Der Hundertjährige Krieg ist gewonnen!",
+        "levels": {
+          "1": "Die Valois und Crécy",
+          "2": "Der Schwarze Tod",
+          "3": "Das Große Schisma",
+          "4": "Die Osmanen rücken vor",
+          "5": "Azincourt und Tannenberg",
+          "6": "Jeanne d’Arc",
+          "7": "Der Beginn der Renaissance"
+        }
+      },
+      "renaissances": {
+        "title": "Die Renaissancen",
+        "boss": "Die Herausforderung Leonardos",
+        "done": "Du bist nun Meister der Renaissancen!",
+        "levels": {
+          "1": "Konstantinopel und Gutenberg",
+          "2": "Kolumbus und Granada",
+          "3": "Die Aufteilung der Welt",
+          "4": "Marignano und die 95 Thesen",
+          "5": "Cortés und der Bauernkrieg",
+          "6": "Cartier und die Plakataffäre",
+          "7": "Calvin und Franz Xaver",
+          "8": "Der Augsburger Religionsfrieden"
+        }
+      },
+      "religion": {
+        "title": "Die Religionskriege",
+        "boss": "Das Edikt von Nantes",
+        "done": "Der Religionsfrieden ist unterzeichnet!",
+        "levels": {
+          "1": "Wassy, der Beginn der Kriege",
+          "2": "Lepanto und die Bartholomäusnacht",
+          "3": "Montaigne und die Iberische Union",
+          "4": "Die Armada und das Edikt von Nantes",
+          "5": "Cervantes, Bruno und die Ostindien-Kompanien",
+          "6": "Jamestown und Québec",
+          "7": "Der Dreißigjährige Krieg beginnt"
+        }
+      },
+      "absolus": {
+        "title": "Die absoluten Könige",
+        "boss": "Die Herausforderung des Sonnenkönigs",
+        "done": "Das Grand Siècle gehört dir!",
+        "levels": {
+          "1": "Galilei und die ersten Kolonien",
+          "2": "Die Westfälischen Friedensverträge",
+          "3": "Cromwell und die Navigationsakte",
+          "4": "Ludwig XIV. übernimmt die Macht",
+          "5": "Pascal, Spinoza und der Frieden von Nimwegen",
+          "6": "Versailles, Wien und der Code noir",
+          "7": "Locke, Rijswijk und Karlowitz",
+          "8": "Sankt Petersburg und Utrecht"
+        }
+      },
+      "lumieres": {
+        "title": "Die Monarchie der Aufklärung",
+        "boss": "Der Salon der Philosophen",
+        "done": "Die Aufklärung hat keine Geheimnisse mehr für dich!",
+        "levels": {
+          "1": "Der Tod Ludwigs XIV.",
+          "2": "Die Großen Erweckungen",
+          "3": "Die Enzyklopädie",
+          "4": "Lissabon und der Siebenjährige Krieg",
+          "5": "Der Frieden von Paris und Cook",
+          "6": "Die Unabhängigkeitserklärung",
+          "7": "Der Vorabend der Revolution"
+        }
+      },
+      "revolution": {
+        "title": "Revolution, Konsulat, Kaiserreich",
+        "boss": "Die Herausforderung Bonapartes",
+        "done": "Revolution und Kaiserreich liegen hinter dir!",
+        "levels": {
+          "1": "Von der Bastille zur Republik",
+          "2": "Der Prozess gegen den König und die Frauenrechte",
+          "3": "Bonaparte erobert Italien",
+          "4": "Das Konkordat und der Friede von Amiens",
+          "5": "Die Krönung Napoleons",
+          "6": "Austerlitz und Spanien"
+        }
+      },
+      "revolution-inachevee": {
+        "title": "Die unvollendete Revolution",
+        "boss": "Die Barrikaden",
+        "done": "Du hast die unvollendete Revolution durchquert!",
+        "levels": {
+          "1": "Lateinamerika macht sich frei",
+          "2": "Beethoven und die Restauration",
+          "3": "Algier, Hugo und der Opiumkrieg",
+          "4": "Belgien entsteht, die Sklaverei wird abgeschafft",
+          "5": "Der Frühling der Völker",
+          "6": "Die Folgen von 1848",
+          "7": "Das Zweite Kaiserreich",
+          "8": "Louis-Napoléon ergreift die Macht",
+          "9": "Solferino, Gettysburg und Suez",
+          "10": "Darwin, das Rote Kreuz und Marx"
+        }
+      },
+      "republique": {
+        "title": "Die Republik und die Imperien",
+        "boss": "Die Weltausstellung",
+        "done": "Die Belle Époque hat keine Geheimnisse mehr für dich!",
+        "levels": {
+          "1": "Sedan und die Kommune",
+          "2": "Nach der Niederlage: die Ferry-Gesetze",
+          "3": "Berlin, Pasteur und der Eiffelturm",
+          "4": "Die Aufteilung Afrikas",
+          "5": "Die Dreyfus-Affäre und Faschoda",
+          "6": "Die ersten Nobelpreise und das Kino",
+          "7": "Die Trennung von Kirche und Staat",
+          "8": "Die Throne wanken"
+        }
+      },
+      "grande-guerre": {
+        "title": "Der Große Krieg",
+        "boss": "Die Feuerprobe",
+        "done": "Der Große Krieg ist zu Ende, samt Versailler Vertrag!",
+        "levels": {
+          "1": "Sarajevo, Verdun und der Kriegseintritt der USA",
+          "2": "Von der Marne zu den neuen Grenzen",
+          "3": "Mobilmachung, Somme und Dardanellen"
+        }
+      },
+      "entre-deux-guerres": {
+        "title": "Von der Zwischenkriegszeit bis 1945",
+        "boss": "Die Herausforderung von 1945",
+        "done": "Du hast die Wirren von 1920 bis 1945 durchquert!",
+        "levels": {
+          "1": "Der Börsenkrach von 1929 und die Krise",
+          "2": "Die Goldenen Zwanziger und autoritäre Regime",
+          "3": "Volksfront, Guernica, München",
+          "4": "Die dreißiger Jahre, Schatten und Licht",
+          "5": "Der Zweite Weltkrieg",
+          "6": "Vom D-Day zur UN-Charta"
+        }
+      },
+      "trente-glorieuses": {
+        "title": "Kalter Krieg und Trente Glorieuses",
+        "boss": "Der Wettlauf ins All",
+        "done": "Der Kalte Krieg hat keine Geheimnisse mehr für dich!",
+        "levels": {
+          "1": "Die Teilung Indiens und die Berlin-Blockade",
+          "2": "NATO, EGKS und Dien Bien Phu",
+          "3": "Suez, Sputnik und die Römischen Verträge",
+          "4": "Rosa Parks und die Unabhängigkeiten",
+          "5": "Der Mensch auf dem Mond",
+          "6": "Woodstock und die 1960er"
+        }
+      },
+      "crises": {
+        "title": "Krisen und das Ende des Kalten Krieges",
+        "boss": "Die Berliner Mauer",
+        "done": "Du hast die Berliner Mauer fallen sehen!",
+        "levels": {
+          "1": "Die Nelkenrevolution und der Fall Saigons",
+          "2": "Das Veil-Gesetz und die iranische Revolution",
+          "3": "Gorbatschow, Tschernobyl und die Mauer",
+          "4": "Vom Macintosh zur Wiederentdeckung der Titanic"
+        }
+      },
+      "depuis-1991": {
+        "title": "Die Welt seit 1991",
+        "boss": "Die Herausforderung der Gegenwart",
+        "done": "Du bist auf dem Laufenden über das Weltgeschehen!",
+        "levels": {
+          "1": "Maastricht und der Karfreitag",
+          "2": "Mandela und der Bosnienkrieg",
+          "3": "Soziale Netzwerke entstehen",
+          "4": "Europa wächst",
+          "5": "Das Pariser Abkommen und der Burj Khalifa",
+          "6": "Bin Laden und Snowden",
+          "7": "Die Covid-19-Pandemie",
+          "8": "Das Zeitalter der künstlichen Intelligenz"
+        }
+      },
+      "ile-chine": {
+        "title": "Das kaiserliche China",
+        "boss": "Die Große Mauer",
+        "done": "Du hast zweitausend Jahre kaiserliches China durchquert!",
+        "levels": {
+          "1": "Konfuzius und Laozi",
+          "2": "Qin Shihuangdi und die Han",
+          "3": "Die Sui und die Tang",
+          "4": "Die Song und der Buchdruck",
+          "5": "Die Yuan und die Ming",
+          "6": "Die Qing und der Opiumkrieg"
+        }
+      },
+      "ile-ameriques": {
+        "title": "Das präkolumbische Amerika",
+        "boss": "Der Sonnentempel",
+        "done": "Das präkolumbische Amerika hat keine Geheimnisse mehr für dich!",
+        "levels": {
+          "1": "Die Maya-Städte",
+          "2": "Tenochtitlan und Chichén Itzá",
+          "3": "Machu Picchu und die Inka",
+          "4": "Cortés und Moctezuma",
+          "5": "Pizarro und der Untergang der Inka"
+        }
+      },
+      "ile-islam": {
+        "title": "Der Islam und das Osmanische Reich",
+        "boss": "Tausendundeine Nacht",
+        "done": "Du hast dreizehn Jahrhunderte muslimischer Geschichte durchreist!",
+        "levels": {
+          "1": "Mohammed und die Hidschra",
+          "2": "Omajjaden und Abbasiden",
+          "3": "Fatimiden, Saladin und die Kreuzzüge",
+          "4": "Der Aufstieg der Osmanen",
+          "5": "Wien, Lepanto und Karlowitz",
+          "6": "Die Tanzimat und das Ende des Reiches"
+        }
+      },
+      "ile-japon": {
+        "title": "Japan",
+        "boss": "Das Schwert des Shoguns",
+        "done": "Japan hat keine Geheimnisse mehr für dich!",
+        "levels": {
+          "1": "Die Ursprünge Japans",
+          "2": "Von Genji zu den Shogunen",
+          "3": "Tokugawa und die Große Welle",
+          "4": "Meiji und die Expansion",
+          "5": "Das heutige Japan"
+        }
+      },
+      "ile-afrique": {
+        "title": "Geschichten Afrikas",
+        "boss": "Der Palaverbaum",
+        "done": "Du hast Afrika durchquert, von den Königreichen bis zu den Unabhängigkeiten!",
+        "levels": {
+          "1": "Karthago und das antike Maghreb",
+          "2": "Algier, Timbuktu und die Schlacht der drei Könige",
+          "3": "Livingstone und die koloniale Eroberung",
+          "4": "Die Buren, Blum-Viollette und die Neo-Destur",
+          "5": "Sétif und die Unabhängigkeiten"
+        }
+      }
+    },
+    "boss_review": "Der Boss: eine Wiederholung der ganzen Welt „{world}“.",
+    "locked_world": "Besiege den Boss der Welt „{world}“, um diese zu öffnen.",
+    "skip_world": "Kenne ich schon: „{world}“ öffnen",
+    "skip_confirm": "„{world}“ überspringen? „{next}“ wird sofort freigeschaltet, und du kannst diese Welt jederzeit nachholen.",
+    "island": "Bonusinsel",
+    "island_open": "Bonusinsel: {island}",
+    "island_locked": "Bonusinsel: {island} – öffnet sich bei Level {n} von „{world}“",
+    "island_card_stars": "★ {stars}/{max}",
+    "island_unlocked": "Eine Bonusinsel öffnet sich: {island}!",
+    "island_back": "Zurück zum Pfad",
+    "locked_island": "Schließe Level {n} von „{world}“ ab, um diese Insel zu öffnen.",
+    "locked_world_compact": "Demnächst",
+    "boss_range_island": "Der Boss: eine Wiederholung der ganzen Insel.",
+    "island_locked_short": "Level {n}"
+  },
+  "rewards": {
+    "coins_aria": "{count} Münzen",
+    "streak_aria": "Serie von {count} Siegen in Folge",
+    "coins_tip": "Münzen, die du durch geschaffte Pfad-Level und beim Spielen verdienst (bis zu 200 pro Tag in freien Spielen). Gib sie im Shop aus, um Clio einzukleiden.",
+    "streak_tip": "Deine Siegesserie: wie viele Pfad-Level du hintereinander geschafft hast. Ein verlorenes Level setzt sie auf null zurück, Abbrechen nicht. Sie bringt Bonusmünzen, mit Prämien bei 3, 5, 10 und 20.",
+    "shop": "Shop",
+    "album": "Album",
+    "cap_reached": "Das Münzlimit für freie Spiele ist für heute erreicht: Pfad-Level bringen weiterhin Münzen.",
+    "end_coins": "+{n} 🪙 (gesamt: {balance})",
+    "part_level": "Level geschafft",
+    "part_consolation": "Trostpreis",
+    "part_first": "Erster Abschluss",
+    "part_streak": "Serie von {n} Siegen",
+    "part_milestone": "Meilenstein: {n} Siege in Folge!",
+    "part_duplicate": "Doppelte Karte",
+    "part_album": "Album komplett!",
+    "streak_line": "⚡ Siegesserie: {n}",
+    "streak_broken": "Die Serie ist unterbrochen (Rekord: {best}). Eine neue beginnt beim nächsten Level.",
+    "card_chip_aria": "Karte „{rarity}“: aufdecken",
+    "rarity": {
+      "commune": "Gewöhnlich",
+      "rare": "Selten",
+      "legendaire": "Legendär"
+    },
+    "card_new": "Neue Karte!",
+    "card_duplicate": "Schon in deinem Album: +{coins} 🪙",
+    "card_progress": "{world}: {have}/{total} Karten",
+    "card_next": "Nächste Karte",
+    "card_done": "Weiter",
+    "card_album": "Album ansehen",
+    "album_title": "Personen-Album",
+    "album_subtitle": "Gefundene Karten: {have} von {total}",
+    "card_missing_aria": "Karte „{rarity}“ noch nicht gefunden",
+    "shop_title": "Clios Shop",
+    "clio_soon": "Clio wird bald gezeichnet: Diese Kostüme sind Vorschauen.",
+    "clio_wears": "Clio trägt: {name}",
+    "clio_bare": "Clio hat noch kein Kostüm.",
+    "shop_decors": "Hintergrunddekors kommen später.",
+    "shop_locked": "Erreiche „{world}“, um es zu kaufen",
+    "shop_wear": "Anziehen",
+    "shop_worn": "Getragen",
+    "shop_short": "Nicht genug Münzen: Spiele noch ein Level!",
+    "shop_cannot": "Dieser Kauf ist im Moment nicht möglich.",
+    "shop_bought": "Neues Kostüm: {name}!",
+    "costumes": {
+      "prehistoire": "Mammutfell",
+      "orient": "Halsband der heiligen Katze",
+      "grece": "Lorbeerkranz",
+      "rome1": "Legionärsrüstung",
+      "rome2": "Kaisertoga",
+      "haut-moyen-age": "Merowingischer Mantel",
+      "feodalites": "Kettenhemd",
+      "capetiens": "Lilienmantel",
+      "cent-ans": "Jeannes Rüstung",
+      "renaissances": "Leonardos Wams",
+      "religion": "Halskrause und Wams",
+      "absolus": "Perücke des Sonnenkönigs",
+      "lumieres": "Philosophenrock",
+      "revolution": "Jakobinermütze",
+      "revolution-inachevee": "Zylinder",
+      "republique": "Belle-Époque-Kostüm",
+      "grande-guerre": "Adrian-Helm",
+      "entre-deux-guerres": "Outfit der Goldenen Zwanziger",
+      "trente-glorieuses": "Raumanzug",
+      "crises": "Lederjacke der 80er",
+      "depuis-1991": "Vernetztes Outfit"
+    }
+  },
+  "arcade": {
+    "title": "Spielhalle",
+    "subtitle": "Minispiele, Arcade-Spiele und Denkspiele zum Wiederholen von Daten.",
+    "card_kicker": "Minispiele · Arcade · Denkspiele",
+    "best": "Bestleistung: {score}",
+    "no_best": "Noch nicht gespielt",
+    "play": "Spielen",
+    "replay": "Nochmal spielen",
+    "over": "Spiel vorbei",
+    "empty": "In dieser Sprache gibt es nicht genug Ereignisse für dieses Spiel.",
+    "wheel_progress": "{done} / {total} Kalender abgeschlossen",
+    "stars_best": "Bestes Ergebnis: {stars}",
+    "advent_progress": "{opened} / {total} Türchen geöffnet · {right} richtig"
+  },
+  "pacman": {
+    "title": "Zeitleisten-Pac-Man",
+    "desc": "Friss das Datum des gesuchten Ereignisses, fliehe vor den Geistern.",
+    "board_aria": "Pac-Man-Labyrinth",
+    "status": "Runde {round} · {lives} · {score} Pkt.",
+    "banner": "Wo ist das Datum von: {title}?",
+    "wrong": "Nicht dieses: {year} ist „{title}“. Gesucht war das Datum von „{wanted}“.",
+    "ok": "Gut erkannt: {year}, „{title}“.",
+    "caught": "Ein Geist hat dich erwischt!",
+    "over_text": "{rounds} Runden geschafft, {score} Punkte.",
+    "mistake": "Du hast {year} („{ate}“) gefressen statt das Datum von „{wanted}“ ({wanted_year})."
+  },
+  "invaders": {
+    "title": "Anachronismus-Invaders",
+    "desc": "Schieße die Ereignisse ab, die nicht zur Epoche gehören.",
+    "board_aria": "Invaders-Spielfeld",
+    "left": "Linke Spur",
+    "right": "Rechte Spur",
+    "fire": "💥 Feuer",
+    "hint": "Tippe auf eine Spur, um das Schiff dorthin zu bewegen. Schieße auf Ereignisse AUSSERHALB der Epoche; lass die anderen durch.",
+    "status": "Runde {round} · {lives} · {score} Pkt.",
+    "banner": "Epoche: {period}. Schieße auf alles, was nicht dazugehört.",
+    "hit": "Gut erkannt: „{title}“ ({year}) gehört nicht zu dieser Epoche, sondern zu „{actual}“.",
+    "friendly": "Daneben: „{title}“ ({year}) gehört zur Epoche „{period}“. Ein Leben weniger.",
+    "breach": "Ein Anachronismus ist durchgekommen: „{title}“ ({year}) gehört zur Epoche „{actual}“. Ein Leben weniger.",
+    "saved": "Zu Recht durchgelassen: „{title}“ ({year}) gehört zur Epoche.",
+    "round": "Runde geschafft: neue Epoche!",
+    "over_text": "{shot} Anachronismen abgeschossen, {rounds} Runden geschafft, {score} Punkte.",
+    "mistake": "„{title}“ ({year}) gehört zur Epoche „{actual}“."
+  },
+  "snake": {
+    "title": "Chronologische Schlange",
+    "desc": "Friss die Ereignisse vom ältesten zum jüngsten.",
+    "entry": "🐍 Chronologische Schlange",
+    "rule": "Friss die Punkte in chronologischer Reihenfolge, vom ältesten zum jüngsten Ereignis. Ein Fehler, eine Wand oder dein eigener Schwanz: ein Leben weniger.",
+    "status": "Runde {round} · {lives} · {score} Pkt.",
+    "board_aria": "Snake-Spielfeld",
+    "dpad_aria": "Richtungen",
+    "up": "Hoch",
+    "down": "Runter",
+    "left": "Links",
+    "right": "Rechts",
+    "over_text": "{rounds} Runden geschafft, {score} Punkte.",
+    "mistake": "Du hast „{ate}“ ({ate_year}) vor „{expected}“ ({expected_year}) gefressen."
+  },
+  "tetris": {
+    "title": "Tetris der Jahrhunderte",
+    "desc": "Ordne jedes fallende Ereignis seiner Epoche zu.",
+    "entry": "🧱 Minispiel: Tetris der Jahrhunderte",
+    "status": "{score} Pkt. · {rows} Reihen · Level {level}",
+    "banner": "Welche Epoche? {title}",
+    "board_aria": "Tetris-Spielfeld",
+    "left": "Linke Spalte",
+    "right": "Rechte Spalte",
+    "drop": "⏬ Fallen lassen",
+    "hint": "Tippe auf eine Spalte (oder eine Epoche), um den Block dorthin zu schicken. Fünf grüne Blöcke nebeneinander ergeben eine Reihe.",
+    "over_text": "{placed} Blöcke gesetzt, {good} richtig eingeordnet, {rows} Reihen, {score} Punkte.",
+    "mistake": "„{title}“ ({year}) gehört zu „{expected}“, nicht zu „{chosen}“."
+  },
+  "eras": {
+    "title": "Der Zeitrechnungs-Umrechner",
+    "entry": "📏 Minispiel: der Zeitrechnungs-Umrechner",
+    "status": "Frage {n} / {total} · Fehler: {errors}",
+    "question": "Im Jahr {year} ({label}): welches Jahr für „{era}“?",
+    "ruler_aria": "Jahreslineal",
+    "steppers_aria": "Jahr wählen",
+    "minus_one": "Minus eins",
+    "plus_one": "Plus eins",
+    "slider_aria": "Jahr der Zeitrechnung",
+    "greg_label": "Unser Kalender",
+    "check": "Prüfen",
+    "right": "Richtig!",
+    "wrong": "Nicht ganz …",
+    "answer_right": "Richtige Antwort: {answer}.",
+    "answer_wrong": "Die richtige Antwort war: {answer}.",
+    "next": "Nächste Frage",
+    "finish": "Ergebnis ansehen",
+    "done": "{total} Fragen, davon {errors} Fehler.",
+    "leave": "Zurück",
+    "desc": "Verschiebe das Lineal einer anderen Zeitrechnung auf das richtige Jahr."
+  },
+  "wheel": {
+    "entry": "🎡 Minispiel: das Festrad",
+    "title": "Das Festrad",
+    "kinds_aria": "Kalenderfamilie",
+    "kind_religieux": "Religiös",
+    "kind_civil": "Bürgerlich",
+    "choices_religieux": "Religiöse Kalender",
+    "choices_civil": "Bürgerliche Kalender",
+    "current": "Kalender: {name}",
+    "tab_stars": "{count} Sterne",
+    "aria": "Monatsrad des Kalenders {calendar}",
+    "slice_aria": "Monat {month}: das gewählte Fest hier ablegen",
+    "progress": "{placed} / {total} platziert · {errors} Fehler",
+    "pick": "Tippe unten auf ein Fest und dann auf den Monat, in den es fällt.",
+    "place": "Zu platzieren:",
+    "pick_first": "Wähle zuerst unten in der Liste ein Fest. Angetippter Monat: {month}.",
+    "wrong": "{event} fällt nicht in den {month}. Versuche einen anderen Monat.",
+    "wrong_hint": "Immer noch nicht: {event} liegt nicht im {month}. Hinweis: {when}.",
+    "tray_label": "Zu platzierende Feste",
+    "spin_left": "Rad nach links drehen",
+    "spin_right": "Rad nach rechts drehen",
+    "reset": "Gerade stellen",
+    "hint": "Ziehe das Rad, um es zu drehen und die Monate aufrecht zu lesen.",
+    "done": "Rad des Kalenders {calendar} abgeschlossen, mit {errors} Fehlern. Tippe auf einen Punkt, um die Erklärung des Festes noch einmal zu lesen.",
+    "next": "Nächster Kalender",
+    "replay": "Dieses Rad wiederholen",
+    "desc": "Ordne die Feste eines religiösen oder bürgerlichen Kalenders dem richtigen Monat zu."
+  },
+  "lesson": {
+    "stage_title": "Lektion · {title}",
+    "review_title": "Lektion · Gesamtwiederholung",
+    "stage_desc": "Ein paar Fragen, nach jeder Antwort gibt es eine Erklärung. Ein Fehler kostet ein Leben.",
+    "empty": "Diese Lektion hat keine Fragen.",
+    "right": "Richtig!",
+    "wrong": "Nicht ganz …",
+    "next": "Nächste Frage",
+    "finish": "Lektion beenden",
+    "end_lives": "Keine Leben mehr – beenden"
+  },
+  "classroom": {
+    "title": "Klassenmodus",
+    "desc": "Lehrkräfte: Eröffnet eine Sitzung, die Schüler platzieren gleichzeitig dieselben Karten auf ihren Handys.",
+    "join_entry": "Einer Klasse beitreten",
+    "join_title": "Einer Klasse beitreten",
+    "join_subtitle": "Gib den Code ein, den deine Lehrkraft anzeigt.",
+    "leave": "Verlassen",
+    "leave_aria": "Sitzung verlassen",
+    "setup_subtitle": "Thema: {theme}",
+    "setup_help": "Die Schüler platzieren dieselben Karten in derselben Reihenfolge, jeder auf seinem Handy. Wie viele Karten?",
+    "size_aria": "Anzahl der Karten",
+    "create": "Sitzung eröffnen",
+    "not_enough": "Für eine Sitzung braucht das Thema mindestens 6 Ereignisse mit unterschiedlichen Daten.",
+    "code_label": "Sitzungscode",
+    "name_label": "Dein Vorname",
+    "join": "Beitreten",
+    "join_missing": "Gib den Code und deinen Vornamen ein.",
+    "code_kicker": "Code zum Eingeben auf den Handys",
+    "code_aria": "Sitzungscode: {code}",
+    "lobby_teacher": "Beitretende Schüler erscheinen unten. Starte die Sitzung, wenn alle da sind.",
+    "lobby_student": "Verbunden. Warte auf den Start durch die Lehrkraft …",
+    "players_count": "{count} Schüler verbunden",
+    "total_cards": "{count} Karten",
+    "start": "Sitzung starten",
+    "end": "Sitzung beenden",
+    "confirm_end": "Sitzung für die ganze Klasse beenden? Schüler, die nicht fertig sind, hören dort auf.",
+    "status_running_teacher": "Sitzung läuft – die Rangliste aktualisiert sich von selbst.",
+    "status_waiting": "Warte auf die Rangliste …",
+    "status_playing": "Du bist im Moment Platz {rank}.",
+    "status_finished": "Fertig! Du bist Platz {rank} von {count}. Die Auswertung erscheint am Ende der Sitzung.",
+    "status_ended": "Sitzung beendet.",
+    "progress_aria": "{done} von {total} Karten gespielt",
+    "recap_title": "Am häufigsten verfehlte Karten",
+    "recap_miss": "{pct} % Fehler ({wrong}/{answered})",
+    "recap_none": "Kein Fehler: Die Klasse hat alles richtig!",
+    "offline": "Der Klassenmodus braucht eine Verbindung.",
+    "error": "Die Sitzung ist gerade nicht erreichbar. Versuche es erneut.",
+    "outdated": "Deine App ist nicht aktuell: Starte sie neu, um dieser Sitzung beizutreten.",
+    "gone": "Diese Sitzung existiert nicht mehr."
+  },
   "account": {
     "section": "Konto",
     "open_btn": "Anmelden oder Konto erstellen",
@@ -814,5 +1552,219 @@
     "sign_out_confirm": "Abmelden? Dein Fortschritt bleibt in deinem Konto gespeichert; dieses Gerät beginnt bis zur nächsten Anmeldung von vorn.",
     "delete_confirm": "Dein Konto, deine Punkte und deinen gespeicherten Fortschritt endgültig löschen? Das kann nicht rückgängig gemacht werden.",
     "err_delete": "Löschen fehlgeschlagen. Prüfe deine Verbindung und versuche es erneut, oder schreibe an ruben.arditti@gmail.com."
+  },
+  "team": {
+    "title": "Klassenteam",
+    "short": "Team",
+    "offline": "Das Klassenteam braucht eine Verbindung zum Server.",
+    "join_help": "Hat deine Lehrkraft dir einen Code gegeben? Tritt dem Team deiner Klasse bei: Eure Sterne füllen eine gemeinsame Truhe.",
+    "code_label": "Teamcode",
+    "join": "Dem Team beitreten",
+    "create_title": "Bist du Lehrkraft?",
+    "new_name_label": "Teamname (zum Beispiel die Klasse)",
+    "create": "Team erstellen",
+    "need_name": "Gib deinen Vornamen ein.",
+    "need_team_name": "Gib dem Team einen Namen.",
+    "bad_code": "Der Code hat 6 Zeichen.",
+    "not_found": "Team nicht gefunden: Prüfe den Code.",
+    "full": "Das Team ist voll.",
+    "error": "Der Server antwortet nicht: Versuche es gleich noch einmal.",
+    "gone": "Dieses Team existiert nicht mehr.",
+    "removed": "Du gehörst nicht mehr zu diesem Team.",
+    "members_count": "{count} Mitglieder",
+    "chest_aria": "Gemeinsame Truhe",
+    "chest_progress": "{have} / {target} Punkte in der Truhe",
+    "next_card_now": "Die nächste Truhe enthält für alle eine seltene Karte!",
+    "next_card": "Eine seltene Karte für alle in {count} Truhen.",
+    "chests_opened": "{count} Truhen geöffnet · {cards} seltene Karten für die Klasse",
+    "my_points": "Du hast {count} Punkte beigetragen.",
+    "account_on": "Konto verbunden: Deine Teampunkte bleiben dir erhalten ({total} insgesamt), und jeder Punkt bringt dir eine Münze.",
+    "account_off": "Melde dich mit einem persönlichen Konto an, um deine Teampunkte zu behalten und pro Punkt eine Münze zu verdienen.",
+    "claimed": "Truhe geöffnet! +{coins} Münzen für dich.",
+    "code_kicker": "Code für die Schüler",
+    "teacher_hint": "Damit auch richtige Antworten einer Sitzung im Klassenmodus die Truhe füllen, aktiviere beim Eröffnen der Sitzung „Für das Team zählen“.",
+    "link_session": "Für das Team „{name}“ zählen",
+    "kick_aria": "{name} aus dem Team entfernen",
+    "confirm_kick": "{name} aus dem Team entfernen?",
+    "leave": "Team verlassen",
+    "forget": "Dieses Team nicht mehr anzeigen",
+    "delete": "Team löschen",
+    "confirm_leave": "Team verlassen? Bereits beigetragene Punkte bleiben in der Truhe.",
+    "confirm_forget": "Dieses Team auf diesem Gerät nicht mehr anzeigen? Es bleibt für die Schüler geöffnet.",
+    "confirm_delete": "Team für die ganze Klasse löschen? Truhe und Punkte gehen verloren."
+  },
+  "clio": {
+    "name": "Clio",
+    "aria": "Clio, das Maskottchen",
+    "dismiss": "Schließen",
+    "see_shop": "Shop ansehen",
+    "line": {
+      "win1": {
+        "0": "Gut gespielt, wir kommen voran!",
+        "1": "Ein weiteres Level im Sack.",
+        "2": "Langsam, aber sicher.",
+        "3": "Beim nächsten Versuch kannst du höher zielen."
+      },
+      "win2": {
+        "0": "Sehr gut! Fast perfekt.",
+        "1": "Zwei Sterne, was für ein toller Durchgang!",
+        "2": "Noch ein bisschen und es ist perfekt.",
+        "3": "Bravo, das beherrschst du."
+      },
+      "win3": {
+        "0": "Drei Sterne! Ich bin begeistert!",
+        "1": "Perfekt! Kein Fehler zu viel.",
+        "2": "Was für ein Gedächtnis, bravo!",
+        "3": "Alle drei Sterne, nicht weniger!"
+      },
+      "lose": {
+        "0": "Nicht schlimm, versuchen wir es zusammen noch einmal?",
+        "1": "Bei jedem Versuch lernen wir dazu.",
+        "2": "Atme durch, du bist fast da.",
+        "3": "Noch ein Versuch und es klappt!"
+      },
+      "boss": {
+        "0": "Der Wächter ist besiegt! Was für ein Sieg!",
+        "1": "Du hast den Boss besiegt, bravo!",
+        "2": "Wieder eine Welt erobert!",
+        "3": "Das Monument gehört dir!"
+      },
+      "greet": {
+        "0": "Hallo! Gehen wir weiter auf dem Pfad?",
+        "1": "Schön, dich wiederzusehen!",
+        "2": "Bereit für eine neue Reise durch die Zeit?",
+        "3": "Hi! Ein kleines Level zum Start?"
+      },
+      "greetStreak": {
+        "0": "{n} Tage in Folge: Weiter so!",
+        "1": "{n} Tage hintereinander, bravo!",
+        "2": "Deine {n}-Tage-Serie bringt mich zum Schnurren."
+      },
+      "streakRisk": {
+        "0": "Zzz … Deine {n}-Tage-Serie ist in Gefahr. Ein kleines Level reicht!",
+        "1": "Lass deine {n}-Tage-Serie nicht einschlafen!",
+        "2": "Spiele heute, um deine {n}-Tage-Serie zu behalten."
+      },
+      "tap": {
+        "0": "Tippe auf ein Level, um zu spielen!",
+        "1": "Ich folge dir, los!",
+        "2": "Miau! Gehen wir?",
+        "3": "Jeder Stern zählt."
+      },
+      "first": {
+        "0": "Willkommen! Ich bin Clio. Tippe auf das grüne Level, um zu beginnen."
+      },
+      "costume": {
+        "0": "Das Kostüm „{name}“ wartet im Shop auf dich ({price} 🪙).",
+        "1": "Zur Feier des Tages: „{name}“, {price} 🪙 im Shop!"
+      },
+      "costumeShort": {
+        "0": "Dir fehlen {missing} 🪙 für das Kostüm „{name}“."
+      }
+    }
+  },
+  "games": {
+    "mini_title": "Minispiele",
+    "mini_desc": "Kurz und passend zum Unterricht: Kalender, Zeitrechnungen, Epochen.",
+    "arcade_title": "Arcade-Spiele",
+    "arcade_desc": "Geschick und Reflexe, mit einer Punktzahl zum Übertreffen.",
+    "reflexion_title": "Denkspiele",
+    "reflexion_desc": "Ohne Zeitlimit: Nimm dir Zeit zum Nachdenken."
+  },
+  "memory": {
+    "title": "Chronologisches Memory",
+    "desc": "Finde die Paare aus Ereignis und Datum.",
+    "rule": "Decke zwei Karten auf: Ein Ereignis und sein Datum bilden ein Paar.",
+    "grid_aria": "Memory-Karten",
+    "status": "Paare: {matched} / {pairs} · Fehler: {errors}",
+    "card_hidden": "Karte {n}, verdeckt",
+    "card_event": "Karte {n}: Ereignis „{text}“",
+    "card_date": "Karte {n}: Datum {text}",
+    "match": "✓ {year} — {title}",
+    "miss_pair": "„{title}“ stammt nicht aus {year}.",
+    "miss_same": "Es braucht ein Ereignis UND ein Datum, nicht zwei gleichartige Karten.",
+    "won": "Alle Paare!",
+    "over_text": "{errors} Fehler, {score} Punkte."
+  },
+  "who": {
+    "title": "Wer bin ich?",
+    "loading": "Figuren werden ausgewählt …",
+    "desc": "Errate die historische Persönlichkeit, mit Hinweisen, die nach und nach dazukommen.",
+    "status": "Runde {n} / {total} · {score} Pkt.",
+    "more": "Noch ein Hinweis (−{cost} Pkt.)",
+    "more_last": "Letzter Hinweis",
+    "clue_axis": "Bereich: {axis}",
+    "clue_country": "Land: {country}",
+    "clue_period": "Epoche: {label}",
+    "clue_portrait": "Das Porträt, direkt darunter.",
+    "worth": "Jetzt zu raten bringt {points} Pkt.",
+    "right": "Gut gespielt! +{points} Pkt.",
+    "lost": "Verfehlt …",
+    "answer": "Es war {name}.",
+    "next": "Nächste Runde",
+    "finish": "Ergebnis ansehen",
+    "empty": "In dieser Sprache gibt es nicht genug Persönlichkeiten mit Porträt für dieses Spiel.",
+    "found": "{found} von {total} Persönlichkeiten gefunden, {score} Punkte.",
+    "result_found": "{name} — {points} Pkt.",
+    "result_lost": "{name} — nicht gefunden"
+  },
+  "cause": {
+    "title": "Ursache oder Folge?",
+    "desc": "Zwei Ereignisse: Welches hat das andere ausgelöst?",
+    "status": "Frage {n} / {total} · {score} Pkt.",
+    "ask_cause": "Welches dieser beiden Ereignisse hat das andere AUSGELÖST?",
+    "ask_effect": "Welches dieser beiden Ereignisse ist die FOLGE des anderen?",
+    "right": "Richtig!",
+    "wrong": "Nicht ganz …",
+    "links": "{cause} ({cause_year}) führte zu: {effect} ({effect_year}).",
+    "next": "Nächste Frage",
+    "finish": "Ergebnis ansehen",
+    "found": "{found} richtige Antworten von {total}, {score} Punkte.",
+    "card_aria": "Ereignis {n}: {title}"
+  },
+  "scene": {
+    "title": "Anachronismen-Jagd",
+    "desc": "Entdecke in einer Szene, was nicht in diese Epoche gehört.",
+    "status": "Szene {n} / {total} · {score} Pkt.",
+    "grid_aria": "Elemente der Szene",
+    "when": "{title} — {when}",
+    "check": "Prüfen ({count} ausgewählt)",
+    "check_none": "Nichts zu melden: prüfen",
+    "hint": "Tippe auf die Elemente, die nicht in diese Epoche gehören, und prüfe dann.",
+    "result": "{found} / {total} Anachronismen gefunden · {wrong} zu Unrecht · +{points} Pkt.",
+    "found_item": "✓ Gefunden: {text} — {why}",
+    "missed_item": "✗ Verpasst: {text} — {why}",
+    "wrong_item": "⚠ Kein Anachronismus: {text} — {why}",
+    "next": "Nächste Szene",
+    "finish": "Ergebnis ansehen",
+    "over_text": "{found} von {total} Anachronismen gefunden, {score} Punkte.",
+    "result_line": "{title}: {found} / {total}, {wrong} zu Unrecht"
+  },
+  "roman": {
+    "title": "Jahrhunderte in römischen Ziffern",
+    "desc": "Lies römische Ziffern und ordne Jahrhunderte in der Zeit ein.",
+    "entry": "🏛️ Minispiel: Jahrhunderte in römischen Ziffern",
+    "status": "Frage {n} / {total} · {score} Pkt.",
+    "ask_numeral": "Was bedeutet diese römische Ziffer?",
+    "ask_span": "Welche Jahre umfasst das {label}?",
+    "ask_which": "{year} ({label}): In welches Jahrhundert fällt das?",
+    "ask_order": "Ordne diese Jahrhunderte vom ältesten zum jüngsten: Tippe sie der Reihe nach an.",
+    "right": "Richtig!",
+    "wrong": "Nicht ganz …",
+    "order_done": "Gut geordnet! +{points} Pkt.",
+    "order_errors": "Mit {errors} Fehler(n) geordnet: +{points} Pkt.",
+    "order_miss": "Nicht dieses: Ein anderes Jahrhundert ist älter.",
+    "order_tile": "{name}, {rank}",
+    "next": "Nächste Frage",
+    "finish": "Ergebnis ansehen",
+    "found": "{found} richtige Antworten von {total}, {score} Punkte."
+  },
+  "advent": {
+    "title": "Historischer Adventskalender",
+    "desc": "Ein Türchen pro Tag im Dezember: ein Ereignis, ein Jahr zu finden.",
+    "grid_aria": "Kalendertürchen",
+    "rule_december": "Im Dezember öffnet sich jeden Tag ein Türchen. Vergangene Türchen bleiben offen.",
+    "rule_practice": "Außerhalb des Dezembers sind alle Türchen offen: Übe. Deine Antworten werden für das laufende Jahr gespeichert.",
+    "status": "{opened} Türchen geöffnet · {right} richtig"
   }
 }
