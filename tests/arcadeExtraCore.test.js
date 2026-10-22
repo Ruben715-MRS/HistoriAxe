@@ -320,86 +320,117 @@ test('Course : une question à quatre années distinctes dont la bonne, jamais d
     }
 });
 
-test('Course en solo : une bonne réponse rapide avance de deux cases (turbo), lente d\'une, fausse de zéro', () => {
+test('Course en solo : une bonne réponse avance d\'une case, une fausse de zéro ; plus de minuteur', () => {
     const g = E.createRace(pool(), seeded(2), { mode: 'solo', difficulty: 'easy' });
-    let out = E.raceAnswer(g, g.question.answer, 2);
-    assert.ok(out.includes('right') && out.includes('turbo'));
+    let out = E.raceAnswer(g, g.question.answer);
+    assert.ok(out.includes('right') && out.includes('round'));
+    assert.equal(g.pos[0], 1);
+    out = E.raceAnswer(g, g.question.answer);
     assert.equal(g.pos[0], 2);
-    out = E.raceAnswer(g, g.question.answer, 7);
-    assert.ok(!out.includes('turbo'));
-    assert.equal(g.pos[0], 3);
     const wrong = g.question.options.find((y) => y !== g.question.answer);
-    out = E.raceAnswer(g, wrong, 1);
+    out = E.raceAnswer(g, wrong);
     assert.ok(out.includes('wrong'));
-    assert.equal(g.pos[0], 3);
-    E.raceAnswer(g, null, 99);
-    assert.equal(g.pos[0], 3, 'temps écoulé');
-    assert.equal(g.history.length, 4);
+    assert.equal(g.pos[0], 2);
+    assert.equal(g.pos[1], 0, 'l\'adversaire n\'avance plus à chaque réponse : il avance avec le temps');
+    assert.equal(g.history.length, 3);
+    assert.deepEqual(Object.keys(g.history[2]).sort(), ['answer', 'event', 'player', 'right', 'steps', 'year']);
+    assert.equal(g.history[2].right, false);
+    assert.equal(g.history[2].answer, g.history[2].event.date);
+    assert.equal(E.RACE.ANSWER_TIME, undefined);
 });
 
-test('Course en solo : l\'ordinateur avance selon sa difficulté ; un joueur parfait gagne', () => {
-    const rate = (difficulty) => {
-        let steps = 0, rounds = 0;
-        for (let seed = 1; seed <= 60; seed++) {
-            const g = E.createRace(pool(), seeded(seed), { mode: 'solo', difficulty });
-            E.raceAnswer(g, null, 99);
-            steps += g.pos[1];
-            rounds += 1;
-        }
-        return steps / rounds;
+test('Course en solo : l\'adversaire avance sans cesse, plus vite quand c\'est difficile, avec des élans', () => {
+    const run = (difficulty, seconds) => {
+        const g = E.createRace(pool(), seeded(7), { mode: 'solo', difficulty });
+        for (let t = 0; t < seconds * 10; t++) E.raceTick(g, 0.1);
+        return g;
     };
-    assert.ok(rate('easy') < rate('hard'), 'plus difficile : il avance davantage');
-    const g = E.createRace(pool(), seeded(9), { mode: 'solo', difficulty: 'normal' });
-    let guard = 0;
-    while (!g.over && guard++ < 50) E.raceAnswer(g, g.question.answer, 1);
-    assert.ok(g.over);
-    assert.equal(g.winner, 0);
-    assert.ok(g.pos[0] >= g.length);
-    assert.equal(E.raceScore(g), g.pos[0] * 10 + 100);
-    assert.deepEqual(E.raceAnswer(g, 1, 1), []);
+    const easy = run('easy', 20), normal = run('normal', 20), hard = run('hard', 20);
+    assert.ok(easy.pos[1] > 0 && easy.pos[1] < normal.pos[1] && normal.pos[1] < hard.pos[1]);
+    // ~ vitesse × temps, à l'ondulation près
+    assert.ok(Math.abs(hard.pos[1] - E.RACE.RIVAL.hard * 20) < E.RACE.RIVAL.hard * 20 * E.RACE.WOBBLE + 0.05);
+    // la vitesse varie d'un instant à l'autre
+    const g = E.createRace(pool(), seeded(7), { mode: 'solo', difficulty: 'normal' });
+    const speeds = new Set();
+    for (let t = 0; t < 60; t++) { E.raceTick(g, 0.5); speeds.add(E.raceRivalSpeed(g).toFixed(3)); }
+    assert.ok(speeds.size > 10);
+    // le découpage du temps ne change pas la distance
+    const a = E.createRace(pool(), seeded(7), { mode: 'solo', difficulty: 'normal' });
+    const b = E.createRace(pool(), seeded(7), { mode: 'solo', difficulty: 'normal' });
+    for (let t = 0; t < 100; t++) E.raceTick(a, 0.05);
+    for (let t = 0; t < 10; t++) E.raceTick(b, 0.5);
+    assert.ok(Math.abs(a.pos[1] - b.pos[1]) < 0.15, `${a.pos[1]} / ${b.pos[1]}`);
 });
 
-test('Course en solo : un joueur qui ne répond jamais perd, et l\'égalité se joue au temps', () => {
+test('Course en solo : un joueur parfait gagne ; un joueur qui ne répond jamais est rattrapé, et l\'arrivée ne se joue plus qu\'une fois', () => {
     const g = E.createRace(pool(), seeded(9), { mode: 'solo', difficulty: 'hard' });
     let guard = 0;
-    while (!g.over && guard++ < 200) E.raceAnswer(g, null, 99);
+    while (!g.over && guard++ < 50) E.raceAnswer(g, g.question.answer);
     assert.ok(g.over);
-    assert.equal(g.winner, 1);
-    assert.equal(E.raceScore(g), 0);
-    // Égalité en fin de manche : celui qui est le plus rapide l'emporte.
-    const h = E.createRace(pool(), () => 0.01, { mode: 'solo', difficulty: 'hard' });
-    h.pos = [11, 11];
-    E.raceAnswer(h, h.question.answer, 1);
+    assert.equal(g.winner, 0);
+    assert.equal(g.pos[0], g.length);
+    assert.equal(E.raceScore(g), g.length * 10 + 100);
+    assert.deepEqual(E.raceAnswer(g, 1), []);
+    assert.deepEqual(E.raceTick(g, 100), [], 'la course est finie : l\'adversaire ne gagne pas après coup');
+    assert.equal(g.winner, 0);
+
+    const h = E.createRace(pool(), seeded(9), { mode: 'solo', difficulty: 'hard' });
+    let events = [];
+    for (let t = 0; t < 2000 && !h.over; t++) events = events.concat(E.raceTick(h, 0.1));
     assert.ok(h.over);
-    assert.equal(h.winner, 0, 'le joueur répond en 1 s, le rival en 2 s au plus tôt');
+    assert.deepEqual(events, ['over']);
+    assert.equal(h.winner, 1);
+    assert.equal(E.raceScore(h), 0);
+    assert.equal(h.pos[1], h.length);
+    assert.deepEqual(E.raceAnswer(h, h.question.answer), [], 'plus de réponse après la défaite');
 });
 
-test('Course à deux : chacun joue sa question, la manche se joue après le second ; égalité possible', () => {
+test('Course en solo : un joueur qui répond juste à la cadence d\'un joueur normal bat l\'adversaire facile, pas toujours le difficile', () => {
+    const play = (difficulty, secondsPerQuestion, rightRate, seed) => {
+        const g = E.createRace(pool(), seeded(seed), { mode: 'solo', difficulty });
+        const rng = seeded(seed + 100);
+        for (let guard = 0; guard < 200 && !g.over; guard++) {
+            for (let t = 0; t < secondsPerQuestion * 10 && !g.over; t++) E.raceTick(g, 0.1);
+            if (g.over) break;
+            const ok = rng() < rightRate;
+            E.raceAnswer(g, ok ? g.question.answer : g.question.options.find((y) => y !== g.question.answer));
+        }
+        return g.winner === 0;
+    };
+    const wins = (difficulty) => [1, 2, 3, 4, 5, 6, 7, 8].filter((seed) => play(difficulty, 4.5, 0.8, seed)).length;
+    assert.equal(wins('easy'), 8);
+    assert.ok(wins('hard') < wins('easy'));
+});
+
+test('Course à deux : chacun joue sa question, la manche se joue après le second ; égalité possible ; pas de minuteur', () => {
     const g = E.createRace(pool(), seeded(3), { mode: 'duo' });
     const q1 = g.question;
-    let out = E.raceAnswer(g, q1.answer, 3);
+    let out = E.raceAnswer(g, q1.answer);
     assert.ok(out.includes('next-player'));
     assert.equal(g.turn, 1);
-    assert.equal(g.pos[0], 2);
+    assert.equal(g.pos[0], 1);
     assert.notEqual(g.question, q1, 'une autre question pour le joueur 2');
-    out = E.raceAnswer(g, g.question.answer, 9);
+    out = E.raceAnswer(g, g.question.answer);
     assert.ok(out.includes('round'));
     assert.equal(g.turn, 0);
     assert.equal(g.pos[1], 1);
     assert.equal(g.round, 1);
+    assert.deepEqual(E.raceTick(g, 100), [], 'en duo, rien n\'avance tout seul');
+    assert.equal(g.pos[1], 1);
+    assert.deepEqual(g.history.map((h) => h.player), [0, 1]);
     // Les deux arrivent dans la même manche, à égalité : match nul.
     const h = E.createRace(pool(), seeded(3), { mode: 'duo' });
-    h.pos = [10, 10];
-    E.raceAnswer(h, h.question.answer, 1);
-    E.raceAnswer(h, h.question.answer, 1);
+    h.pos = [11, 11];
+    E.raceAnswer(h, h.question.answer);
+    E.raceAnswer(h, h.question.answer);
     assert.ok(h.over);
     assert.equal(h.winner, null);
     // Le joueur 1 ne gagne pas avant que le joueur 2 ait joué sa manche.
     const k = E.createRace(pool(), seeded(3), { mode: 'duo' });
     k.pos = [11, 10];
-    E.raceAnswer(k, k.question.answer, 1);
+    E.raceAnswer(k, k.question.answer);
     assert.ok(!k.over);
-    E.raceAnswer(k, null, 99);
+    E.raceAnswer(k, 999999);
     assert.ok(k.over);
     assert.equal(k.winner, 0);
 });
@@ -407,8 +438,8 @@ test('Course à deux : chacun joue sa question, la manche se joue après le seco
 test('textes, scripts et écrans des jeux d\'arcade ajoutés', () => {
     const need = {
         breakout: ['title', 'desc', 'board_aria', 'rule', 'left', 'right', 'launch', 'hint', 'status', 'break', 'wrong', 'lost', 'over_text', 'mistake'],
-        flappy: ['title', 'desc', 'board_aria', 'flap', 'hint', 'status', 'banner_start', 'banner_last', 'good', 'wrong', 'hit', 'over_text', 'mistake'],
-        race: ['title', 'desc', 'rule', 'solo_easy', 'solo_normal', 'solo_hard', 'duo', 'handover', 'ready', 'status', 'turn_solo', 'turn_duo', 'question', 'right', 'wrong', 'timeout', 'turbo', 'answer', 'next', 'finish', 'win', 'lose', 'draw', 'win_player', 'over_solo', 'over_duo']
+        flappy: ['title', 'desc', 'board_aria', 'flap', 'hint', 'status', 'banner_start', 'banner_last', 'good', 'wrong', 'hit', 'over_text', 'mistake', 'tap'],
+        race: ['title', 'desc', 'rule', 'solo_easy', 'solo_normal', 'solo_hard', 'duo', 'handover', 'ready', 'status', 'turn_solo', 'turn_duo', 'question', 'right', 'wrong', 'answer', 'recap_title', 'recap_right', 'recap_wrong', 'win', 'lose', 'draw', 'win_player', 'over_solo', 'over_duo']
     };
     Object.keys(need).forEach((g) => need[g].forEach((k) => assert.ok(ui[g] && ui[g][k], `${g}.${k}`)));
     const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
@@ -418,4 +449,16 @@ test('textes, scripts et écrans des jeux d\'arcade ajoutés', () => {
         assert.ok(sw.includes(`'./${f}'`), f + ' dans sw.js');
     });
     ['screen-breakout', 'screen-flappy', 'screen-race'].forEach((id) => assert.ok(html.includes(`id="${id}"`), id));
+});
+
+test('bruitages : tir, explosion, pas de Pac-Man, battement d\'ailes et musique du galop sont branchés', () => {
+    const audio = fs.readFileSync(path.join(root, 'js/audio.js'), 'utf8');
+    ['function playArcadeSfx', 'function startRaceMusic', 'function stopRaceMusic', 'function playHoof'].forEach((f) => assert.ok(audio.includes(f), f));
+    ['shoot', 'explosion', 'chomp', 'flap'].forEach((k) => assert.ok(audio.includes(`'${k}'`), k));
+    const arcade = fs.readFileSync(path.join(root, 'js/app/arcade.js'), 'utf8');
+    ["arcadeSfx('shoot')", "arcadeSfx('explosion')", "arcadeSfx('chomp')"].forEach((c) => assert.ok(arcade.includes(c), c));
+    const extra = fs.readFileSync(path.join(root, 'js/app/arcade-extra.js'), 'utf8');
+    assert.ok(extra.includes("arcadeSfx('flap')") && extra.includes('startRaceMusic(') && extra.includes('stopRaceMusic()'));
+    // la musique s'arrête quand on quitte la course
+    assert.match(extra, /function raceBack\(\) \{\s*raceStopAll\(\);/);
 });

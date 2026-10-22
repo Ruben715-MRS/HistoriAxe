@@ -286,7 +286,7 @@ function flappyAfter(events) {
 }
 
 function flappyFlapNow() {
-    if (flGame && !flGame.over) ArcadeExtraCore.flappyFlap(flGame);
+    if (flGame && !flGame.over) { ArcadeExtraCore.flappyFlap(flGame); arcadeSfx('flap'); }
 }
 
 // L'époque du décor : celle du dernier repère franchi, ou du premier à venir.
@@ -403,9 +403,14 @@ function flappyBindInput() {
 // =====================================================================================================
 let raceGame = null;
 let raceReturn = 'screen-arcade';
-let raceTimer = 0;
-let raceAskedAt = 0;
+let raceFrame = 0;
+let raceLast = 0;
+let raceLocked = false;        // la réponse est donnée : on voit la bonne réponse avant la question suivante
+let raceAdvanceTimer = 0;
+let raceCars = [];
+let raceShown = '';
 let raceCurrentOnly = false; // duo : la question du joueur suivant est cachée tant qu'il n'a pas touché « Prêt »
+const RACE_TEMPO = { easy: 0.92, normal: 1, hard: 1.12 };
 
 function openRace(fromScreen) {
     raceReturn = fromScreen || 'screen-arcade';
@@ -414,18 +419,22 @@ function openRace(fromScreen) {
 }
 
 function raceBack() {
-    raceStopTimer();
+    raceStopAll();
     gamesBackTo(raceReturn);
 }
 
-function raceStopTimer() {
-    clearInterval(raceTimer);
-    raceTimer = 0;
+function raceStopAll() {
+    if (raceFrame) cancelAnimationFrame(raceFrame);
+    raceFrame = 0;
+    clearTimeout(raceAdvanceTimer);
+    raceAdvanceTimer = 0;
+    if (typeof stopRaceMusic === 'function') stopRaceMusic();
 }
 
 function raceSetup() {
-    raceStopTimer();
+    raceStopAll();
     raceGame = null;
+    raceLocked = false;
     ['race-play', 'race-handover', 'race-over'].forEach(id => document.getElementById(id).classList.add('hidden'));
     document.getElementById('race-setup').classList.remove('hidden');
     document.getElementById('race-status').textContent = '';
@@ -434,45 +443,70 @@ function raceSetup() {
 function raceStart(mode, difficulty) {
     const game = ArcadeExtraCore.createRace(arcadePool(), undefined, { mode, difficulty });
     if (game.empty) { alert(t('arcade.empty')); return; }
+    raceStopAll();
     raceGame = game;
+    raceLocked = false;
     document.getElementById('race-setup').classList.add('hidden');
     document.getElementById('race-over').classList.add('hidden');
     document.getElementById('race-play').classList.remove('hidden');
+    raceBuildTrack();
     raceRender();
+    if (typeof startRaceMusic === 'function') startRaceMusic(RACE_TEMPO[game.difficulty] || 1);
+    if (game.mode === 'solo') {
+        raceLast = performance.now();
+        raceFrame = requestAnimationFrame(raceLoop);
+    }
 }
 
-// Les deux pistes : un char par concurrent, placé selon sa case.
-function raceRenderTrack() {
+// Les deux pistes : la ligne d'arrivée est à gauche, les chevaux (qui regardent à gauche) partent de la droite.
+function raceBuildTrack() {
     const g = raceGame;
     const track = document.getElementById('race-track');
     track.innerHTML = '';
-    [0, 1].forEach(i => {
+    raceCars = [0, 1].map(i => {
         const lane = document.createElement('div');
-        lane.className = 'race-lane';
+        lane.className = 'race-lane' + (g.mode === 'solo' && i === 1 ? ' is-rival' : '');
         const label = document.createElement('span');
         label.className = 'race-label';
         label.textContent = g.mode === 'solo' ? t(i === 0 ? 'race.you' : 'race.rival') : t('race.player', { n: i + 1 });
         const road = document.createElement('div');
         road.className = 'race-road';
-        const car = document.createElement('span');
-        car.className = 'race-car';
-        car.textContent = i === 0 ? '🏇' : '🐎';
-        car.style.left = Math.min(100, g.pos[i] / g.length * 100) + '%';
         const flag = document.createElement('span');
         flag.className = 'race-flag';
         flag.textContent = '🏁';
-        road.appendChild(car);
+        const car = document.createElement('span');
+        car.className = 'race-car';
+        car.textContent = i === 0 ? '🏇' : '🐎';
         road.appendChild(flag);
+        road.appendChild(car);
         lane.appendChild(label);
         lane.appendChild(road);
         track.appendChild(lane);
+        return car;
     });
-    document.getElementById('race-status').textContent = t('race.status', { a: g.pos[0], b: g.pos[1], len: g.length });
+    raceShown = '';
+    raceUpdateTrack();
+}
+
+// La position de chaque cheval, de la droite (départ) à la gauche (arrivée).
+function raceUpdateTrack() {
+    const g = raceGame;
+    if (!g || !raceCars.length) return;
+    raceCars.forEach((car, i) => {
+        const progress = Math.min(1, g.pos[i] / g.length);
+        car.style.left = (94 - progress * 88) + '%';
+    });
+    const status = t('race.status', { a: Math.floor(g.pos[0]), b: Math.floor(g.pos[1]), len: g.length });
+    if (status !== raceShown) {
+        raceShown = status;
+        document.getElementById('race-status').textContent = status;
+    }
 }
 
 function raceRender() {
     const g = raceGame;
-    raceRenderTrack();
+    raceLocked = false;
+    raceUpdateTrack();
     document.getElementById('race-feedback').classList.add('hidden');
     document.getElementById('race-turn').textContent = g.mode === 'duo' ? t('race.turn_duo', { n: g.turn + 1 }) : t('race.turn_solo');
     document.getElementById('race-question').textContent = t('race.question', { title: g.question.event.title });
@@ -487,25 +521,31 @@ function raceRender() {
         btn.onclick = () => raceChoose(year);
         box.appendChild(btn);
     });
-    raceAskedAt = performance.now();
-    raceStopTimer();
-    const fill = document.getElementById('race-timer-fill');
-    fill.style.width = '100%';
-    raceTimer = setInterval(() => {
-        const elapsed = (performance.now() - raceAskedAt) / 1000;
-        fill.style.width = Math.max(0, 100 - elapsed / ArcadeExtraCore.RACE.ANSWER_TIME * 100) + '%';
-        if (elapsed >= ArcadeExtraCore.RACE.ANSWER_TIME) raceChoose(null);
-    }, 100);
+}
+
+// L'adversaire avance sans cesse, à la vitesse de sa difficulté ; s'il franchit la ligne le premier, la course s'arrête.
+function raceLoop(now) {
+    raceFrame = 0;
+    const g = raceGame;
+    if (!g || g.over || !arcadeScreenVisible('screen-race')) return;
+    const dt = document.hidden ? 0 : Math.min(0.1, Math.max(0, (now - raceLast) / 1000));
+    raceLast = now;
+    const events = ArcadeExtraCore.raceTick(g, dt);
+    raceUpdateTrack();
+    if (events.includes('over')) {
+        if (!raceLocked) { clearTimeout(raceAdvanceTimer); raceAdvanceTimer = 0; raceFinish(); }
+        return;
+    }
+    raceFrame = requestAnimationFrame(raceLoop);
 }
 
 function raceChoose(year) {
     const g = raceGame;
-    if (!g || g.over || !g.question || document.getElementById('race-feedback').classList.contains('is-shown')) return;
-    raceStopTimer();
+    if (!g || g.over || !g.question || raceLocked) return;
     const asked = g.question;
-    const elapsed = (performance.now() - raceAskedAt) / 1000;
-    const events = ArcadeExtraCore.raceAnswer(g, year, elapsed);
+    const events = ArcadeExtraCore.raceAnswer(g, year);
     if (!events.length) return;
+    raceLocked = true;
     const right = events.includes('right');
     arcadeSound(right ? 'good' : 'bad');
     document.querySelectorAll('#race-options .advent-option').forEach(btn => {
@@ -514,26 +554,21 @@ function raceChoose(year) {
         if (y === asked.answer) btn.classList.add('correct');
         else if (y === year) btn.classList.add('wrong');
     });
-    raceRenderTrack();
+    raceUpdateTrack();
     const feedback = document.getElementById('race-feedback');
     feedback.classList.toggle('is-wrong', !right);
-    const parts = [];
-    parts.push(t('race.answer', { year: formatYear(asked.answer) }));
-    if (g.mode === 'solo' && g.last && g.last.rivalSteps) parts.push(t('race.rival_moves', { steps: g.last.rivalSteps }));
-    document.getElementById('race-feedback-title').textContent = year === null ? t('race.timeout') : right ? (events.includes('turbo') ? t('race.turbo') : t('race.right') + ' ' + t('race.step')) : t('race.wrong');
-    document.getElementById('race-feedback-text').textContent = parts.join(' ');
-    const next = document.getElementById('race-next');
-    if (g.over) next.textContent = t('race.finish');
-    else next.textContent = events.includes('next-player') ? t('race.next_player', { n: 2 }) : t('race.next');
+    document.getElementById('race-feedback-title').textContent = right ? t('race.right') + ' ' + t('race.step') : t('race.wrong');
+    document.getElementById('race-feedback-text').textContent = t('race.answer', { year: formatYear(asked.answer) });
     feedback.classList.remove('hidden');
-    feedback.classList.add('is-shown');
-    next.focus();
+    // Une seconde pour voir la bonne réponse, puis la question suivante s'enchaîne.
+    clearTimeout(raceAdvanceTimer);
+    raceAdvanceTimer = setTimeout(raceAdvance, ArcadeExtraCore.RACE.PAUSE * 1000);
 }
 
-function raceContinue() {
+function raceAdvance() {
+    raceAdvanceTimer = 0;
     const g = raceGame;
-    if (!g) return;
-    document.getElementById('race-feedback').classList.remove('is-shown');
+    if (!g || !arcadeScreenVisible('screen-race')) return;
     if (g.over) { raceFinish(); return; }
     if (g.mode === 'duo') {
         // Le joueur suivant ne doit pas voir la question avant d'avoir pris l'appareil.
@@ -552,24 +587,45 @@ function raceReady() {
 }
 
 function raceFinish() {
-    raceStopTimer();
+    raceStopAll();
     const g = raceGame;
     const score = ArcadeExtraCore.raceScore(g);
     const best = g.mode === 'solo' ? arcadeRecord('race', score) : arcadeBest();
     document.getElementById('race-play').classList.add('hidden');
+    document.getElementById('race-handover').classList.add('hidden');
     const title = g.winner === null ? t('race.draw')
         : g.mode === 'solo' ? t(g.winner === 0 ? 'race.win' : 'race.lose') : t('race.win_player', { n: g.winner + 1 });
     document.getElementById('race-over-title').textContent = title;
     document.getElementById('race-over-text').textContent = g.mode === 'solo'
-        ? t('race.over_solo', { steps: g.pos[0], score }) + ' ' + t('arcade.best', { score: best.race })
+        ? t('race.over_solo', { steps: Math.floor(g.pos[0]), score }) + ' ' + t('arcade.best', { score: best.race })
         : t('race.over_duo', { a: g.pos[0], b: g.pos[1] });
-    const list = document.getElementById('race-over-list');
-    list.innerHTML = '';
-    g.history.filter(h => !h.right).slice(0, 6).forEach(h => {
-        const li = document.createElement('li');
-        li.textContent = t('race.missed', { title: h.event.title, year: formatYear(h.event.date) });
-        list.appendChild(li);
-    });
+    raceRenderRecap(g);
     document.getElementById('race-over').classList.remove('hidden');
     document.getElementById('race-status').textContent = '';
+    if (g.winner === 0 || (g.mode === 'duo' && g.winner !== null)) { if (typeof playVictorySound === 'function') playVictorySound(); }
+    else arcadeSound('bad');
 }
+
+// Le récapitulatif : toutes les questions posées, avec ce qui a été répondu (réussites et erreurs).
+function raceRenderRecap(g) {
+    const right = g.history.filter(h => h.right).length;
+    document.getElementById('race-recap-title').textContent = t('race.recap_title', { right, total: g.history.length });
+    const list = document.getElementById('race-over-list');
+    list.innerHTML = '';
+    g.history.forEach(h => {
+        const li = document.createElement('li');
+        li.className = h.right ? 'race-recap-right' : 'race-recap-wrong';
+        const line = h.right
+            ? t('race.recap_right', { title: h.event.title, year: formatYear(h.answer) })
+            : t('race.recap_wrong', { title: h.event.title, answer: formatYear(h.answer), chosen: formatYear(h.year) });
+        li.textContent = (g.mode === 'duo' ? t('race.player', { n: h.player + 1 }) + ' · ' : '') + line;
+        list.appendChild(li);
+    });
+}
+
+// Onglet masqué : la musique se tait, et reprend au retour si la course est en cours.
+document.addEventListener('visibilitychange', () => {
+    if (typeof stopRaceMusic !== 'function' || !raceGame || raceGame.over || !arcadeScreenVisible('screen-race')) return;
+    if (document.hidden) stopRaceMusic();
+    else startRaceMusic(RACE_TEMPO[raceGame.difficulty] || 1);
+});

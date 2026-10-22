@@ -16,21 +16,30 @@ const ARCADE_MAX_BOARD = 360;
 let arcadePoolCache = null; // { bdd, size, pool }
 
 // --- Le vivier ---------------------------------------------------------------------------------------
-// Les événements connus (incontournables ou cités par plusieurs thèmes), un seul par fait, avec leur titre.
+// Seuls les ⭐ incontournables des thèmes, un seul par fait, avec leur titre : un événement obscur ne se devine pas, et le jeu n'y
+// gagne rien. (Si le pack chargé en compte trop peu, on y ajoute les événements cités par plusieurs thèmes plutôt que de manquer de cartes.)
+const ARCADE_MIN_POOL = 60;
+
 function arcadePool() {
     const current = window.bdd || bdd || [];
     const size = current.length;
     if (arcadePoolCache && arcadePoolCache.bdd === current && arcadePoolCache.size === size) return arcadePoolCache.pool;
     const data = pathData();
-    const seen = new Set();
-    const pool = [];
-    PathCore.flattenEvents(current).forEach(item => {
-        if (!(item.essential || item.fame >= 2) || seen.has(item.cluster)) return;
-        const evt = data.byId.get(item.id);
-        if (!evt || !evt.titre) return;
-        seen.add(item.cluster);
-        pool.push({ id: item.id, title: evt.titre, date: item.date });
-    });
+    const items = PathCore.flattenEvents(current);
+    const build = known => {
+        const seen = new Set();
+        const pool = [];
+        items.forEach(item => {
+            if (!known(item) || seen.has(item.cluster)) return;
+            const evt = data.byId.get(item.id);
+            if (!evt || !evt.titre) return;
+            seen.add(item.cluster);
+            pool.push({ id: item.id, title: evt.titre, date: item.date });
+        });
+        return pool;
+    };
+    let pool = build(item => item.essential);
+    if (pool.length < ARCADE_MIN_POOL) pool = build(item => item.essential || item.fame >= 2);
     arcadePoolCache = { bdd: current, size, pool };
     return pool;
 }
@@ -137,6 +146,11 @@ function arcadeFitCanvas(canvas, cols, rows, cellRatio) {
 function arcadeScreenVisible(id) {
     const el = document.getElementById(id);
     return !!el && !el.classList.contains('hidden');
+}
+
+// Les bruitages propres aux jeux (js/audio.js) : tir, explosion, pas de Pac-Man, battement d'ailes…
+function arcadeSfx(kind) {
+    if (typeof playArcadeSfx === 'function') playArcadeSfx(kind);
 }
 
 function arcadeSound(kind) {
@@ -389,11 +403,12 @@ function tetrisGoTo(col) {
 }
 
 function tetrisShift(dx) {
-    if (tetrisGame && !tetrisGame.over) { ArcadeCore.tetrisMove(tetrisGame, dx); tetrisDraw(); }
+    if (tetrisGame && !tetrisGame.over) { ArcadeCore.tetrisMove(tetrisGame, dx); arcadeSfx('move'); tetrisDraw(); }
 }
 
 function tetrisDropNow() {
     if (!tetrisGame || tetrisGame.over) return;
+    arcadeSfx('drop');
     tetrisAfter(ArcadeCore.tetrisDrop(tetrisGame));
 }
 
@@ -532,7 +547,9 @@ function pacmanLoop() {
     if (!pacGame || !arcadeScreenVisible('screen-pacman')) return;
     if (!document.hidden) {
         const target = ArcadeCore.pacTarget(pacGame);
+        const before = { x: pacGame.player.x, y: pacGame.player.y };
         const events = ArcadeCore.pacStep(pacGame);
+        if (pacGame.player.x !== before.x || pacGame.player.y !== before.y) arcadeSfx('chomp');
         if (events.includes('ok')) {
             arcadeSound('good');
             arcadeMessage('pacman-message', t('pacman.ok', { year: formatYear(target.date), title: target.title }), false);
@@ -720,7 +737,7 @@ function invadersAfter(events) {
     events.forEach(ev => {
         const c = ev.card;
         const base = c ? { title: c.event.title, year: formatYear(c.event.date), actual: invadersPeriodName(c.event), period: ArcadeCore.PERIODS[invGame.period].name } : null;
-        if (ev.type === 'hit') { arcadeSound('good'); arcadeMessage('invaders-message', t('invaders.hit', base), false); }
+        if (ev.type === 'hit') { arcadeSfx('explosion'); triggerHaptic('success'); arcadeMessage('invaders-message', t('invaders.hit', base), false); }
         else if (ev.type === 'saved') arcadeMessage('invaders-message', t('invaders.saved', base), false);
         else if (ev.type === 'friendly') { arcadeSound('bad'); arcadeMessage('invaders-message', t('invaders.friendly', base), true); }
         else if (ev.type === 'breach') { arcadeSound('bad'); arcadeMessage('invaders-message', t('invaders.breach', base), true); }
@@ -734,7 +751,7 @@ function invadersFire() {
     if (!invGame || invGame.over) return;
     const lane = invGame.lane;
     const events = ArcadeCore.invFire(invGame);
-    if (events.length) invFx = { lane, until: performance.now() + 120 };
+    if (events.length) { invFx = { lane, until: performance.now() + 120 }; arcadeSfx('shoot'); }
     invadersAfter(events);
 }
 

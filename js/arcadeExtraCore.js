@@ -371,7 +371,10 @@
     // =====================================================================================================
     // === COURSE DE CHARS ===
     // =====================================================================================================
-    var RACE = { LENGTH: 12, ANSWER_TIME: 10, TURBO_TIME: 4, RIVAL: { easy: 0.5, normal: 0.65, hard: 0.8 } };
+    // Plus de minuteur : une bonne réponse avance le char d'une case. En solo, l'adversaire avance sans cesse, à une vitesse (cases par seconde)
+    // qui dépend de la difficulté et qui varie un peu au fil de la course. PAUSE : le temps, en secondes, de voir la bonne réponse avant la
+    // question suivante.
+    var RACE = { LENGTH: 12, PAUSE: 1, WOBBLE: 0.18, RIVAL: { easy: 0.1, normal: 0.16, hard: 0.24 } };
 
     // La question d'un événement : son année, parmi quatre. Les fausses sont proches (écart plus large pour les époques anciennes).
     function raceQuestion(event, rng) {
@@ -401,63 +404,65 @@
         var state = {
             pool: Arcade.playable(pool), rng: rng || Math.random, mode: o.mode === 'duo' ? 'duo' : 'solo',
             difficulty: RACE.RIVAL[o.difficulty] ? o.difficulty : 'normal', length: o.length || RACE.LENGTH,
-            pos: [0, 0], turn: 0, round: 0, question: null, pending: null, used: {}, last: null, over: false, winner: null, history: []
+            pos: [0, 0], turn: 0, round: 0, question: null, used: {}, last: null, over: false, winner: null, history: [], clock: 0
         };
+        state.phase = state.rng() * Math.PI * 2;
         if (state.pool.length < 8) { state.over = true; state.empty = true; return state; }
         raceNextQuestion(state);
         return state;
     }
 
-    // Un char avance d'une case par bonne réponse, de deux si elle est rapide (turbo).
-    function raceSteps(right, elapsed) {
-        return right ? (elapsed <= RACE.TURBO_TIME ? 2 : 1) : 0;
+    // Vitesse de l'adversaire à l'instant `clock` : celle de sa difficulté, qui ondule de ±WOBBLE (il a des élans et des essoufflements).
+    function raceRivalSpeed(state) {
+        return RACE.RIVAL[state.difficulty] * (1 + RACE.WOBBLE * Math.sin(state.clock * 0.9 + state.phase));
     }
 
-    function raceFinish(state, details) {
+    // Solo : l'adversaire avance pendant `dt` secondes. Renvoie ['over'] s'il franchit la ligne le premier.
+    function raceTick(state, dt) {
+        if (state.over || state.mode !== 'solo') return [];
+        var d = Math.max(0, dt);
+        state.clock += d;
+        state.pos[1] = Math.min(state.length, state.pos[1] + raceRivalSpeed(state) * d);
+        if (state.pos[1] >= state.length) {
+            state.over = true;
+            state.winner = 1;
+            return ['over'];
+        }
+        return [];
+    }
+
+    // La fin d'une manche en duo : quand l'un des deux a franchi la ligne (les deux le même tour : égalité).
+    function raceFinishDuo(state) {
         var a = state.pos[0], b = state.pos[1];
         if (a < state.length && b < state.length) return;
         state.over = true;
-        if (a !== b) state.winner = a > b ? 0 : 1;
-        else if (state.mode === 'solo' && details && details.rivalTime !== undefined) state.winner = details.elapsed <= details.rivalTime ? 0 : 1;
-        else state.winner = null; // égalité
+        state.winner = a === b ? null : (a > b ? 0 : 1);
     }
 
-    // Répond à la question en cours : `year` (null : temps écoulé), `elapsed` en secondes.
-    // Solo : le rival « répond » aussi (juste avec la probabilité de sa difficulté, en un temps tiré au hasard). Duo : deux joueurs jouent
-    // chacun leur question, à tour de rôle ; la manche se joue quand le second a répondu.
-    // Renvoie : 'right', 'wrong', 'turbo', 'rival', 'next-player' (duo, joueur 2 à toi), 'round', 'over'.
-    function raceAnswer(state, year, elapsed) {
+    // Répond à la question en cours (`year` : l'année choisie). Solo : le char avance d'une case si c'est juste, et gagne en franchissant
+    // la ligne. Duo : deux joueurs jouent chacun leur question, à tour de rôle ; la manche se joue quand le second a répondu.
+    // Renvoie : 'right', 'wrong', 'next-player' (duo, joueur 2 à toi), 'round', 'over'.
+    function raceAnswer(state, year) {
         var out = [];
         if (state.over || !state.question) return out;
-        var right = year !== null && year === state.question.answer;
-        var t = clamp(elapsed, 0, RACE.ANSWER_TIME);
-        var steps = raceSteps(right, t);
+        var right = year === state.question.answer;
+        var steps = right ? 1 : 0;
         out.push(right ? 'right' : 'wrong');
-        if (steps === 2) out.push('turbo');
-        state.history.push({ player: state.turn, right: right, event: state.question.event, year: year, steps: steps });
+        state.history.push({ player: state.turn, right: right, event: state.question.event, year: year, answer: state.question.answer, steps: steps });
+        state.pos[state.turn] += steps;
+        state.last = { player: state.turn, steps: steps, right: right };
         if (state.mode === 'solo') {
-            state.pos[0] += steps;
-            var rivalRight = state.rng() < RACE.RIVAL[state.difficulty];
-            var rivalTime = 2 + state.rng() * 7;
-            var rivalSteps = raceSteps(rivalRight, rivalTime);
-            state.pos[1] += rivalSteps;
-            state.last = { steps: steps, rivalSteps: rivalSteps, right: right, rivalRight: rivalRight };
-            if (rivalSteps) out.push('rival');
             state.round += 1;
-            raceFinish(state, { elapsed: t, rivalTime: rivalTime });
+            if (state.pos[0] >= state.length) { state.over = true; state.winner = 0; }
             out.push(state.over ? 'over' : 'round');
+        } else if (state.turn === 0) {
+            state.turn = 1;
+            out.push('next-player');
         } else {
-            state.pos[state.turn] += steps;
-            state.last = { player: state.turn, steps: steps, right: right };
-            if (state.turn === 0) {
-                state.turn = 1;
-                out.push('next-player');
-            } else {
-                state.turn = 0;
-                state.round += 1;
-                raceFinish(state, null);
-                out.push(state.over ? 'over' : 'round');
-            }
+            state.turn = 0;
+            state.round += 1;
+            raceFinishDuo(state);
+            out.push(state.over ? 'over' : 'round');
         }
         if (!state.over) raceNextQuestion(state);
         return out;
@@ -473,6 +478,6 @@
         createBreakout: createBreakout, breakoutTarget: breakoutTarget, breakoutSpeed: breakoutSpeed, breakoutMovePaddle: breakoutMovePaddle,
         breakoutLaunch: breakoutLaunch, breakoutStep: breakoutStep,
         createFlappy: createFlappy, flappyEra: flappyEra, flappyFlap: flappyFlap, flappyPause: flappyPause, flappyStep: flappyStep, flappySpeed: flappySpeed, gateSolids: gateSolids,
-        raceQuestion: raceQuestion, createRace: createRace, raceAnswer: raceAnswer, raceScore: raceScore
+        raceQuestion: raceQuestion, createRace: createRace, raceAnswer: raceAnswer, raceTick: raceTick, raceRivalSpeed: raceRivalSpeed, raceScore: raceScore
     };
 }));

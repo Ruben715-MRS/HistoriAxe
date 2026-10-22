@@ -1154,7 +1154,7 @@
         <h2 class="header-title" data-i18n="race.title">Course de chars de la frise</h2>
         <p class="modes-header-subtitle" id="race-status" role="status"></p>
         <div id="race-setup" class="race-setup">
-            <p class="arcade-rule" data-i18n="race.rule">Répondez juste aux questions de date pour avancer votre char : une case par bonne réponse, deux si vous répondez en moins de quatre secondes. Le premier à franchir douze cases gagne.</p>
+            <p class="arcade-rule" data-i18n="race.rule">Répondez juste aux questions de date pour avancer votre char : une case par bonne réponse. Pas de minuteur : les questions s'enchaînent. Le premier à franchir douze cases, de la droite vers la ligne d'arrivée à gauche, gagne.</p>
             <button type="button" class="btn" onclick="raceStart('solo', 'easy')" data-i18n="race.solo_easy">Contre l'ordinateur · facile</button>
             <button type="button" class="btn" onclick="raceStart('solo', 'normal')" data-i18n="race.solo_normal">Contre l'ordinateur · normal</button>
             <button type="button" class="btn" onclick="raceStart('solo', 'hard')" data-i18n="race.solo_hard">Contre l'ordinateur · difficile</button>
@@ -1163,13 +1163,11 @@
         <div id="race-play" class="hidden">
             <div class="race-track" id="race-track" aria-hidden="true"></div>
             <p class="race-turn" id="race-turn" role="status"></p>
-            <div class="race-timer" aria-hidden="true"><div class="race-timer-fill" id="race-timer-fill"></div></div>
             <p class="cause-question" id="race-question"></p>
             <div class="advent-options" id="race-options"></div>
             <div class="wheel-feedback hidden" id="race-feedback" role="status">
                 <strong id="race-feedback-title"></strong>
                 <p id="race-feedback-text"></p>
-                <button type="button" class="btn" id="race-next" onclick="raceContinue()"></button>
             </div>
         </div>
         <div class="arcade-over hidden" id="race-handover">
@@ -1180,7 +1178,8 @@
         <div class="arcade-over hidden" id="race-over">
             <h3 id="race-over-title"></h3>
             <p id="race-over-text"></p>
-            <ul class="arcade-mistakes" id="race-over-list"></ul>
+            <h4 class="race-recap-title" id="race-recap-title"></h4>
+            <ul class="arcade-mistakes race-recap" id="race-over-list"></ul>
             <button type="button" class="btn" onclick="raceSetup()" data-i18n="arcade.replay">Rejouer</button>
         </div>
     </div>

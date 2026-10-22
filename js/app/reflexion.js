@@ -121,17 +121,18 @@ function whoDescriptionLength(evt) {
     return evt.description !== undefined ? String(evt.description).length : (evt.dl || 0);
 }
 
-// Les figures à portrait du pack chargé. Les connues d'abord (incontournables de leur panthéon, ou citées par plusieurs
-// thèmes) : un joueur ne devine pas un chef oorlam du XIXe siècle. Il faut aussi une notice, d'où viennent les indices.
+// Les figures à portrait du pack chargé. Seulement les ⭐ incontournables de leur panthéon quand il y en a assez (sinon aussi celles
+// citées par plusieurs thèmes) : un joueur ne devine pas un chef oorlam du XIXe siècle. Il faut aussi une notice, d'où viennent les indices.
 function whoFigures() {
     const current = window.bdd || bdd || [];
     const size = current.length;
     if (whoFiguresCache && whoFiguresCache.bdd === current && whoFiguresCache.size === size) return whoFiguresCache;
     const raw = getAllEventsWithLocation().map(item => item.event);
     const candidates = GameModes.whoCandidates(raw).filter(e => portraitOf(e) && whoDescriptionLength(e) >= 80);
-    const famous = new Set();
-    PathCore.flattenEvents(current).forEach(item => { if (item.essential || item.fame >= 2) famous.add(item.id); });
-    const known = candidates.filter(e => famous.has(e.id));
+    const items = PathCore.flattenEvents(current);
+    const among = known => { const ids = new Set(); items.forEach(item => { if (known(item)) ids.add(item.id); }); return candidates.filter(e => ids.has(e.id)); };
+    let known = among(item => item.essential);
+    if (known.length < 40) known = among(item => item.essential || item.fame >= 2);
     whoFiguresCache = { bdd: current, size, candidates, known: known.length >= 40 ? known : candidates };
     return whoFiguresCache;
 }

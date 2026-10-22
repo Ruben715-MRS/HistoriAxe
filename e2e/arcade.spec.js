@@ -488,9 +488,10 @@ test('Flappy Clio : Clio attend le premier battement, vole, passe une porte et f
     // Une porte franchie par la bonne ouverture : le banner donne le repère.
     await page.evaluate(() => {
         flappyStop();
-        const gate = flGame.gates[0];
+        flGame.invulnerable = 0; flGame.started = true; flGame.waiting = false;
+        const gate = flGame.gates.find(g => !g.done);
         gate.x = flGame.clio.x - gate.w / 2;
-        flGame.clio.y = gate.gaps[0].y; flGame.clio.vy = 0;
+        flGame.clio.y = gate.gaps.find(p => p.correct).y; flGame.clio.vy = 0;
         flappyAfter(ArcadeExtraCore.flappyStep(flGame, 0.01));
     });
     await expect(page.locator('#flappy-message')).toContainText('✓');
@@ -501,7 +502,7 @@ test('Flappy Clio : Clio attend le premier battement, vole, passe une porte et f
     await expect(page.locator('#arcade-best-flappy')).toContainText('Meilleur score');
 });
 
-test('Course de chars : contre l\'ordinateur jusqu\'à l\'arrivée, puis à deux avec passage de l\'appareil', async ({ page }) => {
+test('Course de chars : pas de minuteur, l\'adversaire avance seul, départ à droite, récapitulatif ; puis à deux avec passage de l\'appareil', async ({ page }) => {
     await page.locator('#btn-arcade').click();
     await page.locator('.arcade-card', { hasText: 'Course de chars' }).click();
     expect(await visibleScreen(page)).toBe('screen-race');
@@ -509,26 +510,50 @@ test('Course de chars : contre l\'ordinateur jusqu\'à l\'arrivée, puis à deux
     await page.locator('#race-setup .btn', { hasText: 'facile' }).click();
     await expect(page.locator('#race-track .race-lane')).toHaveCount(2);
     await expect(page.locator('#race-options .advent-option')).toHaveCount(4);
-    // Une réponse rapide et juste : turbo, deux cases.
-    const answer = await page.evaluate(() => raceGame.question.answer);
-    await page.locator(`#race-options .advent-option[data-year="${answer}"]`).click();
-    await expect(page.locator('#race-feedback-title')).toContainText('Turbo');
-    await expect(page.locator('#race-status')).toContainText('2 / 12');
-    await page.locator('#race-next').click();
+    await expect(page.locator('#race-timer-fill, #race-next')).toHaveCount(0);
+    // Les chevaux partent de la droite, la ligne d'arrivée est à gauche.
+    const lefts = () => page.evaluate(() => raceCars.map(c => parseFloat(c.style.left)));
+    const flagLeft = await page.evaluate(() => { const f = document.querySelector('.race-flag'); const r = f.getBoundingClientRect(), road = f.parentElement.getBoundingClientRect(); return r.left - road.left; });
+    expect(flagLeft).toBeLessThan(20);
+    const start = await lefts();
+    expect(start[0]).toBeGreaterThan(90);
+    expect(start[1]).toBeGreaterThan(90);
+    // L'adversaire avance sans qu'on réponde.
+    await expect.poll(async () => (await lefts())[1], { timeout: 15_000 }).toBeLessThan(start[1] - 1);
+    expect((await lefts())[0]).toBe(start[0]);
+    // Une bonne réponse : une case, la bonne réponse reste visible, puis la question suivante arrive d'elle-même.
+    const first = await page.evaluate(() => ({ answer: raceGame.question.answer, title: raceGame.question.event.title }));
+    await page.locator(`#race-options .advent-option[data-year="${first.answer}"]`).click();
+    await expect(page.locator('#race-feedback-title')).toContainText('Juste');
+    await expect(page.locator('#race-options .advent-option.correct')).toHaveCount(1);
+    await expect(page.locator('#race-status')).toContainText(/1 \/ 12/);
+    await expect(page.locator('#race-feedback')).toBeHidden({ timeout: 3_000 });
+    await expect(page.locator('#race-question')).not.toContainText(first.title);
+    expect((await lefts())[0]).toBeLessThan(start[0] - 5);
     // Une mauvaise réponse : pas d'avance.
     const wrongYear = await page.evaluate(() => raceGame.question.options.find(y => y !== raceGame.question.answer));
+    const posBefore = await page.evaluate(() => raceGame.pos[0]);
     await page.locator(`#race-options .advent-option[data-year="${wrongYear}"]`).click();
     await expect(page.locator('#race-feedback-title')).toHaveText('Pas tout à fait…');
-    await page.locator('#race-next').click();
-    // Jusqu'à la fin.
-    for (let i = 0; i < 12; i++) {
+    expect(await page.evaluate(() => raceGame.pos[0])).toBe(posBefore);
+    await expect(page.locator('#race-feedback')).toBeHidden({ timeout: 3_000 });
+    // Jusqu'à l'arrivée : douze bonnes réponses en tout, sans autre bouton que les années.
+    for (let i = 0; i < 14; i++) {
         if (await page.locator('#race-over').isVisible()) break;
+        await page.locator('#race-options .advent-option:not([disabled])').first().waitFor();
         const a = await page.evaluate(() => raceGame.question.answer);
         await page.locator(`#race-options .advent-option[data-year="${a}"]`).click();
-        await page.locator('#race-next').click();
+        await page.waitForTimeout(1_150);
     }
-    await expect(page.locator('#race-over')).toBeVisible();
-    await expect(page.locator('#race-over-title')).toContainText(/Victoire|Défaite|Égalité/);
+    await expect(page.locator('#race-over')).toBeVisible({ timeout: 5_000 });
+    await expect(page.locator('#race-over-title')).toHaveText('Victoire !');
+    // Le récapitulatif : toutes les questions, avec leurs réussites et l'erreur.
+    const total = await page.evaluate(() => raceGame.history.length);
+    await expect(page.locator('#race-over-list li')).toHaveCount(total);
+    await expect(page.locator('#race-over-list li.race-recap-wrong')).toHaveCount(1);
+    await expect(page.locator('#race-over-list li.race-recap-wrong')).toContainText('réponse donnée');
+    await expect(page.locator('#race-over-list li.race-recap-right').first()).toContainText('✓');
+    await expect(page.locator('#race-recap-title')).toContainText(`12 bonne(s) réponse(s) sur ${total}`);
     await page.locator('#race-over .btn').click();
     await expect(page.locator('#race-setup')).toBeVisible();
     // À deux : la question du joueur 2 reste cachée jusqu'au « Prêt ».
@@ -536,9 +561,7 @@ test('Course de chars : contre l\'ordinateur jusqu\'à l\'arrivée, puis à deux
     await expect(page.locator('#race-turn')).toContainText('Joueur 1');
     const a1 = await page.evaluate(() => raceGame.question.answer);
     await page.locator(`#race-options .advent-option[data-year="${a1}"]`).click();
-    await expect(page.locator('#race-next')).toContainText('Joueur 2');
-    await page.locator('#race-next').click();
-    await expect(page.locator('#race-handover')).toBeVisible();
+    await expect(page.locator('#race-handover')).toBeVisible({ timeout: 3_000 });
     await expect(page.locator('#race-play')).toBeHidden();
     await expect(page.locator('#race-handover-title')).toContainText('Joueur 2');
     await page.locator('#race-handover .btn').click();
@@ -546,6 +569,38 @@ test('Course de chars : contre l\'ordinateur jusqu\'à l\'arrivée, puis à deux
     await expect(page.locator('#race-turn')).toContainText('Joueur 2');
     await page.locator('#screen-race .back-btn').click();
     expect(await visibleScreen(page)).toBe('screen-arcade');
+});
+
+test('Course de chars : l\'adversaire qui franchit la ligne le premier met fin à la course, récapitulatif compris', async ({ page }) => {
+    await page.locator('#btn-arcade').click();
+    await page.locator('.arcade-card', { hasText: 'Course de chars' }).click();
+    await page.locator('#race-setup .btn', { hasText: 'difficile' }).click();
+    await page.evaluate(() => { raceGame.pos[1] = raceGame.length - 0.05; });
+    await expect(page.locator('#race-over')).toBeVisible({ timeout: 5_000 });
+    await expect(page.locator('#race-over-title')).toHaveText('Défaite…');
+    await expect(page.locator('#race-play')).toBeHidden();
+    await expect(page.locator('#race-recap-title')).toContainText('0 bonne(s) réponse(s) sur 0');
+    expect(await page.evaluate(() => raceMusicTimer)).toBe(0);
+});
+
+test('la salle de jeux ne tire que des événements ⭐ incontournables (le vivier et les figures de « Qui suis-je ? »)', async ({ page }) => {
+    await page.waitForFunction(() => window.bdd && window.bdd.some(c => (c.themes || []).some(t => t.id === 'thm_aut')), null, { timeout: 45_000 });
+    const result = await page.evaluate(() => {
+        const items = PathCore.flattenEvents(window.bdd);
+        const essential = new Set(items.filter(i => i.essential).map(i => i.id));
+        const pool = arcadePool();
+        const figures = whoFigures().known;
+        return {
+            pool: pool.length,
+            poolOutside: pool.filter(e => !essential.has(e.id)).length,
+            figures: figures.length,
+            figuresOutside: figures.filter(e => !essential.has(e.id)).length
+        };
+    });
+    expect(result.pool).toBeGreaterThan(100);
+    expect(result.poolOutside).toBe(0);
+    expect(result.figures).toBeGreaterThan(40);
+    expect(result.figuresOutside).toBe(0);
 });
 
 test('Pendu des dates : des chiffres à proposer, une année entière avec « plus tôt / plus tard », cinq événements', async ({ page }) => {

@@ -562,11 +562,22 @@ voulue de `#screen-arcade`, ses textes dans `ui/fr.json`, et sa ligne dans `rend
   (préhistoire : volcan et cromlech ; Orient : pyramides et ziggourat ; Antiquité : temple grec, aqueduc, amphithéâtre ; Moyen Âge : château,
   cathédrale, moulin ; Temps modernes : palais à dôme, caravelle ; ère industrielle : usine, locomotive ; monde contemporain : tour, gratte-ciel,
   fusée), avec un fondu entre deux époques.
-- **Course de chars de la frise** (`ArcadeExtraCore.createRace`) : douze cases. Un événement est nommé, on choisit son année parmi quatre ; une bonne
-  réponse avance le char d'une case, de deux en moins de 4 secondes (turbo). Face à l'ordinateur (facile, normal, difficile : il avance 50 %, 65 % ou
-  80 % du temps), ou **à deux sur le même appareil** (tour à tour, avec un écran de passation entre les joueurs pour cacher la question).
+- **Course de chars de la frise** (`ArcadeExtraCore.createRace`) : douze cases, **sans minuteur**. Un événement est nommé, on choisit son année parmi
+  quatre ; une bonne réponse avance le cheval d'une case, une mauvaise d'aucune. La bonne réponse reste affichée **une seconde** (`RACE.PAUSE`), puis la
+  question suivante s'enchaîne toute seule. Les chevaux (qui regardent à gauche) **partent de la droite, la ligne d'arrivée est à gauche**. Face à
+  l'ordinateur, **l'adversaire avance sans cesse** (`raceTick`), à une vitesse en cases par seconde qui dépend de la difficulté (facile 0,10, normal 0,16,
+  difficile 0,24) et qui ondule de ±18 % (des élans, des essoufflements) : s'il franchit la ligne le premier, la course s'arrête. Ou **à deux sur le
+  même appareil** (tour à tour, avec un écran de passation entre les joueurs pour cacher la question ; rien n'avance seul). À la fin, un **récapitulatif**
+  de toutes les questions : ✓ réussies, ✗ ratées avec la bonne année et la réponse donnée. **Musique de fond** équestre synthétisée (`startRaceMusic`,
+  js/audio.js) : un galop (un coup fort, deux faibles) sous une fanfare en do majeur de huit mesures, à un tempo qui suit la difficulté ; elle se tait
+  quand on quitte la course, quand l'onglet est masqué ou quand les sons sont coupés.
   **Pas de duel en ligne** : les duels existants de l'app sont asynchrones et passent par le serveur (défi quotidien) ; un duel en direct demanderait
   un canal temps réel qui n'existe pas encore.
+- **Bruitages** (`playArcadeSfx`, js/audio.js, tous synthétisés, sans fichier son, et soumis au réglage « Sons ») : le tir du vaisseau et l'explosion d'une
+  carte touchée (Space Invaders), le « ouaka-ouaka » de Pac-Man à chaque pas, le battement d'ailes de Flappy Clio, un tic de déplacement et un bruit de chute (Tetris).
+- **Un vivier d'⭐ incontournables seulement** (`arcadePool`, `whoFigures`) : les événements et les figures tirés dans toute la salle de jeux sont ceux que les
+  thèmes classent parmi leurs incontournables (4 300 faits distincts, 1 100 figures à portrait) ; un événement obscur ne se devine pas. Si un pack chargé
+  en comptait trop peu (moins de 60 faits, 40 figures), on y ajoute les faits cités par plusieurs thèmes plutôt que de manquer de cartes.
 
 Deux mini-jeux de plus, dont le contenu écrit à la main est **à relire par un enseignant** :
 
