@@ -1567,6 +1567,16 @@
             <button type="button" class="btn team-secondary" id="team-leave-btn" onclick="teamLeave()"></button>
             <button type="button" class="btn team-secondary hidden" id="team-delete-btn" onclick="teamDelete()" data-i18n="team.delete">Supprimer l'équipe</button>
         </section>
+        <section id="team-class-form" class="class-panel team-class hidden">
+            <h3 data-i18n="team.class_title">Séance de classe en direct</h3>
+            <p class="class-help" data-i18n="team.class_help">Votre enseignant a ouvert une séance ? Saisissez le code affiché au tableau : tout le monde place les mêmes cartes en même temps.</p>
+            <label class="class-label" for="team-class-code" data-i18n="classroom.code_label">Code de la séance</label>
+            <input type="text" id="team-class-code" class="form-input class-code-input" maxlength="9" autocomplete="off"
+                autocapitalize="characters" spellcheck="false" inputmode="text" placeholder="ABC DEF">
+            <label class="class-label" for="team-class-name" data-i18n="classroom.name_label">Votre prénom</label>
+            <input type="text" id="team-class-name" class="form-input" maxlength="20" autocomplete="given-name">
+            <button type="button" class="btn class-primary" id="team-class-btn" onclick="teamClassJoin()" data-i18n="team.class_join">Rejoindre la séance</button>
+        </section>
         <p class="class-error hidden" id="team-error" role="alert"></p>
     </div>
 
