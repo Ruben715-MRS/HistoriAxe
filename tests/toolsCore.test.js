@@ -230,3 +230,99 @@ test('périodes : bornes et doutes', () => {
     // les périodes se suivent sans trou
     for (let i = 1; i < T.PERIODS.length; i++) assert.equal(T.PERIODS[i].start, T.PERIODS[i - 1].end);
 });
+
+// --- Les découpages de l'histoire selon les pays ---------------------------------------------------------
+const PS = require('../js/periodSystems.js');
+
+test('découpages : sept pays, aux identifiants uniques et aux champs complets', () => {
+    assert.deepEqual(PS.SYSTEMS.map(s => s.id), ['france', 'anglophone', 'allemagne', 'chine', 'japon', 'inde', 'arabo-musulman']);
+    assert.equal(new Set(PS.SYSTEMS.map(s => s.id)).size, PS.SYSTEMS.length);
+    PS.SYSTEMS.forEach(s => {
+        assert.ok(s.name && s.flag && s.intro.length > 80, s.id);
+        assert.ok(s.periods.length >= 6, s.id + ' au moins six périodes');
+        const ids = new Set();
+        s.periods.forEach(p => {
+            assert.ok(!ids.has(p.id), s.id + ' doublon ' + p.id); ids.add(p.id);
+            assert.ok(p.name && p.bounds && p.bounds.length > 20, s.id + '/' + p.id);
+            if (p.debated !== undefined) assert.ok(p.debated.length > 10, s.id + '/' + p.id + ' débat');
+        });
+    });
+    assert.equal(PS.byId('chine').name, 'Chine');
+    assert.equal(PS.byId('inconnu'), null);
+});
+
+test('découpages : les périodes se suivent sans trou ni recouvrement, de la préhistoire à aujourd\'hui', () => {
+    PS.SYSTEMS.forEach(s => {
+        const first = s.periods[0], last = s.periods[s.periods.length - 1];
+        assert.equal(first.start, null, s.id + ' commence aux origines');
+        assert.equal(last.end, null, s.id + ' se termine aujourd\'hui');
+        for (let i = 0; i < s.periods.length; i++) {
+            const p = s.periods[i];
+            if (i > 0) assert.equal(p.start, s.periods[i - 1].end, s.id + ' : ' + p.id + ' ne commence pas où finit la précédente');
+            if (p.start !== null && p.end !== null) assert.ok(p.start < p.end, s.id + '/' + p.id + ' bornes inversées');
+            assert.notEqual(p.start, 0); assert.notEqual(p.end, 0);   // il n'y a pas d'année 0
+        }
+    });
+});
+
+test('découpages : chaque année a exactement une période, dans chaque découpage', () => {
+    for (const y of [-100000, -5000, -3300, -221, -1, 1, 476, 1000, 1500, 1789, 1914, 1945, 1989, 2026]) {
+        T.PERIOD_SYSTEMS.forEach(s => {
+            const hits = s.periods.filter(p => (p.start === null || y >= p.start) && (p.end === null || y < p.end));
+            assert.equal(hits.length, 1, s.id + ' ' + y);
+            assert.equal(T.periodOfYear(y, s.id).period.id, hits[0].id);
+        });
+    }
+});
+
+test('découpages : la même année ne tombe pas dans les mêmes périodes', () => {
+    const at = (y, id) => T.periodOfYear(y, id).period.id;
+    // 1500 : « Temps modernes » en France, « Early Modern » chez les anglophones, « Frühe Neuzeit » en Allemagne, Ming en Chine, Muromachi au Japon,
+    // sultanat de Delhi en Inde, et la période des Mamelouks dans le monde arabe (les Ottomans arrivent en 1517)
+    assert.equal(at(1500, 'france'), 'modernes');
+    assert.equal(at(1500, 'anglophone'), 'early-modern');
+    assert.equal(at(1500, 'allemagne'), 'fruehe-neuzeit');
+    assert.equal(at(1500, 'chine'), 'ming');
+    assert.equal(at(1500, 'japon'), 'muromachi');
+    assert.equal(at(1500, 'inde'), 'delhi');
+    assert.equal(at(1500, 'arabo-musulman'), 'mamelouks');
+    assert.equal(at(1520, 'arabo-musulman'), 'ottomans');
+    // 1868 : Meiji au Japon ; 1912 : Taishō au Japon, République en Chine ; 1949 : fondation de la RPC
+    assert.equal(at(1868, 'japon'), 'meiji');
+    assert.equal(at(1912, 'japon'), 'taisho');
+    assert.equal(at(1911, 'chine'), 'qing');
+    assert.equal(at(1912, 'chine'), 'republique');
+    assert.equal(at(1949, 'chine'), 'rpc');
+    // la fin des ères japonaises : 1989 Heisei, 2019 Reiwa
+    assert.equal(at(1988, 'japon'), 'showa');
+    assert.equal(at(1989, 'japon'), 'heisei');
+    assert.equal(at(2019, 'japon'), 'reiwa');
+    // 1789 n'est une borne qu'en France ; 1806 et 1871 sont allemandes ; 1757 est indienne
+    assert.equal(at(1788, 'france'), 'modernes'); assert.equal(at(1789, 'france'), 'xix');
+    assert.equal(at(1805, 'allemagne'), 'fruehe-neuzeit'); assert.equal(at(1806, 'allemagne'), 'unite');
+    assert.equal(at(1870, 'allemagne'), 'unite'); assert.equal(at(1871, 'allemagne'), 'kaiserreich');
+    assert.equal(at(1756, 'inde'), 'moghols'); assert.equal(at(1757, 'inde'), 'colonisation');
+    assert.equal(at(1946, 'inde'), 'colonisation'); assert.equal(at(1947, 'inde'), 'independance');
+    // avant J.-C.
+    assert.equal(at(-221, 'chine'), 'qin'); assert.equal(at(-222, 'chine'), 'zhou');
+    assert.equal(at(-206, 'chine'), 'han'); assert.equal(at(-300, 'japon'), 'yayoi'); assert.equal(at(-301, 'japon'), 'jomon');
+    assert.equal(at(622, 'arabo-musulman'), 'origines');
+});
+
+test('découpages : les doutes sont dits, et le découpage par défaut est la France', () => {
+    assert.ok(T.periodOfYear(1453, 'anglophone').doubt);
+    assert.ok(T.periodOfYear(1517, 'allemagne').doubt);
+    assert.ok(T.periodOfYear(1757, 'inde').doubt);
+    assert.equal(T.periodOfYear(1000, 'anglophone').doubt, null);
+    assert.equal(T.periodOfYear(1000).period.id, 'moyenage');
+    assert.equal(T.periodOfYear(1000, 'inconnu'), null);
+    assert.equal(T.periodOfYear(1000, 'chine').system.id, 'chine');
+    assert.equal(T.PERIODS, PS.byId('france').periods);
+});
+
+test('découpages : l\'étendue d\'une période se lit', () => {
+    assert.equal(T.periodSpanText({ start: 476, end: 1492 }), 'de 476 à 1492');
+    assert.equal(T.periodSpanText({ start: null, end: -3300 }), 'avant 3300 av. J.-C.');
+    assert.equal(T.periodSpanText({ start: 1914, end: null }), 'depuis 1914');
+    assert.equal(T.periodSpanText({ start: -221, end: -206 }), 'de 221 av. J.-C. à 206 av. J.-C.');
+});

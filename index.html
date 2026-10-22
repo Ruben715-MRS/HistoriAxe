@@ -1296,7 +1296,6 @@
                 <span class="arcade-card-text"><strong data-i18n="tools.history_title"></strong><small data-i18n="tools.history_desc"></small></span>
             </button>
         </div>
-        <p class="tools-review" data-i18n="tools.review">Contenu à relire par un enseignant.</p>
     </div>
 
     <div id="screen-tool-eras" class="list-screen hidden">
@@ -1452,6 +1451,11 @@
         <p class="modes-header-subtitle" data-i18n="tools.periods_intro"></p>
         <div class="tool-panel">
             <div class="tool-field">
+                <label for="tool-per-system" data-i18n="tools.periods_system_label">Découpage de l'histoire selon…</label>
+                <select id="tool-per-system" class="tool-input" onchange="toolPeriodsSystemChange()"></select>
+            </div>
+            <p class="tool-small" id="tool-per-intro"></p>
+            <div class="tool-field">
                 <label for="tool-per-year" data-i18n="tools.period_of_year">De quelle période est cette année ?</label>
                 <div class="tool-inline">
                     <input type="number" inputmode="numeric" min="1" max="9999" step="1" id="tool-per-year" class="tool-input" oninput="toolPeriodsUpdate()">
@@ -1462,6 +1466,7 @@
                 </div>
             </div>
             <div class="tool-result" id="tool-per-result" role="status"></div>
+            <div class="tool-compare" id="tool-per-compare"></div>
             <div class="tool-rows" id="tool-per-list"></div>
         </div>
     </div>
@@ -3012,6 +3017,7 @@
     <script src="js/app/reflexion.js"></script>
     <script src="js/app/minigames.js"></script>
     <script src="js/app/arcade-extra.js"></script>
+    <script src="js/periodSystems.js"></script>
     <script src="js/toolsCore.js"></script>
     <script src="js/countriesCore.js"></script>
     <script src="js/app/tools.js"></script>

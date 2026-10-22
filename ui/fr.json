@@ -1878,7 +1878,6 @@
     "title": "Boîte à outils",
     "subtitle": "Des convertisseurs et des calculs pour les cours d'histoire.",
     "card_kicker": "Convertisseurs · Calculs",
-    "review": "Contenu à relire par un enseignant. Les conversions de calendriers lunaires peuvent différer d'un jour ou deux selon les pays.",
     "ad": "ap. J.-C.",
     "bc": "av. J.-C.",
     "bc_aria": "Avant ou après J.-C.",
@@ -1974,10 +1973,10 @@
     "date_result": "Ce jour-là, dans les autres calendriers :",
     "date_off": "hors de la période d'usage",
     "periods_title": "Repères de périodes",
-    "periods_desc": "Les grandes périodes de l'histoire, leurs bornes, et ce qui est discuté.",
-    "periods_intro": "Antiquité, Moyen Âge, Temps modernes… avec leurs bornes et les débats qui les entourent.",
+    "periods_desc": "Les grandes périodes de l'histoire selon la France, le monde anglophone, l'Allemagne, la Chine, le Japon, l'Inde et le monde arabo-musulman.",
+    "periods_intro": "Chaque pays découpe le temps à sa façon : choisissez un découpage, et voyez ses périodes, ses bornes et ce qui est discuté.",
     "period_of_year": "De quelle période est cette année ?",
-    "period_of": "{year} appartient à la période « {period} ».",
+    "period_of": "{year} appartient à la période « {period} » ({system}).",
     "period_doubt": "Attention : {doubt}.",
     "countries_title": "Atlas des pays",
     "countries_desc": "Touchez un pays : capitale, langues, monnaie, population, et les événements de l'app qui s'y sont passés.",
@@ -2018,6 +2017,8 @@
     "history_capital": "Capitale",
     "history_period": "Période",
     "history_events_title": "{n} événement(s) de l'app situé(s) dans cette zone, pendant cette période",
-    "history_events_none": "Aucun événement de l'app n'est situé dans cette zone pendant cette période."
+    "history_events_none": "Aucun événement de l'app n'est situé dans cette zone pendant cette période.",
+    "periods_system_label": "Découpage de l'histoire selon…",
+    "periods_compare": "L'année {year} dans les autres découpages"
   }
 }

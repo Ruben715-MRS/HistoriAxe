@@ -11,14 +11,15 @@
 //  - SIÈCLES : année → siècle et siècle → années (le piège : l'an 1700 est du XVIIe siècle).
 //  - DURÉES : combien d'années entre deux années, sans an 0 (de 44 av. J.-C. à 14 : 57 ans, pas 58) ; et année + durée.
 //  - DATES : un jour précis dans les autres calendriers (julien, juif, musulman, persan, bouddhique, japonais, copte, républicain).
-//  - PÉRIODES : les repères de l'Histoire scolaire, leurs bornes, ce qui est discuté, et la période d'une année.
+//  - PÉRIODES : les repères de l'Histoire selon plusieurs pays (France, monde anglophone, Allemagne, Chine, Japon, Inde, monde arabo-musulman),
+//    leurs bornes, ce qui est discuté, et la période d'une année.
 //
 // Les années sont des entiers signés : −44 = 44 av. J.-C. ; il n'y a pas d'année 0.
 
 (function (root, factory) {
-    if (typeof module === 'object' && module.exports) module.exports = factory(require('./eraConverter.js'));
-    else root.ToolsCore = factory(root.EraConverter);
-}(typeof self !== 'undefined' ? self : this, function (EraConverter) {
+    if (typeof module === 'object' && module.exports) module.exports = factory(require('./eraConverter.js'), require('./periodSystems.js'));
+    else root.ToolsCore = factory(root.EraConverter, root.PeriodSystems);
+}(typeof self !== 'undefined' ? self : this, function (EraConverter, PeriodSystems) {
     'use strict';
 
     // =====================================================================================================
@@ -318,57 +319,33 @@
     // =====================================================================================================
     // === PÉRIODES ===
     // =====================================================================================================
-    // Les bornes sont celles du programme (comme le Tetris des siècles : js/arcadeCore.js). `start`/`end` : années signées
-    // (end = null pour « jusqu'à aujourd'hui »). Les bornes qui font débat sont dites.
-    var PERIODS = [
-        {
-            id: 'prehistoire', name: 'Préhistoire', start: null, end: -3300,
-            bounds: 'Des premiers humains jusqu\'à l\'invention de l\'écriture, vers 3300 av. J.-C. (Sumer, en Mésopotamie).',
-            debated: 'La date de fin dépend des régions : l\'écriture apparaît vers 3300 av. J.-C. au Proche-Orient, bien plus tard ailleurs. On distingue le Paléolithique, le Néolithique (premiers agriculteurs) et l\'âge des métaux.'
-        },
-        {
-            id: 'antiquite', name: 'Antiquité', start: -3300, end: 476,
-            bounds: 'De l\'invention de l\'écriture (vers 3300 av. J.-C.) à la chute de l\'Empire romain d\'Occident (476).',
-            debated: '476, c\'est la déposition du dernier empereur d\'Occident, Romulus Augustule. Certains historiens préfèrent 395 (partage de l\'Empire), d\'autres la fin du VIIe siècle ; l\'Empire romain d\'Orient dure jusqu\'en 1453.'
-        },
-        {
-            id: 'moyenage', name: 'Moyen Âge', start: 476, end: 1492,
-            bounds: 'De 476 à 1492, la découverte de l\'Amérique par Christophe Colomb.',
-            debated: 'La fin est très discutée : 1453 (prise de Constantinople, fin de la guerre de Cent Ans) ou 1492 (Amérique) ou encore 1517 (début de la Réforme). On le divise en haut Moyen Âge (jusqu\'à l\'an mil), Moyen Âge central et bas Moyen Âge.'
-        },
-        {
-            id: 'modernes', name: 'Temps modernes', start: 1492, end: 1789,
-            bounds: 'De 1492 à 1789, le début de la Révolution française.',
-            debated: 'Dans les pays anglophones, « Modern history » commence souvent vers 1500 et continue jusqu\'à nos jours. En France, on arrête à 1789 (ou 1815, fin des guerres napoléoniennes).'
-        },
-        {
-            id: 'xix', name: 'De 1789 à 1914', start: 1789, end: 1914,
-            bounds: 'De la Révolution française au début de la Première Guerre mondiale. C\'est le début de l\'époque contemporaine.',
-            debated: 'On parle du « long XIXe siècle » : il commence en 1789 et se termine en 1914, pas en 1801 ni en 1900.'
-        },
-        {
-            id: 'contemporain', name: 'Depuis 1914', start: 1914, end: null,
-            bounds: 'De 1914 à aujourd\'hui, la seconde partie de l\'époque contemporaine.',
-            debated: 'Le « court XXe siècle » va de 1914 à 1991 (fin de l\'URSS). Où s\'arrête l\'époque contemporaine, les historiens en débattent encore : on parle parfois de « temps présent » après 1945 ou 1989.'
-        }
-    ];
-    // Les années proches d'une borne discutée : on le dit, au lieu de trancher.
-    var PERIOD_DOUBT = [
-        { from: 470, to: 480, text: 'proche de 476, borne discutée entre l\'Antiquité et le Moyen Âge' },
-        { from: 1450, to: 1495, text: 'entre 1453 et 1492, bornes discutées de la fin du Moyen Âge' }
-    ];
+    // Plusieurs découpages de l'histoire, selon les pays (js/periodSystems.js) : la France par défaut, avec les bornes du programme (comme le
+    // Tetris des siècles : js/arcadeCore.js). `start`/`end` : années signées (end = null pour « jusqu'à aujourd'hui »). Les bornes qui font débat
+    // sont dites, au lieu d'être tranchées.
+    var PERIOD_SYSTEMS = PeriodSystems.SYSTEMS;
+    var PERIODS = PeriodSystems.byId('france').periods;
 
-    function periodOfYear(y) {
+    // « de 476 à 1492 », « avant 476 », « depuis 1914 »
+    function periodSpanText(period) {
+        if (period.start === null) return 'avant ' + yearText(period.end);
+        if (period.end === null) return 'depuis ' + yearText(period.start);
+        return 'de ' + yearText(period.start) + ' à ' + yearText(period.end);
+    }
+
+    // La période d'une année dans un découpage ({ period, doubt }), ou null. Sans identifiant de découpage, celui de la France.
+    function periodOfYear(y, systemId) {
         if (typeof y !== 'number' || y !== Math.floor(y) || y === 0) return null;
+        var system = PeriodSystems.byId(systemId || 'france');
+        if (!system) return null;
         var found = null;
-        PERIODS.forEach(function (p) {
+        system.periods.forEach(function (p) {
             var after = p.start === null || y >= p.start;
             var before = p.end === null || y < p.end;
             if (after && before) found = p;
         });
         var doubt = null;
-        PERIOD_DOUBT.forEach(function (d) { if (y >= d.from && y <= d.to) doubt = d.text; });
-        return found ? { period: found, doubt: doubt } : null;
+        (system.doubts || []).forEach(function (d) { if (y >= d.from && y <= d.to) doubt = d.text; });
+        return found ? { period: found, doubt: doubt, system: system } : null;
     }
 
     return {
@@ -377,6 +354,6 @@
         centuryExplain: centuryExplain, yearsBetween: yearsBetween, addYears: addYears,
         ERA_YEAR_MIN: ERA_YEAR_MIN, ERA_YEAR_MAX: ERA_YEAR_MAX, convertYear: convertYear,
         DATE_YEAR_MIN: DATE_YEAR_MIN, DATE_YEAR_MAX: DATE_YEAR_MAX, gregorianToJdn: gregorianToJdn, jdnToJulian: jdnToJulian, republicanDate: republicanDate, convertDate: convertDate,
-        PERIODS: PERIODS, periodOfYear: periodOfYear
+        PERIODS: PERIODS, PERIOD_SYSTEMS: PERIOD_SYSTEMS, periodSpanText: periodSpanText, periodOfYear: periodOfYear
     };
 }));

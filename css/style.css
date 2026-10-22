@@ -10987,15 +10987,6 @@ input:not([type="range"]), label, select, summary, textarea {
 }
 
 /* --- LA BOÎTE À OUTILS (js/app/tools.js) --- */
-.tools-review {
-    flex: 0 0 auto;
-    max-width: 520px;
-    margin: 14px 0 0;
-    font-size: 12px;
-    text-align: center;
-    color: var(--muted-text);
-}
-
 .tool-panel {
     flex: 0 0 auto;
     width: 100%;
@@ -11358,4 +11349,17 @@ input:not([type="range"]), label, select, summary, textarea {
     height: 12px;
     border-radius: 50%;
     vertical-align: middle;
+}
+
+.tool-compare {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+.tool-compare-row {
+    padding: 4px 0;
+    border-bottom: 1px solid var(--border-soft);
 }

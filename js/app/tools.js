@@ -386,24 +386,62 @@ function toolDatesUpdate() {
 // =====================================================================================================
 // === REPÈRES DE PÉRIODES ===
 // =====================================================================================================
+const PERIOD_SYSTEM_KEY = 'historiaxe_period_system_v1';
+
+function toolPeriodsSystemId() {
+    const select = toolEl('tool-per-system');
+    return select.value || 'france';
+}
+
 function toolPeriodsInit() {
+    const select = toolEl('tool-per-system');
+    if (!select.options.length) {
+        ToolsCore.PERIOD_SYSTEMS.forEach(system => {
+            const option = document.createElement('option');
+            option.value = system.id;
+            option.textContent = system.flag + ' ' + system.name;
+            select.appendChild(option);
+        });
+        let saved = null;
+        try { saved = localStorage.getItem(PERIOD_SYSTEM_KEY); } catch (e) { saved = null; }
+        if (saved && ToolsCore.PERIOD_SYSTEMS.some(system => system.id === saved)) select.value = saved;
+        if (!toolEl('tool-per-year').value) toolSetYear('tool-per-year', 'tool-per-bc', 1500);
+    }
+    toolPeriodsRender();
+}
+
+// Le choix d'un autre découpage : on le garde pour la prochaine fois, et on redessine la liste.
+function toolPeriodsSystemChange() {
+    try { localStorage.setItem(PERIOD_SYSTEM_KEY, toolPeriodsSystemId()); } catch (e) { /* stockage indisponible : le choix n'est pas gardé */ }
+    toolPeriodsRender();
+}
+
+function toolPeriodsRender() {
+    const system = ToolsCore.PERIOD_SYSTEMS.find(item => item.id === toolPeriodsSystemId()) || ToolsCore.PERIOD_SYSTEMS[0];
+    toolEl('tool-per-intro').textContent = system.intro;
     const list = toolEl('tool-per-list');
     toolClear(list);
-    ToolsCore.PERIODS.forEach(period => {
+    system.periods.forEach(period => {
         const el = document.createElement('div');
         el.className = 'tool-row';
         el.dataset.period = period.id;
         const title = document.createElement('strong');
         title.textContent = period.name;
+        const span = document.createElement('small');
+        span.className = 'tool-row-note';
+        span.textContent = ToolsCore.periodSpanText(period);
         const bounds = document.createElement('p');
         bounds.className = 'tool-small';
         bounds.textContent = period.bounds;
-        const debated = document.createElement('p');
-        debated.className = 'tool-small tool-debated';
-        debated.textContent = t('tools.debated') + ' ' + period.debated;
         el.appendChild(title);
+        el.appendChild(span);
         el.appendChild(bounds);
-        el.appendChild(debated);
+        if (period.debated) {
+            const debated = document.createElement('p');
+            debated.className = 'tool-small tool-debated';
+            debated.textContent = t('tools.debated') + ' ' + period.debated;
+            el.appendChild(debated);
+        }
         list.appendChild(el);
     });
     toolPeriodsUpdate();
@@ -411,17 +449,38 @@ function toolPeriodsInit() {
 
 function toolPeriodsUpdate() {
     const out = toolEl('tool-per-result');
+    const compare = toolEl('tool-per-compare');
+    toolClear(compare);
     const read = toolReadYear('tool-per-year', 'tool-per-bc');
     document.querySelectorAll('#tool-per-list .tool-row').forEach(el => el.classList.remove('is-current'));
     if (read.empty) { toolResult(out, [{ text: t('tools.year_empty') }]); return; }
-    const found = read.year === null ? null : ToolsCore.periodOfYear(read.year);
+    const systemId = toolPeriodsSystemId();
+    const found = read.year === null ? null : ToolsCore.periodOfYear(read.year, systemId);
     if (!found) { toolResult(out, [{ text: t('tools.year_bad') }]); return; }
     const lines = [
         { cls: 'tool-big', text: found.period.name },
-        { text: t('tools.period_of', { year: ToolsCore.yearText(read.year), period: found.period.name }) }
+        { text: t('tools.period_of', { year: ToolsCore.yearText(read.year), period: found.period.name, system: found.system.name }) }
     ];
     if (found.doubt) lines.push({ text: t('tools.period_doubt', { doubt: found.doubt }) });
     toolResult(out, lines);
     const card = document.querySelector('#tool-per-list .tool-row[data-period="' + found.period.id + '"]');
     if (card) card.classList.add('is-current');
+    // La même année dans tous les découpages : c'est là qu'on voit qu'ils ne coupent pas aux mêmes endroits.
+    const title = document.createElement('h4');
+    title.className = 'tool-h';
+    title.textContent = t('tools.periods_compare', { year: ToolsCore.yearText(read.year) });
+    compare.appendChild(title);
+    ToolsCore.PERIOD_SYSTEMS.forEach(system => {
+        const other = ToolsCore.periodOfYear(read.year, system.id);
+        if (!other) return;
+        const row = document.createElement('div');
+        row.className = 'tool-row-head tool-compare-row';
+        const name = document.createElement('span');
+        name.textContent = system.flag + ' ' + system.name;
+        const value = document.createElement('strong');
+        value.textContent = other.period.name;
+        row.appendChild(name);
+        row.appendChild(value);
+        compare.appendChild(row);
+    });
 }

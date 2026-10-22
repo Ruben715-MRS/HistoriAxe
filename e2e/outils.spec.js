@@ -126,6 +126,8 @@ test('dates : le même jour dans les autres calendriers', async ({ page }) => {
 
 test('périodes : la période d\'une année, et les bornes discutées', async ({ page }) => {
     await ouvrir(page, 'Repères de périodes');
+    // pas de mention « à relire » dans la boîte à outils
+    await expect(page.locator('#screen-tools')).not.toContainText('relire');
     await expect(page.locator('#tool-per-list .tool-row')).toHaveCount(6);
     await page.locator('#tool-per-year').fill('1000');
     await expect(page.locator('#tool-per-result')).toContainText('Moyen Âge');
@@ -135,6 +137,35 @@ test('périodes : la période d\'une année, et les bornes discutées', async ({
     await page.locator('#tool-per-bc').selectOption('bc');
     await page.locator('#tool-per-year').fill('44');
     await expect(page.locator('#tool-per-result')).toContainText('Antiquité');
+});
+
+test('périodes : sept découpages au choix, et la même année vue dans chacun', async ({ page }) => {
+    await ouvrir(page, 'Repères de périodes');
+    await expect(page.locator('#tool-per-system option')).toHaveCount(7);
+    await page.locator('#tool-per-year').fill('1500');
+    // la comparaison montre l'année dans les sept découpages
+    await expect(page.locator('#tool-per-compare .tool-compare-row')).toHaveCount(7);
+    await expect(page.locator('#tool-per-compare')).toContainText('Ming');
+    await expect(page.locator('#tool-per-compare')).toContainText('Muromachi');
+    await expect(page.locator('#tool-per-compare')).toContainText('Sultanat de Delhi');
+    await page.locator('#tool-per-system').selectOption('chine');
+    await expect(page.locator('#tool-per-list .tool-row')).toHaveCount(16);
+    await expect(page.locator('#tool-per-intro')).toContainText('dynastique');
+    await expect(page.locator('#tool-per-result')).toContainText('Ming');
+    await expect(page.locator('#tool-per-result')).toContainText('(Chine)');
+    await expect(page.locator('#tool-per-list .tool-row.is-current')).toContainText('de 1368 à 1644');
+    await page.locator('#tool-per-system').selectOption('japon');
+    await expect(page.locator('#tool-per-list .tool-row')).toHaveCount(15);
+    await expect(page.locator('#tool-per-result')).toContainText('Muromachi');
+    // avant J.-C. : les Qin en Chine
+    await page.locator('#tool-per-system').selectOption('chine');
+    await page.locator('#tool-per-bc').selectOption('bc');
+    await page.locator('#tool-per-year').fill('215');
+    await expect(page.locator('#tool-per-result')).toContainText('Qin');
+    // le choix est gardé quand on revient
+    await page.locator('#screen-tool-periods .back-btn').click();
+    await page.locator('#screen-tools .arcade-card', { hasText: 'Repères de périodes' }).click();
+    await expect(page.locator('#tool-per-system')).toHaveValue('chine');
 });
 
 test('depuis le Chemin : le niveau 3 propose l\'outil des ères, le niveau 5 celui des chiffres romains, et rendent la main', async ({ page }) => {
