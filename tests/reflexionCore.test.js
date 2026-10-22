@@ -243,7 +243,9 @@ test('la salle de jeux : textes, scripts et écrans des jeux de réflexion', () 
     ['screen-memory', 'screen-who', 'screen-cause', 'screen-scene', 'screen-hangman'].forEach((id) => assert.ok(html.includes(`id="${id}"`), id));
     // Trois sections : quatre mini-jeux, sept jeux d'arcade, cinq jeux de réflexion.
     ['games-h-mini', 'games-h-arcade', 'games-h-reflexion'].forEach((id) => assert.ok(html.includes(`id="${id}"`), id));
-    assert.equal((html.match(/class="arcade-card"/g) || []).length, 16);
+    // Les cartes de la salle de jeux seulement (la boîte à outils réutilise la même classe, dans son propre écran).
+    const hub = html.slice(html.indexOf('id="screen-arcade"'), html.indexOf('<div id="screen-', html.indexOf('id="screen-arcade"') + 10));
+    assert.equal((hub.match(/class="arcade-card"/g) || []).length, 16);
 });
 
 // --- Contenu rédigé à la main ---------------------------------------------------------------------------

@@ -680,6 +680,7 @@
             <button type="button" class="path-sheet-side hidden" id="path-sheet-wheel" onclick="openWheel('screen-path')" data-i18n="wheel.entry">🎡 Mini-jeu : la roue des fêtes</button>
             <button type="button" class="path-sheet-side hidden" id="path-sheet-game"></button>
             <button type="button" class="path-sheet-side hidden" id="path-sheet-game-2"></button>
+            <button type="button" class="path-sheet-side hidden" id="path-sheet-game-3"></button>
         </div>
     </div>
 
@@ -1253,6 +1254,207 @@
                 <button type="button" class="btn" onclick="erasRestart()" data-i18n="arcade.replay">Rejouer</button>
                 <button type="button" class="final-link" onclick="erasBack()" data-i18n="eras.leave">Retour</button>
             </div>
+        </div>
+    </div>
+
+    <!-- ÉCRANS : LA BOÎTE À OUTILS (js/app/tools.js, js/toolsCore.js) — des utilitaires, pas des jeux -->
+    <div id="screen-tools" class="list-screen hidden">
+        <button class="back-btn" onclick="toolsHubBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="tools.title">Boîte à outils</h2>
+        <p class="modes-header-subtitle" data-i18n="tools.subtitle">Des convertisseurs et des calculs pour les cours d'histoire.</p>
+        <div class="arcade-menu">
+            <button type="button" class="arcade-card" onclick="openTool('eras', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">🔁</span>
+                <span class="arcade-card-text"><strong data-i18n="tools.eras_title"></strong><small data-i18n="tools.eras_desc"></small></span>
+            </button>
+            <button type="button" class="arcade-card" onclick="openTool('roman', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">🏛️</span>
+                <span class="arcade-card-text"><strong data-i18n="tools.roman_title"></strong><small data-i18n="tools.roman_desc"></small></span>
+            </button>
+            <button type="button" class="arcade-card" onclick="openTool('centuries', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">💯</span>
+                <span class="arcade-card-text"><strong data-i18n="tools.centuries_title"></strong><small data-i18n="tools.centuries_desc"></small></span>
+            </button>
+            <button type="button" class="arcade-card" onclick="openTool('duration', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">⏳</span>
+                <span class="arcade-card-text"><strong data-i18n="tools.duration_title"></strong><small data-i18n="tools.duration_desc"></small></span>
+            </button>
+            <button type="button" class="arcade-card" onclick="openTool('dates', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">📅</span>
+                <span class="arcade-card-text"><strong data-i18n="tools.dates_title"></strong><small data-i18n="tools.dates_desc"></small></span>
+            </button>
+            <button type="button" class="arcade-card" onclick="openTool('periods', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">🧭</span>
+                <span class="arcade-card-text"><strong data-i18n="tools.periods_title"></strong><small data-i18n="tools.periods_desc"></small></span>
+            </button>
+        </div>
+        <p class="tools-review" data-i18n="tools.review">Contenu à relire par un enseignant.</p>
+    </div>
+
+    <div id="screen-tool-eras" class="list-screen hidden">
+        <button class="back-btn" onclick="toolBack('eras')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="tools.eras_title">Convertisseur d'années</h2>
+        <p class="modes-header-subtitle" data-i18n="tools.eras_intro"></p>
+        <div class="tool-panel">
+            <div class="tool-field">
+                <label for="tool-eras-year" data-i18n="tools.year_label">Année de notre calendrier</label>
+                <div class="tool-inline">
+                    <input type="number" inputmode="numeric" min="1" max="3800" step="1" id="tool-eras-year" class="tool-input" oninput="toolErasUpdate()">
+                    <select id="tool-eras-bc" class="tool-input" onchange="toolErasUpdate()" aria-label="Avant ou après J.-C." data-i18n-attr="aria-label:tools.bc_aria">
+                        <option value="ad" data-i18n="tools.ad">ap. J.-C.</option>
+                        <option value="bc" data-i18n="tools.bc">av. J.-C.</option>
+                    </select>
+                </div>
+            </div>
+            <p class="tool-msg" id="tool-eras-msg" role="status"></p>
+            <div class="tool-rows" id="tool-eras-rows"></div>
+        </div>
+    </div>
+
+    <div id="screen-tool-roman" class="list-screen hidden">
+        <button class="back-btn" onclick="toolBack('roman')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="tools.roman_title">Chiffres romains</h2>
+        <p class="modes-header-subtitle" data-i18n="tools.roman_intro"></p>
+        <div class="tool-panel">
+            <div class="tool-field">
+                <label for="tool-roman-input" data-i18n="tools.roman_label">Un nombre ou des chiffres romains</label>
+                <input type="text" id="tool-roman-input" class="tool-input" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="1994 ou MCMXCIV" data-i18n-attr="placeholder:tools.roman_placeholder" oninput="toolRomanUpdate()">
+            </div>
+            <p class="tool-msg" id="tool-roman-msg" role="status"></p>
+            <div class="tool-result hidden" id="tool-roman-result">
+                <p class="tool-big" id="tool-roman-big"></p>
+                <p class="tool-small" id="tool-roman-line"></p>
+                <div class="tool-chips" id="tool-roman-parts" role="list"></div>
+                <p class="tool-small" id="tool-roman-sum"></p>
+            </div>
+            <button type="button" class="btn tool-lesson-btn" onclick="toolRomanLesson()" data-i18n="tools.roman_lesson_btn">Comment ça marche ? La leçon</button>
+        </div>
+    </div>
+
+    <div id="screen-tool-roman-lesson" class="list-screen hidden">
+        <button class="back-btn" onclick="toolRomanLessonBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="tools.lesson_title">Lire les chiffres romains</h2>
+        <div class="tool-panel tool-lesson" id="tool-lesson-body"></div>
+    </div>
+
+    <div id="screen-tool-centuries" class="list-screen hidden">
+        <button class="back-btn" onclick="toolBack('centuries')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="tools.centuries_title">Siècles et années</h2>
+        <p class="modes-header-subtitle" data-i18n="tools.centuries_intro"></p>
+        <div class="tool-panel">
+            <h3 class="tool-h" data-i18n="tools.century_of_year">Quel est le siècle d'une année ?</h3>
+            <div class="tool-field">
+                <label for="tool-cent-year" data-i18n="tools.year_label_short">Année</label>
+                <div class="tool-inline">
+                    <input type="number" inputmode="numeric" min="1" max="9999" step="1" id="tool-cent-year" class="tool-input" oninput="toolCenturiesUpdate()">
+                    <select id="tool-cent-bc" class="tool-input" onchange="toolCenturiesUpdate()" aria-label="Avant ou après J.-C." data-i18n-attr="aria-label:tools.bc_aria">
+                        <option value="ad" data-i18n="tools.ad">ap. J.-C.</option>
+                        <option value="bc" data-i18n="tools.bc">av. J.-C.</option>
+                    </select>
+                </div>
+            </div>
+            <div class="tool-result" id="tool-cent-year-result" role="status"></div>
+            <h3 class="tool-h" data-i18n="tools.years_of_century">Quelles années forment un siècle ?</h3>
+            <div class="tool-field">
+                <label for="tool-cent-n" data-i18n="tools.century_label">Siècle (en chiffres arabes ou romains)</label>
+                <div class="tool-inline">
+                    <input type="text" id="tool-cent-n" class="tool-input" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="XVIII" oninput="toolCenturiesUpdate()">
+                    <select id="tool-cent-n-bc" class="tool-input" onchange="toolCenturiesUpdate()" aria-label="Avant ou après J.-C." data-i18n-attr="aria-label:tools.bc_aria">
+                        <option value="ad" data-i18n="tools.ad">ap. J.-C.</option>
+                        <option value="bc" data-i18n="tools.bc">av. J.-C.</option>
+                    </select>
+                </div>
+            </div>
+            <div class="tool-result" id="tool-cent-n-result" role="status"></div>
+        </div>
+    </div>
+
+    <div id="screen-tool-duration" class="list-screen hidden">
+        <button class="back-btn" onclick="toolBack('duration')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="tools.duration_title">Calculateur de durées</h2>
+        <p class="modes-header-subtitle" data-i18n="tools.duration_intro"></p>
+        <div class="tool-panel">
+            <h3 class="tool-h" data-i18n="tools.between_title">Combien d'années entre deux années ?</h3>
+            <div class="tool-field">
+                <label for="tool-dur-a" data-i18n="tools.first_year">Première année</label>
+                <div class="tool-inline">
+                    <input type="number" inputmode="numeric" min="1" max="9999" step="1" id="tool-dur-a" class="tool-input" oninput="toolDurationUpdate()">
+                    <select id="tool-dur-a-bc" class="tool-input" onchange="toolDurationUpdate()" aria-label="Avant ou après J.-C." data-i18n-attr="aria-label:tools.bc_aria">
+                        <option value="ad" data-i18n="tools.ad">ap. J.-C.</option>
+                        <option value="bc" data-i18n="tools.bc">av. J.-C.</option>
+                    </select>
+                </div>
+            </div>
+            <div class="tool-field">
+                <label for="tool-dur-b" data-i18n="tools.second_year">Deuxième année</label>
+                <div class="tool-inline">
+                    <input type="number" inputmode="numeric" min="1" max="9999" step="1" id="tool-dur-b" class="tool-input" oninput="toolDurationUpdate()">
+                    <select id="tool-dur-b-bc" class="tool-input" onchange="toolDurationUpdate()" aria-label="Avant ou après J.-C." data-i18n-attr="aria-label:tools.bc_aria">
+                        <option value="ad" data-i18n="tools.ad">ap. J.-C.</option>
+                        <option value="bc" data-i18n="tools.bc">av. J.-C.</option>
+                    </select>
+                </div>
+            </div>
+            <div class="tool-result" id="tool-dur-between" role="status"></div>
+            <h3 class="tool-h" data-i18n="tools.add_title">Quelle année, tant d'années plus tôt ou plus tard ?</h3>
+            <div class="tool-field">
+                <label for="tool-add-year" data-i18n="tools.start_year">Année de départ</label>
+                <div class="tool-inline">
+                    <input type="number" inputmode="numeric" min="1" max="9999" step="1" id="tool-add-year" class="tool-input" oninput="toolDurationUpdate()">
+                    <select id="tool-add-bc" class="tool-input" onchange="toolDurationUpdate()" aria-label="Avant ou après J.-C." data-i18n-attr="aria-label:tools.bc_aria">
+                        <option value="ad" data-i18n="tools.ad">ap. J.-C.</option>
+                        <option value="bc" data-i18n="tools.bc">av. J.-C.</option>
+                    </select>
+                </div>
+            </div>
+            <div class="tool-field">
+                <label for="tool-add-n" data-i18n="tools.add_n">Nombre d'années</label>
+                <div class="tool-inline">
+                    <input type="number" inputmode="numeric" min="0" max="20000" step="1" id="tool-add-n" class="tool-input" oninput="toolDurationUpdate()">
+                    <select id="tool-add-dir" class="tool-input" onchange="toolDurationUpdate()" aria-label="Plus tard ou plus tôt" data-i18n-attr="aria-label:tools.dir_aria">
+                        <option value="later" data-i18n="tools.later">plus tard</option>
+                        <option value="earlier" data-i18n="tools.earlier">plus tôt</option>
+                    </select>
+                </div>
+            </div>
+            <div class="tool-result" id="tool-dur-add" role="status"></div>
+        </div>
+    </div>
+
+    <div id="screen-tool-dates" class="list-screen hidden">
+        <button class="back-btn" onclick="toolBack('dates')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="tools.dates_title">Une date dans les autres calendriers</h2>
+        <p class="modes-header-subtitle" data-i18n="tools.dates_intro"></p>
+        <div class="tool-panel">
+            <div class="tool-field">
+                <label for="tool-dates-input" data-i18n="tools.date_label">Date (calendrier grégorien)</label>
+                <div class="tool-inline">
+                    <input type="date" id="tool-dates-input" class="tool-input" min="1583-01-01" max="2500-12-31" oninput="toolDatesUpdate()">
+                    <button type="button" class="btn tool-today" onclick="toolDatesToday()" data-i18n="tools.today">Aujourd'hui</button>
+                </div>
+            </div>
+            <p class="tool-msg" id="tool-dates-msg" role="status"></p>
+            <div class="tool-rows" id="tool-dates-rows"></div>
+        </div>
+    </div>
+
+    <div id="screen-tool-periods" class="list-screen hidden">
+        <button class="back-btn" onclick="toolBack('periods')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="tools.periods_title">Repères de périodes</h2>
+        <p class="modes-header-subtitle" data-i18n="tools.periods_intro"></p>
+        <div class="tool-panel">
+            <div class="tool-field">
+                <label for="tool-per-year" data-i18n="tools.period_of_year">De quelle période est cette année ?</label>
+                <div class="tool-inline">
+                    <input type="number" inputmode="numeric" min="1" max="9999" step="1" id="tool-per-year" class="tool-input" oninput="toolPeriodsUpdate()">
+                    <select id="tool-per-bc" class="tool-input" onchange="toolPeriodsUpdate()" aria-label="Avant ou après J.-C." data-i18n-attr="aria-label:tools.bc_aria">
+                        <option value="ad" data-i18n="tools.ad">ap. J.-C.</option>
+                        <option value="bc" data-i18n="tools.bc">av. J.-C.</option>
+                    </select>
+                </div>
+            </div>
+            <div class="tool-result" id="tool-per-result" role="status"></div>
+            <div class="tool-rows" id="tool-per-list"></div>
         </div>
     </div>
 
@@ -2768,6 +2970,8 @@
     <script src="js/app/reflexion.js"></script>
     <script src="js/app/minigames.js"></script>
     <script src="js/app/arcade-extra.js"></script>
+    <script src="js/toolsCore.js"></script>
+    <script src="js/app/tools.js"></script>
     <script src="js/app/rewards.js"></script>
     <script src="js/app/clio.js"></script>
     <script src="js/app/team.js"></script>

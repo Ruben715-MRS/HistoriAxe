@@ -604,6 +604,24 @@ Les règles sont pures (`ArcadeCore`, testées sans minuteur) ; l'écran ne fait
 (`historiaxe_arcade_v1`, hors synchronisation). Pas de `touch-action: none` (interdit par `tests/a11y.test.js`) : le glisser du
 Snake retient le défilement par un écouteur `touchmove` non passif, seulement sur le plateau.
 
+**La boîte à outils** (`js/toolsCore.js`, `js/app/tools.js`, écrans `#screen-tools` et `#screen-tool-*`) : une carte « Boîte à outils » sous la salle de
+jeux, sur l'écran des catégories. Des utilitaires, pas des jeux : pas d'étoiles, rien n'est enregistré, le résultat s'affiche à mesure qu'on tape
+(`oninput`). Les calculs sont purs et testés (`tests/toolsCore.test.js`) ; tout ce qui vient de la saisie passe par `textContent`. Le contenu écrit à la main
+(leçon, périodes, notes sur les calendriers) est **à relire par un enseignant**. Six outils :
+
+| Outil | Ce qu'il fait |
+|---|---|
+| **Convertisseur d'années** | Une année (de 3 800 av. J.-C. à 2100) dans les onze ères de `js/eraConverter.js`, avec la règle repliable ; dit quand l'ère n'existe pas encore ou plus (république de 1792 à 1805, ères japonaises), et les deux réponses quand l'ère change en cours d'année. Aussi proposé dans la fiche du niveau 3 du Monde 0. |
+| **Chiffres romains** | Nombre ↔ chiffres romains de 1 à 3 999, dans les deux sens, avec la décomposition (1994 = M + CM + XC + IV). Seule la forme usuelle est acceptée : IIII est refusé, avec la bonne forme (IV). Une **leçon** (`#screen-tool-roman-lesson`) explique les sept lettres, l'addition, la soustraction, la règle des trois répétitions (et les cadrans à IIII), la méthode et l'usage en histoire. Aussi proposé dans la fiche du niveau 5. |
+| **Siècles et années** | Année → siècle, et siècle (en chiffres arabes ou romains) → années, avant et après J.-C. ; le piège des années rondes est expliqué (l'an 1700 est du XVIIe siècle). |
+| **Calculateur de durées** | Années entre deux années, et année ± un nombre d'années, **sans an 0** (de 44 av. J.-C. à 14 : 57 ans). |
+| **Une date dans les autres calendriers** | Un jour grégorien (de 1583 à 2500) en julien (calcul exact), juif, musulman, persan, bouddhique, japonais, copte (via `Intl`, le calendrier du navigateur) et républicain (calculé ici : 1792-1805, les débuts d'année sont dans `REPUBLICAN_STARTS`). Le calendrier musulman est arithmétique : le vrai dépend de l'observation de la lune et peut différer d'un ou deux jours, ce que l'écran dit. |
+| **Repères de périodes** | Préhistoire, Antiquité, Moyen Âge, Temps modernes, 1789-1914, depuis 1914 : bornes, ce qui est discuté (476 ; 1453-1492…), et la période d'une année saisie. |
+
+Pour ajouter un outil : une fonction pure dans `ToolsCore` (avec ses tests), un écran `screen-tool-…` dans `index.html`, ses textes dans `ui/fr.json` (groupe `tools`),
+une entrée dans `TOOL_SCREENS` et une carte dans `#screen-tools`. Un outil se lance avec `openTool(id, écranDeRetour)` ; depuis le Chemin, il rend la main au Chemin
+(`PATH_SIDE_GAMES` dans `js/app/path.js`, jusqu'à trois boutons par fiche).
+
 Les **leçons** sont une nouvelle sorte d'épreuve (`js/app/lesson.js`, écran `#screen-lesson`) : des questions
 **rédigées à la main** (`js/pathLessons.js` : 9 séries, 71 questions, la première réponse est la bonne et
 l'ordre est mélangé à l'affichage). Après chaque réponse, juste ou fausse, l'**explication** s'affiche ; une

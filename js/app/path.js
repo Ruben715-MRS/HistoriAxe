@@ -18,8 +18,8 @@ const PATH_MAP = { width: 300, step: 100, padTop: 250, padBottom: 70, amplitude:
 
 // Les mini-jeux qui accompagnent un niveau du Monde 0 (la roue des fêtes, au niveau 4, a son propre bouton).
 const PATH_SIDE_GAMES = {
-    3: [{ label: 'eras.entry', open: 'openEras' }],
-    5: [{ label: 'roman.entry', open: 'openRoman' }, { label: 'tetris.entry', open: 'openTetris' }]
+    3: [{ label: 'eras.entry', open: 'openEras' }, { label: 'tools.entry_eras', open: 'openToolEras' }],
+    5: [{ label: 'roman.entry', open: 'openRoman' }, { label: 'tetris.entry', open: 'openTetris' }, { label: 'tools.entry_roman', open: 'openToolRoman' }]
 };
 
 let pathCache = null; // { bdd, size, pools, byId }
@@ -152,6 +152,20 @@ function renderPathCard(container) {
     const advent = typeof adventHomeCard === 'function' ? adventHomeCard() : null;
     if (advent) container.appendChild(advent);
     container.appendChild(arcade);
+    const tools = document.createElement('button');
+    tools.type = 'button';
+    tools.className = 'resume-card tools-entry';
+    tools.id = 'btn-tools';
+    tools.innerHTML = `
+        <span class="resume-card-icon" aria-hidden="true">🧰</span>
+        <span class="resume-card-text">
+            <small class="resume-card-kicker"></small>
+            <strong class="resume-card-title"></strong>
+        </span>`;
+    tools.querySelector('.resume-card-kicker').textContent = t('tools.card_kicker');
+    tools.querySelector('.resume-card-title').textContent = t('tools.title');
+    tools.onclick = () => openTools();
+    container.appendChild(tools);
 }
 
 // --- Le paysage ------------------------------------------------------------------
@@ -453,9 +467,9 @@ function pathOpenSheet(levelId) {
     // Le niveau 4 du Monde 0 a un mini-jeu à côté (js/app/wheel.js) : ouvert à tous, même avant le niveau.
     document.getElementById('path-sheet-wheel').classList.toggle('hidden', !(world.id === 'monde0' && level.n === 4 && !level.boss));
     // Les autres mini-jeux du Monde 0 : le convertisseur d'ères (niveau 3, js/app/eras.js), les siècles en chiffres romains et le
-    // Tetris des siècles (niveau 5, js/app/minigames.js, js/app/arcade.js). Jusqu'à deux boutons par fiche.
+    // Tetris des siècles (niveau 5, js/app/minigames.js, js/app/arcade.js). Jusqu'à trois boutons par fiche (les jeux, puis l'outil qui va avec : js/app/tools.js).
     const sides = world.id === 'monde0' && !level.boss ? (PATH_SIDE_GAMES[level.n] || []) : [];
-    ['path-sheet-game', 'path-sheet-game-2'].forEach((id, i) => {
+    ['path-sheet-game', 'path-sheet-game-2', 'path-sheet-game-3'].forEach((id, i) => {
         const btn = document.getElementById(id);
         const side = sides[i];
         btn.classList.toggle('hidden', !side);
