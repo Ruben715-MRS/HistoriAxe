@@ -2978,32 +2978,62 @@ textarea.form-input {
     margin-bottom: 6px;
 }
 
-/* Mode Carte et Chrono-Géo côte à côte, sur toute la largeur de la grille parente. */
+/* Mode Carte, Chrono-Géo et (au niveau des Panthéons) Galerie des portraits : une même rangée sur toute la
+   largeur de la grille parente. Trois colonnes dès la tablette ; sur téléphone, deux colonnes pour les deux
+   modes et la galerie en pleine largeur dessous. Le .gallery-launcher se dissout (display: contents) pour que
+   son bouton prenne place dans la rangée et que son choix d'ordre s'ouvre sur toute la largeur. */
 .geo-mode-row {
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
+    gap: 12px;
 }
 
 .geo-mode-row .geo-mode-card {
     margin-bottom: 0;
+    padding: 14px 16px;
+    min-height: 0;
+    justify-content: flex-start;
 }
 
-/* Sur téléphone, deux colonnes étroites feraient une rangée plus haute que l'ancienne pile : le titre suffit. */
-@media (max-width: 600px) {
+.geo-mode-row .gallery-launcher {
+    display: contents;
+}
+
+.geo-mode-row .gallery-launcher-btn {
+    grid-column: 1 / -1;
+    height: 100%;
+    margin: 0;
+    padding: 14px 16px;
+    border-radius: 12px;
+    gap: 10px;
+}
+
+.geo-mode-row .gallery-launcher-icon {
+    font-size: 26px;
+}
+
+.geo-mode-row .gallery-launcher-title {
+    font-size: 16px;
+}
+
+.geo-mode-row .gallery-order-picker {
+    grid-column: 1 / -1;
+    margin-top: 0;
+}
+
+@media (min-width: 768px) {
     .geo-mode-row {
-        gap: 12px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .geo-mode-row .gallery-launcher-btn {
+        grid-column: auto;
     }
 
     .geo-mode-row .geo-mode-card {
-        padding: 14px 16px;
-        min-height: 0;
-        justify-content: center;
-    }
-
-    .geo-mode-row .special-card-subtitle {
-        display: none;
+        padding: 18px 20px;
     }
 }
 
