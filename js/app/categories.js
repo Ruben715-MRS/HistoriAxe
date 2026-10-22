@@ -255,6 +255,11 @@ const PROGRAMMES_PAYS_IMAGES = {
     'belgique': 'prog_belgique.webp',
     'canada': 'prog_canada.webp',
     'colombie': 'prog_colombie.webp',
+    'espagne': 'prog_espagne.webp',
+    'états-unis': 'prog_etats_unis.webp',
+    'inde': 'prog_inde.webp',
+    'irlande': 'prog_irlande.webp',
+    'italie': 'prog_italie.webp',
 };
 
 // INIT SOUS-CATÉGORIES (régions, niveaux scolaires, etc. — potentiellement imbriquées)
