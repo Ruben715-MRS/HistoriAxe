@@ -11273,3 +11273,59 @@ input:not([type="range"]), label, select, summary, textarea {
 .tool-countries-event strong {
     margin-right: 4px;
 }
+
+/* --- LES CARTES HISTORIQUES (js/app/history-maps.js) --- */
+.tool-history-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tool-history-chip {
+    min-height: 44px;
+    padding: 8px 14px;
+    border: 1px solid var(--border-soft);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text-dark);
+    font: inherit;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.tool-history-chip.is-date {
+    border-radius: 12px;
+    font-size: 13px;
+}
+
+.tool-history-chip[aria-pressed="true"] {
+    border-color: var(--text-dark);
+    background: var(--surface-2);
+    font-weight: 700;
+    box-shadow: var(--card-shadow);
+}
+
+.tool-history-when {
+    margin: 0;
+    font-size: 15px;
+    color: var(--text-dark);
+}
+
+.tool-history-legend {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+.tool-history-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    vertical-align: middle;
+}

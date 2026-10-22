@@ -1291,6 +1291,10 @@
                 <span class="arcade-card-icon" aria-hidden="true">🌍</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.countries_title"></strong><small data-i18n="tools.countries_desc"></small></span>
             </button>
+            <button type="button" class="arcade-card" onclick="openTool('history', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">🗺️</span>
+                <span class="arcade-card-text"><strong data-i18n="tools.history_title"></strong><small data-i18n="tools.history_desc"></small></span>
+            </button>
         </div>
         <p class="tools-review" data-i18n="tools.review">Contenu à relire par un enseignant.</p>
     </div>
@@ -1479,6 +1483,20 @@
             <div id="tool-countries-map" class="tool-countries-map" role="application" aria-label="Carte du monde : touchez un pays" data-i18n-attr="aria-label:tools.countries_map_label"></div>
             <p class="tool-small tool-countries-credit" data-i18n="tools.countries_credit"></p>
             <div class="tool-result tool-countries-fiche" id="tool-countries-fiche" role="region" aria-live="polite" aria-label="Fiche du pays" data-i18n-attr="aria-label:tools.countries_fiche_label"></div>
+        </div>
+    </div>
+
+    <div id="screen-tool-history" class="list-screen hidden">
+        <button class="back-btn" onclick="toolBack('history')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="tools.history_title">Cartes historiques</h2>
+        <p class="modes-header-subtitle" data-i18n="tools.history_intro"></p>
+        <div class="tool-panel">
+            <div class="tool-history-chips" id="tool-history-entities" role="group" aria-label="Choisir un empire ou une région" data-i18n-attr="aria-label:tools.history_entities_label"></div>
+            <div class="tool-history-chips" id="tool-history-snapshots" role="group" aria-label="Choisir une date" data-i18n-attr="aria-label:tools.history_dates_label"></div>
+            <p class="tool-msg" id="tool-history-status" role="status"></p>
+            <div id="tool-history-map" class="tool-countries-map" role="application" aria-label="Carte historique" data-i18n-attr="aria-label:tools.history_map_label"></div>
+            <p class="tool-small tool-countries-credit" data-i18n="tools.history_credit"></p>
+            <div class="tool-result tool-countries-fiche" id="tool-history-fiche" role="region" aria-live="polite" aria-label="Fiche de la carte" data-i18n-attr="aria-label:tools.history_fiche_label"></div>
         </div>
     </div>
 
@@ -2998,6 +3016,8 @@
     <script src="js/countriesCore.js"></script>
     <script src="js/app/tools.js"></script>
     <script src="js/app/countries.js"></script>
+    <script src="js/historyMapsCore.js"></script>
+    <script src="js/app/history-maps.js"></script>
     <script src="js/app/rewards.js"></script>
     <script src="js/app/clio.js"></script>
     <script src="js/app/team.js"></script>

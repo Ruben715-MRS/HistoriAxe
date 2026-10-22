@@ -18,10 +18,10 @@ async function ouvrir(page, texte) {
     await page.locator('#screen-tools .arcade-card', { hasText: texte }).click();
 }
 
-test('la boîte à outils s\'ouvre depuis les catégories, propose sept outils et revient', async ({ page }) => {
+test('la boîte à outils s\'ouvre depuis les catégories, propose huit outils et revient', async ({ page }) => {
     await page.locator('#btn-tools').click();
     expect(await visibleScreen(page)).toBe('screen-tools');
-    await expect(page.locator('#screen-tools .arcade-card')).toHaveCount(7);
+    await expect(page.locator('#screen-tools .arcade-card')).toHaveCount(8);
     await page.locator('#screen-tools .arcade-card', { hasText: 'Chiffres romains' }).click();
     expect(await visibleScreen(page)).toBe('screen-tool-roman');
     await page.locator('#screen-tool-roman .back-btn').click();
@@ -185,4 +185,40 @@ test('atlas des pays : une capitale se cherche aussi, et un statut contesté est
     await expect(page.locator('.tool-countries-badge')).toContainText('Statut contesté');
     await page.locator('#tool-countries-input').fill('zzzzz');
     await expect(page.locator('.tool-countries-none')).toBeVisible();
+});
+
+test('cartes historiques : six entités, des dates, une fiche, et les événements de l\'app situés dans la zone', async ({ page }) => {
+    await page.waitForFunction(() => window.bdd && window.bdd.some(c => (c.themes || []).some(t => t.id === 'thm_aut')), null, { timeout: 45_000 });
+    await ouvrir(page, 'Cartes historiques');
+    expect(await visibleScreen(page)).toBe('screen-tool-history');
+    await expect(page.locator('#tool-history-entities .tool-history-chip')).toHaveCount(6);
+    // Rome au départ : trois dates, et la fiche de l'apogée
+    await expect(page.locator('#tool-history-entities [data-entity="rome"]')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-history-snapshots .tool-history-chip')).toHaveCount(3);
+    await expect(page.locator('#tool-history-fiche')).toContainText('Trajan');
+    await expect(page.locator('#tool-history-fiche')).toContainText('27 av. J.-C.');
+    // le partage de 395 a deux zones, et une légende
+    await page.locator('#tool-history-snapshots [data-snapshot="partage"]').click();
+    await expect(page.locator('.tool-history-legend li')).toHaveCount(2);
+    await expect(page.locator('#tool-history-fiche')).toContainText('Empire romain d\'Orient');
+    // les événements de l'app situés dans l'empire pendant sa période : on en ouvre un
+    const first = page.locator('#tool-history-fiche .tool-countries-event').first();
+    await expect(first).toBeVisible({ timeout: 30_000 });
+    expect(await page.locator('#tool-history-fiche .tool-countries-event').count()).toBeLessThanOrEqual(10);
+    await first.click();
+    await expect(page.locator('#modal-details')).toBeVisible();
+});
+
+test('cartes historiques : changer d\'entité change les dates et la fiche', async ({ page }) => {
+    await ouvrir(page, 'Cartes historiques');
+    await page.locator('#tool-history-entities [data-entity="mongol"]').click();
+    await expect(page.locator('#tool-history-snapshots .tool-history-chip')).toHaveCount(2);
+    await expect(page.locator('#tool-history-fiche')).toContainText('Kubilai');
+    await expect(page.locator('.tool-history-legend li')).toHaveCount(4);
+    await page.locator('#tool-history-entities [data-entity="mesopotamie"]').click();
+    await expect(page.locator('#tool-history-snapshots .tool-history-chip')).toHaveCount(4);
+    await expect(page.locator('#tool-history-fiche')).toContainText('Tigre');
+    await page.locator('#tool-history-snapshots [data-snapshot="sumer"]').click();
+    await expect(page.locator('#tool-history-fiche')).toContainText('cités-États');
+    await expect(page.locator('#tool-history-snapshots [data-snapshot="sumer"]')).toHaveAttribute('aria-pressed', 'true');
 });
