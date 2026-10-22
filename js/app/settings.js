@@ -21,7 +21,7 @@ function restartOnboarding() {
     if (typeof Onboarding === 'undefined') return;
     Onboarding.restart();
     closeSettings();
-    showScreen('screen-home');
+    showScreen('screen-categories');
 }
 
 function openScoringInfo() {

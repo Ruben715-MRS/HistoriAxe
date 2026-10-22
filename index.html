@@ -56,8 +56,7 @@
          téléphone (le plus étroit/large) est testé avant le format
          tablette de la même orientation. Repli sur accueil.jpg (~4:3,
          tablette paysage) pour tout le reste — desktop compris. -->
-    <div id="screen-home" onclick="showScreen('screen-categories')" role="button" tabindex="0"
-        aria-label="Commencer" data-i18n-attr="aria-label:home.start_aria">
+    <div id="screen-home" aria-busy="true">
         <picture>
             <source media="(orientation: portrait) and (max-aspect-ratio: 2/3)" srcset="splash_iphone_portrait.jpg">
             <source media="(orientation: portrait)" srcset="splash_ipad_portrait.jpg">
@@ -79,8 +78,6 @@
 
     <!-- ÉCRAN 2 : CATÉGORIES (Grandes sections) -->
     <div id="screen-categories" class="list-screen hidden">
-        <button class="back-btn" onclick="showScreen('screen-home')" aria-label="Retour à l'accueil"
-            data-i18n-attr="aria-label:nav.back">‹</button>
         <button class="league-btn" onclick="openLeagueModal()" aria-label="Ligue hebdomadaire"
             data-i18n-attr="aria-label:categories.league_btn_aria">🥇</button>
         <button class="profile-btn" onclick="openProfileModal()" aria-label="Profil et Trophées"

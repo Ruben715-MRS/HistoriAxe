@@ -129,23 +129,29 @@ var Onboarding = (function () {
         return (val && val !== key) ? val : fallback;
     }
 
-    function onHomeScreen() {
-        if (isDone() || hasShown('welcome')) return;
-        showCoachMark('welcome', {
-            title: ob('onboarding.welcome_title', '👋 Bienvenue dans HistoriAxe !'),
-            text: ob('onboarding.welcome_text', "Découvre comment progresser en 3 minutes : une ou deux bulles d'aide vont s'afficher pendant que tu explores. Touche l'écran pour commencer."),
-            nextLabel: ob('onboarding.lets_go_btn', "C'est parti")
+    function showDailyMark() {
+        showCoachMark('daily_or_categories', {
+            targetSelector: '#btn-daily',
+            title: ob('onboarding.daily_title', '🎯 Le Défi du jour'),
+            text: ob('onboarding.daily_text', "10 événements à remettre dans l'ordre, en 2 minutes chrono : la façon la plus simple de commencer, et le point de départ de ta série quotidienne 🔥. Tu peux aussi explorer une catégorie ci-dessous.")
         });
     }
 
+    // Le menu principal est le premier écran de l'app (l'accueil n'est qu'un écran de chargement) :
+    // la bulle de bienvenue s'y affiche d'abord, suivie de celle du Défi du jour.
     function onCategoriesScreen() {
-        if (isDone() || hasShown('daily_or_categories')) return;
+        if (isDone()) return;
         setTimeout(function () {
-            showCoachMark('daily_or_categories', {
-                targetSelector: '#btn-daily',
-                title: ob('onboarding.daily_title', '🎯 Le Défi du jour'),
-                text: ob('onboarding.daily_text', "10 événements à remettre dans l'ordre, en 2 minutes chrono : la façon la plus simple de commencer, et le point de départ de ta série quotidienne 🔥. Tu peux aussi explorer une catégorie ci-dessous.")
-            });
+            if (!hasShown('welcome')) {
+                showCoachMark('welcome', {
+                    title: ob('onboarding.welcome_title', '👋 Bienvenue dans HistoriAxe !'),
+                    text: ob('onboarding.welcome_text', "Découvre comment progresser en 3 minutes : une ou deux bulles d'aide vont s'afficher pendant que tu explores."),
+                    nextLabel: ob('onboarding.lets_go_btn', "C'est parti"),
+                    onNext: function () { setTimeout(showDailyMark, 300); }
+                });
+            } else if (!hasShown('daily_or_categories')) {
+                showDailyMark();
+            }
         }, 300);
     }
 
@@ -174,7 +180,6 @@ var Onboarding = (function () {
     }
 
     return {
-        onHomeScreen: onHomeScreen,
         onCategoriesScreen: onCategoriesScreen,
         onModesScreen: onModesScreen,
         onFirstGameEnd: onFirstGameEnd,

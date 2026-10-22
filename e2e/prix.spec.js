@@ -9,7 +9,6 @@
 const { test, expect, visibleScreen, openThemeCard } = require('./fixtures');
 
 test('Prix et récompenses : la note explique la règle de datation et le thème propose six axes', async ({ page }) => {
-    await page.locator('#screen-home').click();
     const index = await page.evaluate(() => bdd.findIndex(c => c.nom === 'Culture générale'));
     expect(index, 'la catégorie « Culture générale » doit exister').toBeGreaterThanOrEqual(0);
     await page.locator('#cat-grid > div').nth(index).click();
