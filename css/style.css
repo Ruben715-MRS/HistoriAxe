@@ -3024,8 +3024,12 @@ textarea.form-input {
 
 @media (min-width: 768px) {
     .geo-mode-row {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 16px;
+    }
+
+    /* Trois colonnes seulement quand il y a un troisième élément ; sinon les deux modes se partagent la ligne. */
+    .geo-mode-row.has-extra {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .geo-mode-row .gallery-launcher-btn {
