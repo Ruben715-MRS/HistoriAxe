@@ -334,30 +334,17 @@ function initModesGroups() {
     });
 }
 
-// « Reprendre » : un tap pour retrouver le dernier thème ouvert, au lieu de refaire six écrans.
-function renderResumeCard(container) {
-    // Le Chemin du Temps passe avant « Reprendre » : c'est le parcours proposé à tous.
-    if (typeof renderPathCard === 'function' && typeof PathCore !== 'undefined') renderPathCard(container);
+// « Reprendre » : un tap pour retrouver le dernier thème ouvert, au lieu de refaire six écrans. C'est un
+// bouton rond de la grille d'accueil (js/app/categories.js) ; ici, le thème qu'il ouvre, ou null.
+function resumeTarget() {
     const last = lastThemeLoad();
-    if (!last || !last.themeId) return;
-    const found = getAllThemesWithPath().find(item => item.theme.id === last.themeId);
-    if (!found) return;
-    const card = document.createElement('button');
-    card.type = 'button';
-    card.className = 'resume-card';
-    card.id = 'btn-resume';
-    const sub = found.pathNames.slice(1).join(' › ');
-    card.innerHTML = `
-        <span class="resume-card-icon" aria-hidden="true">▶</span>
-        <span class="resume-card-text">
-            <small class="resume-card-kicker">${t('categories.resume')}</small>
-            <strong class="resume-card-title"></strong>
-            <small class="resume-card-path"></small>
-        </span>`;
-    card.querySelector('.resume-card-title').textContent = found.theme.nom;
-    card.querySelector('.resume-card-path').textContent = sub;
-    card.onclick = () => openThemeAt(found.ci, found.si, found.ti);
-    container.appendChild(card);
+    if (!last || !last.themeId) return null;
+    return getAllThemesWithPath().find(item => item.theme.id === last.themeId) || null;
+}
+
+// Le Chemin du Temps (bandeau entre les boutons ronds et les catégories) : le parcours proposé à tous.
+function renderPathBanner(container) {
+    if (typeof renderPathCard === 'function' && typeof PathCore !== 'undefined') renderPathCard(container);
 }
 
 function openDiscoveryMode() {

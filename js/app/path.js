@@ -110,11 +110,15 @@ function pathWorldTitle(world) {
     return t('path.worlds.' + world.id + '.title');
 }
 
-// La carte posée en tête de l'écran des catégories (avant « Reprendre »).
-function renderPathCard(container) {
+// Barre de récompenses et salut de Clio, en tête de l'écran des catégories.
+function renderHomeHeader(container) {
     if (typeof renderRewardsBar === 'function') renderRewardsBar(container, 'screen-categories');
     const greeting = typeof clioHomeGreeting === 'function' ? clioHomeGreeting() : null;
     if (greeting) container.appendChild(greeting);
+}
+
+// Le bandeau du Chemin du Temps, posé entre les boutons ronds et les catégories.
+function renderPathCard(container) {
     const target = pathNextTarget();
     const card = document.createElement('button');
     card.type = 'button';
@@ -127,7 +131,7 @@ function renderPathCard(container) {
             : t('path.card_next', { n: target.level.n, title: pathLevelTitle(target.world, target.level) }))
         : t('path.card_done');
     card.innerHTML = `
-        <span class="resume-card-icon" aria-hidden="true">🗺️</span>
+        <span class="resume-card-icon" aria-hidden="true">🛤️</span>
         <span class="resume-card-text">
             <small class="resume-card-kicker">${escapeHtml(target.world ? pathWorldTitle(target.world) : t('path.title'))} · ★ ${stars}/${pathTotalMaxStars()}</small>
             <strong class="resume-card-title"></strong>
@@ -135,37 +139,10 @@ function renderPathCard(container) {
     card.querySelector('.resume-card-title').textContent = sub;
     card.onclick = () => openPath();
     container.appendChild(card);
-    const arcade = document.createElement('button');
-    arcade.type = 'button';
-    arcade.className = 'resume-card arcade-entry';
-    arcade.id = 'btn-arcade';
-    arcade.innerHTML = `
-        <span class="resume-card-icon" aria-hidden="true">🕹️</span>
-        <span class="resume-card-text">
-            <small class="resume-card-kicker"></small>
-            <strong class="resume-card-title"></strong>
-        </span>`;
-    arcade.querySelector('.resume-card-kicker').textContent = t('arcade.card_kicker');
-    arcade.querySelector('.resume-card-title').textContent = t('arcade.title');
-    arcade.onclick = () => openArcade();
-    // En décembre, la case du calendrier de l'Avent du jour s'affiche entre le Chemin et la salle de jeux (js/app/minigames.js).
+    // En décembre, la case du calendrier de l'Avent du jour s'affiche sous le Chemin (js/app/minigames.js).
+    // La salle de jeux et la boîte à outils sont des boutons ronds de la grille d'accueil (js/app/categories.js).
     const advent = typeof adventHomeCard === 'function' ? adventHomeCard() : null;
     if (advent) container.appendChild(advent);
-    container.appendChild(arcade);
-    const tools = document.createElement('button');
-    tools.type = 'button';
-    tools.className = 'resume-card tools-entry';
-    tools.id = 'btn-tools';
-    tools.innerHTML = `
-        <span class="resume-card-icon" aria-hidden="true">🧰</span>
-        <span class="resume-card-text">
-            <small class="resume-card-kicker"></small>
-            <strong class="resume-card-title"></strong>
-        </span>`;
-    tools.querySelector('.resume-card-kicker').textContent = t('tools.card_kicker');
-    tools.querySelector('.resume-card-title').textContent = t('tools.title');
-    tools.onclick = () => openTools();
-    container.appendChild(tools);
 }
 
 // --- Le paysage ------------------------------------------------------------------

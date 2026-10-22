@@ -7841,24 +7841,66 @@ input:not([type="range"]), label, select, summary, textarea {
     filter: invert(1);
 }
 
-/* Cinq actions rapides depuis l'ajout de l'Atlas : sur les écrans les plus étroits (≤ 400 px),
-   les pastilles rétrécissent pour ne pas se chevaucher (leur taille est posée en ligne, d'où !important). */
+/* Deux rangées de quatre boutons ronds en tête de l'écran des catégories. Sur les écrans les plus étroits
+   (≤ 400 px), les pastilles rétrécissent un peu. */
+.quick-actions-row {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+    text-align: center;
+    margin: 14px auto 0;
+    max-width: 640px;
+}
+
+#quick-actions-1 {
+    margin-top: 0;
+}
+
+.quick-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.quick-action .quick-action-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quick-action-emoji {
+    font-size: 28px;
+}
+
+.quick-action .quick-action-label {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.25;
+    margin-top: 8px;
+    color: var(--text-dark);
+}
+
+/* « Reprendre » sans partie commencée : affiché, mais éteint (le clic explique pourquoi). */
+.quick-action.is-disabled .quick-action-circle {
+    opacity: 0.55;
+}
+
+.quick-action.is-disabled .quick-action-label {
+    color: var(--muted-text);
+}
+
 @media (max-width: 400px) {
-    #btn-favoris .quick-action-circle,
-    #btn-discover .quick-action-circle,
-    #btn-daily .quick-action-circle,
-    #btn-reviser .quick-action-circle,
-    #btn-atlas .quick-action-circle {
-        width: 54px !important;
-        height: 54px !important;
+    .quick-action .quick-action-circle {
+        width: 54px;
+        height: 54px;
     }
 
-    #btn-favoris .quick-action-label,
-    #btn-discover .quick-action-label,
-    #btn-daily .quick-action-label,
-    #btn-reviser .quick-action-label,
-    #btn-atlas .quick-action-label {
-        font-size: 12px !important;
+    .quick-action .quick-action-label {
+        font-size: 12px;
     }
 }
 

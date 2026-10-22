@@ -1,6 +1,19 @@
 // Extrait de l'ancien js/app.js — Écrans des catégories et des sous-catégories.
 // Découpage mécanique : les fichiers se chargent dans l'ordre d'index.html, qui est celui du fichier d'origine
 // (tout reste global ; une fonction ou un `let` d'un fichier est visible des suivants).
+// Un bouton rond de la grille d'accueil : pastille, emoji, légende. Les identifiants (#btn-…) sont ceux
+// que visent les tests et le reste de l'app ; `attrs` ajoute les attributs propres à un bouton (aria-…).
+function quickLabel(key, fallback) {
+    return typeof t === 'function' ? t(key) : fallback;
+}
+
+function quickAction(id, emoji, label, attrs = '', disabled = false) {
+    return `<div class="quick-action${disabled ? ' is-disabled' : ''}" id="${id}" role="button" tabindex="0"${disabled ? ' aria-disabled="true"' : ''} ${attrs}>
+                        <div class="quick-action-circle"><span class="quick-action-emoji" aria-hidden="true">${emoji}</span></div>
+                        <span class="quick-action-label">${label}</span>
+                    </div>`;
+}
+
 // INIT CATÉGORIES (Dossiers)
 function initCategories() {
     updateHeaderProfileBar();
@@ -32,44 +45,23 @@ function initCategories() {
     const weakCount = (typeof getDueSummary === 'function') ? getDueSummary().due : 0;
     const favCount = (typeof favoritesLoad === 'function') ? favoritesLoad().length : 0;
 
-    renderResumeCard(container);
+    renderHomeHeader(container);
+    // « Reprendre » est un bouton rond permanent : sans dernier thème, il reste affiché mais renvoie un message.
+    const resume = resumeTarget();
+    const resumeAttrs = resume
+        ? `aria-label="${escapeHtml(t('categories.resume') + ' : ' + resume.theme.nom)}" title="${escapeHtml(resume.theme.nom)}"`
+        : '';
 
     // --- QUICK ACTION GRID ---
     const gridSection = document.createElement('section');
     gridSection.className = 'w-full';
     gridSection.style.marginTop = '24px';
     gridSection.innerHTML = `
-                <div class="grid grid-cols-4 gap-sm md:gap-md" style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; text-align: center;">
-                    <div class="flex flex-col items-center gap-2" id="btn-favoris" style="cursor: pointer;" role="button" tabindex="0">
-                        <div class="quick-action-circle rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border-soft); box-shadow: var(--card-shadow);">
-                            <span style="font-size: 28px;">⭐</span>
-                        </div>
-                        <span class="quick-action-label" style="font-size: 13px; font-weight: 600;">${(typeof t === 'function' ? t('categories.special_favorites') : 'Favoris')} (${favCount})</span>
-                    </div>
-                    <div class="flex flex-col items-center gap-2" id="btn-discover" style="cursor: pointer;" role="button" tabindex="0" aria-expanded="false" aria-controls="discover-picker">
-                        <div class="quick-action-circle rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border-soft); box-shadow: var(--card-shadow);">
-                            <span style="font-size: 28px;">🎲</span>
-                        </div>
-                        <span class="quick-action-label" style="font-size: 13px; font-weight: 600;">${(typeof t === 'function' ? t('categories.special_discover') : 'Hasard')}</span>
-                    </div>
-                    <div class="flex flex-col items-center gap-2" id="btn-daily" style="cursor: pointer;" role="button" tabindex="0" aria-expanded="false" aria-controls="challenge-picker">
-                        <div class="quick-action-circle rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border-soft); box-shadow: var(--card-shadow);">
-                            <span style="font-size: 28px;">🎯</span>
-                        </div>
-                        <span class="quick-action-label" style="font-size: 13px; font-weight: 600;">${(typeof t === 'function' ? t('categories.special_challenges') : 'Défis')}</span>
-                    </div>
-                    <div class="flex flex-col items-center gap-2" id="btn-reviser" style="cursor: pointer;" role="button" tabindex="0">
-                        <div class="quick-action-circle rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border-soft); box-shadow: var(--card-shadow);">
-                            <span style="font-size: 28px;">🧠</span>
-                        </div>
-                        <span class="quick-action-label" style="font-size: 13px; font-weight: 600;">${(typeof t === 'function' ? t('categories.special_revision') : 'Réviser')} (${weakCount})</span>
-                    </div>
-                    <div class="flex flex-col items-center gap-2" id="btn-atlas" style="cursor: pointer;" role="button" tabindex="0">
-                        <div class="quick-action-circle rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border-soft); box-shadow: var(--card-shadow);">
-                            <span style="font-size: 28px;">🗺️</span>
-                        </div>
-                        <span class="quick-action-label" style="font-size: 13px; font-weight: 600;">${(typeof t === 'function' ? t('categories.special_atlas') : 'Atlas')}</span>
-                    </div>
+                <div class="quick-actions-row" id="quick-actions-1">
+                    ${quickAction('btn-favoris', '⭐', `${quickLabel('categories.special_favorites', 'Favoris')} (${favCount})`)}
+                    ${quickAction('btn-discover', '🎲', quickLabel('categories.special_discover', 'Hasard'), 'aria-expanded="false" aria-controls="discover-picker"')}
+                    ${quickAction('btn-daily', '🎯', quickLabel('categories.special_challenges', 'Défis'), 'aria-expanded="false" aria-controls="challenge-picker"')}
+                    ${quickAction('btn-resume', '▶️', quickLabel('categories.resume', 'Reprendre'), resumeAttrs, !resume)}
                 </div>
                 <div class="challenge-picker hidden" id="discover-picker">
                     <button type="button" class="challenge-picker-btn" id="btn-discover-event">
@@ -106,9 +98,26 @@ function initCategories() {
                         </span>
                     </button>
                 </div>
+                <div class="quick-actions-row" id="quick-actions-2">
+                    ${quickAction('btn-reviser', '🧠', `${quickLabel('categories.special_revision', 'Réviser')} (${weakCount})`)}
+                    ${quickAction('btn-arcade', '🕹️', quickLabel('arcade.title', 'Salle de jeux'))}
+                    ${quickAction('btn-tools', '🧰', quickLabel('tools.title', 'Boîte à outils'))}
+                    ${quickAction('btn-atlas', '🗺️', quickLabel('categories.special_atlas', 'Atlas'))}
+                </div>
             `;
     container.appendChild(gridSection);
 
+    const btnResume = gridSection.querySelector('#btn-resume');
+    if (btnResume) {
+        btnResume.onclick = () => {
+            if (!resume) { showToast(t('categories.resume_none')); return; }
+            openThemeAt(resume.ci, resume.si, resume.ti);
+        };
+    }
+    const btnArcade = gridSection.querySelector('#btn-arcade');
+    if (btnArcade) btnArcade.onclick = () => openArcade();
+    const btnTools = gridSection.querySelector('#btn-tools');
+    if (btnTools) btnTools.onclick = () => openTools();
     const btnAtlas = gridSection.querySelector('#btn-atlas');
     if (btnAtlas) btnAtlas.onclick = () => showScreen('screen-atlas', 'forward');
     const btnFav = gridSection.querySelector('#btn-favoris');
@@ -177,6 +186,9 @@ function initCategories() {
     }
     const btnRev = gridSection.querySelector('#btn-reviser');
     if (btnRev) btnRev.onclick = () => showScreen('screen-revision-hub');
+
+    // Le bandeau des mondes / niveaux, entre les boutons ronds et les catégories.
+    renderPathBanner(container);
 
     // --- BROWSE ARCHIVES (Categories) ---
     const catSection = document.createElement('section');
