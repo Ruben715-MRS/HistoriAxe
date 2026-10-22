@@ -201,6 +201,9 @@ let flFrame = 0;
 let flLast = 0;
 let flReturn = 'screen-arcade';
 let flInputBound = false;
+let flEra = '';
+let flEraFrom = '';
+let flFade = 1;
 
 function openFlappy(fromScreen) {
     flReturn = fromScreen || 'screen-arcade';
@@ -231,6 +234,9 @@ function flappyStart() {
     if (game.empty) { alert(t('arcade.empty')); return; }
     flappyStop();
     flGame = game;
+    flEra = flappyEraOf(game);
+    flEraFrom = flEra;
+    flFade = 1;
     document.getElementById('flappy-start').classList.add('hidden');
     document.getElementById('flappy-over').classList.add('hidden');
     arcadeMessage('flappy-message', '');
@@ -253,6 +259,7 @@ function flappyLoop(now) {
     const dt = document.hidden ? 0 : arcadeDelta(flLast, now);
     flLast = now;
     const events = ArcadeExtraCore.flappyStep(flGame, dt);
+    flappyEraTick(dt);
     flappyAfter(events);
     flappyDraw();
     if (flGame.over) { flappyFinish(); return; }
@@ -282,33 +289,76 @@ function flappyFlapNow() {
     if (flGame && !flGame.over) ArcadeExtraCore.flappyFlap(flGame);
 }
 
+// L'époque du décor : celle du dernier repère franchi, ou du premier à venir.
+function flappyEraOf(g) {
+    const next = g.gates.find(gate => !gate.done);
+    const year = g.last ? g.last.date : (next ? next.event.date : 0);
+    return ArcadeExtraCore.flappyEra(year);
+}
+
+function flappyEraTick(dt) {
+    flFade = Math.min(1, flFade + dt / 1.2);
+    const era = flappyEraOf(flGame);
+    if (era !== flEra) { flEraFrom = flEra; flEra = era; flFade = 0; }
+}
+
+function flappyDrawPillar(ctx, s, H) {
+    const grad = ctx.createLinearGradient(s[0], 0, s[0] + s[2], 0);
+    grad.addColorStop(0, '#f1f5f9');
+    grad.addColorStop(1, '#94a3b8');
+    ctx.fillStyle = grad;
+    ctx.fillRect(s[0], s[1], s[2], s[3]);
+    ctx.strokeStyle = '#334155';
+    ctx.lineWidth = 2;
+    ctx.strokeRect(s[0] + 1, s[1] + 1, s[2] - 2, s[3] - 2);
+    // Un chapiteau du côté de l'ouverture.
+    ctx.fillStyle = '#64748b';
+    if (s[1] > 0) { ctx.fillRect(s[0] - 3, s[1], s[2] + 6, 9); }
+    if (s[1] + s[3] < H) { ctx.fillRect(s[0] - 3, s[1] + s[3] - 9, s[2] + 6, 9); }
+}
+
 function flappyDraw() {
     const { ctx } = arcadeWorldCanvas('flappy-canvas', ArcadeExtraCore.FL);
     const FL = ArcadeExtraCore.FL;
-    ctx.fillStyle = ARCADE_BOARD_BG;
-    ctx.fillRect(0, 0, FL.W, FL.H);
     const g = flGame;
+    const ground = FL.H - FL.GROUND;
+    const distance = g ? g.distance : 0;
+    if (g && flFade < 1 && flEraFrom) flappyDrawBackdrop(ctx, FL.W, FL.H, ground, flEraFrom, distance, 1);
+    flappyDrawBackdrop(ctx, FL.W, FL.H, ground, g ? flEra : 'antique', distance, g && flFade < 1 && flEraFrom ? flFade : 1);
     if (!g) { ctx.restore(); return; }
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     g.gates.forEach(gate => {
-        ctx.fillStyle = '#475569';
-        ArcadeExtraCore.gateSolids(gate).forEach(s => ctx.fillRect(s[0], s[1], s[2], s[3]));
+        ArcadeExtraCore.gateSolids(gate).forEach(s => flappyDrawPillar(ctx, s, FL.H));
         // L'année de chaque ouverture, sur une pastille au centre du passage.
         gate.gaps.forEach(gap => {
             const text = arcadeShortYear(gap.year);
             ctx.font = '700 13px sans-serif';
             const w = Math.max(gate.w, ctx.measureText(text).width + 12);
-            ctx.fillStyle = 'rgba(15,26,51,0.8)';
+            ctx.fillStyle = 'rgba(15,26,51,0.85)';
             ctx.fillRect(gate.x + gate.w / 2 - w / 2, gap.y - 11, w, 22);
             ctx.fillStyle = '#fde68a';
             ctx.fillText(text, gate.x + gate.w / 2, gap.y + 1);
         });
     });
-    // Clio : un chat, qui clignote pendant l'invulnérabilité qui suit un choc.
+    // Clio : un chat qui s'incline selon sa vitesse, et qui clignote pendant le répit qui suit un choc.
+    const bob = g.waiting ? Math.sin(performance.now() / 260) * 4 : 0;
     if (!g.invulnerable || Math.floor(g.invulnerable * 10) % 2 === 0) {
+        ctx.save();
+        ctx.translate(g.clio.x, g.clio.y + bob);
+        ctx.rotate(Math.max(-0.45, Math.min(0.7, g.clio.vy / 600)));
         ctx.font = '26px sans-serif';
-        ctx.fillText('🐱', g.clio.x, g.clio.y + 1);
+        ctx.fillText('🐱', 0, 1);
+        ctx.restore();
+    }
+    if (g.waiting && !g.over) {
+        ctx.font = '700 14px sans-serif';
+        const text = t('flappy.tap');
+        const w = ctx.measureText(text).width + 24;
+        ctx.fillStyle = 'rgba(15,26,51,0.8)';
+        ctx.fillRect(FL.W / 2 - w / 2, 26, w, 30);
+        ctx.fillStyle = '#ffffff';
+        ctx.fillText(text, FL.W / 2, 41);
     }
     ctx.restore();
 }
@@ -334,7 +384,14 @@ function flappyFinish() {
 function flappyBindInput() {
     if (flInputBound) return;
     flInputBound = true;
-    document.getElementById('flappy-canvas').addEventListener('pointerdown', e => { e.preventDefault(); flappyFlapNow(); });
+    const canvas = document.getElementById('flappy-canvas');
+    canvas.addEventListener('pointerdown', e => { e.preventDefault(); flappyFlapNow(); });
+    // Le CSS ne pose pas `touch-action: none` : on retient le défilement de la page seulement pendant la partie.
+    canvas.addEventListener('touchmove', e => { if (flGame && !flGame.over) e.preventDefault(); }, { passive: false });
+    // Onglet masqué : le monde attend le prochain battement au retour.
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden && flGame) { ArcadeExtraCore.flappyPause(flGame); flappyDraw(); }
+    });
     document.addEventListener('keydown', e => {
         if (!arcadeScreenVisible('screen-flappy') || !flGame || flGame.over) return;
         if (e.key === ' ' || e.key === 'ArrowUp') { e.preventDefault(); flappyFlapNow(); }

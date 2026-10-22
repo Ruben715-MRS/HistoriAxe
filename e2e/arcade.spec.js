@@ -489,7 +489,7 @@ test('Flappy Clio : Clio attend le premier battement, vole, passe une porte et f
     await page.evaluate(() => {
         flappyStop();
         const gate = flGame.gates[0];
-        gate.x = flGame.clio.x - gate.w / 2 + 1;
+        gate.x = flGame.clio.x - gate.w / 2;
         flGame.clio.y = gate.gaps[0].y; flGame.clio.vy = 0;
         flappyAfter(ArcadeExtraCore.flappyStep(flGame, 0.01));
     });

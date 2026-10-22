@@ -150,13 +150,14 @@ test('Flappy : une chaîne de huit portes aux repères croissants ; la première
 
 test('Flappy : Clio flotte tant qu\'on n\'a pas battu des ailes ; un battement la fait monter, la gravité la fait tomber', () => {
     const g = E.createFlappy(pool(), seeded(4));
+    const y0 = g.clio.y;
     E.flappyStep(g, 0.5);
-    assert.equal(g.clio.y, E.FL.H / 2);
+    assert.equal(g.clio.y, y0);
     E.flappyFlap(g);
     E.flappyStep(g, 0.1);
-    assert.ok(g.clio.y < E.FL.H / 2);
+    assert.ok(g.clio.y < y0);
     for (let i = 0; i < 20; i++) E.flappyStep(g, 0.05);
-    assert.ok(g.lives < 3 || g.clio.y > E.FL.H / 2 - 100, 'sans battement, elle finit par tomber (ou par se cogner)');
+    assert.ok(g.lives < 3 || g.clio.y > y0 - 100, 'sans battement, elle finit par tomber (ou par se cogner)');
 });
 
 // Mène Clio devant la bonne (ou la mauvaise) ouverture de la prochaine porte, à chaque pas.
@@ -197,7 +198,7 @@ test('Flappy : la mauvaise ouverture (une date plus ancienne) coûte une vie et 
     assert.ok(g.mistakes[0].expected.date > g.mistakes[0].previous.date);
 });
 
-test('Flappy : heurter un pilier ou le plafond coûte une vie, avec un court répit ; trois vies et c\'est fini', () => {
+test('Flappy : heurter un pilier ou le sol coûte une vie ; le monde attend alors le prochain battement, Clio repart devant une ouverture', () => {
     const g = E.createFlappy(pool(), seeded(4));
     E.flappyFlap(g);
     const gate = g.gates[1];
@@ -208,19 +209,91 @@ test('Flappy : heurter un pilier ou le plafond coûte une vie, avec un court ré
     const events = E.flappyStep(g, 0.01);
     assert.ok(events.includes('hit'));
     assert.equal(g.lives, 2);
+    assert.equal(g.started, false);
+    assert.equal(g.waiting, true);
+    assert.deepEqual(E.flappyStep(g, 1), [], 'le monde est figé tant qu\'on n\'a pas battu des ailes');
+    // Les portes jugées ont disparu ; la prochaine est à bonne distance et Clio est au centre d'une de ses ouvertures.
+    const next = g.gates[0];
+    assert.ok(!next.done);
+    assert.ok(next.x >= g.clio.x + E.FL.READY_GAP - 0.001);
+    assert.ok(next.gaps.some((p) => Math.abs(p.y - g.clio.y) < 0.001));
     assert.ok(g.invulnerable > 1);
-    assert.equal(g.clio.y, E.FL.H / 2, 'Clio repart du milieu');
-    // Pendant le répit, plafond et sol ne coûtent rien.
+    E.flappyFlap(g);
+    assert.equal(g.waiting, false);
+    // Le plafond n'est plus mortel.
     g.clio.y = -50;
     assert.ok(!E.flappyStep(g, 0.01).includes('hit'));
     assert.equal(g.lives, 2);
+    assert.ok(g.clio.y >= g.clio.r - 0.001);
+    // Le sol l'est, une fois le répit passé.
     for (let i = 0; i < 2; i++) {
         g.invulnerable = 0;
-        g.clio.y = -50;
+        g.started = true;
+        g.clio.y = E.FL.H;
         E.flappyStep(g, 0.01);
     }
     assert.ok(g.over);
     assert.deepEqual(E.flappyStep(g, 0.1), []);
+});
+
+// Un pilote automatique qui ne connaît que la physique : il vise l'ouverture voulue de la prochaine porte.
+function autopilot(g, seconds, choose) {
+    const events = [];
+    for (let i = 0; i < seconds * 60 && !g.over; i++) {
+        if (g.waiting) E.flappyFlap(g);
+        const gate = g.gates.find((x) => !x.done);
+        const target = gate ? choose(gate).y : (E.FL.H - E.FL.GROUND) / 2;
+        const c = g.clio;
+        if (c.y > target + 20) E.flappyFlap(g);
+        E.flappyStep(g, 1 / 60).forEach((e) => events.push(e));
+    }
+    return events;
+}
+
+test('Flappy : la partie est jouable — un pilote qui bat des ailes à la bonne cadence passe trois chaînes sans une égratignure', () => {
+    for (const seed of [1, 4, 9]) {
+        const g = E.createFlappy(pool(), seeded(seed));
+        const events = autopilot(g, 190, (gate) => gate.gaps.find((p) => p.correct));
+        assert.equal(g.lives, 3, `seed ${seed} : ${events.join(',')}`);
+        assert.ok(g.rounds >= 3, `seed ${seed} : ${g.rounds} manches`);
+    }
+});
+
+test('Flappy : après un choc, le pilote repart sans se cogner de nouveau', () => {
+    for (let seed = 1; seed < 15; seed++) {
+        const g = E.createFlappy(pool(), seeded(seed));
+        E.flappyFlap(g);
+        const gate = g.gates[1];
+        gate.x = g.clio.x - 5;
+        g.clio.y = (gate.gaps[0].y + gate.gaps[1].y) / 2;
+        E.flappyStep(g, 0.01);
+        assert.equal(g.lives, 2);
+        const events = autopilot(g, 25, (x) => x.gaps.find((p) => p.correct));
+        assert.equal(g.lives, 2, `seed ${seed} : ${events.join(',')}`);
+    }
+});
+
+test('Flappy : la hauteur d\'un battement ne dépend pas de la fluidité de l\'écran', () => {
+    const peak = (dt) => {
+        const g = E.createFlappy(pool(), seeded(4));
+        E.flappyFlap(g);
+        let top = g.clio.y;
+        for (let t = 0; t < 0.6; t += dt) { E.flappyStep(g, dt); top = Math.min(top, g.clio.y); }
+        return top;
+    };
+    const fine = peak(1 / 120), coarse = peak(0.05);
+    assert.ok(Math.abs(fine - coarse) < 1.5, `${fine} / ${coarse}`);
+});
+
+test('Flappy : le décor suit l\'époque du dernier repère', () => {
+    assert.equal(E.flappyEra(-10000), 'prehistoire');
+    assert.equal(E.flappyEra(-2500), 'orient');
+    assert.equal(E.flappyEra(-400), 'antique');
+    assert.equal(E.flappyEra(476), 'antique');
+    assert.equal(E.flappyEra(1066), 'medieval');
+    assert.equal(E.flappyEra(1648), 'moderne');
+    assert.equal(E.flappyEra(1830), 'industriel');
+    assert.equal(E.flappyEra(1969), 'contemporain');
 });
 
 test('Flappy : les pleins d\'une porte laissent exactement les ouvertures libres', () => {

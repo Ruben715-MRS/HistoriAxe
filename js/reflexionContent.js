@@ -8,7 +8,7 @@
 //  - CAUSES : { id, cause: { title, year }, effect: { title, year }, explain }. Les années sont négatives avant J.-C. ;
 //    la cause n'est jamais postérieure à sa conséquence. Une explication dit le mécanisme, pas seulement l'ordre.
 //  - SCENES : { id, title, when, intro, elements: [{ icon, text, anachronism, why }] }. Huit éléments par scène, dont
-//    deux ou trois anachronismes ; `why` dit, pour un anachronisme, quand la chose apparaît, et pour un élément à sa place,
+//    un à quatre anachronismes (le nombre varie d'une scène à l'autre et n'est jamais annoncé au joueur) ; `why` dit, pour un anachronisme, quand la chose apparaît, et pour un élément à sa place,
 //    pourquoi il est bien de l'époque (montré au joueur qui l'a désigné à tort).
 
 (function (root, factory) {
@@ -75,16 +75,16 @@
     var SCENES = [
         {
             id: "louisxiv", title: "Un banquet à la cour de Louis XIV", when: "vers 1680",
-            intro: "Au château de Versailles, le roi dîne devant la cour. Quels éléments n'ont rien à faire dans cette scène ?",
+            intro: "Au château de Versailles, le roi dîne devant la cour. Quelque chose n'a rien à faire dans cette scène…",
             elements: [
                 { icon: "🕯️", text: "Des bougies dans les lustres", anachronism: false, why: "On s'éclairait à la bougie : c'est bien l'éclairage de l'époque." },
                 { icon: "🎻", text: "Un orchestre de violons", anachronism: false, why: "Lully dirigeait les « Vingt-quatre violons du roi »." },
                 { icon: "☕", text: "Du café servi dans de petites tasses", anachronism: false, why: "Le café est à la mode à la cour depuis 1669, après la visite de l'ambassadeur ottoman." },
                 { icon: "🧑‍🦳", text: "Des perruques poudrées", anachronism: false, why: "Louis XIV a lancé la mode des grandes perruques." },
                 { icon: "🍷", text: "Du vin servi dans des verres", anachronism: false, why: "Le vin et les verres existent depuis l'Antiquité." },
-                { icon: "💡", text: "Une ampoule électrique au plafond", anachronism: true, why: "L'ampoule à incandescence date des années 1870-1880 (Swan, Edison)." },
+                { icon: "🪞", text: "Des miroirs de la galerie des Glaces", anachronism: false, why: "La galerie des Glaces de Versailles est achevée en 1684 : ses miroirs sont l'un des décors du règne." },
                 { icon: "📷", text: "Un photographe qui règle son appareil", anachronism: true, why: "La photographie est inventée en 1839, avec le daguerréotype." },
-                { icon: "🥤", text: "Un gobelet en plastique", anachronism: true, why: "Le plastique moderne ne se répand qu'au XXe siècle." }
+                { icon: "🥂", text: "Des coupes en cristal", anachronism: false, why: "Verres et coupes en cristal ornent les tables de la cour." }
             ]
         },
         {
@@ -97,8 +97,8 @@
                 { icon: "🗣️", text: "Un philosophe qui discute avec des passants", anachronism: false, why: "Socrate arpente l'agora à cette époque." },
                 { icon: "🧀", text: "Du fromage de chèvre", anachronism: false, why: "Le fromage fait partie de l'alimentation grecque ordinaire." },
                 { icon: "🥔", text: "Des pommes de terre", anachronism: true, why: "Originaire d'Amérique, la pomme de terre n'arrive en Europe qu'après 1492." },
-                { icon: "🍅", text: "Des tomates", anachronism: true, why: "La tomate vient d'Amérique : elle n'est connue en Europe que depuis le XVIe siècle." },
-                { icon: "👓", text: "Un marchand de lunettes de vue", anachronism: true, why: "Les lunettes sont inventées en Italie vers la fin du XIIIe siècle." }
+                { icon: "🍇", text: "Des grappes de raisin", anachronism: false, why: "La vigne est cultivée en Grèce depuis très longtemps : raisins et vin sont courants." },
+                { icon: "🐟", text: "Du poisson salé", anachronism: false, why: "La pêche et le poisson salé nourrissent la cité, qui commerce par la mer." }
             ]
         },
         {
@@ -111,8 +111,8 @@
                 { icon: "⛺", text: "Des tentes en cuir alignées dans un camp fortifié", anachronism: false, why: "Chaque soir, la légion construit un camp selon un plan fixe." },
                 { icon: "🍞", text: "Des galettes de blé cuites sur place", anachronism: false, why: "Le blé est la base de la ration des soldats." },
                 { icon: "💣", text: "Un canon sur un rempart", anachronism: true, why: "L'artillerie à poudre n'apparaît en Europe qu'au XIVe siècle." },
-                { icon: "🚬", text: "Un soldat qui fume", anachronism: true, why: "Le tabac vient d'Amérique : les Européens ne le connaissent qu'au XVIe siècle." },
-                { icon: "🏇", text: "Un cavalier dont les pieds reposent sur des étriers", anachronism: true, why: "L'étrier n'arrive en Europe qu'au début du Moyen Âge, entre le VIe et le VIIIe siècle." }
+                { icon: "🍷", text: "De la posca, mélange d'eau et de vinaigre", anachronism: false, why: "La posca est la boisson courante des soldats romains." },
+                { icon: "🐎", text: "Un cavalier sur une selle à quatre cornes", anachronism: false, why: "Les cavaliers romains montent sur une selle à cornes : les étriers n'arrivent en Europe que vers le VIe-VIIIe siècle." }
             ]
         },
         {
@@ -126,7 +126,7 @@
                 { icon: "🐂", text: "Un attelage de bœufs qui laboure", anachronism: false, why: "Le labour se fait avec des bœufs ou des chevaux." },
                 { icon: "🕰️", text: "Une horloge mécanique au clocher", anachronism: true, why: "Les horloges mécaniques apparaissent à la fin du XIIIe siècle." },
                 { icon: "🌽", text: "Des épis de maïs", anachronism: true, why: "Le maïs vient d'Amérique : les Européens ne le connaissent qu'au XVIe siècle." },
-                { icon: "📖", text: "Un livre imprimé", anachronism: true, why: "L'imprimerie de Gutenberg date d'environ 1450." }
+                { icon: "🔔", text: "Une cloche qui rythme les heures de prière", anachronism: false, why: "Les cloches des églises et des monastères rythment la journée au Moyen Âge." }
             ]
         },
         {
@@ -139,7 +139,7 @@
                 { icon: "🛢️", text: "Des tonneaux de biscuits et d'eau", anachronism: false, why: "Les vivres de bord sont conservés en tonneaux." },
                 { icon: "⚓", text: "Une ancre en fer", anachronism: false, why: "L'ancre est un outil de navigation depuis l'Antiquité." },
                 { icon: "🚢", text: "Un bateau à vapeur", anachronism: true, why: "Les premiers bateaux à vapeur apparaissent au début du XIXe siècle (Fulton, 1807)." },
-                { icon: "📐", text: "Un sextant", anachronism: true, why: "Le sextant est inventé vers 1730." },
+                { icon: "⏳", text: "Un sablier pour mesurer le temps", anachronism: false, why: "Le sablier est l'instrument des marins pour mesurer les quarts avant les chronomètres." },
                 { icon: "🇺🇸", text: "Un drapeau des États-Unis", anachronism: true, why: "Les États-Unis n'existent que depuis 1776." }
             ]
         },
@@ -153,7 +153,7 @@
                 { icon: "🔱", text: "Des piques et des fourches", anachronism: false, why: "Les émeutiers sont mal armés et prennent ce qu'ils trouvent." },
                 { icon: "🏰", text: "Une forteresse aux tours massives", anachronism: false, why: "La Bastille est une ancienne forteresse devenue prison." },
                 { icon: "🚴", text: "Un cycliste qui passe en trombe", anachronism: true, why: "Le vélocipède à pédales n'apparaît que vers 1860." },
-                { icon: "🔦", text: "Des lampadaires au gaz", anachronism: true, why: "L'éclairage au gaz arrive à Paris dans les années 1820." },
+                { icon: "🏮", text: "Des lanternes à huile suspendues au-dessus de la rue", anachronism: false, why: "Les réverbères à huile éclairent Paris depuis 1766 ; l'éclairage au gaz n'y arrive que vers 1820." },
                 { icon: "📡", text: "Un télégraphe électrique", anachronism: true, why: "Le télégraphe électrique date des années 1830 (Morse, 1837)." }
             ]
         },
@@ -168,7 +168,7 @@
                 { icon: "💥", text: "Une pluie d'obus d'artillerie lourde", anachronism: false, why: "L'artillerie cause la majorité des pertes." },
                 { icon: "🛸", text: "Un drone de surveillance", anachronism: true, why: "Les drones militaires modernes n'existent que depuis la fin du XXe siècle." },
                 { icon: "📱", text: "Un soldat qui téléphone avec son portable", anachronism: true, why: "Le téléphone portable se répand dans les années 1990." },
-                { icon: "🚜", text: "Un char Tigre sur la route", anachronism: true, why: "Le char Tigre est mis en service en 1942, pendant la Seconde Guerre mondiale." }
+                { icon: "🚚", text: "Un camion sur la Voie sacrée", anachronism: false, why: "La Voie sacrée ravitaille Verdun : jusqu'à un camion toutes les quatorze secondes en 1916." }
             ]
         },
         {
@@ -221,7 +221,7 @@
                 { icon: "🪶", text: "Une plume d'oie et un encrier", anachronism: false, why: "On écrit à la plume d'oie." },
                 { icon: "🎹", text: "Un clavecin dans un coin du salon", anachronism: false, why: "Le clavecin est très répandu au XVIIIe siècle." },
                 { icon: "☕", text: "Du café dans des tasses de porcelaine", anachronism: false, why: "Le café est la boisson des salons et des cafés philosophiques." },
-                { icon: "🕯️", text: "Des chandeliers sur la cheminée", anachronism: false, why: "L'éclairage est à la bougie." },
+                { icon: "🔌", text: "Une prise électrique au mur", anachronism: true, why: "L'électricité domestique ne se répand qu'à la fin du XIXe siècle ; vers 1760, on étudie à peine l'électricité statique." },
                 { icon: "🖊️", text: "Un stylo à bille", anachronism: true, why: "Le stylo à bille est breveté en 1938." },
                 { icon: "⌨️", text: "Une machine à écrire", anachronism: true, why: "La machine à écrire commerciale date des années 1870." },
                 { icon: "🛢️", text: "Une lampe à pétrole", anachronism: true, why: "La lampe à pétrole se répand vers 1850." }
@@ -229,12 +229,12 @@
         },
         {
             id: "vikings", title: "Un drakkar viking", when: "vers 900",
-            intro: "L'équipage approche d'une côte inconnue. Trois détails sont des légendes ou des inventions plus récentes.",
+            intro: "L'équipage approche d'une côte inconnue. Certains détails sont des légendes ou des inventions plus récentes.",
             elements: [
                 { icon: "⛵", text: "Un drakkar à fond plat et à voile carrée", anachronism: false, why: "C'est le navire des Vikings." },
                 { icon: "🛡️", text: "Un bouclier rond en bois", anachronism: false, why: "Les boucliers ronds étaient peints et fixés au bastingage." },
                 { icon: "🪨", text: "Une pierre gravée de runes", anachronism: false, why: "Les Vikings écrivent en runes." },
-                { icon: "🪓", text: "Une hache de guerre", anachronism: false, why: "La hache est leur arme de prédilection." },
+                { icon: "🔫", text: "Un mousquet à mèche", anachronism: true, why: "Les armes à feu portatives n'arrivent en Europe qu'au XIVe-XVe siècle, bien après les Vikings." },
                 { icon: "🍺", text: "De l'hydromel dans des cornes à boire", anachronism: false, why: "On boit de l'hydromel et de la bière." },
                 { icon: "🪖", text: "Un casque orné de cornes", anachronism: true, why: "Les casques à cornes sont une image du XIXe siècle, popularisée par les opéras de Wagner." },
                 { icon: "🧭", text: "Une boussole à aiguille", anachronism: true, why: "La boussole n'arrive en Europe qu'au XIIe siècle." },
@@ -249,7 +249,7 @@
                 { icon: "🗼", text: "La tour Eiffel, achevée en 1889", anachronism: false, why: "Elle domine l'Exposition." },
                 { icon: "📞", text: "Un téléphone à manivelle", anachronism: false, why: "Le téléphone existe depuis 1876." },
                 { icon: "💡", text: "Des ampoules électriques qui illuminent le Palais de l'électricité", anachronism: false, why: "La « fée Électricité » est la vedette de l'Exposition." },
-                { icon: "🚲", text: "Un cycliste en costume du dimanche", anachronism: false, why: "Le vélo est très populaire dans les années 1890." },
+                { icon: "📱", text: "Un visiteur qui photographie avec son smartphone", anachronism: true, why: "Le smartphone date des années 2000 : en 1900, on photographie à l'appareil à plaque." },
                 { icon: "✈️", text: "Un avion de ligne à réaction", anachronism: true, why: "Les avions à réaction de ligne n'existent que depuis les années 1950." },
                 { icon: "🏧", text: "Un distributeur de billets", anachronism: true, why: "Le premier distributeur automatique de billets date de 1967." },
                 { icon: "📺", text: "Un écran de télévision", anachronism: true, why: "La télévision ne se diffuse qu'à partir des années 1930-1950." }

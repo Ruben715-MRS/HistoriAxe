@@ -1807,15 +1807,16 @@
     "desc": "Volez entre les piliers : passez par la date qui suit le dernier repère.",
     "board_aria": "Plateau de Flappy Clio",
     "flap": "🐾 Voler",
-    "hint": "Touchez l'écran (ou la barre d'espace) pour battre des ailes. À chaque porte, passez par la date qui SUIT le dernier repère.",
+    "hint": "Touchez l'écran (ou la barre d'espace) pour battre des ailes. À chaque porte, passez par la date qui SUIT le dernier repère. Le décor change avec l'époque. Après un choc, le jeu attend votre prochain battement.",
     "status": "Manche {round} · {lives} · {score} pts",
     "banner_start": "Premier repère : passez par la grande ouverture.",
     "banner_last": "Dernier repère : {year} — {title}",
     "good": "✓ {year} — {title}",
     "wrong": "Cette année est plus ancienne que le dernier repère : il fallait passer par {expected_year}.",
-    "hit": "Aïe ! Un pilier, le sol ou le plafond.",
+    "hit": "Aïe ! Un pilier ou le sol. Touchez pour reprendre.",
     "over_text": "{passed} repères franchis, {score} points.",
-    "mistake": "Vous avez pris {chosen}, plus ancien que le dernier repère, au lieu de {expected_year} (« {expected} »)."
+    "mistake": "Vous avez pris {chosen}, plus ancien que le dernier repère, au lieu de {expected_year} (« {expected} »).",
+    "tap": "Touchez pour voler"
   },
   "race": {
     "title": "Course de chars de la frise",

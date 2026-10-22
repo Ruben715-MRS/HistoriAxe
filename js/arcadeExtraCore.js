@@ -175,12 +175,23 @@
     // === FLAPPY CLIO ===
     // =====================================================================================================
     var FL = {
-        W: 360, H: 440, CLIO_X: 80, CLIO_R: 13, GRAVITY: 1100, FLAP: -340, GATE_W: 46, SPACING: 190, GAP: 96,
-        LIVES: 3, CHAIN: 8, INVULN: 1.2, BASE_SPEED: 110, SPEED_GAIN: 8, MAX_SPEED: 190
+        W: 360, H: 440, CLIO_X: 80, CLIO_R: 11, GRAVITY: 1000, FLAP: -330, MAX_FALL: 360, GATE_W: 46, SPACING: 215, GAP: 112, FIRST_GAP: 150,
+        GROUND: 18, READY_GAP: 150, STEP: 1 / 120, LIVES: 3, CHAIN: 8, INVULN: 1.5, BASE_SPEED: 95, SPEED_GAIN: 6, MAX_SPEED: 150
     };
 
     function flappySpeed(state) {
         return Math.min(FL.MAX_SPEED, FL.BASE_SPEED + FL.SPEED_GAIN * state.rounds);
+    }
+
+    // L'époque du décor, d'après une année : prehistoire, orient, antique, medieval, moderne, industriel, contemporain.
+    function flappyEra(year) {
+        if (year < -3000) return 'prehistoire';
+        if (year < -500) return 'orient';
+        if (year < 500) return 'antique';
+        if (year < 1500) return 'medieval';
+        if (year < 1789) return 'moderne';
+        if (year < 1914) return 'industriel';
+        return 'contemporain';
     }
 
     // Une chaîne : des repères de plus en plus récents. À chaque porte, deux années : la suivante de la chaîne, et une plus ancienne
@@ -192,15 +203,16 @@
         events.forEach(function (event, k) {
             var gate = { x: startX + k * FL.SPACING, w: FL.GATE_W, event: event, done: false, chain: state.chains, k: k };
             if (k === 0) {
-                gate.gaps = [{ y: FL.H / 2, h: 130, year: event.date, correct: true, event: event }];
+                gate.gaps = [{ y: (FL.H - FL.GROUND) / 2, h: FL.FIRST_GAP, year: event.date, correct: true, event: event }];
             } else {
                 var prev = years[k - 1];
                 var spread = Math.max(10, Math.round(Math.abs(prev) * 0.15));
                 var wrong = prev - (1 + Math.floor(state.rng() * spread));
                 for (var guard = 0; guard < 20 && (years.indexOf(wrong) !== -1 || wrong === 0); guard++) wrong -= 1;
                 var okFirst = state.rng() < 0.5;
-                var top = { y: 95 + state.rng() * 55, h: FL.GAP };
-                var bottom = { y: 290 + state.rng() * 55, h: FL.GAP };
+                // Deux ouvertures assez proches pour passer de l'une à l'autre en trois ou quatre battements.
+                var top = { y: 108 + state.rng() * 34, h: FL.GAP };
+                var bottom = { y: 262 + state.rng() * 34, h: FL.GAP };
                 var good = { year: event.date, correct: true, event: event };
                 var bad = { year: wrong, correct: false };
                 gate.gaps = okFirst ? [Object.assign(top, good), Object.assign(bottom, bad)] : [Object.assign(top, bad), Object.assign(bottom, good)];
@@ -214,7 +226,7 @@
     function createFlappy(pool, rng) {
         var state = {
             pool: Arcade.playable(pool), rng: rng || Math.random, w: FL.W, h: FL.H,
-            clio: { x: FL.CLIO_X, y: FL.H / 2, vy: 0, r: FL.CLIO_R }, started: false, invulnerable: 0,
+            clio: { x: FL.CLIO_X, y: (FL.H - FL.GROUND) / 2, vy: 0, r: FL.CLIO_R }, started: false, waiting: true, invulnerable: 0, distance: 0,
             gates: [], chains: 0, chainDone: 0, lives: FL.LIVES, score: 0, passed: 0, rounds: 0, last: null, over: false, mistakes: []
         };
         if (Arcade.pickDistinct(state.pool, state.rng, FL.CHAIN).length < FL.CHAIN) { state.over = true; state.empty = true; return state; }
@@ -222,10 +234,11 @@
         return state;
     }
 
-    // Un battement d'ailes. Le premier lance la partie (avant, Clio flotte).
+    // Un battement d'ailes. Le premier lance la partie (avant, et après chaque choc, le monde attend).
     function flappyFlap(state) {
         if (state.over) return false;
         state.started = true;
+        state.waiting = false;
         state.clio.vy = FL.FLAP;
         return true;
     }
@@ -256,38 +269,60 @@
         if (gate.chain === state.chains - 1) state.chainDone += 1;
     }
 
+    // Une vie en moins. Le monde se met en pause : les portes déjà jugées disparaissent, la prochaine est ramenée à bonne distance et
+    // Clio repart devant l'une de ses ouvertures, au repos, jusqu'au prochain battement (puis un court répit). Jamais dans un pilier.
     function flappyLoseLife(state, events, why) {
         state.lives -= 1;
         events.push(why);
+        if (state.lives <= 0) { state.over = true; events.push('over'); return; }
+        var c = state.clio;
+        state.gates = state.gates.filter(function (g) { return !g.done; });
+        var next = state.gates[0];
+        c.vy = 0;
+        c.y = (FL.H - FL.GROUND) / 2;
+        if (next) {
+            var delta = c.x + FL.READY_GAP - next.x;
+            if (delta > 0) state.gates.forEach(function (g) { g.x += delta; });
+            var near = next.gaps.slice().sort(function (a, b) { return Math.abs(a.y - c.y) - Math.abs(b.y - c.y); })[0];
+            c.y = near.y;
+        }
+        state.started = false;
+        state.waiting = true;
         state.invulnerable = FL.INVULN;
-        state.clio.y = FL.H / 2;
-        state.clio.vy = 0;
-        if (state.lives <= 0) { state.over = true; events.push('over'); }
     }
 
-    // Avance de `dt` secondes. Renvoie : 'good' (bonne ouverture), 'wrong' (ouverture plus ancienne), 'hit' (pilier, sol, plafond),
-    // 'round' (la chaîne est terminée), 'over'.
-    function flappyStep(state, dt) {
-        var events = [];
-        if (state.over || !state.started) return events;
+    // Mise en pause (onglet masqué, retour à l'écran) : le monde attend le prochain battement, avec un court répit.
+    function flappyPause(state) {
+        if (state.over || !state.started) return false;
+        state.started = false;
+        state.waiting = true;
+        state.invulnerable = Math.max(state.invulnerable, 0.8);
+        return true;
+    }
+
+    // Un petit pas de simulation (toujours le même : la hauteur d'un battement ne dépend pas de la fluidité de l'écran).
+    function flappySub(state, dt, events) {
         var c = state.clio;
         state.invulnerable = Math.max(0, state.invulnerable - dt);
-        c.vy += FL.GRAVITY * dt;
+        c.vy = Math.min(FL.MAX_FALL, c.vy + FL.GRAVITY * dt);
         c.y += c.vy * dt;
         var speed = flappySpeed(state);
+        state.distance += speed * dt;
         state.gates.forEach(function (g) { g.x -= speed * dt; });
 
-        if (c.y - c.r < 0 || c.y + c.r > FL.H) {
-            if (!state.invulnerable) flappyLoseLife(state, events, 'hit');
-            else { c.y = clamp(c.y, c.r, FL.H - c.r); c.vy = 0; }
-            if (state.over) return events;
+        // Le plafond arrête Clio sans la blesser ; le sol (la bande de terre) est mortel.
+        if (c.y - c.r < 0) { c.y = c.r; if (c.vy < 0) c.vy = 0; }
+        if (c.y + c.r > FL.H - FL.GROUND) {
+            if (!state.invulnerable) { flappyLoseLife(state, events, 'hit'); return; }
+            c.y = FL.H - FL.GROUND - c.r;
+            c.vy = Math.min(c.vy, 0);
         }
         for (var i = 0; i < state.gates.length; i++) {
             var g = state.gates[i];
             if (g.done) continue;
             if (!state.invulnerable && g.x < c.x + c.r && g.x + g.w > c.x - c.r) {
                 var hit = gateSolids(g).some(function (s) { return circleHitsRect(c.x, c.y, c.r, s); });
-                if (hit) { gateDone(state, g); flappyLoseLife(state, events, 'hit'); if (state.over) return events; continue; }
+                if (hit) { gateDone(state, g); flappyLoseLife(state, events, 'hit'); return; }
             }
             // Le choix est jugé quand Clio atteint le milieu de la porte.
             if (g.x + g.w / 2 <= c.x) {
@@ -304,17 +339,29 @@
                     var expected = g.gaps.filter(function (p) { return p.correct; })[0];
                     state.mistakes.push({ chosen: gap.year, expected: expected.event, previous: state.last });
                     flappyLoseLife(state, events, 'wrong');
-                    if (state.over) return events;
+                    return;
                 }
             }
         }
-        // Chaîne terminée : toutes ses portes franchies. La suivante est déjà posée plus loin.
-        var open = state.gates.filter(function (g) { return !g.done; });
-        if (state.chainDone >= FL.CHAIN) {
+    }
+
+    // Avance de `dt` secondes. Renvoie : 'good' (bonne ouverture), 'wrong' (ouverture plus ancienne), 'hit' (pilier ou sol),
+    // 'round' (la chaîne est terminée), 'over'.
+    function flappyStep(state, dt) {
+        var events = [];
+        if (state.over || !state.started) return events;
+        var left = Math.max(0, dt);
+        while (left > 1e-9 && !state.over && state.started) {
+            var h = Math.min(FL.STEP, left);
+            left -= h;
+            flappySub(state, h, events);
+        }
+        // Chaîne terminée : toutes ses portes franchies. La suivante est posée plus loin.
+        if (!state.over && state.chainDone >= FL.CHAIN) {
             state.rounds += 1;
             state.score += 50;
             events.push('round');
-            state.gates = open;
+            state.gates = state.gates.filter(function (g) { return !g.done; });
             flappyChain(state);
         }
         state.gates = state.gates.filter(function (g) { return g.x + g.w > -20; });
@@ -425,7 +472,7 @@
         BO: BO, FL: FL, RACE: RACE,
         createBreakout: createBreakout, breakoutTarget: breakoutTarget, breakoutSpeed: breakoutSpeed, breakoutMovePaddle: breakoutMovePaddle,
         breakoutLaunch: breakoutLaunch, breakoutStep: breakoutStep,
-        createFlappy: createFlappy, flappyFlap: flappyFlap, flappyStep: flappyStep, flappySpeed: flappySpeed, gateSolids: gateSolids,
+        createFlappy: createFlappy, flappyEra: flappyEra, flappyFlap: flappyFlap, flappyPause: flappyPause, flappyStep: flappyStep, flappySpeed: flappySpeed, gateSolids: gateSolids,
         raceQuestion: raceQuestion, createRace: createRace, raceAnswer: raceAnswer, raceScore: raceScore
     };
 }));

@@ -117,11 +117,19 @@ function arcadeFitCanvas(canvas, cols, rows, cellRatio) {
     const cell = width / cols;
     const height = Math.round(cell * cellRatio * rows);
     const dpr = window.devicePixelRatio || 1;
-    canvas.style.width = width + 'px';
-    canvas.style.height = height + 'px';
-    canvas.width = Math.round(width * dpr);
-    canvas.height = Math.round(height * dpr);
+    const pxW = Math.round(width * dpr);
+    const pxH = Math.round(height * dpr);
     const ctx = canvas.getContext('2d');
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    if (canvas.width !== pxW || canvas.height !== pxH) {
+        // Redimensionner efface et réalloue le canevas : seulement quand la taille change, pas à chaque image.
+        canvas.style.width = width + 'px';
+        canvas.style.height = height + 'px';
+        canvas.width = pxW;
+        canvas.height = pxH;
+    } else {
+        ctx.clearRect(0, 0, pxW, pxH);
+    }
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     return { ctx, width, height, cellW: cell, cellH: cell * cellRatio };
 }

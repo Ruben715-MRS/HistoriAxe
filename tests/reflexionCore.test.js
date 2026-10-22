@@ -263,19 +263,21 @@ test('Cause ou conséquence : au moins quarante paires, aux identifiants uniques
     C.CAUSES.forEach((c) => assert.ok(!causeTitles.has(c.effect.title) || c.cause.year < c.effect.year, c.id));
 });
 
-test('Chasse aux anachronismes : treize scènes de huit éléments, deux ou trois anachronismes, chacun expliqué', () => {
+test('Chasse aux anachronismes : treize scènes de huit éléments, un à quatre anachronismes (chaque nombre est représenté), chacun expliqué', () => {
     assert.ok(C.SCENES.length >= 12);
     assert.equal(new Set(C.SCENES.map((s) => s.id)).size, C.SCENES.length);
     C.SCENES.forEach((s) => {
         assert.ok(s.title && s.when && s.intro, s.id);
         assert.equal(s.elements.length, 8, s.id);
         const bad = s.elements.filter((e) => e.anachronism).length;
-        assert.ok(bad >= 2 && bad <= 3, `${s.id} : ${bad} anachronismes`);
+        assert.ok(bad >= 1 && bad <= 4, `${s.id} : ${bad} anachronismes`);
         // L'emoji est tout ce qu'on voit d'un élément à côté de son texte : un doublon prêterait à confusion.
         assert.equal(new Set(s.elements.map((e) => e.icon)).size, 8, `${s.id} : emojis`);
         s.elements.forEach((e) => assert.ok(e.icon && e.text && e.why && e.why.length > 15, `${s.id} : ${e.text}`));
         assert.equal(R.sceneTotal(s), bad);
     });
+    const counts = new Set(C.SCENES.map((s) => R.sceneTotal(s)));
+    [1, 2, 3, 4].forEach((n) => assert.ok(counts.has(n), `aucune scène à ${n} anachronisme(s)`));
 });
 
 // --- Cause ou conséquence : les manches --------------------------------------------------------------------------
@@ -348,7 +350,7 @@ test('Anachronismes : trouver tout sans erreur fait 100 points ; une erreur reti
     assert.deepEqual(R.sceneValidate(g), []);
     R.sceneNext(g);
 
-    // Les trois anachronismes trouvés, plus un élément à sa place désigné à tort : 3 − 1 sur 3 = 67 points.
+    // Tous les anachronismes trouvés, plus un élément à sa place désigné à tort : (n − 1) / n des points.
     const scene2 = R.sceneRound(g).scene;
     const bad = indexOfAnachronisms(scene2);
     bad.forEach((i) => R.sceneToggle(g, i));

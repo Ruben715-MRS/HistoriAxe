@@ -552,7 +552,16 @@ voulue de `#screen-arcade`, ses textes dans `ui/fr.json`, et sa ligne dans `rend
   à la souris ou aux flèches ; un tap lance la balle. Boucle `requestAnimationFrame` dont chaque pas `breakoutStep(état, dt)` est pur.
 - **Flappy Clio** (`ArcadeExtraCore.createFlappy`) : Clio vole (un tap = un battement) entre des piliers qui portent des années ; il faut passer par
   l'ouverture qui suit l'ordre croissant, pas par le leurre (une année plus ancienne que la précédente). Le premier pilier n'a qu'une large ouverture
-  pour s'échauffer ; trois vies, une courte invulnérabilité après un choc ; huit portes par série, de plus en plus vite.
+  pour s'échauffer ; trois vies ; huit portes par série, de plus en plus vite. **Stabilité** : la simulation avance par pas fixes de 1/120 s (la
+  hauteur d'un battement ne dépend plus de la fluidité de l'écran), la chute est plafonnée, le plafond arrête Clio sans la blesser (seuls les
+  piliers et le sol coûtent une vie), et après un choc le monde **attend le prochain battement** : les portes jugées disparaissent, la suivante est
+  ramenée à bonne distance et Clio repart au centre d'une de ses ouvertures (avant, elle réapparaissait au milieu de l'écran, souvent *dans* un
+  pilier, d'où des chocs en cascade). Une pause automatique quand l'onglet est masqué ; le canevas n'est plus réalloué à chaque image. Un test
+  fait voler un pilote automatique à la cadence humaine sur 900 s sans une égratignure. **Décor 2D** (`js/app/flappy-backdrop.js`, dessiné au
+  canevas, sans image) : ciel, nuages, collines, monuments et sol défilent en parallaxe et changent avec l'époque du dernier repère franchi
+  (préhistoire : volcan et cromlech ; Orient : pyramides et ziggourat ; Antiquité : temple grec, aqueduc, amphithéâtre ; Moyen Âge : château,
+  cathédrale, moulin ; Temps modernes : palais à dôme, caravelle ; ère industrielle : usine, locomotive ; monde contemporain : tour, gratte-ciel,
+  fusée), avec un fondu entre deux époques.
 - **Course de chars de la frise** (`ArcadeExtraCore.createRace`) : douze cases. Un événement est nommé, on choisit son année parmi quatre ; une bonne
   réponse avance le char d'une case, de deux en moins de 4 secondes (turbo). Face à l'ordinateur (facile, normal, difficile : il avance 50 %, 65 % ou
   80 % du temps), ou **à deux sur le même appareil** (tour à tour, avec un écran de passation entre les joueurs pour cacher la question).
@@ -591,7 +600,7 @@ Deux mini-jeux de plus, dont le contenu écrit à la main est **à relire par un
   seulement l'ordre. 100 points par bonne réponse. Un test vérifie que la cause n'est jamais postérieure à sa conséquence.
 - **Chasse aux anachronismes** (`ReflexionContent.SCENES`) : cinq scènes sur treize (banquet de Louis XIV, agora d'Athènes, camp romain, village de l'an 1100,
   port de Palos, Bastille, Verdun, New York 1925, Chine des Han, laboratoire de Lavoisier, salon des Lumières, drakkar viking, Exposition de 1900). Huit
-  éléments par scène, dont deux ou trois anachronismes ; on touche ceux qu'on croit déplacés, puis on valide : 100 points si tout est trouvé sans erreur,
+  éléments par scène, dont **un, deux, trois ou quatre** anachronismes (le nombre varie d'une scène à l'autre et n'est jamais annoncé) ; on touche ceux qu'on croit déplacés, puis on valide : 100 points si tout est trouvé sans erreur,
   un élément à sa place désigné à tort retire autant qu'un anachronisme trouvé en rapporte. Chaque tuile se colore (trouvé, manqué, désigné à tort) et
   **chaque élément est expliqué** (quand la chose est inventée, ou pourquoi elle est bien de l'époque : le café de Louis XIV date de 1669). Les scènes
   sont décrites par du texte et des emojis : le dépôt ne contient pas d'illustrations de scènes ; en ajouter se ferait en remplaçant `icon` par une image.
