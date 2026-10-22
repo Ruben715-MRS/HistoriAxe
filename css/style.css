@@ -5591,6 +5591,23 @@ textarea.form-input {
     color: var(--text-dark) !important;
 }
 
+:root[data-theme="dark"] .multiplayer-setup-container {
+    background: var(--surface);
+    color: var(--text-dark);
+}
+
+:root[data-theme="dark"] .podium-row {
+    background: var(--surface-2);
+}
+
+:root[data-theme="dark"] .podium-row.gold { background: rgba(255, 215, 0, 0.14); }
+:root[data-theme="dark"] .podium-row.silver { background: rgba(192, 192, 192, 0.14); }
+:root[data-theme="dark"] .podium-row.bronze { background: rgba(205, 127, 50, 0.16); }
+
+:root[data-theme="dark"] .multiplayer-setup-container h2 {
+    color: var(--text-dark);
+}
+
 /* Champs de formulaire dans les modales et écrans de configuration (pseudo défi du jour, mode du bouton « Jouer »,
            etc.) : en mode sombre, même fond marine que la barre de recherche, avec le texte clair du thème. */
 :root[data-theme="dark"] .form-input,
