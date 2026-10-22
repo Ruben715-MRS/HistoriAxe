@@ -5591,14 +5591,15 @@ textarea.form-input {
     color: var(--text-dark) !important;
 }
 
-/* Champs de formulaire dans les modales et écrans de configuration (pseudo défi du jour, etc.) :
-           Gardent un fond blanc et un texte noir bien contrasté et lisible en mode sombre comme en mode clair */
+/* Champs de formulaire dans les modales et écrans de configuration (pseudo défi du jour, mode du bouton « Jouer »,
+           etc.) : en mode sombre, même fond marine que la barre de recherche, avec le texte clair du thème. */
 :root[data-theme="dark"] .form-input,
 :root[data-theme="dark"] #daily-pseudo-input,
 :root[data-theme="dark"] .multiplayer-setup-container input,
 :root[data-theme="dark"] .multiplayer-setup-container select {
-    background: #ffffff !important;
-    color: #141d23 !important;
+    background: #17233A !important;
+    border-color: #2A3B5C !important;
+    color: var(--text-dark) !important;
 }
 
 :root[data-theme="dark"] .form-input::placeholder,
