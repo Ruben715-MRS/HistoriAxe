@@ -295,11 +295,29 @@ function toolCountriesRenderFiche(country) {
         note.textContent = country.note;
         panel.appendChild(note);
     }
+    const nation = toolCountriesNationalTheme(country);
+    if (nation) {
+        const play = document.createElement('button');
+        play.type = 'button';
+        play.className = 'btn tool-countries-play';
+        play.textContent = t('tools.countries_play', { theme: nation.name });
+        play.onclick = () => openThemeAt(nation.ci, nation.si, nation.ti);
+        panel.appendChild(play);
+    }
     const events = document.createElement('div');
     events.className = 'tool-countries-events';
     events.id = 'tool-countries-events';
     panel.appendChild(events);
     toolCountriesRenderEvents(country.id);
+}
+
+// Le thème « Histoire de … » de ce pays (les « Histoires nationales » portent le drapeau du pays dans leur nom), s'il existe dans le pack chargé.
+function toolCountriesNationalTheme(country) {
+    if (!country.iso2 || typeof getAllThemesWithPath !== 'function') return null;
+    const flag = CountriesCore.flagEmoji(country.iso2);
+    const found = getAllThemesWithPath().find(item => item.theme.nom.indexOf(flag) !== -1 && /^Histoire/.test(item.theme.nom));
+    if (!found) return null;
+    return { name: found.theme.nom.replace(flag, '').trim(), ci: found.ci, si: found.si, ti: found.ti };
 }
 
 // Les événements de l'app situés dans ce pays : les points de l'Atlas des événements, retrouvés par leur position dans le contour.

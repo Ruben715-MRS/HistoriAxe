@@ -211,6 +211,24 @@ test('atlas des pays : la recherche donne la fiche, avec drapeau, capitale, popu
     await expect(page.locator('#modal-details')).toBeVisible();
 });
 
+test('atlas des pays : un bouton « Jouer sur Histoire de … » entre la fiche et les événements ouvre le thème du pays', async ({ page }) => {
+    await page.waitForFunction(() => window.bdd && window.bdd.some(c => (c.themes || []).some(t => t.id === 'thm_aut')), null, { timeout: 45_000 });
+    await ouvrir(page, 'Atlas des pays');
+    await page.waitForFunction(() => typeof countriesData !== 'undefined' && countriesData !== null);
+    await page.locator('#tool-countries-input').fill('france');
+    await page.locator('.tool-countries-hit', { hasText: 'France' }).first().click();
+    const fiche = page.locator('#tool-countries-fiche');
+    const play = fiche.locator('.tool-countries-play');
+    await expect(play).toHaveText('Jouer sur Histoire de France');
+    // le bouton vient après les faits et avant les événements extraits
+    const order = await fiche.evaluate(el => [...el.children].map(c => c.className || c.tagName));
+    expect(order.indexOf('btn tool-countries-play')).toBeGreaterThan(order.indexOf('tool-countries-facts'));
+    expect(order.indexOf('btn tool-countries-play')).toBeLessThan(order.indexOf('tool-countries-events'));
+    await play.click();
+    expect(['screen-modes', 'screen-axes']).toContain(await visibleScreen(page));
+    expect(await page.evaluate(() => getCurrentThemeList()[selectedThemeIndex].id)).toBe('thm_fr');
+});
+
 test('atlas des pays : une capitale se cherche aussi, et un statut contesté est dit', async ({ page }) => {
     await ouvrir(page, 'Atlas des pays');
     await page.waitForFunction(() => typeof countriesData !== 'undefined' && countriesData !== null);

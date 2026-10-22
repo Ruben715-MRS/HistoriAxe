@@ -12319,3 +12319,9 @@ input:not([type="range"]), label, select, summary, textarea {
         transition: none;
     }
 }
+
+.tool-countries-play {
+    display: block;
+    width: 100%;
+    margin: 12px 0;
+}
