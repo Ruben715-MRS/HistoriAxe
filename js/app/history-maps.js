@@ -1,7 +1,8 @@
 // =========================================================================
 // === LES CARTES HISTORIQUES (écran de la boîte à outils) ===
 // =========================================================================
-// On choisit une entité (Mésopotamie, Empire romain…), puis un instantané daté ; la carte colore la zone, la fiche dit qui, quand, où,
+// Deux façons de regarder : PAR EMPIRE (on choisit une tranche d'époque, une entité, puis un instantané daté) ou PAR DATE (un curseur
+// montre tout ce qui existe à l'année choisie). Par empire : la carte colore la zone, la fiche dit qui, quand, où,
 // et liste les événements de l'app situés dans cette zone pendant la période de l'entité. Les contours sont dessinés à la main et
 // approximatifs (js/historyMapsCore.js) : l'écran le dit. Ils peuvent déborder sur la mer ; un masque de mer, calculé à partir des
 // contours des pays actuels (assets/geo/countries.json, chargés par js/app/countries.js), ne laisse colorée que la terre ferme.
@@ -11,13 +12,19 @@ let historyMap = null;
 let historyMapReady = false;
 let historyEntityId = 'rome';
 let historySnapshotId = null;
+let historyMode = 'entity';        // 'entity' : un empire et ses dates ; 'date' : tout ce qui existe à une date (curseur)
+let historyCategory = 'avant-500'; // une tranche d'apogée (HistoryMapsCore.CATEGORIES), ou 'tous'
+let historyYear = 1500;
+const HISTORY_PRESETS = [-500, 117, 800, 1250, 1500, 1683, 1812, 1920];
 const historyEventsCache = new Map();
 
 function toolHistoryInit() {
     const status = document.getElementById('tool-history-status');
     status.textContent = t('tools.history_loading');
+    if (!document.getElementById('tool-history-cats').firstChild) toolHistoryRenderPresets();
+    toolHistoryRenderCategories();
     toolHistoryRenderEntities();
-    toolHistorySelect(historyEntityId, historySnapshotId, { keepMap: true });
+    toolHistoryApplyMode();
     countriesLoad().then(ok => {
         if (!ok) { status.textContent = t('tools.countries_error'); return; }
         status.textContent = '';
@@ -29,11 +36,59 @@ function toolHistoryInit() {
     });
 }
 
-// --- Les puces d'entités et les dates -----------------------------------------------------------
+// --- Les modes : un empire, ou une date ------------------------------------------------------------
+function toolHistoryMode(mode) {
+    historyMode = mode === 'date' ? 'date' : 'entity';
+    toolHistoryApplyMode();
+}
+
+function toolHistoryApplyMode() {
+    const date = historyMode === 'date';
+    document.getElementById('tool-history-mode-entity').setAttribute('aria-pressed', date ? 'false' : 'true');
+    document.getElementById('tool-history-mode-date').setAttribute('aria-pressed', date ? 'true' : 'false');
+    document.getElementById('tool-history-entity-block').classList.toggle('hidden', date);
+    document.getElementById('tool-history-date-block').classList.toggle('hidden', !date);
+    if (historyMap && historyMapReady) historyMap.setPaintProperty('zones-fill', 'fill-opacity', date ? 0.55 : 0.72);
+    if (date) {
+        document.getElementById('tool-history-slider').value = String(HistoryMapsCore.yearToPosition(historyYear));
+        toolHistoryDateRender();
+    } else {
+        toolHistorySelect(historyEntityId, historySnapshotId, { keepMap: true });
+    }
+}
+
+// --- Les puces : tranches, entités, dates ---------------------------------------------------------------
+function toolHistoryRenderCategories() {
+    const holder = document.getElementById('tool-history-cats');
+    while (holder.firstChild) holder.removeChild(holder.firstChild);
+    [{ id: 'tous', label: t('tools.history_all') }].concat(HistoryMapsCore.CATEGORIES).forEach(cat => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'tool-history-chip is-cat';
+        btn.dataset.cat = cat.id;
+        btn.textContent = cat.label;
+        btn.setAttribute('aria-pressed', cat.id === historyCategory ? 'true' : 'false');
+        btn.onclick = () => toolHistorySetCategory(cat.id);
+        holder.appendChild(btn);
+    });
+}
+
+// Choisir une tranche montre ses entités ; si l'entité affichée n'en fait pas partie, on passe à la première de la tranche.
+function toolHistorySetCategory(category) {
+    historyCategory = category;
+    toolHistoryRenderCategories();
+    toolHistoryRenderEntities();
+    const current = HistoryMapsCore.entityById(historyEntityId);
+    if (category !== 'tous' && (!current || HistoryMapsCore.categoryOf(current) !== category)) {
+        const first = HistoryMapsCore.ENTITIES.find(entity => HistoryMapsCore.categoryOf(entity) === category);
+        if (first) toolHistorySelect(first.id, null, {});
+    }
+}
+
 function toolHistoryRenderEntities() {
     const holder = document.getElementById('tool-history-entities');
     while (holder.firstChild) holder.removeChild(holder.firstChild);
-    HistoryMapsCore.ENTITIES.forEach(entity => {
+    HistoryMapsCore.ENTITIES.filter(entity => historyCategory === 'tous' || HistoryMapsCore.categoryOf(entity) === historyCategory).forEach(entity => {
         const btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'tool-history-chip';
@@ -63,18 +118,93 @@ function toolHistoryRenderSnapshots(entity) {
     });
 }
 
+// Sans instantané choisi, on prend celui qui est le plus près de l'apogée de l'entité.
+function historyDefaultSnapshot(entity) {
+    return entity.snapshots.reduce((best, snapshot) => (Math.abs(snapshot.year - entity.peak) < Math.abs(best.year - entity.peak) ? snapshot : best), entity.snapshots[0]);
+}
+
 function toolHistorySelect(entityId, snapshotId, how) {
     const entity = HistoryMapsCore.entityById(entityId) || HistoryMapsCore.ENTITIES[0];
-    // Sans instantané choisi, on prend le dernier (le plus connu : l'apogée ou la fin).
-    const snapshot = HistoryMapsCore.snapshotOf(entity, snapshotId) || entity.snapshots[Math.min(1, entity.snapshots.length - 1)] || entity.snapshots[0];
+    const snapshot = HistoryMapsCore.snapshotOf(entity, snapshotId) || historyDefaultSnapshot(entity);
     historyEntityId = entity.id;
     historySnapshotId = snapshot.id;
+    // L'entité choisie doit rester visible dans les puces : on change de tranche si elle n'en fait pas partie.
+    if (historyCategory !== 'tous' && HistoryMapsCore.categoryOf(entity) !== historyCategory) {
+        historyCategory = HistoryMapsCore.categoryOf(entity);
+        toolHistoryRenderCategories();
+        toolHistoryRenderEntities();
+    }
     document.querySelectorAll('#tool-history-entities .tool-history-chip').forEach(btn => {
         btn.setAttribute('aria-pressed', btn.dataset.entity === entity.id ? 'true' : 'false');
     });
     toolHistoryRenderSnapshots(entity);
     toolHistoryRenderFiche(entity, snapshot);
     historyShowOnMap(entity, snapshot, !(how && how.keepMap));
+}
+
+// --- Le curseur temporel -------------------------------------------------------------------------------
+function toolHistoryRenderPresets() {
+    const holder = document.getElementById('tool-history-presets');
+    while (holder.firstChild) holder.removeChild(holder.firstChild);
+    HISTORY_PRESETS.forEach(year => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'tool-history-chip is-date';
+        btn.dataset.year = String(year);
+        btn.textContent = ToolsCore.yearText(year);
+        btn.onclick = () => { historyYear = year; document.getElementById('tool-history-slider').value = String(HistoryMapsCore.yearToPosition(year)); toolHistoryDateRender(); };
+        holder.appendChild(btn);
+    });
+}
+
+function toolHistorySlide(position) {
+    historyYear = HistoryMapsCore.positionToYear(Number(position));
+    toolHistoryDateRender();
+}
+
+// À une date, toutes les entités qui existent, chacune avec la carte la plus proche ; la liste dit de quelle année est chaque carte.
+function toolHistoryDateRender() {
+    const active = HistoryMapsCore.activeAt(historyYear);
+    document.getElementById('tool-history-year').textContent = ToolsCore.yearText(historyYear);
+    document.querySelectorAll('#tool-history-presets .tool-history-chip').forEach(btn => {
+        btn.setAttribute('aria-pressed', Number(btn.dataset.year) === historyYear ? 'true' : 'false');
+    });
+    const panel = document.getElementById('tool-history-fiche');
+    while (panel.firstChild) panel.removeChild(panel.firstChild);
+    const title = document.createElement('h3');
+    title.className = 'tool-countries-name';
+    title.textContent = t(active.length > 1 ? 'tools.history_active_many' : active.length === 1 ? 'tools.history_active_one' : 'tools.history_active_none', { year: ToolsCore.yearText(historyYear), n: active.length });
+    panel.appendChild(title);
+    if (active.length) {
+        const note = document.createElement('p');
+        note.className = 'tool-small';
+        note.textContent = t('tools.history_active_note');
+        panel.appendChild(note);
+    }
+    const list = document.createElement('div');
+    list.className = 'tool-countries-event-list';
+    active.forEach(item => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'tool-countries-event tool-history-active';
+        btn.dataset.entity = item.entity.id;
+        const dot = document.createElement('span');
+        dot.className = 'tool-history-dot';
+        dot.style.background = item.entity.color;
+        dot.setAttribute('aria-hidden', 'true');
+        btn.appendChild(dot);
+        const name = document.createElement('strong');
+        name.textContent = ' ' + item.entity.name;
+        btn.appendChild(name);
+        const map = document.createElement('small');
+        map.className = 'tool-row-note';
+        map.textContent = ' · ' + t('tools.history_map_of', { year: ToolsCore.yearText(item.snapshot.year), label: item.snapshot.label });
+        btn.appendChild(map);
+        btn.onclick = () => { historyMode = 'entity'; historyEntityId = item.entity.id; historySnapshotId = item.snapshot.id; toolHistoryApplyMode(); };
+        list.appendChild(btn);
+    });
+    panel.appendChild(list);
+    historyShowYear(active);
 }
 
 // --- La carte --------------------------------------------------------------------------
@@ -129,6 +259,7 @@ function historyEnsureMap() {
     map.on('load', () => {
         historyAddLayers();
         historyMapReady = true;
+        if (historyMode === 'date') { toolHistoryApplyMode(); return; }
         const entity = HistoryMapsCore.entityById(historyEntityId);
         if (entity) historyShowOnMap(entity, HistoryMapsCore.snapshotOf(entity, historySnapshotId), true);
     });
@@ -160,6 +291,17 @@ function historyAddLayers() {
         layout: { 'text-field': ['get', 'n'], 'text-font': ['Noto Sans Regular'], 'text-size': 11, 'text-offset': [0, 0.9], 'text-anchor': 'top', 'text-max-width': 7 },
         paint: { 'text-color': theme === 'dark' ? '#e8eef5' : '#26323f', 'text-halo-color': theme === 'dark' ? '#0f1a26' : '#ffffff', 'text-halo-width': 1.4 }
     });
+}
+
+// Toutes les entités actives à une date : leurs zones, chacune dans la couleur de son entité ; pas de villes (elles se mélangeraient).
+function historyShowYear(active) {
+    if (!historyMap || !historyMapReady) return;
+    const features = [];
+    active.forEach(item => HistoryMapsCore.snapshotFeatures(item.entity, item.snapshot).forEach(f => features.push(f)));
+    historyMap.getSource('zones').setData({ type: 'FeatureCollection', features });
+    const none = { type: 'FeatureCollection', features: [] };
+    historyMap.getSource('places').setData(none);
+    historyMap.getSource('places-names').setData(none);
 }
 
 function historyShowOnMap(entity, snapshot, fit) {
@@ -200,7 +342,7 @@ function toolHistoryRenderFiche(entity, snapshot) {
     text.className = 'tool-small';
     text.textContent = snapshot.text;
     panel.appendChild(text);
-    if (snapshot.zones.length > 1) {
+    if (HistoryMapsCore.legendNeeded(entity, snapshot)) {
         const legend = document.createElement('ul');
         legend.className = 'tool-history-legend';
         snapshot.zones.forEach(zone => {

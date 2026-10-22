@@ -12,15 +12,18 @@ const zoneContains = (zone, [lon, lat]) => C.contains(C.prepare({ type: 'Polygon
 const snapshotContains = (snapshot, point) => snapshot.zones.some(z => zoneContains(z, point));
 const get = (entityId, snapshotId) => { const e = H.entityById(entityId); return { entity: e, snapshot: H.snapshotOf(e, snapshotId) }; };
 
-test('les quatorze entités, aux identifiants uniques et aux champs complets', () => {
-    assert.deepEqual(H.ENTITIES.map(e => e.id), ['mesopotamie', 'egypte', 'mayas', 'perse', 'alexandre', 'rome', 'byzance', 'califat', 'carolingien', 'saint-empire', 'mongol', 'ottoman', 'azteques', 'incas']);
+test('les vingt-trois entités, aux identifiants uniques et aux champs complets', () => {
+    assert.deepEqual(H.ENTITIES.map(e => e.id), ['mesopotamie', 'egypte', 'maurya', 'han', 'rome', 'gupta', 'mayas', 'perse', 'alexandre', 'byzance', 'califat', 'carolingien', 'saint-empire', 'mali', 'mongol', 'ottoman', 'azteques', 'incas', 'ethiopie', 'britannique', 'russe', 'napoleon', 'colonial-francais']);
     assert.equal(new Set(H.ENTITIES.map(e => e.id)).size, H.ENTITIES.length);
     H.ENTITIES.forEach(e => {
         ['name', 'icon', 'color', 'span', 'capital', 'summary'].forEach(k => assert.ok(e[k] && String(e[k]).length >= 1, e.id + ' ' + k));
         assert.match(e.color, /^#[0-9a-f]{6}$/i);
         assert.ok(e.from < e.to, e.id + ' période');
+        assert.equal(typeof e.peak, 'number', e.id + ' apogée');
+        assert.ok(e.peak >= e.from && e.peak <= e.to, e.id + ' : l\'apogée est dans la période');
         assert.ok(e.snapshots.length >= 2, e.id + ' au moins deux dates');
         assert.ok(e.places.length >= 5, e.id + ' villes repères');
+        assert.ok(e.summary.length > 200, e.id + ' résumé');
     });
 });
 
@@ -277,4 +280,156 @@ test('Incas : Cusco, puis les Andes de l\'Équateur au Chili', () => {
     // l'empire s'allonge du nord au sud : de Pasto au Maule, près de 4 000 km
     const box = C.prepare(H.snapshotGeometry(c)).box;
     assert.ok(box[3] - box[1] > 35);
+});
+
+test('Empire maurya : Chandragupta, puis Ashoka et le Kalinga', () => {
+    const e = H.entityById('maurya');
+    const a = H.snapshotOf(e, 'chandragupta'), b = H.snapshotOf(e, 'ashoka');
+    ['Pataliputra', 'Taxila', 'Ujjain', 'Sarnath', 'Kandahar'].forEach(n => assert.ok(snapshotContains(a, place(e, n)), n + ' vers 300'));
+    assert.ok(!snapshotContains(a, place(e, 'Bhubaneswar')), 'le Kalinga n\'est conquis que vers 261');
+    e.places.forEach(p => assert.ok(snapshotContains(b, p.c), p.n + ' sous Ashoka'));
+    const box = s => C.prepare(H.snapshotGeometry(s)).box;
+    assert.ok(box(b)[1] < box(a)[1] - 5, 'Ashoka descend plus au sud');
+});
+
+test('Empire Han : le corridor du Hexi, puis le Tarim', () => {
+    const e = H.entityById('han');
+    const a = H.snapshotOf(e, 'han-occ'), b = H.snapshotOf(e, 'han-or');
+    ['Chang\'an', 'Luoyang', 'Chengdu', 'Pyongyang', 'Hanoï'].forEach(n => assert.ok(snapshotContains(a, place(e, n)), n + ' vers -100'));
+    assert.ok(!snapshotContains(a, place(e, 'Kashgar')), 'Kashgar n\'est pas encore chinoise');
+    e.places.forEach(p => assert.ok(snapshotContains(b, p.c), p.n + ' vers 100'));
+});
+
+test('Empire gupta : du Magadha à l\'âge d\'or', () => {
+    const e = H.entityById('gupta');
+    const a = H.snapshotOf(e, '320'), b = H.snapshotOf(e, '350'), c = H.snapshotOf(e, '400');
+    assert.ok(snapshotContains(a, place(e, 'Pataliputra')) && !snapshotContains(a, place(e, 'Ujjain')) && !snapshotContains(a, place(e, 'Mathura')));
+    ['Pataliputra', 'Mathura', 'Ayodhya', 'Prayagraj', 'Nalanda'].forEach(n => assert.ok(snapshotContains(b, place(e, n)), n + ' en 350'));
+    e.places.forEach(p => assert.ok(snapshotContains(c, p.c), p.n + ' en 400'));
+    const area = s => { const box = C.prepare(H.snapshotGeometry(s)).box; return (box[2] - box[0]) * (box[3] - box[1]); };
+    assert.ok(area(a) < area(b) && area(b) < area(c) + 100);
+});
+
+test('Empire du Mali : le pays mandingue, puis le Sahel', () => {
+    const e = H.entityById('mali');
+    const a = H.snapshotOf(e, '1235'), b = H.snapshotOf(e, '1325');
+    ['Niani', 'Kangaba'].forEach(n => assert.ok(snapshotContains(a, place(e, n)), n + ' en 1235'));
+    ['Tombouctou', 'Gao', 'Walata'].forEach(n => assert.ok(!snapshotContains(a, place(e, n)), n + ' n\'est pas encore dans l\'empire'));
+    e.places.forEach(p => assert.ok(snapshotContains(b, p.c), p.n + ' en 1325'));
+});
+
+test('Empire d\'Éthiopie : des hautes terres à Ménélik II', () => {
+    const e = H.entityById('ethiopie');
+    const a = H.snapshotOf(e, '1270'), b = H.snapshotOf(e, '1450'), c = H.snapshotOf(e, '1900');
+    ['Lalibela', 'Gondar'].forEach(n => assert.ok(snapshotContains(a, place(e, n)), n + ' en 1270'));
+    assert.ok(!snapshotContains(a, place(e, 'Axoum')), 'Axoum est plus au nord');
+    ['Axoum', 'Lalibela', 'Gondar'].forEach(n => assert.ok(snapshotContains(b, place(e, n)), n + ' en 1450'));
+    e.places.forEach(p => assert.ok(snapshotContains(c, p.c), p.n + ' en 1900'));
+});
+
+test('Empire britannique : 1763 et 1920', () => {
+    const e = H.entityById('britannique');
+    const a = H.snapshotOf(e, '1763'), b = H.snapshotOf(e, '1920');
+    ['Calcutta', 'Ottawa'].forEach(n => assert.ok(snapshotContains(a, place(e, n)), n + ' en 1763'));
+    ['Londres', 'Le Cap', 'Sydney', 'Nairobi', 'Singapour'].forEach(n => assert.ok(!snapshotContains(a, place(e, n)), n + ' n\'est pas britannique en 1763'));
+    e.places.forEach(p => assert.ok(snapshotContains(b, p.c), p.n + ' en 1920'));
+    assert.ok(b.zones.length >= 12, 'beaucoup de territoires en 1920');
+    assert.ok(H.legendNeeded(e, a), 'légende demandée en 1763');
+    assert.ok(!H.legendNeeded(e, b), 'pas de légende de quinze zones de la même couleur');
+});
+
+test('Empire russe : de Pierre le Grand à 1895', () => {
+    const e = H.entityById('russe');
+    const a = H.snapshotOf(e, '1721'), b = H.snapshotOf(e, '1796'), c = H.snapshotOf(e, '1895');
+    ['Saint-Pétersbourg', 'Moscou', 'Kiev', 'Irkoutsk'].forEach(n => assert.ok(snapshotContains(a, place(e, n)), n + ' en 1721'));
+    ['Varsovie', 'Tbilissi', 'Tachkent', 'Vladivostok'].forEach(n => assert.ok(!snapshotContains(a, place(e, n)), n + ' n\'est pas russe en 1721'));
+    assert.ok(!snapshotContains(b, place(e, 'Varsovie')), 'Varsovie est prussienne en 1796');
+    assert.equal(b.zones.length, 2, 'l\'Alaska est une zone à part');
+    e.places.forEach(p => assert.ok(snapshotContains(c, p.c), p.n + ' en 1895'));
+});
+
+test('Empire napoléonien : 1804 et 1812', () => {
+    const e = H.entityById('napoleon');
+    const a = H.snapshotOf(e, '1804'), b = H.snapshotOf(e, '1812');
+    ['Paris'].forEach(n => assert.ok(snapshotContains(a, place(e, n))));
+    ['Rome', 'Hambourg', 'Amsterdam', 'Madrid', 'Varsovie', 'Milan'].forEach(n => assert.ok(!snapshotContains(a, place(e, n)), n + ' n\'est pas dans l\'empire en 1804'));
+    ['Paris', 'Rome', 'Hambourg', 'Amsterdam', 'Madrid', 'Varsovie', 'Milan'].forEach(n => assert.ok(snapshotContains(b, place(e, n)), n + ' en 1812'));
+    assert.ok(!snapshotContains(b, place(e, 'Vienne')), 'Vienne reste autrichienne');
+    // l'empire direct et les satellites ont des couleurs différentes
+    const colors = new Set(b.zones.map(z => z.color));
+    assert.equal(colors.size, 2);
+    assert.ok(H.legendNeeded(e, b));
+});
+
+test('Empire colonial français : 1750 et 1930', () => {
+    const e = H.entityById('colonial-francais');
+    const a = H.snapshotOf(e, '1750'), b = H.snapshotOf(e, '1930');
+    ['Québec', 'Pondichéry'].forEach(n => assert.ok(snapshotContains(a, place(e, n)), n + ' en 1750'));
+    ['Alger', 'Dakar', 'Hanoï', 'Tananarive', 'Brazzaville'].forEach(n => assert.ok(!snapshotContains(a, place(e, n)), n + ' n\'est pas française en 1750'));
+    ['Alger', 'Dakar', 'Hanoï', 'Tananarive', 'Brazzaville'].forEach(n => assert.ok(snapshotContains(b, place(e, n)), n + ' en 1930'));
+    assert.ok(!snapshotContains(b, place(e, 'Québec')), 'le Canada est perdu depuis 1763');
+});
+
+// --- Le classement, la légende, le curseur --------------------------------------------------------------
+test('classement : chaque entité dans une tranche d\'apogée, et chaque tranche a des entités', () => {
+    const ids = H.CATEGORIES.map(c => c.id);
+    assert.deepEqual(ids, ['avant-500', '500-1500', '1500-1800', 'depuis-1800']);
+    const groups = {};
+    H.ENTITIES.forEach(e => { const c = H.categoryOf(e); assert.ok(ids.includes(c), e.id); (groups[c] = groups[c] || []).push(e.id); });
+    ids.forEach(id => assert.ok(groups[id] && groups[id].length >= 3, id + ' a au moins trois entités'));
+    assert.deepEqual(groups['avant-500'], ['mesopotamie', 'egypte', 'maurya', 'han', 'rome', 'gupta', 'perse', 'alexandre']);
+    assert.deepEqual(groups['depuis-1800'], ['ethiopie', 'britannique', 'russe', 'napoleon', 'colonial-francais']);
+    assert.equal(H.categoryOf({ peak: 500 }), 'avant-500');
+    assert.equal(H.categoryOf({ peak: 501 }), '500-1500');
+    assert.equal(H.categoryOf({ peak: 1800 }), '1500-1800');
+    assert.equal(H.categoryOf({ peak: 1801 }), 'depuis-1800');
+    assert.equal(Object.values(groups).reduce((n, g) => n + g.length, 0), H.ENTITIES.length);
+});
+
+test('légende : seulement pour des zones qui se distinguent, ou sur demande', () => {
+    const rome = H.entityById('rome'), byz = H.entityById('byzance');
+    assert.equal(H.legendNeeded(rome, H.snapshotOf(rome, 'auguste')), false);
+    assert.equal(H.legendNeeded(rome, H.snapshotOf(rome, 'partage')), true);
+    // Byzance 565 : trois zones de même couleur, mais nommées : on demande la légende
+    assert.equal(H.legendNeeded(byz, H.snapshotOf(byz, '565')), true);
+    assert.equal(H.legendNeeded(byz, H.snapshotOf(byz, '1450')), true);
+});
+
+test('curseur : l\'échelle monte sans à-coups, de 3500 av. J.-C. à 2000', () => {
+    assert.equal(H.positionToYear(0), -3500);
+    assert.equal(H.positionToYear(H.SLIDER_MAX), 2000);
+    let last = -Infinity;
+    for (let p = 0; p <= H.SLIDER_MAX; p++) {
+        const y = H.positionToYear(p);
+        assert.notEqual(y, 0, 'pas d\'an 0 (position ' + p + ')');
+        const astro = y < 0 ? y + 1 : y;
+        assert.ok(astro >= last, 'monotone à la position ' + p);
+        last = astro;
+    }
+    // aller-retour : une position retrouve la même position
+    [0, 100, 150, 349, 350, 351, 500, 750, 900, 1000].forEach(p => assert.equal(H.yearToPosition(H.positionToYear(p)), p, 'position ' + p));
+    // le XIXe siècle occupe une vraie place, pas un cran
+    assert.ok(H.yearToPosition(1900) - H.yearToPosition(1800) > 30);
+    assert.equal(H.yearToPosition(-9999), 0);
+    assert.equal(H.yearToPosition(9999), H.SLIDER_MAX);
+});
+
+test('curseur : ce qui existe à une date, avec la carte la plus proche', () => {
+    const at = year => H.activeAt(year).map(a => a.entity.id + '@' + a.snapshot.year);
+    assert.deepEqual(at(117).filter(x => x.startsWith('rome') || x.startsWith('han')), ['han@100', 'rome@117']);
+    assert.ok(!at(117).some(x => x.startsWith('maurya') || x.startsWith('gupta')), 'Maurya a disparu, les Gupta ne sont pas nés');
+    assert.ok(at(-250).some(x => x.startsWith('maurya')) && at(-250).some(x => x.startsWith('han')) === false, 'les Han ne naissent qu\'en -206');
+    assert.ok(at(1250).includes('mali@1235') && at(1250).includes('saint-empire@1250') && at(1250).includes('mongol@1227'));
+    assert.ok(at(1920).includes('britannique@1920') && at(1920).includes('colonial-francais@1930'), 'la carte la plus proche, même postérieure');
+    assert.ok(at(1920).includes('ottoman@1914'));
+    assert.ok(!at(1920).some(x => x.startsWith('russe')), 'l\'Empire russe finit en 1917');
+    // une année sans aucune entité : -10000 (avant tout) ou 1980 après les derniers empires ?
+    assert.deepEqual(H.activeAt(-9000), []);
+    // `since` : années écoulées depuis la carte (négatif : la carte est postérieure)
+    const rome = H.activeAt(150).find(a => a.entity.id === 'rome');
+    assert.equal(rome.snapshot.year, 117); assert.equal(rome.since, 33);
+    const colonial = H.activeAt(1920).find(a => a.entity.id === 'colonial-francais');
+    assert.equal(colonial.since, -10);
+    // chaque entité est vue au moins une année : aucune n'est cachée par la règle de proximité
+    H.ENTITIES.forEach(e => assert.ok(H.activeAt(e.peak).some(a => a.entity.id === e.id), e.id + ' à son apogée'));
 });

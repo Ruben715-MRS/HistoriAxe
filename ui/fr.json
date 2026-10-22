@@ -2006,8 +2006,8 @@
     "countries_events_none": "Aucun événement de l'app n'est situé ici.",
     "countries_events_more": "Un extrait de {n}, réparti sur toute la période : l'Atlas des événements les montre tous.",
     "history_title": "Cartes historiques",
-    "history_desc": "Quatorze empires et civilisations, de la Mésopotamie aux Incas : leur étendue à plusieurs dates.",
-    "history_intro": "Choisissez un empire ou une civilisation, puis une date : la carte colore la zone qu'il occupait.",
+    "history_desc": "Vingt-trois empires et civilisations, de la Mésopotamie à l'Empire britannique : par empire, ou à une date au curseur.",
+    "history_intro": "Choisissez un empire et une date, ou faites glisser le curseur pour voir tout ce qui existait à une année donnée.",
     "history_entities_label": "Choisir un empire ou une région",
     "history_dates_label": "Choisir une date",
     "history_loading": "Chargement de la carte…",
@@ -2019,6 +2019,18 @@
     "history_events_title": "{n} événement(s) de l'app situé(s) dans cette zone, pendant cette période",
     "history_events_none": "Aucun événement de l'app n'est situé dans cette zone pendant cette période.",
     "periods_system_label": "Découpage de l'histoire selon…",
-    "periods_compare": "L'année {year} dans les autres découpages"
+    "periods_compare": "L'année {year} dans les autres découpages",
+    "history_modes_label": "Façon de regarder",
+    "history_mode_entity": "Par empire",
+    "history_mode_date": "Par date",
+    "history_cats_label": "Époque de l'apogée",
+    "history_all": "Tous",
+    "history_slider_label": "Année",
+    "history_presets_label": "Dates repères",
+    "history_active_none": "En {year}, aucune des entités de cet outil n'existe.",
+    "history_active_note": "Chaque carte est l'instantané le plus proche de l'année choisie ; touchez une ligne pour ouvrir l'empire.",
+    "history_map_of": "carte de {year} : {label}",
+    "history_active_many": "En {year} : {n} empires ou civilisations",
+    "history_active_one": "En {year} : un empire ou une civilisation"
   }
 }

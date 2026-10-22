@@ -224,12 +224,22 @@ test('atlas des pays : une capitale se cherche aussi, et un statut contesté est
     await expect(page.locator('.tool-countries-none')).toBeVisible();
 });
 
-test('cartes historiques : quatorze entités, des dates, une fiche, et les événements de l\'app situés dans la zone', async ({ page }) => {
+test('cartes historiques : classées par époque, des dates, une fiche, et les événements de l\'app situés dans la zone', async ({ page }) => {
     await page.waitForFunction(() => window.bdd && window.bdd.some(c => (c.themes || []).some(t => t.id === 'thm_aut')), null, { timeout: 45_000 });
     await ouvrir(page, 'Cartes historiques');
     expect(await visibleScreen(page)).toBe('screen-tool-history');
-    await expect(page.locator('#tool-history-entities .tool-history-chip')).toHaveCount(14);
-    // Rome au départ : trois dates, et la fiche de l'apogée
+    // vingt-trois entités, rangées en quatre tranches d'apogée : on n'en voit qu'une à la fois
+    await expect(page.locator('#tool-history-cats .tool-history-chip')).toHaveCount(5);
+    await expect(page.locator('#tool-history-cats [data-cat="avant-500"]')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-history-entities .tool-history-chip')).toHaveCount(8);
+    await page.locator('#tool-history-cats [data-cat="500-1500"]').click();
+    await expect(page.locator('#tool-history-entities .tool-history-chip')).toHaveCount(7);
+    await page.locator('#tool-history-cats [data-cat="depuis-1800"]').click();
+    await expect(page.locator('#tool-history-entities .tool-history-chip')).toHaveCount(5);
+    await page.locator('#tool-history-cats [data-cat="tous"]').click();
+    await expect(page.locator('#tool-history-entities .tool-history-chip')).toHaveCount(23);
+    // Rome : trois dates, et la fiche de l'apogée
+    await page.locator('#tool-history-entities [data-entity="rome"]').click();
     await expect(page.locator('#tool-history-entities [data-entity="rome"]')).toHaveAttribute('aria-pressed', 'true');
     await expect(page.locator('#tool-history-snapshots .tool-history-chip')).toHaveCount(3);
     await expect(page.locator('#tool-history-fiche')).toContainText('Trajan');
@@ -248,6 +258,7 @@ test('cartes historiques : quatorze entités, des dates, une fiche, et les évé
 
 test('cartes historiques : changer d\'entité change les dates et la fiche', async ({ page }) => {
     await ouvrir(page, 'Cartes historiques');
+    await page.locator('#tool-history-cats [data-cat="tous"]').click();
     await page.locator('#tool-history-entities [data-entity="mongol"]').click();
     await expect(page.locator('#tool-history-snapshots .tool-history-chip')).toHaveCount(2);
     await expect(page.locator('#tool-history-fiche')).toContainText('Kubilai');
@@ -266,4 +277,40 @@ test('cartes historiques : changer d\'entité change les dates et la fiche', asy
     await page.locator('#tool-history-snapshots [data-snapshot="sumer"]').click();
     await expect(page.locator('#tool-history-fiche')).toContainText('cités-États');
     await expect(page.locator('#tool-history-snapshots [data-snapshot="sumer"]')).toHaveAttribute('aria-pressed', 'true');
+    // un empire de la tranche « depuis 1800 » : pas de légende quand toutes les zones ont la même couleur
+    await page.locator('#tool-history-entities [data-entity="britannique"]').click();
+    await page.locator('#tool-history-snapshots [data-snapshot="1920"]').click();
+    await expect(page.locator('.tool-history-legend')).toHaveCount(0);
+    await expect(page.locator('#tool-history-fiche')).toContainText('soleil ne se couche jamais');
+});
+
+test('cartes historiques : le curseur montre tout ce qui existe à une date', async ({ page }) => {
+    await ouvrir(page, 'Cartes historiques');
+    await page.locator('#tool-history-mode-date').click();
+    await expect(page.locator('#tool-history-mode-date')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-history-entity-block')).toBeHidden();
+    await expect(page.locator('#tool-history-date-block')).toBeVisible();
+    // une date repère : 117, Rome et les Han
+    await page.locator('#tool-history-presets [data-year="117"]').click();
+    await expect(page.locator('#tool-history-year')).toHaveText('117');
+    const actifs = page.locator('#tool-history-fiche .tool-history-active');
+    await expect(actifs.filter({ hasText: 'Empire romain' })).toContainText('carte de 117');
+    await expect(actifs.filter({ hasText: 'Empire Han' })).toContainText('carte de 100');
+    await expect(actifs.filter({ hasText: 'Empire maurya' })).toHaveCount(0);
+    // le curseur : tout à gauche, 3500 av. J.-C. ; tout à droite, l'an 2000, où aucune entité n'existe plus
+    const slider = page.locator('#tool-history-slider');
+    await slider.fill('0');
+    await expect(page.locator('#tool-history-year')).toHaveText('3500 av. J.-C.');
+    await slider.fill('1000');
+    await expect(page.locator('#tool-history-year')).toHaveText('2000');
+    await expect(page.locator('#tool-history-fiche')).toContainText('aucune des entités');
+    await page.locator('#tool-history-presets [data-year="1920"]').click();
+    await expect(actifs.filter({ hasText: 'Empire britannique' })).toBeVisible();
+    await expect(actifs.filter({ hasText: 'Empire colonial français' })).toContainText('carte de 1930');
+    // toucher une ligne ouvre l'empire, à la carte la plus proche
+    await actifs.filter({ hasText: 'Empire britannique' }).click();
+    await expect(page.locator('#tool-history-mode-entity')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-history-fiche')).toContainText('soleil ne se couche jamais');
+    await expect(page.locator('#tool-history-snapshots [data-snapshot="1920"]')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-history-cats [data-cat="depuis-1800"]')).toHaveAttribute('aria-pressed', 'true');
 });

@@ -11363,3 +11363,37 @@ input:not([type="range"]), label, select, summary, textarea {
     padding: 4px 0;
     border-bottom: 1px solid var(--border-soft);
 }
+
+.tool-history-modes {
+    display: flex;
+    gap: 8px;
+}
+
+.tool-history-modes .tool-history-chip {
+    flex: 1;
+    justify-content: center;
+}
+
+.tool-history-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tool-history-chip.is-cat {
+    min-height: 40px;
+    font-size: 13px;
+    padding: 6px 12px;
+}
+
+.tool-history-slider {
+    width: 100%;
+    min-height: 32px;
+}
+
+.tool-history-active {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+}
