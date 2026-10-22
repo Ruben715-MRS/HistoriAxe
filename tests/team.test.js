@@ -254,7 +254,7 @@ maybe('profil d\'équipe : description, pays, langue (enseignant seul), liste fe
     assert.equal((await call(h, 'POST', { action: 'profile', code, deviceId: TEACHER })).code, 400, 'rien à modifier');
     assert.equal((await call(h, 'POST', { action: 'profile', code, deviceId: TEACHER, country: 'QQ' })).code, 400);
     const r = await call(h, 'POST', { action: 'profile', code, deviceId: TEACHER, description: 'Nouvelle description', country: 'BE', lang: 'nl' });
-    assert.deepEqual(r.body, { description: 'Nouvelle description', country: 'BE', lang: 'nl' });
+    assert.deepEqual(r.body, { description: 'Nouvelle description', country: 'BE', lang: 'nl', listed: false });
     s = (await call(h, 'GET', { code, deviceId: dev(1) })).body;
     assert.equal(s.country, 'BE');
     // Vider un champ est permis.
@@ -295,12 +295,16 @@ maybe('une équipe est limitée à 50 membres', async () => {
 
 maybe('recherche d\'équipe par nom ou par identifiant', async () => {
     const { team: h } = loadHandlers();
-    const a = (await call(h, 'POST', { action: 'create', deviceId: TEACHER, name: 'Les Historiens', country: 'FR', lang: 'fr' })).body.code;
-    const b = (await call(h, 'POST', { action: 'create', deviceId: 'second-teacher-0001', name: 'Historiens du soir' })).body.code;
+    const a = (await call(h, 'POST', { action: 'create', deviceId: TEACHER, name: 'Les Historiens', country: 'FR', lang: 'fr', listed: true })).body.code;
+    const b = (await call(h, 'POST', { action: 'create', deviceId: 'second-teacher-0001', name: 'Historiens du soir', listed: true })).body.code;
+    // Une équipe privée (le choix par défaut) ne sort pas dans une recherche par nom, mais se trouve par son identifiant.
+    const privee = (await call(h, 'POST', { action: 'create', deviceId: 'private-owner-00001', name: 'Historiens entre amis' })).body.code;
     await call(h, 'POST', { action: 'join', code: b, deviceId: dev(1), name: 'Léa' });
     assert.equal((await call(h, 'POST', { action: 'search', q: 'h' })).code, 400, 'au moins deux caractères');
     let r = (await call(h, 'POST', { action: 'search', q: 'historiens' })).body.teams;
     assert.deepEqual(r.map((t) => t.code), [b, a], 'les plus peuplées d\'abord');
+    assert.ok(!r.some((t) => t.code === privee), 'une équipe privée n\'apparaît pas par son nom');
+    assert.equal((await call(h, 'POST', { action: 'search', q: privee })).body.teams[0].code, privee, 'mais se trouve par son identifiant');
     assert.deepEqual(r[1], { code: a, name: 'Les Historiens', badge: '0.2.1.0', country: 'FR', lang: 'fr', memberCount: 0 });
     r = (await call(h, 'POST', { action: 'search', q: '#' + a.toLowerCase() })).body.teams;
     assert.equal(r[0].code, a, 'l\'identifiant, avec ou sans dièse');
@@ -366,4 +370,16 @@ maybe('défier une autre équipe : invitation, acceptation, score sur sept jours
     assert.equal((await call(h, 'GET', { code: A, deviceId: dev(1) })).body.challenge.myScore, figé.myScore, 'plus de changement après la fin');
     // Un défi terminé libère les deux équipes.
     assert.equal((await call(h, 'POST', { action: 'challenge', code: A, deviceId: TEACHER, target: C })).code, 200);
+});
+
+maybe('visible dans la recherche : décidé par le créateur, privé par défaut', async () => {
+    const { team: h } = loadHandlers();
+    assert.equal((await call(h, 'POST', { action: 'create', deviceId: TEACHER, name: 'X', listed: 'oui' })).code, 400);
+    const code = (await call(h, 'POST', { action: 'create', deviceId: TEACHER, name: 'Entre amis' })).body.code;
+    assert.equal((await call(h, 'GET', { code })).body.listed, false);
+    await call(h, 'POST', { action: 'join', code, deviceId: dev(1), name: 'Léa' });
+    assert.equal((await call(h, 'POST', { action: 'profile', code, deviceId: dev(1), listed: true })).code, 403);
+    assert.equal((await call(h, 'POST', { action: 'profile', code, deviceId: TEACHER, listed: true })).body.listed, true);
+    assert.equal((await call(h, 'GET', { code })).body.listed, true);
+    assert.equal((await call(h, 'POST', { action: 'search', q: 'entre amis' })).body.teams[0].code, code);
 });

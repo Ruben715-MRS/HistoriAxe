@@ -3,9 +3,10 @@
 // réponses des séances de Mode Classe liées à l'équipe — remplit un coffre commun. Le coffre plein verse des
 // pièces à chacun, et un coffre sur trois une carte rare à chaque membre (et un trophée à la classe).
 //
-// POST /api/team { action: 'create',     deviceId, pseudo?, name, badge?, description?, country?, lang?, level? } → { code }
+// Une équipe est créée par n'importe quel joueur — enseignant, club, groupe d'amis : son créateur en est le chef.
+// POST /api/team { action: 'create',     deviceId, pseudo?, name, badge?, description?, country?, lang?, level?, listed? } → { code }
 // POST /api/team { action: 'badge',      code, deviceId, badge }  (enseignant)        → { badge }
-// POST /api/team { action: 'profile',    code, deviceId, description?, country?, lang? } (enseignant) → { description, country, lang }
+// POST /api/team { action: 'profile',    code, deviceId, description?, country?, lang?, listed? } (chef d'équipe) → { description, country, lang, listed }
 // POST /api/team { action: 'level',      code, deviceId, level }                      → { ok }   (niveau du joueur, pour le classement des membres)
 // POST /api/team { action: 'search',     q }                                          → { teams: [{ code, name, badge, country, lang, memberCount }] }
 // POST /api/team { action: 'challenge',  code, deviceId, target }  (enseignant)       → { id }   (défier l'équipe `target`)
@@ -55,7 +56,7 @@ async function playerOf(deviceId) {
 
 async function loadTeam(code) {
     const { rows } = await query(
-        'select code, teacher_id, name, progress, chest_index, cards, badge, description, country, lang, leader_level, points_total from class_teams where code = $1', [code]
+        'select code, teacher_id, name, progress, chest_index, cards, badge, description, country, lang, leader_level, points_total, listed from class_teams where code = $1', [code]
     );
     if (!rows[0]) throw httpError(404, 'Équipe introuvable : vérifiez le code.');
     return rows[0];
@@ -79,6 +80,11 @@ function readProfile(body) {
     if (body.lang !== undefined) {
         out.lang = Profile.sanitizeLanguage(body.lang);
         if (out.lang === null) throw httpError(400, 'Langue invalide.');
+    }
+    // Visible dans la recherche : décidé par le créateur ; faux par défaut à la création (voir createTeam).
+    if (body.listed !== undefined) {
+        if (typeof body.listed !== 'boolean') throw httpError(400, 'Valeur invalide.');
+        out.listed = body.listed;
     }
     return out;
 }
@@ -104,8 +110,8 @@ async function createTeam(body) {
         const code = T.generateCode();
         try {
             await query(
-                'insert into class_teams (code, teacher_id, name, badge, description, country, lang, leader_level) values ($1, $2, $3, $4, $5, $6, $7, $8)',
-                [code, teacher.id, name, badge, profile.description || '', profile.country || '', profile.lang || '', leaderLevel]
+                'insert into class_teams (code, teacher_id, name, badge, description, country, lang, leader_level, listed) values ($1, $2, $3, $4, $5, $6, $7, $8, $9)',
+                [code, teacher.id, name, badge, profile.description || '', profile.country || '', profile.lang || '', leaderLevel, profile.listed === true]
             );
             return { code };
         } catch (err) {
@@ -213,7 +219,7 @@ async function setProfile(body) {
 
 async function loadTeamProfile(code) {
     const team = await loadTeam(code);
-    return { description: team.description, country: team.country, lang: team.lang };
+    return { description: team.description, country: team.country, lang: team.lang, listed: team.listed };
 }
 
 // Une fiche d'équipe pour les résultats de recherche et l'adversaire d'un défi : rien de personnel.
@@ -234,14 +240,15 @@ async function memberCounts(codes) {
     return counts;
 }
 
-// Chercher une équipe par son nom (morceau de nom) ou par son identifiant (#ABC234 ou ABC234).
+// Chercher une équipe par son nom (morceau de nom) ou par son identifiant (#ABC234 ou ABC234). Le nom ne trouve que les
+// équipes « visibles dans la recherche » ; l'identifiant, lui, trouve toujours son équipe (qui le connaît l'a reçu).
 async function searchTeams(body) {
     const q = String(body.q === undefined ? '' : body.q).replace(/[%_\\]/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 40);
     if (q.length < 2) throw httpError(400, 'Tapez au moins deux caractères.');
     const asCode = T.normalizeCode(q.replace(/^#/, '')) || '';
     const { rows } = await query(
         `select code, name, badge, country, lang, description, leader_level, points_total, teacher_id, progress, chest_index, cards
-           from class_teams where code = $1 or lower(name) like $2 order by name asc limit 8`,
+           from class_teams where code = $1 or (listed and lower(name) like $2) order by name asc limit 8`,
         [asCode, '%' + q.toLowerCase() + '%']
     );
     const counts = await memberCounts(rows.map((r) => r.code));
@@ -376,6 +383,7 @@ async function buildState(code, deviceId) {
         description: team.description,
         country: team.country,
         lang: team.lang,
+        listed: team.listed,
         maxMembers: T.MAX_MEMBERS,
         totalPoints: team.points_total,
         leader: { name: leader ? leader.pseudo : '', level: team.leader_level },

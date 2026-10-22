@@ -848,6 +848,11 @@ petits entiers (`fond.motif.couleur.bordure`, ex. `0.2.1.0`) : le serveur ne sto
 Les dessins sont originaux, en SVG, dans `js/teamBadge.js` (pur, testé : `tests/teamBadge.test.js`) ; l'éditeur est dans
 `js/app/team.js`.
 
+**Qui crée une équipe.** N'importe quel joueur — enseignant, club, groupe d'amis, adulte indépendant : le créateur en est le
+chef (rôle `teacher` dans le code), il modifie le profil et l'écusson et lance les défis. Une équipe est **privée par défaut** :
+elle ne se rejoint qu'avec son identifiant ; la case « Visible dans la recherche » (colonne `class_teams.listed`) la rend
+trouvable par son nom. Les équipes d'avant cette option sont restées listées.
+
 **Fiche d'équipe (style « clan »).** L'écran de l'équipe montre l'écusson, l'**identifiant** unique `#ABC234` (le code de
 6 caractères : c'est lui qui fait retrouver et rejoindre l'équipe), une **description** (200 caractères, texte seulement),
 le **pays** et la **langue parlée** (listes fermées de codes ISO ; les noms viennent d'`Intl.DisplayNames`, rien à

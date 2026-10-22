@@ -45,10 +45,11 @@ async function creditTeam(code, playerId, asked, source) {
                 [code, next.progress, next.chestIndex, cardsOpened, accepted]
             );
         }
-        const acct = (await client.query(
-            `update players set team_points = team_points + $2
-              where id = $1 and auth_user_id is not null and $2 > 0 returning 1`, [playerId, accepted]
-        )).rows[0];
+        // Un joueur connecté à un compte garde ses points d'équipe (cumul) : on lit d'abord s'il en a un, puis on cumule.
+        const hasAccount = (await client.query('select auth_user_id is not null as account from players where id = $1', [playerId])).rows[0];
+        const acct = hasAccount && hasAccount.account && accepted > 0
+            ? (await client.query('update players set team_points = team_points + $2 where id = $1 returning 1', [playerId, accepted])).rows[0]
+            : null;
         await client.query('commit');
         return { accepted, account: !!acct, progress: next.progress, chestIndex: next.chestIndex, opened: next.opened };
     } catch (err) {

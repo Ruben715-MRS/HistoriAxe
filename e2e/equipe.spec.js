@@ -301,7 +301,7 @@ test('chercher une équipe par son nom ou son identifiant, puis la rejoindre ave
 });
 
 test('l\'enseignant édite le profil (description, pays, langue) à la création et ensuite', async ({ page }) => {
-    const etat = { courant: etatEquipe({ isTeacher: true, isMember: false, me: null, description: 'Avant', country: 'FR', lang: 'fr', badge: '0.2.1.0' }),
+    const etat = { courant: etatEquipe({ isTeacher: true, isMember: false, me: null, description: 'Avant', country: 'FR', lang: 'fr', badge: '0.2.1.0', listed: true }),
         reponses: { create: { body: { code: 'ABC234' } }, profile: { body: { description: '', country: '', lang: '' } } } };
     const appels = await fauxServeur(page, etat);
     await ouvrirEquipe(page);
@@ -309,9 +309,12 @@ test('l\'enseignant édite le profil (description, pays, langue) à la création
     await page.locator('#team-create-profile textarea').fill('Une classe <b>géniale</b>');
     await page.locator('#team-create-profile select').first().selectOption('BE');
     await page.locator('#team-create-profile select').nth(1).selectOption('nl');
+    // Privée par défaut : on ne la rend visible dans la recherche qu'en cochant la case.
+    await expect(page.locator('#team-create-profile input[type="checkbox"]')).not.toBeChecked();
+    await page.locator('#team-create-profile input[type="checkbox"]').check();
     await page.locator('#team-create-form .class-primary').click();
     await expect(page.locator('#team-panel-view')).toBeVisible();
-    expect(appels.find(a => a.action === 'create')).toMatchObject({ name: '2de B', description: 'Une classe <b>géniale</b>', country: 'BE', lang: 'nl' });
+    expect(appels.find(a => a.action === 'create')).toMatchObject({ name: '2de B', description: 'Une classe <b>géniale</b>', country: 'BE', lang: 'nl', listed: true });
 
     await page.locator('#team-edit-btn').click();
     await expect(page.locator('#team-edit-profile textarea')).toHaveValue('Avant');
@@ -320,7 +323,7 @@ test('l\'enseignant édite le profil (description, pays, langue) à la création
     await page.locator('#team-edit-profile select').nth(1).selectOption('');
     await page.locator('#team-edit .class-primary').click();
     await expect(page.locator('#team-edit')).toBeHidden();
-    expect(appels.find(a => a.action === 'profile')).toMatchObject({ code: 'ABC234', description: 'Après', country: 'FR', lang: '' });
+    expect(appels.find(a => a.action === 'profile')).toMatchObject({ code: 'ABC234', description: 'Après', country: 'FR', lang: '', listed: true });
 });
 
 test('défier une autre équipe : recherche, invitation, réponse, score', async ({ page }) => {

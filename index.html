@@ -1524,7 +1524,7 @@
     <!-- ÉCRAN : ÉQUIPE DE CLASSE (coffre commun, membres — voir js/app/team.js et api/team.js) -->
     <div id="screen-team" class="list-screen hidden">
         <button class="back-btn" onclick="teamBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
-        <h2 class="header-title" id="team-title" data-i18n="team.title">Équipe de classe</h2>
+        <h2 class="header-title" id="team-title" data-i18n="team.title">Équipe</h2>
         <p class="modes-header-subtitle" id="team-subtitle"></p>
 
         <section id="team-class-form" class="class-panel team-class hidden">
@@ -1541,7 +1541,7 @@
         <section id="team-panel-none" class="class-panel hidden">
             <div id="team-join-form">
                 <h3 data-i18n="team.join_title">Rejoindre une équipe</h3>
-                <p class="class-help" data-i18n="team.join_help">Ton enseignant t'a donné un code ? Rejoins l'équipe de ta classe : vos étoiles remplissent un coffre commun.</p>
+                <p class="class-help" data-i18n="team.join_help">Un ami ou votre enseignant vous a donné un identifiant ? Saisissez-le pour rejoindre son équipe : vos étoiles remplissent un coffre commun.</p>
                 <div id="team-join-search"></div>
                 <label class="class-label" for="team-code-input" data-i18n="team.code_label">Identifiant de l'équipe</label>
                 <input type="text" id="team-code-input" class="form-input class-code-input" maxlength="9" autocomplete="off"
@@ -1552,8 +1552,8 @@
             </div>
             <div id="team-create-form" class="team-create">
                 <h3 data-i18n="team.create_title">Créer une équipe</h3>
-                <p class="class-help" data-i18n="team.create_help">Vous êtes enseignant ? Créez l'équipe de votre classe : un code s'affiche, à donner à vos élèves pour qu'ils la rejoignent.</p>
-                <label class="class-label" for="team-new-name" data-i18n="team.new_name_label">Nom de l'équipe (par exemple la classe)</label>
+                <p class="class-help" data-i18n="team.create_help">Classe, club ou groupe d'amis : créez votre équipe. Un identifiant s'affiche, à partager pour qu'on puisse la rejoindre.</p>
+                <label class="class-label" for="team-new-name" data-i18n="team.new_name_label">Nom de l'équipe (la classe, le club, les amis…)</label>
                 <input type="text" id="team-new-name" class="form-input" maxlength="40" autocomplete="off">
                 <div id="team-create-profile"></div>
                 <p class="class-help" data-i18n="team.badge_create_hint">Dessinez l'écusson de votre équipe. Les bordures plus riches se débloquent à mesure que vos élèves ouvrent des coffres.</p>
@@ -1609,7 +1609,7 @@
             <h3 class="team-members-title" id="team-members-title"></h3>
             <ul class="team-members" id="team-members"></ul>
             <div class="team-teacher hidden" id="team-teacher-tools">
-                <div class="class-code-kicker" data-i18n="team.code_kicker">Code à donner aux élèves</div>
+                <div class="class-code-kicker" data-i18n="team.code_kicker">Identifiant à partager</div>
                 <div class="class-code" id="team-code" role="img"></div>
                 <p class="class-help" data-i18n="team.teacher_hint">Pour que les bonnes réponses d'une séance de Mode Classe remplissent aussi le coffre, cochez « Compter pour l'équipe » en ouvrant la séance.</p>
             </div>

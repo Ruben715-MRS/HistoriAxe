@@ -104,8 +104,21 @@ function teamProfileEditor(host, values) {
     descLabel.className = 'class-label';
     descLabel.htmlFor = desc.id;
     descLabel.textContent = t('team.desc_label');
-    host.append(descLabel, desc, country.label, country.el, lang.label, lang.el);
-    return { get: () => ({ description: desc.value, country: country.el.value, lang: lang.el.value }) };
+    // Visible dans la recherche : décoché par défaut (l'équipe ne se rejoint alors qu'avec son identifiant).
+    const listedLabel = document.createElement('label');
+    listedLabel.className = 'team-listed';
+    const listed = document.createElement('input');
+    listed.type = 'checkbox';
+    listed.checked = values.listed === true;
+    const listedText = document.createElement('span');
+    const listedTitle = document.createElement('b');
+    listedTitle.textContent = t('team.listed_label');
+    const listedHint = document.createElement('small');
+    listedHint.textContent = t('team.listed_hint');
+    listedText.append(listedTitle, listedHint);
+    listedLabel.append(listed, listedText);
+    host.append(descLabel, desc, country.label, country.el, lang.label, lang.el, listedLabel);
+    return { get: () => ({ description: desc.value, country: country.el.value, lang: lang.el.value, listed: listed.checked }) };
 }
 
 // --- Recherche d'équipe (par nom ou par identifiant) -------------------------------------------------------------

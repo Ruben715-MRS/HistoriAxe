@@ -169,6 +169,7 @@ alter table class_teams add column if not exists country text not null default '
 alter table class_teams add column if not exists lang text not null default '';
 alter table class_teams add column if not exists leader_level smallint not null default 1;
 alter table class_teams add column if not exists points_total integer not null default 0;
+alter table class_teams add column if not exists listed boolean not null default true;
 alter table team_members add column if not exists level smallint not null default 1;
 
 create table if not exists team_challenges (

@@ -227,6 +227,9 @@ async function ensureSchema() {
         await query(`alter table class_teams add column if not exists lang text not null default '';`);
         await query(`alter table class_teams add column if not exists leader_level smallint not null default 1;`);
         await query(`alter table class_teams add column if not exists points_total integer not null default 0;`);
+        // Les équipes d'avant existaient déjà, trouvables par leur nom : elles restent listées ; les nouvelles ne le sont que si
+        // leur créateur le choisit.
+        await query(`alter table class_teams add column if not exists listed boolean not null default true;`);
         await query(`alter table team_members add column if not exists level smallint not null default 1;`);
         await query(`create table if not exists team_challenges (
     id         bigserial primary key,

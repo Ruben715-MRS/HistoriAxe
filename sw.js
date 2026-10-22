@@ -14,7 +14,7 @@
 // généralement le signe que l'un de ces deux numéros n'a pas été incrémenté.
 const CACHE_VERSION = '1.4.150';
 const APP_SHELL_CACHE = `historiaxe-shell-v${CACHE_VERSION}`;
-const DATA_CACHE = 'historiaxe-data-v1.0.105';
+const DATA_CACHE = 'historiaxe-data-v1.0.106';
 
 // Portraits des personnages (assets/portraits/*.jpg, champ `image` des
 // événements). Un cache À PART, et c'est tout l'objet : 'activate' purge tout
