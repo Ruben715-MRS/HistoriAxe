@@ -732,6 +732,239 @@
                     ]
                 }
             ]
+        },
+        {
+            id: 'parthes', name: "Empire parthe (arsacide)", icon: "🏹", color: '#9a3412', span: "vers 247 av. J.-C. → 224", from: -247, to: 224, peak: -53,
+            places: [{ n: "Nisa", c: [57.9, 37.95] }, { n: "Rhagès", c: [51.4, 35.6] }, { n: "Ecbatane", c: [48.5, 34.8] }, { n: "Suse", c: [48.25, 32.19] }, { n: "Ctésiphon", c: [44.58, 33.09] }, { n: "Doura-Europos", c: [40.73, 34.75] }, { n: "Merv", c: [62.19, 37.66] }, { n: "Carrhes", c: [39.03, 36.86] }],
+            capital: "Nisa, puis Ctésiphon, sur le Tigre",
+            summary: "Les Parthes sont un peuple cavalier venu des steppes de l'Est de la mer Caspienne. Vers 247 av. J.-C., leur chef Arsace s'empare de la province de Parthie, dans le nord-est de l'Iran, aux dépens des Séleucides, héritiers d'Alexandre. Mithridate Ier conquiert l'Iran et la Mésopotamie (Séleucie du Tigre en 141), puis Mithridate II porte l'empire jusqu'à l'Euphrate. Les archers parthes à cheval, qui tirent en arrière en feignant de fuir, écrasent les légions de Crassus à Carrhes en 53 av. J.-C. : l'Empire parthe est, face à Rome, la seule grande puissance de l'époque, et il tient les routes de la soie. Affaibli par les guerres romaines et les querelles de succession, il est renversé en 224 par un vassal perse, Ardachir, fondateur de la dynastie sassanide.",
+            snapshots: [
+                {
+                    id: '-247', label: "La Parthie d'Arsace", year: -247,
+                    text: "Vers 247 av. J.-C., Arsace et les Parnes, un peuple de cavaliers, occupent la Parthie (le nord-est de l'Iran actuel, autour de Nisa) et se révoltent contre les Séleucides. C'est un petit royaume, loin de l'empire qu'il deviendra.",
+                    zones: [{ name: "Parthie (vers 247 av. J.-C.)", ring: [[54.0, 37.8], [56.5, 38.3], [59.0, 38.2], [60.8, 37.4], [60.5, 35.8], [59.0, 35.2], [57.0, 35.6], [55.0, 36.3]] }]
+                },
+                {
+                    id: '-141', label: "Sous Mithridate Ier", year: -141,
+                    text: "En 141 av. J.-C., Mithridate Ier entre à Séleucie du Tigre : les Parthes ont pris aux Séleucides l'Iran, puis la Mésopotamie. Ctésiphon, sur le Tigre en face de Séleucie, devient la résidence d'hiver des rois.",
+                    zones: [{ name: "Empire parthe (vers 141 av. J.-C.)", ring: [[54.0, 38.0], [57.0, 38.3], [60.5, 37.6], [61.5, 35.5], [61.0, 33.0], [60.5, 31.0], [58.0, 29.0], [56.0, 27.0], [53.0, 27.5], [51.0, 29.0], [49.0, 30.0], [47.5, 30.5], [45.5, 31.0], [43.8, 32.0], [43.3, 33.5], [43.0, 35.0], [43.5, 36.5], [44.5, 37.5], [46.0, 38.5], [48.5, 38.5], [49.5, 37.2], [51.5, 36.8]] }]
+                },
+                {
+                    id: '-53', label: "À Carrhes, face à Rome", year: -53,
+                    text: "En 53 av. J.-C., à Carrhes, les cavaliers du général Surena détruisent l'armée du Romain Crassus. L'empire s'étend de l'Euphrate (où il touche les provinces romaines) à l'Asie centrale. Carrhes elle-même reste du côté romain.",
+                    zones: [{ name: "Empire parthe (53 av. J.-C.)", ring: [[41.0, 36.5], [42.5, 37.8], [44.0, 39.0], [46.5, 39.5], [48.5, 38.8], [53.0, 38.0], [56.0, 38.3], [59.5, 38.0], [62.5, 38.0], [64.0, 36.5], [65.0, 34.5], [64.5, 32.0], [63.5, 30.0], [62.0, 27.0], [59.0, 25.5], [56.5, 27.0], [53.0, 26.7], [50.5, 28.5], [48.5, 29.8], [47.8, 29.8], [46.0, 30.0], [44.0, 30.5], [42.0, 32.0], [40.3, 33.5], [40.0, 35.0]] }]
+                }
+            ]
+        },
+        {
+            id: 'sassanide', name: "Empire perse sassanide", icon: "🔥", color: '#0d9488', span: "224 → 651", from: 224, to: 651, peak: 620,
+            places: [{ n: "Ctésiphon", c: [44.58, 33.09] }, { n: "Istakhr (Persépolis)", c: [52.9, 29.97] }, { n: "Gundishapur", c: [48.5, 32.27] }, { n: "Nisibe", c: [41.22, 37.07] }, { n: "Antioche", c: [36.16, 36.2] }, { n: "Alexandrie", c: [29.92, 31.2] }, { n: "Merv", c: [62.19, 37.66] }, { n: "Balkh", c: [66.9, 36.76] }, { n: "Derbent", c: [48.3, 42.06] }, { n: "Sanaa", c: [44.2, 15.35] }],
+            capital: "Ctésiphon, sur le Tigre",
+            summary: "En 224, Ardachir Ier, prince du Fars (le berceau des Perses), renverse le dernier roi parthe et fonde la dynastie sassanide, qui se veut l'héritière des Achéménides et fait du zoroastrisme la religion de l'État. Pendant quatre siècles, c'est le grand rival de Rome puis de Byzance : Chapour Ier capture l'empereur Valérien à Édesse en 260, Khosro Ier (531-579) réorganise l'État et l'impôt et s'empare du Yémen, Khosro II (590-628) conquiert la Syrie, la Palestine (Jérusalem, 614) et l'Égypte (619). Mais l'empereur Héraclius contre-attaque, et les deux empires, épuisés, s'écroulent devant les armées arabes (Qadisiyya vers 636, Nahavand en 642). Le dernier roi, Yazdegerd III, est assassiné en 651.",
+            snapshots: [
+                {
+                    id: '260', label: "Sous Chapour Ier", year: 260, legend: true,
+                    text: "Vers 260, Chapour Ier, fils d'Ardachir, a repoussé Rome : il prend Nisibe, vainc l'empereur Valérien à Édesse (260) et le capture, puis occupe pour un temps la Syrie. À l'est, il soumet les restes de l'empire kouchan. L'Iran, la Mésopotamie, l'Arménie et la Bactriane forment l'empire.",
+                    zones: [{ name: "Empire sassanide (vers 260)", ring: [[40.5, 37.5], [42.5, 38.5], [44.5, 40.0], [47.5, 40.0], [49.5, 39.0], [53.0, 38.2], [57.0, 38.4], [61.0, 38.0], [65.0, 37.5], [67.5, 37.0], [68.0, 34.5], [66.0, 32.5], [64.0, 29.5], [62.0, 27.5], [58.0, 25.5], [56.5, 27.0], [53.0, 26.7], [50.5, 28.5], [48.5, 29.8], [47.8, 29.8], [46.0, 30.0], [43.5, 30.8], [41.5, 32.5], [40.3, 34.5]] }]
+                },
+                {
+                    id: '560', label: "Sous Khosro Ier", year: 560, legend: true,
+                    text: "Vers 560, Khosro Ier Anouchirvan est au sommet de la puissance sassanide : il tient les passes du Caucase (muraille de Derbent), a écrasé les Hephtalites à l'est, et envoie vers 570 une expédition au Yémen, qui chasse les Éthiopiens. C'est aussi l'âge d'or de la culture : l'académie de Gundishapur, l'impôt réformé.",
+                    zones: [
+                        { name: "Empire sassanide (vers 560)", ring: [[40.5, 37.5], [41.5, 39.5], [43.0, 41.5], [45.0, 42.0], [47.0, 42.4], [49.2, 42.4], [49.3, 40.5], [53.0, 38.2], [57.0, 38.4], [61.0, 38.0], [65.0, 37.5], [67.5, 37.0], [68.0, 34.5], [66.0, 32.5], [64.0, 29.5], [62.0, 27.5], [58.0, 25.5], [56.5, 27.0], [53.0, 26.7], [50.5, 28.5], [48.5, 29.8], [47.8, 29.8], [46.0, 30.0], [43.5, 30.8], [41.5, 32.5], [40.3, 34.5]] },
+                        { name: "Yémen sassanide", ring: [[43.0, 16.5], [44.5, 17.5], [46.5, 16.0], [48.0, 14.5], [45.0, 12.8], [43.5, 13.5]] }
+                    ]
+                },
+                {
+                    id: '620', label: "Les conquêtes de Khosro II", year: 620, legend: true,
+                    text: "Vers 620, Khosro II a pris la Syrie, Jérusalem (614), l'Égypte (619) et une large part de l'Anatolie : il tient presque tout l'ancien empire achéménide, de l'Égée à l'Indus. Ce sommet est de courte durée : dès 622, Héraclius contre-attaque et ruine l'empire en six ans.",
+                    zones: [
+                        { name: "Empire sassanide (vers 620)", ring: [[28.0, 41.0], [31.0, 41.4], [35.0, 42.4], [38.0, 42.0], [41.5, 42.0], [43.0, 42.5], [45.0, 42.5], [47.0, 42.5], [49.2, 42.4], [49.3, 40.5], [53.0, 38.2], [57.0, 38.4], [61.0, 38.0], [65.0, 37.5], [67.5, 37.0], [68.0, 34.5], [66.0, 32.5], [64.0, 29.5], [62.0, 27.5], [58.0, 25.5], [56.5, 27.0], [53.0, 26.7], [50.5, 28.5], [48.5, 29.8], [47.8, 29.8], [46.0, 29.5], [44.0, 29.5], [40.0, 29.8], [37.0, 29.5], [35.0, 29.5], [34.0, 27.5], [33.5, 24.5], [31.5, 22.5], [29.5, 23.5], [28.5, 26.5], [28.0, 29.5], [28.0, 31.5], [28.2, 36.0]] },
+                        { name: "Yémen sassanide", ring: [[43.0, 16.5], [44.5, 17.5], [46.5, 16.0], [48.0, 14.5], [45.0, 12.8], [43.5, 13.5]] }
+                    ]
+                }
+            ]
+        },
+        {
+            id: 'zimbabwe', name: "Mapungubwe et Grand Zimbabwe", icon: "🪨", color: '#92400e', span: "vers 1075 → vers 1450", from: 1075, to: 1450, peak: 1350,
+            places: [{ n: "Grand Zimbabwe", c: [30.93, -20.27] }, { n: "Mapungubwe", c: [29.4, -22.2] }, { n: "Khami", c: [28.6, -20.15] }, { n: "Tete", c: [33.58, -16.16] }, { n: "Sofala", c: [34.72, -20.2] }, { n: "Kilwa", c: [39.5, -8.96] }],
+            capital: "Mapungubwe, puis Grand Zimbabwe",
+            summary: "Dans le sud-est de l'Afrique, entre le Limpopo et le Zambèze, des royaumes shonas s'enrichissent par l'élevage du bétail et par l'or, qu'ils échangent avec les villes swahilies de la côte (Sofala, Kilwa) contre des perles, de la céramique chinoise et du verre perse. Mapungubwe (vers 1075-1220) en est le premier centre. Vers 1100-1450, Grand Zimbabwe (« les maisons de pierre » en shona) devient la capitale d'un État puissant : sa Grande Enceinte, en blocs de granit sans mortier, haute de plus de 10 mètres, est la plus grande construction de pierre d'Afrique au sud du Sahara. Il compte peut-être 18 000 habitants. La ville est abandonnée vers 1450 ; des royaumes issus d'elle (le Mutapa au nord, les Torwa à Khami) prennent le relais. L'archéologie a mis fin aux légendes coloniales qui l'attribuaient à des étrangers (Phéniciens, reine de Saba) : c'est bien une œuvre africaine.",
+            snapshots: [
+                {
+                    id: '1150', label: "Mapungubwe", year: 1150,
+                    text: "Vers 1150, Mapungubwe, au confluent du Limpopo et de la Chamdwe, est le premier royaume de la région : sa cour, installée sur une colline, thésaurise l'or (le fameux rhinocéros d'or) et le bétail, et commerce avec la côte de l'océan Indien.",
+                    zones: [{ name: "Royaume de Mapungubwe", ring: [[28.4, -21.2], [30.0, -21.5], [31.0, -22.5], [30.0, -23.4], [28.5, -23.0], [27.8, -22.0]] }]
+                },
+                {
+                    id: '1300', label: "Grand Zimbabwe", year: 1300,
+                    text: "Vers 1300, le pouvoir s'est déplacé vers le plateau du Zimbabwe, plus riche en pâturages et en or. Grand Zimbabwe, sa capitale, domine un royaume qui s'étend de la vallée du Zambèze aux abords du Limpopo, et qui contrôle la route de l'or vers Sofala.",
+                    zones: [{ name: "Royaume du Grand Zimbabwe", ring: [[28.5, -17.0], [31.5, -16.8], [33.0, -18.0], [33.5, -20.5], [32.0, -22.0], [29.5, -22.0], [28.0, -20.5]] }]
+                },
+                {
+                    id: '1450', label: "Les héritiers : Mutapa et Torwa", year: 1450, legend: true,
+                    text: "Vers 1450, Grand Zimbabwe est abandonnée. Au nord, le prince Mutota fonde le royaume du Mutapa (le « maître des mines »), qui contrôle la vallée du Zambèze et l'or ; au sud-ouest, une autre dynastie bâtit une nouvelle capitale à Khami, dans l'esprit des murs de pierre.",
+                    zones: [
+                        { name: "Royaume du Mutapa", ring: [[29.5, -15.5], [32.0, -15.0], [34.5, -16.0], [35.0, -18.5], [34.5, -20.5], [32.5, -19.0], [30.5, -18.0], [29.0, -17.0]] },
+                        { name: "Royaume des Torwa (Khami)", ring: [[26.5, -19.0], [28.5, -19.0], [29.8, -20.5], [29.0, -22.0], [27.0, -21.5]] }
+                    ]
+                }
+            ]
+        },
+        {
+            id: 'khmer', name: "Empire khmer (Angkor)", icon: "🛕", color: '#d97706', span: "802 → 1431", from: 802, to: 1431, peak: 1200,
+            places: [{ n: "Angkor Vat", c: [103.87, 13.41] }, { n: "Phnom Kulen", c: [104.1, 13.57] }, { n: "Phimai", c: [102.5, 15.22] }, { n: "Lopburi", c: [100.62, 14.8] }, { n: "Wat Phou", c: [105.83, 14.85] }, { n: "Vientiane", c: [102.6, 17.97] }, { n: "Phnom Penh", c: [104.92, 11.56] }],
+            capital: "Hariharalaya, puis Angkor (Yasodharapura)",
+            summary: "En 802, Jayavarman II se proclame « roi universel » sur le mont Kulen, au nord-est du Grand Lac (le Tonlé Sap) : c'est la naissance de l'Empire khmer. Ses rois, hindous (shivaïtes, vishnouïtes) puis bouddhistes, bâtissent Angkor, dont Suryavarman II élève au XIIe siècle le temple d'Angkor Vat, plus grand édifice religieux du monde. Le pouvoir repose sur un système de réservoirs (barays) et de canaux qui permet plusieurs récoltes de riz par an. Jayavarman VII (1181-vers 1218), bouddhiste, chasse les Chams qui avaient pillé Angkor, bâtit Angkor Thom et le Bayon, des routes, des hôpitaux : c'est l'apogée. Ensuite l'empire décline, et le royaume d'Ayutthaya (siamois) prend Angkor en 1431 : la cour se replie vers Phnom Penh.",
+            snapshots: [
+                {
+                    id: '802', label: "Jayavarman II et le mont Kulen", year: 802,
+                    text: "En 802, Jayavarman II, revenu de Java (selon la tradition), se fait consacrer sur le mont Kulen : il réunit les petits royaumes du bassin du Tonlé Sap et fonde la royauté khmère. Sa capitale, Hariharalaya, est à la limite du Grand Lac.",
+                    zones: [{ name: "Royaume khmer (vers 802)", ring: [[102.5, 14.8], [104.8, 14.7], [105.5, 13.3], [105.0, 12.0], [103.5, 11.5], [102.4, 12.5]] }]
+                },
+                {
+                    id: '1050', label: "Sous Suryavarman Ier", year: 1050,
+                    text: "Vers 1050, Suryavarman Ier étend le royaume vers l'ouest et le nord : il prend Lopburi, dans la vallée de la Chao Phraya, et le plateau de Khorat, et tient le Mékong jusqu'à Wat Phou. Angkor est déjà la grande capitale, avec ses premiers temples-montagnes.",
+                    zones: [{ name: "Empire khmer (vers 1050)", ring: [[100.2, 16.5], [102.5, 17.5], [104.5, 17.0], [106.5, 15.5], [106.5, 13.5], [106.0, 11.5], [104.5, 10.7], [102.5, 11.5], [101.5, 12.8], [100.5, 14.0]] }]
+                },
+                {
+                    id: '1200', label: "L'apogée de Jayavarman VII", year: 1200,
+                    text: "Vers 1200, Jayavarman VII règne sur la plus grande étendue de l'empire : du delta du Mékong au Laos, de la vallée de la Chao Phraya aux marges de la Birmanie, et occupe une partie du Champa à l'est. Le roi bâtisseur multiplie temples, hôpitaux et « maisons de repos » sur les routes.",
+                    zones: [{ name: "Empire khmer (vers 1200)", ring: [[99.0, 19.0], [101.5, 19.8], [104.0, 19.0], [106.0, 18.0], [108.0, 16.0], [109.2, 14.0], [109.3, 12.0], [107.5, 10.5], [105.0, 8.7], [103.0, 10.5], [101.5, 11.0], [100.0, 13.5], [98.8, 16.0]] }]
+                }
+            ]
+        },
+        {
+            id: 'japon', name: "Empire du Japon", icon: "🌅", color: '#e11d48', span: "1868 → 1945", from: 1868, to: 1945, peak: 1942,
+            places: [{ n: "Tokyo", c: [139.69, 35.69] }, { n: "Kyoto", c: [135.77, 35.01] }, { n: "Séoul (Keijō)", c: [126.98, 37.57] }, { n: "Taipei", c: [121.56, 25.04] }, { n: "Port-Arthur", c: [121.25, 38.81] }, { n: "Changchun (Hsinking)", c: [125.32, 43.82] }, { n: "Nankin", c: [118.8, 32.06] }, { n: "Manille", c: [120.98, 14.6] }, { n: "Singapour", c: [103.85, 1.29] }, { n: "Rabaul", c: [152.17, -4.2] }],
+            capital: "Tokyo",
+            summary: "La restauration de Meiji (1868) met fin au shogunat des Tokugawa : le jeune empereur Mutsuhito s'installe à Tokyo, et le Japon se modernise à marche forcée (constitution de 1889, armée, industrie, école obligatoire). Il devient en trente ans une puissance coloniale : la guerre contre la Chine (1894-1895) lui donne Taïwan, la guerre contre la Russie (1904-1905) le sud de Sakhaline, la ferme de Port-Arthur et le protectorat sur la Corée, annexée en 1910. Après la Première Guerre mondiale, il reçoit les îles allemandes du Pacifique en mandat. À partir de 1931 (Mandchourie, puis guerre contre la Chine en 1937), un régime militariste entraîne le pays dans la Seconde Guerre mondiale : après Pearl Harbor (décembre 1941), il occupe en six mois l'Asie du Sud-Est, mais reflue dès Midway (1942), et capitule en août 1945, après Hiroshima et Nagasaki. L'empire est alors démantelé.",
+            snapshots: [
+                {
+                    id: '1895', label: "Après la guerre contre la Chine", year: 1895, legend: true,
+                    text: "En 1895, le traité de Shimonoseki, qui conclut la guerre contre la Chine des Qing, donne à Japon Taïwan (et la presqu'île du Liaodong, qu'il doit rendre sous la pression de la Russie, de la France et de l'Allemagne). L'archipel comprend déjà Hokkaido et les îles Ryukyu (Okinawa), annexées en 1879.",
+                    zones: [
+                        { name: "Archipel japonais", ring: [[130.0, 33.0], [130.0, 34.6], [132.0, 35.6], [135.5, 36.0], [137.0, 37.4], [139.0, 38.5], [140.2, 40.6], [141.7, 41.2], [142.0, 39.5], [141.0, 37.0], [140.8, 35.4], [139.8, 34.8], [137.5, 34.5], [136.0, 33.4], [134.5, 33.6], [133.0, 32.5], [131.8, 31.2], [130.3, 31.0]] },
+                        { name: "Archipel japonais", ring: [[139.8, 42.5], [140.2, 43.4], [141.5, 45.4], [143.5, 44.2], [145.5, 43.4], [143.5, 42.0], [141.5, 41.8]] },
+                        { name: "Archipel japonais", ring: [[127.6, 26.0], [128.5, 26.9], [128.5, 26.0], [127.8, 25.6]] },
+                        { name: "Taïwan (depuis 1895)", color: '#fb7185', ring: [[120.0, 23.0], [120.2, 25.0], [121.6, 25.3], [122.0, 24.5], [121.0, 22.0]] }
+                    ]
+                },
+                {
+                    id: '1920', label: "Après la Première Guerre mondiale", year: 1920, legend: true,
+                    text: "Vers 1920, l'empire compte, autour de l'archipel, Taïwan (1895), le sud de Sakhaline (Karafuto, 1905), le territoire à bail du Kwantung avec Port-Arthur (1905), la Corée (annexée en 1910) et, depuis 1919-1920, des îles du Pacifique allemandes reçues en mandat de la Société des Nations (Mariannes, Carolines, Marshall, trop petites pour figurer ici).",
+                    zones: [
+                        { name: "Archipel japonais", ring: [[130.0, 33.0], [130.0, 34.6], [132.0, 35.6], [135.5, 36.0], [137.0, 37.4], [139.0, 38.5], [140.2, 40.6], [141.7, 41.2], [142.0, 39.5], [141.0, 37.0], [140.8, 35.4], [139.8, 34.8], [137.5, 34.5], [136.0, 33.4], [134.5, 33.6], [133.0, 32.5], [131.8, 31.2], [130.3, 31.0]] },
+                        { name: "Archipel japonais", ring: [[139.8, 42.5], [140.2, 43.4], [141.5, 45.4], [143.5, 44.2], [145.5, 43.4], [143.5, 42.0], [141.5, 41.8]] },
+                        { name: "Archipel japonais", ring: [[127.6, 26.0], [128.5, 26.9], [128.5, 26.0], [127.8, 25.6]] },
+                        { name: "Taïwan", color: '#fb7185', ring: [[120.0, 23.0], [120.2, 25.0], [121.6, 25.3], [122.0, 24.5], [121.0, 22.0]] },
+                        { name: "Corée (annexée en 1910)", color: '#fb7185', ring: [[124.5, 38.0], [125.0, 39.8], [126.5, 41.0], [128.5, 42.0], [130.7, 42.4], [129.5, 40.5], [129.5, 38.0], [129.4, 35.4], [128.0, 34.7], [126.3, 34.4], [126.2, 36.6]] },
+                        { name: "Sud de Sakhaline (Karafuto)", color: '#fb7185', ring: [[141.9, 46.0], [141.9, 48.5], [142.5, 50.0], [143.9, 49.0], [143.5, 46.5], [142.5, 46.2]] },
+                        { name: "Kwantung (Port-Arthur)", color: '#fb7185', ring: [[120.8, 38.5], [122.6, 38.5], [122.6, 40.0], [121.0, 40.0]] }
+                    ]
+                },
+                {
+                    id: '1942', label: "À son extension maximale", year: 1942, legend: true,
+                    text: "Vers mi-1942, le Japon occupe, en plus de son empire d'avant-guerre, le Mandchoukouo (un État fantoche en Mandchourie, depuis 1932), la Chine du Nord et de l'Est, l'Indochine, la Birmanie, la Malaisie et Singapour, les Philippines, les Indes néerlandaises et le nord de la Nouvelle-Guinée, ainsi que des archipels du Pacifique. La Thaïlande est alliée. C'est le moment de la « sphère de coprospérité de la grande Asie orientale ».",
+                    zones: [
+                        { name: "Archipel japonais", ring: [[130.0, 33.0], [130.0, 34.6], [132.0, 35.6], [135.5, 36.0], [137.0, 37.4], [139.0, 38.5], [140.2, 40.6], [141.7, 41.2], [142.0, 39.5], [141.0, 37.0], [140.8, 35.4], [139.8, 34.8], [137.5, 34.5], [136.0, 33.4], [134.5, 33.6], [133.0, 32.5], [131.8, 31.2], [130.3, 31.0]] },
+                        { name: "Archipel japonais", ring: [[139.8, 42.5], [140.2, 43.4], [141.5, 45.4], [143.5, 44.2], [145.5, 43.4], [143.5, 42.0], [141.5, 41.8]] },
+                        { name: "Archipel japonais", ring: [[127.6, 26.0], [128.5, 26.9], [128.5, 26.0], [127.8, 25.6]] },
+                        { name: "Colonies d'avant-guerre", color: '#fb7185', ring: [[120.0, 23.0], [120.2, 25.0], [121.6, 25.3], [122.0, 24.5], [121.0, 22.0]] },
+                        { name: "Colonies d'avant-guerre", color: '#fb7185', ring: [[124.5, 38.0], [125.0, 39.8], [126.5, 41.0], [128.5, 42.0], [130.7, 42.4], [129.5, 40.5], [129.5, 38.0], [129.4, 35.4], [128.0, 34.7], [126.3, 34.4], [126.2, 36.6]] },
+                        { name: "Colonies d'avant-guerre", color: '#fb7185', ring: [[141.9, 46.0], [141.9, 48.5], [142.5, 50.0], [143.9, 49.0], [143.5, 46.5], [142.5, 46.2]] },
+                        { name: "Colonies d'avant-guerre", color: '#fb7185', ring: [[120.8, 38.5], [122.6, 38.5], [122.6, 40.0], [121.0, 40.0]] },
+                        { name: "Mandchoukouo et Chine occupée", color: '#f97316', ring: [[121.0, 53.3], [125.5, 53.2], [130.5, 49.0], [134.5, 48.0], [131.0, 44.0], [130.7, 42.4], [128.5, 42.0], [126.5, 41.0], [124.5, 40.0], [122.0, 40.8], [121.0, 40.0], [119.5, 39.0], [118.0, 38.2], [120.5, 37.8], [122.5, 37.2], [121.0, 35.0], [121.5, 32.5], [121.5, 30.0], [120.5, 27.0], [119.5, 25.5], [117.0, 23.5], [113.5, 22.2], [111.0, 21.5], [110.5, 23.5], [111.5, 26.0], [113.0, 29.5], [112.0, 32.5], [112.5, 35.5], [114.5, 38.5], [116.5, 40.5], [114.0, 41.5], [112.5, 43.0], [116.0, 45.0], [119.5, 47.0], [119.0, 50.0]] },
+                        { name: "Asie du Sud-Est continentale (occupée ou alliée)", color: '#f59e0b', ring: [[93.5, 26.0], [97.0, 27.8], [98.5, 24.0], [101.0, 22.3], [104.0, 22.8], [106.5, 22.5], [108.0, 21.5], [107.0, 19.5], [108.5, 16.0], [109.3, 13.0], [109.2, 11.2], [106.5, 9.8], [105.0, 8.6], [104.5, 5.0], [104.4, 1.2], [103.5, 1.1], [101.0, 2.8], [100.0, 6.0], [98.3, 8.0], [98.6, 10.5], [97.7, 14.0], [95.0, 15.8], [94.3, 18.5], [93.5, 21.5], [92.5, 22.5]] },
+                        { name: "Philippines et Indes néerlandaises", color: '#eab308', ring: [[119.8, 18.5], [122.3, 18.5], [122.0, 16.0], [124.0, 13.8], [123.0, 13.0], [121.0, 13.7], [120.0, 14.5]] },
+                        { name: "Philippines et Indes néerlandaises", color: '#eab308', ring: [[122.0, 11.5], [125.5, 11.0], [126.5, 9.0], [126.2, 6.2], [124.0, 6.0], [122.0, 7.0], [122.0, 9.0]] },
+                        { name: "Philippines et Indes néerlandaises", color: '#eab308', ring: [[95.3, 5.5], [98.0, 4.0], [100.5, 1.5], [104.5, -1.5], [106.0, -3.0], [105.8, -5.8], [102.5, -4.0], [99.5, -1.5], [96.5, 2.5]] },
+                        { name: "Philippines et Indes néerlandaises", color: '#eab308', ring: [[105.2, -6.0], [108.5, -6.3], [112.5, -6.5], [114.5, -7.8], [112.0, -8.3], [108.0, -7.8], [106.0, -7.2]] },
+                        { name: "Philippines et Indes néerlandaises", color: '#eab308', ring: [[109.0, 1.5], [111.0, 2.0], [114.5, 4.5], [117.0, 7.0], [119.0, 5.0], [117.5, 1.0], [116.5, -1.5], [116.0, -4.0], [113.0, -3.5], [110.0, -3.0], [109.0, -0.5]] },
+                        { name: "Philippines et Indes néerlandaises", color: '#eab308', ring: [[119.5, -5.5], [119.0, -2.0], [119.8, 0.5], [121.5, 1.2], [124.8, 1.5], [124.5, 0.0], [122.0, -0.8], [123.2, -3.2], [122.0, -5.2], [120.3, -3.5], [120.3, -5.6]] },
+                        { name: "Nord de la Nouvelle-Guinée et Bismarck", color: '#eab308', ring: [[131.0, -0.8], [135.0, -3.2], [138.5, -4.0], [141.0, -2.6], [144.5, -3.8], [147.5, -6.0], [148.5, -8.0], [145.0, -6.5], [142.5, -8.5], [141.0, -9.0], [138.0, -8.2], [135.0, -4.5], [132.5, -4.0], [131.0, -2.0]] },
+                        { name: "Nord de la Nouvelle-Guinée et Bismarck", color: '#eab308', ring: [[148.0, -5.5], [150.5, -5.0], [152.6, -3.8], [152.2, -4.8], [151.0, -5.8], [149.5, -6.2]] }
+                    ]
+                }
+            ]
+        },
+        {
+            id: 'allemand', name: "Empire allemand (Deuxième Reich)", icon: "🦅", color: '#52525b', span: "1871 → 1918", from: 1871, to: 1918, peak: 1914,
+            places: [{ n: "Berlin", c: [13.4, 52.52] }, { n: "Hambourg", c: [9.99, 53.55] }, { n: "Munich", c: [11.58, 48.14] }, { n: "Strasbourg", c: [7.75, 48.58] }, { n: "Metz", c: [6.18, 49.12] }, { n: "Königsberg", c: [20.5, 54.7] }, { n: "Breslau", c: [17.03, 51.11] }, { n: "Posen", c: [16.93, 52.41] }, { n: "Windhoek", c: [17.08, -22.56] }, { n: "Dar es Salaam", c: [39.28, -6.8] }, { n: "Douala", c: [9.7, 4.05] }, { n: "Lomé", c: [1.22, 6.13] }, { n: "Qingdao (Tsingtao)", c: [120.38, 36.07] }],
+            capital: "Berlin",
+            summary: "Le 18 janvier 1871, en pleine guerre contre la France, les princes allemands proclament le roi de Prusse, Guillaume Ier, empereur allemand dans la galerie des Glaces de Versailles. L'Empire est l'œuvre du chancelier Bismarck : il réunit 25 États (royaumes, grands-duchés, villes libres) autour de la Prusse, sans l'Autriche, et prend à la France l'Alsace et une partie de la Lorraine (l'Alsace-Lorraine, « terre d'Empire »). En vingt ans, l'Allemagne devient la première puissance industrielle d'Europe. Guillaume II (1888-1918) veut aussi un empire colonial et une flotte : Togo, Cameroun, Sud-Ouest africain, Afrique orientale, Kiautschou en Chine, Nouvelle-Guinée et îles du Pacifique. L'Empire entre en guerre en 1914 ; il impose à la Russie la paix de Brest-Litovsk (mars 1918), puis s'effondre en novembre : l'empereur abdique, la République est proclamée.",
+            snapshots: [
+                {
+                    id: '1871', label: "La proclamation à Versailles", year: 1871,
+                    text: "En 1871, l'Empire allemand comprend la Prusse (avec ses annexions de 1866), la Bavière, la Saxe, le Wurtemberg et les autres États du sud, auxquels s'ajoute l'Alsace-Lorraine prise à la France. L'Autriche, vaincue en 1866, reste à l'écart : c'est la solution « petite-allemande ».",
+                    zones: [{ name: "Empire allemand (1871)", ring: [[7.0, 47.5], [7.6, 47.58], [8.6, 47.65], [9.6, 47.55], [10.2, 47.3], [10.9, 47.5], [12.2, 47.6], [13.0, 47.45], [13.1, 48.4], [13.8, 48.75], [12.9, 49.3], [12.1, 50.2], [12.9, 50.4], [14.6, 50.9], [15.5, 50.8], [16.4, 50.4], [16.9, 50.2], [18.0, 50.1], [18.8, 50.3], [19.0, 50.7], [18.3, 51.2], [17.9, 52.3], [18.5, 52.9], [19.6, 53.3], [20.4, 53.6], [22.0, 53.9], [22.8, 54.4], [22.7, 55.1], [21.1, 55.9], [19.5, 54.8], [16.5, 54.8], [14.2, 54.2], [12.0, 54.5], [10.9, 54.3], [10.0, 54.8], [9.3, 55.0], [8.5, 55.0], [8.5, 53.9], [7.3, 53.9], [6.9, 53.5], [7.1, 52.5], [6.8, 52.1], [6.0, 51.9], [5.9, 50.8], [6.3, 49.9], [5.9, 49.2], [6.3, 48.7], [6.9, 48.35], [7.05, 47.9]] }]
+                },
+                {
+                    id: '1914', label: "À la veille de la guerre, avec ses colonies", year: 1914, legend: true,
+                    text: "En 1914, l'Empire compte 65 millions d'habitants en Europe et s'est donné des colonies depuis 1884 : le Togo, le Cameroun (agrandi du « Neukamerun » en 1911), le Sud-Ouest africain (la Namibie actuelle), l'Afrique orientale allemande (Tanzanie, Rwanda, Burundi), la concession de Kiautschou en Chine (1898), et des îles du Pacifique (Samoa, Micronésie, Nouvelle-Guinée allemande, trop petites ou dispersées pour figurer toutes ici). Elles sont toutes perdues pendant la guerre.",
+                    zones: [
+                        { name: "Reich allemand", ring: [[7.0, 47.5], [7.6, 47.58], [8.6, 47.65], [9.6, 47.55], [10.2, 47.3], [10.9, 47.5], [12.2, 47.6], [13.0, 47.45], [13.1, 48.4], [13.8, 48.75], [12.9, 49.3], [12.1, 50.2], [12.9, 50.4], [14.6, 50.9], [15.5, 50.8], [16.4, 50.4], [16.9, 50.2], [18.0, 50.1], [18.8, 50.3], [19.0, 50.7], [18.3, 51.2], [17.9, 52.3], [18.5, 52.9], [19.6, 53.3], [20.4, 53.6], [22.0, 53.9], [22.8, 54.4], [22.7, 55.1], [21.1, 55.9], [19.5, 54.8], [16.5, 54.8], [14.2, 54.2], [12.0, 54.5], [10.9, 54.3], [10.0, 54.8], [9.3, 55.0], [8.5, 55.0], [8.5, 53.9], [7.3, 53.9], [6.9, 53.5], [7.1, 52.5], [6.8, 52.1], [6.0, 51.9], [5.9, 50.8], [6.3, 49.9], [5.9, 49.2], [6.3, 48.7], [6.9, 48.35], [7.05, 47.9]] },
+                        { name: "Togo", color: '#a1a1aa', ring: [[0.8, 5.9], [1.8, 5.9], [1.6, 11.0], [0.1, 11.0]] },
+                        { name: "Cameroun", color: '#a1a1aa', ring: [[8.5, 4.6], [9.5, 3.7], [9.8, 2.3], [11.3, 2.2], [14.5, 1.5], [16.2, 1.8], [16.0, 3.5], [15.2, 7.5], [14.8, 10.0], [14.2, 12.5], [13.2, 13.2], [12.0, 10.5], [10.0, 7.0], [9.0, 6.0]] },
+                        { name: "Sud-Ouest africain", color: '#a1a1aa', ring: [[11.75, -17.3], [20.0, -17.8], [20.0, -22.0], [20.0, -24.9], [19.0, -28.0], [17.2, -28.8], [16.45, -28.6], [15.0, -27.0], [14.4, -22.5], [11.8, -17.8]] },
+                        { name: "Afrique orientale allemande", color: '#a1a1aa', ring: [[29.2, -1.1], [30.5, -1.0], [33.9, -1.0], [34.1, -2.5], [37.6, -3.0], [39.8, -4.7], [40.0, -7.0], [40.6, -9.8], [40.6, -10.7], [38.0, -11.3], [36.0, -11.6], [34.6, -11.5], [34.0, -9.8], [33.0, -9.3], [32.3, -9.2], [30.8, -8.3], [29.5, -6.5], [29.2, -4.5], [29.0, -3.3]] },
+                        { name: "Kiautschou (Tsingtao)", color: '#a1a1aa', ring: [[119.7, 35.6], [120.8, 35.6], [120.8, 36.6], [119.7, 36.6]] },
+                        { name: "Nouvelle-Guinée allemande", color: '#a1a1aa', ring: [[141.0, -2.6], [144.5, -3.8], [147.5, -6.0], [148.5, -8.0], [145.5, -6.6], [143.0, -4.5], [141.0, -5.0]] },
+                        { name: "Nouvelle-Guinée allemande", color: '#a1a1aa', ring: [[148.0, -5.5], [150.5, -5.0], [152.6, -3.8], [152.2, -4.8], [151.0, -5.8], [149.5, -6.2]] }
+                    ]
+                },
+                {
+                    id: '1918', label: "Après Brest-Litovsk", year: 1918, legend: true,
+                    text: "En mars 1918, la paix de Brest-Litovsk impose à la Russie bolchevique de renoncer à la Pologne, aux pays baltes, à la Biélorussie et à l'Ukraine : l'armée allemande les occupe ou y installe des gouvernements dépendants, sous le régime de l'Ober Ost. C'est le sommet territorial de l'Empire, quelques mois avant sa chute. Les colonies d'Afrique et d'Asie ne tiennent plus, sauf l'Afrique orientale de Lettow-Vorbeck.",
+                    zones: [
+                        { name: "Reich allemand", ring: [[7.0, 47.5], [7.6, 47.58], [8.6, 47.65], [9.6, 47.55], [10.2, 47.3], [10.9, 47.5], [12.2, 47.6], [13.0, 47.45], [13.1, 48.4], [13.8, 48.75], [12.9, 49.3], [12.1, 50.2], [12.9, 50.4], [14.6, 50.9], [15.5, 50.8], [16.4, 50.4], [16.9, 50.2], [18.0, 50.1], [18.8, 50.3], [19.0, 50.7], [18.3, 51.2], [17.9, 52.3], [18.5, 52.9], [19.6, 53.3], [20.4, 53.6], [22.0, 53.9], [22.8, 54.4], [22.7, 55.1], [21.1, 55.9], [19.5, 54.8], [16.5, 54.8], [14.2, 54.2], [12.0, 54.5], [10.9, 54.3], [10.0, 54.8], [9.3, 55.0], [8.5, 55.0], [8.5, 53.9], [7.3, 53.9], [6.9, 53.5], [7.1, 52.5], [6.8, 52.1], [6.0, 51.9], [5.9, 50.8], [6.3, 49.9], [5.9, 49.2], [6.3, 48.7], [6.9, 48.35], [7.05, 47.9]] },
+                        { name: "Territoires de l'Est sous contrôle allemand", color: '#a1a1aa', ring: [[22.7, 55.1], [21.0, 56.0], [21.5, 57.8], [23.5, 59.2], [27.5, 59.5], [28.2, 57.0], [30.5, 55.5], [31.5, 53.5], [34.0, 52.2], [35.5, 50.5], [38.0, 49.5], [38.3, 47.2], [37.0, 46.5], [35.0, 46.5], [32.0, 46.5], [30.0, 45.8], [29.6, 45.4], [28.2, 47.8], [26.8, 48.3], [24.5, 48.4], [24.0, 50.0], [22.0, 50.8], [19.0, 50.7], [18.3, 51.2], [17.9, 52.3], [18.5, 52.9], [19.6, 53.3], [20.4, 53.6], [22.0, 53.9], [22.8, 54.4]] }
+                    ]
+                }
+            ]
+        },
+        {
+            id: 'prusse', name: "Royaume de Prusse", icon: "🪖", color: '#1e3a8a', span: "1701 → 1918 (dissous en 1947)", from: 1701, to: 1918, peak: 1866,
+            places: [{ n: "Berlin", c: [13.4, 52.52] }, { n: "Potsdam", c: [13.06, 52.4] }, { n: "Königsberg", c: [20.5, 54.7] }, { n: "Breslau", c: [17.03, 51.11] }, { n: "Posen", c: [16.93, 52.41] }, { n: "Danzig", c: [18.65, 54.35] }, { n: "Clèves", c: [6.14, 51.79] }, { n: "Cologne", c: [6.96, 50.94] }, { n: "Magdebourg", c: [11.63, 52.12] }, { n: "Hanovre", c: [9.73, 52.37] }, { n: "Francfort", c: [8.68, 50.11] }, { n: "Kiel", c: [10.14, 54.32] }],
+            capital: "Berlin (et Potsdam)",
+            summary: "Le Brandebourg, un petit État sableux du nord de l'Allemagne, s'agrandit par mariages et héritages, puis devient la Prusse : en 1701, l'électeur Frédéric III se couronne « roi en Prusse » à Königsberg (Frédéric Ier). Frédéric-Guillaume Ier, le « roi-sergent », lui donne une armée disciplinée et une administration efficace ; Frédéric II le Grand (1740-1786) s'empare de la Silésie, bat l'Autriche, la France et la Russie pendant la guerre de Sept Ans et partage la Pologne (1772). Battue par Napoléon à Iéna (1806), la Prusse se réforme et revient plus grande au congrès de Vienne (1815), avec la Rhénanie, la Westphalie et la Saxe du nord. Sous Bismarck, elle bat l'Autriche à Sadowa (1866), annexe le Hanovre, la Hesse, Nassau et Francfort, puis fait l'unité allemande autour d'elle en 1871. Elle couvre alors les deux tiers du Reich. Le royaume disparaît avec la monarchie en 1918, l'État prussien est dissous en 1947.",
+            snapshots: [
+                {
+                    id: '1701', label: "Le royaume de 1701", year: 1701, legend: true,
+                    text: "En 1701, l'électeur de Brandebourg se couronne roi « en Prusse » : sa couronne vient du duché de Prusse, hors du Saint-Empire. Ses États sont dispersés : le Brandebourg et la Poméranie (avec Berlin) au centre, le duché de Prusse (Königsberg) loin à l'est, et des terres sur le Rhin (Clèves, Mark, Minden).",
+                    zones: [
+                        { name: "Brandebourg et Poméranie", ring: [[11.0, 52.0], [11.1, 53.0], [12.5, 53.9], [14.2, 54.1], [15.6, 54.3], [17.0, 54.5], [17.8, 54.0], [17.5, 53.3], [16.0, 53.0], [15.2, 52.2], [14.8, 51.5], [13.5, 51.6], [12.3, 51.7]] },
+                        { name: "Duché de Prusse (Königsberg)", ring: [[19.4, 54.4], [19.5, 54.8], [21.1, 55.3], [22.8, 55.1], [22.9, 54.3], [22.5, 53.7], [21.0, 53.5], [19.7, 53.9]] },
+                        { name: "Clèves, Mark et Minden", ring: [[6.0, 51.9], [8.7, 52.4], [8.8, 51.6], [7.0, 51.2], [6.0, 51.4]] }
+                    ]
+                },
+                {
+                    id: '1786', label: "À la mort de Frédéric le Grand", year: 1786, legend: true,
+                    text: "En 1786, Frédéric II laisse un État bien plus grand : la Silésie, prise à l'Autriche en 1740-1742, la Prusse royale (la Prusse occidentale, reçue au premier partage de la Pologne, 1772) qui relie enfin le Brandebourg à Königsberg, et la Frise orientale. Danzig et Thorn, polonaises, ne sont pas encore prussiennes (1793).",
+                    zones: [
+                        { name: "Prusse de 1786", ring: [[11.0, 52.0], [11.1, 53.0], [12.5, 53.9], [14.2, 54.1], [15.6, 54.4], [17.6, 54.8], [18.25, 54.8], [18.3, 54.25], [19.0, 54.25], [19.1, 54.85], [20.0, 55.0], [21.1, 55.3], [22.8, 55.1], [22.9, 54.3], [23.2, 53.9], [22.5, 53.4], [20.5, 53.0], [19.5, 52.8], [18.0, 52.8], [16.8, 52.7], [16.1, 52.0], [17.3, 51.5], [18.3, 51.0], [19.0, 50.4], [18.9, 50.1], [17.6, 50.0], [16.6, 50.3], [15.4, 50.8], [14.95, 51.0], [14.9, 51.5], [13.5, 51.5], [12.3, 51.7]] },
+                        { name: "Terres de l'Ouest (Clèves, Mark, Minden)", ring: [[6.0, 51.9], [8.7, 52.4], [8.8, 51.6], [7.0, 51.2], [6.0, 51.4]] },
+                        { name: "Terres de l'Ouest (Clèves, Mark, Minden)", ring: [[6.9, 53.4], [7.9, 53.7], [7.9, 53.2], [7.2, 53.0]] }
+                    ]
+                },
+                {
+                    id: '1815', label: "Après le congrès de Vienne", year: 1815, legend: true,
+                    text: "En 1815, la Prusse, victorieuse de Napoléon, reçoit au congrès de Vienne la moitié nord de la Saxe, la Westphalie et la Rhénanie, qui en font une puissance de l'Ouest comme de l'Est : elle est désormais frontalière de la France. Elle a aussi retrouvé Posen et Danzig (qu'elle avait pris en 1793-1795, aux deuxième et troisième partages de la Pologne). Son territoire est en deux morceaux, séparés par le Hanovre.",
+                    zones: [
+                        { name: "Prusse orientale et centrale", ring: [[10.0, 51.6], [10.9, 52.5], [11.1, 53.1], [12.5, 54.0], [14.2, 54.3], [16.0, 54.6], [18.0, 54.85], [19.6, 54.7], [20.5, 55.0], [21.1, 55.3], [22.8, 55.1], [22.9, 54.3], [23.2, 53.9], [22.5, 53.4], [20.5, 53.0], [19.6, 52.7], [18.5, 52.3], [18.3, 51.6], [19.0, 50.8], [19.0, 50.3], [18.9, 50.1], [17.6, 50.0], [16.6, 50.3], [15.4, 50.8], [14.95, 51.0], [14.9, 51.5], [13.5, 51.45], [12.6, 51.3], [12.2, 51.1], [11.6, 50.9], [11.0, 50.8], [10.4, 50.9], [10.0, 51.3]] },
+                        { name: "Rhénanie et Westphalie", ring: [[6.3, 49.4], [6.2, 50.2], [6.0, 50.8], [5.9, 51.4], [5.95, 51.9], [6.9, 52.4], [7.7, 52.55], [9.0, 52.5], [9.2, 52.0], [8.7, 51.4], [8.4, 50.9], [8.2, 50.4], [7.9, 50.0], [7.5, 49.6], [7.2, 49.2], [6.8, 49.15]] }
+                    ]
+                },
+                {
+                    id: '1866', label: "Après Sadowa", year: 1866, legend: true,
+                    text: "En 1866, après sa victoire sur l'Autriche, la Prusse annexe le royaume de Hanovre, la Hesse-Cassel, Nassau, la ville libre de Francfort et le Schleswig-Holstein (pris au Danemark en 1864) : ses deux morceaux se rejoignent, elle devient un État compact qui coupe l'Allemagne en deux et s'impose à tous les États du nord. La Confédération de l'Allemagne du Nord, sous son autorité, est le prélude de l'Empire.",
+                    zones: [
+                        { name: "Prusse d'avant 1866", ring: [[10.0, 51.6], [10.9, 52.5], [11.1, 53.1], [12.5, 54.0], [14.2, 54.3], [16.0, 54.6], [18.0, 54.85], [19.6, 54.7], [20.5, 55.0], [21.1, 55.3], [22.8, 55.1], [22.9, 54.3], [23.2, 53.9], [22.5, 53.4], [20.5, 53.0], [19.6, 52.7], [18.5, 52.3], [18.3, 51.6], [19.0, 50.8], [19.0, 50.3], [18.9, 50.1], [17.6, 50.0], [16.6, 50.3], [15.4, 50.8], [14.95, 51.0], [14.9, 51.5], [13.5, 51.45], [12.6, 51.3], [12.2, 51.1], [11.6, 50.9], [11.0, 50.8], [10.4, 50.9], [10.0, 51.3]] },
+                        { name: "Prusse d'avant 1866", ring: [[6.3, 49.4], [6.2, 50.2], [6.0, 50.8], [5.9, 51.4], [5.95, 51.9], [6.9, 52.4], [7.7, 52.55], [9.0, 52.5], [9.2, 52.0], [8.7, 51.4], [8.4, 50.9], [8.2, 50.4], [7.9, 50.0], [7.5, 49.6], [7.2, 49.2], [6.8, 49.15]] },
+                        { name: "Annexions de 1866 (Hanovre, Hesse, Nassau, Schleswig-Holstein)", color: '#60a5fa', ring: [[7.0, 52.7], [7.2, 53.4], [8.4, 53.7], [8.7, 53.95], [8.6, 54.9], [9.4, 55.0], [10.4, 54.7], [11.0, 54.4], [10.9, 53.9], [10.6, 53.5], [11.1, 53.1], [10.9, 52.5], [10.0, 51.6], [9.9, 50.8], [9.4, 50.2], [8.9, 49.95], [8.0, 49.95], [8.2, 50.4], [8.4, 50.9], [8.7, 51.4], [9.2, 52.0], [9.0, 52.5], [7.7, 52.55]] }
+                    ]
+                }
+            ]
         }
     ];
 
@@ -790,7 +1023,7 @@
     }
 
     // --- Le classement : par époque de l'apogée ------------------------------------------------------
-    // Vingt-trois entités ne tiennent pas sur une rangée de puces : on les range selon l'année de leur apogée (`peak`), en tranches neutres
+    // Trente-six entités ne tiennent pas sur une rangée de puces : on les range selon l'année de leur apogée (`peak`), en tranches neutres
     // (sans « Antiquité » ou « Moyen Âge », qui sont des termes européens) ; l'écran en fait les groupes d'un menu déroulant.
     var CATEGORIES = [
         { id: 'avant-500', label: 'Jusqu\'à 500', title: 'Apogée jusqu\'en 500', to: 500 },

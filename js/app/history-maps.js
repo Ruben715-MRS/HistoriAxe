@@ -179,10 +179,11 @@ function toolHistoryDateRender() {
 }
 
 // --- La carte --------------------------------------------------------------------------
-// Un masque de mer : le monde entier, percé d'un trou par masse de terre (assets/geo/land.json : l'union des pays, calculée une fois pour toutes,
-// sinon les trous de pays voisins se touchent et la triangulation se trompe). Tout ce qui est dessiné dessous (les zones historiques)
-// n'apparaît donc que sur terre. Les lacs et mers intérieures de cette silhouette (la Caspienne) redeviennent de la mer.
-const HISTORY_LAND_URL = 'assets/geo/land.json';
+// Un masque de mer : tout ce qui n'est pas terre (assets/geo/sea.json), pour que les zones historiques, dessinées dessous, n'apparaissent que
+// sur terre. Il est découpé une fois pour toutes en cases de 30° : « le monde percé d'un trou par masse de terre » en un seul polygone à
+// 1 200 trous se faisait mal trianguler (des bandes de mer parasites sur la terre selon le cadrage). Les lacs et mers intérieures de la
+// silhouette des pays (la Caspienne) en font partie.
+const HISTORY_LAND_URL = 'assets/geo/sea.json';
 let historyLand = null;
 let historyLandPromise = null;
 
@@ -197,10 +198,7 @@ function historyLoadLand() {
 }
 
 function historySeaMask() {
-    const world = [[-181, -86], [181, -86], [181, 86], [-181, 86], [-181, -86]];
-    const polygons = [[world].concat(historyLand.coordinates.map(polygon => polygon[0]))];
-    historyLand.coordinates.forEach(polygon => polygon.slice(1).forEach(lake => polygons.push([lake])));
-    return { type: 'Feature', properties: {}, geometry: { type: 'MultiPolygon', coordinates: polygons } };
+    return { type: 'Feature', properties: {}, geometry: historyLand };
 }
 
 function historyEnsureMap() {

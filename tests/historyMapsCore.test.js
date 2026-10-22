@@ -12,8 +12,8 @@ const zoneContains = (zone, [lon, lat]) => C.contains(C.prepare({ type: 'Polygon
 const snapshotContains = (snapshot, point) => snapshot.zones.some(z => zoneContains(z, point));
 const get = (entityId, snapshotId) => { const e = H.entityById(entityId); return { entity: e, snapshot: H.snapshotOf(e, snapshotId) }; };
 
-test('les vingt-neuf entités, aux identifiants uniques et aux champs complets', () => {
-    assert.deepEqual(H.ENTITIES.map(e => e.id), ['mesopotamie', 'egypte', 'maurya', 'han', 'rome', 'aksoum', 'gupta', 'mayas', 'perse', 'alexandre', 'byzance', 'califat', 'carolingien', 'saint-empire', 'mali', 'mongol', 'songhai', 'ottoman', 'charles-quint', 'azteques', 'incas', 'kongo', 'qing', 'ethiopie', 'britannique', 'russe', 'napoleon', 'austro-hongrois', 'colonial-francais']);
+test('les trente-six entités, aux identifiants uniques et aux champs complets', () => {
+    assert.deepEqual(H.ENTITIES.map(e => e.id), ['mesopotamie', 'egypte', 'maurya', 'han', 'rome', 'aksoum', 'gupta', 'mayas', 'perse', 'alexandre', 'byzance', 'califat', 'carolingien', 'saint-empire', 'mali', 'mongol', 'songhai', 'ottoman', 'charles-quint', 'azteques', 'incas', 'kongo', 'qing', 'ethiopie', 'britannique', 'russe', 'napoleon', 'austro-hongrois', 'colonial-francais', 'parthes', 'sassanide', 'zimbabwe', 'khmer', 'japon', 'allemand', 'prusse']);
     assert.equal(new Set(H.ENTITIES.map(e => e.id)).size, H.ENTITIES.length);
     H.ENTITIES.forEach(e => {
         ['name', 'icon', 'color', 'span', 'capital', 'summary'].forEach(k => assert.ok(e[k] && String(e[k]).length >= 1, e.id + ' ' + k));
@@ -182,11 +182,14 @@ test('période d\'une entité', () => {
     assert.equal(H.inSpan(rome, null), false);
 });
 
-test('les données de la silhouette de la terre sont là et raisonnables', () => {
-    const land = JSON.parse(fs.readFileSync(path.join(root, 'assets/geo/land.json'), 'utf8'));
-    assert.equal(land.type, 'MultiPolygon');
-    assert.ok(land.coordinates.length > 500);
-    assert.ok(fs.statSync(path.join(root, 'assets/geo/land.json')).size < 700 * 1024);
+test('le masque de mer est là, en cases saines et de taille raisonnable', () => {
+    const sea = JSON.parse(fs.readFileSync(path.join(root, 'assets/geo/sea.json'), 'utf8'));
+    assert.equal(sea.type, 'MultiPolygon');
+    assert.ok(sea.coordinates.length > 50);
+    // pas de case surchargée de trous : c'est ce qui faisait se tromper la triangulation
+    assert.ok(Math.max(...sea.coordinates.map(p => p.length - 1)) < 150);
+    sea.coordinates.forEach(p => p.forEach(r => { assert.ok(r.length >= 4); assert.deepEqual(r[0], r[r.length - 1]); }));
+    assert.ok(fs.statSync(path.join(root, 'assets/geo/sea.json')).size < 700 * 1024);
 });
 
 test('Empire perse : de Cyrus à Darius', () => {
@@ -377,9 +380,9 @@ test('classement : chaque entité dans une tranche d\'apogée, et chaque tranche
     const groups = {};
     H.ENTITIES.forEach(e => { const c = H.categoryOf(e); assert.ok(ids.includes(c), e.id); (groups[c] = groups[c] || []).push(e.id); });
     ids.forEach(id => assert.ok(groups[id] && groups[id].length >= 3, id + ' a au moins trois entités'));
-    assert.deepEqual(groups['avant-500'], ['mesopotamie', 'egypte', 'maurya', 'han', 'rome', 'aksoum', 'gupta', 'perse', 'alexandre']);
+    assert.deepEqual(groups['avant-500'], ['mesopotamie', 'egypte', 'maurya', 'han', 'rome', 'aksoum', 'gupta', 'perse', 'alexandre', 'parthes']);
     assert.deepEqual(groups['1500-1800'], ['songhai', 'ottoman', 'charles-quint', 'azteques', 'incas', 'kongo', 'qing']);
-    assert.deepEqual(groups['depuis-1800'], ['ethiopie', 'britannique', 'russe', 'napoleon', 'austro-hongrois', 'colonial-francais']);
+    assert.deepEqual(groups['depuis-1800'], ['ethiopie', 'britannique', 'russe', 'napoleon', 'austro-hongrois', 'colonial-francais', 'japon', 'allemand', 'prusse']);
     assert.equal(H.categoryOf({ peak: 500 }), 'avant-500');
     assert.equal(H.categoryOf({ peak: 501 }), '500-1500');
     assert.equal(H.categoryOf({ peak: 1800 }), '1500-1800');
@@ -502,4 +505,81 @@ test('Royaume de Kongo : de Mbanza Kongo à Afonso Ier', () => {
     assert.ok(snapshotContains(c, place(e, 'Mbanza Kongo')));
     const area = s => { const box = C.prepare(H.snapshotGeometry(s)).box; return (box[2] - box[0]) * (box[3] - box[1]); };
     assert.ok(area(c) < area(b), 'le royaume rétrécit après Mbwila');
+});
+
+test('Empire parthe : la Parthie, puis la Mésopotamie, puis l\'Euphrate', () => {
+    const e = H.entityById('parthes');
+    const a = H.snapshotOf(e, '-247'), b = H.snapshotOf(e, '-141'), c = H.snapshotOf(e, '-53');
+    assert.ok(snapshotContains(a, place(e, 'Nisa')));
+    ['Ctésiphon', 'Suse', 'Ecbatane'].forEach(n => assert.ok(!snapshotContains(a, place(e, n)), n + ' n\'est pas encore parthe'));
+    ['Nisa', 'Rhagès', 'Ecbatane', 'Suse', 'Ctésiphon'].forEach(n => assert.ok(snapshotContains(b, place(e, n)), n + ' en 141 av. J.-C.'));
+    ['Merv', 'Doura-Europos'].forEach(n => assert.ok(snapshotContains(c, place(e, n)), n + ' en 53 av. J.-C.'));
+    assert.ok(!snapshotContains(c, place(e, 'Carrhes')), 'Carrhes est romaine : c\'est là que Crassus est vaincu');
+});
+
+test('Empire sassanide : Chapour Ier, Khosro Ier et le Yémen, puis l\'Égypte de Khosro II', () => {
+    const e = H.entityById('sassanide');
+    const a = H.snapshotOf(e, '260'), b = H.snapshotOf(e, '560'), c = H.snapshotOf(e, '620');
+    ['Ctésiphon', 'Istakhr', 'Nisibe', 'Merv', 'Balkh'].forEach(n => assert.ok(snapshotContains(a, place(e, n)), n + ' en 260'));
+    ['Antioche', 'Alexandrie', 'Sanaa', 'Derbent'].forEach(n => assert.ok(!snapshotContains(a, place(e, n)), n + ' n\'est pas sassanide en 260'));
+    ['Sanaa', 'Derbent'].forEach(n => assert.ok(snapshotContains(b, place(e, n)), n + ' en 560'));
+    assert.ok(!snapshotContains(b, place(e, 'Alexandrie')));
+    e.places.forEach(p => assert.ok(snapshotContains(c, p.c), p.n + ' en 620'));
+    assert.ok(H.legendNeeded(e, b) && H.legendNeeded(e, c));
+});
+
+test('Mapungubwe et Grand Zimbabwe : le Limpopo, puis le plateau, puis les héritiers', () => {
+    const e = H.entityById('zimbabwe');
+    const a = H.snapshotOf(e, '1150'), b = H.snapshotOf(e, '1300'), c = H.snapshotOf(e, '1450');
+    assert.ok(snapshotContains(a, place(e, 'Mapungubwe')));
+    assert.ok(!snapshotContains(a, place(e, 'Grand Zimbabwe')));
+    ['Grand Zimbabwe', 'Khami'].forEach(n => assert.ok(snapshotContains(b, place(e, n)), n + ' en 1300'));
+    assert.ok(!snapshotContains(b, place(e, 'Mapungubwe')), 'Mapungubwe est abandonnée vers 1220');
+    assert.equal(c.zones.length, 2);
+    assert.ok(!snapshotContains(c, place(e, 'Grand Zimbabwe')), 'Grand Zimbabwe est abandonnée vers 1450');
+    assert.ok(c.zones.some(z => zoneContains(z, place(e, 'Khami'))) && c.zones.some(z => zoneContains(z, place(e, 'Tete'))));
+});
+
+test('Empire khmer : le mont Kulen, Suryavarman Ier, Jayavarman VII', () => {
+    const e = H.entityById('khmer');
+    const a = H.snapshotOf(e, '802'), b = H.snapshotOf(e, '1050'), c = H.snapshotOf(e, '1200');
+    ['Angkor Vat', 'Phnom Kulen'].forEach(n => assert.ok(snapshotContains(a, place(e, n)), n + ' en 802'));
+    ['Lopburi', 'Wat Phou', 'Phimai'].forEach(n => assert.ok(!snapshotContains(a, place(e, n)), n + ' n\'est pas encore khmère'));
+    ['Lopburi', 'Wat Phou', 'Phimai'].forEach(n => assert.ok(snapshotContains(b, place(e, n)), n + ' en 1050'));
+    assert.ok(!snapshotContains(b, place(e, 'Vientiane')));
+    e.places.forEach(p => assert.ok(snapshotContains(c, p.c), p.n + ' en 1200'));
+});
+
+test('Empire du Japon : Taïwan, puis la Corée, puis la sphère de coprospérité', () => {
+    const e = H.entityById('japon');
+    const a = H.snapshotOf(e, '1895'), b = H.snapshotOf(e, '1920'), c = H.snapshotOf(e, '1942');
+    ['Tokyo', 'Kyoto', 'Taipei'].forEach(n => assert.ok(snapshotContains(a, place(e, n)), n + ' en 1895'));
+    ['Séoul', 'Port-Arthur'].forEach(n => assert.ok(!snapshotContains(a, place(e, n)), n + ' n\'est pas encore japonaise en 1895'));
+    ['Séoul', 'Port-Arthur'].forEach(n => assert.ok(snapshotContains(b, place(e, n)), n + ' en 1920'));
+    ['Nankin', 'Manille', 'Singapour'].forEach(n => assert.ok(!snapshotContains(b, place(e, n)), n + ' n\'est pas occupée en 1920'));
+    e.places.forEach(p => assert.ok(snapshotContains(c, p.c), p.n + ' en 1942'));
+    assert.ok(H.legendNeeded(e, a) && H.legendNeeded(e, b) && H.legendNeeded(e, c));
+});
+
+test('Empire allemand : le Reich de 1871, les colonies de 1914, l\'Est de 1918', () => {
+    const e = H.entityById('allemand');
+    const a = H.snapshotOf(e, '1871'), b = H.snapshotOf(e, '1914'), c = H.snapshotOf(e, '1918');
+    ['Berlin', 'Hambourg', 'Munich', 'Strasbourg', 'Metz', 'Königsberg', 'Breslau', 'Posen'].forEach(n => assert.ok(snapshotContains(a, place(e, n)), n + ' en 1871'));
+    [[2.35, 48.86], [21.01, 52.23], [16.37, 48.21]].forEach(pt => assert.ok(!snapshotContains(a, pt), 'Paris, Varsovie et Vienne ne sont pas dans le Reich'));
+    ['Windhoek', 'Dar es Salaam', 'Douala', 'Lomé', 'Qingdao'].forEach(n => { assert.ok(!snapshotContains(a, place(e, n))); assert.ok(snapshotContains(b, place(e, n)), n + ' en 1914'); });
+    assert.equal(c.zones.length, 2);
+    assert.ok(c.zones.some(z => zoneContains(z, [21.01, 52.23])), 'Varsovie est sous contrôle allemand en 1918');
+    assert.ok(c.zones.some(z => zoneContains(z, [30.52, 50.45])), 'Kiev aussi');
+});
+
+test('Royaume de Prusse : 1701 dispersée, la Silésie, le congrès de Vienne, Sadowa', () => {
+    const e = H.entityById('prusse');
+    const a = H.snapshotOf(e, '1701'), b = H.snapshotOf(e, '1786'), c = H.snapshotOf(e, '1815'), d = H.snapshotOf(e, '1866');
+    ['Berlin', 'Königsberg', 'Magdebourg', 'Clèves'].forEach(n => assert.ok(snapshotContains(a, place(e, n)), n + ' en 1701'));
+    ['Breslau', 'Posen', 'Danzig'].forEach(n => assert.ok(!snapshotContains(a, place(e, n)), n + ' n\'est pas prussienne en 1701'));
+    assert.ok(snapshotContains(b, place(e, 'Breslau')), 'la Silésie est prise en 1740-1742');
+    ['Posen', 'Danzig', 'Cologne'].forEach(n => assert.ok(!snapshotContains(b, place(e, n)), n + ' n\'est pas prussienne en 1786'));
+    ['Posen', 'Danzig', 'Cologne', 'Breslau'].forEach(n => assert.ok(snapshotContains(c, place(e, n)), n + ' en 1815'));
+    ['Hanovre', 'Francfort', 'Kiel'].forEach(n => { assert.ok(!snapshotContains(c, place(e, n))); assert.ok(snapshotContains(d, place(e, n)), n + ' en 1866'); });
+    assert.equal(c.zones.length, 2, 'en 1815 le royaume est en deux morceaux');
 });

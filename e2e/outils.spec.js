@@ -228,12 +228,12 @@ test('cartes historiques : un menu groupé par époque, des dates, une fiche, et
     await page.waitForFunction(() => window.bdd && window.bdd.some(c => (c.themes || []).some(t => t.id === 'thm_aut')), null, { timeout: 45_000 });
     await ouvrir(page, 'Cartes historiques');
     expect(await visibleScreen(page)).toBe('screen-tool-history');
-    // vingt-neuf entités, rangées en quatre groupes d'un seul menu (plus de mur de puces)
+    // trente-six entités, rangées en quatre groupes d'un seul menu (plus de mur de puces)
     const menu = page.locator('#tool-history-entity-select');
-    await expect(menu.locator('option')).toHaveCount(29);
+    await expect(menu.locator('option')).toHaveCount(36);
     await expect(menu.locator('optgroup')).toHaveCount(4);
     await expect(menu.locator('optgroup').first()).toHaveAttribute('label', 'Apogée jusqu\'en 500');
-    await expect(menu.locator('optgroup[label="Apogée depuis 1800"] option')).toHaveCount(6);
+    await expect(menu.locator('optgroup[label="Apogée depuis 1800"] option')).toHaveCount(9);
     expect(await page.locator('#screen-tool-history').innerText()).not.toContain('tools.');
     // Rome au départ : trois dates, et la fiche de l'apogée
     await expect(menu).toHaveValue('rome');
