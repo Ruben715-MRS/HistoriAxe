@@ -104,7 +104,7 @@ function renderRanks() {
         const title = document.createElement('b');
         title.textContent = rankTitle(rank);
         const meta = document.createElement('small');
-        meta.textContent = t('gamification.rank_badge', { level: k === top ? realLevel : k });
+        meta.textContent = t('gamification.rank_badge', { level: k === top && realLevel >= top ? realLevel : k });
         label.append(title, meta);
         if (k === level) {
             const here = document.createElement('em');
