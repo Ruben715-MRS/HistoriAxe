@@ -132,8 +132,8 @@ async function joinTeam(body) {
     const player = await upsertPlayer(body.deviceId, null);
     const already = await query('select 1 from team_members where code = $1 and player_id = $2', [code, player.id]);
     if (!already.rows[0]) {
-        const count = await query('select count(*)::int as n from team_members where code = $1', [code]);
-        if (count.rows[0].n >= T.MAX_MEMBERS) throw httpError(409, 'L\'équipe est complète.');
+        const count = await query('select count(*)::int as n from team_members where code = $1 and player_id <> $2', [code, team.teacher_id]);
+        if (count.rows[0].n + 1 >= T.MAX_MEMBERS) throw httpError(409, 'L\'équipe est complète.');
     }
     // Un nouvel arrivant ne touche pas les coffres déjà ouverts : il démarre au coffre courant.
     await query(
@@ -232,11 +232,14 @@ function teamCard(team, memberCount) {
 
 async function memberCounts(codes) {
     const counts = {};
-    codes.forEach((c) => { counts[c] = 0; });
+    // Le chef d'équipe compte toujours comme un membre (même sans ligne dans team_members), et une seule fois.
+    codes.forEach((c) => { counts[c] = 1; });
     if (!codes.length) return counts;
     const marks = codes.map((_, i) => `$${i + 1}`).join(', ');
-    const { rows } = await query(`select code, count(*)::int as n from team_members where code in (${marks}) group by code`, codes);
-    rows.forEach((r) => { counts[r.code] = r.n; });
+    const { rows } = await query(
+        `select m.code, count(*)::int as n from team_members m join class_teams t on t.code = m.code
+          where m.code in (${marks}) and m.player_id <> t.teacher_id group by m.code`, codes);
+    rows.forEach((r) => { counts[r.code] += r.n; });
     return counts;
 }
 
@@ -375,7 +378,8 @@ async function buildState(code, deviceId) {
     const me = deviceId && isValidDeviceId(deviceId) ? await playerOf(deviceId) : null;
     const isTeacher = !!me && me.id === team.teacher_id;
     const mine = me ? rows.find((r) => r.player_id === me.id) : null;
-    const target = T.chestTarget(rows.length);
+    const total = rows.filter((r) => r.player_id !== team.teacher_id).length + 1;
+    const target = T.chestTarget(total);
     const state = {
         code,
         name: team.name,
@@ -390,7 +394,7 @@ async function buildState(code, deviceId) {
         challenge: await challengeOf(code, team),
         isTeacher,
         isMember: !!mine,
-        memberCount: rows.length,
+        memberCount: total,
         progress: team.progress,
         target,
         chestIndex: team.chest_index,

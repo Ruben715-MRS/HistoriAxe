@@ -139,7 +139,7 @@ maybe('une équipe de bout en bout : création, membres, coffre, réclamation un
     assert.equal((await call(h, 'POST', { action: 'kick', code, deviceId: dev(1), ref: zoe.ref })).code, 403);
     assert.equal((await call(h, 'POST', { action: 'kick', code, deviceId: TEACHER, ref: 'pas-un-uuid' })).code, 400);
     assert.equal((await call(h, 'POST', { action: 'kick', code, deviceId: TEACHER, ref: zoe.ref })).code, 200);
-    assert.equal((await call(h, 'GET', { code, deviceId: TEACHER })).body.memberCount, 2);
+    assert.equal((await call(h, 'GET', { code, deviceId: TEACHER })).body.memberCount, 3, 'Léa, Hugo et le chef d\'équipe');
 
     // Quitter, puis suppression par l'enseignant.
     assert.equal((await call(h, 'POST', { action: 'leave', code, deviceId: dev(2) })).code, 200);
@@ -287,8 +287,10 @@ maybe('les membres se classent par niveau, puis par points ; le niveau se met à
 maybe('une équipe est limitée à 50 membres', async () => {
     const { team: h } = loadHandlers();
     const code = (await call(h, 'POST', { action: 'create', deviceId: TEACHER, name: 'Grande' })).body.code;
-    for (let i = 1; i <= 50; i++) assert.equal((await call(h, 'POST', { action: 'join', code, deviceId: dev(i), name: 'E' + i })).code, 200);
-    assert.equal((await call(h, 'POST', { action: 'join', code, deviceId: dev(51), name: 'Trop' })).code, 409);
+    // Le chef d'équipe compte : 49 autres membres suffisent à remplir les 50 places.
+    for (let i = 1; i <= 49; i++) assert.equal((await call(h, 'POST', { action: 'join', code, deviceId: dev(i), name: 'E' + i })).code, 200);
+    assert.equal((await call(h, 'GET', { code, deviceId: TEACHER })).body.memberCount, 50);
+    assert.equal((await call(h, 'POST', { action: 'join', code, deviceId: dev(50), name: 'Trop' })).code, 409);
     // Un membre déjà inscrit peut re-rejoindre (changer de prénom) même quand l'équipe est pleine.
     assert.equal((await call(h, 'POST', { action: 'join', code, deviceId: dev(1), name: 'Nouveau' })).code, 200);
 });
@@ -305,7 +307,7 @@ maybe('recherche d\'équipe par nom ou par identifiant', async () => {
     assert.deepEqual(r.map((t) => t.code), [b, a], 'les plus peuplées d\'abord');
     assert.ok(!r.some((t) => t.code === privee), 'une équipe privée n\'apparaît pas par son nom');
     assert.equal((await call(h, 'POST', { action: 'search', q: privee })).body.teams[0].code, privee, 'mais se trouve par son identifiant');
-    assert.deepEqual(r[1], { code: a, name: 'Les Historiens', badge: '0.2.1.0', country: 'FR', lang: 'fr', memberCount: 0 });
+    assert.deepEqual(r[1], { code: a, name: 'Les Historiens', badge: '0.2.1.0', country: 'FR', lang: 'fr', memberCount: 1 });
     r = (await call(h, 'POST', { action: 'search', q: '#' + a.toLowerCase() })).body.teams;
     assert.equal(r[0].code, a, 'l\'identifiant, avec ou sans dièse');
     assert.deepEqual((await call(h, 'POST', { action: 'search', q: 'zzzzzzz%' })).body.teams, []);
