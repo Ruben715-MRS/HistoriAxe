@@ -174,8 +174,7 @@ function initThemes() {
     // sous-catégories : disponible dès que ce nœud — ici le dernier niveau
     // avant la liste de thèmes — contient assez d'événements géolocalisables.
     if (!category.isCustomCategory && typeof isGeoEligible === 'function' && isGeoEligible(node)) {
-        container.appendChild(buildGeoModeCard(node, node.nom));
-        container.appendChild(buildChronoGeoCard(node, node.nom));
+        container.appendChild(buildGeoModeRow(node, node.nom));
     }
 
     if (themeList.length === 0 && !category.isCustomCategory) {
