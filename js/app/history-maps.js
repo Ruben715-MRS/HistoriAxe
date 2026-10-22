@@ -1,7 +1,7 @@
 // =========================================================================
 // === LES CARTES HISTORIQUES (écran de la boîte à outils) ===
 // =========================================================================
-// Deux façons de regarder : PAR EMPIRE (on choisit une tranche d'époque, une entité, puis un instantané daté) ou PAR DATE (un curseur
+// Deux façons de regarder : PAR EMPIRE (un menu d'entités groupées par époque d'apogée, puis un instantané daté) ou PAR DATE (un curseur
 // montre tout ce qui existe à l'année choisie). Par empire : la carte colore la zone, la fiche dit qui, quand, où,
 // et liste les événements de l'app situés dans cette zone pendant la période de l'entité. Les contours sont dessinés à la main et
 // approximatifs (js/historyMapsCore.js) : l'écran le dit. Ils peuvent déborder sur la mer ; un masque de mer, calculé à partir des
@@ -13,7 +13,6 @@ let historyMapReady = false;
 let historyEntityId = 'rome';
 let historySnapshotId = null;
 let historyMode = 'entity';        // 'entity' : un empire et ses dates ; 'date' : tout ce qui existe à une date (curseur)
-let historyCategory = 'avant-500'; // une tranche d'apogée (HistoryMapsCore.CATEGORIES), ou 'tous'
 let historyYear = 1500;
 const HISTORY_PRESETS = [-500, 117, 800, 1250, 1500, 1683, 1812, 1920];
 const historyEventsCache = new Map();
@@ -21,8 +20,7 @@ const historyEventsCache = new Map();
 function toolHistoryInit() {
     const status = document.getElementById('tool-history-status');
     status.textContent = t('tools.history_loading');
-    if (!document.getElementById('tool-history-cats').firstChild) toolHistoryRenderPresets();
-    toolHistoryRenderCategories();
+    if (!document.getElementById('tool-history-presets').firstChild) toolHistoryRenderPresets();
     toolHistoryRenderEntities();
     toolHistoryApplyMode();
     countriesLoad().then(ok => {
@@ -57,47 +55,28 @@ function toolHistoryApplyMode() {
     }
 }
 
-// --- Les puces : tranches, entités, dates ---------------------------------------------------------------
-function toolHistoryRenderCategories() {
-    const holder = document.getElementById('tool-history-cats');
-    while (holder.firstChild) holder.removeChild(holder.firstChild);
-    [{ id: 'tous', label: t('tools.history_all') }].concat(HistoryMapsCore.CATEGORIES).forEach(cat => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'tool-history-chip is-cat';
-        btn.dataset.cat = cat.id;
-        btn.textContent = cat.label;
-        btn.setAttribute('aria-pressed', cat.id === historyCategory ? 'true' : 'false');
-        btn.onclick = () => toolHistorySetCategory(cat.id);
-        holder.appendChild(btn);
-    });
-}
-
-// Choisir une tranche montre ses entités ; si l'entité affichée n'en fait pas partie, on passe à la première de la tranche.
-function toolHistorySetCategory(category) {
-    historyCategory = category;
-    toolHistoryRenderCategories();
-    toolHistoryRenderEntities();
-    const current = HistoryMapsCore.entityById(historyEntityId);
-    if (category !== 'tous' && (!current || HistoryMapsCore.categoryOf(current) !== category)) {
-        const first = HistoryMapsCore.ENTITIES.find(entity => HistoryMapsCore.categoryOf(entity) === category);
-        if (first) toolHistorySelect(first.id, null, {});
-    }
-}
-
+// --- Le choix de l'empire (un menu groupé par époque d'apogée) et de la date (quelques puces) --------------------
+// Vingt-trois puces d'empires encombraient l'écran : un menu déroulant natif les range en quatre groupes (HistoryMapsCore.CATEGORIES), avec
+// leur emoji ; les dates de l'empire choisi (deux à quatre) restent des puces, sur une seule rangée.
 function toolHistoryRenderEntities() {
-    const holder = document.getElementById('tool-history-entities');
-    while (holder.firstChild) holder.removeChild(holder.firstChild);
-    HistoryMapsCore.ENTITIES.filter(entity => historyCategory === 'tous' || HistoryMapsCore.categoryOf(entity) === historyCategory).forEach(entity => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'tool-history-chip';
-        btn.dataset.entity = entity.id;
-        btn.textContent = entity.icon + ' ' + entity.name;
-        btn.setAttribute('aria-pressed', entity.id === historyEntityId ? 'true' : 'false');
-        btn.onclick = () => toolHistorySelect(entity.id, null, {});
-        holder.appendChild(btn);
+    const select = document.getElementById('tool-history-entity-select');
+    while (select.firstChild) select.removeChild(select.firstChild);
+    HistoryMapsCore.CATEGORIES.forEach(category => {
+        const group = document.createElement('optgroup');
+        group.label = category.title;
+        HistoryMapsCore.ENTITIES.filter(entity => HistoryMapsCore.categoryOf(entity) === category.id).forEach(entity => {
+            const option = document.createElement('option');
+            option.value = entity.id;
+            option.textContent = entity.icon + ' ' + entity.name;
+            group.appendChild(option);
+        });
+        select.appendChild(group);
     });
+    select.value = historyEntityId;
+}
+
+function toolHistoryPick(entityId) {
+    toolHistorySelect(entityId, null, {});
 }
 
 function toolHistoryRenderSnapshots(entity) {
@@ -128,15 +107,7 @@ function toolHistorySelect(entityId, snapshotId, how) {
     const snapshot = HistoryMapsCore.snapshotOf(entity, snapshotId) || historyDefaultSnapshot(entity);
     historyEntityId = entity.id;
     historySnapshotId = snapshot.id;
-    // L'entité choisie doit rester visible dans les puces : on change de tranche si elle n'en fait pas partie.
-    if (historyCategory !== 'tous' && HistoryMapsCore.categoryOf(entity) !== historyCategory) {
-        historyCategory = HistoryMapsCore.categoryOf(entity);
-        toolHistoryRenderCategories();
-        toolHistoryRenderEntities();
-    }
-    document.querySelectorAll('#tool-history-entities .tool-history-chip').forEach(btn => {
-        btn.setAttribute('aria-pressed', btn.dataset.entity === entity.id ? 'true' : 'false');
-    });
+    document.getElementById('tool-history-entity-select').value = entity.id;
     toolHistoryRenderSnapshots(entity);
     toolHistoryRenderFiche(entity, snapshot);
     historyShowOnMap(entity, snapshot, !(how && how.keepMap));

@@ -643,12 +643,12 @@
 
     // --- Le classement : par époque de l'apogée ------------------------------------------------------
     // Vingt-trois entités ne tiennent pas sur une rangée de puces : on les range selon l'année de leur apogée (`peak`), en tranches neutres
-    // (sans « Antiquité » ou « Moyen Âge », qui sont des termes européens) ; l'écran n'affiche qu'une tranche à la fois, plus « Tous ».
+    // (sans « Antiquité » ou « Moyen Âge », qui sont des termes européens) ; l'écran en fait les groupes d'un menu déroulant.
     var CATEGORIES = [
-        { id: 'avant-500', label: 'Jusqu\'à 500', to: 500 },
-        { id: '500-1500', label: '500 – 1500', to: 1500 },
-        { id: '1500-1800', label: '1500 – 1800', to: 1800 },
-        { id: 'depuis-1800', label: 'Depuis 1800', to: Infinity }
+        { id: 'avant-500', label: 'Jusqu\'à 500', title: 'Apogée jusqu\'en 500', to: 500 },
+        { id: '500-1500', label: '500 – 1500', title: 'Apogée entre 500 et 1500', to: 1500 },
+        { id: '1500-1800', label: '1500 – 1800', title: 'Apogée entre 1500 et 1800', to: 1800 },
+        { id: 'depuis-1800', label: 'Depuis 1800', title: 'Apogée depuis 1800', to: Infinity }
     ];
 
     function categoryOf(entity) {

@@ -1501,8 +1501,10 @@
                 <button type="button" class="tool-history-chip" id="tool-history-mode-date" aria-pressed="false" onclick="toolHistoryMode('date')" data-i18n="tools.history_mode_date">Par date</button>
             </div>
             <div id="tool-history-entity-block" class="tool-history-block">
-                <div class="tool-history-chips" id="tool-history-cats" role="group" aria-label="Époque de l'apogée" data-i18n-attr="aria-label:tools.history_cats_label"></div>
-                <div class="tool-history-chips" id="tool-history-entities" role="group" aria-label="Choisir un empire ou une région" data-i18n-attr="aria-label:tools.history_entities_label"></div>
+                <div class="tool-field">
+                    <label for="tool-history-entity-select" data-i18n="tools.history_entity_label">Empire ou civilisation</label>
+                    <select id="tool-history-entity-select" class="tool-input" onchange="toolHistoryPick(this.value)"></select>
+                </div>
                 <div class="tool-history-chips" id="tool-history-snapshots" role="group" aria-label="Choisir une date" data-i18n-attr="aria-label:tools.history_dates_label"></div>
             </div>
             <div id="tool-history-date-block" class="tool-history-block hidden">
@@ -1510,7 +1512,7 @@
                     <label for="tool-history-slider"><span data-i18n="tools.history_slider_label">Année</span> : <output id="tool-history-year" for="tool-history-slider"></output></label>
                     <input type="range" id="tool-history-slider" class="tool-history-slider" min="0" max="1000" step="1" value="750" oninput="toolHistorySlide(this.value)">
                 </div>
-                <div class="tool-history-chips" id="tool-history-presets" role="group" aria-label="Dates repères" data-i18n-attr="aria-label:tools.history_presets_label"></div>
+                <div class="tool-history-chips is-scroll" id="tool-history-presets" role="group" aria-label="Dates repères" data-i18n-attr="aria-label:tools.history_presets_label"></div>
             </div>
             <p class="tool-msg" id="tool-history-status" role="status"></p>
             <div id="tool-history-map" class="tool-countries-map" role="application" aria-label="Carte historique" data-i18n-attr="aria-label:tools.history_map_label"></div>

@@ -11437,12 +11437,6 @@ input:not([type="range"]), label, select, summary, textarea {
     gap: 10px;
 }
 
-.tool-history-chip.is-cat {
-    min-height: 40px;
-    font-size: 13px;
-    padding: 6px 12px;
-}
-
 .tool-history-slider {
     width: 100%;
     min-height: 32px;
@@ -11453,4 +11447,39 @@ input:not([type="range"]), label, select, summary, textarea {
     flex-wrap: wrap;
     align-items: center;
     gap: 4px;
+}
+
+/* Une seule rangée qui défile, au lieu d'un mur de puces */
+.tool-history-chips.is-scroll {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+}
+
+.tool-history-chips.is-scroll .tool-history-chip {
+    flex: none;
+    scroll-snap-align: start;
+    white-space: nowrap;
+}
+
+.tool-history-modes {
+    padding: 3px;
+    border: 1px solid var(--border-soft);
+    border-radius: 999px;
+    background: var(--surface-2);
+}
+
+.tool-history-modes .tool-history-chip {
+    min-height: 38px;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    font-size: 14px;
+}
+
+.tool-history-modes .tool-history-chip[aria-pressed="true"] {
+    background: var(--surface);
+    box-shadow: var(--card-shadow);
 }
