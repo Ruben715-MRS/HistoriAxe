@@ -59,8 +59,8 @@ function initCategories() {
     gridSection.innerHTML = `
                 <div class="quick-actions-row" id="quick-actions-1">
                     ${quickAction('btn-favoris', '⭐', `${quickLabel('categories.special_favorites', 'Favoris')} (${favCount})`)}
-                    ${quickAction('btn-discover', '🎲', quickLabel('categories.special_discover', 'Hasard'), 'aria-expanded="false" aria-controls="discover-picker"')}
                     ${quickAction('btn-daily', '🎯', quickLabel('categories.special_challenges', 'Défis'), 'aria-expanded="false" aria-controls="challenge-picker"')}
+                    ${quickAction('btn-discover', '🎲', quickLabel('categories.special_discover', 'Hasard'), 'aria-expanded="false" aria-controls="discover-picker"')}
                     ${quickAction('btn-resume', '▶️', quickLabel('categories.resume', 'Reprendre'), resumeAttrs, !resume)}
                 </div>
                 <div class="challenge-picker hidden" id="discover-picker">
