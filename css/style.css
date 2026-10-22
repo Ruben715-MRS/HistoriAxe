@@ -7848,12 +7848,27 @@ input:not([type="range"]), label, select, summary, textarea {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 8px;
     text-align: center;
-    margin: 14px auto 0;
-    max-width: 640px;
+    margin-top: 14px;
 }
 
-#quick-actions-1 {
-    margin-top: 0;
+/* Dès la tablette, les rangées s'étendent sur toute la largeur utile : le premier bouton touche la marge
+   gauche, le dernier la marge droite, et les écarts entre les quatre sont égaux — comme les autres
+   éléments de l'écran. */
+@media (min-width: 768px) {
+    .quick-actions-row {
+        grid-template-columns: repeat(4, 64px);
+        justify-content: space-between;
+        margin-top: 24px;
+    }
+
+    /* La colonne n'a que la largeur du cercle : la légende, centrée dessous, peut la déborder un peu. */
+    .quick-actions-row .quick-action-label {
+        white-space: nowrap;
+    }
+
+    #quick-actions-1 {
+        margin-top: 0;
+    }
 }
 
 .quick-action {
