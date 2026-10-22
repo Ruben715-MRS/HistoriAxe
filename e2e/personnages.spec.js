@@ -2539,6 +2539,22 @@ test('le portrait du jour : une question, sans points ni vies ni écran de fin',
     expect(await page.evaluate(() => whoDailyMode)).toBe(false);
 });
 
+test('le portrait du jour répondu défile : on atteint « Retour aux défis » même sur un petit écran', async ({ page }) => {
+    // Régression : le body ne défile pas, et l'écran de jeu n'avait pas de zone de défilement — la fiche
+    // révélée, plus haute que l'écran, restait coupée et l'on ne pouvait plus revenir au menu.
+    await page.setViewportSize({ width: 390, height: 600 });
+    await ouvrirLesDefis(page);
+    await page.locator('#btn-challenge-portrait').click();
+    await repondre(page, true);
+    const corps = page.locator('#screen-whois .quiz-body');
+    expect(await corps.evaluate(el => el.scrollHeight > el.clientHeight)).toBe(true);
+    await page.locator('#whois-continue').scrollIntoViewIfNeeded();
+    expect(await corps.evaluate(el => el.scrollTop)).toBeGreaterThan(0);
+    await expect(page.locator('#whois-continue')).toBeInViewport();
+    await page.locator('#whois-continue').click();
+    await expect(page.locator('#screen-categories')).toBeVisible();
+});
+
 test('le portrait du jour, une fois répondu, se rouvre tel qu’on l’a laissé et ne se rejoue pas', async ({ page }) => {
     await ouvrirLesDefis(page);
     await page.locator('#btn-challenge-portrait').click();
