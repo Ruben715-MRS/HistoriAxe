@@ -597,7 +597,7 @@
   },
   "carte": {
     "mode_title": "🗺️ Map Mode",
-    "mode_subtitle": "Place the events of “{label}” on a map without names, then date them.",
+    "mode_subtitle": "Place events on a blank map.",
     "where_kicker": "Where did this event take place?",
     "not_enough_events": "This area doesn't have enough geolocated events to play Map Mode.",
     "place_hint": "Tap the map to drop your marker (you can drag it), then confirm.",
@@ -739,7 +739,7 @@
   },
   "gallery": {
     "title": "Portrait gallery",
-    "launcher_sub": "{count} faces from the Pantheons to browse",
+    "launcher_sub": "{count} faces to browse",
     "order_alpha": "Alphabetical order",
     "order_famille": "By family name",
     "order_chrono": "Chronological order",
@@ -836,7 +836,7 @@
   },
   "chronogeo": {
     "mode_title": "🧭 Chrono-Geo",
-    "mode_subtitle": "Place the events of “{label}” on the map, then estimate their year with the slider.",
+    "mode_subtitle": "Place them on the map, then date them.",
     "year_kicker": "Roughly which year? (within ±{tolerance} years counts)",
     "share": "🧭 HistoriAxe — Chrono-Geo · {label}\n📍 {km} km · ⏳ {years} years on average\n🏆 Score: {score} points\n\nPlay HistoriAxe!"
   },

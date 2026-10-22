@@ -545,7 +545,7 @@
   },
   "carte": {
     "mode_title": "🗺️ マップモード",
-    "mode_subtitle": "「{label}」の出来事を地名のない地図に置き、そのあと年代を答えます。",
+    "mode_subtitle": "出来事を白地図に置きます。",
     "where_kicker": "この出来事はどこで起きた？",
     "not_enough_events": "このエリアにはマップモードをプレイするのに十分な位置情報付きの出来事がありません。",
     "place_hint": "地図をタップしてマーカーを置き（ドラッグで動かせます）、決定してください。",
@@ -685,7 +685,7 @@
   },
   "gallery": {
     "title": "肖像ギャラリー",
-    "launcher_sub": "殿堂の{count}人の肖像を眺める",
+    "launcher_sub": "{count}人の肖像を眺める",
     "order_alpha": "名前順",
     "order_famille": "姓の順",
     "order_chrono": "年代順",

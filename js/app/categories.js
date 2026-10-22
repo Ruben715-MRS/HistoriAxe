@@ -295,8 +295,12 @@ function initSubcategories() {
     // assez d'événements géolocalisables, quel que soit le niveau de la
     // hiérarchie régionale où l'on se trouve (monde entier, un continent, ou
     // une sous-région) — c'est ce nœud qui devient le périmètre de la partie.
-    if (typeof isGeoEligible === 'function' && isGeoEligible(node)) {
-        gridSection.appendChild(buildGeoModeRow(node, node.nom));
+    // La galerie des portraits (voir plus bas) rejoint cette rangée quand elle existe.
+    const pantheon = typeof findPantheonNode === 'function' ? findPantheonNode(node) : null;
+    const launcher = pantheon ? buildGalleryLauncher(pantheon) : null;
+    const geoEligible = typeof isGeoEligible === 'function' && isGeoEligible(node);
+    if (geoEligible) {
+        gridSection.appendChild(buildGeoModeRow(node, node.nom, launcher));
     }
 
     node.subcategories.forEach((sub, index) => {
@@ -385,12 +389,10 @@ function initSubcategories() {
     });
     applyStagger(gridSection);
 
-    // Galerie des portraits (voir js/gallery.js) : sous la grille, et non dans
-    // elle, parce qu'elle n'est ni une sous-catégorie ni un mode de jeu. Elle
-    // n'apparaît qu'au niveau qui porte les « Panthéons ».
-    const pantheon = typeof findPantheonNode === 'function' ? findPantheonNode(node) : null;
-    const launcher = pantheon ? buildGalleryLauncher(pantheon) : null;
-    if (launcher) container.appendChild(launcher);
+    // Galerie des portraits (voir js/gallery.js) : hors de la grille des sous-catégories, parce qu'elle n'est
+    // ni une sous-catégorie ni un mode de jeu. Elle n'apparaît qu'au niveau qui porte les « Panthéons » :
+    // à côté des modes carte quand ils sont là, sinon sous la grille.
+    if (launcher && !geoEligible) container.appendChild(launcher);
 }
 
 

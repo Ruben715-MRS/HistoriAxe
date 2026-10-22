@@ -602,7 +602,7 @@
   },
   "carte": {
     "mode_title": "🗺️ Mode Carte",
-    "mode_subtitle": "Posez les événements de « {label} » sur une carte sans noms, puis datez-les.",
+    "mode_subtitle": "Placez les événements sur une carte muette.",
     "where_kicker": "Où cet événement s'est-il déroulé ?",
     "not_enough_events": "Cette zone ne contient pas assez d'événements géolocalisés pour jouer en Mode Carte.",
     "place_hint": "Touchez la carte pour poser votre repère (vous pouvez le glisser), puis validez.",
@@ -744,7 +744,7 @@
   },
   "gallery": {
     "title": "Galerie des portraits",
-    "launcher_sub": "{count} visages des Panthéons, à feuilleter",
+    "launcher_sub": "{count} visages à feuilleter",
     "order_alpha": "Ordre alphabétique",
     "order_famille": "Par nom de famille",
     "order_chrono": "Ordre chronologique",
@@ -841,7 +841,7 @@
   },
   "chronogeo": {
     "mode_title": "🧭 Chrono-Géo",
-    "mode_subtitle": "Posez les événements de « {label} » sur la carte, puis estimez leur année au curseur.",
+    "mode_subtitle": "Placez-les sur la carte, puis datez-les.",
     "year_kicker": "En quelle année, à peu près ? (à ±{tolerance} ans près, la réponse compte)",
     "share": "🧭 HistoriAxe — Chrono-Géo · {label}\n📍 {km} km · ⏳ {years} ans en moyenne\n🏆 Score : {score} points\n\nJoue sur HistoriAxe !"
   },
