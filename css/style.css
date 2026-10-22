@@ -9677,15 +9677,16 @@ input:not([type="range"]), label, select, summary, textarea {
     padding-top: 22px;
 }
 
-#screen-team .team-class {
+/* Trois blocs, dans l'ordre : séance en direct, rejoindre une équipe, créer une équipe. Un filet sépare chacun du
+   précédent, à la largeur des champs. */
+#team-join-form {
     margin-top: 26px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(127,127,127,.3);
 }
 
-/* Le filet de séparation suit la largeur des champs (comme celui de .team-create), pas celle de la section. */
-#screen-team .team-class::before {
-    content: '';
-    height: 1px;
-    background: rgba(127,127,127,.3);
+#team-panel-view {
+    margin-top: 26px;
 }
 .team-secondary { display: block; margin: 8px auto; background: transparent; border: 1px solid rgba(127,127,127,.5); color: inherit; }
 .class-team-link { display: flex; align-items: center; gap: 8px; margin: 10px 0; font-size: 14px; }
