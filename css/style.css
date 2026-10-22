@@ -9285,6 +9285,64 @@ input:not([type="range"]), label, select, summary, textarea {
 
 .rewards-bar .rewards-shop-btn { margin-left: auto; }
 
+/* Téléphone : pièces et série se partagent la première ligne, puis quatre tuiles égales (icône au-dessus du libellé). */
+@media (max-width: 600px) {
+    .rewards-bar {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .rewards-bar .rewards-chip {
+        grid-column: span 2;
+        justify-content: center;
+    }
+
+    .rewards-bar .rewards-streak .rewards-tip {
+        left: auto;
+        right: 0;
+    }
+
+    .rewards-bar .rewards-btn {
+        flex-direction: column;
+        justify-content: center;
+        gap: 2px;
+        padding: 8px 2px;
+        border-radius: 16px;
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .rewards-bar .rewards-btn > span[aria-hidden],
+    .rewards-bar .rewards-team-badge {
+        font-size: 20px;
+        line-height: 1.1;
+    }
+
+    .rewards-bar .rewards-btn small {
+        display: block;
+        font-size: 11px;
+        line-height: 1;
+    }
+
+    .rewards-bar .rewards-btn small:empty { display: none; }
+
+    .rewards-bar .rewards-team-badge {
+        width: 22px;
+        height: 24px;
+    }
+
+    /* Le compteur de demandes d'ami reste une petite pastille, pas une barre pleine largeur. */
+    .rewards-bar .rewards-friends-btn small:not(:empty) {
+        display: inline-block;
+        align-self: center;
+        padding: 1px 6px;
+    }
+
+    .rewards-bar .rewards-shop-btn { margin-left: 0; }
+}
+
 .path-rewards {
     width: 100%;
     max-width: 420px;
