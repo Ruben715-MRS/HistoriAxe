@@ -130,6 +130,32 @@
             ]
         },
         {
+            id: 'aksoum', name: "Empire d'Aksoum", icon: "🗿", color: '#0f766e', span: "Ier siècle → vers 940", from: 100, to: 940, peak: 350,
+            places: [{ n: "Axoum", c: [38.72, 14.13] }, { n: "Adulis", c: [39.65, 15.25] }, { n: "Yéha", c: [39.0, 14.28] }, { n: "Méroé", c: [33.75, 16.94] }, { n: "Sanaa", c: [44.2, 15.35] }],
+            capital: "Axoum (dans le Tigré, au nord de l'Éthiopie actuelle)",
+            summary: "Un royaume des hautes terres d'Érythrée et du Tigré, qui contrôle le commerce de la mer Rouge par le port d'Adulis, entre l'Égypte romaine, l'Arabie et l'Inde. Au IIIe siècle, le prophète Mani le range parmi les quatre grandes puissances du monde avec Rome, la Perse et la Chine. Il frappe sa propre monnaie, en or, érige des stèles monumentales à Axoum, et son roi Ézana (vers 330) se convertit au christianisme, bientôt suivi du royaume : l'Éthiopie est l'un des plus anciens États chrétiens. Vers 350 Ézana détruit le royaume de Koush (Méroé), et vers 525 le roi Kaleb traverse la mer Rouge pour intervenir au Yémen. L'empire décline ensuite, avec l'expansion arabe et le recul du commerce de la mer Rouge, et disparaît vers 940.",
+            snapshots: [
+                {
+                    id: '200', label: "Le royaume commerçant", year: 200,
+                    text: "Vers 200, Aksoum est un royaume prospère des hautes terres, dont le port d'Adulis exporte l'ivoire, l'or et l'encens vers l'Égypte romaine et l'Inde. Il bat ses premières monnaies un siècle plus tard.",
+                    zones: [{ name: "Royaume d'Aksoum (vers 200)", ring: [[37.5, 15.5], [39.0, 15.9], [40.6, 15.3], [40.2, 13.8], [38.5, 12.8], [37.0, 13.5]] }]
+                },
+                {
+                    id: '350', label: "Sous Ézana", year: 350,
+                    text: "Vers 350, sous Ézana, converti au christianisme, Aksoum atteint la haute vallée du Nil : l'inscription du roi vante la conquête du royaume de Koush, dont la capitale, Méroé, est ruinée. Le royaume tient la côte de la mer Rouge et contrôle une grande partie du commerce.",
+                    zones: [{ name: "Royaume d'Aksoum (vers 350)", ring: [[33.0, 17.0], [35.0, 18.5], [38.5, 18.0], [40.5, 15.8], [41.0, 13.5], [39.0, 12.5], [36.5, 12.5], [34.0, 13.5]] }]
+                },
+                {
+                    id: '530', label: "Sous Kaleb : Aksoum et le Yémen", year: 530,
+                    text: "Vers 530, le roi Kaleb franchit la mer Rouge pour renverser le roi juif du Yémen, Dhu Nuwas, qui persécutait les chrétiens. Aksoum domine un temps le Yémen, avant d'en être chassé par les Perses (vers 570).",
+                    zones: [
+                        { name: "Royaume d'Aksoum", ring: [[33.0, 17.0], [35.0, 18.5], [38.5, 18.0], [40.5, 15.8], [41.0, 13.5], [39.0, 12.5], [36.5, 12.5], [34.0, 13.5]] },
+                        { name: "Conquête du Yémen (Himyar)", color: '#b45309', ring: [[42.5, 13.0], [44.0, 12.8], [46.0, 13.5], [48.0, 14.5], [44.0, 17.5], [42.7, 16.0]] }
+                    ]
+                }
+            ]
+        },
+        {
             id: 'gupta', name: "Empire gupta", icon: "🪔", color: '#a16207', span: "320 → vers 550", from: 320, to: 550, peak: 400,
             places: [{ n: "Pataliputra", c: [85.14, 25.61] }, { n: "Ujjain", c: [75.78, 23.18] }, { n: "Mathura", c: [77.67, 27.49] }, { n: "Ayodhya", c: [82.2, 26.8] }, { n: "Prayagraj", c: [81.85, 25.43] }, { n: "Nalanda", c: [85.44, 25.14] }],
             capital: "Pataliputra (l'actuelle Patna)",
@@ -374,6 +400,24 @@
             ]
         },
         {
+            id: 'songhai', name: "Empire songhaï", icon: "🌾", color: '#a16207', span: "vers 1464 → 1591", from: 1464, to: 1591, peak: 1520,
+            places: [{ n: "Gao", c: [-0.04, 16.27] }, { n: "Tombouctou", c: [-3.0, 16.77] }, { n: "Djenné", c: [-4.55, 13.9] }, { n: "Agadez", c: [7.99, 16.97] }, { n: "Walata", c: [-6.93, 17.3] }],
+            capital: "Gao",
+            summary: "Le royaume songhaï, au bord du Niger, a été sujet du Mali. Vers 1464, Sonni Ali Ber le rend indépendant et en fait un empire : il prend Tombouctou (1468) et Djenné (1473, après un siège de sept ans). Askia Mohammed, qui le renverse en 1493, fait le pèlerinage à La Mecque (1496-1497), reçoit le titre de calife du Soudan et organise l'empire en provinces, avec des juges et des savants musulmans : Tombouctou devient un grand centre d'études. L'empire s'étend sur le Niger, vers Agadez et les villes haoussa, et contrôle le commerce de l'or et du sel. Une armée marocaine, équipée de mousquets et de canons, le bat à Tondibi (1591) : l'empire se disloque.",
+            snapshots: [
+                {
+                    id: '1480', label: "Sous Sonni Ali", year: 1480,
+                    text: "Vers 1480, Sonni Ali, chef de guerre redoutable, tient Gao, Tombouctou et Djenné : la boucle du Niger forme le cœur de l'empire. Il s'appuie sur une flotte de pirogues et sur une cavalerie.",
+                    zones: [{ name: "Empire songhaï (vers 1480)", ring: [[-6.0, 15.0], [-3.0, 17.0], [1.0, 17.5], [3.5, 16.0], [3.0, 13.0], [-1.0, 12.0], [-5.0, 12.5], [-7.0, 13.5]] }]
+                },
+                {
+                    id: '1520', label: "Sous Askia Mohammed", year: 1520,
+                    text: "Vers 1520, l'empire est à son maximum : de la Sénégambie (à l'ouest) à l'Aïr et au pays haoussa (à l'est), du Sahara (mines de sel de Taghaza) à la savane. Il est plus étendu que l'empire du Mali, qu'il a remplacé comme grande puissance du Sahel.",
+                    zones: [{ name: "Empire songhaï (vers 1520)", ring: [[-12.0, 15.2], [-9.0, 18.0], [-5.0, 19.5], [0.0, 20.0], [5.0, 19.0], [9.0, 17.5], [13.0, 15.0], [13.0, 12.0], [9.0, 11.5], [5.0, 11.5], [1.0, 11.5], [-3.0, 11.0], [-8.0, 12.0], [-12.0, 12.5]] }]
+                }
+            ]
+        },
+        {
             id: 'ottoman', name: 'Empire ottoman', icon: '🌙', color: '#15803d', span: 'vers 1299 → 1922', from: 1299, to: 1922, peak: 1683,
             places: [{ n: 'Bursa', c: [29.06, 40.18] }, { n: 'Edirne', c: [26.56, 41.68] }, { n: 'Constantinople', c: [28.98, 41.01] }, { n: 'Le Caire', c: [31.24, 30.04] }, { n: 'Bagdad', c: [44.36, 33.31] }, { n: 'La Mecque', c: [39.83, 21.42] }, { n: 'Belgrade', c: [20.46, 44.82] }, { n: 'Alger', c: [3.06, 36.75] }],
             capital: 'Bursa, puis Édirne, puis Constantinople (Istanbul) à partir de 1453',
@@ -393,6 +437,43 @@
                     id: '1914', label: 'À la veille de la Première Guerre mondiale', year: 1914,
                     text: 'En 1914, l\'empire s\'est beaucoup réduit : les Balkans sont perdus (guerres balkaniques de 1912-1913), l\'Égypte, la Tunisie et la Libye aussi. Il garde l\'Anatolie, la Syrie, la Palestine, l\'Irak et la côte occidentale de l\'Arabie. Il entre en guerre aux côtés de l\'Allemagne, fin 1914.',
                     zones: [{ name: 'Empire ottoman (1914)', ring: [[26.2, 41.0], [26.5, 41.7], [28.0, 41.95], [29.0, 41.2], [31.0, 41.3], [36.0, 42.0], [41.5, 41.5], [42.5, 41.0], [42.5, 40.0], [44.1, 39.5], [44.5, 39.7], [44.0, 38.4], [44.5, 37.5], [45.0, 36.5], [46.0, 35.0], [46.7, 33.8], [47.7, 32.5], [48.0, 30.5], [48.3, 29.9], [46.0, 29.5], [44.0, 30.5], [42.0, 28.5], [40.0, 26.0], [41.0, 24.0], [42.5, 20.0], [43.5, 17.5], [43.8, 15.0], [43.5, 13.0], [42.8, 13.8], [38, 20], [36, 25.0], [34.9, 29.4], [34.2, 31.3], [35.0, 33.0], [36.2, 36.6], [34, 36.4], [30, 36], [27.5, 36.7], [26, 38.5], [25.5, 40]] }]
+                }
+            ]
+        },
+        {
+            id: 'charles-quint', name: "Empire de Charles Quint", icon: "🌐", color: '#ca8a04', span: "1516 → 1556", from: 1516, to: 1556, peak: 1540,
+            places: [{ n: "Gand", c: [3.72, 51.05] }, { n: "Bruxelles", c: [4.35, 50.85] }, { n: "Tolède", c: [-4.02, 39.86] }, { n: "Séville", c: [-5.98, 37.39] }, { n: "Vienne", c: [16.37, 48.21] }, { n: "Naples", c: [14.27, 40.85] }, { n: "Milan", c: [9.19, 45.46] }, { n: "Mexico", c: [-99.13, 19.43] }, { n: "Lima", c: [-77.04, -12.05] }],
+            capital: "Aucune capitale : une cour itinérante (Gand, Bruxelles, Tolède, Valladolid)",
+            summary: "Né à Gand en 1500, Charles de Habsbourg réunit par héritage la Bourgogne et les Pays-Bas (1506), l'Espagne et ses possessions d'Italie et d'Amérique (1516), et les États autrichiens de sa famille ; il est élu empereur du Saint-Empire en 1519, face à François Ier. C'est le premier souverain sur les terres duquel « le soleil ne se couche jamais » (la formule est postérieure). Il combat sans cesse : contre la France (Pavie, 1525 ; sac de Rome, 1527), les Ottomans (siège de Vienne, 1529) et les princes protestants (Réforme de Luther, paix d'Augsbourg, 1555). Pendant son règne, Cortés conquiert le Mexique (1519-1521) et Pizarro le Pérou (1532). Épuisé, il abdique en 1555-1556 et partage l'héritage : l'Espagne, les Pays-Bas, l'Italie et l'Amérique à son fils Philippe II, l'Autriche et la couronne impériale à son frère Ferdinand.",
+            snapshots: [
+                {
+                    id: '1519', label: "À l'élection impériale", year: 1519, legend: true,
+                    text: "En 1519, Charles est roi d'Espagne (couronnes de Castille et d'Aragon, avec Naples, la Sicile et la Sardaigne), souverain des Pays-Bas et de la Franche-Comté, et chef des États autrichiens des Habsbourg. L'élection impériale lui ajoute le Saint-Empire, un ensemble de principautés que la carte ne figure pas (voir la carte du Saint-Empire).",
+                    zones: [
+                        { name: "Couronnes de Castille et d'Aragon", color: '#ca8a04', ring: [[-9.2, 42.0], [-9.8, 37.0], [-6.2, 36.0], [-2.0, 36.8], [0.3, 39.5], [1.0, 41.0], [3.2, 42.4], [0.0, 42.8], [-1.8, 43.4], [-8.5, 43.5]] },
+                        { name: "Naples, Sicile et Sardaigne", color: '#ca8a04', ring: [[13.4, 41.5], [14.2, 42.6], [16.2, 41.8], [18.5, 40.2], [17.0, 39.0], [15.8, 38.0], [15.2, 40.0]] },
+                        { name: "Naples, Sicile et Sardaigne", color: '#ca8a04', ring: [[12.4, 37.4], [12.6, 38.1], [15.6, 38.3], [15.3, 36.7]] },
+                        { name: "Naples, Sicile et Sardaigne", color: '#ca8a04', ring: [[8.1, 39.0], [8.2, 41.0], [9.6, 41.2], [9.8, 39.2]] },
+                        { name: "Pays-Bas et Franche-Comté", color: '#ca8a04', ring: [[2.5, 50.8], [3.5, 51.5], [4.5, 52.6], [5.5, 53.3], [7.0, 53.4], [6.8, 52.0], [6.1, 51.2], [5.8, 50.4], [5.4, 49.6], [4.5, 49.9], [3.2, 50.4]] },
+                        { name: "Pays-Bas et Franche-Comté", color: '#ca8a04', ring: [[5.2, 47.9], [6.9, 47.4], [6.0, 46.3], [5.3, 46.6]] },
+                        { name: "États autrichiens des Habsbourg", color: '#b45309', ring: [[9.6, 47.1], [10.5, 46.4], [12.4, 46.5], [13.7, 46.5], [13.6, 45.7], [14.5, 45.5], [15.2, 46.2], [16.4, 46.9], [16.8, 47.7], [17.0, 48.2], [14.7, 48.8], [13.8, 48.8], [13.0, 47.7], [10.5, 47.5]] }
+                    ]
+                },
+                {
+                    id: '1556', label: "À l'abdication : le partage", year: 1556, legend: true,
+                    text: "En 1556, Charles Quint abdique. Son fils Philippe II reçoit l'Espagne, les Pays-Bas, l'Italie (avec le Milanais, conquis en 1535) et les Amériques, où l'empire des Aztèques et celui des Incas viennent d'être conquis. Son frère Ferdinand reçoit les États autrichiens et sera élu empereur en 1558. L'empire de Charles Quint ne lui survit donc pas : les Habsbourg se divisent en deux branches.",
+                    zones: [
+                        { name: "Couronnes de Castille et d'Aragon", color: '#ca8a04', ring: [[-9.2, 42.0], [-9.8, 37.0], [-6.2, 36.0], [-2.0, 36.8], [0.3, 39.5], [1.0, 41.0], [3.2, 42.4], [0.0, 42.8], [-1.8, 43.4], [-8.5, 43.5]] },
+                        { name: "Naples, Sicile, Sardaigne et Milanais", color: '#ca8a04', ring: [[13.4, 41.5], [14.2, 42.6], [16.2, 41.8], [18.5, 40.2], [17.0, 39.0], [15.8, 38.0], [15.2, 40.0]] },
+                        { name: "Naples, Sicile, Sardaigne et Milanais", color: '#ca8a04', ring: [[12.4, 37.4], [12.6, 38.1], [15.6, 38.3], [15.3, 36.7]] },
+                        { name: "Naples, Sicile, Sardaigne et Milanais", color: '#ca8a04', ring: [[8.1, 39.0], [8.2, 41.0], [9.6, 41.2], [9.8, 39.2]] },
+                        { name: "Naples, Sicile, Sardaigne et Milanais", color: '#ca8a04', ring: [[8.5, 45.0], [8.6, 46.0], [10.2, 46.3], [10.6, 45.5], [10.0, 44.9], [9.2, 44.7]] },
+                        { name: "Pays-Bas et Franche-Comté", color: '#ca8a04', ring: [[2.5, 50.8], [3.5, 51.5], [4.5, 52.6], [5.5, 53.3], [7.0, 53.4], [6.8, 52.0], [6.1, 51.2], [5.8, 50.4], [5.4, 49.6], [4.5, 49.9], [3.2, 50.4]] },
+                        { name: "Pays-Bas et Franche-Comté", color: '#ca8a04', ring: [[5.2, 47.9], [6.9, 47.4], [6.0, 46.3], [5.3, 46.6]] },
+                        { name: "Amériques espagnoles", color: '#ca8a04', ring: [[-106.0, 22.0], [-103.0, 26.0], [-98.0, 26.5], [-97.4, 21.5], [-96.0, 19.0], [-94.5, 18.0], [-90.5, 17.8], [-88.0, 16.0], [-85.0, 15.8], [-83.5, 15.0], [-83.5, 11.0], [-82.7, 9.3], [-80.0, 8.9], [-80.0, 7.4], [-81.0, 7.5], [-83.0, 8.5], [-85.5, 10.0], [-87.5, 13.0], [-89.5, 13.5], [-92.0, 14.2], [-96.0, 15.8], [-100.0, 17.0], [-104.5, 19.5]] },
+                        { name: "Amériques espagnoles", color: '#ca8a04', ring: [[-81.0, -6.0], [-79.8, -8.0], [-77.5, -12.0], [-75.0, -15.0], [-71.5, -17.5], [-70.5, -19.5], [-70.3, -23.0], [-67.0, -19.0], [-66.5, -15.5], [-68.5, -12.5], [-72.0, -10.5], [-75.5, -8.5], [-78.0, -5.5]] },
+                        { name: "États autrichiens (Ferdinand)", color: '#b45309', ring: [[9.6, 47.1], [10.5, 46.4], [12.4, 46.5], [13.7, 46.5], [13.6, 45.7], [14.5, 45.5], [15.2, 46.2], [16.4, 46.9], [16.8, 47.7], [17.0, 48.2], [14.7, 48.8], [13.8, 48.8], [13.0, 47.7], [10.5, 47.5]] }
+                    ]
                 }
             ]
         },
@@ -434,6 +515,55 @@
                     id: '1527', label: 'À son extension maximale', year: 1527,
                     text: "Vers 1527, à la mort de Huayna Capac, le Tawantinsuyu va de la frontière de la Colombie actuelle (Pasto) jusqu'au fleuve Maule, au Chili, et à l'Argentine du nord-ouest, sur près de 4 000 km. Il est organisé en quatre « suyu » autour de Cusco ; il a des greniers publics, un impôt en travail (mit'a) et des déplacements de populations.",
                     zones: [{ name: 'Tawantinsuyu', ring: [[-77.2, 1.3], [-79.6, 0.8], [-80.2, -1.0], [-80.5, -4.0], [-81.0, -6.0], [-79.8, -8.0], [-77.5, -12.0], [-75.0, -15.0], [-71.5, -17.5], [-70.5, -19.5], [-70.3, -23.0], [-70.7, -27.0], [-71.4, -31.0], [-71.8, -35.0], [-69.5, -34.5], [-68.5, -32.5], [-67.0, -29.5], [-65.0, -26.0], [-64.5, -22.5], [-62.5, -19.5], [-64.0, -16.0], [-66.0, -13.0], [-69.0, -11.0], [-73.0, -9.0], [-75.5, -7.0], [-77.0, -4.0], [-77.8, -1.5]] }]
+                }
+            ]
+        },
+        {
+            id: 'kongo', name: "Royaume de Kongo", icon: "🌴", color: '#c2410c', span: "vers 1390 → 1914", from: 1390, to: 1914, peak: 1520,
+            places: [{ n: "Mbanza Kongo", c: [14.25, -6.27] }, { n: "Soyo", c: [12.37, -6.13] }, { n: "Kinshasa (Mpumbu)", c: [15.31, -4.32] }, { n: "Luanda", c: [13.23, -8.84] }, { n: "Mbwila", c: [15.45, -7.95] }],
+            capital: "Mbanza Kongo (rebaptisée São Salvador par les Portugais)",
+            summary: "Le royaume de Kongo naît vers 1390 de la réunion de provinces autour de Mbanza Kongo, sous Lukeni lua Nimi : un royaume centralisé, avec un roi (manikongo), des gouverneurs de provinces et un système d'impôts et de monnaie (coquillages nzimbu). Les Portugais arrivent en 1483. Le roi Nzinga a Nkuwu se fait baptiser en 1491. Son fils Afonso Ier (1509-1542), roi chrétien lettré, entretient des relations d'égal à égal avec le Portugal et le pape, mais proteste, dans des lettres célèbres, contre la traite des esclaves, qui dépeuple son pays. Après l'invasion des Jaga (1568) et la défaite de Mbwila face aux Portugais (29 octobre 1665, où le roi António Ier est tué), le royaume sombre dans les guerres civiles. Il garde une existence nominale jusqu'en 1914, quand le Portugal supprime la royauté.",
+            snapshots: [
+                {
+                    id: '1400', label: "Les débuts du royaume", year: 1400,
+                    text: "Vers 1400, le royaume se réduit à la région de Mbanza Kongo, entre le fleuve Congo, au nord, et l'Atlantique, à l'ouest. Il est composé de provinces gouvernées par des proches du roi.",
+                    zones: [{ name: "Royaume de Kongo (vers 1400)", ring: [[13.5, -5.5], [15.0, -5.0], [15.5, -6.5], [14.5, -7.5], [13.5, -7.0]] }]
+                },
+                {
+                    id: '1520', label: "Sous Afonso Ier", year: 1520,
+                    text: "Vers 1520, sous Afonso Ier, le royaume atteint sa plus grande extension : de l'Atlantique au Kwango, et du Congo au nord à la Dande au sud. Mbanza Kongo compte une grande population et accueille des missions, des écoles et des églises de pierre.",
+                    zones: [{ name: "Royaume de Kongo (vers 1520)", ring: [[12.4, -5.0], [14.0, -4.5], [16.0, -4.0], [18.5, -4.8], [19.0, -7.0], [18.5, -9.0], [16.5, -9.3], [14.0, -9.0], [13.2, -8.6], [12.3, -6.2]] }]
+                },
+                {
+                    id: '1680', label: "Après la défaite de Mbwila", year: 1680,
+                    text: "Vers 1680, après la défaite de Mbwila (1665), le royaume est affaibli et divisé en factions rivales. La capitale est abandonnée en 1678 puis reconstruite ; les provinces s'autonomisent. Le commerce des esclaves continue de saigner le pays.",
+                    zones: [{ name: "Royaume de Kongo (vers 1680)", ring: [[12.8, -5.4], [15.5, -5.2], [16.2, -7.2], [14.5, -8.2], [13.0, -7.2]] }]
+                }
+            ]
+        },
+        {
+            id: 'qing', name: "Empire chinois des Qing", icon: "🏮", color: '#ca8a04', span: "1644 → 1912", from: 1644, to: 1912, peak: 1760,
+            places: [{ n: "Pékin", c: [116.4, 39.9] }, { n: "Moukden", c: [123.4, 41.8] }, { n: "Lhassa", c: [91.1, 29.65] }, { n: "Ourounqi", c: [87.6, 43.8] }, { n: "Kashgar", c: [75.99, 39.47] }, { n: "Canton", c: [113.26, 23.13] }, { n: "Nankin", c: [118.8, 32.06] }, { n: "Taipei", c: [121.56, 25.03] }, { n: "Oulan-Bator", c: [106.9, 47.9] }],
+            capital: "Pékin (Moukden avant 1644)",
+            summary: "Les Mandchous, un peuple du nord-est, fondent la dynastie Qing en 1636 et prennent Pékin en 1644, quand l'empire Ming s'effondre. Ils gouvernent la Chine avec les lettrés chinois, mais imposent la natte (« queue ») aux hommes. Sous Kangxi (1661-1722), Yongzheng et surtout Qianlong (1735-1796), ils doublent le territoire : Taïwan (1683), Mongolie, Tibet (protectorat dès 1720) et le Xinjiang (« nouvelle frontière »), conquis en 1755-1759 sur les Dzoungars. L'empire compte alors 300 millions d'habitants. Au XIXe siècle, les guerres de l'opium (1839-1842, 1856-1860), la rébellion des Taiping (1850-1864) et les traités inégaux l'affaiblissent : perte de la Mandchourie extérieure (traités d'Aigun, 1858, et de Pékin, 1860, au profit de la Russie), de Taïwan (1895, Japon). Le dernier empereur, Puyi, abdique le 12 février 1912 : c'est la fin de plus de deux mille ans d'empire en Chine.",
+            snapshots: [
+                {
+                    id: '1644', label: "À la prise de Pékin", year: 1644,
+                    text: "En 1644, les Mandchous, appelés par un général Ming, entrent à Pékin après la chute de l'empereur Ming (qui s'est pendu). Leur domaine est alors la Mandchourie et le nord de la Chine ; la conquête du sud dure encore près de quarante ans.",
+                    zones: [{ name: "Empire Qing (1644)", ring: [[98.0, 42.0], [106.0, 41.5], [111.0, 42.0], [114.0, 44.0], [118.0, 46.0], [120.0, 49.0], [122.0, 52.0], [125.0, 53.5], [130.0, 53.0], [135.0, 54.0], [140.0, 53.5], [140.0, 48.0], [135.0, 43.0], [131.0, 42.5], [128.0, 42.0], [124.5, 40.0], [122.5, 37.5], [120.0, 35.0], [121.5, 31.5], [121.0, 28.0], [119.0, 25.5], [117.0, 23.5], [113.0, 22.0], [110.0, 20.5], [108.0, 21.5], [106.0, 22.5], [104.0, 22.5], [102.0, 22.5], [100.0, 22.5], [98.5, 24.0], [98.0, 27.0], [100.0, 30.0], [101.0, 33.0], [100.0, 35.5], [97.0, 38.0], [95.0, 39.5]] }]
+                },
+                {
+                    id: '1760', label: "Sous Qianlong, à son apogée", year: 1760,
+                    text: "En 1760, après la conquête du Xinjiang, l'empire est à son sommet : près de 13 millions de km², de la Mandchourie et de la Mongolie au Turkestan et au Tibet. La Corée, le Vietnam et la Birmanie lui versent tribut, ce que la carte ne figure pas. Le commerce avec les Européens est limité à Canton.",
+                    zones: [
+                        { name: "Empire Qing (1760)", ring: [[74.5, 39.5], [73.5, 41.5], [80.0, 42.5], [80.5, 45.0], [83.0, 47.0], [87.0, 49.0], [90.0, 50.3], [97.0, 50.5], [98.0, 51.7], [105.0, 50.3], [115.0, 50.0], [120.0, 52.5], [121.0, 53.3], [125.0, 55.0], [130.0, 55.0], [135.0, 54.5], [140.0, 53.5], [140.0, 48.0], [135.0, 43.0], [131.0, 42.5], [128.0, 42.0], [124.5, 40.0], [122.5, 37.5], [120.0, 35.0], [121.5, 31.5], [121.0, 28.0], [119.0, 25.5], [117.0, 23.5], [113.0, 22.0], [110.0, 20.5], [108.0, 21.5], [106.0, 22.5], [104.0, 22.5], [102.0, 22.5], [100.0, 22.5], [98.5, 24.0], [98.0, 27.0], [97.0, 28.5], [92.0, 27.8], [88.5, 27.8], [84.0, 28.5], [80.0, 30.5], [79.0, 32.5], [78.0, 35.5], [76.0, 37.0]] },
+                        { name: "Taïwan", ring: [[120.0, 23.0], [120.2, 24.7], [121.1, 25.3], [122.0, 25.0], [121.5, 22.0], [120.6, 22.3]] }
+                    ]
+                },
+                {
+                    id: '1900', label: "À l'époque des traités inégaux", year: 1900,
+                    text: "En 1900, l'empire a perdu la Mandchourie extérieure (Russie, 1858-1860) et Taïwan (Japon, 1895), et ses côtes sont partagées en zones d'influence et en concessions étrangères. La révolte des Boxeurs (1900) est écrasée par une expédition internationale. La carte ne montre pas les concessions.",
+                    zones: [{ name: "Empire Qing (1900)", ring: [[74.5, 39.5], [74.0, 40.5], [80.0, 42.5], [80.5, 45.0], [83.0, 47.0], [87.0, 49.0], [90.0, 50.3], [97.0, 50.5], [98.0, 51.7], [105.0, 50.3], [115.0, 50.0], [120.0, 52.5], [120.5, 53.3], [126.0, 50.2], [127.0, 50.3], [130.0, 48.5], [134.5, 48.3], [134.2, 47.3], [133.5, 45.5], [132.0, 44.5], [131.0, 43.0], [130.7, 42.4], [128.0, 42.0], [124.5, 40.0], [122.5, 37.5], [120.0, 35.0], [121.5, 31.5], [121.0, 28.0], [119.0, 25.5], [117.0, 23.5], [113.0, 22.0], [110.0, 20.5], [108.0, 21.5], [106.0, 22.5], [104.0, 22.5], [102.0, 22.5], [100.0, 22.5], [98.5, 24.0], [98.0, 27.0], [97.0, 28.5], [92.0, 27.8], [88.5, 27.8], [84.0, 28.5], [80.0, 30.5], [79.0, 32.5], [78.0, 35.5], [76.0, 37.0]] }]
                 }
             ]
         },
@@ -547,6 +677,24 @@
                         { name: "Empire français (130 départements)", color: '#1e3a8a', ring: [[-1.8, 43.4], [0.8, 40.8], [3.2, 41.9], [4.5, 43.4], [6.5, 43.1], [7.7, 43.8], [9.0, 44.4], [10.2, 43.5], [11.1, 42.3], [12.5, 41.3], [13.4, 41.9], [12.2, 43.3], [10.8, 44.3], [9.5, 45.2], [8.5, 46.0], [7.0, 45.9], [7.4, 47.0], [7.6, 47.6], [8.2, 49.0], [8.4, 50.0], [8.5, 51.5], [9.3, 52.8], [10.9, 53.5], [10.9, 53.97], [8.7, 53.9], [6.8, 53.5], [5.5, 53.2], [4.5, 52.6], [3.5, 51.5], [1.8, 50.8], [-1.5, 49.7], [-4.7, 48.5], [-2.0, 46.5], [-1.3, 44.5]] },
                         { name: "Provinces illyriennes", color: '#1e3a8a', ring: [[13.4, 46.3], [15.2, 46.5], [16.0, 45.5], [18.0, 43.7], [19.2, 42.2], [18.5, 42.4], [16.0, 43.5], [14.5, 44.8], [13.7, 45.5]] }
                     ]
+                }
+            ]
+        },
+        {
+            id: 'austro-hongrois', name: "Empire austro-hongrois", icon: "🎻", color: '#be123c', span: "1867 → 1918", from: 1867, to: 1918, peak: 1914,
+            places: [{ n: "Vienne", c: [16.37, 48.21] }, { n: "Budapest", c: [19.04, 47.5] }, { n: "Prague", c: [14.42, 50.09] }, { n: "Cracovie", c: [19.94, 50.06] }, { n: "Trieste", c: [13.77, 45.65] }, { n: "Sarajevo", c: [18.41, 43.86] }, { n: "Zagreb", c: [15.98, 45.81] }, { n: "Lemberg (Lviv)", c: [24.03, 49.84] }],
+            capital: "Vienne (et Budapest, pour la Hongrie)",
+            summary: "Après la défaite contre la Prusse à Sadowa (1866), l'Autriche des Habsbourg négocie avec les Hongrois le Compromis de 1867 : un seul souverain, François-Joseph (empereur d'Autriche et roi de Hongrie), mais deux États, deux parlements et trois ministères communs (affaires étrangères, guerre, finances). L'empire compte plus de dix peuples (Allemands, Hongrois, Tchèques, Polonais, Ukrainiens, Croates, Roumains, Slovaques, Slovènes, Serbes, Italiens), qui réclament de plus en plus de droits. Il annexe la Bosnie-Herzégovine en 1908. L'assassinat de l'héritier François-Ferdinand à Sarajevo (28 juin 1914) déclenche la Première Guerre mondiale. L'empire se disloque en octobre-novembre 1918, et les traités de Saint-Germain et de Trianon (1919-1920) créent l'Autriche, la Hongrie et la Tchécoslovaquie, et agrandissent la Roumanie, la Pologne, l'Italie et la Yougoslavie.",
+            snapshots: [
+                {
+                    id: '1867', label: "Le Compromis austro-hongrois", year: 1867,
+                    text: "En 1867, la monarchie des Habsbourg, qui a perdu la Lombardie (1859) et la Vénétie (1866) face à l'Italie, et l'hégémonie en Allemagne (Sadowa, 1866), devient une double monarchie. Elle comprend l'Autriche (Cisleithanie), la Hongrie (Transleithanie, avec la Croatie) et la Dalmatie.",
+                    zones: [{ name: "Autriche-Hongrie (1867)", ring: [[9.6, 47.1], [10.5, 46.4], [12.4, 46.5], [13.7, 46.5], [13.6, 45.7], [13.6, 45.1], [14.5, 44.8], [15.2, 44.1], [16.5, 43.5], [17.5, 43.0], [18.5, 42.4], [17.7, 43.2], [16.4, 44.0], [15.7, 44.6], [16.0, 45.1], [17.0, 45.2], [18.0, 45.1], [19.0, 45.0], [20.3, 44.85], [21.5, 45.2], [22.5, 44.6], [22.7, 45.3], [24.0, 45.6], [25.5, 45.7], [26.4, 46.5], [25.6, 47.9], [26.7, 48.5], [26.3, 49.6], [24.6, 50.3], [23.5, 50.3], [22.5, 49.2], [21.0, 50.0], [19.8, 50.2], [18.5, 50.3], [17.1, 50.4], [16.4, 50.7], [15.0, 50.95], [14.3, 50.9], [13.2, 50.4], [12.1, 50.3], [12.5, 49.6], [13.2, 49.0], [13.8, 48.8], [13.0, 47.7], [12.2, 47.7], [10.5, 47.5]] }]
+                },
+                {
+                    id: '1914', label: "À la veille de la Grande Guerre", year: 1914,
+                    text: "En 1914, l'empire, avec 52 millions d'habitants, est la troisième puissance démographique d'Europe. La Bosnie-Herzégovine, administrée depuis 1878 et annexée en 1908, y est incluse : c'est là que l'archiduc François-Ferdinand est assassiné, à Sarajevo.",
+                    zones: [{ name: "Autriche-Hongrie (1914)", ring: [[9.6, 47.1], [10.5, 46.4], [12.4, 46.5], [13.7, 46.5], [13.6, 45.7], [13.6, 45.1], [14.5, 44.8], [15.2, 44.1], [16.5, 43.5], [17.5, 43.0], [18.5, 42.4], [19.0, 43.3], [19.5, 43.6], [19.1, 44.5], [19.4, 44.9], [20.3, 44.85], [21.5, 45.2], [22.5, 44.6], [22.7, 45.3], [24.0, 45.6], [25.5, 45.7], [26.4, 46.5], [25.6, 47.9], [26.7, 48.5], [26.3, 49.6], [24.6, 50.3], [23.5, 50.3], [22.5, 49.2], [21.0, 50.0], [19.8, 50.2], [18.5, 50.3], [17.1, 50.4], [16.4, 50.7], [15.0, 50.95], [14.3, 50.9], [13.2, 50.4], [12.1, 50.3], [12.5, 49.6], [13.2, 49.0], [13.8, 48.8], [13.0, 47.7], [12.2, 47.7], [10.5, 47.5]] }]
                 }
             ]
         },

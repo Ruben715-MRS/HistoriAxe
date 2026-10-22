@@ -12,8 +12,8 @@ const zoneContains = (zone, [lon, lat]) => C.contains(C.prepare({ type: 'Polygon
 const snapshotContains = (snapshot, point) => snapshot.zones.some(z => zoneContains(z, point));
 const get = (entityId, snapshotId) => { const e = H.entityById(entityId); return { entity: e, snapshot: H.snapshotOf(e, snapshotId) }; };
 
-test('les vingt-trois entités, aux identifiants uniques et aux champs complets', () => {
-    assert.deepEqual(H.ENTITIES.map(e => e.id), ['mesopotamie', 'egypte', 'maurya', 'han', 'rome', 'gupta', 'mayas', 'perse', 'alexandre', 'byzance', 'califat', 'carolingien', 'saint-empire', 'mali', 'mongol', 'ottoman', 'azteques', 'incas', 'ethiopie', 'britannique', 'russe', 'napoleon', 'colonial-francais']);
+test('les vingt-neuf entités, aux identifiants uniques et aux champs complets', () => {
+    assert.deepEqual(H.ENTITIES.map(e => e.id), ['mesopotamie', 'egypte', 'maurya', 'han', 'rome', 'aksoum', 'gupta', 'mayas', 'perse', 'alexandre', 'byzance', 'califat', 'carolingien', 'saint-empire', 'mali', 'mongol', 'songhai', 'ottoman', 'charles-quint', 'azteques', 'incas', 'kongo', 'qing', 'ethiopie', 'britannique', 'russe', 'napoleon', 'austro-hongrois', 'colonial-francais']);
     assert.equal(new Set(H.ENTITIES.map(e => e.id)).size, H.ENTITIES.length);
     H.ENTITIES.forEach(e => {
         ['name', 'icon', 'color', 'span', 'capital', 'summary'].forEach(k => assert.ok(e[k] && String(e[k]).length >= 1, e.id + ' ' + k));
@@ -377,8 +377,9 @@ test('classement : chaque entité dans une tranche d\'apogée, et chaque tranche
     const groups = {};
     H.ENTITIES.forEach(e => { const c = H.categoryOf(e); assert.ok(ids.includes(c), e.id); (groups[c] = groups[c] || []).push(e.id); });
     ids.forEach(id => assert.ok(groups[id] && groups[id].length >= 3, id + ' a au moins trois entités'));
-    assert.deepEqual(groups['avant-500'], ['mesopotamie', 'egypte', 'maurya', 'han', 'rome', 'gupta', 'perse', 'alexandre']);
-    assert.deepEqual(groups['depuis-1800'], ['ethiopie', 'britannique', 'russe', 'napoleon', 'colonial-francais']);
+    assert.deepEqual(groups['avant-500'], ['mesopotamie', 'egypte', 'maurya', 'han', 'rome', 'aksoum', 'gupta', 'perse', 'alexandre']);
+    assert.deepEqual(groups['1500-1800'], ['songhai', 'ottoman', 'charles-quint', 'azteques', 'incas', 'kongo', 'qing']);
+    assert.deepEqual(groups['depuis-1800'], ['ethiopie', 'britannique', 'russe', 'napoleon', 'austro-hongrois', 'colonial-francais']);
     assert.equal(H.categoryOf({ peak: 500 }), 'avant-500');
     assert.equal(H.categoryOf({ peak: 501 }), '500-1500');
     assert.equal(H.categoryOf({ peak: 1800 }), '1500-1800');
@@ -432,4 +433,73 @@ test('curseur : ce qui existe à une date, avec la carte la plus proche', () => 
     assert.equal(colonial.since, -10);
     // chaque entité est vue au moins une année : aucune n'est cachée par la règle de proximité
     H.ENTITIES.forEach(e => assert.ok(H.activeAt(e.peak).some(a => a.entity.id === e.id), e.id + ' à son apogée'));
+});
+
+test('Empire d\'Aksoum : le royaume commerçant, Ézana, le Yémen', () => {
+    const e = H.entityById('aksoum');
+    const a = H.snapshotOf(e, '200'), b = H.snapshotOf(e, '350'), c = H.snapshotOf(e, '530');
+    ['Axoum', 'Adulis', 'Yéha'].forEach(n => assert.ok(snapshotContains(a, place(e, n)), n + ' vers 200'));
+    assert.ok(!snapshotContains(a, place(e, 'Méroé')), 'Méroé n\'est conquise que vers 350');
+    ['Axoum', 'Adulis', 'Méroé'].forEach(n => assert.ok(snapshotContains(b, place(e, n)), n + ' vers 350'));
+    assert.ok(!snapshotContains(b, place(e, 'Sanaa')));
+    assert.equal(c.zones.length, 2);
+    assert.ok(c.zones.some(z => zoneContains(z, place(e, 'Sanaa'))), 'Sanaa sous Kaleb');
+    assert.ok(H.legendNeeded(e, c));
+});
+
+test('Empire songhaï : la boucle du Niger, puis l\'Aïr', () => {
+    const e = H.entityById('songhai');
+    const a = H.snapshotOf(e, '1480'), b = H.snapshotOf(e, '1520');
+    ['Gao', 'Tombouctou', 'Djenné'].forEach(n => assert.ok(snapshotContains(a, place(e, n)), n + ' en 1480'));
+    ['Agadez', 'Walata'].forEach(n => assert.ok(!snapshotContains(a, place(e, n)), n + ' n\'est pas encore songhaï'));
+    e.places.forEach(p => assert.ok(snapshotContains(b, p.c), p.n + ' en 1520'));
+});
+
+test('Empire des Qing : de Pékin au Xinjiang, puis la perte de Taïwan', () => {
+    const e = H.entityById('qing');
+    const a = H.snapshotOf(e, '1644'), b = H.snapshotOf(e, '1760'), c = H.snapshotOf(e, '1900');
+    ['Pékin', 'Moukden', 'Canton', 'Nankin'].forEach(n => assert.ok(snapshotContains(a, place(e, n)), n + ' en 1644'));
+    ['Lhassa', 'Ourounqi', 'Kashgar', 'Oulan-Bator', 'Taipei'].forEach(n => assert.ok(!snapshotContains(a, place(e, n)), n + ' n\'est pas qing en 1644'));
+    e.places.forEach(p => assert.ok(snapshotContains(b, p.c), p.n + ' en 1760'));
+    ['Pékin', 'Lhassa', 'Ourounqi', 'Kashgar', 'Oulan-Bator', 'Canton'].forEach(n => assert.ok(snapshotContains(c, place(e, n)), n + ' en 1900'));
+    assert.ok(!snapshotContains(c, place(e, 'Taipei')), 'Taïwan est japonaise depuis 1895');
+    // la Mandchourie extérieure (au nord de l\'Amour) est perdue entre 1760 et 1900
+    assert.ok(snapshotContains(b, [130.5, 54.0]) && !snapshotContains(c, [130.5, 54.0]));
+});
+
+test('Autriche-Hongrie : le Compromis, puis la Bosnie', () => {
+    const e = H.entityById('austro-hongrois');
+    const a = H.snapshotOf(e, '1867'), b = H.snapshotOf(e, '1914');
+    ['Vienne', 'Budapest', 'Prague', 'Cracovie', 'Trieste', 'Zagreb', 'Lemberg'].forEach(n => assert.ok(snapshotContains(a, place(e, n)), n + ' en 1867'));
+    assert.ok(!snapshotContains(a, place(e, 'Sarajevo')), 'la Bosnie n\'est annexée qu\'en 1908');
+    e.places.forEach(p => assert.ok(snapshotContains(b, p.c), p.n + ' en 1914'));
+    ['Rome', 'Belgrade', 'Berlin'].forEach(() => {});
+    assert.ok(!snapshotContains(b, [20.46, 44.82]), 'Belgrade est serbe');
+    assert.ok(!snapshotContains(b, [12.5, 41.9]), 'Rome est italienne');
+});
+
+test('Empire de Charles Quint : 1519 et le partage de 1556', () => {
+    const e = H.entityById('charles-quint');
+    const a = H.snapshotOf(e, '1519'), b = H.snapshotOf(e, '1556');
+    ['Gand', 'Bruxelles', 'Tolède', 'Séville', 'Vienne', 'Naples'].forEach(n => assert.ok(snapshotContains(a, place(e, n)), n + ' en 1519'));
+    ['Mexico', 'Lima', 'Milan'].forEach(n => assert.ok(!snapshotContains(a, place(e, n)), n + ' n\'est pas encore espagnole en 1519'));
+    e.places.forEach(p => assert.ok(snapshotContains(b, p.c), p.n + ' en 1556'));
+    // en 1556 Vienne revient à Ferdinand, pas à Philippe II
+    const ferdinand = b.zones.filter(z => z.name.startsWith('États autrichiens'));
+    assert.equal(ferdinand.length, 1);
+    assert.ok(zoneContains(ferdinand[0], place(e, 'Vienne')));
+    assert.ok(!b.zones.filter(z => !z.name.startsWith('États autrichiens')).some(z => zoneContains(z, place(e, 'Vienne'))));
+    assert.ok(H.legendNeeded(e, a) && H.legendNeeded(e, b));
+});
+
+test('Royaume de Kongo : de Mbanza Kongo à Afonso Ier', () => {
+    const e = H.entityById('kongo');
+    const a = H.snapshotOf(e, '1400'), b = H.snapshotOf(e, '1520'), c = H.snapshotOf(e, '1680');
+    assert.ok(snapshotContains(a, place(e, 'Mbanza Kongo')));
+    ['Soyo', 'Kinshasa', 'Mbwila'].forEach(n => assert.ok(!snapshotContains(a, place(e, n)), n + ' est hors du premier royaume'));
+    ['Mbanza Kongo', 'Soyo', 'Kinshasa', 'Mbwila'].forEach(n => assert.ok(snapshotContains(b, place(e, n)), n + ' en 1520'));
+    assert.ok(!snapshotContains(b, place(e, 'Luanda')), 'Luanda est dans le Ndongo, pas au Kongo');
+    assert.ok(snapshotContains(c, place(e, 'Mbanza Kongo')));
+    const area = s => { const box = C.prepare(H.snapshotGeometry(s)).box; return (box[2] - box[0]) * (box[3] - box[1]); };
+    assert.ok(area(c) < area(b), 'le royaume rétrécit après Mbwila');
 });

@@ -316,7 +316,12 @@ function toolHistoryRenderFiche(entity, snapshot) {
     if (HistoryMapsCore.legendNeeded(entity, snapshot)) {
         const legend = document.createElement('ul');
         legend.className = 'tool-history-legend';
+        // Plusieurs anneaux peuvent former une même zone (des îles, des territoires séparés) : une seule ligne par nom et par couleur.
+        const seen = new Set();
         snapshot.zones.forEach(zone => {
+            const key = zone.name + '|' + (zone.color || entity.color);
+            if (seen.has(key)) return;
+            seen.add(key);
             const li = document.createElement('li');
             const dot = document.createElement('span');
             dot.className = 'tool-history-dot';
