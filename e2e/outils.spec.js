@@ -224,11 +224,11 @@ test('atlas des pays : une capitale se cherche aussi, et un statut contesté est
     await expect(page.locator('.tool-countries-none')).toBeVisible();
 });
 
-test('cartes historiques : six entités, des dates, une fiche, et les événements de l\'app situés dans la zone', async ({ page }) => {
+test('cartes historiques : quatorze entités, des dates, une fiche, et les événements de l\'app situés dans la zone', async ({ page }) => {
     await page.waitForFunction(() => window.bdd && window.bdd.some(c => (c.themes || []).some(t => t.id === 'thm_aut')), null, { timeout: 45_000 });
     await ouvrir(page, 'Cartes historiques');
     expect(await visibleScreen(page)).toBe('screen-tool-history');
-    await expect(page.locator('#tool-history-entities .tool-history-chip')).toHaveCount(6);
+    await expect(page.locator('#tool-history-entities .tool-history-chip')).toHaveCount(14);
     // Rome au départ : trois dates, et la fiche de l'apogée
     await expect(page.locator('#tool-history-entities [data-entity="rome"]')).toHaveAttribute('aria-pressed', 'true');
     await expect(page.locator('#tool-history-snapshots .tool-history-chip')).toHaveCount(3);
@@ -252,6 +252,14 @@ test('cartes historiques : changer d\'entité change les dates et la fiche', asy
     await expect(page.locator('#tool-history-snapshots .tool-history-chip')).toHaveCount(2);
     await expect(page.locator('#tool-history-fiche')).toContainText('Kubilai');
     await expect(page.locator('.tool-history-legend li')).toHaveCount(4);
+    await page.locator('#tool-history-entities [data-entity="incas"]').click();
+    await expect(page.locator('#tool-history-snapshots .tool-history-chip')).toHaveCount(3);
+    await expect(page.locator('#tool-history-fiche')).toContainText('Cusco');
+    await expect(page.locator('#tool-history-fiche')).toContainText('quipus');
+    await page.locator('#tool-history-entities [data-entity="carolingien"]').click();
+    await page.locator('#tool-history-snapshots [data-snapshot="843"]').click();
+    await expect(page.locator('.tool-history-legend li')).toHaveCount(3);
+    await expect(page.locator('#tool-history-fiche')).toContainText('Verdun');
     await page.locator('#tool-history-entities [data-entity="mesopotamie"]').click();
     await expect(page.locator('#tool-history-snapshots .tool-history-chip')).toHaveCount(4);
     await expect(page.locator('#tool-history-fiche')).toContainText('Tigre');

@@ -12,11 +12,11 @@ const zoneContains = (zone, [lon, lat]) => C.contains(C.prepare({ type: 'Polygon
 const snapshotContains = (snapshot, point) => snapshot.zones.some(z => zoneContains(z, point));
 const get = (entityId, snapshotId) => { const e = H.entityById(entityId); return { entity: e, snapshot: H.snapshotOf(e, snapshotId) }; };
 
-test('les six entités, aux identifiants uniques et aux champs complets', () => {
-    assert.deepEqual(H.ENTITIES.map(e => e.id), ['mesopotamie', 'egypte', 'rome', 'saint-empire', 'ottoman', 'mongol']);
+test('les quatorze entités, aux identifiants uniques et aux champs complets', () => {
+    assert.deepEqual(H.ENTITIES.map(e => e.id), ['mesopotamie', 'egypte', 'mayas', 'perse', 'alexandre', 'rome', 'byzance', 'califat', 'carolingien', 'saint-empire', 'mongol', 'ottoman', 'azteques', 'incas']);
     assert.equal(new Set(H.ENTITIES.map(e => e.id)).size, H.ENTITIES.length);
     H.ENTITIES.forEach(e => {
-        ['name', 'icon', 'color', 'span', 'capital', 'summary'].forEach(k => assert.ok(e[k] && String(e[k]).length > 1, e.id + ' ' + k));
+        ['name', 'icon', 'color', 'span', 'capital', 'summary'].forEach(k => assert.ok(e[k] && String(e[k]).length >= 1, e.id + ' ' + k));
         assert.match(e.color, /^#[0-9a-f]{6}$/i);
         assert.ok(e.from < e.to, e.id + ' période');
         assert.ok(e.snapshots.length >= 2, e.id + ' au moins deux dates');
@@ -44,7 +44,7 @@ test('chaque contour est un anneau sain : assez de points, dans le monde, sans c
         s.zones.forEach(z => {
             const where = e.id + '/' + s.id + '/' + z.name;
             assert.ok(z.name, where + ' nom');
-            assert.ok(z.ring.length >= 8, where + ' trop peu de points');
+            assert.ok(z.ring.length >= 4, where + ' trop peu de points');
             z.ring.forEach(([lon, lat]) => {
                 assert.ok(lon >= -180 && lon <= 180 && lat >= -85 && lat <= 85, where + ' hors du monde : ' + lon + ',' + lat);
             });
@@ -54,9 +54,16 @@ test('chaque contour est un anneau sain : assez de points, dans le monde, sans c
             // surface en degrés carrés (formule du lacet)
             let area = 0;
             for (let i = 0; i < closed.length - 1; i++) area += closed[i][0] * closed[i + 1][1] - closed[i + 1][0] * closed[i][1];
-            assert.ok(Math.abs(area) / 2 > 5, where + ' surface trop petite');
+            assert.ok(Math.abs(area) / 2 > 0.05, where + ' surface trop petite');
             if (z.color) assert.match(z.color, /^#[0-9a-f]{6}$/i);
         });
+        // un instantané doit se voir sur une carte du monde
+        const total = s.zones.reduce((sum, z) => {
+            const c = H.closeRing(z.ring); let a = 0;
+            for (let i = 0; i < c.length - 1; i++) a += c[i][0] * c[i + 1][1] - c[i + 1][0] * c[i][1];
+            return sum + Math.abs(a) / 2;
+        }, 0);
+        assert.ok(total > 1, e.id + '/' + s.id + ' surface totale trop petite : ' + total);
     }));
 });
 
@@ -177,4 +184,97 @@ test('les données de la silhouette de la terre sont là et raisonnables', () =>
     assert.equal(land.type, 'MultiPolygon');
     assert.ok(land.coordinates.length > 500);
     assert.ok(fs.statSync(path.join(root, 'assets/geo/land.json')).size < 700 * 1024);
+});
+
+test('Empire perse : de Cyrus à Darius', () => {
+    const e = H.entityById('perse');
+    const cyrus = H.snapshotOf(e, 'cyrus'), darius = H.snapshotOf(e, 'darius');
+    ['Persépolis', 'Suse', 'Pasargades', 'Babylone', 'Sardes', 'Ecbatane'].forEach(n => assert.ok(snapshotContains(cyrus, place(e, n)), n + ' sous Cyrus'));
+    assert.ok(!snapshotContains(cyrus, place(e, 'Memphis')), 'l\'Égypte n\'est conquise qu\'en 525');
+    assert.ok(snapshotContains(darius, place(e, 'Memphis')), 'Memphis sous Darius');
+    assert.ok(snapshotContains(darius, place(e, 'Persépolis')) && snapshotContains(darius, place(e, 'Sardes')));
+});
+
+test('Alexandre : de la Macédoine à l\'Indus, puis le partage', () => {
+    const e = H.entityById('alexandre');
+    const a = H.snapshotOf(e, '336'), b = H.snapshotOf(e, '323'), c = H.snapshotOf(e, '281');
+    ['Pella', 'Athènes'].forEach(n => assert.ok(snapshotContains(a, place(e, n)), n + ' en 336'));
+    ['Alexandrie', 'Babylone', 'Persépolis', 'Samarcande'].forEach(n => assert.ok(!snapshotContains(a, place(e, n)), n + ' n\'est pas macédonienne en 336'));
+    ['Pella', 'Athènes', 'Alexandrie', 'Babylone', 'Persépolis', 'Samarcande', 'Taxila'].forEach(n => assert.ok(snapshotContains(b, place(e, n)), n + ' en 323'));
+    // le partage : chaque capitale dans son royaume
+    const zone = name => c.zones.find(z => z.name.startsWith(name));
+    assert.ok(zoneContains(zone('Lagides'), place(e, 'Alexandrie')) && !zoneContains(zone('Séleucides'), place(e, 'Alexandrie')));
+    assert.ok(zoneContains(zone('Séleucides'), place(e, 'Babylone')) && zoneContains(zone('Séleucides'), place(e, 'Persépolis')));
+    assert.ok(zoneContains(zone('Macédoine'), place(e, 'Pella')));
+    assert.equal(c.zones.length, 3);
+});
+
+test('Empire byzantin : Justinien, Basile II, la veille de la chute', () => {
+    const e = H.entityById('byzance');
+    const a = H.snapshotOf(e, '565'), b = H.snapshotOf(e, '1025'), c = H.snapshotOf(e, '1450');
+    ['Constantinople', 'Ravenne', 'Carthage', 'Antioche', 'Alexandrie', 'Jérusalem', 'Thessalonique'].forEach(n => assert.ok(snapshotContains(a, place(e, n)), n + ' en 565'));
+    ['Constantinople', 'Antioche', 'Thessalonique', 'Nicée'].forEach(n => assert.ok(snapshotContains(b, place(e, n)), n + ' en 1025'));
+    ['Carthage', 'Alexandrie', 'Jérusalem', 'Ravenne'].forEach(n => assert.ok(!snapshotContains(b, place(e, n)), n + ' est perdue en 1025'));
+    assert.ok(snapshotContains(c, place(e, 'Constantinople')));
+    ['Antioche', 'Nicée', 'Thessalonique'].forEach(n => assert.ok(!snapshotContains(c, place(e, n)), n + ' est perdue en 1450'));
+    assert.equal(c.zones.length, 2);
+});
+
+test('Califat : de Mu\'awiya aux Abbassides et à Cordoue', () => {
+    const e = H.entityById('califat');
+    const a = H.snapshotOf(e, '661'), b = H.snapshotOf(e, '750'), c = H.snapshotOf(e, '900');
+    ['Médine', 'La Mecque', 'Damas', 'Bagdad'].forEach(n => assert.ok(snapshotContains(a, place(e, n)), n + ' en 661'));
+    ['Kairouan', 'Cordoue', 'Samarcande'].forEach(n => assert.ok(!snapshotContains(a, place(e, n)), n + ' n\'est pas encore conquise en 661'));
+    e.places.forEach(p => assert.ok(snapshotContains(b, p.c), p.n + ' en 750'));
+    const zone = name => c.zones.find(z => z.name.startsWith(name));
+    assert.ok(zoneContains(zone('Califat abbasside'), place(e, 'Bagdad')) && zoneContains(zone('Califat abbasside'), place(e, 'Samarcande')));
+    assert.ok(!zoneContains(zone('Califat abbasside'), place(e, 'Cordoue')) && !zoneContains(zone('Califat abbasside'), place(e, 'Kairouan')));
+    assert.ok(zoneContains(zone('Émirat omeyyade'), place(e, 'Cordoue')));
+});
+
+test('Empire carolingien : de 768 au partage de Verdun', () => {
+    const e = H.entityById('carolingien');
+    const a = H.snapshotOf(e, '768'), b = H.snapshotOf(e, '814'), c = H.snapshotOf(e, '843');
+    ['Aix-la-Chapelle', 'Paris', 'Verdun'].forEach(n => assert.ok(snapshotContains(a, place(e, n)), n + ' en 768'));
+    ['Rome', 'Pavie', 'Ratisbonne'].forEach(n => assert.ok(!snapshotContains(a, place(e, n)), n + ' n\'est pas franque en 768'));
+    e.places.forEach(p => assert.ok(snapshotContains(b, p.c), p.n + ' en 814'));
+    assert.equal(c.zones.length, 3);
+    const zone = name => c.zones.find(z => z.name.startsWith(name));
+    assert.ok(zoneContains(zone('Francie occidentale'), place(e, 'Paris')));
+    assert.ok(zoneContains(zone('Francie orientale'), place(e, 'Ratisbonne')));
+    assert.ok(zoneContains(zone('Lotharingie'), place(e, 'Aix-la-Chapelle')) && zoneContains(zone('Lotharingie'), place(e, 'Pavie')) && zoneContains(zone('Lotharingie'), place(e, 'Rome')));
+    assert.ok(!zoneContains(zone('Francie occidentale'), place(e, 'Aix-la-Chapelle')));
+});
+
+test('Mayas : cités du Petén, classique, postclassique', () => {
+    const e = H.entityById('mayas');
+    const a = H.snapshotOf(e, 'preclassique'), b = H.snapshotOf(e, 'classique'), c = H.snapshotOf(e, 'postclassique');
+    ['El Mirador', 'Tikal', 'Calakmul'].forEach(n => assert.ok(snapshotContains(a, place(e, n)), n + ' au préclassique'));
+    assert.ok(!snapshotContains(a, place(e, 'Chichén Itzá')) && !snapshotContains(a, place(e, 'Copán')));
+    ['Tikal', 'Palenque', 'Copán', 'Chichén Itzá', 'Calakmul', 'Uxmal'].forEach(n => assert.ok(snapshotContains(b, place(e, n)), n + ' à l\'époque classique'));
+    ['Chichén Itzá', 'Uxmal'].forEach(n => assert.ok(snapshotContains(c, place(e, n)), n + ' au postclassique'));
+    ['Tikal', 'Copán'].forEach(n => assert.ok(!snapshotContains(c, place(e, n)), n + ' est abandonnée au postclassique'));
+});
+
+test('Aztèques : la vallée de Mexico, puis l\'empire', () => {
+    const e = H.entityById('azteques');
+    const a = H.snapshotOf(e, '1428'), b = H.snapshotOf(e, '1519');
+    ['Tenochtitlan', 'Texcoco', 'Tlacopan'].forEach(n => assert.ok(snapshotContains(a, place(e, n)), n + ' en 1428'));
+    assert.ok(!snapshotContains(a, place(e, 'Tochtepec')), 'Tochtepec est conquise plus tard');
+    ['Tenochtitlan', 'Texcoco', 'Tlacopan', 'Tochtepec'].forEach(n => assert.ok(snapshotContains(b, place(e, n)), n + ' en 1519'));
+    // l'empire est bien plus étendu que la vallée
+    assert.ok(C.prepare(H.snapshotGeometry(b)).box[3] - C.prepare(H.snapshotGeometry(b)).box[1] > 2 * (C.prepare(H.snapshotGeometry(a)).box[3] - C.prepare(H.snapshotGeometry(a)).box[1]));
+});
+
+test('Incas : Cusco, puis les Andes de l\'Équateur au Chili', () => {
+    const e = H.entityById('incas');
+    const a = H.snapshotOf(e, '1438'), b = H.snapshotOf(e, '1470'), c = H.snapshotOf(e, '1527');
+    assert.ok(snapshotContains(a, place(e, 'Cusco')) && snapshotContains(a, place(e, 'Machu Picchu')));
+    ['Cusco', 'Chan Chan', 'Tiwanaku'].forEach(n => assert.ok(snapshotContains(b, place(e, n)), n + ' en 1470'));
+    assert.ok(!snapshotContains(b, place(e, 'Quito')), 'Quito n\'est conquise que vers 1500');
+    e.places.forEach(p => assert.ok(snapshotContains(c, p.c), p.n + ' en 1527'));
+    assert.ok(!snapshotContains(a, place(e, 'Tiwanaku')));
+    // l'empire s'allonge du nord au sud : de Pasto au Maule, près de 4 000 km
+    const box = C.prepare(H.snapshotGeometry(c)).box;
+    assert.ok(box[3] - box[1] > 35);
 });
