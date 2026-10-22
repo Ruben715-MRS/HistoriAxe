@@ -243,6 +243,15 @@ function initCategories() {
     applyStagger(catGrid);
 }
 
+// Images d'illustration des pays de « Programmes scolaires » (clé : nom du pays en minuscules).
+const PROGRAMMES_PAYS_IMAGES = {
+    'france': 'prog_france.webp',
+    'afrique du sud': 'prog_afrique_du_sud.webp',
+    'algérie': 'prog_algerie.webp',
+    'allemagne': 'prog_allemagne.webp',
+    'argentine': 'prog_argentine.webp',
+};
+
 // INIT SOUS-CATÉGORIES (régions, niveaux scolaires, etc. — potentiellement imbriquées)
 function initSubcategories() {
     const container = document.getElementById('subcategories-container');
@@ -321,7 +330,12 @@ function initSubcategories() {
         // que la règle des mythologies (plus bas) lui volerait. Égalité stricte,
         // et non `includes` : « Mythologies et panthéons antiques » doit garder
         // sa propre image.
-        if (nomLower === 'panthéons' || nomLower === 'pantheons') bgImg = 'assets/images/sub_themes_generaux.webp';
+        // « Programmes scolaires » : une image par pays, testée avant les règles par mot-clé
+        // (« Afrique du Sud » contient « afrique » et prendrait sinon l'image du continent).
+        const progPays = category.nom.toLowerCase().includes('scolaire') && node === category
+            ? PROGRAMMES_PAYS_IMAGES[nomLower] : null;
+        if (progPays) bgImg = 'assets/images/' + progPays;
+        else if (nomLower === 'panthéons' || nomLower === 'pantheons') bgImg = 'assets/images/sub_themes_generaux.webp';
         else if (nomLower === 'biographies') bgImg = 'assets/images/cat_biographies.webp';
         else if (nomLower.includes('europe')) bgImg = 'assets/images/sub_europe.webp';
         else if (nomLower.includes('amérique')) bgImg = 'assets/images/sub_ameriques.webp';
