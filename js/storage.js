@@ -252,7 +252,9 @@ function teamLoad() {
             return {
                 code: raw.code, role: raw.role === 'teacher' ? 'teacher' : 'member', name: String(raw.name || '').slice(0, 40),
                 // Étoiles gagnées hors ligne, à verser au coffre au prochain envoi réussi.
-                pending: Math.max(0, Math.min(60, parseInt(raw.pending, 10) || 0))
+                pending: Math.max(0, Math.min(60, parseInt(raw.pending, 10) || 0)),
+                // Dernier niveau de joueur communiqué au serveur (classement des membres) : évite de le renvoyer à chaque rafraîchissement.
+                levelSent: Math.max(0, Math.min(50, parseInt(raw.levelSent, 10) || 0))
             };
         }
     } catch (e) {}

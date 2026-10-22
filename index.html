@@ -1523,7 +1523,7 @@
     <!-- ÉCRAN : ÉQUIPE DE CLASSE (coffre commun, membres — voir js/app/team.js et api/team.js) -->
     <div id="screen-team" class="list-screen hidden">
         <button class="back-btn" onclick="teamBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
-        <h2 class="header-title" id="team-title" data-i18n="team.title">Équipe de classe</h2>
+        <h2 class="header-title" id="team-title" data-i18n="team.title">Équipe</h2>
         <p class="modes-header-subtitle" id="team-subtitle"></p>
 
         <section id="team-class-form" class="class-panel team-class hidden">
@@ -1540,8 +1540,9 @@
         <section id="team-panel-none" class="class-panel hidden">
             <div id="team-join-form">
                 <h3 data-i18n="team.join_title">Rejoindre une équipe</h3>
-                <p class="class-help" data-i18n="team.join_help">Ton enseignant t'a donné un code ? Rejoins l'équipe de ta classe : vos étoiles remplissent un coffre commun.</p>
-                <label class="class-label" for="team-code-input" data-i18n="team.code_label">Code de l'équipe</label>
+                <p class="class-help" data-i18n="team.join_help">Un ami ou votre enseignant vous a donné un identifiant ? Saisissez-le pour rejoindre son équipe : vos étoiles remplissent un coffre commun.</p>
+                <div id="team-join-search"></div>
+                <label class="class-label" for="team-code-input" data-i18n="team.code_label">Identifiant de l'équipe</label>
                 <input type="text" id="team-code-input" class="form-input class-code-input" maxlength="9" autocomplete="off"
                     autocapitalize="characters" spellcheck="false" placeholder="ABC DEF">
                 <label class="class-label" for="team-name-input" data-i18n="classroom.name_label">Votre prénom</label>
@@ -1550,14 +1551,48 @@
             </div>
             <div id="team-create-form" class="team-create">
                 <h3 data-i18n="team.create_title">Créer une équipe</h3>
-                <p class="class-help" data-i18n="team.create_help">Vous êtes enseignant ? Créez l'équipe de votre classe : un code s'affiche, à donner à vos élèves pour qu'ils la rejoignent.</p>
-                <label class="class-label" for="team-new-name" data-i18n="team.new_name_label">Nom de l'équipe (par exemple la classe)</label>
+                <p class="class-help" data-i18n="team.create_help">Classe, club ou groupe d'amis : créez votre équipe. Un identifiant s'affiche, à partager pour qu'on puisse la rejoindre.</p>
+                <label class="class-label" for="team-new-name" data-i18n="team.new_name_label">Nom de l'équipe (la classe, le club, les amis…)</label>
                 <input type="text" id="team-new-name" class="form-input" maxlength="40" autocomplete="off">
+                <div id="team-create-profile"></div>
+                <p class="class-help" data-i18n="team.badge_create_hint">Dessinez l'écusson de votre équipe. Les bordures plus riches se débloquent à mesure que vos élèves ouvrent des coffres.</p>
+                <div id="team-create-badge"></div>
                 <button type="button" class="btn class-primary" onclick="teamCreate()" data-i18n="team.create">Créer l'équipe</button>
             </div>
         </section>
 
         <section id="team-panel-view" class="class-panel hidden">
+            <div class="team-card">
+                <div class="team-card-badge" id="team-badge-view"></div>
+                <div class="team-card-info">
+                    <div class="team-card-id">
+                        <span data-i18n="team.id_label">Identifiant</span>
+                        <b id="team-id"></b>
+                        <button type="button" class="team-copy" onclick="teamCopyId()" data-i18n="team.id_copy">Copier</button>
+                    </div>
+                    <p class="team-card-desc hidden" id="team-desc"></p>
+                    <dl class="team-facts">
+                        <div><dt data-i18n="team.country_label">Pays</dt><dd id="team-fact-country"></dd></div>
+                        <div><dt data-i18n="team.lang_label">Langue parlée</dt><dd id="team-fact-lang"></dd></div>
+                        <div><dt data-i18n="team.fact_members">Membres</dt><dd id="team-fact-members"></dd></div>
+                        <div><dt data-i18n="team.fact_points">Points de l'équipe</dt><dd id="team-fact-points"></dd></div>
+                    </dl>
+                </div>
+            </div>
+            <div class="team-card-actions">
+                <button type="button" class="btn team-secondary hidden" id="team-edit-btn" onclick="teamEditToggle()" data-i18n="team.edit_team">Modifier l'équipe</button>
+                <button type="button" class="btn team-secondary hidden" id="team-challenge-btn" onclick="teamChallengeToggle()" data-i18n="team.challenge_btn">Défier une autre équipe</button>
+            </div>
+            <div class="team-edit hidden" id="team-edit">
+                <div id="team-edit-profile"></div>
+                <div id="team-edit-badge"></div>
+                <button type="button" class="btn class-primary" onclick="teamEditSave()" data-i18n="team.edit_save">Enregistrer les modifications</button>
+            </div>
+            <div class="team-challenge-find hidden" id="team-challenge-find">
+                <p class="class-help" data-i18n="team.challenge_help">Trouvez l'équipe à défier par son nom ou son identifiant. Pendant sept jours, on compare les points gagnés par chaque équipe.</p>
+                <div id="team-challenge-search"></div>
+            </div>
+            <div class="team-challenge hidden" id="team-challenge-card"></div>
             <div class="team-chest">
                 <div class="team-chest-icon" aria-hidden="true">🎁</div>
                 <div class="team-chest-track" id="team-chest-track" role="progressbar" aria-valuemin="0" aria-valuenow="0"
@@ -1570,9 +1605,10 @@
             </div>
             <p class="team-claimed hidden" id="team-claimed" role="status"></p>
             <p class="team-me hidden" id="team-me"></p>
+            <h3 class="team-members-title" id="team-members-title"></h3>
             <ul class="team-members" id="team-members"></ul>
             <div class="team-teacher hidden" id="team-teacher-tools">
-                <div class="class-code-kicker" data-i18n="team.code_kicker">Code à donner aux élèves</div>
+                <div class="class-code-kicker" data-i18n="team.code_kicker">Identifiant à partager</div>
                 <div class="class-code" id="team-code" role="img"></div>
                 <p class="class-help" data-i18n="team.teacher_hint">Pour que les bonnes réponses d'une séance de Mode Classe remplissent aussi le coffre, cochez « Compter pour l'équipe » en ouvrant la séance.</p>
             </div>
@@ -3055,7 +3091,10 @@
     <script src="js/app/history-maps.js"></script>
     <script src="js/app/rewards.js"></script>
     <script src="js/app/clio.js"></script>
+    <script src="js/teamBadge.js"></script>
+    <script src="js/teamProfile.js"></script>
     <script src="js/app/team.js"></script>
+    <script src="js/app/team-social.js"></script>
     <script src="js/classroom.js"></script>
     <script src="js/app.js"></script>
 

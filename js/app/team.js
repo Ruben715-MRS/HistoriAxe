@@ -39,6 +39,86 @@ function teamStopPolling() {
 
 // --- Ouverture / fermeture ----------------------------------------------------------------------------
 
+// --- Écusson : éditeur et affichage (le dessin est dans js/teamBadge.js) ---------------------------------------
+
+let teamBadgeUid = 0;
+let teamCreateEditor = null;
+
+// Un éditeur d'écusson dans `host` : aperçu, puis une rangée de choix pour le fond, le motif, la couleur du motif
+// et la bordure (verrouillée tant que la classe n'a pas ouvert assez de coffres). `chests` : coffres ouverts.
+function teamBadgeEditor(host, value, chests) {
+    const state = TeamBadge.parse(value) || TeamBadge.parse(TeamBadge.DEFAULT);
+    const ROWS = [
+        { key: 'bg', label: 'team.badge_background', count: TeamBadge.COLORS.length },
+        { key: 'pattern', label: 'team.badge_pattern', count: TeamBadge.PATTERNS_COUNT },
+        { key: 'color', label: 'team.badge_pattern_color', count: TeamBadge.COLORS.length },
+        { key: 'border', label: 'team.badge_border', count: TeamBadge.BORDERS.length }
+    ];
+    const unlocked = TeamBadge.unlockedBorders(chests);
+    const draw = (extra, opts) => TeamBadge.render(TeamBadge.stringify(Object.assign({}, state, extra)), Object.assign({ uid: 'e' + (++teamBadgeUid) }, opts));
+    function render(focus) {
+        host.innerHTML = '';
+        host.className = 'tb-editor';
+        const preview = document.createElement('div');
+        preview.className = 'tb-preview';
+        preview.innerHTML = draw({}, { level: TeamBadge.levelOf(chests), label: t('team.badge_aria') });
+        host.appendChild(preview);
+        ROWS.forEach(row => {
+            const wrap = document.createElement('div');
+            wrap.className = 'tb-row';
+            const title = document.createElement('h4');
+            title.className = 'tb-row-title';
+            title.textContent = t(row.label);
+            const options = document.createElement('div');
+            options.className = 'tb-options';
+            options.setAttribute('role', 'group');
+            options.setAttribute('aria-label', t(row.label));
+            for (let i = 0; i < row.count; i++) {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'tb-opt';
+                btn.dataset.row = row.key;
+                btn.dataset.index = String(i);
+                btn.setAttribute('aria-label', t('team.badge_option_aria', { kind: t(row.label), n: i + 1 }));
+                btn.setAttribute('aria-pressed', String(state[row.key] === i));
+                if (row.key === 'bg' || row.key === 'color') {
+                    btn.innerHTML = '<span class="tb-swatch" style="background:' + TeamBadge.COLORS[i] + '"></span>';
+                } else if (row.key === 'pattern') {
+                    btn.innerHTML = draw({ pattern: i, border: 0 });
+                } else {
+                    btn.innerHTML = draw({ border: i });
+                    if (i >= unlocked) {
+                        btn.classList.add('is-locked');
+                        btn.setAttribute('aria-disabled', 'true');
+                        btn.title = t('team.badge_locked', { n: TeamBadge.BORDERS[i].chests, have: chests });
+                    }
+                }
+                btn.onclick = () => {
+                    if (row.key === 'border' && i >= unlocked) { showToast(t('team.badge_locked', { n: TeamBadge.BORDERS[i].chests, have: chests }), 3500); return; }
+                    state[row.key] = i;
+                    render({ row: row.key, index: i });
+                };
+                options.appendChild(btn);
+            }
+            wrap.append(title, options);
+            host.appendChild(wrap);
+        });
+        if (focus) {
+            const again = host.querySelector('.tb-opt[data-row="' + focus.row + '"][data-index="' + focus.index + '"]');
+            if (again) again.focus({ preventScroll: true });
+        }
+    }
+    render(null);
+    return { get: () => TeamBadge.stringify(state) };
+}
+
+// L'écusson affiché en grand sur l'écran de l'équipe, avec le niveau de l'équipe en médaillon.
+function teamBadgeRender(state) {
+    const view = document.getElementById('team-badge-view');
+    if (!view || !state.badge) return;
+    view.innerHTML = TeamBadge.render(state.badge, { level: TeamBadge.levelOf(state.chestIndex), uid: 'view', label: t('team.badge_aria') });
+}
+
 function openTeam(from) {
     teamReturn = from || 'screen-categories';
     teamSetError('');
@@ -57,6 +137,16 @@ function openTeam(from) {
     document.getElementById('team-class-name').value = pseudo || '';
     document.getElementById('team-join-form').classList.remove('hidden');
     document.getElementById('team-create-form').classList.remove('hidden');
+    teamCreateEditor = teamBadgeEditor(document.getElementById('team-create-badge'), TeamBadge.DEFAULT, 0);
+    teamCreateProfile = teamProfileEditor(document.getElementById('team-create-profile'), { lang: TeamProfile.LANGUAGES.indexOf(teamAppLang()) >= 0 ? teamAppLang() : '' });
+    teamSearchBox(document.getElementById('team-join-search'), {
+        actionLabel: t('team.search_join'),
+        fullBlocks: true,
+        // Rejoindre depuis un résultat : l'identifiant passe dans le champ, le prénom est celui de la ligne du dessous.
+        onPick: team => { document.getElementById('team-code-input').value = team.code; teamJoin(); }
+    });
+    document.getElementById('team-edit').classList.add('hidden');
+    document.getElementById('team-challenge-find').classList.add('hidden');
     document.getElementById('team-subtitle').innerText = '';
     const saved = teamLoad();
     if (!saved) { teamShowPanel('none'); return; }
@@ -81,9 +171,9 @@ function teamJoin() {
     if (!name) { teamSetError(t('team.need_name')); return; }
     if (code.length !== 6) { teamSetError(t('team.bad_code')); return; }
     teamSetError('');
-    HistoriAxeAPI.team('join', { code, deviceId: getOrCreateDeviceId(), name }).then(res => {
+    HistoriAxeAPI.team('join', { code, deviceId: getOrCreateDeviceId(), name, level: teamMyLevel() }).then(res => {
         if (!res.ok) { teamSetError(res.status === 404 ? t('team.not_found') : (res.status === 409 ? t('team.full') : t('team.error'))); return; }
-        teamSave({ code: res.data.code, role: 'member', name: '', pending: 0 });
+        teamSave({ code: res.data.code, role: 'member', name: '', pending: 0, levelSent: teamMyLevel() });
         openTeam(teamReturn);
     });
 }
@@ -105,13 +195,15 @@ function teamCreate() {
     const name = (document.getElementById('team-new-name').value || '').trim();
     if (!name) { teamSetError(t('team.need_team_name')); return; }
     teamSetError('');
-    HistoriAxeAPI.team('create', {
+    HistoriAxeAPI.team('create', Object.assign({
         deviceId: getOrCreateDeviceId(),
         pseudo: (typeof pseudoLoad === 'function' ? pseudoLoad() : '') || null,
-        name
-    }).then(res => {
+        name,
+        badge: teamCreateEditor ? teamCreateEditor.get() : TeamBadge.DEFAULT,
+        level: teamMyLevel()
+    }, teamCreateProfile ? teamCreateProfile.get() : {})).then(res => {
         if (!res.ok) { teamSetError(t('team.error')); return; }
-        teamSave({ code: res.data.code, role: 'teacher', name, pending: 0 });
+        teamSave({ code: res.data.code, role: 'teacher', name, pending: 0, levelSent: teamMyLevel() });
         openTeam(teamReturn);
     });
 }
@@ -170,6 +262,7 @@ function teamRefresh() {
             return;
         }
         teamCache = state;
+        teamSyncLevel(state);
         if (!document.getElementById('screen-team').classList.contains('hidden')) teamRender(state);
         if (state.me && state.me.unclaimed.length) teamClaim();
     });
@@ -178,7 +271,8 @@ function teamRefresh() {
 function teamRender(state) {
     teamShowPanel('view');
     document.getElementById('team-title').innerText = state.name;
-    document.getElementById('team-subtitle').innerText = t('team.members_count', { count: state.memberCount });
+    teamBadgeRender(state);
+    document.getElementById('team-subtitle').innerText = '';
     const pct = Math.min(100, Math.round(100 * state.progress / state.target));
     const bar = document.getElementById('team-chest-bar');
     bar.style.width = pct + '%';
@@ -203,28 +297,9 @@ function teamRender(state) {
     code.innerText = state.code.slice(0, 3) + ' ' + state.code.slice(3);
     code.setAttribute('aria-label', state.code.split('').join(' '));
 
-    const list = document.getElementById('team-members');
-    list.innerHTML = '';
-    state.members.forEach(m => {
-        const li = document.createElement('li');
-        li.className = 'team-member' + (m.me ? ' is-me' : '');
-        const name = document.createElement('span');
-        name.className = 'team-member-name';
-        name.innerText = m.name;
-        const pts = document.createElement('b');
-        pts.innerText = String(m.points);
-        li.append(name, pts);
-        if (state.isTeacher && m.ref) {
-            const kick = document.createElement('button');
-            kick.type = 'button';
-            kick.className = 'team-kick';
-            kick.innerText = '×';
-            kick.setAttribute('aria-label', t('team.kick_aria', { name: m.name }));
-            kick.onclick = () => teamKick(m.ref, m.name);
-            li.appendChild(kick);
-        }
-        list.appendChild(li);
-    });
+    teamRenderHeader(state);
+    teamRenderMembers(state);
+    teamRenderChallenge(state);
     document.getElementById('team-teacher-tools').classList.toggle('hidden', !state.isTeacher);
     document.getElementById('team-delete-btn').classList.toggle('hidden', !state.isTeacher);
     document.getElementById('team-leave-btn').innerText = t(state.isTeacher ? 'team.forget' : 'team.leave');
@@ -237,7 +312,7 @@ function teamOnStars(gained) {
     const saved = teamLoad();
     if (!saved || saved.role !== 'member' || !(gained > 0) || !teamApiReady()) return;
     const stars = gained + (saved.pending || 0);
-    HistoriAxeAPI.team('contribute', { code: saved.code, deviceId: getOrCreateDeviceId(), stars }).then(res => {
+    HistoriAxeAPI.team('contribute', { code: saved.code, deviceId: getOrCreateDeviceId(), stars, level: teamMyLevel() }).then(res => {
         const now = teamLoad() || saved;
         if (!res.ok) {
             if (!res.status || res.status >= 500) teamSave(Object.assign({}, now, { pending: Math.min(60, stars) })); // hors ligne : on réessaiera

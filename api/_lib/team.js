@@ -10,8 +10,9 @@
 // ce qui permet de se contenter d'un plafond journalier plutôt que d'un rejeu complet des niveaux côté serveur.
 
 const classroom = require('./classroom');
+const TeamBadge = require('../../js/teamBadge.js');
 
-const MAX_MEMBERS = 40;
+const MAX_MEMBERS = 50;
 const MAX_NAME = classroom.MAX_NAME;
 const MAX_TEAM_NAME = 40;
 // Étoiles que l'on peut apporter au coffre en un jour depuis le Chemin (3 niveaux parfaits ≈ 9 étoiles ; 30 laisse
@@ -75,7 +76,16 @@ function sanitizeTeamName(raw) {
     return cleaned.slice(0, MAX_TEAM_NAME) || null;
 }
 
+// L'écusson reçu d'un client : quatre entiers valides, et une bordure déjà débloquée par les coffres ouverts.
+// Renvoie la forme canonique, ou null.
+function sanitizeBadge(raw, chestsOpened) {
+    const badge = TeamBadge.parse(raw);
+    if (!badge || !TeamBadge.canUseBorder(badge.border, chestsOpened)) return null;
+    return TeamBadge.stringify(badge);
+}
+
 module.exports = {
+    sanitizeBadge,
     MAX_MEMBERS, MAX_NAME, MAX_TEAM_NAME, DAILY_PATH_CAP, MAX_PER_CONTRIBUTION, CARD_EVERY,
     chestTarget, chestCoins, chestHasCard, addToChest, unclaimedChests, acceptPathPoints, sanitizeTeamName,
     generateCode: classroom.generateCode, normalizeCode: classroom.normalizeCode, sanitizeName: classroom.sanitizeName

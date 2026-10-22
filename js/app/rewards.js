@@ -107,6 +107,12 @@ function renderRewardsBar(container, returnScreen) {
     bar.querySelector('.rewards-team-btn small').innerText = typeof teamChipText === 'function' ? teamChipText() : '';
     rewardsAttachTip(bar.querySelector('.rewards-coins'), t('rewards.coins_tip'));
     rewardsAttachTip(bar.querySelector('.rewards-streak'), t('rewards.streak_tip'));
+    // Une équipe déjà consultée : son écusson remplace l'emoji de la pastille.
+    if (typeof teamCache !== 'undefined' && teamCache && teamCache.badge && typeof TeamBadge !== 'undefined') {
+        const icon = bar.querySelector('.rewards-team-btn > span[aria-hidden]');
+        icon.className = 'rewards-team-badge';
+        icon.innerHTML = TeamBadge.render(teamCache.badge, { uid: 'chip' });
+    }
     bar.querySelector('.rewards-team-btn').onclick = () => openTeam(returnScreen);
     bar.querySelector('.rewards-shop-btn').onclick = () => openShop(returnScreen);
     bar.querySelector('.rewards-album-btn').onclick = () => openAlbum(returnScreen);

@@ -218,6 +218,31 @@ async function ensureSchema() {
         `);
         // Une séance de Mode Classe peut nourrir le coffre de l'équipe (class_sessions.team_code) ; `credited`
         // est le nombre de bonnes réponses déjà versées, pour ne verser que la différence à chaque envoi.
+        // Écusson de l'équipe (js/teamBadge.js) : quatre petits entiers « fond.motif.couleur.bordure ».
+        await query(`alter table class_teams add column if not exists badge text not null default '0.2.1.0';`);
+        // Profil de l'équipe (description, pays, langue), niveau des membres, points cumulés et défis entre équipes
+        // (api/team.js).
+        await query(`alter table class_teams add column if not exists description text not null default '';`);
+        await query(`alter table class_teams add column if not exists country text not null default '';`);
+        await query(`alter table class_teams add column if not exists lang text not null default '';`);
+        await query(`alter table class_teams add column if not exists leader_level smallint not null default 1;`);
+        await query(`alter table class_teams add column if not exists points_total integer not null default 0;`);
+        // Les équipes d'avant existaient déjà, trouvables par leur nom : elles restent listées ; les nouvelles ne le sont que si
+        // leur créateur le choisit.
+        await query(`alter table class_teams add column if not exists listed boolean not null default true;`);
+        await query(`alter table team_members add column if not exists level smallint not null default 1;`);
+        await query(`create table if not exists team_challenges (
+    id         bigserial primary key,
+    from_code  text not null references class_teams(code) on delete cascade,
+    to_code    text not null references class_teams(code) on delete cascade,
+    status     text not null default 'pending',
+    created_at timestamptz not null default now(),
+    ends_at    timestamptz,
+    from_base  integer not null default 0,
+    to_base    integer not null default 0,
+    from_score integer,
+    to_score   integer
+);`);
         await query(`alter table class_sessions add column if not exists team_code text;`);
         await query(`alter table class_players add column if not exists credited smallint not null default 0;`);
     })().catch((err) => {
