@@ -191,3 +191,42 @@ test('une équipe supprimée ou un élève retiré sont oubliés avec un message
     await expect(page.locator('#team-join-form')).toBeVisible();
     expect(await page.evaluate(() => localStorage.getItem('historiaxe_team_v1'))).toBeNull();
 });
+
+test('l\'enseignant dessine l\'écusson à la création, puis le modifie ; les bordures se débloquent avec les coffres', async ({ page }) => {
+    const etat = { courant: etatEquipe({ isTeacher: true, isMember: false, badge: '7.9.1.0', chestIndex: 2, me: null }), reponses: { create: { body: { code: 'ABC234' } }, badge: { body: { badge: '2.9.1.2' } } } };
+    const appels = await fauxServeur(page, etat);
+    await ouvrirEquipe(page);
+
+    // Création : fond n° 8, motif n° 10 ; une bordure verrouillée est refusée (message, rien n'est choisi).
+    await page.locator('#team-create-badge .tb-opt[data-row="bg"][data-index="7"]').click();
+    await page.locator('#team-create-badge .tb-opt[data-row="pattern"][data-index="9"]').click();
+    await page.locator('#team-create-badge .tb-opt[data-row="border"][data-index="3"]').click({ force: true });
+    await expect(page.locator('#app-toast')).toContainText('coffres');
+    await expect(page.locator('#team-create-badge .tb-opt[data-row="border"][data-index="0"]')).toHaveAttribute('aria-pressed', 'true');
+    await page.locator('#team-new-name').fill('2de B');
+    await page.locator('#team-create-form .class-primary').click();
+    await expect(page.locator('#team-panel-view')).toBeVisible();
+    expect(appels.find(a => a.action === 'create').badge).toBe('7.9.1.0');
+
+    // L'écusson s'affiche, avec le niveau de l'équipe (1 + coffres ouverts).
+    await expect(page.locator('#team-badge-view svg')).toBeVisible();
+    await expect(page.locator('#team-badge-view text')).toHaveText('3');
+
+    // Modification : deux coffres ouverts, donc trois bordures disponibles.
+    await page.locator('#team-badge-edit-btn').click();
+    await expect(page.locator('#team-edit-badge .tb-opt.is-locked')).toHaveCount(5);
+    await page.locator('#team-edit-badge .tb-opt[data-row="bg"][data-index="2"]').click();
+    await page.locator('#team-edit-badge .tb-opt[data-row="border"][data-index="2"]').click();
+    await page.locator('#team-badge-edit .class-primary').click();
+    await expect(page.locator('#team-badge-edit')).toBeHidden();
+    expect(appels.find(a => a.action === 'badge').badge).toBe('2.9.1.2');
+});
+
+test('un élève voit l\'écusson de l\'équipe mais ne peut pas le modifier', async ({ page }) => {
+    const etat = { courant: etatEquipe({ badge: '3.5.2.1' }), reponses: {} };
+    await fauxServeur(page, etat);
+    await page.evaluate(() => localStorage.setItem('historiaxe_team_v1', JSON.stringify({ code: 'ABC234', role: 'member', name: '', pending: 0 })));
+    await ouvrirEquipe(page);
+    await expect(page.locator('#team-badge-view svg')).toBeVisible();
+    await expect(page.locator('#team-badge-edit-btn')).toBeHidden();
+});

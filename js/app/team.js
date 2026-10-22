@@ -39,6 +39,107 @@ function teamStopPolling() {
 
 // --- Ouverture / fermeture ----------------------------------------------------------------------------
 
+// --- Écusson : éditeur et affichage (le dessin est dans js/teamBadge.js) ---------------------------------------
+
+let teamBadgeUid = 0;
+let teamCreateEditor = null;
+let teamEditEditor = null;
+
+// Un éditeur d'écusson dans `host` : aperçu, puis une rangée de choix pour le fond, le motif, la couleur du motif
+// et la bordure (verrouillée tant que la classe n'a pas ouvert assez de coffres). `chests` : coffres ouverts.
+function teamBadgeEditor(host, value, chests) {
+    const state = TeamBadge.parse(value) || TeamBadge.parse(TeamBadge.DEFAULT);
+    const ROWS = [
+        { key: 'bg', label: 'team.badge_background', count: TeamBadge.COLORS.length },
+        { key: 'pattern', label: 'team.badge_pattern', count: TeamBadge.PATTERNS_COUNT },
+        { key: 'color', label: 'team.badge_pattern_color', count: TeamBadge.COLORS.length },
+        { key: 'border', label: 'team.badge_border', count: TeamBadge.BORDERS.length }
+    ];
+    const unlocked = TeamBadge.unlockedBorders(chests);
+    const draw = (extra, opts) => TeamBadge.render(TeamBadge.stringify(Object.assign({}, state, extra)), Object.assign({ uid: 'e' + (++teamBadgeUid) }, opts));
+    function render(focus) {
+        host.innerHTML = '';
+        host.className = 'tb-editor';
+        const preview = document.createElement('div');
+        preview.className = 'tb-preview';
+        preview.innerHTML = draw({}, { level: TeamBadge.levelOf(chests), label: t('team.badge_aria') });
+        host.appendChild(preview);
+        ROWS.forEach(row => {
+            const wrap = document.createElement('div');
+            wrap.className = 'tb-row';
+            const title = document.createElement('h4');
+            title.className = 'tb-row-title';
+            title.textContent = t(row.label);
+            const options = document.createElement('div');
+            options.className = 'tb-options';
+            options.setAttribute('role', 'group');
+            options.setAttribute('aria-label', t(row.label));
+            for (let i = 0; i < row.count; i++) {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'tb-opt';
+                btn.dataset.row = row.key;
+                btn.dataset.index = String(i);
+                btn.setAttribute('aria-label', t('team.badge_option_aria', { kind: t(row.label), n: i + 1 }));
+                btn.setAttribute('aria-pressed', String(state[row.key] === i));
+                if (row.key === 'bg' || row.key === 'color') {
+                    btn.innerHTML = '<span class="tb-swatch" style="background:' + TeamBadge.COLORS[i] + '"></span>';
+                } else if (row.key === 'pattern') {
+                    btn.innerHTML = draw({ pattern: i, border: 0 });
+                } else {
+                    btn.innerHTML = draw({ border: i });
+                    if (i >= unlocked) {
+                        btn.classList.add('is-locked');
+                        btn.setAttribute('aria-disabled', 'true');
+                        btn.title = t('team.badge_locked', { n: TeamBadge.BORDERS[i].chests, have: chests });
+                    }
+                }
+                btn.onclick = () => {
+                    if (row.key === 'border' && i >= unlocked) { showToast(t('team.badge_locked', { n: TeamBadge.BORDERS[i].chests, have: chests }), 3500); return; }
+                    state[row.key] = i;
+                    render({ row: row.key, index: i });
+                };
+                options.appendChild(btn);
+            }
+            wrap.append(title, options);
+            host.appendChild(wrap);
+        });
+        if (focus) {
+            const again = host.querySelector('.tb-opt[data-row="' + focus.row + '"][data-index="' + focus.index + '"]');
+            if (again) again.focus({ preventScroll: true });
+        }
+    }
+    render(null);
+    return { get: () => TeamBadge.stringify(state) };
+}
+
+// L'écusson affiché en grand sur l'écran de l'équipe, et son éditeur (enseignant seulement).
+function teamBadgeRender(state) {
+    const view = document.getElementById('team-badge-view');
+    if (!view || !state.badge) return;
+    view.innerHTML = TeamBadge.render(state.badge, { level: TeamBadge.levelOf(state.chestIndex), uid: 'view', label: t('team.badge_aria') });
+    document.getElementById('team-badge-edit-btn').classList.toggle('hidden', !state.isTeacher);
+    if (!state.isTeacher) document.getElementById('team-badge-edit').classList.add('hidden');
+}
+
+function teamBadgeToggleEdit() {
+    const box = document.getElementById('team-badge-edit');
+    const opening = box.classList.contains('hidden');
+    box.classList.toggle('hidden', !opening);
+    if (opening && teamCache) teamEditEditor = teamBadgeEditor(document.getElementById('team-edit-badge'), teamCache.badge, teamCache.chestIndex);
+}
+
+function teamBadgeSave() {
+    const saved = teamLoad();
+    if (!saved || saved.role !== 'teacher' || !teamEditEditor) return;
+    HistoriAxeAPI.team('badge', { code: saved.code, deviceId: getOrCreateDeviceId(), badge: teamEditEditor.get() }).then(res => {
+        if (!res.ok) { showToast(t('team.badge_error'), 3500); return; }
+        document.getElementById('team-badge-edit').classList.add('hidden');
+        showToast(t('team.badge_saved'));
+        teamRefresh();
+    });
+}
+
 function openTeam(from) {
     teamReturn = from || 'screen-categories';
     teamSetError('');
@@ -57,6 +158,8 @@ function openTeam(from) {
     document.getElementById('team-class-name').value = pseudo || '';
     document.getElementById('team-join-form').classList.remove('hidden');
     document.getElementById('team-create-form').classList.remove('hidden');
+    teamCreateEditor = teamBadgeEditor(document.getElementById('team-create-badge'), TeamBadge.DEFAULT, 0);
+    document.getElementById('team-badge-edit').classList.add('hidden');
     document.getElementById('team-subtitle').innerText = '';
     const saved = teamLoad();
     if (!saved) { teamShowPanel('none'); return; }
@@ -108,7 +211,8 @@ function teamCreate() {
     HistoriAxeAPI.team('create', {
         deviceId: getOrCreateDeviceId(),
         pseudo: (typeof pseudoLoad === 'function' ? pseudoLoad() : '') || null,
-        name
+        name,
+        badge: teamCreateEditor ? teamCreateEditor.get() : TeamBadge.DEFAULT
     }).then(res => {
         if (!res.ok) { teamSetError(t('team.error')); return; }
         teamSave({ code: res.data.code, role: 'teacher', name, pending: 0 });
@@ -178,6 +282,7 @@ function teamRefresh() {
 function teamRender(state) {
     teamShowPanel('view');
     document.getElementById('team-title').innerText = state.name;
+    teamBadgeRender(state);
     document.getElementById('team-subtitle').innerText = t('team.members_count', { count: state.memberCount });
     const pct = Math.min(100, Math.round(100 * state.progress / state.target));
     const bar = document.getElementById('team-chest-bar');

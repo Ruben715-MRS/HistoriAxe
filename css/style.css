@@ -11555,3 +11555,98 @@ input:not([type="range"]), label, select, summary, textarea {
     background: var(--surface);
     box-shadow: var(--card-shadow);
 }
+
+/* --- Écusson d'équipe (js/teamBadge.js, éditeur dans js/app/team.js) --- */
+.team-badge-svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.team-badge-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.team-badge-view {
+    width: 116px;
+}
+
+.team-badge-edit {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.rewards-team-badge {
+    display: inline-block;
+    width: 18px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.tb-editor {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.tb-preview {
+    width: 112px;
+    margin: 0 auto;
+}
+
+.tb-row-title {
+    margin: 0 0 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.tb-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tb-opt {
+    position: relative;
+    width: 48px;
+    height: 52px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--border-soft);
+    border-radius: 12px;
+    background: var(--surface);
+    cursor: pointer;
+}
+
+.tb-opt[aria-pressed="true"] {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 2px var(--selected-tint, rgba(0, 26, 75, 0.15));
+}
+
+.tb-swatch {
+    display: block;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+.tb-opt.is-locked svg {
+    opacity: 0.35;
+    filter: grayscale(0.8);
+}
+
+.tb-opt.is-locked::after {
+    content: '🔒';
+    position: absolute;
+    right: 1px;
+    bottom: 0;
+    font-size: 13px;
+}

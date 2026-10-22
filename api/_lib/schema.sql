@@ -163,5 +163,7 @@ create table if not exists team_members (
     primary key (code, player_id)
 );
 
+alter table class_teams add column if not exists badge text not null default '0.2.1.0';
+
 alter table class_sessions add column if not exists team_code text;
 alter table class_players add column if not exists credited smallint not null default 0;

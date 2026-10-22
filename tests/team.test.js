@@ -201,3 +201,36 @@ maybe('une séance de Mode Classe liée à l\'équipe verse les bonnes réponses
     assert.equal(r.body.team.accepted, 4);
     assert.equal((await call(team, 'GET', { code, deviceId: dev(1) })).body.me.points, 7);
 });
+
+test('sanitizeBadge : un écusson valide, avec une bordure déjà débloquée', () => {
+    assert.equal(T.sanitizeBadge('3.5.2.0', 0), '3.5.2.0');
+    assert.equal(T.sanitizeBadge('3.5.2.3', 0), null, 'bordure verrouillée à zéro coffre');
+    assert.equal(T.sanitizeBadge('3.5.2.3', 4), '3.5.2.3');
+    assert.equal(T.sanitizeBadge('<b>', 99), null);
+    assert.equal(T.sanitizeBadge(undefined, 99), null);
+});
+
+maybe('l\'écusson : choisi à la création, modifiable par l\'enseignant seul, bordures limitées par les coffres', async () => {
+    const { team: h, query } = loadHandlers();
+    // Un client plus ancien n'envoie pas d'écusson : celui par défaut.
+    const plain = await call(h, 'POST', { action: 'create', deviceId: 'old-teacher-device-1', name: 'Ancienne' });
+    assert.equal((await call(h, 'GET', { code: plain.body.code })).body.badge, '0.2.1.0');
+
+    assert.equal((await call(h, 'POST', { action: 'create', deviceId: TEACHER, name: 'Classe', badge: 'nimporte quoi' })).code, 400);
+    assert.equal((await call(h, 'POST', { action: 'create', deviceId: TEACHER, name: 'Classe', badge: '1.1.1.4' })).code, 400, 'bordure verrouillée dès la création');
+    const created = await call(h, 'POST', { action: 'create', deviceId: TEACHER, name: 'Classe', badge: '7.5.3.0' });
+    assert.equal(created.code, 200);
+    const code = created.body.code;
+    await call(h, 'POST', { action: 'join', code, deviceId: dev(1), name: 'Léa' });
+    assert.equal((await call(h, 'GET', { code, deviceId: dev(1) })).body.badge, '7.5.3.0');
+
+    // Seul l'enseignant change l'écusson.
+    assert.equal((await call(h, 'POST', { action: 'badge', code, deviceId: dev(1), badge: '1.1.1.0' })).code, 403);
+    assert.equal((await call(h, 'POST', { action: 'badge', code, deviceId: TEACHER, badge: '1.1.1.0' })).body.badge, '1.1.1.0');
+    assert.equal((await call(h, 'POST', { action: 'badge', code, deviceId: TEACHER, badge: 'zzz' })).code, 400);
+    // Une bordure se débloque avec les coffres ouverts.
+    assert.equal((await call(h, 'POST', { action: 'badge', code, deviceId: TEACHER, badge: '1.1.1.2' })).code, 400);
+    await query('update class_teams set chest_index = 2 where code = $1', [code]);
+    assert.equal((await call(h, 'POST', { action: 'badge', code, deviceId: TEACHER, badge: '1.1.1.2' })).body.badge, '1.1.1.2');
+    assert.equal((await call(h, 'GET', { code, deviceId: dev(1) })).body.badge, '1.1.1.2');
+});

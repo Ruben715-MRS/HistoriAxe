@@ -1609,7 +1609,20 @@
     "confirm_delete": "Supprimer l'équipe pour toute la classe ? Le coffre et les points seront perdus.",
     "class_title": "Séance de classe en direct",
     "class_help": "Votre enseignant a ouvert une séance ? Saisissez le code affiché au tableau : tout le monde place les mêmes cartes en même temps.",
-    "class_join": "Rejoindre la séance"
+    "class_join": "Rejoindre la séance",
+    "badge_title": "Écusson de l'équipe",
+    "badge_aria": "Écusson de l'équipe",
+    "badge_edit": "Modifier l'écusson",
+    "badge_save": "Enregistrer l'écusson",
+    "badge_saved": "Écusson enregistré !",
+    "badge_error": "Impossible d'enregistrer l'écusson pour le moment.",
+    "badge_background": "Fond",
+    "badge_pattern": "Motif",
+    "badge_pattern_color": "Couleur du motif",
+    "badge_border": "Bordure",
+    "badge_locked": "Cette bordure se débloque quand la classe a ouvert {n} coffres (déjà ouverts : {have}).",
+    "badge_option_aria": "{kind} {n}",
+    "badge_create_hint": "Dessinez l'écusson de votre équipe. Les bordures plus riches se débloquent à mesure que vos élèves ouvrent des coffres."
   },
   "clio": {
     "name": "Clio",

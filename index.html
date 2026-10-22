@@ -1552,6 +1552,8 @@
             <div id="team-create-form" class="team-create">
                 <h3 data-i18n="team.create_title">Créer une équipe</h3>
                 <p class="class-help" data-i18n="team.create_help">Vous êtes enseignant ? Créez l'équipe de votre classe : un code s'affiche, à donner à vos élèves pour qu'ils la rejoignent.</p>
+                <p class="class-help" data-i18n="team.badge_create_hint">Dessinez l'écusson de votre équipe. Les bordures plus riches se débloquent à mesure que vos élèves ouvrent des coffres.</p>
+                <div id="team-create-badge"></div>
                 <label class="class-label" for="team-new-name" data-i18n="team.new_name_label">Nom de l'équipe (par exemple la classe)</label>
                 <input type="text" id="team-new-name" class="form-input" maxlength="40" autocomplete="off">
                 <button type="button" class="btn class-primary" onclick="teamCreate()" data-i18n="team.create">Créer l'équipe</button>
@@ -1559,6 +1561,14 @@
         </section>
 
         <section id="team-panel-view" class="class-panel hidden">
+            <div class="team-badge-hero">
+                <div class="team-badge-view" id="team-badge-view"></div>
+                <button type="button" class="btn team-secondary hidden" id="team-badge-edit-btn" onclick="teamBadgeToggleEdit()" data-i18n="team.badge_edit">Modifier l'écusson</button>
+            </div>
+            <div class="team-badge-edit hidden" id="team-badge-edit">
+                <div id="team-edit-badge"></div>
+                <button type="button" class="btn class-primary" onclick="teamBadgeSave()" data-i18n="team.badge_save">Enregistrer l'écusson</button>
+            </div>
             <div class="team-chest">
                 <div class="team-chest-icon" aria-hidden="true">🎁</div>
                 <div class="team-chest-track" id="team-chest-track" role="progressbar" aria-valuemin="0" aria-valuenow="0"
@@ -3056,6 +3066,7 @@
     <script src="js/app/history-maps.js"></script>
     <script src="js/app/rewards.js"></script>
     <script src="js/app/clio.js"></script>
+    <script src="js/teamBadge.js"></script>
     <script src="js/app/team.js"></script>
     <script src="js/classroom.js"></script>
     <script src="js/app.js"></script>

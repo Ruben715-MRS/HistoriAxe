@@ -3,7 +3,8 @@
 // réponses des séances de Mode Classe liées à l'équipe — remplit un coffre commun. Le coffre plein verse des
 // pièces à chacun, et un coffre sur trois une carte rare à chaque membre (et un trophée à la classe).
 //
-// POST /api/team { action: 'create',     deviceId, pseudo?, name }                    → { code }
+// POST /api/team { action: 'create',     deviceId, pseudo?, name, badge? }            → { code }
+// POST /api/team { action: 'badge',      code, deviceId, badge }  (enseignant)        → { badge }
 // POST /api/team { action: 'join',       code, deviceId, name }                       → { code }
 // POST /api/team { action: 'contribute', code, deviceId, stars }                      → { accepted, account, progress, chestIndex }
 // POST /api/team { action: 'claim',      code, deviceId }                             → { chests: [{ index, coins, card }] }
@@ -26,6 +27,7 @@ const { upsertPlayer, isValidDeviceId } = require('./_lib/players');
 const { handlePreflight, readJsonBody, sendError } = require('./_lib/http');
 const T = require('./_lib/team');
 const { creditTeam } = require('./_lib/teamStore');
+const TeamBadge = require('../js/teamBadge.js');
 
 const MAX_CREATE_RETRIES = 6;
 const RETENTION_SQL = "now() - interval '1 year'";
@@ -43,7 +45,7 @@ async function playerOf(deviceId) {
 
 async function loadTeam(code) {
     const { rows } = await query(
-        'select code, teacher_id, name, progress, chest_index, cards from class_teams where code = $1', [code]
+        'select code, teacher_id, name, progress, chest_index, cards, badge from class_teams where code = $1', [code]
     );
     if (!rows[0]) throw httpError(404, 'Équipe introuvable : vérifiez le code.');
     return rows[0];
@@ -61,12 +63,19 @@ async function createTeam(body) {
     if (!isValidDeviceId(deviceId)) throw httpError(400, 'deviceId invalide.');
     const name = T.sanitizeTeamName(body.name);
     if (!name) throw httpError(400, 'Donnez un nom à l\'équipe.');
+    // L'écusson est facultatif à la création (un client plus ancien n'en envoie pas) ; une équipe neuve n'a
+    // débloqué que la première bordure.
+    let badge = TeamBadge.DEFAULT;
+    if (body.badge !== undefined && body.badge !== null) {
+        badge = T.sanitizeBadge(body.badge, 0);
+        if (!badge) throw httpError(400, 'Écusson invalide.');
+    }
     const teacher = await upsertPlayer(deviceId, pseudo);
     await query(`delete from class_teams where last_activity_at < ${RETENTION_SQL}`);
     for (let i = 0; i < MAX_CREATE_RETRIES; i++) {
         const code = T.generateCode();
         try {
-            await query('insert into class_teams (code, teacher_id, name) values ($1, $2, $3)', [code, teacher.id, name]);
+            await query('insert into class_teams (code, teacher_id, name, badge) values ($1, $2, $3, $4)', [code, teacher.id, name, badge]);
             return { code };
         } catch (err) {
             if (err && err.code === '23505') continue;
@@ -135,6 +144,15 @@ async function kick(body) {
     return { ok: true };
 }
 
+async function setBadge(body) {
+    const code = await teacherOnly(body);
+    const team = await loadTeam(code);
+    const badge = T.sanitizeBadge(body.badge, team.chest_index);
+    if (!badge) throw httpError(400, 'Écusson invalide, ou bordure pas encore débloquée.');
+    await query('update class_teams set badge = $2 where code = $1', [code, badge]);
+    return { badge };
+}
+
 async function leave(body) {
     const code = readCode(body);
     const me = await playerOf(body.deviceId);
@@ -160,6 +178,7 @@ async function buildState(code, deviceId) {
     const state = {
         code,
         name: team.name,
+        badge: TeamBadge.normalize(team.badge),
         isTeacher,
         isMember: !!mine,
         memberCount: rows.length,
@@ -209,6 +228,7 @@ module.exports = async (req, res) => {
             case 'join': return res.status(200).json(await joinTeam(body));
             case 'contribute': return res.status(200).json(await contribute(body));
             case 'claim': return res.status(200).json(await claim(body));
+            case 'badge': return res.status(200).json(await setBadge(body));
             case 'kick': return res.status(200).json(await kick(body));
             case 'leave': return res.status(200).json(await leave(body));
             case 'delete': return res.status(200).json(await deleteTeam(body));

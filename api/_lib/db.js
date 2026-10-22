@@ -218,6 +218,8 @@ async function ensureSchema() {
         `);
         // Une séance de Mode Classe peut nourrir le coffre de l'équipe (class_sessions.team_code) ; `credited`
         // est le nombre de bonnes réponses déjà versées, pour ne verser que la différence à chaque envoi.
+        // Écusson de l'équipe (js/teamBadge.js) : quatre petits entiers « fond.motif.couleur.bordure ».
+        await query(`alter table class_teams add column if not exists badge text not null default '0.2.1.0';`);
         await query(`alter table class_sessions add column if not exists team_code text;`);
         await query(`alter table class_players add column if not exists credited smallint not null default 0;`);
     })().catch((err) => {

@@ -840,6 +840,14 @@ jouent hors ligne), donc **plafonnées** : 6 points par envoi et 30 par jour et 
 gardées (60 au plus) et versées au prochain envoi réussi. Le coffre ne donne que du plaisir de jeu — jamais d'avantage
 payant ni durable. Les équipes inactives depuis un an sont supprimées.
 
+**Écusson.** L'enseignant dessine celui de son équipe, à la création puis quand il veut : un **fond**, un **motif** (douze) avec
+sa couleur, une **bordure**. Les bordures se gagnent avec la classe : de la bronze (d'emblée) à la royale (18 coffres), selon
+le nombre de coffres ouverts, et un médaillon donne le niveau de l'équipe (1 + coffres ouverts). Un écusson tient en quatre
+petits entiers (`fond.motif.couleur.bordure`, ex. `0.2.1.0`) : le serveur ne stocke et ne valide que cela (colonne
+`class_teams.badge`, action `badge` réservée à l'enseignant, bordure vérifiée contre `chest_index`) — jamais de texte libre.
+Les dessins sont originaux, en SVG, dans `js/teamBadge.js` (pur, testé : `tests/teamBadge.test.js`) ; l'éditeur est dans
+`js/app/team.js`.
+
 Fichiers : `api/team.js` (endpoint), `api/_lib/team.js` (règles pures), `api/_lib/teamStore.js` (versement,
 transactionnel), `js/app/team.js` (écran), tables `class_teams` / `team_members` (+ `players.team_points`,
 `class_sessions.team_code`, `class_players.credited`). Tests : `tests/team.test.js`, `e2e/equipe.spec.js`.

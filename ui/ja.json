@@ -1609,7 +1609,20 @@
     "confirm_delete": "クラス全体のチームを削除しますか？宝箱とポイントは失われます。",
     "class_title": "クラスのライブセッション",
     "class_help": "先生がセッションを開きましたか？黒板に表示されたコードを入力すると、全員が同じカードを同時に並べます。",
-    "class_join": "セッションに参加"
+    "class_join": "セッションに参加",
+    "badge_title": "チームのエンブレム",
+    "badge_aria": "チームのエンブレム",
+    "badge_edit": "エンブレムを編集",
+    "badge_save": "エンブレムを保存",
+    "badge_saved": "エンブレムを保存しました！",
+    "badge_error": "今はエンブレムを保存できません。",
+    "badge_background": "背景",
+    "badge_pattern": "模様",
+    "badge_pattern_color": "模様の色",
+    "badge_border": "フチ",
+    "badge_locked": "このフチは、クラスが宝箱を {n} 個開けると解放されます（現在：{have} 個）。",
+    "badge_option_aria": "{kind} {n}",
+    "badge_create_hint": "チームのエンブレムをデザインしましょう。生徒が宝箱を開けるほど、豪華なフチが解放されます。"
   },
   "clio": {
     "name": "クリオ",
