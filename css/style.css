@@ -2978,6 +2978,35 @@ textarea.form-input {
     margin-bottom: 6px;
 }
 
+/* Mode Carte et Chrono-Géo côte à côte, sur toute la largeur de la grille parente. */
+.geo-mode-row {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.geo-mode-row .geo-mode-card {
+    margin-bottom: 0;
+}
+
+/* Sur téléphone, deux colonnes étroites feraient une rangée plus haute que l'ancienne pile : le titre suffit. */
+@media (max-width: 600px) {
+    .geo-mode-row {
+        gap: 12px;
+    }
+
+    .geo-mode-row .geo-mode-card {
+        padding: 14px 16px;
+        min-height: 0;
+        justify-content: center;
+    }
+
+    .geo-mode-row .special-card-subtitle {
+        display: none;
+    }
+}
+
 /* Mode « Le fil du temps » */
 .fil-body {
     max-width: 480px;

@@ -685,7 +685,6 @@ function buildChronoGeoCard(node, label) {
     const card = document.createElement('div');
     card.className = 'special-card geo-mode-card chronogeo-mode-card';
     card.style.background = 'linear-gradient(135deg, #5B3A9E, #8E5BD6)';
-    card.style.gridColumn = '1 / -1';
     card.innerHTML = `
         <div class="special-card-title">${t('chronogeo.mode_title')}</div>
         <div class="special-card-subtitle">${t('chronogeo.mode_subtitle', { label: escapeHtml(label) })}</div>
@@ -695,11 +694,19 @@ function buildChronoGeoCard(node, label) {
     return card;
 }
 
+// Mode Carte à gauche, Chrono-Géo à droite : une seule rangée sur toute la largeur de la grille.
+function buildGeoModeRow(node, label) {
+    const row = document.createElement('div');
+    row.className = 'geo-mode-row';
+    row.appendChild(buildGeoModeCard(node, label));
+    row.appendChild(buildChronoGeoCard(node, label));
+    return row;
+}
+
 function buildGeoModeCard(node, label) {
     const card = document.createElement('div');
     card.className = 'special-card geo-mode-card';
     card.style.background = 'linear-gradient(135deg, #0B6E4F, #08A045)';
-    card.style.gridColumn = '1 / -1';
     card.innerHTML = `
         <div class="special-card-title">${t('carte.mode_title')}</div>
         <div class="special-card-subtitle">${t('carte.mode_subtitle', { label: escapeHtml(label) })}</div>
