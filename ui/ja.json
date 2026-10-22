@@ -484,7 +484,16 @@
     "pack_installed": "✨ {name}パックをインストールしました。オフラインでも使えます！",
     "pack_download_failed": "⚠️ {lang}パックのダウンロードに失敗しました。",
     "pack_cannot_delete": "⚠️ 基本のフランス語パックは削除できません。",
-    "pack_deleted": "🗑️ {name}パックを削除しました。"
+    "pack_deleted": "🗑️ {name}パックを削除しました。",
+    "notif_types_label": "受け取る通知",
+    "notif_type_streak": "連続記録の危機(20時)",
+    "notif_type_daily": "デイリーチャレンジ(9時)",
+    "notif_type_recap": "週間まとめ(日曜19時)",
+    "notif_type_review": "復習する出来事",
+    "notif_type_duel": "対戦のリマインダー",
+    "notif_type_milestone": "明日達成できる連続記録の節目",
+    "notif_type_comeback": "数日間プレイしなかったときの呼びかけ",
+    "notif_types_hint": "受け取りたくない通知のチェックを外してください。"
   },
   "anecdote": {
     "did_you_know": "💡 ご存知でしたか？",
@@ -671,7 +680,13 @@
     "recap_body": "今週獲得したXP、達成したチャレンジ、習得したテーマを確認しましょう。",
     "duel_title": "⚔️ あなたの対戦が待っています",
     "duel_body": "友達があなたの挑戦を受けたか、そしてあなたが追い抜かれていないか確認しに行きましょう。",
-    "streak_reminder_fallback": "デイリーチャレンジが待っています:連続記録を始めるのに2分だけ🔥。"
+    "streak_reminder_fallback": "デイリーチャレンジが待っています:連続記録を始めるのに2分だけ🔥。",
+    "milestone_title": "🏅 あと1日です!",
+    "milestone_body": "明日プレイすると、{goal}日連続になります。",
+    "comeback3_title": "🌍 歴史があなたを待っています",
+    "comeback3_body": "3日ぶりです。5分のプレイで、また流れを取り戻せます。",
+    "comeback7_title": "📜 1週間お会いしていません",
+    "comeback7_body": "いつでも戻ってきてください。進捗と復習はそのまま残っています。"
   },
   "scoring": {
     "title": "ポイントはどのように計算されますか?",

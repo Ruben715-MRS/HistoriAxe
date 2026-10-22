@@ -484,7 +484,16 @@
     "pack_installed": "✨ {name} pack installed and ready offline!",
     "pack_download_failed": "⚠️ Failed to download the {lang} pack.",
     "pack_cannot_delete": "⚠️ The base French pack cannot be deleted.",
-    "pack_deleted": "🗑️ {name} pack deleted."
+    "pack_deleted": "🗑️ {name} pack deleted.",
+    "notif_types_label": "Which notifications?",
+    "notif_type_streak": "Streak at risk (8 pm)",
+    "notif_type_daily": "Daily Challenge available (9 am)",
+    "notif_type_recap": "Weekly recap (Sunday, 7 pm)",
+    "notif_type_review": "Events to review",
+    "notif_type_duel": "Duel reminder",
+    "notif_type_milestone": "Streak milestone within reach tomorrow",
+    "notif_type_comeback": "Come back after a few days away",
+    "notif_types_hint": "Untick the reminders you don't want to receive."
   },
   "anecdote": {
     "did_you_know": "💡 Did You Know?",
@@ -671,7 +680,13 @@
     "recap_body": "Discover the XP you earned, the challenges you completed and the themes you mastered this week.",
     "duel_title": "⚔️ Your duel awaits",
     "duel_body": "Come see if your friend has taken on your challenge — and whether you've been beaten.",
-    "streak_reminder_fallback": "The Daily Challenge is waiting: 2 minutes to start your streak 🔥."
+    "streak_reminder_fallback": "The Daily Challenge is waiting: 2 minutes to start your streak 🔥.",
+    "milestone_title": "🏅 Just one day to go!",
+    "milestone_body": "Play tomorrow to reach a {goal}-day streak.",
+    "comeback3_title": "🌍 History is waiting for you",
+    "comeback3_body": "It's been three days. A five-minute game is enough to pick up where you left off.",
+    "comeback7_title": "📜 A week without you",
+    "comeback7_body": "Come back whenever you like: your progress and your reviews are still here."
   },
   "scoring": {
     "title": "How are points calculated?",

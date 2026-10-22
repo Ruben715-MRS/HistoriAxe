@@ -484,7 +484,16 @@
     "pack_installed": "✨ Paket {name} installiert und offline bereit!",
     "pack_download_failed": "⚠️ Das Paket {lang} konnte nicht heruntergeladen werden.",
     "pack_cannot_delete": "⚠️ Das französische Basispaket kann nicht gelöscht werden.",
-    "pack_deleted": "🗑️ Paket {name} gelöscht."
+    "pack_deleted": "🗑️ Paket {name} gelöscht.",
+    "notif_types_label": "Welche Benachrichtigungen?",
+    "notif_type_streak": "Serie in Gefahr (20 Uhr)",
+    "notif_type_daily": "Tagesherausforderung verfügbar (9 Uhr)",
+    "notif_type_recap": "Wochenübersicht (Sonntag, 19 Uhr)",
+    "notif_type_review": "Zu wiederholende Ereignisse",
+    "notif_type_duel": "Duell-Erinnerung",
+    "notif_type_milestone": "Serien-Meilenstein morgen erreichbar",
+    "notif_type_comeback": "Rückkehr nach einigen Tagen Pause",
+    "notif_types_hint": "Entferne den Haken bei Erinnerungen, die du nicht erhalten möchtest."
   },
   "anecdote": {
     "did_you_know": "💡 Wussten Sie schon?",
@@ -671,7 +680,13 @@
     "recap_body": "Entdecke, wie viel XP du verdient, welche Herausforderungen du gemeistert und welche Themen du diese Woche beherrscht hast.",
     "duel_title": "⚔️ Dein Duell wartet",
     "duel_body": "Schau nach, ob dein Freund deine Herausforderung angenommen hat — und ob du überholt wurdest.",
-    "streak_reminder_fallback": "Die Tagesherausforderung wartet: 2 Minuten, um deine Serie zu starten 🔥."
+    "streak_reminder_fallback": "Die Tagesherausforderung wartet: 2 Minuten, um deine Serie zu starten 🔥.",
+    "milestone_title": "🏅 Nur noch ein Tag!",
+    "milestone_body": "Spiele morgen, um eine Serie von {goal} Tagen zu erreichen.",
+    "comeback3_title": "🌍 Die Geschichte wartet auf dich",
+    "comeback3_body": "Es sind drei Tage vergangen. Eine Partie von fünf Minuten genügt, um wieder einzusteigen.",
+    "comeback7_title": "📜 Eine Woche ohne dich",
+    "comeback7_body": "Komm zurück, wann du möchtest: Dein Fortschritt und deine Wiederholungen sind noch da."
   },
   "scoring": {
     "title": "Wie werden die Punkte berechnet?",

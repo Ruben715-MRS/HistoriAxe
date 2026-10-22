@@ -484,7 +484,16 @@
     "pack_installed": "✨ Pack {name} installé et prêt hors-ligne !",
     "pack_download_failed": "⚠️ Échec du téléchargement du pack {lang}.",
     "pack_cannot_delete": "⚠️ Le pack Français de base ne peut pas être supprimé.",
-    "pack_deleted": "🗑️ Pack {name} supprimé."
+    "pack_deleted": "🗑️ Pack {name} supprimé.",
+    "notif_types_label": "Quelles notifications ?",
+    "notif_type_streak": "Série en danger (20 h)",
+    "notif_type_daily": "Défi du jour disponible (9 h)",
+    "notif_type_recap": "Récap hebdomadaire (dimanche, 19 h)",
+    "notif_type_review": "Événements à réviser",
+    "notif_type_duel": "Rappel de duel",
+    "notif_type_milestone": "Palier de série atteignable demain",
+    "notif_type_comeback": "Retour après quelques jours d'absence",
+    "notif_types_hint": "Décoche les rappels que tu ne veux pas recevoir."
   },
   "anecdote": {
     "did_you_know": "💡 Le Saviez-vous ?",
@@ -671,7 +680,13 @@
     "recap_body": "Découvre ton XP gagné, tes défis relevés et tes thèmes maîtrisés cette semaine.",
     "duel_title": "⚔️ Ton duel t'attend",
     "duel_body": "Viens voir si ton ami a relevé ton défi — et si tu as été dépassé.",
-    "streak_reminder_fallback": "Le Défi du jour t'attend : 2 minutes pour lancer ta série 🔥."
+    "streak_reminder_fallback": "Le Défi du jour t'attend : 2 minutes pour lancer ta série 🔥.",
+    "milestone_title": "🏅 Plus qu'un jour !",
+    "milestone_body": "Joue demain pour atteindre {goal} jours de série d'affilée.",
+    "comeback3_title": "🌍 L'Histoire t'attend",
+    "comeback3_body": "Ça fait trois jours. Une partie de cinq minutes suffit pour reprendre le fil.",
+    "comeback7_title": "📜 Une semaine sans toi",
+    "comeback7_body": "Reviens quand tu veux : ta progression et tes révisions sont toujours là."
   },
   "scoring": {
     "title": "Comment sont calculés les points ?",

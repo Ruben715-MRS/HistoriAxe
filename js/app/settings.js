@@ -268,11 +268,26 @@ function renderSettingsUI() {
         const supported = typeof HistoriAxeNotifications !== 'undefined' && HistoriAxeNotifications.isSupported();
         notifGroup.classList.toggle('hidden', !supported);
     }
+    // Un réglage par type de rappel, visible seulement quand les notifications sont activées.
+    const notifTypes = document.getElementById('settings-group-notif-types');
+    if (notifTypes) {
+        const supported = typeof HistoriAxeNotifications !== 'undefined' && HistoriAxeNotifications.isSupported();
+        notifTypes.classList.toggle('hidden', !supported || !appSettings.notifications);
+        notifTypes.querySelectorAll('input[data-notif-type]').forEach(box => {
+            box.checked = appSettings[NOTIF_TYPE_SETTINGS[box.dataset.notifType]] !== false;
+        });
+    }
     renderPlayModeSetting();
     if (typeof i18n !== 'undefined' && typeof i18n.renderLanguagePacksSettingsUI === 'function') {
         i18n.renderLanguagePacksSettingsUI();
     }
 }
+
+// Type de rappel -> clé de appSettings (voir js/storage.js: DEFAULT_SETTINGS et js/notifications.js).
+const NOTIF_TYPE_SETTINGS = {
+    streak: 'notifStreak', daily: 'notifDaily', recap: 'notifRecap', review: 'notifReview',
+    duel: 'notifDuel', milestone: 'notifMilestone', comeback: 'notifComeback'
+};
 
 function initSettingsControls() {
     document.querySelectorAll('#settings-landscape-flow button').forEach(btn => {
@@ -335,6 +350,13 @@ function initSettingsControls() {
             settingsSave(appSettings);
             if (appSettings.haptics) triggerHaptic('success');
             renderSettingsUI();
+        };
+    });
+    document.querySelectorAll('#settings-group-notif-types input[data-notif-type]').forEach(box => {
+        box.onchange = () => {
+            appSettings[NOTIF_TYPE_SETTINGS[box.dataset.notifType]] = box.checked;
+            settingsSave(appSettings);
+            if (typeof HistoriAxeNotifications !== 'undefined') HistoriAxeNotifications.refreshAll();
         };
     });
     document.querySelectorAll('#settings-notifications button').forEach(btn => {

@@ -22,7 +22,27 @@ var HistoriAxeNotifications = (function () {
     var IDS = {
         STREAK_REMINDER: 1001,
         DAILY_AVAILABLE: 1002,
-        WEEKLY_RECAP: 1003
+        WEEKLY_RECAP: 1003,
+        STREAK_MILESTONE: 1004
+    };
+    // Retour après inactivité : un rappel à J+3, un à J+7 (ids 1020, 1021), jamais plus. Chaque ouverture de
+    // l'app les reprogramme, donc ils ne partent que si le joueur n'est pas revenu entre-temps.
+    var COMEBACK_BASE_ID = 1020;
+    var COMEBACK_DAYS = [3, 7];
+    // Paliers de série annoncés la veille (« plus qu'un jour pour… »).
+    var STREAK_MILESTONES = [3, 7, 14, 30, 50, 100, 200, 365];
+    // Rappels de duel : ids 2000 à 101999 (voir scheduleDuelNudge).
+    var DUEL_ID_MIN = 2000;
+    var DUEL_ID_MAX = 102000;
+    // Réglage par type (appSettings[...]) : tout est activé tant que le joueur n'a rien décoché.
+    var TYPE_SETTING = {
+        streak: 'notifStreak',
+        daily: 'notifDaily',
+        recap: 'notifRecap',
+        review: 'notifReview',
+        duel: 'notifDuel',
+        milestone: 'notifMilestone',
+        comeback: 'notifComeback'
     };
     // Rappels « n événements à réviser » : un par jour à venir, ids 1010, 1011, 1012… (voir
     // scheduleReviewReminders). REVIEW_SLOTS doit couvrir l'horizon de SRS.planReminders.
@@ -52,6 +72,16 @@ var HistoriAxeNotifications = (function () {
     function userEnabled() {
         try {
             return typeof appSettings !== 'undefined' && appSettings && appSettings.notifications !== false;
+        } catch (e) {
+            return true;
+        }
+    }
+
+    // Le réglage général ET celui du type de rappel.
+    function typeEnabled(type) {
+        if (!userEnabled()) return false;
+        try {
+            return !(typeof appSettings !== 'undefined' && appSettings && appSettings[TYPE_SETTING[type]] === false);
         } catch (e) {
             return true;
         }
@@ -115,7 +145,7 @@ var HistoriAxeNotifications = (function () {
     // js/storage.js: streakRecordToday, appelé depuis endGame() dans js/app.js).
     function scheduleStreakReminder() {
         cancel(IDS.STREAK_REMINDER);
-        if (!isSupported() || !userEnabled()) return;
+        if (!isSupported() || !typeEnabled('streak')) return;
         try {
             var streak = typeof getStreakCount === 'function' ? getStreakCount() : 0;
             var streakData = typeof streakLoad === 'function' ? streakLoad() : null;
@@ -143,7 +173,7 @@ var HistoriAxeNotifications = (function () {
     // --- Défi du jour disponible : rappel quotidien répété (~9h heure locale).
     function scheduleDailyAvailable() {
         cancel(IDS.DAILY_AVAILABLE);
-        if (!isSupported() || !userEnabled()) return;
+        if (!isSupported() || !typeEnabled('daily')) return;
         try {
             var tFn = (typeof t === 'function') ? t : function (key) { return key; };
             scheduleOne({
@@ -155,18 +185,18 @@ var HistoriAxeNotifications = (function () {
         } catch (e) {}
     }
 
-    // --- Récap hebdomadaire prêt : rappel hebdo répété (lundi ~19h — voir
-    // js/recap.js pour le contenu réel du récap).
+    // --- Récap hebdomadaire prêt : rappel hebdo répété (dimanche ~19h — voir
+    // js/recap.js pour le contenu réel du récap). Capacitor numérote les jours de 1 (dimanche) à 7 (samedi).
     function scheduleWeeklyRecap() {
         cancel(IDS.WEEKLY_RECAP);
-        if (!isSupported() || !userEnabled()) return;
+        if (!isSupported() || !typeEnabled('recap')) return;
         try {
             var tFn = (typeof t === 'function') ? t : function (key) { return key; };
             scheduleOne({
                 id: IDS.WEEKLY_RECAP,
                 title: tFn('notifications.recap_title'),
                 body: tFn('notifications.recap_body'),
-                schedule: { on: { weekday: 2, hour: 19, minute: 0 }, repeats: true }
+                schedule: { on: { weekday: 1, hour: 19, minute: 0 }, repeats: true }
             });
         } catch (e) {}
     }
@@ -180,7 +210,7 @@ var HistoriAxeNotifications = (function () {
 
     function scheduleReviewReminders() {
         cancelReviewReminders();
-        if (!isSupported() || !userEnabled()) return;
+        if (!isSupported() || !typeEnabled('review')) return;
         try {
             if (typeof SRS === 'undefined' || typeof getSrsEntries !== 'function') return;
             var plan = SRS.planReminders(getSrsEntries(), Date.now());
@@ -201,9 +231,9 @@ var HistoriAxeNotifications = (function () {
     // serveur, impossible de confirmer en temps réel que l'adversaire a joué ;
     // ce rappel se contente d'inciter à revenir ouvrir l'app pour vérifier.
     function scheduleDuelNudge(duelId) {
-        if (!isSupported() || !userEnabled() || !duelId) return;
+        if (!isSupported() || !typeEnabled('duel') || !duelId) return;
         try {
-            var id = 2000 + (hashCode(String(duelId)) % 100000);
+            var id = DUEL_ID_MIN + (hashCode(String(duelId)) % (DUEL_ID_MAX - DUEL_ID_MIN));
             var target = new Date(Date.now() + 24 * 3600 * 1000);
             var tFn = (typeof t === 'function') ? t : function (key) { return key; };
             scheduleOne({
@@ -215,6 +245,85 @@ var HistoriAxeNotifications = (function () {
         } catch (e) {}
     }
 
+    // Prochain jour, à l'heure donnée (heure locale de l'appareil).
+    function dayAt(daysFromNow, hour) {
+        var d = new Date();
+        d.setDate(d.getDate() + daysFromNow);
+        d.setHours(hour, 0, 0, 0);
+        return d;
+    }
+
+    // --- Palier de série : la veille, si la série est à un jour d'un palier ET que le joueur a déjà joué
+    // aujourd'hui (sinon c'est le rappel de série en péril qui parle). Demain midi.
+    function scheduleStreakMilestone() {
+        cancel(IDS.STREAK_MILESTONE);
+        if (!isSupported() || !typeEnabled('milestone')) return;
+        try {
+            var streakData = typeof streakLoad === 'function' ? streakLoad() : null;
+            var today = typeof getTodayStringUTC === 'function' ? getTodayStringUTC() : null;
+            if (!streakData || streakData.lastPlayedDate !== today) return;
+            var streak = typeof getStreakCount === 'function' ? getStreakCount() : 0;
+            var goal = 0;
+            for (var i = 0; i < STREAK_MILESTONES.length; i++) {
+                if (STREAK_MILESTONES[i] - streak === 1) goal = STREAK_MILESTONES[i];
+            }
+            if (!goal) return;
+            var tFn = (typeof t === 'function') ? t : function (key) { return key; };
+            scheduleOne({
+                id: IDS.STREAK_MILESTONE,
+                title: tFn('notifications.milestone_title', { goal: goal }),
+                body: tFn('notifications.milestone_body', { goal: goal }),
+                schedule: { at: dayAt(1, 12) }
+            });
+        } catch (e) {}
+    }
+
+    // --- Retour après inactivité : J+3 et J+7 à 18 h, puis plus rien.
+    function cancelComeback() {
+        for (var i = 0; i < COMEBACK_DAYS.length; i++) cancel(COMEBACK_BASE_ID + i);
+    }
+
+    function scheduleComeback() {
+        cancelComeback();
+        if (!isSupported() || !typeEnabled('comeback')) return;
+        try {
+            var tFn = (typeof t === 'function') ? t : function (key) { return key; };
+            COMEBACK_DAYS.forEach(function (days, i) {
+                scheduleOne({
+                    id: COMEBACK_BASE_ID + i,
+                    title: tFn('notifications.comeback' + days + '_title'),
+                    body: tFn('notifications.comeback' + days + '_body'),
+                    schedule: { at: dayAt(days, 18) }
+                });
+            });
+        } catch (e) {}
+    }
+
+    // Annule les rappels de duel déjà programmés (leurs ids dépendent du duel : on les relit auprès du plugin).
+    function cancelDuelNudges() {
+        if (!isSupported()) return;
+        try {
+            plugin().getPending().then(function (res) {
+                var ids = ((res && res.notifications) || [])
+                    .filter(function (n) { return n.id >= DUEL_ID_MIN && n.id < DUEL_ID_MAX; })
+                    .map(function (n) { return { id: n.id }; });
+                if (ids.length) plugin().cancel({ notifications: ids });
+            }).catch(function () {});
+        } catch (e) {}
+    }
+
+    // Programme chaque type selon les réglages ; un type décoché est annulé. Les rappels de duel sont
+    // ponctuels (programmés à la création du duel) : ici on ne fait qu'annuler s'ils sont décochés.
+    function scheduleAll() {
+        scheduleStreakReminder();
+        scheduleDailyAvailable();
+        scheduleWeeklyRecap();
+        scheduleReviewReminders();
+        scheduleStreakMilestone();
+        scheduleComeback();
+        if (!typeEnabled('duel')) cancelDuelNudges();
+    }
+
     // --- Point d'entrée global : reprogramme tous les rappels récurrents à
     // partir de l'état actuel (série, réglage utilisateur). Appelé au
     // démarrage de l'app et à chaque retour au premier plan (voir js/app.js:
@@ -223,18 +332,11 @@ var HistoriAxeNotifications = (function () {
     function refreshAll() {
         if (!isSupported()) return;
         if (!userEnabled()) {
-            cancel(IDS.STREAK_REMINDER);
-            cancel(IDS.DAILY_AVAILABLE);
-            cancel(IDS.WEEKLY_RECAP);
-            cancelReviewReminders();
+            cancelAll();
             return;
         }
         hasPermission().then(function (granted) {
-            if (!granted) return;
-            scheduleStreakReminder();
-            scheduleDailyAvailable();
-            scheduleWeeklyRecap();
-            scheduleReviewReminders();
+            if (granted) scheduleAll();
         });
     }
 
@@ -244,12 +346,7 @@ var HistoriAxeNotifications = (function () {
     function enableAndSchedule() {
         if (!isSupported()) return Promise.resolve(false);
         return requestPermission().then(function (granted) {
-            if (granted) {
-                scheduleStreakReminder();
-                scheduleDailyAvailable();
-                scheduleWeeklyRecap();
-                scheduleReviewReminders();
-            }
+            if (granted) scheduleAll();
             return granted;
         });
     }
@@ -259,6 +356,9 @@ var HistoriAxeNotifications = (function () {
         cancel(IDS.DAILY_AVAILABLE);
         cancel(IDS.WEEKLY_RECAP);
         cancelReviewReminders();
+        cancel(IDS.STREAK_MILESTONE);
+        cancelComeback();
+        cancelDuelNudges();
     }
 
     return {
@@ -266,6 +366,7 @@ var HistoriAxeNotifications = (function () {
         requestPermission: requestPermission,
         enableAndSchedule: enableAndSchedule,
         refreshAll: refreshAll,
+        scheduleAll: scheduleAll,
         scheduleStreakReminder: scheduleStreakReminder,
         scheduleReviewReminders: scheduleReviewReminders,
         scheduleDuelNudge: scheduleDuelNudge,

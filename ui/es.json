@@ -484,7 +484,16 @@
     "pack_installed": "✨ ¡Paquete {name} instalado y listo sin conexión!",
     "pack_download_failed": "⚠️ Error al descargar el paquete {lang}.",
     "pack_cannot_delete": "⚠️ El paquete base en francés no se puede eliminar.",
-    "pack_deleted": "🗑️ Paquete {name} eliminado."
+    "pack_deleted": "🗑️ Paquete {name} eliminado.",
+    "notif_types_label": "¿Qué notificaciones?",
+    "notif_type_streak": "Racha en peligro (20 h)",
+    "notif_type_daily": "Reto diario disponible (9 h)",
+    "notif_type_recap": "Resumen semanal (domingo, 19 h)",
+    "notif_type_review": "Acontecimientos por repasar",
+    "notif_type_duel": "Recordatorio de duelo",
+    "notif_type_milestone": "Hito de racha al alcance mañana",
+    "notif_type_comeback": "Vuelta tras unos días de ausencia",
+    "notif_types_hint": "Desmarca los recordatorios que no quieras recibir."
   },
   "anecdote": {
     "did_you_know": "💡 ¿Sabías que…?",
@@ -671,7 +680,13 @@
     "recap_body": "Descubre el XP que has ganado, los retos que has superado y los temas que has dominado esta semana.",
     "duel_title": "⚔️ Tu duelo te espera",
     "duel_body": "Ven a ver si tu amigo ha aceptado tu reto — y si te han superado.",
-    "streak_reminder_fallback": "El Reto diario te espera: 2 minutos para empezar tu racha 🔥."
+    "streak_reminder_fallback": "El Reto diario te espera: 2 minutos para empezar tu racha 🔥.",
+    "milestone_title": "🏅 ¡Solo un día más!",
+    "milestone_body": "Juega mañana para llegar a una racha de {goal} días.",
+    "comeback3_title": "🌍 La Historia te espera",
+    "comeback3_body": "Han pasado tres días. Una partida de cinco minutos basta para retomar el hilo.",
+    "comeback7_title": "📜 Una semana sin ti",
+    "comeback7_body": "Vuelve cuando quieras: tu progreso y tus repasos siguen ahí."
   },
   "scoring": {
     "title": "¿Cómo se calculan los puntos?",
