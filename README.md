@@ -191,10 +191,19 @@ qu'en partagé — les deux défis ne tournent jamais en même temps, mais des
 
 ## Rétention — onboarding, notifications, série, ligues & duels
 
-- **Onboarding guidé** (`js/onboarding.js`) : 4 bulles d'aide contextuelles
-  (coach-marks) sur les 3 premières minutes d'un nouvel arrivant. Purement
-  local, aucun réglage requis. Rejouable depuis Réglages → « Revoir le
-  tutoriel ».
+- **Onboarding guidé** (`js/onboarding.js`) : des bulles d'aide contextuelles
+  (coach-marks), toutes passables d'un seul bouton. **Sept bulles au menu
+  principal** (bienvenue, Chemin du Temps, pièces/album/amis/équipe, Défis,
+  Réviser, Salle de jeux + Boîte à outils + Atlas, profil), qui éclairent chacune
+  leur bouton et reprennent là où on s'est arrêté ; **une** à la première visite
+  de la carte des mondes ; **deux** sur l'écran des modes (« Jouer », puis les
+  groupes de modes) ; **une** à la fin de la première partie. Chaque pas a un
+  identifiant dans `STEPS` ; le tutoriel est terminé quand tous sont vus. Textes
+  dans `ui/*.json` (`onboarding.*`, six langues), repli français dans le code.
+  Purement local, aucun réglage requis. Rejouable depuis Réglages → « Revoir le
+  tutoriel ». `e2e/tutoriel.spec.js` le déroule. **Pour ajouter une fonction au
+  tour** : une entrée dans `MENU_TOUR` (cible CSS) et `STEPS`, un texte de repli
+  dans `FALLBACK`, et `onboarding.<id>_title` / `_text` dans les six langues.
 - **Notifications locales** (`js/notifications.js`, plugin
   `@capacitor/local-notifications`) : rappel de série en péril, Défi du jour
   disponible, récap hebdo prêt, nudge de duel. Actives uniquement dans l'app
@@ -373,7 +382,7 @@ L'écran des catégories affiche une carte **Reprendre** vers le dernier thème
 ouvert (`lastThemeSave` dans `openThemeAt`, clé `LAST_THEME_KEY`, propre à
 l'appareil et hors synchronisation). Elle ouvre le thème là où on l'avait
 laissé : choix des axes s'il en a, sinon écran des modes. L'écran d'accueil
-(image à toucher) n'en porte pas : ce n'est qu'un seuil vers les catégories.
+(l'image affichée pendant le chargement, quittée toute seule) n'en porte pas.
 
 ## L'Expédition : huit épreuves, trois vies pour tout le parcours
 

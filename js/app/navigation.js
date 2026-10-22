@@ -142,6 +142,7 @@ function showScreen(screenId, direction) {
     // qu'une fois, et jamais si le tutoriel a été terminé/passé.
     if (typeof Onboarding !== 'undefined') {
         if (screenId === 'screen-categories') Onboarding.onCategoriesScreen();
+        if (screenId === 'screen-path') Onboarding.onPathScreen();
         if (screenId === 'screen-modes') Onboarding.onModesScreen();
     }
     if (screenId === 'screen-modes') {
