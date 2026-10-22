@@ -628,9 +628,9 @@
 
     // --- Meilleurs scores (propres à l'appareil) --------------------------------------------------------
     function normalizeBest(raw) {
-        var out = { snake: 0, tetris: 0, pacman: 0, invaders: 0, memory: 0, who: 0 };
+        var out = { snake: 0, tetris: 0, pacman: 0, invaders: 0, memory: 0, who: 0, cause: 0, scene: 0 };
         if (raw && typeof raw === 'object') {
-            ['snake', 'tetris', 'pacman', 'invaders', 'memory', 'who'].forEach(function (k) {
+            ['snake', 'tetris', 'pacman', 'invaders', 'memory', 'who', 'cause', 'scene'].forEach(function (k) {
                 if (raw[k] > 0) out[k] = Math.floor(raw[k]);
             });
         }

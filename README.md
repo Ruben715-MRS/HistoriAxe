@@ -523,16 +523,16 @@ le vérifie). **Tout ce contenu est à relire par un enseignant.**
   bloc reste. Une ligne de cinq blocs verts disparaît. Les années proches de 476 et de 1453-1492 sont exclues (bornes discutées).
 
 **La salle de jeux** (`js/app/arcade.js`, écran `#screen-arcade` : l'identifiant a gardé l'ancien nom « salle d'arcade ») : une carte sous
-« Le Chemin du Temps » sur l'écran des catégories. Un seul écran, trois sections, huit jeux, et sur chaque carte ce que le joueur y a fait
+« Le Chemin du Temps » sur l'écran des catégories. Un seul écran, trois sections, dix jeux, et sur chaque carte ce que le joueur y a fait
 (meilleur score, étoiles, calendriers terminés) :
 
 | Section | Jeux | Principe |
 |---|---|---|
 | **Mini-jeux** | la roue des fêtes, le convertisseur d'ères | courts, liés à une notion du cours, avec des étoiles (aussi proposés dans la fiche de leur niveau du Monde 0) |
 | **Jeux d'arcade** | Snake, Tetris, Pac-Man, Space Invaders | de l'adresse en temps réel, un score à battre |
-| **Jeux de réflexion** | Memory, Qui suis-je ? | au tour par tour, sans minuteur |
+| **Jeux de réflexion** | Memory, Qui suis-je ?, Cause ou conséquence ?, Chasse aux anachronismes | au tour par tour, sans minuteur |
 
-Les jeux d'arcade portent sur les événements connus du pack chargé (incontournables, un seul par fait) ; les deux jeux de réflexion sont décrits plus bas.
+Les jeux d'arcade portent sur les événements connus du pack chargé (incontournables, un seul par fait) ; les quatre jeux de réflexion sont décrits plus bas.
 Un jeu rend la main à l'écran d'où on l'a ouvert (`gamesBackTo` : la salle de jeux, ou le Chemin). Pour ajouter un jeu : une carte dans la section
 voulue de `#screen-arcade`, ses textes dans `ui/fr.json`, et sa ligne dans `renderGamesHub`.
 
@@ -547,7 +547,7 @@ voulue de `#screen-arcade`, ses textes dans `ui/fr.json`, et sa ligne dans `rend
   les autres (tirer sur un événement de la période, ou en laisser passer un hors période, coûte une vie). Chaque tir ou carte
   passée est expliqué en une phrase. Le temps est un flottant (secondes) : `invStep(état, dt)` est pur et testé avec des `dt` simulés.
 
-**Jeux de réflexion** (`js/reflexionCore.js`, `js/app/reflexion.js`) :
+**Jeux de réflexion** (`js/reflexionCore.js`, `js/reflexionContent.js`, `js/app/reflexion.js`) ; le contenu écrit à la main (paires de causes, scènes) est **à relire par un enseignant** :
 
 - **Memory chronologique** : douze cartes face cachée, six événements aux années différentes, chacun une fois en titre et une fois en date.
   Deux cartes qui ne vont pas ensemble (deux événements, deux dates, ou une mauvaise date) comptent une erreur et se recachent. 100 points par
@@ -558,6 +558,17 @@ voulue de `#screen-arcade`, ses textes dans `ui/fr.json`, et sa ligne dans `rend
   100, 80, 60, 40 ou 20 points selon le nombre d'indices vus ; une mauvaise réponse retire l'option et dévoile l'indice suivant. Les notices d'un pack
   découpé arrivent thème par thème (`Pack.ensureDescriptions`) : une figure dont la notice ne se charge pas (hors ligne) est écartée. Limite connue :
   une notice qui donne un autre nom de la figure (nom de scène, nom de naissance) le laisse passer.
+
+- **Cause ou conséquence ?** (`ReflexionContent.CAUSES`) : huit questions sur 52 paires écrites à la main (de Salamine à la crise des subprimes). Deux
+  événements s'affichent, sans date ; on désigne celui qui a **provoqué** l'autre, ou celui qui est la **conséquence** de l'autre (les deux sens se mêlent,
+  et la cause passe tantôt à gauche, tantôt à droite). Après chaque réponse : le lien avec les années, puis une explication qui dit le mécanisme, pas
+  seulement l'ordre. 100 points par bonne réponse. Un test vérifie que la cause n'est jamais postérieure à sa conséquence.
+- **Chasse aux anachronismes** (`ReflexionContent.SCENES`) : cinq scènes sur treize (banquet de Louis XIV, agora d'Athènes, camp romain, village de l'an 1100,
+  port de Palos, Bastille, Verdun, New York 1925, Chine des Han, laboratoire de Lavoisier, salon des Lumières, drakkar viking, Exposition de 1900). Huit
+  éléments par scène, dont deux ou trois anachronismes ; on touche ceux qu'on croit déplacés, puis on valide : 100 points si tout est trouvé sans erreur,
+  un élément à sa place désigné à tort retire autant qu'un anachronisme trouvé en rapporte. Chaque tuile se colore (trouvé, manqué, désigné à tort) et
+  **chaque élément est expliqué** (quand la chose est inventée, ou pourquoi elle est bien de l'époque : le café de Louis XIV date de 1669). Les scènes
+  sont décrites par du texte et des emojis : le dépôt ne contient pas d'illustrations de scènes ; en ajouter se ferait en remplaçant `icon` par une image.
 
 Les règles sont pures (`ArcadeCore`, testées sans minuteur) ; l'écran ne fait que cadencer et dessiner. Meilleurs scores sur l'appareil
 (`historiaxe_arcade_v1`, hors synchronisation). Pas de `touch-action: none` (interdit par `tests/a11y.test.js`) : le glisser du

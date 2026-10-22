@@ -802,6 +802,22 @@
                     <small class="arcade-best" id="arcade-best-who"></small>
                 </span>
             </button>
+            <button type="button" class="arcade-card" onclick="openCause('screen-arcade')">
+                <span class="arcade-card-icon" aria-hidden="true">⛓️</span>
+                <span class="arcade-card-text">
+                    <strong data-i18n="cause.title"></strong>
+                    <small data-i18n="cause.desc"></small>
+                    <small class="arcade-best" id="arcade-best-cause"></small>
+                </span>
+            </button>
+            <button type="button" class="arcade-card" onclick="openScene('screen-arcade')">
+                <span class="arcade-card-icon" aria-hidden="true">🔍</span>
+                <span class="arcade-card-text">
+                    <strong data-i18n="scene.title"></strong>
+                    <small data-i18n="scene.desc"></small>
+                    <small class="arcade-best" id="arcade-best-scene"></small>
+                </span>
+            </button>
             </div>
         </section>
     </div>
@@ -945,6 +961,52 @@
             <p id="who-over-text"></p>
             <ul class="arcade-mistakes" id="who-over-list"></ul>
             <button type="button" class="btn" onclick="whoStart()" data-i18n="arcade.replay">Rejouer</button>
+        </div>
+    </div>
+
+    <!-- ÉCRAN : CAUSE OU CONSÉQUENCE ? (js/app/reflexion.js, js/reflexionContent.js) -->
+    <div id="screen-cause" class="list-screen hidden">
+        <button class="back-btn" onclick="causeBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="cause.title">Cause ou conséquence ?</h2>
+        <p class="modes-header-subtitle" id="cause-status" role="status"></p>
+        <div id="cause-play">
+            <p class="cause-question" id="cause-question"></p>
+            <div class="cause-cards" id="cause-cards"></div>
+            <div class="wheel-feedback hidden" id="cause-feedback" role="status">
+                <strong id="cause-feedback-title"></strong>
+                <p id="cause-feedback-links"></p>
+                <p id="cause-feedback-text"></p>
+                <button type="button" class="btn" id="cause-next" onclick="causeContinue()"></button>
+            </div>
+        </div>
+        <div class="arcade-over hidden" id="cause-over">
+            <h3 data-i18n="arcade.over">Partie terminée</h3>
+            <p id="cause-over-text"></p>
+            <button type="button" class="btn" onclick="causeStart()" data-i18n="arcade.replay">Rejouer</button>
+        </div>
+    </div>
+
+    <!-- ÉCRAN : CHASSE AUX ANACHRONISMES (js/app/reflexion.js, js/reflexionContent.js) -->
+    <div id="screen-scene" class="list-screen hidden">
+        <button class="back-btn" onclick="sceneBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="scene.title">Chasse aux anachronismes</h2>
+        <p class="modes-header-subtitle" id="scene-status" role="status"></p>
+        <div id="scene-play">
+            <h3 class="scene-title" id="scene-title"></h3>
+            <p class="scene-intro" id="scene-intro"></p>
+            <div class="scene-grid" id="scene-grid" role="group" aria-label="Éléments de la scène" data-i18n-attr="aria-label:scene.grid_aria"></div>
+            <button type="button" class="btn scene-check" id="scene-check" onclick="sceneCheck()"></button>
+            <div class="wheel-feedback hidden" id="scene-feedback" role="status">
+                <strong id="scene-feedback-title"></strong>
+                <ul class="scene-reasons" id="scene-feedback-list"></ul>
+                <button type="button" class="btn" id="scene-next" onclick="sceneContinue()"></button>
+            </div>
+        </div>
+        <div class="arcade-over hidden" id="scene-over">
+            <h3 data-i18n="arcade.over">Partie terminée</h3>
+            <p id="scene-over-text"></p>
+            <ul class="arcade-mistakes" id="scene-over-list"></ul>
+            <button type="button" class="btn" onclick="sceneStart()" data-i18n="arcade.replay">Rejouer</button>
         </div>
     </div>
 
@@ -2444,6 +2506,7 @@
     <script src="js/calendarWheel.js"></script>
     <script src="js/eraConverter.js"></script>
     <script src="js/arcadeCore.js"></script>
+    <script src="js/reflexionContent.js"></script>
     <script src="js/reflexionCore.js"></script>
     <script src="js/rewardsCore.js"></script>
     <script src="js/clioCore.js"></script>

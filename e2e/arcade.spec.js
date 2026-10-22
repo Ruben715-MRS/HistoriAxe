@@ -189,11 +189,11 @@ test('Space Invaders : une période, des cartes qui descendent, un tir sur un an
     await expect(page.locator('#invaders-over')).toBeVisible();
 });
 
-test('la salle de jeux : trois sections, huit jeux, des mini-jeux qui reviennent au menu', async ({ page }) => {
+test('la salle de jeux : trois sections, dix jeux, des mini-jeux qui reviennent au menu', async ({ page }) => {
     await page.locator('#btn-arcade').click();
     await expect(page.locator('#screen-arcade h2')).toHaveText('Salle de jeux');
     await expect(page.locator('#screen-arcade .games-section h3')).toHaveText(['Mini-jeux', "Jeux d'arcade", 'Jeux de réflexion']);
-    await expect(page.locator('#screen-arcade .arcade-card')).toHaveCount(8);
+    await expect(page.locator('#screen-arcade .arcade-card')).toHaveCount(10);
     // Les cartes du menu disent où l'on en est.
     await expect(page.locator('#arcade-best-wheel')).toContainText('Pas encore joué');
     await page.evaluate(() => {
@@ -269,4 +269,69 @@ test('Qui suis-je ? : des indices un à un, une mauvaise réponse dévoile le su
     expect(await page.evaluate(() => JSON.parse(localStorage.getItem('historiaxe_arcade_v1')).who)).toBeGreaterThan(0);
     await page.locator('#screen-who .back-btn').click();
     await expect(page.locator('#arcade-best-who')).toContainText('Meilleur score');
+});
+
+test('Cause ou conséquence ? : deux cartes, une explication à chaque réponse, huit questions', async ({ page }) => {
+    await page.locator('#btn-arcade').click();
+    await page.locator('.arcade-card', { hasText: 'Cause ou conséquence' }).click();
+    expect(await visibleScreen(page)).toBe('screen-cause');
+    await expect(page.locator('#cause-status')).toContainText('Question 1 / 8');
+    await expect(page.locator('#cause-cards .cause-card')).toHaveCount(2);
+    // Une mauvaise réponse : la bonne carte est montrée, avec le lien et l'explication.
+    const wrongSide = await page.evaluate(() => { const q = ReflexionCore.causeQuestion(causeGame); return 1 - (q.kind === 'cause' ? q.causeSide : 1 - q.causeSide); });
+    await page.locator(`#cause-cards .cause-card[data-side="${wrongSide}"]`).click();
+    await expect(page.locator('#cause-feedback-title')).toHaveText('Pas tout à fait…');
+    await expect(page.locator('#cause-cards .cause-card.correct')).toHaveCount(1);
+    await expect(page.locator('#cause-cards .cause-card.wrong')).toHaveCount(1);
+    await expect(page.locator('#cause-feedback-links')).toContainText('a provoqué');
+    await expect(page.locator('#cause-feedback-text')).not.toBeEmpty();
+    await page.locator('#cause-next').click();
+    // Les sept autres, justes.
+    for (let i = 0; i < 7; i++) {
+        const side = await page.evaluate(() => { const q = ReflexionCore.causeQuestion(causeGame); return q.kind === 'cause' ? q.causeSide : 1 - q.causeSide; });
+        await page.locator(`#cause-cards .cause-card[data-side="${side}"]`).click();
+        await expect(page.locator('#cause-feedback-title')).toHaveText('Juste !');
+        await page.locator('#cause-next').click();
+    }
+    await expect(page.locator('#cause-over')).toBeVisible();
+    await expect(page.locator('#cause-over-text')).toContainText('7 bonnes réponses sur 8, 700 points');
+    await page.locator('#screen-cause .back-btn').click();
+    await expect(page.locator('#arcade-best-cause')).toContainText('700');
+});
+
+test('Chasse aux anachronismes : désigner, valider, voir pourquoi, cinq scènes', async ({ page }) => {
+    await page.locator('#btn-arcade').click();
+    await page.locator('.arcade-card', { hasText: 'Chasse aux anachronismes' }).click();
+    expect(await visibleScreen(page)).toBe('screen-scene');
+    await expect(page.locator('#scene-status')).toContainText('Scène 1 / 5');
+    await expect(page.locator('#scene-grid .scene-tile')).toHaveCount(8);
+    await expect(page.locator('#scene-check')).toContainText('Rien à signaler');
+    // Première scène : un élément à sa place désigné à tort, un seul anachronisme trouvé.
+    const first = await page.evaluate(() => {
+        const scene = ReflexionCore.sceneRound(sceneGame).scene;
+        return { bad: scene.elements.findIndex(e => e.anachronism), ok: scene.elements.findIndex(e => !e.anachronism), total: ReflexionCore.sceneTotal(scene) };
+    });
+    await page.locator(`#scene-grid .scene-tile[data-index="${first.bad}"]`).click();
+    await page.locator(`#scene-grid .scene-tile[data-index="${first.ok}"]`).click();
+    await expect(page.locator('#scene-check')).toContainText('2 désigné');
+    await expect(page.locator(`#scene-grid .scene-tile[data-index="${first.ok}"]`)).toHaveAttribute('aria-pressed', 'true');
+    await page.locator('#scene-check').click();
+    await expect(page.locator('#scene-grid .scene-tile.is-found')).toHaveCount(1);
+    await expect(page.locator('#scene-grid .scene-tile.is-wrong')).toHaveCount(1);
+    await expect(page.locator('#scene-grid .scene-tile.is-missed')).toHaveCount(first.total - 1);
+    await expect(page.locator('#scene-feedback-list li')).toHaveCount(first.total + 1);
+    await expect(page.locator('#scene-feedback-list')).toContainText('Pas un anachronisme');
+    await page.locator('#scene-next').click();
+    // Les quatre autres, parfaites.
+    for (let i = 0; i < 4; i++) {
+        const bad = await page.evaluate(() => ReflexionCore.sceneRound(sceneGame).scene.elements.map((e, i) => e.anachronism ? i : -1).filter(i => i >= 0));
+        for (const idx of bad) await page.locator(`#scene-grid .scene-tile[data-index="${idx}"]`).click();
+        await page.locator('#scene-check').click();
+        await expect(page.locator('#scene-feedback-title')).toContainText('+100 pts');
+        await page.locator('#scene-next').click();
+    }
+    await expect(page.locator('#scene-over')).toBeVisible();
+    await expect(page.locator('#scene-over-list li')).toHaveCount(5);
+    await page.locator('#screen-scene .back-btn').click();
+    await expect(page.locator('#arcade-best-scene')).toContainText('Meilleur score');
 });

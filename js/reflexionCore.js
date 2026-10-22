@@ -1,7 +1,7 @@
 // =========================================================================
 // === LES JEUX DE RÉFLEXION — RÈGLES DU MEMORY CHRONOLOGIQUE ET DE « QUI SUIS-JE ? » ===
 // =========================================================================
-// Deux jeux au tour par tour, sans minuteur. Ici, seulement les règles (états purs, sans DOM) ; les écrans sont dans
+// Quatre jeux au tour par tour, sans minuteur. Ici, seulement les règles (états purs, sans DOM) ; les écrans sont dans
 // js/app/reflexion.js. Testé dans tests/reflexionCore.test.js.
 //
 //  - MEMORY : six événements, douze cartes (le titre de l'événement d'un côté, sa date de l'autre), face cachée. On
@@ -10,6 +10,11 @@
 //  - QUI SUIS-JE ? : une figure à trouver parmi quatre noms, avec des indices qui s'ajoutent un par un (domaine et pays,
 //    siècle, phrases de sa notice dont le nom est caché, enfin son portrait). Plus on trouve tôt, plus on marque ; une
 //    mauvaise réponse retire l'option et dévoile l'indice suivant.
+//  - CAUSE OU CONSÉQUENCE ? : deux événements ; on dit lequel a provoqué l'autre (ou lequel est la conséquence de l'autre).
+//    L'explication du mécanisme suit chaque réponse. Contenu écrit à la main : js/reflexionContent.js.
+//  - CHASSE AUX ANACHRONISMES : une scène d'une époque, huit éléments dont deux ou trois n'y ont pas leur place. On désigne
+//    ceux qu'on croit anachroniques, puis on valide : chaque anachronisme trouvé rapporte, chaque élément à sa place désigné à
+//    tort retire un point.
 
 (function (root, factory) {
     if (typeof module === 'object' && module.exports) module.exports = factory(require('./arcadeCore.js'));
@@ -239,10 +244,124 @@
         return ['next'];
     }
 
+
+    // --- CAUSE OU CONSÉQUENCE ? ----------------------------------------------------------------------------
+    var CAUSE_ROUNDS = 8;
+    var CAUSE_POINTS = 100;
+
+    // `items` : { id, cause: { title, year }, effect: { title, year }, explain }. Pour chaque manche : de quel côté (0 : gauche,
+    // 1 : droite) se trouve la cause, et ce qu'on demande (la cause, ou la conséquence) — les deux sens se mêlent, pour qu'on ne
+    // réponde pas toujours par le même réflexe.
+    function createCause(items, rng, rounds) {
+        var random = rng || Math.random;
+        var picks = Arcade.shuffle(items, random).slice(0, rounds || CAUSE_ROUNDS);
+        var questions = picks.map(function (item) {
+            return { item: item, causeSide: random() < 0.5 ? 0 : 1, kind: random() < 0.5 ? 'cause' : 'effect' };
+        });
+        return { questions: questions, index: 0, score: 0, found: 0, results: [], resolved: null, over: !questions.length, empty: !questions.length };
+    }
+
+    function causeQuestion(state) {
+        return state.questions[state.index] || null;
+    }
+
+    // Les deux cartes affichées : [gauche, droite], chacune { title, year, role }.
+    function causeSides(question) {
+        var sides = [];
+        sides[question.causeSide] = { title: question.item.cause.title, year: question.item.cause.year, role: 'cause' };
+        sides[1 - question.causeSide] = { title: question.item.effect.title, year: question.item.effect.year, role: 'effect' };
+        return sides;
+    }
+
+    // Répond en désignant une carte (0 ou 1). Renvoie : 'right' ou 'wrong'.
+    function causeAnswer(state, side) {
+        var q = causeQuestion(state);
+        if (state.over || !q || state.resolved || (side !== 0 && side !== 1)) return [];
+        var expected = q.kind === 'cause' ? q.causeSide : 1 - q.causeSide;
+        var right = side === expected;
+        state.resolved = right ? 'right' : 'wrong';
+        if (right) { state.score += CAUSE_POINTS; state.found += 1; }
+        state.results.push({ id: q.item.id, right: right, kind: q.kind });
+        return [state.resolved];
+    }
+
+    function causeNext(state) {
+        if (state.over || !state.resolved) return [];
+        state.index += 1;
+        state.resolved = null;
+        if (state.index >= state.questions.length) { state.over = true; return ['done']; }
+        return ['next'];
+    }
+
+    // --- CHASSE AUX ANACHRONISMES --------------------------------------------------------------------------
+    var SCENE_ROUNDS = 5;
+    var SCENE_POINTS = 100;
+
+    function sceneTotal(scene) {
+        return scene.elements.filter(function (e) { return e.anachronism; }).length;
+    }
+
+    // `scenes` : { id, title, when, intro, elements: [{ icon, text, anachronism, why }] }. L'ordre d'affichage des éléments est
+    // mêlé à chaque partie (sinon les anachronismes seraient toujours en dernier) ; `selected` : indices dans scene.elements.
+    function createScenes(scenes, rng, rounds) {
+        var random = rng || Math.random;
+        var picks = Arcade.shuffle(scenes, random).slice(0, rounds || SCENE_ROUNDS);
+        var list = picks.map(function (scene) {
+            var order = Arcade.shuffle(scene.elements.map(function (e, i) { return i; }), random);
+            return { scene: scene, order: order };
+        });
+        return { rounds: list, index: 0, selected: {}, resolved: null, score: 0, results: [], over: !list.length, empty: !list.length };
+    }
+
+    function sceneRound(state) {
+        return state.rounds[state.index] || null;
+    }
+
+    // Désigne (ou désélectionne) un élément, avant la validation.
+    function sceneToggle(state, elementIndex) {
+        var round = sceneRound(state);
+        if (state.over || !round || state.resolved || !round.scene.elements[elementIndex]) return [];
+        if (state.selected[elementIndex]) delete state.selected[elementIndex];
+        else state.selected[elementIndex] = true;
+        return ['toggle'];
+    }
+
+    // Valide la sélection : anachronismes trouvés, éléments désignés à tort, anachronismes manqués. Les points : 100 si tout est trouvé
+    // sans erreur ; chaque erreur retire autant qu'un anachronisme trouvé en rapporte.
+    function sceneValidate(state) {
+        var round = sceneRound(state);
+        if (state.over || !round || state.resolved) return [];
+        var found = [], wrong = [], missed = [];
+        round.scene.elements.forEach(function (e, i) {
+            var chosen = !!state.selected[i];
+            if (chosen && e.anachronism) found.push(i);
+            else if (chosen) wrong.push(i);
+            else if (e.anachronism) missed.push(i);
+        });
+        var total = sceneTotal(round.scene);
+        var points = Math.max(0, Math.round(SCENE_POINTS * (found.length - wrong.length) / total));
+        state.score += points;
+        state.resolved = { found: found, wrong: wrong, missed: missed, points: points, total: total };
+        state.results.push({ id: round.scene.id, title: round.scene.title, found: found.length, total: total, wrong: wrong.length, points: points });
+        return ['validated'];
+    }
+
+    function sceneNext(state) {
+        if (state.over || !state.resolved) return [];
+        state.index += 1;
+        state.selected = {};
+        state.resolved = null;
+        if (state.index >= state.rounds.length) { state.over = true; return ['done']; }
+        return ['next'];
+    }
+
     return {
         MEMORY_PAIRS: MEMORY_PAIRS, WHO_ROUNDS: WHO_ROUNDS, WHO_POINTS: WHO_POINTS,
         createMemory: createMemory, memoryFlip: memoryFlip, memoryHide: memoryHide, memoryScore: memoryScore,
         centuryLabel: centuryLabel, nameTokens: nameTokens, maskName: maskName, splitSentences: splitSentences, buildClues: buildClues,
+        CAUSE_ROUNDS: CAUSE_ROUNDS, SCENE_ROUNDS: SCENE_ROUNDS,
+        createCause: createCause, causeQuestion: causeQuestion, causeSides: causeSides, causeAnswer: causeAnswer, causeNext: causeNext,
+        createScenes: createScenes, sceneRound: sceneRound, sceneTotal: sceneTotal, sceneToggle: sceneToggle, sceneValidate: sceneValidate, sceneNext: sceneNext,
         createWho: createWho, whoQuestion: whoQuestion, whoPoints: whoPoints, whoReveal: whoReveal, whoPick: whoPick, whoNext: whoNext
     };
 }));

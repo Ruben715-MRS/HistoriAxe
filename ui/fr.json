@@ -1703,5 +1703,37 @@
     "found": "{found} figures trouvées sur {total}, {score} points.",
     "result_found": "{name} — {points} pts",
     "result_lost": "{name} — pas trouvé"
+  },
+  "cause": {
+    "title": "Cause ou conséquence ?",
+    "desc": "Deux événements : lequel a provoqué l'autre ?",
+    "status": "Question {n} / {total} · {score} pts",
+    "ask_cause": "Lequel de ces deux événements a PROVOQUÉ l'autre ?",
+    "ask_effect": "Lequel de ces deux événements est la CONSÉQUENCE de l'autre ?",
+    "right": "Juste !",
+    "wrong": "Pas tout à fait…",
+    "links": "{cause} ({cause_year}) a provoqué : {effect} ({effect_year}).",
+    "next": "Question suivante",
+    "finish": "Voir le résultat",
+    "found": "{found} bonnes réponses sur {total}, {score} points.",
+    "card_aria": "Événement {n} : {title}"
+  },
+  "scene": {
+    "title": "Chasse aux anachronismes",
+    "desc": "Repérez dans une scène ce qui n'a pas sa place à cette époque.",
+    "status": "Scène {n} / {total} · {score} pts",
+    "grid_aria": "Éléments de la scène",
+    "when": "{title} — {when}",
+    "check": "Valider ({count} désigné(s))",
+    "check_none": "Rien à signaler : valider",
+    "hint": "Touchez les éléments qui n'ont pas leur place à cette époque, puis validez.",
+    "result": "{found} / {total} anachronismes trouvés · {wrong} à tort · +{points} pts",
+    "found_item": "✓ Trouvé : {text} — {why}",
+    "missed_item": "✗ Manqué : {text} — {why}",
+    "wrong_item": "⚠ Pas un anachronisme : {text} — {why}",
+    "next": "Scène suivante",
+    "finish": "Voir le résultat",
+    "over_text": "{found} anachronismes trouvés sur {total}, {score} points.",
+    "result_line": "{title} : {found} / {total}, {wrong} à tort"
   }
 }

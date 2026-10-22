@@ -5,6 +5,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const R = require('../js/reflexionCore.js');
 const G = require('../js/gameModes.js');
+const C = require('../js/reflexionContent.js');
 
 const root = path.resolve(__dirname, '..');
 const fr = JSON.parse(fs.readFileSync(path.join(root, 'data', 'fr.json'), 'utf8'));
@@ -226,18 +227,164 @@ test('la salle de jeux : textes, scripts et écrans des jeux de réflexion', () 
     const need = {
         games: ['mini_title', 'mini_desc', 'arcade_title', 'arcade_desc', 'reflexion_title', 'reflexion_desc'],
         memory: ['title', 'desc', 'rule', 'status', 'card_hidden', 'card_event', 'card_date', 'match', 'miss_pair', 'miss_same', 'won', 'over_text'],
+        cause: ['title', 'desc', 'status', 'ask_cause', 'ask_effect', 'right', 'wrong', 'links', 'next', 'finish', 'found', 'card_aria'],
+        scene: ['title', 'desc', 'status', 'when', 'check', 'check_none', 'hint', 'result', 'found_item', 'missed_item', 'wrong_item', 'next', 'finish', 'over_text', 'result_line'],
         who: ['title', 'loading', 'desc', 'status', 'more', 'clue_axis', 'clue_country', 'clue_period', 'clue_portrait', 'worth', 'right', 'lost', 'answer', 'next', 'finish', 'found', 'result_found', 'result_lost']
     };
     Object.keys(need).forEach((g) => need[g].forEach((k) => assert.ok(ui[g] && ui[g][k], `${g}.${k}`)));
     assert.equal(ui.arcade.title, 'Salle de jeux');
     const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
     const sw = fs.readFileSync(path.join(root, 'sw.js'), 'utf8');
-    ['js/reflexionCore.js', 'js/app/reflexion.js'].forEach((f) => {
+    ['js/reflexionContent.js', 'js/reflexionCore.js', 'js/app/reflexion.js'].forEach((f) => {
         assert.ok(html.includes(`<script src="${f}">`), f + ' dans index.html');
         assert.ok(sw.includes(`'./${f}'`), f + ' dans sw.js');
     });
-    ['screen-memory', 'screen-who'].forEach((id) => assert.ok(html.includes(`id="${id}"`), id));
-    // Trois sections, six jeux d'arcade et de réflexion + deux mini-jeux : huit cartes.
+    ['screen-memory', 'screen-who', 'screen-cause', 'screen-scene'].forEach((id) => assert.ok(html.includes(`id="${id}"`), id));
+    // Trois sections : deux mini-jeux, quatre jeux d'arcade, quatre jeux de réflexion.
     ['games-h-mini', 'games-h-arcade', 'games-h-reflexion'].forEach((id) => assert.ok(html.includes(`id="${id}"`), id));
-    assert.equal((html.match(/class="arcade-card"/g) || []).length, 8);
+    assert.equal((html.match(/class="arcade-card"/g) || []).length, 10);
+});
+
+// --- Contenu rédigé à la main ---------------------------------------------------------------------------
+test('Cause ou conséquence : au moins quarante paires, aux identifiants uniques, la cause jamais après sa conséquence', () => {
+    assert.ok(C.CAUSES.length >= 40);
+    assert.equal(new Set(C.CAUSES.map((c) => c.id)).size, C.CAUSES.length);
+    C.CAUSES.forEach((c) => {
+        assert.ok(c.cause.title && c.effect.title && c.cause.title !== c.effect.title, c.id);
+        assert.ok(Number.isInteger(c.cause.year) && Number.isInteger(c.effect.year), c.id);
+        assert.ok(c.cause.year <= c.effect.year, `${c.id} : la cause (${c.cause.year}) précède sa conséquence (${c.effect.year})`);
+        assert.ok(c.explain.length > 60, `${c.id} : une explication qui dit le mécanisme`);
+    });
+    // Deux paires ne doivent pas se contredire : un même titre ne peut pas être la cause ici et la conséquence là en sens inverse.
+    const causeTitles = new Set(C.CAUSES.map((c) => c.cause.title));
+    C.CAUSES.forEach((c) => assert.ok(!causeTitles.has(c.effect.title) || c.cause.year < c.effect.year, c.id));
+});
+
+test('Chasse aux anachronismes : treize scènes de huit éléments, deux ou trois anachronismes, chacun expliqué', () => {
+    assert.ok(C.SCENES.length >= 12);
+    assert.equal(new Set(C.SCENES.map((s) => s.id)).size, C.SCENES.length);
+    C.SCENES.forEach((s) => {
+        assert.ok(s.title && s.when && s.intro, s.id);
+        assert.equal(s.elements.length, 8, s.id);
+        const bad = s.elements.filter((e) => e.anachronism).length;
+        assert.ok(bad >= 2 && bad <= 3, `${s.id} : ${bad} anachronismes`);
+        // L'emoji est tout ce qu'on voit d'un élément à côté de son texte : un doublon prêterait à confusion.
+        assert.equal(new Set(s.elements.map((e) => e.icon)).size, 8, `${s.id} : emojis`);
+        s.elements.forEach((e) => assert.ok(e.icon && e.text && e.why && e.why.length > 15, `${s.id} : ${e.text}`));
+        assert.equal(R.sceneTotal(s), bad);
+    });
+});
+
+// --- Cause ou conséquence : les manches --------------------------------------------------------------------------
+test('Cause ou conséquence : huit questions, jamais deux fois la même paire, des sens mêlés', () => {
+    const g = R.createCause(C.CAUSES, seeded(4));
+    assert.equal(g.questions.length, 8);
+    assert.equal(new Set(g.questions.map((q) => q.item.id)).size, 8);
+    const many = R.createCause(C.CAUSES, seeded(9), 40);
+    assert.ok(many.questions.some((q) => q.kind === 'cause') && many.questions.some((q) => q.kind === 'effect'));
+    assert.ok(many.questions.some((q) => q.causeSide === 0) && many.questions.some((q) => q.causeSide === 1));
+    assert.ok(R.createCause([], seeded(1)).empty);
+});
+
+test('Cause ou conséquence : la cause est du côté annoncé ; on gagne 100 points en désignant la bonne carte', () => {
+    const g = R.createCause(C.CAUSES, seeded(7));
+    const q = R.causeQuestion(g);
+    const sides = R.causeSides(q);
+    assert.equal(sides[q.causeSide].role, 'cause');
+    assert.equal(sides[q.causeSide].title, q.item.cause.title);
+    assert.equal(sides[1 - q.causeSide].title, q.item.effect.title);
+    const expected = q.kind === 'cause' ? q.causeSide : 1 - q.causeSide;
+    assert.deepEqual(R.causeAnswer(g, expected), ['right']);
+    assert.equal(g.score, 100);
+    assert.deepEqual(R.causeAnswer(g, expected), [], 'une question résolue ne se rejoue pas');
+    assert.deepEqual(R.causeNext(g), ['next']);
+    const q2 = R.causeQuestion(g);
+    assert.deepEqual(R.causeAnswer(g, 1 - (q2.kind === 'cause' ? q2.causeSide : 1 - q2.causeSide)), ['wrong']);
+    assert.equal(g.score, 100);
+    assert.equal(g.results.length, 2);
+    assert.deepEqual(R.causeAnswer(g, 5), []);
+});
+
+test('Cause ou conséquence : huit réponses justes font 800 points et finissent la partie', () => {
+    const g = R.createCause(C.CAUSES, seeded(11));
+    let last = [];
+    while (!g.over) {
+        const q = R.causeQuestion(g);
+        R.causeAnswer(g, q.kind === 'cause' ? q.causeSide : 1 - q.causeSide);
+        last = R.causeNext(g);
+    }
+    assert.deepEqual(last, ['done']);
+    assert.equal(g.score, 800);
+    assert.equal(g.found, 8);
+    assert.deepEqual(R.causeNext(g), []);
+});
+
+// --- Chasse aux anachronismes : les manches ---------------------------------------------------------------------
+function indexOfAnachronisms(scene) {
+    return scene.elements.map((e, i) => (e.anachronism ? i : -1)).filter((i) => i >= 0);
+}
+
+test('Anachronismes : cinq scènes différentes, les éléments mêlés mais tous présents', () => {
+    const g = R.createScenes(C.SCENES, seeded(5));
+    assert.equal(g.rounds.length, 5);
+    assert.equal(new Set(g.rounds.map((r) => r.scene.id)).size, 5);
+    g.rounds.forEach((r) => assert.deepEqual(r.order.slice().sort((a, b) => a - b), [0, 1, 2, 3, 4, 5, 6, 7]));
+    // Mêlés : l'ordre d'affichage n'est pas toujours celui du texte (où les anachronismes sont en dernier).
+    assert.ok(g.rounds.some((r) => r.order.some((v, i) => v !== i)));
+    assert.ok(R.createScenes([], seeded(1)).empty);
+});
+
+test('Anachronismes : trouver tout sans erreur fait 100 points ; une erreur retire un anachronisme trouvé', () => {
+    const g = R.createScenes(C.SCENES, seeded(5));
+    const scene = R.sceneRound(g).scene;
+    indexOfAnachronisms(scene).forEach((i) => assert.deepEqual(R.sceneToggle(g, i), ['toggle']));
+    assert.deepEqual(R.sceneValidate(g), ['validated']);
+    assert.equal(g.resolved.points, 100);
+    assert.equal(g.resolved.missed.length, 0);
+    assert.deepEqual(R.sceneToggle(g, 0), [], 'plus de sélection après validation');
+    assert.deepEqual(R.sceneValidate(g), []);
+    R.sceneNext(g);
+
+    // Les trois anachronismes trouvés, plus un élément à sa place désigné à tort : 3 − 1 sur 3 = 67 points.
+    const scene2 = R.sceneRound(g).scene;
+    const bad = indexOfAnachronisms(scene2);
+    bad.forEach((i) => R.sceneToggle(g, i));
+    const ok = scene2.elements.findIndex((e) => !e.anachronism);
+    R.sceneToggle(g, ok);
+    R.sceneValidate(g);
+    assert.equal(g.resolved.wrong.length, 1);
+    assert.equal(g.resolved.points, Math.round(100 * (bad.length - 1) / bad.length));
+    assert.equal(g.score, 100 + g.resolved.points);
+});
+
+test('Anachronismes : désélectionner, ne rien désigner (0 point, tout manqué), et jamais de points négatifs', () => {
+    const g = R.createScenes(C.SCENES, seeded(8));
+    const scene = R.sceneRound(g).scene;
+    R.sceneToggle(g, 0);
+    R.sceneToggle(g, 0);
+    assert.deepEqual(g.selected, {});
+    R.sceneValidate(g);
+    assert.equal(g.resolved.points, 0);
+    assert.equal(g.resolved.missed.length, R.sceneTotal(scene));
+    R.sceneNext(g);
+    // Que des erreurs : 0 et non un score négatif.
+    const scene2 = R.sceneRound(g).scene;
+    scene2.elements.forEach((e, i) => { if (!e.anachronism) R.sceneToggle(g, i); });
+    R.sceneValidate(g);
+    assert.equal(g.resolved.points, 0);
+    assert.ok(g.score >= 0);
+});
+
+test('Anachronismes : cinq scènes parfaites font 500 points et finissent la partie', () => {
+    const g = R.createScenes(C.SCENES, seeded(12));
+    let last = [];
+    while (!g.over) {
+        indexOfAnachronisms(R.sceneRound(g).scene).forEach((i) => R.sceneToggle(g, i));
+        R.sceneValidate(g);
+        last = R.sceneNext(g);
+    }
+    assert.deepEqual(last, ['done']);
+    assert.equal(g.score, 500);
+    assert.equal(g.results.length, 5);
+    assert.deepEqual(R.sceneNext(g), []);
 });

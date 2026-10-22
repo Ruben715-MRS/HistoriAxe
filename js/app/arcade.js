@@ -83,7 +83,7 @@ function openArcade() {
 
 function renderGamesHub() {
     const best = arcadeBest();
-    ['snake', 'tetris', 'pacman', 'invaders', 'memory', 'who'].forEach(game => {
+    ['snake', 'tetris', 'pacman', 'invaders', 'memory', 'who', 'cause', 'scene'].forEach(game => {
         document.getElementById('arcade-best-' + game).textContent = best[game] > 0
             ? t('arcade.best', { score: best[game] }) : t('arcade.no_best');
     });

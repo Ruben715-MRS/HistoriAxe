@@ -10354,3 +10354,139 @@ input:not([type="range"]), label, select, summary, textarea {
 #who-feedback p {
     margin: 0 0 10px;
 }
+
+/* --- CAUSE OU CONSÉQUENCE ?, CHASSE AUX ANACHRONISMES (js/app/reflexion.js) --- */
+#cause-play,
+#scene-play {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 520px;
+}
+
+.cause-question {
+    margin: 0 0 12px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--text-dark);
+}
+
+.cause-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.cause-card {
+    min-height: 72px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.cause-card:disabled {
+    opacity: 1;
+    cursor: default;
+}
+
+#cause-play .wheel-feedback,
+#scene-play .wheel-feedback {
+    margin-top: 12px;
+}
+
+#cause-feedback strong,
+#scene-feedback strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+#cause-feedback p {
+    margin: 0 0 8px;
+}
+
+.scene-title {
+    margin: 0 0 4px;
+    text-align: center;
+    font-size: 17px;
+    color: var(--text-dark);
+}
+
+.scene-intro {
+    margin: 0 0 10px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--muted-text);
+}
+
+.scene-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    width: 100%;
+}
+
+.scene-tile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 64px;
+    padding: 8px 10px;
+    border: 2px solid var(--border-soft);
+    border-radius: 12px;
+    background: var(--surface);
+    color: var(--text-dark);
+    font: inherit;
+    font-size: 13px;
+    line-height: 1.3;
+    text-align: left;
+    cursor: pointer;
+}
+
+.scene-tile-icon {
+    flex: none;
+    font-size: 24px;
+}
+
+.scene-tile.is-selected {
+    border-color: var(--primary-blue);
+    background: var(--selected-tint);
+    box-shadow: 0 0 0 1px var(--primary-blue);
+}
+
+.scene-tile:disabled {
+    opacity: 1;
+    cursor: default;
+}
+
+.scene-tile.is-found {
+    border-color: var(--progress-green);
+    background: var(--selected-tint);
+}
+
+.scene-tile.is-missed {
+    border-color: var(--favorite-yellow);
+    border-style: dashed;
+}
+
+.scene-tile.is-wrong {
+    border-color: var(--danger-red);
+}
+
+.scene-check {
+    margin-top: 12px;
+}
+
+.scene-check.hidden {
+    display: none;
+}
+
+.scene-reasons {
+    margin: 4px 0 10px;
+    padding-left: 18px;
+    font-size: 13px;
+    line-height: 1.45;
+}
