@@ -2,8 +2,8 @@
 // === LES DÉCOUPAGES DE L'HISTOIRE SELON LES PAYS (données de l'outil « Repères de périodes ») ===
 // =========================================================================
 // « Antiquité, Moyen Âge, Temps modernes » est un découpage français, hérité de l'Europe de la Renaissance : il ne dit rien des autres
-// régions du monde, qui découpent le temps autrement (par dynasties en Chine, par ères et par shogunats au Japon, par grandes dominations
-// en Inde, par califats dans le monde arabo-musulman…). Chaque découpage est une suite de périodes qui se suivent sans trou ni recouvrement
+// régions du monde, qui découpent le temps autrement (par dynasties en Chine et en Corée, par ères et par shogunats au Japon, par grandes dominations
+// en Inde, par califats dans le monde arabo-musulman, par régimes en Espagne, en Italie, en Allemagne et en Russie…). Chaque découpage est une suite de périodes qui se suivent sans trou ni recouvrement
 // (là où des dynasties coexistaient, on suit la période que les manuels retiennent et on le dit).
 //
 // Une période : { id, name, start, end, bounds, debated? } ; `start` et `end` sont des années signées (−221 = 221 av. J.-C.), `start`
@@ -58,42 +58,150 @@
             ]
         },
         {
-            id: 'anglophone', name: 'Monde anglophone', flag: '🇬🇧',
-            intro: 'Au Royaume-Uni et aux États-Unis, on découpe aussi en « Ancient », « Medieval » et « Modern », mais le « Modern » est coupé en plusieurs morceaux (« Early Modern », « Modern », « Contemporary »), et le Moyen Âge est souvent daté de 500 à 1500 plutôt que de 476 à 1492. L\'histoire nationale a aussi ses propres coupures (les Tudors, l\'ère victorienne, la guerre de Sécession).',
+            id: 'espagne', name: 'Espagne', flag: '🇪🇸',
+            intro: 'L\'histoire espagnole est marquée par la longue présence musulmane (711-1492) et la « Reconquista », puis par l\'empire des Habsbourg et ses colonies. On ne parle donc pas de « Moyen Âge » en bloc, mais d\'Al-Andalus et de royaumes chrétiens. Le XIXe et le XXe siècle sont découpés par les régimes politiques, de la monarchie libérale à la dictature de Franco.',
             doubts: [
-                { from: 470, to: 510, text: 'vers 476 ou 500, selon qu\'on date la fin de l\'Antiquité de la chute de Rome ou d\'un « Ve siècle » rond' },
-                { from: 1450, to: 1520, text: 'entre 1453, 1485, 1492 et 1517, bornes discutées du début de l\'« Early Modern »' }
+                { from: 1469, to: 1516, text: 'entre 1469 (mariage d\'Isabelle et de Ferdinand), 1492 (Grenade, Amérique) et 1516 (Charles Ier), bornes discutées du début de l\'Espagne moderne' }
             ],
             periods: [
                 {
-                    id: 'prehistory', name: 'Préhistoire (Prehistory)', start: null, end: -3300,
-                    bounds: 'Jusqu\'à l\'apparition de l\'écriture, vers 3300 av. J.-C.',
-                    debated: 'Les mondes anglophone et français s\'accordent à peu près : la limite est l\'écriture, dont la date varie selon les régions.'
+                    id: 'prehistoire', name: 'Préhistoire et peuples d\'Ibérie', start: null, end: -218,
+                    bounds: 'Jusqu\'en 218 av. J.-C. : grottes d\'Altamira (art paléolithique), Ibères, Celtes, comptoirs phéniciens (Gadir vers 1100 av. J.-C.) et grecs, Carthaginois.',
+                    debated: 'La date de 218 av. J.-C. est celle du débarquement romain à Empúries, dans la deuxième guerre punique.'
                 },
                 {
-                    id: 'ancient', name: 'Histoire ancienne (Ancient history)', start: -3300, end: 476,
-                    bounds: 'De l\'écriture à la chute de l\'Empire romain d\'Occident (476).',
-                    debated: 'On trouve aussi « Late Antiquity » (IIIe-VIIe siècle), qui voit moins une rupture en 476 qu\'une lente transformation du monde romain.'
+                    id: 'hispania', name: 'Hispanie romaine', start: -218, end: 409,
+                    bounds: 'De 218 av. J.-C. à 409 : conquête romaine (achevée sous Auguste, en 19 av. J.-C.), romanisation, empereurs hispaniques (Trajan, Hadrien), christianisation.',
+                    debated: 'La conquête dure deux siècles.'
                 },
                 {
-                    id: 'medieval', name: 'Moyen Âge (Middle Ages, Medieval)', start: 476, end: 1500,
-                    bounds: 'De 476 à environ 1500. En histoire de l\'Angleterre, on s\'arrête souvent en 1485, à la bataille de Bosworth, qui ouvre le règne des Tudors.',
-                    debated: 'Le haut Moyen Âge s\'appelle parfois « Dark Ages », une expression que les historiens récusent. Les États-Unis ont une histoire « coloniale » qui ne commence qu\'au XVIe siècle.'
+                    id: 'wisigoths', name: 'Royaume wisigoth', start: 409, end: 711,
+                    bounds: 'De 409 (arrivée des Vandales, Suèves et Alains) à 711 : les Wisigoths s\'installent et fondent un royaume (capitale Tolède) ; conversion au catholicisme (589).',
+                    debated: 'Le royaume wisigoth ne contrôle toute la péninsule qu\'au début du VIIe siècle.'
                 },
                 {
-                    id: 'early-modern', name: 'Début de l\'époque moderne (Early Modern)', start: 1500, end: 1800,
-                    bounds: 'De 1500 environ à 1800 : Renaissance, Réforme, grandes découvertes, colonisation de l\'Amérique, révolutions anglaise, américaine et française.',
-                    debated: 'Cette période est un découpage propre au monde anglophone ; en France, elle est comprise dans les « Temps modernes », qui vont de 1492 à 1789.'
+                    id: 'al-andalus', name: 'Al-Andalus et royaumes chrétiens (Reconquista)', start: 711, end: 1492,
+                    bounds: 'De 711 (bataille de Guadalete, conquête musulmane) à 1492 (chute de Grenade) : Al-Andalus, émirat puis califat de Cordoue, royaumes de Taïfas ; au nord, Asturies, Castille, Aragon, Navarre, qui avancent par étapes (Tolède en 1085, Las Navas de Tolosa en 1212).',
+                    debated: 'Le mot « Reconquista » est contesté : il présente comme un projet unique un mouvement de huit siècles, fait d\'alliances et de guerres entre chrétiens comme entre musulmans.'
                 },
                 {
-                    id: 'modern', name: 'Époque moderne (Modern, Late Modern)', start: 1800, end: 1945,
-                    bounds: 'De 1800 environ à 1945 : révolution industrielle, ère victorienne, expansion des États-Unis, guerres mondiales.',
-                    debated: 'Dans les universités américaines, « Modern history » commence souvent vers 1500 et couvre tout ce qui suit. Pour le XIXe siècle, on dit « long nineteenth century » (1789-1914).'
+                    id: 'rois-catholiques', name: 'Rois catholiques et Habsbourg', start: 1492, end: 1700,
+                    bounds: 'De 1492 à 1700 : Isabelle et Ferdinand, découverte et conquête de l\'Amérique, empire de Charles Quint et de Philippe II, « Siècle d\'or » (Cervantès, Vélasquez), puis déclin sous les derniers Habsbourg.',
+                    debated: 'Les Habsbourg régnent à partir de 1516, avec Charles Ier (Charles Quint).'
                 },
                 {
-                    id: 'contemporary', name: 'Histoire contemporaine (Contemporary)', start: 1945, end: null,
-                    bounds: 'Depuis 1945 : guerre froide, décolonisation, mondialisation.',
-                    debated: 'La borne varie : 1914, 1945 ou 1989 selon les historiens. Les Anglo-Saxons parlent aussi de « post-war » (l\'après-guerre).'
+                    id: 'bourbons', name: 'Bourbons et Lumières', start: 1700, end: 1808,
+                    bounds: 'De 1700 (mort de Charles II, dernier Habsbourg) à 1808 : guerre de Succession (1701-1714), réformes de Charles III, puis l\'invasion napoléonienne de 1808.',
+                    debated: 'La dynastie des Bourbons règne depuis 1700, mais le régime a changé à plusieurs reprises.'
+                },
+                {
+                    id: 'xix-liberal', name: 'Guerre d\'indépendance et XIXe siècle libéral', start: 1808, end: 1874,
+                    bounds: 'De 1808 (invasion napoléonienne, soulèvement du 2 mai) à 1874 : constitution de Cadix (1812), perte de l\'Amérique latine, guerres carlistes, Première République (1873-1874).',
+                    debated: 'Période d\'instabilité : coups d\'État, pronunciamientos, changements de souverains.'
+                },
+                {
+                    id: 'restauration', name: 'Restauration bourbonienne', start: 1874, end: 1923,
+                    bounds: 'De 1874 à 1923 : monarchie constitutionnelle d\'Alphonse XII puis Alphonse XIII, alternance contrôlée entre deux partis, « désastre » de 1898 (perte de Cuba et des Philippines), conflits sociaux.',
+                    debated: 'On parle de « régénérationnisme » pour les réflexions qui suivent 1898.'
+                },
+                {
+                    id: 'dictature-primo', name: 'Dictature de Primo de Rivera', start: 1923, end: 1931,
+                    bounds: 'De 1923 à 1931 : coup d\'État du général Miguel Primo de Rivera, avec l\'accord du roi, puis chute en 1930 et départ du roi.',
+                    debated: 'Brève, mais elle ouvre la voie à la République.'
+                },
+                {
+                    id: 'republique', name: 'Seconde République', start: 1931, end: 1936,
+                    bounds: 'De 1931 (14 avril) à 1936 : réformes (statut de la Catalogne, droit de vote des femmes), polarisation, victoire du Front populaire en février 1936.',
+                    debated: 'On distingue le « biennat réformateur » (1931-1933) du « biennat noir » (1934-1935).'
+                },
+                {
+                    id: 'guerre-civile', name: 'Guerre civile', start: 1936, end: 1939,
+                    bounds: 'De juillet 1936 (soulèvement militaire) à avril 1939 : républicains contre nationalistes de Franco, aidés par l\'Allemagne et l\'Italie ; les Brigades internationales soutiennent la République.',
+                    debated: 'Les bombardements de Guernica (avril 1937) sont devenus un symbole.'
+                },
+                {
+                    id: 'franquisme', name: 'Franquisme', start: 1939, end: 1975,
+                    bounds: 'De 1939 à 1975 : dictature du général Franco, répression, autarcie puis ouverture économique dans les années 1960.',
+                    debated: 'On distingue le franquisme d\'après-guerre (1939-1959) de la période de développement (1959-1975).'
+                },
+                {
+                    id: 'democratie', name: 'Transition et démocratie', start: 1975, end: null,
+                    bounds: 'Depuis la mort de Franco (20 novembre 1975) : le roi Juan Carlos Ier ouvre une transition ; Constitution de 1978, communautés autonomes, entrée dans la CEE (1986).',
+                    debated: 'La tentative de coup d\'État du 23 février 1981 échoue ; on date parfois la consolidation de la démocratie de 1982.'
+                }
+            ]
+        },
+        {
+            id: 'italie', name: 'Italie', flag: '🇮🇹',
+            intro: 'L\'Italie n\'est unie qu\'en 1861 : son histoire est longtemps celle de cités, de royaumes et de dominations étrangères. Les Italiens distinguent un « haut » et un « bas » Moyen Âge, font une place à part à la Renaissance, puis découpent par les régimes, du Risorgimento à la République.',
+            doubts: [
+                { from: 1490, to: 1500, text: 'entre 1492 (Amérique, mort de Laurent de Médicis) et 1494 (invasion de Charles VIII), borne discutée de la fin de la Renaissance florissante' }
+            ],
+            periods: [
+                {
+                    id: 'prehistoire', name: 'Préhistoire et âge du fer', start: null, end: -753,
+                    bounds: 'Jusqu\'à la fondation traditionnelle de Rome (753 av. J.-C.) : Préhistoire, culture villanovienne, premières cités étrusques et colonies grecques.',
+                    debated: 'La date de 753 av. J.-C. est celle de la fondation légendaire de Rome par Romulus.'
+                },
+                {
+                    id: 'antiquite', name: 'Antiquité (Étrusques, Grande-Grèce, Rome)', start: -753, end: 476,
+                    bounds: 'De 753 av. J.-C. à 476 : royauté, République (509 av. J.-C.), Empire (27 av. J.-C.). La péninsule devient le centre d\'un empire autour de la Méditerranée.',
+                    debated: 'La chute de l\'Empire d\'Occident (476) n\'est pas ressentie comme une rupture brutale par les contemporains.'
+                },
+                {
+                    id: 'haut-moyen-age', name: 'Haut Moyen Âge (Alto Medioevo)', start: 476, end: 1000,
+                    bounds: 'De 476 à l\'an mil : Ostrogoths de Théodoric, reconquête byzantine, Lombards (568), États pontificaux (756), Charlemagne roi des Lombards (774).',
+                    debated: 'L\'Italie du nord est divisée entre Lombards et Byzantins ; le sud reste longtemps sous influence byzantine puis arabe.'
+                },
+                {
+                    id: 'communes', name: 'Âge des communes (Basso Medioevo)', start: 1000, end: 1300,
+                    bounds: 'De 1000 à 1300 : les villes du nord et du centre deviennent des communes autonomes (Milan, Florence, Venise, Gênes, Pise), luttes entre papes et empereurs, Ligue lombarde (victoire de Legnano en 1176).',
+                    debated: 'Le sud du pays est resté sous le pouvoir de royaumes (Normands, puis Souabes, Angevins, Aragonais).'
+                },
+                {
+                    id: 'renaissance', name: 'Humanisme et Renaissance', start: 1300, end: 1494,
+                    bounds: 'De 1300 à 1494 : Dante, Pétrarque, Boccace, puis les arts à Florence des Médicis (Brunelleschi, Botticelli, Léonard). Cités-États devenues seigneuries, équilibre fragile par la paix de Lodi (1454).',
+                    debated: 'La Renaissance italienne commence au XIVe siècle (Pétrarque) et continue au XVIe siècle : on ne la limite ici qu\'à la phase des cités-États libres.'
+                },
+                {
+                    id: 'guerres-italie', name: 'Guerres d\'Italie', start: 1494, end: 1559,
+                    bounds: 'De 1494 (invasion de Charles VIII) à 1559 (paix du Cateau-Cambrésis) : Français, Espagnols et Impériaux se disputent la péninsule ; sac de Rome (1527).',
+                    debated: 'C\'est aussi la période des plus grands artistes de la Haute Renaissance (Michel-Ange, Raphaël).'
+                },
+                {
+                    id: 'domination-etrangere', name: 'Domination étrangère et Contre-Réforme', start: 1559, end: 1796,
+                    bounds: 'De 1559 à 1796 : Milan, Naples, Sicile et Sardaigne sous domination espagnole, puis autrichienne (après 1713) ; Venise, Gênes, la Savoie, Toscane et les États du pape subsistent ; Baroque, Contre-Réforme, Lumières italiennes (Beccaria).',
+                    debated: 'Les historiens italiens débattent du « déclin » de l\'Italie après la Renaissance.'
+                },
+                {
+                    id: 'napoleonienne', name: 'Italie napoléonienne', start: 1796, end: 1815,
+                    bounds: 'De 1796 (campagne d\'Italie de Bonaparte) à 1815 : républiques sœurs, royaume d\'Italie (1805), idée d\'unité nationale, code civil.',
+                    debated: 'Le Congrès de Vienne rétablit les anciens souverains en 1815.'
+                },
+                {
+                    id: 'risorgimento', name: 'Risorgimento', start: 1815, end: 1861,
+                    bounds: 'De 1815 à 1861 : « résurrection » nationale : révolutions de 1820-1821 et 1848, Mazzini, Cavour, guerres d\'indépendance, expédition des Mille de Garibaldi (1860), proclamation du royaume d\'Italie (17 mars 1861).',
+                    debated: 'On fait parfois commencer le Risorgimento dès 1796, avec l\'arrivée des Français.'
+                },
+                {
+                    id: 'liberale', name: 'Italie libérale', start: 1861, end: 1922,
+                    bounds: 'De 1861 à 1922 : monarchie des Savoie, Rome capitale (1871), industrialisation du Nord, grande émigration, colonies, Première Guerre mondiale (1915-1918).',
+                    debated: 'On distingue souvent l\'« âge giolittien » (1901-1914) du reste.'
+                },
+                {
+                    id: 'fascisme', name: 'Fascisme', start: 1922, end: 1943,
+                    bounds: 'De 1922 (marche sur Rome, 28 octobre) à 1943 : dictature de Mussolini, lois raciales (1938), guerre aux côtés de l\'Allemagne (1940).',
+                    debated: 'La dictature s\'installe progressivement entre 1922 et 1926.'
+                },
+                {
+                    id: 'guerre-liberation', name: 'Guerre, Résistance et libération', start: 1943, end: 1946,
+                    bounds: 'De 1943 à 1946 : chute de Mussolini (25 juillet 1943), armistice (8 septembre), occupation allemande et République sociale, Résistance, libération (25 avril 1945), référendum du 2 juin 1946 qui abolit la monarchie.',
+                    debated: 'Période courte, mais très dense : guerre civile entre fascistes et partisans.'
+                },
+                {
+                    id: 'republique', name: 'République italienne', start: 1946, end: null,
+                    bounds: 'Depuis 1946 : Constitution de 1948, « miracle économique », « années de plomb » (terrorisme), fin des partis historiques (années 1990).',
+                    debated: 'On parle de « Première République » (jusqu\'en 1992-1994) puis de « Seconde République », expressions non officielles.'
                 }
             ]
         },
@@ -154,6 +262,188 @@
                     id: 'reunifiee', name: 'Allemagne réunifiée (depuis 1990)', start: 1990, end: null,
                     bounds: 'Depuis la réunification du 3 octobre 1990.',
                     debated: 'Les historiens parlent de « Berliner Republik » (République de Berlin), par contraste avec la « Bonner Republik » (RFA, capitale Bonn).'
+                }
+            ]
+        },
+        {
+            id: 'anglophone', name: 'Monde anglophone', flag: '🇬🇧',
+            intro: 'Au Royaume-Uni et aux États-Unis, on découpe aussi en « Ancient », « Medieval » et « Modern », mais le « Modern » est coupé en plusieurs morceaux (« Early Modern », « Modern », « Contemporary »), et le Moyen Âge est souvent daté de 500 à 1500 plutôt que de 476 à 1492. L\'histoire nationale a aussi ses propres coupures (les Tudors, l\'ère victorienne, la guerre de Sécession).',
+            doubts: [
+                { from: 470, to: 510, text: 'vers 476 ou 500, selon qu\'on date la fin de l\'Antiquité de la chute de Rome ou d\'un « Ve siècle » rond' },
+                { from: 1450, to: 1520, text: 'entre 1453, 1485, 1492 et 1517, bornes discutées du début de l\'« Early Modern »' }
+            ],
+            periods: [
+                {
+                    id: 'prehistory', name: 'Préhistoire (Prehistory)', start: null, end: -3300,
+                    bounds: 'Jusqu\'à l\'apparition de l\'écriture, vers 3300 av. J.-C.',
+                    debated: 'Les mondes anglophone et français s\'accordent à peu près : la limite est l\'écriture, dont la date varie selon les régions.'
+                },
+                {
+                    id: 'ancient', name: 'Histoire ancienne (Ancient history)', start: -3300, end: 476,
+                    bounds: 'De l\'écriture à la chute de l\'Empire romain d\'Occident (476).',
+                    debated: 'On trouve aussi « Late Antiquity » (IIIe-VIIe siècle), qui voit moins une rupture en 476 qu\'une lente transformation du monde romain.'
+                },
+                {
+                    id: 'medieval', name: 'Moyen Âge (Middle Ages, Medieval)', start: 476, end: 1500,
+                    bounds: 'De 476 à environ 1500. En histoire de l\'Angleterre, on s\'arrête souvent en 1485, à la bataille de Bosworth, qui ouvre le règne des Tudors.',
+                    debated: 'Le haut Moyen Âge s\'appelle parfois « Dark Ages », une expression que les historiens récusent. Les États-Unis ont une histoire « coloniale » qui ne commence qu\'au XVIe siècle.'
+                },
+                {
+                    id: 'early-modern', name: 'Début de l\'époque moderne (Early Modern)', start: 1500, end: 1800,
+                    bounds: 'De 1500 environ à 1800 : Renaissance, Réforme, grandes découvertes, colonisation de l\'Amérique, révolutions anglaise, américaine et française.',
+                    debated: 'Cette période est un découpage propre au monde anglophone ; en France, elle est comprise dans les « Temps modernes », qui vont de 1492 à 1789.'
+                },
+                {
+                    id: 'modern', name: 'Époque moderne (Modern, Late Modern)', start: 1800, end: 1945,
+                    bounds: 'De 1800 environ à 1945 : révolution industrielle, ère victorienne, expansion des États-Unis, guerres mondiales.',
+                    debated: 'Dans les universités américaines, « Modern history » commence souvent vers 1500 et couvre tout ce qui suit. Pour le XIXe siècle, on dit « long nineteenth century » (1789-1914).'
+                },
+                {
+                    id: 'contemporary', name: 'Histoire contemporaine (Contemporary)', start: 1945, end: null,
+                    bounds: 'Depuis 1945 : guerre froide, décolonisation, mondialisation.',
+                    debated: 'La borne varie : 1914, 1945 ou 1989 selon les historiens. Les Anglo-Saxons parlent aussi de « post-war » (l\'après-guerre).'
+                }
+            ]
+        },
+        {
+            id: 'russie', name: 'Russie', flag: '🇷🇺',
+            intro: 'L\'histoire russe se découpe par ses États et ses dynasties successifs : la Rus\' de Kiev, la Moscovie des Riourikides, les Romanov, l\'Empire, puis le régime soviétique. Les grandes ruptures sont des invasions (les Mongols en 1240), des changements de titre (tsar en 1547, empereur en 1721) et des révolutions. Avant 1918, les dates russes suivent le calendrier julien, en retard sur le nôtre (13 jours au XXe siècle) : la « révolution d\'Octobre » a lieu en novembre.',
+            doubts: [
+                { from: 1700, to: 1725, text: 'entre 1682 (Pierre Ier devient tsar), 1703 (Saint-Pétersbourg) et 1721 (il se proclame empereur), bornes discutées du début de l\'Empire' }
+            ],
+            periods: [
+                {
+                    id: 'origines', name: 'Des origines à la Rus\' de Kiev', start: null, end: 862,
+                    bounds: 'Jusqu\'en 862 : peuples de la steppe (Scythes, Khazars) et tribus slaves orientales, marchands scandinaves (les Varègues) sur les fleuves.',
+                    debated: 'La date de 862 est celle que donne la Chronique des temps passés pour l\'appel au Varègue Riourik à Novgorod : elle tient de la tradition.'
+                },
+                {
+                    id: 'kiev', name: 'Rus\' de Kiev', start: 862, end: 1240,
+                    bounds: 'De 862 à 1240 : premier État des Slaves orientaux, centré sur Kiev, baptisé vers 988 par le prince Vladimir (christianisme de rite byzantin). Il s\'émiette en principautés rivales à partir du XIIe siècle.',
+                    debated: 'Ukrainiens, Biélorusses et Russes se réclament tous de la Rus\' de Kiev, qui n\'est donc pas l\'histoire d\'un seul de ces pays.'
+                },
+                {
+                    id: 'joug-mongol', name: 'Joug mongol et montée de Moscou', start: 1240, end: 1480,
+                    bounds: 'De 1240 (sac de Kiev par Batu Khan) à 1480 : les princes russes sont tributaires de la Horde d\'or. Moscou s\'impose peu à peu (victoire de Koulikovo en 1380, règne d\'Ivan III) et ne paie plus tribut en 1480.',
+                    debated: 'Les historiens russes parlent de « joug tatar-mongol », une expression que d\'autres jugent trop sombre : la domination a aussi laissé des institutions (poste, impôt).'
+                },
+                {
+                    id: 'moscovie', name: 'Moscovie (Riourikides, puis Temps des troubles)', start: 1480, end: 1613,
+                    bounds: 'De 1480 à 1613 : Ivan III « rassemble les terres russes », Ivan IV le Terrible se fait couronner tsar en 1547 ; puis le Temps des troubles (1598-1613), famine, guerre civile, invasions polonaise et suédoise.',
+                    debated: 'On date parfois le début de l\'État russe de 1547 (premier tsar) plutôt que de 1480.'
+                },
+                {
+                    id: 'romanov', name: 'Tsarat des Romanov', start: 1613, end: 1721,
+                    bounds: 'De 1613 (élection de Michel Romanov) à 1721 : consolidation du pouvoir, servage généralisé, schisme des vieux-croyants, puis réformes de Pierre le Grand (Saint-Pétersbourg fondée en 1703, victoire sur la Suède).',
+                    debated: 'La coupure peut aussi être placée à 1682 (Pierre devient tsar) ou 1703.'
+                },
+                {
+                    id: 'empire', name: 'Empire russe', start: 1721, end: 1917,
+                    bounds: 'De 1721 (Pierre Ier prend le titre d\'empereur) à 1917 : Catherine II, victoire sur Napoléon (1812), abolition du servage (1861), révolution de 1905, abdication de Nicolas II (mars 1917).',
+                    debated: 'Période très longue : on la découpe souvent en « siècle de Catherine » (XVIIIe), « âge de Nicolas Ier et des réformes » et dernière période (1894-1917).'
+                },
+                {
+                    id: 'revolutions', name: 'Révolutions et guerre civile', start: 1917, end: 1922,
+                    bounds: 'De 1917 à 1922 : révolution de février, prise du pouvoir par les bolcheviks en octobre (novembre), guerre civile entre Rouges et Blancs, communisme de guerre.',
+                    debated: 'La guerre civile commence en 1918 ; l\'URSS n\'est créée qu\'en décembre 1922.'
+                },
+                {
+                    id: 'urss', name: 'Union soviétique (URSS)', start: 1922, end: 1991,
+                    bounds: 'De 1922 à 1991 : Lénine, Staline (collectivisation, Grande Terreur, victoire de 1945), guerre froide, Khrouchtchev, Brejnev, Gorbatchev. Dissolution le 26 décembre 1991.',
+                    debated: 'On distingue souvent la période stalinienne (1928-1953), le « dégel » (1953-1964), la « stagnation » (1964-1985) et la perestroïka (1985-1991).'
+                },
+                {
+                    id: 'post-sovietique', name: 'Russie depuis 1991', start: 1991, end: null,
+                    bounds: 'Depuis 1991 : la Fédération de Russie, présidences d\'Eltsine (1991-1999) puis de Poutine (depuis 2000).',
+                    debated: 'Les historiens parlent de « temps présent » : la période n\'est pas encore close.'
+                }
+            ]
+        },
+        {
+            id: 'arabo-musulman', name: 'Monde arabo-musulman', flag: '☪️',
+            intro: 'Le monde arabo-musulman a son propre calendrier, qui part de l\'Hégire en 622, et un découpage fondé sur les grandes dynasties califales (Omeyyades, Abbassides), puis sur les dominations (mamelouke, ottomane, coloniale). On suit ici le Proche-Orient arabe (Arabie, Syrie, Irak, Égypte) ; d\'autres régions musulmanes (Iran, Inde, Maghreb, Afrique subsaharienne) ont d\'autres rythmes.',
+            doubts: [
+                { from: 607, to: 625, text: 'entre la première révélation (610) et l\'Hégire (622), dates qu\'on distingue dans les récits musulmans' }
+            ],
+            periods: [
+                {
+                    id: 'jahiliyya', name: 'Avant l\'islam (jāhiliyya)', start: null, end: 610,
+                    bounds: 'Jusqu\'à la première révélation, vers 610. Les musulmans appellent « jāhiliyya » (ignorance) l\'époque qui précède : tribus d\'Arabie, royaumes de Palmyre, des Nabatéens, de Saba, empires byzantin et sassanide voisins.',
+                    debated: 'Le terme est religieux, pas historique : l\'Arabie d\'avant l\'islam a une culture riche (poésie, commerce caravanier).'
+                },
+                {
+                    id: 'origines', name: 'Prophète et premiers califes', start: 610, end: 661,
+                    bounds: 'De 610 à 661 : prédication de Mahomet, Hégire à Médine (622, an 1 du calendrier musulman), puis les quatre califes « bien guidés » (632-661) et les premières conquêtes (Syrie, Égypte, Iran).',
+                    debated: 'Le calendrier musulman commence en 622 (l\'Hégire) et non en 610 : c\'est l\'événement qui lance la communauté.'
+                },
+                {
+                    id: 'omeyyades', name: 'Califat omeyyade', start: 661, end: 750,
+                    bounds: 'De 661 à 750 : capitale Damas, de l\'Espagne à l\'Inde. Arabisation de l\'administration, Dôme du Rocher (691).',
+                    debated: 'Une branche omeyyade survit en Espagne (émirat puis califat de Cordoue, 756-1031).'
+                },
+                {
+                    id: 'abbassides', name: 'Califat abbasside', start: 750, end: 1258,
+                    bounds: 'De 750 à 1258 : capitale Bagdad (fondée en 762), « âge d\'or » des sciences, de la traduction et du commerce. Le pouvoir réel des califes décline dès le Xe siècle (Fatimides, Seldjoukides…).',
+                    debated: 'La fin est la prise de Bagdad par les Mongols d\'Houlagou (1258). Le pouvoir politique des califes avait disparu bien avant.'
+                },
+                {
+                    id: 'mamelouks', name: 'Mamelouks, Mongols et sultanats', start: 1258, end: 1517,
+                    bounds: 'De 1258 à 1517 : les sultans mamelouks (Égypte, Syrie, Hedjaz) arrêtent les Mongols à Aïn Djalout (1260) ; ailleurs, dynasties locales ; les Ottomans montent en puissance en Anatolie.',
+                    debated: 'Les Mamelouks perdent leur sultanat devant les Ottomans en 1516-1517.'
+                },
+                {
+                    id: 'ottomans', name: 'Période ottomane', start: 1517, end: 1798,
+                    bounds: 'De 1517 à 1798 : le sultan ottoman, qui se réclame du califat, gouverne la plupart des pays arabes (Égypte, Syrie, Irak, Hedjaz).',
+                    debated: 'Le Maghreb (Alger, Tunis, Tripoli) est ottoman mais autonome ; le Maroc reste indépendant.'
+                },
+                {
+                    id: 'reformes-colonisation', name: 'Réformes et domination européenne', start: 1798, end: 1945,
+                    bounds: 'De 1798 à 1945 : expédition de Bonaparte en Égypte (1798), « Nahda » (renaissance culturelle arabe), colonisation de l\'Algérie (1830), de l\'Égypte (1882), mandats français et britannique après 1920.',
+                    debated: 'Selon les pays, la domination commence en 1830, 1882 ou 1920, et la fin en 1943-1956.'
+                },
+                {
+                    id: 'independances', name: 'Indépendances', start: 1945, end: null,
+                    bounds: 'Depuis 1945 : Ligue arabe (1945), indépendances des pays arabes, création d\'Israël (1948) et guerres du Proche-Orient, nationalisme arabe, pétrole.',
+                    debated: 'Les indépendances s\'échelonnent de 1943 (Liban) à 1971 (Qatar, Bahreïn, Émirats).'
+                }
+            ]
+        },
+        {
+            id: 'inde', name: 'Inde', flag: '🇮🇳',
+            intro: 'L\'histoire indienne est souvent découpée en « ancienne », « médiévale » et « moderne », mais pas aux mêmes dates qu\'en Europe : la période médiévale commence avec les royaumes régionaux du Ve-VIe siècle et les premières dominations musulmanes, et la période moderne avec la domination coloniale britannique. Les grandes périodes portent le nom du pouvoir dominant.',
+            doubts: [
+                { from: 1755, to: 1760, text: 'proche de 1757 (bataille de Plassey), borne discutée du début de la domination britannique (d\'autres disent 1858)' }
+            ],
+            periods: [
+                {
+                    id: 'antiquite', name: 'Antiquité', start: null, end: 550,
+                    bounds: 'Des origines à environ 550 : civilisation de l\'Indus (vers 2600-1900 av. J.-C.), âge védique, empire maurya (321-185 av. J.-C., Ashoka) et empire gupta (320-550, « âge classique »).',
+                    debated: 'Les Indiens disent souvent « ancient India » pour tout ce qui précède 1200 environ ; on a ici coupé à la chute des Gupta.'
+                },
+                {
+                    id: 'haut-moyen-age', name: 'Royaumes régionaux (Moyen Âge ancien)', start: 550, end: 1206,
+                    bounds: 'De 550 à 1206 : royaumes régionaux (Chola, Chalukya, Rajputs…), premières conquêtes musulmanes (Sind en 711, raids de Mahmud de Ghazni).',
+                    debated: 'La coupure à 1206 est celle de la fondation du sultanat de Delhi.'
+                },
+                {
+                    id: 'delhi', name: 'Sultanat de Delhi', start: 1206, end: 1526,
+                    bounds: 'De 1206 à 1526 : cinq dynasties successives de sultans musulmans, centrés sur Delhi. Le Sud est dominé par l\'empire hindou de Vijayanagara (1336-1646).',
+                    debated: 'Timur pille Delhi en 1398, ce qui affaiblit durablement le sultanat.'
+                },
+                {
+                    id: 'moghols', name: 'Empire moghol', start: 1526, end: 1757,
+                    bounds: 'De 1526 (bataille de Panipat, Babur) à 1757 : empire dont l\'apogée est sous Akbar (1556-1605) et Aurangzeb (mort en 1707). Taj Mahal (1632-1653).',
+                    debated: 'L\'empire existe formellement jusqu\'en 1857, mais n\'a plus de pouvoir réel après 1707, voire après 1757.'
+                },
+                {
+                    id: 'colonisation', name: 'Domination britannique', start: 1757, end: 1947,
+                    bounds: 'De 1757 (bataille de Plassey, la Compagnie des Indes orientales prend le Bengale) à 1947. Après la révolte des cipayes (1857), la Couronne gouverne directement : le « Raj » (1858-1947).',
+                    debated: 'Début de la période : 1757 (Compagnie) ou 1858 (Raj) selon qu\'on prend la conquête ou le gouvernement direct.'
+                },
+                {
+                    id: 'independance', name: 'Inde indépendante', start: 1947, end: null,
+                    bounds: 'Depuis le 15 août 1947 : indépendance et partition de l\'Inde britannique en deux États, l\'Inde et le Pakistan. Constitution de 1950.',
+                    debated: 'La partition a causé des déplacements de populations de plusieurs millions de personnes.'
                 }
             ]
         },
@@ -244,6 +534,62 @@
             ]
         },
         {
+            id: 'coree', name: 'Corée', flag: '🇰🇷🇰🇵',
+            intro: 'L\'histoire coréenne se découpe par ses royaumes et ses dynasties : les Trois Royaumes, Silla unifié, Goryeo (qui donne son nom à la Corée), Joseon, puis l\'Empire, la colonisation japonaise et la division en deux États. Elle est le plus souvent celle d\'une seule péninsule, avant 1945.',
+            periods: [
+                {
+                    id: 'prehistoire', name: 'Préhistoire', start: null, end: -2333,
+                    bounds: 'Des premiers habitants à 2333 av. J.-C. : Paléolithique, puis Néolithique (poteries à décor de peigne).',
+                    debated: 'La date de 2333 av. J.-C. est celle de la fondation légendaire de Gojoseon par Dangun ; elle est mythique, et on la célèbre en Corée du Sud.'
+                },
+                {
+                    id: 'gojoseon', name: 'Gojoseon et premiers États', start: -2333, end: -57,
+                    bounds: 'De 2333 (date légendaire) à 57 av. J.-C. : Gojoseon (« ancienne Joseon »), âge du bronze. Les Chinois Han conquièrent le nord en 108 av. J.-C. et y installent des commanderies.',
+                    debated: 'Les historiens ne tiennent pour sûre l\'existence de Gojoseon qu\'à partir du IVe siècle av. J.-C.'
+                },
+                {
+                    id: 'trois-royaumes', name: 'Trois Royaumes', start: -57, end: 668,
+                    bounds: 'De 57 av. J.-C. à 668 : Goguryeo (nord), Baekje (sud-ouest) et Silla (sud-est), plus la confédération de Gaya. Le bouddhisme arrive au IVe siècle.',
+                    debated: 'Les dates de fondation (57, 37 et 18 av. J.-C.) viennent de chroniques tardives.'
+                },
+                {
+                    id: 'silla-unifie', name: 'Silla unifié et Balhae', start: 668, end: 936,
+                    bounds: 'De 668 à 936 : Silla, avec l\'aide de la Chine des Tang, vainc Baekje (660) puis Goguryeo (668) et unifie la plus grande partie de la péninsule. Au nord, le royaume de Balhae (698-926). Après 892, « Royaumes tardifs ».',
+                    debated: 'Le dernier roi de Silla se soumet en 935 ; Goryeo, fondé en 918, achève la réunification en 936.'
+                },
+                {
+                    id: 'goryeo', name: 'Goryeo', start: 936, end: 1392,
+                    bounds: 'De 936 à 1392 : État bouddhique, qui donne son nom à la « Corée » (Goryeo). Céladons, impression à caractères métalliques mobiles (le Jikji, 1377). Invasion mongole (1231-1259), puis soumission aux Yuan.',
+                    debated: 'La dynastie est fondée en 918 par Wang Geon ; la date de 936 est celle de l\'unification complète.'
+                },
+                {
+                    id: 'joseon', name: 'Joseon', start: 1392, end: 1897,
+                    bounds: 'De 1392 à 1897 : dynastie fondée par Yi Seong-gye, capitale Séoul, néoconfucianisme. Le roi Sejong crée l\'alphabet coréen (hangul) en 1443. Invasions japonaises (1592-1598), puis mandchoues (1627 et 1636), longue fermeture du pays.',
+                    debated: 'L\'ouverture forcée au Japon (traité de 1876) est le début de la fin de la dynastie.'
+                },
+                {
+                    id: 'empire', name: 'Empire coréen', start: 1897, end: 1910,
+                    bounds: 'De 1897 à 1910 : le roi Gojong proclame l\'Empire coréen (Daehan Jeguk) pour affirmer l\'indépendance du pays. Le Japon en fait un protectorat (1905) puis l\'annexe (1910).',
+                    debated: 'Période très courte, entre deux dominations de la Chine et du Japon.'
+                },
+                {
+                    id: 'colonisation', name: 'Colonisation japonaise', start: 1910, end: 1945,
+                    bounds: 'De 1910 à 1945 : le Japon gouverne la Corée. Mouvement du 1er mars 1919, assimilation forcée, travail forcé pendant la guerre.',
+                    debated: 'Cette période pèse encore sur les relations entre la Corée du Sud et le Japon.'
+                },
+                {
+                    id: 'division', name: 'Libération, division et guerre', start: 1945, end: 1953,
+                    bounds: 'De 1945 à 1953 : libération, partage de la péninsule au 38e parallèle entre troupes soviétiques et américaines, naissance de deux États en 1948, guerre de Corée (1950-1953).',
+                    debated: 'L\'armistice du 27 juillet 1953 n\'est pas un traité de paix : la guerre n\'est officiellement pas terminée.'
+                },
+                {
+                    id: 'deux-corees', name: 'Deux Corées', start: 1953, end: null,
+                    bounds: 'Depuis 1953 : au Sud, dictatures militaires (Park Chung-hee), « miracle économique » puis démocratisation en 1987 ; au Nord, régime de la dynastie Kim (Kim Il-sung, puis Kim Jong-il, puis Kim Jong-un).',
+                    debated: 'Les deux États se disent chacun l\'héritier de la Corée ; le Sud date l\'indépendance de 1948, le Nord également.'
+                }
+            ]
+        },
+        {
             id: 'japon', name: 'Japon', flag: '🇯🇵',
             intro: 'L\'histoire japonaise se découpe par les lieux où siège le pouvoir (Nara, Heian, Kamakura, Muromachi, Edo), puis, à l\'époque moderne, par le règne de chaque empereur (Meiji, Taishō, Shōwa, Heisei, Reiwa) : l\'ère change à chaque règne. Le nom d\'une période est celui d\'une capitale, d\'un shogunat ou d\'un empereur.',
             periods: [
@@ -321,94 +667,6 @@
                     id: 'reiwa', name: 'Reiwa', start: 2019, end: null,
                     bounds: 'Depuis le 1er mai 2019, règne de Naruhito.',
                     debated: 'L\'ère change à chaque règne : la fin de Reiwa sera celle du règne de Naruhito.'
-                }
-            ]
-        },
-        {
-            id: 'inde', name: 'Inde', flag: '🇮🇳',
-            intro: 'L\'histoire indienne est souvent découpée en « ancienne », « médiévale » et « moderne », mais pas aux mêmes dates qu\'en Europe : la période médiévale commence avec les royaumes régionaux du Ve-VIe siècle et les premières dominations musulmanes, et la période moderne avec la domination coloniale britannique. Les grandes périodes portent le nom du pouvoir dominant.',
-            doubts: [
-                { from: 1755, to: 1760, text: 'proche de 1757 (bataille de Plassey), borne discutée du début de la domination britannique (d\'autres disent 1858)' }
-            ],
-            periods: [
-                {
-                    id: 'antiquite', name: 'Antiquité', start: null, end: 550,
-                    bounds: 'Des origines à environ 550 : civilisation de l\'Indus (vers 2600-1900 av. J.-C.), âge védique, empire maurya (321-185 av. J.-C., Ashoka) et empire gupta (320-550, « âge classique »).',
-                    debated: 'Les Indiens disent souvent « ancient India » pour tout ce qui précède 1200 environ ; on a ici coupé à la chute des Gupta.'
-                },
-                {
-                    id: 'haut-moyen-age', name: 'Royaumes régionaux (Moyen Âge ancien)', start: 550, end: 1206,
-                    bounds: 'De 550 à 1206 : royaumes régionaux (Chola, Chalukya, Rajputs…), premières conquêtes musulmanes (Sind en 711, raids de Mahmud de Ghazni).',
-                    debated: 'La coupure à 1206 est celle de la fondation du sultanat de Delhi.'
-                },
-                {
-                    id: 'delhi', name: 'Sultanat de Delhi', start: 1206, end: 1526,
-                    bounds: 'De 1206 à 1526 : cinq dynasties successives de sultans musulmans, centrés sur Delhi. Le Sud est dominé par l\'empire hindou de Vijayanagara (1336-1646).',
-                    debated: 'Timur pille Delhi en 1398, ce qui affaiblit durablement le sultanat.'
-                },
-                {
-                    id: 'moghols', name: 'Empire moghol', start: 1526, end: 1757,
-                    bounds: 'De 1526 (bataille de Panipat, Babur) à 1757 : empire dont l\'apogée est sous Akbar (1556-1605) et Aurangzeb (mort en 1707). Taj Mahal (1632-1653).',
-                    debated: 'L\'empire existe formellement jusqu\'en 1857, mais n\'a plus de pouvoir réel après 1707, voire après 1757.'
-                },
-                {
-                    id: 'colonisation', name: 'Domination britannique', start: 1757, end: 1947,
-                    bounds: 'De 1757 (bataille de Plassey, la Compagnie des Indes orientales prend le Bengale) à 1947. Après la révolte des cipayes (1857), la Couronne gouverne directement : le « Raj » (1858-1947).',
-                    debated: 'Début de la période : 1757 (Compagnie) ou 1858 (Raj) selon qu\'on prend la conquête ou le gouvernement direct.'
-                },
-                {
-                    id: 'independance', name: 'Inde indépendante', start: 1947, end: null,
-                    bounds: 'Depuis le 15 août 1947 : indépendance et partition de l\'Inde britannique en deux États, l\'Inde et le Pakistan. Constitution de 1950.',
-                    debated: 'La partition a causé des déplacements de populations de plusieurs millions de personnes.'
-                }
-            ]
-        },
-        {
-            id: 'arabo-musulman', name: 'Monde arabo-musulman', flag: '☪️',
-            intro: 'Le monde arabo-musulman a son propre calendrier, qui part de l\'Hégire en 622, et un découpage fondé sur les grandes dynasties califales (Omeyyades, Abbassides), puis sur les dominations (mamelouke, ottomane, coloniale). On suit ici le Proche-Orient arabe (Arabie, Syrie, Irak, Égypte) ; d\'autres régions musulmanes (Iran, Inde, Maghreb, Afrique subsaharienne) ont d\'autres rythmes.',
-            doubts: [
-                { from: 607, to: 625, text: 'entre la première révélation (610) et l\'Hégire (622), dates qu\'on distingue dans les récits musulmans' }
-            ],
-            periods: [
-                {
-                    id: 'jahiliyya', name: 'Avant l\'islam (jāhiliyya)', start: null, end: 610,
-                    bounds: 'Jusqu\'à la première révélation, vers 610. Les musulmans appellent « jāhiliyya » (ignorance) l\'époque qui précède : tribus d\'Arabie, royaumes de Palmyre, des Nabatéens, de Saba, empires byzantin et sassanide voisins.',
-                    debated: 'Le terme est religieux, pas historique : l\'Arabie d\'avant l\'islam a une culture riche (poésie, commerce caravanier).'
-                },
-                {
-                    id: 'origines', name: 'Prophète et premiers califes', start: 610, end: 661,
-                    bounds: 'De 610 à 661 : prédication de Mahomet, Hégire à Médine (622, an 1 du calendrier musulman), puis les quatre califes « bien guidés » (632-661) et les premières conquêtes (Syrie, Égypte, Iran).',
-                    debated: 'Le calendrier musulman commence en 622 (l\'Hégire) et non en 610 : c\'est l\'événement qui lance la communauté.'
-                },
-                {
-                    id: 'omeyyades', name: 'Califat omeyyade', start: 661, end: 750,
-                    bounds: 'De 661 à 750 : capitale Damas, de l\'Espagne à l\'Inde. Arabisation de l\'administration, Dôme du Rocher (691).',
-                    debated: 'Une branche omeyyade survit en Espagne (émirat puis califat de Cordoue, 756-1031).'
-                },
-                {
-                    id: 'abbassides', name: 'Califat abbasside', start: 750, end: 1258,
-                    bounds: 'De 750 à 1258 : capitale Bagdad (fondée en 762), « âge d\'or » des sciences, de la traduction et du commerce. Le pouvoir réel des califes décline dès le Xe siècle (Fatimides, Seldjoukides…).',
-                    debated: 'La fin est la prise de Bagdad par les Mongols d\'Houlagou (1258). Le pouvoir politique des califes avait disparu bien avant.'
-                },
-                {
-                    id: 'mamelouks', name: 'Mamelouks, Mongols et sultanats', start: 1258, end: 1517,
-                    bounds: 'De 1258 à 1517 : les sultans mamelouks (Égypte, Syrie, Hedjaz) arrêtent les Mongols à Aïn Djalout (1260) ; ailleurs, dynasties locales ; les Ottomans montent en puissance en Anatolie.',
-                    debated: 'Les Mamelouks perdent leur sultanat devant les Ottomans en 1516-1517.'
-                },
-                {
-                    id: 'ottomans', name: 'Période ottomane', start: 1517, end: 1798,
-                    bounds: 'De 1517 à 1798 : le sultan ottoman, qui se réclame du califat, gouverne la plupart des pays arabes (Égypte, Syrie, Irak, Hedjaz).',
-                    debated: 'Le Maghreb (Alger, Tunis, Tripoli) est ottoman mais autonome ; le Maroc reste indépendant.'
-                },
-                {
-                    id: 'reformes-colonisation', name: 'Réformes et domination européenne', start: 1798, end: 1945,
-                    bounds: 'De 1798 à 1945 : expédition de Bonaparte en Égypte (1798), « Nahda » (renaissance culturelle arabe), colonisation de l\'Algérie (1830), de l\'Égypte (1882), mandats français et britannique après 1920.',
-                    debated: 'Selon les pays, la domination commence en 1830, 1882 ou 1920, et la fin en 1943-1956.'
-                },
-                {
-                    id: 'independances', name: 'Indépendances', start: 1945, end: null,
-                    bounds: 'Depuis 1945 : Ligue arabe (1945), indépendances des pays arabes, création d\'Israël (1948) et guerres du Proche-Orient, nationalisme arabe, pétrole.',
-                    debated: 'Les indépendances s\'échelonnent de 1943 (Liban) à 1971 (Qatar, Bahreïn, Émirats).'
                 }
             ]
         }

@@ -139,15 +139,18 @@ test('périodes : la période d\'une année, et les bornes discutées', async ({
     await expect(page.locator('#tool-per-result')).toContainText('Antiquité');
 });
 
-test('périodes : sept découpages au choix, et la même année vue dans chacun', async ({ page }) => {
+test('périodes : onze découpages au choix, et la même année vue dans chacun', async ({ page }) => {
     await ouvrir(page, 'Repères de périodes');
-    await expect(page.locator('#tool-per-system option')).toHaveCount(7);
+    await expect(page.locator('#tool-per-system option')).toHaveCount(11);
     await page.locator('#tool-per-year').fill('1500');
-    // la comparaison montre l'année dans les sept découpages
-    await expect(page.locator('#tool-per-compare .tool-compare-row')).toHaveCount(7);
+    // la comparaison montre l'année dans les onze découpages
+    await expect(page.locator('#tool-per-compare .tool-compare-row')).toHaveCount(11);
     await expect(page.locator('#tool-per-compare')).toContainText('Ming');
     await expect(page.locator('#tool-per-compare')).toContainText('Muromachi');
     await expect(page.locator('#tool-per-compare')).toContainText('Sultanat de Delhi');
+    await expect(page.locator('#tool-per-compare')).toContainText('Moscovie');
+    await expect(page.locator('#tool-per-compare')).toContainText('Rois catholiques');
+    await expect(page.locator('#tool-per-compare')).toContainText('Guerres d\'Italie');
     await page.locator('#tool-per-system').selectOption('chine');
     await expect(page.locator('#tool-per-list .tool-row')).toHaveCount(16);
     await expect(page.locator('#tool-per-intro')).toContainText('dynastique');
@@ -157,6 +160,9 @@ test('périodes : sept découpages au choix, et la même année vue dans chacun'
     await page.locator('#tool-per-system').selectOption('japon');
     await expect(page.locator('#tool-per-list .tool-row')).toHaveCount(15);
     await expect(page.locator('#tool-per-result')).toContainText('Muromachi');
+    await page.locator('#tool-per-system').selectOption('coree');
+    await expect(page.locator('#tool-per-list .tool-row')).toHaveCount(10);
+    await expect(page.locator('#tool-per-result')).toContainText('Joseon');
     // avant J.-C. : les Qin en Chine
     await page.locator('#tool-per-system').selectOption('chine');
     await page.locator('#tool-per-bc').selectOption('bc');

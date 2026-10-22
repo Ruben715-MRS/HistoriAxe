@@ -234,8 +234,8 @@ test('périodes : bornes et doutes', () => {
 // --- Les découpages de l'histoire selon les pays ---------------------------------------------------------
 const PS = require('../js/periodSystems.js');
 
-test('découpages : sept pays, aux identifiants uniques et aux champs complets', () => {
-    assert.deepEqual(PS.SYSTEMS.map(s => s.id), ['france', 'anglophone', 'allemagne', 'chine', 'japon', 'inde', 'arabo-musulman']);
+test('découpages : onze pays, aux identifiants uniques et aux champs complets', () => {
+    assert.deepEqual(PS.SYSTEMS.map(s => s.id), ['france', 'espagne', 'italie', 'allemagne', 'anglophone', 'russie', 'arabo-musulman', 'inde', 'chine', 'coree', 'japon']);
     assert.equal(new Set(PS.SYSTEMS.map(s => s.id)).size, PS.SYSTEMS.length);
     PS.SYSTEMS.forEach(s => {
         assert.ok(s.name && s.flag && s.intro.length > 80, s.id);
@@ -307,12 +307,38 @@ test('découpages : la même année ne tombe pas dans les mêmes périodes', () 
     assert.equal(at(-221, 'chine'), 'qin'); assert.equal(at(-222, 'chine'), 'zhou');
     assert.equal(at(-206, 'chine'), 'han'); assert.equal(at(-300, 'japon'), 'yayoi'); assert.equal(at(-301, 'japon'), 'jomon');
     assert.equal(at(622, 'arabo-musulman'), 'origines');
+    // Russie : 1240 (Kiev tombe), 1480, 1613, 1721, 1917, 1922, 1991
+    assert.equal(at(1239, 'russie'), 'kiev'); assert.equal(at(1240, 'russie'), 'joug-mongol');
+    assert.equal(at(1500, 'russie'), 'moscovie'); assert.equal(at(1613, 'russie'), 'romanov');
+    assert.equal(at(1720, 'russie'), 'romanov'); assert.equal(at(1721, 'russie'), 'empire');
+    assert.equal(at(1917, 'russie'), 'revolutions'); assert.equal(at(1922, 'russie'), 'urss'); assert.equal(at(1991, 'russie'), 'post-sovietique');
+    assert.equal(at(988, 'russie'), 'kiev');
+    // Corée : Trois Royaumes, Goryeo, Joseon, colonisation, division
+    assert.equal(at(-100, 'coree'), 'gojoseon'); assert.equal(at(-56, 'coree'), 'trois-royaumes'); assert.equal(at(660, 'coree'), 'trois-royaumes');
+    assert.equal(at(700, 'coree'), 'silla-unifie'); assert.equal(at(1100, 'coree'), 'goryeo'); assert.equal(at(1443, 'coree'), 'joseon');
+    assert.equal(at(1900, 'coree'), 'empire'); assert.equal(at(1919, 'coree'), 'colonisation'); assert.equal(at(1950, 'coree'), 'division');
+    assert.equal(at(1953, 'coree'), 'deux-corees');
+    // Espagne : 711, 1492, 1700, 1808, 1874, 1936, 1939, 1975
+    assert.equal(at(-200, 'espagne'), 'hispania'); assert.equal(at(500, 'espagne'), 'wisigoths'); assert.equal(at(710, 'espagne'), 'wisigoths');
+    assert.equal(at(711, 'espagne'), 'al-andalus'); assert.equal(at(1491, 'espagne'), 'al-andalus'); assert.equal(at(1492, 'espagne'), 'rois-catholiques');
+    assert.equal(at(1699, 'espagne'), 'rois-catholiques'); assert.equal(at(1700, 'espagne'), 'bourbons'); assert.equal(at(1812, 'espagne'), 'xix-liberal');
+    assert.equal(at(1898, 'espagne'), 'restauration'); assert.equal(at(1925, 'espagne'), 'dictature-primo'); assert.equal(at(1931, 'espagne'), 'republique');
+    assert.equal(at(1936, 'espagne'), 'guerre-civile'); assert.equal(at(1939, 'espagne'), 'franquisme'); assert.equal(at(1975, 'espagne'), 'democratie');
+    // Italie : 476, 1000, 1494, 1559, 1796, 1815, 1861, 1922, 1943, 1946
+    assert.equal(at(-753, 'italie'), 'antiquite'); assert.equal(at(-754, 'italie'), 'prehistoire'); assert.equal(at(500, 'italie'), 'haut-moyen-age');
+    assert.equal(at(1176, 'italie'), 'communes'); assert.equal(at(1400, 'italie'), 'renaissance'); assert.equal(at(1527, 'italie'), 'guerres-italie');
+    assert.equal(at(1700, 'italie'), 'domination-etrangere'); assert.equal(at(1805, 'italie'), 'napoleonienne'); assert.equal(at(1848, 'italie'), 'risorgimento');
+    assert.equal(at(1861, 'italie'), 'liberale'); assert.equal(at(1922, 'italie'), 'fascisme'); assert.equal(at(1943, 'italie'), 'guerre-liberation');
+    assert.equal(at(1946, 'italie'), 'republique');
 });
 
 test('découpages : les doutes sont dits, et le découpage par défaut est la France', () => {
     assert.ok(T.periodOfYear(1453, 'anglophone').doubt);
     assert.ok(T.periodOfYear(1517, 'allemagne').doubt);
     assert.ok(T.periodOfYear(1757, 'inde').doubt);
+    assert.ok(T.periodOfYear(1492, 'espagne').doubt);
+    assert.ok(T.periodOfYear(1721, 'russie').doubt);
+    assert.ok(T.periodOfYear(1494, 'italie').doubt);
     assert.equal(T.periodOfYear(1000, 'anglophone').doubt, null);
     assert.equal(T.periodOfYear(1000).period.id, 'moyenage');
     assert.equal(T.periodOfYear(1000, 'inconnu'), null);
