@@ -94,6 +94,7 @@ function renderRewardsBar(container, returnScreen) {
         <span class="rewards-chip rewards-streak" role="img"><span aria-hidden="true">⚡</span> <b class="rewards-streak-n"></b></span>
         <button type="button" class="rewards-btn rewards-shop-btn"><span aria-hidden="true">🛍️</span> <span class="rewards-btn-label"></span></button>
         <button type="button" class="rewards-btn rewards-album-btn"><span aria-hidden="true">🎴</span> <span class="rewards-btn-label"></span> <small></small></button>
+        <button type="button" class="rewards-btn rewards-friends-btn"><span aria-hidden="true">🤝</span> <span class="rewards-btn-label"></span> <small></small></button>
         <button type="button" class="rewards-btn rewards-team-btn"><span aria-hidden="true">👥</span> <span class="rewards-btn-label"></span> <small></small></button>`;
     bar.querySelector('.rewards-coins-n').innerText = state.coins;
     bar.querySelector('.rewards-coins').setAttribute('aria-label', t('rewards.coins_aria', { count: state.coins }));
@@ -113,6 +114,11 @@ function renderRewardsBar(container, returnScreen) {
         icon.className = 'rewards-team-badge';
         icon.innerHTML = TeamBadge.render(teamCache.badge, { uid: 'chip' });
     }
+    bar.querySelector('.rewards-friends-btn .rewards-btn-label').innerText = t('friends.short');
+    bar.querySelector('.rewards-friends-btn small').innerText = typeof friendsChipText === 'function' ? friendsChipText() : '';
+    bar.querySelector('.rewards-friends-btn').onclick = () => openFriends(returnScreen);
+    // Un relevé discret des demandes d'ami en attente (au plus toutes les cinq minutes).
+    if (typeof friendsPrefetch === 'function') friendsPrefetch();
     bar.querySelector('.rewards-team-btn').onclick = () => openTeam(returnScreen);
     bar.querySelector('.rewards-shop-btn').onclick = () => openShop(returnScreen);
     bar.querySelector('.rewards-album-btn').onclick = () => openAlbum(returnScreen);

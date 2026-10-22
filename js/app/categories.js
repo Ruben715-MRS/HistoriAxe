@@ -243,6 +243,51 @@ function initCategories() {
     applyStagger(catGrid);
 }
 
+// Images d'illustration des pays de « Programmes scolaires » (clé : nom du pays en minuscules).
+const PROGRAMMES_PAYS_IMAGES = {
+    'france': 'prog_france.webp',
+    'afrique du sud': 'prog_afrique_du_sud.webp',
+    'algérie': 'prog_algerie.webp',
+    'allemagne': 'prog_allemagne.webp',
+    'argentine': 'prog_argentine.webp',
+    'australie': 'prog_australie.webp',
+    'autriche': 'prog_autriche.webp',
+    'belgique': 'prog_belgique.webp',
+    'canada': 'prog_canada.webp',
+    'colombie': 'prog_colombie.webp',
+    'espagne': 'prog_espagne.webp',
+    'états-unis': 'prog_etats_unis.webp',
+    'inde': 'prog_inde.webp',
+    'irlande': 'prog_irlande.webp',
+    'italie': 'prog_italie.webp',
+    'japon': 'prog_japon.webp',
+    'maroc': 'prog_maroc.webp',
+    'mexique': 'prog_mexique.webp',
+    'royaume-uni': 'prog_royaume_uni.webp',
+    'suisse': 'prog_suisse.webp',
+    'tunisie': 'prog_tunisie.webp',
+};
+
+// Images des régions de « Histoires nationales » (clé : nom de la région en minuscules).
+const HISTOIRES_NATIONALES_REGIONS_IMAGES = {
+    "europe de l'ouest": 'prog_france.webp',
+    "europe du sud": 'prog_italie.webp',
+    "europe du nord": 'nat_europe_du_nord.webp',
+    "europe de l'est": 'nat_europe_de_l_est.webp',
+    "asie du sud-est": 'nat_asie_du_sud_est.webp',
+    "asie centrale & caucase": 'nat_asie_centrale_caucase.webp',
+    "amérique du nord": 'prog_etats_unis.webp',
+    "amérique du sud": 'prog_argentine.webp',
+    "asie de l'est": 'prog_japon.webp',
+    "asie du sud": 'prog_inde.webp',
+    "afrique du nord": 'prog_maroc.webp',
+    "afrique australe": 'prog_afrique_du_sud.webp',
+    "afrique de l'ouest": 'nat_afrique_de_l_ouest.webp',
+    "afrique centrale": 'nat_afrique_centrale.webp',
+    "afrique de l'est": 'nat_afrique_de_l_est.webp',
+    "amérique centrale & caraïbes": 'nat_amerique_centrale_caraibes.webp',
+};
+
 // INIT SOUS-CATÉGORIES (régions, niveaux scolaires, etc. — potentiellement imbriquées)
 function initSubcategories() {
     const container = document.getElementById('subcategories-container');
@@ -321,7 +366,17 @@ function initSubcategories() {
         // que la règle des mythologies (plus bas) lui volerait. Égalité stricte,
         // et non `includes` : « Mythologies et panthéons antiques » doit garder
         // sa propre image.
-        if (nomLower === 'panthéons' || nomLower === 'pantheons') bgImg = 'assets/images/sub_themes_generaux.webp';
+        // « Programmes scolaires » : une image par pays, testée avant les règles par mot-clé
+        // (« Afrique du Sud » contient « afrique » et prendrait sinon l'image du continent).
+        const progPays = category.nom.toLowerCase().includes('scolaire') && node === category
+            ? PROGRAMMES_PAYS_IMAGES[nomLower] : null;
+        // « Histoires nationales » : régions (sous-continents) illustrées par un pays emblématique
+        // quand une image adaptée existe ; sinon on retombe sur l'image du continent.
+        const natRegion = category.nom.toLowerCase().includes('nationale') && node !== category
+            ? HISTOIRES_NATIONALES_REGIONS_IMAGES[nomLower] : null;
+        if (progPays) bgImg = 'assets/images/' + progPays;
+        else if (natRegion) bgImg = 'assets/images/' + natRegion;
+        else if (nomLower === 'panthéons' || nomLower === 'pantheons') bgImg = 'assets/images/sub_themes_generaux.webp';
         else if (nomLower === 'biographies') bgImg = 'assets/images/cat_biographies.webp';
         else if (nomLower.includes('europe')) bgImg = 'assets/images/sub_europe.webp';
         else if (nomLower.includes('amérique')) bgImg = 'assets/images/sub_ameriques.webp';

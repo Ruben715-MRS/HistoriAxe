@@ -4,7 +4,7 @@
 // fichier touche le DOM/localStorage et n'est pas testé ici.
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { RANKS, getRankInfo, getStreakXpMultiplier, getNextStreakXpTier } = require('../js/gamification.js');
+const { RANKS, MAX_LEVEL, levelMinXP, getRankInfo, getStreakXpMultiplier, getNextStreakXpTier } = require('../js/gamification.js');
 
 test('getRankInfo renvoie le premier rang pour 0 XP', () => {
     const info = getRankInfo(0);
@@ -27,13 +27,12 @@ test('getRankInfo bascule au rang suivant pile au seuil minXP', () => {
     assert.equal(info.currentRank.level, secondRank.level);
 });
 
-test('getRankInfo plafonne au dernier rang (pas de nextRank)', () => {
+test('getRankInfo : au dernier grade, le niveau suivant est le niveau 11 (les niveaux continuent)', () => {
     const lastRank = RANKS[RANKS.length - 1];
-    const info = getRankInfo(lastRank.minXP + 100000);
+    const info = getRankInfo(lastRank.minXP);
     assert.equal(info.currentRank.level, lastRank.level);
-    assert.equal(info.nextRank, null);
-    assert.equal(info.progressPct, 100);
-    assert.equal(info.xpToNext, 0);
+    assert.equal(info.nextRank.level, lastRank.level + 1);
+    assert.equal(info.xpToNext, 12400);
 });
 
 test('getRankInfo tolère un XP négatif ou invalide', () => {
@@ -73,4 +72,30 @@ test('getNextStreakXpTier pointe vers le palier suivant, et null au maximum', ()
     assert.equal(getNextStreakXpTier(29).multiplier, 2.0);
     assert.equal(getNextStreakXpTier(30), null);
     assert.equal(getNextStreakXpTier(1000), null);
+});
+
+test('au-delà du grade 10, les niveaux continuent jusqu\'à 300 avec un écart qui grandit', () => {
+    assert.equal(MAX_LEVEL, 300);
+    assert.equal(levelMinXP(10), 42000);
+    assert.equal(levelMinXP(11), 42000 + 12400);
+    let prevGap = 0;
+    for (let n = 2; n <= MAX_LEVEL; n++) {
+        const gap = levelMinXP(n) - levelMinXP(n - 1);
+        assert.ok(gap > prevGap, 'niveau ' + n);
+        prevGap = gap;
+    }
+    const info = getRankInfo(levelMinXP(57) + 10);
+    assert.equal(info.currentRank.level, 57);
+    assert.equal(info.currentRank.icon, RANKS[9].icon);
+    assert.equal(info.currentRank.titleLevel, 10);
+    assert.equal(info.nextRank.level, 58);
+    assert.equal(info.xpToNext, levelMinXP(58) - levelMinXP(57) - 10);
+    assert.equal(getRankInfo(levelMinXP(57) - 1).currentRank.level, 56);
+});
+
+test('le niveau 300 est le dernier : plus de palier suivant', () => {
+    const info = getRankInfo(levelMinXP(300) + 5000000);
+    assert.equal(info.currentRank.level, 300);
+    assert.equal(info.nextRank, null);
+    assert.equal(info.progressPct, 100);
 });

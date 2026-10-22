@@ -21,7 +21,7 @@ const RANKS = [
 // si la clé i18n manque, ex. hors-ligne sans pack de langue chargé).
 function rankTitle(rank) {
     if (!rank) return '';
-    const key = 'gamification.ranks.' + rank.level + '.title';
+    const key = 'gamification.ranks.' + (rank.titleLevel || rank.level) + '.title';
     const translated = (typeof t === 'function') ? t(key) : key;
     return (translated && translated !== key) ? translated : rank.title;
 }
@@ -173,21 +173,53 @@ function gamificationSave(data) {
     } catch (e) {}
 }
 
+// Au-delà du grade 10 (« Maître du Temps », 42 000 XP) il n'y a plus de nouveau titre, mais les niveaux continuent
+// jusqu'à MAX_LEVEL. Un niveau demande toujours un peu plus d'XP que le précédent : l'écart entre deux niveaux
+// (12 000 XP entre le 9 et le 10) grandit de 400 XP à chaque niveau. Une hausse de ×1,2 par niveau serait
+// impraticable (×1,2 puissance 290 donne environ 10^23) ; la hausse linéaire garde le niveau 300 lointain mais
+// atteignable (environ 20 millions d'XP).
+const MAX_LEVEL = 300;
+const BEYOND_GAP_START = 12000;
+const BEYOND_GAP_STEP = 400;
+
+// XP total à atteindre pour un niveau donné (1 à MAX_LEVEL).
+function levelMinXP(level) {
+    level = Math.min(MAX_LEVEL, Math.max(1, Math.round(level) || 1));
+    if (level <= RANKS.length) return RANKS[level - 1].minXP;
+    const m = level - RANKS.length;
+    return RANKS[RANKS.length - 1].minXP + BEYOND_GAP_START * m + BEYOND_GAP_STEP * m * (m + 1) / 2;
+}
+
+// Niveau « au-delà » : garde le titre et l'icône du dernier grade (titleLevel sert à retrouver la traduction).
+function beyondRank(level) {
+    const top = RANKS[RANKS.length - 1];
+    return { level, titleLevel: top.level, title: top.title, icon: top.icon, minXP: levelMinXP(level), maxXP: levelMinXP(level + 1), beyond: true };
+}
+
 function getRankInfo(xp) {
     xp = Math.max(0, Math.round(xp) || 0);
-    for (let i = RANKS.length - 1; i >= 0; i--) {
+    const topXp = RANKS[RANKS.length - 1].minXP;
+    if (xp >= topXp) {
+        let level = RANKS.length;
+        while (level < MAX_LEVEL && xp >= levelMinXP(level + 1)) level++;
+        const currentRank = level === RANKS.length ? RANKS[RANKS.length - 1] : beyondRank(level);
+        const nextRank = level < MAX_LEVEL ? beyondRank(level + 1) : null;
+        let progressPct = 100;
+        let xpToNext = 0;
+        if (nextRank) {
+            const range = nextRank.minXP - levelMinXP(level);
+            progressPct = Math.min(100, Math.max(0, Math.round(((xp - levelMinXP(level)) / range) * 100)));
+            xpToNext = nextRank.minXP - xp;
+        }
+        return { currentRank, nextRank, progressPct, xpToNext, xp };
+    }
+    for (let i = RANKS.length - 2; i >= 0; i--) {
         if (xp >= RANKS[i].minXP) {
             const currentRank = RANKS[i];
-            const nextRank = (i < RANKS.length - 1) ? RANKS[i + 1] : null;
-            let progressPct = 100;
-            let xpToNext = 0;
-            if (nextRank) {
-                const range = nextRank.minXP - currentRank.minXP;
-                const currentInRange = xp - currentRank.minXP;
-                progressPct = Math.min(100, Math.max(0, Math.round((currentInRange / range) * 100)));
-                xpToNext = nextRank.minXP - xp;
-            }
-            return { currentRank, nextRank, progressPct, xpToNext, xp };
+            const nextRank = RANKS[i + 1];
+            const range = nextRank.minXP - currentRank.minXP;
+            const progressPct = Math.min(100, Math.max(0, Math.round(((xp - currentRank.minXP) / range) * 100)));
+            return { currentRank, nextRank, progressPct, xpToNext: nextRank.minXP - xp, xp };
         }
     }
     return { currentRank: RANKS[0], nextRank: RANKS[1], progressPct: 0, xpToNext: 500, xp: 0 };
@@ -220,8 +252,9 @@ function awardXP(points, reason = '') {
             triggerHaptic('victory');
             triggerConfetti(3500);
             const rankTitleTxt = rankTitle(newRankInfo.currentRank);
+            const beyond = newRankInfo.currentRank.beyond;
             const msg = typeof t === 'function'
-                ? t('gamification.new_rank_toast', { title: rankTitleTxt, level: newRankInfo.currentRank.level })
+                ? t(beyond ? 'gamification.new_level_toast' : 'gamification.new_rank_toast', { title: rankTitleTxt, level: newRankInfo.currentRank.level })
                 : `👑 NOUVEAU GRADE : ${rankTitleTxt} (Niv. ${newRankInfo.currentRank.level}) !`;
             showToast(msg, 4000);
         }, 800);
@@ -441,7 +474,9 @@ function renderProfileModal() {
         if (rankInfo.nextRank) {
             const nextTitle = rankTitle(rankInfo.nextRank);
             xpNeededEl.innerText = (typeof t === 'function')
-                ? t('gamification.xp_needed', { needed: rankInfo.xpToNext, next: nextTitle })
+                ? (rankInfo.nextRank.beyond
+                    ? t('gamification.xp_needed_level', { needed: rankInfo.xpToNext, level: rankInfo.nextRank.level })
+                    : t('gamification.xp_needed', { needed: rankInfo.xpToNext, next: nextTitle }))
                 : `Encore ${rankInfo.xpToNext} XP avant ${nextTitle}`;
         } else {
             xpNeededEl.innerText = (typeof t === 'function') ? t('gamification.max_rank') : `Grade suprême atteint !`;
@@ -523,5 +558,5 @@ function renderProfileModal() {
 // pas. Seules les fonctions pures (sans dépendance DOM/localStorage) sont
 // exposées ici.
 if (typeof module === 'object' && typeof module.exports === 'object') {
-    module.exports = { RANKS, BADGES_CONFIG, getRankInfo, STREAK_XP_MULTIPLIER_TIERS, getStreakXpMultiplier, getNextStreakXpTier };
+    module.exports = { RANKS, MAX_LEVEL, levelMinXP, BADGES_CONFIG, getRankInfo, STREAK_XP_MULTIPLIER_TIERS, getStreakXpMultiplier, getNextStreakXpTier };
 }

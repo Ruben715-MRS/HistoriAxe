@@ -881,6 +881,36 @@ Fichiers : `api/team.js` (endpoint), `api/_lib/team.js` (règles pures), `api/_l
 transactionnel), `js/app/team.js` (écran), tables `class_teams` / `team_members` (+ `players.team_points`,
 `class_sessions.team_code`, `class_players.credited`). Tests : `tests/team.test.js`, `e2e/equipe.spec.js`.
 
+## La colonne des grades
+
+Depuis la fenêtre du profil, « Voir tous les grades » ouvre une grande colonne romaine (`js/app/ranks.js`) : le premier grade à son pied, le dernier sous le chapiteau. Le fût se remplit comme un thermomètre, avec une ligne qui monte avec l'XP. Les grades ne sont pas espacés selon l'XP (le dernier en demande 42 000) : chacun a la même hauteur et la ligne monte de façon continue à l'intérieur du grade courant, signalé « Vous êtes ici ». Seuils et titres viennent de `RANKS` (`js/gamification.js`). Au-delà du grade 10 (« Maître du Temps », 42 000 XP), il n'y a plus de nouveau titre mais les niveaux continuent jusqu'au niveau 300 (`MAX_LEVEL`, `levelMinXP()`) : l'écart d'XP entre deux niveaux, 12 000 entre le 9 et le 10, grandit de 400 XP à chaque niveau (niveau 11 à 54 400 XP, niveau 300 à environ 20 millions). Une hausse de ×1,2 par niveau donnerait ~10²³ XP au niveau 300, d'où la progression linéaire. La colonne reste pleine et le dernier grade affiche le niveau réel. Test : `e2e/grades.spec.js`, `tests/gamification.test.js`.
+
+## Amis
+
+Un joueur **avec un compte** (e-mail, Google ou Apple) a un **identifiant d'ami** : huit caractères tirés au hasard,
+présentés `K7QX-92HM` (alphabet sans I, O, 0, 1). Il est **généré**, sans aucun lien avec l'adresse e-mail ni avec
+l'identifiant du compte (le module `api/_lib/friends.js` ne reçoit ni l'un ni l'autre) : le donner à quelqu'un ne
+révèle rien d'autre. C'est la **seule** façon de retrouver un joueur — pas d'annuaire, pas de recherche par pseudo
+ni par e-mail. Un joueur sans compte n'a pas d'identité durable (il est lié à un appareil) : les amis lui sont fermés
+(réponse 403, l'écran renvoie vers la connexion des Réglages).
+
+On envoie une **demande**, l'autre l'**accepte**, la **refuse** ou la **bloque** ; deux demandes croisées valent
+acceptation. Un ami voit le **pseudo et le niveau** de l'autre (le niveau est envoyé par chaque appareil à chaque
+relevé) — rien d'autre. Un joueur peut **refuser toutes les demandes** (réglage `friend_requests`) : son identifiant ne
+trouve alors personne. Un identifiant inconnu, un joueur qui n'accepte pas de demandes et un joueur qui nous a bloqué
+donnent **la même réponse** (404) : on ne devine ni qui existe ni qui nous a bloqué ; un blocage n'est visible que de
+celui qui bloque. Limites : 200 amis, 50 demandes envoyées en attente. L'écran « Amis » est ouvert par la pastille de
+l'accueil, qui annonce les demandes reçues.
+
+Fichiers : `api/friends.js` (endpoint `POST /api/friends`, actions `list`, `request`, `respond`, `cancel`, `remove`,
+`block`, `unblock`, `settings`), `api/_lib/friends.js` (identifiant, limites), `js/app/friends.js` (écran), tables
+`friendships` et colonnes `players.friend_code` / `friend_requests` / `level`. Tests : `tests/friends.test.js`,
+`e2e/amis.spec.js`. Ce qui n'existe pas encore (à construire sur ces liens) : inviter un ami dans son équipe, le
+défier directement, comparer les progressions.
+
+**Limite des fonctions serverless.** Avec `api/friends.js`, le dossier `api/` compte **12 fonctions** — le maximum de
+l'offre gratuite de Vercel : un nouvel endpoint demande de regrouper des routes existantes (ou de changer d'offre).
+
 ## Longueur de la manche
 
 Jusqu'ici, **une partie valait le thème entier**. Médiane de 18 événements,

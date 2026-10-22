@@ -151,6 +151,10 @@ var HistoriAxeAPI = (function () {
         getTeam: function (code, deviceId) {
             return request('GET', '/api/team' + qs({ code: code, deviceId: deviceId }));
         },
+        // Amis (api/friends.js) : action ∈ list | request | respond | cancel | remove | block | unblock | settings.
+        friends: function (action, payload) {
+            return request('POST', '/api/friends', Object.assign({ action: action }, payload));
+        },
         linkAccount: function (accessToken, deviceId, pseudo) {
             return request('POST', '/api/account', { deviceId: deviceId, pseudo: pseudo }, accessToken);
         },

@@ -26,5 +26,5 @@ test('pays et langue : liste fermée, vide accepté, le reste refusé', () => {
 test('niveau : un entier de 1 au plafond', () => {
     assert.equal(P.sanitizeLevel(3), 3);
     assert.equal(P.sanitizeLevel('7'), 7);
-    for (const bad of [0, -1, 51, 2.5, 'a', null, undefined, NaN]) assert.equal(P.sanitizeLevel(bad), null, String(bad));
+    for (const bad of [0, -1, 301, 2.5, 'a', null, undefined, NaN]) assert.equal(P.sanitizeLevel(bad), null, String(bad));
 });
