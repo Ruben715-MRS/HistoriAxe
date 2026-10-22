@@ -701,7 +701,10 @@ function buildGeoModeRow(node, label, extra) {
     row.className = 'geo-mode-row';
     row.appendChild(buildGeoModeCard(node, label));
     row.appendChild(buildChronoGeoCard(node, label));
-    if (extra) row.appendChild(extra);
+    if (extra) {
+        row.classList.add('has-extra');
+        row.appendChild(extra);
+    }
     return row;
 }
 

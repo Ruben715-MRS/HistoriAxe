@@ -52,6 +52,35 @@ function rewardsWorldReached(worldId) {
 
 // --- La barre pièces · série · boutique · album ----------------------------------------------------------
 
+// Une bulle d'explication sur une pastille (pièces, série) : au survol à la souris, au focus au clavier, au
+// toucher sur tactile (elle se referme en touchant ailleurs, ou toute seule après quelques secondes).
+// Le texte est aussi ajouté au libellé lu par les lecteurs d'écran.
+let rewardsTipTimer = null;
+function rewardsCloseTips() {
+    clearTimeout(rewardsTipTimer);
+    document.querySelectorAll('.rewards-chip.is-tip-open').forEach(el => el.classList.remove('is-tip-open'));
+}
+function rewardsAttachTip(chip, text) {
+    if (!chip || !text) return;
+    chip.tabIndex = 0;
+    chip.setAttribute('aria-label', chip.getAttribute('aria-label') + ' — ' + text);
+    const tip = document.createElement('span');
+    tip.className = 'rewards-tip';
+    tip.setAttribute('aria-hidden', 'true');
+    tip.textContent = text;
+    chip.appendChild(tip);
+    chip.addEventListener('click', event => {
+        event.stopPropagation();
+        const open = !chip.classList.contains('is-tip-open');
+        rewardsCloseTips();
+        if (!open) return;
+        chip.classList.add('is-tip-open');
+        rewardsTipTimer = setTimeout(rewardsCloseTips, 6000);
+    });
+    chip.addEventListener('keydown', event => { if (event.key === 'Escape') rewardsCloseTips(); });
+}
+document.addEventListener('click', rewardsCloseTips);
+
 function renderRewardsBar(container, returnScreen) {
     if (!container) return;
     const old = container.querySelector(':scope > .rewards-bar');
@@ -76,6 +105,8 @@ function renderRewardsBar(container, returnScreen) {
     bar.querySelector('.rewards-album-btn small').innerText = totals.have + '/' + totals.total;
     bar.querySelector('.rewards-team-btn .rewards-btn-label').innerText = t('team.short');
     bar.querySelector('.rewards-team-btn small').innerText = typeof teamChipText === 'function' ? teamChipText() : '';
+    rewardsAttachTip(bar.querySelector('.rewards-coins'), t('rewards.coins_tip'));
+    rewardsAttachTip(bar.querySelector('.rewards-streak'), t('rewards.streak_tip'));
     bar.querySelector('.rewards-team-btn').onclick = () => openTeam(returnScreen);
     bar.querySelector('.rewards-shop-btn').onclick = () => openShop(returnScreen);
     bar.querySelector('.rewards-album-btn').onclick = () => openAlbum(returnScreen);
