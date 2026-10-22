@@ -144,7 +144,7 @@ var HistoriAxeAPI = (function () {
         getClassroom: function (code, deviceId) {
             return request('GET', '/api/classroom' + qs({ code: code, deviceId: deviceId }));
         },
-        // Équipe de classe (api/team.js) : action ∈ create | join | contribute | claim | kick | leave | delete | badge.
+        // Équipe de classe (api/team.js) : action ∈ create | join | contribute | claim | kick | leave | delete | badge | profile | level | search | challenge | challenge_reply | challenge_cancel.
         team: function (action, payload) {
             return request('POST', '/api/team', Object.assign({ action: action }, payload));
         },

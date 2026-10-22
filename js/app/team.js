@@ -43,7 +43,6 @@ function teamStopPolling() {
 
 let teamBadgeUid = 0;
 let teamCreateEditor = null;
-let teamEditEditor = null;
 
 // Un éditeur d'écusson dans `host` : aperçu, puis une rangée de choix pour le fond, le motif, la couleur du motif
 // et la bordure (verrouillée tant que la classe n'a pas ouvert assez de coffres). `chests` : coffres ouverts.
@@ -113,31 +112,11 @@ function teamBadgeEditor(host, value, chests) {
     return { get: () => TeamBadge.stringify(state) };
 }
 
-// L'écusson affiché en grand sur l'écran de l'équipe, et son éditeur (enseignant seulement).
+// L'écusson affiché en grand sur l'écran de l'équipe, avec le niveau de l'équipe en médaillon.
 function teamBadgeRender(state) {
     const view = document.getElementById('team-badge-view');
     if (!view || !state.badge) return;
     view.innerHTML = TeamBadge.render(state.badge, { level: TeamBadge.levelOf(state.chestIndex), uid: 'view', label: t('team.badge_aria') });
-    document.getElementById('team-badge-edit-btn').classList.toggle('hidden', !state.isTeacher);
-    if (!state.isTeacher) document.getElementById('team-badge-edit').classList.add('hidden');
-}
-
-function teamBadgeToggleEdit() {
-    const box = document.getElementById('team-badge-edit');
-    const opening = box.classList.contains('hidden');
-    box.classList.toggle('hidden', !opening);
-    if (opening && teamCache) teamEditEditor = teamBadgeEditor(document.getElementById('team-edit-badge'), teamCache.badge, teamCache.chestIndex);
-}
-
-function teamBadgeSave() {
-    const saved = teamLoad();
-    if (!saved || saved.role !== 'teacher' || !teamEditEditor) return;
-    HistoriAxeAPI.team('badge', { code: saved.code, deviceId: getOrCreateDeviceId(), badge: teamEditEditor.get() }).then(res => {
-        if (!res.ok) { showToast(t('team.badge_error'), 3500); return; }
-        document.getElementById('team-badge-edit').classList.add('hidden');
-        showToast(t('team.badge_saved'));
-        teamRefresh();
-    });
 }
 
 function openTeam(from) {
@@ -159,7 +138,15 @@ function openTeam(from) {
     document.getElementById('team-join-form').classList.remove('hidden');
     document.getElementById('team-create-form').classList.remove('hidden');
     teamCreateEditor = teamBadgeEditor(document.getElementById('team-create-badge'), TeamBadge.DEFAULT, 0);
-    document.getElementById('team-badge-edit').classList.add('hidden');
+    teamCreateProfile = teamProfileEditor(document.getElementById('team-create-profile'), { lang: TeamProfile.LANGUAGES.indexOf(teamAppLang()) >= 0 ? teamAppLang() : '' });
+    teamSearchBox(document.getElementById('team-join-search'), {
+        actionLabel: t('team.search_join'),
+        fullBlocks: true,
+        // Rejoindre depuis un résultat : l'identifiant passe dans le champ, le prénom est celui de la ligne du dessous.
+        onPick: team => { document.getElementById('team-code-input').value = team.code; teamJoin(); }
+    });
+    document.getElementById('team-edit').classList.add('hidden');
+    document.getElementById('team-challenge-find').classList.add('hidden');
     document.getElementById('team-subtitle').innerText = '';
     const saved = teamLoad();
     if (!saved) { teamShowPanel('none'); return; }
@@ -184,9 +171,9 @@ function teamJoin() {
     if (!name) { teamSetError(t('team.need_name')); return; }
     if (code.length !== 6) { teamSetError(t('team.bad_code')); return; }
     teamSetError('');
-    HistoriAxeAPI.team('join', { code, deviceId: getOrCreateDeviceId(), name }).then(res => {
+    HistoriAxeAPI.team('join', { code, deviceId: getOrCreateDeviceId(), name, level: teamMyLevel() }).then(res => {
         if (!res.ok) { teamSetError(res.status === 404 ? t('team.not_found') : (res.status === 409 ? t('team.full') : t('team.error'))); return; }
-        teamSave({ code: res.data.code, role: 'member', name: '', pending: 0 });
+        teamSave({ code: res.data.code, role: 'member', name: '', pending: 0, levelSent: teamMyLevel() });
         openTeam(teamReturn);
     });
 }
@@ -208,14 +195,15 @@ function teamCreate() {
     const name = (document.getElementById('team-new-name').value || '').trim();
     if (!name) { teamSetError(t('team.need_team_name')); return; }
     teamSetError('');
-    HistoriAxeAPI.team('create', {
+    HistoriAxeAPI.team('create', Object.assign({
         deviceId: getOrCreateDeviceId(),
         pseudo: (typeof pseudoLoad === 'function' ? pseudoLoad() : '') || null,
         name,
-        badge: teamCreateEditor ? teamCreateEditor.get() : TeamBadge.DEFAULT
-    }).then(res => {
+        badge: teamCreateEditor ? teamCreateEditor.get() : TeamBadge.DEFAULT,
+        level: teamMyLevel()
+    }, teamCreateProfile ? teamCreateProfile.get() : {})).then(res => {
         if (!res.ok) { teamSetError(t('team.error')); return; }
-        teamSave({ code: res.data.code, role: 'teacher', name, pending: 0 });
+        teamSave({ code: res.data.code, role: 'teacher', name, pending: 0, levelSent: teamMyLevel() });
         openTeam(teamReturn);
     });
 }
@@ -274,6 +262,7 @@ function teamRefresh() {
             return;
         }
         teamCache = state;
+        teamSyncLevel(state);
         if (!document.getElementById('screen-team').classList.contains('hidden')) teamRender(state);
         if (state.me && state.me.unclaimed.length) teamClaim();
     });
@@ -283,7 +272,7 @@ function teamRender(state) {
     teamShowPanel('view');
     document.getElementById('team-title').innerText = state.name;
     teamBadgeRender(state);
-    document.getElementById('team-subtitle').innerText = t('team.members_count', { count: state.memberCount });
+    document.getElementById('team-subtitle').innerText = '';
     const pct = Math.min(100, Math.round(100 * state.progress / state.target));
     const bar = document.getElementById('team-chest-bar');
     bar.style.width = pct + '%';
@@ -308,28 +297,9 @@ function teamRender(state) {
     code.innerText = state.code.slice(0, 3) + ' ' + state.code.slice(3);
     code.setAttribute('aria-label', state.code.split('').join(' '));
 
-    const list = document.getElementById('team-members');
-    list.innerHTML = '';
-    state.members.forEach(m => {
-        const li = document.createElement('li');
-        li.className = 'team-member' + (m.me ? ' is-me' : '');
-        const name = document.createElement('span');
-        name.className = 'team-member-name';
-        name.innerText = m.name;
-        const pts = document.createElement('b');
-        pts.innerText = String(m.points);
-        li.append(name, pts);
-        if (state.isTeacher && m.ref) {
-            const kick = document.createElement('button');
-            kick.type = 'button';
-            kick.className = 'team-kick';
-            kick.innerText = '×';
-            kick.setAttribute('aria-label', t('team.kick_aria', { name: m.name }));
-            kick.onclick = () => teamKick(m.ref, m.name);
-            li.appendChild(kick);
-        }
-        list.appendChild(li);
-    });
+    teamRenderHeader(state);
+    teamRenderMembers(state);
+    teamRenderChallenge(state);
     document.getElementById('team-teacher-tools').classList.toggle('hidden', !state.isTeacher);
     document.getElementById('team-delete-btn').classList.toggle('hidden', !state.isTeacher);
     document.getElementById('team-leave-btn').innerText = t(state.isTeacher ? 'team.forget' : 'team.leave');
@@ -342,7 +312,7 @@ function teamOnStars(gained) {
     const saved = teamLoad();
     if (!saved || saved.role !== 'member' || !(gained > 0) || !teamApiReady()) return;
     const stars = gained + (saved.pending || 0);
-    HistoriAxeAPI.team('contribute', { code: saved.code, deviceId: getOrCreateDeviceId(), stars }).then(res => {
+    HistoriAxeAPI.team('contribute', { code: saved.code, deviceId: getOrCreateDeviceId(), stars, level: teamMyLevel() }).then(res => {
         const now = teamLoad() || saved;
         if (!res.ok) {
             if (!res.status || res.status >= 500) teamSave(Object.assign({}, now, { pending: Math.min(60, stars) })); // hors ligne : on réessaiera

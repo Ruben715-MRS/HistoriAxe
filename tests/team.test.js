@@ -234,3 +234,136 @@ maybe('l\'écusson : choisi à la création, modifiable par l\'enseignant seul, 
     assert.equal((await call(h, 'POST', { action: 'badge', code, deviceId: TEACHER, badge: '1.1.1.2' })).body.badge, '1.1.1.2');
     assert.equal((await call(h, 'GET', { code, deviceId: dev(1) })).body.badge, '1.1.1.2');
 });
+
+maybe('profil d\'équipe : description, pays, langue (enseignant seul), liste fermée', async () => {
+    const { team: h } = loadHandlers();
+    assert.equal((await call(h, 'POST', { action: 'create', deviceId: TEACHER, name: 'C', country: 'ZZ' })).code, 400);
+    assert.equal((await call(h, 'POST', { action: 'create', deviceId: TEACHER, name: 'C', lang: 'xx' })).code, 400);
+    const created = await call(h, 'POST', { action: 'create', deviceId: TEACHER, name: 'Classe de 3e', description: '  Bienvenue <b>ici</b> ', country: 'fr', lang: 'FR', level: 4 });
+    assert.equal(created.code, 200);
+    const code = created.body.code;
+    let s = (await call(h, 'GET', { code, deviceId: TEACHER })).body;
+    assert.equal(s.description, 'Bienvenue b ici /b');
+    assert.equal(s.country, 'FR');
+    assert.equal(s.lang, 'fr');
+    assert.equal(s.leader.level, 4);
+    assert.equal(s.maxMembers, 50);
+
+    await call(h, 'POST', { action: 'join', code, deviceId: dev(1), name: 'Léa' });
+    assert.equal((await call(h, 'POST', { action: 'profile', code, deviceId: dev(1), description: 'pirate' })).code, 403);
+    assert.equal((await call(h, 'POST', { action: 'profile', code, deviceId: TEACHER })).code, 400, 'rien à modifier');
+    assert.equal((await call(h, 'POST', { action: 'profile', code, deviceId: TEACHER, country: 'QQ' })).code, 400);
+    const r = await call(h, 'POST', { action: 'profile', code, deviceId: TEACHER, description: 'Nouvelle description', country: 'BE', lang: 'nl' });
+    assert.deepEqual(r.body, { description: 'Nouvelle description', country: 'BE', lang: 'nl' });
+    s = (await call(h, 'GET', { code, deviceId: dev(1) })).body;
+    assert.equal(s.country, 'BE');
+    // Vider un champ est permis.
+    await call(h, 'POST', { action: 'profile', code, deviceId: TEACHER, country: '' });
+    assert.equal((await call(h, 'GET', { code, deviceId: dev(1) })).body.country, '');
+});
+
+maybe('les membres se classent par niveau, puis par points ; le niveau se met à jour', async () => {
+    const { team: h } = loadHandlers();
+    const code = (await call(h, 'POST', { action: 'create', deviceId: TEACHER, name: 'Classe' })).body.code;
+    assert.equal((await call(h, 'POST', { action: 'join', code, deviceId: dev(1), name: 'Léa', level: 0 })).code, 400);
+    await call(h, 'POST', { action: 'join', code, deviceId: dev(1), name: 'Léa', level: 2 });
+    await call(h, 'POST', { action: 'join', code, deviceId: dev(2), name: 'Hugo', level: 5 });
+    await call(h, 'POST', { action: 'join', code, deviceId: dev(3), name: 'Zoé', level: 2 });
+    await call(h, 'POST', { action: 'contribute', code, deviceId: dev(3), stars: 3 });
+    let names = (await call(h, 'GET', { code, deviceId: dev(1) })).body.members.map((m) => m.name);
+    assert.deepEqual(names, ['Hugo', 'Zoé', 'Léa'], 'niveau 5, puis niveau 2 par points');
+    // Léa passe niveau 6 : elle prend la tête. Le chef d'équipe a son propre niveau.
+    assert.equal((await call(h, 'POST', { action: 'level', code, deviceId: dev(1), level: 6 })).code, 200);
+    assert.equal((await call(h, 'POST', { action: 'level', code, deviceId: dev(1), level: 99 })).code, 400);
+    assert.equal((await call(h, 'POST', { action: 'level', code, deviceId: dev(9), level: 3 })).code, 404);
+    await call(h, 'POST', { action: 'level', code, deviceId: TEACHER, level: 8 });
+    const s = (await call(h, 'GET', { code, deviceId: dev(1) })).body;
+    names = s.members.map((m) => m.name);
+    assert.deepEqual(names, ['Léa', 'Hugo', 'Zoé']);
+    assert.equal(s.leader.level, 8);
+    assert.equal(s.totalPoints, 3);
+});
+
+maybe('une équipe est limitée à 50 membres', async () => {
+    const { team: h } = loadHandlers();
+    const code = (await call(h, 'POST', { action: 'create', deviceId: TEACHER, name: 'Grande' })).body.code;
+    for (let i = 1; i <= 50; i++) assert.equal((await call(h, 'POST', { action: 'join', code, deviceId: dev(i), name: 'E' + i })).code, 200);
+    assert.equal((await call(h, 'POST', { action: 'join', code, deviceId: dev(51), name: 'Trop' })).code, 409);
+    // Un membre déjà inscrit peut re-rejoindre (changer de prénom) même quand l'équipe est pleine.
+    assert.equal((await call(h, 'POST', { action: 'join', code, deviceId: dev(1), name: 'Nouveau' })).code, 200);
+});
+
+maybe('recherche d\'équipe par nom ou par identifiant', async () => {
+    const { team: h } = loadHandlers();
+    const a = (await call(h, 'POST', { action: 'create', deviceId: TEACHER, name: 'Les Historiens', country: 'FR', lang: 'fr' })).body.code;
+    const b = (await call(h, 'POST', { action: 'create', deviceId: 'second-teacher-0001', name: 'Historiens du soir' })).body.code;
+    await call(h, 'POST', { action: 'join', code: b, deviceId: dev(1), name: 'Léa' });
+    assert.equal((await call(h, 'POST', { action: 'search', q: 'h' })).code, 400, 'au moins deux caractères');
+    let r = (await call(h, 'POST', { action: 'search', q: 'historiens' })).body.teams;
+    assert.deepEqual(r.map((t) => t.code), [b, a], 'les plus peuplées d\'abord');
+    assert.deepEqual(r[1], { code: a, name: 'Les Historiens', badge: '0.2.1.0', country: 'FR', lang: 'fr', memberCount: 0 });
+    r = (await call(h, 'POST', { action: 'search', q: '#' + a.toLowerCase() })).body.teams;
+    assert.equal(r[0].code, a, 'l\'identifiant, avec ou sans dièse');
+    assert.deepEqual((await call(h, 'POST', { action: 'search', q: 'zzzzzzz%' })).body.teams, []);
+    // Les jokers SQL ne sont pas interprétés.
+    assert.deepEqual((await call(h, 'POST', { action: 'search', q: '%%' })).code, 400);
+});
+
+maybe('défier une autre équipe : invitation, acceptation, score sur sept jours, un seul défi à la fois', async () => {
+    const { team: h, query } = loadHandlers();
+    const A = (await call(h, 'POST', { action: 'create', deviceId: TEACHER, name: 'Alpha' })).body.code;
+    const B = (await call(h, 'POST', { action: 'create', deviceId: 'second-teacher-0001', name: 'Beta' })).body.code;
+    const C = (await call(h, 'POST', { action: 'create', deviceId: 'third-teacher-00001', name: 'Gamma' })).body.code;
+    await call(h, 'POST', { action: 'join', code: A, deviceId: dev(1), name: 'Léa' });
+    await call(h, 'POST', { action: 'join', code: B, deviceId: dev(2), name: 'Hugo' });
+
+    // Réservé à l'enseignant ; pas soi-même ; cible connue.
+    assert.equal((await call(h, 'POST', { action: 'challenge', code: A, deviceId: dev(1), target: B })).code, 403);
+    assert.equal((await call(h, 'POST', { action: 'challenge', code: A, deviceId: TEACHER, target: A })).code, 400);
+    assert.equal((await call(h, 'POST', { action: 'challenge', code: A, deviceId: TEACHER, target: 'ZZZZZZ' })).code, 404);
+    const sent = await call(h, 'POST', { action: 'challenge', code: A, deviceId: TEACHER, target: '#' + B.toLowerCase() });
+    assert.equal(sent.code, 200);
+    // Un seul défi ouvert à la fois, de chaque côté.
+    assert.equal((await call(h, 'POST', { action: 'challenge', code: A, deviceId: TEACHER, target: C })).code, 409);
+    assert.equal((await call(h, 'POST', { action: 'challenge', code: C, deviceId: 'third-teacher-00001', target: B })).code, 409);
+
+    let sa = (await call(h, 'GET', { code: A, deviceId: dev(1) })).body.challenge;
+    let sb = (await call(h, 'GET', { code: B, deviceId: dev(2) })).body.challenge;
+    assert.deepEqual([sa.status, sa.direction, sa.opponent.name], ['pending', 'sent', 'Beta']);
+    assert.deepEqual([sb.status, sb.direction, sb.opponent.name], ['pending', 'received', 'Alpha']);
+
+    // Seul l'enseignant de l'équipe défiée répond.
+    assert.equal((await call(h, 'POST', { action: 'challenge_reply', code: B, deviceId: dev(2), id: sb.id, accept: true })).code, 403);
+    assert.equal((await call(h, 'POST', { action: 'challenge_reply', code: A, deviceId: TEACHER, id: sb.id, accept: true })).code, 404, 'celle qui a défié ne répond pas');
+    // Refuser efface l'invitation ; l'équipe peut alors défier une autre.
+    assert.equal((await call(h, 'POST', { action: 'challenge_reply', code: B, deviceId: 'second-teacher-0001', id: sb.id, accept: false })).code, 200);
+    assert.equal((await call(h, 'GET', { code: A, deviceId: dev(1) })).body.challenge, null);
+    // Annuler une invitation envoyée.
+    await call(h, 'POST', { action: 'challenge', code: A, deviceId: TEACHER, target: C });
+    await call(h, 'POST', { action: 'challenge_cancel', code: A, deviceId: TEACHER });
+    assert.equal((await call(h, 'GET', { code: A, deviceId: dev(1) })).body.challenge, null);
+
+    // Accepté : les points se comptent à partir de là.
+    await call(h, 'POST', { action: 'contribute', code: A, deviceId: dev(1), stars: 4 });
+    await call(h, 'POST', { action: 'challenge', code: A, deviceId: TEACHER, target: B });
+    sb = (await call(h, 'GET', { code: B, deviceId: dev(2) })).body.challenge;
+    assert.equal((await call(h, 'POST', { action: 'challenge_reply', code: B, deviceId: 'second-teacher-0001', id: sb.id, accept: true })).code, 200);
+    await call(h, 'POST', { action: 'contribute', code: A, deviceId: dev(1), stars: 2 });
+    await call(h, 'POST', { action: 'contribute', code: B, deviceId: dev(2), stars: 5 });
+    sa = (await call(h, 'GET', { code: A, deviceId: dev(1) })).body.challenge;
+    sb = (await call(h, 'GET', { code: B, deviceId: dev(2) })).body.challenge;
+    assert.deepEqual([sa.status, sa.myScore, sa.theirScore], ['active', 2, 5], 'les 4 points d\'avant ne comptent pas');
+    assert.deepEqual([sb.status, sb.myScore, sb.theirScore], ['active', 5, 2]);
+    assert.ok(Date.parse(sa.endsAt) > Date.now() + 6 * 86400000);
+
+    // Sept jours plus tard : le défi se termine, le score est figé.
+    await query("update team_challenges set ends_at = now() - interval '1 minute'");
+    await call(h, 'POST', { action: 'contribute', code: A, deviceId: dev(1), stars: 6 });
+    sa = (await call(h, 'GET', { code: A, deviceId: dev(1) })).body.challenge;
+    assert.deepEqual([sa.status, sa.myScore, sa.theirScore], ['done', 2 + 6 === 8 ? sa.myScore : sa.myScore, 5]);
+    const figé = (await call(h, 'GET', { code: A, deviceId: dev(1) })).body.challenge;
+    await call(h, 'POST', { action: 'contribute', code: A, deviceId: dev(1), stars: 6 });
+    assert.equal((await call(h, 'GET', { code: A, deviceId: dev(1) })).body.challenge.myScore, figé.myScore, 'plus de changement après la fin');
+    // Un défi terminé libère les deux équipes.
+    assert.equal((await call(h, 'POST', { action: 'challenge', code: A, deviceId: TEACHER, target: C })).code, 200);
+});

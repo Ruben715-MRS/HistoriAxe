@@ -39,9 +39,10 @@ async function creditTeam(code, playerId, asked, source) {
                 [code, playerId, accepted, source === 'path' ? accepted : 0, today]
             );
             await client.query(
-                `update class_teams set progress = $2, chest_index = $3, cards = cards + $4, last_activity_at = now()
+                `update class_teams set progress = $2, chest_index = $3, cards = cards + $4, last_activity_at = now(),
+                        points_total = points_total + $5
                   where code = $1`,
-                [code, next.progress, next.chestIndex, cardsOpened]
+                [code, next.progress, next.chestIndex, cardsOpened, accepted]
             );
         }
         const acct = (await client.query(

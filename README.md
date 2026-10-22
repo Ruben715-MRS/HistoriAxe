@@ -848,6 +848,19 @@ petits entiers (`fond.motif.couleur.bordure`, ex. `0.2.1.0`) : le serveur ne sto
 Les dessins sont originaux, en SVG, dans `js/teamBadge.js` (pur, testé : `tests/teamBadge.test.js`) ; l'éditeur est dans
 `js/app/team.js`.
 
+**Fiche d'équipe (style « clan »).** L'écran de l'équipe montre l'écusson, l'**identifiant** unique `#ABC234` (le code de
+6 caractères : c'est lui qui fait retrouver et rejoindre l'équipe), une **description** (200 caractères, texte seulement),
+le **pays** et la **langue parlée** (listes fermées de codes ISO ; les noms viennent d'`Intl.DisplayNames`, rien à
+traduire), les points cumulés et la liste des **membres, 50 au plus**, classés par **niveau de joueur** (celui du grade,
+envoyé par chaque appareil à la jointure, à chaque versement et dès qu'il change : action `level`) puis par points, le chef
+d'équipe en tête. L'enseignant modifie profil et écusson (action `profile`). Une **recherche** par nom ou identifiant
+(action `search`, huit résultats au plus, jokers SQL neutralisés) sert à rejoindre une équipe comme à en défier une.
+**Défi entre équipes** : l'enseignant défie une autre équipe (`challenge`), l'enseignant de celle-ci accepte ou refuse
+(`challenge_reply`) ; accepté, le défi dure **sept jours** et compare les points que chaque équipe a gagnés depuis le départ
+(`class_teams.points_total`, relevé à l'acceptation) ; une invitation sans réponse expire au bout de trois jours ; une équipe
+n'a qu'un défi ouvert à la fois ; le score est figé à la fin. Fichiers : `js/teamProfile.js` (listes et validation, partagés
+avec le serveur, testés dans `tests/teamProfile.test.js`) et `js/app/team-social.js` (fiche, membres, recherche, défis).
+
 Fichiers : `api/team.js` (endpoint), `api/_lib/team.js` (règles pures), `api/_lib/teamStore.js` (versement,
 transactionnel), `js/app/team.js` (écran), tables `class_teams` / `team_members` (+ `players.team_points`,
 `class_sessions.team_code`, `class_players.credited`). Tests : `tests/team.test.js`, `e2e/equipe.spec.js`.

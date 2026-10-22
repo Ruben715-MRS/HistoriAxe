@@ -12,7 +12,7 @@
 const classroom = require('./classroom');
 const TeamBadge = require('../../js/teamBadge.js');
 
-const MAX_MEMBERS = 40;
+const MAX_MEMBERS = 50;
 const MAX_NAME = classroom.MAX_NAME;
 const MAX_TEAM_NAME = 40;
 // Étoiles que l'on peut apporter au coffre en un jour depuis le Chemin (3 niveaux parfaits ≈ 9 étoiles ; 30 laisse

@@ -11563,22 +11563,6 @@ input:not([type="range"]), label, select, summary, textarea {
     height: auto;
 }
 
-.team-badge-hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-.team-badge-view {
-    width: 116px;
-}
-
-.team-badge-edit {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
 
 .rewards-team-badge {
     display: inline-block;
@@ -11649,4 +11633,298 @@ input:not([type="range"]), label, select, summary, textarea {
     right: 1px;
     bottom: 0;
     font-size: 13px;
+}
+
+/* --- Fiche de l'équipe (style « clan ») : en-tête, membres par niveau, recherche, défis --- */
+.team-card {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 16px;
+    border-radius: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    box-shadow: var(--card-shadow);
+}
+
+.team-card-badge {
+    flex: 0 0 96px;
+    width: 96px;
+}
+
+.team-card-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.team-card-id {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--muted-text);
+}
+
+.team-card-id b {
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    color: var(--text-dark);
+}
+
+.team-copy {
+    padding: 3px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border-soft);
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.team-card-desc {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+.team-card-desc.is-placeholder {
+    font-style: italic;
+    color: var(--muted-text);
+}
+
+.team-facts {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px 14px;
+    font-size: 13px;
+}
+
+.team-facts dt {
+    color: var(--muted-text);
+    font-size: 12px;
+}
+
+.team-facts dd {
+    margin: 0;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.team-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.team-card-actions .team-secondary {
+    margin: 0;
+    flex: 1 1 180px;
+}
+
+.team-edit,
+.team-challenge-find {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px;
+    border-radius: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+}
+
+.team-profile-editor {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.team-textarea {
+    height: auto;
+    border-radius: 18px;
+    resize: vertical;
+    font: inherit;
+}
+
+.team-select {
+    width: 100%;
+}
+
+.team-find-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.team-find-row {
+    display: flex;
+    gap: 8px;
+}
+
+.team-find-row .form-input {
+    flex: 1;
+    min-width: 0;
+}
+
+.team-find-btn,
+.team-find-action {
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.team-find-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.team-find-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 14px;
+    border: 1px solid var(--border-soft);
+    background: var(--surface);
+}
+
+.team-find-badge {
+    flex: 0 0 38px;
+    width: 38px;
+}
+
+.team-find-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.team-find-info b {
+    overflow-wrap: anywhere;
+}
+
+.team-find-info small {
+    color: var(--muted-text);
+    font-size: 12px;
+}
+
+.team-challenge {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
+    border-radius: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    text-align: center;
+}
+
+.team-challenge h3 {
+    margin: 0;
+}
+
+.team-challenge-lead {
+    margin: 0;
+    font-weight: 700;
+}
+
+.team-challenge-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.team-challenge-actions .btn {
+    flex: 1;
+    margin: 0;
+}
+
+.team-versus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.team-versus-side {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.team-versus-badge {
+    width: 64px;
+}
+
+.team-versus-score {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.team-versus-side.is-mine .team-versus-score {
+    color: var(--primary-blue);
+}
+
+.team-versus-vs {
+    font-weight: 800;
+    color: var(--muted-text);
+}
+
+.team-members-title {
+    margin: 6px 0 0;
+    font-size: 14px;
+    color: var(--muted-text);
+    font-weight: 700;
+}
+
+.team-members .team-member {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.team-member-icon {
+    font-size: 22px;
+}
+
+.team-members .team-member-name {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    white-space: normal;
+}
+
+.team-member-name b {
+    overflow-wrap: anywhere;
+}
+
+.team-member-name small {
+    color: var(--muted-text);
+    font-size: 12px;
+}
+
+.team-member-level {
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--selected-tint, rgba(0, 26, 75, 0.08));
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.team-member.is-leader {
+    outline: 2px solid #C9A24A;
 }
