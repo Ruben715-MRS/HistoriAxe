@@ -10,8 +10,6 @@ const config: CapacitorConfig = {
     androidScheme: 'https',
     // Domaines que la WebView peut ouvrir en plus de son bundle local.
     allowNavigation: ['histori-axe.vercel.app'],
-    // Développement uniquement (ne concerne qu'Android ; iOS l'ignore). À retirer pour une version publiée.
-    cleartext: true
   },
   ios: {
     contentInset: 'always',

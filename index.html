@@ -56,8 +56,7 @@
          téléphone (le plus étroit/large) est testé avant le format
          tablette de la même orientation. Repli sur accueil.jpg (~4:3,
          tablette paysage) pour tout le reste — desktop compris. -->
-    <div id="screen-home" onclick="showScreen('screen-categories')" role="button" tabindex="0"
-        aria-label="Commencer" data-i18n-attr="aria-label:home.start_aria">
+    <div id="screen-home" aria-busy="true">
         <picture>
             <source media="(orientation: portrait) and (max-aspect-ratio: 2/3)" srcset="splash_iphone_portrait.jpg">
             <source media="(orientation: portrait)" srcset="splash_ipad_portrait.jpg">
@@ -79,8 +78,6 @@
 
     <!-- ÉCRAN 2 : CATÉGORIES (Grandes sections) -->
     <div id="screen-categories" class="list-screen hidden">
-        <button class="back-btn" onclick="showScreen('screen-home')" aria-label="Retour à l'accueil"
-            data-i18n-attr="aria-label:nav.back">‹</button>
         <button class="league-btn" onclick="openLeagueModal()" aria-label="Ligue hebdomadaire"
             data-i18n-attr="aria-label:categories.league_btn_aria">🥇</button>
         <button class="profile-btn" onclick="openProfileModal()" aria-label="Profil et Trophées"
@@ -1740,19 +1737,19 @@
 
     <!-- ÉCRAN MULTIJOUEURS SETUP -->
     <div id="screen-multiplayer-setup" class="hidden">
-        <div class="header">
-            <h2 data-i18n="multiplayer.title">Mode Multijoueurs</h2>
-        </div>
+        <h2 class="header-title" data-i18n="multiplayer.title">Mode Multijoueurs</h2>
         <div class="multiplayer-setup-container">
-            <label for="multi-player-count" data-i18n="multiplayer.player_count_label">Nombre de joueurs :</label>
-            <select id="multi-player-count" onchange="renderMultiplayerNameInputs()">
-                <option value="2" data-i18n="multiplayer.player_count_option" data-i18n-params='{"n":2}'>2 Joueurs
-                </option>
-                <option value="3" data-i18n="multiplayer.player_count_option" data-i18n-params='{"n":3}'>3 Joueurs
-                </option>
-                <option value="4" data-i18n="multiplayer.player_count_option" data-i18n-params='{"n":4}'>4 Joueurs
-                </option>
-            </select>
+            <div class="multi-count-row">
+                <label for="multi-player-count" data-i18n="multiplayer.player_count_label">Nombre de joueurs :</label>
+                <select id="multi-player-count" onchange="renderMultiplayerNameInputs()">
+                    <option value="2" data-i18n="multiplayer.player_count_option" data-i18n-params='{"n":2}'>2 Joueurs
+                    </option>
+                    <option value="3" data-i18n="multiplayer.player_count_option" data-i18n-params='{"n":3}'>3 Joueurs
+                    </option>
+                    <option value="4" data-i18n="multiplayer.player_count_option" data-i18n-params='{"n":4}'>4 Joueurs
+                    </option>
+                </select>
+            </div>
             <div id="multi-player-names">
                 <!-- Inputs générés dynamiquement -->
             </div>
@@ -1764,7 +1761,7 @@
     </div>
 
     <!-- ÉCRAN MULTIJOUEURS TURN -->
-    <div id="screen-multi-turn" class="hidden" style="position: fixed; inset: 0; background: #ecf0f1; z-index: 9999;">
+    <div id="screen-multi-turn" class="hidden" style="position: fixed; inset: 0; background: var(--bg-color); z-index: 9999;">
         <div class="multi-turn-banner">
             <h2 id="multi-turn-text">À Joueur 1 de jouer !</h2>
             <button class="btn" style="background-color:#E67E22; font-size:20px; padding:15px 30px;"
@@ -1776,9 +1773,7 @@
     <div id="screen-multiplayer-end" class="hidden">
         <button class="back-btn" onclick="showScreen('screen-modes')" aria-label="Retour aux modes"
             data-i18n-attr="aria-label:nav.back">‹</button>
-        <div class="header">
-            <h2 data-i18n="multiplayer.results_title">Résultats Multijoueurs</h2>
-        </div>
+        <h2 class="header-title" data-i18n="multiplayer.results_title">Résultats Multijoueurs</h2>
         <div class="multiplayer-setup-container" style="max-width:600px;">
             <div id="multi-podium" class="multi-end-podium">
                 <!-- Classement généré dynamiquement -->
@@ -2953,6 +2948,18 @@
                 </div>
                 <p class="settings-hint" data-i18n="settings.notifications_hint">Rappels pour garder ta série et ne pas
                     manquer le Défi du jour. Disponible dans l'app iOS (pas sur le web).</p>
+            </div>
+
+            <div class="settings-group hidden" id="settings-group-notif-types">
+                <div class="settings-label" data-i18n="settings.notif_types_label">Quelles notifications ?</div>
+                <label class="notif-type-row"><span data-i18n="settings.notif_type_streak">Série en danger (20 h)</span><input type="checkbox" data-notif-type="streak"></label>
+                <label class="notif-type-row"><span data-i18n="settings.notif_type_daily">Défi du jour disponible (9 h)</span><input type="checkbox" data-notif-type="daily"></label>
+                <label class="notif-type-row"><span data-i18n="settings.notif_type_recap">Récap hebdomadaire (dimanche, 19 h)</span><input type="checkbox" data-notif-type="recap"></label>
+                <label class="notif-type-row"><span data-i18n="settings.notif_type_review">Événements à réviser</span><input type="checkbox" data-notif-type="review"></label>
+                <label class="notif-type-row"><span data-i18n="settings.notif_type_duel">Rappel de duel</span><input type="checkbox" data-notif-type="duel"></label>
+                <label class="notif-type-row"><span data-i18n="settings.notif_type_milestone">Palier de série atteignable demain</span><input type="checkbox" data-notif-type="milestone"></label>
+                <label class="notif-type-row"><span data-i18n="settings.notif_type_comeback">Retour après quelques jours d'absence</span><input type="checkbox" data-notif-type="comeback"></label>
+                <p class="settings-hint" data-i18n="settings.notif_types_hint">Décoche les rappels que tu ne veux pas recevoir.</p>
             </div>
 
             <div class="settings-group">

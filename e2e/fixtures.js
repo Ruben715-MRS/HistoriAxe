@@ -81,12 +81,14 @@ const test = base.test.extend({
         // jamais vide au démarrage : app.js y range d'emblée la catégorie des
         // thèmes personnalisés. Attendre « non vide » laissait donc un test
         // cliquer sur l'accueil pendant le chargement du pack, et la fin de
-        // window.onload (showScreen('screen-home')) le ramenait à l'accueil :
+        // window.onload (showScreen('screen-categories')) le ramenait au menu :
         // un test échouait dès que le pack tardait (démarrage à froid, machine
         // chargée). On attend une catégorie du pack — la fin de
         // l'initialisation suit dans la même tâche. Les helpers qui visent un
         // thème précis attendent ce thème (voir openThemeCard).
         await page.waitForFunction(() => window.bdd && window.bdd.some(c => !c.isCustomCategory), null, { timeout: 45_000 });
+        // L'accueil n'est qu'un écran de chargement : on attend que l'app l'ait quitté pour le menu principal.
+        await page.locator('#screen-categories').waitFor({ state: 'visible', timeout: 15_000 });
 
         await use(page);
 

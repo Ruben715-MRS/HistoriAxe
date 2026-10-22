@@ -26,9 +26,7 @@ const cartesTheme = page => page.locator('#themes-container .data-card');
 const indexCategorieImbriquee = page => page.evaluate(() =>
     bdd.findIndex(c => !c.isCustomCategory && Array.isArray(c.subcategories) && c.subcategories.length > 0));
 
-test('accueil → catégories → sous-catégories → thèmes, et retour', async ({ page }) => {
-    expect(await visibleScreen(page)).toBe('screen-home');
-    await page.locator('#screen-home').click();
+test('menu principal → sous-catégories → thèmes, et retour', async ({ page }) => {
     expect(await visibleScreen(page)).toBe('screen-categories');
 
     const index = await indexCategorieImbriquee(page);
@@ -56,7 +54,6 @@ test('accueil → catégories → sous-catégories → thèmes, et retour', asyn
 });
 
 test('la recherche mène droit au thème, quelle que soit sa profondeur', async ({ page }) => {
-    await page.locator('#screen-home').click();
 
     await page.locator('#theme-search-input').fill('Vivre à la campagne');
     const resultats = page.locator('#theme-search-results .search-result-item');
@@ -70,7 +67,6 @@ test('la recherche mène droit au thème, quelle que soit sa profondeur', async 
 });
 
 test('une recherche sans résultat le dit, sans vider l’écran', async ({ page }) => {
-    await page.locator('#screen-home').click();
     await page.locator('#theme-search-input').fill('zzzzzzz');
 
     await expect(page.locator('#theme-search-results .search-empty')).toBeVisible();
@@ -80,7 +76,6 @@ test('une recherche sans résultat le dit, sans vider l’écran', async ({ page
 });
 
 test('un thème mis en favori apparaît dans Favoris, et en sort', async ({ page }) => {
-    await page.locator('#screen-home').click();
 
     // Une catégorie qui porte directement des thèmes, pour rester en deux clics.
     const index = await page.evaluate(() =>
@@ -111,7 +106,6 @@ test('un thème mis en favori apparaît dans Favoris, et en sort', async ({ page
 });
 
 test('« Hasard » ouvre la fiche d’un événement et propose son thème', async ({ page }) => {
-    await page.locator('#screen-home').click();
     await page.locator('#btn-discover').click();
     await page.locator('#btn-discover-event').click();
 
@@ -128,7 +122,6 @@ test('« Hasard » ouvre la fiche d’un événement et propose son thème', asy
 });
 
 test('« Réviser » explique qu’il n’y a rien à réviser sur un profil neuf', async ({ page }) => {
-    await page.locator('#screen-home').click();
     await page.locator('#btn-reviser').click();
 
     expect(await visibleScreen(page)).toBe('screen-revision-hub');
@@ -142,7 +135,6 @@ test('« Réviser » explique qu’il n’y a rien à réviser sur un profil neu
 });
 
 test('« Défis » déplie le choix entre les deux défis', async ({ page }) => {
-    await page.locator('#screen-home').click();
 
     await expect(page.locator('#challenge-picker')).toBeHidden();
     await page.locator('#btn-daily').click();

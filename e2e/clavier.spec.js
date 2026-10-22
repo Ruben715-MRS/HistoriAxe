@@ -91,30 +91,21 @@ test('le double-tap ne zoome pas, mais le pincement reste possible', async ({ pa
 
 // --- ATTEINDRE L'APP AU CLAVIER ------------------------------------------------
 
-test('au chargement, le focus n’est pas volé ; le premier Tab tombe sur « Commencer »', async ({ page }) => {
+test('au chargement, le focus n’est pas volé ; le premier Tab entre dans le menu principal', async ({ page }) => {
     await attendreLePack(page);
     // Avant toute action : aucun écran ne doit avoir pris le focus. Le lui
     // voler faisait repartir le premier Tab de l'accueil vers le navigateur.
     expect(await ouEstLeFocus(page)).toBe('<body>');
 
     await page.keyboard.press('Tab');
-    expect(await page.evaluate(() => document.activeElement.id)).toBe('screen-home');
-    expect(await page.evaluate(() => document.activeElement.getAttribute('role'))).toBe('button');
-    expect(await page.evaluate(() => document.activeElement.getAttribute('aria-label')), 'l’accueil doit se nommer')
-        .toBeTruthy();
-
-    await page.keyboard.press('Enter');
     await expect(page.locator('#screen-categories')).toBeVisible();
+    expect(await page.evaluate(() => !!document.activeElement.closest('#screen-categories')),
+        'le premier Tab doit tomber dans le menu principal').toBe(true);
 });
 
-test('de l’accueil à une question de Quiz, sans toucher la souris', async ({ page }) => {
+test('du menu principal à une question de Quiz, sans toucher la souris', async ({ page }) => {
     await attendreLePack(page);
-
-    await page.keyboard.press('Tab');
-    await page.keyboard.press('Enter');
     await expect(page.locator('#screen-categories')).toBeVisible();
-    // Le focus a suivi l'écran : sans cela il retombait sur <body>.
-    expect(await page.evaluate(() => document.activeElement.id)).toBe('screen-categories');
 
     // CAPES & Agrégation : ses thèmes sont rattachés directement à la catégorie.
     await tabJusqua(page, `el.getAttribute('role') === 'button' && el.innerText.includes('CAPES')`);
@@ -235,8 +226,6 @@ test('une carte de mode verrouillée s’annonce indisponible mais s’active au
 
 test('une modale piège le focus, se ferme à Échap et rend le focus', async ({ page }) => {
     await attendreLePack(page);
-    await page.keyboard.press('Tab');
-    await page.keyboard.press('Enter');
     await expect(page.locator('#screen-categories')).toBeVisible();
 
     await tabJusqua(page, `el.classList.contains('settings-btn')`);
@@ -263,8 +252,6 @@ test('une modale piège le focus, se ferme à Échap et rend le focus', async ({
 
 test('le croisillon d’une modale s’atteint et se nomme', async ({ page }) => {
     await attendreLePack(page);
-    await page.keyboard.press('Tab');
-    await page.keyboard.press('Enter');
     await tabJusqua(page, `el.classList.contains('settings-btn')`);
     await page.keyboard.press('Enter');
     await expect(page.locator('#modal-settings')).toBeVisible();

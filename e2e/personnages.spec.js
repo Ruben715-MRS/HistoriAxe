@@ -49,7 +49,6 @@ const fondDeTuile = (page, titre) =>
         .first().locator('div[style*="background-image"]').first();
 
 test('Personnages illustres : deux sous-catégories, chacune avec sa note et son image', async ({ page }) => {
-    await page.locator('#screen-home').click();
     const index = await page.evaluate(() => bdd.findIndex(c => c.nom === 'Personnages illustres'));
     expect(index, 'la catégorie « Personnages illustres » doit exister').toBeGreaterThanOrEqual(0);
 
@@ -294,7 +293,6 @@ test('la fiche d’une figure d’Amérique hispanique indique son pays, drapeau
 });
 
 test('la recherche par nom de pays — sans accent — mène au panthéon de la région', async ({ page }) => {
-    await page.locator('#screen-home').click();
     // « Équateur » n'est pas dans le nom du thème : il est dans ses mots-clés.
     await page.locator('#theme-search-input').fill('equateur');
     const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Amérique hispanique" });
@@ -492,7 +490,6 @@ test('l’Italie : chacune de ses figures a son portrait, de Jules César à Fed
 });
 
 test('la recherche — « italie », « renaissance », « vatican » — mène au panthéon de l’Italie', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['italie', 'renaissance', 'vatican']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Italie" });
@@ -502,7 +499,6 @@ test('la recherche — « italie », « renaissance », « vatican » — mène 
 });
 
 test('la recherche — « etats-unis », « usa », « hollywood » — mène au panthéon des États-Unis', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['etats-unis', 'usa', 'hollywood']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures des États-Unis' });
@@ -512,7 +508,6 @@ test('la recherche — « etats-unis », « usa », « hollywood » — mène au
 });
 
 test('la recherche — « egypte », « pharaon », « nil » — mène au panthéon de l’Égypte', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['egypte', 'pharaon', 'nil']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Égypte" });
@@ -553,7 +548,6 @@ test('le Royaume-Uni : chacune de ses figures a son portrait, de Boudicca à Amy
 });
 
 test('la recherche — « royaume-uni », « ecosse », « angleterre », « londres » — mène au panthéon du Royaume-Uni', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['royaume-uni', 'ecosse', 'angleterre', 'londres']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures du Royaume-Uni' });
@@ -815,7 +809,6 @@ test('l\'Asie centrale : chacune de ses figures a son portrait et son pays, l\'A
 });
 
 test('la recherche — « kazakhstan », « ouzbekistan », « tadjikistan », « afghanistan » — mène au panthéon d\'Asie centrale', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['asie centrale', 'kazakhstan', 'ouzbekistan', 'kirghizistan', 'tadjikistan', 'turkmenistan', 'afghanistan']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures d\'Asie centrale' });
@@ -858,7 +851,6 @@ test('la Nouvelle-Zélande et le Pacifique : chacune de ses figures a son portra
 });
 
 test('la recherche — « nouvelle-zélande », « maori », « hawaï », « tahiti », « samoa », « pitcairn » — mène au panthéon de Nouvelle-Zélande et du Pacifique', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['nouvelle-zelande', 'maori', 'pacifique', 'oceanie', 'hawai', 'tahiti', 'nouvelle-caledonie', 'samoa', 'tonga', 'fidji', 'nauru', 'guam', 'pitcairn', 'ile de paques']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures de Nouvelle-Zélande et du Pacifique' });
@@ -904,7 +896,6 @@ test('le Brésil : chacune de ses figures a son portrait, de Zumbi à Marielle F
 });
 
 test('la recherche — « brésil », « brasilia », « samba », « amazonie », « canudos » — mène au panthéon du Brésil', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['bresil', 'bresilien', 'brasilia', 'samba', 'bossa nova', 'amazonie', 'canudos', 'palmares', 'salvador de bahia']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures du Brésil' });
@@ -942,7 +933,6 @@ test('l’Iran : chacune de ses figures a son portrait, de Cyrus le Grand à Mar
 });
 
 test('la recherche — « iran », « perse », « persépolis », « ispahan », « chah » — mène au panthéon de l’Iran', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['iran', 'iranien', 'perse', 'persan', 'persepolis', 'ispahan', 'chiraz', 'chah', 'safavide', 'qadjar']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Iran" });
@@ -980,7 +970,6 @@ test('l’Indonésie : chacune de ses figures a son portrait, d’Airlangga à T
 });
 
 test('la recherche — « indonésie », « java », « sumatra », « jakarta », « majapahit », « pancasila » — mène au panthéon de l’Indonésie', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['indonesie', 'indonesien', 'java', 'bali', 'sumatra', 'jakarta', 'batavia', 'majapahit', 'pancasila', 'aceh']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Indonésie" });
@@ -1018,7 +1007,6 @@ test('les Philippines : chacune de ses figures a son portrait, de Gabriela Silan
 });
 
 test('la recherche — « philippines », « manille », « luçon », « katipunan », « edsa » — mène au panthéon des Philippines', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['philippines', 'philippin', 'manille', 'lucon', 'cebu', 'mindanao', 'katipunan', 'edsa']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures des Philippines" });
@@ -1059,7 +1047,6 @@ test('l’Afrique de l’Est et la Corne : chacune de ses figures a son portrait
 });
 
 test('la recherche — « kenya », « tanzanie », « ouganda », « somalie », « soudan », « djibouti », « mau mau » — mène au panthéon de l’Afrique de l’Est et de la Corne', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['kenya', 'tanzanie', 'zanzibar', 'ouganda', 'somalie', 'soudan', 'soudan du sud', 'djibouti', 'erythree', 'corne de l\'afrique', 'mau mau', 'mahdi']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Afrique de l'Est et de la Corne" });
@@ -1100,7 +1087,6 @@ test('l’océan Indien occidental : chacune de ses figures a son portrait et so
 });
 
 test('la recherche — « madagascar », « tananarive », « comores », « maurice », « seychelles », « mascareignes » — mène au panthéon de l’océan Indien occidental', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['madagascar', 'malgache', 'tananarive', 'comores', 'anjouan', 'maurice', 'port-louis', 'seychelles', 'ocean indien', 'mascareignes', 'hira gasy']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures de l'océan Indien occidental" });
@@ -1144,7 +1130,6 @@ test('la Caraïbe non hispanique : chacune de ses figures a son portrait et son 
 });
 
 test('la recherche — « caraïbes », « antilles », « haïti », « jamaïque », « guyana », « suriname », « rastafari » — mène au panthéon de la Caraïbe non hispanique', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['caraibes', 'antilles', 'haiti', 'jamaique', 'trinidad', 'barbade', 'belize', 'guyana', 'suriname', 'rastafari', 'calypso', 'caricom']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures de la Caraïbe non hispanique' });
@@ -1185,7 +1170,6 @@ test('l’Afrique australe : chacune de ses figures a son portrait et son pays, 
 });
 
 test('la recherche — « angola », « mozambique », « zimbabwe », « zambie », « namibie », « botswana », « lesotho », « eswatini » — mène au panthéon de l’Afrique australe', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['angola', 'mozambique', 'zimbabwe', 'rhodesie', 'zambie', 'malawi', 'nyassaland', 'namibie', 'botswana', 'lesotho', 'eswatini', 'swaziland', 'afrique australe', 'frelimo', 'swapo']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Afrique australe" });
@@ -1225,7 +1209,6 @@ test('le Caucase : chacune de ses figures a son portrait et son pays, de Tigrane
 });
 
 test('la recherche — « géorgie », « arménie », « azerbaïdjan », « caucase » — mène au panthéon du Caucase', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['georgie', 'armenie', 'azerbaidjan', 'caucase', 'tbilissi', 'erevan', 'bakou', 'karabagh', 'transcaucasie']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures du Caucase" });
@@ -1269,7 +1252,6 @@ test('l’Afrique centrale : chacune de ses figures a son portrait et son pays, 
 });
 
 test('la recherche — « afrique centrale », « rdc », « zaire », « cameroun », « rwanda » — mène au panthéon de l’Afrique centrale', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['afrique centrale', 'ceeac', 'rdc', 'zaire', 'brazzaville', 'cameroun', 'gabon', 'centrafrique', 'tchad', 'guinee equatoriale', 'sao tome', 'rwanda', 'burundi']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Afrique centrale" });
@@ -1315,7 +1297,6 @@ test('les Balkans : chacune de ses figures a son portrait et son pays, d’Étie
 });
 
 test('la recherche — « balkans », « yougoslavie », « roumanie », « serbie », « kosovo », « moldavie » — mène au panthéon des Balkans', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['balkans', 'yougoslavie', 'roumanie', 'bulgarie', 'serbie', 'croatie', 'bosnie', 'montenegro', 'kosovo', 'albanie', 'macedoine du nord', 'moldavie', 'moldova', 'transylvanie', 'dracula', 'tito']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures des Balkans' });
@@ -1359,7 +1340,6 @@ test('les pays baltes : chacune de leurs figures a son portrait et son pays, de 
 });
 
 test('la recherche — « baltes », « estonie », « lettonie », « lituanie », « riga », « vilnius », « tallinn » — mène au panthéon des pays baltes', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['pays baltes', 'baltique', 'estonie', 'lettonie', 'lituanie', 'tallinn', 'riga', 'vilnius', 'kaunas', 'livonie', 'courlande']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures des pays baltes' });
@@ -1401,7 +1381,6 @@ test('le monde malais : chacune de ses figures a son portrait et son pays, de Ra
 });
 
 test('la recherche — « malaisie », « singapour », « brunei », « timor », « malacca », « raffles » — mène au panthéon du monde malais', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['malaisie', 'malaisien', 'singapour', 'brunei', 'timor oriental', 'kuala lumpur', 'penang', 'malacca', 'sabah', 'sarawak', 'raffles', 'merdeka']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures du monde malais' });
@@ -1442,7 +1421,6 @@ test('le Vietnam, le Cambodge et le Laos : chacune de leurs figures a son portra
 });
 
 test('la recherche — « vietnam », « cambodge », « laos », « angkor », « hanoi », « indochine » — mène au panthéon de l’Indochine', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['vietnam', 'vietnamien', 'cambodge', 'khmer', 'laos', 'laotien', 'angkor', 'hanoi', 'saigon', 'indochine', 'mekong', 'vientiane']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Indochine" });
@@ -1481,7 +1459,6 @@ test('la Thaïlande et la Birmanie : chacune de leurs figures a son portrait et 
 });
 
 test('la recherche — « thaïlande », « siam », « bangkok », « birmanie », « rangoun » — mène au panthéon de la Thaïlande et de la Birmanie', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['thailande', 'thailandais', 'siam', 'bangkok', 'ayutthaya', 'birmanie', 'birman', 'myanmar', 'rangoun', 'mandalay']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures de Thaïlande et de Birmanie' });
@@ -1521,7 +1498,6 @@ test('la Mongolie : chacune de ses figures a son portrait, de Gengis Khan à Rin
 });
 
 test('la recherche — « mongolie », « mongol », « oulan-bator », « gobi », « karakorum », « naadam » — mène au panthéon de la Mongolie', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['mongolie', 'mongol', 'oulan-bator', 'gobi', 'karakorum', 'khoural', 'khalkha', 'naadam']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures de Mongolie' });
@@ -1560,7 +1536,6 @@ test('la Corée : chacune de ses figures a son portrait et son pays, de Gwanggae
 });
 
 test('la recherche — « corée », « séoul », « pyongyang », « joseon », « hangeul » — mène au panthéon de la Corée', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['coree', 'coreen', 'coree du sud', 'coree du nord', 'seoul', 'pyongyang', 'joseon', 'goryeo', 'silla', 'hangeul', 'juche']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures de Corée' });
@@ -1594,7 +1569,6 @@ test('la Pologne : chacune de ses figures a son portrait, de Mieszko Ier à Jerz
 });
 
 test('la recherche — « pologne », « polonais », « varsovie », « cracovie », « solidarnosc », « katyn » — mène au panthéon de la Pologne', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['pologne', 'polonais', 'varsovie', 'cracovie', 'wroclaw', 'jagellon', 'solidarnosc', 'katyn', 'grunwald', 'ghetto de varsovie']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures de Pologne' });
@@ -1641,7 +1615,6 @@ test('l’Europe centrale : chacune de ses figures a son portrait et son pays, d
 });
 
 test('la recherche — « europe centrale », « hongrie », « tchéquie », « slovaquie », « slovénie », « budapest », « prague », « habsbourg » — mène au panthéon de l’Europe centrale', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['europe centrale', 'hongrie', 'hongrois', 'tchequie', 'tcheque', 'slovaquie', 'slovenie', 'budapest', 'prague', 'bratislava', 'ljubljana', 'habsbourg', 'boheme', 'moravie', 'printemps de prague', 'revolution de velours']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Europe centrale" });
@@ -1682,7 +1655,6 @@ test('l’Éthiopie : chacune de ses figures a son portrait, de Zara Yaqob à Ha
 });
 
 test('la recherche — « éthiopie », « éthiopien », « addis-abeba », « adoua », « négus », « derg » — mène au panthéon de l’Éthiopie', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['ethiopie', 'ethiopien', 'addis-abeba', 'adoua', 'negus', 'derg', 'abyssinie', 'oromo']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Éthiopie" });
@@ -1726,7 +1698,6 @@ test('l’Afrique du Sud : chacune de ses figures a son portrait, de Van Riebeec
 });
 
 test('la recherche — « afrique du sud », « apartheid », « zoulou », « boers », « soweto » — mène au panthéon de l’Afrique du Sud', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['afrique du sud', 'apartheid', 'zoulou', 'boers', 'soweto', 'robben island', 'sud-africain']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures d\'Afrique du Sud' });
@@ -1736,7 +1707,6 @@ test('la recherche — « afrique du sud », « apartheid », « zoulou », « b
 });
 
 test('la recherche — « espagne », « castille », « catalogne », « madrid » — mène au panthéon de l’Espagne', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['espagne', 'castille', 'catalogne', 'madrid']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Espagne" });
@@ -1780,7 +1750,6 @@ test('l’Allemagne, l’Autriche et la Suisse : chacune de ses figures a son po
 });
 
 test('la recherche — « allemagne », « autriche », « suisse » — mène au panthéon de la sphère germanophone', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['allemagne', 'autriche', 'suisse', 'habsbourg']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Allemagne, d'Autriche et de Suisse" });
@@ -1823,7 +1792,6 @@ test('le Benelux : chacune de ses figures a son portrait et son pays, et la rech
 });
 
 test('la recherche — « belgique », « pays-bas », « luxembourg », « flandre » — mène au panthéon du Benelux', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['benelux', 'belgique', 'pays-bas', 'luxembourg', 'flandre']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures du Benelux' });
@@ -1833,7 +1801,6 @@ test('la recherche — « belgique », « pays-bas », « luxembourg », « flan
 });
 
 test('la recherche — « tunisie », « libye », « mauritanie » — mène au panthéon du Maghreb', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['tunisie', 'libye', 'mauritanie']) {
         await page.locator('#theme-search-input').fill(mot);
         // Aucun de ces pays n'est dans le nom du thème : ils sont dans ses mots-clés.
@@ -1844,7 +1811,6 @@ test('la recherche — « tunisie », « libye », « mauritanie » — mène au
 });
 
 test('la recherche — « irak », « liban », « yémen » — mène au panthéon du Machrek', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['irak', 'liban', 'yémen']) {
         await page.locator('#theme-search-input').fill(mot);
         // Aucun de ces pays n'est dans le nom du thème : ils sont dans ses mots-clés.
@@ -1889,7 +1855,6 @@ test('un thème sans portrait n’affiche ni vignette ni figure', async ({ page 
 // déplie le choix de l'ordre ; un trombinoscope de toutes les figures à
 // portrait ; une fiche qui mène à la biographie et au panthéon du pays.
 test('la galerie des portraits : deux ordres, une fiche, et ses deux accès au jeu', async ({ page }) => {
-    await page.locator('#screen-home').click();
     const index = await page.evaluate(() => bdd.findIndex(c => c.nom === 'Personnages illustres'));
     await page.locator('#cat-grid > div').nth(index).click();
     expect(await visibleScreen(page)).toBe('screen-subcategories');
@@ -1947,7 +1912,6 @@ test('la galerie des portraits : deux ordres, une fiche, et ses deux accès au j
 });
 
 test('le retour de la galerie ramène à « Personnages illustres », et la fiche ordinaire garde « Voir sa biographie »', async ({ page }) => {
-    await page.locator('#screen-home').click();
     const index = await page.evaluate(() => bdd.findIndex(c => c.nom === 'Personnages illustres'));
     await page.locator('#cat-grid > div').nth(index).click();
     await page.locator('#btn-gallery').click();
@@ -1974,9 +1938,9 @@ async function remonterJusqueALaGalerie(page) {
     await expect(page.locator('#screen-gallery')).toBeVisible();
 }
 
-// L'accueil se quitte d'un appui ; déjà quitté, on ne clique pas dans le vide.
+// L'accueil n'est plus qu'un écran de chargement, quitté tout seul : on attend le menu principal.
 async function quitterLAccueil(page) {
-    if (await page.locator('#screen-home').isVisible()) await page.locator('#screen-home').click();
+    await expect(page.locator('#screen-categories')).toBeVisible();
 }
 
 // Galerie : ouverture directe, pour les tests qui ne portent pas sur le bouton.
@@ -2232,7 +2196,6 @@ test('la croix et Échap répondent « tout en couleur », sans que la question 
 });
 
 test('la question n’est pas posée ailleurs que dans « Personnages illustres »', async ({ page }) => {
-    await page.locator('#screen-home').click();
     await premiereVisite(page);
     const autre = await page.evaluate(() => bdd.findIndex(c => c.subcategories && !c.subcategories.some(s => s.nom === 'Panthéons')));
     expect(autre).toBeGreaterThanOrEqual(0);
@@ -2779,7 +2742,6 @@ test('l’Irlande : chacune de ses figures a son portrait, de Patrick à Dolores
 });
 
 test('la recherche — « irlande », « irlandais », « dublin », « ulster », « sinn fein », « pâques 1916 » — mène au panthéon de l’Irlande', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['irlande', 'irlandais', 'dublin', 'ulster', 'sinn fein', 'home rule', 'celtic revival']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Irlande" });
@@ -2842,7 +2804,6 @@ test('Chypre : chacune de ses figures a son portrait, d’Épiphane de Salamine 
 });
 
 test('la recherche — « malte », « maltais », « la valette », « grand siège », « gozo » — mène au panthéon de Malte', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['malte', 'maltais', 'la valette', 'grand siege', 'gozo', 'hospitaliers']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures de Malte' });
@@ -2852,7 +2813,6 @@ test('la recherche — « malte », « maltais », « la valette », « grand si
 });
 
 test('la recherche — « chypre », « chypriote », « nicosie », « eoka », « lusignan » — mène au panthéon de Chypre', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['chypre', 'chypriote', 'nicosie', 'eoka', 'lusignan', 'famagouste']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures de Chypre' });
@@ -2862,7 +2822,6 @@ test('la recherche — « chypre », « chypriote », « nicosie », « eoka »,
 });
 
 test('la recherche — « ukraine », « ukrainien », « kiev », « cosaque », « hetman » — mène au panthéon de l’Ukraine', async ({ page }) => {
-    await page.locator('#screen-home').click();
     for (const mot of ['ukraine', 'ukrainien', 'kiev', 'cosaque', 'hetman', 'zaporogue', 'galicie']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Ukraine" });

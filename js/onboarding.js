@@ -1,11 +1,14 @@
 // =========================================================================
 // === HISTORIAXE — ONBOARDING GUIDÉ (COACH-MARKS DES 3 PREMIÈRES MINUTES) ===
 // =========================================================================
-// Séquence de bulles d'aide contextuelles pour un nouvel arrivant : avec 5
-// catégories, des centaines de thèmes et 7 modes de jeu, un premier lancement
-// sans repère peut submerger. Ce module se contente de montrer 4 bulles très
-// courtes aux points d'entrée existants (showScreen()/endGame() dans
-// js/app.js) — aucune nouvelle navigation forcée, aucun blocage : l'utilisateur
+// Séquence de bulles d'aide contextuelles pour un nouvel arrivant : avec une
+// dizaine de boutons au menu, des centaines de thèmes et une vingtaine de modes
+// de jeu, un premier lancement sans repère peut submerger. Ce module montre
+// des bulles très courtes aux points d'entrée existants (showScreen()/endGame()
+// dans js/app.js) : un tour du menu principal (bienvenue, Chemin du Temps,
+// Défis, Réviser, le reste, profil), puis une bulle à la première visite de la
+// carte des mondes, deux à celle de l'écran des modes, une à la fin de la
+// première partie. Aucune navigation forcée, aucun blocage : l'utilisateur
 // peut « Passer le tutoriel » à tout moment.
 //
 // Persistance : js/storage.js (onboardingLoad/onboardingSave, clé
@@ -20,7 +23,38 @@
 var Onboarding = (function () {
     'use strict';
 
-    var STEPS = ['welcome', 'daily_or_categories', 'modes', 'first_xp'];
+    // Les identifiants d'origine (welcome, daily_or_categories, modes, first_xp) sont gardés tels quels : un
+    // joueur au milieu de l'ancien tutoriel ne revoit pas ce qu'il a déjà vu.
+    var STEPS = ['welcome', 'path', 'rewards', 'daily_or_categories', 'revise', 'more', 'profile',
+        'path_screen', 'modes_play', 'modes', 'first_xp'];
+
+    // Le tour du menu principal, dans l'ordre. `target` : ce que la bulle éclaire (aucun : bulle centrée).
+    var MENU_TOUR = [
+        { id: 'welcome', target: null, nextKey: 'onboarding.lets_go_btn', nextFallback: "C'est parti" },
+        { id: 'path', target: '#btn-path' },
+        { id: 'rewards', target: '.rewards-bar' },
+        { id: 'daily_or_categories', target: '#btn-daily' },
+        { id: 'revise', target: '#btn-reviser' },
+        { id: 'more', target: '#quick-actions-2' },
+        { id: 'profile', target: '.profile-btn', nextKey: 'onboarding.got_it_label', nextFallback: 'Compris !' }
+    ];
+
+    // Textes de repli (français), utilisés si le pack de langue n'a pas encore la clé.
+    var FALLBACK = {
+        welcome: ["👋 Bienvenue dans HistoriAxe !", "Remets des événements dans l'ordre, retrouve des dates, explore des cartes et des portraits… Un tour rapide en quelques bulles, à passer quand tu veux."],
+        path: ["🛤️ Le Chemin du Temps", "Le parcours guidé : 21 mondes, de la Préhistoire à nos jours, niveau après niveau. Chaque niveau rapporte jusqu'à 3 étoiles ★ et des pièces 🪙. Commence par le Monde 0, qui sert de tutoriel."],
+        rewards: ["🪙 Pièces, album et amis", "Tes pièces 🪙 et ta série de victoires ⚡ ; la Boutique pour les dépenser ; l'Album de cartes à collectionner ; tes Amis, pour se défier ; et l'Équipe, le coffre commun d'une classe."],
+        daily: ["🎯 Les Défis", "Le Défi du jour : 10 événements à remettre dans l'ordre, en 2 minutes chrono. C'est le point de départ de ta série quotidienne 🔥. Il y a aussi un Défi hebdomadaire et un Défi de simultanéité, avec classement."],
+        revise: ["🧠 Réviser", "Le jeu retient tes erreurs et te les repropose au bon moment (répétition espacée). Le chiffre entre parenthèses, c'est le nombre d'événements à revoir aujourd'hui."],
+        more: ["🕹️ Et aussi…", "La Salle de jeux (arcade : Tetris des siècles, Snake, Pac-Man…), la Boîte à outils (convertisseurs, calculateur de durées, cartes historiques) et l'Atlas, qui place tous les événements sur une carte."],
+        profile: ["🏆 Ton profil", "En haut : tes trophées et ton grade 🏆, la ligue de la semaine 🥇 et les réglages ⚙ (c'est là que tu peux revoir ce tutoriel). Cherche un thème dans la barre de recherche, ou ouvre une catégorie plus bas."],
+        path_screen: ["🗺️ La carte des mondes", "Touche un monde pour ouvrir ses niveaux. Un niveau enchaîne plusieurs épreuves ; réussis-le pour débloquer le suivant. Le Monde 0 explique comment les historiens découpent le temps : tu peux le passer si tu le connais déjà."],
+        modes_play: ["▶ Jouer", "Un seul tap pour lancer ta partie favorite (Classique au départ). Tu peux changer ce mode dans les Réglages."],
+        modes: ["🧭 Tous les modes", "En dessous : la frise (Entraînement, Classique…), des défis express (Quiz, Blitz, Curseur…) et des modes pour explorer. Pour débuter, essaie Découverte : la frise sans aucune pression, sans vie en jeu."],
+        first_xp: ["🔥 Bravo, tu as gagné de l'XP !", "Reviens chaque jour jouer le Défi du jour pour garder ta série : plus elle dure longtemps, plus l'XP que tu gagnes est multiplié (visible en haut du menu). Un seul jour manqué, et tout repart à zéro."]
+    };
+    // Le Défi du jour garde ses clés historiques `onboarding.daily_*`.
+    var KEY_PREFIX = { daily_or_categories: 'daily' };
     var overlayEl = null;
 
     function state() {
@@ -78,6 +112,11 @@ var Onboarding = (function () {
             return false;
         }
 
+        // Une cible sous le pli (petit écran) est amenée à l'écran avant d'être mesurée.
+        if (target && target.scrollIntoView) {
+            try { target.scrollIntoView({ block: 'center' }); } catch (e) { /* ancien navigateur */ }
+        }
+
         teardown();
         overlayEl = document.createElement('div');
         overlayEl.className = 'onboarding-overlay';
@@ -129,34 +168,79 @@ var Onboarding = (function () {
         return (val && val !== key) ? val : fallback;
     }
 
-    function onHomeScreen() {
-        if (isDone() || hasShown('welcome')) return;
-        showCoachMark('welcome', {
-            title: ob('onboarding.welcome_title', '👋 Bienvenue dans HistoriAxe !'),
-            text: ob('onboarding.welcome_text', "Découvre comment progresser en 3 minutes : une ou deux bulles d'aide vont s'afficher pendant que tu explores. Touche l'écran pour commencer."),
-            nextLabel: ob('onboarding.lets_go_btn', "C'est parti")
+    function stepTexts(id) {
+        var prefix = KEY_PREFIX[id] || id;
+        var fb = FALLBACK[prefix];
+        return { title: ob('onboarding.' + prefix + '_title', fb[0]), text: ob('onboarding.' + prefix + '_text', fb[1]) };
+    }
+
+    // Le prochain pas du tour du menu qui n'a pas encore été vu et dont la cible est à l'écran.
+    function nextMenuStep() {
+        for (var i = 0; i < MENU_TOUR.length; i++) {
+            var step = MENU_TOUR[i];
+            if (hasShown(step.id)) continue;
+            if (step.target && !document.querySelector(step.target)) continue;
+            return step;
+        }
+        return null;
+    }
+
+    function showMenuStep() {
+        var screen = document.getElementById('screen-categories');
+        if (isDone() || !screen || screen.classList.contains('hidden')) return;
+        var step = nextMenuStep();
+        if (!step) return;
+        var texts = stepTexts(step.id);
+        showCoachMark(step.id, {
+            targetSelector: step.target || undefined,
+            title: texts.title,
+            text: texts.text,
+            nextLabel: step.nextKey ? ob(step.nextKey, step.nextFallback) : undefined,
+            onNext: function () { setTimeout(showMenuStep, 250); }
         });
     }
 
+    // Le menu principal est le premier écran de l'app (l'accueil n'est qu'un écran de chargement) :
+    // le tour s'y déroule bulle après bulle, et reprend là où il s'était arrêté si on le quitte.
     function onCategoriesScreen() {
-        if (isDone() || hasShown('daily_or_categories')) return;
-        setTimeout(function () {
-            showCoachMark('daily_or_categories', {
-                targetSelector: '#btn-daily',
-                title: ob('onboarding.daily_title', '🎯 Le Défi du jour'),
-                text: ob('onboarding.daily_text', "10 événements à remettre dans l'ordre, en 2 minutes chrono : la façon la plus simple de commencer, et le point de départ de ta série quotidienne 🔥. Tu peux aussi explorer une catégorie ci-dessous.")
-            });
-        }, 300);
+        if (isDone()) return;
+        setTimeout(showMenuStep, 300);
     }
 
-    function onModesScreen() {
-        if (isDone() || hasShown('modes')) return;
+    // Première visite de la carte des mondes.
+    function onPathScreen() {
+        if (isDone() || hasShown('path_screen')) return;
         setTimeout(function () {
-            showCoachMark('modes', {
-                targetSelector: '#mode-card-discovery',
-                title: ob('onboarding.modes_title', '🧭 Le mode Découverte'),
-                text: ob('onboarding.modes_text', "Parfait pour débuter : consulte la frise chronologique sans aucune pression, aucune vie en jeu. Une fois à l'aise, essaie le mode Classique !")
-            });
+            var texts = stepTexts('path_screen');
+            showCoachMark('path_screen', { title: texts.title, text: texts.text });
+        }, 400);
+    }
+
+    function showModesGroupsMark() {
+        var texts = stepTexts('modes');
+        showCoachMark('modes', {
+            targetSelector: '#mode-card-discovery',
+            title: texts.title,
+            text: texts.text,
+            nextLabel: ob('onboarding.got_it_label', 'Compris !')
+        });
+    }
+
+    // Écran des modes : d'abord le bouton « Jouer », puis le reste des modes.
+    function onModesScreen() {
+        if (isDone()) return;
+        setTimeout(function () {
+            if (!hasShown('modes_play')) {
+                var texts = stepTexts('modes_play');
+                showCoachMark('modes_play', {
+                    targetSelector: '#btn-modes-play',
+                    title: texts.title,
+                    text: texts.text,
+                    onNext: function () { setTimeout(showModesGroupsMark, 250); }
+                });
+            } else if (!hasShown('modes')) {
+                showModesGroupsMark();
+            }
         }, 300);
     }
 
@@ -164,18 +248,19 @@ var Onboarding = (function () {
         if (isDone() || hasShown('first_xp')) return;
         setTimeout(function () {
             var hasXpChip = !!document.getElementById('end-xp-display') && !document.getElementById('end-xp-display').classList.contains('hidden');
+            var texts = stepTexts('first_xp');
             showCoachMark('first_xp', {
                 targetSelector: hasXpChip ? '#end-xp-display' : undefined,
-                title: ob('onboarding.first_xp_title', "🔥 Bravo, tu as gagné de l'XP !"),
-                text: ob('onboarding.first_xp_text', "Reviens chaque jour jouer le Défi du jour pour garder ta série : plus elle dure longtemps, plus l'XP que tu gagnes est multiplié (visible en haut de l'écran d'accueil). Un seul jour manqué, et tout repart à zéro."),
+                title: texts.title,
+                text: texts.text,
                 nextLabel: ob('onboarding.got_it_label', 'Compris !')
             });
         }, 500);
     }
 
     return {
-        onHomeScreen: onHomeScreen,
         onCategoriesScreen: onCategoriesScreen,
+        onPathScreen: onPathScreen,
         onModesScreen: onModesScreen,
         onFirstGameEnd: onFirstGameEnd,
         restart: restart,

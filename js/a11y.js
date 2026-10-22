@@ -174,9 +174,9 @@
     // souvent APRÈS un bouton de retour, que Tab sauterait alors.
     function focusScreen(screen) {
         // Jamais avant une première action de l'utilisateur : au chargement,
-        // showScreen('screen-home') passe ici, et lui voler le focus faisait
-        // repartir le premier Tab de l'accueil vers le navigateur — un
-        // utilisateur au clavier ne tombait sur « Commencer » qu'au second.
+        // showScreen('screen-categories') passe ici, et lui voler le focus faisait
+        // repartir le premier Tab du menu vers le navigateur — un
+        // utilisateur au clavier n'y entrait qu'au second.
         // Voler le focus d'une page qu'on n'a pas encore touchée est de toute
         // façon une mauvaise manière.
         if (!screen || !interacted || openModals().length) return;
