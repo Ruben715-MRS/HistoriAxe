@@ -9216,6 +9216,43 @@ input:not([type="range"]), label, select, summary, textarea {
     font-weight: 700;
 }
 
+.rewards-chip {
+    position: relative;
+    cursor: help;
+}
+
+/* Bulle d'explication (js/app/rewards.js : rewardsAttachTip). */
+.rewards-tip {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    z-index: 60;
+    width: 260px;
+    max-width: min(260px, calc(100vw - 40px));
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: var(--text-dark);
+    color: var(--surface);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: left;
+    box-shadow: var(--card-shadow-hover);
+    pointer-events: none;
+}
+
+.rewards-chip.is-tip-open .rewards-tip,
+.rewards-chip:focus-visible .rewards-tip {
+    display: block;
+}
+
+@media (hover: hover) {
+    .rewards-chip:hover .rewards-tip {
+        display: block;
+    }
+}
+
 .rewards-streak.is-hot {
     border-color: var(--favorite-yellow);
 }
