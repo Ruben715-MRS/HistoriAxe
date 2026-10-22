@@ -679,6 +679,7 @@
             <button type="button" class="btn path-sheet-play" id="path-sheet-play"></button>
             <button type="button" class="path-sheet-side hidden" id="path-sheet-wheel" onclick="openWheel('screen-path')" data-i18n="wheel.entry">🎡 Mini-jeu : la roue des fêtes</button>
             <button type="button" class="path-sheet-side hidden" id="path-sheet-game"></button>
+            <button type="button" class="path-sheet-side hidden" id="path-sheet-game-2"></button>
         </div>
     </div>
 
@@ -742,6 +743,22 @@
                     <small class="arcade-best" id="arcade-best-eras"></small>
                 </span>
             </button>
+            <button type="button" class="arcade-card" onclick="openRoman('screen-arcade')">
+                <span class="arcade-card-icon" aria-hidden="true">🏛️</span>
+                <span class="arcade-card-text">
+                    <strong data-i18n="roman.title"></strong>
+                    <small data-i18n="roman.desc"></small>
+                    <small class="arcade-best" id="arcade-best-roman"></small>
+                </span>
+            </button>
+            <button type="button" class="arcade-card" onclick="openAdvent('screen-arcade')">
+                <span class="arcade-card-icon" aria-hidden="true">🎅</span>
+                <span class="arcade-card-text">
+                    <strong data-i18n="advent.title"></strong>
+                    <small data-i18n="advent.desc"></small>
+                    <small class="arcade-best" id="arcade-best-advent"></small>
+                </span>
+            </button>
             </div>
         </section>
         <section class="games-section" aria-labelledby="games-h-arcade">
@@ -780,6 +797,30 @@
                     <small class="arcade-best" id="arcade-best-invaders"></small>
                 </span>
             </button>
+            <button type="button" class="arcade-card" onclick="openBreakout('screen-arcade')">
+                <span class="arcade-card-icon" aria-hidden="true">🏓</span>
+                <span class="arcade-card-text">
+                    <strong data-i18n="breakout.title"></strong>
+                    <small data-i18n="breakout.desc"></small>
+                    <small class="arcade-best" id="arcade-best-breakout"></small>
+                </span>
+            </button>
+            <button type="button" class="arcade-card" onclick="openFlappy('screen-arcade')">
+                <span class="arcade-card-icon" aria-hidden="true">🐱</span>
+                <span class="arcade-card-text">
+                    <strong data-i18n="flappy.title"></strong>
+                    <small data-i18n="flappy.desc"></small>
+                    <small class="arcade-best" id="arcade-best-flappy"></small>
+                </span>
+            </button>
+            <button type="button" class="arcade-card" onclick="openRace('screen-arcade')">
+                <span class="arcade-card-icon" aria-hidden="true">🏇</span>
+                <span class="arcade-card-text">
+                    <strong data-i18n="race.title"></strong>
+                    <small data-i18n="race.desc"></small>
+                    <small class="arcade-best" id="arcade-best-race"></small>
+                </span>
+            </button>
             </div>
         </section>
         <section class="games-section" aria-labelledby="games-h-reflexion">
@@ -816,6 +857,14 @@
                     <strong data-i18n="scene.title"></strong>
                     <small data-i18n="scene.desc"></small>
                     <small class="arcade-best" id="arcade-best-scene"></small>
+                </span>
+            </button>
+            <button type="button" class="arcade-card" onclick="openHangman('screen-arcade')">
+                <span class="arcade-card-icon" aria-hidden="true">🔤</span>
+                <span class="arcade-card-text">
+                    <strong data-i18n="hangman.title"></strong>
+                    <small data-i18n="hangman.desc"></small>
+                    <small class="arcade-best" id="arcade-best-hangman"></small>
                 </span>
             </button>
             </div>
@@ -1007,6 +1056,163 @@
             <p id="scene-over-text"></p>
             <ul class="arcade-mistakes" id="scene-over-list"></ul>
             <button type="button" class="btn" onclick="sceneStart()" data-i18n="arcade.replay">Rejouer</button>
+        </div>
+    </div>
+
+    <!-- ÉCRAN : SIÈCLES EN CHIFFRES ROMAINS (js/app/minigames.js, js/minigamesCore.js) -->
+    <div id="screen-roman" class="list-screen hidden">
+        <button class="back-btn" onclick="romanBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="roman.title">Siècles en chiffres romains</h2>
+        <p class="modes-header-subtitle" id="roman-status" role="status"></p>
+        <div id="roman-play">
+            <p class="cause-question" id="roman-prompt"></p>
+            <p class="roman-numeral hidden" id="roman-numeral" aria-hidden="true"></p>
+            <div class="cause-cards" id="roman-options"></div>
+            <div class="wheel-feedback hidden" id="roman-feedback" role="status">
+                <strong id="roman-feedback-title"></strong>
+                <p id="roman-feedback-text"></p>
+                <button type="button" class="btn" id="roman-next" onclick="romanContinue()"></button>
+            </div>
+        </div>
+        <div class="arcade-over hidden" id="roman-over">
+            <h3 data-i18n="arcade.over">Partie terminée</h3>
+            <p id="roman-over-text"></p>
+            <button type="button" class="btn" onclick="romanStart()" data-i18n="arcade.replay">Rejouer</button>
+        </div>
+    </div>
+
+    <!-- ÉCRAN : CALENDRIER DE L'AVENT HISTORIQUE (js/app/minigames.js, js/adventContent.js) -->
+    <div id="screen-advent" class="list-screen hidden">
+        <button class="back-btn" onclick="adventBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="advent.title">Calendrier de l'Avent historique</h2>
+        <p class="modes-header-subtitle" id="advent-status" role="status"></p>
+        <p class="arcade-rule" id="advent-rule"></p>
+        <div class="advent-grid" id="advent-grid" role="group" aria-label="Cases du calendrier" data-i18n-attr="aria-label:advent.grid_aria"></div>
+        <div class="advent-case hidden" id="advent-case">
+            <p class="advent-case-title" id="advent-case-title"></p>
+            <p class="cause-question" id="advent-case-question"></p>
+            <div class="advent-options" id="advent-options"></div>
+            <div class="wheel-feedback hidden" id="advent-feedback" role="status">
+                <strong id="advent-feedback-title"></strong>
+                <p id="advent-feedback-text"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ÉCRAN : CASSE-BRIQUES DES REPÈRES (js/app/arcade-extra.js, js/arcadeExtraCore.js) -->
+    <div id="screen-breakout" class="list-screen hidden">
+        <button class="back-btn" onclick="breakoutBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="breakout.title">Casse-briques des repères</h2>
+        <p class="modes-header-subtitle" id="breakout-status" role="status"></p>
+        <p class="arcade-rule" data-i18n="breakout.rule">Cassez les briques de la plus ancienne à la plus récente. Une autre brique, ou une balle perdue : une vie en moins. La balle accélère à chaque brique.</p>
+        <div class="arcade-board" id="breakout-board">
+            <canvas id="breakout-canvas" class="arcade-canvas arcade-canvas-wide" role="img" aria-label="Plateau du Casse-briques" data-i18n-attr="aria-label:breakout.board_aria"></canvas>
+            <button type="button" class="btn arcade-start" id="breakout-start" onclick="breakoutStart()" data-i18n="arcade.play">Jouer</button>
+        </div>
+        <p class="wheel-feedback hidden arcade-message" id="breakout-message" role="status"></p>
+        <div class="arcade-controls">
+            <button type="button" class="arcade-key" id="breakout-left" aria-label="Plateau vers la gauche" data-i18n-attr="aria-label:breakout.left">◀</button>
+            <button type="button" class="arcade-key arcade-key-wide" onclick="breakoutLaunchNow()" data-i18n="breakout.launch">Lancer la balle</button>
+            <button type="button" class="arcade-key" id="breakout-right" aria-label="Plateau vers la droite" data-i18n-attr="aria-label:breakout.right">▶</button>
+        </div>
+        <p class="wheel-hint" data-i18n="breakout.hint">Glissez le doigt sur le plateau pour déplacer la raquette ; touchez pour lancer.</p>
+        <div class="arcade-over hidden" id="breakout-over">
+            <h3 data-i18n="arcade.over">Partie terminée</h3>
+            <p id="breakout-over-text"></p>
+            <ul class="arcade-mistakes" id="breakout-over-list"></ul>
+            <button type="button" class="btn" onclick="breakoutStart()" data-i18n="arcade.replay">Rejouer</button>
+        </div>
+    </div>
+
+    <!-- ÉCRAN : FLAPPY CLIO (js/app/arcade-extra.js) -->
+    <div id="screen-flappy" class="list-screen hidden">
+        <button class="back-btn" onclick="flappyBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="flappy.title">Flappy Clio</h2>
+        <p class="modes-header-subtitle" id="flappy-status" role="status"></p>
+        <p class="tetris-banner" id="flappy-banner" role="status"></p>
+        <div class="arcade-board" id="flappy-board">
+            <canvas id="flappy-canvas" class="arcade-canvas arcade-canvas-wide" role="img" aria-label="Plateau de Flappy Clio" data-i18n-attr="aria-label:flappy.board_aria"></canvas>
+            <button type="button" class="btn arcade-start" id="flappy-start" onclick="flappyStart()" data-i18n="arcade.play">Jouer</button>
+        </div>
+        <p class="wheel-feedback hidden arcade-message" id="flappy-message" role="status"></p>
+        <div class="arcade-controls">
+            <button type="button" class="arcade-key arcade-key-wide" onclick="flappyFlapNow()" data-i18n="flappy.flap">🐾 Voler</button>
+        </div>
+        <p class="wheel-hint" data-i18n="flappy.hint">Touchez l'écran (ou la barre d'espace) pour battre des ailes. À chaque porte, passez par la date qui SUIT le dernier repère.</p>
+        <div class="arcade-over hidden" id="flappy-over">
+            <h3 data-i18n="arcade.over">Partie terminée</h3>
+            <p id="flappy-over-text"></p>
+            <ul class="arcade-mistakes" id="flappy-over-list"></ul>
+            <button type="button" class="btn" onclick="flappyStart()" data-i18n="arcade.replay">Rejouer</button>
+        </div>
+    </div>
+
+    <!-- ÉCRAN : COURSE DE CHARS DE LA FRISE (js/app/arcade-extra.js) -->
+    <div id="screen-race" class="list-screen hidden">
+        <button class="back-btn" onclick="raceBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="race.title">Course de chars de la frise</h2>
+        <p class="modes-header-subtitle" id="race-status" role="status"></p>
+        <div id="race-setup" class="race-setup">
+            <p class="arcade-rule" data-i18n="race.rule">Répondez juste aux questions de date pour avancer votre char : une case par bonne réponse, deux si vous répondez en moins de quatre secondes. Le premier à franchir douze cases gagne.</p>
+            <button type="button" class="btn" onclick="raceStart('solo', 'easy')" data-i18n="race.solo_easy">Contre l'ordinateur · facile</button>
+            <button type="button" class="btn" onclick="raceStart('solo', 'normal')" data-i18n="race.solo_normal">Contre l'ordinateur · normal</button>
+            <button type="button" class="btn" onclick="raceStart('solo', 'hard')" data-i18n="race.solo_hard">Contre l'ordinateur · difficile</button>
+            <button type="button" class="btn race-duo" onclick="raceStart('duo', 'normal')" data-i18n="race.duo">À deux, sur le même appareil</button>
+        </div>
+        <div id="race-play" class="hidden">
+            <div class="race-track" id="race-track" aria-hidden="true"></div>
+            <p class="race-turn" id="race-turn" role="status"></p>
+            <div class="race-timer" aria-hidden="true"><div class="race-timer-fill" id="race-timer-fill"></div></div>
+            <p class="cause-question" id="race-question"></p>
+            <div class="advent-options" id="race-options"></div>
+            <div class="wheel-feedback hidden" id="race-feedback" role="status">
+                <strong id="race-feedback-title"></strong>
+                <p id="race-feedback-text"></p>
+                <button type="button" class="btn" id="race-next" onclick="raceContinue()"></button>
+            </div>
+        </div>
+        <div class="arcade-over hidden" id="race-handover">
+            <h3 id="race-handover-title"></h3>
+            <p data-i18n="race.handover">Passez l'appareil, puis touchez « Prêt » : la question reste cachée jusque-là.</p>
+            <button type="button" class="btn" onclick="raceReady()" data-i18n="race.ready">Prêt</button>
+        </div>
+        <div class="arcade-over hidden" id="race-over">
+            <h3 id="race-over-title"></h3>
+            <p id="race-over-text"></p>
+            <ul class="arcade-mistakes" id="race-over-list"></ul>
+            <button type="button" class="btn" onclick="raceSetup()" data-i18n="arcade.replay">Rejouer</button>
+        </div>
+    </div>
+
+    <!-- ÉCRAN : PENDU DES DATES (js/app/reflexion.js) -->
+    <div id="screen-hangman" class="list-screen hidden">
+        <button class="back-btn" onclick="hangmanBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="hangman.title">Pendu des dates</h2>
+        <p class="modes-header-subtitle" id="hangman-status" role="status"></p>
+        <div id="hangman-play">
+            <p class="cause-question" id="hangman-prompt"></p>
+            <p class="hangman-bc hidden" id="hangman-bc" data-i18n="hangman.bc">av. J.-C.</p>
+            <div class="hangman-slots" id="hangman-slots" aria-live="polite"></div>
+            <p class="hangman-lives" id="hangman-lives" role="img"></p>
+            <p class="hangman-hint hidden" id="hangman-hint" role="status"></p>
+            <div class="hangman-pad" id="hangman-pad" role="group" aria-label="Chiffres" data-i18n-attr="aria-label:hangman.pad_aria"></div>
+            <form class="hangman-try" id="hangman-try" onsubmit="hangmanSubmit(event)">
+                <label class="hangman-try-label" for="hangman-year" data-i18n="hangman.try_label">Ou tentez une année entière :</label>
+                <input type="number" id="hangman-year" class="hangman-year" inputmode="numeric" min="1" max="9999" autocomplete="off">
+                <label class="hangman-try-bc"><input type="checkbox" id="hangman-year-bc"> <span data-i18n="hangman.bc">av. J.-C.</span></label>
+                <button type="submit" class="btn" data-i18n="hangman.try">Proposer</button>
+            </form>
+            <div class="wheel-feedback hidden" id="hangman-feedback" role="status">
+                <strong id="hangman-feedback-title"></strong>
+                <p id="hangman-feedback-text"></p>
+                <button type="button" class="btn" id="hangman-next" onclick="hangmanContinue()"></button>
+            </div>
+        </div>
+        <div class="arcade-over hidden" id="hangman-over">
+            <h3 data-i18n="arcade.over">Partie terminée</h3>
+            <p id="hangman-over-text"></p>
+            <ul class="arcade-mistakes" id="hangman-over-list"></ul>
+            <button type="button" class="btn" onclick="hangmanStart()" data-i18n="arcade.replay">Rejouer</button>
         </div>
     </div>
 
@@ -2506,6 +2712,9 @@
     <script src="js/calendarWheel.js"></script>
     <script src="js/eraConverter.js"></script>
     <script src="js/arcadeCore.js"></script>
+    <script src="js/adventContent.js"></script>
+    <script src="js/minigamesCore.js"></script>
+    <script src="js/arcadeExtraCore.js"></script>
     <script src="js/reflexionContent.js"></script>
     <script src="js/reflexionCore.js"></script>
     <script src="js/rewardsCore.js"></script>
@@ -2557,6 +2766,8 @@
     <script src="js/app/eras.js"></script>
     <script src="js/app/arcade.js"></script>
     <script src="js/app/reflexion.js"></script>
+    <script src="js/app/minigames.js"></script>
+    <script src="js/app/arcade-extra.js"></script>
     <script src="js/app/rewards.js"></script>
     <script src="js/app/clio.js"></script>
     <script src="js/app/team.js"></script>

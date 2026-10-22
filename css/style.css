@@ -10490,3 +10490,416 @@ input:not([type="range"]), label, select, summary, textarea {
     font-size: 13px;
     line-height: 1.45;
 }
+
+/* --- CASSE-BRIQUES, FLAPPY CLIO, COURSE DE CHARS, PENDU DES DATES, SIÈCLES ROMAINS, AVENT (js/app/arcade-extra.js, js/app/minigames.js, js/app/reflexion.js) --- */
+.arcade-canvas-wide {
+    touch-action: pan-y;
+    background: #0f1a33;
+}
+
+.roman-numeral {
+    flex: 0 0 auto;
+    margin: 0 0 12px;
+    text-align: center;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 56px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--text-dark);
+}
+
+.roman-numeral.hidden {
+    display: none;
+}
+
+#roman-play {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 520px;
+}
+
+#roman-play .wheel-feedback {
+    margin-top: 12px;
+}
+
+#roman-feedback strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+#roman-feedback p {
+    margin: 0 0 10px;
+}
+
+.roman-tile:disabled {
+    opacity: 1;
+}
+
+.advent-grid {
+    flex: 0 0 auto;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    width: min(100%, 420px);
+}
+
+.advent-day {
+    position: relative;
+    aspect-ratio: 1;
+    min-height: 44px;
+    padding: 0;
+    border: 2px solid var(--border-soft);
+    border-radius: 10px;
+    background: var(--surface);
+    color: var(--text-dark);
+    font: inherit;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.advent-day small {
+    position: absolute;
+    left: 3px;
+    bottom: 1px;
+    font-size: 9px;
+    font-weight: 600;
+    color: var(--muted-text);
+}
+
+.advent-day.is-locked {
+    opacity: 0.55;
+    font-size: 14px;
+}
+
+.advent-day.is-right {
+    border-color: var(--progress-green);
+    background: var(--selected-tint);
+    color: var(--success-text);
+}
+
+.advent-day.is-wrong {
+    border-color: var(--danger-red);
+    color: var(--danger-red-text);
+}
+
+.advent-day.is-selected {
+    box-shadow: 0 0 0 3px var(--primary-blue);
+}
+
+.advent-case {
+    flex: 0 0 auto;
+    width: min(100%, 520px);
+    box-sizing: border-box;
+    margin-top: 14px;
+    padding: 14px 16px;
+    border: 1px solid var(--border-soft);
+    border-radius: 14px;
+    background: var(--surface);
+    color: var(--text-dark);
+}
+
+.advent-case.hidden {
+    display: none;
+}
+
+.advent-case-title {
+    margin: 0 0 6px;
+    font-size: 15px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.advent-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    width: 100%;
+}
+
+.advent-option {
+    min-height: 54px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.advent-option:disabled {
+    opacity: 1;
+    cursor: default;
+}
+
+#advent-feedback strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+#advent-feedback p {
+    margin: 0;
+}
+
+/* La carte du jour de l'Avent sur l'écran des catégories : chaque jour de décembre a sa teinte (--advent-hue). */
+.advent-card {
+    --advent-hue: 140;
+    border-color: hsl(var(--advent-hue) 55% 35%);
+    background: linear-gradient(135deg, hsl(var(--advent-hue) 55% 22%), hsl(calc(var(--advent-hue) + 40) 55% 16%));
+    color: #fff;
+}
+
+.advent-card .resume-card-kicker {
+    color: #f3f4f6;
+}
+
+.advent-card-icon {
+    background: hsl(var(--advent-hue) 60% 38%);
+    font-size: 22px;
+}
+
+.race-setup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 520px;
+    align-items: stretch;
+}
+
+.race-duo {
+    background: var(--surface);
+    color: var(--text-dark);
+    border: 2px solid var(--primary-blue);
+}
+
+#race-play {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 520px;
+}
+
+.race-track {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.race-lane {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 6px 0;
+}
+
+.race-label {
+    flex: none;
+    width: 78px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--muted-text);
+}
+
+.race-road {
+    position: relative;
+    flex: 1;
+    height: 38px;
+    border-radius: 10px;
+    background: repeating-linear-gradient(90deg, var(--surface-2) 0 8.33%, var(--surface) 8.33% 16.66%);
+    border: 1px solid var(--border-soft);
+}
+
+.race-car {
+    position: absolute;
+    top: 3px;
+    font-size: 26px;
+    transform: translateX(-50%);
+    transition: left 0.5s ease;
+}
+
+.race-flag {
+    position: absolute;
+    right: 4px;
+    top: 5px;
+    font-size: 22px;
+}
+
+.race-turn {
+    margin: 0 0 6px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--muted-text);
+}
+
+.race-timer {
+    width: 100%;
+    height: 8px;
+    margin-bottom: 10px;
+    border-radius: 999px;
+    background: var(--border-soft);
+    overflow: hidden;
+}
+
+.race-timer-fill {
+    height: 100%;
+    width: 100%;
+    background: var(--progress-green);
+}
+
+#race-play .wheel-feedback {
+    margin-top: 12px;
+}
+
+#race-feedback strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+#race-feedback p {
+    margin: 0 0 10px;
+}
+
+#race-handover,
+#race-over {
+    width: 100%;
+    max-width: 520px;
+    text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .race-car { transition: none; }
+}
+
+#hangman-play {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 520px;
+}
+
+.hangman-bc {
+    margin: 0 0 4px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--muted-text);
+}
+
+.hangman-bc.hidden {
+    display: none;
+}
+
+.hangman-slots {
+    display: flex;
+    gap: 8px;
+    margin: 4px 0 8px;
+}
+
+.hangman-slot {
+    width: 44px;
+    height: 56px;
+    border-bottom: 4px solid var(--text-dark);
+    text-align: center;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 56px;
+    color: var(--text-dark);
+}
+
+.hangman-slot.is-found {
+    color: var(--success-text);
+    border-bottom-color: var(--progress-green);
+}
+
+.hangman-lives {
+    margin: 0 0 6px;
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: var(--danger-red-text);
+}
+
+.hangman-hint {
+    margin: 0 0 8px;
+    padding: 6px 12px;
+    border-radius: 10px;
+    background: var(--selected-tint);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.hangman-hint.hidden {
+    display: none;
+}
+
+.hangman-pad {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    width: 100%;
+    max-width: 360px;
+}
+
+.hangman-digit {
+    font-size: 20px;
+}
+
+.hangman-digit.correct {
+    background: var(--selected-tint);
+    border-color: var(--progress-green);
+    color: var(--success-text);
+    opacity: 1;
+}
+
+.hangman-digit.wrong {
+    border-color: var(--danger-red);
+    color: var(--danger-red-text);
+    opacity: 1;
+}
+
+.hangman-try {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    margin-top: 14px;
+}
+
+.hangman-try-label {
+    flex: 0 0 100%;
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted-text);
+}
+
+.hangman-year {
+    width: 110px;
+    min-height: 44px;
+    padding: 0 10px;
+    border: 1px solid var(--border-soft);
+    border-radius: 10px;
+    background: var(--surface);
+    color: var(--text-dark);
+    font: inherit;
+    font-size: 18px;
+}
+
+.hangman-try-bc {
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+#hangman-play .wheel-feedback {
+    margin-top: 12px;
+}
+
+#hangman-feedback strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+#hangman-feedback p {
+    margin: 0 0 10px;
+}

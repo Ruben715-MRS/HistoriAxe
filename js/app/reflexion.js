@@ -518,3 +518,175 @@ function sceneFinish() {
     });
     document.getElementById('scene-over').classList.remove('hidden');
 }
+
+// =====================================================================================================
+// === PENDU DES DATES ===
+// =====================================================================================================
+let hangmanGame = null;
+let hangmanReturn = 'screen-arcade';
+let hangmanKeysBound = false;
+
+function openHangman(fromScreen) {
+    hangmanReturn = fromScreen || 'screen-arcade';
+    showScreen('screen-hangman', 'forward');
+    hangmanBindKeys();
+    hangmanStart();
+}
+
+function hangmanBack() {
+    gamesBackTo(hangmanReturn);
+}
+
+function hangmanStart() {
+    hangmanGame = ReflexionCore.createHangman(arcadePool());
+    if (hangmanGame.empty) { alert(t('arcade.empty')); return; }
+    document.getElementById('hangman-over').classList.add('hidden');
+    document.getElementById('hangman-play').classList.remove('hidden');
+    hangmanRender();
+}
+
+function hangmanRenderStatus() {
+    const g = hangmanGame;
+    document.getElementById('hangman-status').textContent = t('hangman.status', { n: g.index + 1, total: g.questions.length, score: g.score });
+}
+
+function hangmanRenderLives() {
+    const g = hangmanGame;
+    const el = document.getElementById('hangman-lives');
+    el.textContent = '♥'.repeat(g.lives) + '♡'.repeat(ReflexionCore.HANGMAN_LIVES - g.lives);
+    el.setAttribute('aria-label', t('hangman.lives', { lives: g.lives }));
+}
+
+// Les cases de l'année et le clavier de chiffres : un chiffre trouvé en vert (partout où il est), un chiffre raté en rouge.
+function hangmanRender() {
+    const g = hangmanGame;
+    const q = ReflexionCore.hangmanQuestion(g);
+    hangmanRenderStatus();
+    hangmanRenderLives();
+    document.getElementById('hangman-prompt').textContent = t('hangman.prompt', { title: q.event.title });
+    document.getElementById('hangman-bc').classList.toggle('hidden', !q.bc);
+    document.getElementById('hangman-feedback').classList.add('hidden');
+    document.getElementById('hangman-hint').classList.add('hidden');
+    document.getElementById('hangman-year').value = '';
+    document.getElementById('hangman-year-bc').checked = false;
+    hangmanRenderSlots();
+    const pad = document.getElementById('hangman-pad');
+    pad.innerHTML = '';
+    for (let d = 0; d <= 9; d++) {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'arcade-key hangman-digit';
+        btn.dataset.digit = String(d);
+        btn.textContent = String(d);
+        btn.setAttribute('aria-label', t('hangman.digit_aria', { digit: d }));
+        btn.onclick = () => hangmanPick(String(d));
+        pad.appendChild(btn);
+    }
+    hangmanSetFormDisabled(false);
+}
+
+function hangmanRenderSlots() {
+    const box = document.getElementById('hangman-slots');
+    box.innerHTML = '';
+    ReflexionCore.hangmanSlots(hangmanGame).forEach(digit => {
+        const slot = document.createElement('span');
+        slot.className = 'hangman-slot' + (digit === null ? '' : ' is-found');
+        slot.textContent = digit === null ? '_' : digit;
+        if (digit === null) slot.setAttribute('aria-label', t('hangman.slot_empty'));
+        box.appendChild(slot);
+    });
+}
+
+function hangmanSetFormDisabled(disabled) {
+    document.querySelectorAll('#hangman-pad .hangman-digit, #hangman-year, #hangman-year-bc, #hangman-try button').forEach(el => { el.disabled = disabled; });
+}
+
+function hangmanPick(digit) {
+    const g = hangmanGame;
+    const events = ReflexionCore.hangmanGuess(g, digit);
+    if (!events.length) return;
+    const btn = document.querySelector('#hangman-pad .hangman-digit[data-digit="' + digit + '"]');
+    btn.disabled = true;
+    btn.classList.add(events.includes('hit') ? 'correct' : 'wrong');
+    arcadeSound(events.includes('hit') ? 'good' : 'bad');
+    document.getElementById('hangman-hint').classList.add('hidden');
+    hangmanRenderSlots();
+    hangmanRenderLives();
+    hangmanAfter();
+}
+
+// Une année entière : juste, la manche est gagnée ; fausse, une vie de moins et « plus tôt » ou « plus tard ».
+function hangmanSubmit(event) {
+    event.preventDefault();
+    const g = hangmanGame;
+    const raw = Number(document.getElementById('hangman-year').value);
+    if (!Number.isInteger(raw) || raw < 1) return;
+    const year = document.getElementById('hangman-year-bc').checked ? -raw : raw;
+    const events = ReflexionCore.hangmanTryYear(g, year);
+    if (!events.length) return;
+    arcadeSound(events.includes('solved') ? 'good' : 'bad');
+    const hint = document.getElementById('hangman-hint');
+    if (events.includes('earlier') || events.includes('later')) {
+        hint.textContent = t(events.includes('earlier') ? 'hangman.earlier' : 'hangman.later', { year: formatYear(year) });
+        hint.classList.remove('hidden');
+    }
+    hangmanRenderSlots();
+    hangmanRenderLives();
+    hangmanAfter();
+}
+
+// Si la manche est résolue (gagnée ou perdue) : le détail, le bouton suivant.
+function hangmanAfter() {
+    const g = hangmanGame;
+    if (!g.resolved) return;
+    const q = ReflexionCore.hangmanQuestion(g);
+    const result = g.results[g.results.length - 1];
+    hangmanSetFormDisabled(true);
+    hangmanRenderStatus();
+    const feedback = document.getElementById('hangman-feedback');
+    feedback.classList.toggle('is-wrong', g.resolved === 'lost');
+    document.getElementById('hangman-feedback-title').textContent = g.resolved === 'solved' ? t('hangman.solved', { points: result.points }) : t('hangman.lost');
+    document.getElementById('hangman-feedback-text').textContent = t('hangman.answer', { year: formatYear(q.event.date) });
+    const last = g.index + 1 >= g.questions.length;
+    const next = document.getElementById('hangman-next');
+    next.textContent = t(last ? 'hangman.finish' : 'hangman.next');
+    feedback.classList.remove('hidden');
+    next.focus();
+}
+
+function hangmanContinue() {
+    const g = hangmanGame;
+    if (!g || !g.resolved) return;
+    if (ReflexionCore.hangmanNext(g).includes('done')) { hangmanFinish(); return; }
+    hangmanRender();
+}
+
+function hangmanFinish() {
+    const g = hangmanGame;
+    const best = arcadeRecord('hangman', g.score);
+    document.getElementById('hangman-play').classList.add('hidden');
+    document.getElementById('hangman-status').textContent = '';
+    document.getElementById('hangman-over-text').textContent =
+        t('hangman.found', { found: g.found, total: g.questions.length, score: g.score }) + ' ' + t('arcade.best', { score: best.hangman });
+    const list = document.getElementById('hangman-over-list');
+    list.innerHTML = '';
+    g.results.forEach(r => {
+        const li = document.createElement('li');
+        li.textContent = r.solved
+            ? t('hangman.result_found', { title: r.title, year: formatYear(r.date), points: r.points })
+            : t('hangman.result_lost', { title: r.title, year: formatYear(r.date) });
+        list.appendChild(li);
+    });
+    document.getElementById('hangman-over').classList.remove('hidden');
+}
+
+// Au clavier : taper un chiffre le propose (sauf quand le champ « année entière » a le focus).
+function hangmanBindKeys() {
+    if (hangmanKeysBound) return;
+    hangmanKeysBound = true;
+    document.addEventListener('keydown', e => {
+        if (!arcadeScreenVisible('screen-hangman') || !hangmanGame || hangmanGame.over || hangmanGame.resolved) return;
+        if (document.activeElement && document.activeElement.id === 'hangman-year') return;
+        if (/^[0-9]$/.test(e.key)) { e.preventDefault(); hangmanPick(e.key); }
+    });
+}

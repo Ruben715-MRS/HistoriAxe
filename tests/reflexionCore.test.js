@@ -229,6 +229,7 @@ test('la salle de jeux : textes, scripts et écrans des jeux de réflexion', () 
         memory: ['title', 'desc', 'rule', 'status', 'card_hidden', 'card_event', 'card_date', 'match', 'miss_pair', 'miss_same', 'won', 'over_text'],
         cause: ['title', 'desc', 'status', 'ask_cause', 'ask_effect', 'right', 'wrong', 'links', 'next', 'finish', 'found', 'card_aria'],
         scene: ['title', 'desc', 'status', 'when', 'check', 'check_none', 'hint', 'result', 'found_item', 'missed_item', 'wrong_item', 'next', 'finish', 'over_text', 'result_line'],
+        hangman: ['title', 'desc', 'status', 'prompt', 'bc', 'lives', 'try_label', 'try', 'earlier', 'later', 'solved', 'lost', 'answer', 'next', 'finish', 'found', 'result_found', 'result_lost'],
         who: ['title', 'loading', 'desc', 'status', 'more', 'clue_axis', 'clue_country', 'clue_period', 'clue_portrait', 'worth', 'right', 'lost', 'answer', 'next', 'finish', 'found', 'result_found', 'result_lost']
     };
     Object.keys(need).forEach((g) => need[g].forEach((k) => assert.ok(ui[g] && ui[g][k], `${g}.${k}`)));
@@ -239,10 +240,10 @@ test('la salle de jeux : textes, scripts et écrans des jeux de réflexion', () 
         assert.ok(html.includes(`<script src="${f}">`), f + ' dans index.html');
         assert.ok(sw.includes(`'./${f}'`), f + ' dans sw.js');
     });
-    ['screen-memory', 'screen-who', 'screen-cause', 'screen-scene'].forEach((id) => assert.ok(html.includes(`id="${id}"`), id));
-    // Trois sections : deux mini-jeux, quatre jeux d'arcade, quatre jeux de réflexion.
+    ['screen-memory', 'screen-who', 'screen-cause', 'screen-scene', 'screen-hangman'].forEach((id) => assert.ok(html.includes(`id="${id}"`), id));
+    // Trois sections : quatre mini-jeux, sept jeux d'arcade, cinq jeux de réflexion.
     ['games-h-mini', 'games-h-arcade', 'games-h-reflexion'].forEach((id) => assert.ok(html.includes(`id="${id}"`), id));
-    assert.equal((html.match(/class="arcade-card"/g) || []).length, 10);
+    assert.equal((html.match(/class="arcade-card"/g) || []).length, 16);
 });
 
 // --- Contenu rédigé à la main ---------------------------------------------------------------------------
@@ -387,4 +388,92 @@ test('Anachronismes : cinq scènes parfaites font 500 points et finissent la par
     assert.equal(g.score, 500);
     assert.equal(g.results.length, 5);
     assert.deepEqual(R.sceneNext(g), []);
+});
+
+// --- Pendu des dates ------------------------------------------------------------------------------------------
+function hangmanPool() {
+    return [{ id: 'a', title: 'Prise de la Bastille', date: 1789 }, { id: 'b', title: 'Découverte de l\'Amérique', date: 1492 },
+        { id: 'c', title: 'Assassinat de César', date: -44 }, { id: 'd', title: 'Couronnement de Charlemagne', date: 800 },
+        { id: 'e', title: 'Bataille d\'Hastings', date: 1066 }, { id: 'f', title: 'Waterloo', date: 1815 }, { id: 'g', title: 'Fondation de Rome', date: -753 }];
+}
+
+test('Pendu : cinq événements aux années différentes ; l\'année est cachée chiffre par chiffre, le signe est connu', () => {
+    const g = R.createHangman(hangmanPool(), seeded(3));
+    assert.equal(g.questions.length, 5);
+    assert.equal(new Set(g.questions.map((q) => q.event.date)).size, 5);
+    g.questions.forEach((q) => { assert.equal(q.digits, String(Math.abs(q.event.date))); assert.equal(q.bc, q.event.date < 0); });
+    assert.deepEqual(R.hangmanSlots(g), g.questions[0].digits.split('').map(() => null));
+    assert.equal(R.createHangman([{ id: 'x', title: 't', date: 12345 }], seeded(1)).questions.length, 0, 'cinq chiffres : hors du jeu');
+    assert.ok(R.createHangman([], seeded(1)).empty);
+});
+
+// Une partie dont la première année est connue.
+function hangmanOn(date) {
+    const g = R.createHangman(hangmanPool(), seeded(3));
+    g.questions[0] = { event: { id: 'z', title: 'Test', date }, digits: String(Math.abs(date)), bc: date < 0 };
+    return g;
+}
+
+test('Pendu : un chiffre juste se dévoile partout où il est ; un chiffre faux coûte une vie', () => {
+    const g = hangmanOn(1914);
+    assert.deepEqual(R.hangmanGuess(g, '1'), ['hit']);
+    assert.deepEqual(R.hangmanSlots(g), ['1', null, '1', null]);
+    assert.deepEqual(R.hangmanGuess(g, '1'), [], 'un chiffre déjà proposé ne se rejoue pas');
+    assert.deepEqual(R.hangmanGuess(g, '7'), ['miss']);
+    assert.equal(g.lives, 5);
+    assert.deepEqual(R.hangmanGuess(g, 'x'), []);
+    R.hangmanGuess(g, '9');
+    assert.deepEqual(R.hangmanGuess(g, '4'), ['hit', 'solved']);
+    assert.equal(g.resolved, 'solved');
+    assert.equal(g.score, 30 + 10 * 5);
+    assert.deepEqual(R.hangmanGuess(g, '0'), [], 'manche résolue');
+});
+
+test('Pendu : six erreurs perdent la manche (0 point), la réponse se dévoile', () => {
+    const g = hangmanOn(1914);
+    let last = [];
+    ['0', '2', '3', '5', '6', '7'].forEach((d) => { last = R.hangmanGuess(g, d); });
+    assert.deepEqual(last, ['miss', 'lost']);
+    assert.equal(g.resolved, 'lost');
+    assert.equal(g.score, 0);
+    assert.deepEqual(R.hangmanSlots(g), ['1', '9', '1', '4']);
+    assert.deepEqual(g.results[0], { id: 'z', title: 'Test', date: 1914, solved: false, lives: 0, points: 0 });
+});
+
+test('Pendu : proposer une année entière — juste, c\'est gagné ; fausse, une vie de moins et « plus tôt » ou « plus tard »', () => {
+    const g = hangmanOn(1789);
+    assert.deepEqual(R.hangmanTryYear(g, 1800), ['wrong', 'earlier', ]);
+    assert.equal(g.hint, 'earlier');
+    assert.equal(g.lives, 5);
+    assert.deepEqual(R.hangmanTryYear(g, 1700), ['wrong', 'later']);
+    assert.equal(g.hint, 'later');
+    assert.equal(g.lives, 4);
+    assert.deepEqual(R.hangmanTryYear(g, 0), [], 'pas d\'an 0');
+    assert.deepEqual(R.hangmanTryYear(g, 17.5), []);
+    assert.deepEqual(R.hangmanTryYear(g, 1789), ['solved']);
+    assert.equal(g.score, 30 + 10 * 4);
+    // Avant J.-C. : −44 contre −27 (plus tard dans le temps) : la vraie date est plus tôt.
+    const h = hangmanOn(-44);
+    assert.deepEqual(R.hangmanTryYear(h, -27), ['wrong', 'earlier']);
+    assert.deepEqual(R.hangmanTryYear(h, -44), ['solved']);
+});
+
+test('Pendu : cinq événements trouvés d\'emblée font 5 × 90 = 450 points ; une manche se quitte par hangmanNext', () => {
+    const g = R.createHangman(hangmanPool(), seeded(7));
+    let last = [];
+    while (!g.over) {
+        const q = R.hangmanQuestion(g);
+        R.hangmanTryYear(g, q.event.date);
+        assert.deepEqual(R.hangmanNext(g).length > 0, true);
+        last = [g.over];
+    }
+    assert.equal(g.score, 5 * 90);
+    assert.equal(g.found, 5);
+    assert.deepEqual(R.hangmanNext(g), []);
+    assert.equal(last[0], true);
+    const h = R.createHangman(hangmanPool(), seeded(7));
+    assert.deepEqual(R.hangmanNext(h), [], 'pas avant la fin de la manche');
+    R.hangmanGuess(h, '1');
+    R.hangmanNext(h);
+    assert.equal(h.index, 0);
 });

@@ -523,16 +523,16 @@ le vérifie). **Tout ce contenu est à relire par un enseignant.**
   bloc reste. Une ligne de cinq blocs verts disparaît. Les années proches de 476 et de 1453-1492 sont exclues (bornes discutées).
 
 **La salle de jeux** (`js/app/arcade.js`, écran `#screen-arcade` : l'identifiant a gardé l'ancien nom « salle d'arcade ») : une carte sous
-« Le Chemin du Temps » sur l'écran des catégories. Un seul écran, trois sections, dix jeux, et sur chaque carte ce que le joueur y a fait
+« Le Chemin du Temps » sur l'écran des catégories. Un seul écran, trois sections, seize jeux, et sur chaque carte ce que le joueur y a fait
 (meilleur score, étoiles, calendriers terminés) :
 
 | Section | Jeux | Principe |
 |---|---|---|
-| **Mini-jeux** | la roue des fêtes, le convertisseur d'ères | courts, liés à une notion du cours, avec des étoiles (aussi proposés dans la fiche de leur niveau du Monde 0) |
-| **Jeux d'arcade** | Snake, Tetris, Pac-Man, Space Invaders | de l'adresse en temps réel, un score à battre |
-| **Jeux de réflexion** | Memory, Qui suis-je ?, Cause ou conséquence ?, Chasse aux anachronismes | au tour par tour, sans minuteur |
+| **Mini-jeux** | la roue des fêtes, le convertisseur d'ères, les siècles en chiffres romains, le calendrier de l'Avent historique | courts, liés à une notion du cours, avec des étoiles (aussi proposés dans la fiche de leur niveau du Monde 0) |
+| **Jeux d'arcade** | Snake, Tetris, Pac-Man, Space Invaders, Casse-briques des repères, Flappy Clio, Course de chars de la frise | de l'adresse en temps réel, un score à battre |
+| **Jeux de réflexion** | Memory, Qui suis-je ?, Cause ou conséquence ?, Chasse aux anachronismes, Pendu des dates | au tour par tour, sans minuteur |
 
-Les jeux d'arcade portent sur les événements connus du pack chargé (incontournables, un seul par fait) ; les quatre jeux de réflexion sont décrits plus bas.
+Les jeux d'arcade portent sur les événements connus du pack chargé (incontournables, un seul par fait) ; les jeux de réflexion sont décrits plus bas.
 Un jeu rend la main à l'écran d'où on l'a ouvert (`gamesBackTo` : la salle de jeux, ou le Chemin). Pour ajouter un jeu : une carte dans la section
 voulue de `#screen-arcade`, ses textes dans `ui/fr.json`, et sa ligne dans `renderGamesHub`.
 
@@ -546,6 +546,32 @@ voulue de `#screen-arcade`, ses textes dans `ui/fr.json`, et sa ligne dans `rend
   vaisseau sur une voie et on tire sur la carte la plus basse ; il faut abattre les événements HORS de la période et laisser passer
   les autres (tirer sur un événement de la période, ou en laisser passer un hors période, coûte une vie). Chaque tir ou carte
   passée est expliqué en une phrase. Le temps est un flottant (secondes) : `invStep(état, dt)` est pur et testé avec des `dt` simulés.
+
+- **Casse-briques des repères** (`ArcadeExtraCore.createBreakout`, `js/app/arcade-extra.js`) : des briques portent des années ; seule la plus ancienne encore
+  debout se casse. Toucher une autre brique coûte une vie (3) et la balle repart. La balle accélère de 6 % à chaque brique cassée. Raquette au doigt,
+  à la souris ou aux flèches ; un tap lance la balle. Boucle `requestAnimationFrame` dont chaque pas `breakoutStep(état, dt)` est pur.
+- **Flappy Clio** (`ArcadeExtraCore.createFlappy`) : Clio vole (un tap = un battement) entre des piliers qui portent des années ; il faut passer par
+  l'ouverture qui suit l'ordre croissant, pas par le leurre (une année plus ancienne que la précédente). Le premier pilier n'a qu'une large ouverture
+  pour s'échauffer ; trois vies, une courte invulnérabilité après un choc ; huit portes par série, de plus en plus vite.
+- **Course de chars de la frise** (`ArcadeExtraCore.createRace`) : douze cases. Un événement est nommé, on choisit son année parmi quatre ; une bonne
+  réponse avance le char d'une case, de deux en moins de 4 secondes (turbo). Face à l'ordinateur (facile, normal, difficile : il avance 50 %, 65 % ou
+  80 % du temps), ou **à deux sur le même appareil** (tour à tour, avec un écran de passation entre les joueurs pour cacher la question).
+  **Pas de duel en ligne** : les duels existants de l'app sont asynchrones et passent par le serveur (défi quotidien) ; un duel en direct demanderait
+  un canal temps réel qui n'existe pas encore.
+
+Deux mini-jeux de plus, dont le contenu écrit à la main est **à relire par un enseignant** :
+
+- **Siècles en chiffres romains** (`js/minigamesCore.js`, `js/app/minigames.js`) : le « Bon siècle » est devenu un jeu de lecture des chiffres romains,
+  dix questions : lire un chiffre romain (XVIIIe) → quel siècle ? (avec ses années), quel siècle contient telle année ? (le piège des années rondes :
+  l'an 1700 appartient au XVIIe ; l'an 100 av. J.-C. ouvre le IIe siècle av. J.-C.), et **remettre dans l'ordre chronologique** plusieurs siècles écrits en
+  chiffres romains (av. J.-C. compris, où l'ordre s'inverse). 100 points par bonne réponse, −25 par erreur dans l'ordre. Aussi proposé dans la fiche du
+  niveau 5 du Monde 0, à côté du Tetris.
+- **Calendrier de l'Avent historique** (`js/adventContent.js`, `js/app/minigames.js`) : 31 cases, une par jour de décembre, chacune un événement
+  daté de ce jour. On ouvre la case, on retrouve l'année parmi quatre propositions, puis l'événement est expliqué. En décembre, les cases s'ouvrent
+  jour après jour ; hors décembre, tout est ouvert pour s'exercer. Progression par année civile (`historiaxe_advent_v1`, sur l'appareil).
+  **Le menu principal change chaque jour de décembre** : une carte (`adventHomeCard`) porte l'emoji du jour, une teinte propre à la date
+  (`--advent-hue`) et le décompte « Plus que N jours avant Noël » (« Joyeux Noël ! » le 25, « Entre Noël et le Nouvel An » ensuite). Hors décembre,
+  elle n'apparaît pas. Les tests moquent la date en remplaçant `adventNow`.
 
 **Jeux de réflexion** (`js/reflexionCore.js`, `js/reflexionContent.js`, `js/app/reflexion.js`) ; le contenu écrit à la main (paires de causes, scènes) est **à relire par un enseignant** :
 
@@ -569,6 +595,10 @@ voulue de `#screen-arcade`, ses textes dans `ui/fr.json`, et sa ligne dans `rend
   un élément à sa place désigné à tort retire autant qu'un anachronisme trouvé en rapporte. Chaque tuile se colore (trouvé, manqué, désigné à tort) et
   **chaque élément est expliqué** (quand la chose est inventée, ou pourquoi elle est bien de l'époque : le café de Louis XIV date de 1669). Les scènes
   sont décrites par du texte et des emojis : le dépôt ne contient pas d'illustrations de scènes ; en ajouter se ferait en remplaçant `icon` par une image.
+
+- **Pendu des dates** (`ReflexionCore.createHangman`) : cinq manches ; un événement est nommé, son année est cachée sous des tirets. On devine
+  chiffre par chiffre (six vies) ou on tente l'année entière ; une année entière fausse dit « plus tôt » ou « plus tard ». Score : 30 + 10 par vie
+  restante. Les chiffres se tapent aussi au clavier.
 
 Les règles sont pures (`ArcadeCore`, testées sans minuteur) ; l'écran ne fait que cadencer et dessiner. Meilleurs scores sur l'appareil
 (`historiaxe_arcade_v1`, hors synchronisation). Pas de `touch-action: none` (interdit par `tests/a11y.test.js`) : le glisser du

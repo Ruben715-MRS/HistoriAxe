@@ -1,7 +1,7 @@
 // =========================================================================
 // === LES JEUX DE RÉFLEXION — RÈGLES DU MEMORY CHRONOLOGIQUE ET DE « QUI SUIS-JE ? » ===
 // =========================================================================
-// Quatre jeux au tour par tour, sans minuteur. Ici, seulement les règles (états purs, sans DOM) ; les écrans sont dans
+// Cinq jeux au tour par tour, sans minuteur. Ici, seulement les règles (états purs, sans DOM) ; les écrans sont dans
 // js/app/reflexion.js. Testé dans tests/reflexionCore.test.js.
 //
 //  - MEMORY : six événements, douze cartes (le titre de l'événement d'un côté, sa date de l'autre), face cachée. On
@@ -12,6 +12,8 @@
 //    mauvaise réponse retire l'option et dévoile l'indice suivant.
 //  - CAUSE OU CONSÉQUENCE ? : deux événements ; on dit lequel a provoqué l'autre (ou lequel est la conséquence de l'autre).
 //    L'explication du mécanisme suit chaque réponse. Contenu écrit à la main : js/reflexionContent.js.
+//  - PENDU DES DATES : l'événement est nommé, l'année est cachée, chiffre par chiffre. On propose un chiffre (il se dévoile partout où
+//    il est, ou coûte une vie) ou une année entière (« plus tôt » / « plus tard », au prix d'une vie si elle est fausse).
 //  - CHASSE AUX ANACHRONISMES : une scène d'une époque, huit éléments dont deux ou trois n'y ont pas leur place. On désigne
 //    ceux qu'on croit anachroniques, puis on valide : chaque anachronisme trouvé rapporte, chaque élément à sa place désigné à
 //    tort retire un point.
@@ -245,6 +247,89 @@
     }
 
 
+
+    // --- PENDU DES DATES -----------------------------------------------------------------------------------
+    var HANGMAN_ROUNDS = 5;
+    var HANGMAN_LIVES = 6;
+    var HANGMAN_BASE = 30;
+    var HANGMAN_PER_LIFE = 10;
+
+    // Cinq événements aux années différentes, de un à quatre chiffres. `digits` : l'année sans signe ; `bc` : avant J.-C.
+    function createHangman(pool, rng, rounds) {
+        var n = rounds || HANGMAN_ROUNDS;
+        var events = Arcade.pickDistinct((pool || []).filter(function (e) {
+            return e && typeof e.date === 'number' && e.title && Math.abs(e.date) >= 1 && Math.abs(e.date) <= 9999;
+        }), rng, n);
+        var questions = events.map(function (event) { return { event: event, digits: String(Math.abs(event.date)), bc: event.date < 0 }; });
+        var state = { questions: questions, index: 0, guessed: {}, lives: HANGMAN_LIVES, resolved: null, hint: null, score: 0, found: 0, results: [], over: !questions.length, empty: !questions.length };
+        return state;
+    }
+
+    function hangmanQuestion(state) { return state.questions[state.index] || null; }
+
+    // Les cases : le chiffre s'il est trouvé, sinon null ; toutes quand la manche est résolue.
+    function hangmanSlots(state) {
+        var q = hangmanQuestion(state);
+        if (!q) return [];
+        return q.digits.split('').map(function (d) { return state.resolved || state.guessed[d] ? d : null; });
+    }
+
+    function hangmanResolve(state, how) {
+        var q = hangmanQuestion(state);
+        state.resolved = how;
+        var points = how === 'solved' ? HANGMAN_BASE + HANGMAN_PER_LIFE * state.lives : 0;
+        state.score += points;
+        if (how === 'solved') state.found += 1;
+        state.results.push({ id: q.event.id, title: q.event.title, date: q.event.date, solved: how === 'solved', lives: state.lives, points: points });
+    }
+
+    function hangmanLoseLife(state, out) {
+        state.lives -= 1;
+        if (state.lives <= 0) { hangmanResolve(state, 'lost'); out.push('lost'); }
+    }
+
+    // Propose un chiffre (« 0 » à « 9 »). Renvoie : 'hit' (il est dans l'année), 'miss' (il n'y est pas : une vie en moins),
+    // 'solved' (tous les chiffres sont trouvés), 'lost' (plus de vie).
+    function hangmanGuess(state, digit) {
+        var q = hangmanQuestion(state);
+        var d = String(digit);
+        if (state.over || !q || state.resolved || !/^[0-9]$/.test(d) || state.guessed[d]) return [];
+        state.guessed[d] = true;
+        state.hint = null;
+        var out = [];
+        if (q.digits.indexOf(d) !== -1) {
+            out.push('hit');
+            if (q.digits.split('').every(function (x) { return state.guessed[x]; })) { hangmanResolve(state, 'solved'); out.push('solved'); }
+        } else {
+            out.push('miss');
+            hangmanLoseLife(state, out);
+        }
+        return out;
+    }
+
+    // Propose une année entière (négative avant J.-C.). Juste : la manche est gagnée. Fausse : une vie en moins, et on apprend si la vraie date
+    // est plus tôt ou plus tard (`state.hint` : 'earlier' ou 'later').
+    function hangmanTryYear(state, year) {
+        var q = hangmanQuestion(state);
+        if (state.over || !q || state.resolved || !Number.isInteger(year) || year === 0) return [];
+        if (year === q.event.date) { hangmanResolve(state, 'solved'); state.hint = null; return ['solved']; }
+        state.hint = q.event.date < year ? 'earlier' : 'later';
+        var out = ['wrong', state.hint];
+        hangmanLoseLife(state, out);
+        return out;
+    }
+
+    function hangmanNext(state) {
+        if (state.over || !state.resolved) return [];
+        state.index += 1;
+        state.guessed = {};
+        state.lives = HANGMAN_LIVES;
+        state.resolved = null;
+        state.hint = null;
+        if (state.index >= state.questions.length) { state.over = true; return ['done']; }
+        return ['next'];
+    }
+
     // --- CAUSE OU CONSÉQUENCE ? ----------------------------------------------------------------------------
     var CAUSE_ROUNDS = 8;
     var CAUSE_POINTS = 100;
@@ -359,6 +444,9 @@
         MEMORY_PAIRS: MEMORY_PAIRS, WHO_ROUNDS: WHO_ROUNDS, WHO_POINTS: WHO_POINTS,
         createMemory: createMemory, memoryFlip: memoryFlip, memoryHide: memoryHide, memoryScore: memoryScore,
         centuryLabel: centuryLabel, nameTokens: nameTokens, maskName: maskName, splitSentences: splitSentences, buildClues: buildClues,
+        HANGMAN_ROUNDS: HANGMAN_ROUNDS, HANGMAN_LIVES: HANGMAN_LIVES,
+        createHangman: createHangman, hangmanQuestion: hangmanQuestion, hangmanSlots: hangmanSlots, hangmanGuess: hangmanGuess,
+        hangmanTryYear: hangmanTryYear, hangmanNext: hangmanNext,
         CAUSE_ROUNDS: CAUSE_ROUNDS, SCENE_ROUNDS: SCENE_ROUNDS,
         createCause: createCause, causeQuestion: causeQuestion, causeSides: causeSides, causeAnswer: causeAnswer, causeNext: causeNext,
         createScenes: createScenes, sceneRound: sceneRound, sceneTotal: sceneTotal, sceneToggle: sceneToggle, sceneValidate: sceneValidate, sceneNext: sceneNext,

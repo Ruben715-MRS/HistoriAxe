@@ -206,12 +206,12 @@ test('Tetris : un vivier sans une période ne démarre pas, la gravité accélè
 
 test('meilleurs scores : on garde le plus haut, on ignore ce qui est abîmé', () => {
     let best = A.recordBest(null, 'snake', 150);
-    assert.deepEqual(best, { snake: 150, tetris: 0, pacman: 0, invaders: 0, memory: 0, who: 0, cause: 0, scene: 0 });
+    assert.deepEqual(best, { snake: 150, tetris: 0, pacman: 0, invaders: 0, memory: 0, who: 0, cause: 0, scene: 0, breakout: 0, flappy: 0, race: 0, hangman: 0, roman: 0 });
     best = A.recordBest(best, 'snake', 90);
     assert.equal(best.snake, 150);
     best = A.recordBest(best, 'tetris', 320);
-    assert.deepEqual(best, { snake: 150, tetris: 320, pacman: 0, invaders: 0, memory: 0, who: 0, cause: 0, scene: 0 });
-    assert.deepEqual(A.normalizeBest('x'), { snake: 0, tetris: 0, pacman: 0, invaders: 0, memory: 0, who: 0, cause: 0, scene: 0 });
+    assert.deepEqual(best, { snake: 150, tetris: 320, pacman: 0, invaders: 0, memory: 0, who: 0, cause: 0, scene: 0, breakout: 0, flappy: 0, race: 0, hangman: 0, roman: 0 });
+    assert.deepEqual(A.normalizeBest('x'), { snake: 0, tetris: 0, pacman: 0, invaders: 0, memory: 0, who: 0, cause: 0, scene: 0, breakout: 0, flappy: 0, race: 0, hangman: 0, roman: 0 });
     assert.deepEqual(A.recordBest(best, 'autre', 999), best);
 });
 
@@ -411,7 +411,7 @@ test('Invaders : la manche finie, une autre période arrive, plus vite ; trois v
 });
 
 test('meilleurs scores : quatre jeux', () => {
-    assert.deepEqual(A.normalizeBest(null), { snake: 0, tetris: 0, pacman: 0, invaders: 0, memory: 0, who: 0, cause: 0, scene: 0 });
+    assert.deepEqual(A.normalizeBest(null), { snake: 0, tetris: 0, pacman: 0, invaders: 0, memory: 0, who: 0, cause: 0, scene: 0, breakout: 0, flappy: 0, race: 0, hangman: 0, roman: 0 });
     assert.equal(A.recordBest(null, 'pacman', 40).pacman, 40);
     assert.equal(A.recordBest(null, 'invaders', 70).invaders, 70);
 });

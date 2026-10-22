@@ -18,8 +18,8 @@ const PATH_MAP = { width: 300, step: 100, padTop: 250, padBottom: 70, amplitude:
 
 // Les mini-jeux qui accompagnent un niveau du Monde 0 (la roue des fêtes, au niveau 4, a son propre bouton).
 const PATH_SIDE_GAMES = {
-    3: { label: 'eras.entry', open: 'openEras' },
-    5: { label: 'tetris.entry', open: 'openTetris' }
+    3: [{ label: 'eras.entry', open: 'openEras' }],
+    5: [{ label: 'roman.entry', open: 'openRoman' }, { label: 'tetris.entry', open: 'openTetris' }]
 };
 
 let pathCache = null; // { bdd, size, pools, byId }
@@ -148,6 +148,9 @@ function renderPathCard(container) {
     arcade.querySelector('.resume-card-kicker').textContent = t('arcade.card_kicker');
     arcade.querySelector('.resume-card-title').textContent = t('arcade.title');
     arcade.onclick = () => openArcade();
+    // En décembre, la case du calendrier de l'Avent du jour s'affiche entre le Chemin et la salle de jeux (js/app/minigames.js).
+    const advent = typeof adventHomeCard === 'function' ? adventHomeCard() : null;
+    if (advent) container.appendChild(advent);
     container.appendChild(arcade);
 }
 
@@ -449,15 +452,18 @@ function pathOpenSheet(levelId) {
 
     // Le niveau 4 du Monde 0 a un mini-jeu à côté (js/app/wheel.js) : ouvert à tous, même avant le niveau.
     document.getElementById('path-sheet-wheel').classList.toggle('hidden', !(world.id === 'monde0' && level.n === 4 && !level.boss));
-    // Les autres mini-jeux du Monde 0 : le convertisseur d'ères (niveau 3, js/app/eras.js) et le Tetris des siècles
-    // (niveau 5, js/app/arcade.js).
-    const side = world.id === 'monde0' && !level.boss ? PATH_SIDE_GAMES[level.n] : null;
-    const sideBtn = document.getElementById('path-sheet-game');
-    sideBtn.classList.toggle('hidden', !side);
-    if (side) {
-        sideBtn.innerText = t(side.label);
-        sideBtn.onclick = () => window[side.open]('screen-path');
-    }
+    // Les autres mini-jeux du Monde 0 : le convertisseur d'ères (niveau 3, js/app/eras.js), les siècles en chiffres romains et le
+    // Tetris des siècles (niveau 5, js/app/minigames.js, js/app/arcade.js). Jusqu'à deux boutons par fiche.
+    const sides = world.id === 'monde0' && !level.boss ? (PATH_SIDE_GAMES[level.n] || []) : [];
+    ['path-sheet-game', 'path-sheet-game-2'].forEach((id, i) => {
+        const btn = document.getElementById(id);
+        const side = sides[i];
+        btn.classList.toggle('hidden', !side);
+        if (side) {
+            btn.innerText = t(side.label);
+            btn.onclick = () => window[side.open]('screen-path');
+        }
+    });
 
     const sheet = document.getElementById('path-sheet');
     sheet.classList.remove('hidden');

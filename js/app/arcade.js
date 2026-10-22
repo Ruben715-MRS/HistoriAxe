@@ -83,13 +83,17 @@ function openArcade() {
 
 function renderGamesHub() {
     const best = arcadeBest();
-    ['snake', 'tetris', 'pacman', 'invaders', 'memory', 'who', 'cause', 'scene'].forEach(game => {
+    ['snake', 'tetris', 'pacman', 'invaders', 'memory', 'who', 'cause', 'scene', 'breakout', 'flappy', 'race', 'hangman', 'roman'].forEach(game => {
         document.getElementById('arcade-best-' + game).textContent = best[game] > 0
             ? t('arcade.best', { score: best[game] }) : t('arcade.no_best');
     });
     const done = Object.keys(wheelProgress()).length;
     document.getElementById('arcade-best-wheel').textContent = done > 0
         ? t('arcade.wheel_progress', { done, total: CalendarWheel.CALENDARS.length }) : t('arcade.no_best');
+    // L'Avent : les cases ouvertes cette année (le calendrier se joue une fois par case, pas pour un score).
+    const advent = MiniGamesCore.adventCounts(adventProgress(), adventYear());
+    document.getElementById('arcade-best-advent').textContent = advent.opened > 0
+        ? t('arcade.advent_progress', { opened: advent.opened, total: MiniGamesCore.ADVENT_DAYS, right: advent.right }) : t('arcade.no_best');
     const eras = erasProgress();
     document.getElementById('arcade-best-eras').textContent = eras
         ? t('arcade.stars_best', { stars: '★'.repeat(eras.stars) + '☆'.repeat(EraConverter.MAX_STARS - eras.stars) }) : t('arcade.no_best');

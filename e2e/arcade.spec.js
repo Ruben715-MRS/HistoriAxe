@@ -7,7 +7,7 @@ const { test, expect, visibleScreen } = require('./fixtures');
 test.beforeEach(async ({ page }) => {
     await page.evaluate(() => {
         markRecapShownThisWeek();
-        ['historiaxe_arcade_v1', 'historiaxe_eras_v1', 'historiaxe_wheel_v1'].forEach(k => localStorage.removeItem(k));
+        ['historiaxe_arcade_v1', 'historiaxe_eras_v1', 'historiaxe_wheel_v1', 'historiaxe_advent_v1'].forEach(k => localStorage.removeItem(k));
         localStorage.setItem('historiaxe_path_v1', JSON.stringify({ levels: {}, skipped: [] }));
         showScreen('screen-categories');
         initCategories();
@@ -101,16 +101,22 @@ test('Convertisseur d\'ères : ouvert depuis la fiche du niveau 3, huit question
     expect(await page.evaluate(() => JSON.parse(localStorage.getItem('historiaxe_eras_v1')))).toEqual({ stars: 3, errors: 1 });
 });
 
-test('Le Tetris est aussi proposé dans la fiche du niveau 5, et aucun mini-jeu sur les autres niveaux', async ({ page }) => {
+test('Le niveau 5 propose les siècles romains et le Tetris ; aucun mini-jeu sur le niveau 2', async ({ page }) => {
     await page.locator('#btn-path').click();
     await page.evaluate(() => pathOpenSheet('monde0-5'));
-    await expect(page.locator('#path-sheet-game')).toContainText('Tetris');
-    await page.locator('#path-sheet-game').click();
+    await expect(page.locator('#path-sheet-game')).toContainText('chiffres romains');
+    await expect(page.locator('#path-sheet-game-2')).toContainText('Tetris');
+    await page.locator('#path-sheet-game-2').click();
     expect(await visibleScreen(page)).toBe('screen-tetris');
     await page.locator('#screen-tetris .back-btn').click();
     await expect(page.locator('#screen-path')).toBeVisible();
+    await page.evaluate(() => pathOpenSheet('monde0-5'));
+    await page.locator('#path-sheet-game').click();
+    expect(await visibleScreen(page)).toBe('screen-roman');
+    await page.locator('#screen-roman .back-btn').click();
     await page.evaluate(() => pathOpenSheet('monde0-2'));
     await expect(page.locator('#path-sheet-game')).toBeHidden();
+    await expect(page.locator('#path-sheet-game-2')).toBeHidden();
 });
 
 test('Pac-Man : un labyrinthe, une consigne, un bon et un mauvais bonbon, une partie qui se termine', async ({ page }) => {
@@ -189,11 +195,11 @@ test('Space Invaders : une période, des cartes qui descendent, un tir sur un an
     await expect(page.locator('#invaders-over')).toBeVisible();
 });
 
-test('la salle de jeux : trois sections, dix jeux, des mini-jeux qui reviennent au menu', async ({ page }) => {
+test('la salle de jeux : trois sections, seize jeux, des mini-jeux qui reviennent au menu', async ({ page }) => {
     await page.locator('#btn-arcade').click();
     await expect(page.locator('#screen-arcade h2')).toHaveText('Salle de jeux');
     await expect(page.locator('#screen-arcade .games-section h3')).toHaveText(['Mini-jeux', "Jeux d'arcade", 'Jeux de réflexion']);
-    await expect(page.locator('#screen-arcade .arcade-card')).toHaveCount(10);
+    await expect(page.locator('#screen-arcade .arcade-card')).toHaveCount(16);
     // Les cartes du menu disent où l'on en est.
     await expect(page.locator('#arcade-best-wheel')).toContainText('Pas encore joué');
     await page.evaluate(() => {
@@ -334,4 +340,252 @@ test('Chasse aux anachronismes : désigner, valider, voir pourquoi, cinq scènes
     await expect(page.locator('#scene-over-list li')).toHaveCount(5);
     await page.locator('#screen-scene .back-btn').click();
     await expect(page.locator('#arcade-best-scene')).toContainText('Meilleur score');
+});
+
+test('Siècles en chiffres romains : dix questions de quatre sortes, un siècle remis à l\'ordre, un meilleur score', async ({ page }) => {
+    await page.locator('#btn-arcade').click();
+    await page.locator('.arcade-card', { hasText: 'Siècles en chiffres romains' }).click();
+    expect(await visibleScreen(page)).toBe('screen-roman');
+    await expect(page.locator('#roman-status')).toContainText('Question 1 / 10');
+    // La première question est un chiffre romain à lire : il s'affiche en grand.
+    await expect(page.locator('#roman-numeral')).toBeVisible();
+    const wrong = await page.evaluate(() => { const q = MiniGamesCore.romanQuestion(romanGame); return (q.answer + 1) % 4; });
+    await page.locator(`#roman-options .quiz-option[data-choice="${wrong}"]`).click();
+    await expect(page.locator('#roman-feedback-title')).toHaveText('Pas tout à fait…');
+    await expect(page.locator('#roman-options .quiz-option.correct')).toHaveCount(1);
+    await expect(page.locator('#roman-feedback-text')).toContainText('=');
+    await page.locator('#roman-next').click();
+    // Les neuf autres, justes ; les questions d'ordre se jouent en touchant les siècles un à un.
+    for (let i = 0; i < 9; i++) {
+        const q = await page.evaluate(() => { const x = MiniGamesCore.romanQuestion(romanGame); return { type: x.type, answer: x.answer, order: x.order }; });
+        if (q.type === 'order') {
+            await expect(page.locator('#roman-prompt')).toContainText('du plus ancien au plus récent');
+            // Un mauvais siècle d'abord : message, puis le bon ordre.
+            await page.locator(`#roman-options .roman-tile[data-item="${q.order[3]}"]`).click();
+            await expect(page.locator('#roman-feedback-title')).toContainText('Pas celui-là');
+            for (const item of q.order) await page.locator(`#roman-options .roman-tile[data-item="${item}"]`).click();
+            await expect(page.locator('#roman-feedback-title')).toContainText('1 erreur');
+        } else {
+            await page.locator(`#roman-options .quiz-option[data-choice="${q.answer}"]`).click();
+            await expect(page.locator('#roman-feedback-title')).toHaveText('Juste !');
+        }
+        await page.locator('#roman-next').click();
+    }
+    await expect(page.locator('#roman-over')).toBeVisible();
+    expect(await page.evaluate(() => JSON.parse(localStorage.getItem('historiaxe_arcade_v1')).roman)).toBeGreaterThan(500);
+    await page.locator('#screen-roman .back-btn').click();
+    await expect(page.locator('#arcade-best-roman')).toContainText('Meilleur score');
+});
+
+test('Calendrier de l\'Avent : un 12 décembre, la case du jour s\'ouvre, les suivantes sont fermées, la carte du menu aussi', async ({ page }) => {
+    await page.evaluate(() => { adventNow = () => new Date(2026, 11, 12); initCategories(); });
+    // Le menu principal : une carte spéciale, avec la case du jour.
+    const card = page.locator('#btn-advent');
+    await expect(card).toBeVisible();
+    await expect(card).toContainText('12 décembre');
+    await expect(card).toContainText('Plus que 13 jour');
+    await expect(card).toContainText('premier signal radio');
+    await expect(card).toContainText('Case du jour à ouvrir');
+    await card.click();
+    expect(await visibleScreen(page)).toBe('screen-advent');
+    await expect(page.locator('#advent-grid .advent-day')).toHaveCount(31);
+    await expect(page.locator('#advent-grid .advent-day.is-locked')).toHaveCount(19);
+    await expect(page.locator('#advent-grid .advent-day.is-selected')).toHaveText('12');
+    await expect(page.locator('#advent-case-question')).toContainText('en quelle année');
+    await expect(page.locator('#advent-options .advent-option')).toHaveCount(4);
+    // Une case fermée dit quand elle s'ouvrira.
+    await page.locator('#advent-grid .advent-day[data-day="13"]').click();
+    await expect(page.locator('#advent-case-question')).toContainText("s'ouvrira le 13 décembre");
+    await expect(page.locator('#advent-options .advent-option')).toHaveCount(0);
+    // La case du jour : on répond, elle se marque et ne se rejoue pas.
+    await page.locator('#advent-grid .advent-day[data-day="12"]').click();
+    await page.locator('#advent-options .advent-option', { hasText: '1901' }).click();
+    await expect(page.locator('#advent-feedback-title')).toHaveText('Juste !');
+    await expect(page.locator('#advent-feedback-text')).toContainText('Marconi');
+    await expect(page.locator('#advent-grid .advent-day[data-day="12"]')).toHaveClass(/is-right/);
+    await expect(page.locator('#advent-status')).toContainText('1 cases ouvertes · 1 trouvées');
+    await page.locator('#advent-grid .advent-day[data-day="1"]').click();
+    await page.locator('#advent-options .advent-option').first().click();
+    await page.locator('#advent-grid .advent-day[data-day="12"]').click();
+    await expect(page.locator('#advent-feedback-title')).toContainText('déjà ouverte');
+    await expect(page.locator('#advent-options .advent-option')).toHaveCount(0);
+    // Retour au menu : la carte du jour dit que la case est ouverte.
+    await page.locator('#screen-advent .back-btn').click();
+    await expect(page.locator('#btn-advent')).toContainText('Case du jour ouverte');
+});
+
+test('Calendrier de l\'Avent : chaque jour de décembre a son affichage, hors décembre il n\'y en a pas et tout est ouvert', async ({ page }) => {
+    const seen = await page.evaluate(() => {
+        const out = [];
+        for (let day = 1; day <= 31; day++) {
+            adventNow = () => new Date(2026, 11, day);
+            const card = adventHomeCard();
+            out.push({ icon: card.querySelector('.advent-card-icon').textContent, kicker: card.querySelector('.resume-card-kicker').textContent, hue: card.style.getPropertyValue('--advent-hue') });
+        }
+        return out;
+    });
+    expect(new Set(seen.map(c => c.icon)).size).toBe(31);
+    expect(new Set(seen.map(c => c.hue)).size).toBeGreaterThan(25);
+    expect(seen[0].kicker).toContain('Plus que 24 jour');
+    expect(seen[23].kicker).toContain('Plus que 1 jour');
+    expect(seen[24].kicker).toContain('Joyeux Noël');
+    expect(seen[30].kicker).toContain('Entre Noël et le Nouvel An');
+    await page.evaluate(() => { adventNow = () => new Date(2026, 6, 4); initCategories(); });
+    await expect(page.locator('#btn-advent')).toHaveCount(0);
+    await page.locator('#btn-arcade').click();
+    await page.locator('.arcade-card', { hasText: "Calendrier de l'Avent" }).click();
+    expect(await visibleScreen(page)).toBe('screen-advent');
+    await expect(page.locator('#advent-grid .advent-day.is-locked')).toHaveCount(0);
+    await expect(page.locator('#advent-rule')).toContainText('Hors décembre');
+});
+
+test('Casse-briques : cinq briques, la balle part au lancer, la plus ancienne se casse, une autre coûte une vie', async ({ page }) => {
+    await page.locator('#btn-arcade').click();
+    await page.locator('.arcade-card', { hasText: 'Casse-briques' }).click();
+    expect(await visibleScreen(page)).toBe('screen-breakout');
+    await page.locator('#breakout-start').click();
+    await expect(page.locator('#breakout-status')).toContainText('♥♥♥');
+    expect(await page.evaluate(() => boGame.bricks.length)).toBe(5);
+    expect(await page.evaluate(() => boGame.ball.stuck)).toBe(true);
+    await page.locator('#screen-breakout .arcade-key-wide').click();
+    await expect.poll(() => page.evaluate(() => boGame.ball.stuck)).toBe(false);
+    // On fige la boucle pour viser : la balle sous la plus ancienne brique.
+    await page.evaluate(() => {
+        breakoutStop();
+        const target = ArcadeExtraCore.breakoutTarget(boGame);
+        boGame.ball.x = target.x + target.w / 2; boGame.ball.y = target.y + target.h + 9; boGame.ball.vx = 0; boGame.ball.vy = -ArcadeExtraCore.breakoutSpeed(boGame);
+        breakoutAfter(ArcadeExtraCore.breakoutStep(boGame, 0.05));
+    });
+    await expect(page.locator('#breakout-message')).toContainText('✓');
+    expect(await page.evaluate(() => boGame.bricks.length)).toBe(4);
+    await page.evaluate(() => {
+        const target = ArcadeExtraCore.breakoutTarget(boGame);
+        const other = boGame.bricks.find(b => b !== target);
+        boGame.ball.x = other.x + other.w / 2; boGame.ball.y = other.y + other.h + 9; boGame.ball.vx = 0; boGame.ball.vy = -ArcadeExtraCore.breakoutSpeed(boGame);
+        breakoutAfter(ArcadeExtraCore.breakoutStep(boGame, 0.05));
+    });
+    await expect(page.locator('#breakout-message')).toContainText('Pas celle-ci');
+    await expect(page.locator('#breakout-status')).toContainText('♥♥ ');
+    await page.evaluate(() => { boGame.lives = 0; boGame.over = true; breakoutFinish(); });
+    await expect(page.locator('#breakout-over')).toBeVisible();
+    await expect(page.locator('#breakout-over-list li').first()).toContainText('avant');
+    await page.locator('#screen-breakout .back-btn').click();
+    await expect(page.locator('#arcade-best-breakout')).toContainText('Meilleur score');
+});
+
+test('Flappy Clio : Clio attend le premier battement, vole, passe une porte et finit sa partie', async ({ page }) => {
+    await page.locator('#btn-arcade').click();
+    await page.locator('.arcade-card', { hasText: 'Flappy Clio' }).click();
+    expect(await visibleScreen(page)).toBe('screen-flappy');
+    await page.locator('#flappy-start').click();
+    await expect(page.locator('#flappy-banner')).toContainText('grande ouverture');
+    expect(await page.evaluate(() => flGame.gates.length)).toBe(8);
+    const y0 = await page.evaluate(() => flGame.clio.y);
+    await page.waitForTimeout(300);
+    expect(await page.evaluate(() => flGame.clio.y)).toBe(y0);
+    await page.locator('#screen-flappy .arcade-key-wide').click();
+    await expect.poll(() => page.evaluate(() => flGame.started)).toBe(true);
+    // Une porte franchie par la bonne ouverture : le banner donne le repère.
+    await page.evaluate(() => {
+        flappyStop();
+        const gate = flGame.gates[0];
+        gate.x = flGame.clio.x - gate.w / 2 + 1;
+        flGame.clio.y = gate.gaps[0].y; flGame.clio.vy = 0;
+        flappyAfter(ArcadeExtraCore.flappyStep(flGame, 0.01));
+    });
+    await expect(page.locator('#flappy-message')).toContainText('✓');
+    await expect(page.locator('#flappy-banner')).toContainText('Dernier repère');
+    await page.evaluate(() => { flGame.lives = 0; flGame.over = true; flappyFinish(); });
+    await expect(page.locator('#flappy-over')).toBeVisible();
+    await page.locator('#screen-flappy .back-btn').click();
+    await expect(page.locator('#arcade-best-flappy')).toContainText('Meilleur score');
+});
+
+test('Course de chars : contre l\'ordinateur jusqu\'à l\'arrivée, puis à deux avec passage de l\'appareil', async ({ page }) => {
+    await page.locator('#btn-arcade').click();
+    await page.locator('.arcade-card', { hasText: 'Course de chars' }).click();
+    expect(await visibleScreen(page)).toBe('screen-race');
+    await expect(page.locator('#race-setup .btn')).toHaveCount(4);
+    await page.locator('#race-setup .btn', { hasText: 'facile' }).click();
+    await expect(page.locator('#race-track .race-lane')).toHaveCount(2);
+    await expect(page.locator('#race-options .advent-option')).toHaveCount(4);
+    // Une réponse rapide et juste : turbo, deux cases.
+    const answer = await page.evaluate(() => raceGame.question.answer);
+    await page.locator(`#race-options .advent-option[data-year="${answer}"]`).click();
+    await expect(page.locator('#race-feedback-title')).toContainText('Turbo');
+    await expect(page.locator('#race-status')).toContainText('2 / 12');
+    await page.locator('#race-next').click();
+    // Une mauvaise réponse : pas d'avance.
+    const wrongYear = await page.evaluate(() => raceGame.question.options.find(y => y !== raceGame.question.answer));
+    await page.locator(`#race-options .advent-option[data-year="${wrongYear}"]`).click();
+    await expect(page.locator('#race-feedback-title')).toHaveText('Pas tout à fait…');
+    await page.locator('#race-next').click();
+    // Jusqu'à la fin.
+    for (let i = 0; i < 12; i++) {
+        if (await page.locator('#race-over').isVisible()) break;
+        const a = await page.evaluate(() => raceGame.question.answer);
+        await page.locator(`#race-options .advent-option[data-year="${a}"]`).click();
+        await page.locator('#race-next').click();
+    }
+    await expect(page.locator('#race-over')).toBeVisible();
+    await expect(page.locator('#race-over-title')).toContainText(/Victoire|Défaite|Égalité/);
+    await page.locator('#race-over .btn').click();
+    await expect(page.locator('#race-setup')).toBeVisible();
+    // À deux : la question du joueur 2 reste cachée jusqu'au « Prêt ».
+    await page.locator('#race-setup .race-duo').click();
+    await expect(page.locator('#race-turn')).toContainText('Joueur 1');
+    const a1 = await page.evaluate(() => raceGame.question.answer);
+    await page.locator(`#race-options .advent-option[data-year="${a1}"]`).click();
+    await expect(page.locator('#race-next')).toContainText('Joueur 2');
+    await page.locator('#race-next').click();
+    await expect(page.locator('#race-handover')).toBeVisible();
+    await expect(page.locator('#race-play')).toBeHidden();
+    await expect(page.locator('#race-handover-title')).toContainText('Joueur 2');
+    await page.locator('#race-handover .btn').click();
+    await expect(page.locator('#race-play')).toBeVisible();
+    await expect(page.locator('#race-turn')).toContainText('Joueur 2');
+    await page.locator('#screen-race .back-btn').click();
+    expect(await visibleScreen(page)).toBe('screen-arcade');
+});
+
+test('Pendu des dates : des chiffres à proposer, une année entière avec « plus tôt / plus tard », cinq événements', async ({ page }) => {
+    await page.locator('#btn-arcade').click();
+    await page.locator('.arcade-card', { hasText: 'Pendu des dates' }).click();
+    expect(await visibleScreen(page)).toBe('screen-hangman');
+    await expect(page.locator('#hangman-status')).toContainText('Événement 1 / 5');
+    await expect(page.locator('#hangman-pad .hangman-digit')).toHaveCount(10);
+    const info = await page.evaluate(() => { const q = ReflexionCore.hangmanQuestion(hangmanGame); return { digits: q.digits, date: q.event.date }; });
+    await expect(page.locator('#hangman-slots .hangman-slot')).toHaveCount(info.digits.length);
+    // Un chiffre qui n'y est pas : une vie de moins.
+    const absent = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].find(d => !info.digits.includes(String(d)));
+    await page.locator(`#hangman-pad .hangman-digit[data-digit="${absent}"]`).click();
+    await expect(page.locator('#hangman-lives')).toHaveAttribute('aria-label', '5 vies');
+    await expect(page.locator(`#hangman-pad .hangman-digit[data-digit="${absent}"]`)).toHaveClass(/wrong/);
+    // Un chiffre qui y est : il se dévoile.
+    await page.locator(`#hangman-pad .hangman-digit[data-digit="${info.digits[0]}"]`).click();
+    await expect(page.locator('#hangman-slots .hangman-slot.is-found').first()).toHaveText(info.digits[0]);
+    // Une année entière fausse : « plus tôt » ou « plus tard ».
+    const tooLate = Math.abs(info.date) + 400 > 9999 ? 9999 : Math.abs(info.date) + 400;
+    await page.locator('#hangman-year').fill(String(tooLate));
+    if (info.date < 0) await page.locator('#hangman-year-bc').check();
+    await page.locator('#hangman-try button').click();
+    await expect(page.locator('#hangman-hint')).toBeVisible();
+    await expect(page.locator('#hangman-hint')).toContainText(/plus (TÔT|TARD)/);
+    // La bonne année : gagné.
+    await page.locator('#hangman-year').fill(String(Math.abs(info.date)));
+    if (info.date < 0) await page.locator('#hangman-year-bc').check(); else await page.locator('#hangman-year-bc').uncheck();
+    await page.locator('#hangman-try button').click();
+    await expect(page.locator('#hangman-feedback-title')).toContainText('Trouvé');
+    await page.locator('#hangman-next').click();
+    for (let i = 0; i < 4; i++) {
+        const d = await page.evaluate(() => ReflexionCore.hangmanQuestion(hangmanGame).event.date);
+        await page.locator('#hangman-year').fill(String(Math.abs(d)));
+        if (d < 0) await page.locator('#hangman-year-bc').check();
+        await page.locator('#hangman-try button').click();
+        await page.locator('#hangman-next').click();
+    }
+    await expect(page.locator('#hangman-over')).toBeVisible();
+    await expect(page.locator('#hangman-over-list li')).toHaveCount(5);
+    await page.locator('#screen-hangman .back-btn').click();
+    await expect(page.locator('#arcade-best-hangman')).toContainText('Meilleur score');
 });
