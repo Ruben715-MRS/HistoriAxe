@@ -273,7 +273,6 @@ const HISTOIRES_NATIONALES_REGIONS_IMAGES = {
     "europe de l'ouest": 'prog_france.webp',
     "europe du sud": 'prog_italie.webp',
     "amérique du nord": 'prog_etats_unis.webp',
-    "amérique centrale & caraïbes": 'prog_colombie.webp',
     "amérique du sud": 'prog_argentine.webp',
     "asie de l'est": 'prog_japon.webp',
     "asie du sud": 'prog_inde.webp',
