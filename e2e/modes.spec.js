@@ -182,11 +182,23 @@ test('« Reprendre » ramène au dernier thème ouvert', async ({ page }) => {
     await page.evaluate(() => { showScreen('screen-categories'); initCategories(); });
     const reprendre = page.locator('#btn-resume');
     await expect(reprendre).toBeVisible();
-    await expect(reprendre).toContainText('Histoire de la Belgique');
+    await expect(reprendre).toContainText('Reprendre');
+    await expect(reprendre).toHaveAttribute('aria-label', /Histoire de la Belgique/);
     await reprendre.click();
     // La Belgique a des axes : on arrive sur le choix des axes de CE thème.
     expect(await visibleScreen(page)).toBe('screen-axes');
     expect(await page.evaluate(() => getCurrentTheme().id)).toBe('thm_be');
+});
+
+test('« Reprendre » sans partie commencée reste affiché, éteint, et explique quoi faire', async ({ page }) => {
+    await page.evaluate(() => { showScreen('screen-categories'); localStorage.removeItem(LAST_THEME_KEY); initCategories(); });
+    const reprendre = page.locator('#btn-resume');
+    await expect(reprendre).toBeVisible();
+    await expect(reprendre).toHaveAttribute('aria-disabled', 'true');
+    // aria-disabled : Playwright le tient pour inactif, un joueur peut pourtant le toucher.
+    await reprendre.click({ force: true });
+    await expect(page.locator('#app-toast')).toContainText('Commencez d\'abord une partie');
+    await expect(page.locator('#screen-categories')).toBeVisible();
 });
 
 // --- « La frise » : mêmes cases que les autres groupes ---------------------
