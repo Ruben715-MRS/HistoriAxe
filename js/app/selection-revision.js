@@ -369,8 +369,8 @@ function buildMasteryBarHtml(name, stats, extraMetaHtml) {
     const pct = masteryPctOf(stats);
     const band = masteryBand(pct);
     const pctLabel = pct === null ? '—' : pct + '%';
-    const testedMeta = `${stats.tested}/${stats.total} événements testés`;
-    const weakMeta = stats.weak > 0 ? `<span class="mastery-row-weak-badge">⚠ ${stats.weak} points faibles</span>` : '';
+    const testedMeta = t('mastery.tested_meta', { tested: stats.tested, total: stats.total });
+    const weakMeta = stats.weak > 0 ? `<span class="mastery-row-weak-badge">${escapeHtml(t('mastery.weak_badge', { count: stats.weak }))}</span>` : '';
     return `
                 <div class="mastery-row-top">
                     <span class="mastery-row-name">${escapeHtml(name)}</span>
@@ -396,7 +396,7 @@ function renderProgressGroup(node) {
 
     const summary = document.createElement('summary');
     summary.className = 'mastery-group-summary';
-    const themeCountMeta = `<span>${node.stats.themeCount} thèmes</span>`;
+    const themeCountMeta = `<span>${escapeHtml(t('mastery.theme_count', { count: node.stats.themeCount }))}</span>`;
     summary.innerHTML = buildMasteryBarHtml('📁 ' + node.nom, node.stats, themeCountMeta);
     details.appendChild(summary);
 

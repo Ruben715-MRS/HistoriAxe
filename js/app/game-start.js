@@ -82,7 +82,7 @@ function endMultiplayerGame() {
     sorted.forEach((p, index) => {
         const medal = index < 3 ? medals[index] : `${index + 1}.`;
         const cls = index < 3 ? classes[index] : '';
-        const eliminatedText = p.eliminated ? ' <em>(Éliminé)</em>' : '';
+        const eliminatedText = p.eliminated ? ` <em>(${escapeHtml(t('multiplayer.eliminated'))})</em>` : '';
         container.innerHTML += `
                     <div class="podium-row ${cls}">
                         <span>${medal} ${escapeHtml(p.name)} ${eliminatedText}</span>
