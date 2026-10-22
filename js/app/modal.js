@@ -90,7 +90,7 @@ function fillPortraitCredit(credit, image) {
     const licenseUrl = portraitLicenseUrl(image.licence);
     if (licenseUrl) addLink(image.licence, licenseUrl);
     else if (image.licence) addText(image.licence);
-    if (/^CC BY/.test(image.licence || '')) addText(' · image recadrée');
+    if (/^CC BY/.test(image.licence || '')) addText(' · ' + t('modal.image_cropped'));
     addText(' · ');
     if (/^https:\/\//.test(image.source || '')) addLink('Wikimedia Commons', image.source);
     else addText('Wikimedia Commons');

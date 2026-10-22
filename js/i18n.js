@@ -9,7 +9,7 @@
 // pack de langue explicitement téléchargé avant une mise à jour de
 // ui/<lang>.json resterait bloqué sur son ancien contenu indéfiniment (ce
 // cache n'est jamais revalidé contre le réseau une fois rempli).
-const I18N_DATA_CACHE = 'historiaxe-data-v1.0.100';
+const I18N_DATA_CACHE = 'historiaxe-data-v1.0.103';
 
 // Le nom de chaque langue reste dans sa propre langue (autonyme) — convention
 // standard des sélecteurs de langue, ne dépend jamais de la langue active.
@@ -155,12 +155,12 @@ class I18nManager {
             if (typeof renderSettingsUI === 'function') renderSettingsUI();
 
             if (reloadUI) {
-                showToast('🌐 Langue active : ' + this.getLanguageName(lang), 3000);
+                showToast(this.t('settings.language_active', { name: this.getLanguageName(lang) }), 3000);
             }
         } catch (err) {
             console.error('Failed to load language pack [' + lang + ']:', err);
             if (lang !== 'fr') {
-                showToast('⚠️ Erreur de chargement du pack ' + lang + '. Repli sur Français.', 4000);
+                showToast(this.t('settings.pack_load_error', { lang: lang }), 4000);
                 await this.loadLanguage('fr', reloadUI);
             }
         } finally {
@@ -206,7 +206,7 @@ class I18nManager {
 
     async downloadLanguagePack(lang, onProgress) {
         if (!navigator.onLine) {
-            showToast('⚠️ Connexion Internet requise pour télécharger un pack.', 4000);
+            showToast(this.t('settings.pack_need_internet'), 4000);
             return false;
         }
 
@@ -242,19 +242,19 @@ class I18nManager {
                 localStorage.setItem(INSTALLED_LANGS_KEY, JSON.stringify(this.installedLanguages));
             }
 
-            showToast('✨ Pack ' + this.getLanguageName(lang) + ' installé et prêt hors-ligne !', 3500);
+            showToast(this.t('settings.pack_installed', { name: this.getLanguageName(lang) }), 3500);
             this.renderLanguagePacksSettingsUI();
             return true;
         } catch (err) {
             console.error('Error downloading pack ' + lang + ':', err);
-            showToast('⚠️ Échec du téléchargement du pack ' + lang + '.', 4000);
+            showToast(this.t('settings.pack_download_failed', { lang: lang }), 4000);
             return false;
         }
     }
 
     async deleteLanguagePack(lang) {
         if (lang === 'fr') {
-            showToast('⚠️ Le pack Français de base ne peut pas être supprimé.', 3000);
+            showToast(this.t('settings.pack_cannot_delete'), 3000);
             return;
         }
 
@@ -274,7 +274,7 @@ class I18nManager {
                 await this.loadLanguage('fr', true);
             }
 
-            showToast('🗑️ Pack ' + this.getLanguageName(lang) + ' supprimé.', 3000);
+            showToast(this.t('settings.pack_deleted', { name: this.getLanguageName(lang) }), 3000);
             this.renderLanguagePacksSettingsUI();
         } catch (e) {
             console.error('Error deleting pack ' + lang + ':', e);

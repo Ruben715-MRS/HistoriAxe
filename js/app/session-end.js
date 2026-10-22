@@ -52,8 +52,8 @@ function generateShareText(isDaily) {
 
     if (isDaily) {
         const timeStr = totalTimePlayed ? ` | ⏱️ ${formatDecimal(totalTimePlayed)}s` : '';
-        const streakStr = streak > 0 ? `\n🔥 Série : ${streak} jour${streak > 1 ? 's' : ''}` : '';
-        return `⚔️ HistoriAxe — Défi du Jour (${dateFormatted})\n${grid}\n🏆 Score : ${score} pts${timeStr}${streakStr}\n\nRejoins le défi sur HistoriAxe !`;
+        const streakStr = streak > 0 ? t('end.share_streak', { n: streak }) : '';
+        return t('end.share_daily', { date: dateFormatted, grid, score, time: timeStr, streak: streakStr });
     } else if (currentMode === 'carte' && geoYearVariant === 'slider' && geoStats.length) {
         // Chrono-Géo : l'espace et le temps en une ligne, ce qui se compare d'un joueur à l'autre.
         const km = geoStats.reduce((sum, s) => sum + s.km, 0) / geoStats.length;
@@ -62,8 +62,8 @@ function generateShareText(isDaily) {
         return t('chronogeo.share', { label: geoScopeLabel, km: geoFormatKm(km), years: Math.round(years), score });
     } else {
         const theme = getCurrentTheme();
-        const themeName = theme ? theme.nom : 'Chronologie';
-        return `⚔️ HistoriAxe — ${themeName}\n${grid}\n🏆 Score : ${score} points\n\nJoue sur HistoriAxe !`;
+        const themeName = theme ? theme.nom : t('end.share_default_theme');
+        return t('end.share_theme', { theme: themeName, grid, score });
     }
 }
 

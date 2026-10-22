@@ -244,7 +244,11 @@
     "victory_curseur": "Bravo ! L'œil juste à chaque fois !",
     "victory_intrus": "Bravo ! Pas un intrus ne vous a échappé !",
     "victory_whois": "Bravo ! Pas un visage ne vous a échappé !",
-    "victory_chronogeo": "Bravo ! Espace et temps maîtrisés !"
+    "victory_chronogeo": "Bravo ! Espace et temps maîtrisés !",
+    "share_daily": "⚔️ HistoriAxe — Défi du Jour ({date})\n{grid}\n🏆 Score : {score} pts{time}{streak}\n\nRejoins le défi sur HistoriAxe !",
+    "share_streak": "\n🔥 Série : {n} jour(s)",
+    "share_theme": "⚔️ HistoriAxe — {theme}\n{grid}\n🏆 Score : {score} points\n\nJoue sur HistoriAxe !",
+    "share_default_theme": "Chronologie"
   },
   "daily": {
     "title_win": "🌍 Défi du jour relevé !",
@@ -462,7 +466,14 @@
     "portraits_label": "Portraits de la galerie",
     "portraits_bw": "Collection",
     "portraits_color": "Toujours en couleur",
-    "portraits_hint": "En mode collection, un portrait reste en noir et blanc tant que vous n'avez pas rencontré le personnage en jeu."
+    "portraits_hint": "En mode collection, un portrait reste en noir et blanc tant que vous n'avez pas rencontré le personnage en jeu.",
+    "language_active": "🌐 Langue active : {name}",
+    "pack_load_error": "⚠️ Erreur de chargement du pack {lang}. Repli sur Français.",
+    "pack_need_internet": "⚠️ Connexion Internet requise pour télécharger un pack.",
+    "pack_installed": "✨ Pack {name} installé et prêt hors-ligne !",
+    "pack_download_failed": "⚠️ Échec du téléchargement du pack {lang}.",
+    "pack_cannot_delete": "⚠️ Le pack Français de base ne peut pas être supprimé.",
+    "pack_deleted": "🗑️ Pack {name} supprimé."
   },
   "anecdote": {
     "did_you_know": "💡 Le Saviez-vous ?",
@@ -532,7 +543,8 @@
     "start_btn": "Commencer la partie",
     "turn_banner": "À {name} de jouer !",
     "ready_btn": "Prêt ?",
-    "results_title": "Résultats Multijoueurs"
+    "results_title": "Résultats Multijoueurs",
+    "eliminated": "Éliminé"
   },
   "mastery": {
     "tested_meta": "{tested}/{total} événements testés",
@@ -680,7 +692,8 @@
     "linked_label": "Vu aussi dans…",
     "linked_more": "+{n} de plus",
     "linked_open": "Ouvrir la fiche de cet événement dans « {theme} »",
-    "redraw_person_btn": "🔀 Un autre personnage"
+    "redraw_person_btn": "🔀 Un autre personnage",
+    "image_cropped": "image recadrée"
   },
   "simultaneity": {
     "title": "Pendant ce temps, ailleurs…",
@@ -1557,10 +1570,12 @@
     "title": "Équipe de classe",
     "short": "Équipe",
     "offline": "L'équipe de classe a besoin d'une connexion au serveur.",
+    "join_title": "Rejoindre une équipe",
     "join_help": "Ton enseignant t'a donné un code ? Rejoins l'équipe de ta classe : vos étoiles remplissent un coffre commun.",
     "code_label": "Code de l'équipe",
     "join": "Rejoindre l'équipe",
-    "create_title": "Vous êtes enseignant ?",
+    "create_title": "Créer une équipe",
+    "create_help": "Vous êtes enseignant ? Créez l'équipe de votre classe : un code s'affiche, à donner à vos élèves pour qu'ils la rejoignent.",
     "new_name_label": "Nom de l'équipe (par exemple la classe)",
     "create": "Créer l'équipe",
     "need_name": "Indiquez votre prénom.",
@@ -1591,7 +1606,10 @@
     "delete": "Supprimer l'équipe",
     "confirm_leave": "Quitter l'équipe ? Les points déjà apportés restent dans le coffre.",
     "confirm_forget": "Ne plus afficher cette équipe sur cet appareil ? Elle reste ouverte pour les élèves.",
-    "confirm_delete": "Supprimer l'équipe pour toute la classe ? Le coffre et les points seront perdus."
+    "confirm_delete": "Supprimer l'équipe pour toute la classe ? Le coffre et les points seront perdus.",
+    "class_title": "Séance de classe en direct",
+    "class_help": "Votre enseignant a ouvert une séance ? Saisissez le code affiché au tableau : tout le monde place les mêmes cartes en même temps.",
+    "class_join": "Rejoindre la séance"
   },
   "clio": {
     "name": "Clio",

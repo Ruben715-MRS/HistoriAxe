@@ -85,19 +85,24 @@ test('élève : rejoint, attend, joue le paquet de l\'enseignant sans éliminati
     const etat = { courant: {}, reponses: { join: { body: { status: 'lobby', lang: 'fr', themeName: 'Belgique', eventIds: ids } }, submit: { body: { score: 100, answered: 1, finished: false, rank: 1 } } } };
     const appels = await fauxServeur(page, etat);
 
+    // Rejoindre une séance se fait depuis l'écran Équipe : il n'y a plus de bouton à part parmi les défis.
     await page.evaluate(() => { showScreen('screen-categories'); initCategories(); });
     await page.locator('#btn-daily').click();
-    await page.locator('#btn-challenge-class').click();
-    await expect(page.locator('#class-panel-join')).toBeVisible();
+    await expect(page.locator('#btn-challenge-class')).toHaveCount(0);
+    await page.evaluate(() => openTeam('screen-categories'));
+    await expect(page.locator('#team-class-form')).toBeVisible();
 
     // Champs manquants, puis un code inconnu.
-    await page.locator('#class-join-btn').click();
-    await expect(page.locator('#class-join-error')).toBeVisible();
+    await page.locator('#team-class-code').fill('');
+    await page.locator('#team-class-name').fill('');
+    await page.locator('#team-class-btn').click();
+    await expect(page.locator('#team-error')).toBeVisible();
     // Un code inconnu : la réponse d'erreur du serveur est rejouée côté client (un vrai 404 réseau salirait la console).
     await page.evaluate(() => { window.__classroomReel = HistoriAxeAPI.classroom; HistoriAxeAPI.classroom = () => Promise.resolve({ ok: false, status: 404, error: 'Séance introuvable : vérifiez le code.' }); });
-    await page.locator('#class-code-input').fill('zzz-zzz');
-    await page.locator('#class-name-input').fill('Léa');
-    await page.locator('#class-join-btn').click();
+    await page.locator('#team-class-code').fill('zzz-zzz');
+    await page.locator('#team-class-name').fill('Léa');
+    await page.locator('#team-class-btn').click();
+    await expect(page.locator('#class-panel-join')).toBeVisible();
     await expect(page.locator('#class-join-error')).toContainText('introuvable');
     await page.evaluate(() => { HistoriAxeAPI.classroom = window.__classroomReel; });
 

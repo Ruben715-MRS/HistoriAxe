@@ -48,8 +48,13 @@ function openTeam(from) {
         teamShowPanel('none');
         document.getElementById('team-join-form').classList.add('hidden');
         document.getElementById('team-create-form').classList.add('hidden');
+        document.getElementById('team-class-form').classList.add('hidden');
         return;
     }
+    document.getElementById('team-class-form').classList.remove('hidden');
+    const pseudo = typeof pseudoLoad === 'function' ? pseudoLoad() : '';
+    document.getElementById('team-class-code').value = '';
+    document.getElementById('team-class-name').value = pseudo || '';
     document.getElementById('team-join-form').classList.remove('hidden');
     document.getElementById('team-create-form').classList.remove('hidden');
     document.getElementById('team-subtitle').innerText = '';
@@ -81,6 +86,19 @@ function teamJoin() {
         teamSave({ code: res.data.code, role: 'member', name: '', pending: 0 });
         openTeam(teamReturn);
     });
+}
+
+// Rejoindre une séance de Mode Classe depuis l'écran Équipe : le code et le prénom saisis ici passent au formulaire
+// de la séance (js/classroom.js), qui prend la suite — salon, puis partie.
+function teamClassJoin() {
+    const code = document.getElementById('team-class-code').value;
+    const name = document.getElementById('team-class-name').value.trim();
+    if (!code.trim() || !name) { teamSetError(t('classroom.join_missing')); return; }
+    teamSetError('');
+    openClassJoin();
+    document.getElementById('class-code-input').value = code;
+    document.getElementById('class-name-input').value = name;
+    classJoin();
 }
 
 function teamCreate() {
