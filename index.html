@@ -1618,6 +1618,44 @@
         <p class="class-error hidden" id="team-error" role="alert"></p>
     </div>
 
+    <!-- ÉCRAN : AMIS (identifiant d'ami, demandes, liste — voir js/app/friends.js et api/friends.js) -->
+    <div id="screen-friends" class="list-screen hidden">
+        <button class="back-btn" onclick="friendsBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="friends.title">Amis</h2>
+        <p class="modes-header-subtitle" id="friends-subtitle"></p>
+
+        <section id="friends-panel-account" class="class-panel hidden">
+            <h3 data-i18n="friends.need_account_title">Un compte pour retrouver vos amis</h3>
+            <p class="class-help" data-i18n="friends.need_account_text">Connectez-vous avec un compte (e-mail, Google ou Apple) : vous recevez un identifiant d'ami à partager. Il est généré au hasard et n'a aucun lien avec votre adresse e-mail.</p>
+            <button type="button" class="btn class-primary" onclick="friendsOpenSettings()" data-i18n="friends.open_settings">Se connecter</button>
+        </section>
+
+        <section id="friends-panel-main" class="class-panel hidden">
+            <div class="friends-me">
+                <h3 data-i18n="friends.my_code_title">Mon identifiant d'ami</h3>
+                <div class="friends-code-row">
+                    <b class="friends-code" id="friends-code" role="img"></b>
+                    <button type="button" class="team-copy" onclick="friendsCopyCode()" data-i18n="friends.copy">Copier</button>
+                </div>
+                <p class="class-help" data-i18n="friends.my_code_hint">Donnez-le à un ami pour qu'il vous envoie une demande. Il ne révèle ni votre e-mail ni votre compte, et c'est le seul moyen de vous trouver.</p>
+                <label class="team-listed">
+                    <input type="checkbox" id="friends-allow-input" checked onchange="friendsToggleRequests(this.checked)">
+                    <span><b data-i18n="friends.allow_requests">Accepter les demandes d'ami</b><small data-i18n="friends.allow_hint">Décoché, personne ne peut vous ajouter avec votre identifiant.</small></span>
+                </label>
+            </div>
+            <div class="friends-add">
+                <h3 data-i18n="friends.add_title">Ajouter un ami</h3>
+                <label class="class-label" for="friends-add-input" data-i18n="friends.add_label">Identifiant de l'ami</label>
+                <input type="text" id="friends-add-input" class="form-input class-code-input" maxlength="12" autocomplete="off"
+                    autocapitalize="characters" spellcheck="false" data-i18n-attr="placeholder:friends.add_placeholder" placeholder="K7QX-92HM"
+                    onkeydown="if(event.key==='Enter'){event.preventDefault();friendsAdd();}">
+                <button type="button" class="btn class-primary" onclick="friendsAdd()" data-i18n="friends.add_btn">Envoyer la demande</button>
+                <p class="friends-msg hidden" id="friends-add-msg" role="status"></p>
+            </div>
+            <div id="friends-lists"></div>
+        </section>
+    </div>
+
     <!-- ÉCRAN : MODE CLASSE (séance en direct — voir js/classroom.js et api/classroom.js). Un seul écran, des
          panneaux qui se relaient : réglage (enseignant), rejoindre (élève), salon, séance en direct / bilan. -->
     <div id="screen-class" class="list-screen hidden">
@@ -3095,6 +3133,7 @@
     <script src="js/teamProfile.js"></script>
     <script src="js/app/team.js"></script>
     <script src="js/app/team-social.js"></script>
+    <script src="js/app/friends.js"></script>
     <script src="js/classroom.js"></script>
     <script src="js/app.js"></script>
 

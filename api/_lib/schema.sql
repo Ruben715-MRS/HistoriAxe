@@ -185,5 +185,19 @@ create table if not exists team_challenges (
     to_score   integer
 );
 
+-- Amis (api/friends.js) : identifiant d'ami généré (sans lien avec l'e-mail), niveau affiché, demandes acceptées ou non.
+alter table players add column if not exists friend_code text unique;
+alter table players add column if not exists friend_requests boolean not null default true;
+alter table players add column if not exists level smallint not null default 1;
+
+create table if not exists friendships (
+    id           bigserial primary key,
+    requester_id uuid not null references players(id) on delete cascade,
+    addressee_id uuid not null references players(id) on delete cascade,
+    status       text not null default 'pending',
+    created_at   timestamptz not null default now(),
+    unique (requester_id, addressee_id)
+);
+
 alter table class_sessions add column if not exists team_code text;
 alter table class_players add column if not exists credited smallint not null default 0;
