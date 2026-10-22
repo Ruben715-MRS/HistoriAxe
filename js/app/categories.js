@@ -272,6 +272,10 @@ const PROGRAMMES_PAYS_IMAGES = {
 const HISTOIRES_NATIONALES_REGIONS_IMAGES = {
     "europe de l'ouest": 'prog_france.webp',
     "europe du sud": 'prog_italie.webp',
+    "europe du nord": 'nat_europe_du_nord.webp',
+    "europe de l'est": 'nat_europe_de_l_est.webp',
+    "asie du sud-est": 'nat_asie_du_sud_est.webp',
+    "asie centrale & caucase": 'nat_asie_centrale_caucase.webp',
     "amérique du nord": 'prog_etats_unis.webp',
     "amérique du sud": 'prog_argentine.webp',
     "asie de l'est": 'prog_japon.webp',
