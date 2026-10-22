@@ -5456,6 +5456,11 @@ textarea.form-input {
     color: #001a4b !important;
 }
 
+:root[data-theme="dark"] .timer-chip {
+    background: #17233A !important;
+    color: var(--text-dark) !important;
+}
+
 .board {
     background: var(--bg-color) !important;
 }
