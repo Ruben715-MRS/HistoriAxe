@@ -282,6 +282,10 @@ const HISTOIRES_NATIONALES_REGIONS_IMAGES = {
     "asie du sud": 'prog_inde.webp',
     "afrique du nord": 'prog_maroc.webp',
     "afrique australe": 'prog_afrique_du_sud.webp',
+    "afrique de l'ouest": 'nat_afrique_de_l_ouest.webp',
+    "afrique centrale": 'nat_afrique_centrale.webp',
+    "afrique de l'est": 'nat_afrique_de_l_est.webp',
+    "amérique centrale & caraïbes": 'nat_amerique_centrale_caraibes.webp',
 };
 
 // INIT SOUS-CATÉGORIES (régions, niveaux scolaires, etc. — potentiellement imbriquées)
