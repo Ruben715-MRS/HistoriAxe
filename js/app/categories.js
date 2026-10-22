@@ -265,6 +265,7 @@ const PROGRAMMES_PAYS_IMAGES = {
     'mexique': 'prog_mexique.webp',
     'royaume-uni': 'prog_royaume_uni.webp',
     'suisse': 'prog_suisse.webp',
+    'tunisie': 'prog_tunisie.webp',
 };
 
 // INIT SOUS-CATÉGORIES (régions, niveaux scolaires, etc. — potentiellement imbriquées)
