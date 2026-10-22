@@ -883,7 +883,7 @@ transactionnel), `js/app/team.js` (écran), tables `class_teams` / `team_members
 
 ## La colonne des grades
 
-Depuis la fenêtre du profil, « Voir tous les grades » ouvre une grande colonne romaine (`js/app/ranks.js`) : le premier grade à son pied, le dernier sous le chapiteau. Le fût se remplit comme un thermomètre, avec une ligne qui monte avec l'XP. Les grades ne sont pas espacés selon l'XP (le dernier en demande 42 000) : chacun a la même hauteur et la ligne monte de façon continue à l'intérieur du grade courant, signalé « Vous êtes ici ». Seuils et titres viennent de `RANKS` (`js/gamification.js`). Test : `e2e/grades.spec.js`.
+Depuis la fenêtre du profil, « Voir tous les grades » ouvre une grande colonne romaine (`js/app/ranks.js`) : le premier grade à son pied, le dernier sous le chapiteau. Le fût se remplit comme un thermomètre, avec une ligne qui monte avec l'XP. Les grades ne sont pas espacés selon l'XP (le dernier en demande 42 000) : chacun a la même hauteur et la ligne monte de façon continue à l'intérieur du grade courant, signalé « Vous êtes ici ». Seuils et titres viennent de `RANKS` (`js/gamification.js`). Au-delà du grade 10 (« Maître du Temps », 42 000 XP), il n'y a plus de nouveau titre mais les niveaux continuent jusqu'au niveau 300 (`MAX_LEVEL`, `levelMinXP()`) : l'écart d'XP entre deux niveaux, 12 000 entre le 9 et le 10, grandit de 400 XP à chaque niveau (niveau 11 à 54 400 XP, niveau 300 à environ 20 millions). Une hausse de ×1,2 par niveau donnerait ~10²³ XP au niveau 300, d'où la progression linéaire. La colonne reste pleine et le dernier grade affiche le niveau réel. Test : `e2e/grades.spec.js`, `tests/gamification.test.js`.
 
 ## Amis
 

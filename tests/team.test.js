@@ -274,7 +274,7 @@ maybe('les membres se classent par niveau, puis par points ; le niveau se met à
     assert.deepEqual(names, ['Hugo', 'Zoé', 'Léa'], 'niveau 5, puis niveau 2 par points');
     // Léa passe niveau 6 : elle prend la tête. Le chef d'équipe a son propre niveau.
     assert.equal((await call(h, 'POST', { action: 'level', code, deviceId: dev(1), level: 6 })).code, 200);
-    assert.equal((await call(h, 'POST', { action: 'level', code, deviceId: dev(1), level: 99 })).code, 400);
+    assert.equal((await call(h, 'POST', { action: 'level', code, deviceId: dev(1), level: 301 })).code, 400);
     assert.equal((await call(h, 'POST', { action: 'level', code, deviceId: dev(9), level: 3 })).code, 404);
     await call(h, 'POST', { action: 'level', code, deviceId: TEACHER, level: 8 });
     const s = (await call(h, 'GET', { code, deviceId: dev(1) })).body;

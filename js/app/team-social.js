@@ -45,7 +45,7 @@ function teamMyLevel() {
 }
 
 function teamRankIcon(level) {
-    return (typeof RANKS !== 'undefined' && RANKS[level - 1] && RANKS[level - 1].icon) || '🎖️';
+    return (typeof RANKS !== 'undefined' && RANKS[Math.min(level, RANKS.length) - 1] && RANKS[Math.min(level, RANKS.length) - 1].icon) || '🎖️';
 }
 
 // Prévient le serveur quand le niveau du joueur a changé (membre ou chef d'équipe) : la liste reste triée juste.

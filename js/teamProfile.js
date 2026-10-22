@@ -17,7 +17,7 @@
 
     var MAX_DESCRIPTION = 200;
     // Niveaux de joueur : ceux des grades du jeu (js/gamification.js). Large, pour qu'un grade de plus ne casse rien.
-    var MAX_LEVEL = 50;
+    var MAX_LEVEL = 300;
 
     var COUNTRIES = ('AD AE AF AG AI AL AM AO AQ AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BJ BL BM BN BO BQ BR BS BT BV BW BY BZ ' +
         'CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CW CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR ' +

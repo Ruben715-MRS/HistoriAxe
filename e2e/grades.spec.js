@@ -46,3 +46,12 @@ test('le bouton retour ramène à l\'accueil', async ({ page }) => {
     await expect(page.locator('#screen-ranks')).toBeHidden();
     await expect(page.locator('#screen-categories')).toBeVisible();
 });
+
+test('au-delà du grade 10 : la colonne est pleine et le niveau réel est indiqué', async ({ page }) => {
+    const xp = await page.evaluate(() => levelMinXP(57) + 100);
+    await ouvrir(page, xp);
+    await expect(page.locator('.ranks-row.is-reached')).toHaveCount(10);
+    expect(await remplissage(page)).toBe(1000);
+    await expect(page.locator('.ranks-row.is-current')).toContainText('57');
+    await expect(page.locator('#header-rank-level')).toHaveText('Niv. 57');
+});

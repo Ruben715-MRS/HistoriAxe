@@ -48,8 +48,10 @@ function renderRanks() {
     if (!host) return;
     const data = gamificationLoad();
     const info = getRankInfo(data.xp);
-    const level = info.currentRank.level;
+    const realLevel = info.currentRank.level;
     const top = RANKS.length;
+    // Au-delà du dernier grade, la colonne est pleine : le niveau réel (jusqu'à MAX_LEVEL) est indiqué sur le dernier.
+    const level = Math.min(realLevel, top);
     // Position continue sur la colonne : grade courant + part parcourue vers le suivant (0 à 9 ; 9 = sommet).
     const progress = info.nextRank ? info.progressPct / 100 : 1;
     const position = (level - 1) + (level === top ? 0 : progress);
@@ -58,7 +60,7 @@ function renderRanks() {
 
     host.innerHTML = '';
     host.setAttribute('role', 'group');
-    host.setAttribute('aria-label', t('gamification.ranks_aria', { level, max: top, xp: data.xp }));
+    host.setAttribute('aria-label', t('gamification.ranks_aria', { level: realLevel, max: realLevel > top ? MAX_LEVEL : top, xp: data.xp }));
 
     const capital = document.createElement('div');
     capital.className = 'ranks-capital';
@@ -102,14 +104,20 @@ function renderRanks() {
         const title = document.createElement('b');
         title.textContent = rankTitle(rank);
         const meta = document.createElement('small');
-        meta.textContent = t('gamification.rank_badge', { level: k });
+        meta.textContent = t('gamification.rank_badge', { level: k === top ? realLevel : k });
         label.append(title, meta);
         if (k === level) {
             const here = document.createElement('em');
             here.className = 'ranks-here';
             here.textContent = t('gamification.ranks_here') + ' · ' + t('gamification.ranks_xp', { xp: data.xp });
             label.appendChild(here);
-            if (info.nextRank) {
+            if (realLevel >= top) {
+                if (info.nextRank) {
+                    const toNext = document.createElement('small');
+                    toNext.textContent = t('gamification.xp_needed_level', { needed: info.xpToNext, level: info.nextRank.level });
+                    label.appendChild(toNext);
+                }
+            } else if (info.nextRank) {
                 const next = document.createElement('small');
                 next.textContent = t('gamification.xp_needed', { needed: info.xpToNext, next: rankTitle(info.nextRank) });
                 label.appendChild(next);
