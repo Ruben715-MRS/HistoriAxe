@@ -257,6 +257,8 @@ test('« Reprendre » sans partie commencée reste affiché, éteint, et expliqu
 
 test('les cases de « La frise » ont la largeur de celles des autres groupes (grand écran)', async ({ page }) => {
     await page.setViewportSize({ width: 1200, height: 900 });
+    // Les cases arrivent en cascade en grossissant (voir « Mouvement » du README) : on les mesure posées.
+    await page.evaluate(() => Promise.all(document.getAnimations().map(a => a.finished.catch(() => null))));
     const largeur = id => page.locator(id).evaluate(el => Math.round(el.getBoundingClientRect().width));
     const quiz = await largeur('#mode-card-blitz');
     for (const id of ['#mode-card-training', '#mode-card-classic', '#mode-card-chrono', '#mode-card-expert']) {
