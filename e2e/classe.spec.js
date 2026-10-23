@@ -154,8 +154,8 @@ test('élève : rejoint, attend, joue le paquet de l\'enseignant sans éliminati
     }
     const soumissions = appels.filter(a => a.action === 'submit');
     expect(soumissions.length).toBeGreaterThanOrEqual(ids.length - 1);
-    expect(soumissions.map(s => s.rounds.length).slice(0, 3)).toEqual([1, 2, 3]);
-    expect(soumissions[soumissions.length - 1].rounds).toHaveLength(ids.length - 1);
+    expect(soumissions.map(s => s.logs.frise.length).slice(0, 3)).toEqual([1, 2, 3]);
+    expect(soumissions[soumissions.length - 1].logs.frise).toHaveLength(ids.length - 1);
 
     // Fin de manche : l'élève attend le classement, pas l'écran de fin habituel.
     etat.courant = { code: 'ABC234', status: 'running', total: 7, isTeacher: false, playerCount: 2,
@@ -174,7 +174,7 @@ test('élève : rejoint, attend, joue le paquet de l\'enseignant sans éliminati
 
 test('un prénom saisi par un élève est affiché comme du texte, jamais comme du HTML', async ({ page }) => {
     await openThemeModes(page, 'thm_be');
-    const etat = { courant: {}, reponses: { create: { body: { code: 'ABC234' } } } };
+    const etat = { courant: { code: 'ABC234', status: 'lobby', total: 7, isTeacher: true, players: [] }, reponses: { create: { body: { code: 'ABC234' } } } };
     await fauxServeur(page, etat);
     await page.locator('#mode-card-class').click();
     etat.courant = { code: 'ABC234', status: 'lobby', total: 9, isTeacher: true, players: [{ rank: 1, name: '<img src=x onerror=window.__xss=1>', score: 0, answered: 0, correct: 0, finished: false }] };
@@ -196,4 +196,91 @@ test('un paquet qui contient un événement inconnu de ce pack n\'est pas joué'
     await page.locator('#class-join-btn').click();
     await expect(page.locator('#class-join-error')).toContainText('pas à jour');
     expect(await visibleScreen(page)).toBe('screen-class');
+});
+
+test('enseignant : les modes se cochent un par ligne, la frise d\'abord ; le dernier coché ne se décoche pas ; l\'ordre peut être aléatoire', async ({ page }) => {
+    await openThemeModes(page, 'thm_be');
+    const etat = { courant: { code: 'ABC234', status: 'lobby', total: 7, isTeacher: true, players: [] }, reponses: { create: { body: { code: 'ABC234' } } } };
+    const appels = await fauxServeur(page, etat);
+    await page.locator('#mode-card-class').click();
+    await expect(page.locator('#class-panel-setup')).toBeVisible();
+
+    const lignes = page.locator('#class-modes-list li');
+    await expect(lignes).toHaveCount(4);
+    await expect(lignes.first()).toContainText('La frise');
+    await expect(lignes.first().locator('small')).not.toBeEmpty();
+    // Au départ, seule la frise est cochée — et on ne peut pas la décocher : il faut au moins un mode.
+    await expect(page.locator('#class-modes-list input:checked')).toHaveCount(1);
+    await expect(lignes.first().locator('input')).toBeDisabled();
+    await expect(page.locator('#class-shuffle-input')).toBeDisabled();
+
+    // Trouve l'écart, Avant / Après : l'ordre de la liste est conservé.
+    await lignes.nth(2).locator('input').check();
+    await lignes.nth(3).locator('input').check();
+    await expect(page.locator('#class-shuffle-input')).toBeEnabled();
+    await page.locator('#class-create-btn').click();
+    await expect(page.locator('#class-panel-lobby')).toBeVisible();
+    expect(appels.find(a => a.action === 'create').modes).toEqual(['frise', 'ecart', 'avap']);
+});
+
+test('enseignant : l\'ordre aléatoire envoie les mêmes modes, dans un ordre quelconque', async ({ page }) => {
+    await openThemeModes(page, 'thm_be');
+    const etat = { courant: { code: 'ABC234', status: 'lobby', total: 7, isTeacher: true, players: [] }, reponses: { create: { body: { code: 'ABC234' } } } };
+    const appels = await fauxServeur(page, etat);
+    await page.locator('#mode-card-class').click();
+    const lignes = page.locator('#class-modes-list li');
+    for (const i of [1, 2, 3]) await lignes.nth(i).locator('input').check();
+    await page.locator('#class-shuffle-input').check();
+    await page.locator('#class-create-btn').click();
+    await expect(page.locator('#class-panel-lobby')).toBeVisible();
+    const modes = appels.find(a => a.action === 'create').modes;
+    expect([...modes].sort()).toEqual(['avap', 'ecart', 'fil', 'frise']);
+});
+
+test('élève : la séance enchaîne les modes choisis, journal par mode, jusqu\'à l\'attente du classement', async ({ page }) => {
+    test.setTimeout(150000);
+    await openThemeModes(page, 'thm_be');
+    const ids = await paquetDe8(page);
+    const etat = {
+        courant: { code: 'ABC234', status: 'running', total: 18, isTeacher: false, modes: ['avap', 'ecart', 'fil'], players: [], me: null },
+        reponses: {
+            join: { body: { status: 'running', lang: 'fr', themeName: 'Belgique', eventIds: ids, modes: ['avap', 'ecart', 'fil'] } },
+            submit: { body: { score: 0, answered: 0, finished: false, rank: 1 } }
+        }
+    };
+    const appels = await fauxServeur(page, etat);
+    await page.evaluate(() => { showScreen('screen-categories'); initCategories(); });
+    await page.evaluate(() => openTeam('screen-categories'));
+    await page.locator('#team-class-code').fill('abc234');
+    await page.locator('#team-class-name').fill('Léa');
+    await page.locator('#team-class-btn').click();
+
+    // 1. Avant / Après : 7 manches, un choix chacune.
+    await expect(page.locator('#screen-avant-apres')).toBeVisible({ timeout: 8000 });
+    for (let i = 0; i < 7; i++) {
+        await page.waitForFunction(n => avapIndex === n && !isAnimating, i, { timeout: 8000 });
+        await page.locator('#avap-option-a').click();
+    }
+    // 2. Trouve l'écart : 4 paires, la bonne réponse du premier coup.
+    await expect(page.locator('#screen-ecart')).toBeVisible({ timeout: 8000 });
+    for (let i = 0; i < 4; i++) {
+        await page.waitForFunction(n => ecartIndex === n && !isAnimating, i, { timeout: 8000 });
+        await page.evaluate(() => { ecartInput = String(ecartQuestions[ecartIndex].gap); updateEcartDisplay(); ecartSubmit(); });
+    }
+    // 3. Le fil du temps : 7 années, sans indice (le bouton est masqué).
+    await expect(page.locator('#screen-fil')).toBeVisible({ timeout: 8000 });
+    await expect(page.locator('#fil-hint-btn')).toBeHidden();
+    for (let i = 0; i < 7; i++) {
+        await page.waitForFunction(n => filIndex === n && !isAnimating, i, { timeout: 8000 });
+        await page.evaluate(() => { const d = filEvents[filIndex].date; filInput = String(Math.abs(d)); filEra = d < 0 ? -1 : 1; updateFilDisplay(); filSubmit(); });
+    }
+
+    // Tout est joué : l'élève attend le classement, et le journal porte les trois modes.
+    await expect(page.locator('#class-panel-live')).toBeVisible({ timeout: 8000 });
+    const dernier = appels.filter(a => a.action === 'submit').pop();
+    expect(dernier.logs.avap).toHaveLength(7);
+    expect(dernier.logs.ecart).toHaveLength(4);
+    expect(dernier.logs.ecart.every(r => r.guesses.length === 1)).toBe(true);
+    expect(dernier.logs.fil).toHaveLength(7);
+    expect(dernier.logs.avap.every(r => r.choice === 0)).toBe(true);
 });

@@ -1,18 +1,19 @@
 // Mode Classe : l'enseignant ouvre une séance sur un thème, les élèves la rejoignent avec un code de 6 caractères
 // et placent les MÊMES cartes dans le même ordre.
 //
-// POST /api/classroom { action: 'create', deviceId, pseudo?, lang, themeName, eventIds }   → { code }
-// POST /api/classroom { action: 'join',   code, deviceId, name }                           → { status, lang, themeName, eventIds }
+// POST /api/classroom { action: 'create', deviceId, pseudo?, lang, themeName, eventIds, modes? } → { code }
+// POST /api/classroom { action: 'join',   code, deviceId, name }                           → { status, lang, themeName, eventIds, modes }
 // POST /api/classroom { action: 'start',  code, deviceId }     (enseignant)                → { status }
 // POST /api/classroom { action: 'end',    code, deviceId }     (enseignant)                → { status }
-// POST /api/classroom { action: 'submit', code, deviceId, rounds: [{ slotIndex, elapsedMs }] } → { score, answered, finished, rank }
+// POST /api/classroom { action: 'submit', code, deviceId, logs: { frise: [...], fil: [...], ... } } → { score, answered, finished, rank }
 // GET  /api/classroom?code=&deviceId=                          → l'état de la séance, à interroger toutes les 2-3 s
 //
 // Pas de temps réel (websocket) : une classe, c'est ~30 élèves qui interrogent toutes les 2-3 secondes — de
 // simples requêtes sur ces fonctions suffisent. Le score n'est jamais déclaré par l'élève : comme pour le Défi du
-// jour, il envoie le JOURNAL de ses placements (cumulatif, renvoyé à chaque carte) et le serveur le rejoue avec
-// js/dailyEngine.js — mêmes règles que la frise, mais sans élimination (3 vies feraient sortir les élèves en cours
-// de séance) ; c'est aussi ce qui donne, carte par carte, qui a juste et qui a faux.
+// jour, il envoie le JOURNAL de ses réponses (cumulatif, renvoyé à chaque manche) et le serveur le rejoue avec
+// js/classModes.js (la frise passe par js/dailyEngine.js) — sans élimination (3 vies feraient sortir les élèves en
+// cours de séance) ; c'est aussi ce qui donne, manche par manche, qui a juste et qui a faux. Une séance enchaîne
+// les modes choisis par l'enseignant (frise, fil du temps, écart, avant / après), chacun noté sur 100 par manche.
 //
 // Aucun compte : l'enseignant est reconnu à l'identifiant de son appareil (celui qui a créé la séance). Les noms
 // sont des prénoms ou surnoms libres, jamais renvoyés avec un identifiant ; tout est purgé après deux jours.
@@ -20,7 +21,7 @@
 const { ensureSchema, query } = require('./_lib/db');
 const { upsertPlayer, isValidDeviceId } = require('./_lib/players');
 const { SUPPORTED_LANGS, loadLangEvents } = require('./_lib/dataset');
-const DailyEngine = require('../js/dailyEngine.js');
+const ClassModes = require('../js/classModes.js');
 const { handlePreflight, readJsonBody, sendError } = require('./_lib/http');
 const C = require('./_lib/classroom');
 const { creditTeam } = require('./_lib/teamStore');
@@ -42,7 +43,7 @@ function httpError(status, message) {
 
 async function loadSession(code) {
     const { rows } = await query(
-        'select code, teacher_id, lang, theme_name, event_ids, status, team_code from class_sessions where code = $1', [code]
+        'select code, teacher_id, lang, theme_name, event_ids, status, team_code, modes from class_sessions where code = $1', [code]
     );
     if (!rows[0]) throw httpError(404, 'Séance introuvable : vérifiez le code.');
     return rows[0];
@@ -62,6 +63,7 @@ async function createSession(body) {
     const problem = C.validateDeck(eventIds, eventIndex(lang));
     if (problem) throw httpError(400, problem);
 
+    const modes = ClassModes.sanitizeModes(body.modes);
     const teacher = await upsertPlayer(deviceId, pseudo);
     // Séance liée à une équipe de classe de cet enseignant : les bonnes réponses nourriront son coffre.
     let teamCode = null;
@@ -76,9 +78,9 @@ async function createSession(body) {
         const code = C.generateCode();
         try {
             await query(
-                `insert into class_sessions (code, teacher_id, lang, theme_name, event_ids, status, created_at, team_code)
-                 values ($1, $2, $3, $4, $5::jsonb, 'lobby', now(), $6)`,
-                [code, teacher.id, lang, name, JSON.stringify(eventIds), teamCode]
+                `insert into class_sessions (code, teacher_id, lang, theme_name, event_ids, status, created_at, team_code, modes)
+                 values ($1, $2, $3, $4, $5::jsonb, 'lobby', now(), $6, $7::jsonb)`,
+                [code, teacher.id, lang, name, JSON.stringify(eventIds), teamCode, JSON.stringify(modes)]
             );
             return { code };
         } catch (err) {
@@ -108,7 +110,7 @@ async function joinSession(body) {
          on conflict (code, player_id) do update set name = excluded.name, updated_at = now()`,
         [code, player.id, name]
     );
-    return { status: session.status, lang: session.lang, themeName: session.theme_name, eventIds: session.event_ids };
+    return { status: session.status, lang: session.lang, themeName: session.theme_name, eventIds: session.event_ids, modes: session.modes };
 }
 
 async function control(body, status) {
@@ -138,21 +140,17 @@ async function submitProgress(body) {
     if (!joined.rows[0]) throw httpError(404, 'Rejoignez d\'abord la séance.');
 
     const previouslyCredited = joined.rows[0].credited;
-    const total = session.event_ids.length - 1; // manches : l'ancre n'est pas jouée
-    const rounds = (Array.isArray(body.rounds) ? body.rounds : []).slice(0, total).map((r) => ({
-        slotIndex: r && typeof r === 'object' ? r.slotIndex : undefined,
-        elapsedMs: r && typeof r === 'object' ? r.elapsedMs : undefined
-    }));
-    const replay = DailyEngine.replayDailyGame(C.orderedDatesFor(session.event_ids, eventIndex(session.lang)), rounds, { lives: Infinity });
-    const results = replay.details.map((d) => d.correct);
-    const correct = results.filter(Boolean).length;
-    const finished = replay.roundsPlayed === replay.roundsTotal;
+    const deck = session.event_ids.map((id) => ({ id, date: eventIndex(session.lang).get(id) }));
+    const replay = ClassModes.replaySession(session.modes, deck, body.logs);
+    const results = replay.results;
+    const correct = replay.correct;
+    const finished = replay.finished;
     // Une requête arrivée en retard (moins de manches que déjà reçues) ne fait pas reculer l'élève.
     await query(
         `update class_players
             set score = $3, answered = $4, correct = $5, finished = $6, results = $7::jsonb, updated_at = now()
           where code = $1 and player_id = $2 and answered <= $4`,
-        [code, me.id, replay.score, replay.roundsPlayed, correct, finished, JSON.stringify(results)]
+        [code, me.id, replay.points, replay.answered, correct, finished, JSON.stringify(results)]
     );
     // Séance liée à une équipe : chaque bonne réponse verse un point au coffre, une seule fois (on ne verse que
     // ce qui dépasse les points déjà crédités — le journal est cumulatif et renvoyé à chaque carte).
@@ -166,7 +164,7 @@ async function submitProgress(body) {
         if (claimed.rows[0]) team = await creditTeam(session.team_code, me.id, correct - previouslyCredited, 'class');
     }
     const state = await buildState(code, body.deviceId);
-    return { score: replay.score, answered: replay.roundsPlayed, finished, rank: state.me ? state.me.rank : null, team };
+    return { score: replay.points, answered: replay.answered, finished, rank: state.me ? state.me.rank : null, team };
 }
 
 async function buildState(code, deviceId) {
@@ -189,7 +187,8 @@ async function buildState(code, deviceId) {
         status: session.status,
         lang: session.lang,
         themeName: session.theme_name,
-        total: session.event_ids.length - 1,
+        modes: session.modes,
+        total: ClassModes.totalRounds(session.modes, session.event_ids.length),
         isTeacher,
         playerCount: ranked.length,
         // Le bilan de toute la classe (la liste ci-dessous est plafonnée) : de quoi remplir la barre « vert / rouge ».
@@ -200,7 +199,7 @@ async function buildState(code, deviceId) {
         me: mine >= 0 ? { rank: mine + 1, score: ranked[mine].score, answered: ranked[mine].answered, correct: ranked[mine].correct, finished: ranked[mine].finished } : null
     };
     // Les cartes les plus ratées : à l'enseignant dès que ça se joue, à tous une fois la séance terminée.
-    if (isTeacher || session.status === 'ended') state.recap = C.buildRecap(session.event_ids, players);
+    if (isTeacher || session.status === 'ended') state.recap = C.buildRecap(session.event_ids, players, session.modes);
     return state;
 }
 

@@ -123,6 +123,8 @@ function ecartSubmit() {
     const q = ecartQuestions[ecartIndex];
     const guessedGap = parseInt(ecartInput, 10);
     const isPerfect = guessedGap === q.gap;
+    // Mode Classe : chaque proposition part au journal (js/classroom.js), le serveur rejoue la manche.
+    if (typeof classOnEcartGuess === 'function') classOnEcartGuess(ecartIndex, guessedGap);
     const badge = document.getElementById('ecart-answer-badge');
 
     if (isPerfect) {

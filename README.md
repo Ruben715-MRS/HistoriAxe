@@ -831,6 +831,15 @@ plus ratées** de la classe — ce que l'enseignant va reprendre en cours.
 - **Pas fait** : pas d'export du bilan, pas de reprise d'une séance par un autre appareil de
   l'enseignant, pas de mode « cours » avec correction projetée carte par carte.
 
+### Plusieurs modes dans une séance
+
+L'enseignant coche, un par ligne, les modes que les élèves enchaîneront (la frise d'abord, puis le fil du temps, « Trouve l'écart », « Avant / Après »), et peut mélanger leur ordre. Tous jouent sur le même paquet de cartes ; les points s'additionnent au tableau, en direct.
+
+- `js/classModes.js` (client + serveur) construit les manches de chaque mode sans hasard à partir du paquet et rejoue les journaux : l'élève n'envoie jamais de score, seulement ses réponses (`logs: { frise: [...], fil: [...], ecart: [...], avap: [...] }`).
+- Chaque mode vaut au plus 100 points par manche, pour que les scores se comparent : la frise garde son barème (combo, vitesse) ramené à cette échelle, le fil du temps retire des points selon l'écart, « Trouve l'écart » vaut 100, 80, 60… selon l'essai, « Avant / Après » 100 ou 0.
+- Le bilan devient « manches les plus ratées », avec le mode ; la barre de toute la classe et le podium additionnent tous les modes.
+- Colonne `class_sessions.modes` (jsonb), ajoutée par `ensureSchema`.
+
 ## L'équipe de classe : un coffre commun
 
 L'enseignant crée une équipe (écran **Équipe**, bouton 👥 de la barre de récompenses du Chemin) : un nom, un

@@ -10,13 +10,18 @@
 //
 // Deux rôles sur le même écran (#screen-class), des panneaux qui se relaient :
 //   enseignant : réglage → salon (code, élèves) → séance en direct → bilan
-//   élève      : rejoindre → salon → (la frise, mode 'class') → attente du classement → bilan
+//   élève      : rejoindre → salon → (les modes choisis, l'un après l'autre) → attente du classement → bilan
+//
+// Les modes (js/classModes.js) : frise, fil du temps, écart, avant / après. La frise passe par le moteur de jeu
+// (mode 'class') ; les autres réutilisent leurs écrans habituels, avec des questions construites sans hasard à
+// partir du paquet, pour que toute la classe ait les mêmes.
 
 const CLASS_POLL_MS = 2500;
 const CLASS_SIZES = [10, 15, 20];
 
 let classState = null;   // null hors Mode Classe
-let classRoundLog = [];  // journal cumulatif des placements de l'élève (voir checkPlacement)
+let classRoundLog = [];  // journal cumulatif des placements de la frise (voir checkPlacement)
+let classLogs = {};      // les journaux de tous les modes : { frise: classRoundLog, fil: [...], ... }
 let classEventIndex = null;
 
 // --- Aides -------------------------------------------------------------------
@@ -74,11 +79,13 @@ function openClassSetup() {
         return;
     }
     classLeave(true);
-    classState = { role: 'teacher', size: Math.min(15, pool.length), eventIds: null, code: null, status: 'setup', timer: null };
+    classState = { role: 'teacher', size: Math.min(15, pool.length), eventIds: null, code: null, status: 'setup', timer: null, modeSel: ['frise'] };
     const theme = getCurrentTheme();
     document.getElementById('class-title').innerText = t('classroom.title');
     document.getElementById('class-subtitle').innerText = t('classroom.setup_subtitle', { theme: theme ? theme.nom : '' });
     classRenderSizes(pool.length);
+    document.getElementById('class-shuffle-input').checked = false;
+    classRenderModes();
     // Un enseignant qui a une équipe peut y verser les bonnes réponses de la séance.
     const team = typeof teamLoad === 'function' ? teamLoad() : null;
     const linkable = !!team && team.role === 'teacher';
@@ -107,6 +114,38 @@ function classRenderSizes(poolSize) {
     });
 }
 
+// La liste des modes, un par ligne : case à cocher, nom, puis explication en plus clair. Il en reste toujours un.
+function classRenderModes() {
+    const list = document.getElementById('class-modes-list');
+    list.innerHTML = '';
+    const only = classState.modeSel.length === 1 ? classState.modeSel[0] : null;
+    ClassModes.MODE_IDS.forEach(id => {
+        const li = document.createElement('li');
+        const label = document.createElement('label');
+        label.className = 'class-mode-row';
+        const box = document.createElement('input');
+        box.type = 'checkbox';
+        box.checked = classState.modeSel.includes(id);
+        box.disabled = id === only; // on ne décoche pas le dernier mode
+        box.onchange = () => {
+            classState.modeSel = ClassModes.MODE_IDS.filter(m => (m === id ? box.checked : classState.modeSel.includes(m)));
+            classRenderModes();
+        };
+        const text = document.createElement('span');
+        text.className = 'class-mode-text';
+        const name = document.createElement('b');
+        name.textContent = t('classroom.mode_' + id);
+        const desc = document.createElement('small');
+        desc.textContent = t('classroom.mode_' + id + '_desc');
+        text.append(name, desc);
+        label.append(box, text);
+        li.appendChild(label);
+        list.appendChild(li);
+    });
+    // L'ordre aléatoire n'a de sens qu'avec au moins deux modes.
+    document.getElementById('class-shuffle-input').disabled = classState.modeSel.length < 2;
+}
+
 function classCreate() {
     if (!classApiReady()) return;
     // Le paquet : n cartes tirées dans le thème, de dates distinctes (une égalité n'aurait pas de bonne réponse
@@ -122,6 +161,9 @@ function classCreate() {
     }
     if (deck.length < 6) { classSetError('class-setup-error', t('classroom.not_enough')); return; }
     const theme = getCurrentTheme();
+    // L'ordre des modes : celui de la liste (la frise d'abord), ou mélangé si l'enseignant l'a demandé.
+    const shuffle = document.getElementById('class-shuffle-input').checked && classState.modeSel.length > 1;
+    const modes = shuffle ? shuffleArray(classState.modeSel.slice()) : classState.modeSel.slice();
     const btn = document.getElementById('class-create-btn');
     btn.disabled = true;
     HistoriAxeAPI.classroom('create', {
@@ -130,12 +172,14 @@ function classCreate() {
         lang: i18n.currentLang,
         themeName: theme ? theme.nom : t('classroom.title'),
         eventIds: deck.map(e => e.id),
+        modes,
         teamCode: classTeamCodeToLink()
     }).then(res => {
         btn.disabled = false;
         if (!res.ok) { classSetError('class-setup-error', res.status === 400 && res.error ? res.error : t('classroom.error')); return; }
         classState.code = res.data.code;
         classState.eventIds = deck.map(e => e.id);
+        classState.modes = modes;
         classState.themeName = theme ? theme.nom : '';
         classState.status = 'lobby';
         classRenderLobby({ players: [], total: deck.length - 1 });
@@ -195,6 +239,7 @@ function classJoin() {
         if (typeof pseudoSave === 'function') pseudoSave(name);
         classState.code = code.toUpperCase().replace(/[\s-]+/g, '');
         classState.eventIds = res.data.eventIds;
+        classState.modes = ClassModes.sanitizeModes(res.data.modes);
         classState.themeName = res.data.themeName;
         classState.status = res.data.status;
         // Un paquet dont un événement manque à CE pack n'est pas jouable : mieux vaut le dire que bloquer en cours de route.
@@ -218,27 +263,106 @@ function classBeginPlay() {
     classState.playing = true;
     classStopPolling();
     classRoundLog = [];
-    startActualGame('class');
+    classLogs = { frise: classRoundLog };
+    classState.modeIdx = -1;
+    classNextMode();
 }
 
-// Envoie le journal cumulatif ; la réponse porte le rang, pour le suivre pendant la manche.
+// L'élève est en train de jouer un des modes de la séance (et n'a pas fini).
+function classRunning() {
+    return !!classState && classState.role === 'student' && !!classState.playing && !classState.finished;
+}
+
+// Le mode suivant de la séance : on prévient l'élève (sauf au tout début) et on le lance.
+function classNextMode() {
+    classState.modeIdx++;
+    const mode = classState.modes[classState.modeIdx];
+    classState.activeMode = mode;
+    if (classState.modeIdx > 0) showToast(t('classroom.next_mode', { mode: t('classroom.mode_' + mode) }), 2800);
+    classStartMode(mode);
+}
+
+// Lance un mode sur le paquet de la séance. Pas d'élimination (vies infinies) : le serveur rejoue le journal.
+function classStartMode(mode) {
+    if (mode === 'frise') { startActualGame('class'); return; }
+    resetPlacementAnimationState();
+    resetSessionHistory();
+    const deck = classDeckEvents();
+    lives = Infinity;
+    score = 0;
+    comboMultiplier = 1.0;
+    const dates = deck.map(e => e.date);
+    currentGameSpan = Math.max(1, Math.max(...dates) - Math.min(...dates));
+    classLogs[mode] = [];
+    const filScreen = document.getElementById('screen-fil');
+    if (filScreen) filScreen.classList.toggle('is-class', mode === 'fil');
+    if (mode === 'fil') {
+        currentMode = 'fil';
+        filEvents = deck.slice(1);
+        filIndex = 0;
+        showScreen('screen-fil');
+        renderFilQuestion();
+    } else if (mode === 'ecart') {
+        currentMode = 'ecart';
+        ecartQuestions = [];
+        for (let r = 0; r < ClassModes.roundsFor('ecart', deck.length); r++) {
+            const eventA = deck[2 * r];
+            const eventB = deck[2 * r + 1];
+            ecartQuestions.push({ eventA, eventB, gap: Math.abs(eventA.date - eventB.date) });
+        }
+        ecartIndex = 0;
+        showScreen('screen-ecart');
+        renderEcartQuestion();
+    } else if (mode === 'avap') {
+        currentMode = 'avantapres';
+        avapQuestions = [];
+        for (let r = 0; r < ClassModes.roundsFor('avap', deck.length); r++) {
+            const pair = ClassModes.avapPair(deck, r);
+            avapQuestions.push({ left: pair.left, right: pair.right, correctEvt: pair.left.date < pair.right.date ? pair.left : pair.right });
+        }
+        avapIndex = 0;
+        showScreen('screen-avant-apres');
+        renderAvapQuestion();
+    }
+}
+
+// Une manche (ou une proposition) de plus dans le journal du mode en cours : renvoyé au serveur aussitôt.
+function classOnRound(mode, index, entry) {
+    if (!classRunning() || classState.activeMode !== mode) return;
+    classLogs[mode][index] = entry;
+    classSubmitProgress();
+}
+
+// « Trouve l'écart » : chaque proposition compte, jusqu'à la bonne ou aux cinq essais.
+function classOnEcartGuess(index, value) {
+    if (!classRunning() || classState.activeMode !== 'ecart') return;
+    const entry = classLogs.ecart[index] || (classLogs.ecart[index] = { guesses: [] });
+    entry.guesses.push(value);
+    classSubmitProgress();
+}
+
+// Envoie les journaux cumulatifs ; le serveur les rejoue.
 function classSubmitProgress() {
     if (!classState || typeof HistoriAxeAPI === 'undefined') return;
     HistoriAxeAPI.classroom('submit', {
-        code: classState.code, deviceId: getOrCreateDeviceId(), rounds: classRoundLog
+        code: classState.code, deviceId: getOrCreateDeviceId(), logs: classLogs
     });
 }
 
 // Appelée par endGame() : la manche de l'élève est finie. true = prise en charge (endGame s'arrête là).
 function classOnGameEnd() {
-    if (!classState || classState.role !== 'student' || currentMode !== 'class') return false;
-    classState.finished = true;
+    if (!classRunning()) return false;
     classSubmitProgress();
     triggerHaptic('success');
+    // Encore un mode à jouer : on l'enchaîne.
+    if (classState.modeIdx + 1 < classState.modes.length) { classNextMode(); return true; }
+    classState.finished = true;
+    const filScreen = document.getElementById('screen-fil');
+    if (filScreen) filScreen.classList.remove('is-class');
     document.getElementById('class-title').innerText = classState.themeName;
     classShowPanel('live');
     showScreen('screen-class', 'forward');
-    classRenderBoard({ status: 'running', players: [], total: classState.eventIds.length - 1, me: null });
+    classRenderBoard({ status: 'running', players: [], total: ClassModes.totalRounds(classState.modes, classState.eventIds.length), me: null });
     classStartPolling();
     return true;
 }
@@ -424,7 +548,14 @@ function classRenderRecap(recap) {
         const evt = index.get(r.eventId);
         const li = document.createElement('li');
         li.innerHTML = '<span class="class-recap-title"></span><span class="class-recap-miss"></span>';
-        li.querySelector('.class-recap-title').textContent = evt ? `${evt.titre} (${formatYear(evt.date)})` : r.eventId;
+        let title = evt ? evt.titre + ' (' + formatYear(evt.date) + ')' : r.eventId;
+        if (r.eventId2) {
+            // « Trouve l'écart » : la manche est une paire de cartes.
+            const evt2 = index.get(r.eventId2);
+            title = (evt ? evt.titre : r.eventId) + ' ↔ ' + (evt2 ? evt2.titre : r.eventId2);
+        }
+        const tag = classState.modes && classState.modes.length > 1 && r.mode ? '[' + t('classroom.mode_' + r.mode) + '] ' : '';
+        li.querySelector('.class-recap-title').textContent = tag + title;
         li.querySelector('.class-recap-miss').innerText = t('classroom.recap_miss', { pct: Math.round(100 * r.wrong / r.answered), wrong: r.wrong, answered: r.answered });
         list.appendChild(li);
     });
@@ -438,6 +569,9 @@ function classLeave(quiet) {
     const teacher = !!classState && classState.role === 'teacher';
     classState = null;
     classRoundLog = [];
+    classLogs = {};
+    const filScreen = document.getElementById('screen-fil');
+    if (filScreen) filScreen.classList.remove('is-class');
     if (quiet === true) return;
     if (wasPlaying || currentMode === 'class') { resetPlacementAnimationState(); stopTimer(); }
     // L'enseignant revient à l'écran des modes d'où il est parti, l'élève aux catégories.

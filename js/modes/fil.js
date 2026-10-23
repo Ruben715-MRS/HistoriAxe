@@ -59,6 +59,7 @@ function renderFilQuestion() {
 
 function filUseHint() {
     if (isAnimating) return;
+    if (typeof classRunning === 'function' && classRunning()) return; // pas d'indice en séance de classe
     const evt = filEvents[filIndex];
     const targetStr = filCorrectYearString;
 
@@ -147,6 +148,8 @@ function filSubmit(autoFailByHint = false) {
 
     const evt = filEvents[filIndex];
     const guessedYear = filEra * parseInt(filInput, 10);
+    // Mode Classe : l'année proposée part au journal (js/classroom.js), le serveur rejoue la manche.
+    if (!autoFailByHint && typeof classOnRound === 'function') classOnRound('fil', filIndex, { year: guessedYear });
     const gap = autoFailByHint ? Infinity : Math.abs(guessedYear - evt.date);
     const isPerfect = gap === 0;
 

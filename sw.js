@@ -12,9 +12,9 @@
 // 'install' recharge tout depuis le réseau. Un pack de langue ou un texte
 // d'UI modifié qui ne s'affiche pas malgré un déploiement réussi est
 // généralement le signe que l'un de ces deux numéros n'a pas été incrémenté.
-const CACHE_VERSION = '1.4.185';
+const CACHE_VERSION = '1.4.186';
 const APP_SHELL_CACHE = `historiaxe-shell-v${CACHE_VERSION}`;
-const DATA_CACHE = 'historiaxe-data-v1.0.111';
+const DATA_CACHE = 'historiaxe-data-v1.0.113';
 
 // Portraits des personnages (assets/portraits/*.jpg, champ `image` des
 // événements). Un cache À PART, et c'est tout l'objet : 'activate' purge tout
@@ -58,6 +58,7 @@ const APP_SHELL_FILES = [
     './js/duels.js',
     './js/gamification.js',
     './js/dailyEngine.js',
+    './js/classModes.js',
     './js/pathWorlds.js',
     './js/pathCore.js',
     './js/pathSprites.js',

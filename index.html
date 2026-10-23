@@ -1673,6 +1673,13 @@
             <p class="class-help" data-i18n="classroom.setup_help">Les élèves placeront les mêmes cartes, dans le même ordre, chacun sur son téléphone. Combien de cartes ?</p>
             <div class="round-length" id="class-size-picker" role="group" aria-label="Nombre de cartes"
                 data-i18n-attr="aria-label:classroom.size_aria"></div>
+            <h3 class="class-subhead" data-i18n="classroom.modes_title">Modes de jeu</h3>
+            <p class="class-help" data-i18n="classroom.modes_help">Cochez les modes que les élèves enchaîneront ; leurs points s'additionnent au tableau.</p>
+            <ul class="class-modes" id="class-modes-list"></ul>
+            <label class="class-check" id="class-shuffle-label">
+                <input type="checkbox" id="class-shuffle-input">
+                <span data-i18n="classroom.shuffle_modes">Modes dans un ordre aléatoire</span>
+            </label>
             <label class="class-team-link hidden" id="class-team-link">
                 <input type="checkbox" id="class-team-link-input" checked>
                 <span id="class-team-link-label"></span>
@@ -3079,6 +3086,7 @@
     <script src="js/duels.js"></script>
     <script src="js/gamification.js"></script>
     <script src="js/dailyEngine.js"></script>
+    <script src="js/classModes.js"></script>
     <script src="js/pathWorlds.js"></script>
     <script src="js/pathCore.js"></script>
     <script src="js/pathSprites.js"></script>

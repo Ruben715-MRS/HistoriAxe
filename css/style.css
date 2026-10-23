@@ -10026,6 +10026,35 @@ input:not([type="range"]), label, select, summary, textarea {
     margin-top: 26px;
 }
 .team-secondary { display: block; margin: 8px auto; background: transparent; border: 1px solid rgba(127,127,127,.5); color: inherit; }
+.class-subhead { font-size: 16px; margin: 8px 0 0; }
+
+.class-modes { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+
+.class-mode-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+}
+
+.class-mode-row input { width: 20px; height: 20px; margin-top: 2px; flex: none; cursor: pointer; accent-color: var(--primary-blue); }
+
+.class-mode-text { display: flex; flex-direction: column; gap: 2px; }
+
+.class-mode-text b { font-size: 15px; }
+
+.class-mode-text small { font-size: 13px; line-height: 1.35; color: var(--muted-text); }
+
+.class-check { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; }
+
+.class-check input { width: 18px; height: 18px; cursor: pointer; accent-color: var(--primary-blue); }
+
+/* En séance de classe, le fil du temps se joue sans indice : le bouton garde sa place (le pavé ne bouge pas). */
+#screen-fil.is-class .fil-hint-btn { visibility: hidden; }
+
 .class-team-link { display: flex; align-items: center; gap: 8px; margin: 10px 0; font-size: 14px; }
 .rewards-team-btn small:empty,
 .rewards-friends-btn small:empty { display: none; }

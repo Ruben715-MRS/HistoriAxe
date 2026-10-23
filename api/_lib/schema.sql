@@ -200,4 +200,6 @@ create table if not exists friendships (
 );
 
 alter table class_sessions add column if not exists team_code text;
+-- Les modes enchaînés pendant la séance, dans l'ordre de jeu (js/classModes.js).
+alter table class_sessions add column if not exists modes jsonb not null default '["frise"]'::jsonb;
 alter table class_players add column if not exists credited smallint not null default 0;
