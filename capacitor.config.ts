@@ -12,7 +12,11 @@ const config: CapacitorConfig = {
     allowNavigation: ['histori-axe.vercel.app'],
   },
   ios: {
-    contentInset: 'always',
+    // Les marges de sécurité sont gérées par le CSS (body, env(safe-area-inset-*)) :
+    // ne pas les ajouter une seconde fois côté WebView.
+    contentInset: 'never',
+    // Fond de la WebView : même couleur que l'app, pour qu'aucune zone ne reste blanche.
+    backgroundColor: '#F2F4F7',
     allowsLinkPreview: false,
     handleApplicationURL: true
   },
