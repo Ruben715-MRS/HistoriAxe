@@ -148,6 +148,10 @@ maybe('une séance de bout en bout : création, élèves, départ, rejeu, classe
     assert.deepEqual(live.body.players.map((p) => [p.rank, p.name, p.finished]), [[1, 'Léa', true], [2, 'Hugo', true]]);
     assert.equal(live.body.players[0].correct, 7);
     assert.ok(live.body.players[1].correct < 7);
+    // Le bilan de toute la classe (pour la barre vert / rouge) : bonnes réponses et fautes de tous les élèves.
+    const [p0, p1] = live.body.players;
+    assert.deepEqual(live.body.totals, { correct: p0.correct + p1.correct, wrong: (p0.answered - p0.correct) + (p1.answered - p1.correct) });
+    assert.ok(live.body.totals.wrong >= 1);
     assert.ok(live.body.recap.length === 7, 'le bilan est à l\'enseignant dès que ça se joue');
     const hardest = live.body.recap.slice().sort((a, b) => b.wrong - a.wrong)[0];
     assert.ok(hardest.wrong >= 1);
