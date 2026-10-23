@@ -1754,7 +1754,6 @@ textarea.form-input {
 
 .slot:focus-visible .slot-label {
     color: var(--amber);
-    font-weight: 600;
 }
 
 .slot:focus-visible .slot-caret {
@@ -1770,16 +1769,15 @@ textarea.form-input {
 
 .slot:active .slot-label {
     color: var(--amber);
-    font-weight: 600;
 }
 
 /* (hover: hover) évite qu'un tap sur mobile/tactile ne laisse l'intervalle
            « collé » dans son état survolé une fois le doigt relevé (aucun mouseleave
            n'est jamais émis sur ces appareils). */
 @media (hover: hover) {
+    /* Pas de changement de graisse ici : le texte plus large ferait revenir à la ligne toute la frise (les repères sautent). */
     .slot:hover .slot-label {
         color: var(--amber);
-        font-weight: 600;
     }
 
     .slot:hover .slot-caret {

@@ -47,6 +47,29 @@ test.describe('tablette en paysage', () => {
         expect(await page.locator('#timeline .row-end').count()).toBeGreaterThan(1);
     });
 
+    test('en partie, survoler un intervalle ne fait pas bouger la frise : aucun repère ni intervalle ne change de place', async ({ page }) => {
+        await page.locator('#mode-card-training').click();
+        await expect(page.locator('#screen-game')).toBeVisible();
+        expect(await flow(page)).toBe('wrap');
+        // Quelques cartes posées (au bon intervalle) : la frise passe à plusieurs lignes.
+        for (let k = 0; k < 6; k++) {
+            const avantN = await page.evaluate(() => placedEvents.length);
+            const idx = await page.evaluate(() => { let i = 0; while (i < placedEvents.length && placedEvents[i].date <= eventToPlace.date) i++; return i; });
+            await page.locator('#timeline button.slot').nth(idx).click();
+            await page.waitForFunction(n => placedEvents.length > n, avantN);
+            await page.waitForTimeout(700);
+        }
+        expect(await lignesDeRepères(page)).toBeGreaterThan(1);
+        const positions = () => page.evaluate(() => [...document.querySelectorAll('#timeline .entry, #timeline .slot')].map(e => [e.offsetLeft, e.offsetTop, e.offsetWidth]));
+        const avant = await positions();
+        // Des intervalles au milieu de la frise : le survol de chacun ne doit rien déplacer.
+        for (const i of [1, 3, 4]) {
+            await page.locator('#timeline button.slot').nth(i).hover();
+            await page.waitForTimeout(300);
+            expect(await positions()).toEqual(avant);
+        }
+    });
+
     test('« Ligne » garde la frise sur une seule ligne', async ({ page }) => {
         await reglages(page, { landscapeFlow: 'line' });
         await page.locator('#mode-card-discovery').click();
