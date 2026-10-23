@@ -7,7 +7,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // Fond de la fenêtre : même couleur que l'app (#F2F4F7), pour qu'aucune bande
+        // blanche n'apparaisse sous l'indicateur de l'écran d'accueil.
+        UIWindow.appearance().backgroundColor = UIColor(red: 242 / 255, green: 244 / 255, blue: 247 / 255, alpha: 1)
         return true
     }
 
@@ -45,5 +47,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // tracking app url opens, make sure to keep this call
         return ApplicationDelegateProxy.shared.application(application, continue: userActivity, restorationHandler: restorationHandler)
     }
+
+}
+
+// Le SDK d'Xcode récent exige le cycle de vie « UIScene ». Sans cette classe, l'app
+// s'arrête au lancement (« UIScene life cycle is required »). La fenêtre est créée
+// à partir de Main.storyboard, déclaré dans Info.plist (UISceneStoryboardFile).
+class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+
+    var window: UIWindow?
 
 }
