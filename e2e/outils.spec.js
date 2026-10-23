@@ -301,6 +301,8 @@ test('calendrier annuel : l\'année choisie date les fêtes mobiles, « 5 avril 
     const champ = page.locator('#cal-year-input');
     await expect(champ).toHaveValue(String(new Date().getFullYear()));
     await champ.fill('2026');
+    // Israël : le 5 iyar 2026, le 22 avril, avec son drapeau et l'année
+    await expect(page.locator('#cal-year .cal-row', { has: page.locator('.cal-date', { hasText: /^22 avril$/ }) }).locator('.cal-country')).toHaveText('\u{1F1EE}\u{1F1F1} Israël (2026)');
     const paques = page.locator('#cal-year .cal-row', { has: page.locator('.cal-date', { hasText: /^5 avril$/ }) });
     await expect(paques.locator('.cal-religious')).toHaveText('\u271D\uFE0F Pâques (2026)');
     await expect(page.locator('#cal-year .cal-row', { has: page.locator('.cal-date', { hasText: /^14 mai$/ }) }).locator('.cal-religious')).toHaveText('\u271D\uFE0F Ascension (2026)');

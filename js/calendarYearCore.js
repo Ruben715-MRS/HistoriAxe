@@ -127,6 +127,15 @@
         }).filter(function (f) { return f.year === year; });
     }
 
+    // Yom Haatzmaut, fête nationale d'Israël : le 5 iyar, célébrée depuis 1949. Quand le 5 iyar tombe un jour où l'on ne fête pas (le
+    // shabbat notamment), Israël avance ou recule la célébration officielle ; le calendrier affiche le 5 iyar, la date de la fête.
+    var ISRAEL_FIRST_YEAR = 1949;
+    function israelIndependenceDay(year) {
+        if (year < ISRAEL_FIRST_YEAR) return null;
+        var g = fixedToGregorian(hebrewToFixed(year + 3760, 'Iyar', 5));
+        return g.year === year ? g : null;
+    }
+
     // Les journées des saints patrons des nations du Royaume-Uni (pas des fêtes nationales communes). Le drapeau est un emoji « sous-drapeau »
     // (séquence de balises) pour l'Angleterre, l'Écosse et le pays de Galles ; l'Irlande du Nord n'en a pas : son nom seul s'affiche.
     function regionFlag(code) {
@@ -192,6 +201,10 @@
                 var countries = (facts || []).filter(function (c) {
                     return c.fete_jour && c.fete_jour[0] === m && c.fete_jour[1] === d;
                 }).map(function (c) { return { n: c.n, iso2: c.iso2 }; });
+                if (year) {
+                    var israel = israelIndependenceDay(year);
+                    if (israel && israel.month === m && israel.day === d) countries.push({ n: 'Israël', iso2: 'IL', year: year });
+                }
                 NATIONS.forEach(function (x) {
                     if (x.m === m && x.d === d) countries.push({ n: x.n, iso2: null, flag: x.flag });
                 });
@@ -210,7 +223,7 @@
     return {
         MONTHS: MONTHS, RELIGIOUS: RELIGIOUS, MOBILE: MOBILE, JEWISH: JEWISH, easterSunday: easterSunday, mobileFeasts: mobileFeasts,
         hebrewLeap: hebrewLeap, hebrewNewYear: hebrewNewYear, hebrewToFixed: hebrewToFixed, fixedToGregorian: fixedToGregorian,
-        jewishFeasts: jewishFeasts, CROSS: CROSS, STAR: STAR, MENORAH: MENORAH,
+        jewishFeasts: jewishFeasts, israelIndependenceDay: israelIndependenceDay, CROSS: CROSS, STAR: STAR, MENORAH: MENORAH,
         yearDays: yearDays, dateLabel: dateLabel, monthName: monthName
     };
 }));

@@ -140,3 +140,16 @@ test('sans année, aucune fête juive ni mobile : le calendrier reste intemporel
     const labels = sans.flatMap(x => x.religious).join(' | ');
     ['Pourim', 'Hanouka', 'Roch Hachana', 'Pessa', 'Pâques'].forEach(mot => assert.ok(!labels.includes(mot), mot));
 });
+
+test('Yom Haatzmaut, fête nationale d\'Israël : le 5 iyar de l\'année, à partir de 1949, avec le drapeau', () => {
+    assert.deepEqual([K.israelIndependenceDay(2026).day, K.israelIndependenceDay(2026).month], [22, 4]);
+    // 5 iyar 2025 : samedi 3 mai (la célébration officielle avait été avancée au jeudi 1er mai)
+    assert.deepEqual([K.israelIndependenceDay(2025).day, K.israelIndependenceDay(2025).month], [3, 5]);
+    assert.equal(K.israelIndependenceDay(1948), null);
+    const d2026 = K.yearDays(facts, 2026).find(x => x.month === 4 && x.day === 22);
+    const il = d2026.countries.find(c => c.iso2 === 'IL');
+    assert.equal(il.n, 'Israël');
+    assert.equal(il.year, 2026);
+    // timeless : pas d'Israël sans année
+    assert.ok(!K.yearDays(facts).some(x => x.countries.some(c => c.iso2 === 'IL')));
+});
