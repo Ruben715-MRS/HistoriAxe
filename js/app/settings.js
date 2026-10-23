@@ -242,6 +242,8 @@ function renderSettingsUI() {
     if (byAxisHint) byAxisHint.classList.toggle('hidden', !byAxisOn);
     const byAxisBox = document.getElementById('settings-landscape-by-axis');
     if (byAxisBox) byAxisBox.checked = appSettings.landscapeByAxis === true;
+    const axisUnderBox = document.getElementById('settings-axis-under-events');
+    if (axisUnderBox) axisUnderBox.checked = appSettings.axisUnderEvents === true;
     document.querySelectorAll('#settings-orientation button').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.value === appSettings.orientation);
     });
@@ -298,6 +300,14 @@ function initSettingsControls() {
             renderSettingsUI();
         };
     });
+    const axisUnderBox = document.getElementById('settings-axis-under-events');
+    if (axisUnderBox) {
+        axisUnderBox.onchange = () => {
+            appSettings.axisUnderEvents = axisUnderBox.checked;
+            settingsSave(appSettings);
+            if (typeof renderAxesLegend === 'function') renderAxesLegend();
+        };
+    }
     const byAxisBox = document.getElementById('settings-landscape-by-axis');
     if (byAxisBox) {
         byAxisBox.onchange = () => {

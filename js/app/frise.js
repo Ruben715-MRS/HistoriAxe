@@ -228,7 +228,12 @@ function renderAxesLegend() {
         legendEl.classList.toggle('pinned', pinned);
     } else {
         const timeline = document.getElementById('timeline');
-        if (timeline) timeline.classList.remove('axes-entry-badges-hidden', 'axes-legend-visible');
+        // Hors Découverte (ou thème à un seul axe), le nom de l'axe ne s'affiche sous les événements que si le
+        // réglage le demande : le liseré de couleur de la carte suffit.
+        if (timeline) {
+            timeline.classList.toggle('axes-entry-badges-hidden', currentMode !== 'discovery' && appSettings.axisUnderEvents !== true);
+            timeline.classList.remove('axes-legend-visible');
+        }
         legendEl.classList.add('hidden');
     }
 }
