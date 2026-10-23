@@ -206132,153 +206132,6 @@
               "nom": "Afrique centrale",
               "themes": [
                 {
-                  "id": "thm_ao",
-                  "nom": "Histoire de l'Angola 🇦🇴",
-                  "difficulte": "Intermédiaire",
-                  "events": [
-                    {
-                      "id": "ao1",
-                      "date": 1483,
-                      "titre": "Arrivée des Portugais au royaume du Kongo",
-                      "description": "Le navigateur portugais Diogo Cão atteint l'embouchure du fleuve Congo et établit le contact avec le puissant royaume du Kongo. Diogo Cão arrive en 1483. Il explore l'embouchure du Congo.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Royaume_du_Kongo"
-                    },
-                    {
-                      "id": "ao2",
-                      "date": 1575,
-                      "titre": "Fondation de Luanda",
-                      "description": "Les Portugais fondent Luanda, qui devient une plaque tournante majeure de la traite négrière vers le Brésil. Luanda est fondée en 1576. Elle devient un grand port négrier.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Luanda"
-                    },
-                    {
-                      "id": "ao3",
-                      "date": 1665,
-                      "titre": "Bataille de Mbwila",
-                      "description": "La défaite du royaume du Kongo face aux troupes portugaises précipite son morcellement politique durable. La bataille de Mbwila a lieu en 1665. Le roi Antonio Ier est tué.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Mbwila"
-                    },
-                    {
-                      "id": "ao4",
-                      "date": 1836,
-                      "titre": "Abolition officielle de la traite négrière",
-                      "description": "Le Portugal interdit officiellement la traite des esclaves, qui perdure cependant de façon clandestine pendant des décennies. Le Portugal abolit la traite en 1836. La traite continue pourtant.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Traite_n%C3%A9gri%C3%A8re_atlantique"
-                    },
-                    {
-                      "id": "ao5",
-                      "date": 1885,
-                      "titre": "Conférence de Berlin",
-                      "description": "Le partage colonial de l'Afrique consacre l'Angola comme colonie portugaise aux frontières fixées par les puissances européennes. La conférence de Berlin a lieu en 1884-1885. Elle fixe les règles de la colonisation.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Conf%C3%A9rence_de_Berlin_(1884-1885)"
-                    },
-                    {
-                      "id": "ao6",
-                      "date": 1926,
-                      "titre": "Travail forcé sous l'Estado Novo",
-                      "description": "Le régime portugais de l'Estado Novo impose un système de travail forcé et de cultures obligatoires aux populations angolaises. L'Estado Novo est établi en 1933. Le travail forcé est répandu dans les colonies.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Empire_colonial_portugais"
-                    },
-                    {
-                      "id": "ao7",
-                      "date": 1956,
-                      "titre": "Fondation du MPLA",
-                      "description": "Le Mouvement populaire de libération de l'Angola, mouvement marxisant, est fondé pour lutter contre la colonisation portugaise. Le MPLA est fondé en 1956. Agostinho Neto en est le dirigeant.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Mouvement_populaire_de_lib%C3%A9ration_de_l%27Angola"
-                    },
-                    {
-                      "id": "ao8",
-                      "date": 1961,
-                      "titre": "Début de la guerre d'indépendance",
-                      "description": "Des soulèvements armés dans le nord du pays marquent le début de la guerre coloniale angolaise. La guerre commence en février 1961. Elle dure treize ans.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_d%27ind%C3%A9pendance_de_l%27Angola"
-                    },
-                    {
-                      "id": "ao9",
-                      "date": 1975,
-                      "titre": "Indépendance de l'Angola",
-                      "description": "Le MPLA proclame l'indépendance de l'Angola le 11 novembre après la chute de la dictature portugaise. L'indépendance est proclamée le 11 novembre 1975. Agostinho Neto devient président.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Ind%C3%A9pendance_de_l%27Angola"
-                    },
-                    {
-                      "id": "ao10",
-                      "date": 1975,
-                      "titre": "Début de la guerre civile",
-                      "description": "Le MPLA, l'UNITA et le FNLA s'affrontent pour le contrôle du pays dès l'indépendance proclamée. La guerre civile commence en 1975. Elle dure jusqu'en 2002.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_civile_angolaise"
-                    },
-                    {
-                      "id": "ao11",
-                      "date": 1976,
-                      "titre": "Intervention cubaine et sud-africaine",
-                      "description": "Des troupes cubaines soutiennent le MPLA tandis que l'Afrique du Sud appuie l'UNITA, internationalisant le conflit dans le contexte de la guerre froide. L'intervention cubaine commence en 1975. Elle compte des dizaines de milliers de soldats.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Intervention_cubaine_en_Angola"
-                    },
-                    {
-                      "id": "ao12",
-                      "date": 1988,
-                      "titre": "Accords tripartites",
-                      "description": "L'Angola, Cuba et l'Afrique du Sud signent un accord prévoyant le retrait des troupes étrangères du territoire angolais. Les accords sont signés en décembre 1988. Ils sont signés à New York.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Accords_tripartites_de_1988"
-                    },
-                    {
-                      "id": "ao13",
-                      "date": 1991,
-                      "titre": "Accords de Bicesse",
-                      "description": "Un premier accord de paix instaure un cessez-le-feu et ouvre la voie au multipartisme. Les accords sont signés en mai 1991. Ils prévoient des élections.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Accords_de_Bicesse"
-                    },
-                    {
-                      "id": "ao14",
-                      "date": 1992,
-                      "titre": "Reprise de la guerre civile",
-                      "description": "Le rejet par l'UNITA des résultats électoraux entraîne la reprise d'un conflit encore plus violent. Les élections ont lieu en septembre 1992. La guerre reprend en octobre.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_civile_angolaise"
-                    },
-                    {
-                      "id": "ao15",
-                      "date": 2002,
-                      "titre": "Mort de Jonas Savimbi",
-                      "description": "La mort au combat du chef de l'UNITA met fin à vingt-sept années de guerre civile. Savimbi est tué le 22 février 2002. Un accord de paix est signé en avril.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Jonas_Savimbi"
-                    },
-                    {
-                      "id": "ao16",
-                      "date": 2010,
-                      "titre": "Nouvelle Constitution",
-                      "description": "Une nouvelle Constitution renforce considérablement les pouvoirs du président de la République. La Constitution est adoptée en février 2010. Elle supprime l'élection directe du président.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Constitution_de_l%27Angola"
-                    },
-                    {
-                      "id": "ao17",
-                      "date": 2017,
-                      "titre": "João Lourenço succède à dos Santos",
-                      "description": "João Lourenço accède à la présidence après trente-huit ans de pouvoir de José Eduardo dos Santos. Lourenço est élu en août 2017. Dos Santos était au pouvoir depuis 1979.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Jo%C3%A3o_Louren%C3%A7o"
-                    },
-                    {
-                      "id": "ao18",
-                      "date": 2018,
-                      "titre": "Campagne anticorruption",
-                      "description": "Le nouveau pouvoir lance une vaste campagne anticorruption visant notamment le clan de l'ancien président dos Santos. La campagne commence en 2018. Elle vise des proches de dos Santos.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Jo%C3%A3o_Louren%C3%A7o"
-                    },
-                    {
-                      "id": "ao19",
-                      "date": 2022,
-                      "titre": "Réélection contestée de Lourenço",
-                      "description": "João Lourenço est réélu à l'issue d'un scrutin serré et contesté par l'opposition de l'UNITA. L'élection a lieu en août 2022. Le MPLA obtient environ 51 % des voix.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89lection_pr%C3%A9sidentielle_angolaise_de_2022"
-                    },
-                    {
-                      "id": "ao20",
-                      "date": 2023,
-                      "titre": "Diversification économique",
-                      "description": "L'Angola poursuit ses efforts de diversification économique afin de réduire sa forte dépendance au pétrole. La diversification est un objectif du gouvernement. Elle vise l'agriculture, les mines et le tourisme.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89conomie_de_l%27Angola"
-                    }
-                  ]
-                },
-                {
                   "id": "thm_cm",
                   "nom": "Histoire du Cameroun 🇨🇲",
                   "difficulte": "Intermédiaire",
@@ -209959,6 +209812,153 @@
                     "zan25",
                     "zan28",
                     "zan30"
+                  ]
+                },
+                {
+                  "id": "thm_ao",
+                  "nom": "Histoire de l'Angola 🇦🇴",
+                  "difficulte": "Intermédiaire",
+                  "events": [
+                    {
+                      "id": "ao1",
+                      "date": 1483,
+                      "titre": "Arrivée des Portugais au royaume du Kongo",
+                      "description": "Le navigateur portugais Diogo Cão atteint l'embouchure du fleuve Congo et établit le contact avec le puissant royaume du Kongo. Diogo Cão arrive en 1483. Il explore l'embouchure du Congo.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Royaume_du_Kongo"
+                    },
+                    {
+                      "id": "ao2",
+                      "date": 1575,
+                      "titre": "Fondation de Luanda",
+                      "description": "Les Portugais fondent Luanda, qui devient une plaque tournante majeure de la traite négrière vers le Brésil. Luanda est fondée en 1576. Elle devient un grand port négrier.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Luanda"
+                    },
+                    {
+                      "id": "ao3",
+                      "date": 1665,
+                      "titre": "Bataille de Mbwila",
+                      "description": "La défaite du royaume du Kongo face aux troupes portugaises précipite son morcellement politique durable. La bataille de Mbwila a lieu en 1665. Le roi Antonio Ier est tué.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Mbwila"
+                    },
+                    {
+                      "id": "ao4",
+                      "date": 1836,
+                      "titre": "Abolition officielle de la traite négrière",
+                      "description": "Le Portugal interdit officiellement la traite des esclaves, qui perdure cependant de façon clandestine pendant des décennies. Le Portugal abolit la traite en 1836. La traite continue pourtant.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Traite_n%C3%A9gri%C3%A8re_atlantique"
+                    },
+                    {
+                      "id": "ao5",
+                      "date": 1885,
+                      "titre": "Conférence de Berlin",
+                      "description": "Le partage colonial de l'Afrique consacre l'Angola comme colonie portugaise aux frontières fixées par les puissances européennes. La conférence de Berlin a lieu en 1884-1885. Elle fixe les règles de la colonisation.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Conf%C3%A9rence_de_Berlin_(1884-1885)"
+                    },
+                    {
+                      "id": "ao6",
+                      "date": 1926,
+                      "titre": "Travail forcé sous l'Estado Novo",
+                      "description": "Le régime portugais de l'Estado Novo impose un système de travail forcé et de cultures obligatoires aux populations angolaises. L'Estado Novo est établi en 1933. Le travail forcé est répandu dans les colonies.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Empire_colonial_portugais"
+                    },
+                    {
+                      "id": "ao7",
+                      "date": 1956,
+                      "titre": "Fondation du MPLA",
+                      "description": "Le Mouvement populaire de libération de l'Angola, mouvement marxisant, est fondé pour lutter contre la colonisation portugaise. Le MPLA est fondé en 1956. Agostinho Neto en est le dirigeant.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Mouvement_populaire_de_lib%C3%A9ration_de_l%27Angola"
+                    },
+                    {
+                      "id": "ao8",
+                      "date": 1961,
+                      "titre": "Début de la guerre d'indépendance",
+                      "description": "Des soulèvements armés dans le nord du pays marquent le début de la guerre coloniale angolaise. La guerre commence en février 1961. Elle dure treize ans.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_d%27ind%C3%A9pendance_de_l%27Angola"
+                    },
+                    {
+                      "id": "ao9",
+                      "date": 1975,
+                      "titre": "Indépendance de l'Angola",
+                      "description": "Le MPLA proclame l'indépendance de l'Angola le 11 novembre après la chute de la dictature portugaise. L'indépendance est proclamée le 11 novembre 1975. Agostinho Neto devient président.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Ind%C3%A9pendance_de_l%27Angola"
+                    },
+                    {
+                      "id": "ao10",
+                      "date": 1975,
+                      "titre": "Début de la guerre civile",
+                      "description": "Le MPLA, l'UNITA et le FNLA s'affrontent pour le contrôle du pays dès l'indépendance proclamée. La guerre civile commence en 1975. Elle dure jusqu'en 2002.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_civile_angolaise"
+                    },
+                    {
+                      "id": "ao11",
+                      "date": 1976,
+                      "titre": "Intervention cubaine et sud-africaine",
+                      "description": "Des troupes cubaines soutiennent le MPLA tandis que l'Afrique du Sud appuie l'UNITA, internationalisant le conflit dans le contexte de la guerre froide. L'intervention cubaine commence en 1975. Elle compte des dizaines de milliers de soldats.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Intervention_cubaine_en_Angola"
+                    },
+                    {
+                      "id": "ao12",
+                      "date": 1988,
+                      "titre": "Accords tripartites",
+                      "description": "L'Angola, Cuba et l'Afrique du Sud signent un accord prévoyant le retrait des troupes étrangères du territoire angolais. Les accords sont signés en décembre 1988. Ils sont signés à New York.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Accords_tripartites_de_1988"
+                    },
+                    {
+                      "id": "ao13",
+                      "date": 1991,
+                      "titre": "Accords de Bicesse",
+                      "description": "Un premier accord de paix instaure un cessez-le-feu et ouvre la voie au multipartisme. Les accords sont signés en mai 1991. Ils prévoient des élections.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Accords_de_Bicesse"
+                    },
+                    {
+                      "id": "ao14",
+                      "date": 1992,
+                      "titre": "Reprise de la guerre civile",
+                      "description": "Le rejet par l'UNITA des résultats électoraux entraîne la reprise d'un conflit encore plus violent. Les élections ont lieu en septembre 1992. La guerre reprend en octobre.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_civile_angolaise"
+                    },
+                    {
+                      "id": "ao15",
+                      "date": 2002,
+                      "titre": "Mort de Jonas Savimbi",
+                      "description": "La mort au combat du chef de l'UNITA met fin à vingt-sept années de guerre civile. Savimbi est tué le 22 février 2002. Un accord de paix est signé en avril.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Jonas_Savimbi"
+                    },
+                    {
+                      "id": "ao16",
+                      "date": 2010,
+                      "titre": "Nouvelle Constitution",
+                      "description": "Une nouvelle Constitution renforce considérablement les pouvoirs du président de la République. La Constitution est adoptée en février 2010. Elle supprime l'élection directe du président.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Constitution_de_l%27Angola"
+                    },
+                    {
+                      "id": "ao17",
+                      "date": 2017,
+                      "titre": "João Lourenço succède à dos Santos",
+                      "description": "João Lourenço accède à la présidence après trente-huit ans de pouvoir de José Eduardo dos Santos. Lourenço est élu en août 2017. Dos Santos était au pouvoir depuis 1979.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Jo%C3%A3o_Louren%C3%A7o"
+                    },
+                    {
+                      "id": "ao18",
+                      "date": 2018,
+                      "titre": "Campagne anticorruption",
+                      "description": "Le nouveau pouvoir lance une vaste campagne anticorruption visant notamment le clan de l'ancien président dos Santos. La campagne commence en 2018. Elle vise des proches de dos Santos.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Jo%C3%A3o_Louren%C3%A7o"
+                    },
+                    {
+                      "id": "ao19",
+                      "date": 2022,
+                      "titre": "Réélection contestée de Lourenço",
+                      "description": "João Lourenço est réélu à l'issue d'un scrutin serré et contesté par l'opposition de l'UNITA. L'élection a lieu en août 2022. Le MPLA obtient environ 51 % des voix.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89lection_pr%C3%A9sidentielle_angolaise_de_2022"
+                    },
+                    {
+                      "id": "ao20",
+                      "date": 2023,
+                      "titre": "Diversification économique",
+                      "description": "L'Angola poursuit ses efforts de diversification économique afin de réduire sa forte dépendance au pétrole. La diversification est un objectif du gouvernement. Elle vise l'agriculture, les mines et le tourisme.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89conomie_de_l%27Angola"
+                    }
                   ]
                 },
                 {
