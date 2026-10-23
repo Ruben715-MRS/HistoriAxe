@@ -276,6 +276,10 @@ function classRunning() {
 // Le mode suivant de la séance : on prévient l'élève (sauf au tout début) et on le lance.
 function classNextMode() {
     classState.modeIdx++;
+    // Un mode qui ne peut bâtir aucune manche sur ce paquet (« L'intrus » sur trop peu de cartes) est passé.
+    const cards = classDeckEvents();
+    while (classState.modeIdx < classState.modes.length && !ClassModes.roundsFor(classState.modes[classState.modeIdx], cards)) classState.modeIdx++;
+    if (classState.modeIdx >= classState.modes.length) { classFinishPlay(); return; }
     const mode = classState.modes[classState.modeIdx];
     classState.activeMode = mode;
     if (classState.modeIdx > 0) showToast(t('classroom.next_mode', { mode: t('classroom.mode_' + mode) }), 2800);
@@ -287,27 +291,33 @@ function classStartMode(mode) {
     if (mode === 'frise') { startActualGame('class'); return; }
     resetPlacementAnimationState();
     resetSessionHistory();
-    const deck = classDeckEvents();
+    const cards = classDeckEvents();
+    const byId = new Map(cards.map(e => [e.id, e]));
+    const get = id => byId.get(id);
+    const rounds = ClassModes.plan(mode, cards);
     lives = Infinity;
     score = 0;
     comboMultiplier = 1.0;
-    const dates = deck.map(e => e.date);
+    const dates = cards.map(e => e.date);
     currentGameSpan = Math.max(1, Math.max(...dates) - Math.min(...dates));
     classLogs[mode] = [];
-    const filScreen = document.getElementById('screen-fil');
-    if (filScreen) filScreen.classList.toggle('is-class', mode === 'fil');
+    // Les aides propres à la partie libre (indice du fil, 50/50 du quiz) n'existent pas en classe.
+    ['screen-fil', 'screen-quiz'].forEach(id => {
+        const screen = document.getElementById(id);
+        if (screen) screen.classList.toggle('is-class', (id === 'screen-fil' && mode === 'fil') || (id === 'screen-quiz' && mode === 'quiz'));
+    });
     if (mode === 'fil') {
         currentMode = 'fil';
-        filEvents = deck.slice(1);
+        filEvents = cards.slice(1);
         filIndex = 0;
         showScreen('screen-fil');
         renderFilQuestion();
     } else if (mode === 'ecart') {
         currentMode = 'ecart';
         ecartQuestions = [];
-        for (let r = 0; r < ClassModes.roundsFor('ecart', deck.length); r++) {
-            const eventA = deck[2 * r];
-            const eventB = deck[2 * r + 1];
+        for (let r = 0; r < rounds.length; r++) {
+            const eventA = cards[2 * r];
+            const eventB = cards[2 * r + 1];
             ecartQuestions.push({ eventA, eventB, gap: Math.abs(eventA.date - eventB.date) });
         }
         ecartIndex = 0;
@@ -315,14 +325,68 @@ function classStartMode(mode) {
         renderEcartQuestion();
     } else if (mode === 'avap') {
         currentMode = 'avantapres';
-        avapQuestions = [];
-        for (let r = 0; r < ClassModes.roundsFor('avap', deck.length); r++) {
-            const pair = ClassModes.avapPair(deck, r);
-            avapQuestions.push({ left: pair.left, right: pair.right, correctEvt: pair.left.date < pair.right.date ? pair.left : pair.right });
-        }
+        avapQuestions = rounds.map(q => {
+            const left = get(q.leftId);
+            const right = get(q.rightId);
+            return { left, right, correctEvt: left.date < right.date ? left : right };
+        });
         avapIndex = 0;
         showScreen('screen-avant-apres');
         renderAvapQuestion();
+    } else if (mode === 'quiz') {
+        currentMode = 'quiz';
+        quizQuestions = rounds.map(q => ({ type: q.type, correct: get(q.correctId), distractorEvents: q.distractorIds.map(get) }));
+        quizIndex = 0;
+        quizFiftyLeft = 0;
+        document.getElementById('quiz-fifty-count').innerText = '(0)';
+        showScreen('screen-quiz');
+        renderQuizQuestion();
+    } else if (mode === 'ordre') {
+        currentMode = 'ordre';
+        ordreRounds = rounds.map(q => ({ cards: q.cardIds.map(get), solution: q.solution }));
+        ordreIndex = 0;
+        ordreAttempt = [];
+        currentRoundSize = ordreRounds.length;
+        currentGameSpan = 1;
+        showScreen('screen-ordre');
+        renderOrdreRound();
+    } else if (mode === 'curseur') {
+        currentMode = 'curseur';
+        curseurRounds = rounds.map(q => ({ event: get(q.eventId), min: q.min, max: q.max, tolerance: q.tolerance }));
+        curseurIndex = 0;
+        currentRoundSize = curseurRounds.length;
+        currentGameSpan = Math.max(1, curseurRounds[0].tolerance * 3);
+        const range = document.getElementById('curseur-range');
+        range.oninput = () => { document.getElementById('curseur-value').innerText = formatYear(Number(range.value)); };
+        showScreen('screen-curseur');
+        renderCurseurRound();
+    } else if (mode === 'blitz') {
+        // Sans chronomètre en classe : une série fixe d'énoncés « vrai ou faux », la même pour tous.
+        currentMode = 'blitz';
+        blitzPool = cards;
+        blitzQueue = rounds.map(q => ({ left: get(q.leftId), right: get(q.rightId), answer: q.answer, pairKey: '' }));
+        blitzCurrent = null;
+        blitzRight = 0;
+        blitzWrong = 0;
+        currentRoundSize = 0;
+        currentGameSpan = 1;
+        blitzDeadline = Date.now() + 24 * 3600 * 1000;
+        stopBlitzClock();
+        document.getElementById('blitz-clock').innerText = '';
+        document.getElementById('blitz-progress-fill').style.width = '100%';
+        showScreen('screen-blitz');
+        nextBlitzQuestion();
+    } else if (mode === 'intrus') {
+        currentMode = 'intrus';
+        intrusQuestions = rounds.map(q => ({
+            kind: q.kind, axis: q.axis, options: q.optionIds.map(get), intruderId: q.intruderId,
+            groupIds: q.optionIds.filter(id => id !== q.intruderId)
+        }));
+        intrusIndex = 0;
+        currentRoundSize = intrusQuestions.length;
+        currentGameSpan = 1;
+        showScreen('screen-intrus');
+        renderIntrusQuestion();
     }
 }
 
@@ -354,17 +418,22 @@ function classOnGameEnd() {
     if (!classRunning()) return false;
     classSubmitProgress();
     triggerHaptic('success');
-    // Encore un mode à jouer : on l'enchaîne.
-    if (classState.modeIdx + 1 < classState.modes.length) { classNextMode(); return true; }
+    classNextMode(); // encore un mode à jouer, ou la fin de la manche de l'élève
+    return true;
+}
+
+// Tous les modes sont joués : l'élève attend le classement.
+function classFinishPlay() {
     classState.finished = true;
-    const filScreen = document.getElementById('screen-fil');
-    if (filScreen) filScreen.classList.remove('is-class');
+    ['screen-fil', 'screen-quiz'].forEach(id => {
+        const screen = document.getElementById(id);
+        if (screen) screen.classList.remove('is-class');
+    });
     document.getElementById('class-title').innerText = classState.themeName;
     classShowPanel('live');
     showScreen('screen-class', 'forward');
-    classRenderBoard({ status: 'running', players: [], total: ClassModes.totalRounds(classState.modes, classState.eventIds.length), me: null });
+    classRenderBoard({ status: 'running', players: [], total: ClassModes.totalRounds(classState.modes, classDeckEvents()), me: null });
     classStartPolling();
-    return true;
 }
 
 // --- Les deux rôles : interrogation et rendu ------------------------------------
@@ -545,15 +614,12 @@ function classRenderRecap(recap) {
         return;
     }
     hardest.forEach(r => {
-        const evt = index.get(r.eventId);
         const li = document.createElement('li');
         li.innerHTML = '<span class="class-recap-title"></span><span class="class-recap-miss"></span>';
-        let title = evt ? evt.titre + ' (' + formatYear(evt.date) + ')' : r.eventId;
-        if (r.eventId2) {
-            // « Trouve l'écart » : la manche est une paire de cartes.
-            const evt2 = index.get(r.eventId2);
-            title = (evt ? evt.titre : r.eventId) + ' ↔ ' + (evt2 ? evt2.titre : r.eventId2);
-        }
+        const events = (r.ids || []).map(id => index.get(id));
+        let title;
+        if (events.length === 1) title = events[0] ? events[0].titre + ' (' + formatYear(events[0].date) + ')' : r.ids[0];
+        else title = events.map((e, i) => e ? e.titre : r.ids[i]).join(r.mode === 'ordre' ? ' · ' : ' ↔ ');
         const tag = classState.modes && classState.modes.length > 1 && r.mode ? '[' + t('classroom.mode_' + r.mode) + '] ' : '';
         li.querySelector('.class-recap-title').textContent = tag + title;
         li.querySelector('.class-recap-miss').innerText = t('classroom.recap_miss', { pct: Math.round(100 * r.wrong / r.answered), wrong: r.wrong, answered: r.answered });
@@ -570,8 +636,10 @@ function classLeave(quiet) {
     classState = null;
     classRoundLog = [];
     classLogs = {};
-    const filScreen = document.getElementById('screen-fil');
-    if (filScreen) filScreen.classList.remove('is-class');
+    ['screen-fil', 'screen-quiz'].forEach(id => {
+        const screen = document.getElementById(id);
+        if (screen) screen.classList.remove('is-class');
+    });
     if (quiet === true) return;
     if (wasPlaying || currentMode === 'class') { resetPlacementAnimationState(); stopTimer(); }
     // L'enseignant revient à l'écran des modes d'où il est parti, l'élève aux catégories.

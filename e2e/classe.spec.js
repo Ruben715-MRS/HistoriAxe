@@ -57,7 +57,7 @@ test('enseignant : réglage, salon avec le code, départ, séance en direct, bil
     etat.courant = { code: 'ABC234', status: 'running', total: 9, isTeacher: true, playerCount: 2,
         players: [{ rank: 1, name: 'Léa', score: 540, answered: 6, correct: 6, finished: false }, { rank: 2, name: 'Hugo', score: 210, answered: 9, correct: 4, finished: true }],
         totals: { correct: 10, wrong: 5 },
-        recap: [{ eventId: ids[1], answered: 2, wrong: 2 }, { eventId: ids[2], answered: 2, wrong: 0 }] };
+        recap: [{ mode: 'frise', ids: [ids[1]], answered: 2, wrong: 2 }, { mode: 'frise', ids: [ids[2]], answered: 2, wrong: 0 }] };
     await page.locator('#class-start-btn').click();
     await expect(page.locator('#class-panel-live')).toBeVisible();
     await expect(page.locator('#class-board .class-row')).toHaveCount(2);
@@ -167,7 +167,7 @@ test('élève : rejoint, attend, joue le paquet de l\'enseignant sans éliminati
     await expect(page.locator('#class-board .class-row.is-me')).toContainText('Léa');
     await expect(page.locator('#class-recap')).toBeHidden(); // pas de bilan avant la fin de la séance
 
-    etat.courant = { ...etat.courant, status: 'ended', recap: [{ eventId: ids[3], answered: 2, wrong: 1 }] };
+    etat.courant = { ...etat.courant, status: 'ended', recap: [{ mode: 'frise', ids: [ids[3]], answered: 2, wrong: 1 }] };
     await expect(page.locator('#class-live-status')).toHaveText('Séance terminée.', { timeout: 8000 });
     await expect(page.locator('#class-recap')).toBeVisible();
 });
@@ -206,7 +206,7 @@ test('enseignant : les modes se cochent un par ligne, la frise d\'abord ; le der
     await expect(page.locator('#class-panel-setup')).toBeVisible();
 
     const lignes = page.locator('#class-modes-list li');
-    await expect(lignes).toHaveCount(4);
+    await expect(lignes).toHaveCount(9);
     await expect(lignes.first()).toContainText('La frise');
     await expect(lignes.first().locator('small')).not.toBeEmpty();
     // Au départ, seule la frise est cochée — et on ne peut pas la décocher : il faut au moins un mode.
@@ -283,4 +283,81 @@ test('élève : la séance enchaîne les modes choisis, journal par mode, jusqu\
     expect(dernier.logs.ecart.every(r => r.guesses.length === 1)).toBe(true);
     expect(dernier.logs.fil).toHaveLength(7);
     expect(dernier.logs.avap.every(r => r.choice === 0)).toBe(true);
+});
+
+test('élève : quiz, remise en ordre, curseur, blitz et intrus s\'enchaînent sur le paquet, avec un journal par mode', async ({ page }) => {
+    test.setTimeout(240000);
+    await openThemeModes(page, 'thm_be');
+    const ids = await paquetDe8(page);
+    const modes = ['quiz', 'ordre', 'curseur', 'blitz', 'intrus'];
+    const etat = {
+        courant: { code: 'ABC234', status: 'running', total: 30, isTeacher: false, modes, players: [], me: null },
+        reponses: {
+            join: { body: { status: 'running', lang: 'fr', themeName: 'Belgique', eventIds: ids, modes } },
+            submit: { body: { score: 0, answered: 0, finished: false, rank: 1 } }
+        }
+    };
+    const appels = await fauxServeur(page, etat);
+    // Les manches que le moteur commun bâtit sur ce paquet (« L'intrus » peut n'en avoir aucune sur huit cartes).
+    const manches = await page.evaluate(({ ids, modes }) => {
+        const index = new Map(getAllEventsWithLocation().map(i => [i.event.id, i.event]));
+        const cards = ids.map(id => index.get(id));
+        return Object.fromEntries(modes.map(m => [m, ClassModes.roundsFor(m, cards)]));
+    }, { ids, modes });
+    expect(manches.quiz).toBe(7);
+    expect(manches.ordre).toBe(1);
+    expect(manches.curseur).toBe(7);
+
+    await page.evaluate(() => { showScreen('screen-categories'); initCategories(); });
+    await page.evaluate(() => openTeam('screen-categories'));
+    await page.locator('#team-class-code').fill('abc234');
+    await page.locator('#team-class-name').fill('Léa');
+    await page.locator('#team-class-btn').click();
+
+    // 1. Quiz : une réponse par question, pas de 50/50.
+    await expect(page.locator('#screen-quiz')).toBeVisible({ timeout: 8000 });
+    await expect(page.locator('#quiz-fifty-btn')).toBeHidden();
+    for (let i = 0; i < manches.quiz; i++) {
+        await page.waitForFunction(n => quizIndex === n && !isAnimating, i, { timeout: 8000 });
+        await page.locator('#quiz-options .quiz-option').first().click();
+    }
+    // 2. Remise en ordre : cinq cartes touchées, puis « suivant ».
+    await expect(page.locator('#screen-ordre')).toBeVisible({ timeout: 8000 });
+    for (let i = 0; i < manches.ordre; i++) {
+        await page.waitForFunction(n => ordreIndex === n && !isAnimating, i, { timeout: 8000 });
+        for (let c = 0; c < 5; c++) await page.locator('#ordre-cards .ordre-card:not(.placed)').first().click();
+        await page.locator('#ordre-reveal button').click();
+    }
+    // 3. Le curseur : on valide au milieu.
+    await expect(page.locator('#screen-curseur')).toBeVisible({ timeout: 8000 });
+    for (let i = 0; i < manches.curseur; i++) {
+        await page.waitForFunction(n => curseurIndex === n && !isAnimating, i, { timeout: 8000 });
+        await page.locator('#curseur-validate').click();
+    }
+    // 4. Blitz : « vrai » à chaque énoncé, sans chronomètre.
+    await expect(page.locator('#screen-blitz')).toBeVisible({ timeout: 8000 });
+    await expect(page.locator('#blitz-clock')).toHaveText('');
+    for (let i = 0; i < manches.blitz; i++) {
+        await page.waitForFunction(n => blitzRight + blitzWrong === n && !isAnimating, i, { timeout: 8000 });
+        await page.locator('#blitz-true').click();
+    }
+    // 5. L'intrus, s'il y a des manches : on désigne la première option.
+    for (let i = 0; i < manches.intrus; i++) {
+        await expect(page.locator('#screen-intrus')).toBeVisible({ timeout: 8000 });
+        await page.waitForFunction(n => intrusIndex === n && !isAnimating, i, { timeout: 8000 });
+        await page.locator('#intrus-options .intrus-option').first().click();
+        await page.locator('#intrus-reveal button').click();
+    }
+
+    await expect(page.locator('#class-panel-live')).toBeVisible({ timeout: 10000 });
+    const logs = appels.filter(a => a.action === 'submit').pop().logs;
+    expect(logs.quiz).toHaveLength(manches.quiz);
+    expect(logs.quiz.every(r => typeof r.choice === 'string')).toBe(true);
+    expect(logs.ordre).toHaveLength(manches.ordre);
+    expect(logs.ordre[0].order).toHaveLength(5);
+    expect(logs.curseur).toHaveLength(manches.curseur);
+    expect(logs.curseur.every(r => typeof r.guess === 'number')).toBe(true);
+    expect(logs.blitz).toHaveLength(manches.blitz);
+    expect(logs.blitz.every(r => r.answer === true)).toBe(true);
+    expect((logs.intrus || []).length).toBe(manches.intrus);
 });

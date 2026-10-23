@@ -58,14 +58,14 @@ function rankPlayers(players) {
     return players.slice().sort((a, b) => b.score - a.score || a.joinedAt - b.joinedAt);
 }
 
-// Les manches les plus ratées : { mode, round, eventId, eventId2?, answered, wrong }. Une manche est une carte (frise,
-// fil, avap : la carte r + 1 du paquet — la carte 0 est l'ancre) ou une paire de cartes (écart : les cartes 2r et
-// 2r + 1). `results` d'un joueur : { mode: [booléen par manche terminée] }.
-function buildRecap(eventIds, players, modes) {
+// Les manches les plus ratées : { mode, round, ids, answered, wrong }, `ids` = les cartes en jeu dans la manche (une,
+// ou deux pour « écart » et « blitz », cinq pour « ordre »). `deck` : les cartes du paquet [{ id, date, axe? }] ;
+// `results` d'un joueur : { mode: [booléen par manche terminée] }.
+function buildRecap(deck, players, modes) {
     const recap = [];
     for (const mode of (modes && modes.length ? modes : ['frise'])) {
-        const rounds = ClassModes.roundsFor(mode, eventIds.length);
-        for (let r = 0; r < rounds; r++) {
+        const rounds = ClassModes.plan(mode, deck);
+        rounds.forEach((round, r) => {
             let answered = 0;
             let wrong = 0;
             for (const p of players) {
@@ -74,12 +74,8 @@ function buildRecap(eventIds, players, modes) {
                 answered++;
                 if (list[r] === false) wrong++;
             }
-            if (answered === 0) continue;
-            const entry = { mode, round: r, answered, wrong };
-            if (mode === 'ecart') { entry.eventId = eventIds[2 * r]; entry.eventId2 = eventIds[2 * r + 1]; }
-            else entry.eventId = eventIds[r + 1];
-            recap.push(entry);
-        }
+            if (answered > 0) recap.push({ mode, round: r, ids: round.ids, answered, wrong });
+        });
     }
     return recap;
 }

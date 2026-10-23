@@ -29,10 +29,16 @@ const { creditTeam } = require('./_lib/teamStore');
 const MAX_CREATE_RETRIES = 6;
 const RETENTION_SQL = "now() - interval '2 days'";
 
-const dateIndexes = new Map(); // lang → Map(id → date), construit une fois par instance chaude
+const cardIndexes = new Map(); // lang → Map(id → { id, date, axe? }), construit une fois par instance chaude
 function eventIndex(lang) {
-    if (!dateIndexes.has(lang)) dateIndexes.set(lang, new Map(loadLangEvents(lang).map((e) => [e.id, e.date])));
-    return dateIndexes.get(lang);
+    if (!cardIndexes.has(lang)) cardIndexes.set(lang, new Map(loadLangEvents(lang).map((e) => [e.id, e])));
+    return cardIndexes.get(lang);
+}
+
+// Le paquet de la séance : ses cartes dans l'ordre de jeu.
+function deckOf(session) {
+    const index = eventIndex(session.lang);
+    return session.event_ids.map((id) => index.get(id));
 }
 
 function httpError(status, message) {
@@ -140,7 +146,7 @@ async function submitProgress(body) {
     if (!joined.rows[0]) throw httpError(404, 'Rejoignez d\'abord la séance.');
 
     const previouslyCredited = joined.rows[0].credited;
-    const deck = session.event_ids.map((id) => ({ id, date: eventIndex(session.lang).get(id) }));
+    const deck = deckOf(session);
     const replay = ClassModes.replaySession(session.modes, deck, body.logs);
     const results = replay.results;
     const correct = replay.correct;
@@ -188,7 +194,7 @@ async function buildState(code, deviceId) {
         lang: session.lang,
         themeName: session.theme_name,
         modes: session.modes,
-        total: ClassModes.totalRounds(session.modes, session.event_ids.length),
+        total: ClassModes.totalRounds(session.modes, deckOf(session)),
         isTeacher,
         playerCount: ranked.length,
         // Le bilan de toute la classe (la liste ci-dessous est plafonnée) : de quoi remplir la barre « vert / rouge ».
@@ -199,7 +205,7 @@ async function buildState(code, deviceId) {
         me: mine >= 0 ? { rank: mine + 1, score: ranked[mine].score, answered: ranked[mine].answered, correct: ranked[mine].correct, finished: ranked[mine].finished } : null
     };
     // Les cartes les plus ratées : à l'enseignant dès que ça se joue, à tous une fois la séance terminée.
-    if (isTeacher || session.status === 'ended') state.recap = C.buildRecap(session.event_ids, players, session.modes);
+    if (isTeacher || session.status === 'ended') state.recap = C.buildRecap(deckOf(session), players, session.modes);
     return state;
 }
 

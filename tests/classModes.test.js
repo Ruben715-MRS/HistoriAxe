@@ -15,11 +15,12 @@ test('les modes choisis : sans doublon ni inconnu, la frise à défaut', () => {
 });
 
 test('le nombre de manches : n - 1, sauf « écart » qui prend les cartes deux à deux', () => {
-    assert.equal(M.roundsFor('frise', 8), 7);
-    assert.equal(M.roundsFor('fil', 8), 7);
-    assert.equal(M.roundsFor('avap', 8), 7);
-    assert.equal(M.roundsFor('ecart', 8), 4);
-    assert.equal(M.totalRounds(['frise', 'ecart'], 8), 11);
+    assert.equal(M.roundsFor('frise', deck), 7);
+    assert.equal(M.roundsFor('fil', deck), 7);
+    assert.equal(M.roundsFor('avap', deck), 7);
+    assert.equal(M.roundsFor('quiz', deck), 7);
+    assert.equal(M.roundsFor('ecart', deck), 4);
+    assert.equal(M.totalRounds(['frise', 'ecart'], deck), 11);
 });
 
 test('Avant / Après : l\'adversaire n\'est jamais la carte elle-même, et les côtés alternent', () => {
@@ -91,4 +92,90 @@ test('la séance : les points s\'additionnent d\'un mode à l\'autre ; terminée
     assert.equal(s.finished, true);
     assert.equal(s.correct, 14);
     assert.deepEqual(Object.keys(s.results), modes);
+});
+
+// --- Les modes de la deuxième étape : quiz, remise en ordre, curseur, blitz, intrus ---------------------------
+
+// Un paquet plus large, avec axes, pour que les cinq modes aient de quoi construire leurs manches.
+const big = Array.from({ length: 20 }, (_, i) => ({ id: 'b' + i, date: 1000 + i * 37, axe: ['A', 'B', 'C'][i % 3] }));
+
+test('les questions sont les mêmes à chaque appel : le paquet seul les détermine', () => {
+    for (const mode of M.MODE_IDS) {
+        assert.deepEqual(M.plan(mode, big), M.plan(mode, big), mode);
+        // La donnée « axe » ou « titre » en plus ne change rien : seuls identifiants et dates comptent.
+        const avecTitres = big.map((c) => ({ ...c, titre: 'X' + c.id }));
+        assert.deepEqual(M.plan(mode, avecTitres), M.plan(mode, big), mode);
+    }
+    // Un autre paquet, d'autres questions.
+    assert.notDeepEqual(M.plan('quiz', big), M.plan('quiz', big.slice().reverse()));
+});
+
+test('Quiz : une bonne réponse et trois distracteurs de dates différentes ; 100 pour la bonne carte', () => {
+    const rounds = M.plan('quiz', big);
+    assert.equal(rounds.length, 19);
+    rounds.forEach((q, r) => {
+        assert.equal(q.correctId, big[r + 1].id);
+        assert.equal(q.distractorIds.length, 3);
+        assert.ok(!q.distractorIds.includes(q.correctId));
+    });
+    const bon = M.replayMode('quiz', big, [{ choice: rounds[0].correctId }, { choice: rounds[1].distractorIds[0] }]);
+    assert.deepEqual([bon.points, bon.results], [100, [true, false]]);
+});
+
+test('Remise en ordre : cinq cartes par manche, le rang juste de chacune compte', () => {
+    const rounds = M.plan('ordre', big);
+    assert.equal(rounds.length, 4);
+    assert.equal(rounds[0].cardIds.length, 5);
+    assert.deepEqual([...rounds[0].cardIds].sort(), [...rounds[0].solution].sort());
+    const parfait = M.replayMode('ordre', big, [{ order: rounds[0].solution }]);
+    assert.deepEqual([parfait.points, parfait.results], [100, [true]]);
+    const inverse = rounds[1].solution.slice().reverse();
+    const rate = M.replayMode('ordre', big, [{ order: rounds[0].solution }, { order: inverse }]);
+    assert.equal(rate.results[1], false);
+    assert.ok(rate.points >= 100 && rate.points < 200, 'une manche ratée vaut moins de 100');
+    assert.deepEqual(M.replayMode('ordre', big, [{ order: rounds[0].solution.slice(0, 3) }]).results, [], 'classement incomplet : pas une réponse');
+});
+
+test('Curseur : proche de la bonne année, beaucoup de points ; loin, zéro', () => {
+    const rounds = M.plan('curseur', big);
+    assert.ok(rounds.length >= 10);
+    const r0 = rounds[0];
+    const pile = M.replayMode('curseur', big, [{ guess: r0.date }]);
+    assert.deepEqual([pile.points, pile.results], [100, [true]]);
+    const loin = M.replayMode('curseur', big, [{ guess: r0.date + r0.tolerance * 10 }]);
+    assert.deepEqual([loin.points, loin.results], [0, [false]]);
+    const pres = M.replayMode('curseur', big, [{ guess: r0.date + r0.tolerance }]);
+    assert.deepEqual(pres.results, [true]);
+    assert.ok(pres.points > 0 && pres.points < 100);
+});
+
+test('Blitz : vrai ou faux, la moitié des énoncés sont vrais ; 100 si on a juste', () => {
+    const rounds = M.plan('blitz', big);
+    assert.ok(rounds.length >= 10);
+    assert.ok(Math.abs(rounds.filter((q) => q.answer).length - rounds.length / 2) <= 1);
+    const log = rounds.map((q, i) => ({ answer: i < 3 ? q.answer : !q.answer }));
+    const res = M.replayMode('blitz', big, log);
+    assert.equal(res.points, 300);
+    assert.deepEqual(res.results.slice(0, 4), [true, true, true, false]);
+});
+
+test('L\'intrus : quatre cartes, un intrus ; 100 pour le trouver', () => {
+    const rounds = M.plan('intrus', big);
+    assert.ok(rounds.length >= 1);
+    rounds.forEach((q) => {
+        assert.equal(q.optionIds.length, 4);
+        assert.ok(q.optionIds.includes(q.intruderId));
+    });
+    const res = M.replayMode('intrus', big, [{ choice: rounds[0].intruderId }, { choice: 'inconnu' }]);
+    assert.deepEqual([res.points, res.results], [100, [true, false]]);
+});
+
+test('un mode sans manche possible (paquet trop pauvre) vaut zéro manche, et la séance reste terminable', () => {
+    const pauvre = [100, 200, 300, 400, 500, 600].map((date, i) => ({ id: 'p' + i, date }));
+    const modes = ['frise', 'intrus'];
+    const rounds = M.roundsFor('intrus', pauvre);
+    assert.ok(rounds >= 0);
+    const logs = { frise: pauvre.slice(1).map((_, r) => ({ slotIndex: r + 1, elapsedMs: 100 })) };
+    const s = M.replaySession(modes, pauvre, logs);
+    assert.equal(s.finished, true, 'les manches de la frise suffisent quand l\'intrus n\'en a aucune');
 });

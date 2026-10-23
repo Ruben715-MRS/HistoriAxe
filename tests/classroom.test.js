@@ -37,26 +37,26 @@ test('le paquet : taille, ids connus, pas de doublon', () => {
 });
 
 test('le rappel : la manche r est la carte r + 1, et seules les cartes jouées comptent', () => {
-    const ids = ['a', 'b', 'c', 'd'];
+    const deck = ['a', 'b', 'c', 'd'].map((id, i) => ({ id, date: 100 * (i + 1) }));
     const players = [
         { results: { frise: [true, false, false] } },
         { results: { frise: [false, false] } },   // n'a pas joué la 3e
         { results: {} }
     ];
-    assert.deepEqual(C.buildRecap(ids, players), [
-        { mode: 'frise', round: 0, eventId: 'b', answered: 2, wrong: 1 },
-        { mode: 'frise', round: 1, eventId: 'c', answered: 2, wrong: 2 },
-        { mode: 'frise', round: 2, eventId: 'd', answered: 1, wrong: 1 }
+    assert.deepEqual(C.buildRecap(deck, players), [
+        { mode: 'frise', round: 0, ids: ['b'], answered: 2, wrong: 1 },
+        { mode: 'frise', round: 1, ids: ['c'], answered: 2, wrong: 2 },
+        { mode: 'frise', round: 2, ids: ['d'], answered: 1, wrong: 1 }
     ]);
 });
 
 test('le rappel indique le mode ; en « écart », une manche est une paire de cartes', () => {
-    const ids = ['a', 'b', 'c', 'd', 'e'];
+    const deck = ['a', 'b', 'c', 'd', 'e'].map((id, i) => ({ id, date: 100 * (i + 1) }));
     const players = [{ results: { frise: [false], ecart: [false, true] } }, { results: { frise: [true], ecart: [false] } }];
-    assert.deepEqual(C.buildRecap(ids, players, ['ecart', 'frise']), [
-        { mode: 'ecart', round: 0, eventId: 'a', eventId2: 'b', answered: 2, wrong: 2 },
-        { mode: 'ecart', round: 1, eventId: 'c', eventId2: 'd', answered: 1, wrong: 0 },
-        { mode: 'frise', round: 0, eventId: 'b', answered: 2, wrong: 1 }
+    assert.deepEqual(C.buildRecap(deck, players, ['ecart', 'frise']), [
+        { mode: 'ecart', round: 0, ids: ['a', 'b'], answered: 2, wrong: 2 },
+        { mode: 'ecart', round: 1, ids: ['c', 'd'], answered: 1, wrong: 0 },
+        { mode: 'frise', round: 0, ids: ['b'], answered: 2, wrong: 1 }
     ]);
 });
 
@@ -124,7 +124,7 @@ maybe('une séance qui enchaîne plusieurs modes : rejeu de chacun, total sur 10
     assert.equal(r2.body.answered, 11);
     const live = await call(handler, 'GET', { code, deviceId: TEACHER });
     assert.deepEqual(live.body.totals, { correct: 11, wrong: 0 });
-    assert.ok(live.body.recap.some((r) => r.mode === 'ecart' && r.eventId2));
+    assert.ok(live.body.recap.some((r) => r.mode === 'ecart' && r.ids.length === 2));
 });
 
 maybe('une séance de bout en bout : création, élèves, départ, rejeu, classement, bilan', async (t) => {

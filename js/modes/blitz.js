@@ -82,6 +82,11 @@ function tickBlitzClock() {
 }
 
 function nextBlitzQuestion() {
+    if (!blitzQueue.length && typeof classRunning === 'function' && classRunning()) {
+        // Mode Classe : la série est fixe, quand elle est jouée le mode est fini.
+        endGame(true);
+        return;
+    }
     if (!blitzQueue.length) {
         blitzQueue = GameModes.buildBlitzQuestions(blitzPool, { count: 20 });
     }
@@ -103,6 +108,8 @@ function answerBlitz(value) {
     if (isAnimating || !blitzCurrent || currentMode !== 'blitz') return;
     isAnimating = true;
 
+    // Mode Classe : la réponse part au journal (js/classroom.js).
+    if (typeof classOnRound === 'function') classOnRound('blitz', blitzRight + blitzWrong, { answer: value });
     const correct = value === blitzCurrent.answer;
     if (correct) {
         blitzRight++;
