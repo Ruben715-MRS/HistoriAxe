@@ -39,22 +39,29 @@ test('la carte posée atterrit sur la frise, les autres glissent à leur place',
 
     // On pose la prochaine carte tout en haut de la frise si elle y va, sinon on la pose où elle va :
     // dans les deux cas, au moins un repère se décale (la frise a au moins 4 repères).
-    const bon = await page.evaluate(bonCreneau);
-    const avant = await page.evaluate(() => placedEvents.length);
-    await page.locator('#timeline button.slot').nth(bon).click();
-    await expect(page.locator('#timeline .entry')).toHaveCount(avant + 1);
-
+    // Le clic et la lecture se font dans la même image : sur une machine chargée, 600 ms de mouvement
+    // peuvent sinon être écoulées avant que le test ne regarde.
+    const vu = await page.evaluate(() => {
+        const bon = (() => { let i = 0; while (i < placedEvents.length && placedEvents[i].date < eventToPlace.date) i++; return i; })();
+        const avant = placedEvents.length;
+        document.querySelectorAll('#timeline button.slot')[bon].click();
+        return new Promise(resolve => requestAnimationFrame(() => {
+            const noms = sel => Array.from(document.querySelectorAll(sel)).flatMap(el => el.getAnimations().map(a => a.animationName || 'web'));
+            resolve({
+                bon, avant,
+                posee: noms('#timeline .entry.entry-correct-pulse'),
+                glissements: Array.from(document.querySelectorAll('#timeline .entry'))
+                    .filter(el => !el.classList.contains('entry-correct-pulse')).flatMap(el => el.getAnimations()).length,
+                main: noms('#hand .hand-card')
+            });
+        }));
+    });
     // La carte posée a son animation d'arrivée…
-    expect(await animationsDe(page, '#timeline .entry.entry-correct-pulse')).toContain('entryLand');
+    expect(vu.posee).toContain('entryLand');
     // …et, si elle n'est pas la dernière, les repères qui la suivent glissent (animation Web, pas CSS).
-    if (bon < avant) {
-        const glissements = await page.evaluate(() => Array.from(document.querySelectorAll('#timeline .entry'))
-            .filter(el => !el.classList.contains('entry-correct-pulse'))
-            .flatMap(el => el.getAnimations()).length);
-        expect(glissements).toBeGreaterThan(0);
-    }
+    if (vu.bon < vu.avant) expect(vu.glissements).toBeGreaterThan(0);
     // La nouvelle carte « en main » arrive aussi par un mouvement.
-    expect(await animationsDe(page, '#hand .hand-card')).toContain('handCardIn');
+    expect(vu.main).toContain('handCardIn');
 });
 
 test('la dernière carte atterrit avant l’écran de fin, et la partie ne se bloque pas', async ({ page }) => {
@@ -79,13 +86,16 @@ test('la dernière carte atterrit avant l’écran de fin, et la partie ne se bl
 
 test('les écrans et les modales s’ouvrent par un mouvement', async ({ page }) => {
     await openThemeModes(page, THEME);
-    await page.evaluate(() => showScreen('screen-categories'));
-    expect(await animationsDe(page, '#screen-categories')).toContain('motionScreenIn');
+    // Ouverture et lecture dans la même image (voir plus haut).
+    const ecran = await page.evaluate(() => { showScreen('screen-categories'); return Array.from(document.querySelectorAll('#screen-categories')).flatMap(el => el.getAnimations().map(a => a.animationName)); });
+    expect(ecran).toContain('motionScreenIn');
 
-    await page.evaluate(() => openSettings());
-    const animations = await animationsDe(page, '#modal-settings, #modal-settings .modal-content');
-    expect(animations).toContain('motionOverlayIn');
-    expect(animations).toContain('motionModalIn');
+    const modale = await page.evaluate(() => {
+        openSettings();
+        return Array.from(document.querySelectorAll('#modal-settings, #modal-settings .modal-content')).flatMap(el => el.getAnimations().map(a => a.animationName));
+    });
+    expect(modale).toContain('motionOverlayIn');
+    expect(modale).toContain('motionModalIn');
 });
 
 test('une nouvelle question du Quiz arrive en cascade', async ({ page }) => {
