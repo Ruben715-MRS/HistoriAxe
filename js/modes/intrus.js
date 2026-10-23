@@ -79,6 +79,8 @@ function answerIntrus(chosenId) {
 
     const q = intrusQuestions[intrusIndex];
     const correct = chosenId === q.intruderId;
+    // Mode Classe : l'intrus désigné part au journal (js/classroom.js).
+    if (typeof classOnRound === 'function') classOnRound('intrus', intrusIndex, { choice: chosenId });
 
     awardPoints(correct ? 0 : 1, correct);
     if (correct) { playCorrectSound(comboMultiplier); triggerHaptic('success'); }

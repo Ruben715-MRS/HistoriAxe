@@ -4,6 +4,7 @@
 // Voir api/classroom.js pour le déroulé. Tout ce qui se teste sans Postgres vit ici.
 
 const crypto = require('crypto');
+const ClassModes = require('../../js/classModes.js');
 
 // Sans I, O, 0 et 1 : un code dicté à voix haute ou lu au tableau ne se confond pas.
 const CODE_ALPHABET = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
@@ -57,20 +58,24 @@ function rankPlayers(players) {
     return players.slice().sort((a, b) => b.score - a.score || a.joinedAt - b.joinedAt);
 }
 
-// Les cartes les plus ratées : { eventId, answered, wrong }. La manche r (0, 1, …) est la carte eventIds[r + 1]
-// — la carte 0 est l'ancre, jamais jouée.
-function buildRecap(eventIds, players) {
+// Les manches les plus ratées : { mode, round, ids, answered, wrong }, `ids` = les cartes en jeu dans la manche (une,
+// ou deux pour « écart » et « blitz », cinq pour « ordre »). `deck` : les cartes du paquet [{ id, date, axe? }] ;
+// `results` d'un joueur : { mode: [booléen par manche terminée] }.
+function buildRecap(deck, players, modes) {
     const recap = [];
-    for (let r = 0; r + 1 < eventIds.length; r++) {
-        let answered = 0;
-        let wrong = 0;
-        for (const p of players) {
-            const result = Array.isArray(p.results) ? p.results[r] : undefined;
-            if (result === undefined || result === null) continue;
-            answered++;
-            if (result === false) wrong++;
-        }
-        if (answered > 0) recap.push({ eventId: eventIds[r + 1], answered, wrong });
+    for (const mode of (modes && modes.length ? modes : ['frise'])) {
+        const rounds = ClassModes.plan(mode, deck);
+        rounds.forEach((round, r) => {
+            let answered = 0;
+            let wrong = 0;
+            for (const p of players) {
+                const list = p.results && Array.isArray(p.results[mode]) ? p.results[mode] : [];
+                if (list[r] === undefined || list[r] === null) continue;
+                answered++;
+                if (list[r] === false) wrong++;
+            }
+            if (answered > 0) recap.push({ mode, round: r, ids: round.ids, answered, wrong });
+        });
     }
     return recap;
 }

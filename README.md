@@ -831,6 +831,15 @@ plus ratées** de la classe — ce que l'enseignant va reprendre en cours.
 - **Pas fait** : pas d'export du bilan, pas de reprise d'une séance par un autre appareil de
   l'enseignant, pas de mode « cours » avec correction projetée carte par carte.
 
+### Plusieurs modes dans une séance
+
+L'enseignant coche, un par ligne, les modes que les élèves enchaîneront (la frise d'abord, puis le fil du temps, « Trouve l'écart », « Avant / Après », le quiz, la remise en ordre, le curseur, le blitz vrai / faux et l'intrus), et peut mélanger leur ordre. Tous jouent sur le même paquet de cartes ; les points s'additionnent au tableau, en direct.
+
+- `js/classModes.js` (client + serveur) construit les manches de chaque mode à partir du paquet (un générateur pseudo-aléatoire initialisé par le paquet : mêmes questions pour tous, et pour le serveur) et rejoue les journaux : l'élève n'envoie jamais de score, seulement ses réponses (`logs: { frise: [...], quiz: [...], ordre: [...], ... }`). Les générateurs de `js/gameModes.js` (remise en ordre, curseur, blitz, intrus) sont réutilisés tels quels. Le blitz se joue sans chronomètre en classe, le fil du temps sans indice, le quiz sans 50/50. Un mode qui ne peut bâtir aucune manche sur un petit paquet (l'intrus) est passé. Ne sont pas proposés : Périodes & Ères, Carte, Qui est-ce ?, Pendant ce temps, ailleurs… et les jeux d'arcade (libellés propres à la langue, gestes ou jeu libre, rejeu serveur sans objet).
+- Chaque mode vaut au plus 100 points par manche, pour que les scores se comparent : la frise garde son barème (combo, vitesse) ramené à cette échelle, le fil du temps retire des points selon l'écart, « Trouve l'écart » vaut 100, 80, 60… selon l'essai, « Avant / Après » 100 ou 0.
+- Le bilan devient « manches les plus ratées », avec le mode ; la barre de toute la classe et le podium additionnent tous les modes.
+- Colonne `class_sessions.modes` (jsonb), ajoutée par `ensureSchema`.
+
 ## L'équipe de classe : un coffre commun
 
 L'enseignant crée une équipe (écran **Équipe**, bouton 👥 de la barre de récompenses du Chemin) : un nom, un

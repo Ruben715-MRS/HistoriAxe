@@ -410,7 +410,7 @@ function quitGame() {
             return;
         }
         // Quitter la manche d'une séance de classe : on sort de la séance (l'enseignant voit l'élève s'arrêter).
-        if (currentMode === 'class' && typeof classLeave === 'function') { classLeave(); return; }
+        if ((currentMode === 'class' || (typeof classRunning === 'function' && classRunning())) && typeof classLeave === 'function') { classLeave(); return; }
         showScreen(screenAfterGame());
     });
 }

@@ -140,6 +140,8 @@ function answerOrdre() {
 
     const round = ordreRounds[ordreIndex];
     const verdict = GameModes.scoreOrderAttempt(ordreAttempt, round.solution);
+    // Mode Classe : le classement complet part au journal (js/classroom.js).
+    if (typeof classOnRound === 'function') classOnRound('ordre', ordreIndex, { order: ordreAttempt.slice() });
 
     // Tout ou rien pour la vie, comme Avant/Après et Périodes & Ères — mais le
     // score suit le nombre de rangs justes, pour qu'une manche ratée de peu ne

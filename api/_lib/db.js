@@ -258,6 +258,8 @@ async function ensureSchema() {
             );
         `);
         await query(`alter table class_sessions add column if not exists team_code text;`);
+        // Les modes enchaînés pendant la séance, dans l'ordre de jeu (js/classModes.js).
+        await query(`alter table class_sessions add column if not exists modes jsonb not null default '["frise"]'::jsonb;`);
         await query(`alter table class_players add column if not exists credited smallint not null default 0;`);
     })().catch((err) => {
         // En cas d'échec (permissions restreintes, base non joignable...),

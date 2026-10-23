@@ -192,12 +192,12 @@ maybe('une séance de Mode Classe liée à l\'équipe verse les bonnes réponses
         rounds.push({ slotIndex: placed.filter((d) => d < deck[r].date).length, elapsedMs: 4000 });
         placed.push(deck[r].date);
     }
-    let r = await call(classroom, 'POST', { action: 'submit', code: session, deviceId: dev(1), rounds: rounds.slice(0, 3) });
+    let r = await call(classroom, 'POST', { action: 'submit', code: session, deviceId: dev(1), logs: { frise: rounds.slice(0, 3) } });
     assert.equal(r.body.team.accepted, 3);
     // Le journal est cumulatif : renvoyer les mêmes cartes ne verse rien de plus.
-    r = await call(classroom, 'POST', { action: 'submit', code: session, deviceId: dev(1), rounds: rounds.slice(0, 3) });
+    r = await call(classroom, 'POST', { action: 'submit', code: session, deviceId: dev(1), logs: { frise: rounds.slice(0, 3) } });
     assert.equal(r.body.team, null);
-    r = await call(classroom, 'POST', { action: 'submit', code: session, deviceId: dev(1), rounds });
+    r = await call(classroom, 'POST', { action: 'submit', code: session, deviceId: dev(1), logs: { frise: rounds } });
     assert.equal(r.body.team.accepted, 4);
     assert.equal((await call(team, 'GET', { code, deviceId: dev(1) })).body.me.points, 7);
 });

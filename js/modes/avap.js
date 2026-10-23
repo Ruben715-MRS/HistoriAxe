@@ -87,6 +87,8 @@ function answerAvap(chosenEvent, chosenBtn) {
 
     const q = avapQuestions[avapIndex];
     const isPerfect = chosenEvent.id === q.correctEvt.id;
+    // Mode Classe : le choix (0 = gauche) part au journal (js/classroom.js), le serveur rejoue la manche.
+    if (typeof classOnRound === 'function') classOnRound('avap', avapIndex, { choice: chosenEvent.id === q.left.id ? 0 : 1 });
 
     if (isPerfect) {
         const points = Math.round(100 * comboMultiplier);

@@ -99,6 +99,8 @@ function answerCurseur() {
     const round = curseurRounds[curseurIndex];
     const guess = Number(document.getElementById('curseur-range').value);
     const verdict = GameModes.scoreSliderGuess(guess, round);
+    // Mode Classe : l'année choisie part au journal (js/classroom.js).
+    if (typeof classOnRound === 'function') classOnRound('curseur', curseurIndex, { guess });
 
     awardPoints(verdict.gap, verdict.within);
     if (verdict.within) { playCorrectSound(comboMultiplier); triggerHaptic('success'); }

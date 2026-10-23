@@ -118,6 +118,8 @@ function answerQuiz(chosenEvent) {
 
     const q = quizQuestions[quizIndex];
     const isPerfect = chosenEvent.date === q.correct.date;
+    // Mode Classe : l'identifiant de la carte choisie part au journal (js/classroom.js).
+    if (typeof classOnRound === 'function') classOnRound('quiz', quizIndex, { choice: chosenEvent.id });
     const gap = Math.abs(chosenEvent.date - q.correct.date);
     awardPoints(gap, isPerfect, { halved: quizFiftyActive });
     if (isPerfect) { playCorrectSound(comboMultiplier); triggerHaptic('success'); } else { playWrongSound(); triggerHaptic('error'); }

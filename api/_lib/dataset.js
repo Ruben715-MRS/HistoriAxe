@@ -41,7 +41,8 @@ function flattenCategories(categories) {
                 if (thm.id && DailyEngine.EXCLUDED_THEME_IDS.includes(thm.id)) return;
                 thm.events.forEach((evt) => {
                     if (evt && evt.id != null && typeof evt.date === 'number' && !evt.isCustom) {
-                        out.push({ id: String(evt.id), date: evt.date });
+                        // L'axe thématique sert à « L'intrus » du Mode Classe (js/classModes.js) ; absent, il n'est pas écrit.
+                        out.push(evt.axe ? { id: String(evt.id), date: evt.date, axe: evt.axe } : { id: String(evt.id), date: evt.date });
                     }
                 });
             });

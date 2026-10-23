@@ -37,16 +37,26 @@ test('le paquet : taille, ids connus, pas de doublon', () => {
 });
 
 test('le rappel : la manche r est la carte r + 1, et seules les cartes jouées comptent', () => {
-    const ids = ['a', 'b', 'c', 'd'];
+    const deck = ['a', 'b', 'c', 'd'].map((id, i) => ({ id, date: 100 * (i + 1) }));
     const players = [
-        { results: [true, false, false] },
-        { results: [false, false] },   // n'a pas joué la 3e
-        { results: [] }
+        { results: { frise: [true, false, false] } },
+        { results: { frise: [false, false] } },   // n'a pas joué la 3e
+        { results: {} }
     ];
-    assert.deepEqual(C.buildRecap(ids, players), [
-        { eventId: 'b', answered: 2, wrong: 1 },
-        { eventId: 'c', answered: 2, wrong: 2 },
-        { eventId: 'd', answered: 1, wrong: 1 }
+    assert.deepEqual(C.buildRecap(deck, players), [
+        { mode: 'frise', round: 0, ids: ['b'], answered: 2, wrong: 1 },
+        { mode: 'frise', round: 1, ids: ['c'], answered: 2, wrong: 2 },
+        { mode: 'frise', round: 2, ids: ['d'], answered: 1, wrong: 1 }
+    ]);
+});
+
+test('le rappel indique le mode ; en « écart », une manche est une paire de cartes', () => {
+    const deck = ['a', 'b', 'c', 'd', 'e'].map((id, i) => ({ id, date: 100 * (i + 1) }));
+    const players = [{ results: { frise: [false], ecart: [false, true] } }, { results: { frise: [true], ecart: [false] } }];
+    assert.deepEqual(C.buildRecap(deck, players, ['ecart', 'frise']), [
+        { mode: 'ecart', round: 0, ids: ['a', 'b'], answered: 2, wrong: 2 },
+        { mode: 'ecart', round: 1, ids: ['c', 'd'], answered: 1, wrong: 0 },
+        { mode: 'frise', round: 0, ids: ['b'], answered: 2, wrong: 1 }
     ]);
 });
 
@@ -84,6 +94,39 @@ async function call(handler, method, payload) {
 const TEACHER = 'teacher-device-0001';
 const dev = (n) => `student-device-${String(n).padStart(4, '0')}`;
 
+maybe('une séance qui enchaîne plusieurs modes : rejeu de chacun, total sur 100 par manche, bilan avec le mode', async () => {
+    const { handler } = loadHandler();
+    const { loadLangEvents } = require('../api/_lib/dataset.js');
+    const seen = new Set();
+    const deck = [];
+    for (const e of loadLangEvents('fr')) { if (!seen.has(e.date)) { seen.add(e.date); deck.push(e); } if (deck.length === 8) break; }
+    const ids = deck.map((e) => e.id);
+    const created = await call(handler, 'POST', { action: 'create', deviceId: TEACHER, lang: 'fr', themeName: 'T', eventIds: ids, modes: ['fil', 'bidon', 'ecart', 'fil'] });
+    assert.equal(created.code, 200);
+    const code = created.body.code;
+    const join = await call(handler, 'POST', { action: 'join', code, deviceId: dev(1), name: 'Léa' });
+    assert.deepEqual(join.body.modes, ['fil', 'ecart'], 'modes inconnus et doublons écartés, ordre conservé');
+    await call(handler, 'POST', { action: 'start', code, deviceId: TEACHER });
+    const lobby = await call(handler, 'GET', { code, deviceId: TEACHER });
+    assert.equal(lobby.body.total, 7 + 4, 'manches du fil (7) + paires de l\'écart (4)');
+    assert.deepEqual(lobby.body.modes, ['fil', 'ecart']);
+
+    // Le fil réussi, l'écart commencé : la séance n'est pas terminée.
+    const dates = deck.map((e) => e.date);
+    const fil = dates.slice(1).map((year) => ({ year }));
+    const r1 = await call(handler, 'POST', { action: 'submit', code, deviceId: dev(1), logs: { fil } });
+    assert.equal(r1.body.score, 700);
+    assert.equal(r1.body.finished, false);
+    const ecart = [0, 1, 2, 3].map((r) => ({ guesses: [Math.abs(dates[2 * r] - dates[2 * r + 1])] }));
+    const r2 = await call(handler, 'POST', { action: 'submit', code, deviceId: dev(1), logs: { fil, ecart } });
+    assert.equal(r2.body.score, 1100);
+    assert.equal(r2.body.finished, true);
+    assert.equal(r2.body.answered, 11);
+    const live = await call(handler, 'GET', { code, deviceId: TEACHER });
+    assert.deepEqual(live.body.totals, { correct: 11, wrong: 0 });
+    assert.ok(live.body.recap.some((r) => r.mode === 'ecart' && r.ids.length === 2));
+});
+
 maybe('une séance de bout en bout : création, élèves, départ, rejeu, classement, bilan', async (t) => {
     const { handler } = loadHandler();
     const { loadLangEvents } = require('../api/_lib/dataset.js');
@@ -114,7 +157,7 @@ maybe('une séance de bout en bout : création, élèves, départ, rejeu, classe
     assert.equal((await call(handler, 'POST', { action: 'join', code: 'ZZZZZZ', deviceId: dev(3), name: 'X' })).code, 404);
 
     // Avant le départ : on ne soumet rien, et seul l'enseignant démarre.
-    assert.equal((await call(handler, 'POST', { action: 'submit', code, deviceId: dev(1), rounds: [] })).code, 409);
+    assert.equal((await call(handler, 'POST', { action: 'submit', code, deviceId: dev(1), logs: {} })).code, 409);
     assert.equal((await call(handler, 'POST', { action: 'start', code, deviceId: dev(1) })).code, 403);
     const lobby = await call(handler, 'GET', { code, deviceId: TEACHER });
     assert.equal(lobby.body.isTeacher, true);
@@ -132,15 +175,15 @@ maybe('une séance de bout en bout : création, élèves, départ, rejeu, classe
         placed.push(deck[r].date);
     }
     const hugo = deck.slice(1).map(() => ({ slotIndex: 0, elapsedMs: 4000 }));
-    const partial = await call(handler, 'POST', { action: 'submit', code, deviceId: dev(1), rounds: lea.slice(0, 3) });
+    const partial = await call(handler, 'POST', { action: 'submit', code, deviceId: dev(1), logs: { frise: lea.slice(0, 3) } });
     assert.equal(partial.body.answered, 3);
     assert.equal(partial.body.finished, false);
-    const full = await call(handler, 'POST', { action: 'submit', code, deviceId: dev(1), rounds: lea });
+    const full = await call(handler, 'POST', { action: 'submit', code, deviceId: dev(1), logs: { frise: lea } });
     assert.equal(full.body.finished, true);
     assert.ok(full.body.score > 0);
     // Une requête en retard (3 manches) ne fait pas reculer Léa.
-    await call(handler, 'POST', { action: 'submit', code, deviceId: dev(1), rounds: lea.slice(0, 3) });
-    const hugoRes = await call(handler, 'POST', { action: 'submit', code, deviceId: dev(2), rounds: hugo });
+    await call(handler, 'POST', { action: 'submit', code, deviceId: dev(1), logs: { frise: lea.slice(0, 3) } });
+    const hugoRes = await call(handler, 'POST', { action: 'submit', code, deviceId: dev(2), logs: { frise: hugo } });
     assert.ok(hugoRes.body.finished, 'sans élimination : Hugo joue jusqu\'au bout malgré ses erreurs');
     assert.ok(hugoRes.body.score < full.body.score);
 
@@ -165,7 +208,7 @@ maybe('une séance de bout en bout : création, élèves, départ, rejeu, classe
     // Fin : seul l'enseignant, plus de soumission, bilan pour tous.
     assert.equal((await call(handler, 'POST', { action: 'end', code, deviceId: dev(2) })).code, 403);
     assert.equal((await call(handler, 'POST', { action: 'end', code, deviceId: TEACHER })).body.status, 'ended');
-    assert.equal((await call(handler, 'POST', { action: 'submit', code, deviceId: dev(2), rounds: hugo })).code, 409);
+    assert.equal((await call(handler, 'POST', { action: 'submit', code, deviceId: dev(2), logs: { frise: hugo } })).code, 409);
     assert.equal((await call(handler, 'POST', { action: 'join', code, deviceId: dev(4), name: 'Tard' })).code, 409);
     const after = await call(handler, 'GET', { code, deviceId: dev(2) });
     assert.equal(after.body.status, 'ended');
