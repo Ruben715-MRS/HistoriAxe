@@ -181,21 +181,27 @@ test('les fêtes musulmanes portent le croissant ☪️ ; sans année, elles n\'
     assert.ok(!sans.includes('ramadan') && !sans.includes('Aïd'));
 });
 
-test('Yom Haatzmaut : célébrée le 5 iyar, avancée au jeudi quand le 5 iyar tombe un vendredi ou un samedi', () => {
+test('Yom Haatzmaut : célébrée le 5 iyar ; avancée au jeudi (vendredi, samedi, depuis 1951) ; reportée au mardi (lundi, depuis 2004)', () => {
     const wd = g => new Date(Date.UTC(g.year, g.month - 1, g.day)).getUTCDay();
-    // 2025 : 5 iyar samedi 3 mai, célébration jeudi 1er mai
-    assert.deepEqual([K.israelCelebrationDay(2025).day, K.israelCelebrationDay(2025).month], [1, 5]);
-    // 2026 : 5 iyar mercredi 22 avril, pas de décalage
-    assert.deepEqual([K.israelCelebrationDay(2026).day, K.israelCelebrationDay(2026).month], [22, 4]);
-    let shifted = 0;
-    for (let y = 1949; y <= 2100; y++) {
-        const c = K.israelCelebrationDay(y), i = K.israelIndependenceDay(y);
-        assert.notEqual(wd(c), 5, 'jamais un vendredi ' + y);
-        assert.notEqual(wd(c), 6, 'jamais un samedi ' + y);
-        if (wd(i) === 5 || wd(i) === 6) { assert.equal(wd(c), 4, 'un jeudi ' + y); shifted++; }
-        else assert.deepEqual(c, i, 'pas de décalage ' + y);
+    const at = y => { const c = K.israelCelebrationDay(y); return [c.day, c.month]; };
+    assert.deepEqual(at(2025), [1, 5]);      // 5 iyar samedi 3 mai : jeudi 1er mai
+    assert.deepEqual(at(2026), [22, 4]);     // 5 iyar mercredi 22 avril : pas de décalage
+    assert.deepEqual(at(2028), [2, 5]);      // 5 iyar lundi 1er mai 2028 : mardi 2 mai (règle depuis 2004)
+    let moved = 0;
+    for (let y = 2004; y <= 2100; y++) {
+        const c = K.israelCelebrationDay(y);
+        // depuis 2004 : toujours un mardi, un mercredi ou un jeudi
+        assert.ok([2, 3, 4].includes(wd(c)), 'mardi, mercredi ou jeudi ' + y);
+        moved++;
     }
-    assert.ok(shifted > 50);
+    assert.ok(moved > 90);
+    // avant 2004, un lundi n'est pas reporté ; avant 1951, un vendredi ou un samedi n'est pas avancé
+    for (let y = 1951; y < 2004; y++) {
+        const i = K.israelIndependenceDay(y), c = K.israelCelebrationDay(y);
+        if (wd(i) === 1) assert.deepEqual(c, i, 'lundi conservé avant 2004 ' + y);
+    }
+    for (let y = 1949; y < 1951; y++) assert.deepEqual(K.israelCelebrationDay(y), K.israelIndependenceDay(y), 'avant 1951 ' + y);
     // l'Israël du calendrier est à la date de la célébration
     assert.equal(K.yearDays(facts, 2025).find(x => x.month === 5 && x.day === 1).countries.find(c => c.iso2 === 'IL').n, 'Israël');
+    assert.equal(K.yearDays(facts, 2028).find(x => x.month === 5 && x.day === 2).countries.find(c => c.iso2 === 'IL').n, 'Israël');
 });

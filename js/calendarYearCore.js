@@ -162,11 +162,13 @@
         }).filter(function (f) { return f.year === year; });
     }
 
-    // Yom Haatzmaut, fête nationale d'Israël : le 5 iyar, célébrée depuis 1949. Règle de la célébration : quand le 5 iyar tombe un vendredi
-    // ou un samedi (jour de shabbat), la fête est avancée au jeudi précédent (2025 : le 5 iyar était un samedi, 3 mai ; la fête a été
-    // célébrée le jeudi 1er mai). Les autres jours ne sont pas déplacés. `israelIndependenceDay` renvoie le 5 iyar ;
-    // `israelCelebrationDay` la date de la célébration.
+    // Yom Haatzmaut, fête nationale d'Israël : le 5 iyar, célébrée depuis 1949. Règle officielle (Grand Rabbinat) : quand le 5 iyar tombe un
+    // vendredi ou un samedi (shabbat), la célébration est avancée au jeudi précédent (depuis 1951) ; quand il tombe un lundi, elle est
+    // reportée au mardi suivant (depuis 2004, pour que Yom HaZikaron, la veille, ne commence pas le shabbat). Le mercredi reste le mercredi.
+    // `israelIndependenceDay` renvoie le 5 iyar ; `israelCelebrationDay` la date de la célébration.
     var ISRAEL_FIRST_YEAR = 1949;
+    var ISRAEL_FRIDAY_SATURDAY_RULE = 1951;
+    var ISRAEL_MONDAY_RULE = 2004;
     function israelIndependenceDay(year) {
         if (year < ISRAEL_FIRST_YEAR) return null;
         var g = fixedToGregorian(hebrewToFixed(year + 3760, 'Iyar', 5));
@@ -175,9 +177,9 @@
     function israelCelebrationDay(year) {
         var g = israelIndependenceDay(year);
         if (!g) return null;
-        var weekday = new Date(Date.UTC(g.year, g.month - 1, g.day)).getUTCDay();   // 0 = dimanche, 5 = vendredi, 6 = samedi
-        if (weekday === 5) return addDays(g, -1);   // vendredi -> jeudi
-        if (weekday === 6) return addDays(g, -2);   // samedi -> jeudi
+        var weekday = new Date(Date.UTC(g.year, g.month - 1, g.day)).getUTCDay();   // 0 = dimanche, 1 = lundi, 5 = vendredi, 6 = samedi
+        if ((weekday === 5 || weekday === 6) && year >= ISRAEL_FRIDAY_SATURDAY_RULE) return addDays(g, weekday === 5 ? -1 : -2);
+        if (weekday === 1 && year >= ISRAEL_MONDAY_RULE) return addDays(g, 1);   // lundi -> mardi
         return g;
     }
     function addDays(g, n) {
