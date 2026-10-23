@@ -12,7 +12,11 @@ const config: CapacitorConfig = {
     allowNavigation: ['histori-axe.vercel.app'],
   },
   ios: {
-    contentInset: 'always',
+    // Les marges de sécurité sont gérées par le CSS (body, env(safe-area-inset-*)) :
+    // ne pas les ajouter une seconde fois côté WebView.
+    contentInset: 'never',
+    // Fond de la WebView : même couleur que l'app, pour qu'aucune zone ne reste blanche.
+    backgroundColor: '#F2F4F7',
     allowsLinkPreview: false,
     handleApplicationURL: true
   },
@@ -31,9 +35,10 @@ const config: CapacitorConfig = {
       splashImmersive: true
     },
     StatusBar: {
-      style: 'DARK',
-      backgroundColor: '#001a4b',
-      overlaysWebView: false
+      // Le contenu passe sous la barre d'état (plein écran) : le fond de la page apparaît
+      // derrière l'heure. DEFAULT suit le mode clair ou sombre de l'iPhone.
+      style: 'DEFAULT',
+      overlaysWebView: true
     },
     Haptics: {
       enabled: true

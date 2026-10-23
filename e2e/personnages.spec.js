@@ -63,7 +63,7 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
     await expect(page.locator('#subcategories-container h4')).toHaveText(['Biographies', 'Panthéons']);
     await expect(fondDeTuile(page, 'Biographies')).toHaveAttribute('style', /cat_biographies\.webp/);
     // Et non l'image des mythologies, que « panth » aurait attirée.
-    await expect(fondDeTuile(page, 'Panthéons')).toHaveAttribute('style', /sub_themes_generaux\.webp/);
+    await expect(fondDeTuile(page, 'Panthéons')).toHaveAttribute('style', /sub_pantheons\.webp/);
     await expect(fondDeTuile(page, 'Panthéons')).not.toHaveAttribute('style', /sub_mythologies\.webp/);
 
     // Biographies : toujours ses douze domaines, et sa propre note.

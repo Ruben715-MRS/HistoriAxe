@@ -200,7 +200,8 @@ function initCategories() {
     currentBdd.forEach((cat, index) => {
         let bgImg = 'assets/images/cat_culture_generale.webp';
         if (cat.nom.toLowerCase().includes('culture')) bgImg = 'assets/images/cat_culture_generale.webp';
-        if (cat.nom.toLowerCase().includes('bio') || cat.nom.toLowerCase().includes('illustres')) bgImg = 'assets/images/cat_biographies.webp';
+        if (cat.nom.toLowerCase().includes('illustres')) bgImg = 'assets/images/cat_personnages_illustres.webp';
+        else if (cat.nom.toLowerCase().includes('bio')) bgImg = 'assets/images/cat_biographies.webp';
         if (cat.nom.toLowerCase().includes('nationale')) bgImg = 'assets/images/cat_histoires_nationales.webp';
         if (cat.nom.toLowerCase().includes('programmes')) bgImg = 'assets/images/cat_programmes_scolaires.webp';
         if (cat.nom.toLowerCase().includes('capes') || cat.nom.toLowerCase().includes('agrég')) bgImg = 'assets/images/cat_agregation.webp';
@@ -376,7 +377,7 @@ function initSubcategories() {
             ? HISTOIRES_NATIONALES_REGIONS_IMAGES[nomLower] : null;
         if (progPays) bgImg = 'assets/images/' + progPays;
         else if (natRegion) bgImg = 'assets/images/' + natRegion;
-        else if (nomLower === 'panthéons' || nomLower === 'pantheons') bgImg = 'assets/images/sub_themes_generaux.webp';
+        else if (nomLower === 'panthéons' || nomLower === 'pantheons') bgImg = 'assets/images/sub_pantheons.webp';
         else if (nomLower === 'biographies') bgImg = 'assets/images/cat_biographies.webp';
         else if (nomLower.includes('europe')) bgImg = 'assets/images/sub_europe.webp';
         else if (nomLower.includes('amérique')) bgImg = 'assets/images/sub_ameriques.webp';
