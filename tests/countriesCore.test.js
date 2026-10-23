@@ -148,3 +148,11 @@ test('fiche : les lignes affichées', () => {
     // l'Antarctique n'a ni capitale, ni langue, ni population
     assert.deepEqual(C.factRows(byId.get('ATA')).map(r => r.key), ['continent']);
 });
+
+test('régions : le Zimbabwe, la Zambie, le Malawi et le Mozambique sont en Afrique australe ; l\'Iran est en Asie de l\'Ouest', () => {
+    const sub = name => facts.countries.find(c => c.n === name).sub;
+    ['Zimbabwe', 'Zambie', 'Malawi', 'Mozambique', 'Afrique du Sud', 'Namibie'].forEach(n => assert.equal(sub(n), 'Afrique australe', n));
+    assert.equal(sub('Tanzanie'), "Afrique de l'Est");
+    assert.equal(sub('Iran'), "Asie de l'Ouest");
+    assert.equal(sub('Afghanistan'), 'Asie du Sud');
+});

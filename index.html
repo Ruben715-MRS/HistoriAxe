@@ -2215,10 +2215,13 @@
         </div>
 
         <div class="fil-body">
-            <div class="fil-question-card">
-                <div class="fil-kicker" data-i18n="game.fil_enter_year">Quelle est l'année exacte de cet événement ?
+            <div class="fil-top">
+                <div class="fil-question-card">
+                    <div class="fil-kicker" data-i18n="game.fil_enter_year">Quelle est l'année exacte de cet événement ?
+                    </div>
+                    <div class="fil-prompt" id="fil-prompt" data-i18n="nav.loading">Chargement…</div>
                 </div>
-                <div class="fil-prompt" id="fil-prompt" data-i18n="nav.loading">Chargement…</div>
+                <div class="fil-answer-badge hidden" id="fil-answer-badge"></div>
             </div>
 
             <div class="fil-display">
@@ -2228,8 +2231,6 @@
                 <button class="fil-era-btn" id="fil-era-btn" onclick="filToggleEra()" data-i18n="game.era_ad">apr.
                     J.-C.</button>
             </div>
-
-            <div class="fil-answer-badge hidden" id="fil-answer-badge"></div>
 
             <div class="fil-keypad">
                 <button class="fil-key" onclick="filKeyPress('1')">1</button>
@@ -2349,18 +2350,21 @@
         </div>
 
         <div class="fil-body">
-            <div class="fil-question-card">
-                <div class="fil-kicker" data-i18n="game.ecart_estimate_gap">Combien d'années séparent ces deux
-                    événements ? Proposez un nombre, le jeu vous dira si c'est plus ou moins.</div>
-                <div class="ecart-pair">
-                    <div class="ecart-pair-event" id="ecart-event-a" data-i18n="nav.loading">Chargement…</div>
-                    <div class="ecart-pair-sep">↕</div>
-                    <div class="ecart-pair-event" id="ecart-event-b" data-i18n="nav.loading">Chargement…</div>
+            <div class="fil-top">
+                <div class="fil-question-card">
+                    <div class="fil-kicker" data-i18n="game.ecart_estimate_gap">Combien d'années séparent ces deux
+                        événements ? Proposez un nombre, le jeu vous dira si c'est plus ou moins.</div>
+                    <div class="ecart-pair">
+                        <div class="ecart-pair-event" id="ecart-event-a" data-i18n="nav.loading">Chargement…</div>
+                        <div class="ecart-pair-sep">↕</div>
+                        <div class="ecart-pair-event" id="ecart-event-b" data-i18n="nav.loading">Chargement…</div>
+                    </div>
+                    <div class="ecart-pair-years">
+                        <span class="ecart-pair-year hidden" id="ecart-event-a-year"></span>
+                        <span class="ecart-pair-year hidden" id="ecart-event-b-year"></span>
+                    </div>
                 </div>
-                <div class="ecart-pair-years">
-                    <span class="ecart-pair-year hidden" id="ecart-event-a-year"></span>
-                    <span class="ecart-pair-year hidden" id="ecart-event-b-year"></span>
-                </div>
+                <div class="fil-answer-badge hidden" id="ecart-answer-badge"></div>
             </div>
 
             <div class="fil-display">
@@ -2369,8 +2373,6 @@
                 <span class="fil-display-value" id="ecart-display-value">—</span>
                 <span class="fil-era-btn ecart-unit-label" aria-hidden="true" data-i18n="game.years_unit">ans</span>
             </div>
-
-            <div class="fil-answer-badge hidden" id="ecart-answer-badge"></div>
 
             <div class="fil-keypad">
                 <button class="fil-key" onclick="ecartKeyPress('1')">1</button>
