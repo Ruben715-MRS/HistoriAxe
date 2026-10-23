@@ -142,11 +142,27 @@ test('données : poids raisonnable', () => {
 
 test('fiche : les lignes affichées', () => {
     const rows = C.factRows(byId.get('FRA'));
-    assert.deepEqual(rows.map(r => r.key), ['capital', 'languages', 'currency', 'population', 'continent']);
+    // six lignes : la fête nationale vient en dernier
+    assert.deepEqual(rows.map(r => r.key), ['capital', 'languages', 'currency', 'population', 'continent', 'national_day']);
     assert.equal(rows[3].value, '68,4 millions d\'habitants');
     assert.equal(rows[3].year, 2024);
+    assert.equal(rows[5].value, '14 juillet : Fête de la Fédération (1790)');
+    assert.equal(C.factRows(byId.get('GBR')).find(r => r.key === 'national_day').value, 'aucune fête nationale officielle');
     // l'Antarctique n'a ni capitale, ni langue, ni population
-    assert.deepEqual(C.factRows(byId.get('ATA')).map(r => r.key), ['continent']);
+    assert.deepEqual(C.factRows(byId.get('ATA')).map(r => r.key), ['continent', 'national_day']);
+});
+
+test('fêtes nationales : chaque pays a sa fête ou « null », et le jour [mois, jour] est cohérent avec le libellé', () => {
+    facts.countries.forEach(c => {
+        assert.ok('fete' in c && 'fete_jour' in c, c.n);
+        assert.ok(c.fete === null || c.fete.length > 5, c.n);
+        if (c.fete_jour) {
+            const [m, j] = c.fete_jour;
+            assert.ok(m >= 1 && m <= 12 && j >= 1 && j <= 31, c.n);
+            assert.ok(c.fete.startsWith(j + ' '), c.n + ' : ' + c.fete);
+        }
+    });
+    assert.equal(facts.countries.filter(c => c.fete).length, 199);
 });
 
 test('régions : le Zimbabwe, la Zambie, le Malawi, le Mozambique et l\'Angola sont en Afrique australe ; l\'Iran est en Asie de l\'Ouest', () => {

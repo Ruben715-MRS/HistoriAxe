@@ -220,6 +220,9 @@ test('atlas des pays : un bouton « Jouer sur Histoire de … » entre la fiche 
     const fiche = page.locator('#tool-countries-fiche');
     const play = fiche.locator('.tool-countries-play');
     await expect(play).toHaveText('Jouer sur Histoire de France');
+    // la sixième ligne de la fiche : la fête nationale, après la région
+    await expect(fiche.locator('.tool-countries-facts dt').last()).toHaveText('Fête nationale');
+    await expect(fiche.locator('.tool-countries-facts dd').last()).toContainText('14 juillet');
     // le bouton vient après les faits et avant les événements extraits
     const order = await fiche.evaluate(el => [...el.children].map(c => c.className || c.tagName));
     expect(order.indexOf('btn tool-countries-play')).toBeGreaterThan(order.indexOf('tool-countries-facts'));

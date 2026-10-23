@@ -127,6 +127,8 @@
         if (country.cur && country.cur !== 'aucune') rows.push({ key: 'currency', value: country.cur });
         if (country.pop) rows.push({ key: 'population', value: formatPopulation(country.pop) + ' d\'habitants', year: country.year });
         rows.push({ key: 'continent', value: country.sub && country.sub !== country.cont ? country.sub + ' (' + country.cont + ')' : country.cont });
+        // La fête nationale vient en dernier : elle ne déplace pas les lignes qui la précèdent.
+        rows.push({ key: 'national_day', value: country.fete || 'aucune fête nationale officielle' });
         return rows;
     }
 
