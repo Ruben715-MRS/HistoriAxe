@@ -13002,7 +13002,10 @@ input:not([type="range"]), label, select, summary, textarea {
     display: flex;
     flex: 0 0 auto;   /* l'écran est en flex : sans cela la barre s'écrase et ses boutons disparaissent */
     gap: 8px;
-    overflow-x: auto;
+    overflow-x: auto;   /* la barre défile seule, à la largeur de l'écran : jamais de défilement horizontal de la page */
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
     padding: 4px 2px 12px;
     margin: 0 auto;
     max-width: 720px;

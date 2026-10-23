@@ -281,6 +281,10 @@ test('calendrier annuel : la liste part du 1er janvier, une fête nationale et u
     const annee = page.locator('#cal-year');
     await expect(annee.locator('.cal-month')).toHaveCount(12);
     await expect(annee.locator('.cal-row')).toHaveCount(366);
+    // sur téléphone : pas de défilement horizontal de la page, la barre des mois tient dans l'écran
+    const largeur = await page.evaluate(() => ({ page: document.documentElement.scrollWidth, vw: window.innerWidth, barre: document.getElementById('cal-months').getBoundingClientRect().right }));
+    expect(largeur.page).toBeLessThanOrEqual(largeur.vw);
+    expect(largeur.barre).toBeLessThanOrEqual(largeur.vw);
     await expect(annee.locator('.cal-row').first().locator('.cal-date')).toHaveText('1er janvier');
     // le 14 juillet : la France, avec son drapeau
     const quatorze = annee.locator('.cal-row', { has: page.locator('.cal-date', { hasText: /^14 juillet$/ }) });
