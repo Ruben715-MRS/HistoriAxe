@@ -8843,11 +8843,158 @@ input:not([type="range"]), label, select, summary, textarea {
     overflow: hidden;
 }
 
-.class-progress-fill {
+.class-progress {
+    display: flex;
+}
+
+.class-progress-fill,
+.class-progress-bad {
     display: block;
     height: 100%;
-    background: var(--progress-green);
+    flex: none;
     transition: width 0.4s;
+}
+
+.class-progress-fill { background: var(--progress-green); }
+
+.class-progress-bad { background: var(--danger-red); }
+
+/* La grande barre de toute la classe : vert depuis la gauche, rouge depuis la droite, le taux de réussite au centre. */
+.class-meter {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 26px 0;
+}
+
+.class-meter-bar {
+    position: relative;
+    flex: 1;
+    height: 26px;
+    border-radius: 999px;
+    background: var(--border-soft);
+    overflow: hidden;
+}
+
+.class-meter-good,
+.class-meter-bad {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    transition: width 0.6s;
+}
+
+.class-meter-good { left: 0; background: var(--progress-green); }
+
+.class-meter-bad { right: 0; background: var(--danger-red); }
+
+.class-meter-pct {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 3px solid var(--border-soft);
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.1;
+}
+
+.class-meter-pct b { font-size: 18px; }
+
+.class-meter-pct small {
+    font-size: 10px;
+    color: var(--muted-text);
+}
+
+/* Le podium de fin de séance : les marches montent l'une après l'autre (3e, 2e, puis 1er). */
+.class-podium {
+    padding: 8px 0 0;
+    text-align: center;
+}
+
+.class-podium-title {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 14px;
+}
+
+.class-podium-stage {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 6px;
+    min-height: 230px;
+}
+
+.class-podium-place {
+    flex: 1;
+    max-width: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    opacity: 0;
+    animation: class-podium-in 0.4s ease-out forwards;
+    animation-delay: var(--delay, 0s);
+}
+
+.class-podium-name {
+    align-self: center;
+    max-width: 100%;
+    padding: 4px 10px;
+    border-radius: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.class-podium-step {
+    height: 0;
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding-top: 10px;
+    color: #fff;
+    font-weight: 800;
+    overflow: hidden;
+    animation: class-podium-rise 0.9s cubic-bezier(.2, .8, .2, 1) forwards;
+    animation-delay: var(--delay, 0s);
+}
+
+.class-podium-medal { font-size: 30px; }
+
+.class-podium-score { font-size: 14px; font-variant-numeric: tabular-nums; }
+
+.class-podium-place.place-1 .class-podium-step { background: linear-gradient(#e6b422, #b8860b); --h: 150px; }
+.class-podium-place.place-2 .class-podium-step { background: linear-gradient(#aab2bd, #7d8794); --h: 110px; }
+.class-podium-place.place-3 .class-podium-step { background: linear-gradient(#cd7f32, #8c5a24); --h: 80px; }
+
+@keyframes class-podium-in {
+    to { opacity: 1; }
+}
+
+@keyframes class-podium-rise {
+    to { height: var(--h); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .class-podium-place,
+    .class-podium-step {
+        animation-duration: 0.01s;
+        animation-delay: 0s;
+    }
 }
 
 .class-score {

@@ -316,19 +316,86 @@ function classRenderBoard(state) {
         const li = document.createElement('li');
         const mine = !teacher && state.me && p.rank === state.me.rank;
         li.className = 'class-row' + (mine ? ' is-me' : '') + (p.finished ? ' is-done' : '');
-        li.innerHTML = '<span class="class-rank"></span><span class="class-name"></span><span class="class-progress"><span class="class-progress-fill"></span></span><span class="class-score"></span>';
+        li.innerHTML = '<span class="class-rank"></span><span class="class-name"></span><span class="class-progress"><span class="class-progress-fill"></span><span class="class-progress-bad"></span></span><span class="class-score"></span>';
         li.querySelector('.class-rank').innerText = '#' + p.rank;
         li.querySelector('.class-name').textContent = p.name;
-        li.querySelector('.class-progress-fill').style.width = Math.round(Math.min(1, p.answered / total) * 100) + '%';
+        // Vert : les cartes bien placées ; rouge : la part de fautes.
+        const good = Math.min(1, (p.correct || 0) / total);
+        const bad = Math.min(1 - good, Math.max(0, (p.answered - (p.correct || 0)) / total));
+        li.querySelector('.class-progress-fill').style.width = (good * 100).toFixed(1) + '%';
+        li.querySelector('.class-progress-bad').style.width = (bad * 100).toFixed(1) + '%';
         li.querySelector('.class-progress').setAttribute('aria-label', t('classroom.progress_aria', { done: p.answered, total }));
         li.querySelector('.class-score').innerText = String(p.score);
         board.appendChild(li);
     });
 
+    classRenderMeter(state);
+    classRenderPodium(state);
+
     const recapBox = document.getElementById('class-recap');
     const recap = state.recap || [];
     recapBox.classList.toggle('hidden', !recap.length || (!teacher && !ended));
     if (recap.length) classRenderRecap(recap);
+}
+
+// La grande barre du haut : le vert avance depuis la gauche avec les bonnes réponses de toute la classe, le rouge
+// depuis la droite avec les fautes ; au centre, le taux de réussite.
+function classRenderMeter(state) {
+    const box = document.getElementById('class-meter');
+    const totals = state.totals;
+    const show = !!totals && state.status !== 'lobby' && (totals.correct + totals.wrong) > 0;
+    box.classList.toggle('hidden', !show);
+    if (!show) return;
+    const slots = Math.max(1, (state.playerCount || (state.players || []).length || 1) * (state.total || 1));
+    const good = Math.min(1, totals.correct / slots);
+    const bad = Math.min(1 - good, totals.wrong / slots);
+    box.querySelector('.class-meter-good').style.width = (good * 100).toFixed(1) + '%';
+    box.querySelector('.class-meter-bad').style.width = (bad * 100).toFixed(1) + '%';
+    const pct = Math.round(100 * totals.correct / (totals.correct + totals.wrong));
+    box.querySelector('.class-meter-pct b').innerText = pct + ' %';
+    box.setAttribute('aria-label', t('classroom.meter_aria', { right: totals.correct, wrong: totals.wrong, pct }));
+}
+
+// Le podium de fin de séance : les trois premiers, 2e – 1er – 3e, dont les marches montent l'une après l'autre.
+// Il ne se joue qu'une fois par séance, à l'instant où elle se termine.
+function classRenderPodium(state) {
+    const box = document.getElementById('class-podium');
+    const top = (state.players || []).slice(0, 3);
+    const show = state.status === 'ended' && top.length > 0;
+    box.classList.toggle('hidden', !show);
+    if (!show) { box.innerHTML = ''; return; }
+    if (box.dataset.code === classState.code && box.childElementCount) return;
+    box.dataset.code = classState.code;
+    box.innerHTML = '';
+    const title = document.createElement('h3');
+    title.className = 'class-podium-title';
+    title.innerText = t('classroom.podium_title');
+    const stage = document.createElement('div');
+    stage.className = 'class-podium-stage';
+    // Ordre visuel : 2e à gauche, 1er au centre, 3e à droite.
+    [1, 0, 2].forEach(i => {
+        const p = top[i];
+        if (!p) return;
+        const place = document.createElement('div');
+        place.className = 'class-podium-place place-' + (i + 1);
+        place.style.setProperty('--delay', (i === 2 ? 0.2 : i === 1 ? 0.8 : 1.5) + 's');
+        const name = document.createElement('span');
+        name.className = 'class-podium-name';
+        name.textContent = p.name;
+        const step = document.createElement('div');
+        step.className = 'class-podium-step';
+        const medal = document.createElement('span');
+        medal.className = 'class-podium-medal';
+        medal.innerText = ['🥇', '🥈', '🥉'][i];
+        const score = document.createElement('span');
+        score.className = 'class-podium-score';
+        score.innerText = t('classroom.podium_pts', { score: p.score });
+        step.append(medal, score);
+        place.append(name, step);
+        stage.appendChild(place);
+    });
+    box.append(title, stage);
+    if (typeof triggerConfetti === 'function') setTimeout(() => triggerConfetti(3000), 1700);
 }
 
 function classMyStatus(state) {
