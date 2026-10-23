@@ -78,7 +78,7 @@ function renderCalendarYear() {
         d.countries.forEach(c => {
             const line = document.createElement('span');
             line.className = 'cal-country';
-            line.textContent = CountriesCore.flagEmoji(c.iso2) + ' ' + c.n;
+            line.textContent = (c.flag !== undefined ? c.flag : CountriesCore.flagEmoji(c.iso2)) + (c.flag || c.iso2 ? ' ' : '') + c.n;
             list.appendChild(line);
         });
         d.religious.forEach(label => {

@@ -84,3 +84,21 @@ test('avec une année, le calendrier porte les fêtes mobiles datées ; sans ann
     // les fêtes fixes restent présentes dans les deux cas
     assert.deepEqual(avec.find(x => x.month === 12 && x.day === 25).religious, ['Noël']);
 });
+
+test('les saints patrons des nations du Royaume-Uni : à leur date, avec leur drapeau emoji quand il existe', () => {
+    const nations = (m, d) => days.find(x => x.month === m && x.day === d).countries;
+    const eng = nations(4, 23).find(c => c.n === 'Angleterre');
+    assert.equal(eng.flag, '\u{1F3F4}\u{E0067}\u{E0062}\u{E0065}\u{E006E}\u{E0067}\u{E007F}');
+    assert.equal(nations(11, 30).find(c => c.n === 'Écosse').flag, '\u{1F3F4}\u{E0067}\u{E0062}\u{E0073}\u{E0063}\u{E0074}\u{E007F}');
+    assert.equal(nations(3, 1).find(c => c.n === 'Pays de Galles').flag, '\u{1F3F4}\u{E0067}\u{E0062}\u{E0077}\u{E006C}\u{E0073}\u{E007F}');
+    // l'Irlande du Nord n'a pas d'emoji : son nom seul
+    const nir = nations(3, 17).find(c => c.n === 'Irlande du Nord');
+    assert.equal(nir.flag, '');
+    assert.equal(nir.iso2, null);
+});
+
+test('le Royaume-Uni : pas de fête nationale commune, mais la note donne les quatre journées', () => {
+    const gb = facts.find(c => c.iso2 === 'GB');
+    assert.equal(gb.fete, null);
+    ['23 avril', '30 novembre', '1er mars', '17 mars'].forEach(j => assert.ok(gb.note.includes(j), j));
+});

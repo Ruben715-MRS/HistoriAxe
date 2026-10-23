@@ -8,7 +8,7 @@
 // reste intemporel et ne les montre pas.
 // Pur, sans DOM : testé dans tests/calendarYearCore.test.js. Contenu en français seulement ; **à relire par un enseignant**.
 //
-// Un jour : { month, day, religious: [libellé], countries: [{ n, iso2 }] }. Le drapeau d'un pays s'affiche avec son nom (l'interface le
+// Un jour : { month, day, religious: [libellé], countries: [{ n, iso2 | flag }] } (un pays porte son code ; une nation du Royaume-Uni, son emoji). Le drapeau d'un pays s'affiche avec son nom (l'interface le
 // fait avec la fonction `flagEmoji` de countriesCore.js, passée en paramètre pour que ce fichier reste sans dépendance).
 
 (function (root, factory) {
@@ -39,6 +39,18 @@
         { m: 12, d: 8, label: 'Immaculée Conception' },
         { m: 12, d: 25, label: 'Noël' },
         { m: 12, d: 26, label: 'Saint Étienne' }
+    ];
+
+    // Les journées des saints patrons des nations du Royaume-Uni (pas des fêtes nationales communes). Le drapeau est un emoji « sous-drapeau »
+    // (séquence de balises) pour l'Angleterre, l'Écosse et le pays de Galles ; l'Irlande du Nord n'en a pas : son nom seul s'affiche.
+    function regionFlag(code) {
+        return String.fromCodePoint(0x1F3F4).concat([...code].map(function (c) { return String.fromCodePoint(0xE0000 + c.charCodeAt(0)); }).join(''), String.fromCodePoint(0xE007F));
+    }
+    var NATIONS = [
+        { m: 3, d: 1, n: 'Pays de Galles', flag: regionFlag('gbwls') },
+        { m: 3, d: 17, n: 'Irlande du Nord', flag: '' },
+        { m: 4, d: 23, n: 'Angleterre', flag: regionFlag('gbeng') },
+        { m: 11, d: 30, n: 'Écosse', flag: regionFlag('gbsct') }
     ];
 
     // Les fêtes mobiles, par rapport à Pâques (en jours). Le libellé porte le nom de la fête ; la date se calcule pour chaque année.
@@ -89,8 +101,11 @@
                 });
                 var countries = (facts || []).filter(function (c) {
                     return c.fete_jour && c.fete_jour[0] === m && c.fete_jour[1] === d;
-                }).map(function (c) { return { n: c.n, iso2: c.iso2 }; })
-                    .sort(function (a, b) { return a.n.localeCompare(b.n, 'fr'); });
+                }).map(function (c) { return { n: c.n, iso2: c.iso2 }; });
+                NATIONS.forEach(function (x) {
+                    if (x.m === m && x.d === d) countries.push({ n: x.n, iso2: null, flag: x.flag });
+                });
+                countries.sort(function (a, b) { return a.n.localeCompare(b.n, 'fr'); });
                 days.push({ month: m, day: d, religious: religious, countries: countries });
             }
         }
