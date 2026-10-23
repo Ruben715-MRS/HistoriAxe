@@ -149,6 +149,30 @@ test('Trouve l’écart : sur un petit téléphone, touches et « Valider » res
     await expect(page.locator('#ecart-event-a')).toBeVisible();
     await expect(page.locator('#ecart-event-b')).toBeVisible();
 });
+
+test('Le fil du temps : touches et « Valider » restent visibles et immobiles quand le message apparaît', async ({ page }) => {
+    await page.locator('.fil-card').click();
+    await expect(page.locator('#screen-fil')).toBeVisible();
+    await expect(page.locator('#fil-prompt')).not.toHaveText('Chargement…');
+
+    const positions = () => page.evaluate(() => {
+        const r = sel => { const b = document.querySelector(sel).getBoundingClientRect(); return { top: Math.round(b.top), bottom: Math.round(b.bottom) }; };
+        return { keys: r('#screen-fil .fil-keypad'), validate: r('#fil-validate-btn'), display: r('#screen-fil .fil-display'), card: r('#screen-fil .fil-question-card') };
+    });
+    await page.waitForTimeout(600); // fin de l'animation d'entrée de l'écran
+    const avant = await positions();
+    expect(avant.validate.bottom).toBeLessThanOrEqual(664);
+
+    // Une mauvaise année : le message « bonne réponse » apparaît.
+    await page.evaluate(() => { filInput = String(Math.abs(filEvents[filIndex].date) + 7); updateFilDisplay(); filSubmit(); });
+    await expect(page.locator('#fil-answer-badge')).toBeVisible();
+    const apres = await positions();
+    expect(apres.keys).toEqual(avant.keys);
+    expect(apres.validate).toEqual(avant.validate);
+    expect(apres.display).toEqual(avant.display);
+    expect(apres.card.bottom - apres.card.top).toBeLessThan(avant.card.bottom - avant.card.top);
+    await expect(page.locator('#fil-prompt')).toBeVisible();
+});
 });
 
 test('Chrono et Expert restent verrouillés tant que le thème n’est pas entamé', async ({ page }) => {

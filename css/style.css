@@ -3486,17 +3486,19 @@ textarea.form-input {
     cursor: default;
 }
 
-/* « Trouve l'écart » : tout tient dans l'écran, pavé numérique et « Valider » compris. La zone des deux événements prend la
+/* « Trouve l'écart » et « Le fil du temps » : tout tient dans l'écran, pavé numérique et « Valider » compris. La zone des deux événements prend la
    hauteur laissée libre par le reste ; quand le message (plus / moins / écart réel) apparaît, elle rétrécit d'autant, si bien
    que l'affichage, les touches et « Valider » ne bougent jamais. */
-#screen-ecart {
+#screen-ecart,
+#screen-fil {
     flex: 1;
     display: flex;
     flex-direction: column;
     min-height: 0;
 }
 
-#screen-ecart .fil-body {
+#screen-ecart .fil-body,
+#screen-fil .fil-body {
     width: 100%;
     flex: 1;
     min-height: 0;
@@ -3507,7 +3509,7 @@ textarea.form-input {
     overflow-y: auto;
 }
 
-.ecart-top {
+.fil-top {
     flex: 1 1 auto;
     min-height: 150px;
     display: flex;
@@ -3515,7 +3517,8 @@ textarea.form-input {
     gap: 8px;
 }
 
-#screen-ecart .fil-question-card {
+#screen-ecart .fil-question-card,
+#screen-fil .fil-question-card {
     flex: 1 1 0;
     min-height: 0;
     margin: 0;
@@ -3526,11 +3529,14 @@ textarea.form-input {
     overflow: hidden;
 }
 
-#screen-ecart .fil-kicker { margin-bottom: 6px; }
+#screen-ecart .fil-kicker,
+#screen-fil .fil-kicker { margin-bottom: 6px; }
 
-#screen-ecart .ecart-pair { margin-top: 6px; }
+#screen-ecart .ecart-pair,
+#screen-fil .ecart-pair { margin-top: 6px; }
 
-#screen-ecart .fil-answer-badge {
+#screen-ecart .fil-answer-badge,
+#screen-fil .fil-answer-badge {
     flex: none;
     margin: 0 auto;
     padding: 8px 16px;
@@ -3539,23 +3545,29 @@ textarea.form-input {
     box-sizing: border-box;
 }
 
-#screen-ecart .fil-display { margin-bottom: 0; }
+#screen-ecart .fil-display,
+#screen-fil .fil-display { margin-bottom: 0; }
 
-#screen-ecart .fil-display-value { padding: 10px; }
+#screen-ecart .fil-display-value,
+#screen-fil .fil-display-value { padding: 10px; }
 
-#screen-ecart .fil-keypad {
+#screen-ecart .fil-keypad,
+#screen-fil .fil-keypad {
     gap: 8px;
     margin-bottom: 0;
 }
 
-#screen-ecart .fil-key { padding: 11px 0; }
+#screen-ecart .fil-key,
+#screen-fil .fil-key { padding: 11px 0; }
 
-#screen-ecart .fil-validate-btn { flex: none; padding: 14px 0; }
+#screen-ecart .fil-validate-btn,
+#screen-fil .fil-validate-btn { flex: none; padding: 14px 0; }
 
 /* Message affiché : la consigne cède la place, les deux événements restent lisibles. */
 @supports selector(:has(*)) {
-    .ecart-top:has(.fil-answer-badge:not(.hidden)) .fil-kicker { display: none; }
-    .ecart-top:has(.fil-answer-badge:not(.hidden)) .ecart-pair-event { font-size: 15px; }
+    .fil-top:has(.fil-answer-badge:not(.hidden)) .fil-kicker { display: none; }
+    .fil-top:has(.fil-answer-badge:not(.hidden)) .ecart-pair-event { font-size: 15px; }
+    .fil-top:has(.fil-answer-badge:not(.hidden)) .fil-prompt { font-size: 17px; }
 }
 
 #screen-end {
