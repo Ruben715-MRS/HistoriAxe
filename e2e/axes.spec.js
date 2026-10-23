@@ -88,22 +88,62 @@ test('tout décocher désactive le bouton Continuer', async ({ page }) => {
     await expect(page.locator('#axes-continue-btn')).toBeDisabled();
 });
 
-test('téléphone en portrait : l’axe se lit au liseré de la carte, pas à une étiquette sous chaque repère', async ({ page }) => {
+async function ouvrirFrise(page, mode) {
     await page.setViewportSize({ width: 390, height: 800 });
     await clickThemeCard(page, THEME_B);
     await page.locator('#axes-continue-btn').click();
-    await page.locator('#mode-card-discovery').click();
-    await page.locator('#discovery-picker .mode-picker-btn').first().click();
+    if (mode === 'discovery') {
+        await page.locator('#mode-card-discovery').click();
+        await page.locator('#discovery-picker .mode-picker-btn').first().click();
+    } else {
+        await page.locator('#mode-card-classic').click();
+    }
     await expect(page.locator('#screen-game')).toBeVisible();
     await page.waitForTimeout(600);
+}
 
+// Toute la carte est à l'écran : ni débordement à droite, ni défilement horizontal en portrait.
+async function carteEntiereALEcran(page) {
+    const mesures = await page.evaluate(() => {
+        const board = document.querySelector('#screen-game .board');
+        const cartes = [...document.querySelectorAll('#timeline .entry-title')].map(el => Math.round(el.getBoundingClientRect().right));
+        return { cartes, largeur: window.innerWidth, scroll: board.scrollWidth, client: board.clientWidth };
+    });
+    expect(mesures.cartes.length).toBeGreaterThan(0);
+    for (const droite of mesures.cartes) expect(droite).toBeLessThanOrEqual(mesures.largeur);
+    expect(mesures.scroll).toBeLessThanOrEqual(mesures.client);
+}
+
+test('en partie, l’axe se lit au liseré de la carte : pas de nom d’axe dessous, la carte tient à l’écran, défilement vertical seul', async ({ page }) => {
+    await ouvrirFrise(page, 'classic');
     const premiere = page.locator('#timeline .entry[data-axis]').first();
     await expect(premiere).toBeVisible();
     // Le liseré de la couleur de l'axe (ombre intérieure en haut de la carte)…
     const ombre = await premiere.locator('.entry-title').evaluate(el => getComputedStyle(el).boxShadow);
     expect(ombre).toContain('inset');
-    // … et l'étiquette ne prend plus de place sous le titre (elle reste lue par les lecteurs d'écran).
-    const boite = await premiere.locator('.entry-axe-badge').boundingBox();
-    expect(boite.width).toBeLessThanOrEqual(2);
-    expect(boite.height).toBeLessThanOrEqual(2);
+    // … et plus d'étiquette sous le titre.
+    await expect(premiere.locator('.entry-axe-badge')).toBeHidden();
+    await carteEntiereALEcran(page);
+    expect(await page.locator('#screen-game .board').evaluate(el => getComputedStyle(el).touchAction)).toBe('pan-y');
+});
+
+test('le réglage « nom de l’axe sous les événements » le rend visible en partie, sans faire déborder la carte', async ({ page }) => {
+    await page.evaluate(() => { appSettings.axisUnderEvents = true; settingsSave(appSettings); });
+    await ouvrirFrise(page, 'classic');
+    const badge = page.locator('#timeline .entry[data-axis] .entry-axe-badge').first();
+    await expect(badge).toBeVisible();
+    await carteEntiereALEcran(page);
+});
+
+test('en Découverte, le nom de l’axe reste affiché sous l’événement, et la carte tient à l’écran', async ({ page }) => {
+    await ouvrirFrise(page, 'discovery');
+    await expect(page.locator('#timeline .entry[data-axis] .entry-axe-badge').first()).toBeVisible();
+    await carteEntiereALEcran(page);
+});
+
+test('en paysage sur téléphone, le seul défilement possible est horizontal', async ({ page }) => {
+    await ouvrirFrise(page, 'classic');
+    await page.setViewportSize({ width: 800, height: 390 });
+    await page.waitForTimeout(600);
+    expect(await page.locator('#screen-game .board').evaluate(el => getComputedStyle(el).touchAction)).toBe('pan-x');
 });

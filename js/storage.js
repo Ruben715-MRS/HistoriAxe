@@ -63,6 +63,9 @@ const DEFAULT_SETTINGS = {
     landscapeByAxis: false,
     appearance: 'auto',
     axesLegendPinned: true,
+    // Le nom de l'axe thématique sous chaque événement : toujours en Découverte, à la demande en partie
+    // (le liseré de couleur de la carte suffit à le signaler).
+    axisUnderEvents: false,
     sound: true,
     haptics: true,
     notifications: true,

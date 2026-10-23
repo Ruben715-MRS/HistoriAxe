@@ -1566,6 +1566,10 @@ textarea.form-input {
     flex: 1;
     min-height: 0;
     overflow-y: auto;
+    overflow-x: hidden;
+    /* Une seule direction de défilement : vertical en portrait, horizontal en paysage (voir plus bas). */
+    touch-action: pan-y;
+    overscroll-behavior-x: none;
     -webkit-overflow-scrolling: touch;
     padding: 10px 16px 32px;
     scroll-padding: 90px 0;
@@ -1607,7 +1611,7 @@ textarea.form-input {
 
 .entry {
     display: grid;
-    grid-template-columns: var(--gutter) 23px 1fr;
+    grid-template-columns: var(--gutter) 23px minmax(0, 1fr);
     align-items: center;
     padding: calc(10px * var(--zoom-level)) 0;
     cursor: pointer;
@@ -1665,6 +1669,8 @@ textarea.form-input {
 
 .entry-title {
     flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
     font-size: calc(15px * var(--zoom-level));
     line-height: 1.35;
     color: var(--ink);
@@ -4783,6 +4789,7 @@ textarea.form-input {
 .entry-axe-badge {
     display: inline-flex;
     align-items: center;
+    box-sizing: border-box;
     font-size: calc(11px * var(--zoom-level));
     font-weight: 600;
     line-height: 1.25;
@@ -5260,6 +5267,7 @@ textarea.form-input {
            hauteur, et l'axe vient se caler dessus — jamais sur le texte.
            ===================================================================== */
 [data-layout="horizontal"] .board {
+    touch-action: pan-x;
     overflow-x: auto;
     overflow-y: hidden;
     display: flex;
@@ -7434,6 +7442,7 @@ input:not([type="range"]), label, select, summary, textarea {
 }
 
 [data-layout="horizontal"][data-landscape-multi] .board {
+    touch-action: pan-y;
     overflow-x: hidden !important;
     overflow-y: auto !important;
     justify-content: flex-start !important;
@@ -7647,27 +7656,13 @@ input:not([type="range"]), label, select, summary, textarea {
     padding-top: 14px !important;
 }
 
-.entry .entry-axe-badge {
+[data-layout="horizontal"][data-landscape-multi] .entry .entry-axe-badge {
     display: block;
     box-sizing: border-box;
     max-width: 100%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-}
-
-/* Avec la légende à l'écran, l'étiquette n'est plus visible mais reste lue
-   par les lecteurs d'écran. */
-.axes-legend-visible .entry .entry-axe-badge {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    border: 0;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    white-space: nowrap;
 }
 
 /* Case à cocher des réglages. */
