@@ -35,9 +35,10 @@ const config: CapacitorConfig = {
       splashImmersive: true
     },
     StatusBar: {
+      // Le contenu passe sous la barre d'état (plein écran). Le bandeau marine du haut
+      // est alors dessiné en CSS (css/style.css, adaptations natives iOS).
       style: 'DARK',
-      backgroundColor: '#001a4b',
-      overlaysWebView: false
+      overlaysWebView: true
     },
     Haptics: {
       enabled: true

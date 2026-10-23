@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <script>
+        // Marque l'app native (Capacitor) pour les réglages propres à iOS, sans toucher au web.
+        if (window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform()) {
+            document.documentElement.classList.add('native-app');
+        }
+    </script>
     <title>HistoriAxe - Le quiz chronologique de l'Histoire</title>
     <meta name="description"
         content="Révisez la chronologie de l'Histoire en plaçant les événements sur la frise : défis quotidiens, nombreux modes de jeu et classement mondial vérifié côté serveur.">
