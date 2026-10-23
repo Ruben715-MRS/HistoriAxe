@@ -334,7 +334,11 @@ function openModal(evt, context = null, keepHistory = false) {
         themeRow.classList.add('hidden');
     }
 
-    document.getElementById('modal-details').classList.remove('hidden');
+    // Déjà ouverte (événement lié, retour, repioche) : le contenu se renouvelle d'un fondu. Fermée, c'est
+    // l'ouverture de la modale elle-même qui s'anime (voir css/style.css, « MOUVEMENT »).
+    const overlay = document.getElementById('modal-details');
+    if (!overlay.classList.contains('hidden')) replayAnimClass(modalContent, 'modal-swap');
+    overlay.classList.remove('hidden');
 }
 
 function closeModal() {

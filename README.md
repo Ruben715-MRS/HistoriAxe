@@ -1609,6 +1609,35 @@ qui la garde — quatorze mutations, quatorze attrapées.
 - Le **contraste des éléments qui ne sont pas du texte** (WCAG 1.4.11 : icônes,
   bordures de champ), qui relève d'un autre critère.
 
+## Mouvement : rien n'apparaît d'un coup
+
+Les changements d'état passent par un court mouvement (150 à 450 ms, une seule courbe, `--ease-out`, dans `css/style.css`,
+section « MOUVEMENT ») : on voit où ça se passe, et l'app perd son côté mécanique. Trois mécanismes, du plus au moins simple :
+
+- **Du CSS seul.** Une animation démarre quand un élément passe de `display: none` à affiché, ou qu'il est inséré. Écrans
+  (`body > div[id^="screen-"]`), modales (voile puis panneau), panneaux dévoilés après une réponse, `<details>` qui s'ouvrent,
+  groupes de modes qui se déplient, écran de fin : rien à appeler. Les sélecteurs sont en `:where()` (spécificité nulle) pour que
+  les mouvements plus précis (glissements de navigation, rebond de l'XP) gardent la main.
+- **Une classe.** `.fx-cascade` sur le conteneur d'une liste (posée dans `index.html`, ou par `applyCascade()`) : ses dix premières
+  cartes arrivent l'une après l'autre. `applyStagger()` fait de même sur des listes construites par le JS.
+- **`js/app/motion.js`** pour ce que le CSS ne sait pas faire :
+  - la **frise** : poser une carte reconstruit toute la colonne ; `timelineFlipSnapshot` / `timelineFlipPlay` notent la place de
+    chaque repère (clé `data-flip`) avant la reconstruction et le font glisser jusqu'à la nouvelle (technique « FLIP »). La carte
+    posée atterrit (`entryLand`), les deux intervalles qu'elle crée se déploient (`.slot-new`). La carte à placer arrive par le bas
+    (`.hand-card-in`) et sa date se retourne quand on a raté (`.hand-revealed`). Le repère à animer se déclare avec
+    `queueEntryFx(id, classes)` **avant** la reconstruction (`renderTimeline`) : le repère n'existe pas encore avant, et c'était
+    la cause d'une animation « posée » qui ne se jouait jamais ;
+  - la **dernière carte** d'une partie atterrit sous les yeux du joueur (~1 s) avant l'écran de fin. Le chrono est figé à l'instant
+    du dernier clic (`timerFrozenAt`) : ce délai ne compte ni dans le temps affiché, ni dans le badge de rapidité ;
+  - `animateQuestionIn(screenId)`, appelée par chaque mode au moment d'afficher une question : la carte-question, puis ses réponses
+    en cascade. Le Blitz (course contre la montre) et le Mode Carte n'en ont volontairement pas ;
+  - `initMotion()` : un observateur par bandeau fait « rebondir » le score quand il monte (`…hud-score`) et gonfler une vie qui
+    vient d'être perdue (`…hud-lives`), pour tous les modes d'un coup.
+
+**« Réduire les animations »** (`prefers-reduced-motion`) coupe tout : le CSS, `timelineFlipSnapshot` (qui ne note rien), `animateQuestionIn`
+et le délai de la dernière carte. `e2e/mouvement.spec.js` vérifie qu'il y a bien un mouvement là où il faut, et aucun avec ce réglage.
+Les tests de contraste tournent déjà dans ce mode, pour ne pas mesurer des couleurs à moitié transparentes.
+
 ## Échappement des textes insérés dans la page
 
 Presque tout l'affichage passe par des gabarits `innerHTML`. Tout texte qui peut venir d'un joueur — nom de thème ou titre d'événement personnalisés, prénom multijoueur, pseudo, lien Wikipédia d'un contenu importé — doit donc être **échappé** :

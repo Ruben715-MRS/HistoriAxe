@@ -86,6 +86,7 @@ function renderWhoQuestion() {
     document.getElementById('whois-hud-count').innerText = `${whoIndex + 1} / ${whoQuestions.length}`;
     document.getElementById('whois-progress-fill').style.width =
         Math.round(whoIndex / whoQuestions.length * 100) + '%';
+    animateQuestionIn('screen-whois');
     updateWhoHUD();
 }
 

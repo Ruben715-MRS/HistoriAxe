@@ -131,7 +131,7 @@
             <button type="button" data-value="progress" data-i18n="revision.tab_progress">Progression</button>
         </div>
 
-        <div id="revision-hub-due-container">
+        <div id="revision-hub-due-container" class="fx-cascade">
             <p id="revision-due-subtitle" class="revision-hub-subtitle"></p>
             <div id="revision-due-empty" class="empty-msg hidden"></div>
             <div id="revision-due-content" class="revision-hub-content hidden">
@@ -150,7 +150,7 @@
             </div>
         </div>
 
-        <div id="revision-hub-weak-container" class="hidden">
+        <div id="revision-hub-weak-container" class="hidden fx-cascade">
             <p id="revision-hub-subtitle" class="revision-hub-subtitle"></p>
 
             <div id="revision-hub-empty" class="empty-msg hidden" data-i18n="revision.weak_empty">
@@ -191,7 +191,7 @@
             </div>
         </div>
 
-        <div id="revision-hub-progress-container" class="hidden">
+        <div id="revision-hub-progress-container" class="hidden fx-cascade">
             <p class="progress-subtitle">Maîtrise calculée à partir de votre historique de jeu (boîtes de mémorisation),
                 tous modes et toutes parties confondus : elle tient compte à la fois de la qualité de vos réponses et de
                 la part du thème déjà couverte (un thème à peine entamé ne peut donc pas afficher un score élevé, même
@@ -222,7 +222,7 @@
                 thème et par catégorie.
             </div>
 
-            <div id="progress-groups-container" class="progress-groups-container"></div>
+            <div id="progress-groups-container" class="progress-groups-container fx-cascade"></div>
         </div>
     </div>
 
@@ -1657,7 +1657,7 @@
                 <button type="button" class="btn class-primary" onclick="friendsAdd()" data-i18n="friends.add_btn">Envoyer la demande</button>
                 <p class="friends-msg hidden" id="friends-add-msg" role="status"></p>
             </div>
-            <div id="friends-lists"></div>
+            <div id="friends-lists" class="fx-cascade"></div>
         </section>
     </div>
 
@@ -1709,7 +1709,7 @@
             <p class="class-error hidden" id="class-live-error" role="alert"></p>
             <div class="class-recap hidden" id="class-recap">
                 <h3 data-i18n="classroom.recap_title">Cartes les plus ratées</h3>
-                <ol id="class-recap-list"></ol>
+                <ol id="class-recap-list" class="fx-cascade"></ol>
             </div>
             <button type="button" class="btn class-primary hidden" id="class-end-btn" onclick="classEnd()" data-i18n="classroom.end">Terminer la séance</button>
             <button type="button" class="btn class-primary hidden" id="class-again-btn" onclick="classLeave()" data-i18n="classroom.leave">Quitter</button>
@@ -1840,7 +1840,7 @@
             <button class="btn btn-secondary" style="padding:6px 12px; font-size:13px;" onclick="selectAllEvents(false)"
                 data-i18n="selection.uncheck_all">Tout décocher</button>
         </div>
-        <div class="selection-list" id="selection-list-container"></div>
+        <div class="selection-list fx-cascade" id="selection-list-container"></div>
         <div style="margin-top: 20px; margin-bottom: 50px; display:flex; gap:15px; justify-content:center;">
             <button class="btn" onclick="saveSelectionAndReturn()" data-i18n="selection.validate_btn">Valider la
                 sélection</button>
@@ -2661,7 +2661,7 @@
                 hebdo/mensuel</button>
 
             <div class="profile-section-title" data-i18n="gamification.trophies_title">🏆 Trophées & Hauts Faits</div>
-            <div class="trophies-grid" id="profile-trophies-container">
+            <div class="trophies-grid fx-cascade" id="profile-trophies-container">
                 <!-- Badges générés dynamiquement -->
             </div>
         </div>
@@ -2676,7 +2676,7 @@
                 de la semaine</h2>
             <div class="league-week-hint" id="league-week-hint">Ton total cette semaine : <strong
                     id="league-my-xp">0</strong> XP. Le classement se réinitialise chaque semaine.</div>
-            <div id="league-list-container"></div>
+            <div id="league-list-container" class="fx-cascade"></div>
         </div>
     </div>
 
@@ -3124,6 +3124,7 @@
     <script src="js/modes/fil.js"></script>
     <script src="js/modes/ecart.js"></script>
     <script src="js/app/frise.js"></script>
+    <script src="js/app/motion.js"></script>
     <script src="js/app/session-end.js"></script>
     <script src="js/app/modal.js"></script>
     <script src="js/app/play-mode.js"></script>

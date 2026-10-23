@@ -209,6 +209,7 @@ function renderPeriodesQuestion() {
     document.getElementById('periodes-hud-count').innerText = `${periodesIndex + 1} / ${periodesQuestions.length}`;
     const pct = Math.round(periodesIndex / periodesQuestions.length * 100);
     document.getElementById('periodes-progress-fill').style.width = pct + '%';
+    animateQuestionIn('screen-periodes');
     updatePeriodesHUD();
 }
 

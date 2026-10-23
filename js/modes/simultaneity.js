@@ -258,6 +258,7 @@ function renderSimultaneityQuestion() {
     document.getElementById('simul-hud-count').innerText = `${simulIndex + 1} / ${simulQuestions.length}`;
     document.getElementById('simul-progress-fill').style.width =
         Math.round(simulIndex / simulQuestions.length * 100) + '%';
+    animateQuestionIn('screen-simultaneity');
     updateSimultaneityHUD();
 }
 

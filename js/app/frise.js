@@ -4,6 +4,7 @@
 // CHRONOMÈTRE
 function startTimer() {
     startTime = Date.now();
+    timerFrozenAt = null;
     if (timerInterval) clearInterval(timerInterval);
     timerInterval = setInterval(() => {
         let elapsed = (Date.now() - startTime) / 1000;
@@ -11,9 +12,13 @@ function startTimer() {
     }, 100);
 }
 
+// Instant (en secondes) où la dernière carte a été posée, quand la fin de partie est retardée pour laisser
+// cette carte atterrir : le temps affiché, et celui des badges de rapidité, ne doivent pas compter ce délai.
+let timerFrozenAt = null;
+
 function stopTimer() {
     if (timerInterval) clearInterval(timerInterval);
-    totalTimePlayed = (Date.now() - startTime) / 1000;
+    totalTimePlayed = timerFrozenAt != null ? timerFrozenAt : (Date.now() - startTime) / 1000;
 }
 
 // Certains noms de thème se terminent par une période entre parenthèses
@@ -36,11 +41,23 @@ function pickNextEvent() {
     if (currentPool.length === 0) {
         if (pendingPlacementAnnouncement) A11y.announce(pendingPlacementAnnouncement);
         pendingPlacementAnnouncement = '';
-        if (currentMode === 'multi') {
-            endMultiplayerGame();
-        } else {
-            endGame(true);
+        const finish = () => (currentMode === 'multi' ? endMultiplayerGame() : endGame(true));
+        // La dernière carte atterrit sous les yeux du joueur avant que l'écran de fin ne la recouvre.
+        if (pendingEntryFx && !motionReduced()) {
+            renderTimeline();
+            stopTimer();
+            timerFrozenAt = totalTimePlayed;
+            isAnimating = true;
+            wrongAnswerTimeoutId = setTimeout(() => {
+                wrongAnswerTimeoutId = null;
+                isAnimating = false;
+                finish();
+                timerFrozenAt = null;
+            }, 950);
+            return;
         }
+        pendingEntryFx = null;
+        finish();
         return;
     }
     eventToPlace = currentPool.pop();
@@ -69,6 +86,7 @@ function pickNextEvent() {
         ? `${escapeHtml(eventToPlace.titre)} <em class="hand-title-theme">(${escapeHtml(stripThemePeriodSuffix(challengeThemeName.nom))})</em>`
         : escapeHtml(eventToPlace.titre);
     setPortraitImg(document.getElementById('hand-portrait'), eventToPlace);
+    replayAnimClass(hand.querySelector('.hand-card'), 'hand-card-in');
     renderTimeline();
 }
 
@@ -84,7 +102,10 @@ function pickNextEvent() {
 // attendre ses dernières cartes une éternité (au-delà, même délai maximal).
 function applyStagger(container) {
     if (!container) return;
-    Array.from(container.children).forEach((el, i) => {
+    const cards = Array.from(container.children);
+    cards.forEach(el => el.classList.remove('stagger-in'));
+    void container.offsetWidth; // un seul reflow pour toute la liste : l'animation repart de zéro
+    cards.forEach((el, i) => {
         el.style.setProperty('--stagger-i', Math.min(i, 10));
         el.classList.add('stagger-in');
     });
@@ -235,6 +256,10 @@ function renderTimeline() {
     applyLandscapeFlow();
     const byAxis = landscapeByAxisActive();
     landscapeSignature = effectiveLandscapeFlow() + '|' + byAxis;
+    // Une carte vient d'être posée (voir queueEntryFx) : les repères déjà là glisseront vers leur nouvelle place.
+    const fx = pendingEntryFx;
+    pendingEntryFx = null;
+    const flipBefore = fx && !byAxis ? timelineFlipSnapshot(timeline) : new Map();
     A11y.keepFocus(timeline, () => {
         timeline.className = isPlaying ? 'chrono playing' : 'chrono';
         if (byAxis) timeline.classList.add('axis-lanes');
@@ -247,11 +272,26 @@ function renderTimeline() {
             return;
         }
         for (let i = 0; i <= placedEvents.length; i++) {
-            if (isPlaying) timeline.appendChild(buildSlot(i));
-            if (i < placedEvents.length) timeline.appendChild(buildEntry(placedEvents[i]));
+            if (isPlaying) {
+                const slot = buildSlot(i);
+                // Clé de glissement : un intervalle est « celui qui sépare ces deux repères ».
+                const before = placedEvents[i - 1];
+                const after = placedEvents[i];
+                slot.dataset.flip = 's:' + (before ? before.id : '^') + '>' + (after ? after.id : '$');
+                timeline.appendChild(slot);
+            }
+            if (i < placedEvents.length) {
+                const entry = buildEntry(placedEvents[i]);
+                entry.dataset.flip = 'e:' + placedEvents[i].id;
+                timeline.appendChild(entry);
+            }
         }
     });
     markTimelineRows();
+    if (fx) {
+        timelineFlipPlay(timeline, flipBefore);
+        focusEntry(fx.eventId, fx.classes);
+    }
 }
 
 // Une voie par axe thématique, dans l'ordre des axes du thème, chacune avec
@@ -359,6 +399,14 @@ function buildEntry(evt) {
     return row;
 }
 
+// La carte qui vient d'être posée, et les classes d'animation que son repère portera : renderTimeline() les
+// pose dès qu'il a reconstruit la frise (le repère n'existe pas avant), après avoir fait glisser les autres.
+let pendingEntryFx = null;
+
+function queueEntryFx(eventId, classes) {
+    pendingEntryFx = { eventId, classes };
+}
+
 // Amène un repère au centre de la colonne et le signale visuellement.
 // extraClass accepte une ou plusieurs classes séparées par un espace (ex.
 // 'entry-new entry-correct-pulse') — classList.add() refuse un seul token
@@ -445,8 +493,9 @@ function checkPlacement(index, slotElement) {
         const correctText = t('game.announce_correct', { title: eventToPlace.titre, date: formatYear(dateToPlace), slot: slotLabel(index) });
         placedEvents.splice(index, 0, eventToPlace);
         updateHUD();
-        focusEntry(placedId, 'entry-new entry-correct-pulse');
+        queueEntryFx(placedId, 'entry-new entry-correct-pulse');
         if (currentMode === 'multi') {
+            renderTimeline();
             A11y.announce(correctText);
             setTimeout(() => nextMultiPlayerTurn(), 1000);
         } else {
@@ -524,16 +573,19 @@ function checkPlacement(index, slotElement) {
             // chemin correct, lui, met à jour juste après son propre splice).
             updateHUD();
 
+            queueEntryFx(missedId, 'entry-reveal');
             if (currentMode === 'multi') {
-                focusEntry(missedId, 'entry-reveal');
+                renderTimeline();
                 setTimeout(() => nextMultiPlayerTurn(), 900);
             } else if (lives <= 0 && currentMode !== 'training') {
                 renderTimeline();
-                focusEntry(missedId, 'entry-reveal');
                 setTimeout(() => endGame(false), 900);
             } else {
+                // Déverrouillé avant : si c'était la dernière carte, pickNextEvent reverrouille le temps
+                // de la laisser atterrir (voir plus haut).
+                isAnimating = false;
                 pickNextEvent();
-                focusEntry(missedId, 'entry-reveal');
+                return;
             }
 
             isAnimating = false;

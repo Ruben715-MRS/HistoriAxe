@@ -62,6 +62,7 @@ function renderOrdreRound() {
         Math.round(ordreIndex / ordreRounds.length * 100) + '%';
 
     renderOrdreCards();
+    animateQuestionIn('screen-ordre');
     updateOrdreHUD();
 }
 

@@ -59,6 +59,7 @@ window.onload = async () => {
     applyOrientationLayout();
     initSettingsControls();
     initModesGroups();
+    initMotion();
     if (typeof initRecapControls === 'function') initRecapControls();
 
     // Initialisation i18n et chargement de la langue active
