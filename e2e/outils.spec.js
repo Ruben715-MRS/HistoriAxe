@@ -315,6 +315,8 @@ test('calendrier annuel : l\'année choisie date les fêtes mobiles, « 5 avril 
     // les fêtes juives de la même année : l'étoile de David, et la ménorah pour Hanouka
     await expect(page.locator('#cal-year .cal-row', { has: page.locator('.cal-date', { hasText: /^13 avril$/ }) }).locator('.cal-religious')).toHaveText('\u2721\uFE0F Pessa\u2019h (2025)');
     await expect(page.locator('#cal-year .cal-row', { has: page.locator('.cal-date', { hasText: /^15 décembre$/ }) }).locator('.cal-religious')).toHaveText('\u{1F54E} Hanouka (2025)');
+    // les fêtes musulmanes : le croissant islamique
+    await expect(page.locator('#cal-year .cal-row', { has: page.locator('.cal-date', { hasText: /^1er mars$/ }) }).locator('.cal-religious')).toHaveText('\u262A\uFE0F Début du ramadan (2025)');
 });
 
 test('atlas des pays : une capitale se cherche aussi, et un statut contesté est dit', async ({ page }) => {

@@ -153,3 +153,30 @@ test('Yom Haatzmaut, fête nationale d\'Israël : le 5 iyar de l\'année, à par
     // timeless : pas d'Israël sans année
     assert.ok(!K.yearDays(facts).some(x => x.countries.some(c => c.iso2 === 'IL')));
 });
+
+test('fêtes musulmanes : le calendrier hégirien, à la date grégorienne de l\'année (contrôles)', () => {
+    const at = (year, label) => K.islamicFeasts(year).filter(f => f.label === label).map(f => [f.day, f.month]);
+    // Ramadan 1445 : début le 11 mars 2024 ; Aïd al-Fitr le 10 avril 2024
+    assert.deepEqual(at(2024, 'Début du ramadan'), [[11, 3]]);
+    assert.deepEqual(at(2024, 'Aïd al-Fitr'), [[10, 4]]);
+    // Ramadan 1446 : début le 1er mars 2025 (observé ce jour-là)
+    assert.deepEqual(at(2025, 'Début du ramadan'), [[1, 3]]);
+    // Aïd al-Adha : 16 ou 17 juin 2024 selon l'observation (le calendrier arithmétique donne le 17)
+    const adha = at(2024, 'Aïd al-Adha');
+    assert.equal(adha.length, 1);
+    assert.ok([[16, 6], [17, 6]].some(x => x[0] === adha[0][0] && x[1] === adha[0][1]));
+    // chaque année grégorienne contient chaque fête au moins une fois, et les dates restent dans l'année
+    for (let y = 1900; y < 2100; y += 9) {
+        const fs = K.islamicFeasts(y);
+        assert.ok(fs.length >= 8, String(y));
+        assert.ok(fs.every(f => f.month >= 1 && f.month <= 12), String(y));
+    }
+});
+
+test('les fêtes musulmanes portent le croissant ☪️ ; sans année, elles n\'apparaissent pas', () => {
+    const d = K.yearDays(facts, 2025);
+    const ramadan = d.find(x => x.month === 3 && x.day === 1).religious;
+    assert.ok(ramadan.includes('\u262A\uFE0F Début du ramadan (2025)'), ramadan.join(' | '));
+    const sans = K.yearDays(facts).flatMap(x => x.religious).join(' | ');
+    assert.ok(!sans.includes('ramadan') && !sans.includes('Aïd'));
+});

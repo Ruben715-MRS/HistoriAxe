@@ -8,7 +8,8 @@
 // Meeus (calendrier grégorien) ; les fêtes juives par le calendrier hébraïque arithmétique (Reingold et Dershowitz, Calendrical
 // Calculations). Sans année, le calendrier reste intemporel et ne les montre pas.
 //
-// Chaque fête porte son signe : ✝️ pour les fêtes chrétiennes, ✡️ (étoile de David) pour les fêtes juives, 🕎 (ménorah) pour Hanouka.
+// Chaque fête porte son signe : ✝️ pour les fêtes chrétiennes, ✡️ (étoile de David) pour les fêtes juives, 🕎 (ménorah) pour Hanouka,
+// ☪️ (croissant islamique) pour les fêtes musulmanes.
 // Pur, sans DOM : testé dans tests/calendarYearCore.test.js. Contenu en français seulement ; **à relire par un enseignant**.
 //
 // Un jour : { month, day, religious: [libellé], countries: [{ n, iso2 | flag }] } (un pays porte son code ; une nation du Royaume-Uni, son emoji). Le drapeau d'un pays s'affiche avec son nom (l'interface le
@@ -47,6 +48,7 @@
     var CROSS = '\u271D\uFE0F';        // ✝️ croix chrétienne
     var STAR = '\u2721\uFE0F';         // ✡️ étoile de David
     var MENORAH = '\u{1F54E}';          // 🕎 ménorah (Hanouka)
+    var CRESCENT = '\u262A\uFE0F';      // ☪️ croissant islamique
 
     // Les fêtes juives à date fixe dans le calendrier hébraïque : mois (nom du calendrier hébraïque), jour, libellé, signe.
     // Pourim tombe en Adar, ou en Adar II les années à deux Adar (voir hebrewLeap).
@@ -60,6 +62,39 @@
         { month: 'Sivan', day: 6, label: 'Chavouot', sign: STAR },
         { month: 'Av', day: 9, label: 'Tisha B\u2019Av', sign: STAR }
     ];
+
+    // Les fêtes musulmanes à date fixe dans le calendrier hégirien (lunaire) : mois, jour, libellé. Le calendrier arithmétique (civil) peut
+    // différer d'un jour de l'observation locale de la lune ; c'est le cas de tous les calendriers calculés.
+    var ISLAMIC = [
+        { month: 1, day: 1, label: 'Nouvel an hégirien' },
+        { month: 1, day: 10, label: 'Achoura' },
+        { month: 3, day: 12, label: 'Mawlid' },
+        { month: 7, day: 27, label: 'Isra et Miraj' },
+        { month: 9, day: 1, label: 'Début du ramadan' },
+        { month: 9, day: 27, label: 'Laylat al-Qadr' },
+        { month: 10, day: 1, label: 'Aïd al-Fitr' },
+        { month: 12, day: 10, label: 'Aïd al-Adha' }
+    ];
+    var ISLAMIC_EPOCH = 227015;      // 1er Muharram de l'an 1 de l'hégire (16 juillet 622, calendrier julien)
+
+    // Le jour fixe d'une date hégirienne (calendrier arithmétique).
+    function islamicToFixed(y, m, d) {
+        return d + Math.ceil(29.5 * (m - 1)) + (y - 1) * 354 + Math.floor((3 + 11 * y) / 30) + ISLAMIC_EPOCH - 1;
+    }
+
+    // Les fêtes musulmanes de l'année grégorienne `year` : une même fête revient chaque année hégirienne, ~11 jours plus tôt. On cherche
+    // les années hégiriennes voisines et on garde les dates qui tombent dans `year`.
+    function islamicFeasts(year) {
+        var out = [];
+        var start = Math.floor((year - 622) * 33 / 32) - 2;
+        for (var h = start; h <= start + 4; h++) {
+            ISLAMIC.forEach(function (f) {
+                var g = fixedToGregorian(islamicToFixed(h, f.month, f.day));
+                if (g.year === year) out.push({ month: g.month, day: g.day, label: f.label });
+            });
+        }
+        return out;
+    }
 
     // Le calendrier hébraïque (arithmétique) : le 1er Tishri d'une année, la durée des mois, et la conversion en jour grégorien.
     var HEBREW_EPOCH = -1373427;     // jour fixe du 1er Tishri de l'an 1
@@ -189,6 +224,7 @@
         var days = [];
         var mobile = year ? mobileFeasts(year) : [];
         var jewish = year ? jewishFeasts(year) : [];
+        var islamic = year ? islamicFeasts(year) : [];
         for (var m = 1; m <= 12; m++) {
             for (var d = 1; d <= DAYS_IN_MONTH[m - 1]; d++) {
                 var religious = RELIGIOUS.filter(function (r) { return r.m === m && r.d === d; }).map(function (r) { return CROSS + ' ' + r.label; });
@@ -197,6 +233,9 @@
                 });
                 jewish.forEach(function (f) {
                     if (f.month === m && f.day === d) religious.push(f.sign + ' ' + f.label + ' (' + year + ')');
+                });
+                islamic.forEach(function (f) {
+                    if (f.month === m && f.day === d) religious.push(CRESCENT + ' ' + f.label + ' (' + year + ')');
                 });
                 var countries = (facts || []).filter(function (c) {
                     return c.fete_jour && c.fete_jour[0] === m && c.fete_jour[1] === d;
@@ -223,7 +262,7 @@
     return {
         MONTHS: MONTHS, RELIGIOUS: RELIGIOUS, MOBILE: MOBILE, JEWISH: JEWISH, easterSunday: easterSunday, mobileFeasts: mobileFeasts,
         hebrewLeap: hebrewLeap, hebrewNewYear: hebrewNewYear, hebrewToFixed: hebrewToFixed, fixedToGregorian: fixedToGregorian,
-        jewishFeasts: jewishFeasts, israelIndependenceDay: israelIndependenceDay, CROSS: CROSS, STAR: STAR, MENORAH: MENORAH,
+        jewishFeasts: jewishFeasts, islamicFeasts: islamicFeasts, islamicToFixed: islamicToFixed, CRESCENT: CRESCENT, israelIndependenceDay: israelIndependenceDay, CROSS: CROSS, STAR: STAR, MENORAH: MENORAH,
         yearDays: yearDays, dateLabel: dateLabel, monthName: monthName
     };
 }));
