@@ -287,7 +287,7 @@ test('calendrier annuel : la liste part du 1er janvier, une fête nationale et u
     await expect(quatorze.locator('.cal-country')).toHaveText('🇫🇷 France');
     // le 25 décembre : Noël, sans pays
     const noel = annee.locator('.cal-row', { has: page.locator('.cal-date', { hasText: /^25 décembre$/ }) });
-    await expect(noel.locator('.cal-religious')).toHaveText('Noël');
+    await expect(noel.locator('.cal-religious')).toHaveText('\u271D\uFE0F Noël');
     // le 29 février existe
     await expect(annee.locator('.cal-date', { hasText: /^29 février$/ })).toHaveCount(1);
     // la barre de mois : Octobre mène au titre d'Octobre, en haut de l'écran
@@ -302,14 +302,17 @@ test('calendrier annuel : l\'année choisie date les fêtes mobiles, « 5 avril 
     await expect(champ).toHaveValue(String(new Date().getFullYear()));
     await champ.fill('2026');
     const paques = page.locator('#cal-year .cal-row', { has: page.locator('.cal-date', { hasText: /^5 avril$/ }) });
-    await expect(paques.locator('.cal-religious')).toHaveText('Pâques (2026)');
-    await expect(page.locator('#cal-year .cal-row', { has: page.locator('.cal-date', { hasText: /^14 mai$/ }) }).locator('.cal-religious')).toHaveText('Ascension (2026)');
+    await expect(paques.locator('.cal-religious')).toHaveText('\u271D\uFE0F Pâques (2026)');
+    await expect(page.locator('#cal-year .cal-row', { has: page.locator('.cal-date', { hasText: /^14 mai$/ }) }).locator('.cal-religious')).toHaveText('\u271D\uFE0F Ascension (2026)');
     // une saisie hors bornes ne touche pas au calendrier
     await champ.fill('12');
-    await expect(paques.locator('.cal-religious')).toHaveText('Pâques (2026)');
+    await expect(paques.locator('.cal-religious')).toHaveText('\u271D\uFE0F Pâques (2026)');
     // une autre année : Pâques bouge
     await champ.fill('2025');
-    await expect(page.locator('#cal-year .cal-row', { has: page.locator('.cal-date', { hasText: /^20 avril$/ }) }).locator('.cal-religious')).toHaveText('Pâques (2025)');
+    await expect(page.locator('#cal-year .cal-row', { has: page.locator('.cal-date', { hasText: /^20 avril$/ }) }).locator('.cal-religious')).toHaveText('\u271D\uFE0F Pâques (2025)');
+    // les fêtes juives de la même année : l'étoile de David, et la ménorah pour Hanouka
+    await expect(page.locator('#cal-year .cal-row', { has: page.locator('.cal-date', { hasText: /^13 avril$/ }) }).locator('.cal-religious')).toHaveText('\u2721\uFE0F Pessa\u2019h (2025)');
+    await expect(page.locator('#cal-year .cal-row', { has: page.locator('.cal-date', { hasText: /^15 décembre$/ }) }).locator('.cal-religious')).toHaveText('\u{1F54E} Hanouka (2025)');
 });
 
 test('atlas des pays : une capitale se cherche aussi, et un statut contesté est dit', async ({ page }) => {

@@ -3,9 +3,12 @@
 // =========================================================================
 // Les 366 jours d'un calendrier civil (le 29 février compris), chacun avec les fêtes qui tombent à cette date : les fêtes nationales des
 // pays (données de assets/geo/countries-facts.json, champ `fete_jour` [mois, jour]) et les fêtes chrétiennes à date fixe du calendrier
-// civil. Les fêtes mobiles (Pâques, l'Ascension, la Pentecôte…) changent d'une année à l'autre : elles ne sont ajoutées que pour une
-// année donnée (`yearDays(facts, année)`), calculées ici par l'algorithme de Meeus (calendrier grégorien). Sans année, le calendrier
-// reste intemporel et ne les montre pas.
+// civil. Les fêtes mobiles (Pâques, l'Ascension, la Pentecôte…) et les fêtes juives (calendrier hébraïque, lunisolaire) changent d'une
+// année à l'autre : elles ne sont ajoutées que pour une année donnée (`yearDays(facts, année)`). Pâques est calculée par l'algorithme de
+// Meeus (calendrier grégorien) ; les fêtes juives par le calendrier hébraïque arithmétique (Reingold et Dershowitz, Calendrical
+// Calculations). Sans année, le calendrier reste intemporel et ne les montre pas.
+//
+// Chaque fête porte son signe : ✝️ pour les fêtes chrétiennes, ✡️ (étoile de David) pour les fêtes juives, 🕎 (ménorah) pour Hanouka.
 // Pur, sans DOM : testé dans tests/calendarYearCore.test.js. Contenu en français seulement ; **à relire par un enseignant**.
 //
 // Un jour : { month, day, religious: [libellé], countries: [{ n, iso2 | flag }] } (un pays porte son code ; une nation du Royaume-Uni, son emoji). Le drapeau d'un pays s'affiche avec son nom (l'interface le
@@ -40,6 +43,89 @@
         { m: 12, d: 25, label: 'Noël' },
         { m: 12, d: 26, label: 'Saint Étienne' }
     ];
+
+    var CROSS = '\u271D\uFE0F';        // ✝️ croix chrétienne
+    var STAR = '\u2721\uFE0F';         // ✡️ étoile de David
+    var MENORAH = '\u{1F54E}';          // 🕎 ménorah (Hanouka)
+
+    // Les fêtes juives à date fixe dans le calendrier hébraïque : mois (nom du calendrier hébraïque), jour, libellé, signe.
+    // Pourim tombe en Adar, ou en Adar II les années à deux Adar (voir hebrewLeap).
+    var JEWISH = [
+        { month: 'Tishri', day: 1, label: 'Roch Hachana', sign: STAR },
+        { month: 'Tishri', day: 10, label: 'Yom Kippour', sign: STAR },
+        { month: 'Tishri', day: 15, label: 'Souccot', sign: STAR },
+        { month: 'Kislev', day: 25, label: 'Hanouka', sign: MENORAH },
+        { month: 'Adar', day: 14, label: 'Pourim', sign: STAR },
+        { month: 'Nisan', day: 15, label: 'Pessa\u2019h', sign: STAR },
+        { month: 'Sivan', day: 6, label: 'Chavouot', sign: STAR },
+        { month: 'Av', day: 9, label: 'Tisha B\u2019Av', sign: STAR }
+    ];
+
+    // Le calendrier hébraïque (arithmétique) : le 1er Tishri d'une année, la durée des mois, et la conversion en jour grégorien.
+    var HEBREW_EPOCH = -1373427;     // jour fixe du 1er Tishri de l'an 1
+    var FIXED_UNIX_EPOCH = 719163;   // jour fixe du 1er janvier 1970
+
+    function hebrewLeap(y) {
+        return ((7 * y + 1) % 19) < 7;
+    }
+
+    function hebrewDelay1(y) {
+        var months = Math.floor((235 * y - 234) / 19);
+        var parts = 12084 + 13753 * months;
+        var day = 29 * months + Math.floor(parts / 25920);
+        if ((3 * (day + 1)) % 7 < 3) day += 1;
+        return day;
+    }
+
+    function hebrewDelay2(y) {
+        var last = hebrewDelay1(y - 1), present = hebrewDelay1(y), next = hebrewDelay1(y + 1);
+        if (next - present === 356) return 2;
+        if (present - last === 382) return 1;
+        return 0;
+    }
+
+    // Le jour fixe du 1er Tishri de l'année hébraïque y.
+    function hebrewNewYear(y) {
+        return HEBREW_EPOCH + hebrewDelay1(y) + hebrewDelay2(y);
+    }
+
+    // Les mois d'une année hébraïque, dans l'ordre à partir de Tishri : [nom, longueur].
+    function hebrewMonths(y) {
+        var length = hebrewNewYear(y + 1) - hebrewNewYear(y);
+        var heshvan = length % 10 === 5 ? 30 : 29;
+        var kislev = length % 10 === 3 ? 29 : 30;
+        var adar = hebrewLeap(y) ? [['Adar', 30], ['AdarII', 29]] : [['Adar', 29]];
+        return [['Tishri', 30], ['Heshvan', heshvan], ['Kislev', kislev], ['Tevet', 29], ['Shevat', 30]]
+            .concat(adar, [['Nisan', 30], ['Iyar', 29], ['Sivan', 30], ['Tamuz', 29], ['Av', 30], ['Elul', 29]]);
+    }
+
+    // Le jour fixe d'une date hébraïque.
+    function hebrewToFixed(y, month, day) {
+        var f = hebrewNewYear(y);
+        var months = hebrewMonths(y);
+        for (var i = 0; i < months.length; i++) {
+            if (months[i][0] === month) return f + day - 1;
+            f += months[i][1];
+        }
+        return null;
+    }
+
+    // Un jour fixe, en date grégorienne { month, day } (et l'année, pour contrôle).
+    function fixedToGregorian(f) {
+        var d = new Date((f - FIXED_UNIX_EPOCH) * 86400000);
+        return { year: d.getUTCFullYear(), month: d.getUTCMonth() + 1, day: d.getUTCDate() };
+    }
+
+    // Les fêtes juives qui tombent dans l'année grégorienne `year`. Tishri, Kislev : dans l'année hébraïque year + 3761 ; Adar, Nisan,
+    // Sivan, Av : dans year + 3760.
+    function jewishFeasts(year) {
+        return JEWISH.map(function (f) {
+            var hy = (f.month === 'Tishri' || f.month === 'Kislev') ? year + 3761 : year + 3760;
+            var month = f.month === 'Adar' && hebrewLeap(hy) ? 'AdarII' : f.month;
+            var g = fixedToGregorian(hebrewToFixed(hy, month, f.day));
+            return { month: g.month, day: g.day, year: g.year, label: f.label, sign: f.sign };
+        }).filter(function (f) { return f.year === year; });
+    }
 
     // Les journées des saints patrons des nations du Royaume-Uni (pas des fêtes nationales communes). Le drapeau est un emoji « sous-drapeau »
     // (séquence de balises) pour l'Angleterre, l'Écosse et le pays de Galles ; l'Irlande du Nord n'en a pas : son nom seul s'affiche.
@@ -93,11 +179,15 @@
     function yearDays(facts, year) {
         var days = [];
         var mobile = year ? mobileFeasts(year) : [];
+        var jewish = year ? jewishFeasts(year) : [];
         for (var m = 1; m <= 12; m++) {
             for (var d = 1; d <= DAYS_IN_MONTH[m - 1]; d++) {
-                var religious = RELIGIOUS.filter(function (r) { return r.m === m && r.d === d; }).map(function (r) { return r.label; });
+                var religious = RELIGIOUS.filter(function (r) { return r.m === m && r.d === d; }).map(function (r) { return CROSS + ' ' + r.label; });
                 mobile.forEach(function (f) {
-                    if (f.month === m && f.day === d) religious.push(f.label + ' (' + year + ')');
+                    if (f.month === m && f.day === d) religious.push(CROSS + ' ' + f.label + ' (' + year + ')');
+                });
+                jewish.forEach(function (f) {
+                    if (f.month === m && f.day === d) religious.push(f.sign + ' ' + f.label + ' (' + year + ')');
                 });
                 var countries = (facts || []).filter(function (c) {
                     return c.fete_jour && c.fete_jour[0] === m && c.fete_jour[1] === d;
@@ -118,7 +208,9 @@
     }
 
     return {
-        MONTHS: MONTHS, RELIGIOUS: RELIGIOUS, MOBILE: MOBILE, easterSunday: easterSunday, mobileFeasts: mobileFeasts,
+        MONTHS: MONTHS, RELIGIOUS: RELIGIOUS, MOBILE: MOBILE, JEWISH: JEWISH, easterSunday: easterSunday, mobileFeasts: mobileFeasts,
+        hebrewLeap: hebrewLeap, hebrewNewYear: hebrewNewYear, hebrewToFixed: hebrewToFixed, fixedToGregorian: fixedToGregorian,
+        jewishFeasts: jewishFeasts, CROSS: CROSS, STAR: STAR, MENORAH: MENORAH,
         yearDays: yearDays, dateLabel: dateLabel, monthName: monthName
     };
 }));

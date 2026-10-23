@@ -31,14 +31,16 @@ test('la fête nationale d\'un pays tombe le jour indiqué, avec son nom ; une d
 });
 
 test('les fêtes chrétiennes à date fixe, et aucune fête mobile (Pâques, Ascension, Pentecôte, mardi gras)', () => {
-    assert.deepEqual(at(12, 25).religious, ['Noël']);
-    assert.deepEqual(at(1, 6).religious, ['Épiphanie']);
-    assert.deepEqual(at(8, 15).religious, ['Assomption']);
-    assert.deepEqual(at(11, 1).religious, ['Toussaint']);
-    assert.deepEqual(at(12, 8).religious, ['Immaculée Conception']);
+    assert.deepEqual(at(12, 25).religious, ['\u271D\uFE0F Noël']);
+    assert.deepEqual(at(1, 6).religious, ['\u271D\uFE0F Épiphanie']);
+    assert.deepEqual(at(8, 15).religious, ['\u271D\uFE0F Assomption']);
+    assert.deepEqual(at(11, 1).religious, ['\u271D\uFE0F Toussaint']);
+    assert.deepEqual(at(12, 8).religious, ['\u271D\uFE0F Immaculée Conception']);
     const labels = days.flatMap(x => x.religious).join(' | ');
     ['Pâques', 'Ascension', 'Pentecôte', 'mardi gras', 'Mardi'].forEach(mot => assert.ok(!labels.includes(mot), mot));
     assert.equal(days.filter(x => x.religious.length).length, K.RELIGIOUS.length);
+    // chaque fête chrétienne porte la croix
+    days.forEach(x => x.religious.forEach(l => assert.ok(l.startsWith('\u271D\uFE0F ') || l.startsWith('\u2721\uFE0F ') || l.startsWith('\u{1F54E} '), l)));
 });
 
 test('libellés : « 1er janvier », « 14 juillet », et les noms de mois', () => {
@@ -76,13 +78,13 @@ test('avec une année, le calendrier porte les fêtes mobiles datées ; sans ann
     const avec = K.yearDays(facts, 2026);
     assert.equal(avec.length, 366);
     const paques = avec.find(x => x.month === 4 && x.day === 5);
-    assert.ok(paques.religious.includes('Pâques (2026)'));
-    assert.ok(avec.find(x => x.month === 5 && x.day === 14).religious.includes('Ascension (2026)'));
+    assert.ok(paques.religious.includes('\u271D\uFE0F Pâques (2026)'));
+    assert.ok(avec.find(x => x.month === 5 && x.day === 14).religious.includes('\u271D\uFE0F Ascension (2026)'));
     // sans année : aucune fête mobile, le calendrier ne dépend pas d'une année
     const sans = K.yearDays(facts);
     assert.ok(!sans.flatMap(x => x.religious).some(l => /Pâques|Ascension|Pentecôte|Mardi gras|Fête-Dieu/.test(l)));
     // les fêtes fixes restent présentes dans les deux cas
-    assert.deepEqual(avec.find(x => x.month === 12 && x.day === 25).religious, ['Noël']);
+    assert.deepEqual(avec.find(x => x.month === 12 && x.day === 25).religious, ['\u271D\uFE0F Noël']);
 });
 
 test('les saints patrons des nations du Royaume-Uni : à leur date, avec leur drapeau emoji quand il existe', () => {
@@ -101,4 +103,40 @@ test('le Royaume-Uni : pas de fête nationale commune, mais la note donne les qu
     const gb = facts.find(c => c.iso2 === 'GB');
     assert.equal(gb.fete, null);
     ['23 avril', '30 novembre', '1er mars', '17 mars'].forEach(j => assert.ok(gb.note.includes(j), j));
+});
+
+test('fêtes juives : le calendrier hébraïque, à la date grégorienne de l\'année (contrôles sur des années connues)', () => {
+    const at = (year, label) => K.jewishFeasts(year).find(f => f.label === label);
+    const date = f => [f.day, f.month];
+    // 2025 : Roch Hachana 23 sept, Yom Kippour 2 oct, Souccot 7 oct, Hanouka 15 déc, Pourim 14 mars, Pessa'h 13 avril,
+    // Chavouot 2 juin, Tisha B'Av 3 août
+    assert.deepEqual(date(at(2025, 'Roch Hachana')), [23, 9]);
+    assert.deepEqual(date(at(2025, 'Yom Kippour')), [2, 10]);
+    assert.deepEqual(date(at(2025, 'Souccot')), [7, 10]);
+    assert.deepEqual(date(at(2025, 'Hanouka')), [15, 12]);
+    assert.deepEqual(date(at(2025, 'Pourim')), [14, 3]);
+    assert.deepEqual(date(at(2025, 'Pessa\u2019h')), [13, 4]);
+    assert.deepEqual(date(at(2025, 'Chavouot')), [2, 6]);
+    assert.deepEqual(date(at(2025, 'Tisha B\u2019Av')), [3, 8]);
+    // Pourim en année à deux Adar (5784 : 2024), le 24 mars
+    assert.deepEqual(date(at(2024, 'Pourim')), [24, 3]);
+    assert.deepEqual(date(at(2024, 'Pessa\u2019h')), [23, 4]);
+    // 2026 : Pessa'h le 2 avril
+    assert.deepEqual(date(at(2026, 'Pessa\u2019h')), [2, 4]);
+    // chaque année donne les huit fêtes, toutes dans l'année grégorienne
+    for (let y = 1900; y < 2100; y += 7) assert.equal(K.jewishFeasts(y).length, 8, String(y));
+});
+
+test('les fêtes juives portent l\'étoile de David, sauf Hanouka qui a la ménorah', () => {
+    const days2025 = K.yearDays(facts, 2025);
+    const pourim = days2025.find(x => x.month === 3 && x.day === 14).religious.join(' | ');
+    assert.ok(pourim.includes('\u2721\uFE0F Pourim (2025)'), pourim);
+    assert.ok(days2025.find(x => x.month === 12 && x.day === 15).religious.includes('\u{1F54E} Hanouka (2025)'));
+    assert.ok(days2025.find(x => x.month === 9 && x.day === 23).religious.includes('\u2721\uFE0F Roch Hachana (2025)'));
+});
+
+test('sans année, aucune fête juive ni mobile : le calendrier reste intemporel', () => {
+    const sans = K.yearDays(facts);
+    const labels = sans.flatMap(x => x.religious).join(' | ');
+    ['Pourim', 'Hanouka', 'Roch Hachana', 'Pessa', 'Pâques'].forEach(mot => assert.ok(!labels.includes(mot), mot));
 });
