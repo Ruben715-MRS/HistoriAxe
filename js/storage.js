@@ -66,6 +66,14 @@ const DEFAULT_SETTINGS = {
     sound: true,
     haptics: true,
     notifications: true,
+    // Un réglage par type de rappel (voir js/notifications.js) ; le général ci-dessus les coiffe tous.
+    notifStreak: true,
+    notifDaily: true,
+    notifRecap: true,
+    notifReview: true,
+    notifDuel: true,
+    notifMilestone: true,
+    notifComeback: true,
     lang: 'fr',
     // Longueur d'une manche : combien d'événements une partie retient du
     // thème. 0 = le thème entier.

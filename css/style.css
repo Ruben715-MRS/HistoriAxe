@@ -93,7 +93,6 @@ body {
     flex: 1;
     display: flex;
     background-color: #E6D5B8;
-    cursor: pointer;
     justify-content: center;
     align-items: center;
     overflow: hidden;
@@ -5027,6 +5026,25 @@ textarea.form-input {
     color: #fff;
 }
 
+.notif-type-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 2px;
+    border-bottom: 1px solid var(--rule);
+    font-size: 14px;
+    color: var(--ink);
+    cursor: pointer;
+}
+
+.notif-type-row input {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    accent-color: var(--primary-blue);
+}
+
 .settings-hint {
     font-size: 12px;
     color: var(--muted-text);
@@ -5322,6 +5340,28 @@ textarea.form-input {
     color: #141d23 !important;
 }
 
+/* « Nombre de joueurs : » et son choix sur une seule ligne, pour ne pas confondre ce choix avec les champs de noms. */
+.multi-count-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 0 0 18px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.multi-count-row label {
+    text-align: left;
+    font-weight: 600;
+}
+
+.multiplayer-setup-container .multi-count-row select {
+    width: auto;
+    min-width: 130px;
+    margin: 0;
+}
+
 .multiplayer-setup-container input::placeholder {
     color: #8B93A0 !important;
     opacity: 1;
@@ -5341,6 +5381,11 @@ textarea.form-input {
     z-index: 1000;
     width: 90%;
     max-width: 400px;
+}
+
+:root[data-theme="dark"] .multi-turn-banner {
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
 }
 
 .multi-turn-banner h2 {
@@ -5409,6 +5454,11 @@ textarea.form-input {
 .timer-chip {
     background: #ecf5fe !important;
     color: #001a4b !important;
+}
+
+:root[data-theme="dark"] .timer-chip {
+    background: #17233A !important;
+    color: var(--text-dark) !important;
 }
 
 .board {
@@ -5573,14 +5623,32 @@ textarea.form-input {
     color: var(--text-dark) !important;
 }
 
-/* Champs de formulaire dans les modales et écrans de configuration (pseudo défi du jour, etc.) :
-           Gardent un fond blanc et un texte noir bien contrasté et lisible en mode sombre comme en mode clair */
+:root[data-theme="dark"] .multiplayer-setup-container {
+    background: var(--surface);
+    color: var(--text-dark);
+}
+
+:root[data-theme="dark"] .podium-row {
+    background: var(--surface-2);
+}
+
+:root[data-theme="dark"] .podium-row.gold { background: rgba(255, 215, 0, 0.14); }
+:root[data-theme="dark"] .podium-row.silver { background: rgba(192, 192, 192, 0.14); }
+:root[data-theme="dark"] .podium-row.bronze { background: rgba(205, 127, 50, 0.16); }
+
+:root[data-theme="dark"] .multiplayer-setup-container h2 {
+    color: var(--text-dark);
+}
+
+/* Champs de formulaire dans les modales et écrans de configuration (pseudo défi du jour, mode du bouton « Jouer »,
+           etc.) : en mode sombre, même fond marine que la barre de recherche, avec le texte clair du thème. */
 :root[data-theme="dark"] .form-input,
 :root[data-theme="dark"] #daily-pseudo-input,
 :root[data-theme="dark"] .multiplayer-setup-container input,
 :root[data-theme="dark"] .multiplayer-setup-container select {
-    background: #ffffff !important;
-    color: #141d23 !important;
+    background: #17233A !important;
+    border-color: #2A3B5C !important;
+    color: var(--text-dark) !important;
 }
 
 :root[data-theme="dark"] .form-input::placeholder,
@@ -6511,27 +6579,6 @@ textarea {
     outline: none;
 }
 
-/* …sauf l'accueil, qui EST le bouton « Commencer » : son anneau se dessine
-   à l'intérieur de l'écran, faute de place autour. Un contour (outline) n'y
-   suffit pas : l'image de fond et son voile sont des enfants positionnés
-   (z-index 1 et 2), peints PAR-DESSUS le contour de leur parent, qui n'y
-   laissait qu'un liseré pâle. Un pseudo-élément placé au-dessus d'eux, doublé
-   d'un filet blanc des deux côtés, reste lisible sur toute l'image. */
-#screen-home:focus-visible {
-    outline: none;
-}
-
-#screen-home:focus-visible::after {
-    content: "";
-    position: absolute;
-    inset: 12px;
-    z-index: 10;
-    border: 4px solid var(--focus-ring);
-    border-radius: 20px;
-    box-shadow: 0 0 0 3px #fff, inset 0 0 0 3px #fff;
-    pointer-events: none;
-}
-
 /* Le champ de recherche supprimait son propre contour (outline: none) sans
    rien mettre à la place : le focus y était invisible. On le rend à sa barre. */
 .search-bar:focus-within {
@@ -7243,6 +7290,8 @@ input:not([type="range"]), label, select, summary, textarea {
 
 #challenge-picker .challenge-picker-btn {
     min-width: 0;
+    justify-content: center;
+    text-align: center;
 }
 
 .portrait-day-title {
@@ -9285,6 +9334,64 @@ input:not([type="range"]), label, select, summary, textarea {
 
 .rewards-bar .rewards-shop-btn { margin-left: auto; }
 
+/* Téléphone : pièces et série se partagent la première ligne, puis quatre tuiles égales (icône au-dessus du libellé). */
+@media (max-width: 600px) {
+    .rewards-bar {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .rewards-bar .rewards-chip {
+        grid-column: span 2;
+        justify-content: center;
+    }
+
+    .rewards-bar .rewards-streak .rewards-tip {
+        left: auto;
+        right: 0;
+    }
+
+    .rewards-bar .rewards-btn {
+        flex-direction: column;
+        justify-content: center;
+        gap: 2px;
+        padding: 8px 2px;
+        border-radius: 16px;
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .rewards-bar .rewards-btn > span[aria-hidden],
+    .rewards-bar .rewards-team-badge {
+        font-size: 20px;
+        line-height: 1.1;
+    }
+
+    .rewards-bar .rewards-btn small {
+        display: block;
+        font-size: 11px;
+        line-height: 1;
+    }
+
+    .rewards-bar .rewards-btn small:empty { display: none; }
+
+    .rewards-bar .rewards-team-badge {
+        width: 22px;
+        height: 24px;
+    }
+
+    /* Le compteur de demandes d'ami reste une petite pastille, pas une barre pleine largeur. */
+    .rewards-bar .rewards-friends-btn small:not(:empty) {
+        display: inline-block;
+        align-self: center;
+        padding: 1px 6px;
+    }
+
+    .rewards-bar .rewards-shop-btn { margin-left: 0; }
+}
+
 .path-rewards {
     width: 100%;
     max-width: 420px;
@@ -10081,10 +10188,13 @@ input:not([type="range"]), label, select, summary, textarea {
 }
 
 .arcade-start {
+    /* Centré sans `transform` : `.btn:active` pose `transform: scale(0.96) !important`, qui écraserait un translate(-50%, -50%) et ferait
+       sauter le bouton vers le bas-droite sous le doigt, avant que le clic n'ait lieu. */
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    inset: 0;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
     min-width: 140px;
 }
 
@@ -12257,4 +12367,10 @@ input:not([type="range"]), label, select, summary, textarea {
     .ranks-fill {
         transition: none;
     }
+}
+
+.tool-countries-play {
+    display: block;
+    width: 100%;
+    margin: 12px 0;
 }

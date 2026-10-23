@@ -484,7 +484,16 @@
     "pack_installed": "✨ Pack {name} installé et prêt hors-ligne !",
     "pack_download_failed": "⚠️ Échec du téléchargement du pack {lang}.",
     "pack_cannot_delete": "⚠️ Le pack Français de base ne peut pas être supprimé.",
-    "pack_deleted": "🗑️ Pack {name} supprimé."
+    "pack_deleted": "🗑️ Pack {name} supprimé.",
+    "notif_types_label": "Quelles notifications ?",
+    "notif_type_streak": "Série en danger (20 h)",
+    "notif_type_daily": "Défi du jour disponible (9 h)",
+    "notif_type_recap": "Récap hebdomadaire (dimanche, 19 h)",
+    "notif_type_review": "Événements à réviser",
+    "notif_type_duel": "Rappel de duel",
+    "notif_type_milestone": "Palier de série atteignable demain",
+    "notif_type_comeback": "Retour après quelques jours d'absence",
+    "notif_types_hint": "Décoche les rappels que tu ne veux pas recevoir."
   },
   "anecdote": {
     "did_you_know": "💡 Le Saviez-vous ?",
@@ -566,14 +575,28 @@
   },
   "onboarding": {
     "welcome_title": "👋 Bienvenue dans HistoriAxe !",
-    "welcome_text": "Découvre comment progresser en 3 minutes : une ou deux bulles d'aide vont s'afficher pendant que tu explores. Touche l'écran pour commencer.",
+    "welcome_text": "Remets des événements dans l'ordre, retrouve des dates, explore des cartes et des portraits… Un tour rapide en quelques bulles, à passer quand tu veux.",
     "lets_go_btn": "C'est parti",
-    "daily_title": "🎯 Le Défi du jour",
-    "daily_text": "10 événements à remettre dans l'ordre, en 2 minutes chrono : la façon la plus simple de commencer, et le point de départ de ta série quotidienne 🔥. Tu peux aussi explorer une catégorie ci-dessous.",
-    "modes_title": "🧭 Le mode Découverte",
-    "modes_text": "Parfait pour débuter : consulte la frise chronologique sans aucune pression, aucune vie en jeu. Une fois à l'aise, essaie le mode Classique !",
+    "path_title": "🛤️ Le Chemin du Temps",
+    "path_text": "Le parcours guidé : 21 mondes, de la Préhistoire à nos jours, niveau après niveau. Chaque niveau rapporte jusqu'à 3 étoiles ★ et des pièces 🪙. Commence par le Monde 0, qui sert de tutoriel.",
+    "rewards_title": "🪙 Pièces, album et amis",
+    "rewards_text": "Tes pièces 🪙 et ta série de victoires ⚡ ; la Boutique pour les dépenser ; l'Album de cartes à collectionner ; tes Amis, pour se défier ; et l'Équipe, le coffre commun d'une classe.",
+    "daily_title": "🎯 Les Défis",
+    "daily_text": "Le Défi du jour : 10 événements à remettre dans l'ordre, en 2 minutes chrono. C'est le point de départ de ta série quotidienne 🔥. Il y a aussi un Défi hebdomadaire et un Défi de simultanéité, avec classement.",
+    "revise_title": "🧠 Réviser",
+    "revise_text": "Le jeu retient tes erreurs et te les repropose au bon moment (répétition espacée). Le chiffre entre parenthèses, c'est le nombre d'événements à revoir aujourd'hui.",
+    "more_title": "🕹️ Et aussi…",
+    "more_text": "La Salle de jeux (arcade : Tetris des siècles, Snake, Pac-Man…), la Boîte à outils (convertisseurs, calculateur de durées, cartes historiques) et l'Atlas, qui place tous les événements sur une carte.",
+    "profile_title": "🏆 Ton profil",
+    "profile_text": "En haut : tes trophées et ton grade 🏆, la ligue de la semaine 🥇 et les réglages ⚙ (c'est là que tu peux revoir ce tutoriel). Cherche un thème dans la barre de recherche, ou ouvre une catégorie plus bas.",
+    "path_screen_title": "🗺️ La carte des mondes",
+    "path_screen_text": "Touche un monde pour ouvrir ses niveaux. Un niveau enchaîne plusieurs épreuves ; réussis-le pour débloquer le suivant. Le Monde 0 explique comment les historiens découpent le temps : tu peux le passer si tu le connais déjà.",
+    "modes_play_title": "▶ Jouer",
+    "modes_play_text": "Un seul tap pour lancer ta partie favorite (Classique au départ). Tu peux changer ce mode dans les Réglages.",
+    "modes_title": "🧭 Tous les modes",
+    "modes_text": "En dessous : la frise (Entraînement, Classique…), des défis express (Quiz, Blitz, Curseur…) et des modes pour explorer. Pour débuter, essaie Découverte : la frise sans aucune pression, sans vie en jeu.",
     "first_xp_title": "🔥 Bravo, tu as gagné de l'XP !",
-    "first_xp_text": "Reviens chaque jour jouer le Défi du jour pour garder ta série : plus elle dure longtemps, plus l'XP que tu gagnes est multiplié (visible en haut de l'écran d'accueil). Un seul jour manqué, et tout repart à zéro.",
+    "first_xp_text": "Reviens chaque jour jouer le Défi du jour pour garder ta série : plus elle dure longtemps, plus l'XP que tu gagnes est multiplié (visible en haut du menu). Un seul jour manqué, et tout repart à zéro.",
     "skip_label": "Passer le tutoriel",
     "next_label": "Suivant",
     "got_it_label": "Compris !"
@@ -657,7 +680,13 @@
     "recap_body": "Découvre ton XP gagné, tes défis relevés et tes thèmes maîtrisés cette semaine.",
     "duel_title": "⚔️ Ton duel t'attend",
     "duel_body": "Viens voir si ton ami a relevé ton défi — et si tu as été dépassé.",
-    "streak_reminder_fallback": "Le Défi du jour t'attend : 2 minutes pour lancer ta série 🔥."
+    "streak_reminder_fallback": "Le Défi du jour t'attend : 2 minutes pour lancer ta série 🔥.",
+    "milestone_title": "🏅 Plus qu'un jour !",
+    "milestone_body": "Joue demain pour atteindre {goal} jours de série d'affilée.",
+    "comeback3_title": "🌍 L'Histoire t'attend",
+    "comeback3_body": "Ça fait trois jours. Une partie de cinq minutes suffit pour reprendre le fil.",
+    "comeback7_title": "📜 Une semaine sans toi",
+    "comeback7_body": "Reviens quand tu veux : ta progression et tes révisions sont toujours là."
   },
   "scoring": {
     "title": "Comment sont calculés les points ?",
@@ -2161,6 +2190,7 @@
     "history_map_of": "carte de {year} : {label}",
     "history_active_many": "En {year} : {n} empires ou civilisations",
     "history_active_one": "En {year} : un empire ou une civilisation",
-    "history_entity_label": "Empire ou civilisation"
+    "history_entity_label": "Empire ou civilisation",
+    "countries_play": "Jouer sur {theme}"
   }
 }

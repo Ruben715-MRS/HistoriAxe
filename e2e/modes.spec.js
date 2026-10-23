@@ -237,7 +237,6 @@ test('le mode choisi dans les Réglages est celui du bouton « Jouer », et il e
     await page.waitForFunction(() => window.bdd && window.bdd.some(c => !c.isCustomCategory));
     expect(await page.evaluate(() => JSON.parse(localStorage.getItem('historiaxe_settings')).playMode)).toBe('quiz');
 
-    await page.locator('#screen-home').click();
     await openThemeModes(page, THEME);
     await page.locator('#btn-modes-play').click();
     await expect(page.locator('#screen-quiz')).toBeVisible();

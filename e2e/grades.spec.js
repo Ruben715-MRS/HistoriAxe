@@ -28,6 +28,8 @@ test('ouvre la colonne depuis le profil : 10 grades, le grade actuel signalé, l
     const h = await remplissage(page);
     expect(h).toBeGreaterThan(250);
     expect(h).toBeLessThan(350);
+    // Le dernier grade reste « Niv. 10 » tant qu'il n'est pas atteint.
+    await expect(page.locator('.ranks-row').first().locator('small')).toHaveText('Niv. 10');
 });
 
 test('au début la ligne est basse ; au sommet elle remplit toute la colonne', async ({ page }) => {

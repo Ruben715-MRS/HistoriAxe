@@ -95,7 +95,9 @@ window.onload = async () => {
         } catch (e) { }
     }
 
-    showScreen('screen-home');
+    // L'écran d'accueil n'est qu'un écran de chargement (visible dès l'ouverture de la page) :
+    // une fois tout prêt, on passe définitivement au menu principal, sans retour possible.
+    showScreen('screen-categories', 'fade');
 
     // Hors-ligne : les fiches d'un pack découpé (js/pack.js) arrivent à la demande ; on réchauffe
     // le cache en arrière-plan pour qu'elles restent lisibles sans réseau. Jamais sur données
