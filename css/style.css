@@ -5996,20 +5996,6 @@ body {
     user-select: none;
     -webkit-touch-callout: none;
 }
-
-/* Bandeau marine sous la barre d'état : le contenu s'étend en plein écran, sous l'heure. */
-.native-app body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: var(--sat);
-    background: #001a4b;
-    pointer-events: none;
-    z-index: 10000;
-}
-
 input,
 textarea {
     -webkit-user-select: auto;

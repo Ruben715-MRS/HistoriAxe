@@ -35,9 +35,9 @@ const config: CapacitorConfig = {
       splashImmersive: true
     },
     StatusBar: {
-      // Le contenu passe sous la barre d'état (plein écran). Le bandeau marine du haut
-      // est alors dessiné en CSS (css/style.css, adaptations natives iOS).
-      style: 'DARK',
+      // Le contenu passe sous la barre d'état (plein écran) : le fond de la page apparaît
+      // derrière l'heure. DEFAULT suit le mode clair ou sombre de l'iPhone.
+      style: 'DEFAULT',
       overlaysWebView: true
     },
     Haptics: {

@@ -7,7 +7,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // Fond de la fenêtre : même couleur que l'app (#F2F4F7), pour qu'aucune bande
+        // blanche n'apparaisse sous l'indicateur de l'écran d'accueil.
+        UIWindow.appearance().backgroundColor = UIColor(red: 242 / 255, green: 244 / 255, blue: 247 / 255, alpha: 1)
         return true
     }
 
