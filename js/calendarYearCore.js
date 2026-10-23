@@ -162,13 +162,27 @@
         }).filter(function (f) { return f.year === year; });
     }
 
-    // Yom Haatzmaut, fête nationale d'Israël : le 5 iyar, célébrée depuis 1949. Quand le 5 iyar tombe un jour où l'on ne fête pas (le
-    // shabbat notamment), Israël avance ou recule la célébration officielle ; le calendrier affiche le 5 iyar, la date de la fête.
+    // Yom Haatzmaut, fête nationale d'Israël : le 5 iyar, célébrée depuis 1949. Règle de la célébration : quand le 5 iyar tombe un vendredi
+    // ou un samedi (jour de shabbat), la fête est avancée au jeudi précédent (2025 : le 5 iyar était un samedi, 3 mai ; la fête a été
+    // célébrée le jeudi 1er mai). Les autres jours ne sont pas déplacés. `israelIndependenceDay` renvoie le 5 iyar ;
+    // `israelCelebrationDay` la date de la célébration.
     var ISRAEL_FIRST_YEAR = 1949;
     function israelIndependenceDay(year) {
         if (year < ISRAEL_FIRST_YEAR) return null;
         var g = fixedToGregorian(hebrewToFixed(year + 3760, 'Iyar', 5));
         return g.year === year ? g : null;
+    }
+    function israelCelebrationDay(year) {
+        var g = israelIndependenceDay(year);
+        if (!g) return null;
+        var weekday = new Date(Date.UTC(g.year, g.month - 1, g.day)).getUTCDay();   // 0 = dimanche, 5 = vendredi, 6 = samedi
+        if (weekday === 5) return addDays(g, -1);   // vendredi -> jeudi
+        if (weekday === 6) return addDays(g, -2);   // samedi -> jeudi
+        return g;
+    }
+    function addDays(g, n) {
+        var d = new Date(Date.UTC(g.year, g.month - 1, g.day) + n * 86400000);
+        return { year: d.getUTCFullYear(), month: d.getUTCMonth() + 1, day: d.getUTCDate() };
     }
 
     // Les journées des saints patrons des nations du Royaume-Uni (pas des fêtes nationales communes). Le drapeau est un emoji « sous-drapeau »
@@ -241,7 +255,7 @@
                     return c.fete_jour && c.fete_jour[0] === m && c.fete_jour[1] === d;
                 }).map(function (c) { return { n: c.n, iso2: c.iso2 }; });
                 if (year) {
-                    var israel = israelIndependenceDay(year);
+                    var israel = israelCelebrationDay(year);
                     if (israel && israel.month === m && israel.day === d) countries.push({ n: 'Israël', iso2: 'IL', year: year });
                 }
                 NATIONS.forEach(function (x) {
@@ -262,7 +276,7 @@
     return {
         MONTHS: MONTHS, RELIGIOUS: RELIGIOUS, MOBILE: MOBILE, JEWISH: JEWISH, easterSunday: easterSunday, mobileFeasts: mobileFeasts,
         hebrewLeap: hebrewLeap, hebrewNewYear: hebrewNewYear, hebrewToFixed: hebrewToFixed, fixedToGregorian: fixedToGregorian,
-        jewishFeasts: jewishFeasts, islamicFeasts: islamicFeasts, islamicToFixed: islamicToFixed, CRESCENT: CRESCENT, israelIndependenceDay: israelIndependenceDay, CROSS: CROSS, STAR: STAR, MENORAH: MENORAH,
+        jewishFeasts: jewishFeasts, islamicFeasts: islamicFeasts, israelCelebrationDay: israelCelebrationDay, islamicToFixed: islamicToFixed, CRESCENT: CRESCENT, israelIndependenceDay: israelIndependenceDay, CROSS: CROSS, STAR: STAR, MENORAH: MENORAH,
         yearDays: yearDays, dateLabel: dateLabel, monthName: monthName
     };
 }));

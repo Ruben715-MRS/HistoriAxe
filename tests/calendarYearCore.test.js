@@ -180,3 +180,22 @@ test('les fêtes musulmanes portent le croissant ☪️ ; sans année, elles n\'
     const sans = K.yearDays(facts).flatMap(x => x.religious).join(' | ');
     assert.ok(!sans.includes('ramadan') && !sans.includes('Aïd'));
 });
+
+test('Yom Haatzmaut : célébrée le 5 iyar, avancée au jeudi quand le 5 iyar tombe un vendredi ou un samedi', () => {
+    const wd = g => new Date(Date.UTC(g.year, g.month - 1, g.day)).getUTCDay();
+    // 2025 : 5 iyar samedi 3 mai, célébration jeudi 1er mai
+    assert.deepEqual([K.israelCelebrationDay(2025).day, K.israelCelebrationDay(2025).month], [1, 5]);
+    // 2026 : 5 iyar mercredi 22 avril, pas de décalage
+    assert.deepEqual([K.israelCelebrationDay(2026).day, K.israelCelebrationDay(2026).month], [22, 4]);
+    let shifted = 0;
+    for (let y = 1949; y <= 2100; y++) {
+        const c = K.israelCelebrationDay(y), i = K.israelIndependenceDay(y);
+        assert.notEqual(wd(c), 5, 'jamais un vendredi ' + y);
+        assert.notEqual(wd(c), 6, 'jamais un samedi ' + y);
+        if (wd(i) === 5 || wd(i) === 6) { assert.equal(wd(c), 4, 'un jeudi ' + y); shifted++; }
+        else assert.deepEqual(c, i, 'pas de décalage ' + y);
+    }
+    assert.ok(shifted > 50);
+    // l'Israël du calendrier est à la date de la célébration
+    assert.equal(K.yearDays(facts, 2025).find(x => x.month === 5 && x.day === 1).countries.find(c => c.iso2 === 'IL').n, 'Israël');
+});
