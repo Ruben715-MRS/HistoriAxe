@@ -1291,6 +1291,10 @@
                 <span class="arcade-card-icon" aria-hidden="true">🗺️</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.history_title"></strong><small data-i18n="tools.history_desc"></small></span>
             </button>
+            <button type="button" class="arcade-card" onclick="openTool('calendar', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">🗓️</span>
+                <span class="arcade-card-text"><strong data-i18n="tools.calendar_title"></strong><small data-i18n="tools.calendar_desc"></small></span>
+            </button>
         </div>
     </div>
 
@@ -1486,6 +1490,15 @@
             <div class="tool-result tool-countries-fiche" id="tool-countries-fiche" role="region" aria-live="polite" aria-label="Fiche du pays" data-i18n-attr="aria-label:tools.countries_fiche_label"></div>
             <button type="button" class="btn tool-countries-another hidden" id="tool-countries-another" onclick="discoverAnotherCountry()" data-i18n="tools.countries_another">Un autre pays</button>
         </div>
+    </div>
+
+    <div id="screen-tool-calendar" class="list-screen hidden">
+        <button class="back-btn" onclick="toolBack('calendar')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="tools.calendar_title">Calendrier annuel</h2>
+        <p class="modes-header-subtitle" data-i18n="tools.calendar_intro">Du 1er janvier au 31 décembre. Touchez un mois pour y aller directement.</p>
+        <nav class="cal-months" id="cal-months" aria-label="Aller à un mois" data-i18n-attr="aria-label:tools.calendar_months_aria"></nav>
+        <p class="tool-msg" id="cal-status" role="status"></p>
+        <div class="cal-year" id="cal-year"></div>
     </div>
 
     <div id="screen-tool-history" class="list-screen hidden">
@@ -3164,8 +3177,10 @@
     <script src="js/periodSystems.js"></script>
     <script src="js/toolsCore.js"></script>
     <script src="js/countriesCore.js"></script>
+    <script src="js/calendarYearCore.js"></script>
     <script src="js/app/tools.js"></script>
     <script src="js/app/countries.js"></script>
+    <script src="js/app/calendar.js"></script>
     <script src="js/historyMapsCore.js"></script>
     <script src="js/app/history-maps.js"></script>
     <script src="js/app/rewards.js"></script>

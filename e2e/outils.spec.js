@@ -18,10 +18,10 @@ async function ouvrir(page, texte) {
     await page.locator('#screen-tools .arcade-card', { hasText: texte }).click();
 }
 
-test('la boîte à outils s\'ouvre depuis les catégories, propose huit outils et revient', async ({ page }) => {
+test('la boîte à outils s\'ouvre depuis les catégories, propose neuf outils et revient', async ({ page }) => {
     await page.locator('#btn-tools').click();
     expect(await visibleScreen(page)).toBe('screen-tools');
-    await expect(page.locator('#screen-tools .arcade-card')).toHaveCount(8);
+    await expect(page.locator('#screen-tools .arcade-card')).toHaveCount(9);
     await page.locator('#screen-tools .arcade-card', { hasText: 'Chiffres romains' }).click();
     expect(await visibleScreen(page)).toBe('screen-tool-roman');
     await page.locator('#screen-tool-roman .back-btn').click();
@@ -272,6 +272,27 @@ test('Découvrir › Pays : le 14 juillet, la France d\'abord, avec la bannière
     await expect(page.locator('.tool-countries-festive')).toContainText("Fête nationale aujourd'hui");
     await page.locator('#tool-countries-another').click();
     await expect(page.locator('.tool-countries-festive')).toHaveCount(0);
+});
+
+test('calendrier annuel : la liste part du 1er janvier, une fête nationale et une fête chrétienne à leur date, la barre de mois y mène', async ({ page }) => {
+    await page.waitForFunction(() => window.bdd && window.bdd.some(c => (c.themes || []).some(t => t.id === 'thm_aut')), null, { timeout: 45_000 });
+    await ouvrir(page, 'Calendrier annuel');
+    expect(await visibleScreen(page)).toBe('screen-tool-calendar');
+    const annee = page.locator('#cal-year');
+    await expect(annee.locator('.cal-month')).toHaveCount(12);
+    await expect(annee.locator('.cal-row')).toHaveCount(366);
+    await expect(annee.locator('.cal-row').first().locator('.cal-date')).toHaveText('1er janvier');
+    // le 14 juillet : la France, avec son drapeau
+    const quatorze = annee.locator('.cal-row', { has: page.locator('.cal-date', { hasText: /^14 juillet$/ }) });
+    await expect(quatorze.locator('.cal-country')).toHaveText('🇫🇷 France');
+    // le 25 décembre : Noël, sans pays
+    const noel = annee.locator('.cal-row', { has: page.locator('.cal-date', { hasText: /^25 décembre$/ }) });
+    await expect(noel.locator('.cal-religious')).toHaveText('Noël');
+    // le 29 février existe
+    await expect(annee.locator('.cal-date', { hasText: /^29 février$/ })).toHaveCount(1);
+    // la barre de mois : Octobre mène au titre d'Octobre, en haut de l'écran
+    await page.locator('#cal-months .cal-month-btn', { hasText: 'Octobre' }).click();
+    await expect.poll(async () => page.evaluate(() => Math.round(document.getElementById('cal-month-10').getBoundingClientRect().top))).toBeLessThan(200);
 });
 
 test('atlas des pays : une capitale se cherche aussi, et un statut contesté est dit', async ({ page }) => {

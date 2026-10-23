@@ -12972,3 +12972,115 @@ input:not([type="range"]), label, select, summary, textarea {
     width: 100%;
     margin: 16px 0 8px;
 }
+
+/* Le calendrier annuel : une liste de 366 jours, des mois en titres, une barre pour aller à un mois ; en colonnes sur grand écran. */
+.cal-months {
+    display: flex;
+    flex: 0 0 auto;   /* l'écran est en flex : sans cela la barre s'écrase et ses boutons disparaissent */
+    gap: 8px;
+    overflow-x: auto;
+    padding: 4px 2px 12px;
+    margin: 0 auto;
+    max-width: 720px;
+    scrollbar-width: none;
+}
+
+.cal-months::-webkit-scrollbar {
+    display: none;
+}
+
+.cal-month-btn {
+    flex: 0 0 auto;
+    padding: 8px 14px;
+    border-radius: 9999px;
+    border: 1px solid var(--border-soft);
+    background: var(--surface);
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.cal-year {
+    max-width: 720px;
+    margin: 0 auto;
+    padding-bottom: 32px;
+}
+
+.cal-month {
+    margin-bottom: 18px;
+}
+
+.cal-month-title {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    margin: 0 0 6px;
+    padding: 8px 4px;
+    font-size: 18px;
+    background: var(--bg-color);
+    color: var(--text-dark);
+}
+
+.cal-row {
+    display: flex;
+    gap: 14px;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border-soft);
+    align-items: baseline;
+}
+
+.cal-row.is-empty .cal-date {
+    color: var(--muted-text);
+    font-weight: 400;
+}
+
+.cal-row.is-today {
+    background: #fff4d6;
+    border-radius: 10px;
+}
+
+[data-theme="dark"] .cal-row.is-today {
+    background: #3d3316;
+}
+
+.cal-date {
+    flex: 0 0 104px;
+    font-weight: 700;
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
+.cal-feasts {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+    font-size: 14px;
+}
+
+.cal-country {
+    color: var(--text-dark);
+}
+
+.cal-religious {
+    color: var(--muted-text);
+    font-style: italic;
+}
+
+/* Grand écran : les mois en trois colonnes, pour voir l'année d'un coup d'œil. */
+@media (min-width: 900px) {
+    .cal-year {
+        max-width: 1100px;
+        columns: 3;
+        column-gap: 28px;
+    }
+
+    .cal-month {
+        break-inside: avoid;
+    }
+
+    .cal-months {
+        max-width: 1100px;
+    }
+}
