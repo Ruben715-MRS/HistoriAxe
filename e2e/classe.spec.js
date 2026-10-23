@@ -56,6 +56,7 @@ test('enseignant : réglage, salon avec le code, départ, séance en direct, bil
     // Départ, puis la séance en direct : l'enseignant voit toute la classe.
     etat.courant = { code: 'ABC234', status: 'running', total: 9, isTeacher: true, playerCount: 2,
         players: [{ rank: 1, name: 'Léa', score: 540, answered: 6, correct: 6, finished: false }, { rank: 2, name: 'Hugo', score: 210, answered: 9, correct: 4, finished: true }],
+        totals: { correct: 10, wrong: 5 },
         recap: [{ eventId: ids[1], answered: 2, wrong: 2 }, { eventId: ids[2], answered: 2, wrong: 0 }] };
     await page.locator('#class-start-btn').click();
     await expect(page.locator('#class-panel-live')).toBeVisible();
@@ -63,6 +64,14 @@ test('enseignant : réglage, salon avec le code, départ, séance en direct, bil
     await expect(page.locator('#class-board .class-row').first()).toContainText('Léa');
     await expect(page.locator('#class-end-btn')).toBeVisible();
     expect(appels.some(a => a.action === 'start' && a.code === 'ABC234')).toBe(true);
+    // La part de fautes de chaque élève se voit en rouge ; la barre de toute la classe indique 67 % de réussite.
+    const rougeHugo = await page.locator('#class-board .class-row').nth(1).locator('.class-progress-bad').evaluate(el => el.style.width);
+    expect(parseFloat(rougeHugo)).toBeGreaterThan(0);
+    const rougeLea = await page.locator('#class-board .class-row').first().locator('.class-progress-bad').evaluate(el => el.style.width);
+    expect(parseFloat(rougeLea)).toBe(0);
+    await expect(page.locator('#class-meter')).toBeVisible();
+    await expect(page.locator('#class-meter .class-meter-pct b')).toHaveText('67 %');
+    await expect(page.locator('#class-podium')).toBeHidden();
     // Le bilan s'affiche à l'enseignant dès que ça se joue : la carte la plus ratée, avec son titre.
     await expect(page.locator('#class-recap')).toBeVisible();
     await expect(page.locator('#class-recap-list li')).toHaveCount(1);
@@ -77,6 +86,12 @@ test('enseignant : réglage, salon avec le code, départ, séance en direct, bil
     await expect(page.locator('#class-live-status')).toHaveText('Séance terminée.');
     await expect(page.locator('#class-end-btn')).toBeHidden();
     await expect(page.locator('#class-again-btn')).toBeVisible();
+    // Le podium monte à la fin de la séance : Léa première, Hugo deuxième.
+    await expect(page.locator('#class-podium')).toBeVisible();
+    await expect(page.locator('#class-podium .class-podium-place')).toHaveCount(2);
+    await expect(page.locator('#class-podium .place-1 .class-podium-name')).toHaveText('Léa');
+    await expect(page.locator('#class-podium .place-2 .class-podium-name')).toHaveText('Hugo');
+    await expect.poll(() => page.locator('#class-podium .place-1 .class-podium-step').evaluate(el => el.offsetHeight), { timeout: 4000 }).toBeGreaterThan(100);
 });
 
 test('élève : rejoint, attend, joue le paquet de l\'enseignant sans élimination, voit son rang puis le bilan', async ({ page }) => {

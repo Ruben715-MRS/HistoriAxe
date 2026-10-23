@@ -108,6 +108,7 @@ function renderQuizQuestion() {
     document.getElementById('quiz-hud-count').innerText = `${quizIndex + 1} / ${quizQuestions.length}`;
     const pct = Math.round(quizIndex / quizQuestions.length * 100);
     document.getElementById('quiz-progress-fill').style.width = pct + '%';
+    animateQuestionIn('screen-quiz');
     updateQuizHUD();
 }
 

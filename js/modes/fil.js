@@ -53,6 +53,7 @@ function renderFilQuestion() {
     document.getElementById('fil-hud-count').innerText = `${filIndex + 1} / ${filEvents.length}`;
     const pct = Math.round(filIndex / filEvents.length * 100);
     document.getElementById('fil-progress-fill').style.width = pct + '%';
+    animateQuestionIn('screen-fil');
     updateFilHUD();
 }
 

@@ -1919,7 +1919,7 @@ textarea.form-input {
 }
 
 .entry-reveal {
-    animation: flag 1.4s ease-out;
+    animation: entryArrive 0.5s var(--ease-out) backwards, flag 1.4s ease-out;
 }
 
 /* Navigation catégories → sous-catégories → thèmes → axes thématiques → modes de jeu :
@@ -3486,6 +3486,90 @@ textarea.form-input {
     cursor: default;
 }
 
+/* « Trouve l'écart » et « Le fil du temps » : tout tient dans l'écran, pavé numérique et « Valider » compris. La zone des deux événements prend la
+   hauteur laissée libre par le reste ; quand le message (plus / moins / écart réel) apparaît, elle rétrécit d'autant, si bien
+   que l'affichage, les touches et « Valider » ne bougent jamais. */
+#screen-ecart,
+#screen-fil {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+#screen-ecart .fil-body,
+#screen-fil .fil-body {
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 16px 14px;
+    overflow-y: auto;
+}
+
+.fil-top {
+    flex: 1 1 auto;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#screen-ecart .fil-question-card,
+#screen-fil .fil-question-card {
+    flex: 1 1 0;
+    min-height: 0;
+    margin: 0;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#screen-ecart .fil-kicker,
+#screen-fil .fil-kicker { margin-bottom: 6px; }
+
+#screen-ecart .ecart-pair,
+#screen-fil .ecart-pair { margin-top: 6px; }
+
+#screen-ecart .fil-answer-badge,
+#screen-fil .fil-answer-badge {
+    flex: none;
+    margin: 0 auto;
+    padding: 8px 16px;
+    max-width: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#screen-ecart .fil-display,
+#screen-fil .fil-display { margin-bottom: 0; }
+
+#screen-ecart .fil-display-value,
+#screen-fil .fil-display-value { padding: 10px; }
+
+#screen-ecart .fil-keypad,
+#screen-fil .fil-keypad {
+    gap: 8px;
+    margin-bottom: 0;
+}
+
+#screen-ecart .fil-key,
+#screen-fil .fil-key { padding: 11px 0; }
+
+#screen-ecart .fil-validate-btn,
+#screen-fil .fil-validate-btn { flex: none; padding: 14px 0; }
+
+/* Message affiché : la consigne cède la place, les deux événements restent lisibles. */
+@supports selector(:has(*)) {
+    .fil-top:has(.fil-answer-badge:not(.hidden)) .fil-kicker { display: none; }
+    .fil-top:has(.fil-answer-badge:not(.hidden)) .ecart-pair-event { font-size: 15px; }
+    .fil-top:has(.fil-answer-badge:not(.hidden)) .fil-prompt { font-size: 17px; }
+}
+
 #screen-end {
     flex: 1;
     display: flex;
@@ -3884,7 +3968,7 @@ textarea.form-input {
 }
 
 .entry-correct-pulse {
-    animation: correctPulse 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: entryLand 0.62s var(--ease-out) backwards;
 }
 
 /* Pulse bonne/mauvaise réponse sur les boutons de choix des modes Quiz,
@@ -4014,7 +4098,7 @@ textarea.form-input {
 }
 
 .stagger-in {
-    animation: staggerIn 0.36s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation: staggerIn 0.36s cubic-bezier(0.16, 1, 0.3, 1) backwards;
     animation-delay: calc(var(--stagger-i, 0) * 45ms);
 }
 
@@ -5035,13 +5119,13 @@ textarea.form-input {
     border-bottom: 1px solid var(--rule);
     font-size: 14px;
     color: var(--ink);
-    cursor: pointer;
 }
 
 .notif-type-row input {
     width: 20px;
     height: 20px;
     flex-shrink: 0;
+    cursor: pointer;
     accent-color: var(--primary-blue);
 }
 
@@ -7554,18 +7638,18 @@ input:not([type="range"]), label, select, summary, textarea {
     border-left: 10px solid var(--flow-axis);
 }
 
-/* --- Axe thématique : liseré de couleur plutôt qu'étiquette. ---
+/* --- Axe thématique : liseré de couleur plutôt qu'étiquette, sur tous les écrans et dans toutes les orientations. ---
    L'étiquette (2 à 3 lignes de texte sous chaque carte) coûtait presque une
    ligne de frise par écran. La carte porte à la place un liseré de la couleur
    de l'axe — celle de la légende, quand il y en a une (Découverte) ; en
    partie, l'étiquette reste mais tient sur une seule ligne (nom complet dans
    l'infobulle). */
-[data-layout="horizontal"][data-landscape-multi] .entry[data-axis] .entry-title {
+.entry[data-axis] .entry-title {
     box-shadow: inset 0 5px 0 var(--axis-c), 0px 10px 30px rgba(0, 26, 75, 0.05) !important;
     padding-top: 14px !important;
 }
 
-[data-layout="horizontal"][data-landscape-multi] .entry .entry-axe-badge {
+.entry .entry-axe-badge {
     display: block;
     box-sizing: border-box;
     max-width: 100%;
@@ -7576,7 +7660,7 @@ input:not([type="range"]), label, select, summary, textarea {
 
 /* Avec la légende à l'écran, l'étiquette n'est plus visible mais reste lue
    par les lecteurs d'écran. */
-[data-layout="horizontal"][data-landscape-multi] .axes-legend-visible .entry .entry-axe-badge {
+.axes-legend-visible .entry .entry-axe-badge {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -8759,11 +8843,158 @@ input:not([type="range"]), label, select, summary, textarea {
     overflow: hidden;
 }
 
-.class-progress-fill {
+.class-progress {
+    display: flex;
+}
+
+.class-progress-fill,
+.class-progress-bad {
     display: block;
     height: 100%;
-    background: var(--progress-green);
+    flex: none;
     transition: width 0.4s;
+}
+
+.class-progress-fill { background: var(--progress-green); }
+
+.class-progress-bad { background: var(--danger-red); }
+
+/* La grande barre de toute la classe : vert depuis la gauche, rouge depuis la droite, le taux de réussite au centre. */
+.class-meter {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 26px 0;
+}
+
+.class-meter-bar {
+    position: relative;
+    flex: 1;
+    height: 26px;
+    border-radius: 999px;
+    background: var(--border-soft);
+    overflow: hidden;
+}
+
+.class-meter-good,
+.class-meter-bad {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    transition: width 0.6s;
+}
+
+.class-meter-good { left: 0; background: var(--progress-green); }
+
+.class-meter-bad { right: 0; background: var(--danger-red); }
+
+.class-meter-pct {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 3px solid var(--border-soft);
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.1;
+}
+
+.class-meter-pct b { font-size: 18px; }
+
+.class-meter-pct small {
+    font-size: 10px;
+    color: var(--muted-text);
+}
+
+/* Le podium de fin de séance : les marches montent l'une après l'autre (3e, 2e, puis 1er). */
+.class-podium {
+    padding: 8px 0 0;
+    text-align: center;
+}
+
+.class-podium-title {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 14px;
+}
+
+.class-podium-stage {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 6px;
+    min-height: 230px;
+}
+
+.class-podium-place {
+    flex: 1;
+    max-width: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    opacity: 0;
+    animation: class-podium-in 0.4s ease-out forwards;
+    animation-delay: var(--delay, 0s);
+}
+
+.class-podium-name {
+    align-self: center;
+    max-width: 100%;
+    padding: 4px 10px;
+    border-radius: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.class-podium-step {
+    height: 0;
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding-top: 10px;
+    color: #fff;
+    font-weight: 800;
+    overflow: hidden;
+    animation: class-podium-rise 0.9s cubic-bezier(.2, .8, .2, 1) forwards;
+    animation-delay: var(--delay, 0s);
+}
+
+.class-podium-medal { font-size: 30px; }
+
+.class-podium-score { font-size: 14px; font-variant-numeric: tabular-nums; }
+
+.class-podium-place.place-1 .class-podium-step { background: linear-gradient(#e6b422, #b8860b); --h: 150px; }
+.class-podium-place.place-2 .class-podium-step { background: linear-gradient(#aab2bd, #7d8794); --h: 110px; }
+.class-podium-place.place-3 .class-podium-step { background: linear-gradient(#cd7f32, #8c5a24); --h: 80px; }
+
+@keyframes class-podium-in {
+    to { opacity: 1; }
+}
+
+@keyframes class-podium-rise {
+    to { height: var(--h); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .class-podium-place,
+    .class-podium-step {
+        animation-duration: 0.01s;
+        animation-delay: 0s;
+    }
 }
 
 .class-score {
@@ -12372,4 +12603,327 @@ input:not([type="range"]), label, select, summary, textarea {
     display: block;
     width: 100%;
     margin: 12px 0;
+}
+
+/* =====================================================================
+   MOUVEMENT — apparitions et transitions partagées (js/app/motion.js)
+   Un seul tempérament pour toute l'app : les choses ne « surgissent » pas,
+   elles arrivent — un fondu court et un léger mouvement vers leur place,
+   avec la même courbe partout. Les animations d'entrée tiennent à ce qu'un
+   élément passe de `display: none` à affiché (écrans, modales, panneaux) ou
+   vient d'être inséré (listes reconstruites) : aucune ligne de JS n'est
+   nécessaire pour elles. Les sélecteurs `:where()` ont une spécificité nulle,
+   pour que les animations plus précises (glissements de navigation, rebond
+   de l'XP…) gardent toujours la main. « Réduire les animations » coupe tout,
+   en fin de section.
+   ===================================================================== */
+:root {
+    --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --dur-base: 280ms;
+    --dur-calm: 420ms;
+}
+
+/* Écrans : toute ouverture d'écran se fait en fondu + légère montée.
+   Les écrans qui ont déjà leur propre mouvement (.screen-slide-*, .screen-fade-*)
+   le gardent. */
+@keyframes motionScreenIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+:where(body > div[id^="screen-"]:not(.hidden)) {
+    animation: motionScreenIn var(--dur-base) var(--ease-out) backwards;
+}
+
+/* Modales : le voile se fond, le panneau monte en se posant. */
+@keyframes motionOverlayIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes motionModalIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+:where(.modal-overlay:not(.hidden)) {
+    animation: motionOverlayIn var(--dur-base) ease-out backwards;
+}
+
+:where(.modal-overlay:not(.hidden) .modal-content) {
+    animation: motionModalIn var(--dur-base) var(--ease-out) backwards;
+}
+
+/* La fiche d'événement reste ouverte quand on passe d'un événement lié à un
+   autre : son contenu se renouvelle d'un fondu plutôt que de changer d'un coup. */
+@keyframes motionSwap {
+    from {
+        opacity: 0.25;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.modal-content.modal-swap {
+    animation: motionSwap var(--dur-base) var(--ease-out);
+}
+
+/* Panneaux qui se dévoilent après une réponse (verdict, année, badge de
+   résultat, bouton « Continuer »…). */
+@keyframes motionReveal {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+:where(.curseur-verdict, .avap-option-year, .ecart-pair-year, .fil-answer-badge, .geo-reveal-label, #geo-continue-btn):not(.hidden),
+:where(details[open] > :not(summary)) {
+    animation: motionReveal var(--dur-base) var(--ease-out) backwards;
+}
+
+/* Frise : la carte posée arrive à sa place (fondu, léger rebond, halo vert)
+   au lieu d'être déjà là. Variante « manquée » : elle arrive sans halo, puis
+   rougit un instant (voir .entry-reveal). */
+@keyframes entryLand {
+    0% {
+        opacity: 0;
+        transform: translateY(-14px) scale(0.95);
+        box-shadow: 0 0 0 0 rgba(30, 142, 62, 0.3);
+    }
+
+    55% {
+        opacity: 1;
+        transform: translateY(0) scale(1.025);
+        box-shadow: 0 0 0 7px rgba(30, 142, 62, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+        box-shadow: 0 0 0 0 rgba(30, 142, 62, 0);
+    }
+}
+
+@keyframes entryArrive {
+    from {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Les intervalles que la pose vient de créer se déploient en fondu pendant
+   que les repères voisins glissent vers leur nouvelle place (voir
+   timelineFlipPlay). */
+@keyframes slotIn {
+    from {
+        opacity: 0;
+        transform: scaleY(0.4);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.slot-new {
+    animation: slotIn var(--dur-calm) var(--ease-out) backwards;
+    transform-origin: top center;
+}
+
+/* Carte « en main » : chaque nouvel événement arrive par le bas. */
+@keyframes handCardIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.hand-card.hand-card-in {
+    animation: handCardIn var(--dur-calm) var(--ease-out) backwards;
+}
+
+/* La date de la carte se dévoile (réponse fausse) : elle se retourne
+   brièvement, et la bordure en pointillés devient pleine en douceur. */
+.hand-year {
+    transition: border-color var(--dur-base) ease, background-color var(--dur-base) ease;
+}
+
+@keyframes handYearReveal {
+    0% {
+        opacity: 0.2;
+        transform: scale(0.7);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1.12);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.hand-revealed .hand-year {
+    animation: handYearReveal 0.5s var(--ease-out);
+}
+
+/* Score : le nombre « rebondit » quand il change ; une vie perdue se gonfle
+   avant de se vider (voir initMotion). */
+[id$="hud-score"] {
+    display: inline-block;
+}
+
+@keyframes scoreBump {
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1.35);
+        color: var(--amber);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.score-bump {
+    animation: scoreBump 0.45s var(--ease-out);
+}
+
+@keyframes pipLost {
+    from {
+        transform: scale(2);
+        background: var(--danger-red);
+        border-color: var(--danger-red);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.pip.pip-lost {
+    animation: pipLost 0.5s var(--ease-out);
+}
+
+/* Écran de fin : le titre, le score, les gains puis le reste arrivent l'un
+   après l'autre. (L'XP et la série ont leur propre rebond, qui reste prioritaire.) */
+:where(#screen-end:not(.hidden) .end-content-wrapper) > * {
+    animation: staggerIn var(--dur-calm) var(--ease-out) backwards;
+    animation-delay: calc(var(--fx-i, 0) * 70ms + 120ms);
+}
+
+/* Listes qui se remplissent d'un coup : leurs cartes arrivent en cascade
+   (les dix premières seulement — le reste est déjà hors de vue). La classe
+   .fx-cascade se pose dans index.html, ou par applyCascade() en JS. */
+.fx-cascade > :nth-child(-n+10) {
+    animation: staggerIn var(--dur-calm) var(--ease-out) backwards;
+    animation-delay: calc(var(--fx-i, 0) * 45ms);
+}
+
+.fx-cascade > :nth-child(1) { --fx-i: 0; }
+.fx-cascade > :nth-child(2) { --fx-i: 1; }
+.fx-cascade > :nth-child(3) { --fx-i: 2; }
+.fx-cascade > :nth-child(4) { --fx-i: 3; }
+.fx-cascade > :nth-child(5) { --fx-i: 4; }
+.fx-cascade > :nth-child(6) { --fx-i: 5; }
+.fx-cascade > :nth-child(7) { --fx-i: 6; }
+.fx-cascade > :nth-child(8) { --fx-i: 7; }
+.fx-cascade > :nth-child(9) { --fx-i: 8; }
+.fx-cascade > :nth-child(10) { --fx-i: 9; }
+
+/* Groupes de modes repliables : le contenu qui se déplie arrive en cascade. */
+:where(.modes-group:not(.collapsed) .modes-group-body) > :nth-child(-n+10) {
+    animation: staggerIn var(--dur-calm) var(--ease-out) backwards;
+    animation-delay: calc(var(--fx-i, 0) * 45ms);
+}
+
+:where(.modes-group:not(.collapsed) .modes-group-body) > :nth-child(1) { --fx-i: 0; }
+:where(.modes-group:not(.collapsed) .modes-group-body) > :nth-child(2) { --fx-i: 1; }
+:where(.modes-group:not(.collapsed) .modes-group-body) > :nth-child(3) { --fx-i: 2; }
+:where(.modes-group:not(.collapsed) .modes-group-body) > :nth-child(4) { --fx-i: 3; }
+:where(.modes-group:not(.collapsed) .modes-group-body) > :nth-child(5) { --fx-i: 4; }
+:where(.modes-group:not(.collapsed) .modes-group-body) > :nth-child(6) { --fx-i: 5; }
+:where(.modes-group:not(.collapsed) .modes-group-body) > :nth-child(7) { --fx-i: 6; }
+:where(.modes-group:not(.collapsed) .modes-group-body) > :nth-child(8) { --fx-i: 7; }
+:where(.modes-group:not(.collapsed) .modes-group-body) > :nth-child(9) { --fx-i: 8; }
+:where(.modes-group:not(.collapsed) .modes-group-body) > :nth-child(10) { --fx-i: 9; }
+
+:where(#screen-end .end-content-wrapper) > :nth-child(1) { --fx-i: 0; }
+:where(#screen-end .end-content-wrapper) > :nth-child(2) { --fx-i: 1; }
+:where(#screen-end .end-content-wrapper) > :nth-child(3) { --fx-i: 2; }
+:where(#screen-end .end-content-wrapper) > :nth-child(4) { --fx-i: 3; }
+:where(#screen-end .end-content-wrapper) > :nth-child(5) { --fx-i: 4; }
+:where(#screen-end .end-content-wrapper) > :nth-child(6) { --fx-i: 5; }
+:where(#screen-end .end-content-wrapper) > :nth-child(7) { --fx-i: 6; }
+:where(#screen-end .end-content-wrapper) > :nth-child(8) { --fx-i: 7; }
+:where(#screen-end .end-content-wrapper) > :nth-child(9) { --fx-i: 8; }
+:where(#screen-end .end-content-wrapper) > :nth-child(10) { --fx-i: 9; }
+
+@media (prefers-reduced-motion: reduce) {
+
+    :where(body > div[id^="screen-"]:not(.hidden)),
+    :where(.modal-overlay:not(.hidden)),
+    :where(.modal-overlay:not(.hidden) .modal-content),
+    .modal-content.modal-swap,
+    :where(.curseur-verdict, .avap-option-year, .ecart-pair-year, .fil-answer-badge, .geo-reveal-label, #geo-continue-btn):not(.hidden),
+    :where(details[open] > :not(summary)),
+    .slot-new,
+    .hand-card.hand-card-in,
+    .hand-revealed .hand-year,
+    .score-bump,
+    .pip.pip-lost,
+    :where(#screen-end:not(.hidden) .end-content-wrapper) > *,
+    .fx-cascade > :nth-child(-n+10),
+    :where(.modes-group:not(.collapsed) .modes-group-body) > :nth-child(-n+10) {
+        animation: none;
+    }
+
+    .hand-year {
+        transition: none;
+    }
 }

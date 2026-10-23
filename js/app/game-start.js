@@ -102,6 +102,8 @@ function resetPlacementAnimationState() {
         clearTimeout(wrongAnswerTimeoutId);
         wrongAnswerTimeoutId = null;
     }
+    timerFrozenAt = null;
+    pendingEntryFx = null;
     isAnimating = false;
 }
 

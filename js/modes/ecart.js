@@ -71,6 +71,7 @@ function renderEcartQuestion() {
     document.getElementById('ecart-hud-count').innerText = `${ecartIndex + 1} / ${ecartQuestions.length}`;
     const pct = Math.round(ecartIndex / ecartQuestions.length * 100);
     document.getElementById('ecart-progress-fill').style.width = pct + '%';
+    animateQuestionIn('screen-ecart');
     updateEcartHUD();
 }
 

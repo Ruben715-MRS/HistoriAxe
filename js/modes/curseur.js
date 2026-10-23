@@ -88,6 +88,7 @@ function renderCurseurRound() {
         `${curseurIndex + 1} / ${curseurRounds.length}`;
     document.getElementById('curseur-progress-fill').style.width =
         Math.round(curseurIndex / curseurRounds.length * 100) + '%';
+    animateQuestionIn('screen-curseur');
     updateCurseurHUD();
 }
 

@@ -192,6 +192,8 @@ async function buildState(code, deviceId) {
         total: session.event_ids.length - 1,
         isTeacher,
         playerCount: ranked.length,
+        // Le bilan de toute la classe (la liste ci-dessous est plafonnée) : de quoi remplir la barre « vert / rouge ».
+        totals: ranked.reduce((t, p) => ({ correct: t.correct + p.correct, wrong: t.wrong + Math.max(0, p.answered - p.correct) }), { correct: 0, wrong: 0 }),
         players: ranked.slice(0, C.MAX_PLAYERS).map((p, i) => ({
             rank: i + 1, name: p.name, score: p.score, answered: p.answered, correct: p.correct, finished: p.finished
         })),

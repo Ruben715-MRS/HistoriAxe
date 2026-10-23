@@ -69,6 +69,7 @@ function renderIntrusQuestion() {
         `${intrusIndex + 1} / ${intrusQuestions.length}`;
     document.getElementById('intrus-progress-fill').style.width =
         Math.round(intrusIndex / intrusQuestions.length * 100) + '%';
+    animateQuestionIn('screen-intrus');
     updateIntrusHUD();
 }
 

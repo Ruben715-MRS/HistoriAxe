@@ -77,6 +77,7 @@ function renderAvapQuestion() {
     document.getElementById('avap-hud-count').innerText = `${avapIndex + 1} / ${avapQuestions.length}`;
     const pct = Math.round(avapIndex / avapQuestions.length * 100);
     document.getElementById('avap-progress-fill').style.width = pct + '%';
+    animateQuestionIn('screen-avant-apres');
     updateAvapHUD();
 }
 
