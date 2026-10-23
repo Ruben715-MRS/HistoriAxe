@@ -5119,13 +5119,13 @@ textarea.form-input {
     border-bottom: 1px solid var(--rule);
     font-size: 14px;
     color: var(--ink);
-    cursor: pointer;
 }
 
 .notif-type-row input {
     width: 20px;
     height: 20px;
     flex-shrink: 0;
+    cursor: pointer;
     accent-color: var(--primary-blue);
 }
 
