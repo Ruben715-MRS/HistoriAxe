@@ -12973,6 +12973,30 @@ input:not([type="range"]), label, select, summary, textarea {
     margin: 16px 0 8px;
 }
 
+/* Le choix d'année du calendrier : un champ, et une note sur le calcul des fêtes mobiles. */
+.cal-year-pick {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+    max-width: 720px;
+    margin: 0 auto 10px;
+}
+
+.cal-year-pick label {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.cal-year-pick input {
+    width: 110px;
+}
+
+.cal-year-pick .tool-small {
+    flex: 1 1 100%;
+    margin: 0;
+}
+
 /* Le calendrier annuel : une liste de 366 jours, des mois en titres, une barre pour aller à un mois ; en colonnes sur grand écran. */
 .cal-months {
     display: flex;

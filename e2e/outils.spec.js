@@ -295,6 +295,23 @@ test('calendrier annuel : la liste part du 1er janvier, une fête nationale et u
     await expect.poll(async () => page.evaluate(() => Math.round(document.getElementById('cal-month-10').getBoundingClientRect().top))).toBeLessThan(200);
 });
 
+test('calendrier annuel : l\'année choisie date les fêtes mobiles, « 5 avril : Pâques (2026) »', async ({ page }) => {
+    await page.waitForFunction(() => window.bdd && window.bdd.some(c => (c.themes || []).some(t => t.id === 'thm_aut')), null, { timeout: 45_000 });
+    await ouvrir(page, 'Calendrier annuel');
+    const champ = page.locator('#cal-year-input');
+    await expect(champ).toHaveValue(String(new Date().getFullYear()));
+    await champ.fill('2026');
+    const paques = page.locator('#cal-year .cal-row', { has: page.locator('.cal-date', { hasText: /^5 avril$/ }) });
+    await expect(paques.locator('.cal-religious')).toHaveText('Pâques (2026)');
+    await expect(page.locator('#cal-year .cal-row', { has: page.locator('.cal-date', { hasText: /^14 mai$/ }) }).locator('.cal-religious')).toHaveText('Ascension (2026)');
+    // une saisie hors bornes ne touche pas au calendrier
+    await champ.fill('12');
+    await expect(paques.locator('.cal-religious')).toHaveText('Pâques (2026)');
+    // une autre année : Pâques bouge
+    await champ.fill('2025');
+    await expect(page.locator('#cal-year .cal-row', { has: page.locator('.cal-date', { hasText: /^20 avril$/ }) }).locator('.cal-religious')).toHaveText('Pâques (2025)');
+});
+
 test('atlas des pays : une capitale se cherche aussi, et un statut contesté est dit', async ({ page }) => {
     await ouvrir(page, 'Atlas des pays');
     await page.waitForFunction(() => typeof countriesData !== 'undefined' && countriesData !== null);

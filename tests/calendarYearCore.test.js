@@ -51,3 +51,36 @@ test('libellés : « 1er janvier », « 14 juillet », et les noms de mois', () 
 test('la liste des fêtes religieuses : chaque date existe dans l\'année', () => {
     K.RELIGIOUS.forEach(r => assert.ok(at(r.m, r.d), r.label));
 });
+
+test('Pâques : le calcul grégorien, sur des années connues et aux bornes de la plage possible', () => {
+    assert.deepEqual(K.easterSunday(2026), { month: 4, day: 5 });
+    assert.deepEqual(K.easterSunday(2025), { month: 4, day: 20 });
+    assert.deepEqual(K.easterSunday(2000), { month: 4, day: 23 });
+    assert.deepEqual(K.easterSunday(2024), { month: 3, day: 31 });
+    assert.deepEqual(K.easterSunday(2038), { month: 4, day: 25 });   // le plus tard possible
+    assert.deepEqual(K.easterSunday(2285), { month: 3, day: 22 });   // le plus tôt possible
+});
+
+test('fêtes mobiles d\'une année : décalages par rapport à Pâques (2026 : Pâques le 5 avril)', () => {
+    const f = K.mobileFeasts(2026);
+    const at2026 = label => { const x = f.find(y => y.label === label); return [x.day, x.month]; };
+    assert.deepEqual(at2026('Pâques'), [5, 4]);
+    assert.deepEqual(at2026('Mardi gras'), [17, 2]);
+    assert.deepEqual(at2026('Mercredi des Cendres'), [18, 2]);
+    assert.deepEqual(at2026('Ascension'), [14, 5]);
+    assert.deepEqual(at2026('Pentecôte'), [24, 5]);
+    assert.deepEqual(at2026('Fête-Dieu'), [4, 6]);
+});
+
+test('avec une année, le calendrier porte les fêtes mobiles datées ; sans année, il reste intemporel', () => {
+    const avec = K.yearDays(facts, 2026);
+    assert.equal(avec.length, 366);
+    const paques = avec.find(x => x.month === 4 && x.day === 5);
+    assert.ok(paques.religious.includes('Pâques (2026)'));
+    assert.ok(avec.find(x => x.month === 5 && x.day === 14).religious.includes('Ascension (2026)'));
+    // sans année : aucune fête mobile, le calendrier ne dépend pas d'une année
+    const sans = K.yearDays(facts);
+    assert.ok(!sans.flatMap(x => x.religious).some(l => /Pâques|Ascension|Pentecôte|Mardi gras|Fête-Dieu/.test(l)));
+    // les fêtes fixes restent présentes dans les deux cas
+    assert.deepEqual(avec.find(x => x.month === 12 && x.day === 25).religious, ['Noël']);
+});

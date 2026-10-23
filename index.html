@@ -1496,6 +1496,11 @@
         <button class="back-btn" onclick="toolBack('calendar')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
         <h2 class="header-title" data-i18n="tools.calendar_title">Calendrier annuel</h2>
         <p class="modes-header-subtitle" data-i18n="tools.calendar_intro">Du 1er janvier au 31 décembre. Touchez un mois pour y aller directement.</p>
+        <div class="cal-year-pick">
+            <label for="cal-year-input" data-i18n="tools.calendar_year_label">Année des fêtes mobiles</label>
+            <input type="number" inputmode="numeric" min="1583" max="2400" step="1" id="cal-year-input" class="tool-input" oninput="calendarSetYear(this.value)">
+            <p class="tool-small" data-i18n="tools.calendar_mobile_note">Pâques et les fêtes qui en dépendent changent chaque année : elles sont calculées pour l'année choisie (calendrier grégorien).</p>
+        </div>
         <nav class="cal-months" id="cal-months" aria-label="Aller à un mois" data-i18n-attr="aria-label:tools.calendar_months_aria"></nav>
         <p class="tool-msg" id="cal-status" role="status"></p>
         <div class="cal-year" id="cal-year"></div>

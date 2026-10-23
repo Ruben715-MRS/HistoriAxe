@@ -6,10 +6,14 @@
 // directement à un mois. Sur grand écran, les mois se rangent en colonnes. Les règles sont dans js/calendarYearCore.js (testé).
 
 let calendarBuilt = false;
+const CALENDAR_YEAR_MIN = 1583;   // début du calendrier grégorien
+const CALENDAR_YEAR_MAX = 2400;
+let calendarYear = new Date().getFullYear();
 
 function toolCalendarInit() {
     const status = document.getElementById('cal-status');
     status.textContent = t('tools.countries_loading');
+    document.getElementById('cal-year-input').value = String(calendarYear);
     if (!calendarBuilt) buildCalendarMonthBar();
     countriesLoad().then(ok => {
         if (!ok) { status.textContent = t('tools.countries_error'); return; }
@@ -36,12 +40,21 @@ function buildCalendarMonthBar() {
     calendarBuilt = true;
 }
 
+// Le choix d'année : une année entière, dans les bornes du calendrier grégorien. Une saisie incomplète ou hors bornes ne change rien.
+function calendarSetYear(value) {
+    const y = Number(value);
+    if (!Number.isInteger(y) || y < CALENDAR_YEAR_MIN || y > CALENDAR_YEAR_MAX) return;
+    if (y === calendarYear && document.querySelector('#cal-year .cal-row')) return;
+    calendarYear = y;
+    if (countriesData) renderCalendarYear();
+}
+
 function renderCalendarYear() {
     const year = document.getElementById('cal-year');
     while (year.firstChild) year.removeChild(year.firstChild);
     const now = new Date();
     const todayM = now.getMonth() + 1, todayD = now.getDate();
-    const days = CalendarYearCore.yearDays(countriesData.facts);
+    const days = CalendarYearCore.yearDays(countriesData.facts, calendarYear);
     let section = null;
     days.forEach(d => {
         if (d.day === 1) {
