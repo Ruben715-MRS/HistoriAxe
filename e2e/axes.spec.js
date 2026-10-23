@@ -87,3 +87,23 @@ test('tout décocher désactive le bouton Continuer', async ({ page }) => {
     await expect(axesCoches(page)).toHaveCount(0);
     await expect(page.locator('#axes-continue-btn')).toBeDisabled();
 });
+
+test('téléphone en portrait : l’axe se lit au liseré de la carte, pas à une étiquette sous chaque repère', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 800 });
+    await clickThemeCard(page, THEME_B);
+    await page.locator('#axes-continue-btn').click();
+    await page.locator('#mode-card-discovery').click();
+    await page.locator('#discovery-picker .mode-picker-btn').first().click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    await page.waitForTimeout(600);
+
+    const premiere = page.locator('#timeline .entry[data-axis]').first();
+    await expect(premiere).toBeVisible();
+    // Le liseré de la couleur de l'axe (ombre intérieure en haut de la carte)…
+    const ombre = await premiere.locator('.entry-title').evaluate(el => getComputedStyle(el).boxShadow);
+    expect(ombre).toContain('inset');
+    // … et l'étiquette ne prend plus de place sous le titre (elle reste lue par les lecteurs d'écran).
+    const boite = await premiere.locator('.entry-axe-badge').boundingBox();
+    expect(boite.width).toBeLessThanOrEqual(2);
+    expect(boite.height).toBeLessThanOrEqual(2);
+});

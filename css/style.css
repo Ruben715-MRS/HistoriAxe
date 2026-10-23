@@ -7638,18 +7638,18 @@ input:not([type="range"]), label, select, summary, textarea {
     border-left: 10px solid var(--flow-axis);
 }
 
-/* --- Axe thématique : liseré de couleur plutôt qu'étiquette. ---
+/* --- Axe thématique : liseré de couleur plutôt qu'étiquette, sur tous les écrans et dans toutes les orientations. ---
    L'étiquette (2 à 3 lignes de texte sous chaque carte) coûtait presque une
    ligne de frise par écran. La carte porte à la place un liseré de la couleur
    de l'axe — celle de la légende, quand il y en a une (Découverte) ; en
    partie, l'étiquette reste mais tient sur une seule ligne (nom complet dans
    l'infobulle). */
-[data-layout="horizontal"][data-landscape-multi] .entry[data-axis] .entry-title {
+.entry[data-axis] .entry-title {
     box-shadow: inset 0 5px 0 var(--axis-c), 0px 10px 30px rgba(0, 26, 75, 0.05) !important;
     padding-top: 14px !important;
 }
 
-[data-layout="horizontal"][data-landscape-multi] .entry .entry-axe-badge {
+.entry .entry-axe-badge {
     display: block;
     box-sizing: border-box;
     max-width: 100%;
@@ -7660,7 +7660,7 @@ input:not([type="range"]), label, select, summary, textarea {
 
 /* Avec la légende à l'écran, l'étiquette n'est plus visible mais reste lue
    par les lecteurs d'écran. */
-[data-layout="horizontal"][data-landscape-multi] .axes-legend-visible .entry .entry-axe-badge {
+.axes-legend-visible .entry .entry-axe-badge {
     position: absolute;
     width: 1px;
     height: 1px;
