@@ -172,3 +172,30 @@ test('régions : le Zimbabwe, la Zambie, le Malawi, le Mozambique et l\'Angola s
     assert.equal(sub('Iran'), "Asie de l'Ouest");
     assert.equal(sub('Afghanistan'), 'Asie du Sud');
 });
+
+test('Découvrir › Pays : la fête nationale du jour d\'abord, sinon au hasard, jamais le pays précédent', () => {
+    const seq = (...xs) => { let i = 0; return () => xs[i++ % xs.length]; };
+    // 14 juillet : la France passe avant tout
+    const fr = C.discoverPick(facts.countries, seq(0.3), { month: 7, day: 14 }, { first: true });
+    assert.equal(fr.country.id, 'FRA');
+    assert.equal(fr.festive, true);
+    // plusieurs fêtes le même jour (1er octobre : Chine, Chypre, Nigeria, Palaos, Tuvalu…) : au sort parmi elles
+    const oct = new Set();
+    for (let k = 0; k < 40; k++) {
+        const p = C.discoverPick(facts.countries, Math.random, { month: 10, day: 1 }, { first: true });
+        assert.equal(p.festive, true);
+        assert.deepEqual(p.country.fete_jour, [10, 1]);
+        oct.add(p.country.id);
+    }
+    assert.ok(oct.size > 1, 'le tirage se répartit entre les pays du jour');
+    // un jour sans fête : tirage au hasard, pas marqué festif
+    const none = C.discoverPick(facts.countries, seq(0.5), { month: 10, day: 23 }, { first: true });
+    assert.equal(none.festive, false);
+    // « Un autre pays » ignore la fête du jour et ne repropose jamais le précédent
+    const again = C.discoverPick(facts.countries, seq(0), { month: 7, day: 14 }, { first: false, previousId: 'FRA' });
+    assert.equal(again.festive, false);
+    assert.notEqual(again.country.id, 'FRA');
+    // un seul pays restant : il reste le seul possible
+    const only = C.discoverPick([facts.countries[0]], seq(0), { month: 1, day: 1 }, { first: false, previousId: facts.countries[0].id });
+    assert.equal(only.country.id, facts.countries[0].id);
+});

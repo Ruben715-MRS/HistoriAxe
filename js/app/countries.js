@@ -27,6 +27,8 @@ let countriesMap = null;
 let countriesMapReady = false;
 let countriesSelected = null;
 let countriesEventsCache = new Map();
+let countriesFestive = null;   // id du pays tiré par « Découvrir » parce que c'est sa fête nationale aujourd'hui (bannière dans la fiche)
+let countriesDiscoverLast = null;
 
 function countriesTheme() {
     return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
@@ -54,6 +56,8 @@ function countriesLoad() {
 }
 
 function toolCountriesInit() {
+    document.getElementById('tool-countries-another').classList.add('hidden');
+    countriesFestive = null;
     const status = document.getElementById('tool-countries-status');
     status.textContent = t('tools.countries_loading');
     countriesLoad().then(ok => {
@@ -120,7 +124,7 @@ function countriesEnsureMap() {
     countriesMap = map;
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
     map.touchZoomRotate.disableRotation();
-    map.on('load', () => { countriesAddLayers(); countriesMapReady = true; if (countriesSelected) countriesHighlight(countriesSelected, false); });
+    map.on('load', () => { countriesAddLayers(); countriesMapReady = true; if (countriesSelected) countriesHighlight(countriesSelected, true); });
     // Une police ou une tuile qui ne vient pas (hors-ligne) n'empêche rien : la carte reste utilisable.
     map.on('error', () => {});
 }
@@ -237,6 +241,33 @@ function toolCountriesInputKey(event) {
     }
 }
 
+// --- Découvrir : un pays au hasard (bouton « Pays » du menu Découvrir) -------------------------
+// Le pays dont c'est la fête nationale aujourd'hui d'abord, sinon au hasard ; « Un autre pays » repioche. La fiche et la carte sont
+// celles de l'Atlas. Le tirage est dans CountriesCore.discoverPick (testé).
+function discoverCountry() {
+    openTool('countries', 'screen-categories');
+    document.getElementById('tool-countries-another').classList.remove('hidden');
+    countriesLoad().then(ok => {
+        if (!ok) { document.getElementById('tool-countries-status').textContent = t('tools.countries_error'); return; }
+        discoverPickCountry(true);
+    });
+}
+
+function discoverAnotherCountry() {
+    discoverPickCountry(false);
+}
+
+function discoverPickCountry(first) {
+    if (!countriesData) return;
+    const now = new Date();
+    const pick = CountriesCore.discoverPick(countriesData.facts, Math.random, { month: now.getMonth() + 1, day: now.getDate() },
+        { first, previousId: countriesDiscoverLast });
+    countriesDiscoverLast = pick.country.id;
+    countriesFestive = pick.festive ? pick.country.id : null;
+    toolCountriesSelect(pick.country.id);
+    document.getElementById('tool-countries-another').focus({ preventScroll: true });
+}
+
 // --- La fiche --------------------------------------------------------------------------
 function toolCountriesSelect(id, how) {
     if (!countriesData) return;
@@ -248,6 +279,7 @@ function toolCountriesSelect(id, how) {
         input.value = '';
         toolCountriesSearch();
     }
+    if (countriesFestive !== id) countriesFestive = null;
     countriesHighlight(id, true);
     toolCountriesRenderFiche(country);
     // La fiche est sous la carte : on la montre, sans faire sauter la page si elle est déjà visible.
@@ -258,6 +290,12 @@ function toolCountriesSelect(id, how) {
 function toolCountriesRenderFiche(country) {
     const panel = document.getElementById('tool-countries-fiche');
     while (panel.firstChild) panel.removeChild(panel.firstChild);
+    if (countriesFestive === country.id) {
+        const festive = document.createElement('p');
+        festive.className = 'tool-countries-festive';
+        festive.textContent = '🎉 ' + t('tools.countries_festive') + ' 🎆';
+        panel.appendChild(festive);
+    }
     const head = document.createElement('h3');
     head.className = 'tool-countries-name';
     const flag = document.createElement('span');

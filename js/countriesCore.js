@@ -132,8 +132,23 @@
         return rows;
     }
 
+    // Le tirage « Pays » (Découvrir) : au premier tirage, un pays dont c'est la fête nationale aujourd'hui passe avant tout (au sort
+    // parmi eux si plusieurs), et `festive` le dit. Sinon, et pour « Un autre pays », un pays au hasard, jamais le précédent.
+    // `today` : { month, day } ; `rng` : une fonction qui rend un nombre entre 0 et 1.
+    function discoverPick(facts, rng, today, opts) {
+        var random = rng || Math.random;
+        var o = opts || {};
+        var pick = function (list) { return list[Math.floor(random() * list.length)]; };
+        if (o.first) {
+            var festive = facts.filter(function (c) { return c.fete_jour && c.fete_jour[0] === today.month && c.fete_jour[1] === today.day; });
+            if (festive.length) return { country: pick(festive), festive: true };
+        }
+        var others = facts.filter(function (c) { return c.id !== o.previousId; });
+        return { country: pick(others.length ? others : facts), festive: false };
+    }
+
     return {
         flagEmoji: flagEmoji, formatPopulation: formatPopulation, normalize: normalize, searchCountries: searchCountries,
-        prepare: prepare, contains: contains, containsNear: containsNear, isTiny: isTiny, factRows: factRows
+        discoverPick: discoverPick, prepare: prepare, contains: contains, containsNear: containsNear, isTiny: isTiny, factRows: factRows
     };
 }));

@@ -72,6 +72,10 @@ function initCategories() {
                         <span class="challenge-picker-icon" aria-hidden="true">👤</span>
                         <span>${t('categories.discover_person')}</span>
                     </button>
+                    <button type="button" class="challenge-picker-btn" id="btn-discover-country">
+                        <span class="challenge-picker-icon" aria-hidden="true">🚩</span>
+                        <span>${t('categories.discover_country')}</span>
+                    </button>
                 </div>
                 <div class="challenge-picker hidden" id="challenge-picker">
                     <button type="button" class="challenge-picker-btn" id="btn-challenge-daily">
@@ -138,6 +142,7 @@ function initCategories() {
         };
         gridSection.querySelector('#btn-discover-event').onclick = () => discoverRandomEvent();
         gridSection.querySelector('#btn-discover-person').onclick = () => discoverRandomPortrait();
+        gridSection.querySelector('#btn-discover-country').onclick = () => discoverCountry();
     }
     // Le bouton « Défis » ne lance plus directement le Défi du jour : il
     // déplie/replie un choix entre Défi du jour et Défi hebdomadaire, sous

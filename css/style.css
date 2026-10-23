@@ -12950,3 +12950,25 @@ input:not([type="range"]), label, select, summary, textarea {
         transition: none;
     }
 }
+
+/* Découvrir › Pays : la bannière de la fête nationale du jour, au-dessus de la fiche ; le bouton « Un autre pays » en bas d'écran. */
+.tool-countries-festive {
+    margin: 0 0 10px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: #fff4d6;
+    color: #7c2d12;
+    font-weight: 700;
+    text-align: center;
+}
+
+[data-theme="dark"] .tool-countries-festive {
+    background: #3d3316;
+    color: #fde68a;
+}
+
+.tool-countries-another {
+    display: block;
+    width: 100%;
+    margin: 16px 0 8px;
+}

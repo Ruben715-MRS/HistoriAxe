@@ -232,6 +232,48 @@ test('atlas des pays : un bouton « Jouer sur Histoire de … » entre la fiche 
     expect(await page.evaluate(() => getCurrentThemeList()[selectedThemeIndex].id)).toBe('thm_fr');
 });
 
+test('Découvrir › Pays : un pays au hasard dans l\'Atlas, « Un autre pays » en bas, et le retour aux catégories', async ({ page }) => {
+    await page.waitForFunction(() => window.bdd && window.bdd.some(c => (c.themes || []).some(t => t.id === 'thm_aut')), null, { timeout: 45_000 });
+    await page.evaluate(() => { markRecapShownThisWeek(); showScreen('screen-categories'); initCategories(); });
+    await page.locator('#btn-discover').click();
+    await page.locator('#btn-discover-country').click();
+    await expect(page.locator('#screen-tool-countries')).toBeVisible();
+    const fiche = page.locator('#tool-countries-fiche');
+    await expect(fiche.locator('.tool-countries-name')).toBeVisible({ timeout: 30_000 });
+    // la sixième ligne et la carte : la fiche de l'Atlas
+    await expect(fiche.locator('.tool-countries-facts dt').last()).toHaveText('Fête nationale');
+    const premier = await fiche.locator('.tool-countries-name').innerText();
+    const another = page.locator('#tool-countries-another');
+    await expect(another).toBeVisible();
+    await expect(another).toHaveText('Un autre pays');
+    // pas de bannière aujourd'hui, sauf si c'est une fête : on ne l'exige pas ici
+    let differ = false;
+    for (let k = 0; k < 4 && !differ; k++) {
+        await another.click();
+        await page.waitForTimeout(150);
+        differ = (await fiche.locator('.tool-countries-name').innerText()) !== premier;
+    }
+    expect(differ).toBe(true);
+    // retour : la boîte à outils n'est pas concernée, on revient aux catégories
+    await page.locator('#screen-tool-countries .back-btn').click();
+    expect(await visibleScreen(page)).toBe('screen-categories');
+    // l'Atlas normal, lui, n'a pas le bouton « Un autre pays »
+    await ouvrir(page, 'Atlas des pays');
+    await expect(page.locator('#tool-countries-another')).toBeHidden();
+});
+
+test('Découvrir › Pays : le 14 juillet, la France d\'abord, avec la bannière « Fête nationale aujourd\'hui »', async ({ page }) => {
+    await page.clock.setFixedTime(new Date('2026-07-14T10:00:00'));
+    await page.waitForFunction(() => window.bdd && window.bdd.some(c => (c.themes || []).some(t => t.id === 'thm_aut')), null, { timeout: 45_000 });
+    await page.evaluate(() => { markRecapShownThisWeek(); showScreen('screen-categories'); initCategories(); });
+    await page.locator('#btn-discover').click();
+    await page.locator('#btn-discover-country').click();
+    await expect(page.locator('#tool-countries-fiche .tool-countries-name')).toContainText('France', { timeout: 30_000 });
+    await expect(page.locator('.tool-countries-festive')).toContainText("Fête nationale aujourd'hui");
+    await page.locator('#tool-countries-another').click();
+    await expect(page.locator('.tool-countries-festive')).toHaveCount(0);
+});
+
 test('atlas des pays : une capitale se cherche aussi, et un statut contesté est dit', async ({ page }) => {
     await ouvrir(page, 'Atlas des pays');
     await page.waitForFunction(() => typeof countriesData !== 'undefined' && countriesData !== null);
