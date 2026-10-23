@@ -47,3 +47,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
+
+// Le SDK d'Xcode récent exige le cycle de vie « UIScene ». Sans cette classe, l'app
+// s'arrête au lancement (« UIScene life cycle is required »). La fenêtre est créée
+// à partir de Main.storyboard, déclaré dans Info.plist (UISceneStoryboardFile).
+class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+
+    var window: UIWindow?
+
+}
