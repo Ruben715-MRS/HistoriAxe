@@ -123,6 +123,34 @@ test('Trouve l’écart : le pavé numérique alimente l’écart proposé', asy
     await expect(page.locator('#ecart-validate-btn')).toBeEnabled();
 });
 
+test.describe('Trouve l’écart sur un petit téléphone', () => {
+test.use({ viewport: { width: 390, height: 664 } });
+test('Trouve l’écart : sur un petit téléphone, touches et « Valider » restent visibles et immobiles quand le message apparaît', async ({ page }) => {
+    await page.locator('.ecart-card').click();
+    await expect(page.locator('#screen-ecart')).toBeVisible();
+    await expect(page.locator('#ecart-event-a')).not.toBeEmpty();
+
+    const positions = () => page.evaluate(() => {
+        const r = sel => { const b = document.querySelector(sel).getBoundingClientRect(); return { top: Math.round(b.top), bottom: Math.round(b.bottom) }; };
+        return { keys: r('#screen-ecart .fil-keypad'), validate: r('#ecart-validate-btn'), display: r('.fil-display'), card: r('#screen-ecart .fil-question-card') };
+    });
+    await page.waitForTimeout(600); // fin de l'animation d'entrée de l'écran
+    const avant = await positions();
+    expect(avant.validate.bottom).toBeLessThanOrEqual(664);
+
+    // Une mauvaise proposition : le message « plus / moins » apparaît.
+    await page.evaluate(() => { ecartInput = String(ecartQuestions[ecartIndex].gap + 7); updateEcartDisplay(); ecartSubmit(); });
+    await expect(page.locator('#ecart-answer-badge')).toBeVisible();
+    const apres = await positions();
+    expect(apres.keys).toEqual(avant.keys);
+    expect(apres.validate).toEqual(avant.validate);
+    expect(apres.display).toEqual(avant.display);
+    expect(apres.card.bottom - apres.card.top).toBeLessThan(avant.card.bottom - avant.card.top);
+    await expect(page.locator('#ecart-event-a')).toBeVisible();
+    await expect(page.locator('#ecart-event-b')).toBeVisible();
+});
+});
+
 test('Chrono et Expert restent verrouillés tant que le thème n’est pas entamé', async ({ page }) => {
     // Profil neuf : ces deux modes demandent une progression sur le thème
     // (voir js/app.js: updateModeLocks). Les ouvrir doit expliquer pourquoi
