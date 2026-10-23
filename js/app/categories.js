@@ -376,7 +376,7 @@ function initSubcategories() {
             ? HISTOIRES_NATIONALES_REGIONS_IMAGES[nomLower] : null;
         if (progPays) bgImg = 'assets/images/' + progPays;
         else if (natRegion) bgImg = 'assets/images/' + natRegion;
-        else if (nomLower === 'panthéons' || nomLower === 'pantheons') bgImg = 'assets/images/sub_themes_generaux.webp';
+        else if (nomLower === 'panthéons' || nomLower === 'pantheons') bgImg = 'assets/images/sub_pantheons.webp';
         else if (nomLower === 'biographies') bgImg = 'assets/images/cat_biographies.webp';
         else if (nomLower.includes('europe')) bgImg = 'assets/images/sub_europe.webp';
         else if (nomLower.includes('amérique')) bgImg = 'assets/images/sub_ameriques.webp';
