@@ -1283,6 +1283,10 @@
                 <span class="arcade-card-icon" aria-hidden="true">🗓️</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.calendar_title"></strong><small data-i18n="tools.calendar_desc"></small></span>
             </button>
+            <button type="button" class="arcade-card" onclick="openTool('genealogy', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">🌳</span>
+                <span class="arcade-card-text"><strong data-i18n="tools.genealogy_title"></strong><small data-i18n="tools.genealogy_desc"></small></span>
+            </button>
             <button type="button" class="arcade-card" onclick="openTool('periods', 'screen-tools')">
                 <span class="arcade-card-icon" aria-hidden="true">🧭</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.periods_title"></strong><small data-i18n="tools.periods_desc"></small></span>
@@ -1504,6 +1508,30 @@
         <nav class="cal-months" id="cal-months" aria-label="Aller à un mois" data-i18n-attr="aria-label:tools.calendar_months_aria"></nav>
         <p class="tool-msg" id="cal-status" role="status"></p>
         <div class="cal-year" id="cal-year"></div>
+    </div>
+
+    <div id="screen-tool-genealogy" class="list-screen gen-screen hidden">
+        <button class="back-btn" onclick="toolBack('genealogy')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <div class="gen-lang" role="group" aria-label="Langue des noms" data-i18n-attr="aria-label:tools.genealogy_lang_aria">
+            <button type="button" class="gen-lang-btn" id="gen-lang-fr" aria-pressed="true" lang="fr" onclick="genSetLang('fr')">A</button>
+            <button type="button" class="gen-lang-btn" id="gen-lang-he" aria-pressed="false" lang="he" onclick="genSetLang('he')">א</button>
+        </div>
+        <h2 class="header-title" data-i18n="tools.genealogy_title">Généalogie biblique</h2>
+        <p class="modes-header-subtitle" data-i18n="tools.genealogy_intro"></p>
+        <div class="gen-bar">
+            <input type="search" id="gen-search" class="tool-input" autocomplete="off" placeholder="Chercher un nom" aria-label="Chercher un nom" data-i18n-attr="placeholder:tools.genealogy_search;aria-label:tools.genealogy_search">
+            <ul class="gen-results" id="gen-results"></ul>
+            <div class="gen-actions">
+                <button type="button" class="btn" onclick="genZoom(-1)" aria-label="Rétrécir" data-i18n-attr="aria-label:tools.genealogy_zoom_out">−</button>
+                <button type="button" class="btn" onclick="genZoom(1)" aria-label="Agrandir" data-i18n-attr="aria-label:tools.genealogy_zoom_in">+</button>
+                <button type="button" class="btn" onclick="genCollapseAll()" data-i18n="tools.genealogy_collapse_all">Tout replier</button>
+                <button type="button" class="btn" onclick="genExpandAll()" data-i18n="tools.genealogy_expand_all">Tout déplier</button>
+            </div>
+            <p class="gen-legend"><span class="gen-key is-man" data-i18n="tools.genealogy_men">Hommes</span> <span class="gen-key is-woman" data-i18n="tools.genealogy_women">Femmes</span></p>
+        </div>
+        <div class="gen-view" id="gen-view" tabindex="0" role="region" aria-label="Arbre généalogique" data-i18n-attr="aria-label:tools.genealogy_view_aria">
+            <div class="gen-sizer" id="gen-sizer"><div class="gen-stage" id="gen-stage"></div></div>
+        </div>
     </div>
 
     <div id="screen-tool-history" class="list-screen hidden">
@@ -3186,6 +3214,8 @@
     <script src="js/app/tools.js"></script>
     <script src="js/app/countries.js"></script>
     <script src="js/app/calendar.js"></script>
+    <script src="js/genealogyCore.js"></script>
+    <script src="js/app/genealogy.js"></script>
     <script src="js/historyMapsCore.js"></script>
     <script src="js/app/history-maps.js"></script>
     <script src="js/app/rewards.js"></script>

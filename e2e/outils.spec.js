@@ -18,10 +18,10 @@ async function ouvrir(page, texte) {
     await page.locator('#screen-tools .arcade-card', { hasText: texte }).click();
 }
 
-test('la boîte à outils s\'ouvre depuis les catégories, propose neuf outils et revient', async ({ page }) => {
+test('la boîte à outils s\'ouvre depuis les catégories, propose dix outils et revient', async ({ page }) => {
     await page.locator('#btn-tools').click();
     expect(await visibleScreen(page)).toBe('screen-tools');
-    await expect(page.locator('#screen-tools .arcade-card')).toHaveCount(9);
+    await expect(page.locator('#screen-tools .arcade-card')).toHaveCount(10);
     await page.locator('#screen-tools .arcade-card', { hasText: 'Chiffres romains' }).click();
     expect(await visibleScreen(page)).toBe('screen-tool-roman');
     await page.locator('#screen-tool-roman .back-btn').click();
@@ -421,4 +421,31 @@ test('cartes historiques : le curseur montre tout ce qui existe à une date', as
     await expect(page.locator('#tool-history-fiche')).toContainText('soleil ne se couche jamais');
     await expect(page.locator('#tool-history-snapshots [data-snapshot="1920"]')).toHaveAttribute('aria-pressed', 'true');
     await expect(page.locator('#tool-history-entity-select')).toHaveValue('britannique');
+});
+
+test('généalogie biblique : un arbre, hommes en bleu et femmes en rose, bascule français / hébreu, repli et recherche', async ({ page }) => {
+    const errors = [];
+    page.on('pageerror', e => errors.push(String(e)));
+    await page.locator('#btn-tools').click();
+    await page.locator('#screen-tools .arcade-card', { hasText: 'Généalogie biblique' }).click();
+    expect(await visibleScreen(page)).toBe('screen-tool-genealogy');
+    await expect(page.locator('#gen-stage .gen-card')).toHaveCount(300);
+    await expect(page.locator('#gen-lang-fr')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#gen-stage .gen-card[data-id="adam"] .gen-name')).toHaveText('Adam');
+    const bg = id => page.locator(`#gen-stage .gen-card[data-id="${id}"]`).evaluate(el => getComputedStyle(el).backgroundColor);
+    expect(await bg('adam')).toBe('rgb(219, 234, 254)');
+    expect(await bg('naama')).toBe('rgb(252, 231, 243)');
+    await page.locator('#gen-lang-he').click();
+    await expect(page.locator('#gen-lang-he')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#gen-stage .gen-card[data-id="adam"] .gen-name')).toHaveText('אדם');
+    await page.locator('#gen-lang-fr').click();
+    // Replier Noé cache ses descendants.
+    await page.locator('#gen-stage .gen-card[data-id="noe"] .gen-toggle').click();
+    await expect(page.locator('#gen-stage .gen-card[data-id="sem"]')).toHaveCount(0);
+    await page.locator('#gen-search').fill('moise');
+    await page.locator('.gen-result', { hasText: 'Moïse' }).click();
+    await expect(page.locator('#gen-stage .gen-card.is-focus .gen-name')).toHaveText('Moïse');
+    await page.locator('#screen-tool-genealogy .back-btn').click();
+    expect(await visibleScreen(page)).toBe('screen-tools');
+    expect(errors).toEqual([]);
 });
