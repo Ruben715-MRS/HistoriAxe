@@ -361,7 +361,36 @@
     m('shimea', 'Schimea', 'שמעא', 'david', { mother: 'bathsheba' });
     m('shobab', 'Schobab', 'שובב', 'david', { mother: 'bathsheba' });
     m('nathan_david', 'Nathan', 'נתן', 'david', { mother: 'bathsheba' });
-    m('salomon', 'Salomon', 'שלמה', 'david', { mother: 'bathsheba' });
+    m('salomon', 'Salomon', 'שלמה', 'david', { mother: 'bathsheba', unions: [['naama_ammonite', 'mariage']] });
+    // La descendance de Salomon : Roboam (de Naama l'Ammonite), puis la lignée royale de Juda, puis les descendants après l'exil (1 Chroniques 3).
+    // Salomon eut aussi beaucoup d'autres femmes et de fils (1 Rois 11:3), non nommés dans ces généalogies : seuls les noms donnés sont figurés.
+    f('naama_ammonite', 'Naama l’Ammonite', 'נעמה', null);
+    m('rehoboam', 'Roboam', 'רחבעם', 'salomon', { mother: 'naama_ammonite' });
+    m('abijam', 'Abija', 'אביה', 'rehoboam');
+    m('asa_roi', 'Asa', 'אסא', 'abijam');
+    m('josaphat', 'Josaphat', 'יהושפט', 'asa_roi');
+    m('joram_roi', 'Joram', 'יהורם', 'josaphat');
+    m('achazia', 'Achazia', 'אחזיה', 'joram_roi');
+    m('joas', 'Joas', 'יואש', 'achazia');
+    m('amatsia', 'Amatsia', 'אמציה', 'joas');
+    m('azaria', 'Azaria', 'עזריה', 'amatsia');
+    m('jotham_roi', 'Jotham', 'יותם', 'azaria');
+    m('achaz', 'Achaz', 'אחז', 'jotham_roi');
+    m('ezechias', 'Ézéchias', 'יחזקיהו', 'achaz');
+    m('manasse_roi', 'Manassé', 'מנשה', 'ezechias');
+    m('amon_roi', 'Amon', 'אמון', 'manasse_roi');
+    m('josias', 'Josias', 'יאשיהו', 'amon_roi');
+    m('johanan_josias', 'Jochanan', 'יוחנן', 'josias');
+    m('jehoiakim', 'Jojakim', 'יהויקים', 'josias');
+    m('zedekiah', 'Sédécias', 'צדקיהו', 'josias');
+    m('shallum_josias', 'Schallum', 'שלום', 'josias');
+    m('jeconiah', 'Jéconias', 'יכניהו', 'jehoiakim');
+    m('shealtiel', 'Schealthiel', 'שאלתיאל', 'jeconiah');
+    m('pedaiah', 'Pedaja', 'פדיה', 'jeconiah');
+    m('zerubbabel', 'Zorobabel', 'זרובבל', 'pedaiah');
+    m('meshullam', 'Meschullam', 'משלם', 'zerubbabel');
+    m('hanania_zerub', 'Hanania', 'חנניה', 'zerubbabel');
+    f('shelomith', 'Shelomith', 'שלומית', 'zerubbabel');
     m('jibhar', 'Jibhar', 'יבחר', 'david');
     m('elishua', 'Élischoua', 'אלישוע', 'david');
     m('eliphelet_1', 'Éliphéleth', 'אליפלט', 'david');
