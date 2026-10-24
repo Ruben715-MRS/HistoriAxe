@@ -144,7 +144,7 @@
 
     // La France est ici ; les autres pays sont dans js/stateLeadersData.js (chargé avant ce fichier dans le navigateur).
     var COUNTRIES = {
-        france: { name: 'France', note: 'Depuis Clovis (481) : rois, puis empereurs et présidents. Liste indicative.', groups: GROUPS, rows: FRANCE_ROWS }
+        france: { name: 'France', note: 'Depuis Clovis (481) : rois, puis empereurs et présidents. Les rois mérovingiens, partagés entre plusieurs royaumes, ne sont pas tous donnés.', groups: GROUPS, rows: FRANCE_ROWS }
     };
     var DATA = typeof module === 'object' && module.exports
         ? require('./stateLeadersData.js')
@@ -164,7 +164,7 @@
         var out = [];
         var prev = null;
         toRows(c.rows).forEach(function (r) {
-            out.push({ row: r, divider: prev !== null && prev !== r.group ? c.groups[r.group].label : null, color: c.groups[r.group].color });
+            out.push({ row: r, divider: prev !== r.group ? c.groups[r.group].label : null, color: c.groups[r.group].color });
             prev = r.group;
         });
         return out;
@@ -177,8 +177,9 @@
         }).sort(function (a, b) { return a.name.localeCompare(b.name, 'fr'); });
     }
 
+    // La note du pays, suivie de la mention commune « Liste indicative ».
     function noteOf(country) {
-        return COUNTRIES[country] ? COUNTRIES[country].note : '';
+        return COUNTRIES[country] ? COUNTRIES[country].note + ' Liste indicative.' : '';
     }
 
     function normalize(text) {

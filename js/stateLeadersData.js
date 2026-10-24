@@ -154,7 +154,7 @@
         },
 
         espagne: {
-            name: "Espagne", note: "Depuis les Rois Catholiques (Isabelle en 1474, Ferdinand en 1479). Liste indicative des souverains et des présidents.",
+            name: "Espagne", note: "Depuis les Rois Catholiques (Isabelle en 1474, Ferdinand en 1479). Les souverains et les présidents.",
             groups: {
                 trastamare: G("Maison de Trastamare", "#fef3c7"), habsbourg: G("Maison de Habsbourg", "#e0e7ff"),
                 bourbon: G("Maison de Bourbon", "#fce7f3"), bonaparte: G("Joseph Bonaparte", EMP),

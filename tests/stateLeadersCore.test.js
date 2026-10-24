@@ -42,18 +42,18 @@ test('chefs d’État : pour chaque pays, la dernière ligne est en fonction et 
             assert.ok(S.COUNTRIES[c.key].groups[r.group], c.name + ' / ' + r.name + ' : groupe inconnu');
             assert.ok(it.color, c.name + ' : couleur manquante');
         });
-        assert.ok(S.noteOf(c.key).length > 0, c.name + ' : note manquante');
+        assert.ok(S.noteOf(c.key).endsWith('Liste indicative.'), c.name + ' : note sans mention « liste indicative »');
     });
 });
 
-test('chefs d’État : un trait s’affiche à chaque changement de régime, et seulement là', () => {
+test('chefs d’État : une barre de dynastie ou de régime s’affiche au début et à chaque changement, et seulement là', () => {
     S.countryList().forEach(c => {
         const items = S.rowsOf(c.key);
         const changes = items.filter((it, i) => i > 0 && it.row.group !== items[i - 1].row.group).length;
-        assert.strictEqual(items.filter(it => it.divider).length, changes, c.name);
-        assert.strictEqual(items[0].divider, null, c.name);
+        assert.strictEqual(items.filter(it => it.divider).length, changes + 1, c.name);
+        assert.strictEqual(items[0].divider, S.COUNTRIES[c.key].groups[items[0].row.group].label, c.name);
     });
-    assert.strictEqual(S.rowsOf('france').find(it => it.divider).divider, S.COUNTRIES.france.groups.carolingiens.label);
+    assert.strictEqual(S.rowsOf('france')[0].divider, S.COUNTRIES.france.groups.merovingiens.label);
 });
 
 test('chefs d’État : la recherche ignore les accents et les apostrophes, et cherche aussi la fonction', () => {

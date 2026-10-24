@@ -463,17 +463,17 @@ test('généalogie biblique : un arbre, hommes en bleu et femmes en rose, bascul
     expect(errors).toEqual([]);
 });
 
-test('les chefs d’État : de Clovis à Macron, traits entre les régimes, recherche par nom', async ({ page }) => {
+test('chronologie des chefs d’État : de Clovis à Macron, barres de dynastie, recherche par nom', async ({ page }) => {
     const errors = [];
     page.on('pageerror', e => errors.push(String(e)));
     await page.locator('#btn-tools').click();
-    await page.locator('#screen-tools .arcade-card', { hasText: 'Les chefs d’État' }).click();
+    await page.locator('#screen-tools .arcade-card', { hasText: 'Chronologie des chefs d’État' }).click();
     expect(await visibleScreen(page)).toBe('screen-tool-leaders');
     const rows = page.locator('#leaders-list .leader-row');
     await expect(rows.first()).toContainText('Clovis Ier');
     await expect(rows.last()).toContainText('Emmanuel Macron');
     await expect(rows.last()).toContainText('aujourd’hui');
-    await expect(page.locator('#leaders-list .leaders-divider').first()).toContainText('Dynastie carolingienne');
+    await expect(page.locator('#leaders-list .leaders-divider').first()).toContainText('Dynastie mérovingienne');
     await page.locator('#leaders-search').fill('petain');
     await expect(rows).toHaveCount(1);
     await expect(rows.first()).toContainText('Philippe Pétain');
