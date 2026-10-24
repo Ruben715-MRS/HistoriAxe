@@ -384,8 +384,8 @@
     m('abijam', 'Abija', 'אביה', 'rehoboam');
     m('asa_roi', 'Asa', 'אסא', 'abijam');
     m('josaphat', 'Josaphat', 'יהושפט', 'asa_roi');
-    m('joram_roi', 'Joram', 'יהורם', 'josaphat');
-    m('achazia', 'Achazia', 'אחזיה', 'joram_roi');
+    m('joram_roi', 'Joram', 'יהורם', 'josaphat', { unions: [['athalie', 'mariage']] });
+    m('achazia', 'Achazia', 'אחזיה', 'joram_roi', { mother: 'athalie' });
     m('joas', 'Joas', 'יואש', 'achazia');
     m('amatsia', 'Amatsia', 'אמציה', 'joas');
     m('azaria', 'Azaria', 'עזריה', 'amatsia');
@@ -573,6 +573,99 @@
     m('ahitub_eli', 'Ahitoub (fils de Phinées)', 'אחיטוב', 'phinees_eli');
     m('ahimelech', 'Ahimélec', 'אחימלך', 'ahitub_eli');
     m('abiathar', 'Abiathar', 'אביתר', 'ahimelech');
+
+    // Les rois d'Israël (royaume du Nord) : Jéroboam, la dynastie d'Omri, la dynastie de Jéhu (1 Rois 11-14 ; 16-22 ; 2 Rois 9-14).
+    m('nebat', 'Nebat', 'נבט', 'ephraim', { far: true, unions: [['zeruah', 'mariage']] });
+    f('zeruah', 'Tseroua', 'צרועה', null);
+    m('jeroboam', 'Jéroboam', 'ירבעם', 'nebat', { mother: 'zeruah' });
+    m('nadab_jer', 'Nadab (fils de Jéroboam)', 'נדב', 'jeroboam');
+    m('baasha', 'Baasha', 'בעשא', 'issakhar', { far: true });
+    m('elah_israel', 'Éla', 'אלה', 'baasha');
+    m('zimri', 'Zimri', 'זמרי', 'issakhar', { far: true });
+    m('omri', 'Omri', 'עמרי', 'issakhar', { far: true, unions: [] });
+    m('achab', 'Achab', 'אחאב', 'omri', { unions: [['jezebel', 'mariage']] });
+    m('ethbaal', 'Ethbaal', 'איתבעל', 'tsidon', { far: true });
+    f('jezebel', 'Jézabel', 'איזבל', 'ethbaal');
+    m('achazia_israel', 'Achazia (roi d’Israël)', 'אחזיה', 'achab', { mother: 'jezebel' });
+    m('joram_israel', 'Joram (roi d’Israël)', 'יהורם', 'achab', { mother: 'jezebel' });
+    f('athalie', 'Athalie', 'עתליה', 'achab', { mother: 'jezebel' });
+    m('nimshi', 'Nimchi', 'נמשי', 'issakhar', { far: true });
+    m('jehoshaphat_nimshi', 'Yehochafat (fils de Nimchi)', 'יהושפט', 'nimshi');
+    m('jehu', 'Jéhu', 'יהוא', 'jehoshaphat_nimshi');
+    m('jehoachaz_israel', 'Yehoachaz (roi d’Israël)', 'יהואחז', 'jehu');
+    m('joas_israel', 'Joas (roi d’Israël)', 'יואש', 'jehoachaz_israel');
+    m('jeroboam_ii', 'Jéroboam II', 'ירבעם', 'joas_israel');
+
+    // Les prophètes (sans ascendance dans le texte : rattachés à leur tribu ou à leur ville par un lien en pointillés).
+    m('elijah', 'Élie', 'אליהו', 'gilead', { far: true });
+    m('elisha', 'Élisée', 'אלישע', 'manasse', { far: true });
+    m('jonah', 'Jonas', 'יונה', 'zebulon', { far: true });
+    m('beeri', 'Béeri', 'בארי', 'ephraim', { far: true });
+    m('hosea', 'Osée', 'הושע', 'beeri', { unions: [['gomer_hosee', 'mariage']] });
+    f('gomer_hosee', 'Gomer', 'גומר', null);
+    m('jezreel_hosee', 'Yizréel', 'יזרעאל', 'hosea', { mother: 'gomer_hosee' });
+    m('lo_ruhama', 'Lo-Ruhama', 'לא רוחמה', 'hosea', { mother: 'gomer_hosee' });
+    m('lo_ammi', 'Lo-Ammi', 'לא עמי', 'hosea', { mother: 'gomer_hosee' });
+    m('amoz', 'Amots', 'אמוץ', 'juda', { far: true });
+    m('isaiah', 'Isaïe', 'ישעיהו', 'amoz', { unions: [['prophetesse_isaie', 'mariage']] });
+    f('prophetesse_isaie', 'La prophétesse', 'הנביאה', null);
+    m('shear_jashub', 'Shear-Yashoub', 'שאר ישוב', 'isaiah', { mother: 'prophetesse_isaie' });
+    m('maher_shalal', 'Maher-Shalal-Hash-Baz', 'מהר שלל חש בז', 'isaiah', { mother: 'prophetesse_isaie' });
+    m('hilkiah_jer', 'Hilkiya (prêtre d’Anatot)', 'חלקיה', 'benjamin', { far: true });
+    m('jeremiah', 'Jérémie', 'ירמיהו', 'hilkiah_jer');
+    m('buzi', 'Buzi', 'בוזי', 'levi', { far: true });
+    m('ezekiel', 'Ézéchiel', 'יחזקאל', 'buzi');
+    m('daniel_prophete', 'Daniel (le prophète)', 'דניאל', 'juda', { far: true });
+    m('amos', 'Amos', 'עמוס', 'juda', { far: true });
+    m('micah', 'Michée', 'מיכה', 'juda', { far: true });
+    m('nahum', 'Nahum', 'נחום', 'juda', { far: true });
+    m('habakkuk', 'Habacuc', 'חבקוק', 'juda', { far: true });
+    m('zephaniah', 'Sophonie', 'צפניה', 'juda', { far: true });
+    m('haggai', 'Aggée', 'חגי', 'juda', { far: true });
+    m('joel_prophete', 'Joël', 'יואל', 'juda', { far: true });
+    m('zechariah', 'Zacharie (le prophète)', 'זכריה', 'juda', { far: true });
+
+    // Balaam, fils de Béor, d'Aram ; Balak roi de Moab, fils de Tsippor (Nombres 22-24).
+    m('beor', 'Béor', 'בעור', 'aram_sem', { far: true });
+    m('balaam', 'Balaam', 'בלעם', 'beor');
+    m('zippor', 'Tsippor', 'צפור', 'moav', { far: true });
+    m('balak', 'Balak', 'בלק', 'zippor');
+
+    // Hiram de Tyr, Hazaël et Naaman (rois et chef d'armée étrangers) ; Bezalel et Oholiab, artisans du Tabernacle (Exode 31:1-6 ; 35:30-35).
+    m('hiram_tyr', 'Hiram (roi de Tyr)', 'חירם', 'tsidon', { far: true });
+    m('hiram_artisan', 'Hiram (artisan)', 'חירם', 'naphtali', { far: true });
+    m('naaman_aram', 'Naaman (chef d’armée d’Aram)', 'נעמן', 'aram_sem', { far: true });
+    m('hazael', 'Hazaël', 'חזאל', 'aram_sem', { far: true });
+    m('ahisamakh', 'Ahisamakh', 'אחיסמך', 'dan', { far: true });
+    m('oholiab', 'Oholiab', 'אהליאב', 'ahisamakh');
+
+    // Esther, Mardochée et Aman (Esther 2-7). Mardochée descend de Kish, comme Saül.
+    m('shimei_kish', 'Shimeï (fils de Kish)', 'שמעי', 'kish');
+    m('jair', 'Yaïr', 'יאיר', 'shimei_kish');
+    m('mordechai', 'Mardochée', 'מרדכי', 'jair');
+    m('abihail', 'Abihaïl', 'אביחיל', 'shimei_kish');
+    f('esther', 'Esther', 'אסתר', 'abihail');
+    f('vashti', 'Vashti', 'ושתי', null);
+    m('ahasuerus', 'Assuérus', 'אחשורוש', 'elam', { far: true, unions: [['esther', 'mariage'], ['vashti', 'mariage']] });
+    m('agag', 'Agag', 'אגג', 'amalek', { far: true });
+    m('haman', 'Aman', 'המן', 'agag');
+    m('hachalia', 'Hachalia', 'חכליה', 'juda', { far: true });
+    m('nehemiah', 'Néhémie', 'נחמיה', 'hachalia');
+
+    // Job et ses amis (Job 2:11 ; 32:2). Job est d'Outs ; Bildad est de Chouah ; Élihou est de Bouz.
+    m('job', 'Job', 'איוב', 'outs_aram', { far: true });
+    m('buz', 'Bouz', 'בוז', 'nahor');
+    m('eliphaz_temanite', 'Éliphaz le Témanite', 'אליפז התימני', 'outs_aram', { far: true });
+    m('bildad', 'Bildad le Shouhite', 'בלדד', 'chouah', { far: true });
+    m('tsophar', 'Tsophar le Naamathite', 'צופר', 'outs_aram', { far: true });
+    m('elihu_job', 'Élihou le Bouzite', 'אליהו', 'buz', { far: true });
+
+    // Naomi, Élimélec, Mahlon et Kilion (Ruth 1). Ruth et Orpa, leurs épouses.
+    m('elimelech', 'Élimélec', 'אלימלך', 'hour', { far: true, unions: [['naomi', 'mariage']] });
+    f('naomi', 'Naomi', 'נעמי', null);
+    m('mahlon', 'Mahlon', 'מחלון', 'elimelech', { mother: 'naomi', unions: [['ruth', 'mariage']] });
+    m('kilion', 'Kilion', 'כליון', 'elimelech', { mother: 'naomi', unions: [['orpah', 'mariage']] });
+    f('orpah', 'Orpa', 'ערפה', null);
 
     // --- Requêtes sur l'arbre -----------------------------------------------------------------------
     var CHILDREN = {};
