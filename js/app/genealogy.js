@@ -77,6 +77,17 @@ function genUnionLabel(kind) {
     return kind === 'concubinage' || kind === 'interdite' ? genWord(kind) : '';
 }
 
+// Les conjoints d'une personne : ses propres unions, et pour une femme, le mari qui la déclare (même union, vue des deux côtés).
+function genSpouses(p) {
+    const out = p.unions.slice();
+    if (p.sex === 'f') {
+        GenealogyCore.PEOPLE.forEach(q => q.unions.forEach(u => {
+            if (u[0] === p.id && !out.some(o => o[0] === q.id)) out.push([q.id, u[1]]);
+        }));
+    }
+    return out;
+}
+
 function genBuildCard(p) {
     const card = document.createElement('div');
     card.className = 'gen-card ' + (p.sex === 'f' ? 'is-woman' : 'is-man') + (p.far ? ' is-far' : '') + (p.ex ? ' is-ex' : '');
@@ -100,7 +111,7 @@ function genBuildCard(p) {
         tag.textContent = genWord('mother') + ' ' + genName(mo);
         card.appendChild(tag);
     }
-    p.unions.forEach(u => {
+    genSpouses(p).forEach(u => {
         const partner = GenealogyCore.byId(u[0]);
         const chip = document.createElement('div');
         chip.className = 'gen-spouse ' + (partner.sex === 'f' ? 'is-woman' : 'is-man');

@@ -13215,7 +13215,7 @@ input:not([type="range"]), label, select, summary, textarea {
     line-height: 1;
     cursor: pointer;
 }
-.gen-screen .header-title { padding-right: 165px; font-size: 20px; margin-bottom: 4px; }
+.gen-screen .header-title { padding: 58px 120px 0; font-size: 20px; margin-bottom: 4px; }
 .gen-screen .modes-header-subtitle { margin: 0 16px 8px; font-size: 13px; }
 .gen-card { padding-right: 14px; }
 .gen-card[lang="he"] { padding-right: 14px; padding-left: 7px; }
@@ -13231,3 +13231,6 @@ input:not([type="range"]), label, select, summary, textarea {
 .gen-legend { text-align: center; }
 .gen-view { text-align: left; }
 .gen-sizer { margin: 12px auto; }
+/* En vertical, les textes des cartes sont centrés (le sens horizontal reste aligné à gauche, à droite pour l'hébreu). */
+.gen-stage.is-vertical .gen-card,
+.gen-stage.is-vertical .gen-card[lang="he"] { text-align: center; }

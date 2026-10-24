@@ -455,6 +455,8 @@ test('généalogie biblique : un arbre, hommes en bleu et femmes en rose, bascul
     await page.locator('#gen-search').fill('moise');
     await page.locator('.gen-result', { hasText: 'Moïse' }).click();
     await expect(page.locator('#gen-stage .gen-card.is-focus .gen-name')).toHaveText('Moïse');
+    // Tsippora, mariée à Moïse, porte le nom de son mari dans sa carte (encadré bleu).
+    await expect(page.locator('#gen-stage .gen-card[data-id="tsippora"] .gen-spouse.is-man')).toContainText('Moïse');
     await page.locator('#screen-tool-genealogy .back-btn').click();
     expect(await visibleScreen(page)).toBe('screen-tools');
     expect(errors).toEqual([]);
