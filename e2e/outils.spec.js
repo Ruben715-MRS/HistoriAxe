@@ -483,7 +483,7 @@ test('chronologie des chefs d’État : de Clovis à Macron, barres de dynastie,
     await expect(page.locator('#leaders-count')).toContainText('Aucun');
     // Le bouton « Pays » ouvre la liste ; le Japon s'affiche, avec sa note.
     await page.locator('#leaders-pick').click();
-    await expect(page.locator('#leaders-countries .leaders-country-btn')).toHaveCount(23);
+    await expect(page.locator('#leaders-countries .leaders-country-btn')).toHaveCount(33);
     await page.locator('.leaders-country-btn', { hasText: 'Japon' }).click();
     await expect(page.locator('#leaders-countries')).toBeHidden();
     await expect(page.locator('#leaders-pick')).toContainText('Japon');

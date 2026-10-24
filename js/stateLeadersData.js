@@ -574,6 +574,214 @@
                 [2003, 2013, "Hu Jintao", "président de la République", "prc"],
                 [2013, null, "Xi Jinping", "président de la République", "prc"]
             ]
+        },
+
+        iran: {
+            name: "Iran",
+            note: "Depuis la dynastie qajare (1796). Depuis 1979, le chef de l’État est le Guide suprême ; le président de la République est chef du gouvernement et n’est pas donné ici.",
+            groups: {
+                qajar: G("Dynastie qajare", "#fef3c7"), pahlavi: G("Dynastie Pahlavi", "#e0e7ff"),
+                islamique: G("République islamique (Guide suprême)", REP)
+            },
+            rows: [
+                [1796, 1797, "Agha Mohammad Khan", "chah", "qajar"],
+                [1797, 1834, "Fath-Ali Chah", "chah", "qajar"],
+                [1834, 1848, "Mohammad Chah", "chah", "qajar"],
+                [1848, 1896, "Naser al-Din Chah", "chah", "qajar"],
+                [1896, 1907, "Mozaffar al-Din Chah", "chah", "qajar"],
+                [1907, 1909, "Mohammad Ali Chah", "chah", "qajar"],
+                [1909, 1925, "Ahmad Chah", "chah", "qajar"],
+                [1925, 1941, "Reza Chah", "chah, fondateur de la dynastie Pahlavi", "pahlavi"],
+                [1941, 1979, "Mohammad Reza Chah", "chah", "pahlavi"],
+                [1979, 1989, "Ruhollah Khomeini", "Guide suprême de la révolution", "islamique"],
+                [1989, null, "Ali Khamenei", "Guide suprême", "islamique"]
+            ]
+        },
+
+        ukraine: {
+            name: "Ukraine",
+            note: "Depuis l’indépendance (1991). Liste des présidents (un intérim en 2014 est donné).",
+            groups: { presidence: G("Présidence de la République", REP) },
+            rows: [
+                [1991, 1994, "Léonid Kravtchouk", "président", "presidence"],
+                [1994, 2005, "Leonid Koutchma", "président", "presidence"],
+                [2005, 2010, "Viktor Iouchtchenko", "président", "presidence"],
+                [2010, 2014, "Viktor Ianoukovytch", "président", "presidence"],
+                [2014, 2014, "Oleksandr Tchynov", "président par intérim", "presidence"],
+                [2014, 2019, "Petro Porochenko", "président", "presidence"],
+                [2019, null, "Volodymyr Zelensky", "président", "presidence"]
+            ]
+        },
+
+        pologne: {
+            name: "Pologne",
+            note: "Depuis 1990 : présidents de la République, élus au suffrage universel direct.",
+            groups: { presidence: G("Présidence de la République", REP) },
+            rows: [
+                [1990, 1995, "Lech Wałęsa", "président", "presidence"],
+                [1995, 2005, "Aleksander Kwaśniewski", "président", "presidence"],
+                [2005, 2010, "Lech Kaczyński", "président", "presidence"],
+                [2010, 2015, "Bronisław Komorowski", "président", "presidence"],
+                [2015, 2025, "Andrzej Duda", "président", "presidence"],
+                [2025, null, "Karol Nawrocki", "président", "presidence"]
+            ]
+        },
+
+        coree_du_sud: {
+            name: "Corée du Sud",
+            note: "Depuis la proclamation de la République de Corée (1948). Les intérims ne sont pas donnés.",
+            groups: {
+                republique1: G("Première et Deuxième Républiques (1948-1961)", REP),
+                autoritaire: G("Régimes autoritaires (1961-1987)", MIL),
+                republique2: G("République actuelle (depuis 1987)", REP)
+            },
+            rows: [
+                [1948, 1960, "Syngman Rhee", "président", "republique1"],
+                [1960, 1962, "Yun Po-seon", "président", "republique1"],
+                [1963, 1979, "Park Chung-hee", "président", "autoritaire"],
+                [1979, 1980, "Choi Kyu-hah", "président", "autoritaire"],
+                [1980, 1988, "Chun Doo-hwan", "président", "autoritaire"],
+                [1988, 1993, "Roh Tae-woo", "président", "republique2"],
+                [1993, 1998, "Kim Young-sam", "président", "republique2"],
+                [1998, 2003, "Kim Dae-jung", "président", "republique2"],
+                [2003, 2008, "Roh Moo-hyun", "président", "republique2"],
+                [2008, 2013, "Lee Myung-bak", "président", "republique2"],
+                [2013, 2017, "Park Geun-hye", "présidente", "republique2"],
+                [2017, 2022, "Moon Jae-in", "président", "republique2"],
+                [2022, 2025, "Yoon Suk-yeol", "président (destitué en avril 2025)", "republique2"],
+                [2025, null, "Lee Jae-myung", "président", "republique2"]
+            ]
+        },
+
+        afrique_du_sud: {
+            name: "Afrique du Sud",
+            note: "Depuis la présidence de la République (1984). Les présidents de l’apartheid sont en gris.",
+            groups: {
+                apartheid: G("Présidence sous l’apartheid (1984-1994)", MIL),
+                democratie: G("Démocratie (depuis 1994)", REP)
+            },
+            rows: [
+                [1984, 1989, "Pieter Willem Botha", "président", "apartheid"],
+                [1989, 1994, "Frederik de Klerk", "président", "apartheid"],
+                [1994, 1999, "Nelson Mandela", "président", "democratie"],
+                [1999, 2008, "Thabo Mbeki", "président", "democratie"],
+                [2008, 2009, "Kgalema Motlanthe", "président par intérim puis président", "democratie"],
+                [2009, 2018, "Jacob Zuma", "président", "democratie"],
+                [2018, null, "Cyril Ramaphosa", "président", "democratie"]
+            ]
+        },
+
+        nigeria: {
+            name: "Nigeria",
+            note: "Depuis l’indépendance (1960) : premier président en 1963, puis régimes militaires et civils. Les chefs militaires sont en gris.",
+            groups: {
+                civil1: G("République civile (1963-1966)", REP),
+                militaire1: G("Régimes militaires (1966-1979)", MIL),
+                civil2: G("République civile (1979-1983)", REP),
+                militaire2: G("Régimes militaires (1983-1999)", MIL),
+                civil3: G("République civile (depuis 1999)", REP)
+            },
+            rows: [
+                [1963, 1966, "Nnamdi Azikiwe", "président", "civil1"],
+                [1966, 1966, "Johnson Aguiyi-Ironsi", "chef militaire", "militaire1"],
+                [1966, 1975, "Yakubu Gowon", "chef militaire", "militaire1"],
+                [1975, 1976, "Murtala Mohammed", "chef militaire", "militaire1"],
+                [1976, 1979, "Olusegun Obasanjo", "chef militaire", "militaire1"],
+                [1979, 1983, "Shehu Shagari", "président", "civil2"],
+                [1983, 1985, "Muhammadu Buhari", "chef militaire", "militaire2"],
+                [1985, 1993, "Ibrahim Babangida", "chef militaire", "militaire2"],
+                [1993, 1993, "Ernest Shonekan", "chef du gouvernement intérimaire", "militaire2"],
+                [1993, 1998, "Sani Abacha", "chef militaire", "militaire2"],
+                [1998, 1999, "Abdulsalami Abubakar", "chef militaire", "militaire2"],
+                [1999, 2007, "Olusegun Obasanjo", "président élu", "civil3"],
+                [2007, 2010, "Umaru Musa Yar’Adua", "président", "civil3"],
+                [2010, 2015, "Goodluck Jonathan", "président", "civil3"],
+                [2015, 2023, "Muhammadu Buhari", "président", "civil3"],
+                [2023, null, "Bola Tinubu", "président", "civil3"]
+            ]
+        },
+
+        arabie_saoudite: {
+            name: "Arabie saoudite",
+            note: "Depuis la fondation du royaume (1932). Les rois sont chefs de l’État.",
+            groups: { saoud: G("Maison de Saoud", "#d1fae5") },
+            rows: [
+                [1932, 1953, "Abdelaziz Ibn Saoud", "roi", "saoud"],
+                [1953, 1964, "Saoud ben Abdelaziz", "roi", "saoud"],
+                [1964, 1975, "Fayçal ben Abdelaziz", "roi", "saoud"],
+                [1975, 1982, "Khalid ben Abdelaziz", "roi", "saoud"],
+                [1982, 2005, "Fahd ben Abdelaziz", "roi", "saoud"],
+                [2005, 2015, "Abdallah ben Abdelaziz", "roi", "saoud"],
+                [2015, null, "Salmane ben Abdelaziz", "roi", "saoud"]
+            ]
+        },
+
+        indonesie: {
+            name: "Indonésie",
+            note: "Depuis la proclamation de l’indépendance (1945). Les intérims ne sont pas donnés.",
+            groups: {
+                sukarno: G("Présidence de Sukarno (1945-1967)", REP),
+                suharto: G("Nouvel Ordre de Suharto (1967-1998)", MIL),
+                reformes: G("Réformes (depuis 1998)", REP)
+            },
+            rows: [
+                [1945, 1967, "Sukarno", "président", "sukarno"],
+                [1967, 1998, "Suharto", "président", "suharto"],
+                [1998, 1999, "B. J. Habibie", "président", "reformes"],
+                [1999, 2001, "Abdurrahman Wahid", "président", "reformes"],
+                [2001, 2004, "Megawati Sukarnoputri", "présidente", "reformes"],
+                [2004, 2014, "Susilo Bambang Yudhoyono", "président", "reformes"],
+                [2014, 2024, "Joko Widodo", "président", "reformes"],
+                [2024, null, "Prabowo Subianto", "président", "reformes"]
+            ]
+        },
+
+        pakistan: {
+            name: "Pakistan",
+            note: "Depuis la première présidence (1956). Les régimes militaires sont en gris ; les intérims ne sont pas tous donnés.",
+            groups: {
+                civil1: G("Première République (1956-1958)", REP),
+                militaire1: G("Régimes militaires (1958-1971)", MIL),
+                civil2: G("Présidence civile (1971-1978)", REP),
+                militaire2: G("Régime de Zia-ul-Haq (1978-1988)", MIL),
+                civil3: G("Présidence civile (depuis 1988)", REP)
+            },
+            rows: [
+                [1956, 1958, "Iskander Mirza", "président", "civil1"],
+                [1958, 1969, "Ayub Khan", "président (régime militaire)", "militaire1"],
+                [1969, 1971, "Yahya Khan", "président (régime militaire)", "militaire1"],
+                [1971, 1973, "Zulfikar Ali Bhutto", "président", "civil2"],
+                [1973, 1978, "Fazal Ilahi Chaudhry", "président", "civil2"],
+                [1978, 1988, "Muhammad Zia-ul-Haq", "président", "militaire2"],
+                [1988, 1993, "Ghulam Ishaq Khan", "président", "civil3"],
+                [1993, 1997, "Farooq Leghari", "président", "civil3"],
+                [1998, 2001, "Mohammad Rafiq Tarar", "président", "civil3"],
+                [2001, 2008, "Pervez Musharraf", "président (régime militaire)", "militaire2"],
+                [2008, 2013, "Asif Ali Zardari", "président", "civil3"],
+                [2013, 2018, "Mamnoon Hussain", "président", "civil3"],
+                [2018, 2023, "Arif Alvi", "président", "civil3"],
+                [2023, 2024, "Sadiq Sanjrani", "président par intérim", "civil3"],
+                [2024, null, "Asif Ali Zardari", "président (de nouveau élu en 2024)", "civil3"]
+            ]
+        },
+
+        algerie: {
+            name: "Algérie",
+            note: "Depuis l’indépendance (1962). Liste des présidents de la République ; les intérims ne sont pas donnés.",
+            groups: {
+                fln: G("Ère du FLN (1963-1992)", REP),
+                ouvert: G("Présidence depuis 1992", REP)
+            },
+            rows: [
+                [1963, 1965, "Ahmed Ben Bella", "président", "fln"],
+                [1965, 1978, "Houari Boumediene", "président", "fln"],
+                [1979, 1992, "Chadli Bendjedid", "président", "fln"],
+                [1992, 1992, "Mohamed Boudiaf", "président du Haut Comité d’État", "ouvert"],
+                [1992, 1994, "Ali Kafi", "président du Haut Comité d’État", "ouvert"],
+                [1994, 1999, "Liamine Zéroual", "président", "ouvert"],
+                [1999, 2019, "Abdelaziz Bouteflika", "président", "ouvert"],
+                [2019, null, "Abdelmadjid Tebboune", "président", "ouvert"]
+            ]
         }
     };
 }));
