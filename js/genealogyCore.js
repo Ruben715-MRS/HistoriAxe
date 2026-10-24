@@ -317,6 +317,61 @@
     m('belier', 'Bélier', 'רם', 'hetsron_perets');
     m('aminadav', 'Aminadav', 'עמינדב', 'belier');
     m('nahchon', 'Na’hchon', 'נחשון', 'aminadav');
+    // La lignée de David (Ruth 4:18-22 ; 1 Chroniques 2:5-15 ; 2 Samuel 3 et 5 ; 1 Chroniques 3 et 14).
+    m('salmon', 'Salmon', 'שלמון', 'nahchon', { unions: [['rahab', 'mariage']] });
+    f('rahab', 'Rahab', 'רחב', null);
+    m('boaz', 'Boaz', 'בועז', 'salmon', { mother: 'rahab', unions: [['ruth', 'mariage']] });
+    f('ruth', 'Ruth', 'רות', null);
+    m('obed', 'Obed', 'עובד', 'boaz', { mother: 'ruth' });
+    m('jesse', 'Jessé', 'ישי', 'obed');
+    // Les fils de Jessé, dans l'ordre : David est le septième.
+    m('eliab', 'Eliab', 'אליאב', 'jesse');
+    m('abinadab', 'Abinadab', 'אבינדב', 'jesse');
+    m('shamma', 'Shamma', 'שמא', 'jesse');
+    m('netanel', 'Netanel', 'נתנאל', 'jesse');
+    m('raddai', 'Raddaï', 'רדי', 'jesse');
+    m('otsem', 'Otsem', 'עצם', 'jesse');
+    m('david', 'David', 'דוד', 'jesse', { unions: [
+        ['achinoam', 'mariage'], ['abigail_carmel', 'mariage'], ['maaca', 'mariage'], ['haggith', 'mariage'],
+        ['abital', 'mariage'], ['eglah', 'mariage'], ['bathsheba', 'mariage']
+    ] });
+    // Les sœurs de David : Tserouya (mère de Joab, Abishaï et Asaël) et Abigaïl (mère d'Amasa).
+    f('tserouya', 'Tserouya', 'צרויה', 'jesse');
+    f('abigail_soeur', 'Abigaïl', 'אביגיל', 'jesse');
+    m('joab', 'Joab', 'יואב', 'tserouya');
+    m('abishai', 'Abishaï', 'אבישי', 'tserouya');
+    m('asahel', 'Asaël', 'עשהאל', 'tserouya');
+    m('amasa', 'Amasa', 'עמשא', 'abigail_soeur');
+    // Les épouses de David.
+    f('achinoam', 'Achinoam', 'אחינועם', null);
+    f('abigail_carmel', 'Abigaïl (de Carmel)', 'אביגיל', null);
+    f('maaca', 'Maaca', 'מעכה', null);
+    f('haggith', 'Haggith', 'חגית', null);
+    f('abital', 'Abital', 'אבית', null);
+    f('eglah', 'Égla', 'עגלה', null);
+    f('bathsheba', 'Bath-Schéba', 'בת שבע', null);
+    // Les fils nés à Hébron.
+    m('amnon', 'Amnon', 'אמנון', 'david', { mother: 'achinoam' });
+    m('daniel_kileab', 'Daniel (Kiléab)', 'דניאל', 'david', { mother: 'abigail_carmel' });
+    m('absalom', 'Absalom', 'אבשלום', 'david', { mother: 'maaca' });
+    m('adonija', 'Adonija', 'אדניה', 'david', { mother: 'haggith' });
+    m('shephatia', 'Schephatia', 'שפטיה', 'david', { mother: 'abital' });
+    m('ithream', 'Jithream', 'יתרעם', 'david', { mother: 'eglah' });
+    // Les fils nés à Jérusalem, dont quatre de Bath-Schéba.
+    m('shimea', 'Schimea', 'שמעא', 'david', { mother: 'bathsheba' });
+    m('shobab', 'Schobab', 'שובב', 'david', { mother: 'bathsheba' });
+    m('nathan_david', 'Nathan', 'נתן', 'david', { mother: 'bathsheba' });
+    m('salomon', 'Salomon', 'שלמה', 'david', { mother: 'bathsheba' });
+    m('jibhar', 'Jibhar', 'יבחר', 'david');
+    m('elishua', 'Élischoua', 'אלישוע', 'david');
+    m('eliphelet_1', 'Éliphéleth', 'אליפלט', 'david');
+    m('nogah', 'Noga', 'נוגה', 'david');
+    m('nepheg', 'Népheg', 'נפג', 'david');
+    m('japhia', 'Japhia', 'יפיע', 'david');
+    m('elishama_david', 'Élischama', 'אלישמע', 'david');
+    m('eliada', 'Éliada', 'אליעדע', 'david');
+    m('eliphelet_2', 'Éliphéleth', 'אליפלט', 'david');
+    f('tamar_david', 'Tamar', 'תמר', 'david', { mother: 'maaca' });
     f('elicheva', 'Elichéva', 'אלישבע', 'aminadav');
     m('calev', 'Calev', 'כלב', 'hetsron_perets', { unions: [['miriam', 'mariage']] });
     m('hour', '’Hour', 'חור', 'calev', { mother: 'miriam' });
