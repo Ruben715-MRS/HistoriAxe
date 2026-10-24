@@ -348,7 +348,7 @@
     m('otsem', 'Otsem', 'עצם', 'jesse');
     m('david', 'David', 'דוד', 'jesse', { unions: [
         ['achinoam', 'mariage'], ['abigail_carmel', 'mariage'], ['maaca', 'mariage'], ['haggith', 'mariage'],
-        ['abital', 'mariage'], ['eglah', 'mariage'], ['bathsheba', 'mariage']
+        ['abital', 'mariage'], ['eglah', 'mariage'], ['bathsheba', 'mariage'], ['michal', 'mariage'], ['abishag', 'concubinage']
     ] });
     // Les sœurs de David : Tserouya (mère de Joab, Abishaï et Asaël) et Abigaïl (mère d'Amasa).
     f('tserouya', 'Tserouya', 'צרויה', 'jesse');
@@ -536,6 +536,43 @@
     f('jael', 'Jaël', 'יעל', null);
     m('jabin', 'Yabin', 'יבין', 'canaan', { far: true });
     m('sisera', 'Sisera', 'סיסרא', 'jabin');
+
+    // Samuel et sa famille (1 Samuel 1 ; rattachés à Éphraïm, comme le dit 1 Samuel 1:1).
+    m('elkana', 'Elkana', 'אלקנה', 'ephraim', { far: true, unions: [['hannah', 'mariage'], ['peninnah', 'mariage']] });
+    f('hannah', 'Anne', 'חנה', null);
+    f('peninnah', 'Peninna', 'פנינה', null);
+    m('samuel', 'Samuel', 'שמואל', 'elkana', { mother: 'hannah' });
+    m('joel_samuel', 'Joël (fils de Samuel)', 'יואל', 'samuel');
+    m('abiah_samuel', 'Abiya (fils de Samuel)', 'אביה', 'samuel');
+
+    // La lignée de Saül (1 Samuel 9:1-2) : Békher, fils de Benjamin, puis Afia, Tsrour, Abiel, Kish, Saül.
+    m('aphiah', 'Afia', 'אפיח', 'bekher');
+    m('zeror', 'Tsrour', 'צרור', 'aphiah');
+    m('abiel', 'Abiel', 'אביאל', 'zeror');
+    m('kish', 'Kish', 'קיש', 'abiel');
+    m('saul_roi', 'Saül', 'שאול', 'kish', { unions: [['ahinoam_saul', 'mariage'], ['rizpah', 'concubinage']] });
+    f('ahinoam_saul', 'Ahinoam (épouse de Saül)', 'אחינעם', null);
+    f('rizpah', 'Rispa', 'רצפה', null);
+    m('ner', 'Ner', 'נר', 'abiel');
+    m('abner', 'Abner', 'אבנר', 'ner');
+    m('jonathan', 'Jonathan', 'יהונתן', 'saul_roi', { mother: 'ahinoam_saul' });
+    m('mephibosheth', 'Mephiboshet', 'מפיבושת', 'jonathan');
+    m('ishbosheth', 'Ish-Bosheth', 'איש בושת', 'saul_roi', { mother: 'ahinoam_saul' });
+    m('malki_shua', 'Malki-Choua', 'מלכי שוע', 'saul_roi', { mother: 'ahinoam_saul' });
+    f('merab', 'Mérab', 'מרב', 'saul_roi', { mother: 'ahinoam_saul' });
+    f('michal', 'Mikhal', 'מיכל', 'saul_roi', { mother: 'ahinoam_saul' });
+    f('abishag', 'Abishag', 'אבישג', null);
+
+    // Uria le Hittite et Bath-Schéba (2 Samuel 11) ; Nabal, Calébite, et Abigaïl de Carmel (1 Samuel 25).
+    m('uriah', 'Urie', 'אוריה', 'het', { unions: [['bathsheba', 'mariage']] });
+    m('nabal', 'Nabal', 'נבל', 'calev', { far: true, unions: [['abigail_carmel', 'mariage']] });
+    m('shimei_benjamin', 'Shimeï', 'שמעי', 'guera');
+    m('goliath', 'Goliath', 'גלית', 'kaftorim', { far: true });
+
+    // Les prêtres de David : Abiatar, fils d'Ahimélec, fils d'Ahitoub, petit-fils de Phinées (1 Samuel 14:3 ; 22:9-20).
+    m('ahitub_eli', 'Ahitoub (fils de Phinées)', 'אחיטוב', 'phinees_eli');
+    m('ahimelech', 'Ahimélec', 'אחימלך', 'ahitub_eli');
+    m('abiathar', 'Abiathar', 'אביתר', 'ahimelech');
 
     // --- Requêtes sur l'arbre -----------------------------------------------------------------------
     var CHILDREN = {};
