@@ -13114,11 +13114,30 @@ input:not([type="range"]), label, select, summary, textarea {
 
 /* --- Généalogie biblique --- */
 .gen-screen { padding-left: 0; padding-right: 0; }
-.gen-lang {
+.gen-tools {
     position: fixed;
     top: calc(env(safe-area-inset-top, 0px) + 14px);
     right: 16px;
     z-index: 60;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.gen-dir-btn {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: var(--card-shadow);
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+}
+.gen-lang {
     display: flex;
     height: 42px;
     border: 1px solid var(--glass-border);
@@ -13202,5 +13221,4 @@ input:not([type="range"]), label, select, summary, textarea {
 .gen-card[lang="he"] { padding-right: 14px; padding-left: 7px; }
 .gen-view { min-height: 62vh; }
 .gen-actions .btn { padding: 4px 10px; min-height: 36px; font-size: 13px; }
-.gen-dir-btn { font-size: 16px; }
 .gen-stage.is-vertical .gen-toggle { right: auto; left: 50%; top: auto; bottom: -24px; transform: translateX(-50%); }
