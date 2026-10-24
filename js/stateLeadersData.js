@@ -507,6 +507,73 @@
                 [2014, 2021, "Reuven Rivlin", "président", "presidence"],
                 [2021, null, "Isaac Herzog", "président", "presidence"]
             ]
+        },
+        russie: {
+            name: "Russie",
+            note: "Depuis la dynastie des Romanov (1613). Pour l’URSS, la liste donne le chef formel de l’État (président du Comité exécutif, puis du Présidium du Soviet suprême) : Lénine et Staline n’exerçaient pas cette fonction. Dates : celles de la fonction, avec les intérims.",
+            groups: {
+                romanov: G("Dynastie des Romanov (tsars puis empereurs)", "#ede9fe"),
+                provisoire: G("Gouvernement provisoire (1917)", "#e0e7ff"),
+                urss: G("Union soviétique (URSS)", "#fecaca"),
+                federation: G("Fédération de Russie", REP)
+            },
+            rows: [
+                [1613, 1645, "Michel Ier Romanov", "tsar de Russie", "romanov"],
+                [1645, 1676, "Alexis Ier", "tsar de Russie", "romanov"],
+                [1676, 1682, "Fédor III", "tsar de Russie", "romanov"],
+                [1682, 1696, "Ivan V et Pierre Ier", "tsars (co-souverains)", "romanov"],
+                [1696, 1725, "Pierre Ier le Grand", "tsar, puis empereur de toutes les Russies (1721)", "romanov"],
+                [1725, 1727, "Catherine Ire", "impératrice", "romanov"],
+                [1727, 1730, "Pierre II", "empereur", "romanov"],
+                [1730, 1740, "Anne Ire", "impératrice", "romanov"],
+                [1740, 1741, "Ivan VI", "empereur", "romanov"],
+                [1741, 1762, "Élisabeth Ire", "impératrice", "romanov"],
+                [1762, 1762, "Pierre III", "empereur", "romanov"],
+                [1762, 1796, "Catherine II la Grande", "impératrice", "romanov"],
+                [1796, 1801, "Paul Ier", "empereur", "romanov"],
+                [1801, 1825, "Alexandre Ier", "empereur", "romanov"],
+                [1825, 1855, "Nicolas Ier", "empereur", "romanov"],
+                [1855, 1881, "Alexandre II", "empereur", "romanov"],
+                [1881, 1894, "Alexandre III", "empereur", "romanov"],
+                [1894, 1917, "Nicolas II", "empereur (abdication en mars 1917)", "romanov"],
+                [1917, 1917, "Gueorgui Lvov", "président du gouvernement provisoire", "provisoire"],
+                [1917, 1917, "Alexandre Kerenski", "président du gouvernement provisoire", "provisoire"],
+                [1917, 1919, "Iakov Sverdlov", "président du Comité exécutif central panrusse (chef formel de l’État)", "urss"],
+                [1919, 1946, "Mikhaïl Kalinine", "président du Comité exécutif central (1919-1938), puis du Présidium du Soviet suprême (1938-1946)", "urss"],
+                [1946, 1953, "Nikolaï Chvernik", "président du Présidium du Soviet suprême", "urss"],
+                [1953, 1960, "Kliment Vorochilov", "président du Présidium du Soviet suprême", "urss"],
+                [1960, 1964, "Leonid Brejnev", "président du Présidium du Soviet suprême", "urss"],
+                [1964, 1965, "Anastase Mikoyan", "président du Présidium du Soviet suprême", "urss"],
+                [1965, 1977, "Nikolaï Podgorny", "président du Présidium du Soviet suprême", "urss"],
+                [1977, 1982, "Leonid Brejnev", "président du Présidium du Soviet suprême", "urss"],
+                [1982, 1983, "Vassili Kouznetsov", "président par intérim", "urss"],
+                [1983, 1984, "Iouri Andropov", "président du Présidium du Soviet suprême", "urss"],
+                [1984, 1984, "Vassili Kouznetsov", "président par intérim", "urss"],
+                [1984, 1985, "Konstantin Tchernenko", "président du Présidium du Soviet suprême", "urss"],
+                [1985, 1988, "Andreï Gromyko", "président du Présidium du Soviet suprême", "urss"],
+                [1988, 1991, "Mikhaïl Gorbatchev", "président du Présidium du Soviet suprême, puis président de l’URSS (1990)", "urss"],
+                [1991, 1999, "Boris Eltsine", "président de la Russie", "federation"],
+                [1999, 2008, "Vladimir Poutine", "président (intérim fin 1999, élu en 2000)", "federation"],
+                [2008, 2012, "Dmitri Medvedev", "président", "federation"],
+                [2012, null, "Vladimir Poutine", "président (de nouveau depuis 2012)", "federation"]
+            ]
+        },
+
+        chine: {
+            name: "Chine",
+            note: "Depuis la proclamation de la République populaire de Chine (1949). Ni les empereurs ni la République de Chine (1912-1949) ne sont donnés. Entre 1975 et 1978, aucun chef de l’État n’est nommé dans cette liste.",
+            groups: { prc: G("République populaire de Chine", "#fee2e2") },
+            rows: [
+                [1949, 1959, "Mao Zedong", "président de la République populaire", "prc"],
+                [1959, 1968, "Liu Shaoqi", "président de la République populaire", "prc"],
+                [1968, 1975, "Dong Biwu", "président par intérim", "prc"],
+                [1978, 1983, "Ye Jianying", "président du Comité permanent de l’Assemblée nationale populaire (chef de l’État)", "prc"],
+                [1983, 1988, "Li Xiannian", "président de la République", "prc"],
+                [1988, 1993, "Yang Shangkun", "président de la République", "prc"],
+                [1993, 2003, "Jiang Zemin", "président de la République", "prc"],
+                [2003, 2013, "Hu Jintao", "président de la République", "prc"],
+                [2013, null, "Xi Jinping", "président de la République", "prc"]
+            ]
         }
     };
 }));
