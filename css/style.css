@@ -13222,3 +13222,12 @@ input:not([type="range"]), label, select, summary, textarea {
 .gen-view { min-height: 62vh; }
 .gen-actions .btn { padding: 4px 10px; min-height: 36px; font-size: 13px; }
 .gen-stage.is-vertical .gen-toggle { right: auto; left: 50%; top: auto; bottom: -24px; transform: translateX(-50%); }
+
+/* Tout l'écran est centré : la barre de recherche et ses boutons, la légende, et l'arbre quand il est plus étroit que l'écran. */
+.gen-bar { display: flex; flex-direction: column; align-items: center; margin: 0 auto; }
+.gen-bar #gen-search { width: 100%; max-width: 420px; box-sizing: border-box; }
+.gen-results { width: 100%; justify-content: center; }
+.gen-actions { justify-content: center; }
+.gen-legend { text-align: center; }
+.gen-view { text-align: left; }
+.gen-sizer { margin: 12px auto; }

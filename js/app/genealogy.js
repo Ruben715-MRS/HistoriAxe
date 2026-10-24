@@ -34,7 +34,8 @@ function toolGenealogyInit() {
     }
     genApplyLangButtons();
     genApplyDirButton();
-    genRender();
+    // À l'ouverture : Adam et ses trois fils, les autres branches repliées.
+    genCollapseAll();
     genScrollTo('adam');
 }
 
@@ -235,6 +236,7 @@ function genZoom(delta) {
     genRender();
 }
 
+// Replie toutes les branches sauf celle d'Adam, pour que l'arbre s'ouvre sur Adam et ses fils.
 function genCollapseAll() {
     genCollapsed = {};
     GenealogyCore.parentsIds().forEach(id => { if (id !== 'adam') genCollapsed[id] = true; });
