@@ -667,6 +667,65 @@
     m('kilion', 'Kilion', 'כליון', 'elimelech', { mother: 'naomi', unions: [['orpah', 'mariage']] });
     f('orpah', 'Orpa', 'ערפה', null);
 
+    // Achan, de Juda, de la lignée de Zéra (Josué 7:1 ; 1 Chroniques 2:6-7). Juges : Ibzan, Abdon, Eglon.
+    m('carmi_achan', 'Karmi', 'כרמי', 'zerah_juda');
+    m('achan', 'Akhan', 'עכן', 'carmi_achan');
+    m('ibzan', 'Ibtsan', 'איבצן', 'juda', { far: true });
+    m('abdon', 'Abdon', 'עבדון', 'ephraim', { far: true });
+    m('eglon', 'Églon', 'עגלון', 'moav', { far: true });
+
+    // Les hommes de David : Benaya, fils de Yehoyada (de la lignée d'Aaron), Ahitophel, Houshaï, Barzillaï, et le prophète Nathan.
+    m('jehoiada', 'Yehoyada', 'יהוידע', 'aaron', { far: true });
+    m('benaiah', 'Benaya', 'בניהו', 'jehoiada');
+    m('ahithophel', 'Ahitophel', 'אחיתופל', 'juda', { far: true });
+    m('hushai', 'Houshaï l’Arkite', 'חושי', 'juda', { far: true });
+    m('barzillai', 'Barzillaï le Galaadite', 'ברזלי', 'gilead', { far: true });
+    m('nathan_prophete', 'Nathan le prophète', 'נתן הנביא', 'juda', { far: true });
+
+    // Les filles de Tselophehad (Nombres 26:33 ; 27:1-7 ; 36) : Tselophehad, de Manassé, fils de Hépher, fils de Galaad.
+    m('hepher', 'Hépher', 'חפר', 'gilead');
+    m('zelophehad', 'Tselophehad', 'צלפחד', 'hepher');
+    f('mahlah', 'Mahla', 'מחלה', 'zelophehad');
+    f('noa', 'Noa', 'נעה', 'zelophehad');
+    f('hoglah', 'Hogla', 'חגלה', 'zelophehad');
+    f('milcah_zel', 'Milca', 'מלכה', 'zelophehad');
+    f('tirtsa', 'Tirtsa', 'תרצה', 'zelophehad');
+
+    // Coré et ses fils ; Datan, Abiram et On de Réouven (Nombres 16 ; 26:5-11).
+    m('assir_korah', 'Assir', 'אסיר', 'korah_levi');
+    m('elkana_korah', 'Elkana (fils de Coré)', 'אלקנה', 'korah_levi');
+    m('abiasaf', 'Abiasaf', 'אביסף', 'korah_levi');
+    m('dathan', 'Datan', 'דתן', 'ruben', { far: true });
+    m('abiram', 'Abiram', 'אבירם', 'ruben', { far: true });
+    m('on', 'On', 'און', 'ruben', { far: true });
+
+    // Abraham et les siens : Éliézer de Damas, Éphron le Hittite, Melkitsédek (Genèse 14:18 ; 15:2 ; 23:8-10).
+    m('eliezer_abraham', 'Éliézer de Damas', 'אליעזר', 'aram_sem', { far: true });
+    m('ephron', 'Éphron le Hittite', 'עפרון', 'het', { far: true });
+    m('melchisedek', 'Melkitsédek', 'מלכי צדק', 'canaan', { far: true });
+    // Potiphar, officier de Pharaon (Genèse 39), et Abimélec roi de Guérar (Genèse 20).
+    m('potiphar', 'Potiphar', 'פוטיפר', 'mitsraim', { far: true });
+    m('abimelech_gerar', 'Abimélec de Guérar', 'אבימלך', 'kaftorim', { far: true });
+
+    // Matthieu 1:12-16 : de Zorobabel à Jésus. Joseph, époux de Marie ; Marie et Jésus.
+    m('abiud', 'Abiud', 'אביהוד', 'zerubbabel');
+    m('eliakim_mt', 'Éliakim', 'אליקים', 'abiud');
+    m('azor', 'Azor', 'עזור', 'eliakim_mt');
+    m('sadoc_mt', 'Sadoc', 'צדוק', 'azor');
+    m('achim', 'Achim', 'אכים', 'sadoc_mt');
+    m('eliud', 'Eliud', 'אליהוד', 'achim');
+    m('eleazar_mt', 'Éléazar', 'אלעזר', 'eliud');
+    m('matthan', 'Matthan', 'מתן', 'eleazar_mt');
+    m('jacob_mt', 'Jacob (père de Joseph)', 'יעקב', 'matthan');
+    m('joseph_mari', 'Joseph (époux de Marie)', 'יוסף', 'jacob_mt', { unions: [['marie', 'mariage']] });
+    f('marie', 'Marie', 'מרים', null);
+    m('jesus', 'Jésus', 'ישוע', 'joseph_mari', { mother: 'marie' });
+
+    // Zacharie, prêtre de la classe d'Abia, et Élisabeth, « des filles d'Aaron » ; leur fils Jean-Baptiste (Luc 1:5-25, 57-80).
+    m('zacharie_nt', 'Zacharie (le prêtre)', 'זכריה', 'aaron', { far: true, unions: [['elisabeth', 'mariage']] });
+    f('elisabeth', 'Élisabeth', 'אלישבע', null);
+    m('jean_baptiste', 'Jean-Baptiste', 'יוחנן', 'zacharie_nt', { mother: 'elisabeth' });
+
     // --- Requêtes sur l'arbre -----------------------------------------------------------------------
     var CHILDREN = {};
     PEOPLE.forEach(function (p) {
