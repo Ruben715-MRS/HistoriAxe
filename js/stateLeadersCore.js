@@ -153,9 +153,12 @@
 
     function toRows(rows) {
         return rows.map(function (r) {
-            return { from: r[0], to: r[1], name: r[2], title: r[3], group: r[4] };
+            return { from: r[0], to: r[1], name: r[2], title: r[3], group: r[4], party: r[5] || null };
         });
     }
+
+    // Couleurs par parti (États-Unis) : démocrate en bleu, républicain en rouge, autre parti ou aucun en jaune.
+    var PARTY_COLORS = { democrate: '#bfdbfe', republicain: '#fecaca', autre: '#fef08a', aucun: '#fef08a' };
 
     // Les lignes d'un pays, dans l'ordre chronologique. `divider` : le nom du nouveau régime quand le groupe change ; `color` : le fond.
     function rowsOf(country) {
@@ -164,7 +167,7 @@
         var out = [];
         var prev = null;
         toRows(c.rows).forEach(function (r) {
-            out.push({ row: r, divider: prev !== r.group ? c.groups[r.group].label : null, color: c.groups[r.group].color });
+            out.push({ row: r, divider: prev !== r.group ? c.groups[r.group].label : null, color: r.party ? PARTY_COLORS[r.party] : c.groups[r.group].color });
             prev = r.group;
         });
         return out;

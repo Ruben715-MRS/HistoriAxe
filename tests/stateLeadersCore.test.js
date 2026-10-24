@@ -64,3 +64,16 @@ test('chefs d’État : la recherche ignore les accents et les apostrophes, et c
     assert.strictEqual(S.search(rows, '').length, rows.length);
     assert.strictEqual(S.search(rows, 'zzzz').length, 0);
 });
+
+test('chefs d’État : aux États-Unis, la couleur suit le parti (bleu démocrate, rouge républicain, jaune sinon)', () => {
+    const us = S.rowsOf('etats_unis');
+    us.forEach(it => {
+        const want = { democrate: '#bfdbfe', republicain: '#fecaca', autre: '#fef08a', aucun: '#fef08a' }[it.row.party];
+        assert.ok(want, it.row.name + ' : parti inconnu');
+        assert.strictEqual(it.color, want, it.row.name);
+    });
+    assert.strictEqual(us.find(it => it.row.name === 'Abraham Lincoln').color, '#fecaca');
+    assert.strictEqual(us.find(it => it.row.name === 'Joe Biden').color, '#bfdbfe');
+    assert.strictEqual(us.find(it => it.row.name === 'George Washington').color, '#fef08a');
+    assert.strictEqual(us.filter(it => it.divider).length, 1, 'un seul groupe : pas de barre intermédiaire');
+});
