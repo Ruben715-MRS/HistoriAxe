@@ -141,3 +141,14 @@ test('contrôle : une question dont les indices ne désignent pas seul le pays e
     const tampered = { ...q, clues: [{ key: 'cur', value: 'euro (EUR)' }] };
     assert.equal(Q.isValid(tampered, pool), false);
 });
+
+test('textes : chaque type de question et d\'indice a son libellé, en français et en anglais', () => {
+    for (const lang of ['fr', 'en']) {
+        const ui = JSON.parse(fs.readFileSync(path.join(root, 'ui', lang + '.json'), 'utf8')).geoquiz;
+        for (const ask of Q.ASK_KEYS) assert.ok(ui['ask_' + ask], `${lang} : geoquiz.ask_${ask}`);
+        for (const key of Q.CLUE_KEYS) assert.ok(ui['clue_' + key], `${lang} : geoquiz.clue_${key}`);
+        for (const key of ['title', 'start', 'progress', 'right', 'wrong', 'next', 'finish', 'score', 'replay', 'back', 'none', 'credit', 'pop_label']) {
+            assert.ok(ui[key], `${lang} : geoquiz.${key}`);
+        }
+    }
+});

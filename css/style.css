@@ -12973,6 +12973,60 @@ input:not([type="range"]), label, select, summary, textarea {
     margin: 16px 0 8px;
 }
 
+/* Le quiz des pays (js/modes/geoquiz.js) : une question à la fois, quatre réponses, puis le score. */
+.geoquiz-play,
+.geoquiz-end {
+    width: 100%;
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.geoquiz-end {
+    align-items: center;
+    text-align: center;
+    margin-top: 24px;
+}
+
+.geoquiz-card {
+    background: var(--surface);
+    border: 2px solid var(--border-soft);
+    border-radius: 14px;
+    padding: 16px 18px;
+}
+
+.geoquiz-ask {
+    margin: 0 0 8px;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.geoquiz-clues {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--text-dark);
+}
+
+.geoquiz-options {
+    display: grid;
+    gap: 10px;
+}
+
+.geoquiz-feedback {
+    min-height: 1.5em;
+    margin: 0;
+    font-weight: 600;
+}
+
+.geoquiz-score {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
 /* Le choix d'année du calendrier : un champ, et une note sur le calcul des fêtes mobiles. */
 .cal-year-pick {
     display: flex;

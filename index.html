@@ -1475,6 +1475,29 @@
         </div>
     </div>
 
+    <!-- ÉCRAN : QUIZ DES PAYS (lancé depuis l'Atlas des pays — voir js/modes/geoquiz.js) -->
+    <div id="screen-geoquiz" class="list-screen hidden">
+        <button class="back-btn" onclick="geoQuizQuit()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="geoquiz.title">Quiz des pays</h2>
+        <p class="tool-msg" id="geoquiz-status" role="status"></p>
+        <div id="geoquiz-play" class="geoquiz-play hidden">
+            <p class="tool-small" id="geoquiz-progress" aria-live="polite"></p>
+            <div class="geoquiz-card">
+                <p class="geoquiz-ask" id="geoquiz-ask"></p>
+                <ul class="geoquiz-clues" id="geoquiz-clues"></ul>
+            </div>
+            <div class="geoquiz-options" id="geoquiz-options"></div>
+            <p class="geoquiz-feedback" id="geoquiz-feedback" role="status" aria-live="polite"></p>
+            <button type="button" class="btn hidden" id="geoquiz-next" onclick="geoQuizNext()"></button>
+        </div>
+        <div id="geoquiz-end" class="geoquiz-end hidden">
+            <p class="geoquiz-score" id="geoquiz-score" tabindex="-1" role="status"></p>
+            <button type="button" class="btn" onclick="startGeoQuiz()" data-i18n="geoquiz.replay">Rejouer</button>
+            <button type="button" class="btn" onclick="geoQuizQuit()" data-i18n="geoquiz.back">Retour à l'atlas</button>
+        </div>
+        <p class="tool-small" data-i18n="geoquiz.credit"></p>
+    </div>
+
     <div id="screen-tool-countries" class="list-screen hidden">
         <button class="back-btn" onclick="toolBack('countries')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
         <h2 class="header-title" data-i18n="tools.countries_title">Atlas des pays</h2>
@@ -1492,6 +1515,7 @@
             <div id="tool-countries-map" class="tool-countries-map" role="application" aria-label="Carte du monde : touchez un pays" data-i18n-attr="aria-label:tools.countries_map_label"></div>
             <p class="tool-small tool-countries-credit" data-i18n="tools.countries_credit"></p>
             <div class="tool-result tool-countries-fiche" id="tool-countries-fiche" role="region" aria-live="polite" aria-label="Fiche du pays" data-i18n-attr="aria-label:tools.countries_fiche_label"></div>
+            <button type="button" class="btn" onclick="startGeoQuiz()" data-i18n="geoquiz.start">S'entraîner : quiz des pays</button>
             <button type="button" class="btn tool-countries-another hidden" id="tool-countries-another" onclick="discoverAnotherCountry()" data-i18n="tools.countries_another">Un autre pays</button>
         </div>
     </div>
@@ -3217,6 +3241,7 @@
     <script src="js/calendarYearCore.js"></script>
     <script src="js/app/tools.js"></script>
     <script src="js/app/countries.js"></script>
+    <script src="js/modes/geoquiz.js"></script>
     <script src="js/app/calendar.js"></script>
     <script src="js/genealogyCore.js"></script>
     <script src="js/app/genealogy.js"></script>
