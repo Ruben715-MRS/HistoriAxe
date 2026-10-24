@@ -1,22 +1,29 @@
 // =========================================================================
 // === LA GÉNÉALOGIE BIBLIQUE (écran de la boîte à outils) ===
 // =========================================================================
-// Un seul arbre horizontal, d'Adam aux enfants de Jacob : une carte par personne (fond bleu clair pour les hommes, rose clair pour les
+// Un seul arbre, d'Adam aux enfants de Jacob (vertical par défaut, Adam centré en haut ; le bouton 🔄 passe à l'horizontal) : une carte par personne (fond bleu clair pour les hommes, rose clair pour les
 // femmes), des traits coudés entre parents et enfants, des pointillés pour les descendants lointains. Deux boutons collés en haut à droite
 // choisissent la langue des noms : « A » (français, par défaut) ou « א » (hébreu). Les données et la mise en page sont dans
 // js/genealogyCore.js (testé). Tout le texte passe par textContent.
 
 const GEN_CARD_W = 132;
 const GEN_COL_STEP = 166;
+const GEN_GAP = 10;
+const GEN_ROW_GAP = 26;
 const GEN_ZOOMS = [0.4, 0.55, 0.7, 0.85, 1, 1.25];
 let genLang = 'fr';
+let genDir = 'v';
+let genBoxes = {};
 let genZoomIdx = 4;
 let genCollapsed = {};
 let genBuilt = false;
 let genHeights = {};
 let genFocus = '';
 
-try { if (localStorage.getItem('genealogyLang') === 'he') genLang = 'he'; } catch (e) { /* stockage indisponible */ }
+try {
+    if (localStorage.getItem('genealogyLang') === 'he') genLang = 'he';
+    if (localStorage.getItem('genealogyDir') === 'h') genDir = 'h';
+} catch (e) { /* stockage indisponible */ }
 
 function genName(p) { return genLang === 'he' ? p.he : p.fr; }
 
@@ -26,7 +33,25 @@ function toolGenealogyInit() {
         document.getElementById('gen-search').addEventListener('input', genOnSearch);
     }
     genApplyLangButtons();
+    genApplyDirButton();
     genRender();
+    genScrollTo('adam');
+}
+
+function genApplyDirButton() {
+    const btn = document.getElementById('gen-dir');
+    const label = t(genDir === 'v' ? 'tools.genealogy_dir_to_h' : 'tools.genealogy_dir_to_v');
+    btn.setAttribute('aria-label', label);
+    btn.title = label;
+}
+
+// Le sens de l'arbre : vertical (Adam en haut, par défaut) ou horizontal (Adam à gauche). Le choix est mémorisé.
+function genToggleDir() {
+    genDir = genDir === 'v' ? 'h' : 'v';
+    try { localStorage.setItem('genealogyDir', genDir); } catch (e) { /* stockage indisponible */ }
+    genApplyDirButton();
+    genRender();
+    genScrollTo('adam');
 }
 
 function genApplyLangButtons() {
@@ -107,39 +132,72 @@ function genMeasure() {
 
 function genRender() {
     genMeasure();
-    const L = GenealogyCore.layout(genCollapsed, id => genHeights[id], { colStep: GEN_COL_STEP, cardWidth: GEN_CARD_W, gap: 10 });
+    const vertical = genDir === 'v';
+    const L = GenealogyCore.layout(genCollapsed, id => (vertical ? GEN_CARD_W + GEN_GAP : genHeights[id]),
+        { colStep: GEN_COL_STEP, cardWidth: GEN_CARD_W, gap: GEN_GAP });
+    let maxDepth = 0;
+    Object.keys(L.nodes).forEach(id => { maxDepth = Math.max(maxDepth, L.nodes[id].depth); });
+    // En vertical, chaque génération a la hauteur de sa plus haute carte : pas de vide entre deux générations.
+    const rowTop = [];
+    let rowsHeight = 0;
+    if (vertical) {
+        const rowH = [];
+        Object.keys(L.nodes).forEach(id => { const d = L.nodes[id].depth; rowH[d] = Math.max(rowH[d] || 0, genHeights[id]); });
+        for (let d = 0; d <= maxDepth; d++) { rowTop[d] = rowsHeight; rowsHeight += rowH[d] + GEN_ROW_GAP; }
+        rowsHeight -= GEN_ROW_GAP;
+    }
+
+    // Une boîte par personne, dans le sens choisi : en vertical, la génération descend et les frères se rangent à côté.
+    genBoxes = {};
+    Object.keys(L.nodes).forEach(id => {
+        const n = L.nodes[id];
+        genBoxes[id] = vertical
+            ? { left: n.cy - GEN_CARD_W / 2, top: rowTop[n.depth], w: GEN_CARD_W, h: genHeights[id] }
+            : { left: n.x, top: n.top, w: GEN_CARD_W, h: genHeights[id] };
+    });
+    const width = vertical ? L.height : L.width;
+    const height = vertical ? rowsHeight : L.height;
+
     const scale = GEN_ZOOMS[genZoomIdx];
     const sizer = document.getElementById('gen-sizer');
     const stage = document.getElementById('gen-stage');
-    sizer.style.width = Math.ceil(L.width * scale + 24) + 'px';
-    sizer.style.height = Math.ceil(L.height * scale + 24) + 'px';
-    stage.style.width = L.width + 'px';
-    stage.style.height = L.height + 'px';
+    sizer.style.width = Math.ceil(width * scale + 24) + 'px';
+    sizer.style.height = Math.ceil(height * scale + 24) + 'px';
+    stage.style.width = width + 'px';
+    stage.style.height = height + 'px';
     stage.style.transform = 'scale(' + scale + ')';
+    stage.classList.toggle('is-vertical', vertical);
     while (stage.firstChild) stage.removeChild(stage.firstChild);
 
     const NS = 'http://www.w3.org/2000/svg';
     const svg = document.createElementNS(NS, 'svg');
     svg.setAttribute('class', 'gen-lines');
-    svg.setAttribute('width', String(L.width));
-    svg.setAttribute('height', String(L.height));
+    svg.setAttribute('width', String(width));
+    svg.setAttribute('height', String(height));
     svg.setAttribute('aria-hidden', 'true');
     L.edges.forEach(e => {
-        const a = L.nodes[e.from], b = L.nodes[e.to];
-        const x1 = a.x + GEN_CARD_W, x2 = b.x, mid = x1 + (x2 - x1) / 2;
+        const a = genBoxes[e.from], b = genBoxes[e.to];
+        let d;
+        if (vertical) {
+            const x1 = a.left + a.w / 2, y1 = a.top + a.h, x2 = b.left + b.w / 2, y2 = b.top, mid = y1 + (y2 - y1) / 2;
+            d = 'M' + x1 + ' ' + y1 + ' V' + mid + ' H' + x2 + ' V' + y2;
+        } else {
+            const x1 = a.left + a.w, y1 = a.top + a.h / 2, x2 = b.left, y2 = b.top + b.h / 2, mid = x1 + (x2 - x1) / 2;
+            d = 'M' + x1 + ' ' + y1 + ' H' + mid + ' V' + y2 + ' H' + x2;
+        }
         const path = document.createElementNS(NS, 'path');
-        path.setAttribute('d', 'M' + x1 + ' ' + a.cy + ' H' + mid + ' V' + b.cy + ' H' + x2);
+        path.setAttribute('d', d);
         path.setAttribute('class', 'gen-line' + (e.far ? ' is-far' : ''));
         svg.appendChild(path);
     });
     stage.appendChild(svg);
 
     Object.keys(L.nodes).forEach(id => {
-        const n = L.nodes[id];
+        const b = genBoxes[id];
         const p = GenealogyCore.byId(id);
         const card = genBuildCard(p);
-        card.style.left = n.x + 'px';
-        card.style.top = n.top + 'px';
+        card.style.left = b.left + 'px';
+        card.style.top = b.top + 'px';
         card.style.width = GEN_CARD_W + 'px';
         if (id === genFocus) card.classList.add('is-focus');
         const kids = GenealogyCore.childrenOf(id);
@@ -156,7 +214,18 @@ function genRender() {
         }
         stage.appendChild(card);
     });
-    stage._layout = L;
+}
+
+// Fait défiler la vue pour centrer une personne (Adam au départ, la personne cherchée ensuite).
+function genScrollTo(id) {
+    const b = genBoxes[id];
+    if (!b) return;
+    const view = document.getElementById('gen-view');
+    const scale = GEN_ZOOMS[genZoomIdx];
+    view.scrollTo({
+        left: Math.max(0, (b.left + b.w / 2) * scale - view.clientWidth / 2),
+        top: Math.max(0, (b.top + b.h / 2) * scale - view.clientHeight / 3)
+    });
 }
 
 function genZoom(delta) {
@@ -207,8 +276,5 @@ function genGoTo(id) {
     document.getElementById('gen-search').value = '';
     genOnSearch();
     genRender();
-    const n = document.getElementById('gen-stage')._layout.nodes[target];
-    const view = document.getElementById('gen-view');
-    const scale = GEN_ZOOMS[genZoomIdx];
-    view.scrollTo({ left: Math.max(0, n.x * scale - view.clientWidth / 3), top: Math.max(0, n.cy * scale - view.clientHeight / 2) });
+    genScrollTo(target);
 }

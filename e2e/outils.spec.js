@@ -430,6 +430,12 @@ test('généalogie biblique : un arbre, hommes en bleu et femmes en rose, bascul
     await page.locator('#screen-tools .arcade-card', { hasText: 'Généalogie biblique' }).click();
     expect(await visibleScreen(page)).toBe('screen-tool-genealogy');
     await expect(page.locator('#gen-stage .gen-card')).toHaveCount(300);
+    // Par défaut vertical : Adam en haut, Caïn et Seth plus bas.
+    await expect(page.locator('#gen-stage.is-vertical')).toHaveCount(1);
+    expect(await page.locator('#gen-stage .gen-card[data-id="adam"]').evaluate(el => el.offsetTop)).toBeLessThan(await page.locator('#gen-stage .gen-card[data-id="cain"]').evaluate(el => el.offsetTop));
+    await page.locator('#gen-dir').click();
+    await expect(page.locator('#gen-stage.is-vertical')).toHaveCount(0);
+    await page.locator('#gen-dir').click();
     await expect(page.locator('#gen-lang-fr')).toHaveAttribute('aria-pressed', 'true');
     await expect(page.locator('#gen-stage .gen-card[data-id="adam"] .gen-name')).toHaveText('Adam');
     const bg = id => page.locator(`#gen-stage .gen-card[data-id="${id}"]`).evaluate(el => getComputedStyle(el).backgroundColor);
