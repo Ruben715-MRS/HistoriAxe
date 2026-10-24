@@ -460,9 +460,9 @@
     m('elon_zebulon', 'Elon', 'אלון', 'zebulon');
     m('yahleel', 'Ya’hléel', 'יחלאל', 'zebulon');
     f('dina', 'Dina', 'דינה', 'jacob', { mother: 'lea' });
-    m('joseph', 'Joseph', 'יוסף', 'jacob', { mother: 'rachel' });
-    m('manasse', 'Manassé', 'מנשה', 'joseph');
-    m('ephraim', 'Ephraïm', 'אפרים', 'joseph');
+    m('joseph', 'Joseph', 'יוסף', 'jacob', { mother: 'rachel', unions: [['asenath', 'mariage']] });
+    m('manasse', 'Manassé', 'מנשה', 'joseph', { mother: 'asenath' });
+    m('ephraim', 'Ephraïm', 'אפרים', 'joseph', { mother: 'asenath' });
     // La lignée d'Éphraïm jusqu'à Josué (1 Chroniques 7:20-27). Béria, fils d'Éphraïm, n'est pas le Béria fils d'Acher, d'où son identifiant.
     m('shuthelah_eph', 'Schutélach', 'שותלח', 'ephraim');
     m('bered_eph', 'Béred', 'ברד', 'shuthelah_eph');
@@ -494,6 +494,48 @@
     m('moupim', 'Moupim', 'מפים', 'benjamin');
     m('houpim', '’Houpim', 'חפים', 'benjamin');
     m('ard', 'Ard', 'ארד', 'benjamin');
+
+    // === Suite : toute la Bible jusqu'à Jésus ===
+    // Une personne dont la Bible ne donne pas l'ascendance est rattachée à sa tribu ou à son peuple par un lien en pointillés (far).
+
+    // Asenath, épouse de Joseph (Genèse 41:45).
+    f('asenath', 'Asenath', 'אסנת', null);
+
+    // Éli, grand-prêtre de Silo, de la lignée d'Ithamar (1 Chroniques 24:3), et ses fils (1 Samuel 1-4).
+    m('eli', 'Éli', 'עלי', 'itamar');
+    m('hophni', 'Hophni', 'חפני', 'eli');
+    m('phinees_eli', 'Phinées (fils d’Éli)', 'פינחס', 'eli');
+    m('ichabod', 'Ichabod', 'איכבוד', 'phinees_eli');
+
+    // Gédéon et sa lignée (Juges 6-9) : Manassé, Makhir, Galaad, Abiézer, Yoash.
+    m('machir', 'Makhir', 'מכיר', 'manasse');
+    m('gilead', 'Galaad', 'גלעד', 'machir');
+    m('abiezer', 'Abiézer', 'אביעזר', 'gilead');
+    m('yoash_gideon', 'Yoash', 'יואש', 'abiezer');
+    m('gideon', 'Gédéon', 'גדעון', 'yoash_gideon');
+    m('abimelech_gideon', 'Abimélec (fils de Gédéon)', 'אבימלך', 'gideon');
+    m('yotham_gideon', 'Yotham (fils de Gédéon)', 'יותם', 'gideon');
+    // Jephté, fils de Galaad (Juges 11).
+    m('jephte', 'Jephté', 'יפתח', 'gilead');
+
+    // Othniel, neveu de Caleb (Juges 3:9 ; 1 Chroniques 4:13-15).
+    m('kenaz_caleb', 'Kénaz', 'קנז', 'calev');
+    m('othniel', 'Othniel', 'עתניאל', 'kenaz_caleb');
+    m('seraiah_kenaz', 'Seraya (fils de Kénaz)', 'שריה', 'kenaz_caleb');
+
+    // Ehoud, de Benjamin, fils de Guéra (Juges 3:15).
+    m('ehud', 'Ehoud', 'אהוד', 'guera');
+
+    // Déborah et Lapidot, d'Éphraïm (Juges 4:5) ; Barak de Nephtali (Juges 4:6).
+    m('lapidot', 'Lapidot', 'לפידות', 'ephraim', { far: true, unions: [['deborah', 'mariage']] });
+    f('deborah', 'Déborah', 'דבורה', null);
+    m('barak', 'Barak', 'ברק', 'naphtali', { far: true });
+
+    // Héber le Kénite et Jaël (Juges 4:17), Yabin roi de Hatsor et Sisera son chef d'armée (Juges 4).
+    m('heber_kenite', 'Héber le Kénite', 'חבר הקיני', 'midian', { far: true, unions: [['jael', 'mariage']] });
+    f('jael', 'Jaël', 'יעל', null);
+    m('jabin', 'Yabin', 'יבין', 'canaan', { far: true });
+    m('sisera', 'Sisera', 'סיסרא', 'jabin');
 
     // --- Requêtes sur l'arbre -----------------------------------------------------------------------
     var CHILDREN = {};
