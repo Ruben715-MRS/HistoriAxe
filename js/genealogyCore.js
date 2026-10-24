@@ -295,6 +295,21 @@
     m('avihou', 'Avihou', 'אביהוא', 'aaron', { mother: 'elicheva' });
     m('elazar', 'Elazar', 'אלעזר', 'aaron', { mother: 'elicheva' });
     m('pinhas', 'Pin’has', 'פינחס', 'elazar');
+    // La lignée sacerdotale d'Éléazar à Esdras le Scribe (1 Chroniques 5:30-40 ; Esdras 7:1-5). Le Azaria fils de Meraïot et le Azaria fils de Hilkiah ont des identifiants distincts.
+    m('abishua', 'Abishoua', 'אבישוע', 'pinhas');
+    m('bukki', 'Bukki', 'בוקי', 'abishua');
+    m('uzzi', 'Ouzi', 'עזי', 'bukki');
+    m('zerahiah', 'Zeraḥia', 'זרחיה', 'uzzi');
+    m('meraioth', 'Meraïot', 'מריות', 'zerahiah');
+    m('azariah_mer', 'Azaria', 'עזריה', 'meraioth');
+    m('amariah', 'Amaria', 'עמריה', 'azariah_mer');
+    m('ahitub', 'Ahitoub', 'אחיטוב', 'amariah');
+    m('tsadok', 'Tsadok', 'צדוק', 'ahitub');
+    m('shallum_tsadok', 'Shallum', 'שלום', 'tsadok');
+    m('hilkiah', 'Hilkiah', 'חלקיה', 'shallum_tsadok');
+    m('azariah_hilkiah', 'Azaria', 'עזריה', 'hilkiah');
+    m('seraiah', 'Seraya', 'שריה', 'azariah_hilkiah');
+    m('ezra', 'Esdras (le scribe)', 'עזרא', 'seraiah');
     m('itamar', 'Itamar', 'איתמר', 'aaron', { mother: 'elicheva' });
     m('moise', 'Moïse', 'משה', 'amram', { mother: 'yokheved', unions: [['tsippora', 'mariage']] });
     m('guerchom', 'Guerchom', 'גרשם', 'moise', { mother: 'tsippora' });
