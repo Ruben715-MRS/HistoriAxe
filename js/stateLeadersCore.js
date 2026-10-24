@@ -142,9 +142,14 @@
         [2017, null, 'Emmanuel Macron', 'président de la République', 've']
     ];
 
+    // La France est ici ; les autres pays sont dans js/stateLeadersData.js (chargé avant ce fichier dans le navigateur).
     var COUNTRIES = {
-        france: { name: 'France', rows: FRANCE_ROWS }
+        france: { name: 'France', note: 'Depuis Clovis (481) : rois, puis empereurs et présidents. Liste indicative.', groups: GROUPS, rows: FRANCE_ROWS }
     };
+    var DATA = typeof module === 'object' && module.exports
+        ? require('./stateLeadersData.js')
+        : (typeof self !== 'undefined' ? self : this).StateLeadersData;
+    Object.keys(DATA).forEach(function (k) { COUNTRIES[k] = DATA[k]; });
 
     function toRows(rows) {
         return rows.map(function (r) {
@@ -152,17 +157,28 @@
         });
     }
 
-    // Les lignes d'un pays, dans l'ordre chronologique, avec la mention « séparateur » quand le groupe change.
+    // Les lignes d'un pays, dans l'ordre chronologique. `divider` : le nom du nouveau régime quand le groupe change ; `color` : le fond.
     function rowsOf(country) {
         var c = COUNTRIES[country];
         if (!c) return [];
         var out = [];
         var prev = null;
         toRows(c.rows).forEach(function (r) {
-            out.push({ row: r, divider: prev !== null && prev !== r.group ? GROUPS[r.group].label : null });
+            out.push({ row: r, divider: prev !== null && prev !== r.group ? c.groups[r.group].label : null, color: c.groups[r.group].color });
             prev = r.group;
         });
         return out;
+    }
+
+    // La liste des pays, par ordre alphabétique : { key, name }.
+    function countryList() {
+        return Object.keys(COUNTRIES).map(function (k) {
+            return { key: k, name: COUNTRIES[k].name };
+        }).sort(function (a, b) { return a.name.localeCompare(b.name, 'fr'); });
+    }
+
+    function noteOf(country) {
+        return COUNTRIES[country] ? COUNTRIES[country].note : '';
     }
 
     function normalize(text) {
@@ -179,6 +195,6 @@
     }
 
     return {
-        GROUPS: GROUPS, COUNTRIES: COUNTRIES, rowsOf: rowsOf, search: search, normalize: normalize
+        COUNTRIES: COUNTRIES, rowsOf: rowsOf, countryList: countryList, noteOf: noteOf, search: search, normalize: normalize
     };
 }));

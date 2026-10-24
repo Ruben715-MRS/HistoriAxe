@@ -481,6 +481,15 @@ test('les chefs d’État : de Clovis à Macron, traits entre les régimes, rech
     await page.locator('#leaders-search').fill('zzzz');
     await expect(rows).toHaveCount(0);
     await expect(page.locator('#leaders-count')).toContainText('Aucun');
+    // Le bouton « Pays » ouvre la liste ; le Japon s'affiche, avec sa note.
+    await page.locator('#leaders-pick').click();
+    await expect(page.locator('#leaders-countries .leaders-country-btn')).toHaveCount(21);
+    await page.locator('.leaders-country-btn', { hasText: 'Japon' }).click();
+    await expect(page.locator('#leaders-countries')).toBeHidden();
+    await expect(page.locator('#leaders-pick')).toContainText('Japon');
+    await expect(rows.first()).toContainText('Meiji');
+    await expect(rows.last()).toContainText('Naruhito');
+    await expect(page.locator('#leaders-country-note')).toContainText('ère Meiji');
     await page.locator('#screen-tool-leaders .back-btn').click();
     expect(await visibleScreen(page)).toBe('screen-tools');
     expect(errors).toEqual([]);

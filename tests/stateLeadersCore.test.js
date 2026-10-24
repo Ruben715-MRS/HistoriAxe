@@ -12,28 +12,48 @@ test('chefs d’État : la France part de Clovis et finit à Emmanuel Macron, en
     assert.strictEqual(last.to, null);
 });
 
-test('chefs d’État : dates cohérentes, dans l’ordre du début du règne', () => {
-    rows.forEach((it, i) => {
-        const r = it.row;
-        if (r.to !== null) assert.ok(r.to >= r.from, r.name + ' : fin avant début');
-        if (i > 0) assert.ok(r.from >= rows[i - 1].row.from, r.name + ' : hors ordre chronologique');
+test('chefs d’État : il y a une vingtaine de pays en plus de la France, et la liste des pays est triée', () => {
+    const list = S.countryList();
+    assert.ok(list.length >= 21, 'au moins 21 pays');
+    assert.ok(list.some(c => c.key === 'france'));
+    const names = list.map(c => c.name);
+    assert.deepStrictEqual(names, names.slice().sort((a, b) => a.localeCompare(b, 'fr')));
+});
+
+test('chefs d’État : pour chaque pays, dates cohérentes, dans l’ordre du début du règne', () => {
+    S.countryList().forEach(c => {
+        const items = S.rowsOf(c.key);
+        assert.ok(items.length > 0, c.name + ' : liste vide');
+        items.forEach((it, i) => {
+            const r = it.row;
+            if (r.to !== null) assert.ok(r.to >= r.from, c.name + ' / ' + r.name + ' : fin avant début');
+            if (i > 0) assert.ok(r.from >= items[i - 1].row.from, c.name + ' / ' + r.name + ' : hors ordre chronologique');
+        });
     });
 });
 
-test('chefs d’État : chaque ligne a un nom, une fonction et un groupe connu', () => {
-    rows.forEach(it => {
-        const r = it.row;
-        assert.ok(r.name && r.title, 'champ manquant');
-        assert.ok(S.GROUPS[r.group], r.name + ' : groupe inconnu');
+test('chefs d’État : pour chaque pays, la dernière ligne est en fonction et chaque ligne a un nom, une fonction et un groupe connu', () => {
+    S.countryList().forEach(c => {
+        const items = S.rowsOf(c.key);
+        assert.strictEqual(items[items.length - 1].row.to, null, c.name + ' : pas de chef en fonction');
+        items.forEach(it => {
+            const r = it.row;
+            assert.ok(r.name && r.title, c.name + ' : champ manquant');
+            assert.ok(S.COUNTRIES[c.key].groups[r.group], c.name + ' / ' + r.name + ' : groupe inconnu');
+            assert.ok(it.color, c.name + ' : couleur manquante');
+        });
+        assert.ok(S.noteOf(c.key).length > 0, c.name + ' : note manquante');
     });
 });
 
-test('chefs d’État : un trait s’affiche à chaque changement de régime ou de dynastie, et seulement là', () => {
-    const dividers = rows.filter(it => it.divider);
-    assert.strictEqual(dividers[0].divider, S.GROUPS.carolingiens.label);
-    const changes = rows.filter((it, i) => i > 0 && it.row.group !== rows[i - 1].row.group).length;
-    assert.strictEqual(dividers.length, changes);
-    assert.strictEqual(rows[0].divider, null);
+test('chefs d’État : un trait s’affiche à chaque changement de régime, et seulement là', () => {
+    S.countryList().forEach(c => {
+        const items = S.rowsOf(c.key);
+        const changes = items.filter((it, i) => i > 0 && it.row.group !== items[i - 1].row.group).length;
+        assert.strictEqual(items.filter(it => it.divider).length, changes, c.name);
+        assert.strictEqual(items[0].divider, null, c.name);
+    });
+    assert.strictEqual(S.rowsOf('france').find(it => it.divider).divider, S.COUNTRIES.france.groups.carolingiens.label);
 });
 
 test('chefs d’État : la recherche ignore les accents et les apostrophes, et cherche aussi la fonction', () => {
