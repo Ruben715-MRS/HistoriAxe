@@ -381,6 +381,10 @@
     m('zerah_juda', 'Zéra’h', 'זרח', 'juda', { mother: 'tamar' });
     m('dan', 'Dan', 'דן', 'jacob', { mother: 'bilha' });
     m('houchim', '’Houchim', 'חשים', 'dan');
+    // Sanson (Juges 13) : la Bible ne donne pas les ancêtres de Manoah. Il est rattaché à Dan par un lien en pointillés, comme Élon ou Jéthro.
+    // Sa mère n'est pas nommée : elle n'a pas de carte. Sanson n'a pas de descendance dans le texte.
+    m('manoah', 'Manoah', 'מנוח', 'dan', { far: true });
+    m('samson', 'Sanson', 'שמשון', 'manoah');
     m('naphtali', 'Naphtali', 'נפתלי', 'jacob', { mother: 'bilha' });
     m('yahtseel', 'Ya’htséel', 'יחצאל', 'naphtali');
     m('gouni', 'Gouni', 'גוני', 'naphtali');
