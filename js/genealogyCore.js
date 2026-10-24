@@ -360,6 +360,26 @@
     m('joseph', 'Joseph', 'יוסף', 'jacob', { mother: 'rachel' });
     m('manasse', 'Manassé', 'מנשה', 'joseph');
     m('ephraim', 'Ephraïm', 'אפרים', 'joseph');
+    // La lignée d'Éphraïm jusqu'à Josué (1 Chroniques 7:20-27). Béria, fils d'Éphraïm, n'est pas le Béria fils d'Acher, d'où son identifiant.
+    m('shuthelah_eph', 'Schutélach', 'שותלח', 'ephraim');
+    m('bered_eph', 'Béred', 'ברד', 'shuthelah_eph');
+    m('tahath_eph', 'Thachath', 'תחת', 'bered_eph');
+    m('eleadah_eph', 'Éleada', 'אלעדה', 'tahath_eph');
+    m('tahath2_eph', 'Thachath', 'תחת', 'eleadah_eph');
+    m('zabad_eph', 'Zabad', 'זבד', 'tahath2_eph');
+    m('shuthelah2_eph', 'Schutélach', 'שותלח', 'zabad_eph');
+    m('ezer_eph', 'Ézer', 'עזר', 'ephraim');
+    m('elead_eph', 'Élead', 'אלעד', 'ephraim');
+    m('beria_ephraim', 'Béria', 'בריעה', 'ephraim');
+    m('rephah', 'Réphach', 'רפח', 'beria_ephraim');
+    m('resheph', 'Réscheph', 'רשף', 'rephah');
+    m('telah', 'Thélach', 'תלח', 'resheph');
+    m('tahan', 'Thachan', 'תחן', 'telah');
+    m('ladan', 'Laedan', 'לעדן', 'tahan');
+    m('ammihud', 'Ammihud', 'עמיהוד', 'ladan');
+    m('elishama', 'Élischama', 'אלישמע', 'ammihud');
+    m('nun', 'Noun', 'נון', 'elishama');
+    m('josue', 'Josué', 'יהושע', 'nun');
     m('benjamin', 'Benjamin', 'בנימין', 'jacob', { mother: 'rachel' });
     m('bela', 'Béla', 'בלע', 'benjamin');
     m('bekher', 'Békher', 'בכר', 'benjamin');

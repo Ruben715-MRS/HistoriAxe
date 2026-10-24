@@ -433,7 +433,8 @@ test('généalogie biblique : un arbre, hommes en bleu et femmes en rose, bascul
     await expect(page.locator('#gen-stage .gen-card')).toHaveCount(4);
     await expect(page.locator('#gen-stage .gen-card[data-id="seth"]')).toHaveCount(1);
     await page.locator('.gen-actions .btn', { hasText: 'Tout déplier' }).click();
-    await expect(page.locator('#gen-stage .gen-card')).toHaveCount(300);
+    await expect(page.locator('#gen-stage .gen-card')).toHaveCount(319);
+    await expect(page.locator('#gen-stage .gen-card[data-id="josue"] .gen-name')).toHaveText('Josué');
     // Par défaut vertical : Adam en haut, Caïn et Seth plus bas.
     await expect(page.locator('#gen-stage.is-vertical')).toHaveCount(1);
     expect(await page.locator('#gen-stage .gen-card[data-id="adam"]').evaluate(el => el.offsetTop)).toBeLessThan(await page.locator('#gen-stage .gen-card[data-id="cain"]').evaluate(el => el.offsetTop));
