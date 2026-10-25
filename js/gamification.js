@@ -131,7 +131,14 @@ const BADGES_CONFIG = [
         icon: "🎓",
         desc: "Obtenir un score parfait sur un thème Scolaire ou CAPES & Agrégation.",
         target: 1
-    }
+    },
+    // Quiz des pays (js/modes/geoquiz.js, js/geoQuizSessionCore.js : badgesEarned).
+    { id: "globe_trotter", name: "Globe-trotter", icon: "🌍", desc: "Maîtriser 50 pays au Quiz des pays.", target: 50 },
+    { id: "cartographe", name: "Cartographe", icon: "🗺️", desc: "Maîtriser tous les pays d'un continent au Quiz des pays.", target: 1 },
+    { id: "sans_faute_geo", name: "Sans-faute géographe", icon: "🎯", desc: "Réussir sans faute une partie d'au moins 10 questions au Quiz des pays, en difficulté Difficile.", target: 1 },
+    { id: "assidu_geo", name: "Voyageur assidu", icon: "🧭", desc: "Faire le Défi du jour du Quiz des pays 7 jours de suite.", target: 7 },
+    { id: "flair_detective", name: "Flair de détective", icon: "🔎", desc: "Trouver un pays mystère en 2 essais ou moins.", target: 1 },
+    { id: "rafale_savant", name: "Rafale d'érudit", icon: "💨", desc: "Donner 20 bonnes réponses en une Rafale de 60 secondes.", target: 20 }
 ];
 
 function badgeName(badge) {
@@ -526,7 +533,12 @@ function renderProfileModal() {
         else if (badge.id === 'centurion') currentProg = Math.min(100, data.maxConsecutiveCorrectPlacements || 0);
         else if (badge.id === 'flamme_eternelle') currentProg = Math.min(7, streakData.maxStreak || 0);
         else if (badge.id === 'pilier_hebdomadaire') currentProg = Math.min(4, weeklyChallengeStreakData.maxStreak || 0);
-        else currentProg = isUnlocked ? badge.target : 0;
+        else if (badge.id === 'globe_trotter' && typeof geoQuizStateLoad === 'function') {
+            const geo = geoQuizStateLoad();
+            currentProg = Math.min(50, Object.keys(geo.countries || {}).filter(id => GeoQuizSessionCore.masteryOf(geo.countries[id]) === 'mastered').length);
+        } else if (badge.id === 'assidu_geo' && typeof geoQuizStateLoad === 'function') {
+            currentProg = Math.min(7, GeoQuizSessionCore.dailyStreak(geoQuizStateLoad(), DailyEngine.getDailySeedString()));
+        } else currentProg = isUnlocked ? badge.target : 0;
 
         const pct = Math.min(100, Math.round((currentProg / badge.target) * 100));
 

@@ -13408,3 +13408,82 @@ input:not([type="range"]), label, select, summary, textarea {
 }
 .leaders-mode-btn[aria-pressed="true"] { background: #2563eb; border-color: #2563eb; color: #fff; }
 .leaders-mode-btn.hidden { display: none; }
+
+/* --- Quiz des pays : réglages, chrono, points, fin de partie --- */
+.geoquiz-settings { display: flex; flex-direction: column; gap: 14px; }
+.geoquiz-setting { display: flex; flex-direction: column; gap: 6px; }
+.geoquiz-setting-title { margin: 6px 0 2px; font-size: 15px; font-weight: 800; color: var(--text-dark); }
+.geoquiz-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.geoquiz-chip {
+    padding: 7px 13px;
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    background: var(--surface);
+    color: var(--text-dark);
+    font-size: 14px;
+    cursor: pointer;
+}
+.geoquiz-chip[aria-pressed="true"] { background: #2563eb; border-color: #2563eb; color: #fff; }
+.geoquiz-secondary { background: var(--surface); color: var(--text-dark); border: 1px solid var(--border-soft); box-shadow: none; }
+.geoquiz-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.geoquiz-head .tool-small { margin: 0; }
+.geoquiz-points { font-weight: 800; color: var(--text-dark); }
+.geoquiz-timer {
+    position: relative;
+    height: 22px;
+    border-radius: 11px;
+    background: var(--border-soft);
+    overflow: hidden;
+}
+.geoquiz-timer.hidden { display: none; }
+.geoquiz-timer-fill { position: absolute; left: 0; top: 0; bottom: 0; width: 100%; background: #16a34a; transition: width 0.1s linear; }
+.geoquiz-timer.is-low .geoquiz-timer-fill { background: #dc2626; }
+.geoquiz-timer-text { position: relative; display: block; text-align: center; font-size: 13px; font-weight: 800; line-height: 22px; color: #0f172a; mix-blend-mode: normal; }
+.geoquiz-scores { width: 100%; max-width: 560px; display: flex; flex-direction: column; gap: 10px; }
+.geoquiz-scores.hidden { display: none; }
+.geoquiz-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; text-align: left; }
+.geoquiz-list li { padding: 8px 12px; border-radius: 10px; background: var(--surface); border: 1px solid var(--border-soft); color: var(--text-dark); font-size: 14px; }
+.geoquiz-detail { margin: 0; color: var(--text-dark); }
+.geoquiz-record { margin: 0; font-weight: 700; color: #15803d; }
+.geoquiz-errors { width: 100%; }
+.geoquiz-end .geoquiz-setting-title { margin-top: 12px; }
+#screen-geoquiz > .tool-small:last-child { margin-top: 22px; }
+.geoquiz-list li strong { font-weight: 700; }
+
+/* --- Quiz des pays : saisie libre, pays mystère, vies, carte raccourcie --- */
+.geoquiz-typed { display: flex; flex-direction: column; gap: 10px; }
+.geoquiz-typed .tool-input { width: 100%; box-sizing: border-box; font-size: 18px; }
+.geoquiz-map.is-short { height: 34vh; min-height: 200px; }
+.geoquiz-lives { margin: 0; font-size: 18px; letter-spacing: 2px; }
+.geoquiz-mystery { display: flex; flex-direction: column; gap: 10px; }
+.geoquiz-guesses { list-style: decimal inside; }
+.geoquiz-guesses li { font-variant-numeric: tabular-nums; }
+.geoquiz-head { flex-wrap: wrap; }
+
+/* --- Quiz des pays : défi du jour, pays faibles, maîtrise --- */
+.geoquiz-mastery { width: 100%; max-width: 560px; display: flex; flex-direction: column; gap: 10px; }
+.geoquiz-mastery.hidden { display: none; }
+.geoquiz-legend { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 14px; color: var(--text-dark); }
+.geoquiz-dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; vertical-align: -1px; border: 2px solid transparent; }
+.geoquiz-zone-block { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+.geoquiz-zone-title { margin: 0; font-size: 15px; font-weight: 800; color: var(--text-dark); }
+.geoquiz-bar { height: 8px; border-radius: 4px; background: var(--border-soft); overflow: hidden; }
+.geoquiz-bar span { display: block; height: 100%; background: #16a34a; }
+.geoquiz-grid { display: flex; flex-wrap: wrap; gap: 4px; }
+.geoquiz-cell { width: 34px; height: 30px; display: inline-flex; align-items: center; justify-content: center; font-size: 20px; border-radius: 6px; border: 2px solid transparent; box-sizing: border-box; }
+.geoquiz-m-mastered { border-color: #16a34a; background: rgba(22, 163, 74, 0.16); }
+.geoquiz-m-learning { border-color: #f59e0b; background: rgba(245, 158, 11, 0.16); }
+.geoquiz-m-weak { border-color: #dc2626; background: rgba(220, 38, 38, 0.16); }
+.geoquiz-m-new { border-color: var(--border-soft); background: transparent; opacity: 0.55; }
+.geoquiz-dot.geoquiz-m-new { opacity: 1; background: var(--border-soft); }
+.geoquiz-dot.geoquiz-m-mastered { background: #16a34a; }
+.geoquiz-dot.geoquiz-m-learning { background: #f59e0b; }
+.geoquiz-dot.geoquiz-m-weak { background: #dc2626; }
+#geoquiz-menu > .tool-small:empty { display: none; }
+
+/* --- Quiz des pays : duel à deux --- */
+.geoquiz-duel-names { display: flex; gap: 8px; }
+.geoquiz-duel-names .tool-input { flex: 1; min-width: 0; box-sizing: border-box; }
+
+/* --- Quiz des pays : mes statistiques --- */
+#geoquiz-stats-forms li { font-size: 14px; }
