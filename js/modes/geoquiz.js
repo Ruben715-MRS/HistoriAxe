@@ -9,8 +9,7 @@
 // enregistré, rien ne part vers le classement. Les données sont celles de countriesData (js/app/countries.js).
 //
 // LA CARTE du quiz n'est pas celle de l'Atlas : elle n'a ni couche de noms ni police, donc aucun nom de pays ne peut y apparaître
-// avant la réponse. Les contours viennent de countriesData.geo (local, hors ligne). Contenu en français seulement, **à relire par un
-// enseignant**. Tout ce qui vient des données passe par textContent, jamais par du HTML.
+// avant la réponse. Les contours viennent de countriesData.geo (local, hors ligne). Contenu en français seulement. Tout ce qui vient des données passe par textContent, jamais par du HTML.
 
 const GEOQUIZ_ROUNDS = 10;
 // Neutre : une couleur par continent donnerait l'indice qu'on cherche.
