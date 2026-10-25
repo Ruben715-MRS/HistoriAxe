@@ -13484,3 +13484,6 @@ input:not([type="range"]), label, select, summary, textarea {
 /* --- Quiz des pays : duel à deux --- */
 .geoquiz-duel-names { display: flex; gap: 8px; }
 .geoquiz-duel-names .tool-input { flex: 1; min-width: 0; box-sizing: border-box; }
+
+/* --- Quiz des pays : mes statistiques --- */
+#geoquiz-stats-forms li { font-size: 14px; }

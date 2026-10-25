@@ -97,3 +97,12 @@ test('quiz des pays : la maîtrise garde le plus grand compte, sans double compt
     assert.deepEqual(mergeGeoQuiz(b, a).countries, merged.countries, 'dans les deux sens');
     assert.deepEqual(mergeGeoQuiz(merged, a).countries, merged.countries, 'fusionner deux fois ne change rien');
 });
+
+test('quiz des pays : les statistiques par forme prennent le maximum de chaque champ, sans double comptage', () => {
+    const a = { v: 1, best: {}, history: [], forms: { qcm: { games: 5, correct: 30, total: 50, best: 800, streak: 4 } } };
+    const b = { v: 1, best: {}, history: [], forms: { qcm: { games: 3, correct: 25, total: 30, best: 900, streak: 2 }, flag: { games: 1, correct: 2, total: 10, best: 200, streak: 1 } } };
+    const merged = mergeGeoQuiz(a, b);
+    assert.deepEqual(merged.forms.qcm, { games: 5, correct: 30, total: 50, best: 900, streak: 4 });
+    assert.deepEqual(merged.forms.flag, { games: 1, correct: 2, total: 10, best: 200, streak: 1 });
+    assert.deepEqual(mergeGeoQuiz(merged, a).forms, merged.forms, 'fusionner deux fois ne change rien');
+});

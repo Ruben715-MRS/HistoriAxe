@@ -293,7 +293,7 @@
         return [form, p.zone, p.level, length, timer].join('|');
     }
 
-    function emptyState() { return { v: 1, best: {}, history: [], countries: {}, daily: {} }; }
+    function emptyState() { return { v: 1, best: {}, history: [], countries: {}, daily: {}, forms: {} }; }
 
     // L'état des records tel qu'on peut le lire dans le stockage (ou après une fusion) : jamais d'erreur, jamais de valeur absurde.
     function normalizeState(raw) {
@@ -321,6 +321,11 @@
                 if (n > 0 && run) out.countries[id] = { n: n, ok: Math.min(n, Math.max(0, c.ok | 0)), last: typeof c.last === 'number' ? c.last : 0, run: run };
             });
         }
+        if (raw.forms && typeof raw.forms === 'object' && !Array.isArray(raw.forms)) {
+            Object.keys(raw.forms).forEach(function (f) {
+                out.forms[f] = normalizeFormStats(raw.forms[f]);
+            });
+        }
         if (raw.daily && typeof raw.daily === 'object' && !Array.isArray(raw.daily)) {
             Object.keys(raw.daily).filter(function (d) { return /^\d{4}-\d{2}-\d{2}$/.test(d); }).sort().slice(-DAILY_MAX).forEach(function (d) {
                 var g = raw.daily[d];
@@ -330,6 +335,38 @@
             });
         }
         return out;
+    }
+
+    // Les compteurs d'une forme : parties, bonnes réponses sur le total, meilleur score, plus longue série. Jamais tronqués.
+    function normalizeFormStats(f) {
+        var n = function (v) { return typeof v === 'number' && isFinite(v) && v > 0 ? Math.floor(v) : 0; };
+        var src = f && typeof f === 'object' ? f : {};
+        return { games: n(src.games), correct: n(src.correct), total: n(src.total), best: n(src.best), streak: n(src.streak) };
+    }
+
+    // Ajoute une partie aux compteurs de sa forme.
+    function addFormStats(forms, form, game) {
+        var f = normalizeFormStats(forms[form]);
+        forms[form] = {
+            games: f.games + 1,
+            correct: f.correct + (game.correct | 0),
+            total: f.total + (game.total | 0),
+            best: Math.max(f.best, Math.round(game.score) || 0),
+            streak: Math.max(f.streak, game.bestStreak | 0)
+        };
+    }
+
+    // Les statistiques à montrer : totaux, pourcentage de réussite, et une ligne par forme (les plus jouées d'abord).
+    function statsOf(state) {
+        var s = normalizeState(state);
+        var pct = function (c, t) { return t > 0 ? Math.round(100 * c / t) : null; };
+        var totals = { games: 0, correct: 0, total: 0, streak: 0 };
+        var forms = Object.keys(s.forms).map(function (form) {
+            var f = s.forms[form];
+            totals.games += f.games; totals.correct += f.correct; totals.total += f.total; totals.streak = Math.max(totals.streak, f.streak);
+            return { form: form, games: f.games, pct: pct(f.correct, f.total), best: f.best, streak: f.streak };
+        }).filter(function (f) { return f.games > 0; }).sort(function (a, b) { return b.games - a.games || (a.form < b.form ? -1 : 1); });
+        return { games: totals.games, pct: pct(totals.correct, totals.total), streak: totals.streak, forms: forms };
     }
 
     // Enregistre une partie terminée. `game` : { at, form, zone, level, length, timer, score, correct, total, bestStreak }.
@@ -345,6 +382,7 @@
             score: game.score, correct: game.correct, total: game.total
         });
         next.history = next.history.slice(0, HISTORY_MAX);
+        addFormStats(next.forms, game.form, game);
         return { state: next, isRecord: isRecord, previous: previous };
     }
 
@@ -428,6 +466,7 @@
         var next = normalizeState(state);
         if (next.daily[date]) return { state: next, first: false };
         next.daily[date] = { score: Math.round(game.score), correct: game.correct, total: game.total };
+        addFormStats(next.forms, 'daily', game);
         var keep = Object.keys(next.daily).sort().slice(-DAILY_MAX);
         var daily = {};
         keep.forEach(function (d) { daily[d] = next.daily[d]; });
@@ -462,7 +501,7 @@
         whoPoints: whoPoints, mysteryPoints: mysteryPoints,
         DEFAULT_PREFS: DEFAULT_PREFS, BASE_POINTS: BASE_POINTS, SPEED_MAX: SPEED_MAX, HISTORY_MAX: HISTORY_MAX,
         normalizePrefs: normalizePrefs, quizPool: quizPool, generateGame: generateGame, pointsFor: pointsFor, summarize: summarize,
-        configKey: configKey, DAILY_PREFS: DAILY_PREFS, RUN_MAX: RUN_MAX, trackAnswer: trackAnswer, masteryOf: masteryOf, masteryCounts: masteryCounts,
+        configKey: configKey, statsOf: statsOf, DAILY_PREFS: DAILY_PREFS, RUN_MAX: RUN_MAX, trackAnswer: trackAnswer, masteryOf: masteryOf, masteryCounts: masteryCounts,
         weakTargets: weakTargets, dailyStreak: dailyStreak, recordDaily: recordDaily, badgesEarned: badgesEarned, xpFor: xpFor, emptyState: emptyState, normalizeState: normalizeState, recordGame: recordGame, bestList: bestList
     };
 });

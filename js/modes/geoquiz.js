@@ -741,7 +741,7 @@ function geoQuizSaveGame(summary) {
     const p = geoQuizGamePrefs;
     const game = {
         at: Date.now(), form: geoQuizForm, zone: p.zone, level: p.level, length: p.length, timer: p.timer,
-        score: summary.score, correct: summary.correct, total: summary.total
+        score: summary.score, correct: summary.correct, total: summary.total, bestStreak: summary.bestStreak
     };
     const result = GeoQuizSessionCore.recordGame(geoQuizStateLoad(), game);
     geoQuizStateSave(result.state);
@@ -856,6 +856,25 @@ function geoQuizShowScores() {
     geoQuizEl('geoquiz-recent').replaceChildren(...recent.map(g =>
         item(new Date(g.at).toLocaleDateString('fr-FR'), geoQuizConfigLine(g), t('geoquiz.result_line', { score: g.score, correct: g.correct, total: g.total }))));
     geoQuizEl('geoquiz-scores-none').classList.toggle('hidden', records.length > 0);
+    geoQuizRenderStats(state);
+}
+
+// « Mes statistiques » : les totaux, puis une ligne par forme jouée (parties, réussite, meilleur score, plus longue série).
+function geoQuizRenderStats(state) {
+    const stats = GeoQuizSessionCore.statsOf(state);
+    geoQuizEl('geoquiz-stats-none').classList.toggle('hidden', stats.games > 0);
+    geoQuizEl('geoquiz-stats-total').textContent = stats.games
+        ? t('geoquiz.stats_total', { games: stats.games, pct: stats.pct, streak: stats.streak })
+        : '';
+    geoQuizEl('geoquiz-stats-forms').replaceChildren(...stats.forms.map(f => {
+        const li = document.createElement('li');
+        const head = document.createElement('strong');
+        head.textContent = t('geoquiz.form_' + f.form);
+        li.append(head, document.createTextNode(' ' + t('geoquiz.stats_form', {
+            games: f.games, pct: f.pct === null ? '–' : f.pct, best: f.best, streak: f.streak
+        })));
+        return li;
+    }));
 }
 
 // « Retour » : depuis une partie ou les scores, au menu ; depuis le menu, à l'écran d'où il a été ouvert.

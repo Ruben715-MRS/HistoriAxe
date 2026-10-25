@@ -819,7 +819,22 @@ function mergeGeoQuiz(a, b) {
             if (isPlainObject(e) && typeof e.score === 'number' && (!daily[d] || e.score > daily[d].score)) daily[d] = e;
         });
     });
-    return { v: 1, best, history, countries, daily };
+    // Compteurs par forme : pris par champ au maximum (une partie jouée sur les deux appareils n'est jamais comptée deux fois, mais
+    // une partie jouée seulement sur l'un des deux peut ne pas se retrouver dans le total de l'autre).
+    const forms = {};
+    [a.forms, b.forms].forEach(src => {
+        if (!isPlainObject(src)) return;
+        Object.keys(src).forEach(f => {
+            const e = src[f];
+            if (!isPlainObject(e)) return;
+            const c = forms[f] || { games: 0, correct: 0, total: 0, best: 0, streak: 0 };
+            forms[f] = {
+                games: Math.max(c.games, e.games || 0), correct: Math.max(c.correct, e.correct || 0), total: Math.max(c.total, e.total || 0),
+                best: Math.max(c.best, e.best || 0), streak: Math.max(c.streak, e.streak || 0)
+            };
+        });
+    });
+    return { v: 1, best, history, countries, daily, forms };
 }
 
 function mergeSyncableStates(local, cloud) {

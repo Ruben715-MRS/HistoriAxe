@@ -464,3 +464,32 @@ test('formes du lot 4 : panaché et défi du jour les mélangent ; seuls les pay
     assert.equal(duel.questions.length, 20, 'dix questions par joueur');
     assert.ok(new Set(duel.questions.map(q => q.kind)).size >= 4);
 });
+
+// --- Lot 5 : statistiques -------------------------------------------------------------------------
+
+test('statistiques : parties, réussite, meilleur score et série par forme ; rien n’est tronqué au-delà de l’historique', () => {
+    let s = S.emptyState();
+    for (let i = 0; i < 60; i++) s = S.recordGame(s, { at: i, form: 'qcm', zone: 'world', level: 'easy', length: 10, timer: 0, score: 100 + i, correct: 5, total: 10, bestStreak: i % 4 }).state;
+    s = S.recordGame(s, { at: 99, form: 'flag', zone: 'world', level: 'easy', length: 10, timer: 0, score: 800, correct: 9, total: 10, bestStreak: 7 }).state;
+    assert.equal(s.history.length, 50, 'l’historique reste borné');
+    const st = S.statsOf(s);
+    assert.equal(st.games, 61, 'les compteurs, eux, ne le sont pas');
+    assert.equal(st.forms[0].form, 'qcm', 'les formes les plus jouées d’abord');
+    assert.equal(st.forms[0].games, 60);
+    assert.equal(st.forms[0].pct, 50);
+    assert.equal(st.forms[0].best, 159);
+    assert.equal(st.forms[0].streak, 3);
+    assert.equal(st.forms[1].pct, 90);
+    assert.equal(st.streak, 7, 'la plus longue série, toutes formes');
+    assert.equal(st.pct, Math.round(100 * (300 + 9) / (600 + 10)));
+});
+
+test('statistiques : le défi du jour compte comme une forme ; un état vide ou abîmé donne des zéros', () => {
+    let s = S.recordDaily(S.emptyState(), '2026-05-01', { score: 700, correct: 7, total: 10, bestStreak: 4 }).state;
+    assert.deepEqual(S.statsOf(s).forms.map(f => f.form), ['daily']);
+    assert.equal(S.statsOf(s).forms[0].streak, 4);
+    assert.deepEqual(S.statsOf(null), { games: 0, pct: null, streak: 0, forms: [] });
+    const bad = S.normalizeState({ forms: { qcm: { games: -2, correct: 'x', total: 10.7 }, flag: null } });
+    assert.deepEqual(bad.forms.qcm, { games: 0, correct: 0, total: 10, best: 0, streak: 0 });
+    assert.deepEqual(bad.forms.flag, { games: 0, correct: 0, total: 0, best: 0, streak: 0 });
+});

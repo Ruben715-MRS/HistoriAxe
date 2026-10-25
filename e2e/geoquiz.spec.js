@@ -527,3 +527,21 @@ test('duel à deux : les joueurs se relaient, chacun ses points et sa série, ri
     await expect(page.locator('#geoquiz-record')).toContainText('rien n\'est enregistré');
     expect(await page.evaluate(() => localStorage.getItem('historiaxe_geoquiz_v1'))).toBeNull();
 });
+
+test('« Mes scores » : les statistiques par forme, après une partie', async ({ page }) => {
+    await openQuiz(page);
+    await page.locator('#geoquiz-menu .btn', { hasText: 'Mes scores' }).click();
+    await expect(page.locator('#geoquiz-stats-none')).toBeVisible();
+    await page.locator('#geoquiz-scores .btn').click();
+    await chip(page, 'geoquiz-length', '5').click();
+    await page.locator('#geoquiz-menu .btn', { hasText: 'QCM' }).click();
+    await page.locator('#geoquiz-play').waitFor({ state: 'visible' });
+    for (let i = 0; i < 4; i++) await playQuestion(page, true);
+    await playQuestion(page, false);
+    await page.locator('#geoquiz-end .btn', { hasText: 'Changer de réglage' }).click();
+    await page.locator('#geoquiz-menu .btn', { hasText: 'Mes scores' }).click();
+    await expect(page.locator('#geoquiz-stats-none')).toBeHidden();
+    await expect(page.locator('#geoquiz-stats-total')).toContainText('1 partie(s) jouée(s) · 80 % de bonnes réponses');
+    await expect(page.locator('#geoquiz-stats-forms li').first()).toContainText('QCM');
+    await expect(page.locator('#geoquiz-stats-forms li').first()).toContainText('1 partie(s) · 80 % de réussite');
+});
