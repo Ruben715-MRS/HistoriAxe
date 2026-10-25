@@ -56,7 +56,41 @@ test('parties : chaque forme donne des questions valables, sur des cibles diffé
     C.FORMS.forEach(form => {
         const g = C.generateCityGame(cities, facts, form, { count: 10, rng: seeded(5), difficulty: 'hard' });
         assert.equal(g.length, 10, form);
-        assert.equal(new Set(g.map(q => q.target)).size, 10, form + ' : cibles uniques');
+        if (form !== 'order') assert.equal(new Set(g.map(q => q.target)).size, 10, form + ' : cibles uniques');
         g.forEach(q => assert.equal(C.isValid(q, cities), true, form + ' ' + q.target));
     });
+});
+
+test('toucher la ville : 100 points sur place, moins avec la distance (échelle du monde, tolérance de 10 km)', () => {
+    assert.equal(C.touchPoints(0), 100);
+    assert.equal(C.touchPoints(10), 100);
+    assert.equal(C.touchPoints(1310), 37, 'à environ 1 300 km, on garde 37 %');
+    assert.ok(C.touchPoints(50) > C.touchPoints(300) && C.touchPoints(300) > C.touchPoints(3000));
+    assert.equal(C.touchPoints(20000), 0);
+});
+
+test('toucher la ville : une question par ville, sans options, la ville à trouver est dans les données', () => {
+    const g = C.generateCityGame(cities, facts, 'touch', { count: 10, rng: seeded(21), difficulty: 'hard' });
+    assert.equal(g.length, 10);
+    assert.equal(new Set(g.map(q => q.target)).size, 10);
+    g.forEach(q => { assert.deepEqual(q.options, []); assert.equal(C.isValid(q, cities), true); });
+});
+
+test('classer : quatre villes de pays différents, d’au moins 100 000 habitants, nettement séparées', () => {
+    const g = C.generateCityGame(cities, facts, 'order', { count: 10, rng: seeded(22), difficulty: 'hard' });
+    assert.equal(g.length, 10);
+    g.forEach(q => {
+        assert.equal(q.ids.length, C.ORDER_SIZE);
+        const picked = q.ids.map(id => cities.find(c => c.id === id));
+        assert.equal(new Set(picked.map(c => c.cc)).size, C.ORDER_SIZE, 'pays différents');
+        picked.forEach(c => assert.ok(c.pop >= 100000, c.n));
+        for (let i = 1; i < picked.length; i++) assert.ok(picked[i - 1].pop >= picked[i].pop * C.MIN_RATIO, 'écart suffisant');
+        assert.equal(C.isValid(q, cities), true);
+    });
+});
+
+test('classer : 25 points par ville à sa place', () => {
+    assert.equal(C.orderPoints(['a', 'b', 'c', 'd'], ['a', 'b', 'c', 'd']), 100);
+    assert.equal(C.orderPoints(['a', 'c', 'b', 'd'], ['a', 'b', 'c', 'd']), 50);
+    assert.equal(C.orderPoints(['d', 'c', 'b', 'a'], ['a', 'b', 'c', 'd']), 0);
 });

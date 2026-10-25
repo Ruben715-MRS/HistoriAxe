@@ -26,7 +26,15 @@
 
     var MIN_RATIO = 1.3;
     var OPTIONS = 4;
-    var FORMS = ['capital', 'largest', 'country'];
+    var FORMS = ['capital', 'country', 'touch', 'order'];
+    // Points : 100 pour une bonne réponse en QCM ; « touche la ville » : 100 sur place, moins avec la distance (échelle du monde,
+    // comme le Mode Carte) ; « classer » : 25 par ville bien placée.
+    var QCM_POINTS = 100;
+    var TOUCH_TOLERANCE_KM = 10;
+    var TOUCH_SCALE_KM = 1300;
+    var ORDER_POINTS = 25;
+    var ORDER_SIZE = 4;
+    var ORDER_MIN_POP = 100000;
 
     function shuffle(list, random) {
         var a = list.slice();
@@ -134,7 +142,66 @@
         return { form: 'country', target: city.id, country: city.cc, ask: 'country', options: optionsFrom(city, more, countryName, random) };
     }
 
-    // Une partie : `count` questions d'une forme (ou d'un mélange), chacune sur une cible différente.
+    // Points d'une ville touchée, selon la distance au vrai lieu (exp(−d/D), la tolérance de 10 km n'est pas comptée).
+    function touchPoints(distKm) {
+        var effective = Math.max(0, distKm - TOUCH_TOLERANCE_KM);
+        return Math.round(QCM_POINTS * Math.exp(-effective / TOUCH_SCALE_KM));
+    }
+
+    // Points d'un classement : ORDER_POINTS par ville à sa place. `answer` et `correct` : les identifiants dans l'ordre.
+    function orderPoints(answer, correct) {
+        var right = 0;
+        for (var i = 0; i < correct.length; i++) if (answer[i] === correct[i]) right++;
+        return right * ORDER_POINTS;
+    }
+
+    // Vrai si deux populations sont assez éloignées pour un classement sans ambiguïté (MIN_RATIO entre voisines).
+    function clearlyOrdered(sortedPops) {
+        for (var i = 1; i < sortedPops.length; i++) {
+            if (sortedPops[i - 1] < sortedPops[i] * MIN_RATIO) return false;
+        }
+        return true;
+    }
+
+    // « Touchez la ville sur la carte » : une ville à trouver, sans options.
+    function touchQuestion(cities, cityId) {
+        var target = cities.filter(function (c) { return c.id === cityId; })[0];
+        return target ? { form: 'touch', target: target.id, country: target.cc, ask: 'touch', options: [] } : null;
+    }
+
+    // « Classez ces villes par population » : quatre villes de pays différents, nettement séparées en population.
+    function orderQuestion(cities, countries, opts) {
+        var o = opts || {};
+        var random = o.rng || Math.random;
+        // Des villes d'au moins 100 000 habitants : une petite capitale ne se classe pas par population.
+        var withPop = cities.filter(function (c) { return c.pop && c.pop >= ORDER_MIN_POP; });
+        for (var attempt = 0; attempt < 60; attempt++) {
+            var anchor = withPop[Math.floor(random() * withPop.length)];
+            var cont = countries.get(anchor.cc) && countries.get(anchor.cc).cont;
+            var pool = o.difficulty === 'hard'
+                ? withPop.filter(function (c) { var k = countries.get(c.cc); return k && k.cont === cont; })
+                : withPop;
+            var picks = [anchor];
+            var tries = 0;
+            while (picks.length < ORDER_SIZE && tries < 200 && pool.length) {
+                var c = pool[Math.floor(random() * pool.length)];
+                tries++;
+                if (picks.some(function (p) { return p.cc === c.cc; })) continue;
+                picks.push(c);
+            }
+            if (picks.length < ORDER_SIZE) continue;
+            var sorted = picks.slice().sort(function (a, b) { return b.pop - a.pop; });
+            if (!clearlyOrdered(sorted.map(function (c) { return c.pop; }))) continue;
+            return {
+                form: 'order', target: null, country: null, ask: 'order',
+                ids: sorted.map(function (c) { return c.id; }),
+                options: shuffle(picks, random).map(function (c) { return { id: c.id, value: c.n }; })
+            };
+        }
+        return null;
+    }
+
+    // Une partie : `count` questions d'une forme, chacune sur une cible différente.
     function generateCityGame(cities, facts, form, opts) {
         var o = opts || {};
         var random = o.rng || Math.random;
@@ -144,12 +211,24 @@
         var seen = new Set();
         var list = cities.slice();
         var attempts = 0;
-        if (form === 'capital' || form === 'largest') {
+        if (form === 'capital') {
+            // La capitale, ou la plus grande ville quand elle est nettement devant : deux questions par pays, au hasard.
             var codes = shuffle(Array.from(byCountry(list).keys()), random);
-            var make = form === 'capital' ? capitalQuestion : largestQuestion;
             for (var i = 0; i < codes.length && out.length < count; i++) {
-                var q = make(list, countries, codes[i], { rng: random, difficulty: o.difficulty });
+                var q = capitalQuestion(list, countries, codes[i], { rng: random, difficulty: o.difficulty })
+                    || (random() < 0.5 ? largestQuestion(list, countries, codes[i], { rng: random, difficulty: o.difficulty }) : null);
                 if (q && !seen.has(q.target)) { seen.add(q.target); out.push(q); }
+            }
+        } else if (form === 'touch') {
+            var pick = shuffle(list, random);
+            for (var t = 0; t < pick.length && out.length < count; t++) {
+                var tq = touchQuestion(list, pick[t].id);
+                if (tq && !seen.has(tq.target)) { seen.add(tq.target); out.push(tq); }
+            }
+        } else if (form === 'order') {
+            for (var k = 0; k < count; k++) {
+                var oq = orderQuestion(list, countries, { rng: random, difficulty: o.difficulty });
+                if (oq) out.push(oq);
             }
         } else {
             list = shuffle(list, random);
@@ -163,6 +242,12 @@
 
     // Contrôle a posteriori : la bonne réponse est proposée une fois, et aucune autre proposition n'a le même libellé.
     function isValid(question, cities) {
+        if (question.form === 'touch') return cities.some(function (c) { return c.id === question.target; });
+        if (question.form === 'order') {
+            var pops = question.ids.map(function (id) { return cities.filter(function (c) { return c.id === id; })[0]; });
+            return pops.every(Boolean) && clearlyOrdered(pops.map(function (c) { return c.pop; }))
+                && question.options.length === ORDER_SIZE && question.ids.every(function (id) { return question.options.some(function (o) { return o.id === id; }); });
+        }
         var target = cities.filter(function (c) { return c.id === question.target; })[0];
         if (!target || question.options.length !== OPTIONS) return false;
         var values = question.options.map(function (o) { return o.value; });
@@ -174,6 +259,8 @@
     return {
         FORMS: FORMS, MIN_RATIO: MIN_RATIO, OPTIONS: OPTIONS,
         countryIndex: countryIndex, byCountry: byCountry, capitalQuestion: capitalQuestion, largestQuestion: largestQuestion,
-        countryQuestion: countryQuestion, generateCityGame: generateCityGame, isValid: isValid
+        countryQuestion: countryQuestion, generateCityGame: generateCityGame, isValid: isValid,
+        touchPoints: touchPoints, orderPoints: orderPoints, touchQuestion: touchQuestion, orderQuestion: orderQuestion,
+        QCM_POINTS: QCM_POINTS, ORDER_POINTS: ORDER_POINTS, TOUCH_SCALE_KM: TOUCH_SCALE_KM, ORDER_SIZE: ORDER_SIZE
     };
 });

@@ -1509,6 +1509,8 @@
             <p class="modes-header-subtitle" data-i18n="cities.menu_intro">Deux jeux sur les villes du monde.</p>
             <button type="button" class="btn" onclick="openCityGame('capital')" data-i18n="cities.menu_capital">Capitale ou plus grande ville ?</button>
             <button type="button" class="btn" onclick="openCityGame('country')" data-i18n="cities.menu_country">Quel pays a cette ville ?</button>
+            <button type="button" class="btn" onclick="openCityGame('touch')" data-i18n="cities.menu_touch">Touchez la ville sur la carte</button>
+            <button type="button" class="btn" onclick="openCityGame('order')" data-i18n="cities.menu_order">Classer les villes par population</button>
         </div>
         <div id="cities-play" class="geoquiz-play hidden">
             <div class="cities-bar">
@@ -1519,6 +1521,11 @@
                 <p class="geoquiz-ask" id="cities-ask"></p>
             </div>
             <div class="geoquiz-options" id="cities-options"></div>
+            <div id="cities-map-wrap" class="hidden">
+                <div id="cities-map" class="tool-countries-map geoquiz-map" role="application" aria-label="Carte du monde : touchez la ville demandée" data-i18n-attr="aria-label:cities.map_label"></div>
+            </div>
+            <p class="tool-small" id="cities-sequence" role="status" aria-live="polite"></p>
+            <button type="button" class="btn hidden" id="cities-reset" onclick="cityGameResetOrder()" data-i18n="cities.order_reset">Recommencer</button>
             <p class="geoquiz-feedback" id="cities-feedback" role="status" aria-live="polite"></p>
             <button type="button" class="btn hidden" id="cities-next" onclick="cityGameNext()"></button>
         </div>

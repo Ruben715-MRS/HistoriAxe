@@ -2503,8 +2503,8 @@
     "ask_largest": "Quelle est la plus grande ville de {country} ?",
     "ask_country": "Dans quel pays se trouve la ville de {city} ?",
     "progress": "Question {n} sur {total}",
-    "score_now": "Score : {score}",
-    "right": "Bonne réponse !",
+    "score_now": "Score : {score} points",
+    "right": "Bonne réponse ! +{points} points.",
     "wrong": "Raté. La bonne réponse était : {answer}.",
     "trap_largest": "{answer} est la plus grande ville du pays, mais ce n’est pas la capitale.",
     "trap_capital": "{answer} est la capitale, mais ce n’est pas la plus grande ville.",
@@ -2515,6 +2515,17 @@
     "card_desc": "Capitales, plus grandes villes et pays des villes du monde.",
     "menu_intro": "Deux jeux sur les villes du monde.",
     "menu_capital": "Capitale ou plus grande ville ?",
-    "menu_country": "Quel pays a cette ville ?"
+    "menu_country": "Quel pays a cette ville ?",
+    "menu_touch": "Touchez la ville sur la carte",
+    "menu_order": "Classer les villes par population",
+    "ask_touch": "Touchez sur la carte : {city}",
+    "ask_order": "Classez ces villes, de la plus peuplée à la moins peuplée.",
+    "order_sequence": "Votre ordre : {list}",
+    "order_reset": "Recommencer",
+    "order_result": "{n} ville(s) bien placée(s) : {points} points.",
+    "order_answer": "L'ordre était : {list}.",
+    "touch_result": "À {km} km de {city} : {points} points.",
+    "score_end": "Score : {score} points sur {max}",
+    "map_label": "Carte du monde : touchez la ville demandée"
   }
 }

@@ -2466,8 +2466,8 @@
     "ask_largest": "What is the largest city of {country}?",
     "ask_country": "In which country is the city of {city}?",
     "progress": "Question {n} of {total}",
-    "score_now": "Score: {score}",
-    "right": "Correct!",
+    "score_now": "Score: {score} points",
+    "right": "Correct! +{points} points.",
     "wrong": "Wrong. The answer was: {answer}.",
     "trap_largest": "{answer} is the largest city of the country, but not its capital.",
     "trap_capital": "{answer} is the capital, but not the largest city.",
@@ -2478,6 +2478,17 @@
     "card_desc": "Capitals, largest cities and the countries of world cities.",
     "menu_intro": "Two games about the world’s cities.",
     "menu_capital": "Capital or largest city?",
-    "menu_country": "Which country has this city?"
+    "menu_country": "Which country has this city?",
+    "menu_touch": "Touch the city on the map",
+    "menu_order": "Order the cities by population",
+    "ask_touch": "Touch on the map: {city}",
+    "ask_order": "Order these cities, from the most populous to the least.",
+    "order_sequence": "Your order: {list}",
+    "order_reset": "Start again",
+    "order_result": "{n} city(ies) in the right place: {points} points.",
+    "order_answer": "The order was: {list}.",
+    "touch_result": "{km} km from {city}: {points} points.",
+    "score_end": "Score: {score} points out of {max}",
+    "map_label": "World map: touch the city asked for"
   }
 }
