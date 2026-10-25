@@ -146,10 +146,12 @@
     var COUNTRIES = {
         france: { name: 'France', note: 'Depuis Clovis (481) : rois, puis empereurs et présidents. Les rois mérovingiens, partagés entre plusieurs royaumes, ne sont pas tous donnés.', groups: GROUPS, rows: FRANCE_ROWS }
     };
-    var DATA = typeof module === 'object' && module.exports
-        ? require('./stateLeadersData.js')
-        : (typeof self !== 'undefined' ? self : this).StateLeadersData;
+    var GLOBAL = typeof self !== 'undefined' ? self : this;
+    var DATA = typeof module === 'object' && module.exports ? require('./stateLeadersData.js') : GLOBAL.StateLeadersData;
+    var GOVS = typeof module === 'object' && module.exports ? require('./stateLeadersGouvernements.js') : GLOBAL.StateLeadersGouvernements;
     Object.keys(DATA).forEach(function (k) { COUNTRIES[k] = DATA[k]; });
+    // Les régimes parlementaires ont en plus la liste de leurs chefs du gouvernement.
+    Object.keys(GOVS).forEach(function (k) { if (COUNTRIES[k]) COUNTRIES[k].gouvernement = GOVS[k]; });
 
     function toRows(rows) {
         return rows.map(function (r) {
@@ -160,9 +162,19 @@
     // Couleurs par parti (États-Unis) : démocrate en bleu, républicain en rouge, autre parti ou aucun en jaune.
     var PARTY_COLORS = { democrate: '#bfdbfe', republicain: '#fecaca', autre: '#fef08a', aucun: '#fef08a' };
 
-    // Les lignes d'un pays, dans l'ordre chronologique. `divider` : le nom du nouveau régime quand le groupe change ; `color` : le fond.
-    function rowsOf(country) {
+    // Les lignes d'un pays, dans l'ordre chronologique. `mode` : 'gouvernement' pour les chefs du gouvernement (si le pays en a la liste), sinon les chefs d'État. `divider` : le nom du nouveau régime quand le groupe change ; `color` : le fond.
+    function sourceOf(country, mode) {
         var c = COUNTRIES[country];
+        if (!c) return null;
+        return mode === 'gouvernement' && c.gouvernement ? c.gouvernement : c;
+    }
+
+    function hasGovernment(country) {
+        return !!(COUNTRIES[country] && COUNTRIES[country].gouvernement);
+    }
+
+    function rowsOf(country, mode) {
+        var c = sourceOf(country, mode);
         if (!c) return [];
         var out = [];
         var prev = null;
@@ -181,8 +193,9 @@
     }
 
     // La note du pays, suivie de la mention commune « Liste indicative ».
-    function noteOf(country) {
-        return COUNTRIES[country] ? COUNTRIES[country].note + ' Liste indicative.' : '';
+    function noteOf(country, mode) {
+        var c = sourceOf(country, mode);
+        return c ? c.note + ' Liste indicative.' : '';
     }
 
     function normalize(text) {
@@ -199,6 +212,6 @@
     }
 
     return {
-        COUNTRIES: COUNTRIES, rowsOf: rowsOf, countryList: countryList, noteOf: noteOf, search: search, normalize: normalize
+        COUNTRIES: COUNTRIES, rowsOf: rowsOf, countryList: countryList, noteOf: noteOf, hasGovernment: hasGovernment, search: search, normalize: normalize
     };
 }));
