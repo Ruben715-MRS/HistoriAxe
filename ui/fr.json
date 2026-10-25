@@ -2351,7 +2351,7 @@
     "timer_0": "Sans chrono",
     "timer_30": "30 s",
     "timer_15": "15 s",
-    "timer_hint": "Sans chrono, on prend son temps. Avec un chrono, répondre vite rapporte jusqu'à 50 points de plus par question. Il ne s'applique ni à la Rafale, ni à la Survie, ni au Pays mystère.",
+    "timer_hint": "Sans chrono, on prend son temps. Avec un chrono, c'est le temps pour répondre à toutes les questions : il tourne aussi entre deux réponses, et à zéro la partie s'arrête. Seules les questions répondues comptent. Il ne s'applique ni à la Rafale, ni à la Survie, ni au Pays mystère.",
     "timer_label": "Temps restant",
     "timer_seconds": "{n} s",
     "form_title": "Forme de jeu",
@@ -2490,6 +2490,9 @@
     "lives_label": "Vies : {n}",
     "end_detail_open": "{correct} bonne(s) réponse(s) sur {total} question(s) · meilleure série : {streak}",
     "zone_americas": "Amériques",
-    "level_floor": "Une zone aussi petite garde au moins {min} pays."
+    "level_floor": "Une zone aussi petite garde au moins {min} pays.",
+    "timer_60": "1 minute",
+    "timer_120": "2 minutes",
+    "timer_180": "3 minutes"
   }
 }

@@ -2314,7 +2314,7 @@
     "timer_0": "No timer",
     "timer_30": "30 s",
     "timer_15": "15 s",
-    "timer_hint": "With no timer, take your time. With a timer, answering fast earns up to 50 extra points per question. It does not apply to Burst, Survival or the Mystery country.",
+    "timer_hint": "With no timer, take your time. With a timer, it is the time to answer all the questions: it keeps running between answers, and at zero the game stops. Only answered questions count. It does not apply to Rapid fire, Survival or the Mystery country.",
     "timer_label": "Time left",
     "timer_seconds": "{n} s",
     "form_title": "Way to play",
@@ -2453,6 +2453,9 @@
     "lives_label": "Lives: {n}",
     "end_detail_open": "{correct} correct out of {total} question(s) · best streak: {streak}",
     "zone_americas": "Americas",
-    "level_floor": "A small area keeps at least {min} countries."
+    "level_floor": "A small area keeps at least {min} countries.",
+    "timer_60": "1 minute",
+    "timer_120": "2 minutes",
+    "timer_180": "3 minutes"
   }
 }
