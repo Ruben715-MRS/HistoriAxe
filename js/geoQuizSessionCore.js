@@ -495,13 +495,38 @@
         return base + (o.newlyMastered || 0) * 10 + (o.dailyFirst ? 100 : 0);
     }
 
+    // Les pays classés par réussite : `ids` (une liste d'identifiants) → les `limit` moins bien réussis (au moins MIN_SEEN fois vus), et les
+    // mieux réussis (`best`). Renvoie { worst: [{ id, n, ok, pct }], best: [...] }.
+    var RANK_MIN_SEEN = 2;
+    function countryRanking(state, ids, limit) {
+        var s = normalizeState(state);
+        var rows = ids.filter(function (id) { return s.countries[id] && s.countries[id].n >= RANK_MIN_SEEN; }).map(function (id) {
+            var c = s.countries[id];
+            return { id: id, n: c.n, ok: c.ok, pct: Math.round(100 * c.ok / c.n) };
+        });
+        var byWorst = rows.slice().sort(function (a, b) { return a.pct - b.pct || b.n - a.n || (a.id < b.id ? -1 : 1); });
+        var byBest = rows.slice().sort(function (a, b) { return b.pct - a.pct || b.n - a.n || (a.id < b.id ? -1 : 1); });
+        return {
+            worst: byWorst.slice(0, limit).filter(function (r) { return r.pct < 100; }),
+            best: byBest.slice(0, limit).filter(function (r) { return r.pct >= 80; })
+        };
+    }
+
+    // La progression : le pourcentage de bonnes réponses de chaque partie, de la plus ancienne à la plus récente (l'historique).
+    function progressionOf(state) {
+        var s = normalizeState(state);
+        return s.history.slice().reverse().filter(function (g) { return g.total > 0; }).map(function (g) {
+            return { at: g.at, form: g.form, pct: Math.round(100 * g.correct / g.total) };
+        });
+    }
+
     return {
         EXCLUDED_IDS: EXCLUDED_IDS, ZONES: ZONES, LEVELS: LEVELS, LENGTHS: LENGTHS, TIMERS: TIMERS, FORMS: FORMS, QUESTION_KINDS: QUESTION_KINDS,
         MIX_KINDS: MIX_KINDS, TRACKED_KINDS: TRACKED_KINDS, MAP_KINDS: MAP_KINDS, BURST_SECONDS: BURST_SECONDS, LIVES: LIVES, rulesOf: rulesOf, questionTimer: questionTimer, kindsOf: kindsOf,
         whoPoints: whoPoints, mysteryPoints: mysteryPoints,
         DEFAULT_PREFS: DEFAULT_PREFS, BASE_POINTS: BASE_POINTS, SPEED_MAX: SPEED_MAX, HISTORY_MAX: HISTORY_MAX,
         normalizePrefs: normalizePrefs, quizPool: quizPool, generateGame: generateGame, pointsFor: pointsFor, summarize: summarize,
-        configKey: configKey, statsOf: statsOf, DAILY_PREFS: DAILY_PREFS, RUN_MAX: RUN_MAX, trackAnswer: trackAnswer, masteryOf: masteryOf, masteryCounts: masteryCounts,
+        configKey: configKey, statsOf: statsOf, countryRanking: countryRanking, progressionOf: progressionOf, DAILY_PREFS: DAILY_PREFS, RUN_MAX: RUN_MAX, trackAnswer: trackAnswer, masteryOf: masteryOf, masteryCounts: masteryCounts,
         weakTargets: weakTargets, dailyStreak: dailyStreak, recordDaily: recordDaily, badgesEarned: badgesEarned, xpFor: xpFor, emptyState: emptyState, normalizeState: normalizeState, recordGame: recordGame, bestList: bestList
     };
 });

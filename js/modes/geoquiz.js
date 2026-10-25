@@ -857,6 +857,67 @@ function geoQuizShowScores() {
         item(new Date(g.at).toLocaleDateString('fr-FR'), geoQuizConfigLine(g), t('geoquiz.result_line', { score: g.score, correct: g.correct, total: g.total }))));
     geoQuizEl('geoquiz-scores-none').classList.toggle('hidden', records.length > 0);
     geoQuizRenderStats(state);
+    geoQuizRenderProgress(state);
+    geoQuizRenderRanking(state);
+}
+
+// « Ma progression » : le pourcentage de bonnes réponses de chaque partie, en ligne (SVG), avec le même texte pour les lecteurs d'écran.
+function geoQuizRenderProgress(state) {
+    const points = GeoQuizSessionCore.progressionOf(state);
+    const chart = geoQuizEl('geoquiz-progress-chart');
+    geoQuizEl('geoquiz-progress-none').classList.toggle('hidden', points.length >= 2);
+    if (points.length < 2) { chart.replaceChildren(); return; }
+    const W = 300, H = 120, PAD = 8;
+    const x = i => PAD + (i * (W - 2 * PAD)) / (points.length - 1);
+    const y = p => H - PAD - (p.pct / 100) * (H - 2 * PAD);
+    const NS = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    svg.setAttribute('role', 'img');
+    svg.setAttribute('aria-label', t('geoquiz.progress_aria', { n: points.length, first: points[0].pct, last: points[points.length - 1].pct }));
+    svg.classList.add('geoquiz-chart-svg');
+    const line = document.createElementNS(NS, 'polyline');
+    line.setAttribute('points', points.map((p, i) => x(i) + ',' + y(p)).join(' '));
+    line.setAttribute('class', 'geoquiz-chart-line');
+    svg.appendChild(line);
+    points.forEach((p, i) => {
+        const dot = document.createElementNS(NS, 'circle');
+        dot.setAttribute('cx', x(i));
+        dot.setAttribute('cy', y(p));
+        dot.setAttribute('r', 2.5);
+        dot.setAttribute('class', 'geoquiz-chart-dot');
+        const title = document.createElementNS(NS, 'title');
+        title.textContent = new Date(p.at).toLocaleDateString('fr-FR') + ' : ' + p.pct + ' %';
+        dot.appendChild(title);
+        svg.appendChild(dot);
+    });
+    chart.replaceChildren(svg);
+}
+
+// « Pays les moins bien réussis » et « mieux réussis » : il faut les noms des pays, donc les données de l'Atlas.
+function geoQuizRenderRanking(state) {
+    const worst = geoQuizEl('geoquiz-rank-worst');
+    const best = geoQuizEl('geoquiz-rank-best');
+    const ids = Object.keys(state.countries);
+    const fill = ranking => {
+        const item = r => {
+            const li = document.createElement('li');
+            li.textContent = countriesData.byId.get(r.id).n + ' · ' + t('geoquiz.rank_line', { pct: r.pct, ok: r.ok, n: r.n });
+            return li;
+        };
+        worst.replaceChildren(...ranking.worst.map(item));
+        best.replaceChildren(...ranking.best.map(item));
+        geoQuizEl('geoquiz-rank-best-title').classList.toggle('hidden', ranking.best.length === 0);
+        geoQuizEl('geoquiz-rank-none').classList.toggle('hidden', ranking.worst.length + ranking.best.length > 0);
+    };
+    worst.replaceChildren();
+    best.replaceChildren();
+    geoQuizEl('geoquiz-rank-best-title').classList.add('hidden');
+    if (!ids.length) { geoQuizEl('geoquiz-rank-none').classList.remove('hidden'); return; }
+    countriesLoad().then(ok => {
+        if (!ok) return;
+        fill(GeoQuizSessionCore.countryRanking(state, ids.filter(id => countriesData.byId.has(id)), 5));
+    });
 }
 
 // « Mes statistiques » : les totaux, puis une ligne par forme jouée (parties, réussite, meilleur score, plus longue série).

@@ -215,7 +215,11 @@ test('« Mes scores » : les records par réglage et les dernières parties ; vi
 
 // --- Les nouveaux modes -------------------------------------------------------------------------
 
-const startForm = (page, label) => page.locator('#geoquiz-menu .btn', { hasText: label }).click();
+// Lance une forme et attend que la partie soit affichée (sinon les questions ne sont pas encore tirées).
+const startForm = async (page, label) => {
+    await page.locator('#geoquiz-menu .btn', { hasText: label }).click();
+    await page.locator('#geoquiz-play').waitFor({ state: 'visible' });
+};
 const strip = text => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 
 test('saisie libre : accents, majuscules et fautes légères tolérés ; « je ne sais pas » et mauvaise réponse listées', async ({ page }) => {
@@ -544,4 +548,20 @@ test('« Mes scores » : les statistiques par forme, après une partie', async (
     await expect(page.locator('#geoquiz-stats-total')).toContainText('1 partie(s) jouée(s) · 80 % de bonnes réponses');
     await expect(page.locator('#geoquiz-stats-forms li').first()).toContainText('QCM');
     await expect(page.locator('#geoquiz-stats-forms li').first()).toContainText('1 partie(s) · 80 % de réussite');
+});
+
+test('« Mes scores » : la progression se dessine après deux parties ; les pays classés apparaissent', async ({ page }) => {
+    await openQuiz(page);
+    await chip(page, 'geoquiz-length', '5').click();
+    for (const right of [true, false]) {
+        await page.locator('#geoquiz-menu .btn', { hasText: 'QCM' }).click();
+        await page.locator('#geoquiz-play').waitFor({ state: 'visible' });
+        for (let i = 0; i < 5; i++) await playQuestion(page, right);
+        await page.locator('#geoquiz-end .btn', { hasText: 'Changer de réglage' }).click();
+    }
+    await page.locator('#geoquiz-menu .btn', { hasText: 'Mes scores' }).click();
+    await expect(page.locator('#geoquiz-progress-none')).toBeHidden();
+    await expect(page.locator('#geoquiz-progress-chart svg')).toBeVisible();
+    await expect(page.locator('#geoquiz-progress-chart .geoquiz-chart-dot')).toHaveCount(2);
+    await expect(page.locator('#geoquiz-progress-chart svg')).toHaveAttribute('aria-label', /Progression sur 2 parties/);
 });

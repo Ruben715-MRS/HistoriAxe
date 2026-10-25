@@ -493,3 +493,26 @@ test('statistiques : le défi du jour compte comme une forme ; un état vide ou 
     assert.deepEqual(bad.forms.qcm, { games: 0, correct: 0, total: 10, best: 0, streak: 0 });
     assert.deepEqual(bad.forms.flag, { games: 0, correct: 0, total: 0, best: 0, streak: 0 });
 });
+
+// --- Lot 5 (suite) : pays les mieux et moins bien réussis, progression -------------------------------
+
+test('classement des pays : les moins bien réussis (au moins deux fois vus) et les mieux réussis', () => {
+    let s = S.emptyState();
+    s = answers(s, 'FRA', '1111');   // 100 %
+    s = answers(s, 'DEU', '0011');   // 50 %
+    s = answers(s, 'ITA', '0');      // vu une seule fois : exclu
+    s = answers(s, 'ESP', '1000');   // 25 %
+    const r = S.countryRanking(s, ['FRA', 'DEU', 'ITA', 'ESP', 'BRA'], 5);
+    assert.deepEqual(r.worst.map(x => x.id), ['ESP', 'DEU'], 'le moins bien réussi d’abord, sans les pays vus une fois');
+    assert.deepEqual(r.best.map(x => x.id), ['FRA'], 'seuls les pays à au moins 80 %');
+    assert.equal(r.worst[0].pct, 25);
+    assert.equal(S.countryRanking(s, ['FRA'], 1).worst.length, 0, 'un pays à 100 % n’est pas « moins bien réussi »');
+});
+
+test('progression : le pourcentage de chaque partie, de la plus ancienne à la plus récente', () => {
+    let s = S.emptyState();
+    s = S.recordGame(s, { at: 1, form: 'qcm', zone: 'world', level: 'easy', length: 10, timer: 0, score: 1, correct: 4, total: 10 }).state;
+    s = S.recordGame(s, { at: 2, form: 'flag', zone: 'world', level: 'easy', length: 10, timer: 0, score: 1, correct: 9, total: 10 }).state;
+    assert.deepEqual(S.progressionOf(s).map(p => p.pct), [40, 90]);
+    assert.deepEqual(S.progressionOf(S.emptyState()), []);
+});
