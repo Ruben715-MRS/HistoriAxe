@@ -720,7 +720,21 @@
     <div id="screen-arcade" class="list-screen hidden">
         <button class="back-btn" onclick="arcadeBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
         <h2 class="header-title" data-i18n="arcade.title">Salle de jeux</h2>
-        <p class="modes-header-subtitle" data-i18n="arcade.subtitle">Mini-jeux, jeux d'arcade et jeux de réflexion pour réviser les dates.</p>
+        <p class="modes-header-subtitle" data-i18n="arcade.subtitle">Jeux géographiques, mini-jeux, jeux d'arcade et jeux de réflexion pour réviser les dates et les pays.</p>
+        <section class="games-section" aria-labelledby="games-h-geo">
+            <h3 id="games-h-geo" data-i18n="games.geo_title">Jeux géographiques</h3>
+            <p class="games-section-desc" data-i18n="games.geo_desc"></p>
+            <div class="arcade-menu">
+                <button type="button" class="arcade-card" onclick="openGeoQuizMenu('screen-arcade')">
+                    <span class="arcade-card-icon" aria-hidden="true">🗺️</span>
+                    <span class="arcade-card-text">
+                        <strong data-i18n="geoquiz.title"></strong>
+                        <small data-i18n="geoquiz.arcade_desc"></small>
+                    </span>
+                </button>
+            </div>
+        </section>
+
         <section class="games-section" aria-labelledby="games-h-mini">
             <h3 id="games-h-mini" data-i18n="games.mini_title">Mini-jeux</h3>
             <p class="games-section-desc" data-i18n="games.mini_desc"></p>
@@ -731,13 +745,6 @@
                     <strong data-i18n="wheel.title"></strong>
                     <small data-i18n="wheel.desc"></small>
                     <small class="arcade-best" id="arcade-best-wheel"></small>
-                </span>
-            </button>
-            <button type="button" class="arcade-card" onclick="openGeoQuizMenu('screen-arcade')">
-                <span class="arcade-card-icon" aria-hidden="true">🗺️</span>
-                <span class="arcade-card-text">
-                    <strong data-i18n="geoquiz.title"></strong>
-                    <small data-i18n="geoquiz.arcade_desc"></small>
                 </span>
             </button>
             <button type="button" class="arcade-card" onclick="openEras('screen-arcade')">
