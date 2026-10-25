@@ -13487,3 +13487,9 @@ input:not([type="range"]), label, select, summary, textarea {
 
 /* --- Quiz des pays : mes statistiques --- */
 #geoquiz-stats-forms li { font-size: 14px; }
+
+/* --- Quiz des pays : progression --- */
+.geoquiz-chart { width: 100%; max-width: 420px; }
+.geoquiz-chart-svg { width: 100%; height: auto; display: block; }
+.geoquiz-chart-line { fill: none; stroke: #2563eb; stroke-width: 2; stroke-linejoin: round; }
+.geoquiz-chart-dot { fill: #2563eb; }
