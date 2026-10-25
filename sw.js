@@ -12,7 +12,7 @@
 // 'install' recharge tout depuis le réseau. Un pack de langue ou un texte
 // d'UI modifié qui ne s'affiche pas malgré un déploiement réussi est
 // généralement le signe que l'un de ces deux numéros n'a pas été incrémenté.
-const CACHE_VERSION = '1.4.206';
+const CACHE_VERSION = '1.4.209';
 const APP_SHELL_CACHE = `historiaxe-shell-v${CACHE_VERSION}`;
 const DATA_CACHE = 'historiaxe-data-v1.0.115';
 
@@ -128,9 +128,11 @@ const APP_SHELL_FILES = [
     './js/periodSystems.js',
     './js/toolsCore.js',
     './js/countriesCore.js',
+    './js/geoQuizCore.js',
     './js/calendarYearCore.js',
     './js/app/tools.js',
     './js/app/countries.js',
+    './js/modes/geoquiz.js',
     './js/app/calendar.js',
     './js/genealogyCore.js',
     './js/app/genealogy.js',
