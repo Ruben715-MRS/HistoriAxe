@@ -33,8 +33,8 @@ test('jeu de pays : tous les territoires et entités contestées, sauf la Palest
     assert.ok(ids.size > 194, 'plus de pays que le jeu historique (194), qui excluait les territoires');
 });
 
-test('chrono : sans chrono, 3 s, 10 s, 15 s, dans l’ordre', () => {
-    assert.deepEqual(S.TIMERS, [0, 3, 10, 15]);
+test('chrono : sans chrono, 3 s, 7 s, 15 s, dans l’ordre', () => {
+    assert.deepEqual(S.TIMERS, [0, 3, 7, 15]);
 });
 
 test('difficulté : une part de la zone (20 %, 50 %, tout le continent), les plus peuplés d’abord, chaque jeu inclus dans le suivant', () => {
@@ -155,9 +155,9 @@ test('règles : Rafale 60 s, Survie 3 vies ; le chrono par question ne s\'appliq
     ['qcm', 'flag', 'map', 'mapname', 'typed', 'fete', 'who', 'mystery', 'mix'].forEach(f => assert.equal(S.rulesOf(f), 'standard', f));
     assert.equal(S.BURST_SECONDS, 60);
     assert.equal(S.LIVES, 3);
-    const prefs = { timer: 10 };
-    assert.equal(S.questionTimer('qcm', prefs, false), 10);
-    assert.equal(S.questionTimer('mix', prefs, false), 10);
+    const prefs = { timer: 7 };
+    assert.equal(S.questionTimer('qcm', prefs, false), 7);
+    assert.equal(S.questionTimer('mix', prefs, false), 7);
     assert.equal(S.questionTimer('mystery', prefs, false), 0, 'six essais, pas de chrono');
     assert.equal(S.questionTimer('burst', prefs, false), 0);
     assert.equal(S.questionTimer('survival', prefs, false), 0);
@@ -189,9 +189,9 @@ test('points : 100, + 10 par bonne réponse de suite (jusqu’à 50), et une vit
     assert.equal(S.pointsFor(true, 0, 0.5, 3), 150);
     assert.equal(S.pointsFor(true, 5, 1, 3), 250);
     assert.equal(S.pointsFor(true, 0, -3, 3), 100, 'un temps négatif ne retire rien');
-    assert.equal(S.pointsFor(false, 4, 0.9, 10), 0);
-    assert.ok(S.pointsFor(true, 0, 1, 3) > S.pointsFor(true, 0, 1, 10), 'plus court, plus de points');
-    assert.ok(S.pointsFor(true, 0, 1, 10) > S.pointsFor(true, 0, 1, 15));
+    assert.equal(S.pointsFor(false, 4, 0.9, 7), 0);
+    assert.ok(S.pointsFor(true, 0, 1, 3) > S.pointsFor(true, 0, 1, 7), 'plus court, plus de points');
+    assert.ok(S.pointsFor(true, 0, 1, 7) > S.pointsFor(true, 0, 1, 15));
 });
 
 test('bilan : score, bonnes réponses et meilleure série', () => {

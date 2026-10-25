@@ -58,8 +58,8 @@
 
     var LENGTHS = [5, 10, 20, 50];
     // Secondes accordées pour répondre à chaque question, dans l'ordre d'affichage ; 0 = sans chrono.
-    var TIMERS = [0, 3, 10, 15];
-    // Le bonus de vitesse maximal est SPEED_BASE / secondes accordées : 100 points à 3 secondes, 30 à 10 secondes, 20 à 15 secondes.
+    var TIMERS = [0, 3, 7, 15];
+    // Le bonus de vitesse maximal est SPEED_BASE / secondes accordées : 100 points à 3 secondes, 43 à 7 secondes, 20 à 15 secondes.
     var SPEED_BASE = 300;
     // Les formes de jeu. Chaque question porte sa forme (`kind`) ; le panaché les mélange, « Rafale » et « Survie » changent la règle
     // de la partie (60 secondes pour tout, ou trois vies) et piochent dans les formes rapides.
