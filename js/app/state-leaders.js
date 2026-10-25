@@ -68,6 +68,7 @@ function leadersShowCountry(key) {
     document.getElementById('leaders-mode-etat').setAttribute('aria-pressed', 'true');
     document.getElementById('leaders-mode-gouv').setAttribute('aria-pressed', 'false');
     document.getElementById('leaders-mode-vice').setAttribute('aria-pressed', 'false');
+    document.getElementById('leaders-mode-gouv').textContent = t('tools.' + StateLeadersCore.govModeKey(key));
     const name = StateLeadersCore.COUNTRIES[key].name;
     document.getElementById('leaders-pick').textContent = t('tools.leaders_country_btn', { name: name });
     document.getElementById('leaders-countries').classList.add('hidden');
@@ -118,7 +119,8 @@ function leadersRender(query) {
         const strong = document.createElement('strong');
         strong.textContent = r.name;
         const small = document.createElement('small');
-        small.textContent = r.title;
+        // La seconde ligne : la fonction, ou pour les Premiers ministres français, le président de la République en fonction.
+        small.textContent = r.sub || r.title;
         name.appendChild(strong);
         name.appendChild(small);
         line.appendChild(dates);

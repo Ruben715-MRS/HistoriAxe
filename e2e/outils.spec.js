@@ -501,7 +501,7 @@ test('chronologie : un régime parlementaire propose les chefs du gouvernement, 
     await page.locator('#btn-tools').click();
     await page.locator('#screen-tools .arcade-card', { hasText: 'Chronologie des chefs d’État' }).click();
     const rows = page.locator('#leaders-list .leader-row');
-    await expect(page.locator('#leaders-modes')).toBeHidden();
+    await expect(page.locator('#leaders-mode-vice')).toBeHidden();
     await page.locator('#leaders-pick').click();
     await page.locator('.leaders-country-btn', { hasText: 'Royaume-Uni' }).click();
     await expect(page.locator('#leaders-modes')).toBeVisible();
@@ -515,7 +515,8 @@ test('chronologie : un régime parlementaire propose les chefs du gouvernement, 
     await expect(rows.first()).toContainText('Jacques Ier');
     await page.locator('#leaders-pick').click();
     await page.locator('.leaders-country-btn', { hasText: 'France' }).click();
-    await expect(page.locator('#leaders-modes')).toBeHidden();
+    await expect(page.locator('#leaders-modes')).toBeVisible();
+    await expect(page.locator('#leaders-mode-gouv')).toHaveText('Premier ministre');
     expect(errors).toEqual([]);
 });
 

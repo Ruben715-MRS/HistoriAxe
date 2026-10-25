@@ -13014,6 +13014,13 @@ input:not([type="range"]), label, select, summary, textarea {
     gap: 10px;
 }
 
+/* La question et les réponses sont espacées comme les réponses entre elles. */
+.geoquiz-qcm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .geoquiz-feedback {
     min-height: 1.5em;
     margin: 0;

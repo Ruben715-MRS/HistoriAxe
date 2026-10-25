@@ -158,7 +158,7 @@
 
     function toRows(rows) {
         return rows.map(function (r) {
-            return { from: r[0], to: r[1], name: r[2], title: r[3], group: r[4], party: r[5] || null };
+            return { from: r[0], to: r[1], name: r[2], title: r[3], group: r[4], party: r[5] || null, sub: r[6] || null };
         });
     }
 
@@ -180,6 +180,12 @@
 
     function hasVice(country) {
         return !!(COUNTRIES[country] && COUNTRIES[country].vice);
+    }
+
+    // La clé de texte du bouton « chefs du gouvernement » : « Premier ministre » pour la France, sinon « Chefs du gouvernement ».
+    function govModeKey(country) {
+        var g = COUNTRIES[country] && COUNTRIES[country].gouvernement;
+        return (g && g.modeKey) || 'leaders_mode_gouv';
     }
 
     function rowsOf(country, mode) {
@@ -221,6 +227,6 @@
     }
 
     return {
-        COUNTRIES: COUNTRIES, rowsOf: rowsOf, countryList: countryList, noteOf: noteOf, hasGovernment: hasGovernment, hasVice: hasVice, search: search, normalize: normalize
+        COUNTRIES: COUNTRIES, rowsOf: rowsOf, countryList: countryList, noteOf: noteOf, hasGovernment: hasGovernment, hasVice: hasVice, govModeKey: govModeKey, search: search, normalize: normalize
     };
 }));
