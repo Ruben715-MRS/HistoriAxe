@@ -2,6 +2,13 @@
 //        → { deviceId, pseudo, email }
 // DELETE /api/account                        (+ Authorization: Bearer <jeton Supabase>)
 //        → { deleted: true }
+// PUT    /api/account { games: [...] }       (+ Authorization)
+//        → { saved, skipped }   historique des parties (api/_lib/history.js)
+// GET    /api/account?limit=&offset=         (+ Authorization)
+//        → { games: [...], total }           la plus récente d'abord
+//
+// Le historique reste dans cet endpoint plutôt que dans un fichier à part : Vercel (offre gratuite)
+// limite le dossier api/ à 12 fonctions, déjà atteintes.
 //
 // Rattache un compte à un joueur. Tout le reste de l'API identifie le joueur
 // par son device_id : plutôt que de réécrire chaque route, un compte possède
@@ -16,10 +23,11 @@
 //   les deux ont joué le même défi), puis ce joueur anonyme est supprimé.
 
 const crypto = require('crypto');
-const { ensureSchema, getPool } = require('./_lib/db');
+const { ensureSchema, getPool, query } = require('./_lib/db');
 const { isValidDeviceId, sanitizePseudo } = require('./_lib/players');
 const { getAuthUser, deleteAuthUser } = require('./_lib/auth');
 const { handlePreflight, readJsonBody, sendError } = require('./_lib/http');
+const { normalizeBatch, pageParams } = require('./_lib/history');
 
 // Tables de scores « un par défi » : en cas de doublon, la meilleure ligne gagne.
 const SCORE_TABLES = [
@@ -126,16 +134,75 @@ async function linkAccount(user, deviceId, pseudo) {
     }
 }
 
+// Le joueur rattaché à ce compte (créé par linkAccount), ou null.
+async function playerOfAccount(userId) {
+    const { rows } = await query('select id from players where auth_user_id = $1', [userId]);
+    return rows[0] || null;
+}
+
+// Ajoute les parties du lot. Idempotent : client_id unique par joueur, une partie déjà reçue est ignorée.
+async function saveGames(playerId, games) {
+    for (const g of games) {
+        await query(
+            `insert into game_history
+                (player_id, client_id, mode, theme_id, theme_name, lang, score, won, rounds, mistakes, duration_seconds, played_at)
+             values ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)
+             on conflict (player_id, client_id) do nothing`,
+            [playerId, g.clientId, g.mode, g.themeId, g.themeName, g.lang, g.score, g.won, g.rounds, g.mistakes, g.durationSeconds, g.playedAt]
+        );
+    }
+}
+
+async function listGames(playerId, { limit, offset }) {
+    const [page, count] = await Promise.all([
+        query(
+            `select client_id, mode, theme_id, theme_name, lang, score, won, rounds, mistakes, duration_seconds, played_at
+             from game_history where player_id = $1
+             order by played_at desc, id desc limit $2 offset $3`,
+            [playerId, limit, offset]
+        ),
+        query('select count(*)::int as total from game_history where player_id = $1', [playerId]),
+    ]);
+    return {
+        games: page.rows.map((r) => ({
+            clientId: r.client_id,
+            mode: r.mode,
+            themeId: r.theme_id,
+            themeName: r.theme_name,
+            lang: r.lang,
+            score: r.score,
+            won: r.won,
+            rounds: r.rounds,
+            mistakes: r.mistakes,
+            durationSeconds: Number(r.duration_seconds),
+            playedAt: r.played_at,
+        })),
+        total: count.rows[0].total,
+    };
+}
+
 module.exports = async (req, res) => {
     if (handlePreflight(req, res)) return;
 
     try {
-        if (req.method !== 'POST' && req.method !== 'DELETE') {
+        if (!['POST', 'DELETE', 'GET', 'PUT'].includes(req.method)) {
             return sendError(res, 405, 'Méthode non autorisée.');
         }
         const user = await getAuthUser(req);
         if (!user) return sendError(res, 401, 'Session expirée : reconnectez-vous.');
         await ensureSchema();
+
+        if (req.method === 'PUT' || req.method === 'GET') {
+            const player = await playerOfAccount(user.id);
+            if (!player) return sendError(res, 404, 'Aucun joueur rattaché à ce compte.');
+            if (req.method === 'GET') {
+                return res.status(200).json(await listGames(player.id, pageParams(req.query || {})));
+            }
+            const body = (await readJsonBody(req)) || {};
+            const { games, skipped } = normalizeBatch(body);
+            await saveGames(player.id, games);
+            return res.status(200).json({ saved: games.length, skipped });
+        }
 
         if (req.method === 'POST') {
             const body = (await readJsonBody(req)) || {};
@@ -145,7 +212,7 @@ module.exports = async (req, res) => {
         }
 
         // DELETE : le compte Supabase d'abord (s'il échoue, rien n'est perdu),
-        // puis le joueur et, en cascade, tous ses scores et sa progression.
+        // puis le joueur et, en cascade, tous ses scores, sa progression et son historique.
         await deleteAuthUser(user.id);
         await getPool().query('delete from players where auth_user_id = $1', [user.id]);
         return res.status(200).json({ deleted: true });

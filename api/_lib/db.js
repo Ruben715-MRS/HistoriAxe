@@ -261,6 +261,31 @@ async function ensureSchema() {
         // Les modes enchaînés pendant la séance, dans l'ordre de jeu (js/classModes.js).
         await query(`alter table class_sessions add column if not exists modes jsonb not null default '["frise"]'::jsonb;`);
         await query(`alter table class_players add column if not exists credited smallint not null default 0;`);
+        // Historique des parties d'un compte (voir api/account.js, api/_lib/history.js). Une ligne par partie ;
+        // client_id (fourni par l'appareil) rend l'envoi idempotent : renvoyer un lot ne crée pas de doublon.
+        await query(`
+            create table if not exists game_history (
+                id               bigserial primary key,
+                player_id        uuid not null references players(id) on delete cascade,
+                client_id        text not null,
+                mode             text not null,
+                theme_id         text,
+                theme_name       text,
+                lang             text,
+                score            integer not null,
+                won              boolean not null default false,
+                rounds           smallint not null default 0,
+                mistakes         smallint not null default 0,
+                duration_seconds numeric(8,1) not null default 0,
+                played_at        timestamptz not null,
+                created_at       timestamptz not null default now(),
+                unique (player_id, client_id)
+            );
+        `);
+        await query(`
+            create index if not exists idx_game_history_player_played
+                on game_history (player_id, played_at desc);
+        `);
     })().catch((err) => {
         // En cas d'échec (permissions restreintes, base non joignable...),
         // on ne met pas le résultat en cache : la prochaine requête réessaiera.

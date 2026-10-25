@@ -74,6 +74,8 @@ window.onload = async () => {
     // Retour d'une connexion (Google, lien reçu par e-mail) : Auth s'occupe de la synchronisation.
     const authRedirect = typeof Auth !== 'undefined' && Auth.init();
     if (!authRedirect) syncOnAppStart();
+    // Parties jouées hors ligne (historique des comptes) : on tente de les envoyer à chaque ouverture.
+    flushGameHistory();
 
     // Duels asynchrones entre amis (voir js/duels.js) : lien entrant
     // (?duel=xxx) et vérification best-effort des duels perdus depuis la

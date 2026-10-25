@@ -932,6 +932,25 @@ défier directement, comparer les progressions.
 **Limite des fonctions serverless.** Avec `api/friends.js`, le dossier `api/` compte **12 fonctions** — le maximum de
 l'offre gratuite de Vercel : un nouvel endpoint demande de regrouper des routes existantes (ou de changer d'offre).
 
+## Historique des parties (comptes)
+
+Pour un joueur connecté (e-mail, Google), chaque partie terminée est enregistrée
+dans `game_history` : mode, thème, langue, score, victoire, manches, erreurs,
+durée, date. Les parties jouées hors ligne attendent dans une file locale
+(`historiaxe_history_outbox_v1`) et partent à la prochaine connexion ; un
+identifiant par partie (`client_id`) rend l'envoi idempotent. Sans compte, rien
+n'est gardé. La Découverte n'entre pas dans l'historique, et les épreuves de
+l'Expédition et les manches du Mode Classe ne sont pas encore historisées.
+
+Endpoints : `PUT /api/account` (lot de 50 parties au plus) et `GET
+/api/account?limit=&offset=` (la plus récente d'abord), sur le même endpoint que
+le compte : l'offre gratuite de Vercel plafonne `api/` à 12 fonctions. La
+suppression du compte emporte l'historique. Ces valeurs viennent de l'appareil
+et ne sont pas rejouées par le serveur : c'est un journal personnel, pas un
+classement. Fichiers : `api/_lib/history.js` (validation des bornes),
+`js/app/session-end.js` (enregistrement et envoi). Tests :
+`tests/gameHistory.test.js`.
+
 ## Longueur de la manche
 
 Jusqu'ici, **une partie valait le thème entier**. Médiane de 18 événements,

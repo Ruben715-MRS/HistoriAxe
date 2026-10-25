@@ -758,6 +758,37 @@ function mergeSyncableStates(local, cloud) {
     return out;
 }
 
+// --- FILE D'ATTENTE DE L'HISTORIQUE DES PARTIES (comptes, voir js/app/session-end.js) ---
+// Chaque partie terminée y entre avant d'être envoyée, et n'en sort qu'à la confirmation du serveur :
+// une partie jouée hors ligne n'est pas perdue. Entrées : { owner: e-mail du compte, game }. Propre à
+// l'appareil, hors de SYNC_KEYS : c'est un envoi en attente, pas une progression.
+const HISTORY_OUTBOX_KEY = 'historiaxe_history_outbox_v1';
+const HISTORY_OUTBOX_MAX = 500;
+
+// Fonctions pures : la file est renvoyée, jamais modifiée sur place.
+function historyOutboxWith(list, entry, max) {
+    const next = list.concat([entry]);
+    return next.length > max ? next.slice(next.length - max) : next;
+}
+
+function historyOutboxWithout(list, clientIds) {
+    const gone = new Set(clientIds);
+    return list.filter(e => !gone.has(e.game.clientId));
+}
+
+function historyOutboxLoad() {
+    try {
+        const data = JSON.parse(localStorage.getItem(HISTORY_OUTBOX_KEY));
+        return Array.isArray(data) ? data : [];
+    } catch (e) {
+        return [];
+    }
+}
+
+function historyOutboxSave(list) {
+    try { localStorage.setItem(HISTORY_OUTBOX_KEY, JSON.stringify(list)); } catch (e) {}
+}
+
 // --- RÉINITIALISATION GLOBALE ---
 function resetAllGameData() {
     try { localStorage.removeItem(FAVORITES_KEY); } catch (e) {}
@@ -785,6 +816,7 @@ if (typeof module === 'object' && typeof module.exports === 'object') {
         getIsoWeekString, getLocalDateString, getDaysDifference, getTodayStringUTC,
         DEFAULT_SETTINGS, ROUND_LENGTH_CHOICES, resolveRoundLength, roundLengthChoicesFor,
         activeRoundLengthChoice, mergeSyncableStates, mergeValues, mergeStreaks,
-        STREAK_KEY, WEEKLY_CHALLENGE_STREAK_KEY
+        STREAK_KEY, WEEKLY_CHALLENGE_STREAK_KEY,
+        historyOutboxWith, historyOutboxWithout, HISTORY_OUTBOX_MAX
     };
 }

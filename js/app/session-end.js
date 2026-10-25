@@ -232,6 +232,9 @@ function endGame(isWin) {
         }
     }
 
+    // Historique de la partie (comptes uniquement, voir recordGameHistory ci-dessous).
+    recordGameHistory(isWin, sessionMistakes);
+
     // Pièces d'une partie libre (js/app/rewards.js) : peu, plafonnées par jour, aucune sans enjeu (entraînement…).
     const gameCoins = typeof rewardsOnGameEnd === 'function'
         ? rewardsOnGameEnd({ mode: currentMode, isWin, score, perfect: isWin && sessionMistakes === 0 })
@@ -365,6 +368,63 @@ function endGame(isWin) {
     if (currentMode !== 'discovery') {
         syncPushProgress();
     }
+}
+
+// --- HISTORIQUE DES PARTIES (comptes uniquement) ---
+// Chaque partie terminée est rangée dans la file d'attente locale (storage.js), puis envoyée à
+// api/account.js. Sans compte, rien n'est gardé : l'historique est une fonctionnalité de compte.
+// La Découverte n'a pas de score : elle n'entre pas dans l'historique.
+// Les épreuves d'Expédition et les manches de Mode Classe ont leur propre fin (voir endGame) : elles
+// ne sont pas encore historisées.
+function recordGameHistory(isWin, mistakes) {
+    if (currentMode === 'discovery' || typeof Auth === 'undefined' || !Auth.isSignedIn()) return;
+
+    let themeId = null;
+    let themeName = null;
+    if (currentMode === 'carte') {
+        themeId = 'geo:' + normalizeSearchText(geoScopeLabel || 'monde').replace(/[^a-z0-9]+/g, '-');
+        themeName = geoScopeLabel || null;
+    } else if (!revisionMode && !dailyChallengeMode && !weeklyChallengeMode && !isSimultaneityChallenge()) {
+        const theme = getCurrentTheme();
+        if (theme) { themeId = theme.id; themeName = theme.nom; }
+    }
+
+    const clientId = (typeof crypto !== 'undefined' && crypto.randomUUID)
+        ? crypto.randomUUID()
+        : Date.now().toString(36) + Math.random().toString(36).slice(2, 12);
+    const game = {
+        clientId: clientId,
+        mode: currentMode,
+        themeId: themeId,
+        themeName: themeName,
+        lang: settingsLoad().lang || null,
+        score: score,
+        won: !!isWin,
+        rounds: sessionHistory.length,
+        mistakes: mistakes,
+        durationSeconds: totalTimePlayed || 0,
+        playedAt: new Date().toISOString()
+    };
+    historyOutboxSave(historyOutboxWith(historyOutboxLoad(), { owner: Auth.email() || '', game: game }, HISTORY_OUTBOX_MAX));
+    flushGameHistory();
+}
+
+// Envoie les parties en attente du compte connecté, par lots de 50 (la limite de l'API). Une partie
+// retirée de la file n'est jamais renvoyée ; un envoi relancé reste sans effet (client_id unique).
+function flushGameHistory() {
+    if (typeof Auth === 'undefined' || !Auth.isSignedIn() || !HistoriAxeAPI.isConfigured()) return Promise.resolve(false);
+    const owner = Auth.email() || '';
+    const mine = historyOutboxLoad().filter(e => e.owner === owner).slice(0, 50);
+    if (!mine.length) return Promise.resolve(false);
+    return Auth.getAccessToken().then(token => {
+        if (!token) return false;
+        return HistoriAxeAPI.recordGames(token, mine.map(e => e.game)).then(res => {
+            if (!res.ok) return false;
+            historyOutboxSave(historyOutboxWithout(historyOutboxLoad(), mine.map(e => e.game.clientId)));
+            flushGameHistory(); // s'il reste des parties en attente, on envoie le lot suivant
+            return true;
+        });
+    });
 }
 
 // Confirmation intégrée à l'interface (remplace window.confirm, qui peut être
