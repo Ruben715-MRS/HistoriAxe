@@ -10,8 +10,8 @@
 //   - deux défis qui changent la règle de la partie : la Rafale (60 secondes pour répondre à un maximum de questions, sans cliquer sur
 //     « suivant ») et la Survie (trois vies, jusqu'à la dernière erreur).
 // Les questions viennent de GeoQuizCore (js/geoQuizCore.js) ; la partie (jeu de pays, mélange, règles, points, records) de
-// GeoQuizSessionCore (js/geoQuizSessionCore.js). Sans chrono par défaut : c'est d'abord un entraînement. Avec un chrono, le temps
-// est celui de toute la partie : à zéro, la partie s'arrête, et seules les questions répondues comptent.
+// GeoQuizSessionCore (js/geoQuizSessionCore.js). Sans chrono par défaut : c'est d'abord un entraînement. Avec un chrono, la vitesse
+// rapporte des points ; un temps écoulé compte comme une erreur.
 // Les records et l'historique sont enregistrés (js/storage.js : geoQuizStateSave) et synchronisés avec le compte ; les réglages restent
 // sur l'appareil. À la fin d'une partie, les erreurs sont listées et peuvent être rejouées (partie de révision : rien n'est enregistré).
 //
@@ -42,7 +42,7 @@ let geoQuizMasteredBefore = null;  // les pays déjà maîtrisés au début de l
 let geoQuizRules = 'standard';     // 'standard' | 'burst' | 'survival'
 let geoQuizLives = 0;
 let geoQuizAnswered = false;
-let geoQuizGameSeconds = 0;        // chrono de toute la partie : 0 = aucun
+let geoQuizTimerSeconds = 0;       // chrono par question : 0 = aucun
 let geoQuizTimerId = null;         // l'intervalle du chrono (par question, ou de la Rafale)
 let geoQuizTimerStart = 0;
 let geoQuizAutoNext = null;        // en Rafale, la question suivante arrive d'elle-même
@@ -182,7 +182,7 @@ function geoQuizBegin(form, review) {
     geoQuizMasteredBefore = geoQuizMasteredIds(geoQuizStateLoad());
     geoQuizRules = review ? 'standard' : core.rulesOf(form);
     geoQuizLives = core.LIVES;
-    geoQuizGameSeconds = core.gameTimer(form, geoQuizGamePrefs, !!review);
+    geoQuizTimerSeconds = core.questionTimer(form, geoQuizGamePrefs, !!review);
     showScreen('screen-geoquiz', 'forward');
     geoQuizShowPanel(null);
     const status = geoQuizEl('geoquiz-status');
@@ -338,16 +338,24 @@ function geoQuizSummary(q) {
 
 // --- Le chrono ----------------------------------------------------------------------------------
 
-// Le chrono de la partie (geoQuizGameSeconds), ou celui de la Rafale (60 secondes). Il est lancé une seule fois, au début de la partie :
-// il tourne entre les questions et pendant les réponses, et ne s'arrête qu'à la fin.
+// Le chrono d'une question (en secondes, geoQuizTimerSeconds), ou en Rafale celui de toute la partie (60 secondes, lancé une fois).
 function geoQuizStartTimer() {
     const box = geoQuizEl('geoquiz-timer');
-    const seconds = geoQuizRules === 'burst' ? GeoQuizSessionCore.BURST_SECONDS : geoQuizGameSeconds;
-    box.classList.toggle('hidden', !seconds);
-    if (!seconds || geoQuizTimerId !== null) return;
+    if (geoQuizRules === 'burst') {
+        box.classList.remove('hidden');
+        if (geoQuizTimerId === null) {
+            geoQuizTimerStart = performance.now();
+            geoQuizBurstTick();
+            geoQuizTimerId = setInterval(geoQuizBurstTick, 100);
+        }
+        return;
+    }
+    geoQuizStopTimer();
+    box.classList.toggle('hidden', !geoQuizTimerSeconds);
+    if (!geoQuizTimerSeconds) return;
     geoQuizTimerStart = performance.now();
-    geoQuizClockTick();
-    geoQuizTimerId = setInterval(geoQuizClockTick, 100);
+    geoQuizTimerTick();
+    geoQuizTimerId = setInterval(geoQuizTimerTick, 100);
 }
 
 function geoQuizStopTimer() {
@@ -360,23 +368,30 @@ function geoQuizClearAuto() {
     geoQuizAutoNext = null;
 }
 
-// Le temps affiché : « 45 s » sous la minute, « 2:30 » au-delà.
-function geoQuizClock(seconds) {
-    if (seconds < 60) return t('geoquiz.timer_seconds', { n: seconds });
-    return Math.floor(seconds / 60) + ':' + String(seconds % 60).padStart(2, '0');
+// La part du temps de la question qui reste, de 1 à 0 ; null sans chrono par question (et en Rafale, où seule la partie est chronométrée).
+function geoQuizRemaining() {
+    if (!geoQuizTimerSeconds) return null;
+    const elapsed = (performance.now() - geoQuizTimerStart) / 1000;
+    return Math.max(0, Math.min(1, 1 - elapsed / geoQuizTimerSeconds));
 }
 
 function geoQuizDrawTimer(remaining, seconds) {
     geoQuizEl('geoquiz-timer-fill').style.width = (remaining * 100).toFixed(1) + '%';
-    geoQuizEl('geoquiz-timer-text').textContent = geoQuizClock(seconds);
+    geoQuizEl('geoquiz-timer-text').textContent = t('geoquiz.timer_seconds', { n: seconds });
     geoQuizEl('geoquiz-timer').setAttribute('aria-valuenow', String(Math.round(remaining * 100)));
     geoQuizEl('geoquiz-timer').classList.toggle('is-low', remaining <= 0.25);
 }
 
-// Quand le temps est écoulé, la partie s'arrête, même au milieu d'une question : celle-ci n'est pas comptée, et seules les réponses
-// données rapportent des points.
-function geoQuizClockTick() {
-    const total = geoQuizRules === 'burst' ? GeoQuizSessionCore.BURST_SECONDS : geoQuizGameSeconds;
+function geoQuizTimerTick() {
+    const remaining = geoQuizRemaining();
+    if (remaining === null) return;
+    geoQuizDrawTimer(remaining, Math.ceil(remaining * geoQuizTimerSeconds));
+    if (remaining <= 0 && !geoQuizAnswered) geoQuizTimeout();
+}
+
+// Rafale : quand les 60 secondes sont écoulées, la partie s'arrête, même au milieu d'une question (elle n'est pas comptée).
+function geoQuizBurstTick() {
+    const total = GeoQuizSessionCore.BURST_SECONDS;
     const remaining = Math.max(0, 1 - (performance.now() - geoQuizTimerStart) / 1000 / total);
     geoQuizDrawTimer(remaining, Math.ceil(remaining * total));
     if (remaining <= 0) {
@@ -386,21 +401,49 @@ function geoQuizClockTick() {
     }
 }
 
+// Le temps est écoulé : une erreur, sans réponse donnée ; la bonne réponse s'affiche.
+function geoQuizTimeout() {
+    if (geoQuizAnswered) return;
+    const q = geoQuizQuestions[geoQuizIndex];
+    const feedback = geoQuizEl('geoquiz-feedback');
+    if (q.kind === 'map') {
+        const target = countriesData.byId.get(q.target);
+        const tiny = CountriesCore.isTiny(countriesData.prepared.get(q.target));
+        geoQuizSettle(false, { summary: geoQuizSummary(q), correctText: target.n, givenText: null });
+        geoQuizWhenReady(() => geoQuizSetHighlight(q.target, tiny, null));
+        feedback.textContent = t('geoquiz.locate_timeout', { answer: target.n });
+    } else if (q.kind === 'typed') {
+        geoQuizSettle(false, { summary: geoQuizSummary(q), correctText: q.answer, givenText: null });
+        feedback.textContent = t('geoquiz.timeout', { answer: q.answer });
+    } else {
+        const buttons = Array.from(document.querySelectorAll('#geoquiz-options .quiz-option'));
+        const correct = q.options.findIndex(o => o.id === geoQuizRight(q));
+        buttons.forEach((b, k) => { b.disabled = true; if (k === correct) b.classList.add('correct'); });
+        const answer = geoQuizLabel(q.ask, q.options[correct].value);
+        geoQuizSettle(false, { summary: geoQuizSummary(q), correctText: answer, givenText: null });
+        feedback.textContent = t('geoquiz.timeout', { answer: answer });
+    }
+    geoQuizShowNext();
+}
+
 // --- Répondre -----------------------------------------------------------------------------------
 
 // Les points de la question qu'on clôt : selon sa forme (indices non montrés pour « qui suis-je ? », essais restants pour le mystère).
-function geoQuizPoints(ok, q) {
+function geoQuizPoints(ok, q, remaining) {
     const core = GeoQuizSessionCore;
-    if (q.kind === 'who') return core.whoPoints(ok, geoQuizWhoShown, q.clues.length, geoQuizStreak);
+    if (q.kind === 'who') return core.whoPoints(ok, geoQuizWhoShown, q.clues.length, geoQuizStreak, remaining, geoQuizTimerSeconds);
     if (q.kind === 'mystery') return core.mysteryPoints(ok, geoQuizMysteryGuesses.length, GeoQuizCore.MYSTERY_TRIES, geoQuizStreak);
-    return core.pointsFor(ok, geoQuizStreak);
+    return core.pointsFor(ok, geoQuizStreak, remaining, geoQuizTimerSeconds);
 }
 
-// Clôt la question : les points, la série, les vies, l'entrée du bilan. Le chrono de la partie continue de tourner. Renvoie les points gagnés.
+// Clôt la question : les points (avec la vitesse si un chrono tourne), la série, les vies, l'entrée du bilan. Renvoie les points gagnés.
 function geoQuizSettle(ok, info) {
     geoQuizAnswered = true;
     const q = geoQuizQuestions[geoQuizIndex];
-    const points = geoQuizPoints(ok, q);
+    const remaining = geoQuizRemaining();
+    // En Rafale, l'intervalle est celui de toute la partie : on ne l'arrête qu'à la fin.
+    if (geoQuizRules !== 'burst') geoQuizStopTimer();
+    const points = geoQuizPoints(ok, q, remaining);
     geoQuizStreak = ok ? geoQuizStreak + 1 : 0;
     const player = geoQuizDuel ? geoQuizIndex % 2 : 0;
     if (geoQuizDuel) { geoQuizDuel.streaks[player] = geoQuizStreak; geoQuizDuel.scores[player] += points; }

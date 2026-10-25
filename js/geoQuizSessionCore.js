@@ -12,8 +12,8 @@
 //   - LE JEU DE PAYS comprend les territoires et les entités contestées (Taïwan, Kosovo, Hong Kong…), sauf la Palestine, que le quiz exclut.
 //   - LA PARTIE : une forme (QCM, drapeau, carte) ou « panaché », qui les mélange. Chaque question porte sa forme (`kind`). En panaché,
 //     un pays n'est demandé qu'une fois et la même forme ne revient pas plus de deux fois de suite.
-//   - LES POINTS : 100 par bonne réponse, + 10 par bonne réponse de suite déjà obtenue (jusqu'à + 50). Le chrono (une durée pour
-//     toute la partie) ne donne pas de points de vitesse. Une mauvaise réponse ou un temps écoulé vaut 0 et coupe la série.
+//   - LES POINTS : 100 par bonne réponse, + 10 par bonne réponse de suite déjà obtenue (jusqu'à + 50), + un bonus de vitesse avec un
+//     chrono : plus le temps accordé est court, plus la réponse rapide vaut. Une mauvaise réponse ou un temps écoulé vaut 0 et coupe la série.
 //   - LES RECORDS : le meilleur score de chaque réglage, et les 50 dernières parties. L'état se fusionne entre deux appareils d'un même
 //     compte (js/storage.js : mergeGeoQuiz).
 //   - LA MAÎTRISE : chaque réponse alimente le suivi du pays interrogé (combien de fois vu, réussi, et les cinq dernières réponses). Un pays
@@ -57,8 +57,10 @@
     var MIN_POOL = 6;
 
     var LENGTHS = [5, 10, 20, 50];
-    // Secondes pour toute la partie, dans l'ordre d'affichage ; 0 = sans chrono.
-    var TIMERS = [0, 15, 30, 60, 120, 180];
+    // Secondes accordées pour répondre à chaque question, dans l'ordre d'affichage ; 0 = sans chrono.
+    var TIMERS = [0, 3, 10, 15];
+    // Le bonus de vitesse maximal est SPEED_BASE / secondes accordées : 100 points à 3 secondes, 30 à 10 secondes, 20 à 15 secondes.
+    var SPEED_BASE = 300;
     // Les formes de jeu. Chaque question porte sa forme (`kind`) ; le panaché les mélange, « Rafale » et « Survie » changent la règle
     // de la partie (60 secondes pour tout, ou trois vies) et piochent dans les formes rapides.
     var FORMS = ['qcm', 'flag', 'map', 'mapname', 'typed', 'fete', 'who', 'mystery', 'burst', 'survival', 'mix', 'weak', 'daily', 'neighbor', 'more', 'leader', 'duel'];
@@ -230,10 +232,9 @@
         return form === 'burst' ? 'burst' : form === 'survival' ? 'survival' : 'standard';
     }
 
-    // Le chrono d'une partie, en secondes (0 = aucun) : le temps accordé pour répondre à toutes les questions. Il tourne aussi entre
-    // deux réponses ; à la fin, seules les questions répondues comptent. Il ne s'applique ni à la Rafale (60 secondes pour tout),
-    // ni à la Survie, ni au Pays mystère (six essais), ni à une partie de révision.
-    function gameTimer(form, prefs, review) {
+    // Le chrono d'une question, en secondes (0 = aucun). Il ne s'applique ni à la Rafale (60 secondes pour tout), ni à la Survie,
+    // ni au Pays mystère (six essais), ni à une partie de révision.
+    function questionTimer(form, prefs, review) {
         if (review || form === 'mystery' || form === 'weak' || form === 'daily' || rulesOf(form) !== 'standard') return 0;
         return normalizePrefs(prefs).timer;
     }
@@ -272,23 +273,25 @@
 
     // --- Les points ---------------------------------------------------------------------------------
 
-    // Les points d'une réponse. `streak` : les bonnes réponses de suite avant celle-ci.
-    function pointsFor(correct, streak) {
+    // Les points d'une réponse. `streak` : les bonnes réponses de suite avant celle-ci. `remaining` : la part du temps restante (0 à 1),
+    // ou null sans chrono ; `seconds` : le temps accordé pour la question (un temps court vaut plus de points de vitesse).
+    function pointsFor(correct, streak, remaining, seconds) {
         if (!correct) return 0;
         var bonus = Math.min(Math.max(streak || 0, 0), STREAK_MAX) * STREAK_STEP;
-        return BASE_POINTS + bonus;
+        var speed = remaining == null || !seconds ? 0 : Math.round((SPEED_BASE / seconds) * Math.min(Math.max(remaining, 0), 1));
+        return BASE_POINTS + bonus + speed;
     }
 
     // « Qui suis-je ? » : les points d'une bonne réponse, plus un bonus pour chaque indice resté caché (`shown` indices montrés sur `total`).
-    function whoPoints(correct, shown, total, streak) {
+    function whoPoints(correct, shown, total, streak, remaining, seconds) {
         if (!correct) return 0;
-        return pointsFor(true, streak) + Math.max(0, total - shown) * WHO_CLUE_BONUS;
+        return pointsFor(true, streak, remaining, seconds) + Math.max(0, total - shown) * WHO_CLUE_BONUS;
     }
 
     // « Pays mystère » : les points d'une bonne réponse trouvée à l'essai `tryNo` sur `maxTries`, plus un bonus pour chaque essai resté.
     function mysteryPoints(correct, tryNo, maxTries, streak) {
         if (!correct) return 0;
-        return pointsFor(true, streak) + Math.max(0, maxTries - tryNo) * MYSTERY_TRY_BONUS;
+        return pointsFor(true, streak, null, 0) + Math.max(0, maxTries - tryNo) * MYSTERY_TRY_BONUS;
     }
 
     // Le bilan d'une partie à partir de ses réponses : [{ ok, points }].
@@ -310,7 +313,7 @@
         var p = normalizePrefs(prefs);
         var rules = rulesOf(form);
         var length = rules === 'standard' ? p.length : 0;
-        var timer = gameTimer(form, p, false);
+        var timer = questionTimer(form, p, false);
         return [form, p.zone, p.level, length, timer].join('|');
     }
 
@@ -544,9 +547,9 @@
     return {
         zoneCountries: zoneCountries, levelInfo: levelInfo, MIN_POOL: MIN_POOL,
         EXCLUDED_IDS: EXCLUDED_IDS, ZONES: ZONES, LEVELS: LEVELS, LENGTHS: LENGTHS, TIMERS: TIMERS, FORMS: FORMS, QUESTION_KINDS: QUESTION_KINDS,
-        MIX_KINDS: MIX_KINDS, TRACKED_KINDS: TRACKED_KINDS, MAP_KINDS: MAP_KINDS, BURST_SECONDS: BURST_SECONDS, LIVES: LIVES, rulesOf: rulesOf, gameTimer: gameTimer, kindsOf: kindsOf,
+        MIX_KINDS: MIX_KINDS, TRACKED_KINDS: TRACKED_KINDS, MAP_KINDS: MAP_KINDS, BURST_SECONDS: BURST_SECONDS, LIVES: LIVES, rulesOf: rulesOf, questionTimer: questionTimer, kindsOf: kindsOf,
         whoPoints: whoPoints, mysteryPoints: mysteryPoints,
-        DEFAULT_PREFS: DEFAULT_PREFS, BASE_POINTS: BASE_POINTS, HISTORY_MAX: HISTORY_MAX,
+        DEFAULT_PREFS: DEFAULT_PREFS, BASE_POINTS: BASE_POINTS, SPEED_BASE: SPEED_BASE, HISTORY_MAX: HISTORY_MAX,
         normalizePrefs: normalizePrefs, quizPool: quizPool, generateGame: generateGame, pointsFor: pointsFor, summarize: summarize,
         configKey: configKey, statsOf: statsOf, countryRanking: countryRanking, progressionOf: progressionOf, DAILY_PREFS: DAILY_PREFS, RUN_MAX: RUN_MAX, trackAnswer: trackAnswer, masteryOf: masteryOf, masteryCounts: masteryCounts,
         weakTargets: weakTargets, dailyStreak: dailyStreak, recordDaily: recordDaily, badgesEarned: badgesEarned, xpFor: xpFor, emptyState: emptyState, normalizeState: normalizeState, recordGame: recordGame, bestList: bestList

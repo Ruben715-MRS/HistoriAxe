@@ -33,8 +33,8 @@ test('jeu de pays : tous les territoires et entités contestées, sauf la Palest
     assert.ok(ids.size > 194, 'plus de pays que le jeu historique (194), qui excluait les territoires');
 });
 
-test('chrono : les durées, dans l’ordre croissant (sans chrono, 15 s, 30 s, 1, 2, 3 minutes)', () => {
-    assert.deepEqual(S.TIMERS, [0, 15, 30, 60, 120, 180]);
+test('chrono : sans chrono, 3 s, 10 s, 15 s, dans l’ordre', () => {
+    assert.deepEqual(S.TIMERS, [0, 3, 10, 15]);
 });
 
 test('difficulté : une part de la zone (20 %, 50 %, tout le continent), les plus peuplés d’abord, chaque jeu inclus dans le suivant', () => {
@@ -155,20 +155,20 @@ test('règles : Rafale 60 s, Survie 3 vies ; le chrono par question ne s\'appliq
     ['qcm', 'flag', 'map', 'mapname', 'typed', 'fete', 'who', 'mystery', 'mix'].forEach(f => assert.equal(S.rulesOf(f), 'standard', f));
     assert.equal(S.BURST_SECONDS, 60);
     assert.equal(S.LIVES, 3);
-    const prefs = { timer: 30 };
-    assert.equal(S.gameTimer('qcm', prefs, false), 30);
-    assert.equal(S.gameTimer('mix', prefs, false), 30);
-    assert.equal(S.gameTimer('mystery', prefs, false), 0, 'six essais, pas de chrono');
-    assert.equal(S.gameTimer('burst', prefs, false), 0);
-    assert.equal(S.gameTimer('survival', prefs, false), 0);
-    assert.equal(S.gameTimer('qcm', prefs, true), 0, 'pas de chrono en révision');
+    const prefs = { timer: 10 };
+    assert.equal(S.questionTimer('qcm', prefs, false), 10);
+    assert.equal(S.questionTimer('mix', prefs, false), 10);
+    assert.equal(S.questionTimer('mystery', prefs, false), 0, 'six essais, pas de chrono');
+    assert.equal(S.questionTimer('burst', prefs, false), 0);
+    assert.equal(S.questionTimer('survival', prefs, false), 0);
+    assert.equal(S.questionTimer('qcm', prefs, true), 0, 'pas de chrono en révision');
 });
 
 test('points : qui suis-je (bonus par indice resté caché) et pays mystère (bonus par essai resté)', () => {
-    assert.equal(S.whoPoints(true, 1, 7, 0), 100 + 6 * 20);
-    assert.equal(S.whoPoints(true, 7, 7, 0), 100);
-    assert.equal(S.whoPoints(true, 3, 7, 2), 100 + 20 + 4 * 20);
-    assert.equal(S.whoPoints(false, 1, 7, 3), 0);
+    assert.equal(S.whoPoints(true, 1, 7, 0, null, 0), 100 + 6 * 20);
+    assert.equal(S.whoPoints(true, 7, 7, 0, null, 0), 100);
+    assert.equal(S.whoPoints(true, 3, 7, 2, null, 0), 100 + 20 + 4 * 20);
+    assert.equal(S.whoPoints(false, 1, 7, 3, null, 0), 0);
     assert.equal(S.mysteryPoints(true, 1, 6, 0), 100 + 5 * 20);
     assert.equal(S.mysteryPoints(true, 6, 6, 0), 100);
     assert.equal(S.mysteryPoints(true, 2, 6, 3), 100 + 30 + 4 * 20);
@@ -181,12 +181,17 @@ test('longueur : jamais plus de questions que de pays dans la zone', () => {
     assert.ok(questions.length >= S.MIN_POOL);
 });
 
-test('points : 100, + 10 par bonne réponse de suite (jusqu’à 50), sans bonus de vitesse', () => {
-    assert.equal(S.pointsFor(true, 0), 100);
-    assert.equal(S.pointsFor(true, 3), 130);
-    assert.equal(S.pointsFor(true, 5), 150);
-    assert.equal(S.pointsFor(true, 12), 150, 'le bonus de série est plafonné');
-    assert.equal(S.pointsFor(false, 4), 0);
+test('points : 100, + 10 par bonne réponse de suite (jusqu’à 50), et une vitesse qui vaut plus quand le temps accordé est court', () => {
+    assert.equal(S.pointsFor(true, 0, null), 100);
+    assert.equal(S.pointsFor(true, 3, null), 130);
+    assert.equal(S.pointsFor(true, 12, null), 150, 'le bonus de série est plafonné');
+    assert.equal(S.pointsFor(true, 0, 1, 3), 200, 'à 3 s, réponse immédiate : 100 de vitesse');
+    assert.equal(S.pointsFor(true, 0, 0.5, 3), 150);
+    assert.equal(S.pointsFor(true, 5, 1, 3), 250);
+    assert.equal(S.pointsFor(true, 0, -3, 3), 100, 'un temps négatif ne retire rien');
+    assert.equal(S.pointsFor(false, 4, 0.9, 10), 0);
+    assert.ok(S.pointsFor(true, 0, 1, 3) > S.pointsFor(true, 0, 1, 10), 'plus court, plus de points');
+    assert.ok(S.pointsFor(true, 0, 1, 10) > S.pointsFor(true, 0, 1, 15));
 });
 
 test('bilan : score, bonnes réponses et meilleure série', () => {
@@ -341,7 +346,7 @@ test('partie « pays faibles » : les questions portent sur les pays à revoir, 
     assert.equal(new Set(targets).size, 10, 'chaque pays une fois');
     targets.forEach(id => assert.ok(hardOnes.includes(id), id + ' devait être un pays à revoir'));
     game.questions.forEach(q => assert.ok(S.MIX_KINDS.includes(q.kind)));
-    assert.equal(S.gameTimer('weak', { timer: 15 }, false), 0, 'pas de chrono en révision');
+    assert.equal(S.questionTimer('weak', { timer: 15 }, false), 0, 'pas de chrono en révision');
 });
 
 test('défi du jour : le même tirage pour la même graine, un autre pour un autre jour, réglages fixes', () => {
@@ -352,7 +357,7 @@ test('défi du jour : le même tirage pour la même graine, un autre pour un aut
     assert.notDeepEqual(a.map(q => q.target), c.map(q => q.target));
     const pool = new Set(S.quizPool(facts, S.DAILY_PREFS).map(x => x.id));
     a.forEach(q => assert.ok(pool.has(q.target), 'monde, niveau moyen'));
-    assert.equal(S.gameTimer('daily', { timer: 30 }, false), 0);
+    assert.equal(S.questionTimer('daily', { timer: 30 }, false), 0);
 });
 
 test('défi du jour : seule la première partie compte ; la série compte les jours de suite', () => {
