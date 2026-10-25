@@ -13449,3 +13449,13 @@ input:not([type="range"]), label, select, summary, textarea {
 .geoquiz-end .geoquiz-setting-title { margin-top: 12px; }
 #screen-geoquiz > .tool-small:last-child { margin-top: 22px; }
 .geoquiz-list li strong { font-weight: 700; }
+
+/* --- Quiz des pays : saisie libre, pays mystère, vies, carte raccourcie --- */
+.geoquiz-typed { display: flex; flex-direction: column; gap: 10px; }
+.geoquiz-typed .tool-input { width: 100%; box-sizing: border-box; font-size: 18px; }
+.geoquiz-map.is-short { height: 34vh; min-height: 200px; }
+.geoquiz-lives { margin: 0; font-size: 18px; letter-spacing: 2px; }
+.geoquiz-mystery { display: flex; flex-direction: column; gap: 10px; }
+.geoquiz-guesses { list-style: decimal inside; }
+.geoquiz-guesses li { font-variant-numeric: tabular-nums; }
+.geoquiz-head { flex-wrap: wrap; }

@@ -1513,11 +1513,20 @@
                     <p class="tool-small" data-i18n="geoquiz.timer_hint"></p>
                 </div>
             </div>
-            <h3 class="geoquiz-setting-title" data-i18n="geoquiz.form_title">Forme de jeu</h3>
+            <h3 class="geoquiz-setting-title" data-i18n="geoquiz.forms_classic">Les classiques</h3>
             <button type="button" class="btn" onclick="startGeoQuizForm('qcm')" data-i18n="geoquiz.menu_qcm">QCM</button>
             <button type="button" class="btn" onclick="startGeoQuizForm('flag')" data-i18n="geoquiz.menu_flag">Drapeau → pays</button>
             <button type="button" class="btn" onclick="startGeoQuizForm('map')" data-i18n="geoquiz.menu_map">Touchez le pays sur la carte</button>
             <button type="button" class="btn" onclick="startGeoQuizForm('mix')" data-i18n="geoquiz.menu_mix">Panaché : toutes les formes mélangées</button>
+            <h3 class="geoquiz-setting-title" data-i18n="geoquiz.forms_other">D'autres façons de jouer</h3>
+            <button type="button" class="btn" onclick="startGeoQuizForm('mapname')" data-i18n="geoquiz.menu_mapname">Carte → nom : quel est ce pays ?</button>
+            <button type="button" class="btn" onclick="startGeoQuizForm('typed')" data-i18n="geoquiz.menu_typed">Saisie libre : tapez la réponse</button>
+            <button type="button" class="btn" onclick="startGeoQuizForm('fete')" data-i18n="geoquiz.menu_fete">Fêtes nationales</button>
+            <button type="button" class="btn" onclick="startGeoQuizForm('who')" data-i18n="geoquiz.menu_who">Qui suis-je ? Des indices, un pays</button>
+            <button type="button" class="btn" onclick="startGeoQuizForm('mystery')" data-i18n="geoquiz.menu_mystery">Pays mystère : distance et direction</button>
+            <h3 class="geoquiz-setting-title" data-i18n="geoquiz.forms_challenge">Défis</h3>
+            <button type="button" class="btn" onclick="startGeoQuizForm('burst')" data-i18n="geoquiz.menu_burst">Rafale : 60 secondes, un maximum de réponses</button>
+            <button type="button" class="btn" onclick="startGeoQuizForm('survival')" data-i18n="geoquiz.menu_survival">Survie : 3 vies, jusqu'à la dernière</button>
             <button type="button" class="btn geoquiz-secondary" onclick="geoQuizShowScores()" data-i18n="geoquiz.scores_btn">Mes scores</button>
         </div>
         <div id="geoquiz-scores" class="geoquiz-scores hidden">
@@ -1531,22 +1540,39 @@
         <div id="geoquiz-play" class="geoquiz-play hidden">
             <div class="geoquiz-head">
                 <p class="tool-small" id="geoquiz-progress" aria-live="polite"></p>
+                <p class="tool-small geoquiz-lives hidden" id="geoquiz-lives"></p>
                 <p class="tool-small geoquiz-points" id="geoquiz-points"></p>
             </div>
             <div class="geoquiz-timer hidden" id="geoquiz-timer" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" aria-label="Temps restant" data-i18n-attr="aria-label:geoquiz.timer_label">
                 <span class="geoquiz-timer-fill" id="geoquiz-timer-fill"></span>
                 <span class="geoquiz-timer-text" id="geoquiz-timer-text"></span>
             </div>
-            <div id="geoquiz-qcm" class="geoquiz-qcm">
-                <div class="geoquiz-card">
-                    <p class="geoquiz-ask" id="geoquiz-ask"></p>
-                    <ul class="geoquiz-clues" id="geoquiz-clues"></ul>
-                </div>
-                <div class="geoquiz-options" id="geoquiz-options"></div>
-            </div>
             <div id="geoquiz-locate" class="geoquiz-locate hidden">
                 <p class="geoquiz-ask" id="geoquiz-locate-ask"></p>
                 <div id="geoquiz-map" class="tool-countries-map geoquiz-map" role="application" aria-label="Carte du monde : touchez le pays demandé" data-i18n-attr="aria-label:geoquiz.map_label"></div>
+            </div>
+            <div id="geoquiz-qcm" class="geoquiz-qcm">
+                <div class="geoquiz-card" id="geoquiz-card">
+                    <p class="geoquiz-ask" id="geoquiz-ask"></p>
+                    <ul class="geoquiz-clues" id="geoquiz-clues"></ul>
+                </div>
+                <button type="button" class="btn geoquiz-secondary hidden" id="geoquiz-who-more" onclick="geoQuizWhoMore()"></button>
+                <form class="geoquiz-typed hidden" id="geoquiz-typed" autocomplete="off" onsubmit="geoQuizTypedSubmit(event)">
+                    <input type="text" class="tool-input" id="geoquiz-typed-input" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="Votre réponse" placeholder="Votre réponse" data-i18n-attr="aria-label:geoquiz.typed_label;placeholder:geoquiz.typed_label">
+                    <button type="submit" class="btn" data-i18n="geoquiz.typed_submit">Valider</button>
+                    <button type="button" class="btn geoquiz-secondary" onclick="geoQuizTypedSkip()" data-i18n="geoquiz.typed_skip">Je ne sais pas</button>
+                </form>
+                <div class="geoquiz-options" id="geoquiz-options"></div>
+            </div>
+            <div id="geoquiz-mystery" class="geoquiz-mystery hidden">
+                <p class="geoquiz-ask" id="geoquiz-mystery-ask"></p>
+                <p class="tool-small" id="geoquiz-mystery-tries" aria-live="polite"></p>
+                <form class="geoquiz-typed" id="geoquiz-mystery-form" autocomplete="off" onsubmit="geoQuizMysterySubmit(event)">
+                    <input type="text" class="tool-input" id="geoquiz-mystery-input" list="geoquiz-names" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="Nom d'un pays" placeholder="Nom d'un pays" data-i18n-attr="aria-label:geoquiz.mystery_label;placeholder:geoquiz.mystery_label">
+                    <datalist id="geoquiz-names"></datalist>
+                    <button type="submit" class="btn" data-i18n="geoquiz.mystery_submit">Proposer</button>
+                </form>
+                <ol class="geoquiz-list geoquiz-guesses" id="geoquiz-guesses"></ol>
             </div>
             <p class="geoquiz-feedback" id="geoquiz-feedback" role="status" aria-live="polite"></p>
             <button type="button" class="btn hidden" id="geoquiz-next" onclick="geoQuizNext()"></button>

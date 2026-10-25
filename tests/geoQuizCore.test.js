@@ -195,3 +195,145 @@ test('indices restreints : le quiz général n\'utilise jamais le drapeau', () =
     const qs = Q.generateQuestions(pool, { count: 100, rng: seeded(8) });
     for (const q of qs) assert.equal(q.clues.some(c => c.key === 'flag'), false);
 });
+
+// --- Les nouveaux modes : carte → nom, fêtes, qui suis-je, saisie libre, pays mystère -------------
+
+const allPool = Q.playablePool(facts, { includeSpecial: true }).filter(c => c.id !== 'PSX');
+
+test('réponses acceptées : chaque capitale citée, sans les précisions entre parenthèses', () => {
+    assert.deepEqual(Q.acceptedAnswers('Pretoria (exécutive) ; Le Cap (législative) ; Bloemfontein (judiciaire)', 'cap'), ['Pretoria', 'Le Cap', 'Bloemfontein']);
+    assert.deepEqual(Q.acceptedAnswers('Washington (D.C.)', 'cap'), ['Washington']);
+    assert.deepEqual(Q.acceptedAnswers('Côte d\'Ivoire', 'name'), ['Côte d\'Ivoire']);
+    assert.deepEqual(Q.acceptedAnswers('Birmanie (Myanmar)', 'name'), ['Birmanie', 'Myanmar'], 'le nom entre parenthèses est un autre nom du pays');
+    assert.deepEqual(Q.acceptedAnswers('Yamoussoukro (capitale économique : Abidjan)', 'cap'), ['Yamoussoukro'], 'une note n\'est pas une capitale');
+});
+
+test('saisie : accents, majuscules, tirets, apostrophes, article au début et fautes de frappe légères sont tolérés', () => {
+    const ok = (input, answers) => Q.isTypedCorrect(input, Array.isArray(answers) ? answers : [answers]);
+    assert.equal(ok('etats unis', 'États-Unis'), true);
+    assert.equal(ok('ETATS-UNIS', 'États-Unis'), true);
+    assert.equal(ok('cote divoire', 'Côte d\'Ivoire'), true);
+    assert.equal(ok('Côte d’Ivoire', 'Côte d\'Ivoire'), true);
+    assert.equal(ok('Gambie', 'la Gambie'), true);
+    assert.equal(ok('Ouagadougou', 'Ouagadougou'), true);
+    assert.equal(ok('Ouagadougo', 'Ouagadougou'), true, 'une lettre de moins sur un long mot');
+    assert.equal(ok('Myanmar', ['Birmanie', 'Myanmar']), true);
+    assert.equal(ok('Le Cap', ['Pretoria', 'Le Cap']), true);
+    assert.equal(ok('', 'Paris'), false);
+    assert.equal(ok('Lyon', 'Paris'), false);
+    assert.equal(ok('Limo', 'Lima'), false, 'pas de tolérance sur un mot de moins de 5 lettres');
+    assert.equal(ok('Pari', 'Paris'), true, 'une lettre de moins sur un mot de 5 lettres');
+});
+
+test('saisie : jamais assez de tolérance pour passer d\'un pays à un autre (Niger / Nigeria, Mali / Malawi, Iran / Irak)', () => {
+    const ok = (input, answer, others) => Q.isTypedCorrect(input, [answer], others);
+    assert.equal(ok('Niger', 'Nigeria'), false);
+    assert.equal(ok('Nigeria', 'Niger'), false);
+    assert.equal(ok('Mali', 'Malawi'), false);
+    assert.equal(ok('Iran', 'Irak'), false);
+    assert.equal(ok('Oman', 'Romain'), false);
+    // Une saisie qui est exactement la réponse d'un autre pays est refusée, même à une lettre de la bonne.
+    assert.equal(ok('Zambie', 'Gambie'), true, 'sans autre pays connu, une lettre de différence est tolérée');
+    assert.equal(ok('Zambie', 'Gambie', ['Zambie', 'Gambie']), false);
+    assert.equal(ok('Gambia', 'Gambie', ['Zambie']), true, 'une faute plus proche de la bonne réponse que de l\'autre');
+    assert.equal(ok('Kingston', 'Kingstown', ['Kingston']), false);
+    assert.equal(ok('Kingstown', 'Kingston', ['Kingstown']), false);
+    // Contrôle sur tout le jeu de données : la réponse d'un pays n'est jamais acceptée pour un autre, sauf si les deux s'écrivent pareil
+    // (George Town et Georgetown).
+    const clash = [];
+    for (const ask of ['name', 'cap']) {
+        const banks = allPool.map(c => ({ id: c.id, list: Q.acceptedAnswers(Q.answerOf(c, ask), ask) }));
+        const everyone = banks.flatMap(b => b.list.map(a => ({ id: b.id, answer: a })));
+        for (const b of banks) {
+            const others = everyone.filter(e => e.id !== b.id).map(e => e.answer);
+            for (const a of banks) {
+                if (a.id === b.id) continue;
+                const sameSpelling = a.list.some(x => b.list.some(y => Q.compact(x) === Q.compact(y)));
+                if (sameSpelling) continue;
+                if (a.list.some(x => Q.isTypedCorrect(x, b.list, others))) clash.push(`${ask} : ${a.id} accepté pour ${b.id}`);
+            }
+        }
+    }
+    assert.deepEqual(clash, []);
+});
+
+test('saisie libre : chaque question a des indices non ambigus, aucune proposition, et les réponses acceptées du pays', () => {
+    const questions = Q.generateTypedQuestions(allPool, { count: 80, rng: seeded(21) });
+    assert.ok(questions.length >= 60, 'au moins 60 questions sur 80 : ' + questions.length);
+    assert.equal(new Set(questions.map(q => q.target)).size, questions.length);
+    questions.forEach(q => {
+        assert.ok(['cap', 'name'].includes(q.ask));
+        assert.deepEqual(q.options, []);
+        assert.ok(q.answers.length >= 1);
+        assert.equal(Q.isTypedCorrect(q.answers[0], q.answers), true);
+        const answer = Q.answerOf(allPool.find(c => c.id === q.target), q.ask);
+        assert.equal(answer, q.answer);
+        assert.ok(Q.isUnambiguous(allPool, q.clues, q.ask, answer), `${q.target} : indices ambigus`);
+    });
+});
+
+test('carte → nom : quatre noms distincts dont le pays montré, sans indice écrit', () => {
+    const questions = Q.generateMapNameQuestions(allPool, { count: 40, rng: seeded(5), difficulty: 'hard' });
+    assert.equal(questions.length, 40);
+    questions.forEach(q => {
+        assert.deepEqual(q.clues, []);
+        assert.equal(q.options.length, 4);
+        assert.equal(new Set(q.options.map(o => o.value)).size, 4);
+        assert.equal(q.options.filter(o => o.id === q.target).length, 1);
+        const target = allPool.find(c => c.id === q.target);
+        assert.equal(q.options.find(o => o.id === q.target).value, target.n);
+    });
+});
+
+test('fêtes nationales : la fête désigne le pays (ou le pays sa fête), jamais en nommant le pays', () => {
+    const questions = Q.generateFeteQuestions(allPool, { count: 60, rng: seeded(33) });
+    assert.ok(questions.length >= 50, 'au moins 50 questions sur 60 : ' + questions.length);
+    const asks = new Set(questions.map(q => q.ask));
+    assert.ok(asks.has('name') && asks.has('fete'), 'les deux sens : ' + [...asks]);
+    questions.forEach(q => {
+        assert.ok(Q.isValid(q, allPool), `${q.target} : question non valable`);
+        if (q.ask === 'name') assert.equal(q.clues[0].key, 'fete', 'la fête vient en premier');
+        else assert.deepEqual(q.clues.map(c => c.key), ['name']);
+        const text = JSON.stringify(q.clues.concat(q.options.map(o => o.value))).toLowerCase();
+        assert.ok(text.length > 0);
+    });
+});
+
+test('qui suis-je : des indices dans l\'ordre, qui désignent le pays sans ambiguïté, et quatre pays à choisir', () => {
+    const questions = Q.generateWhoQuestions(allPool, { count: 40, rng: seeded(8) });
+    assert.ok(questions.length >= 35, 'au moins 35 questions sur 40 : ' + questions.length);
+    questions.forEach(q => {
+        assert.ok(q.clues.length >= 4 && q.clues.length <= Q.WHO_KEYS.length);
+        const order = q.clues.map(c => Q.WHO_KEYS.indexOf(c.key));
+        assert.deepEqual(order, order.slice().sort((a, b) => a - b), 'ordre des indices');
+        assert.equal(q.clues[0].key, 'cont', 'le plus vague d\'abord');
+        assert.ok(Q.isValid(q, allPool), `${q.target} : question non valable`);
+        assert.equal(q.options.length, 4);
+    });
+});
+
+test('pays mystère : distance, direction et proximité', () => {
+    const paris = byName('France'), madrid = byName('Espagne'), lyonish = { id: 'X', c: [4.83, 45.76] };
+    assert.equal(Q.arrowOf(0), '⬆️');
+    assert.equal(Q.arrowOf(90), '➡️');
+    assert.equal(Q.arrowOf(180), '⬇️');
+    assert.equal(Q.arrowOf(270), '⬅️');
+    assert.equal(Q.arrowOf(359), '⬆️');
+    assert.equal(Q.arrowOf(46), '↗️');
+    assert.equal(Q.proximity(0), 100);
+    assert.equal(Q.proximity(20000), 0);
+    assert.equal(Q.proximity(50000), 0, 'jamais négatif');
+    assert.equal(Q.proximity(10000), 50);
+    assert.equal(Q.mysteryGuess(paris, paris).correct, true);
+    assert.equal(Q.mysteryGuess(paris, paris).arrow, '🎯');
+    // De l'Espagne vers la France : au nord (un peu à l'est).
+    const g = Q.mysteryGuess(paris, madrid);
+    assert.equal(g.correct, false);
+    assert.ok(g.km > 800 && g.km < 1500, 'km : ' + g.km);
+    assert.ok(['⬆️', '↗️'].includes(g.arrow), 'direction : ' + g.arrow);
+    assert.ok(Math.abs(Q.bearingDeg([2.35, 48.85], [2.35, 50]) - 0) < 1);
+    assert.ok(Math.abs(Q.bearingDeg([0, 0], [10, 0]) - 90) < 1);
+    assert.equal(Q.MYSTERY_TRIES, 6);
+    assert.equal(Q.generateMysteryQuestions(allPool, { count: 7, rng: seeded(1) }).length, 7);
+    assert.ok(lyonish.id);
+});

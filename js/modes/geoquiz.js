@@ -1,14 +1,17 @@
 // =========================================================================
 // === LE QUIZ DES PAYS (écran de jeu, lancé depuis l'Atlas des pays ou la Salle de jeux) ===
 // =========================================================================
-// Un menu de RÉGLAGES (zone, difficulté, nombre de questions, chrono) puis quatre formes de jeu, un même écran, un même score :
-//   - QCM : un ou deux indices (capitale, monnaie…), quatre réponses (startGeoQuizForm('qcm')) ;
-//   - « Drapeau → pays » : un drapeau, quatre noms ('flag') ;
-//   - « Touche le pays » : le nom d'un pays, et une carte du monde à toucher ('map') ;
-//   - « Panaché » : les trois formes mélangées dans une même partie ('mix'). Chaque question porte sa forme (q.kind).
-// Les questions viennent de GeoQuizCore (js/geoQuizCore.js) ; la partie (jeu de pays, mélange, points, records) de GeoQuizSessionCore
-// (js/geoQuizSessionCore.js). Sans chrono par défaut : c'est d'abord un entraînement. Avec un chrono, la vitesse rapporte des points ;
-// un temps écoulé compte comme une erreur.
+// Un menu de RÉGLAGES (zone, difficulté, nombre de questions, chrono) puis des formes de jeu, un même écran, un même score. Chaque
+// question porte sa forme (q.kind) ; une partie en mélange plusieurs (panaché) ou une seule :
+//   - QCM, drapeau → pays, « touche le pays » sur la carte : les classiques ;
+//   - carte → nom (un pays montré sur la carte, quatre noms), saisie libre (on tape la capitale ou le pays), fêtes nationales,
+//     « qui suis-je ? » (des indices du moins évident au plus évident : chaque indice demandé coûte des points), pays mystère (six
+//     propositions, avec la distance et la direction vers le pays à trouver) ;
+//   - deux défis qui changent la règle de la partie : la Rafale (60 secondes pour répondre à un maximum de questions, sans cliquer sur
+//     « suivant ») et la Survie (trois vies, jusqu'à la dernière erreur).
+// Les questions viennent de GeoQuizCore (js/geoQuizCore.js) ; la partie (jeu de pays, mélange, règles, points, records) de
+// GeoQuizSessionCore (js/geoQuizSessionCore.js). Sans chrono par défaut : c'est d'abord un entraînement. Avec un chrono, la vitesse
+// rapporte des points ; un temps écoulé compte comme une erreur.
 // Les records et l'historique sont enregistrés (js/storage.js : geoQuizStateSave) et synchronisés avec le compte ; les réglages restent
 // sur l'appareil. À la fin d'une partie, les erreurs sont listées et peuvent être rejouées (partie de révision : rien n'est enregistré).
 //
@@ -20,9 +23,10 @@
 const GEOQUIZ_FILL = { light: '#dfe6ee', dark: '#334155' };
 const GEOQUIZ_TARGET = { light: '#f59e0b', dark: '#f2c14e' };
 const GEOQUIZ_WORLD = [[-170, -58], [190, 78]];
-const GEOQUIZ_RECENT = 10;         // parties récentes montrées dans « Mes scores »
+const GEOQUIZ_RECENT = 10;          // parties récentes montrées dans « Mes scores »
+const GEOQUIZ_BURST_PAUSE = { right: 700, wrong: 1400 };   // en Rafale, le temps de lire la réponse avant la question suivante
 
-let geoQuizForm = 'qcm';           // 'qcm' | 'flag' | 'map' | 'mix'
+let geoQuizForm = 'qcm';           // une des GeoQuizSessionCore.FORMS
 let geoQuizPrefs = null;           // les réglages du menu (chargés à l'ouverture)
 let geoQuizGamePrefs = null;       // les réglages de la partie en cours (ils ne changent pas en cours de partie)
 let geoQuizReturn = 'screen-tool-countries';   // l'écran où le menu a été ouvert (Atlas des pays, ou Salle de jeux)
@@ -31,15 +35,28 @@ let geoQuizIndex = 0;
 let geoQuizAnswers = [];           // une entrée par question jouée : { ok, points, q, summary, correctText, givenText }
 let geoQuizStreak = 0;
 let geoQuizReview = false;         // partie de révision (« Rejouer mes erreurs ») : ni record ni historique
+let geoQuizRules = 'standard';     // 'standard' | 'burst' | 'survival'
+let geoQuizLives = 0;
 let geoQuizAnswered = false;
-let geoQuizTimerSeconds = 0;       // 0 : sans chrono
-let geoQuizTimerId = null;
+let geoQuizTimerSeconds = 0;       // chrono par question : 0 = aucun
+let geoQuizTimerId = null;         // l'intervalle du chrono (par question, ou de la Rafale)
 let geoQuizTimerStart = 0;
+let geoQuizAutoNext = null;        // en Rafale, la question suivante arrive d'elle-même
+let geoQuizWhoShown = 1;           // « qui suis-je ? » : le nombre d'indices montrés
+let geoQuizMysteryGuesses = [];    // « pays mystère » : les pays proposés
+let geoQuizNameIndex = null;       // nom normalisé → pays, pour reconnaître une proposition
+let geoQuizAllPool = null;
 let geoQuizMap = null;
 let geoQuizMapReady = false;
 let geoQuizOnReady = [];           // actions à faire une fois la carte chargée (surlignage après une réponse)
 
 function geoQuizEl(id) { return document.getElementById(id); }
+
+// Tous les pays jouables (le monde, tous niveaux) : pour reconnaître une saisie, et ne jamais prendre un pays pour un autre.
+function geoQuizEveryCountry() {
+    if (!geoQuizAllPool) geoQuizAllPool = GeoQuizSessionCore.quizPool(countriesData.facts, { level: 'hard' });
+    return geoQuizAllPool;
+}
 
 // Le menu s'ouvre depuis l'Atlas des pays ou la Salle de jeux ; « Retour » y ramène.
 function openGeoQuizMenu(from) {
@@ -54,6 +71,7 @@ function geoQuizShowPanel(id) {
 
 function geoQuizShowMenu() {
     geoQuizStopTimer();
+    geoQuizClearAuto();
     geoQuizEl('geoquiz-status').textContent = '';
     geoQuizShowPanel('geoquiz-menu');
     geoQuizRenderSettings();
@@ -113,28 +131,33 @@ function geoQuizReplayErrors() {
 
 // `review` : les questions d'une partie de révision, ou null pour tirer une nouvelle partie.
 function geoQuizBegin(form, review) {
+    const core = GeoQuizSessionCore;
     geoQuizStopTimer();
+    geoQuizClearAuto();
     geoQuizForm = form;
     geoQuizReview = !!review;
     geoQuizGamePrefs = Object.assign({}, geoQuizPrefsNow());
-    geoQuizTimerSeconds = review ? 0 : geoQuizGamePrefs.timer;
+    geoQuizRules = review ? 'standard' : core.rulesOf(form);
+    geoQuizLives = core.LIVES;
+    geoQuizTimerSeconds = core.questionTimer(form, geoQuizGamePrefs, !!review);
     showScreen('screen-geoquiz', 'forward');
     geoQuizShowPanel(null);
     const status = geoQuizEl('geoquiz-status');
     status.textContent = t('tools.countries_loading');
-    const wantsMap = review ? review.some(q => q.kind === 'map') : (form === 'map' || form === 'mix');
-    const library = wantsMap ? atlasLoadLibrary() : Promise.resolve(true);
+    const needsMap = review ? review.some(q => core.MAP_KINDS.includes(q.kind)) : core.kindsOf(form).some(k => core.MAP_KINDS.includes(k));
+    const library = needsMap ? atlasLoadLibrary() : Promise.resolve(true);
     Promise.all([countriesLoad(), library]).then(([ok, libOk]) => {
         if (!ok) { status.textContent = t('tools.countries_error'); return; }
-        // Sans carte (bibliothèque absente ou pas de WebGL), le panaché se joue sans la forme « carte » ; les autres formes qui en ont besoin s'arrêtent.
-        const mapOk = !wantsMap || (libOk && !!geoQuizEnsureMap());
-        if (!mapOk && form !== 'mix') { status.textContent = libOk ? t('tools.countries_no_webgl') : t('tools.countries_no_map'); return; }
+        // Sans carte (bibliothèque absente ou pas de WebGL), le panaché, la Rafale et la Survie se jouent sans les formes « carte » ;
+        // une forme qui n'existe que par la carte s'arrête.
+        const mapOk = !needsMap || (libOk && !!geoQuizEnsureMap());
+        if (!mapOk && (review || core.MAP_KINDS.includes(form))) { status.textContent = libOk ? t('tools.countries_no_webgl') : t('tools.countries_no_map'); return; }
         let questions;
         if (review) {
             questions = review.map(q => Object.assign({}, q));
         } else {
-            const opts = form === 'mix' && !mapOk ? { kinds: ['qcm', 'flag'] } : {};
-            questions = GeoQuizSessionCore.generateGame(countriesData.facts, form, geoQuizGamePrefs, opts).questions;
+            const opts = mapOk ? {} : { kinds: core.QUESTION_KINDS.filter(k => !core.MAP_KINDS.includes(k)) };
+            questions = core.generateGame(countriesData.facts, form, geoQuizGamePrefs, opts).questions;
         }
         if (!questions.length) { status.textContent = t('geoquiz.none'); return; }
         status.textContent = '';
@@ -150,45 +173,90 @@ function geoQuizBegin(form, review) {
 function geoQuizScoreNow() { return geoQuizAnswers.reduce((sum, a) => sum + a.points, 0); }
 
 function geoQuizUpdateHead() {
-    geoQuizEl('geoquiz-progress').textContent = t('geoquiz.progress', { n: geoQuizIndex + 1, total: geoQuizQuestions.length });
+    const open = geoQuizRules !== 'standard';
+    geoQuizEl('geoquiz-progress').textContent = open
+        ? t('geoquiz.progress_open', { n: geoQuizIndex + 1 })
+        : t('geoquiz.progress', { n: geoQuizIndex + 1, total: geoQuizQuestions.length });
     geoQuizEl('geoquiz-points').textContent = t('geoquiz.points_label', { score: geoQuizScoreNow() });
+    const lives = geoQuizEl('geoquiz-lives');
+    lives.classList.toggle('hidden', geoQuizRules !== 'survival');
+    if (geoQuizRules === 'survival') {
+        const max = GeoQuizSessionCore.LIVES;
+        lives.textContent = '❤️'.repeat(geoQuizLives) + '🖤'.repeat(max - geoQuizLives);
+        lives.setAttribute('role', 'img');
+        lives.setAttribute('aria-label', t('geoquiz.lives_label', { n: geoQuizLives }));
+    }
 }
 
+// Montre ce que la forme de la question demande, et cache le reste.
 function geoQuizRender() {
     const q = geoQuizQuestions[geoQuizIndex];
-    const locate = q.kind === 'map';
+    const kind = q.kind;
+    const onMap = kind === 'map' || kind === 'mapname';
     geoQuizAnswered = false;
     geoQuizUpdateHead();
     geoQuizEl('geoquiz-feedback').textContent = '';
     geoQuizEl('geoquiz-next').classList.add('hidden');
-    geoQuizEl('geoquiz-qcm').classList.toggle('hidden', locate);
-    geoQuizEl('geoquiz-locate').classList.toggle('hidden', !locate);
-    if (locate) {
-        geoQuizRenderLocate(q);
-    } else {
-        // Espace insécable avant « ? » : le point d'interrogation ne passe pas seul à la ligne.
-        geoQuizEl('geoquiz-ask').textContent = t('geoquiz.ask_' + q.ask).replace(' ?', '\u00A0?');
-        geoQuizEl('geoquiz-clues').replaceChildren(...q.clues.map(clue => {
-            const li = document.createElement('li');
-            if (clue.key === 'flag') {
-                // Le drapeau seul, en grand : pas de libellé à lire avant l'emoji.
-                li.className = 'geoquiz-flag';
-                li.textContent = clue.value;
-            } else {
-                li.textContent = t('geoquiz.clue_' + clue.key) + ' : ' + clue.value;
-            }
-            return li;
-        }));
-        geoQuizEl('geoquiz-options').replaceChildren(...q.options.map((o, i) => {
-            const btn = document.createElement('button');
-            btn.type = 'button';
-            btn.className = 'quiz-option';
-            btn.textContent = geoQuizLabel(q.ask, o.value);
-            btn.onclick = () => geoQuizAnswer(i);
-            return btn;
-        }));
-    }
+    geoQuizEl('geoquiz-locate').classList.toggle('hidden', !onMap);
+    geoQuizEl('geoquiz-map').classList.toggle('is-short', kind === 'mapname');
+    geoQuizEl('geoquiz-qcm').classList.toggle('hidden', kind === 'map' || kind === 'mystery');
+    geoQuizEl('geoquiz-card').classList.toggle('hidden', kind === 'mapname');
+    geoQuizEl('geoquiz-options').classList.toggle('hidden', kind === 'typed');
+    geoQuizEl('geoquiz-typed').classList.toggle('hidden', kind !== 'typed');
+    geoQuizEl('geoquiz-who-more').classList.toggle('hidden', kind !== 'who');
+    geoQuizEl('geoquiz-mystery').classList.toggle('hidden', kind !== 'mystery');
+    if (onMap) geoQuizRenderMap(q);
+    // « Carte → nom » montre la carte et les quatre noms ; « touche le pays » n'a que la carte ; le mystère a son propre panneau.
+    if (kind === 'mystery') geoQuizRenderMystery(q);
+    else if (kind !== 'map') geoQuizRenderCard(q);
     geoQuizStartTimer();
+}
+
+// La question et ses réponses : QCM, drapeau, fêtes, qui suis-je ?, saisie libre, et les quatre noms de « carte → nom ».
+function geoQuizRenderCard(q) {
+    if (q.kind !== 'mapname') {
+        // Espace insécable avant « ? » : le point d'interrogation ne passe pas seul à la ligne.
+        geoQuizEl('geoquiz-ask').textContent = t('geoquiz.ask_' + q.ask).replace(' ?', ' ?');
+        if (q.kind === 'who') geoQuizWhoShown = 1;
+        geoQuizRenderClues(q);
+    }
+    if (q.kind === 'typed') {
+        const input = geoQuizEl('geoquiz-typed-input');
+        input.value = '';
+        input.disabled = false;
+        input.focus({ preventScroll: true });
+        return;
+    }
+    if (q.kind === 'who') geoQuizWhoRefreshMore(q);
+    geoQuizEl('geoquiz-options').replaceChildren(...q.options.map((o, i) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'quiz-option';
+        btn.textContent = geoQuizLabel(q.ask, o.value);
+        btn.onclick = () => geoQuizAnswer(i);
+        return btn;
+    }));
+}
+
+// Les indices : tous, sauf pour « qui suis-je ? » où on en montre un de plus à chaque coup.
+function geoQuizRenderClues(q) {
+    const clues = q.kind === 'who' ? q.clues.slice(0, geoQuizWhoShown) : q.clues;
+    geoQuizEl('geoquiz-clues').replaceChildren(...clues.map(clue => {
+        const li = document.createElement('li');
+        if (clue.key === 'flag') {
+            // Le drapeau seul, en grand : pas de libellé à lire avant l'emoji.
+            li.className = 'geoquiz-flag';
+            li.textContent = clue.value;
+        } else {
+            li.textContent = geoQuizClueText(clue);
+        }
+        return li;
+    }));
+}
+
+function geoQuizClueText(clue) {
+    if (clue.key === 'pop') return t('geoquiz.clue_pop') + ' : ' + t('geoquiz.pop_label', { n: CountriesCore.formatPopulation(clue.value) });
+    return t('geoquiz.clue_' + clue.key) + ' : ' + clue.value;
 }
 
 // Une réponse telle qu'on la lit : la population en lettres (« 68,4 millions »), le reste tel quel.
@@ -199,15 +267,28 @@ function geoQuizLabel(ask, value) {
 // La question en une ligne, pour la liste des erreurs.
 function geoQuizSummary(q) {
     if (q.kind === 'map') return t('geoquiz.summary_locate', { name: q.clues[0].value });
-    if (q.clues.length === 1 && q.clues[0].key === 'flag') return t('geoquiz.summary_flag', { flag: q.clues[0].value });
-    return t('geoquiz.ask_' + q.ask) + ' ' + q.clues.map(c => t('geoquiz.clue_' + c.key) + ' : ' + c.value).join(' ; ');
+    if (q.kind === 'mapname') return t('geoquiz.summary_mapname');
+    if (q.kind === 'mystery') return t('geoquiz.summary_mystery');
+    if (q.kind === 'flag') return t('geoquiz.summary_flag', { flag: q.clues[0].value });
+    const clues = q.kind === 'who' ? q.clues.slice(0, 3) : q.clues;
+    return t('geoquiz.ask_' + q.ask) + ' ' + clues.map(geoQuizClueText).join(' ; ');
 }
 
 // --- Le chrono ----------------------------------------------------------------------------------
 
+// Le chrono d'une question (en secondes, geoQuizTimerSeconds), ou en Rafale celui de toute la partie (60 secondes, lancé une fois).
 function geoQuizStartTimer() {
-    geoQuizStopTimer();
     const box = geoQuizEl('geoquiz-timer');
+    if (geoQuizRules === 'burst') {
+        box.classList.remove('hidden');
+        if (geoQuizTimerId === null) {
+            geoQuizTimerStart = performance.now();
+            geoQuizBurstTick();
+            geoQuizTimerId = setInterval(geoQuizBurstTick, 100);
+        }
+        return;
+    }
+    geoQuizStopTimer();
     box.classList.toggle('hidden', !geoQuizTimerSeconds);
     if (!geoQuizTimerSeconds) return;
     geoQuizTimerStart = performance.now();
@@ -220,22 +301,42 @@ function geoQuizStopTimer() {
     geoQuizTimerId = null;
 }
 
-// La part du temps qui reste, de 1 à 0.
+function geoQuizClearAuto() {
+    if (geoQuizAutoNext !== null) clearTimeout(geoQuizAutoNext);
+    geoQuizAutoNext = null;
+}
+
+// La part du temps de la question qui reste, de 1 à 0 ; null sans chrono par question (et en Rafale, où seule la partie est chronométrée).
 function geoQuizRemaining() {
     if (!geoQuizTimerSeconds) return null;
     const elapsed = (performance.now() - geoQuizTimerStart) / 1000;
     return Math.max(0, Math.min(1, 1 - elapsed / geoQuizTimerSeconds));
 }
 
-function geoQuizTimerTick() {
-    const remaining = geoQuizRemaining();
-    if (remaining === null) return;
-    const seconds = Math.ceil(remaining * geoQuizTimerSeconds);
+function geoQuizDrawTimer(remaining, seconds) {
     geoQuizEl('geoquiz-timer-fill').style.width = (remaining * 100).toFixed(1) + '%';
     geoQuizEl('geoquiz-timer-text').textContent = t('geoquiz.timer_seconds', { n: seconds });
     geoQuizEl('geoquiz-timer').setAttribute('aria-valuenow', String(Math.round(remaining * 100)));
     geoQuizEl('geoquiz-timer').classList.toggle('is-low', remaining <= 0.25);
+}
+
+function geoQuizTimerTick() {
+    const remaining = geoQuizRemaining();
+    if (remaining === null) return;
+    geoQuizDrawTimer(remaining, Math.ceil(remaining * geoQuizTimerSeconds));
     if (remaining <= 0 && !geoQuizAnswered) geoQuizTimeout();
+}
+
+// Rafale : quand les 60 secondes sont écoulées, la partie s'arrête, même au milieu d'une question (elle n'est pas comptée).
+function geoQuizBurstTick() {
+    const total = GeoQuizSessionCore.BURST_SECONDS;
+    const remaining = Math.max(0, 1 - (performance.now() - geoQuizTimerStart) / 1000 / total);
+    geoQuizDrawTimer(remaining, Math.ceil(remaining * total));
+    if (remaining <= 0) {
+        geoQuizStopTimer();
+        geoQuizClearAuto();
+        geoQuizEnd();
+    }
 }
 
 // Le temps est écoulé : une erreur, sans réponse donnée ; la bonne réponse s'affiche.
@@ -249,6 +350,9 @@ function geoQuizTimeout() {
         geoQuizSettle(false, { summary: geoQuizSummary(q), correctText: target.n, givenText: null });
         geoQuizWhenReady(() => geoQuizSetHighlight(q.target, tiny, null));
         feedback.textContent = t('geoquiz.locate_timeout', { answer: target.n });
+    } else if (q.kind === 'typed') {
+        geoQuizSettle(false, { summary: geoQuizSummary(q), correctText: q.answer, givenText: null });
+        feedback.textContent = t('geoquiz.timeout', { answer: q.answer });
     } else {
         const buttons = Array.from(document.querySelectorAll('#geoquiz-options .quiz-option'));
         const correct = q.options.findIndex(o => o.id === q.target);
@@ -262,21 +366,37 @@ function geoQuizTimeout() {
 
 // --- Répondre -----------------------------------------------------------------------------------
 
-// Clôt la question : les points (avec la vitesse si un chrono tourne), la série, l'entrée du bilan. Renvoie les points gagnés.
+// Les points de la question qu'on clôt : selon sa forme (indices non montrés pour « qui suis-je ? », essais restants pour le mystère).
+function geoQuizPoints(ok, q, remaining) {
+    const core = GeoQuizSessionCore;
+    if (q.kind === 'who') return core.whoPoints(ok, geoQuizWhoShown, q.clues.length, geoQuizStreak, remaining);
+    if (q.kind === 'mystery') return core.mysteryPoints(ok, geoQuizMysteryGuesses.length, GeoQuizCore.MYSTERY_TRIES, geoQuizStreak);
+    return core.pointsFor(ok, geoQuizStreak, remaining);
+}
+
+// Clôt la question : les points (avec la vitesse si un chrono tourne), la série, les vies, l'entrée du bilan. Renvoie les points gagnés.
 function geoQuizSettle(ok, info) {
     geoQuizAnswered = true;
+    const q = geoQuizQuestions[geoQuizIndex];
     const remaining = geoQuizRemaining();
-    geoQuizStopTimer();
-    const points = GeoQuizSessionCore.pointsFor(ok, geoQuizStreak, remaining);
+    // En Rafale, l'intervalle est celui de toute la partie : on ne l'arrête qu'à la fin.
+    if (geoQuizRules !== 'burst') geoQuizStopTimer();
+    const points = geoQuizPoints(ok, q, remaining);
     geoQuizStreak = ok ? geoQuizStreak + 1 : 0;
-    geoQuizAnswers.push(Object.assign({ ok: ok, points: points, q: geoQuizQuestions[geoQuizIndex] }, info));
+    if (!ok && geoQuizRules === 'survival') geoQuizLives--;
+    geoQuizAnswers.push(Object.assign({ ok: ok, points: points, q: q }, info));
+    geoQuizEl('geoquiz-who-more').disabled = true;
+    geoQuizEl('geoquiz-typed-input').disabled = true;
+    geoQuizEl('geoquiz-mystery-input').disabled = true;
     geoQuizUpdateHead();
     return points;
 }
 
+// QCM, drapeau, fêtes, carte → nom : un choix parmi des propositions. « Qui suis-je ? » a ses propres règles.
 function geoQuizAnswer(i) {
     if (geoQuizAnswered) return;
     const q = geoQuizQuestions[geoQuizIndex];
+    if (q.kind === 'who') { geoQuizWhoAnswer(i); return; }
     const buttons = Array.from(document.querySelectorAll('#geoquiz-options .quiz-option'));
     const correct = q.options.findIndex(o => o.id === q.target);
     buttons.forEach((b, k) => {
@@ -300,27 +420,182 @@ function geoQuizAnswer(i) {
 }
 
 function geoQuizShowNext() {
-    const last = geoQuizIndex === geoQuizQuestions.length - 1;
+    const last = geoQuizIndex === geoQuizQuestions.length - 1 || (geoQuizRules === 'survival' && geoQuizLives <= 0);
     const next = geoQuizEl('geoquiz-next');
+    if (geoQuizRules === 'burst') {
+        // En Rafale, pas de bouton : la question suivante arrive après le temps de lire la réponse.
+        const ok = geoQuizAnswers[geoQuizAnswers.length - 1].ok;
+        geoQuizClearAuto();
+        geoQuizAutoNext = setTimeout(geoQuizNext, ok ? GEOQUIZ_BURST_PAUSE.right : GEOQUIZ_BURST_PAUSE.wrong);
+        return;
+    }
     next.textContent = t(last ? 'geoquiz.finish' : 'geoquiz.next');
     next.classList.remove('hidden');
     next.focus({ preventScroll: true });
 }
 
 function geoQuizNext() {
+    geoQuizClearAuto();
+    // Une partie finie (ou quittée) ne repart pas : le délai de la Rafale a pu se terminer après.
+    if (geoQuizEl('geoquiz-play').classList.contains('hidden')) return;
     geoQuizIndex++;
-    if (geoQuizIndex >= geoQuizQuestions.length) { geoQuizEnd(); return; }
+    const noLife = geoQuizRules === 'survival' && geoQuizLives <= 0;
+    if (noLife || geoQuizIndex >= geoQuizQuestions.length) { geoQuizEnd(); return; }
     geoQuizRender();
+}
+
+// --- « Qui suis-je ? » --------------------------------------------------------------------------
+
+// Le bouton qui montre un indice de plus, tant qu'il en reste ; il coûte les points de l'indice.
+function geoQuizWhoRefreshMore(q) {
+    const more = geoQuizEl('geoquiz-who-more');
+    more.disabled = false;
+    more.classList.toggle('hidden', geoQuizWhoShown >= q.clues.length);
+    more.textContent = t('geoquiz.who_more', { n: 20 });
+}
+
+function geoQuizWhoMore() {
+    const q = geoQuizQuestions[geoQuizIndex];
+    if (geoQuizAnswered || q.kind !== 'who' || geoQuizWhoShown >= q.clues.length) return;
+    geoQuizWhoShown++;
+    geoQuizRenderClues(q);
+    geoQuizWhoRefreshMore(q);
+}
+
+// Une mauvaise réponse écarte la proposition et montre l'indice suivant ; sans indice à montrer, la question est perdue.
+function geoQuizWhoAnswer(i) {
+    const q = geoQuizQuestions[geoQuizIndex];
+    const buttons = Array.from(document.querySelectorAll('#geoquiz-options .quiz-option'));
+    const correct = q.options.findIndex(o => o.id === q.target);
+    const feedback = geoQuizEl('geoquiz-feedback');
+    if (i !== correct && geoQuizWhoShown < q.clues.length) {
+        buttons[i].classList.add('wrong');
+        buttons[i].disabled = true;
+        geoQuizWhoShown++;
+        geoQuizRenderClues(q);
+        geoQuizWhoRefreshMore(q);
+        feedback.textContent = t('geoquiz.who_next');
+        return;
+    }
+    buttons.forEach((b, k) => {
+        b.disabled = true;
+        if (k === correct) b.classList.add('correct');
+    });
+    const ok = i === correct;
+    const points = geoQuizSettle(ok, { summary: geoQuizSummary(q), correctText: buttons[correct].textContent, givenText: buttons[i].textContent });
+    if (ok) {
+        feedback.textContent = t('geoquiz.right_pts', { n: points });
+    } else {
+        buttons[i].classList.add('wrong');
+        feedback.textContent = t('geoquiz.wrong', { answer: buttons[correct].textContent });
+    }
+    geoQuizShowNext();
+}
+
+// --- Saisie libre -------------------------------------------------------------------------------
+
+function geoQuizTypedSubmit(ev) {
+    ev.preventDefault();
+    const q = geoQuizQuestions[geoQuizIndex];
+    if (geoQuizAnswered || !q || q.kind !== 'typed') return;
+    const value = geoQuizEl('geoquiz-typed-input').value.trim();
+    if (!value) return;
+    const others = GeoQuizCore.otherAnswers(geoQuizEveryCountry(), q.target, q.ask);
+    geoQuizTypedSettle(GeoQuizCore.isTypedCorrect(value, q.answers, others), value);
+}
+
+// « Je ne sais pas » : une erreur sans réponse donnée.
+function geoQuizTypedSkip() {
+    const q = geoQuizQuestions[geoQuizIndex];
+    if (geoQuizAnswered || !q || q.kind !== 'typed') return;
+    geoQuizTypedSettle(false, '');
+}
+
+function geoQuizTypedSettle(ok, given) {
+    const q = geoQuizQuestions[geoQuizIndex];
+    const points = geoQuizSettle(ok, { summary: geoQuizSummary(q), correctText: q.answer, givenText: given });
+    geoQuizEl('geoquiz-feedback').textContent = ok ? t('geoquiz.right_pts', { n: points }) : t('geoquiz.wrong', { answer: q.answer });
+    geoQuizShowNext();
+}
+
+// --- Pays mystère -------------------------------------------------------------------------------
+
+// Le pays qu'un nom désigne (le nom de l'Atlas ou celui entre parenthèses : « Myanmar »), sans accents ni tirets.
+function geoQuizCountryNamed(text) {
+    if (!geoQuizNameIndex) {
+        geoQuizNameIndex = new Map();
+        geoQuizEveryCountry().forEach(c => GeoQuizCore.acceptedAnswers(c.n, 'name').forEach(name => geoQuizNameIndex.set(GeoQuizCore.compact(name), c)));
+    }
+    return geoQuizNameIndex.get(GeoQuizCore.compact(text)) || null;
+}
+
+function geoQuizRenderMystery(q) {
+    geoQuizMysteryGuesses = [];
+    geoQuizEl('geoquiz-mystery-ask').textContent = t('geoquiz.mystery_ask');
+    geoQuizEl('geoquiz-guesses').replaceChildren();
+    const list = geoQuizEl('geoquiz-names');
+    if (!list.children.length) {
+        list.replaceChildren(...geoQuizEveryCountry().map(c => c.n).sort((a, b) => a.localeCompare(b, 'fr')).map(name => {
+            const option = document.createElement('option');
+            option.value = name;
+            return option;
+        }));
+    }
+    const input = geoQuizEl('geoquiz-mystery-input');
+    input.value = '';
+    input.disabled = false;
+    geoQuizMysteryTries();
+    input.focus({ preventScroll: true });
+}
+
+function geoQuizMysteryTries() {
+    geoQuizEl('geoquiz-mystery-tries').textContent = t('geoquiz.mystery_try', {
+        n: Math.min(geoQuizMysteryGuesses.length + 1, GeoQuizCore.MYSTERY_TRIES), max: GeoQuizCore.MYSTERY_TRIES
+    });
+}
+
+function geoQuizMysterySubmit(ev) {
+    ev.preventDefault();
+    const q = geoQuizQuestions[geoQuizIndex];
+    if (geoQuizAnswered || !q || q.kind !== 'mystery') return;
+    const input = geoQuizEl('geoquiz-mystery-input');
+    const value = input.value.trim();
+    if (!value) return;
+    const feedback = geoQuizEl('geoquiz-feedback');
+    const guess = geoQuizCountryNamed(value);
+    if (!guess) { feedback.textContent = t('geoquiz.mystery_unknown'); return; }
+    if (geoQuizMysteryGuesses.indexOf(guess.id) !== -1) { feedback.textContent = t('geoquiz.mystery_already'); return; }
+    const target = countriesData.byId.get(q.target);
+    const result = GeoQuizCore.mysteryGuess(target, guess);
+    geoQuizMysteryGuesses.push(guess.id);
+    const li = document.createElement('li');
+    li.textContent = result.correct
+        ? t('geoquiz.mystery_hit', { name: guess.n })
+        : t('geoquiz.mystery_guess', { name: guess.n, km: result.km.toLocaleString('fr-FR'), arrow: result.arrow, percent: result.percent });
+    geoQuizEl('geoquiz-guesses').appendChild(li);
+    input.value = '';
+    feedback.textContent = '';
+    if (result.correct || geoQuizMysteryGuesses.length >= GeoQuizCore.MYSTERY_TRIES) {
+        const tries = geoQuizMysteryGuesses.length;
+        const points = geoQuizSettle(result.correct, { summary: geoQuizSummary(q), correctText: target.n, givenText: result.correct ? null : guess.n });
+        feedback.textContent = result.correct ? t('geoquiz.mystery_found', { n: tries, pts: points }) : t('geoquiz.mystery_lost', { answer: target.n });
+        geoQuizEl('geoquiz-mystery-tries').textContent = '';
+        geoQuizShowNext();
+    } else {
+        geoQuizMysteryTries();
+    }
 }
 
 // --- La fin de partie : points, record, erreurs --------------------------------------------------
 
 function geoQuizEnd() {
     geoQuizStopTimer();
+    geoQuizClearAuto();
     const summary = GeoQuizSessionCore.summarize(geoQuizAnswers);
     geoQuizShowPanel('geoquiz-end');
     geoQuizEl('geoquiz-score').textContent = t('geoquiz.end_score', { score: summary.score });
-    geoQuizEl('geoquiz-detail').textContent = t('geoquiz.end_detail', { correct: summary.correct, total: summary.total, streak: summary.bestStreak });
+    geoQuizEl('geoquiz-detail').textContent = t(geoQuizRules === 'standard' ? 'geoquiz.end_detail' : 'geoquiz.end_detail_open',
+        { correct: summary.correct, total: summary.total, streak: summary.bestStreak });
     geoQuizEl('geoquiz-record').textContent = geoQuizReview ? t('geoquiz.review_note') : geoQuizSaveGame(summary);
     geoQuizRenderErrors();
     geoQuizEl('geoquiz-score').focus({ preventScroll: true });
@@ -350,8 +625,9 @@ function geoQuizRenderErrors() {
         question.textContent = a.summary;
         const answer = document.createElement('span');
         let text = t('geoquiz.error_answer', { answer: a.correctText });
-        if (a.givenText != null) text += a.q.kind === 'map' ? t('geoquiz.error_km', { km: a.givenText }) : t('geoquiz.error_given', { given: a.givenText });
-        else text += t('geoquiz.error_timeout');
+        if (a.givenText === null) text += t('geoquiz.error_timeout');
+        else if (a.givenText === '') text += t('geoquiz.error_skipped');
+        else text += a.q.kind === 'map' ? t('geoquiz.error_km', { km: a.givenText }) : t('geoquiz.error_given', { given: a.givenText });
         answer.textContent = text;
         li.append(question, document.createElement('br'), answer);
         return li;
@@ -362,10 +638,10 @@ function geoQuizRenderErrors() {
 // --- Mes scores ---------------------------------------------------------------------------------
 
 function geoQuizConfigLine(g) {
-    return t('geoquiz.config_line', {
-        form: t('geoquiz.form_' + g.form), zone: t('geoquiz.zone_' + g.zone), level: t('geoquiz.level_' + g.level),
-        length: g.length, timer: t('geoquiz.timer_' + g.timer)
-    });
+    const parts = { form: t('geoquiz.form_' + g.form), zone: t('geoquiz.zone_' + g.zone), level: t('geoquiz.level_' + g.level) };
+    // Rafale et Survie n'ont ni nombre de questions ni chrono à régler.
+    if (GeoQuizSessionCore.rulesOf(g.form) !== 'standard') return t('geoquiz.config_line_open', parts);
+    return t('geoquiz.config_line', Object.assign(parts, { length: g.length, timer: t('geoquiz.timer_' + g.timer) }));
 }
 
 function geoQuizShowScores() {
@@ -394,12 +670,21 @@ function geoQuizQuit() {
     showScreen(geoQuizReturn, 'back');
 }
 
-// --- « Touche le pays » -----------------------------------------------------------------------
+// --- La carte : « touche le pays » et « carte → nom » -----------------------------------------
 
-function geoQuizRenderLocate(q) {
-    geoQuizEl('geoquiz-locate-ask').textContent = t('geoquiz.locate_ask', { name: q.clues[0].value });
-    // La carte a été créée cachée : on la redimensionne une fois visible, puis on la remet sur le monde.
+function geoQuizRenderMap(q) {
+    // La carte a été créée cachée : on la redimensionne une fois visible.
     geoQuizMap.resize();
+    if (q.kind === 'mapname') {
+        // Le pays à nommer, surligné, avec son voisinage ; aucun nom n'est écrit sur la carte.
+        geoQuizEl('geoquiz-locate-ask').textContent = t('geoquiz.ask_name').replace(' ?', ' ?');
+        const target = countriesData.byId.get(q.target);
+        const tiny = CountriesCore.isTiny(countriesData.prepared.get(q.target));
+        geoQuizMap.jumpTo({ center: target.c, zoom: Math.max(0.4, target.z - 1.3) });
+        geoQuizWhenReady(() => geoQuizSetHighlight(q.target, tiny, null));
+        return;
+    }
+    geoQuizEl('geoquiz-locate-ask').textContent = t('geoquiz.locate_ask', { name: q.clues[0].value });
     geoQuizMap.fitBounds(GEOQUIZ_WORLD, { padding: 6, duration: 0 });
     geoQuizWhenReady(() => geoQuizSetHighlight(null, false, null));
 }
@@ -465,7 +750,7 @@ function geoQuizWhenReady(fn) {
     if (geoQuizMapReady) fn(); else geoQuizOnReady.push(fn);
 }
 
-// Le pays visé (après réponse seulement) et le point du clic. `id` : null pour rien surligner.
+// Le pays visé (après réponse seulement, ou dès le début pour « carte → nom ») et le point du clic. `id` : null pour rien surligner.
 function geoQuizSetHighlight(id, tiny, tap) {
     const map = geoQuizMap;
     const none = { type: 'FeatureCollection', features: [] };
@@ -479,7 +764,7 @@ function geoQuizSetHighlight(id, tiny, tap) {
         : none);
 }
 
-// Un clic sur la carte : réussi s'il tombe dans le pays visé (ou à côté, pour un petit pays).
+// Un clic sur la carte : réussi s'il tombe dans le pays visé (ou à côté, pour un petit pays). Sans effet en « carte → nom ».
 function geoQuizTap(lon, lat) {
     const q = geoQuizQuestions[geoQuizIndex];
     if (geoQuizAnswered || !q || q.kind !== 'map' || geoQuizEl('geoquiz-play').classList.contains('hidden')) return;

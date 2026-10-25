@@ -132,7 +132,7 @@
 
     function settings(opts) {
         var src = opts || {};
-        var o = { rng: src.rng || Math.random, ask: src.ask, asks: src.asks, clues: src.clues };
+        var o = { rng: src.rng || Math.random, ask: src.ask, asks: src.asks, clues: src.clues, first: src.first };
         Object.keys(DEFAULTS).forEach(function (k) { o[k] = src[k] != null ? src[k] : DEFAULTS[k]; });
         return o;
     }
@@ -195,7 +195,9 @@
     function cluesFor(target, pool, o, answer) {
         var clues = [];
         var allowed = o.clues || CLUE_KEYS;
-        var keys = shuffle(allowed.filter(function (k) { return k !== o.ask; }), o.rng);
+        // `o.first` : des indices essayés en premier, dans l'ordre (« la fête d'abord » pour une question sur les fêtes nationales).
+        var first = (o.first || []).filter(function (k) { return k !== o.ask && allowed.indexOf(k) !== -1; });
+        var keys = first.concat(shuffle(allowed.filter(function (k) { return k !== o.ask && first.indexOf(k) === -1; }), o.rng));
         for (var i = 0; i < keys.length && clues.length < o.maxClues; i++) {
             var values = clueValues(target, keys[i]);
             if (!values.length) continue;
@@ -218,7 +220,7 @@
         for (var i = 0; i < targets.length && questions.length < o.count; i++) {
             var order = shuffle(asks, o.rng);
             for (var j = 0; j < order.length; j++) {
-                var question = buildQuestion(targets[i], pool, { ask: order[j], options: o.options, maxClues: o.maxClues, difficulty: o.difficulty, clues: o.clues, rng: o.rng });
+                var question = buildQuestion(targets[i], pool, { ask: order[j], options: o.options, maxClues: o.maxClues, difficulty: o.difficulty, clues: o.clues, first: o.first, rng: o.rng });
                 if (question) { questions.push(question); break; }
             }
         }
@@ -268,11 +270,197 @@
         });
     }
 
+
+    // --- « Carte → nom » ----------------------------------------------------------------------
+    // Un pays montré sur la carte (sans aucun nom écrit dessus), quatre noms à choisir. Pas d'indices : la carte est l'indice.
+    function generateMapNameQuestions(pool, opts) {
+        var o = settings(opts);
+        var out = [];
+        shuffle(pool, o.rng).forEach(function (target) {
+            if (out.length >= o.count) return;
+            var options = chooseOptions(target, pool, { ask: 'name', options: o.options, difficulty: o.difficulty, rng: o.rng });
+            if (options) out.push({ target: target.id, ask: 'name', clues: [], options: options });
+        });
+        return out;
+    }
+
+    // --- « Fêtes nationales » -----------------------------------------------------------------
+    // Soit la fête (« 14 juillet : Fête de la Fédération ») désigne le pays, soit le pays désigne sa fête. Un pays n'est interrogé que
+    // s'il a une fête qui ne le nomme pas. Si une même fête vaut pour plusieurs pays, un indice de plus les départage.
+    function generateFeteQuestions(pool, opts) {
+        var o = settings(opts);
+        var out = [];
+        shuffle(pool.filter(function (c) { return nationalDay(c); }), o.rng).forEach(function (target) {
+            if (out.length >= o.count) return;
+            shuffle(['name', 'fete'], o.rng).some(function (ask) {
+                var q = buildQuestion(target, pool, {
+                    ask: ask, options: o.options, maxClues: o.maxClues, difficulty: o.difficulty, rng: o.rng,
+                    clues: ask === 'name' ? ['fete', 'cont', 'sub', 'lang', 'cur'] : ['name'],
+                    first: ask === 'name' ? ['fete'] : ['name']
+                });
+                if (q) out.push(q);
+                return !!q;
+            });
+        });
+        return out;
+    }
+
+    // --- « Qui suis-je ? » --------------------------------------------------------------------
+    // Des indices du moins évident au plus évident ; le joueur choisit parmi quatre pays et chaque indice demandé coûte des points.
+    // Les indices qui restent forment, tous ensemble, une description sans ambiguïté.
+    var WHO_KEYS = ['cont', 'sub', 'lang', 'cur', 'pop', 'fete', 'cap'];
+
+    function generateWhoQuestions(pool, opts) {
+        var o = settings(opts);
+        var out = [];
+        shuffle(pool, o.rng).forEach(function (target) {
+            if (out.length >= o.count) return;
+            var clues = [];
+            WHO_KEYS.forEach(function (key) {
+                var values = clueValues(target, key);
+                if (values.length) clues.push({ key: key, value: pick(values, o.rng) });
+            });
+            if (clues.length < 4 || !isUnambiguous(pool, clues, 'name', target.n)) return;
+            var options = chooseOptions(target, pool, { ask: 'name', options: o.options, difficulty: o.difficulty, rng: o.rng });
+            if (options) out.push({ target: target.id, ask: 'name', clues: clues, options: options });
+        });
+        return out;
+    }
+
+    // --- « Saisie libre » ---------------------------------------------------------------------
+    // Le joueur tape la réponse : la capitale d'un pays, ou le pays décrit par des indices.
+    // Ce qu'on accepte pour une réponse de l'Atlas : chaque capitale citée (« Pretoria (exécutive) ; Le Cap (législative) » en a deux),
+    // sans les précisions entre parenthèses ; et pour un nom de pays, le nom entre parenthèses (« Birmanie (Myanmar) » → Myanmar).
+    function acceptedAnswers(text, ask) {
+        var out = [];
+        String(text == null ? '' : text).split(';').forEach(function (part) {
+            var m = part.match(/^\s*([^()]*?)\s*(?:\((.*)\))?\s*$/);
+            var base = (m ? m[1] : part).trim();
+            if (base) out.push(base);
+            if (ask === 'name' && m && m[2]) out.push(m[2].trim());
+        });
+        return out;
+    }
+
+    // Pour comparer : sans accents, sans majuscules, sans espaces ni tirets ni apostrophes, sans article au début (« la Gambie »).
+    function compact(text) {
+        return normalize(text).replace(/^(le|la|les|l) /, '').replace(/ /g, '');
+    }
+
+    function editDistance(a, b) {
+        var prev = [];
+        var i, j;
+        for (j = 0; j <= b.length; j++) prev[j] = j;
+        for (i = 1; i <= a.length; i++) {
+            var row = [i];
+            for (j = 1; j <= b.length; j++) {
+                row[j] = Math.min(prev[j] + 1, row[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+            }
+            prev = row;
+        }
+        return prev[b.length];
+    }
+
+    // La saisie est-elle une des réponses acceptées ? Une faute de frappe est tolérée sur les mots d'au moins 5 lettres (une lettre), et
+    // 9 lettres (deux). Mais jamais au point de désigner un autre pays : `others` donne les réponses des autres pays, et une saisie
+    // identique à l'une d'elles est refusée, une saisie proche des deux n'est acceptée que si elle est strictement plus proche de la
+    // bonne réponse (Gambie / Zambie, Irlande / Islande, Kingston / Kingstown, Manama / Panama restent distincts).
+    function isTypedCorrect(input, answers, others) {
+        var x = compact(input);
+        if (!x) return false;
+        var ours = answers.map(compact).filter(Boolean);
+        if (ours.indexOf(x) !== -1) return true;
+        var best = Infinity;
+        ours.forEach(function (y) {
+            var tolerance = y.length >= 9 ? 2 : y.length >= 5 ? 1 : 0;
+            if (tolerance === 0 || Math.abs(x.length - y.length) > tolerance) return;
+            var d = editDistance(x, y);
+            if (d <= tolerance && d < best) best = d;
+        });
+        if (best === Infinity) return false;
+        var closest = Infinity;
+        (others || []).forEach(function (other) {
+            var z = compact(other);
+            if (!z || Math.abs(x.length - z.length) > best) return;
+            var d = editDistance(x, z);
+            if (d < closest) closest = d;
+        });
+        return best < closest;
+    }
+
+    // Les réponses acceptées pour tous les autres pays : `isTypedCorrect` s'en sert pour ne jamais prendre un pays pour un autre.
+    function otherAnswers(pool, targetId, ask) {
+        var out = [];
+        pool.forEach(function (c) {
+            if (c.id !== targetId) out = out.concat(acceptedAnswers(answerOf(c, ask), ask));
+        });
+        return out;
+    }
+
+    function generateTypedQuestions(pool, opts) {
+        var o = settings(opts);
+        var out = [];
+        shuffle(pool, o.rng).forEach(function (target) {
+            if (out.length >= o.count) return;
+            shuffle(['cap', 'name'], o.rng).some(function (ask) {
+                var q = buildQuestion(target, pool, {
+                    ask: ask, options: 2, maxClues: o.maxClues, difficulty: o.difficulty, rng: o.rng,
+                    clues: ask === 'cap' ? ['name'] : CLUE_KEYS.filter(function (k) { return k !== 'name'; })
+                });
+                if (!q) return false;
+                q.options = [];
+                q.answer = answerOf(target, ask);
+                q.answers = acceptedAnswers(q.answer, ask);
+                out.push(q);
+                return true;
+            });
+        });
+        return out;
+    }
+
+    // --- « Pays mystère » ---------------------------------------------------------------------
+    // Le joueur propose des pays ; chaque proposition donne la distance et la direction vers le pays mystère (centre à centre).
+    var MYSTERY_TRIES = 6;
+    var HALF_EARTH_KM = 20000;
+    var ARROWS = ['⬆️', '↗️', '➡️', '↘️', '⬇️', '↙️', '⬅️', '↖️'];
+
+    // Le cap, en degrés (0 = nord, 90 = est), de a vers b (points [lon, lat]).
+    function bearingDeg(a, b) {
+        var rad = Math.PI / 180;
+        var dLon = (b[0] - a[0]) * rad;
+        var y = Math.sin(dLon) * Math.cos(b[1] * rad);
+        var x = Math.cos(a[1] * rad) * Math.sin(b[1] * rad) - Math.sin(a[1] * rad) * Math.cos(b[1] * rad) * Math.cos(dLon);
+        return (Math.atan2(y, x) / rad + 360) % 360;
+    }
+
+    function arrowOf(deg) { return ARROWS[Math.round(deg / 45) % 8]; }
+
+    // 100 % sur place, 0 % à l'opposé de la planète.
+    function proximity(km) { return Math.max(0, Math.round(100 * (1 - km / HALF_EARTH_KM))); }
+
+    // Le résultat d'une proposition : { correct, km, arrow, percent }. `guess` et `target` : des pays de l'Atlas (champs id et c).
+    function mysteryGuess(target, guess) {
+        if (guess.id === target.id) return { correct: true, km: 0, arrow: '🎯', percent: 100 };
+        var km = distanceKm(guess.c, target.c);
+        return { correct: false, km: Math.round(km), arrow: arrowOf(bearingDeg(guess.c, target.c)), percent: proximity(km) };
+    }
+
+    function generateMysteryQuestions(pool, opts) {
+        var o = settings(opts);
+        return shuffle(pool, o.rng).slice(0, o.count).map(function (c) {
+            return { target: c.id, ask: 'mystery', clues: [], options: [] };
+        });
+    }
+
     return {
         LOCATE_TINY_KM: LOCATE_TINY_KM, distanceKm: distanceKm, locateCorrect: locateCorrect, generateLocateQuestions: generateLocateQuestions,
         CLUE_KEYS: CLUE_KEYS, ASK_KEYS: ASK_KEYS, MIN_RATIO: MIN_RATIO,
         normalize: normalize, namesCountry: namesCountry, nationalDay: nationalDay, clueValues: clueValues, answerOf: answerOf,
         playablePool: playablePool, matching: matching, isUnambiguous: isUnambiguous,
-        buildQuestion: buildQuestion, generateQuestions: generateQuestions, isValid: isValid
+        buildQuestion: buildQuestion, generateQuestions: generateQuestions, isValid: isValid,
+        generateMapNameQuestions: generateMapNameQuestions, generateFeteQuestions: generateFeteQuestions, generateWhoQuestions: generateWhoQuestions,
+        generateTypedQuestions: generateTypedQuestions, generateMysteryQuestions: generateMysteryQuestions, WHO_KEYS: WHO_KEYS,
+        acceptedAnswers: acceptedAnswers, isTypedCorrect: isTypedCorrect, otherAnswers: otherAnswers, compact: compact, editDistance: editDistance,
+        MYSTERY_TRIES: MYSTERY_TRIES, bearingDeg: bearingDeg, arrowOf: arrowOf, proximity: proximity, mysteryGuess: mysteryGuess
     };
 });

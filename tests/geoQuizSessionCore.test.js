@@ -96,13 +96,66 @@ test('panaché : les trois formes, un pays une seule fois, jamais plus de deux f
     }
 });
 
-test('panaché : la répartition est équilibrée, et on peut retirer la carte (sans WebGL)', () => {
-    const { questions } = S.generateGame(facts, 'mix', { length: 10 }, { rng: seeded(8) });
+test('panaché : la répartition est équilibrée entre les sept formes, et on peut retirer la carte (sans WebGL)', () => {
+    const { questions } = S.generateGame(facts, 'mix', { length: 50, level: 'hard' }, { rng: seeded(8) });
     const count = k => questions.filter(q => q.kind === k).length;
-    ['qcm', 'flag', 'map'].forEach(k => assert.ok(count(k) >= 3 && count(k) <= 4, k + ' : ' + count(k)));
-    const noMap = S.generateGame(facts, 'mix', { length: 10 }, { rng: seeded(9), kinds: ['qcm', 'flag'] }).questions;
-    assert.equal(noMap.length, 10);
-    assert.ok(noMap.every(q => q.kind !== 'map'));
+    S.MIX_KINDS.forEach(k => assert.ok(count(k) >= 6 && count(k) <= 8, k + ' : ' + count(k)));
+    const noMap = S.generateGame(facts, 'mix', { length: 20 }, { rng: seeded(9), kinds: ['qcm', 'flag', 'typed', 'fete', 'who'] }).questions;
+    assert.equal(noMap.length, 20);
+    assert.ok(noMap.every(q => !S.MAP_KINDS.includes(q.kind)));
+});
+
+test('chaque forme produit des questions de sa forme, valables, sur des pays distincts', () => {
+    const prefs = { level: 'hard', length: 10 };
+    const pool = S.quizPool(facts, prefs);
+    ['qcm', 'flag', 'map', 'mapname', 'typed', 'fete', 'who', 'mystery'].forEach(form => {
+        const { questions } = S.generateGame(facts, form, prefs, { rng: seeded(17) });
+        assert.equal(questions.length, 10, form);
+        assert.ok(questions.every(q => q.kind === form), form + ' : forme des questions');
+        assert.equal(new Set(questions.map(q => q.target)).size, 10, form);
+        questions.forEach(q => assert.ok(pool.some(c => c.id === q.target), form + ' : cible hors du jeu de pays'));
+        if (['qcm', 'flag', 'fete', 'who'].includes(form)) questions.forEach(q => assert.ok(Q.isValid(q, pool), `${form} : ${q.target} non valable`));
+    });
+});
+
+test('Rafale et Survie : beaucoup de questions rapides, sans saisie ni indices progressifs', () => {
+    const prefs = { level: 'hard', length: 5 };
+    const burst = S.generateGame(facts, 'burst', prefs, { rng: seeded(2) });
+    assert.ok(burst.questions.length >= 70, 'de quoi tenir soixante secondes : ' + burst.questions.length);
+    assert.ok(burst.questions.every(q => S.kindsOf('burst').includes(q.kind)), 'QCM et drapeau seulement');
+    const survival = S.generateGame(facts, 'survival', prefs, { rng: seeded(3) });
+    assert.ok(survival.questions.length >= 100, 'tant qu\'il reste des vies : ' + survival.questions.length);
+    assert.ok(survival.questions.every(q => S.kindsOf('survival').includes(q.kind)));
+    assert.ok(!survival.questions.some(q => q.kind === 'typed' || q.kind === 'mystery'));
+    const noMap = S.generateGame(facts, 'survival', prefs, { rng: seeded(3), kinds: ['qcm', 'flag', 'fete', 'who'] }).questions;
+    assert.ok(noMap.every(q => !S.MAP_KINDS.includes(q.kind)));
+    assert.equal(new Set(burst.questions.map(q => q.target)).size, burst.questions.length);
+});
+
+test('règles : Rafale 60 s, Survie 3 vies ; le chrono par question ne s\'applique qu\'aux parties normales', () => {
+    assert.equal(S.rulesOf('burst'), 'burst');
+    assert.equal(S.rulesOf('survival'), 'survival');
+    ['qcm', 'flag', 'map', 'mapname', 'typed', 'fete', 'who', 'mystery', 'mix'].forEach(f => assert.equal(S.rulesOf(f), 'standard', f));
+    assert.equal(S.BURST_SECONDS, 60);
+    assert.equal(S.LIVES, 3);
+    const prefs = { timer: 30 };
+    assert.equal(S.questionTimer('qcm', prefs, false), 30);
+    assert.equal(S.questionTimer('mix', prefs, false), 30);
+    assert.equal(S.questionTimer('mystery', prefs, false), 0, 'six essais, pas de chrono');
+    assert.equal(S.questionTimer('burst', prefs, false), 0);
+    assert.equal(S.questionTimer('survival', prefs, false), 0);
+    assert.equal(S.questionTimer('qcm', prefs, true), 0, 'pas de chrono en révision');
+});
+
+test('points : qui suis-je (bonus par indice resté caché) et pays mystère (bonus par essai resté)', () => {
+    assert.equal(S.whoPoints(true, 1, 7, 0, null), 100 + 6 * 20);
+    assert.equal(S.whoPoints(true, 7, 7, 0, null), 100);
+    assert.equal(S.whoPoints(true, 3, 7, 2, null), 100 + 20 + 4 * 20);
+    assert.equal(S.whoPoints(false, 1, 7, 3, 1), 0);
+    assert.equal(S.mysteryPoints(true, 1, 6, 0), 100 + 5 * 20);
+    assert.equal(S.mysteryPoints(true, 6, 6, 0), 100);
+    assert.equal(S.mysteryPoints(true, 2, 6, 3), 100 + 30 + 4 * 20);
+    assert.equal(S.mysteryPoints(false, 6, 6, 0), 0);
 });
 
 test('longueur : jamais plus de questions que de pays dans la zone', () => {
@@ -184,6 +237,14 @@ test('clé de réglage : stable, et change avec la zone, la difficulté, la long
     assert.notEqual(base, S.configKey('qcm', { length: 20 }));
     assert.notEqual(base, S.configKey('qcm', { timer: 15 }));
     assert.notEqual(base, S.configKey('mix', {}));
+});
+
+test('clé de réglage : Rafale et Survie ignorent longueur et chrono, le Pays mystère ignore le chrono', () => {
+    assert.equal(S.configKey('burst', { length: 50, timer: 15 }), 'burst|world|easy|0|0');
+    assert.equal(S.configKey('burst', {}), S.configKey('burst', { length: 5, timer: 30 }));
+    assert.equal(S.configKey('survival', { zone: 'asia', level: 'hard', length: 20, timer: 15 }), 'survival|asia|hard|0|0');
+    assert.equal(S.configKey('mystery', { length: 5, timer: 30 }), 'mystery|world|easy|5|0');
+    assert.notEqual(S.configKey('mystery', { length: 5 }), S.configKey('mystery', { length: 10 }));
 });
 
 test('textes : chaque libellé utilisé par l’écran du quiz existe en français et en anglais', () => {

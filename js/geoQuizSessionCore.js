@@ -48,11 +48,23 @@
 
     var LENGTHS = [5, 10, 20, 50];
     var TIMERS = [0, 30, 15];          // secondes par question ; 0 = sans chrono
-    var FORMS = ['qcm', 'flag', 'map', 'mix'];
-    var QUESTION_KINDS = ['qcm', 'flag', 'map'];
+    // Les formes de jeu. Chaque question porte sa forme (`kind`) ; le panaché les mélange, « Rafale » et « Survie » changent la règle
+    // de la partie (60 secondes pour tout, ou trois vies) et piochent dans les formes rapides.
+    var FORMS = ['qcm', 'flag', 'map', 'mapname', 'typed', 'fete', 'who', 'mystery', 'burst', 'survival', 'mix'];
+    var QUESTION_KINDS = ['qcm', 'flag', 'map', 'mapname', 'typed', 'fete', 'who', 'mystery'];
+    var MIX_KINDS = ['qcm', 'flag', 'map', 'mapname', 'typed', 'fete', 'who'];
+    var BURST_KINDS = ['qcm', 'flag'];
+    var SURVIVAL_KINDS = ['qcm', 'flag', 'map', 'mapname', 'fete', 'who'];
+    var MAP_KINDS = ['map', 'mapname'];  // les formes qui ont besoin de la carte (WebGL)
+    var BURST_SECONDS = 60;
+    var LIVES = 3;
+    var BURST_MAX_QUESTIONS = 80;
+    var SURVIVAL_MAX_QUESTIONS = 120;
     var DEFAULT_PREFS = { zone: 'world', level: 'easy', length: 10, timer: 0 };
 
     var BASE_POINTS = 100;
+    var WHO_CLUE_BONUS = 20;          // par indice resté caché dans « Qui suis-je ? »
+    var MYSTERY_TRY_BONUS = 20;       // par essai resté dans « Pays mystère »
     var STREAK_STEP = 10;
     var STREAK_MAX = 5;
     var SPEED_MAX = 50;
@@ -104,12 +116,23 @@
         // On en tire plus qu'il n'en faut : certaines tombent sur un pays déjà pris par une autre forme.
         var wanted = count + taken.size + 4;
         var made;
+        var o = { count: wanted, difficulty: level.distractors, rng: rng };
         if (kind === 'map') {
-            made = Q.generateLocateQuestions(pool, { count: wanted, rng: rng });
+            made = Q.generateLocateQuestions(pool, o);
         } else if (kind === 'flag') {
             made = Q.generateQuestions(pool, { count: wanted, asks: ['name'], clues: ['flag'], difficulty: level.distractors, rng: rng });
+        } else if (kind === 'mapname') {
+            made = Q.generateMapNameQuestions(pool, o);
+        } else if (kind === 'typed') {
+            made = Q.generateTypedQuestions(pool, o);
+        } else if (kind === 'fete') {
+            made = Q.generateFeteQuestions(pool, o);
+        } else if (kind === 'who') {
+            made = Q.generateWhoQuestions(pool, o);
+        } else if (kind === 'mystery') {
+            made = Q.generateMysteryQuestions(pool, o);
         } else {
-            made = Q.generateQuestions(pool, { count: wanted, difficulty: level.distractors, rng: rng });
+            made = Q.generateQuestions(pool, o);
         }
         var out = [];
         made.forEach(function (q) {
@@ -162,27 +185,44 @@
         return list;
     }
 
-    // Une partie : { questions, poolSize }. `form` : 'qcm' | 'flag' | 'map' | 'mix'. `opts.kinds` : les formes permises en panaché
-    // (par défaut toutes ; la carte peut manquer si WebGL est indisponible). `opts.rng` : générateur aléatoire (les tests le fixent).
+    // La règle d'une partie : 'burst' (60 secondes pour tout), 'survival' (trois vies) ou 'standard' (un nombre de questions).
+    function rulesOf(form) {
+        return form === 'burst' ? 'burst' : form === 'survival' ? 'survival' : 'standard';
+    }
+
+    // Le chrono par question d'une partie, en secondes (0 = aucun). Il ne s'applique ni à la Rafale (60 secondes pour tout), ni à la Survie,
+    // ni au Pays mystère (six essais), ni à une partie de révision.
+    function questionTimer(form, prefs, review) {
+        if (review || form === 'mystery' || rulesOf(form) !== 'standard') return 0;
+        return normalizePrefs(prefs).timer;
+    }
+
+    // Les formes de question d'une partie : toutes celles permises par `allowed` (par défaut toutes) dans ce que la forme comprend.
+    function kindsOf(form, allowed) {
+        var base = form === 'mix' ? MIX_KINDS : form === 'burst' ? BURST_KINDS : form === 'survival' ? SURVIVAL_KINDS : [form];
+        var kinds = allowed ? base.filter(function (k) { return allowed.indexOf(k) !== -1; }) : base.slice();
+        return kinds.length ? kinds : ['qcm'];
+    }
+
+    // Une partie : { questions, poolSize }. `form` : une des FORMS. `opts.kinds` : les formes de question permises en panaché, Rafale et
+    // Survie (sans carte, on retire `map` et `mapname`). `opts.rng` : générateur aléatoire (les tests le fixent).
     function generateGame(facts, form, prefs, opts) {
         var p = normalizePrefs(prefs);
         var rng = (opts && opts.rng) || Math.random;
         var pool = quizPool(facts, p);
-        var count = Math.min(p.length, pool.length);
+        var rules = rulesOf(form);
+        var wanted = rules === 'burst' ? BURST_MAX_QUESTIONS : rules === 'survival' ? SURVIVAL_MAX_QUESTIONS : p.length;
+        var count = Math.min(wanted, pool.length);
         var taken = new Set();
-        var questions;
-        if (form === 'mix') {
-            var allowed = (opts && opts.kinds ? opts.kinds : QUESTION_KINDS).filter(function (k) { return QUESTION_KINDS.indexOf(k) !== -1; });
-            if (!allowed.length) allowed = ['qcm'];
-            var counts = splitCounts(count, allowed, rng);
-            questions = [];
-            allowed.forEach(function (kind, i) { questions = questions.concat(questionsOfKind(kind, pool, p, counts[i], taken, rng)); });
-            // Si une forme n'a pas pu fournir ses questions, le QCM comble le manque.
-            if (questions.length < count) questions = questions.concat(questionsOfKind('qcm', pool, p, count - questions.length, taken, rng));
-            questions = interleave(questions, rng);
-        } else {
-            questions = questionsOfKind(QUESTION_KINDS.indexOf(form) === -1 ? 'qcm' : form, pool, p, count, taken, rng);
+        var kinds = kindsOf(form, opts && opts.kinds);
+        var counts = splitCounts(count, kinds, rng);
+        var questions = [];
+        kinds.forEach(function (kind, i) { questions = questions.concat(questionsOfKind(kind, pool, p, counts[i], taken, rng)); });
+        // Si une forme n'a pas pu fournir ses questions, le QCM comble le manque.
+        if (questions.length < count && !(kinds.length === 1 && kinds[0] === 'qcm')) {
+            questions = questions.concat(questionsOfKind('qcm', pool, p, count - questions.length, taken, rng));
         }
+        if (kinds.length > 1) questions = interleave(questions, rng);
         return { questions: questions, poolSize: pool.length };
     }
 
@@ -195,6 +235,18 @@
         var bonus = Math.min(Math.max(streak || 0, 0), STREAK_MAX) * STREAK_STEP;
         var speed = remaining == null ? 0 : Math.round(SPEED_MAX * Math.min(Math.max(remaining, 0), 1));
         return BASE_POINTS + bonus + speed;
+    }
+
+    // « Qui suis-je ? » : les points d'une bonne réponse, plus un bonus pour chaque indice resté caché (`shown` indices montrés sur `total`).
+    function whoPoints(correct, shown, total, streak, remaining) {
+        if (!correct) return 0;
+        return pointsFor(true, streak, remaining) + Math.max(0, total - shown) * WHO_CLUE_BONUS;
+    }
+
+    // « Pays mystère » : les points d'une bonne réponse trouvée à l'essai `tryNo` sur `maxTries`, plus un bonus pour chaque essai resté.
+    function mysteryPoints(correct, tryNo, maxTries, streak) {
+        if (!correct) return 0;
+        return pointsFor(true, streak, null) + Math.max(0, maxTries - tryNo) * MYSTERY_TRY_BONUS;
     }
 
     // Le bilan d'une partie à partir de ses réponses : [{ ok, points }].
@@ -211,9 +263,13 @@
     // --- Les records et l'historique ---------------------------------------------------------------
 
     // La clé d'un réglage dans les records : la forme et les réglages qui changent la difficulté.
+    // Rafale et Survie n'ont ni longueur ni chrono réglables, le Pays mystère n'a pas de chrono : ces réglages ne changent pas leur clé.
     function configKey(form, prefs) {
         var p = normalizePrefs(prefs);
-        return [form, p.zone, p.level, p.length, p.timer].join('|');
+        var rules = rulesOf(form);
+        var length = rules === 'standard' ? p.length : 0;
+        var timer = questionTimer(form, p, false);
+        return [form, p.zone, p.level, length, timer].join('|');
     }
 
     function emptyState() { return { v: 1, best: {}, history: [] }; }
@@ -265,6 +321,8 @@
 
     return {
         EXCLUDED_IDS: EXCLUDED_IDS, ZONES: ZONES, LEVELS: LEVELS, LENGTHS: LENGTHS, TIMERS: TIMERS, FORMS: FORMS, QUESTION_KINDS: QUESTION_KINDS,
+        MIX_KINDS: MIX_KINDS, MAP_KINDS: MAP_KINDS, BURST_SECONDS: BURST_SECONDS, LIVES: LIVES, rulesOf: rulesOf, questionTimer: questionTimer, kindsOf: kindsOf,
+        whoPoints: whoPoints, mysteryPoints: mysteryPoints,
         DEFAULT_PREFS: DEFAULT_PREFS, BASE_POINTS: BASE_POINTS, SPEED_MAX: SPEED_MAX, HISTORY_MAX: HISTORY_MAX,
         normalizePrefs: normalizePrefs, quizPool: quizPool, generateGame: generateGame, pointsFor: pointsFor, summarize: summarize,
         configKey: configKey, emptyState: emptyState, normalizeState: normalizeState, recordGame: recordGame, bestList: bestList
