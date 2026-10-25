@@ -494,3 +494,27 @@ test('chronologie des chefs d’État : de Clovis à Macron, barres de dynastie,
     expect(await visibleScreen(page)).toBe('screen-tools');
     expect(errors).toEqual([]);
 });
+
+test('chronologie : un régime parlementaire propose les chefs du gouvernement, les chefs d’État restent par défaut', async ({ page }) => {
+    const errors = [];
+    page.on('pageerror', e => errors.push(String(e)));
+    await page.locator('#btn-tools').click();
+    await page.locator('#screen-tools .arcade-card', { hasText: 'Chronologie des chefs d’État' }).click();
+    const rows = page.locator('#leaders-list .leader-row');
+    await expect(page.locator('#leaders-modes')).toBeHidden();
+    await page.locator('#leaders-pick').click();
+    await page.locator('.leaders-country-btn', { hasText: 'Royaume-Uni' }).click();
+    await expect(page.locator('#leaders-modes')).toBeVisible();
+    await expect(page.locator('#leaders-mode-etat')).toHaveAttribute('aria-pressed', 'true');
+    await expect(rows.first()).toContainText('Jacques Ier');
+    await page.locator('#leaders-mode-gouv').click();
+    await expect(page.locator('#leaders-mode-gouv')).toHaveAttribute('aria-pressed', 'true');
+    await expect(rows.first()).toContainText('Robert Walpole');
+    await expect(rows.last()).toContainText('Keir Starmer');
+    await page.locator('#leaders-mode-etat').click();
+    await expect(rows.first()).toContainText('Jacques Ier');
+    await page.locator('#leaders-pick').click();
+    await page.locator('.leaders-country-btn', { hasText: 'France' }).click();
+    await expect(page.locator('#leaders-modes')).toBeHidden();
+    expect(errors).toEqual([]);
+});

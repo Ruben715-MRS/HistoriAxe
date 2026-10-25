@@ -8,6 +8,7 @@
 
 let leadersBuilt = false;
 let leadersCountry = 'france';
+let leadersMode = 'etat';
 
 function toolLeadersInit() {
     const search = document.getElementById('leaders-search');
@@ -41,8 +42,26 @@ function leadersTogglePicker() {
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
 }
 
+// Le choix entre chefs d’État (par défaut) et chefs du gouvernement, pour les régimes parlementaires.
+function leadersSetMode(mode) {
+    leadersMode = mode === 'gouvernement' ? 'gouvernement' : 'etat';
+    document.getElementById('leaders-mode-etat').setAttribute('aria-pressed', leadersMode === 'etat' ? 'true' : 'false');
+    document.getElementById('leaders-mode-gouv').setAttribute('aria-pressed', leadersMode === 'gouvernement' ? 'true' : 'false');
+    leadersShowNote();
+    leadersRender(document.getElementById('leaders-search').value);
+}
+
+function leadersShowNote() {
+    document.getElementById('leaders-country-note').textContent = StateLeadersCore.noteOf(leadersCountry, leadersMode);
+}
+
 function leadersShowCountry(key) {
     leadersCountry = key;
+    leadersMode = 'etat';
+    const hasGov = StateLeadersCore.hasGovernment(key);
+    document.getElementById('leaders-modes').classList.toggle('hidden', !hasGov);
+    document.getElementById('leaders-mode-etat').setAttribute('aria-pressed', 'true');
+    document.getElementById('leaders-mode-gouv').setAttribute('aria-pressed', 'false');
     const name = StateLeadersCore.COUNTRIES[key].name;
     document.getElementById('leaders-pick').textContent = t('tools.leaders_country_btn', { name: name });
     document.getElementById('leaders-countries').classList.add('hidden');
@@ -50,7 +69,7 @@ function leadersShowCountry(key) {
     document.querySelectorAll('.leaders-country-btn').forEach(b => {
         b.setAttribute('aria-pressed', b.dataset.country === key ? 'true' : 'false');
     });
-    document.getElementById('leaders-country-note').textContent = StateLeadersCore.noteOf(key);
+    leadersShowNote();
     document.getElementById('leaders-search').value = '';
     leadersRender('');
 }
@@ -59,7 +78,7 @@ function leadersRender(query) {
     const list = document.getElementById('leaders-list');
     const count = document.getElementById('leaders-count');
     while (list.firstChild) list.removeChild(list.firstChild);
-    const all = StateLeadersCore.rowsOf(leadersCountry);
+    const all = StateLeadersCore.rowsOf(leadersCountry, leadersMode);
     const q = String(query || '').trim();
     // Avec une recherche, on ne montre que les lignes trouvées, sans les traits de régime.
     const items = q ? StateLeadersCore.search(all, q).map(it => ({ row: it.row, divider: null, color: it.color })) : all;

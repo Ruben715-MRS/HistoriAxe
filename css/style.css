@@ -13395,3 +13395,15 @@ input:not([type="range"]), label, select, summary, textarea {
     cursor: pointer;
 }
 .leaders-country-btn[aria-pressed="true"] { background: #2563eb; border-color: #2563eb; color: #fff; }
+.leaders-modes { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 8px; }
+.leaders-modes.hidden { display: none; }
+.leaders-mode-btn {
+    padding: 6px 14px;
+    border: 1px solid #94a3b8;
+    border-radius: 14px;
+    background: #fff;
+    color: #0f172a;
+    font-size: 14px;
+    cursor: pointer;
+}
+.leaders-mode-btn[aria-pressed="true"] { background: #2563eb; border-color: #2563eb; color: #fff; }

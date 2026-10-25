@@ -77,3 +77,21 @@ test('chefs d’État : aux États-Unis, la couleur suit le parti (bleu démocra
     assert.strictEqual(us.find(it => it.row.name === 'George Washington').color, '#fef08a');
     assert.strictEqual(us.filter(it => it.divider).length, 1, 'un seul groupe : pas de barre intermédiaire');
 });
+
+test('chefs d’État : les régimes parlementaires ont aussi la liste des chefs du gouvernement, dates cohérentes', () => {
+    ['royaume_uni', 'israel', 'canada', 'australie'].forEach(k => {
+        assert.ok(S.hasGovernment(k), k);
+        const items = S.rowsOf(k, 'gouvernement');
+        assert.strictEqual(items[items.length - 1].row.to, null, k + ' : pas de chef du gouvernement en fonction');
+        items.forEach((it, i) => {
+            const r = it.row;
+            if (r.to !== null) assert.ok(r.to >= r.from, k + ' / ' + r.name);
+            if (i > 0) assert.ok(r.from >= items[i - 1].row.from, k + ' / ' + r.name + ' : hors ordre');
+        });
+    });
+    assert.strictEqual(S.rowsOf('royaume_uni', 'gouvernement')[0].row.name, 'Robert Walpole');
+    assert.ok(!S.hasGovernment('france'), 'la France (semi-présidentielle) n’a pas ce mode');
+    // Par défaut, on obtient les chefs d’État.
+    assert.strictEqual(S.rowsOf('royaume_uni')[0].row.name, 'Jacques Ier (Jacques VI d’Écosse)');
+    assert.ok(S.noteOf('royaume_uni', 'gouvernement').startsWith('Premiers ministres'));
+});
