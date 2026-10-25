@@ -35,6 +35,9 @@ let geoQuizIndex = 0;
 let geoQuizAnswers = [];           // une entrée par question jouée : { ok, points, q, summary, correctText, givenText }
 let geoQuizStreak = 0;
 let geoQuizReview = false;         // partie de révision (« Rejouer mes erreurs ») : ni record ni historique
+let geoQuizNoRecord = false;       // révision, pays faibles ou défi du jour : la partie n'entre pas dans les records par réglage
+let geoQuizDailyDate = '';         // le jour du défi en cours
+let geoQuizMasteredBefore = null;  // les pays déjà maîtrisés au début de la partie
 let geoQuizRules = 'standard';     // 'standard' | 'burst' | 'survival'
 let geoQuizLives = 0;
 let geoQuizAnswered = false;
@@ -43,6 +46,7 @@ let geoQuizTimerId = null;         // l'intervalle du chrono (par question, ou d
 let geoQuizTimerStart = 0;
 let geoQuizAutoNext = null;        // en Rafale, la question suivante arrive d'elle-même
 let geoQuizWhoShown = 1;           // « qui suis-je ? » : le nombre d'indices montrés
+let geoQuizWhoWrong = 0;           // « qui suis-je ? » : les mauvais choix déjà faits sur cette question
 let geoQuizMysteryGuesses = [];    // « pays mystère » : les pays proposés
 let geoQuizNameIndex = null;       // nom normalisé → pays, pour reconnaître une proposition
 let geoQuizAllPool = null;
@@ -66,7 +70,7 @@ function openGeoQuizMenu(from) {
 }
 
 function geoQuizShowPanel(id) {
-    ['geoquiz-menu', 'geoquiz-scores', 'geoquiz-play', 'geoquiz-end'].forEach(p => geoQuizEl(p).classList.toggle('hidden', p !== id));
+    ['geoquiz-menu', 'geoquiz-scores', 'geoquiz-mastery', 'geoquiz-play', 'geoquiz-end'].forEach(p => geoQuizEl(p).classList.toggle('hidden', p !== id));
 }
 
 function geoQuizShowMenu() {
@@ -75,6 +79,28 @@ function geoQuizShowMenu() {
     geoQuizEl('geoquiz-status').textContent = '';
     geoQuizShowPanel('geoquiz-menu');
     geoQuizRenderSettings();
+    geoQuizRenderToday();
+}
+
+// Les jours du défi et les pays à revoir, lus dans l'état (sans charger les données des pays).
+function geoQuizToday() { return DailyEngine.getDailySeedString(); }
+
+function geoQuizMasteredIds(state) {
+    const core = GeoQuizSessionCore;
+    return new Set(Object.keys(state.countries).filter(id => core.masteryOf(state.countries[id]) === 'mastered'));
+}
+
+function geoQuizRenderToday() {
+    const core = GeoQuizSessionCore;
+    const state = geoQuizStateLoad();
+    const done = state.daily[geoQuizToday()];
+    const streak = core.dailyStreak(state, geoQuizToday());
+    geoQuizEl('geoquiz-daily-btn').textContent = done ? t('geoquiz.daily_done', { score: done.score, correct: done.correct, total: done.total }) : t('geoquiz.menu_daily');
+    geoQuizEl('geoquiz-daily-line').textContent = streak > 0 ? t('geoquiz.daily_streak', { n: streak }) : t('geoquiz.daily_hint');
+    const ids = Object.keys(state.countries);
+    const weak = ids.filter(id => core.masteryOf(state.countries[id]) === 'weak').length;
+    const mastered = geoQuizMasteredIds(state).size;
+    geoQuizEl('geoquiz-weak-line').textContent = ids.length ? t('geoquiz.weak_line', { weak: weak, mastered: mastered }) : t('geoquiz.weak_none');
 }
 
 // --- Les réglages ------------------------------------------------------------------------------
@@ -136,7 +162,10 @@ function geoQuizBegin(form, review) {
     geoQuizClearAuto();
     geoQuizForm = form;
     geoQuizReview = !!review;
-    geoQuizGamePrefs = Object.assign({}, geoQuizPrefsNow());
+    geoQuizNoRecord = !!review || form === 'weak' || form === 'daily';
+    geoQuizDailyDate = form === 'daily' ? geoQuizToday() : '';
+    geoQuizGamePrefs = Object.assign({}, form === 'daily' ? core.DAILY_PREFS : geoQuizPrefsNow());
+    geoQuizMasteredBefore = geoQuizMasteredIds(geoQuizStateLoad());
     geoQuizRules = review ? 'standard' : core.rulesOf(form);
     geoQuizLives = core.LIVES;
     geoQuizTimerSeconds = core.questionTimer(form, geoQuizGamePrefs, !!review);
@@ -157,6 +186,9 @@ function geoQuizBegin(form, review) {
             questions = review.map(q => Object.assign({}, q));
         } else {
             const opts = mapOk ? {} : { kinds: core.QUESTION_KINDS.filter(k => !core.MAP_KINDS.includes(k)) };
+            if (form === 'weak') opts.state = geoQuizStateLoad();
+            // Le défi du jour : un tirage fixé par la date, le même pour tous.
+            if (form === 'daily') opts.rng = DailyEngine.mulberry32(DailyEngine.hashStringToSeed('historiaxe_geoquiz_' + geoQuizDailyDate));
             questions = core.generateGame(countriesData.facts, form, geoQuizGamePrefs, opts).questions;
         }
         if (!questions.length) { status.textContent = t('geoquiz.none'); return; }
@@ -217,7 +249,7 @@ function geoQuizRenderCard(q) {
     if (q.kind !== 'mapname') {
         // Espace insécable avant « ? » : le point d'interrogation ne passe pas seul à la ligne.
         geoQuizEl('geoquiz-ask').textContent = t('geoquiz.ask_' + q.ask).replace(' ?', ' ?');
-        if (q.kind === 'who') geoQuizWhoShown = 1;
+        if (q.kind === 'who') geoQuizWhoShown = 1, geoQuizWhoWrong = 0;
         geoQuizRenderClues(q);
     }
     if (q.kind === 'typed') {
@@ -384,7 +416,10 @@ function geoQuizSettle(ok, info) {
     const points = geoQuizPoints(ok, q, remaining);
     geoQuizStreak = ok ? geoQuizStreak + 1 : 0;
     if (!ok && geoQuizRules === 'survival') geoQuizLives--;
-    geoQuizAnswers.push(Object.assign({ ok: ok, points: points, q: q }, info));
+    geoQuizAnswers.push(Object.assign({ ok: ok, points: points, q: q, tries: q.kind === 'mystery' ? geoQuizMysteryGuesses.length : 0 }, info));
+    // Chaque réponse nourrit le suivi du pays, même quittée à mi-partie.
+    // « Qui suis-je ? » trouvé après des erreurs (parfois par élimination) n'est pas un pays su.
+    geoQuizStateSave(GeoQuizSessionCore.trackAnswer(geoQuizStateLoad(), q.target, ok && !(q.kind === 'who' && geoQuizWhoWrong > 0), Date.now()));
     geoQuizEl('geoquiz-who-more').disabled = true;
     geoQuizEl('geoquiz-typed-input').disabled = true;
     geoQuizEl('geoquiz-mystery-input').disabled = true;
@@ -472,6 +507,7 @@ function geoQuizWhoAnswer(i) {
         buttons[i].classList.add('wrong');
         buttons[i].disabled = true;
         geoQuizWhoShown++;
+        geoQuizWhoWrong++;
         geoQuizRenderClues(q);
         geoQuizWhoRefreshMore(q);
         feedback.textContent = t('geoquiz.who_next');
@@ -596,9 +632,68 @@ function geoQuizEnd() {
     geoQuizEl('geoquiz-score').textContent = t('geoquiz.end_score', { score: summary.score });
     geoQuizEl('geoquiz-detail').textContent = t(geoQuizRules === 'standard' ? 'geoquiz.end_detail' : 'geoquiz.end_detail_open',
         { correct: summary.correct, total: summary.total, streak: summary.bestStreak });
-    geoQuizEl('geoquiz-record').textContent = geoQuizReview ? t('geoquiz.review_note') : geoQuizSaveGame(summary);
+    let dailyFirst = false;
+    let record;
+    if (geoQuizForm === 'daily' && !geoQuizReview) {
+        const result = geoQuizSaveDaily(summary);
+        dailyFirst = result.first;
+        record = result.text;
+    } else if (geoQuizForm === 'weak' && !geoQuizReview) {
+        record = t('geoquiz.weak_note');
+    } else {
+        record = geoQuizReview ? t('geoquiz.review_note') : geoQuizSaveGame(summary);
+    }
+    geoQuizEl('geoquiz-record').textContent = record;
+    geoQuizEl('geoquiz-reward').textContent = geoQuizReward(summary, dailyFirst);
     geoQuizRenderErrors();
     geoQuizEl('geoquiz-score').focus({ preventScroll: true });
+}
+
+// Le défi du jour : seule la première partie du jour compte. Renvoie { first, text }.
+function geoQuizSaveDaily(summary) {
+    const core = GeoQuizSessionCore;
+    const result = core.recordDaily(geoQuizStateLoad(), geoQuizDailyDate, summary);
+    if (!result.first) return { first: false, text: t('geoquiz.daily_again') };
+    geoQuizStateSave(result.state);
+    if (typeof syncPushProgress === 'function') syncPushProgress();
+    return { first: true, text: t('geoquiz.daily_saved', { n: core.dailyStreak(result.state, geoQuizDailyDate) }) };
+}
+
+// L'XP de la partie, les pays devenus maîtrisés et les trophées gagnés. Renvoie la phrase à montrer.
+function geoQuizReward(summary, dailyFirst) {
+    const core = GeoQuizSessionCore;
+    const state = geoQuizStateLoad();
+    const masteredNow = geoQuizMasteredIds(state);
+    let newly = 0;
+    masteredNow.forEach(id => { if (!geoQuizMasteredBefore.has(id)) newly++; });
+    const xp = core.xpFor(summary.score, { review: geoQuizNoRecord && !dailyFirst, newlyMastered: newly, dailyFirst: dailyFirst });
+    let awarded = 0;
+    if (xp > 0 && typeof awardXP === 'function') {
+        const info = awardXP(xp, 'Quiz des pays');
+        awarded = info ? info.xpAwarded : 0;
+        if (typeof addRecapLogEntry === 'function') addRecapLogEntry(awarded, 0);
+    }
+    geoQuizUnlockBadges(summary, masteredNow.size, dailyFirst);
+    const parts = [];
+    if (awarded > 0) parts.push(t('geoquiz.reward_xp', { n: awarded }));
+    if (newly > 0) parts.push(t('geoquiz.reward_mastered', { n: newly }));
+    return parts.join(' · ');
+}
+
+function geoQuizUnlockBadges(summary, masteredCount, dailyFirst) {
+    if (typeof unlockBadge !== 'function') return;
+    const core = GeoQuizSessionCore;
+    const state = geoQuizStateLoad();
+    const mystery = geoQuizAnswers.filter(a => a.q.kind === 'mystery' && a.ok).map(a => a.tries);
+    const zoneComplete = core.ZONES.some(z => z.continent && (() => {
+        const pool = core.quizPool(countriesData.facts, { zone: z.key, level: 'hard' });
+        return pool.length > 0 && pool.every(c => core.masteryOf(state.countries[c.id]) === 'mastered');
+    })());
+    core.badgesEarned({
+        form: geoQuizForm, level: geoQuizGamePrefs.level, rules: geoQuizRules, correct: summary.correct, total: summary.total,
+        mysteryTries: mystery.length ? Math.min.apply(null, mystery) : 0, mastered: masteredCount, zoneComplete: zoneComplete,
+        streak: dailyFirst ? core.dailyStreak(state, geoQuizDailyDate) : 0
+    }).forEach(unlockBadge);
 }
 
 // Enregistre la partie (record, historique), la pousse vers le compte, et renvoie la phrase du record.
@@ -614,6 +709,65 @@ function geoQuizSaveGame(summary) {
     if (!result.previous) return t('geoquiz.record_first');
     if (result.isRecord) return t('geoquiz.record_new', { score: result.previous.score });
     return t('geoquiz.record_best', { score: result.previous.score });
+}
+
+// --- Ma maîtrise : les pays par niveau de maîtrise ------------------------------------------------
+
+function geoQuizShowMastery() {
+    geoQuizShowPanel('geoquiz-mastery');
+    const status = geoQuizEl('geoquiz-status');
+    status.textContent = t('tools.countries_loading');
+    countriesLoad().then(ok => {
+        if (!ok) { status.textContent = t('tools.countries_error'); return; }
+        status.textContent = '';
+        geoQuizRenderMastery();
+    });
+}
+
+function geoQuizRenderMastery() {
+    const core = GeoQuizSessionCore;
+    const state = geoQuizStateLoad();
+    const pool = geoQuizEveryCountry();
+    const counts = core.masteryCounts(state, pool);
+    geoQuizEl('geoquiz-mastery-total').textContent = t('geoquiz.mastery_total', { mastered: counts.mastered, total: counts.total });
+    const legend = ['mastered', 'learning', 'weak', 'new'].map(level => {
+        const li = document.createElement('li');
+        const dot = document.createElement('span');
+        dot.className = 'geoquiz-dot geoquiz-m-' + level;
+        li.append(dot, document.createTextNode(' ' + t('geoquiz.mastery_' + level, { n: counts[level] })));
+        return li;
+    });
+    geoQuizEl('geoquiz-mastery-legend').replaceChildren(...legend);
+    const zones = core.ZONES.filter(z => z.continent).map(z => {
+        const list = pool.filter(c => c.cont === z.continent).sort((a, b) => (a.n < b.n ? -1 : 1));
+        const got = core.masteryCounts(state, list);
+        const wrap = document.createElement('section');
+        wrap.className = 'geoquiz-zone-block';
+        const title = document.createElement('h4');
+        title.className = 'geoquiz-zone-title';
+        title.textContent = t('geoquiz.zone_' + z.key) + ' · ' + t('geoquiz.mastery_zone', { mastered: got.mastered, total: got.total });
+        const bar = document.createElement('div');
+        bar.className = 'geoquiz-bar';
+        bar.setAttribute('aria-hidden', 'true');
+        const fill = document.createElement('span');
+        fill.style.width = (got.total ? Math.round(100 * got.mastered / got.total) : 0) + '%';
+        bar.appendChild(fill);
+        const grid = document.createElement('div');
+        grid.className = 'geoquiz-grid';
+        list.forEach(c => {
+            const level = core.masteryOf(state.countries[c.id]);
+            const cell = document.createElement('span');
+            cell.className = 'geoquiz-cell geoquiz-m-' + level;
+            cell.setAttribute('role', 'img');
+            cell.setAttribute('aria-label', c.n + ' : ' + t('geoquiz.mastery_word_' + level));
+            cell.title = c.n;
+            cell.textContent = GeoQuizCore.clueValues(c, 'flag')[0] || '🏳️';
+            grid.appendChild(cell);
+        });
+        wrap.append(title, bar, grid);
+        return wrap;
+    });
+    geoQuizEl('geoquiz-mastery-zones').replaceChildren(...zones);
 }
 
 function geoQuizRenderErrors() {

@@ -265,3 +265,115 @@ test('textes : chaque libellé utilisé par l’écran du quiz existe en frança
         }
     }
 });
+
+// --- Lot 3 : maîtrise des pays, pays faibles, défi du jour, XP et trophées ---------------------------
+
+const answers = (state, id, run) => run.split('').reduce((s, r, i) => S.trackAnswer(s, id, r === '1', 1000 + i), state);
+
+test('maîtrise : nouveau, à revoir, en cours, maîtrisé selon les dernières réponses', () => {
+    const level = run => S.masteryOf(answers(S.emptyState(), 'FRA', run).countries.FRA);
+    assert.equal(S.masteryOf(undefined), 'new');
+    assert.equal(level('0'), 'weak', 'une première erreur : à revoir');
+    assert.equal(level('1'), 'learning', 'une seule bonne réponse ne suffit pas à maîtriser');
+    assert.equal(level('11'), 'learning');
+    assert.equal(level('111'), 'mastered');
+    assert.equal(level('1111'), 'mastered');
+    assert.equal(level('1110'), 'weak', 'la dernière réponse fausse : à revoir');
+    assert.equal(level('0111'), 'learning', '3 sur 4 : pas encore maîtrisé');
+    assert.equal(level('01111'), 'mastered', '4 sur 5 : maîtrisé malgré une faute plus ancienne');
+    assert.equal(level('10001'), 'weak', 'moins de la moitié de réussites sur les dernières réponses');
+    assert.equal(level('0000011111'), 'mastered', 'seules les 5 dernières réponses comptent');
+});
+
+test('suivi : compte les réponses, garde les 5 dernières, et résiste à un état abîmé', () => {
+    const s = answers(S.emptyState(), 'BRA', '0110111');
+    assert.deepEqual(s.countries.BRA, { n: 7, ok: 5, last: 1006, run: '10111' });
+    const bad = S.normalizeState({ countries: { A: { n: -3, run: '1' }, B: 'x', C: { n: 4, ok: 99, last: 'y', run: 'a1b0' }, D: { n: 2, ok: 1, run: '' } }, daily: { 'pas-une-date': { score: 5 }, '2026-01-01': { score: -1 }, '2026-01-02': { score: 800, correct: 8, total: 10 } } });
+    assert.deepEqual(Object.keys(bad.countries), ['C']);
+    assert.deepEqual(bad.countries.C, { n: 4, ok: 4, last: 0, run: '10' });
+    assert.deepEqual(Object.keys(bad.daily), ['2026-01-02']);
+});
+
+test('suivi : enregistrer une partie garde la maîtrise et le défi du jour', () => {
+    let s = answers(S.emptyState(), 'FRA', '111');
+    s = S.recordDaily(s, '2026-05-01', { score: 900, correct: 9, total: 10 }).state;
+    const next = S.recordGame(s, { at: 5, form: 'qcm', zone: 'world', level: 'easy', length: 10, timer: 0, score: 500, correct: 5, total: 10 }).state;
+    assert.equal(next.countries.FRA.n, 3);
+    assert.equal(next.daily['2026-05-01'].score, 900);
+    assert.equal(next.history.length, 1);
+});
+
+test('pays faibles : les pays à revoir d’abord (les plus ratés), puis en cours, puis nouveaux, puis maîtrisés', () => {
+    const pool = ['A', 'B', 'C', 'D', 'E', 'F'].map(id => ({ id }));
+    let s = S.emptyState();
+    s = answers(s, 'A', '111');   // maîtrisé
+    s = answers(s, 'B', '0');     // à revoir, 0 %
+    s = answers(s, 'C', '10');    // à revoir (dernière fausse), 50 %
+    s = answers(s, 'D', '01');    // en cours
+    // E, F : nouveaux
+    assert.deepEqual(S.weakTargets(s, pool, 6), ['B', 'C', 'D', 'E', 'F', 'A']);
+    assert.deepEqual(S.weakTargets(s, pool, 2), ['B', 'C']);
+    assert.deepEqual(S.weakTargets(null, pool, 3).length, 3, 'sans suivi, on prend des pays jamais vus');
+    assert.deepEqual(S.masteryCounts(s, pool), { mastered: 1, learning: 1, weak: 2, new: 2, total: 6 });
+});
+
+test('partie « pays faibles » : les questions portent sur les pays à revoir, tous niveaux confondus', () => {
+    const pool = S.quizPool(facts, { level: 'hard' });
+    const hardOnes = pool.slice(-12).map(c => c.id);   // les moins peuplés : hors du niveau facile
+    let state = S.emptyState();
+    hardOnes.forEach(id => { state = answers(state, id, '0'); });
+    const game = S.generateGame(facts, 'weak', { zone: 'world', level: 'easy', length: 10, timer: 0 }, { rng: seeded(7), state: state });
+    assert.equal(game.questions.length, 10);
+    const targets = game.questions.map(q => q.target);
+    assert.equal(new Set(targets).size, 10, 'chaque pays une fois');
+    targets.forEach(id => assert.ok(hardOnes.includes(id), id + ' devait être un pays à revoir'));
+    game.questions.forEach(q => assert.ok(S.MIX_KINDS.includes(q.kind)));
+    assert.equal(S.questionTimer('weak', { timer: 15 }, false), 0, 'pas de chrono en révision');
+});
+
+test('défi du jour : le même tirage pour la même graine, un autre pour un autre jour, réglages fixes', () => {
+    const play = seed => S.generateGame(facts, 'daily', { zone: 'africa', level: 'hard', length: 50, timer: 15 }, { rng: seeded(seed) }).questions;
+    const a = play(11), b = play(11), c = play(12);
+    assert.equal(a.length, 10, 'toujours dix questions, quels que soient les réglages du menu');
+    assert.deepEqual(a, b);
+    assert.notDeepEqual(a.map(q => q.target), c.map(q => q.target));
+    const pool = new Set(S.quizPool(facts, S.DAILY_PREFS).map(x => x.id));
+    a.forEach(q => assert.ok(pool.has(q.target), 'monde, niveau moyen'));
+    assert.equal(S.questionTimer('daily', { timer: 30 }, false), 0);
+});
+
+test('défi du jour : seule la première partie compte ; la série compte les jours de suite', () => {
+    let s = S.emptyState();
+    let r = S.recordDaily(s, '2026-05-01', { score: 700, correct: 7, total: 10 });
+    assert.ok(r.first);
+    r = S.recordDaily(r.state, '2026-05-01', { score: 1200, correct: 10, total: 10 });
+    assert.ok(!r.first);
+    assert.equal(r.state.daily['2026-05-01'].score, 700, 'la première partie reste');
+    s = S.recordDaily(r.state, '2026-05-02', { score: 100, correct: 1, total: 10 }).state;
+    s = S.recordDaily(s, '2026-05-03', { score: 100, correct: 1, total: 10 }).state;
+    assert.equal(S.dailyStreak(s, '2026-05-03'), 3);
+    assert.equal(S.dailyStreak(s, '2026-05-04'), 3, 'aujourd’hui pas encore fait : la série tient jusqu’à la veille');
+    assert.equal(S.dailyStreak(s, '2026-05-05'), 0, 'un jour manqué casse la série');
+    assert.equal(S.dailyStreak(s, '2026-03-01'), 0);
+    assert.equal(S.dailyStreak(S.recordDaily(S.emptyState(), '2026-02-28', { score: 1, correct: 0, total: 1 }).state, '2026-03-01'), 1, 'passage de mois');
+});
+
+test('XP et trophées', () => {
+    assert.equal(S.xpFor(1000), 200);
+    assert.equal(S.xpFor(5000), 300, 'plafonné');
+    assert.equal(S.xpFor(1000, { review: true }), 100);
+    assert.equal(S.xpFor(1000, { newlyMastered: 3, dailyFirst: true }), 200 + 30 + 100);
+    const base = { form: 'qcm', level: 'easy', rules: 'standard', correct: 5, total: 10, mysteryTries: 0, mastered: 0, zoneComplete: false, streak: 0 };
+    const earned = o => S.badgesEarned(Object.assign({}, base, o));
+    assert.deepEqual(earned({}), []);
+    assert.deepEqual(earned({ mastered: 50 }), ['globe_trotter']);
+    assert.deepEqual(earned({ zoneComplete: true }), ['cartographe']);
+    assert.deepEqual(earned({ level: 'hard', correct: 10, total: 10 }), ['sans_faute_geo']);
+    assert.deepEqual(earned({ level: 'easy', correct: 10, total: 10 }), [], 'seulement en difficile');
+    assert.deepEqual(earned({ level: 'hard', correct: 10, total: 10, form: 'weak' }), [], 'pas en révision');
+    assert.deepEqual(earned({ level: 'hard', correct: 5, total: 5 }), [], 'au moins dix questions');
+    assert.deepEqual(earned({ streak: 7 }), ['assidu_geo']);
+    assert.deepEqual(earned({ form: 'mystery', correct: 3, mysteryTries: 2 }), ['flair_detective']);
+    assert.deepEqual(earned({ form: 'mystery', correct: 3, mysteryTries: 3 }), []);
+    assert.deepEqual(earned({ form: 'burst', rules: 'burst', correct: 20, total: 25 }), ['rafale_savant']);
+});

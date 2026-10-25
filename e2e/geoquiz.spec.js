@@ -41,6 +41,14 @@ async function playQuestion(page, right) {
             // Une mauvaise réponse : le point opposé de la planète.
             geoQuizTap(right ? target.c[0] : ((target.c[0] + 180) % 360) - 180, right ? target.c[1] : -target.c[1]);
         }, right);
+    } else if (kind === 'who' && !right) {
+        // « Qui suis-je ? » : chaque erreur montre un indice de plus ; quand il ne reste que la bonne réponse, on la choisit.
+        const good = await correctIndex(page);
+        const buttons = page.locator('#geoquiz-options .quiz-option');
+        for (let k = 0; k < 4 && !(await page.locator('#geoquiz-next').isVisible()); k++) {
+            if (k !== good) await buttons.nth(k).click();
+        }
+        if (!(await page.locator('#geoquiz-next').isVisible())) await buttons.nth(good).click();
     } else {
         const good = await correctIndex(page);
         await page.locator('#geoquiz-options .quiz-option').nth(right ? good : (good + 1) % 4).click();
@@ -54,7 +62,7 @@ test('le menu propose les réglages (sans chrono par défaut), les formes et les
         await expect(chip(page, group, label)).toHaveAttribute('aria-pressed', 'true');
     }
     await expect(page.locator('#geoquiz-zone .geoquiz-chip')).toHaveCount(7);
-    await expect(page.locator('#geoquiz-menu > .btn')).toHaveCount(12);   // 4 classiques, 5 autres façons, 2 défis, « Mes scores »
+    await expect(page.locator('#geoquiz-menu > .btn')).toHaveCount(15);   // défi du jour, pays faibles, maîtrise, 4 classiques, 5 autres façons, 2 défis, « Mes scores »
     await expect(page.locator('#geoquiz-level-hint')).toContainText('40 pays');
     await chip(page, 'geoquiz-level', 'Difficile').click();
     await expect(page.locator('#geoquiz-level-hint')).toContainText('Tous les pays');
@@ -388,4 +396,69 @@ test('survie : trois vies, une par erreur ; la partie finit à la dernière', as
     await expect(page.locator('#geoquiz-errors li')).toHaveCount(3);
     const saved = await page.evaluate(() => JSON.parse(localStorage.getItem('historiaxe_geoquiz_v1')));
     expect(Object.keys(saved.best)).toEqual(['survival|world|easy|0|0']);
+});
+
+// --- Lot 3 : défi du jour, pays faibles, maîtrise ------------------------------------------------
+
+const quizState = page => page.evaluate(() => JSON.parse(localStorage.getItem('historiaxe_geoquiz_v1')));
+
+test('défi du jour : dix questions identiques à chaque tirage, seule la première partie compte, XP et série', async ({ page }) => {
+    await openQuiz(page);
+    await expect(page.locator('#geoquiz-daily-btn')).toContainText('Défi du jour');
+    await page.locator('#geoquiz-daily-btn').click();
+    await page.locator('#geoquiz-play').waitFor({ state: 'visible' });
+    const first = await page.evaluate(() => geoQuizQuestions.map(q => q.kind + ':' + q.target));
+    expect(first).toHaveLength(10);
+    const xpBefore = await page.evaluate(() => gamificationLoad().xp);
+    for (let i = 0; i < 10; i++) await playQuestion(page, true);
+    await expect(page.locator('#geoquiz-record')).toContainText('Défi du jour enregistré');
+    await expect(page.locator('#geoquiz-record')).toContainText('1 jour');
+    await expect(page.locator('#geoquiz-reward')).toContainText('XP');
+    expect(await page.evaluate(() => gamificationLoad().xp)).toBeGreaterThan(xpBefore);
+    const state = await quizState(page);
+    const today = await page.evaluate(() => geoQuizToday());
+    expect(state.daily[today].total).toBe(10);
+    expect(state.daily[today].correct).toBe(10);
+    expect(state.history).toEqual([]);   // ni record ni historique par réglage
+    // Rejouer : les mêmes questions, et la partie ne compte plus pour le défi.
+    await page.locator('#geoquiz-end .btn', { hasText: 'Rejouer' }).first().click();
+    await page.locator('#geoquiz-play').waitFor({ state: 'visible' });
+    expect(await page.evaluate(() => geoQuizQuestions.map(q => q.kind + ':' + q.target))).toEqual(first);
+    for (let i = 0; i < 10; i++) await playQuestion(page, false);
+    await expect(page.locator('#geoquiz-record')).toContainText('Entraînement');
+    expect((await quizState(page)).daily[today].correct).toBe(10);
+    await page.locator('#geoquiz-end .btn', { hasText: 'Changer de réglage' }).click();
+    await expect(page.locator('#geoquiz-daily-btn')).toContainText('fait');
+    await expect(page.locator('#geoquiz-daily-line')).toContainText('Série : 1');
+});
+
+test('pays faibles : les erreurs sont retenues, la révision reprend ces pays, la carte de maîtrise les montre', async ({ page }) => {
+    await openQuiz(page);
+    await expect(page.locator('#geoquiz-weak-line')).toContainText('Jouez quelques parties');
+    await chip(page, 'geoquiz-length', '5').click();
+    await page.locator('#geoquiz-menu .btn', { hasText: 'QCM' }).click();
+    await page.locator('#geoquiz-play').waitFor({ state: 'visible' });
+    const missed = await page.evaluate(() => geoQuizQuestions.map(q => q.target));
+    for (let i = 0; i < 5; i++) await playQuestion(page, false);
+    const state = await quizState(page);
+    expect(Object.keys(state.countries).sort()).toEqual(missed.slice().sort());
+    expect(state.countries[missed[0]]).toMatchObject({ n: 1, ok: 0, run: '0' });
+    await page.locator('#geoquiz-end .btn', { hasText: 'Changer de réglage' }).click();
+    await expect(page.locator('#geoquiz-weak-line')).toContainText('5 pays à revoir · 0 maîtrisés');
+    // La carte de maîtrise : tous les pays, les cinq ratés « à revoir ».
+    await page.locator('#geoquiz-menu .btn', { hasText: 'Ma maîtrise des pays' }).click();
+    await expect(page.locator('#geoquiz-mastery-total')).toContainText('0 pays maîtrisés sur');
+    await expect(page.locator('.geoquiz-cell.geoquiz-m-weak')).toHaveCount(5);
+    expect(await page.locator('.geoquiz-cell').count()).toBeGreaterThan(190);
+    await expect(page.locator('#geoquiz-mastery-legend')).toContainText('À revoir : 5');
+    await page.locator('#geoquiz-mastery .btn', { hasText: 'Retour aux réglages' }).click();
+    // La révision : ces cinq pays, d'abord ; la partie n'entre pas dans les records.
+    await page.locator('#geoquiz-menu .btn', { hasText: 'Réviser mes pays faibles' }).click();
+    await page.locator('#geoquiz-play').waitFor({ state: 'visible' });
+    expect((await page.evaluate(() => geoQuizQuestions.map(q => q.target))).sort()).toEqual(missed.slice().sort());
+    for (let i = 0; i < 5; i++) await playQuestion(page, true);
+    await expect(page.locator('#geoquiz-record')).toContainText('Partie de révision');
+    const after = await quizState(page);
+    expect(after.history).toHaveLength(1);   // seule la première partie (QCM) est enregistrée
+    expect(after.countries[missed[0]]).toMatchObject({ n: 2, ok: 1, run: '01' });
 });

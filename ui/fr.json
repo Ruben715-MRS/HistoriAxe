@@ -412,6 +412,30 @@
       "major_concours": {
         "name": "Major de Concours",
         "desc": "Obtenir un score parfait sur un thème Scolaire ou CAPES & Agrégation."
+      },
+      "globe_trotter": {
+        "name": "Globe-trotter",
+        "desc": "Maîtriser 50 pays au Quiz des pays."
+      },
+      "cartographe": {
+        "name": "Cartographe",
+        "desc": "Maîtriser tous les pays d'un continent au Quiz des pays."
+      },
+      "sans_faute_geo": {
+        "name": "Sans-faute géographe",
+        "desc": "Réussir sans faute une partie d'au moins 10 questions au Quiz des pays, en difficulté Difficile."
+      },
+      "assidu_geo": {
+        "name": "Voyageur assidu",
+        "desc": "Faire le Défi du jour du Quiz des pays 7 jours de suite."
+      },
+      "flair_detective": {
+        "name": "Flair de détective",
+        "desc": "Trouver un pays mystère en 2 essais ou moins."
+      },
+      "rafale_savant": {
+        "name": "Rafale d'érudit",
+        "desc": "Donner 20 bonnes réponses en une Rafale de 60 secondes."
       }
     },
     "progress_fraction": "{current}/{target}",
@@ -2379,6 +2403,32 @@
     "form_mystery": "Pays mystère",
     "form_burst": "Rafale 60 s",
     "form_survival": "Survie",
+    "forms_today": "Aujourd'hui",
+    "menu_daily": "Défi du jour : 10 questions, les mêmes pour tous",
+    "daily_done": "Défi du jour : fait, {score} pts ({correct}/{total}) · rejouer pour s'entraîner",
+    "daily_hint": "Une seule partie compte par jour. Les jours de suite forment une série.",
+    "daily_streak": "Série : {n} jour(s) de suite.",
+    "daily_saved": "Défi du jour enregistré. Série : {n} jour(s) de suite.",
+    "daily_again": "Entraînement : seule votre première partie du jour compte pour le défi.",
+    "menu_weak": "Réviser mes pays faibles",
+    "weak_line": "{weak} pays à revoir · {mastered} maîtrisés",
+    "weak_none": "Jouez quelques parties : le quiz retient les pays que vous ratez pour vous les reproposer.",
+    "weak_note": "Partie de révision : elle n'entre pas dans vos records, mais chaque réponse compte pour votre maîtrise.",
+    "mastery_btn": "Ma maîtrise des pays",
+    "mastery_total": "{mastered} pays maîtrisés sur {total}",
+    "mastery_mastered": "Maîtrisés : {n}",
+    "mastery_learning": "En cours : {n}",
+    "mastery_weak": "À revoir : {n}",
+    "mastery_new": "Jamais vus : {n}",
+    "mastery_word_mastered": "maîtrisé",
+    "mastery_word_learning": "en cours",
+    "mastery_word_weak": "à revoir",
+    "mastery_word_new": "jamais vu",
+    "mastery_zone": "{mastered}/{total}",
+    "reward_xp": "+{n} XP",
+    "reward_mastered": "{n} pays maîtrisé(s) de plus",
+    "form_weak": "Pays faibles",
+    "form_daily": "Défi du jour",
     "config_line_open": "{form} · {zone} · {level}",
     "clue_pop": "Population",
     "summary_mapname": "Pays montré sur la carte",

@@ -84,3 +84,16 @@ test('quiz des pays : l\'historique est limité à 50 parties', () => {
     assert.equal(merged.history.length, 50);
     assert.equal(merged.history[0].at, 1060);
 });
+
+test('quiz des pays : la maîtrise garde le plus grand compte, sans double comptage ; le défi du jour garde le meilleur score du jour', () => {
+    const a = { v: 1, best: {}, history: [], countries: { FRA: { n: 5, ok: 4, last: 10, run: '11101' }, DEU: { n: 1, ok: 0, last: 3, run: '0' } }, daily: { '2026-05-01': { score: 700, correct: 7, total: 10 } } };
+    const b = { v: 1, best: {}, history: [], countries: { FRA: { n: 6, ok: 4, last: 20, run: '11010' }, ITA: { n: 2, ok: 2, last: 4, run: '11' } }, daily: { '2026-05-01': { score: 900, correct: 9, total: 10 }, '2026-05-02': { score: 100, correct: 1, total: 10 } } };
+    const merged = mergeGeoQuiz(a, b);
+    assert.deepEqual(merged.countries.FRA, { n: 6, ok: 4, last: 20, run: '11010' }, 'les dernières réponses de l\'appareil le plus récent');
+    assert.equal(merged.countries.DEU.n, 1);
+    assert.equal(merged.countries.ITA.n, 2);
+    assert.equal(merged.daily['2026-05-01'].score, 900);
+    assert.equal(merged.daily['2026-05-02'].score, 100);
+    assert.deepEqual(mergeGeoQuiz(b, a).countries, merged.countries, 'dans les deux sens');
+    assert.deepEqual(mergeGeoQuiz(merged, a).countries, merged.countries, 'fusionner deux fois ne change rien');
+});

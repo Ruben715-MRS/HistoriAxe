@@ -411,6 +411,30 @@
       "major_concours": {
         "name": "Top of the Class",
         "desc": "Get a perfect score on a School Curriculum or Teaching Exam theme."
+      },
+      "globe_trotter": {
+        "name": "Globe-trotter",
+        "desc": "Master 50 countries in the Country Quiz."
+      },
+      "cartographe": {
+        "name": "Cartographer",
+        "desc": "Master every country of a continent in the Country Quiz."
+      },
+      "sans_faute_geo": {
+        "name": "Flawless geographer",
+        "desc": "Play a game of at least 10 questions without a mistake in the Country Quiz, on Hard difficulty."
+      },
+      "assidu_geo": {
+        "name": "Faithful traveller",
+        "desc": "Play the Country Quiz daily challenge 7 days in a row."
+      },
+      "flair_detective": {
+        "name": "Detective's nose",
+        "desc": "Find a mystery country in 2 tries or fewer."
+      },
+      "rafale_savant": {
+        "name": "Scholar's burst",
+        "desc": "Give 20 right answers in one 60-second Burst."
       }
     },
     "progress_fraction": "{current}/{target}",
@@ -2342,6 +2366,32 @@
     "form_mystery": "Mystery country",
     "form_burst": "Burst 60 s",
     "form_survival": "Survival",
+    "forms_today": "Today",
+    "menu_daily": "Daily challenge: 10 questions, the same for everyone",
+    "daily_done": "Daily challenge: done, {score} pts ({correct}/{total}) · replay to practise",
+    "daily_hint": "Only one game a day counts. Days in a row make a streak.",
+    "daily_streak": "Streak: {n} day(s) in a row.",
+    "daily_saved": "Daily challenge saved. Streak: {n} day(s) in a row.",
+    "daily_again": "Practice: only your first game of the day counts for the challenge.",
+    "menu_weak": "Review my weak countries",
+    "weak_line": "{weak} countries to review · {mastered} mastered",
+    "weak_none": "Play a few games: the quiz remembers the countries you miss and asks them again.",
+    "weak_note": "Review game: it does not count for your records, but every answer counts for your mastery.",
+    "mastery_btn": "My country mastery",
+    "mastery_total": "{mastered} countries mastered out of {total}",
+    "mastery_mastered": "Mastered: {n}",
+    "mastery_learning": "Learning: {n}",
+    "mastery_weak": "To review: {n}",
+    "mastery_new": "Never seen: {n}",
+    "mastery_word_mastered": "mastered",
+    "mastery_word_learning": "learning",
+    "mastery_word_weak": "to review",
+    "mastery_word_new": "never seen",
+    "mastery_zone": "{mastered}/{total}",
+    "reward_xp": "+{n} XP",
+    "reward_mastered": "{n} more country(ies) mastered",
+    "form_weak": "Weak countries",
+    "form_daily": "Daily challenge",
     "config_line_open": "{form} · {zone} · {level}",
     "clue_pop": "Population",
     "summary_mapname": "Country shown on the map",

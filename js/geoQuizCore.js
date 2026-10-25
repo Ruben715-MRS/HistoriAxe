@@ -130,9 +130,16 @@
 
     function pick(list, random) { return list[Math.floor(random() * list.length)]; }
 
+    // Les pays qu'on peut interroger, mélangés : tout le jeu de pays, ou seulement ceux de `o.targets` (une liste d'identifiants).
+    // Le jeu entier sert toujours aux fausses réponses et à lever les ambiguïtés.
+    function targetList(pool, o) {
+        var keep = o.targets ? new Set(o.targets) : null;
+        return shuffle(keep ? pool.filter(function (c) { return keep.has(c.id); }) : pool, o.rng);
+    }
+
     function settings(opts) {
         var src = opts || {};
-        var o = { rng: src.rng || Math.random, ask: src.ask, asks: src.asks, clues: src.clues, first: src.first };
+        var o = { rng: src.rng || Math.random, ask: src.ask, asks: src.asks, clues: src.clues, first: src.first, targets: src.targets };
         Object.keys(DEFAULTS).forEach(function (k) { o[k] = src[k] != null ? src[k] : DEFAULTS[k]; });
         return o;
     }
@@ -216,7 +223,7 @@
         var o = settings(opts);
         var asks = o.asks || ASK_KEYS;
         var questions = [];
-        var targets = shuffle(pool, o.rng);
+        var targets = targetList(pool, o);
         for (var i = 0; i < targets.length && questions.length < o.count; i++) {
             var order = shuffle(asks, o.rng);
             for (var j = 0; j < order.length; j++) {
@@ -265,7 +272,7 @@
     // `count` questions « touche le pays », sur des pays différents, sans options.
     function generateLocateQuestions(pool, opts) {
         var o = settings(opts);
-        return shuffle(pool, o.rng).slice(0, o.count).map(function (c) {
+        return targetList(pool, o).slice(0, o.count).map(function (c) {
             return { target: c.id, ask: 'locate', clues: [{ key: 'name', value: c.n }], options: [] };
         });
     }
@@ -276,7 +283,7 @@
     function generateMapNameQuestions(pool, opts) {
         var o = settings(opts);
         var out = [];
-        shuffle(pool, o.rng).forEach(function (target) {
+        targetList(pool, o).forEach(function (target) {
             if (out.length >= o.count) return;
             var options = chooseOptions(target, pool, { ask: 'name', options: o.options, difficulty: o.difficulty, rng: o.rng });
             if (options) out.push({ target: target.id, ask: 'name', clues: [], options: options });
@@ -290,7 +297,7 @@
     function generateFeteQuestions(pool, opts) {
         var o = settings(opts);
         var out = [];
-        shuffle(pool.filter(function (c) { return nationalDay(c); }), o.rng).forEach(function (target) {
+        targetList(pool, o).filter(function (c) { return nationalDay(c); }).forEach(function (target) {
             if (out.length >= o.count) return;
             shuffle(['name', 'fete'], o.rng).some(function (ask) {
                 var q = buildQuestion(target, pool, {
@@ -313,7 +320,7 @@
     function generateWhoQuestions(pool, opts) {
         var o = settings(opts);
         var out = [];
-        shuffle(pool, o.rng).forEach(function (target) {
+        targetList(pool, o).forEach(function (target) {
             if (out.length >= o.count) return;
             var clues = [];
             WHO_KEYS.forEach(function (key) {
@@ -400,7 +407,7 @@
     function generateTypedQuestions(pool, opts) {
         var o = settings(opts);
         var out = [];
-        shuffle(pool, o.rng).forEach(function (target) {
+        targetList(pool, o).forEach(function (target) {
             if (out.length >= o.count) return;
             shuffle(['cap', 'name'], o.rng).some(function (ask) {
                 var q = buildQuestion(target, pool, {
@@ -447,7 +454,7 @@
 
     function generateMysteryQuestions(pool, opts) {
         var o = settings(opts);
-        return shuffle(pool, o.rng).slice(0, o.count).map(function (c) {
+        return targetList(pool, o).slice(0, o.count).map(function (c) {
             return { target: c.id, ask: 'mystery', clues: [], options: [] };
         });
     }

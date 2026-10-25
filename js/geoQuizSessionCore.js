@@ -16,6 +16,12 @@
 //     avec un chrono. Une mauvaise réponse ou un temps écoulé vaut 0 et coupe la série.
 //   - LES RECORDS : le meilleur score de chaque réglage, et les 50 dernières parties. L'état se fusionne entre deux appareils d'un même
 //     compte (js/storage.js : mergeGeoQuiz).
+//   - LA MAÎTRISE : chaque réponse alimente le suivi du pays interrogé (combien de fois vu, réussi, et les cinq dernières réponses). Un pays
+//     est « maîtrisé » quand ses dernières réponses sont presque toutes justes, « à revoir » quand la dernière est fausse ou que moins de la
+//     moitié sont justes, « en cours » entre les deux, « nouveau » tant qu'on ne l'a jamais rencontré. « Réviser mes pays faibles » tire
+//     d'abord les pays à revoir, puis les pays en cours (les plus anciens d'abord), puis les nouveaux.
+//   - LE DÉFI DU JOUR : les mêmes dix questions pour tous (tirage fixé par la date), une seule partie compte par jour ; la série compte
+//     les jours de suite.
 
 (function (root, factory) {
     if (typeof module === 'object' && typeof module.exports === 'object') {
@@ -50,7 +56,7 @@
     var TIMERS = [0, 30, 15];          // secondes par question ; 0 = sans chrono
     // Les formes de jeu. Chaque question porte sa forme (`kind`) ; le panaché les mélange, « Rafale » et « Survie » changent la règle
     // de la partie (60 secondes pour tout, ou trois vies) et piochent dans les formes rapides.
-    var FORMS = ['qcm', 'flag', 'map', 'mapname', 'typed', 'fete', 'who', 'mystery', 'burst', 'survival', 'mix'];
+    var FORMS = ['qcm', 'flag', 'map', 'mapname', 'typed', 'fete', 'who', 'mystery', 'burst', 'survival', 'mix', 'weak', 'daily'];
     var QUESTION_KINDS = ['qcm', 'flag', 'map', 'mapname', 'typed', 'fete', 'who', 'mystery'];
     var MIX_KINDS = ['qcm', 'flag', 'map', 'mapname', 'typed', 'fete', 'who'];
     var BURST_KINDS = ['qcm', 'flag'];
@@ -61,6 +67,10 @@
     var BURST_MAX_QUESTIONS = 80;
     var SURVIVAL_MAX_QUESTIONS = 120;
     var DEFAULT_PREFS = { zone: 'world', level: 'easy', length: 10, timer: 0 };
+    // Le défi du jour ne se règle pas : le même pour tout le monde.
+    var DAILY_PREFS = { zone: 'world', level: 'medium', length: 10, timer: 0 };
+    var RUN_MAX = 5;                  // les dernières réponses gardées par pays
+    var DAILY_MAX = 60;               // les jours gardés dans l'état
 
     var BASE_POINTS = 100;
     var WHO_CLUE_BONUS = 20;          // par indice resté caché dans « Qui suis-je ? »
@@ -110,17 +120,17 @@
     }
 
     // `count` questions d'une forme, sur des pays que `taken` ne contient pas encore.
-    function questionsOfKind(kind, pool, prefs, count, taken, rng) {
+    function questionsOfKind(kind, pool, prefs, count, taken, rng, targets) {
         if (count <= 0) return [];
         var level = LEVELS[prefs.level];
         // On en tire plus qu'il n'en faut : certaines tombent sur un pays déjà pris par une autre forme.
         var wanted = count + taken.size + 4;
         var made;
-        var o = { count: wanted, difficulty: level.distractors, rng: rng };
+        var o = { count: wanted, difficulty: level.distractors, rng: rng, targets: targets };
         if (kind === 'map') {
             made = Q.generateLocateQuestions(pool, o);
         } else if (kind === 'flag') {
-            made = Q.generateQuestions(pool, { count: wanted, asks: ['name'], clues: ['flag'], difficulty: level.distractors, rng: rng });
+            made = Q.generateQuestions(pool, { count: wanted, asks: ['name'], clues: ['flag'], difficulty: level.distractors, rng: rng, targets: targets });
         } else if (kind === 'mapname') {
             made = Q.generateMapNameQuestions(pool, o);
         } else if (kind === 'typed') {
@@ -193,13 +203,13 @@
     // Le chrono par question d'une partie, en secondes (0 = aucun). Il ne s'applique ni à la Rafale (60 secondes pour tout), ni à la Survie,
     // ni au Pays mystère (six essais), ni à une partie de révision.
     function questionTimer(form, prefs, review) {
-        if (review || form === 'mystery' || rulesOf(form) !== 'standard') return 0;
+        if (review || form === 'mystery' || form === 'weak' || form === 'daily' || rulesOf(form) !== 'standard') return 0;
         return normalizePrefs(prefs).timer;
     }
 
     // Les formes de question d'une partie : toutes celles permises par `allowed` (par défaut toutes) dans ce que la forme comprend.
     function kindsOf(form, allowed) {
-        var base = form === 'mix' ? MIX_KINDS : form === 'burst' ? BURST_KINDS : form === 'survival' ? SURVIVAL_KINDS : [form];
+        var base = form === 'mix' || form === 'weak' || form === 'daily' ? MIX_KINDS : form === 'burst' ? BURST_KINDS : form === 'survival' ? SURVIVAL_KINDS : [form];
         var kinds = allowed ? base.filter(function (k) { return allowed.indexOf(k) !== -1; }) : base.slice();
         return kinds.length ? kinds : ['qcm'];
     }
@@ -207,20 +217,22 @@
     // Une partie : { questions, poolSize }. `form` : une des FORMS. `opts.kinds` : les formes de question permises en panaché, Rafale et
     // Survie (sans carte, on retire `map` et `mapname`). `opts.rng` : générateur aléatoire (les tests le fixent).
     function generateGame(facts, form, prefs, opts) {
-        var p = normalizePrefs(prefs);
+        var p = form === 'daily' ? normalizePrefs(DAILY_PREFS) : normalizePrefs(prefs);
         var rng = (opts && opts.rng) || Math.random;
-        var pool = quizPool(facts, p);
+        // Les pays à revoir se cherchent dans toute la zone, quelle que soit la difficulté réglée.
+        var pool = quizPool(facts, form === 'weak' ? { zone: p.zone, level: 'hard' } : p);
         var rules = rulesOf(form);
         var wanted = rules === 'burst' ? BURST_MAX_QUESTIONS : rules === 'survival' ? SURVIVAL_MAX_QUESTIONS : p.length;
         var count = Math.min(wanted, pool.length);
+        var targets = form === 'weak' ? weakTargets(opts && opts.state, pool, count) : null;
         var taken = new Set();
         var kinds = kindsOf(form, opts && opts.kinds);
         var counts = splitCounts(count, kinds, rng);
         var questions = [];
-        kinds.forEach(function (kind, i) { questions = questions.concat(questionsOfKind(kind, pool, p, counts[i], taken, rng)); });
+        kinds.forEach(function (kind, i) { questions = questions.concat(questionsOfKind(kind, pool, p, counts[i], taken, rng, targets)); });
         // Si une forme n'a pas pu fournir ses questions, le QCM comble le manque.
         if (questions.length < count && !(kinds.length === 1 && kinds[0] === 'qcm')) {
-            questions = questions.concat(questionsOfKind('qcm', pool, p, count - questions.length, taken, rng));
+            questions = questions.concat(questionsOfKind('qcm', pool, p, count - questions.length, taken, rng, targets));
         }
         if (kinds.length > 1) questions = interleave(questions, rng);
         return { questions: questions, poolSize: pool.length };
@@ -272,7 +284,7 @@
         return [form, p.zone, p.level, length, timer].join('|');
     }
 
-    function emptyState() { return { v: 1, best: {}, history: [] }; }
+    function emptyState() { return { v: 1, best: {}, history: [], countries: {}, daily: {} }; }
 
     // L'état des records tel qu'on peut le lire dans le stockage (ou après une fusion) : jamais d'erreur, jamais de valeur absurde.
     function normalizeState(raw) {
@@ -290,6 +302,23 @@
             out.history = raw.history.filter(function (g) {
                 return g && typeof g.at === 'number' && typeof g.score === 'number' && typeof g.form === 'string';
             }).slice(0, HISTORY_MAX);
+        }
+        if (raw.countries && typeof raw.countries === 'object' && !Array.isArray(raw.countries)) {
+            Object.keys(raw.countries).forEach(function (id) {
+                var c = raw.countries[id];
+                if (!c || typeof c !== 'object') return;
+                var n = Math.max(0, c.n | 0);
+                var run = typeof c.run === 'string' ? c.run.replace(/[^01]/g, '').slice(-RUN_MAX) : '';
+                if (n > 0 && run) out.countries[id] = { n: n, ok: Math.min(n, Math.max(0, c.ok | 0)), last: typeof c.last === 'number' ? c.last : 0, run: run };
+            });
+        }
+        if (raw.daily && typeof raw.daily === 'object' && !Array.isArray(raw.daily)) {
+            Object.keys(raw.daily).filter(function (d) { return /^\d{4}-\d{2}-\d{2}$/.test(d); }).sort().slice(-DAILY_MAX).forEach(function (d) {
+                var g = raw.daily[d];
+                if (g && typeof g.score === 'number' && isFinite(g.score) && g.score >= 0) {
+                    out.daily[d] = { score: Math.round(g.score), correct: Math.max(0, g.correct | 0), total: Math.max(0, g.total | 0) };
+                }
+            });
         }
         return out;
     }
@@ -319,12 +348,112 @@
         }).sort(function (a, b) { return b.score - a.score || b.at - a.at; });
     }
 
+
+    // --- La maîtrise des pays ----------------------------------------------------------------------
+
+    // Note la réponse donnée sur un pays : une fois de plus vu, réussi ou non, et ses RUN_MAX dernières réponses.
+    function trackAnswer(state, id, ok, now) {
+        var next = normalizeState(state);
+        var c = next.countries[id] || { n: 0, ok: 0, last: 0, run: '' };
+        next.countries[id] = {
+            n: c.n + 1, ok: c.ok + (ok ? 1 : 0), last: typeof now === 'number' ? now : Date.now(),
+            run: (c.run + (ok ? '1' : '0')).slice(-RUN_MAX)
+        };
+        return next;
+    }
+
+    // 'new' (jamais interrogé), 'weak' (à revoir), 'learning' (en cours) ou 'mastered' (maîtrisé).
+    function masteryOf(entry) {
+        if (!entry || !entry.run) return 'new';
+        var right = entry.run.split('').filter(function (r) { return r === '1'; }).length;
+        var share = right / entry.run.length;
+        var lastOk = entry.run.charAt(entry.run.length - 1) === '1';
+        if (!lastOk || share < 0.5) return 'weak';
+        if (entry.run.length >= 3 && share >= 0.8) return 'mastered';
+        return 'learning';
+    }
+
+    // Le nombre de pays de `pool` par niveau de maîtrise.
+    function masteryCounts(state, pool) {
+        var s = normalizeState(state);
+        var out = { mastered: 0, learning: 0, weak: 0, new: 0, total: pool.length };
+        pool.forEach(function (c) { out[masteryOf(s.countries[c.id])]++; });
+        return out;
+    }
+
+    // Les `count` pays à réviser en premier : à revoir (les plus ratés, puis les plus anciens), en cours (les plus anciens), nouveaux,
+    // puis maîtrisés (les plus anciens) pour compléter. Renvoie des identifiants de `pool`.
+    function weakTargets(state, pool, count) {
+        var s = normalizeState(state);
+        var order = { weak: 0, learning: 1, new: 2, mastered: 3 };
+        var share = function (e) { return e ? e.ok / e.n : 0; };
+        var ranked = pool.map(function (c) {
+            var e = s.countries[c.id];
+            return { id: c.id, level: order[masteryOf(e)], share: share(e), last: e ? e.last : 0 };
+        });
+        ranked.sort(function (a, b) {
+            return a.level - b.level || (a.level === 0 ? a.share - b.share : 0) || a.last - b.last || (a.id < b.id ? -1 : 1);
+        });
+        return ranked.slice(0, count).map(function (r) { return r.id; });
+    }
+
+    // --- Le défi du jour ---------------------------------------------------------------------------
+
+    function previousDay(date) {
+        var d = new Date(date + 'T00:00:00Z');
+        d.setUTCDate(d.getUTCDate() - 1);
+        return d.toISOString().slice(0, 10);
+    }
+
+    // Les jours de suite où le défi a été fait, jusqu'à `today` (ou jusqu'à la veille si aujourd'hui n'est pas encore fait).
+    function dailyStreak(state, today) {
+        var s = normalizeState(state);
+        var day = s.daily[today] ? today : previousDay(today);
+        var n = 0;
+        while (s.daily[day]) { n++; day = previousDay(day); }
+        return n;
+    }
+
+    // Enregistre la partie du jour. Seule la première compte. Renvoie { state, first }.
+    function recordDaily(state, date, game) {
+        var next = normalizeState(state);
+        if (next.daily[date]) return { state: next, first: false };
+        next.daily[date] = { score: Math.round(game.score), correct: game.correct, total: game.total };
+        var keep = Object.keys(next.daily).sort().slice(-DAILY_MAX);
+        var daily = {};
+        keep.forEach(function (d) { daily[d] = next.daily[d]; });
+        next.daily = daily;
+        return { state: next, first: true };
+    }
+
+    // Les badges du quiz que cette partie fait gagner : { id }. `info` : { form, level, correct, total, rules, mysteryTries, mastered, zoneComplete, streak }.
+    function badgesEarned(info) {
+        var out = [];
+        if (info.mastered >= 50) out.push('globe_trotter');
+        if (info.zoneComplete) out.push('cartographe');
+        if (info.rules === 'standard' && info.level === 'hard' && info.total >= 10 && info.correct === info.total && info.form !== 'weak' && info.form !== 'daily') out.push('sans_faute_geo');
+        if (info.streak >= 7) out.push('assidu_geo');
+        if (info.form === 'mystery' && info.correct >= 1 && info.mysteryTries > 0 && info.mysteryTries <= 2) out.push('flair_detective');
+        if (info.form === 'burst' && info.correct >= 20) out.push('rafale_savant');
+        return out;
+    }
+
+    // L'XP d'une partie : un cinquième des points (300 au plus), moitié moins pour une révision ; + 10 par pays devenu maîtrisé,
+    // + 100 pour la première partie du défi du jour.
+    function xpFor(score, opts) {
+        var o = opts || {};
+        var base = Math.min(300, Math.round(score / 5));
+        if (o.review) base = Math.round(base / 2);
+        return base + (o.newlyMastered || 0) * 10 + (o.dailyFirst ? 100 : 0);
+    }
+
     return {
         EXCLUDED_IDS: EXCLUDED_IDS, ZONES: ZONES, LEVELS: LEVELS, LENGTHS: LENGTHS, TIMERS: TIMERS, FORMS: FORMS, QUESTION_KINDS: QUESTION_KINDS,
         MIX_KINDS: MIX_KINDS, MAP_KINDS: MAP_KINDS, BURST_SECONDS: BURST_SECONDS, LIVES: LIVES, rulesOf: rulesOf, questionTimer: questionTimer, kindsOf: kindsOf,
         whoPoints: whoPoints, mysteryPoints: mysteryPoints,
         DEFAULT_PREFS: DEFAULT_PREFS, BASE_POINTS: BASE_POINTS, SPEED_MAX: SPEED_MAX, HISTORY_MAX: HISTORY_MAX,
         normalizePrefs: normalizePrefs, quizPool: quizPool, generateGame: generateGame, pointsFor: pointsFor, summarize: summarize,
-        configKey: configKey, emptyState: emptyState, normalizeState: normalizeState, recordGame: recordGame, bestList: bestList
+        configKey: configKey, DAILY_PREFS: DAILY_PREFS, RUN_MAX: RUN_MAX, trackAnswer: trackAnswer, masteryOf: masteryOf, masteryCounts: masteryCounts,
+        weakTargets: weakTargets, dailyStreak: dailyStreak, recordDaily: recordDaily, badgesEarned: badgesEarned, xpFor: xpFor, emptyState: emptyState, normalizeState: normalizeState, recordGame: recordGame, bestList: bestList
     };
 });

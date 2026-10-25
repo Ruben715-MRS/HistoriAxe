@@ -797,7 +797,29 @@ function mergeGeoQuiz(a, b) {
         })
         .sort((x, y) => y.at - x.at)
         .slice(0, GEOQUIZ_HISTORY_MAX);
-    return { v: 1, best, history };
+    // Maîtrise des pays : pour chaque pays, le plus grand compte des deux appareils (jamais de double comptage), les dernières réponses
+    // de l'appareil le plus récent. Défi du jour : par jour, le meilleur des deux scores.
+    const countries = {};
+    [a.countries, b.countries].forEach(src => {
+        if (!isPlainObject(src)) return;
+        Object.keys(src).forEach(id => {
+            const e = src[id];
+            if (!isPlainObject(e) || typeof e.n !== 'number') return;
+            const c = countries[id];
+            if (!c) { countries[id] = Object.assign({}, e); return; }
+            const newer = (e.last || 0) > (c.last || 0) ? e : c;
+            countries[id] = { n: Math.max(c.n, e.n), ok: Math.max(c.ok || 0, e.ok || 0), last: Math.max(c.last || 0, e.last || 0), run: newer.run };
+        });
+    });
+    const daily = {};
+    [a.daily, b.daily].forEach(src => {
+        if (!isPlainObject(src)) return;
+        Object.keys(src).forEach(d => {
+            const e = src[d];
+            if (isPlainObject(e) && typeof e.score === 'number' && (!daily[d] || e.score > daily[d].score)) daily[d] = e;
+        });
+    });
+    return { v: 1, best, history, countries, daily };
 }
 
 function mergeSyncableStates(local, cloud) {

@@ -1513,6 +1513,12 @@
                     <p class="tool-small" data-i18n="geoquiz.timer_hint"></p>
                 </div>
             </div>
+            <h3 class="geoquiz-setting-title" data-i18n="geoquiz.forms_today">Aujourd'hui</h3>
+            <button type="button" class="btn" id="geoquiz-daily-btn" onclick="startGeoQuizForm('daily')"></button>
+            <p class="tool-small" id="geoquiz-daily-line"></p>
+            <button type="button" class="btn" onclick="startGeoQuizForm('weak')" data-i18n="geoquiz.menu_weak">Réviser mes pays faibles</button>
+            <p class="tool-small" id="geoquiz-weak-line"></p>
+            <button type="button" class="btn geoquiz-secondary" onclick="geoQuizShowMastery()" data-i18n="geoquiz.mastery_btn">Ma maîtrise des pays</button>
             <h3 class="geoquiz-setting-title" data-i18n="geoquiz.forms_classic">Les classiques</h3>
             <button type="button" class="btn" onclick="startGeoQuizForm('qcm')" data-i18n="geoquiz.menu_qcm">QCM</button>
             <button type="button" class="btn" onclick="startGeoQuizForm('flag')" data-i18n="geoquiz.menu_flag">Drapeau → pays</button>
@@ -1535,6 +1541,13 @@
             <h3 class="geoquiz-setting-title" data-i18n="geoquiz.scores_recent">Dernières parties</h3>
             <ul class="geoquiz-list" id="geoquiz-recent"></ul>
             <p class="tool-small" id="geoquiz-scores-none" data-i18n="geoquiz.scores_none"></p>
+            <button type="button" class="btn geoquiz-secondary" onclick="geoQuizShowMenu()" data-i18n="geoquiz.scores_back">Retour aux réglages</button>
+        </div>
+        <div id="geoquiz-mastery" class="geoquiz-mastery hidden">
+            <p class="geoquiz-score" id="geoquiz-mastery-total" role="status"></p>
+            <ul class="geoquiz-legend" id="geoquiz-mastery-legend"></ul>
+            <div id="geoquiz-mastery-zones"></div>
+            <button type="button" class="btn" onclick="startGeoQuizForm('weak')" data-i18n="geoquiz.menu_weak">Réviser mes pays faibles</button>
             <button type="button" class="btn geoquiz-secondary" onclick="geoQuizShowMenu()" data-i18n="geoquiz.scores_back">Retour aux réglages</button>
         </div>
         <div id="geoquiz-play" class="geoquiz-play hidden">
@@ -1581,6 +1594,7 @@
             <p class="geoquiz-score" id="geoquiz-score" tabindex="-1" role="status"></p>
             <p class="geoquiz-detail" id="geoquiz-detail"></p>
             <p class="geoquiz-record" id="geoquiz-record"></p>
+            <p class="geoquiz-record" id="geoquiz-reward"></p>
             <h3 class="geoquiz-setting-title" id="geoquiz-errors-title"></h3>
             <ul class="geoquiz-list geoquiz-errors" id="geoquiz-errors"></ul>
             <button type="button" class="btn" onclick="geoQuizReplay()" data-i18n="geoquiz.replay">Rejouer</button>
