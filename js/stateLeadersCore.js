@@ -152,6 +152,9 @@
     Object.keys(DATA).forEach(function (k) { COUNTRIES[k] = DATA[k]; });
     // Les régimes parlementaires ont en plus la liste de leurs chefs du gouvernement.
     Object.keys(GOVS).forEach(function (k) { if (COUNTRIES[k]) COUNTRIES[k].gouvernement = GOVS[k]; });
+    // Les vice-présidents (États-Unis) : un troisième mode.
+    var VICES = typeof module === 'object' && module.exports ? require('./stateLeadersVices.js') : GLOBAL.StateLeadersVices;
+    Object.keys(VICES).forEach(function (k) { if (COUNTRIES[k]) COUNTRIES[k].vice = VICES[k]; });
 
     function toRows(rows) {
         return rows.map(function (r) {
@@ -166,11 +169,17 @@
     function sourceOf(country, mode) {
         var c = COUNTRIES[country];
         if (!c) return null;
-        return mode === 'gouvernement' && c.gouvernement ? c.gouvernement : c;
+        if (mode === 'gouvernement' && c.gouvernement) return c.gouvernement;
+        if (mode === 'vice' && c.vice) return c.vice;
+        return c;
     }
 
     function hasGovernment(country) {
         return !!(COUNTRIES[country] && COUNTRIES[country].gouvernement);
+    }
+
+    function hasVice(country) {
+        return !!(COUNTRIES[country] && COUNTRIES[country].vice);
     }
 
     function rowsOf(country, mode) {
@@ -212,6 +221,6 @@
     }
 
     return {
-        COUNTRIES: COUNTRIES, rowsOf: rowsOf, countryList: countryList, noteOf: noteOf, hasGovernment: hasGovernment, search: search, normalize: normalize
+        COUNTRIES: COUNTRIES, rowsOf: rowsOf, countryList: countryList, noteOf: noteOf, hasGovernment: hasGovernment, hasVice: hasVice, search: search, normalize: normalize
     };
 }));

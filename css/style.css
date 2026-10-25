@@ -13400,3 +13400,4 @@ input:not([type="range"]), label, select, summary, textarea {
     cursor: pointer;
 }
 .leaders-mode-btn[aria-pressed="true"] { background: #2563eb; border-color: #2563eb; color: #fff; }
+.leaders-mode-btn.hidden { display: none; }

@@ -510,11 +510,32 @@ test('chronologie : un régime parlementaire propose les chefs du gouvernement, 
     await page.locator('#leaders-mode-gouv').click();
     await expect(page.locator('#leaders-mode-gouv')).toHaveAttribute('aria-pressed', 'true');
     await expect(rows.first()).toContainText('Robert Walpole');
-    await expect(rows.last()).toContainText('Keir Starmer');
+    await expect(rows.last()).toContainText('Andy Burnham');
     await page.locator('#leaders-mode-etat').click();
     await expect(rows.first()).toContainText('Jacques Ier');
     await page.locator('#leaders-pick').click();
     await page.locator('.leaders-country-btn', { hasText: 'France' }).click();
     await expect(page.locator('#leaders-modes')).toBeHidden();
+    expect(errors).toEqual([]);
+});
+
+test('chronologie : les États-Unis proposent les vice-présidents, en couleur selon le parti', async ({ page }) => {
+    const errors = [];
+    page.on('pageerror', e => errors.push(String(e)));
+    await page.locator('#btn-tools').click();
+    await page.locator('#screen-tools .arcade-card', { hasText: 'Chronologie des chefs d’État' }).click();
+    const rows = page.locator('#leaders-list .leader-row');
+    await page.locator('#leaders-pick').click();
+    await page.locator('.leaders-country-btn', { hasText: 'États-Unis' }).click();
+    await expect(page.locator('#leaders-mode-vice')).toBeVisible();
+    await expect(page.locator('#leaders-mode-gouv')).toBeHidden();
+    await expect(rows.first()).toContainText('George Washington');
+    await page.locator('#leaders-mode-vice').click();
+    await expect(rows.first()).toContainText('John Adams');
+    await expect(rows.last()).toContainText('JD Vance');
+    await expect(rows.filter({ hasText: 'Kamala Harris' })).toHaveCSS('background-color', 'rgb(191, 219, 254)');
+    await expect(rows.filter({ hasText: 'Mike Pence' })).toHaveCSS('background-color', 'rgb(254, 202, 202)');
+    await page.locator('#leaders-mode-etat').click();
+    await expect(rows.first()).toContainText('George Washington');
     expect(errors).toEqual([]);
 });

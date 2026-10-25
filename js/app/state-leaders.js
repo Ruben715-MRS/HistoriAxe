@@ -44,9 +44,11 @@ function leadersTogglePicker() {
 
 // Le choix entre chefs d’État (par défaut) et chefs du gouvernement, pour les régimes parlementaires.
 function leadersSetMode(mode) {
-    leadersMode = mode === 'gouvernement' ? 'gouvernement' : 'etat';
-    document.getElementById('leaders-mode-etat').setAttribute('aria-pressed', leadersMode === 'etat' ? 'true' : 'false');
-    document.getElementById('leaders-mode-gouv').setAttribute('aria-pressed', leadersMode === 'gouvernement' ? 'true' : 'false');
+    leadersMode = mode === 'gouvernement' || mode === 'vice' ? mode : 'etat';
+    ['etat', 'gouvernement', 'vice'].forEach(m => {
+        const id = m === 'etat' ? 'leaders-mode-etat' : m === 'gouvernement' ? 'leaders-mode-gouv' : 'leaders-mode-vice';
+        document.getElementById(id).setAttribute('aria-pressed', leadersMode === m ? 'true' : 'false');
+    });
     leadersShowNote();
     leadersRender(document.getElementById('leaders-search').value);
 }
@@ -59,9 +61,13 @@ function leadersShowCountry(key) {
     leadersCountry = key;
     leadersMode = 'etat';
     const hasGov = StateLeadersCore.hasGovernment(key);
-    document.getElementById('leaders-modes').classList.toggle('hidden', !hasGov);
+    const hasVice = StateLeadersCore.hasVice(key);
+    document.getElementById('leaders-modes').classList.toggle('hidden', !hasGov && !hasVice);
+    document.getElementById('leaders-mode-gouv').classList.toggle('hidden', !hasGov);
+    document.getElementById('leaders-mode-vice').classList.toggle('hidden', !hasVice);
     document.getElementById('leaders-mode-etat').setAttribute('aria-pressed', 'true');
     document.getElementById('leaders-mode-gouv').setAttribute('aria-pressed', 'false');
+    document.getElementById('leaders-mode-vice').setAttribute('aria-pressed', 'false');
     const name = StateLeadersCore.COUNTRIES[key].name;
     document.getElementById('leaders-pick').textContent = t('tools.leaders_country_btn', { name: name });
     document.getElementById('leaders-countries').classList.add('hidden');

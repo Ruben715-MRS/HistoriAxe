@@ -12,7 +12,7 @@
 // 'install' recharge tout depuis le réseau. Un pack de langue ou un texte
 // d'UI modifié qui ne s'affiche pas malgré un déploiement réussi est
 // généralement le signe que l'un de ces deux numéros n'a pas été incrémenté.
-const CACHE_VERSION = '1.4.209';
+const CACHE_VERSION = '1.4.210';
 const APP_SHELL_CACHE = `historiaxe-shell-v${CACHE_VERSION}`;
 const DATA_CACHE = 'historiaxe-data-v1.0.115';
 
@@ -138,6 +138,7 @@ const APP_SHELL_FILES = [
     './js/app/genealogy.js',
     './js/stateLeadersData.js',
     './js/stateLeadersGouvernements.js',
+    './js/stateLeadersVices.js',
     './js/stateLeadersCore.js',
     './js/app/state-leaders.js',
     './js/historyMapsCore.js',

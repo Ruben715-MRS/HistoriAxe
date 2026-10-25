@@ -95,3 +95,20 @@ test('chefs d’État : les régimes parlementaires ont aussi la liste des chefs
     assert.strictEqual(S.rowsOf('royaume_uni')[0].row.name, 'Jacques Ier (Jacques VI d’Écosse)');
     assert.ok(S.noteOf('royaume_uni', 'gouvernement').startsWith('Premiers ministres'));
 });
+
+test('chefs d’État : les vice-présidents des États-Unis, dates cohérentes et couleurs selon le parti', () => {
+    const items = S.rowsOf('etats_unis', 'vice');
+    assert.ok(S.hasVice('etats_unis'));
+    assert.strictEqual(items[items.length - 1].row.name, 'JD Vance');
+    assert.strictEqual(items[items.length - 1].row.to, null);
+    items.forEach((it, i) => {
+        const r = it.row;
+        if (r.to !== null) assert.ok(r.to >= r.from, r.name);
+        if (i > 0) assert.ok(r.from >= items[i - 1].row.from, r.name + ' : hors ordre');
+        const want = { democrate: '#bfdbfe', republicain: '#fecaca', autre: '#fef08a' }[r.party];
+        assert.strictEqual(it.color, want, r.name);
+    });
+    assert.strictEqual(items.find(it => it.row.name === 'Kamala Harris').color, '#bfdbfe');
+    assert.strictEqual(items.find(it => it.row.name === 'Mike Pence').color, '#fecaca');
+    assert.ok(!S.hasVice('france'));
+});
