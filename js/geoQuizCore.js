@@ -329,7 +329,21 @@
             });
             if (clues.length < 4 || !isUnambiguous(pool, clues, 'name', target.n)) return;
             var options = chooseOptions(target, pool, { ask: 'name', options: o.options, difficulty: o.difficulty, rng: o.rng });
-            if (options) out.push({ target: target.id, ask: 'name', clues: clues, options: options });
+            if (!options) return;
+            // Le premier indice (la région) doit départager quelque chose : si les quatre propositions sont toutes dans la région
+            // du pays, une fausse réponse vient d'une autre région (sinon ce premier indice ne sert à rien).
+            var first = clues[0];
+            var choices = options.map(function (op) { return pool.filter(function (c) { return c.id === op.id; })[0]; });
+            if (!choices.some(function (c) { return clueValues(c, first.key).indexOf(first.value) === -1; })) {
+                var taken = options.map(function (op) { return op.id; });
+                var outsiders = shuffle(pool.filter(function (c) {
+                    return c.cont !== target.cont && taken.indexOf(c.id) === -1 && answerOf(c, 'name') !== target.n;
+                }), o.rng);
+                if (!outsiders.length) return;
+                var swap = options.findIndex(function (op) { return op.id !== target.id; });
+                options[swap] = { id: outsiders[0].id, value: outsiders[0].n };
+            }
+            out.push({ target: target.id, ask: 'name', clues: clues, options: options });
         });
         return out;
     }
