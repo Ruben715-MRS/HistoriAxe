@@ -147,7 +147,7 @@ test('textes : chaque type de question et d\'indice a son libellé, en français
         const ui = JSON.parse(fs.readFileSync(path.join(root, 'ui', lang + '.json'), 'utf8')).geoquiz;
         for (const ask of Q.ASK_KEYS) assert.ok(ui['ask_' + ask], `${lang} : geoquiz.ask_${ask}`);
         for (const key of Q.CLUE_KEYS) assert.ok(ui['clue_' + key], `${lang} : geoquiz.clue_${key}`);
-        for (const key of ['title', 'start', 'progress', 'right', 'wrong', 'next', 'finish', 'score', 'replay', 'back', 'none', 'credit', 'pop_label', 'map_label', 'locate_ask', 'locate_right', 'locate_wrong', 'menu_intro', 'menu_qcm', 'menu_hard', 'menu_flag', 'menu_map', 'arcade_desc', 'clue_flag']) {
+        for (const key of ['title', 'start', 'progress', 'right', 'wrong', 'next', 'finish', 'score', 'replay', 'back', 'none', 'credit', 'pop_label', 'map_label', 'locate_ask', 'locate_right', 'locate_wrong', 'menu_intro', 'menu_qcm', 'menu_flag', 'menu_map', 'menu_mix', 'arcade_desc', 'clue_flag']) {
             assert.ok(ui[key], `${lang} : geoquiz.${key}`);
         }
     }

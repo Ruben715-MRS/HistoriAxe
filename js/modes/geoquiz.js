@@ -1,32 +1,45 @@
 // =========================================================================
-// === LE QUIZ DES PAYS (écran de jeu, lancé depuis l'Atlas des pays) ===
+// === LE QUIZ DES PAYS (écran de jeu, lancé depuis l'Atlas des pays ou la Salle de jeux) ===
 // =========================================================================
-// Un menu (openGeoQuizMenu) puis quatre formes, un même écran et un même score :
-//   - QCM : un ou deux indices (capitale, monnaie…), quatre réponses ; facile ou difficile (startGeoQuiz) ;
-//   - « Drapeau → pays » : un drapeau, quatre noms (startGeoQuizFlag) ;
-//   - « Touche le pays » : le nom d'un pays, et une carte du monde à toucher (startGeoQuizMap).
-// Les questions viennent de GeoQuizCore (js/geoQuizCore.js). Pas de vies ni de chrono : c'est un entraînement. Rien n'est
-// enregistré, rien ne part vers le classement. Les données sont celles de countriesData (js/app/countries.js).
+// Un menu de RÉGLAGES (zone, difficulté, nombre de questions, chrono) puis quatre formes de jeu, un même écran, un même score :
+//   - QCM : un ou deux indices (capitale, monnaie…), quatre réponses (startGeoQuizForm('qcm')) ;
+//   - « Drapeau → pays » : un drapeau, quatre noms ('flag') ;
+//   - « Touche le pays » : le nom d'un pays, et une carte du monde à toucher ('map') ;
+//   - « Panaché » : les trois formes mélangées dans une même partie ('mix'). Chaque question porte sa forme (q.kind).
+// Les questions viennent de GeoQuizCore (js/geoQuizCore.js) ; la partie (jeu de pays, mélange, points, records) de GeoQuizSessionCore
+// (js/geoQuizSessionCore.js). Sans chrono par défaut : c'est d'abord un entraînement. Avec un chrono, la vitesse rapporte des points ;
+// un temps écoulé compte comme une erreur.
+// Les records et l'historique sont enregistrés (js/storage.js : geoQuizStateSave) et synchronisés avec le compte ; les réglages restent
+// sur l'appareil. À la fin d'une partie, les erreurs sont listées et peuvent être rejouées (partie de révision : rien n'est enregistré).
 //
 // LA CARTE du quiz n'est pas celle de l'Atlas : elle n'a ni couche de noms ni police, donc aucun nom de pays ne peut y apparaître
-// avant la réponse. Les contours viennent de countriesData.geo (local, hors ligne). Contenu en français seulement. Tout ce qui vient des données passe par textContent, jamais par du HTML.
+// avant la réponse. Les contours viennent de countriesData.geo (local, hors ligne). Contenu en français et en anglais. Tout ce qui vient
+// des données passe par textContent, jamais par du HTML.
 
-const GEOQUIZ_ROUNDS = 10;
 // Neutre : une couleur par continent donnerait l'indice qu'on cherche.
 const GEOQUIZ_FILL = { light: '#dfe6ee', dark: '#334155' };
 const GEOQUIZ_TARGET = { light: '#f59e0b', dark: '#f2c14e' };
 const GEOQUIZ_WORLD = [[-170, -58], [190, 78]];
+const GEOQUIZ_RECENT = 10;         // parties récentes montrées dans « Mes scores »
 
-let geoQuizMode = 'qcm';          // 'qcm' | 'flag' | 'map'
-let geoQuizDifficulty = 'easy';   // pour le QCM : 'easy' | 'hard'
+let geoQuizForm = 'qcm';           // 'qcm' | 'flag' | 'map' | 'mix'
+let geoQuizPrefs = null;           // les réglages du menu (chargés à l'ouverture)
+let geoQuizGamePrefs = null;       // les réglages de la partie en cours (ils ne changent pas en cours de partie)
 let geoQuizReturn = 'screen-tool-countries';   // l'écran où le menu a été ouvert (Atlas des pays, ou Salle de jeux)
 let geoQuizQuestions = [];
 let geoQuizIndex = 0;
-let geoQuizScore = 0;
+let geoQuizAnswers = [];           // une entrée par question jouée : { ok, points, q, summary, correctText, givenText }
+let geoQuizStreak = 0;
+let geoQuizReview = false;         // partie de révision (« Rejouer mes erreurs ») : ni record ni historique
 let geoQuizAnswered = false;
+let geoQuizTimerSeconds = 0;       // 0 : sans chrono
+let geoQuizTimerId = null;
+let geoQuizTimerStart = 0;
 let geoQuizMap = null;
 let geoQuizMapReady = false;
 let geoQuizOnReady = [];           // actions à faire une fois la carte chargée (surlignage après une réponse)
+
+function geoQuizEl(id) { return document.getElementById(id); }
 
 // Le menu s'ouvre depuis l'Atlas des pays ou la Salle de jeux ; « Retour » y ramène.
 function openGeoQuizMenu(from) {
@@ -35,85 +48,147 @@ function openGeoQuizMenu(from) {
     geoQuizShowMenu();
 }
 
+function geoQuizShowPanel(id) {
+    ['geoquiz-menu', 'geoquiz-scores', 'geoquiz-play', 'geoquiz-end'].forEach(p => geoQuizEl(p).classList.toggle('hidden', p !== id));
+}
+
 function geoQuizShowMenu() {
-    document.getElementById('geoquiz-play').classList.add('hidden');
-    document.getElementById('geoquiz-end').classList.add('hidden');
-    document.getElementById('geoquiz-status').textContent = '';
-    document.getElementById('geoquiz-menu').classList.remove('hidden');
+    geoQuizStopTimer();
+    geoQuizEl('geoquiz-status').textContent = '';
+    geoQuizShowPanel('geoquiz-menu');
+    geoQuizRenderSettings();
 }
 
-function startGeoQuiz(difficulty) { geoQuizBegin('qcm', difficulty === 'hard' ? 'hard' : 'easy'); }
-function startGeoQuizFlag() { geoQuizBegin('flag', 'easy'); }
-function startGeoQuizMap() { geoQuizBegin('map', 'easy'); }
+// --- Les réglages ------------------------------------------------------------------------------
 
-// Rejoue la même forme, depuis le score.
-function geoQuizReplay() { geoQuizBegin(geoQuizMode, geoQuizDifficulty); }
-
-// Les questions d'une forme. Le QCM facile tire ses indices de tout l'Atlas ; le difficile prend ses distracteurs sur le même continent ;
-// le mode drapeau n'a que le drapeau pour indice.
-function geoQuizQuestionsFor(mode, difficulty, pool) {
-    const count = GEOQUIZ_ROUNDS;
-    if (mode === 'map') return GeoQuizCore.generateLocateQuestions(pool, { count: count });
-    if (mode === 'flag') return GeoQuizCore.generateQuestions(pool, { count: count, asks: ['name'], clues: ['flag'] });
-    return GeoQuizCore.generateQuestions(pool, { count: count, difficulty: difficulty });
+function geoQuizPrefsNow() {
+    if (!geoQuizPrefs) geoQuizPrefs = geoQuizPrefsLoad();
+    return geoQuizPrefs;
 }
 
-function geoQuizBegin(mode, difficulty) {
-    geoQuizMode = mode;
-    geoQuizDifficulty = difficulty;
+function geoQuizRenderSettings() {
+    const prefs = geoQuizPrefsNow();
+    const core = GeoQuizSessionCore;
+    geoQuizFillChips('geoquiz-zone', core.ZONES.map(z => ({ value: z.key, label: t('geoquiz.zone_' + z.key) })), 'zone', prefs.zone);
+    geoQuizFillChips('geoquiz-level', Object.keys(core.LEVELS).map(k => ({ value: k, label: t('geoquiz.level_' + k) })), 'level', prefs.level);
+    geoQuizEl('geoquiz-level-hint').textContent = t('geoquiz.level_' + prefs.level + '_hint');
+    geoQuizFillChips('geoquiz-length', core.LENGTHS.map(n => ({ value: n, label: String(n) })), 'length', prefs.length);
+    geoQuizFillChips('geoquiz-timer-choice', core.TIMERS.map(s => ({ value: s, label: t('geoquiz.timer_' + s) })), 'timer', prefs.timer);
+}
+
+function geoQuizFillChips(id, items, key, current) {
+    geoQuizEl(id).replaceChildren(...items.map(item => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'geoquiz-chip';
+        btn.dataset.pref = key;
+        btn.textContent = item.label;
+        btn.setAttribute('aria-pressed', item.value === current ? 'true' : 'false');
+        btn.onclick = () => geoQuizSetPref(key, item.value);
+        return btn;
+    }));
+}
+
+function geoQuizSetPref(key, value) {
+    geoQuizPrefs = GeoQuizSessionCore.normalizePrefs(Object.assign({}, geoQuizPrefsNow(), { [key]: value }));
+    geoQuizPrefsSave(geoQuizPrefs);
+    geoQuizRenderSettings();
+    // Le menu a été redessiné : le clavier reste sur le choix qu'on vient de faire.
+    const kept = document.querySelector('#geoquiz-menu .geoquiz-chip[data-pref="' + key + '"][aria-pressed="true"]');
+    if (kept) kept.focus({ preventScroll: true });
+}
+
+// --- Une partie ---------------------------------------------------------------------------------
+
+function startGeoQuizForm(form) { geoQuizBegin(GeoQuizSessionCore.FORMS.indexOf(form) === -1 ? 'qcm' : form, null); }
+
+function geoQuizReplay() { geoQuizBegin(geoQuizForm, null); }
+
+// « Rejouer mes erreurs » : les questions ratées, dans l'ordre, sans enregistrer la partie.
+function geoQuizReplayErrors() {
+    const missed = geoQuizAnswers.filter(a => !a.ok).map(a => a.q);
+    if (!missed.length) return;
+    geoQuizBegin(geoQuizForm, missed);
+}
+
+// `review` : les questions d'une partie de révision, ou null pour tirer une nouvelle partie.
+function geoQuizBegin(form, review) {
+    geoQuizStopTimer();
+    geoQuizForm = form;
+    geoQuizReview = !!review;
+    geoQuizGamePrefs = Object.assign({}, geoQuizPrefsNow());
+    geoQuizTimerSeconds = review ? 0 : geoQuizGamePrefs.timer;
     showScreen('screen-geoquiz', 'forward');
-    document.getElementById('geoquiz-menu').classList.add('hidden');
-    document.getElementById('geoquiz-play').classList.add('hidden');
-    document.getElementById('geoquiz-end').classList.add('hidden');
-    const status = document.getElementById('geoquiz-status');
+    geoQuizShowPanel(null);
+    const status = geoQuizEl('geoquiz-status');
     status.textContent = t('tools.countries_loading');
-    const library = mode === 'map' ? atlasLoadLibrary() : Promise.resolve(true);
+    const wantsMap = review ? review.some(q => q.kind === 'map') : (form === 'map' || form === 'mix');
+    const library = wantsMap ? atlasLoadLibrary() : Promise.resolve(true);
     Promise.all([countriesLoad(), library]).then(([ok, libOk]) => {
         if (!ok) { status.textContent = t('tools.countries_error'); return; }
-        if (!libOk) { status.textContent = t('tools.countries_no_map'); return; }
-        const pool = GeoQuizCore.playablePool(countriesData.facts);
-        const questions = geoQuizQuestionsFor(mode, difficulty, pool);
+        // Sans carte (bibliothèque absente ou pas de WebGL), le panaché se joue sans la forme « carte » ; les autres formes qui en ont besoin s'arrêtent.
+        const mapOk = !wantsMap || (libOk && !!geoQuizEnsureMap());
+        if (!mapOk && form !== 'mix') { status.textContent = libOk ? t('tools.countries_no_webgl') : t('tools.countries_no_map'); return; }
+        let questions;
+        if (review) {
+            questions = review.map(q => Object.assign({}, q));
+        } else {
+            const opts = form === 'mix' && !mapOk ? { kinds: ['qcm', 'flag'] } : {};
+            questions = GeoQuizSessionCore.generateGame(countriesData.facts, form, geoQuizGamePrefs, opts).questions;
+        }
         if (!questions.length) { status.textContent = t('geoquiz.none'); return; }
-        if (mode === 'map' && !geoQuizEnsureMap()) { status.textContent = t('tools.countries_no_webgl'); return; }
         status.textContent = '';
         geoQuizQuestions = questions;
         geoQuizIndex = 0;
-        geoQuizScore = 0;
-        document.getElementById('geoquiz-play').classList.remove('hidden');
+        geoQuizAnswers = [];
+        geoQuizStreak = 0;
+        geoQuizShowPanel('geoquiz-play');
         geoQuizRender();
     });
 }
 
+function geoQuizScoreNow() { return geoQuizAnswers.reduce((sum, a) => sum + a.points, 0); }
+
+function geoQuizUpdateHead() {
+    geoQuizEl('geoquiz-progress').textContent = t('geoquiz.progress', { n: geoQuizIndex + 1, total: geoQuizQuestions.length });
+    geoQuizEl('geoquiz-points').textContent = t('geoquiz.points_label', { score: geoQuizScoreNow() });
+}
+
 function geoQuizRender() {
     const q = geoQuizQuestions[geoQuizIndex];
-    const locate = geoQuizMode === 'map';
+    const locate = q.kind === 'map';
     geoQuizAnswered = false;
-    document.getElementById('geoquiz-progress').textContent = t('geoquiz.progress', { n: geoQuizIndex + 1, total: geoQuizQuestions.length });
-    document.getElementById('geoquiz-feedback').textContent = '';
-    document.getElementById('geoquiz-next').classList.add('hidden');
-    document.getElementById('geoquiz-qcm').classList.toggle('hidden', locate);
-    document.getElementById('geoquiz-locate').classList.toggle('hidden', !locate);
-    if (locate) { geoQuizRenderLocate(q); return; }
-    document.getElementById('geoquiz-ask').textContent = t('geoquiz.ask_' + q.ask);
-    document.getElementById('geoquiz-clues').replaceChildren(...q.clues.map(clue => {
-        const li = document.createElement('li');
-        if (clue.key === 'flag') {
-            // Le drapeau seul, en grand : pas de libellé à lire avant l'emoji.
-            li.className = 'geoquiz-flag';
-            li.textContent = clue.value;
-        } else {
-            li.textContent = t('geoquiz.clue_' + clue.key) + ' : ' + clue.value;
-        }
-        return li;
-    }));
-    document.getElementById('geoquiz-options').replaceChildren(...q.options.map((o, i) => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'quiz-option';
-        btn.textContent = geoQuizLabel(q.ask, o.value);
-        btn.onclick = () => geoQuizAnswer(i);
-        return btn;
-    }));
+    geoQuizUpdateHead();
+    geoQuizEl('geoquiz-feedback').textContent = '';
+    geoQuizEl('geoquiz-next').classList.add('hidden');
+    geoQuizEl('geoquiz-qcm').classList.toggle('hidden', locate);
+    geoQuizEl('geoquiz-locate').classList.toggle('hidden', !locate);
+    if (locate) {
+        geoQuizRenderLocate(q);
+    } else {
+        // Espace insécable avant « ? » : le point d'interrogation ne passe pas seul à la ligne.
+        geoQuizEl('geoquiz-ask').textContent = t('geoquiz.ask_' + q.ask).replace(' ?', '\u00A0?');
+        geoQuizEl('geoquiz-clues').replaceChildren(...q.clues.map(clue => {
+            const li = document.createElement('li');
+            if (clue.key === 'flag') {
+                // Le drapeau seul, en grand : pas de libellé à lire avant l'emoji.
+                li.className = 'geoquiz-flag';
+                li.textContent = clue.value;
+            } else {
+                li.textContent = t('geoquiz.clue_' + clue.key) + ' : ' + clue.value;
+            }
+            return li;
+        }));
+        geoQuizEl('geoquiz-options').replaceChildren(...q.options.map((o, i) => {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'quiz-option';
+            btn.textContent = geoQuizLabel(q.ask, o.value);
+            btn.onclick = () => geoQuizAnswer(i);
+            return btn;
+        }));
+    }
+    geoQuizStartTimer();
 }
 
 // Une réponse telle qu'on la lit : la population en lettres (« 68,4 millions »), le reste tel quel.
@@ -121,9 +196,86 @@ function geoQuizLabel(ask, value) {
     return ask === 'pop' ? t('geoquiz.pop_label', { n: CountriesCore.formatPopulation(value) }) : value;
 }
 
+// La question en une ligne, pour la liste des erreurs.
+function geoQuizSummary(q) {
+    if (q.kind === 'map') return t('geoquiz.summary_locate', { name: q.clues[0].value });
+    if (q.clues.length === 1 && q.clues[0].key === 'flag') return t('geoquiz.summary_flag', { flag: q.clues[0].value });
+    return t('geoquiz.ask_' + q.ask) + ' ' + q.clues.map(c => t('geoquiz.clue_' + c.key) + ' : ' + c.value).join(' ; ');
+}
+
+// --- Le chrono ----------------------------------------------------------------------------------
+
+function geoQuizStartTimer() {
+    geoQuizStopTimer();
+    const box = geoQuizEl('geoquiz-timer');
+    box.classList.toggle('hidden', !geoQuizTimerSeconds);
+    if (!geoQuizTimerSeconds) return;
+    geoQuizTimerStart = performance.now();
+    geoQuizTimerTick();
+    geoQuizTimerId = setInterval(geoQuizTimerTick, 100);
+}
+
+function geoQuizStopTimer() {
+    if (geoQuizTimerId !== null) clearInterval(geoQuizTimerId);
+    geoQuizTimerId = null;
+}
+
+// La part du temps qui reste, de 1 à 0.
+function geoQuizRemaining() {
+    if (!geoQuizTimerSeconds) return null;
+    const elapsed = (performance.now() - geoQuizTimerStart) / 1000;
+    return Math.max(0, Math.min(1, 1 - elapsed / geoQuizTimerSeconds));
+}
+
+function geoQuizTimerTick() {
+    const remaining = geoQuizRemaining();
+    if (remaining === null) return;
+    const seconds = Math.ceil(remaining * geoQuizTimerSeconds);
+    geoQuizEl('geoquiz-timer-fill').style.width = (remaining * 100).toFixed(1) + '%';
+    geoQuizEl('geoquiz-timer-text').textContent = t('geoquiz.timer_seconds', { n: seconds });
+    geoQuizEl('geoquiz-timer').setAttribute('aria-valuenow', String(Math.round(remaining * 100)));
+    geoQuizEl('geoquiz-timer').classList.toggle('is-low', remaining <= 0.25);
+    if (remaining <= 0 && !geoQuizAnswered) geoQuizTimeout();
+}
+
+// Le temps est écoulé : une erreur, sans réponse donnée ; la bonne réponse s'affiche.
+function geoQuizTimeout() {
+    if (geoQuizAnswered) return;
+    const q = geoQuizQuestions[geoQuizIndex];
+    const feedback = geoQuizEl('geoquiz-feedback');
+    if (q.kind === 'map') {
+        const target = countriesData.byId.get(q.target);
+        const tiny = CountriesCore.isTiny(countriesData.prepared.get(q.target));
+        geoQuizSettle(false, { summary: geoQuizSummary(q), correctText: target.n, givenText: null });
+        geoQuizWhenReady(() => geoQuizSetHighlight(q.target, tiny, null));
+        feedback.textContent = t('geoquiz.locate_timeout', { answer: target.n });
+    } else {
+        const buttons = Array.from(document.querySelectorAll('#geoquiz-options .quiz-option'));
+        const correct = q.options.findIndex(o => o.id === q.target);
+        buttons.forEach((b, k) => { b.disabled = true; if (k === correct) b.classList.add('correct'); });
+        const answer = geoQuizLabel(q.ask, q.options[correct].value);
+        geoQuizSettle(false, { summary: geoQuizSummary(q), correctText: answer, givenText: null });
+        feedback.textContent = t('geoquiz.timeout', { answer: answer });
+    }
+    geoQuizShowNext();
+}
+
+// --- Répondre -----------------------------------------------------------------------------------
+
+// Clôt la question : les points (avec la vitesse si un chrono tourne), la série, l'entrée du bilan. Renvoie les points gagnés.
+function geoQuizSettle(ok, info) {
+    geoQuizAnswered = true;
+    const remaining = geoQuizRemaining();
+    geoQuizStopTimer();
+    const points = GeoQuizSessionCore.pointsFor(ok, geoQuizStreak, remaining);
+    geoQuizStreak = ok ? geoQuizStreak + 1 : 0;
+    geoQuizAnswers.push(Object.assign({ ok: ok, points: points, q: geoQuizQuestions[geoQuizIndex] }, info));
+    geoQuizUpdateHead();
+    return points;
+}
+
 function geoQuizAnswer(i) {
     if (geoQuizAnswered) return;
-    geoQuizAnswered = true;
     const q = geoQuizQuestions[geoQuizIndex];
     const buttons = Array.from(document.querySelectorAll('#geoquiz-options .quiz-option'));
     const correct = q.options.findIndex(o => o.id === q.target);
@@ -131,10 +283,15 @@ function geoQuizAnswer(i) {
         b.disabled = true;
         if (k === correct) b.classList.add('correct');
     });
-    const feedback = document.getElementById('geoquiz-feedback');
-    if (i === correct) {
-        geoQuizScore++;
-        feedback.textContent = t('geoquiz.right');
+    const ok = i === correct;
+    const points = geoQuizSettle(ok, {
+        summary: geoQuizSummary(q),
+        correctText: buttons[correct].textContent,
+        givenText: buttons[i].textContent
+    });
+    const feedback = geoQuizEl('geoquiz-feedback');
+    if (ok) {
+        feedback.textContent = t('geoquiz.right_pts', { n: points });
     } else {
         buttons[i].classList.add('wrong');
         feedback.textContent = t('geoquiz.wrong', { answer: buttons[correct].textContent });
@@ -144,7 +301,7 @@ function geoQuizAnswer(i) {
 
 function geoQuizShowNext() {
     const last = geoQuizIndex === geoQuizQuestions.length - 1;
-    const next = document.getElementById('geoquiz-next');
+    const next = geoQuizEl('geoquiz-next');
     next.textContent = t(last ? 'geoquiz.finish' : 'geoquiz.next');
     next.classList.remove('hidden');
     next.focus({ preventScroll: true });
@@ -156,23 +313,91 @@ function geoQuizNext() {
     geoQuizRender();
 }
 
+// --- La fin de partie : points, record, erreurs --------------------------------------------------
+
 function geoQuizEnd() {
-    document.getElementById('geoquiz-play').classList.add('hidden');
-    document.getElementById('geoquiz-score').textContent = t('geoquiz.score', { score: geoQuizScore, total: geoQuizQuestions.length });
-    document.getElementById('geoquiz-end').classList.remove('hidden');
-    document.getElementById('geoquiz-score').focus({ preventScroll: true });
+    geoQuizStopTimer();
+    const summary = GeoQuizSessionCore.summarize(geoQuizAnswers);
+    geoQuizShowPanel('geoquiz-end');
+    geoQuizEl('geoquiz-score').textContent = t('geoquiz.end_score', { score: summary.score });
+    geoQuizEl('geoquiz-detail').textContent = t('geoquiz.end_detail', { correct: summary.correct, total: summary.total, streak: summary.bestStreak });
+    geoQuizEl('geoquiz-record').textContent = geoQuizReview ? t('geoquiz.review_note') : geoQuizSaveGame(summary);
+    geoQuizRenderErrors();
+    geoQuizEl('geoquiz-score').focus({ preventScroll: true });
 }
 
-// « Retour » : depuis une partie, au menu ; depuis le menu, à l'écran d'où il a été ouvert.
+// Enregistre la partie (record, historique), la pousse vers le compte, et renvoie la phrase du record.
+function geoQuizSaveGame(summary) {
+    const p = geoQuizGamePrefs;
+    const game = {
+        at: Date.now(), form: geoQuizForm, zone: p.zone, level: p.level, length: p.length, timer: p.timer,
+        score: summary.score, correct: summary.correct, total: summary.total
+    };
+    const result = GeoQuizSessionCore.recordGame(geoQuizStateLoad(), game);
+    geoQuizStateSave(result.state);
+    if (typeof syncPushProgress === 'function') syncPushProgress();
+    if (!result.previous) return t('geoquiz.record_first');
+    if (result.isRecord) return t('geoquiz.record_new', { score: result.previous.score });
+    return t('geoquiz.record_best', { score: result.previous.score });
+}
+
+function geoQuizRenderErrors() {
+    const missed = geoQuizAnswers.filter(a => !a.ok);
+    geoQuizEl('geoquiz-errors-title').textContent = t(missed.length ? 'geoquiz.errors_title' : 'geoquiz.errors_none');
+    geoQuizEl('geoquiz-errors').replaceChildren(...missed.map(a => {
+        const li = document.createElement('li');
+        const question = document.createElement('strong');
+        question.textContent = a.summary;
+        const answer = document.createElement('span');
+        let text = t('geoquiz.error_answer', { answer: a.correctText });
+        if (a.givenText != null) text += a.q.kind === 'map' ? t('geoquiz.error_km', { km: a.givenText }) : t('geoquiz.error_given', { given: a.givenText });
+        else text += t('geoquiz.error_timeout');
+        answer.textContent = text;
+        li.append(question, document.createElement('br'), answer);
+        return li;
+    }));
+    geoQuizEl('geoquiz-replay-errors').classList.toggle('hidden', !missed.length);
+}
+
+// --- Mes scores ---------------------------------------------------------------------------------
+
+function geoQuizConfigLine(g) {
+    return t('geoquiz.config_line', {
+        form: t('geoquiz.form_' + g.form), zone: t('geoquiz.zone_' + g.zone), level: t('geoquiz.level_' + g.level),
+        length: g.length, timer: t('geoquiz.timer_' + g.timer)
+    });
+}
+
+function geoQuizShowScores() {
+    geoQuizShowPanel('geoquiz-scores');
+    const state = geoQuizStateLoad();
+    const records = GeoQuizSessionCore.bestList(state);
+    const recent = state.history.slice(0, GEOQUIZ_RECENT);
+    const item = (head, line, tail) => {
+        const li = document.createElement('li');
+        const strong = document.createElement('strong');
+        strong.textContent = head;
+        li.appendChild(strong);
+        li.appendChild(document.createTextNode(' ' + line + (tail ? ' · ' + tail : '')));
+        return li;
+    };
+    geoQuizEl('geoquiz-records').replaceChildren(...records.map(r =>
+        item(t('geoquiz.points_label', { score: r.score }), geoQuizConfigLine(r), t('geoquiz.result_short', { correct: r.correct, total: r.total }))));
+    geoQuizEl('geoquiz-recent').replaceChildren(...recent.map(g =>
+        item(new Date(g.at).toLocaleDateString('fr-FR'), geoQuizConfigLine(g), t('geoquiz.result_line', { score: g.score, correct: g.correct, total: g.total }))));
+    geoQuizEl('geoquiz-scores-none').classList.toggle('hidden', records.length > 0);
+}
+
+// « Retour » : depuis une partie ou les scores, au menu ; depuis le menu, à l'écran d'où il a été ouvert.
 function geoQuizQuit() {
-    if (document.getElementById('geoquiz-menu').classList.contains('hidden')) { geoQuizShowMenu(); return; }
+    if (geoQuizEl('geoquiz-menu').classList.contains('hidden')) { geoQuizShowMenu(); return; }
     showScreen(geoQuizReturn, 'back');
 }
 
 // --- « Touche le pays » -----------------------------------------------------------------------
 
 function geoQuizRenderLocate(q) {
-    document.getElementById('geoquiz-locate-ask').textContent = t('geoquiz.locate_ask', { name: q.clues[0].value });
+    geoQuizEl('geoquiz-locate-ask').textContent = t('geoquiz.locate_ask', { name: q.clues[0].value });
     // La carte a été créée cachée : on la redimensionne une fois visible, puis on la remet sur le monde.
     geoQuizMap.resize();
     geoQuizMap.fitBounds(GEOQUIZ_WORLD, { padding: 6, duration: 0 });
@@ -256,19 +481,18 @@ function geoQuizSetHighlight(id, tiny, tap) {
 
 // Un clic sur la carte : réussi s'il tombe dans le pays visé (ou à côté, pour un petit pays).
 function geoQuizTap(lon, lat) {
-    if (geoQuizAnswered || geoQuizMode !== 'map') return;
-    geoQuizAnswered = true;
     const q = geoQuizQuestions[geoQuizIndex];
+    if (geoQuizAnswered || !q || q.kind !== 'map' || geoQuizEl('geoquiz-play').classList.contains('hidden')) return;
     const target = countriesData.byId.get(q.target);
     const prepared = countriesData.prepared.get(q.target);
     const tiny = CountriesCore.isTiny(prepared);
     const km = GeoQuizCore.distanceKm([lon, lat], target.c);
     const ok = GeoQuizCore.locateCorrect({ inside: CountriesCore.containsNear(prepared, lon, lat), tiny: tiny, distanceKm: km });
-    if (ok) geoQuizScore++;
+    const kmText = Math.round(km).toLocaleString('fr-FR');
+    const points = geoQuizSettle(ok, { summary: geoQuizSummary(q), correctText: target.n, givenText: kmText });
     geoQuizWhenReady(() => geoQuizSetHighlight(q.target, tiny, { lon: lon, lat: lat, ok: ok }));
-    const feedback = document.getElementById('geoquiz-feedback');
-    feedback.textContent = ok
-        ? t('geoquiz.locate_right', { answer: target.n })
-        : t('geoquiz.locate_wrong', { answer: target.n, km: Math.round(km).toLocaleString('fr-FR') });
+    geoQuizEl('geoquiz-feedback').textContent = ok
+        ? t('geoquiz.locate_right', { answer: target.n }) + ' ' + t('geoquiz.right_pts', { n: points })
+        : t('geoquiz.locate_wrong', { answer: target.n, km: kmText });
     geoQuizShowNext();
 }

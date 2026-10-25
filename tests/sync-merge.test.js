@@ -4,7 +4,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const {
-    mergeSyncableStates, mergeValues, STREAK_KEY, WEEKLY_CHALLENGE_STREAK_KEY
+    mergeSyncableStates, mergeValues, STREAK_KEY, WEEKLY_CHALLENGE_STREAK_KEY, GEOQUIZ_KEY, mergeGeoQuiz
 } = require('../js/storage.js');
 
 test('série quotidienne : la plus récente gagne, le record est le meilleur des deux', () => {
@@ -52,4 +52,35 @@ test('null ou absent d\'un côté → l\'autre valeur', () => {
     assert.deepEqual(mergeSyncableStates(null, { k: 1 }), { k: 1 });
     assert.equal(mergeValues(null, 3), 3);
     assert.equal(mergeValues(3, undefined), 3);
+});
+
+test('quiz des pays : le meilleur score de chaque réglage, l\'historique réuni sans doublon', () => {
+    const game = (at, form, score) => ({ at, form, zone: 'world', level: 'easy', length: 10, timer: 0, score, correct: 5, total: 10 });
+    const a = { v: 1, best: { 'qcm|world|easy|10|0': { score: 700, correct: 7, total: 10, at: 3 }, 'flag|world|easy|10|0': { score: 300, correct: 3, total: 10, at: 2 } },
+        history: [game(3, 'qcm', 700), game(2, 'flag', 300)] };
+    const b = { v: 1, best: { 'qcm|world|easy|10|0': { score: 900, correct: 9, total: 10, at: 5 }, 'map|world|easy|10|0': { score: 500, correct: 5, total: 10, at: 4 } },
+        history: [game(5, 'qcm', 900), game(4, 'map', 500), game(3, 'qcm', 700)] };
+    const merged = mergeSyncableStates({ [GEOQUIZ_KEY]: a }, { [GEOQUIZ_KEY]: b })[GEOQUIZ_KEY];
+    assert.equal(merged.best['qcm|world|easy|10|0'].score, 900, 'le meilleur des deux');
+    assert.equal(merged.best['flag|world|easy|10|0'].score, 300, 'un réglage d\'un seul côté est conservé');
+    assert.equal(merged.best['map|world|easy|10|0'].score, 500);
+    assert.deepEqual(merged.history.map(g => g.at), [5, 4, 3, 2], 'sans doublon, le plus récent d\'abord');
+    // Dans les deux sens.
+    assert.deepEqual(mergeGeoQuiz(b, a).best, merged.best);
+});
+
+test('quiz des pays : un seul côté, ou un côté abîmé, ne perd rien', () => {
+    const a = { v: 1, best: { 'qcm|world|easy|10|0': { score: 100, correct: 1, total: 10, at: 1 } }, history: [] };
+    assert.deepEqual(mergeGeoQuiz(a, undefined), a);
+    assert.deepEqual(mergeGeoQuiz(null, a), a);
+    const merged = mergeGeoQuiz(a, { best: 'x', history: 'y' });
+    assert.equal(merged.best['qcm|world|easy|10|0'].score, 100);
+    assert.deepEqual(merged.history, []);
+});
+
+test('quiz des pays : l\'historique est limité à 50 parties', () => {
+    const history = n => Array.from({ length: n }, (_, i) => ({ at: i + 1, form: 'qcm', score: 10 }));
+    const merged = mergeGeoQuiz({ v: 1, best: {}, history: history(40) }, { v: 1, best: {}, history: history(60).map(g => Object.assign({}, g, { at: g.at + 1000 })) });
+    assert.equal(merged.history.length, 50);
+    assert.equal(merged.history[0].at, 1060);
 });

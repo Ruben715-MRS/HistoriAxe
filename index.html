@@ -1486,20 +1486,57 @@
         </div>
     </div>
 
-    <!-- ÉCRAN : QUIZ DES PAYS (lancé depuis l'Atlas des pays — voir js/modes/geoquiz.js) -->
+    <!-- ÉCRAN : QUIZ DES PAYS (lancé depuis l'Atlas des pays ou la Salle de jeux — voir js/modes/geoquiz.js) -->
     <div id="screen-geoquiz" class="list-screen hidden">
         <button class="back-btn" onclick="geoQuizQuit()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
         <h2 class="header-title" data-i18n="geoquiz.title">Quiz des pays</h2>
         <p class="tool-msg" id="geoquiz-status" role="status"></p>
         <div id="geoquiz-menu" class="geoquiz-menu">
-            <p class="modes-header-subtitle" data-i18n="geoquiz.menu_intro">Dix questions sur les pays du monde. Choisissez la forme.</p>
-            <button type="button" class="btn" onclick="startGeoQuiz('easy')" data-i18n="geoquiz.menu_qcm">QCM : indices faciles</button>
-            <button type="button" class="btn" onclick="startGeoQuiz('hard')" data-i18n="geoquiz.menu_hard">QCM : indices difficiles</button>
-            <button type="button" class="btn" onclick="startGeoQuizFlag()" data-i18n="geoquiz.menu_flag">Drapeau → pays</button>
-            <button type="button" class="btn" onclick="startGeoQuizMap()" data-i18n="geoquiz.menu_map">Touchez le pays sur la carte</button>
+            <p class="modes-header-subtitle" data-i18n="geoquiz.menu_intro">Réglez la partie, puis choisissez une forme de jeu.</p>
+            <div class="geoquiz-settings">
+                <div class="geoquiz-setting" role="group" aria-labelledby="geoquiz-zone-title">
+                    <h3 class="geoquiz-setting-title" id="geoquiz-zone-title" data-i18n="geoquiz.zone_title">Zone</h3>
+                    <div class="geoquiz-chips" id="geoquiz-zone"></div>
+                </div>
+                <div class="geoquiz-setting" role="group" aria-labelledby="geoquiz-level-title">
+                    <h3 class="geoquiz-setting-title" id="geoquiz-level-title" data-i18n="geoquiz.level_title">Difficulté</h3>
+                    <div class="geoquiz-chips" id="geoquiz-level"></div>
+                    <p class="tool-small" id="geoquiz-level-hint"></p>
+                </div>
+                <div class="geoquiz-setting" role="group" aria-labelledby="geoquiz-length-title">
+                    <h3 class="geoquiz-setting-title" id="geoquiz-length-title" data-i18n="geoquiz.length_title">Nombre de questions</h3>
+                    <div class="geoquiz-chips" id="geoquiz-length"></div>
+                </div>
+                <div class="geoquiz-setting" role="group" aria-labelledby="geoquiz-timer-title">
+                    <h3 class="geoquiz-setting-title" id="geoquiz-timer-title" data-i18n="geoquiz.timer_title">Chrono</h3>
+                    <div class="geoquiz-chips" id="geoquiz-timer-choice"></div>
+                    <p class="tool-small" data-i18n="geoquiz.timer_hint"></p>
+                </div>
+            </div>
+            <h3 class="geoquiz-setting-title" data-i18n="geoquiz.form_title">Forme de jeu</h3>
+            <button type="button" class="btn" onclick="startGeoQuizForm('qcm')" data-i18n="geoquiz.menu_qcm">QCM</button>
+            <button type="button" class="btn" onclick="startGeoQuizForm('flag')" data-i18n="geoquiz.menu_flag">Drapeau → pays</button>
+            <button type="button" class="btn" onclick="startGeoQuizForm('map')" data-i18n="geoquiz.menu_map">Touchez le pays sur la carte</button>
+            <button type="button" class="btn" onclick="startGeoQuizForm('mix')" data-i18n="geoquiz.menu_mix">Panaché : toutes les formes mélangées</button>
+            <button type="button" class="btn geoquiz-secondary" onclick="geoQuizShowScores()" data-i18n="geoquiz.scores_btn">Mes scores</button>
+        </div>
+        <div id="geoquiz-scores" class="geoquiz-scores hidden">
+            <h3 class="geoquiz-setting-title" data-i18n="geoquiz.scores_records">Records par réglage</h3>
+            <ul class="geoquiz-list" id="geoquiz-records"></ul>
+            <h3 class="geoquiz-setting-title" data-i18n="geoquiz.scores_recent">Dernières parties</h3>
+            <ul class="geoquiz-list" id="geoquiz-recent"></ul>
+            <p class="tool-small" id="geoquiz-scores-none" data-i18n="geoquiz.scores_none"></p>
+            <button type="button" class="btn geoquiz-secondary" onclick="geoQuizShowMenu()" data-i18n="geoquiz.scores_back">Retour aux réglages</button>
         </div>
         <div id="geoquiz-play" class="geoquiz-play hidden">
-            <p class="tool-small" id="geoquiz-progress" aria-live="polite"></p>
+            <div class="geoquiz-head">
+                <p class="tool-small" id="geoquiz-progress" aria-live="polite"></p>
+                <p class="tool-small geoquiz-points" id="geoquiz-points"></p>
+            </div>
+            <div class="geoquiz-timer hidden" id="geoquiz-timer" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" aria-label="Temps restant" data-i18n-attr="aria-label:geoquiz.timer_label">
+                <span class="geoquiz-timer-fill" id="geoquiz-timer-fill"></span>
+                <span class="geoquiz-timer-text" id="geoquiz-timer-text"></span>
+            </div>
             <div id="geoquiz-qcm" class="geoquiz-qcm">
                 <div class="geoquiz-card">
                     <p class="geoquiz-ask" id="geoquiz-ask"></p>
@@ -1516,8 +1553,13 @@
         </div>
         <div id="geoquiz-end" class="geoquiz-end hidden">
             <p class="geoquiz-score" id="geoquiz-score" tabindex="-1" role="status"></p>
+            <p class="geoquiz-detail" id="geoquiz-detail"></p>
+            <p class="geoquiz-record" id="geoquiz-record"></p>
+            <h3 class="geoquiz-setting-title" id="geoquiz-errors-title"></h3>
+            <ul class="geoquiz-list geoquiz-errors" id="geoquiz-errors"></ul>
             <button type="button" class="btn" onclick="geoQuizReplay()" data-i18n="geoquiz.replay">Rejouer</button>
-            <button type="button" class="btn" onclick="geoQuizShowMenu()" data-i18n="geoquiz.back">Changer de forme</button>
+            <button type="button" class="btn hidden" id="geoquiz-replay-errors" onclick="geoQuizReplayErrors()" data-i18n="geoquiz.replay_errors">Rejouer mes erreurs</button>
+            <button type="button" class="btn geoquiz-secondary" onclick="geoQuizShowMenu()" data-i18n="geoquiz.back">Changer de réglage</button>
         </div>
         <p class="tool-small" data-i18n="geoquiz.credit"></p>
     </div>
@@ -3282,6 +3324,7 @@
     <script src="js/toolsCore.js"></script>
     <script src="js/countriesCore.js"></script>
     <script src="js/geoQuizCore.js"></script>
+    <script src="js/geoQuizSessionCore.js"></script>
     <script src="js/calendarYearCore.js"></script>
     <script src="js/app/tools.js"></script>
     <script src="js/app/countries.js"></script>

@@ -40,6 +40,12 @@ const REWARDS_KEY = 'historiaxe_rewards_v1';
 // L'équipe de classe rejointe ou créée ({ code, role: 'member' | 'teacher', name }) : synchronisée, pour qu'un élève
 // connecté à un compte retrouve son équipe sur tous ses appareils.
 const TEAM_KEY = 'historiaxe_team_v1';
+// Les records et l'historique du quiz des pays ({ v, best: { <réglage>: { score, correct, total, at } }, history: [parties] },
+// js/geoQuizSessionCore.js) : synchronisés avec le compte, fusionnés par mergeGeoQuiz. Les réglages de la dernière partie
+// (zone, difficulté, longueur, chrono) sont propres à l'appareil, hors de SYNC_KEYS.
+const GEOQUIZ_KEY = 'historiaxe_geoquiz_v1';
+const GEOQUIZ_PREFS_KEY = 'historiaxe_geoquiz_prefs_v1';
+const GEOQUIZ_HISTORY_MAX = 50;
 // Ce que Clio sait du joueur ({ greetedDate, introSeen, last: { <événement>: <dernière phrase> } }) : propre à l'appareil,
 // hors de SYNC_KEYS — une salutation par jour et par appareil, pas par compte.
 const CLIO_KEY = 'historiaxe_clio_v1';
@@ -47,7 +53,7 @@ const CLIO_KEY = 'historiaxe_clio_v1';
 // Clés dont le contenu est envoyé/reçu par la synchronisation cloud
 // (api/sync.js) — progression de jeu uniquement, jamais les préférences
 // d'affichage (SETTINGS_KEY), qui restent propres à chaque appareil.
-const SYNC_KEYS = [SRS_KEY, PROGRESS_KEY, FAVORITES_KEY, CUSTOM_THEMES_KEY, CUSTOM_EVENTS_KEY, STREAK_KEY, GAMIFICATION_KEY, WEEKLY_CHALLENGE_STREAK_KEY, PATH_PROGRESS_KEY, REWARDS_KEY, TEAM_KEY];
+const SYNC_KEYS = [SRS_KEY, PROGRESS_KEY, FAVORITES_KEY, CUSTOM_THEMES_KEY, CUSTOM_EVENTS_KEY, STREAK_KEY, GAMIFICATION_KEY, WEEKLY_CHALLENGE_STREAK_KEY, PATH_PROGRESS_KEY, REWARDS_KEY, TEAM_KEY, GEOQUIZ_KEY];
 
 const DEFAULT_SETTINGS = {
     orientation: 'auto',
@@ -235,6 +241,27 @@ function rewardsLoad() {
 
 function rewardsSave(state) {
     try { localStorage.setItem(REWARDS_KEY, JSON.stringify(state)); } catch (e) {}
+}
+
+// --- QUIZ DES PAYS (records, historique, réglages) ---
+function geoQuizStateLoad() {
+    var raw = null;
+    try { raw = JSON.parse(localStorage.getItem(GEOQUIZ_KEY)); } catch (e) { raw = null; }
+    return typeof GeoQuizSessionCore !== 'undefined' ? GeoQuizSessionCore.normalizeState(raw) : (raw || {});
+}
+
+function geoQuizStateSave(state) {
+    try { localStorage.setItem(GEOQUIZ_KEY, JSON.stringify(state)); } catch (e) {}
+}
+
+function geoQuizPrefsLoad() {
+    var raw = null;
+    try { raw = JSON.parse(localStorage.getItem(GEOQUIZ_PREFS_KEY)); } catch (e) { raw = null; }
+    return typeof GeoQuizSessionCore !== 'undefined' ? GeoQuizSessionCore.normalizePrefs(raw) : (raw || {});
+}
+
+function geoQuizPrefsSave(prefs) {
+    try { localStorage.setItem(GEOQUIZ_PREFS_KEY, JSON.stringify(prefs)); } catch (e) {}
 }
 
 // --- CLIO (mascotte) ---
@@ -746,6 +773,33 @@ function mergeStreaks(a, b, dateField) {
     return out;
 }
 
+// Quiz des pays : pour chaque réglage, le meilleur score des deux appareils ; l'historique réuni (une partie jouée sur les deux n'est
+// comptée qu'une fois), le plus récent d'abord, GEOQUIZ_HISTORY_MAX parties au plus.
+function mergeGeoQuiz(a, b) {
+    if (!isPlainObject(a)) return b;
+    if (!isPlainObject(b)) return a;
+    const best = {};
+    [a.best, b.best].forEach(src => {
+        if (!isPlainObject(src)) return;
+        Object.keys(src).forEach(k => {
+            const e = src[k];
+            if (isPlainObject(e) && typeof e.score === 'number' && (!best[k] || e.score > best[k].score)) best[k] = e;
+        });
+    });
+    const seen = new Set();
+    const history = [].concat(Array.isArray(a.history) ? a.history : [], Array.isArray(b.history) ? b.history : [])
+        .filter(g => isPlainObject(g) && typeof g.at === 'number')
+        .filter(g => {
+            const id = g.at + '|' + g.form + '|' + g.score;
+            if (seen.has(id)) return false;
+            seen.add(id);
+            return true;
+        })
+        .sort((x, y) => y.at - x.at)
+        .slice(0, GEOQUIZ_HISTORY_MAX);
+    return { v: 1, best, history };
+}
+
 function mergeSyncableStates(local, cloud) {
     local = isPlainObject(local) ? local : {};
     cloud = isPlainObject(cloud) ? cloud : {};
@@ -753,6 +807,7 @@ function mergeSyncableStates(local, cloud) {
     new Set([...Object.keys(local), ...Object.keys(cloud)]).forEach(key => {
         if (key === STREAK_KEY) out[key] = mergeStreaks(local[key], cloud[key], 'lastPlayedDate');
         else if (key === WEEKLY_CHALLENGE_STREAK_KEY) out[key] = mergeStreaks(local[key], cloud[key], 'lastPlayedWeek');
+        else if (key === GEOQUIZ_KEY) out[key] = mergeGeoQuiz(local[key], cloud[key]);
         else out[key] = mergeValues(local[key], cloud[key]);
     });
     return out;
@@ -772,6 +827,8 @@ function resetAllGameData() {
     try { localStorage.removeItem(REWARDS_KEY); } catch (e) {}
     try { localStorage.removeItem(TEAM_KEY); } catch (e) {}
     try { localStorage.removeItem(CLIO_KEY); } catch (e) {}
+    try { localStorage.removeItem(GEOQUIZ_KEY); } catch (e) {}
+    try { localStorage.removeItem(GEOQUIZ_PREFS_KEY); } catch (e) {}
     try { localStorage.removeItem(GAMIFICATION_KEY); } catch (e) {}
     try { localStorage.removeItem(LAST_THEME_KEY); } catch (e) {}
 }
@@ -785,6 +842,6 @@ if (typeof module === 'object' && typeof module.exports === 'object') {
         getIsoWeekString, getLocalDateString, getDaysDifference, getTodayStringUTC,
         DEFAULT_SETTINGS, ROUND_LENGTH_CHOICES, resolveRoundLength, roundLengthChoicesFor,
         activeRoundLengthChoice, mergeSyncableStates, mergeValues, mergeStreaks,
-        STREAK_KEY, WEEKLY_CHALLENGE_STREAK_KEY
+        STREAK_KEY, WEEKLY_CHALLENGE_STREAK_KEY, GEOQUIZ_KEY, mergeGeoQuiz
     };
 }
