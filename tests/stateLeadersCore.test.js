@@ -90,8 +90,27 @@ test('chefs d’État : les régimes parlementaires ont aussi la liste des chefs
         });
     });
     assert.strictEqual(S.rowsOf('royaume_uni', 'gouvernement')[0].row.name, 'Robert Walpole');
-    assert.ok(!S.hasGovernment('france'), 'la France (semi-présidentielle) n’a pas ce mode');
+    assert.ok(S.hasGovernment('france'), 'la France a le mode « Premier ministre »');
     // Par défaut, on obtient les chefs d’État.
     assert.strictEqual(S.rowsOf('royaume_uni')[0].row.name, 'Jacques Ier (Jacques VI d’Écosse)');
     assert.ok(S.noteOf('royaume_uni', 'gouvernement').startsWith('Premiers ministres'));
+});
+
+test('premiers ministres français : chaque ligne donne le chef de l\'État en fonction, et le bouton dit « Premier ministre »', () => {
+    const gov = S.COUNTRIES.france.gouvernement;
+    assert.equal(S.govModeKey('france'), 'leaders_mode_pm');
+    assert.equal(S.govModeKey('royaume_uni'), 'leaders_mode_gouv');
+    const heads = new Set(S.COUNTRIES.france.rows.map(r => r[2]));
+    assert.ok(gov.rows.length > 100, 'de la IIIe République à aujourd\'hui');
+    for (const r of gov.rows) {
+        assert.ok(r[6], `${r[2]} : seconde ligne absente`);
+        const m = r[6].match(/^Président de la République : (.+)$/);
+        if (m) assert.ok(heads.has(m[1]), `${r[2]} : « ${m[1]} » n'est pas un chef de l'État de la liste`);
+    }
+});
+
+test('premiers ministres français : la seconde ligne s\'affiche à la place de la fonction', () => {
+    const rows = S.rowsOf('france', 'gouvernement').map(it => it.row);
+    assert.equal(rows[0].sub, 'Président de la République : Jules Grévy');
+    assert.equal(rows[0].name, 'William Waddington');
 });
