@@ -96,7 +96,8 @@
                 [2019, 2022, "Boris Johnson", "Premier ministre", "premiers"],
                 [2022, 2022, "Liz Truss", "Première ministre", "premiers"],
                 [2022, 2024, "Rishi Sunak", "Premier ministre", "premiers"],
-                [2024, null, "Keir Starmer", "Premier ministre", "premiers"]
+                [2024, 2026, "Keir Starmer", "Premier ministre", "premiers"],
+                [2026, null, "Andy Burnham", "Premier ministre, en fonction depuis le 20 juillet 2026 (à vérifier)", "premiers"]
             ]
         },
 
