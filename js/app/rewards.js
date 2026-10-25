@@ -335,7 +335,7 @@ function rewardsFillCardFace(el, card, item) {
     img.width = 120; img.height = 150;
     img.decoding = 'async';
     const image = item ? portraitOf(item.event) : null;
-    if (image) { img.src = image.src; img.onerror = () => img.classList.add('hidden'); el.querySelector('.card-portrait').appendChild(img); }
+    if (image) { img.src = portraitUrl(image); img.onerror = () => img.classList.add('hidden'); el.querySelector('.card-portrait').appendChild(img); }
     el.querySelector('.card-name').innerText = rewardsCardName(item);
     el.querySelector('.card-date').innerText = item ? formatYear(item.event.date) : '';
     el.querySelector('.card-rarity').innerText = '★'.repeat({ commune: 1, rare: 2, legendaire: 3 }[card.rarity] || 1) + ' ' + t('rewards.rarity.' + card.rarity);

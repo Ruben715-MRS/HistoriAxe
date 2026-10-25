@@ -7,6 +7,11 @@ const path = require('path');
 // uniquement sur celle où il a été écrit.
 const projectDir = path.resolve(__dirname, '..');
 const wwwDir = path.join(projectDir, 'www');
+const isNativeBuild = process.argv.includes('--native');
+
+// Les portraits (assets/portraits/, ~113 Mo) ne sont pas dans le paquet de l'app native : le joueur les
+// télécharge depuis le site (réglages, js/portraits.js). Le build web les garde, il sert le site tel quel.
+const nativeOnlySkip = new Set(isNativeBuild ? [path.join(projectDir, 'assets', 'portraits')] : []);
 
 console.log('Building web bundle into www/...');
 if (!fs.existsSync(wwwDir)) {
@@ -23,7 +28,7 @@ const bundleSkip = new Set(
 );
 
 function copyRecursiveSync(src, dest) {
-    if (bundleSkip.has(src)) return;
+    if (bundleSkip.has(src) || nativeOnlySkip.has(src)) return;
     const exists = fs.existsSync(src);
     const stats = exists && fs.statSync(src);
     const isDirectory = exists && stats.isDirectory();
@@ -79,7 +84,6 @@ itemsToCopy.forEach(item => {
 // `--native` (scripts cap:*) refuse de construire sans elle ; le build web
 // (Vercel) n'en a pas besoin, la PWA appelle son propre domaine.
 const apiBase = (process.env.HISTORIAXE_API_BASE_URL || '').trim().replace(/\/+$/, '');
-const isNativeBuild = process.argv.includes('--native');
 if (apiBase) {
     let validBase = false;
     try { validBase = new URL(apiBase).protocol === 'https:' && !/['"\\\s]/.test(apiBase); } catch (e) { /* URL invalide */ }

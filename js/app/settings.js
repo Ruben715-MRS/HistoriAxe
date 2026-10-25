@@ -6,6 +6,7 @@ function openSettings() {
     if (typeof triggerHaptic === 'function') triggerHaptic('light');
     renderSettingsUI();
     if (typeof renderAccountSettings === 'function') renderAccountSettings();
+    if (typeof renderPortraitPackSettings === 'function') renderPortraitPackSettings();
     const modal = document.getElementById('modal-settings');
     if (modal) modal.classList.remove('hidden');
 }

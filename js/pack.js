@@ -39,6 +39,11 @@
         return { themeOfEvent: themeOfEvent, themes: themes };
     }
 
+    // Langues qui ont un pack découpé (data/pack/<lang>/, voir scripts/build_pack.js). Pour les autres, on ne
+    // demande pas de manifeste : le navigateur journaliserait un 404 à chaque bascule vers cette langue.
+    // tests/pack.test.js vérifie que la liste reste celle des dossiers de data/pack/.
+    var SPLIT_PACK_LANGS = ['fr'];
+
     function url(lang, rel, h) {
         return 'data/pack/' + lang + '/' + rel + (h ? '?v=' + h : '');
     }
@@ -49,6 +54,7 @@
         fetchFn = fetchFn || (typeof fetch === 'function' ? fetch.bind(null) : null);
         if (!fetchFn) return null;
         var manifestRes;
+        if (SPLIT_PACK_LANGS.indexOf(lang) === -1) return null;
         try { manifestRes = await fetchFn(url(lang, 'manifest.json')); } catch (e) { return null; }
         if (!manifestRes || !manifestRes.ok) return null;
         var manifest = await manifestRes.json();
@@ -131,6 +137,6 @@
     return {
         load: load, isSplit: isSplit, needsDescription: needsDescription,
         ensureDescriptions: ensureDescriptions, prefetchAll: prefetchAll,
-        indexCategories: indexCategories, reset: reset
+        indexCategories: indexCategories, reset: reset, splitPackLangs: SPLIT_PACK_LANGS
     };
 }));

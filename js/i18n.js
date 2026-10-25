@@ -373,3 +373,22 @@ class I18nManager {
 
 const i18n = new I18nManager();
 const t = (key, params) => i18n.t(key, params);
+
+// Au premier lancement, propose le pack de la langue du téléphone (ou l'anglais si l'app ne la connaît
+// pas) : une fois par appareil, et seulement en ligne. Le texte de la question est lu dans la langue
+// proposée (ui/<lang>.json, petit fichier) : le pack n'est pas encore installé.
+async function offerPhoneLanguagePack() {
+    const codes = AVAILABLE_LANGUAGES.map(l => l.code);
+    const target = suggestedPackLanguage(navigator.language, codes, i18n.installedLanguages, langSuggestedLoad());
+    if (!target || !navigator.onLine) return;
+    langSuggestedSave(target); // une seule proposition, acceptée ou non
+    let strings = null;
+    try {
+        const res = await fetch('ui/' + target + '.json');
+        if (res.ok) strings = await res.json();
+    } catch (e) { /* texte de repli en français ci-dessous */ }
+    const text = (key, fallback) => (strings && strings.settings && strings.settings[key]) || fallback;
+    showConfirm(text('lang_suggest_ask', 'Télécharger le pack de langue ?'), async () => {
+        if (await i18n.downloadLanguagePack(target)) await i18n.loadLanguage(target, true);
+    }, { okLabel: text('lang_suggest_yes', 'Télécharger'), cancelLabel: text('lang_suggest_no', 'Plus tard') });
+}

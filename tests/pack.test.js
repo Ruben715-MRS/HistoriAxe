@@ -113,3 +113,10 @@ test('prefetchAll réchauffe le cache sans garder les fiches en mémoire', async
     assert.equal(counter.n - before, done);
     assert.equal([...themesOf(loaded.categories[0])][0].events[0].description, undefined);
 });
+
+test('Pack.splitPackLangs : les langues à pack découpé sont exactement les dossiers de data/pack/', () => {
+    const dirs = fs.readdirSync(path.join(__dirname, '..', 'data', 'pack'))
+        .filter((d) => fs.statSync(path.join(__dirname, '..', 'data', 'pack', d)).isDirectory())
+        .sort();
+    assert.deepEqual([...Pack.splitPackLangs].sort(), dirs);
+});

@@ -71,6 +71,10 @@ window.onload = async () => {
         initCategories();
     }
 
+    // Pack de la langue du téléphone, proposé une fois (voir offerPhoneLanguagePack). Un peu après le premier
+    // écran, pour ne pas le couvrir.
+    setTimeout(offerPhoneLanguagePack, 1500);
+
     // Retour d'une connexion (Google, lien reçu par e-mail) : Auth s'occupe de la synchronisation.
     const authRedirect = typeof Auth !== 'undefined' && Auth.init();
     if (!authRedirect) syncOnAppStart();

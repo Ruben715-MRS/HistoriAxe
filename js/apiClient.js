@@ -31,6 +31,13 @@ var HistoriAxeAPI = (function () {
     }
 
     var API_BASE = detectApiBase();
+
+    // Adresse d'une ressource du site, comme assets/portraits/*.jpg. Le paquet de l'app native ne les
+    // contient pas (scripts/build.js) : elles viennent alors du backend, comme les appels à l'API.
+    function assetUrl(path) {
+        var isCapacitor = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
+        return isCapacitor && NATIVE_APP_API_BASE_URL ? NATIVE_APP_API_BASE_URL + '/' + path : path;
+    }
     var TIMEOUT_MS = 8000;
 
     function withTimeout(promise, ms) {
@@ -131,6 +138,7 @@ var HistoriAxeAPI = (function () {
         // le web (déjà le bon domaine) que depuis l'app native (qui n'a pas
         // d'origine https utilisable pour un lien, voir NATIVE_APP_API_BASE_URL).
         getApiBase: function () { return API_BASE; },
+        assetUrl: assetUrl,
         pullProgress: function (deviceId) {
             return request('GET', '/api/sync' + qs({ deviceId: deviceId }));
         },

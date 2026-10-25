@@ -17,6 +17,11 @@
 //    déjà de qui il s'agit, et la légende complète est dans la fiche.
 const PORTRAIT_SRC_PATTERN = /^assets\/portraits\/[A-Za-z0-9_.-]+\.jpg$/;
 
+// Adresse à donner à un <img> (voir HistoriAxe.assetUrl : l'app native charge les portraits depuis le backend).
+function portraitUrl(image) {
+    return HistoriAxeAPI.assetUrl(image.src);
+}
+
 function portraitOf(evt) {
     const image = evt && evt.image;
     return image && PORTRAIT_SRC_PATTERN.test(image.src || '') ? image : null;
@@ -33,7 +38,7 @@ function setPortraitImg(imgEl, evt) {
         return;
     }
     imgEl.onerror = () => imgEl.classList.add('hidden');
-    imgEl.src = image.src;
+    imgEl.src = portraitUrl(image);
     imgEl.classList.remove('hidden');
 }
 
@@ -47,7 +52,7 @@ function createPortraitThumb(evt, className) {
     img.decoding = 'async';
     img.loading = 'lazy';
     img.addEventListener('error', () => img.remove(), { once: true });
-    img.src = image.src;
+    img.src = portraitUrl(image);
     return img;
 }
 
@@ -118,7 +123,7 @@ function renderModalPortrait(evt) {
     // alt vide : la légende juste dessous dit tout, la répéter ferait lire
     // deux fois la même phrase aux lecteurs d'écran.
     img.alt = '';
-    img.src = image.src;
+    img.src = portraitUrl(image);
     document.getElementById('modal-portrait-caption').textContent = image.legende || '';
     fillPortraitCredit(document.getElementById('modal-portrait-credit'), image);
     figure.classList.remove('hidden');

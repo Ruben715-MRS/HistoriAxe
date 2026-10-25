@@ -933,6 +933,23 @@ défier directement, comparer les progressions.
 **Limite des fonctions serverless.** Avec `api/friends.js`, le dossier `api/` compte **12 fonctions** — le maximum de
 l'offre gratuite de Vercel : un nouvel endpoint demande de regrouper des routes existantes (ou de changer d'offre).
 
+## Portraits hors ligne et langue du téléphone
+
+Les portraits (`assets/portraits/`, environ 113 Mo) ne sont pas dans le paquet de
+l'app native (`node scripts/build.js --native`) : ils viennent du site, et le joueur
+peut les télécharger en bloc depuis les réglages (`js/portraits.js`, cache
+`PORTRAIT_CACHE` partagé avec `sw.js`). La liste `assets/portraits.json` est générée
+par `node scripts/build_portraits_manifest.js` : relancez-la après tout ajout ou
+suppression de portrait (le test `tests/portraits.test.js` signale une liste périmée).
+Le site autorise leur lecture cross-origin (`vercel.json`), pour l'app native.
+
+Au premier lancement, si la langue du téléphone a un pack, l'app le propose une
+seule fois (`suggestedPackLanguage`, `js/storage.js`) ; sinon elle propose l'anglais.
+Le texte de la question est lu dans la langue proposée (`ui/<lang>.json`).
+
+**Non vérifié sur iPhone** : le téléchargement passe par l'API Cache dans la WebView
+de Capacitor, qui n'a pas été testée sur un appareil réel.
+
 ## Historique des parties (comptes)
 
 Pour un joueur connecté (e-mail, Google), chaque partie terminée est enregistrée

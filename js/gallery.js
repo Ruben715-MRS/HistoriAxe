@@ -414,7 +414,7 @@ function buildGalleryCard(entry, locked = false) {
     // Un portrait qui ne charge pas laisse le cadre vide plutôt que l'icône
     // « image cassée » (même règle que createPortraitThumb).
     img.addEventListener('error', () => img.remove(), { once: true });
-    img.src = portraitOf(entry.evt).src;
+    img.src = portraitUrl(portraitOf(entry.evt));
     frame.appendChild(img);
     // Biographie disponible : une pastille dans l'angle de la photo, sans rien ajouter à la mise en
     // page — une carte sans biographie garde exactement le même gabarit.

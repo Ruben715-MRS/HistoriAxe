@@ -74,6 +74,11 @@ const test = base.test.extend({
                     localStorage.setItem('historiaxe_settings', JSON.stringify(settings));
                 }
             } catch (e) { /* idem */ }
+            // Le navigateur de test est en anglais : sans ce choix déjà fait, la proposition du pack anglais
+            // couvrirait l'écran de chaque test (voir offerPhoneLanguagePack, js/i18n.js).
+            try {
+                if (!localStorage.getItem('historiaxe_lang_suggested_v1')) localStorage.setItem('historiaxe_lang_suggested_v1', 'en');
+            } catch (e) { /* idem */ }
         });
 
         await page.goto('/index.html');

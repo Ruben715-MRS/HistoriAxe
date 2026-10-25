@@ -438,6 +438,7 @@ function showConfirm(message, onConfirm, options = {}) {
     const alertOnly = !!options.alertOnly;
     cancelBtn.classList.toggle('hidden', alertOnly);
     okBtn.innerText = options.okLabel || (alertOnly ? t('nav.understood') : t('nav.quit'));
+    if (options.cancelLabel) cancelBtn.innerText = options.cancelLabel;
     const cleanup = () => {
         modal.classList.add('hidden');
         okBtn.onclick = null;

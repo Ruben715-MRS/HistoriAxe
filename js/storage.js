@@ -13,6 +13,8 @@ const STREAK_KEY = 'historiaxe_streak_v1';
 const GAMIFICATION_KEY = 'historiaxe_gamification_v1';
 const LANG_KEY = 'historiaxe_language_v1';
 const INSTALLED_LANGS_KEY = 'historiaxe_installed_languages_v1';
+// Langue dont le pack a déjà été proposé à cet appareil (voir suggestedPackLanguage). Une seule proposition.
+const LANG_SUGGESTED_KEY = 'historiaxe_lang_suggested_v1';
 const DEVICE_ID_KEY = 'historiaxe_device_id_v1';
 const PSEUDO_KEY = 'historiaxe_pseudo_v1';
 const ONBOARDING_KEY = 'historiaxe_onboarding_v1';
@@ -850,6 +852,25 @@ function mergeSyncableStates(local, cloud) {
     return out;
 }
 
+// --- PROPOSITION DU PACK DE LA LANGUE DU TÉLÉPHONE (premier lancement, voir js/i18n.js) ---
+// navLang : la langue du téléphone (« pt-BR », « en-US »…). availableCodes : les langues proposables par l'app.
+// Renvoie le code à proposer, ou null : rien pour le français (langue de base), un pack déjà installé, ou une
+// langue déjà proposée. Une langue du téléphone absente de l'app propose l'anglais.
+function suggestedPackLanguage(navLang, availableCodes, installedLanguages, alreadySuggested) {
+    const code = String(navLang || '').toLowerCase().split('-')[0];
+    const target = availableCodes.includes(code) ? code : 'en';
+    if (target === 'fr' || installedLanguages.includes(target) || alreadySuggested === target) return null;
+    return target;
+}
+
+function langSuggestedLoad() {
+    try { return localStorage.getItem(LANG_SUGGESTED_KEY) || null; } catch (e) { return null; }
+}
+
+function langSuggestedSave(code) {
+    try { localStorage.setItem(LANG_SUGGESTED_KEY, code); } catch (e) {}
+}
+
 // --- FILE D'ATTENTE DE L'HISTORIQUE DES PARTIES (comptes, voir js/app/session-end.js) ---
 // Chaque partie terminée y entre avant d'être envoyée, et n'en sort qu'à la confirmation du serveur :
 // une partie jouée hors ligne n'est pas perdue. Entrées : { owner: e-mail du compte, game }. Propre à
@@ -911,6 +932,7 @@ if (typeof module === 'object' && typeof module.exports === 'object') {
         DEFAULT_SETTINGS, ROUND_LENGTH_CHOICES, resolveRoundLength, roundLengthChoicesFor,
         activeRoundLengthChoice, mergeSyncableStates, mergeValues, mergeStreaks,
         STREAK_KEY, WEEKLY_CHALLENGE_STREAK_KEY, GEOQUIZ_KEY, mergeGeoQuiz,
-        historyOutboxWith, historyOutboxWithout, HISTORY_OUTBOX_MAX
+        historyOutboxWith, historyOutboxWithout, HISTORY_OUTBOX_MAX,
+        suggestedPackLanguage
     };
 }

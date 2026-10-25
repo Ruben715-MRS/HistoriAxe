@@ -211,7 +211,7 @@ function whoRender() {
         const image = portraitOf(q.event);
         const img = document.getElementById('who-portrait-img');
         img.alt = g.resolved ? q.name : t('whois.portrait_alt');
-        img.src = image.src;
+        img.src = portraitUrl(image);
         fillPortraitCredit(document.getElementById('who-portrait-credit'), image);
     }
 
