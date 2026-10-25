@@ -2231,7 +2231,7 @@
   },
   "geoquiz": {
     "title": "Country quiz",
-    "start": "Practise: country quiz",
+    "start": "Country quiz: practise",
     "ask_name": "Which country is this?",
     "ask_cap": "What is the capital of this country?",
     "ask_cur": "What is the currency of this country?",
@@ -2254,13 +2254,19 @@
     "finish": "See the score",
     "score": "Score: {score} out of {total}",
     "replay": "Play again",
-    "back": "Back to the atlas",
+    "back": "Change quiz type",
     "none": "Not enough countries for a game.",
     "credit": "The data is the Atlas des pays data: to be checked by a teacher. Nothing is saved.",
-    "map_start": "Touch the country on the map",
     "map_label": "World map: touch the country asked for",
     "locate_ask": "Touch on the map: {name}",
     "locate_right": "Well placed: {answer}.",
-    "locate_wrong": "Missed: it was {answer}, about {km} km from its centre."
+    "locate_wrong": "Missed: it was {answer}, about {km} km from its centre.",
+    "menu_intro": "Ten questions about the world's countries. Choose a quiz type.",
+    "menu_qcm": "Multiple choice: easy clues",
+    "menu_hard": "Multiple choice: hard clues",
+    "menu_flag": "Flag → country",
+    "menu_map": "Touch the country on the map",
+    "arcade_desc": "Capitals, currencies, flags and maps of the world's countries.",
+    "clue_flag": "Flag"
   }
 }

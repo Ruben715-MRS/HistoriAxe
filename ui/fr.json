@@ -2254,7 +2254,7 @@
   },
   "geoquiz": {
     "title": "Quiz des pays",
-    "start": "S'entraîner : quiz des pays",
+    "start": "Quiz des pays : s'entraîner",
     "ask_name": "Quel est ce pays ?",
     "ask_cap": "Quelle est la capitale de ce pays ?",
     "ask_cur": "Quelle est la monnaie de ce pays ?",
@@ -2277,13 +2277,19 @@
     "finish": "Voir le score",
     "score": "Score : {score} sur {total}",
     "replay": "Rejouer",
-    "back": "Retour à l'atlas",
+    "back": "Changer de forme",
     "none": "Pas assez de pays pour une partie.",
     "credit": "Les données sont celles de l'Atlas des pays : à relire par un enseignant. Rien n'est enregistré.",
-    "map_start": "Touchez le pays sur la carte",
     "map_label": "Carte du monde : touchez le pays demandé",
     "locate_ask": "Touchez sur la carte : {name}",
     "locate_right": "Bien placé : {answer}.",
-    "locate_wrong": "Raté : c'était {answer}, à environ {km} km de son centre."
+    "locate_wrong": "Raté : c'était {answer}, à environ {km} km de son centre.",
+    "menu_intro": "Dix questions sur les pays du monde. Choisissez la forme de quiz.",
+    "menu_qcm": "QCM : indices faciles",
+    "menu_hard": "QCM : indices difficiles",
+    "menu_flag": "Drapeau → pays",
+    "menu_map": "Touchez le pays sur la carte",
+    "arcade_desc": "Capitales, monnaies, drapeaux et cartes des pays du monde.",
+    "clue_flag": "Drapeau"
   }
 }

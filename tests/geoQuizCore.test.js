@@ -147,7 +147,7 @@ test('textes : chaque type de question et d\'indice a son libellé, en français
         const ui = JSON.parse(fs.readFileSync(path.join(root, 'ui', lang + '.json'), 'utf8')).geoquiz;
         for (const ask of Q.ASK_KEYS) assert.ok(ui['ask_' + ask], `${lang} : geoquiz.ask_${ask}`);
         for (const key of Q.CLUE_KEYS) assert.ok(ui['clue_' + key], `${lang} : geoquiz.clue_${key}`);
-        for (const key of ['title', 'start', 'progress', 'right', 'wrong', 'next', 'finish', 'score', 'replay', 'back', 'none', 'credit', 'pop_label', 'map_start', 'map_label', 'locate_ask', 'locate_right', 'locate_wrong']) {
+        for (const key of ['title', 'start', 'progress', 'right', 'wrong', 'next', 'finish', 'score', 'replay', 'back', 'none', 'credit', 'pop_label', 'map_label', 'locate_ask', 'locate_right', 'locate_wrong', 'menu_intro', 'menu_qcm', 'menu_hard', 'menu_flag', 'menu_map', 'arcade_desc', 'clue_flag']) {
             assert.ok(ui[key], `${lang} : geoquiz.${key}`);
         }
     }
@@ -178,4 +178,20 @@ test('touche le pays : questions sans options, un pays chacune, distinctes', () 
         assert.deepEqual(q.options, []);
         assert.equal(q.clues[0].value, pool.find(c => c.id === q.target).n);
     }
+});
+
+test('drapeau : un indice emoji, et le mode drapeau ne donne que cet indice', () => {
+    assert.deepEqual(Q.clueValues({ iso2: 'FR' }, 'flag'), ['🇫🇷']);
+    assert.deepEqual(Q.clueValues({ iso2: '' }, 'flag'), []);
+    const qs = Q.generateQuestions(pool, { count: 60, asks: ['name'], clues: ['flag'], rng: seeded(31) });
+    assert.ok(qs.length >= 55, `${qs.length} questions`);
+    for (const q of qs) {
+        assert.deepEqual(q.clues.map(c => c.key), ['flag']);
+        assert.equal(Q.isValid(q, pool), true);
+    }
+});
+
+test('indices restreints : le quiz général n\'utilise jamais le drapeau', () => {
+    const qs = Q.generateQuestions(pool, { count: 100, rng: seeded(8) });
+    for (const q of qs) assert.equal(q.clues.some(c => c.key === 'flag'), false);
 });

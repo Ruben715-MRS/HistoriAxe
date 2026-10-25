@@ -33,6 +33,8 @@
     var NO_CONTINENT = 'Antarctique';
     // Indices possibles. « name » (le nom du pays) sert aux questions « pays → capitale », « pays → monnaie »…
     var CLUE_KEYS = ['name', 'cap', 'cur', 'lang', 'sub', 'cont', 'fete'];
+    // Le drapeau (emoji) n'est pas un indice du quiz général : seul le mode « drapeau → pays » le demande (opts.clues).
+    var FLAG_CLUE = 'flag';
     // Réponses possibles. La population n'est pas un indice : elle ne désigne rien par égalité.
     var ASK_KEYS = ['name', 'cap', 'cur', 'sub', 'cont', 'pop', 'fete'];
     var DEFAULTS = { count: 10, options: 4, maxClues: 3, difficulty: 'easy' };
@@ -70,12 +72,19 @@
         return text && !namesCountry(text, country) ? text : null;
     }
 
+    // Le drapeau est un emoji : deux lettres « indicateur régional » (FR → 🇫🇷). Null si le code manque.
+    function flagOf(country) {
+        var code = String(country.iso2 || '').toUpperCase();
+        if (!/^[A-Z]{2}$/.test(code)) return null;
+        return String.fromCodePoint(0x1F1E6 + code.charCodeAt(0) - 65, 0x1F1E6 + code.charCodeAt(1) - 65);
+    }
+
     // Les valeurs qu'un pays présente pour un indice : une seule, sauf pour les langues (« néerlandais, papiamento »).
     function clueValues(country, key) {
         if (key === 'lang') {
             return String(country.lang || '').split(',').map(function (l) { return l.trim(); }).filter(known);
         }
-        var value = key === 'name' ? country.n : key === 'fete' ? nationalDay(country) : known(country[key]);
+        var value = key === 'name' ? country.n : key === 'fete' ? nationalDay(country) : key === FLAG_CLUE ? flagOf(country) : known(country[key]);
         return value ? [value] : [];
     }
 
@@ -123,7 +132,7 @@
 
     function settings(opts) {
         var src = opts || {};
-        var o = { rng: src.rng || Math.random, ask: src.ask, asks: src.asks };
+        var o = { rng: src.rng || Math.random, ask: src.ask, asks: src.asks, clues: src.clues };
         Object.keys(DEFAULTS).forEach(function (k) { o[k] = src[k] != null ? src[k] : DEFAULTS[k]; });
         return o;
     }
@@ -185,7 +194,8 @@
     // Les indices qui désignent `target` seul, parmi les réponses possibles ; null si le tirage n'y arrive pas.
     function cluesFor(target, pool, o, answer) {
         var clues = [];
-        var keys = shuffle(CLUE_KEYS.filter(function (k) { return k !== o.ask; }), o.rng);
+        var allowed = o.clues || CLUE_KEYS;
+        var keys = shuffle(allowed.filter(function (k) { return k !== o.ask; }), o.rng);
         for (var i = 0; i < keys.length && clues.length < o.maxClues; i++) {
             var values = clueValues(target, keys[i]);
             if (!values.length) continue;
@@ -208,7 +218,7 @@
         for (var i = 0; i < targets.length && questions.length < o.count; i++) {
             var order = shuffle(asks, o.rng);
             for (var j = 0; j < order.length; j++) {
-                var question = buildQuestion(targets[i], pool, { ask: order[j], options: o.options, maxClues: o.maxClues, difficulty: o.difficulty, rng: o.rng });
+                var question = buildQuestion(targets[i], pool, { ask: order[j], options: o.options, maxClues: o.maxClues, difficulty: o.difficulty, clues: o.clues, rng: o.rng });
                 if (question) { questions.push(question); break; }
             }
         }

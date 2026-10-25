@@ -1,8 +1,9 @@
 // =========================================================================
 // === LE QUIZ DES PAYS (écran de jeu, lancé depuis l'Atlas des pays) ===
 // =========================================================================
-// Deux formes, un même écran et un même score :
-//   - QCM : un ou deux indices (capitale, monnaie…), quatre réponses (startGeoQuiz) ;
+// Un menu (openGeoQuizMenu) puis quatre formes, un même écran et un même score :
+//   - QCM : un ou deux indices (capitale, monnaie…), quatre réponses ; facile ou difficile (startGeoQuiz) ;
+//   - « Drapeau → pays » : un drapeau, quatre noms (startGeoQuizFlag) ;
 //   - « Touche le pays » : le nom d'un pays, et une carte du monde à toucher (startGeoQuizMap).
 // Les questions viennent de GeoQuizCore (js/geoQuizCore.js). Pas de vies ni de chrono : c'est un entraînement. Rien n'est
 // enregistré, rien ne part vers le classement. Les données sont celles de countriesData (js/app/countries.js).
@@ -17,7 +18,9 @@ const GEOQUIZ_FILL = { light: '#dfe6ee', dark: '#334155' };
 const GEOQUIZ_TARGET = { light: '#f59e0b', dark: '#f2c14e' };
 const GEOQUIZ_WORLD = [[-170, -58], [190, 78]];
 
-let geoQuizMode = 'qcm';          // 'qcm' | 'map'
+let geoQuizMode = 'qcm';          // 'qcm' | 'flag' | 'map'
+let geoQuizDifficulty = 'easy';   // pour le QCM : 'easy' | 'hard'
+let geoQuizReturn = 'screen-tool-countries';   // l'écran où le menu a été ouvert (Atlas des pays, ou Salle de jeux)
 let geoQuizQuestions = [];
 let geoQuizIndex = 0;
 let geoQuizScore = 0;
@@ -26,12 +29,41 @@ let geoQuizMap = null;
 let geoQuizMapReady = false;
 let geoQuizOnReady = [];           // actions à faire une fois la carte chargée (surlignage après une réponse)
 
-function startGeoQuiz() { geoQuizBegin('qcm'); }
-function startGeoQuizMap() { geoQuizBegin('map'); }
-
-function geoQuizBegin(mode) {
-    geoQuizMode = mode;
+// Le menu s'ouvre depuis l'Atlas des pays ou la Salle de jeux ; « Retour » y ramène.
+function openGeoQuizMenu(from) {
+    geoQuizReturn = from || 'screen-tool-countries';
     showScreen('screen-geoquiz', 'forward');
+    geoQuizShowMenu();
+}
+
+function geoQuizShowMenu() {
+    document.getElementById('geoquiz-play').classList.add('hidden');
+    document.getElementById('geoquiz-end').classList.add('hidden');
+    document.getElementById('geoquiz-status').textContent = '';
+    document.getElementById('geoquiz-menu').classList.remove('hidden');
+}
+
+function startGeoQuiz(difficulty) { geoQuizBegin('qcm', difficulty === 'hard' ? 'hard' : 'easy'); }
+function startGeoQuizFlag() { geoQuizBegin('flag', 'easy'); }
+function startGeoQuizMap() { geoQuizBegin('map', 'easy'); }
+
+// Rejoue la même forme, depuis le score.
+function geoQuizReplay() { geoQuizBegin(geoQuizMode, geoQuizDifficulty); }
+
+// Les questions d'une forme. Le QCM facile tire ses indices de tout l'Atlas ; le difficile prend ses distracteurs sur le même continent ;
+// le mode drapeau n'a que le drapeau pour indice.
+function geoQuizQuestionsFor(mode, difficulty, pool) {
+    const count = GEOQUIZ_ROUNDS;
+    if (mode === 'map') return GeoQuizCore.generateLocateQuestions(pool, { count: count });
+    if (mode === 'flag') return GeoQuizCore.generateQuestions(pool, { count: count, asks: ['name'], clues: ['flag'] });
+    return GeoQuizCore.generateQuestions(pool, { count: count, difficulty: difficulty });
+}
+
+function geoQuizBegin(mode, difficulty) {
+    geoQuizMode = mode;
+    geoQuizDifficulty = difficulty;
+    showScreen('screen-geoquiz', 'forward');
+    document.getElementById('geoquiz-menu').classList.add('hidden');
     document.getElementById('geoquiz-play').classList.add('hidden');
     document.getElementById('geoquiz-end').classList.add('hidden');
     const status = document.getElementById('geoquiz-status');
@@ -41,9 +73,7 @@ function geoQuizBegin(mode) {
         if (!ok) { status.textContent = t('tools.countries_error'); return; }
         if (!libOk) { status.textContent = t('tools.countries_no_map'); return; }
         const pool = GeoQuizCore.playablePool(countriesData.facts);
-        const questions = mode === 'map'
-            ? GeoQuizCore.generateLocateQuestions(pool, { count: GEOQUIZ_ROUNDS })
-            : GeoQuizCore.generateQuestions(pool, { count: GEOQUIZ_ROUNDS });
+        const questions = geoQuizQuestionsFor(mode, difficulty, pool);
         if (!questions.length) { status.textContent = t('geoquiz.none'); return; }
         if (mode === 'map' && !geoQuizEnsureMap()) { status.textContent = t('tools.countries_no_webgl'); return; }
         status.textContent = '';
@@ -68,7 +98,13 @@ function geoQuizRender() {
     document.getElementById('geoquiz-ask').textContent = t('geoquiz.ask_' + q.ask);
     document.getElementById('geoquiz-clues').replaceChildren(...q.clues.map(clue => {
         const li = document.createElement('li');
-        li.textContent = t('geoquiz.clue_' + clue.key) + ' : ' + clue.value;
+        if (clue.key === 'flag') {
+            // Le drapeau seul, en grand : pas de libellé à lire avant l'emoji.
+            li.className = 'geoquiz-flag';
+            li.textContent = clue.value;
+        } else {
+            li.textContent = t('geoquiz.clue_' + clue.key) + ' : ' + clue.value;
+        }
         return li;
     }));
     document.getElementById('geoquiz-options').replaceChildren(...q.options.map((o, i) => {
@@ -128,9 +164,10 @@ function geoQuizEnd() {
     document.getElementById('geoquiz-score').focus({ preventScroll: true });
 }
 
-// Retour à l'Atlas des pays, d'où le quiz a été lancé.
+// « Retour » : depuis une partie, au menu ; depuis le menu, à l'écran d'où il a été ouvert.
 function geoQuizQuit() {
-    showScreen('screen-tool-countries', 'back');
+    if (document.getElementById('geoquiz-menu').classList.contains('hidden')) { geoQuizShowMenu(); return; }
+    showScreen(geoQuizReturn, 'back');
 }
 
 // --- « Touche le pays » -----------------------------------------------------------------------

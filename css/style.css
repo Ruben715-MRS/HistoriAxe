@@ -13020,6 +13020,24 @@ input:not([type="range"]), label, select, summary, textarea {
     font-weight: 600;
 }
 
+.geoquiz-menu {
+    width: 100%;
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Le drapeau seul, en grand : c'est l'indice entier du mode « drapeau → pays ». */
+.geoquiz-flag {
+    font-size: 72px;
+    line-height: 1.1;
+    list-style: none;
+    margin: 4px 0;
+    padding-left: 0;
+    text-align: center;
+}
+
 .geoquiz-locate {
     display: flex;
     flex-direction: column;
