@@ -732,25 +732,11 @@
                         <small data-i18n="geoquiz.arcade_desc"></small>
                     </span>
                 </button>
-            </div>
-        </section>
-
-        <section class="games-section" aria-labelledby="games-h-cities">
-            <h3 id="games-h-cities" data-i18n="games.cities_title">Villes du monde</h3>
-            <p class="games-section-desc" data-i18n="games.cities_desc"></p>
-            <div class="arcade-menu">
-                <button type="button" class="arcade-card" onclick="openCityGame('capital', 'screen-arcade')">
+                <button type="button" class="arcade-card" onclick="openCitiesMenu('screen-arcade')">
                     <span class="arcade-card-icon" aria-hidden="true">🏙️</span>
                     <span class="arcade-card-text">
-                        <strong data-i18n="cities.card_capital"></strong>
-                        <small data-i18n="cities.card_capital_desc"></small>
-                    </span>
-                </button>
-                <button type="button" class="arcade-card" onclick="openCityGame('country', 'screen-arcade')">
-                    <span class="arcade-card-icon" aria-hidden="true">🌍</span>
-                    <span class="arcade-card-text">
-                        <strong data-i18n="cities.card_country"></strong>
-                        <small data-i18n="cities.card_country_desc"></small>
+                        <strong data-i18n="cities.card_title"></strong>
+                        <small data-i18n="cities.card_desc"></small>
                     </span>
                 </button>
             </div>
@@ -1519,6 +1505,11 @@
         <button class="back-btn" onclick="cityGameQuit()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
         <h2 class="header-title" data-i18n="cities.title">Villes du monde</h2>
         <p class="tool-msg" id="cities-status" role="status"></p>
+        <div id="cities-menu" class="geoquiz-menu">
+            <p class="modes-header-subtitle" data-i18n="cities.menu_intro">Deux jeux sur les villes du monde.</p>
+            <button type="button" class="btn" onclick="openCityGame('capital')" data-i18n="cities.menu_capital">Capitale ou plus grande ville ?</button>
+            <button type="button" class="btn" onclick="openCityGame('country')" data-i18n="cities.menu_country">Quel pays a cette ville ?</button>
+        </div>
         <div id="cities-play" class="geoquiz-play hidden">
             <div class="cities-bar">
                 <p class="tool-small" id="cities-progress" aria-live="polite"></p>
@@ -1533,7 +1524,7 @@
         </div>
         <div id="cities-end" class="geoquiz-end hidden">
             <p class="geoquiz-score" id="cities-score" tabindex="-1" role="status"></p>
-            <button type="button" class="btn" onclick="cityGameQuit()" data-i18n="cities.back">Retour à la Salle de jeux</button>
+            <button type="button" class="btn" onclick="openCitiesMenu()" data-i18n="cities.back">Autres jeux sur les villes</button>
         </div>
         <p class="tool-small" data-i18n="cities.credit"></p>
     </div>

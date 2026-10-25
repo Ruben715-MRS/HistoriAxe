@@ -1887,9 +1887,7 @@
     "reflexion_title": "Brain games",
     "reflexion_desc": "No timer: take your time to think.",
     "geo_title": "Geography games",
-    "geo_desc": "The world’s countries: capitals, flags, maps and figures.",
-    "cities_title": "World cities",
-    "cities_desc": "The world's big cities: capitals, largest cities and countries."
+    "geo_desc": "The world’s countries: capitals, flags, maps and figures."
   },
   "memory": {
     "title": "Chronological Memory",
@@ -2475,6 +2473,11 @@
     "trap_capital": "{answer} is the capital, but not the largest city.",
     "none": "Not enough cities for a game.",
     "back": "Back to the Salle de jeux",
-    "credit": "Cities and populations: Wikidata (CC0). Populations are estimates from different years; they only decide which city is largest. Nothing is saved."
+    "credit": "Cities and populations: Wikidata (CC0). Populations are estimates from different years; they only decide which city is largest. Nothing is saved.",
+    "card_title": "World cities",
+    "card_desc": "Capitals, largest cities and the countries of world cities.",
+    "menu_intro": "Two games about the world’s cities.",
+    "menu_capital": "Capital or largest city?",
+    "menu_country": "Which country has this city?"
   }
 }

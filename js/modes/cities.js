@@ -31,10 +31,16 @@ function cityGameLoad() {
     return cityGameLoading;
 }
 
-// Ouvre une partie de la forme donnée. `from` : l'écran de la Salle de jeux, où « Retour » ramène.
-function openCityGame(form, from) {
+// Le menu des jeux sur les villes, ouvert depuis la carte « Villes du monde » de la Salle de jeux (`from`).
+function openCitiesMenu(from) {
+    if (from) cityGameReturn = from;
+    showScreen('screen-cities', 'forward');
+    cityGameShowPanel('menu');
+}
+
+// Ouvre une partie de la forme donnée (depuis le menu des villes).
+function openCityGame(form) {
     cityGameForm = form;
-    cityGameReturn = from || 'screen-arcade';
     showScreen('screen-cities', 'forward');
     cityGameShowPanel('status');
     const status = document.getElementById('cities-status');
@@ -57,8 +63,9 @@ function cityGameStart() {
     cityGameRender();
 }
 
-// Un seul panneau visible à la fois : l'état d'attente, la partie, ou le score.
+// Un seul panneau visible à la fois : le menu, l'état d'attente, la partie, ou le score.
 function cityGameShowPanel(which) {
+    document.getElementById('cities-menu').classList.toggle('hidden', which !== 'menu');
     document.getElementById('cities-status').classList.toggle('hidden', which !== 'status');
     document.getElementById('cities-play').classList.toggle('hidden', which !== 'play');
     document.getElementById('cities-end').classList.toggle('hidden', which !== 'end');
@@ -140,7 +147,8 @@ function cityGameEnd() {
     document.getElementById('cities-score').focus({ preventScroll: true });
 }
 
-// « Retour » : depuis une partie, à l'écran d'où elle a été ouverte.
+// « Retour » : depuis une partie, au menu des villes ; depuis le menu, à la Salle de jeux.
 function cityGameQuit() {
-    showScreen(cityGameReturn, 'back');
+    if (!document.getElementById('cities-menu').classList.contains('hidden')) { showScreen(cityGameReturn, 'back'); return; }
+    openCitiesMenu();
 }

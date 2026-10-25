@@ -1888,9 +1888,7 @@
     "reflexion_title": "Jeux de réflexion",
     "reflexion_desc": "Sans minuteur : on prend le temps de réfléchir.",
     "geo_title": "Jeux géographiques",
-    "geo_desc": "Les pays du monde : capitales, drapeaux, cartes et chiffres.",
-    "cities_title": "Villes du monde",
-    "cities_desc": "Les grandes villes du monde : capitales, plus grandes villes et pays."
+    "geo_desc": "Les pays du monde : capitales, drapeaux, cartes et chiffres."
   },
   "memory": {
     "title": "Memory chronologique",
@@ -2512,6 +2510,11 @@
     "trap_capital": "{answer} est la capitale, mais ce n’est pas la plus grande ville.",
     "none": "Pas assez de villes pour une partie.",
     "back": "Retour à la Salle de jeux",
-    "credit": "Villes et populations : Wikidata (CC0). Les populations sont des estimations d’années différentes ; elles ne servent qu’à départager les plus grandes villes. Rien n’est enregistré."
+    "credit": "Villes et populations : Wikidata (CC0). Les populations sont des estimations d’années différentes ; elles ne servent qu’à départager les plus grandes villes. Rien n’est enregistré.",
+    "card_title": "Villes du monde",
+    "card_desc": "Capitales, plus grandes villes et pays des villes du monde.",
+    "menu_intro": "Deux jeux sur les villes du monde.",
+    "menu_capital": "Capitale ou plus grande ville ?",
+    "menu_country": "Quel pays a cette ville ?"
   }
 }
