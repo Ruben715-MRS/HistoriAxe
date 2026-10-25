@@ -33,14 +33,14 @@ test('jeu de pays : tous les territoires et entités contestées, sauf la Palest
     assert.ok(ids.size > 194, 'plus de pays que le jeu historique (194), qui excluait les territoires');
 });
 
-test('difficulté : une part de la zone (20 %, 35 %, 50 %), les plus peuplés d’abord, chaque jeu inclus dans le suivant', () => {
+test('difficulté : une part de la zone (20 %, 50 %, tout le continent), les plus peuplés d’abord, chaque jeu inclus dans le suivant', () => {
     const all = S.zoneCountries(facts, 'world');
     const easy = S.quizPool(facts, { level: 'easy' });
     const medium = S.quizPool(facts, { level: 'medium' });
     const hard = S.quizPool(facts, { level: 'hard' });
     assert.equal(easy.length, Math.round(0.2 * all.length));
-    assert.equal(medium.length, Math.round(0.35 * all.length));
-    assert.equal(hard.length, Math.round(0.5 * all.length));
+    assert.equal(medium.length, Math.round(0.5 * all.length));
+    assert.equal(hard.length, all.length, 'difficile : tous les pays');
     assert.deepEqual(easy.map(c => c.id), medium.slice(0, easy.length).map(c => c.id));
     assert.deepEqual(medium.map(c => c.id), hard.slice(0, medium.length).map(c => c.id));
     for (let i = 1; i < hard.length; i++) assert.ok(hard[i - 1].pop >= hard[i].pop, 'tri par population');
@@ -67,7 +67,7 @@ test('taille : une petite zone garde au moins MIN_POOL pays, et l’écran le di
     assert.equal(oce.floored, true);
     const world = S.levelInfo(facts, { zone: 'world', level: 'medium' });
     assert.equal(world.floored, false);
-    assert.equal(world.size, Math.round(0.35 * world.total));
+    assert.equal(world.size, Math.round(0.5 * world.total));
 });
 
 test('QCM : chaque question est valable, sur des pays tous différents, dans le jeu de pays', () => {

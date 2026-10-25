@@ -47,12 +47,12 @@
     // Les anciennes zones séparées (Amérique du Nord, Amérique du Sud) rejoignent les Amériques dans les réglages enregistrés.
     var ZONE_ALIASES = { north_america: 'americas', south_america: 'americas' };
 
-    // share : la part des pays de la zone (les plus peuplés d'abord) ; distractors : les fausses réponses de la même région ('hard')
+    // share : la part des pays de la zone (les plus peuplés d'abord ; 1 = tout le continent) ; distractors : les fausses réponses de la même région ('hard')
     // ou au hasard ('easy'). Une zone très petite garde au moins MIN_POOL pays, sans quoi quatre propositions ne se départagent plus.
     var LEVELS = {
         easy: { share: 0.2, distractors: 'easy' },
-        medium: { share: 0.35, distractors: 'easy' },
-        hard: { share: 0.5, distractors: 'hard' }
+        medium: { share: 0.5, distractors: 'easy' },
+        hard: { share: 1, distractors: 'hard' }
     };
     var MIN_POOL = 6;
 
