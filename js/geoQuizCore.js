@@ -139,7 +139,7 @@
 
     function settings(opts) {
         var src = opts || {};
-        var o = { rng: src.rng || Math.random, ask: src.ask, asks: src.asks, clues: src.clues, first: src.first, targets: src.targets };
+        var o = { rng: src.rng || Math.random, ask: src.ask, asks: src.asks, clues: src.clues, first: src.first, targets: src.targets, leaders: src.leaders, year: src.year };
         Object.keys(DEFAULTS).forEach(function (k) { o[k] = src[k] != null ? src[k] : DEFAULTS[k]; });
         return o;
     }
@@ -459,6 +459,149 @@
         });
     }
 
+    // --- Voisins ---------------------------------------------------------------------------------
+    // « Lequel de ces pays a une frontière terrestre avec X ? » : un voisin, et trois pays qui n'en sont ni voisins ni proches (à moins
+    // de NEAR_DEGREES de ses contours, ce que les données appellent `nr`) : une frontière que le tracé simplifié aurait manquée
+    // ne peut pas fausser la question. Les voisins viennent de assets/geo/countries-facts.json (`nb`), calculés sur les contours.
+    // L'identifiant de la bonne réponse est dans `right` ; `target` est le pays dont on demande les voisins.
+    function generateNeighborQuestions(pool, opts) {
+        var o = settings(opts);
+        var byId = {};
+        pool.forEach(function (c) { byId[c.id] = c; });
+        var out = [];
+        targetList(pool, o).forEach(function (target) {
+            if (out.length >= o.count) return;
+            var friends = (target.nb || []).filter(function (id) { return byId[id]; });
+            if (!friends.length) return;
+            // Un vrai pays plutôt qu'un territoire ou une entité contestée, quand il y en a un.
+            var plain = friends.filter(function (id) { return !byId[id].st; });
+            var answer = byId[pick(plain.length ? plain : friends, o.rng)];
+            var avoid = new Set((target.nb || []).concat(target.nr || []));
+            avoid.add(target.id);
+            var others = shuffle(pool.filter(function (c) { return !avoid.has(c.id); }), o.rng);
+            if (o.difficulty === 'hard') {
+                var rank = function (c) { return c.sub === target.sub ? 0 : c.cont === target.cont ? 1 : 2; };
+                others.sort(function (a, b) { return rank(a) - rank(b); });
+            }
+            if (others.length < o.options - 1) return;
+            var options = shuffle([answer].concat(others.slice(0, o.options - 1)), o.rng).map(function (c) { return { id: c.id, value: c.n }; });
+            out.push({ target: target.id, right: answer.id, ask: 'neighbor', clues: [{ key: 'name', value: target.n }], options: options });
+        });
+        return out;
+    }
+
+    // --- Plus ou moins ---------------------------------------------------------------------------
+    // Deux pays, lequel est le plus peuplé (au moins MIN_RATIO fois), ou le plus au nord (au moins NORTH_GAP degrés de latitude de
+    // plus). `right` : l'identifiant du bon pays.
+    var NORTH_GAP = 8;
+    var MORE_ASKS = ['more_pop', 'more_north'];
+
+    function moreWins(ask, a, b) {
+        if (ask === 'more_pop') {
+            if (!(a.pop > 0 && b.pop > 0) || Math.max(a.pop, b.pop) / Math.min(a.pop, b.pop) < MIN_RATIO) return null;
+            return a.pop > b.pop ? a : b;
+        }
+        if (!a.c || !b.c || Math.abs(a.c[1] - b.c[1]) < NORTH_GAP) return null;
+        return a.c[1] > b.c[1] ? a : b;
+    }
+
+    function generateMoreQuestions(pool, opts) {
+        var o = settings(opts);
+        var out = [];
+        targetList(pool, o).forEach(function (target) {
+            if (out.length >= o.count) return;
+            var rivals = shuffle(pool.filter(function (c) { return c.id !== target.id; }), o.rng);
+            // Plus dur : un rival de la même région.
+            if (o.difficulty === 'hard') {
+                var rank = function (c) { return c.sub === target.sub ? 0 : c.cont === target.cont ? 1 : 2; };
+                rivals.sort(function (a, b) { return rank(a) - rank(b); });
+            }
+            var asks = shuffle(MORE_ASKS, o.rng);
+            for (var i = 0; i < asks.length; i++) {
+                var rival = null, winner = null;
+                for (var k = 0; k < rivals.length && !winner; k++) {
+                    winner = moreWins(asks[i], target, rivals[k]);
+                    if (winner) rival = rivals[k];
+                }
+                if (!winner) continue;
+                out.push({
+                    target: target.id, right: winner.id, ask: asks[i], clues: [],
+                    options: shuffle([target, rival], o.rng).map(function (c) { return { id: c.id, value: c.n }; })
+                });
+                break;
+            }
+        });
+        return out;
+    }
+
+    // --- Chefs d'État ----------------------------------------------------------------------------
+    // « Qui était chef de l'État de X en 1962 ? » Les listes viennent de js/stateLeadersCore.js (33 pays) : `leadersFrom` les
+    // range par identifiant de pays. Une année n'est posée que si UN SEUL mandat la couvre (pas d'année de passation, pas de
+    // deux chefs à la fois) ; les fausses réponses sont d'autres chefs du même pays, qui ne la couvrent pas.
+    var LEADER_IDS = {
+        france: 'FRA', etats_unis: 'USA', royaume_uni: 'GBR', allemagne: 'DEU', italie: 'ITA', espagne: 'ESP', belgique: 'BEL', pays_bas: 'NLD',
+        suede: 'SWE', danemark: 'DNK', norvege: 'NOR', japon: 'JPN', inde: 'IND', bresil: 'BRA', mexique: 'MEX', argentine: 'ARG', canada: 'CAN',
+        australie: 'AUS', turquie: 'TUR', egypte: 'EGY', israel: 'ISR', russie: 'RUS', chine: 'CHN', iran: 'IRN', ukraine: 'UKR', pologne: 'POL',
+        coree_du_sud: 'KOR', afrique_du_sud: 'ZAF', nigeria: 'NGA', arabie_saoudite: 'SAU', indonesie: 'IDN', pakistan: 'PAK', algerie: 'DZA'
+    };
+    var LEADER_FROM_YEAR = 1900;
+
+    // Les mandats de chaque pays : { FRA: [{ from, to, name }], ... }, sans les mandats sans fin ni nom exploitables.
+    function leadersFrom(stateLeaders) {
+        var out = {};
+        Object.keys(LEADER_IDS).forEach(function (key) {
+            var rows = stateLeaders.rowsOf(key, 'state').map(function (r) { return { from: r.row.from, to: r.row.to, name: r.row.name }; });
+            if (rows.length) out[LEADER_IDS[key]] = rows;
+        });
+        return out;
+    }
+
+    function leaderQuestion(country, rows, year, nowYear, o) {
+        var covers = function (r, y) { return r.from <= y && y <= (r.to == null ? nowYear : r.to); };
+        var holders = rows.filter(function (r) { return covers(r, year); });
+        if (holders.length !== 1) return null;
+        var answer = holders[0].name;
+        var names = [];
+        rows.forEach(function (r) { if (r.name !== answer && !covers(r, year) && names.indexOf(r.name) === -1) names.push(r.name); });
+        // Plus dur : des chefs d'une époque proche.
+        if (o.difficulty === 'hard') names.sort(function (a, b) { return gap(rows, a, year) - gap(rows, b, year); });
+        else names = shuffle(names, o.rng);
+        if (names.length < o.options - 1) return null;
+        var options = shuffle([answer].concat(names.slice(0, o.options - 1)), o.rng).map(function (n) { return { id: n, value: n }; });
+        return { target: 'LDR:' + country.id + ':' + year, country: country.id, right: answer, ask: 'leader',
+            clues: [{ key: 'name', value: country.n }, { key: 'year', value: String(year) }], options: options };
+    }
+
+    // L'écart en années entre `year` et le mandat de `name` (le plus proche s'il en a plusieurs).
+    function gap(rows, name, year) {
+        return Math.min.apply(null, rows.filter(function (r) { return r.name === name; }).map(function (r) {
+            return year < r.from ? r.from - year : r.to != null && year > r.to ? year - r.to : 0;
+        }));
+    }
+
+    function generateLeaderQuestions(pool, opts) {
+        var o = settings(opts);
+        var leaders = o.leaders || {};
+        var nowYear = o.year || new Date().getFullYear();
+        var out = [];
+        var seen = new Set();
+        var targets = targetList(pool, o).filter(function (c) { return leaders[c.id]; });
+        // Plusieurs tours : un pays peut être interrogé plusieurs fois, sur des années différentes.
+        for (var round = 0; round < 4 && out.length < o.count && targets.length; round++) {
+            targets.forEach(function (country) {
+                if (out.length >= o.count) return;
+                var rows = leaders[country.id];
+                var first = Math.max(LEADER_FROM_YEAR, Math.min.apply(null, rows.map(function (r) { return r.from; })));
+                for (var attempt = 0; attempt < 14; attempt++) {
+                    var year = first + Math.floor(o.rng() * (nowYear - first + 1));
+                    var q = leaderQuestion(country, rows, year, nowYear, o);
+                    if (q && !seen.has(q.target)) { seen.add(q.target); out.push(q); break; }
+                }
+            });
+        }
+        return out;
+    }
+
     return {
         LOCATE_TINY_KM: LOCATE_TINY_KM, distanceKm: distanceKm, locateCorrect: locateCorrect, generateLocateQuestions: generateLocateQuestions,
         CLUE_KEYS: CLUE_KEYS, ASK_KEYS: ASK_KEYS, MIN_RATIO: MIN_RATIO,
@@ -468,6 +611,8 @@
         generateMapNameQuestions: generateMapNameQuestions, generateFeteQuestions: generateFeteQuestions, generateWhoQuestions: generateWhoQuestions,
         generateTypedQuestions: generateTypedQuestions, generateMysteryQuestions: generateMysteryQuestions, WHO_KEYS: WHO_KEYS,
         acceptedAnswers: acceptedAnswers, isTypedCorrect: isTypedCorrect, otherAnswers: otherAnswers, compact: compact, editDistance: editDistance,
+        generateNeighborQuestions: generateNeighborQuestions, generateMoreQuestions: generateMoreQuestions, generateLeaderQuestions: generateLeaderQuestions,
+        leadersFrom: leadersFrom, LEADER_IDS: LEADER_IDS, NORTH_GAP: NORTH_GAP, MORE_ASKS: MORE_ASKS,
         MYSTERY_TRIES: MYSTERY_TRIES, bearingDeg: bearingDeg, arrowOf: arrowOf, proximity: proximity, mysteryGuess: mysteryGuess
     };
 });

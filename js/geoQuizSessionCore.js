@@ -56,11 +56,13 @@
     var TIMERS = [0, 30, 15];          // secondes par question ; 0 = sans chrono
     // Les formes de jeu. Chaque question porte sa forme (`kind`) ; le panaché les mélange, « Rafale » et « Survie » changent la règle
     // de la partie (60 secondes pour tout, ou trois vies) et piochent dans les formes rapides.
-    var FORMS = ['qcm', 'flag', 'map', 'mapname', 'typed', 'fete', 'who', 'mystery', 'burst', 'survival', 'mix', 'weak', 'daily'];
-    var QUESTION_KINDS = ['qcm', 'flag', 'map', 'mapname', 'typed', 'fete', 'who', 'mystery'];
-    var MIX_KINDS = ['qcm', 'flag', 'map', 'mapname', 'typed', 'fete', 'who'];
+    var FORMS = ['qcm', 'flag', 'map', 'mapname', 'typed', 'fete', 'who', 'mystery', 'burst', 'survival', 'mix', 'weak', 'daily', 'neighbor', 'more', 'leader', 'duel'];
+    var QUESTION_KINDS = ['qcm', 'flag', 'map', 'mapname', 'typed', 'fete', 'who', 'mystery', 'neighbor', 'more', 'leader'];
+    var MIX_KINDS = ['qcm', 'flag', 'map', 'mapname', 'typed', 'fete', 'who', 'neighbor', 'more'];
+    // Ce que le suivi par pays retient : les formes qui demandent de connaître le pays lui-même (pas « plus ou moins », ni les chefs d'État).
+    var TRACKED_KINDS = ['qcm', 'flag', 'map', 'mapname', 'typed', 'fete', 'who', 'mystery', 'neighbor'];
     var BURST_KINDS = ['qcm', 'flag'];
-    var SURVIVAL_KINDS = ['qcm', 'flag', 'map', 'mapname', 'fete', 'who'];
+    var SURVIVAL_KINDS = ['qcm', 'flag', 'map', 'mapname', 'fete', 'who', 'neighbor'];
     var MAP_KINDS = ['map', 'mapname'];  // les formes qui ont besoin de la carte (WebGL)
     var BURST_SECONDS = 60;
     var LIVES = 3;
@@ -120,13 +122,13 @@
     }
 
     // `count` questions d'une forme, sur des pays que `taken` ne contient pas encore.
-    function questionsOfKind(kind, pool, prefs, count, taken, rng, targets) {
+    function questionsOfKind(kind, pool, prefs, count, taken, rng, targets, leaders) {
         if (count <= 0) return [];
         var level = LEVELS[prefs.level];
         // On en tire plus qu'il n'en faut : certaines tombent sur un pays déjà pris par une autre forme.
         var wanted = count + taken.size + 4;
         var made;
-        var o = { count: wanted, difficulty: level.distractors, rng: rng, targets: targets };
+        var o = { count: wanted, difficulty: level.distractors, rng: rng, targets: targets, leaders: leaders };
         if (kind === 'map') {
             made = Q.generateLocateQuestions(pool, o);
         } else if (kind === 'flag') {
@@ -141,6 +143,12 @@
             made = Q.generateWhoQuestions(pool, o);
         } else if (kind === 'mystery') {
             made = Q.generateMysteryQuestions(pool, o);
+        } else if (kind === 'neighbor') {
+            made = Q.generateNeighborQuestions(pool, o);
+        } else if (kind === 'more') {
+            made = Q.generateMoreQuestions(pool, o);
+        } else if (kind === 'leader') {
+            made = Q.generateLeaderQuestions(pool, o);
         } else {
             made = Q.generateQuestions(pool, o);
         }
@@ -209,7 +217,7 @@
 
     // Les formes de question d'une partie : toutes celles permises par `allowed` (par défaut toutes) dans ce que la forme comprend.
     function kindsOf(form, allowed) {
-        var base = form === 'mix' || form === 'weak' || form === 'daily' ? MIX_KINDS : form === 'burst' ? BURST_KINDS : form === 'survival' ? SURVIVAL_KINDS : [form];
+        var base = form === 'weak' ? MIX_KINDS.filter(function (k) { return k !== 'more'; }) : form === 'mix' || form === 'daily' || form === 'duel' ? MIX_KINDS : form === 'burst' ? BURST_KINDS : form === 'survival' ? SURVIVAL_KINDS : [form];
         var kinds = allowed ? base.filter(function (k) { return allowed.indexOf(k) !== -1; }) : base.slice();
         return kinds.length ? kinds : ['qcm'];
     }
@@ -223,13 +231,14 @@
         var pool = quizPool(facts, form === 'weak' ? { zone: p.zone, level: 'hard' } : p);
         var rules = rulesOf(form);
         var wanted = rules === 'burst' ? BURST_MAX_QUESTIONS : rules === 'survival' ? SURVIVAL_MAX_QUESTIONS : p.length;
-        var count = Math.min(wanted, pool.length);
+        var count = Math.min(form === 'duel' ? 2 * wanted : wanted, pool.length);
+        var leaders = opts && opts.leaders;
         var targets = form === 'weak' ? weakTargets(opts && opts.state, pool, count) : null;
         var taken = new Set();
         var kinds = kindsOf(form, opts && opts.kinds);
         var counts = splitCounts(count, kinds, rng);
         var questions = [];
-        kinds.forEach(function (kind, i) { questions = questions.concat(questionsOfKind(kind, pool, p, counts[i], taken, rng, targets)); });
+        kinds.forEach(function (kind, i) { questions = questions.concat(questionsOfKind(kind, pool, p, counts[i], taken, rng, targets, leaders)); });
         // Si une forme n'a pas pu fournir ses questions, le QCM comble le manque.
         if (questions.length < count && !(kinds.length === 1 && kinds[0] === 'qcm')) {
             questions = questions.concat(questionsOfKind('qcm', pool, p, count - questions.length, taken, rng, targets));
@@ -449,7 +458,7 @@
 
     return {
         EXCLUDED_IDS: EXCLUDED_IDS, ZONES: ZONES, LEVELS: LEVELS, LENGTHS: LENGTHS, TIMERS: TIMERS, FORMS: FORMS, QUESTION_KINDS: QUESTION_KINDS,
-        MIX_KINDS: MIX_KINDS, MAP_KINDS: MAP_KINDS, BURST_SECONDS: BURST_SECONDS, LIVES: LIVES, rulesOf: rulesOf, questionTimer: questionTimer, kindsOf: kindsOf,
+        MIX_KINDS: MIX_KINDS, TRACKED_KINDS: TRACKED_KINDS, MAP_KINDS: MAP_KINDS, BURST_SECONDS: BURST_SECONDS, LIVES: LIVES, rulesOf: rulesOf, questionTimer: questionTimer, kindsOf: kindsOf,
         whoPoints: whoPoints, mysteryPoints: mysteryPoints,
         DEFAULT_PREFS: DEFAULT_PREFS, BASE_POINTS: BASE_POINTS, SPEED_MAX: SPEED_MAX, HISTORY_MAX: HISTORY_MAX,
         normalizePrefs: normalizePrefs, quizPool: quizPool, generateGame: generateGame, pointsFor: pointsFor, summarize: summarize,

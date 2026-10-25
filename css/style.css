@@ -13480,3 +13480,7 @@ input:not([type="range"]), label, select, summary, textarea {
 .geoquiz-dot.geoquiz-m-learning { background: #f59e0b; }
 .geoquiz-dot.geoquiz-m-weak { background: #dc2626; }
 #geoquiz-menu > .tool-small:empty { display: none; }
+
+/* --- Quiz des pays : duel à deux --- */
+.geoquiz-duel-names { display: flex; gap: 8px; }
+.geoquiz-duel-names .tool-input { flex: 1; min-width: 0; box-sizing: border-box; }

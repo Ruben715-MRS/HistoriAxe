@@ -96,10 +96,10 @@ test('panaché : les trois formes, un pays une seule fois, jamais plus de deux f
     }
 });
 
-test('panaché : la répartition est équilibrée entre les sept formes, et on peut retirer la carte (sans WebGL)', () => {
+test('panaché : la répartition est équilibrée entre les formes, et on peut retirer la carte (sans WebGL)', () => {
     const { questions } = S.generateGame(facts, 'mix', { length: 50, level: 'hard' }, { rng: seeded(8) });
     const count = k => questions.filter(q => q.kind === k).length;
-    S.MIX_KINDS.forEach(k => assert.ok(count(k) >= 6 && count(k) <= 8, k + ' : ' + count(k)));
+    S.MIX_KINDS.forEach(k => assert.ok(count(k) >= 4 && count(k) <= 7, k + ' : ' + count(k)));
     const noMap = S.generateGame(facts, 'mix', { length: 20 }, { rng: seeded(9), kinds: ['qcm', 'flag', 'typed', 'fete', 'who'] }).questions;
     assert.equal(noMap.length, 20);
     assert.ok(noMap.every(q => !S.MAP_KINDS.includes(q.kind)));
@@ -376,4 +376,91 @@ test('XP et trophées', () => {
     assert.deepEqual(earned({ form: 'mystery', correct: 3, mysteryTries: 2 }), ['flair_detective']);
     assert.deepEqual(earned({ form: 'mystery', correct: 3, mysteryTries: 3 }), []);
     assert.deepEqual(earned({ form: 'burst', rules: 'burst', correct: 20, total: 25 }), ['rafale_savant']);
+});
+
+// --- Lot 4 : voisins, plus ou moins, chefs d'État, duel ----------------------------------------------
+
+const SL = require('../js/stateLeadersCore.js');
+
+test('voisins : la bonne réponse touche le pays, les trois autres ne le touchent pas et n’en sont pas proches', () => {
+    const pool = S.quizPool(facts, { level: 'hard' });
+    const byId = new Map(pool.map(c => [c.id, c]));
+    const qs = Q.generateNeighborQuestions(pool, { count: 80, rng: seeded(3), difficulty: 'hard' });
+    assert.ok(qs.length >= 60);
+    qs.forEach(q => {
+        const target = byId.get(q.target);
+        assert.equal(q.options.length, 4);
+        assert.ok(target.nb.includes(q.right), q.target + ' touche ' + q.right);
+        q.options.filter(o => o.id !== q.right).forEach(o => {
+            assert.ok(!target.nb.includes(o.id) && !(target.nr || []).includes(o.id) && o.id !== q.target, o.id + ' ne doit pas toucher ' + q.target);
+        });
+        assert.equal(new Set(q.options.map(o => o.id)).size, 4);
+    });
+});
+
+test('voisins : des frontières connues sont dans les données, et la symétrie est respectée', () => {
+    const by = new Map(facts.map(c => [c.id, c]));
+    const touch = (a, b) => assert.ok(by.get(a).nb.includes(b) && by.get(b).nb.includes(a), a + ' / ' + b);
+    [['FRA', 'ESP'], ['FRA', 'BRA'], ['DEU', 'POL'], ['USA', 'CAN'], ['USA', 'MEX'], ['CHN', 'IND'], ['RUS', 'KAZ'], ['ZAF', 'LSO'], ['ITA', 'VAT'],
+        ['KOR', 'PRK'], ['COD', 'ZMB'], ['TUR', 'GRC'], ['ESP', 'MAR'], ['KWT', 'SAU'], ['SRB', 'MKD'], ['GBR', 'IRL'], ['DOM', 'HTI']].forEach(([a, b]) => touch(a, b));
+    ['AUS', 'JPN', 'ISL', 'NZL', 'CYP', 'MDG'].forEach(id => assert.equal((by.get(id).nb || []).length, 0, id + ' n’a pas de frontière terrestre'));
+    facts.forEach(c => (c.nb || []).forEach(id => assert.ok(by.get(id).nb.includes(c.id), 'symétrie ' + c.id + '/' + id)));
+    facts.forEach(c => assert.ok(!(c.nb || []).includes('PSX') && c.id !== 'PSX' || c.id === 'PSX'));
+});
+
+test('plus ou moins : le bon pays a vraiment plus d’habitants, ou est vraiment plus au nord', () => {
+    const pool = S.quizPool(facts, { level: 'hard' });
+    const byId = new Map(pool.map(c => [c.id, c]));
+    const qs = Q.generateMoreQuestions(pool, { count: 100, rng: seeded(5), difficulty: 'easy' });
+    assert.ok(qs.length > 60);
+    assert.ok(new Set(qs.map(q => q.ask)).size === 2, 'les deux sortes');
+    qs.forEach(q => {
+        assert.equal(q.options.length, 2);
+        const [a, b] = q.options.map(o => byId.get(o.id));
+        const win = byId.get(q.right), lose = a === win ? b : a;
+        assert.ok(q.options.some(o => o.id === q.right));
+        if (q.ask === 'more_pop') assert.ok(win.pop >= Q.MIN_RATIO * lose.pop);
+        else assert.ok(win.c[1] - lose.c[1] >= Q.NORTH_GAP);
+    });
+});
+
+test('chefs d’État : une année couverte par un seul mandat, la bonne réponse parmi des chefs du même pays', () => {
+    const leaders = Q.leadersFrom(SL);
+    assert.ok(Object.keys(leaders).length >= 30);
+    Object.keys(leaders).forEach(id => assert.ok(facts.some(c => c.id === id), id + ' est un pays du jeu'));
+    const pool = S.quizPool(facts, { level: 'hard' });
+    const qs = Q.generateLeaderQuestions(pool, { count: 60, rng: seeded(9), leaders: leaders, year: 2026 });
+    assert.equal(qs.length, 60);
+    assert.equal(new Set(qs.map(q => q.target)).size, 60, 'jamais deux fois la même question');
+    qs.forEach(q => {
+        const rows = leaders[q.country];
+        const year = Number(q.clues[1].value);
+        assert.ok(year >= 1900 && year <= 2026);
+        const holders = rows.filter(r => r.from <= year && year <= (r.to == null ? 2026 : r.to));
+        assert.equal(holders.length, 1, q.country + ' ' + year + ' : un seul chef');
+        assert.equal(holders[0].name, q.right);
+        assert.equal(q.options.length, 4);
+        assert.equal(new Set(q.options.map(o => o.value)).size, 4);
+        q.options.filter(o => o.id !== q.right).forEach(o => {
+            assert.ok(rows.some(r => r.name === o.value), o.value + ' a dirigé ' + q.country);
+            assert.ok(!holders.some(h => h.name === o.value));
+        });
+    });
+    assert.deepEqual(Q.generateLeaderQuestions(pool, { count: 5, rng: seeded(1) }), [], 'sans listes, aucune question');
+});
+
+test('formes du lot 4 : panaché et défi du jour les mélangent ; seuls les pays connus sont suivis', () => {
+    ['neighbor', 'more'].forEach(k => assert.ok(S.MIX_KINDS.includes(k)));
+    assert.ok(!S.kindsOf('weak').includes('more'));
+    assert.ok(!S.kindsOf('survival').includes('more'));
+    ['more', 'leader'].forEach(k => assert.ok(!S.TRACKED_KINDS.includes(k)));
+    assert.ok(S.TRACKED_KINDS.includes('neighbor'));
+    assert.deepEqual(S.kindsOf('leader'), ['leader']);
+    const leaders = Q.leadersFrom(SL);
+    const game = S.generateGame(facts, 'leader', { zone: 'world', level: 'medium', length: 20, timer: 0 }, { rng: seeded(2), leaders: leaders });
+    assert.equal(game.questions.length, 20);
+    assert.ok(game.questions.filter(q => q.kind === 'leader').length >= 15);
+    const duel = S.generateGame(facts, 'duel', { zone: 'world', level: 'easy', length: 10, timer: 0 }, { rng: seeded(4) });
+    assert.equal(duel.questions.length, 20, 'dix questions par joueur');
+    assert.ok(new Set(duel.questions.map(q => q.kind)).size >= 4);
 });

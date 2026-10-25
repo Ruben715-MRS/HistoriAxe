@@ -1530,9 +1530,18 @@
             <button type="button" class="btn" onclick="startGeoQuizForm('fete')" data-i18n="geoquiz.menu_fete">Fêtes nationales</button>
             <button type="button" class="btn" onclick="startGeoQuizForm('who')" data-i18n="geoquiz.menu_who">Qui suis-je ? Des indices, un pays</button>
             <button type="button" class="btn" onclick="startGeoQuizForm('mystery')" data-i18n="geoquiz.menu_mystery">Pays mystère : distance et direction</button>
+            <button type="button" class="btn" onclick="startGeoQuizForm('neighbor')" data-i18n="geoquiz.menu_neighbor">Voisins : qui a une frontière avec ?</button>
+            <button type="button" class="btn" onclick="startGeoQuizForm('more')" data-i18n="geoquiz.menu_more">Plus ou moins : lequel des deux ?</button>
+            <button type="button" class="btn" onclick="startGeoQuizForm('leader')" data-i18n="geoquiz.menu_leader">Chefs d'État : qui dirigeait en… ?</button>
             <h3 class="geoquiz-setting-title" data-i18n="geoquiz.forms_challenge">Défis</h3>
             <button type="button" class="btn" onclick="startGeoQuizForm('burst')" data-i18n="geoquiz.menu_burst">Rafale : 60 secondes, un maximum de réponses</button>
             <button type="button" class="btn" onclick="startGeoQuizForm('survival')" data-i18n="geoquiz.menu_survival">Survie : 3 vies, jusqu'à la dernière</button>
+            <h3 class="geoquiz-setting-title" data-i18n="geoquiz.forms_duel">À deux, sur le même appareil</h3>
+            <div class="geoquiz-duel-names">
+                <input type="text" class="tool-input" id="geoquiz-duel-p1" maxlength="20" autocomplete="off" aria-label="Premier joueur" placeholder="Joueur 1" data-i18n-attr="aria-label:geoquiz.duel_p1_label;placeholder:geoquiz.duel_p1">
+                <input type="text" class="tool-input" id="geoquiz-duel-p2" maxlength="20" autocomplete="off" aria-label="Deuxième joueur" placeholder="Joueur 2" data-i18n-attr="aria-label:geoquiz.duel_p2_label;placeholder:geoquiz.duel_p2">
+            </div>
+            <button type="button" class="btn" onclick="startGeoQuizForm('duel')" data-i18n="geoquiz.menu_duel">Duel : chacun son tour, le même nombre de questions</button>
             <button type="button" class="btn geoquiz-secondary" onclick="geoQuizShowScores()" data-i18n="geoquiz.scores_btn">Mes scores</button>
         </div>
         <div id="geoquiz-scores" class="geoquiz-scores hidden">

@@ -23,7 +23,7 @@ const chip = (page, group, label) => page.locator(`#${group} .geoquiz-chip`, { h
 // L'indice de la bonne réponse de la question affichée (QCM et drapeau).
 const correctIndex = page => page.evaluate(() => {
     const q = geoQuizQuestions[geoQuizIndex];
-    return q.options.findIndex(o => o.id === q.target);
+    return q.options.findIndex(o => o.id === (q.right || q.target));
 });
 
 // Joue la question affichée : bonne réponse, ou mauvaise si `right` est faux ; touche le centre du pays pour la carte.
@@ -51,7 +51,8 @@ async function playQuestion(page, right) {
         if (!(await page.locator('#geoquiz-next').isVisible())) await buttons.nth(good).click();
     } else {
         const good = await correctIndex(page);
-        await page.locator('#geoquiz-options .quiz-option').nth(right ? good : (good + 1) % 4).click();
+        const count = await page.locator('#geoquiz-options .quiz-option').count();
+        await page.locator('#geoquiz-options .quiz-option').nth(right ? good : (good + 1) % count).click();
     }
     await page.locator('#geoquiz-next').click();
 }
@@ -62,7 +63,7 @@ test('le menu propose les réglages (sans chrono par défaut), les formes et les
         await expect(chip(page, group, label)).toHaveAttribute('aria-pressed', 'true');
     }
     await expect(page.locator('#geoquiz-zone .geoquiz-chip')).toHaveCount(7);
-    await expect(page.locator('#geoquiz-menu > .btn')).toHaveCount(15);   // défi du jour, pays faibles, maîtrise, 4 classiques, 5 autres façons, 2 défis, « Mes scores »
+    await expect(page.locator('#geoquiz-menu > .btn')).toHaveCount(19);   // défi du jour, pays faibles, maîtrise, 4 classiques, 8 autres façons, 2 défis, duel, « Mes scores »
     await expect(page.locator('#geoquiz-level-hint')).toContainText('40 pays');
     await chip(page, 'geoquiz-level', 'Difficile').click();
     await expect(page.locator('#geoquiz-level-hint')).toContainText('Tous les pays');
@@ -166,7 +167,7 @@ test('panaché : plusieurs formes dans une partie, chacune jouable, puis le scor
     const kinds = await page.evaluate(() => geoQuizQuestions.map(q => q.kind));
     expect(kinds).toHaveLength(20);
     expect(new Set(kinds).size).toBeGreaterThanOrEqual(2);
-    expect(kinds.every(k => ['qcm', 'flag', 'map', 'mapname', 'typed', 'fete', 'who'].includes(k))).toBe(true);
+    expect(kinds.every(k => ['qcm', 'flag', 'map', 'mapname', 'typed', 'fete', 'who', 'neighbor', 'more'].includes(k))).toBe(true);
     const targets = await page.evaluate(() => geoQuizQuestions.map(q => q.target));
     expect(new Set(targets).size).toBe(20);
     for (let i = 0; i < 20; i++) await playQuestion(page, true);
@@ -461,4 +462,68 @@ test('pays faibles : les erreurs sont retenues, la révision reprend ces pays, l
     const after = await quizState(page);
     expect(after.history).toHaveLength(1);   // seule la première partie (QCM) est enregistrée
     expect(after.countries[missed[0]]).toMatchObject({ n: 2, ok: 1, run: '01' });
+});
+
+// --- Lot 4 : voisins, plus ou moins, chefs d'État, duel -----------------------------------------
+
+test('voisins, plus ou moins, chefs d’État : la bonne réponse est celle des données, les erreurs sont listées', async ({ page }) => {
+    await openQuiz(page);
+    await chip(page, 'geoquiz-length', '5').click();
+    await startForm(page, 'Voisins');
+    await page.locator('#geoquiz-play').waitFor({ state: 'visible' });
+    await expect(page.locator('#geoquiz-ask')).toContainText('frontière terrestre');
+    await expect(page.locator('#geoquiz-options .quiz-option')).toHaveCount(4);
+    const nb = await page.evaluate(() => {
+        const q = geoQuizQuestions[geoQuizIndex];
+        return { kind: q.kind, ok: countriesData.byId.get(q.target).nb.includes(q.right), bad: q.options.filter(o => o.id !== q.right).some(o => countriesData.byId.get(q.target).nb.includes(o.id)) };
+    });
+    expect(nb).toEqual({ kind: 'neighbor', ok: true, bad: false });
+    await playQuestion(page, false);
+    for (let i = 0; i < 4; i++) await playQuestion(page, true);
+    await expect(page.locator('#geoquiz-errors li')).toHaveCount(1);
+    // Les pays visés par « voisins » nourrissent la maîtrise ; « plus ou moins » et « chefs d'État » non.
+    expect(Object.keys((await quizState(page)).countries)).toHaveLength(5);
+    await page.locator('#geoquiz-end .btn', { hasText: 'Changer de réglage' }).click();
+
+    await startForm(page, 'Plus ou moins');
+    await page.locator('#geoquiz-play').waitFor({ state: 'visible' });
+    await expect(page.locator('#geoquiz-options .quiz-option')).toHaveCount(2);
+    await expect(page.locator('#geoquiz-ask')).toContainText(/plus (peuplé|au nord)/);
+    for (let i = 0; i < 5; i++) await playQuestion(page, true);
+    await expect(page.locator('#geoquiz-score')).toContainText('points');
+    expect(Object.keys((await quizState(page)).countries)).toHaveLength(5);
+    await page.locator('#geoquiz-end .btn', { hasText: 'Changer de réglage' }).click();
+
+    await startForm(page, 'Chefs d');
+    await page.locator('#geoquiz-play').waitFor({ state: 'visible' });
+    await expect(page.locator('#geoquiz-ask')).toContainText('chef de l');
+    await expect(page.locator('#geoquiz-clues li').nth(1)).toContainText(/Année : \d{4}/);
+    await expect(page.locator('#geoquiz-options .quiz-option')).toHaveCount(4);
+    for (let i = 0; i < 5; i++) await playQuestion(page, true);
+    await expect(page.locator('#geoquiz-score')).toContainText('600');
+    const records = await page.evaluate(() => Object.keys(JSON.parse(localStorage.getItem('historiaxe_geoquiz_v1')).best));
+    expect(records.sort()).toEqual(['leader|world|easy|5|0', 'more|world|easy|5|0', 'neighbor|world|easy|5|0']);
+});
+
+test('duel à deux : les joueurs se relaient, chacun ses points et sa série, rien n’est enregistré', async ({ page }) => {
+    await openQuiz(page);
+    await chip(page, 'geoquiz-length', '5').click();
+    await page.locator('#geoquiz-duel-p1').fill('Ana');
+    await page.locator('#geoquiz-duel-p2').fill('Ben');
+    await startForm(page, 'Duel');
+    await page.locator('#geoquiz-play').waitFor({ state: 'visible' });
+    expect(await page.evaluate(() => geoQuizQuestions.length)).toBe(10);
+    await expect(page.locator('#geoquiz-progress')).toContainText('Au tour de Ana');
+    for (let i = 0; i < 10; i++) {
+        await expect(page.locator('#geoquiz-progress')).toContainText(i % 2 ? 'Au tour de Ben' : 'Au tour de Ana');
+        await playQuestion(page, i % 2 === 0);
+    }
+    const result = await page.evaluate(() => ({ scores: geoQuizDuel.scores.slice(), players: geoQuizAnswers.map(a => a.player) }));
+    expect(result.players).toEqual([0, 1, 0, 1, 0, 1, 0, 1, 0, 1]);
+    const [a, b] = result.scores;
+    await expect(page.locator('#geoquiz-score')).toContainText(a === b ? 'Égalité' : (a > b ? 'Ana' : 'Ben') + ' l\'emporte');
+    await expect(page.locator('#geoquiz-detail')).toContainText('Ana : ' + a + ' pts');
+    await expect(page.locator('#geoquiz-detail')).toContainText('Ben : ' + b + ' pts');
+    await expect(page.locator('#geoquiz-record')).toContainText('rien n\'est enregistré');
+    expect(await page.evaluate(() => localStorage.getItem('historiaxe_geoquiz_v1'))).toBeNull();
 });
