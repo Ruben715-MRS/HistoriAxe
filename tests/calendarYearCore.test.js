@@ -38,9 +38,10 @@ test('les fêtes chrétiennes à date fixe, et aucune fête mobile (Pâques, Asc
     assert.deepEqual(at(12, 8).religious, ['\u271D\uFE0F Immaculée Conception']);
     const labels = days.flatMap(x => x.religious).join(' | ');
     ['Pâques', 'Ascension', 'Pentecôte', 'mardi gras', 'Mardi'].forEach(mot => assert.ok(!labels.includes(mot), mot));
-    assert.equal(days.filter(x => x.religious.length).length, K.RELIGIOUS.length);
-    // chaque fête chrétienne porte la croix
-    days.forEach(x => x.religious.forEach(l => assert.ok(l.startsWith('\u271D\uFE0F ') || l.startsWith('\u2721\uFE0F ') || l.startsWith('\u{1F54E} '), l)));
+    assert.equal(days.filter(x => x.religious.length).length, K.RELIGIOUS.length + K.CULTURE.length);
+    // chaque fête chrétienne porte la croix ; Halloween porte la citrouille
+    days.forEach(x => x.religious.forEach(l => assert.ok(l.startsWith('\u271D\uFE0F ') || l.startsWith('\u2721\uFE0F ') || l.startsWith('\u{1F54E} ') || l.startsWith('\u{1F383} '), l)));
+    assert.deepEqual(at(10, 31).religious, ['\u{1F383} Halloween']);
 });
 
 test('libellés : « 1er janvier », « 14 juillet », et les noms de mois', () => {

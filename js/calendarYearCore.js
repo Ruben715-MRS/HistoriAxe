@@ -45,6 +45,11 @@
         { m: 12, d: 26, label: 'Saint Étienne' }
     ];
 
+    // Les fêtes à date fixe qui ne sont pas religieuses (affichées avec leur emoji). { m, d, label, emoji }.
+    var CULTURE = [
+        { m: 10, d: 31, label: 'Halloween', emoji: '\u{1F383}' }   // 🎃 citrouille (lanterne d'Halloween)
+    ];
+
     var CROSS = '\u271D\uFE0F';        // ✝️ croix chrétienne
     var STAR = '\u2721\uFE0F';         // ✡️ étoile de David
     var MENORAH = '\u{1F54E}';          // 🕎 ménorah (Hanouka)
@@ -244,6 +249,9 @@
         for (var m = 1; m <= 12; m++) {
             for (var d = 1; d <= DAYS_IN_MONTH[m - 1]; d++) {
                 var religious = RELIGIOUS.filter(function (r) { return r.m === m && r.d === d; }).map(function (r) { return CROSS + ' ' + r.label; });
+                CULTURE.forEach(function (c) {
+                    if (c.m === m && c.d === d) religious.push(c.emoji + ' ' + c.label);
+                });
                 mobile.forEach(function (f) {
                     if (f.month === m && f.day === d) religious.push(CROSS + ' ' + f.label + ' (' + year + ')');
                 });
@@ -276,7 +284,7 @@
     }
 
     return {
-        MONTHS: MONTHS, RELIGIOUS: RELIGIOUS, MOBILE: MOBILE, JEWISH: JEWISH, easterSunday: easterSunday, mobileFeasts: mobileFeasts,
+        MONTHS: MONTHS, RELIGIOUS: RELIGIOUS, CULTURE: CULTURE, MOBILE: MOBILE, JEWISH: JEWISH, easterSunday: easterSunday, mobileFeasts: mobileFeasts,
         hebrewLeap: hebrewLeap, hebrewNewYear: hebrewNewYear, hebrewToFixed: hebrewToFixed, fixedToGregorian: fixedToGregorian,
         jewishFeasts: jewishFeasts, islamicFeasts: islamicFeasts, israelCelebrationDay: israelCelebrationDay, islamicToFixed: islamicToFixed, CRESCENT: CRESCENT, israelIndependenceDay: israelIndependenceDay, CROSS: CROSS, STAR: STAR, MENORAH: MENORAH,
         yearDays: yearDays, dateLabel: dateLabel, monthName: monthName
