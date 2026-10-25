@@ -12973,6 +12973,93 @@ input:not([type="range"]), label, select, summary, textarea {
     margin: 16px 0 8px;
 }
 
+/* Le quiz des pays (js/modes/geoquiz.js) : une question à la fois, quatre réponses, puis le score. */
+.geoquiz-play,
+.geoquiz-end {
+    width: 100%;
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.geoquiz-end {
+    align-items: center;
+    text-align: center;
+    margin-top: 24px;
+}
+
+.geoquiz-card {
+    background: var(--surface);
+    border: 2px solid var(--border-soft);
+    border-radius: 14px;
+    padding: 16px 18px;
+}
+
+.geoquiz-ask {
+    margin: 0 0 8px;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.geoquiz-clues {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--text-dark);
+}
+
+.geoquiz-options {
+    display: grid;
+    gap: 10px;
+}
+
+.geoquiz-feedback {
+    min-height: 1.5em;
+    margin: 0;
+    font-weight: 600;
+}
+
+.geoquiz-menu {
+    width: 100%;
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Le drapeau seul, en grand : c'est l'indice entier du mode « drapeau → pays ». */
+.geoquiz-flag {
+    font-size: 72px;
+    line-height: 1.1;
+    list-style: none;
+    margin: 4px 0;
+    padding-left: 0;
+    text-align: center;
+}
+
+.geoquiz-locate {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Une carte pleine largeur, assez haute pour toucher un petit pays ; le quiz n'a pas de noms à lire dessus. */
+.geoquiz-map {
+    width: 100%;
+    height: 52vh;
+    min-height: 260px;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.geoquiz-score {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
 /* Le choix d'année du calendrier : un champ, et une note sur le calcul des fêtes mobiles. */
 .cal-year-pick {
     display: flex;
