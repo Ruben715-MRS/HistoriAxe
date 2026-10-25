@@ -155,6 +155,9 @@
     // Les vice-présidents (États-Unis) : un troisième mode.
     var VICES = typeof module === 'object' && module.exports ? require('./stateLeadersVices.js') : GLOBAL.StateLeadersVices;
     Object.keys(VICES).forEach(function (k) { if (COUNTRIES[k]) COUNTRIES[k].vice = VICES[k]; });
+    // Les dirigeants du Parti (Chine) : un mode de plus.
+    var PARTI = typeof module === 'object' && module.exports ? require('./stateLeadersParti.js') : GLOBAL.StateLeadersParti;
+    Object.keys(PARTI).forEach(function (k) { if (COUNTRIES[k]) COUNTRIES[k].parti = PARTI[k]; });
 
     function toRows(rows) {
         return rows.map(function (r) {
@@ -171,6 +174,7 @@
         if (!c) return null;
         if (mode === 'gouvernement' && c.gouvernement) return c.gouvernement;
         if (mode === 'vice' && c.vice) return c.vice;
+        if (mode === 'parti' && c.parti) return c.parti;
         return c;
     }
 
@@ -180,6 +184,10 @@
 
     function hasVice(country) {
         return !!(COUNTRIES[country] && COUNTRIES[country].vice);
+    }
+
+    function hasParti(country) {
+        return !!(COUNTRIES[country] && COUNTRIES[country].parti);
     }
 
     // La clé de texte du bouton « chefs du gouvernement » : « Premier ministre » pour la France, sinon « Chefs du gouvernement ».
@@ -227,6 +235,6 @@
     }
 
     return {
-        COUNTRIES: COUNTRIES, rowsOf: rowsOf, countryList: countryList, noteOf: noteOf, hasGovernment: hasGovernment, hasVice: hasVice, govModeKey: govModeKey, search: search, normalize: normalize
+        COUNTRIES: COUNTRIES, rowsOf: rowsOf, countryList: countryList, noteOf: noteOf, hasGovernment: hasGovernment, hasVice: hasVice, hasParti: hasParti, govModeKey: govModeKey, search: search, normalize: normalize
     };
 }));

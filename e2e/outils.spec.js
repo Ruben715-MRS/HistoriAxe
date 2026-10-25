@@ -540,3 +540,20 @@ test('chronologie : les États-Unis proposent les vice-présidents, en couleur s
     await expect(rows.first()).toContainText('George Washington');
     expect(errors).toEqual([]);
 });
+
+test('chronologie : la Chine propose les secrétaires généraux du Parti', async ({ page }) => {
+    const errors = [];
+    page.on('pageerror', e => errors.push(String(e)));
+    await page.locator('#btn-tools').click();
+    await page.locator('#screen-tools .arcade-card', { hasText: 'Chronologie des chefs d’État' }).click();
+    const rows = page.locator('#leaders-list .leader-row');
+    await page.locator('#leaders-pick').click();
+    await page.locator('.leaders-country-btn', { hasText: 'Chine' }).click();
+    await expect(page.locator('#leaders-mode-parti')).toBeVisible();
+    await page.locator('#leaders-mode-parti').click();
+    await expect(rows.first()).toContainText('Chen Duxiu');
+    await expect(rows.last()).toContainText('Xi Jinping');
+    await page.locator('#leaders-mode-etat').click();
+    await expect(rows.first()).toContainText('Mao Zedong');
+    expect(errors).toEqual([]);
+});

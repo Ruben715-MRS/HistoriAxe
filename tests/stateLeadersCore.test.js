@@ -131,3 +131,17 @@ test('premiers ministres français : la seconde ligne s\'affiche à la place de 
     assert.equal(rows[0].sub, 'Président de la République : Jules Grévy');
     assert.equal(rows[0].name, 'William Waddington');
 });
+
+test('chefs d’État : la Chine a le mode « Secrétaires généraux du Parti », dates cohérentes', () => {
+    assert.ok(S.hasParti('chine'));
+    assert.ok(!S.hasParti('france'));
+    const items = S.rowsOf('chine', 'parti');
+    assert.strictEqual(items[items.length - 1].row.name, 'Xi Jinping');
+    assert.strictEqual(items[items.length - 1].row.to, null);
+    items.forEach((it, i) => {
+        const r = it.row;
+        if (r.to !== null) assert.ok(r.to >= r.from, r.name);
+        if (i > 0) assert.ok(r.from >= items[i - 1].row.from, r.name + ' : hors ordre');
+    });
+    assert.ok(!items.some(it => it.row.name === 'Deng Xiaoping'), 'Deng n’a pas occupé ces fonctions');
+});

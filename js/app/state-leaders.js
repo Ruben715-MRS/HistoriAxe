@@ -44,9 +44,9 @@ function leadersTogglePicker() {
 
 // Le choix entre chefs d’État (par défaut) et chefs du gouvernement, pour les régimes parlementaires.
 function leadersSetMode(mode) {
-    leadersMode = mode === 'gouvernement' || mode === 'vice' ? mode : 'etat';
-    ['etat', 'gouvernement', 'vice'].forEach(m => {
-        const id = m === 'etat' ? 'leaders-mode-etat' : m === 'gouvernement' ? 'leaders-mode-gouv' : 'leaders-mode-vice';
+    leadersMode = ['gouvernement', 'vice', 'parti'].includes(mode) ? mode : 'etat';
+    ['etat', 'gouvernement', 'vice', 'parti'].forEach(m => {
+        const id = 'leaders-mode-' + { etat: 'etat', gouvernement: 'gouv', vice: 'vice', parti: 'parti' }[m];
         document.getElementById(id).setAttribute('aria-pressed', leadersMode === m ? 'true' : 'false');
     });
     leadersShowNote();
@@ -62,7 +62,10 @@ function leadersShowCountry(key) {
     leadersMode = 'etat';
     const hasGov = StateLeadersCore.hasGovernment(key);
     const hasVice = StateLeadersCore.hasVice(key);
-    document.getElementById('leaders-modes').classList.toggle('hidden', !hasGov && !hasVice);
+    const hasParti = StateLeadersCore.hasParti(key);
+    document.getElementById('leaders-modes').classList.toggle('hidden', !hasGov && !hasVice && !hasParti);
+    document.getElementById('leaders-mode-parti').classList.toggle('hidden', !hasParti);
+    document.getElementById('leaders-mode-parti').setAttribute('aria-pressed', 'false');
     document.getElementById('leaders-mode-gouv').classList.toggle('hidden', !hasGov);
     document.getElementById('leaders-mode-vice').classList.toggle('hidden', !hasVice);
     document.getElementById('leaders-mode-etat').setAttribute('aria-pressed', 'true');
