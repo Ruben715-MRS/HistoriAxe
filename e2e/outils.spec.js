@@ -18,10 +18,10 @@ async function ouvrir(page, texte) {
     await page.locator('#screen-tools .arcade-card', { hasText: texte }).click();
 }
 
-test('la boîte à outils s\'ouvre depuis les catégories, propose dix outils et revient', async ({ page }) => {
+test('la boîte à outils s\'ouvre depuis les catégories, propose onze outils et revient', async ({ page }) => {
     await page.locator('#btn-tools').click();
     expect(await visibleScreen(page)).toBe('screen-tools');
-    await expect(page.locator('#screen-tools .arcade-card')).toHaveCount(10);
+    await expect(page.locator('#screen-tools .arcade-card')).toHaveCount(11);
     await page.locator('#screen-tools .arcade-card', { hasText: 'Chiffres romains' }).click();
     expect(await visibleScreen(page)).toBe('screen-tool-roman');
     await page.locator('#screen-tool-roman .back-btn').click();
@@ -459,6 +459,38 @@ test('généalogie biblique : un arbre, hommes en bleu et femmes en rose, bascul
     // Tsippora, mariée à Moïse, porte le nom de son mari dans sa carte (encadré bleu).
     await expect(page.locator('#gen-stage .gen-card[data-id="tsippora"] .gen-spouse.is-man')).toContainText('Moïse');
     await page.locator('#screen-tool-genealogy .back-btn').click();
+    expect(await visibleScreen(page)).toBe('screen-tools');
+    expect(errors).toEqual([]);
+});
+
+test('chronologie des chefs d’État : de Clovis à Macron, barres de dynastie, recherche par nom', async ({ page }) => {
+    const errors = [];
+    page.on('pageerror', e => errors.push(String(e)));
+    await page.locator('#btn-tools').click();
+    await page.locator('#screen-tools .arcade-card', { hasText: 'Chronologie des chefs d’État' }).click();
+    expect(await visibleScreen(page)).toBe('screen-tool-leaders');
+    const rows = page.locator('#leaders-list .leader-row');
+    await expect(rows.first()).toContainText('Clovis Ier');
+    await expect(rows.last()).toContainText('Emmanuel Macron');
+    await expect(rows.last()).toContainText('aujourd’hui');
+    await expect(page.locator('#leaders-list .leaders-divider').first()).toContainText('Dynastie mérovingienne');
+    await page.locator('#leaders-search').fill('petain');
+    await expect(rows).toHaveCount(1);
+    await expect(rows.first()).toContainText('Philippe Pétain');
+    await expect(page.locator('#leaders-list .leaders-divider')).toHaveCount(0);
+    await page.locator('#leaders-search').fill('zzzz');
+    await expect(rows).toHaveCount(0);
+    await expect(page.locator('#leaders-count')).toContainText('Aucun');
+    // Le bouton « Pays » ouvre la liste ; le Japon s'affiche, avec sa note.
+    await page.locator('#leaders-pick').click();
+    await expect(page.locator('#leaders-countries .leaders-country-btn')).toHaveCount(33);
+    await page.locator('.leaders-country-btn', { hasText: 'Japon' }).click();
+    await expect(page.locator('#leaders-countries')).toBeHidden();
+    await expect(page.locator('#leaders-pick')).toContainText('Japon');
+    await expect(rows.first()).toContainText('Meiji');
+    await expect(rows.last()).toContainText('Naruhito');
+    await expect(page.locator('#leaders-country-note')).toContainText('ère Meiji');
+    await page.locator('#screen-tool-leaders .back-btn').click();
     expect(await visibleScreen(page)).toBe('screen-tools');
     expect(errors).toEqual([]);
 });

@@ -1294,6 +1294,10 @@
                 <span class="arcade-card-icon" aria-hidden="true">🌳</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.genealogy_title"></strong><small data-i18n="tools.genealogy_desc"></small></span>
             </button>
+            <button type="button" class="arcade-card" onclick="openTool('leaders', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">🏛️</span>
+                <span class="arcade-card-text"><strong data-i18n="tools.leaders_title"></strong><small data-i18n="tools.leaders_desc"></small></span>
+            </button>
             <button type="button" class="arcade-card" onclick="openTool('periods', 'screen-tools')">
                 <span class="arcade-card-icon" aria-hidden="true">🧭</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.periods_title"></strong><small data-i18n="tools.periods_desc"></small></span>
@@ -1579,6 +1583,20 @@
         <div class="gen-view" id="gen-view" tabindex="0" role="region" aria-label="Arbre généalogique" data-i18n-attr="aria-label:tools.genealogy_view_aria">
             <div class="gen-sizer" id="gen-sizer"><div class="gen-stage" id="gen-stage"></div></div>
         </div>
+    </div>
+
+    <div id="screen-tool-leaders" class="list-screen leaders-screen hidden">
+        <button class="back-btn" onclick="toolBack('leaders')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="tools.leaders_title">Chronologie des chefs d’État</h2>
+        <p class="modes-header-subtitle" data-i18n="tools.leaders_intro">De Clovis à aujourd'hui : rois, empereurs et présidents, par dynastie et par régime.</p>
+        <div class="leaders-bar">
+            <button type="button" class="leaders-pick" id="leaders-pick" aria-expanded="false" aria-controls="leaders-countries" onclick="leadersTogglePicker()">Pays : France ▾</button>
+            <div class="leaders-countries hidden" id="leaders-countries" role="group" aria-label="Liste des pays" data-i18n-attr="aria-label:tools.leaders_countries_aria"></div>
+            <p class="tool-small leaders-note" id="leaders-country-note"></p>
+            <input type="search" id="leaders-search" class="tool-input" autocomplete="off" placeholder="Chercher un nom" aria-label="Chercher un nom" data-i18n-attr="placeholder:tools.leaders_search;aria-label:tools.leaders_search">
+            <p class="tool-small" id="leaders-count" role="status"></p>
+        </div>
+        <div class="leaders-list" id="leaders-list"></div>
     </div>
 
     <div id="screen-tool-history" class="list-screen hidden">
@@ -3265,6 +3283,9 @@
     <script src="js/app/calendar.js"></script>
     <script src="js/genealogyCore.js"></script>
     <script src="js/app/genealogy.js"></script>
+    <script src="js/stateLeadersData.js"></script>
+    <script src="js/stateLeadersCore.js"></script>
+    <script src="js/app/state-leaders.js"></script>
     <script src="js/historyMapsCore.js"></script>
     <script src="js/app/history-maps.js"></script>
     <script src="js/app/rewards.js"></script>

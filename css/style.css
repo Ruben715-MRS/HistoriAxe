@@ -13321,3 +13321,70 @@ input:not([type="range"]), label, select, summary, textarea {
 /* En vertical, les textes des cartes sont centrés (le sens horizontal reste aligné à gauche, à droite pour l'hébreu). */
 .gen-stage.is-vertical .gen-card,
 .gen-stage.is-vertical .gen-card[lang="he"] { text-align: center; }
+
+/* --- Les chefs d'État --- */
+.leaders-screen { padding-left: 0; padding-right: 0; }
+.leaders-screen .header-title { padding: 58px 16px 0; font-size: 22px; }
+.leaders-bar { width: 100%; max-width: 620px; padding: 0 16px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; margin: 0 auto; }
+.leaders-bar #leaders-search { width: 100%; max-width: 420px; box-sizing: border-box; }
+.leaders-bar .tool-small { text-align: center; margin: 6px 0 0; }
+.leaders-note { font-size: 12px; opacity: 0.8; }
+.leaders-list { width: 100%; max-width: 620px; padding: 8px 16px 40px; box-sizing: border-box; margin: 0 auto; }
+.leader-row {
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    color: #0f172a;
+    margin-bottom: 4px;
+}
+.leader-dates {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 62px;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    font-size: 14px;
+    border-right: 2px solid rgba(15, 23, 42, 0.25);
+    padding-right: 10px;
+}
+.leader-to { font-size: 12px; color: #334155; }
+.leader-name { display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+.leader-name strong { font-size: 15px; }
+.leader-name small { font-size: 12px; color: #334155; }
+.leaders-divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 14px 0 8px;
+    color: var(--text-dark, #0f172a);
+    font-size: 13px;
+    font-weight: bold;
+}
+.leaders-divider::before,
+.leaders-divider::after { content: ''; flex: 1; border-top: 2px solid currentColor; opacity: 0.5; }
+.leaders-pick {
+    margin: 4px 0 0;
+    padding: 10px 18px;
+    border: 1px solid var(--glass-border);
+    border-radius: 999px;
+    background: var(--glass-bg);
+    color: var(--text-dark);
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.leaders-countries { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 8px; max-height: 40vh; overflow-y: auto; }
+.leaders-countries.hidden { display: none; }
+.leaders-country-btn {
+    padding: 6px 12px;
+    border: 1px solid #94a3b8;
+    border-radius: 14px;
+    background: #fff;
+    color: #0f172a;
+    font-size: 13px;
+    cursor: pointer;
+}
+.leaders-country-btn[aria-pressed="true"] { background: #2563eb; border-color: #2563eb; color: #fff; }
