@@ -695,9 +695,13 @@
     m('assir_korah', 'Assir', 'אסיר', 'korah_levi');
     m('elkana_korah', 'Elkana (fils de Coré)', 'אלקנה', 'korah_levi');
     m('abiasaf', 'Abiasaf', 'אביסף', 'korah_levi');
-    m('dathan', 'Datan', 'דתן', 'ruben', { far: true });
-    m('abiram', 'Abiram', 'אבירם', 'ruben', { far: true });
-    m('on', 'On', 'און', 'ruben', { far: true });
+    // Péleth, fils de Réouven (Nombres 26:5 ; 16:1). Éliab, fils de Péleth, père de Nemouel, Datan et Abiram ; On, fils de Péleth.
+    m('peleth', 'Péleth', 'פלת', 'ruben');
+    m('eliab_pallu', 'Éliab (fils de Péleth)', 'אליאב', 'peleth');
+    m('nemuel', 'Némouel', 'נמואל', 'eliab_pallu');
+    m('dathan', 'Datan', 'דתן', 'eliab_pallu');
+    m('abiram', 'Abiram', 'אבירם', 'eliab_pallu');
+    m('on', 'On', 'און', 'peleth');
 
     // Abraham et les siens : Éliézer de Damas, Éphron le Hittite, Melkitsédek (Genèse 14:18 ; 15:2 ; 23:8-10).
     m('eliezer_abraham', 'Éliézer de Damas', 'אליעזר', 'aram_sem', { far: true });
