@@ -62,7 +62,7 @@ function geoQuizRight(q) { return q.right || q.target; }
 
 // Tous les pays jouables (le monde, tous niveaux) : pour reconnaître une saisie, et ne jamais prendre un pays pour un autre.
 function geoQuizEveryCountry() {
-    if (!geoQuizAllPool) geoQuizAllPool = GeoQuizSessionCore.quizPool(countriesData.facts, { level: 'hard' });
+    if (!geoQuizAllPool) geoQuizAllPool = GeoQuizSessionCore.zoneCountries(countriesData.facts, 'world');
     return geoQuizAllPool;
 }
 
@@ -119,7 +119,10 @@ function geoQuizRenderSettings() {
     const core = GeoQuizSessionCore;
     geoQuizFillChips('geoquiz-zone', core.ZONES.map(z => ({ value: z.key, label: t('geoquiz.zone_' + z.key) })), 'zone', prefs.zone);
     geoQuizFillChips('geoquiz-level', Object.keys(core.LEVELS).map(k => ({ value: k, label: t('geoquiz.level_' + k) })), 'level', prefs.level);
-    geoQuizEl('geoquiz-level-hint').textContent = t('geoquiz.level_' + prefs.level + '_hint');
+    const info = core.levelInfo(countriesData.facts, prefs);
+    const pct = Math.round(info.share * 100);
+    geoQuizEl('geoquiz-level-hint').textContent = t('geoquiz.level_' + prefs.level + '_hint', { pct: pct, n: info.size })
+        + (info.floored ? ' ' + t('geoquiz.level_floor', { min: core.MIN_POOL }) : '');
     geoQuizFillChips('geoquiz-length', core.LENGTHS.map(n => ({ value: n, label: String(n) })), 'length', prefs.length);
     geoQuizFillChips('geoquiz-timer-choice', core.TIMERS.map(s => ({ value: s, label: t('geoquiz.timer_' + s) })), 'timer', prefs.timer);
 }
@@ -725,8 +728,8 @@ function geoQuizUnlockBadges(summary, masteredCount, dailyFirst) {
     const core = GeoQuizSessionCore;
     const state = geoQuizStateLoad();
     const mystery = geoQuizAnswers.filter(a => a.q.kind === 'mystery' && a.ok).map(a => a.tries);
-    const zoneComplete = core.ZONES.some(z => z.continent && (() => {
-        const pool = core.quizPool(countriesData.facts, { zone: z.key, level: 'hard' });
+    const zoneComplete = core.ZONES.some(z => z.continents && (() => {
+        const pool = core.zoneCountries(countriesData.facts, z.key);
         return pool.length > 0 && pool.every(c => core.masteryOf(state.countries[c.id]) === 'mastered');
     })());
     core.badgesEarned({
@@ -778,8 +781,8 @@ function geoQuizRenderMastery() {
         return li;
     });
     geoQuizEl('geoquiz-mastery-legend').replaceChildren(...legend);
-    const zones = core.ZONES.filter(z => z.continent).map(z => {
-        const list = pool.filter(c => c.cont === z.continent).sort((a, b) => (a.n < b.n ? -1 : 1));
+    const zones = core.ZONES.filter(z => z.continents).map(z => {
+        const list = pool.filter(c => z.continents.indexOf(c.cont) !== -1).sort((a, b) => (a.n < b.n ? -1 : 1));
         const got = core.masteryCounts(state, list);
         const wrap = document.createElement('section');
         wrap.className = 'geoquiz-zone-block';

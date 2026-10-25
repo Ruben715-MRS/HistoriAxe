@@ -35,22 +35,26 @@
     // Les pays que le quiz n'interroge jamais, même avec les territoires et les entités contestées : la Palestine.
     var EXCLUDED_IDS = ['PSX'];
 
+    // Les zones : le monde, ou un ou plusieurs continents (les Amériques sont une seule zone, assez peuplée pour une partie).
     var ZONES = [
-        { key: 'world', continent: null },
-        { key: 'africa', continent: 'Afrique' },
-        { key: 'north_america', continent: 'Amérique du Nord' },
-        { key: 'south_america', continent: 'Amérique du Sud' },
-        { key: 'asia', continent: 'Asie' },
-        { key: 'europe', continent: 'Europe' },
-        { key: 'oceania', continent: 'Océanie' }
+        { key: 'world', continents: null },
+        { key: 'africa', continents: ['Afrique'] },
+        { key: 'americas', continents: ['Amérique du Nord', 'Amérique du Sud'] },
+        { key: 'asia', continents: ['Asie'] },
+        { key: 'europe', continents: ['Europe'] },
+        { key: 'oceania', continents: ['Océanie'] }
     ];
+    // Les anciennes zones séparées (Amérique du Nord, Amérique du Sud) rejoignent les Amériques dans les réglages enregistrés.
+    var ZONE_ALIASES = { north_america: 'americas', south_america: 'americas' };
 
-    // size : combien de pays (les plus peuplés de la zone) ; distractors : les fausses réponses de la même région ('hard') ou au hasard ('easy').
+    // share : la part des pays de la zone (les plus peuplés d'abord) ; distractors : les fausses réponses de la même région ('hard')
+    // ou au hasard ('easy'). Une zone très petite garde au moins MIN_POOL pays, sans quoi quatre propositions ne se départagent plus.
     var LEVELS = {
-        easy: { size: 40, distractors: 'easy' },
-        medium: { size: 80, distractors: 'easy' },
-        hard: { size: Infinity, distractors: 'hard' }
+        easy: { share: 0.2, distractors: 'easy' },
+        medium: { share: 0.35, distractors: 'easy' },
+        hard: { share: 0.5, distractors: 'hard' }
     };
+    var MIN_POOL = 6;
 
     var LENGTHS = [5, 10, 20, 50];
     var TIMERS = [0, 30, 15];          // secondes par question ; 0 = sans chrono
@@ -89,11 +93,34 @@
         return ZONES[0];
     }
 
+    // Tous les pays jouables d'une zone, les plus peuplés d'abord (sans limite de difficulté).
+    function zoneCountries(facts, key) {
+        var zone = zoneOf(key);
+        var all = Q.playablePool(facts, { includeSpecial: true }).filter(function (c) {
+            return EXCLUDED_IDS.indexOf(c.id) === -1 && (!zone.continents || zone.continents.indexOf(c.cont) !== -1);
+        });
+        all.sort(function (a, b) { return b.pop - a.pop || (a.id < b.id ? -1 : 1); });
+        return all;
+    }
+
+    // Combien de pays une difficulté garde dans une zone de `total` pays : sa part, avec au moins MIN_POOL (ou tous, si la zone est plus petite).
+    function poolSize(level, total) {
+        return Math.min(total, Math.max(MIN_POOL, Math.round(LEVELS[level].share * total)));
+    }
+
+    // Pour l'écran : la taille du jeu, la part demandée et si le minimum s'applique.
+    function levelInfo(facts, prefs) {
+        var p = normalizePrefs(prefs);
+        var total = zoneCountries(facts, p.zone).length;
+        var size = poolSize(p.level, total);
+        return { size: size, total: total, share: LEVELS[p.level].share, floored: size > Math.round(LEVELS[p.level].share * total) };
+    }
+
     // Les réglages tels qu'on peut les lire dans le stockage : toute valeur inconnue revient à la valeur par défaut.
     function normalizePrefs(raw) {
         var src = raw && typeof raw === 'object' ? raw : {};
         return {
-            zone: ZONES.some(function (z) { return z.key === src.zone; }) ? src.zone : DEFAULT_PREFS.zone,
+            zone: ZONES.some(function (z) { return z.key === (ZONE_ALIASES[src.zone] || src.zone); }) ? (ZONE_ALIASES[src.zone] || src.zone) : DEFAULT_PREFS.zone,
             level: LEVELS[src.level] ? src.level : DEFAULT_PREFS.level,
             length: LENGTHS.indexOf(src.length) !== -1 ? src.length : DEFAULT_PREFS.length,
             timer: TIMERS.indexOf(src.timer) !== -1 ? src.timer : DEFAULT_PREFS.timer
@@ -103,13 +130,8 @@
     // Le jeu de pays d'une partie : les pays jouables de la zone, les plus peuplés d'abord, limités selon la difficulté.
     function quizPool(facts, prefs) {
         var p = normalizePrefs(prefs);
-        var zone = zoneOf(p.zone);
-        var all = Q.playablePool(facts, { includeSpecial: true }).filter(function (c) {
-            return EXCLUDED_IDS.indexOf(c.id) === -1 && (!zone.continent || c.cont === zone.continent);
-        });
-        all.sort(function (a, b) { return b.pop - a.pop || (a.id < b.id ? -1 : 1); });
-        var size = LEVELS[p.level].size;
-        return size >= all.length ? all : all.slice(0, size);
+        var all = zoneCountries(facts, p.zone);
+        return all.slice(0, poolSize(p.level, all.length));
     }
 
     function shuffle(list, rng) {
@@ -228,7 +250,7 @@
         var p = form === 'daily' ? normalizePrefs(DAILY_PREFS) : normalizePrefs(prefs);
         var rng = (opts && opts.rng) || Math.random;
         // Les pays à revoir se cherchent dans toute la zone, quelle que soit la difficulté réglée.
-        var pool = quizPool(facts, form === 'weak' ? { zone: p.zone, level: 'hard' } : p);
+        var pool = form === 'weak' ? zoneCountries(facts, p.zone) : quizPool(facts, p);
         var rules = rulesOf(form);
         var wanted = rules === 'burst' ? BURST_MAX_QUESTIONS : rules === 'survival' ? SURVIVAL_MAX_QUESTIONS : p.length;
         var count = Math.min(form === 'duel' ? 2 * wanted : wanted, pool.length);
@@ -521,6 +543,7 @@
     }
 
     return {
+        zoneCountries: zoneCountries, levelInfo: levelInfo, MIN_POOL: MIN_POOL,
         EXCLUDED_IDS: EXCLUDED_IDS, ZONES: ZONES, LEVELS: LEVELS, LENGTHS: LENGTHS, TIMERS: TIMERS, FORMS: FORMS, QUESTION_KINDS: QUESTION_KINDS,
         MIX_KINDS: MIX_KINDS, TRACKED_KINDS: TRACKED_KINDS, MAP_KINDS: MAP_KINDS, BURST_SECONDS: BURST_SECONDS, LIVES: LIVES, rulesOf: rulesOf, questionTimer: questionTimer, kindsOf: kindsOf,
         whoPoints: whoPoints, mysteryPoints: mysteryPoints,

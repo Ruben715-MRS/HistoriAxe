@@ -26,35 +26,48 @@ test('réglages : les valeurs inconnues reviennent aux valeurs par défaut, et l
 });
 
 test('jeu de pays : tous les territoires et entités contestées, sauf la Palestine ; jamais l’Antarctique', () => {
-    const ids = new Set(S.quizPool(facts, { level: 'hard' }).map(c => c.id));
+    const ids = new Set(S.zoneCountries(facts, 'world').map(c => c.id));
     ['TWN', 'KOS', 'HKG', 'GRL', 'SAH'].forEach(id => assert.ok(ids.has(id), id + ' doit être jouable'));
     assert.ok(!ids.has('PSX'), 'la Palestine est exclue');
     assert.ok(!ids.has('ATA'), 'l’Antarctique n’est pas un pays');
     assert.ok(ids.size > 194, 'plus de pays que le jeu historique (194), qui excluait les territoires');
 });
 
-test('difficulté : facile = les 40 pays les plus peuplés, moyen = 80, difficile = tous', () => {
+test('difficulté : une part de la zone (20 %, 35 %, 50 %), les plus peuplés d’abord, chaque jeu inclus dans le suivant', () => {
+    const all = S.zoneCountries(facts, 'world');
     const easy = S.quizPool(facts, { level: 'easy' });
     const medium = S.quizPool(facts, { level: 'medium' });
     const hard = S.quizPool(facts, { level: 'hard' });
-    assert.equal(easy.length, 40);
-    assert.equal(medium.length, 80);
-    assert.ok(hard.length > 80);
-    // Les plus peuplés d’abord ; chaque jeu est inclus dans le suivant.
-    assert.deepEqual(easy.map(c => c.id), medium.slice(0, 40).map(c => c.id));
-    assert.deepEqual(medium.map(c => c.id), hard.slice(0, 80).map(c => c.id));
+    assert.equal(easy.length, Math.round(0.2 * all.length));
+    assert.equal(medium.length, Math.round(0.35 * all.length));
+    assert.equal(hard.length, Math.round(0.5 * all.length));
+    assert.deepEqual(easy.map(c => c.id), medium.slice(0, easy.length).map(c => c.id));
+    assert.deepEqual(medium.map(c => c.id), hard.slice(0, medium.length).map(c => c.id));
     for (let i = 1; i < hard.length; i++) assert.ok(hard[i - 1].pop >= hard[i].pop, 'tri par population');
-    assert.ok(!easy.some(c => c.id === 'VAT'), 'le Vatican n’est pas dans les 40 plus peuplés');
+    assert.ok(!easy.some(c => c.id === 'VAT'), 'le Vatican n’est pas parmi les 20 % les plus peuplés du monde');
 });
 
-test('zone : un continent ne contient que ses pays, et une petite zone reste jouable même en facile', () => {
-    S.ZONES.filter(z => z.continent).forEach(z => {
-        const pool = S.quizPool(facts, { zone: z.key, level: 'hard' });
-        assert.ok(pool.length >= 8, z.key + ' : ' + pool.length + ' pays');
-        assert.ok(pool.every(c => c.cont === z.continent), z.key);
+test('zone : une zone garde sa part de pays, au moins MIN_POOL, et ne contient que ses continents', () => {
+    S.ZONES.filter(z => z.continents).forEach(z => {
+        ['easy', 'medium', 'hard'].forEach(level => {
+            const pool = S.quizPool(facts, { zone: z.key, level: level });
+            assert.ok(pool.length >= S.MIN_POOL, z.key + ' ' + level + ' : ' + pool.length + ' pays');
+            assert.ok(pool.every(c => z.continents.indexOf(c.cont) !== -1), z.key);
+        });
     });
-    const sa = S.quizPool(facts, { zone: 'south_america', level: 'easy' });
-    assert.ok(sa.length < 40 && sa.length >= 12, 'toute l’Amérique du Sud, moins de 40 pays');
+    const americas = S.zoneCountries(facts, 'americas');
+    assert.ok(americas.some(c => c.cont === 'Amérique du Nord') && americas.some(c => c.cont === 'Amérique du Sud'), 'les Amériques sont une seule zone');
+    assert.equal(S.normalizePrefs({ zone: 'north_america' }).zone, 'americas', 'un réglage enregistré avant la fusion');
+    assert.equal(S.normalizePrefs({ zone: 'south_america' }).zone, 'americas');
+});
+
+test('taille : une petite zone garde au moins MIN_POOL pays, et l’écran le dit', () => {
+    const oce = S.levelInfo(facts, { zone: 'oceania', level: 'easy' });
+    assert.equal(oce.size, S.MIN_POOL);
+    assert.equal(oce.floored, true);
+    const world = S.levelInfo(facts, { zone: 'world', level: 'medium' });
+    assert.equal(world.floored, false);
+    assert.equal(world.size, Math.round(0.35 * world.total));
 });
 
 test('QCM : chaque question est valable, sur des pays tous différents, dans le jeu de pays', () => {
@@ -161,7 +174,7 @@ test('points : qui suis-je (bonus par indice resté caché) et pays mystère (bo
 test('longueur : jamais plus de questions que de pays dans la zone', () => {
     const { questions, poolSize } = S.generateGame(facts, 'map', { zone: 'oceania', level: 'easy', length: 50 }, { rng: seeded(2) });
     assert.ok(questions.length <= poolSize);
-    assert.ok(questions.length >= 10);
+    assert.ok(questions.length >= S.MIN_POOL);
 });
 
 test('points : 100, + 10 par bonne réponse de suite (jusqu’à 50), + jusqu’à 50 de vitesse avec un chrono', () => {

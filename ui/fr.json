@@ -2334,8 +2334,6 @@
     "zone_title": "Zone",
     "zone_world": "Monde",
     "zone_africa": "Afrique",
-    "zone_north_america": "Amérique du Nord",
-    "zone_south_america": "Amérique du Sud",
     "zone_asia": "Asie",
     "zone_europe": "Europe",
     "zone_oceania": "Océanie",
@@ -2343,9 +2341,9 @@
     "level_easy": "Facile",
     "level_medium": "Moyen",
     "level_hard": "Difficile",
-    "level_easy_hint": "Les 40 pays les plus peuplés de la zone.",
-    "level_medium_hint": "Les 80 pays les plus peuplés de la zone.",
-    "level_hard_hint": "Tous les pays et territoires de la zone, avec des fausses réponses de la même région.",
+    "level_easy_hint": "Les {pct} % des pays les plus peuplés de la zone : {n} pays.",
+    "level_medium_hint": "Les {pct} % des pays les plus peuplés de la zone : {n} pays.",
+    "level_hard_hint": "Les {pct} % des pays les plus peuplés de la zone : {n} pays, avec des fausses réponses de la même région.",
     "length_title": "Nombre de questions",
     "timer_title": "Chrono",
     "timer_0": "Sans chrono",
@@ -2488,6 +2486,8 @@
     "mystery_lost": "Raté : le pays mystère était {answer}.",
     "progress_open": "Question {n}",
     "lives_label": "Vies : {n}",
-    "end_detail_open": "{correct} bonne(s) réponse(s) sur {total} question(s) · meilleure série : {streak}"
+    "end_detail_open": "{correct} bonne(s) réponse(s) sur {total} question(s) · meilleure série : {streak}",
+    "zone_americas": "Amériques",
+    "level_floor": "Une zone aussi petite garde au moins {min} pays."
   }
 }

@@ -2297,8 +2297,6 @@
     "zone_title": "Area",
     "zone_world": "World",
     "zone_africa": "Africa",
-    "zone_north_america": "North America",
-    "zone_south_america": "South America",
     "zone_asia": "Asia",
     "zone_europe": "Europe",
     "zone_oceania": "Oceania",
@@ -2306,9 +2304,9 @@
     "level_easy": "Easy",
     "level_medium": "Medium",
     "level_hard": "Hard",
-    "level_easy_hint": "The 40 most populous countries of the area.",
-    "level_medium_hint": "The 80 most populous countries of the area.",
-    "level_hard_hint": "Every country and territory of the area, with wrong answers from the same region.",
+    "level_easy_hint": "The {pct}% most populous countries of the area: {n} countries.",
+    "level_medium_hint": "The {pct}% most populous countries of the area: {n} countries.",
+    "level_hard_hint": "The {pct}% most populous countries of the area: {n} countries, with wrong answers from the same region.",
     "length_title": "Number of questions",
     "timer_title": "Timer",
     "timer_0": "No timer",
@@ -2451,6 +2449,8 @@
     "mystery_lost": "Missed: the mystery country was {answer}.",
     "progress_open": "Question {n}",
     "lives_label": "Lives: {n}",
-    "end_detail_open": "{correct} correct out of {total} question(s) · best streak: {streak}"
+    "end_detail_open": "{correct} correct out of {total} question(s) · best streak: {streak}",
+    "zone_americas": "Americas",
+    "level_floor": "A small area keeps at least {min} countries."
   }
 }
