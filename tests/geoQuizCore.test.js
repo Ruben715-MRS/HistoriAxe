@@ -147,8 +147,35 @@ test('textes : chaque type de question et d\'indice a son libellé, en français
         const ui = JSON.parse(fs.readFileSync(path.join(root, 'ui', lang + '.json'), 'utf8')).geoquiz;
         for (const ask of Q.ASK_KEYS) assert.ok(ui['ask_' + ask], `${lang} : geoquiz.ask_${ask}`);
         for (const key of Q.CLUE_KEYS) assert.ok(ui['clue_' + key], `${lang} : geoquiz.clue_${key}`);
-        for (const key of ['title', 'start', 'progress', 'right', 'wrong', 'next', 'finish', 'score', 'replay', 'back', 'none', 'credit', 'pop_label']) {
+        for (const key of ['title', 'start', 'progress', 'right', 'wrong', 'next', 'finish', 'score', 'replay', 'back', 'none', 'credit', 'pop_label', 'map_start', 'map_label', 'locate_ask', 'locate_right', 'locate_wrong']) {
             assert.ok(ui[key], `${lang} : geoquiz.${key}`);
         }
+    }
+});
+
+test('distance : Paris → Lyon, environ 390 km ; zéro pour le même point', () => {
+    const d = Q.distanceKm([2.35, 48.85], [4.83, 45.76]);
+    assert.ok(Math.abs(d - 392) < 5, `distance ${d}`);
+    assert.equal(Q.distanceKm([10, 10], [10, 10]), 0);
+});
+
+test('touche le pays : un pays de taille normale compte s\'il est touché à l\'intérieur, pas à côté', () => {
+    assert.equal(Q.locateCorrect({ inside: true, tiny: false, distanceKm: 900 }), true);
+    assert.equal(Q.locateCorrect({ inside: false, tiny: false, distanceKm: 5 }), false);
+});
+
+test('touche le pays : un pays trop petit compte dans un rayon de LOCATE_TINY_KM', () => {
+    assert.equal(Q.locateCorrect({ inside: false, tiny: true, distanceKm: Q.LOCATE_TINY_KM - 1 }), true);
+    assert.equal(Q.locateCorrect({ inside: false, tiny: true, distanceKm: Q.LOCATE_TINY_KM + 1 }), false);
+});
+
+test('touche le pays : questions sans options, un pays chacune, distinctes', () => {
+    const qs = Q.generateLocateQuestions(pool, { count: 10, rng: seeded(13) });
+    assert.equal(qs.length, 10);
+    assert.equal(new Set(qs.map(q => q.target)).size, 10);
+    for (const q of qs) {
+        assert.equal(q.ask, 'locate');
+        assert.deepEqual(q.options, []);
+        assert.equal(q.clues[0].value, pool.find(c => c.id === q.target).n);
     }
 });

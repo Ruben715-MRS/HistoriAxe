@@ -230,7 +230,36 @@
             && isUnambiguous(pool, question.clues, question.ask, answer);
     }
 
+    // --- « Touche le pays » (carte) ------------------------------------------------------------
+    // Pas d'options : le joueur touche le pays nommé. Un pays trop petit pour être touché à l'échelle du monde compte comme réussi
+    // dans LOCATE_TINY_KM ; les autres exigent un point à l'intérieur du contour (voir CountriesCore.containsNear).
+    var LOCATE_TINY_KM = 100;
+
+    // Distance orthodromique en kilomètres entre deux points [lon, lat].
+    function distanceKm(a, b) {
+        var rad = Math.PI / 180;
+        var dLat = (b[1] - a[1]) * rad;
+        var dLon = (b[0] - a[0]) * rad;
+        var h = Math.sin(dLat / 2) * Math.sin(dLat / 2)
+            + Math.cos(a[1] * rad) * Math.cos(b[1] * rad) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+        return 2 * 6371 * Math.asin(Math.min(1, Math.sqrt(h)));
+    }
+
+    // Le clic est-il une bonne réponse ? `tap` : { inside (le point est dans le contour), tiny (pays trop petit), distanceKm (au centre du pays) }.
+    function locateCorrect(tap) {
+        return tap.tiny ? tap.distanceKm <= LOCATE_TINY_KM : tap.inside;
+    }
+
+    // `count` questions « touche le pays », sur des pays différents, sans options.
+    function generateLocateQuestions(pool, opts) {
+        var o = settings(opts);
+        return shuffle(pool, o.rng).slice(0, o.count).map(function (c) {
+            return { target: c.id, ask: 'locate', clues: [{ key: 'name', value: c.n }], options: [] };
+        });
+    }
+
     return {
+        LOCATE_TINY_KM: LOCATE_TINY_KM, distanceKm: distanceKm, locateCorrect: locateCorrect, generateLocateQuestions: generateLocateQuestions,
         CLUE_KEYS: CLUE_KEYS, ASK_KEYS: ASK_KEYS, MIN_RATIO: MIN_RATIO,
         normalize: normalize, namesCountry: namesCountry, nationalDay: nationalDay, clueValues: clueValues, answerOf: answerOf,
         playablePool: playablePool, matching: matching, isUnambiguous: isUnambiguous,

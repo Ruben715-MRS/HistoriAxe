@@ -1482,11 +1482,17 @@
         <p class="tool-msg" id="geoquiz-status" role="status"></p>
         <div id="geoquiz-play" class="geoquiz-play hidden">
             <p class="tool-small" id="geoquiz-progress" aria-live="polite"></p>
-            <div class="geoquiz-card">
-                <p class="geoquiz-ask" id="geoquiz-ask"></p>
-                <ul class="geoquiz-clues" id="geoquiz-clues"></ul>
+            <div id="geoquiz-qcm" class="geoquiz-qcm">
+                <div class="geoquiz-card">
+                    <p class="geoquiz-ask" id="geoquiz-ask"></p>
+                    <ul class="geoquiz-clues" id="geoquiz-clues"></ul>
+                </div>
+                <div class="geoquiz-options" id="geoquiz-options"></div>
             </div>
-            <div class="geoquiz-options" id="geoquiz-options"></div>
+            <div id="geoquiz-locate" class="geoquiz-locate hidden">
+                <p class="geoquiz-ask" id="geoquiz-locate-ask"></p>
+                <div id="geoquiz-map" class="tool-countries-map geoquiz-map" role="application" aria-label="Carte du monde : touchez le pays demandé" data-i18n-attr="aria-label:geoquiz.map_label"></div>
+            </div>
             <p class="geoquiz-feedback" id="geoquiz-feedback" role="status" aria-live="polite"></p>
             <button type="button" class="btn hidden" id="geoquiz-next" onclick="geoQuizNext()"></button>
         </div>
@@ -1516,6 +1522,7 @@
             <p class="tool-small tool-countries-credit" data-i18n="tools.countries_credit"></p>
             <div class="tool-result tool-countries-fiche" id="tool-countries-fiche" role="region" aria-live="polite" aria-label="Fiche du pays" data-i18n-attr="aria-label:tools.countries_fiche_label"></div>
             <button type="button" class="btn" onclick="startGeoQuiz()" data-i18n="geoquiz.start">S'entraîner : quiz des pays</button>
+            <button type="button" class="btn" onclick="startGeoQuizMap()" data-i18n="geoquiz.map_start">Touchez le pays sur la carte</button>
             <button type="button" class="btn tool-countries-another hidden" id="tool-countries-another" onclick="discoverAnotherCountry()" data-i18n="tools.countries_another">Un autre pays</button>
         </div>
     </div>
