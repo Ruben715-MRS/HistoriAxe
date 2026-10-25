@@ -735,6 +735,27 @@
             </div>
         </section>
 
+        <section class="games-section" aria-labelledby="games-h-cities">
+            <h3 id="games-h-cities" data-i18n="games.cities_title">Villes du monde</h3>
+            <p class="games-section-desc" data-i18n="games.cities_desc"></p>
+            <div class="arcade-menu">
+                <button type="button" class="arcade-card" onclick="openCityGame('capital', 'screen-arcade')">
+                    <span class="arcade-card-icon" aria-hidden="true">🏙️</span>
+                    <span class="arcade-card-text">
+                        <strong data-i18n="cities.card_capital"></strong>
+                        <small data-i18n="cities.card_capital_desc"></small>
+                    </span>
+                </button>
+                <button type="button" class="arcade-card" onclick="openCityGame('country', 'screen-arcade')">
+                    <span class="arcade-card-icon" aria-hidden="true">🌍</span>
+                    <span class="arcade-card-text">
+                        <strong data-i18n="cities.card_country"></strong>
+                        <small data-i18n="cities.card_country_desc"></small>
+                    </span>
+                </button>
+            </div>
+        </section>
+
         <section class="games-section" aria-labelledby="games-h-mini">
             <h3 id="games-h-mini" data-i18n="games.mini_title">Mini-jeux</h3>
             <p class="games-section-desc" data-i18n="games.mini_desc"></p>
@@ -1491,6 +1512,30 @@
             <div class="tool-compare" id="tool-per-compare"></div>
             <div class="tool-rows" id="tool-per-list"></div>
         </div>
+    </div>
+
+    <!-- ÉCRAN : VILLES DU MONDE (voir js/modes/cities.js) -->
+    <div id="screen-cities" class="list-screen hidden">
+        <button class="back-btn" onclick="cityGameQuit()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="cities.title">Villes du monde</h2>
+        <p class="tool-msg" id="cities-status" role="status"></p>
+        <div id="cities-play" class="geoquiz-play hidden">
+            <div class="cities-bar">
+                <p class="tool-small" id="cities-progress" aria-live="polite"></p>
+                <p class="tool-small" id="cities-score-now"></p>
+            </div>
+            <div class="geoquiz-card">
+                <p class="geoquiz-ask" id="cities-ask"></p>
+            </div>
+            <div class="geoquiz-options" id="cities-options"></div>
+            <p class="geoquiz-feedback" id="cities-feedback" role="status" aria-live="polite"></p>
+            <button type="button" class="btn hidden" id="cities-next" onclick="cityGameNext()"></button>
+        </div>
+        <div id="cities-end" class="geoquiz-end hidden">
+            <p class="geoquiz-score" id="cities-score" tabindex="-1" role="status"></p>
+            <button type="button" class="btn" onclick="cityGameQuit()" data-i18n="cities.back">Retour à la Salle de jeux</button>
+        </div>
+        <p class="tool-small" data-i18n="cities.credit"></p>
     </div>
 
     <!-- ÉCRAN : QUIZ DES PAYS (lancé depuis l'Atlas des pays ou la Salle de jeux — voir js/modes/geoquiz.js) -->
@@ -3402,7 +3447,9 @@
     <script src="js/calendarYearCore.js"></script>
     <script src="js/app/tools.js"></script>
     <script src="js/app/countries.js"></script>
+    <script src="js/cityGameCore.js"></script>
     <script src="js/modes/geoquiz.js"></script>
+    <script src="js/modes/cities.js"></script>
     <script src="js/app/calendar.js"></script>
     <script src="js/genealogyCore.js"></script>
     <script src="js/app/genealogy.js"></script>

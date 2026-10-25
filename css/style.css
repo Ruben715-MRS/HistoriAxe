@@ -13045,6 +13045,14 @@ input:not([type="range"]), label, select, summary, textarea {
     text-align: center;
 }
 
+/* La progression et le score courant, sur une même ligne au-dessus de la question. */
+.cities-bar {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 0;
+}
+
 .geoquiz-locate {
     display: flex;
     flex-direction: column;
