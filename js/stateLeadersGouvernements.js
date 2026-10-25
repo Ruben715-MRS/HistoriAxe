@@ -102,7 +102,7 @@
         },
 
         israel: {
-            note: "Premiers ministres depuis la proclamation de l’État (1948). Le président de l’État est chef de l’État, et non le Premier ministre. Liste à vérifier pour la période la plus récente.",
+            note: "Premiers ministres depuis la proclamation de l’État (1948). Le président de l’État est chef de l’État, et non le Premier ministre.",
             groups: { premiers: G("Premiers ministres", GOV) },
             rows: [
                 [1948, 1954, "David Ben Gourion", "Premier ministre", "premiers"],
@@ -124,7 +124,7 @@
                 [2009, 2021, "Benyamin Netanyahou", "Premier ministre", "premiers"],
                 [2021, 2022, "Naftali Bennett", "Premier ministre", "premiers"],
                 [2022, 2022, "Yaïr Lapid", "Premier ministre", "premiers"],
-                [2022, null, "Benyamin Netanyahou", "Premier ministre (à vérifier)", "premiers"]
+                [2022, null, "Benyamin Netanyahou", "Premier ministre", "premiers"]
             ]
         },
 
