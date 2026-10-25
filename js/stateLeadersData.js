@@ -594,7 +594,8 @@
                 [1925, 1941, "Reza Chah", "chah, fondateur de la dynastie Pahlavi", "pahlavi"],
                 [1941, 1979, "Mohammad Reza Chah", "chah", "pahlavi"],
                 [1979, 1989, "Ruhollah Khomeini", "Guide suprême de la révolution", "islamique"],
-                [1989, null, "Ali Khamenei", "Guide suprême", "islamique"]
+                [1989, 2026, "Ali Khamenei", "Guide suprême", "islamique"],
+                [2026, null, "Mojtaba Khamenei", "Guide suprême (successeur d’Ali Khamenei, à relire)", "islamique"]
             ]
         },
 
