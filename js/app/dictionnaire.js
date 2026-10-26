@@ -50,7 +50,23 @@ function dictFiche(term) {
     return dictData.fiches.find(f => f.id === term.fiche);
 }
 
+// La barre de recherche se décale quand elle est collée en haut (voir le CSS, .dict-bar.is-stuck).
+function dictSyncStuck() {
+    const screen = document.getElementById('screen-tool-dictionary');
+    const bar = document.querySelector('#screen-tool-dictionary .dict-bar');
+    // Collée : la barre touche le haut de l'écran, au rembourrage près.
+    const pad = parseFloat(getComputedStyle(screen).paddingTop) || 0;
+    const stuck = bar.getBoundingClientRect().top - screen.getBoundingClientRect().top <= pad + 1;
+    bar.classList.toggle('is-stuck', stuck);
+}
+
+let dictScrollBound = false;
+
 function toolDictionaryInit() {
+    if (!dictScrollBound) {
+        document.getElementById('screen-tool-dictionary').addEventListener('scroll', dictSyncStuck, { passive: true });
+        dictScrollBound = true;
+    }
     document.getElementById('dict-concours').checked = dictConcours;
     dictionaryLoad().then(ok => {
         const status = document.getElementById('dict-status');

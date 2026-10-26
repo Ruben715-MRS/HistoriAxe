@@ -13572,6 +13572,17 @@ input:not([type="range"]), label, select, summary, textarea {
     padding: 8px 0;
 }
 
+/* Sur téléphone, collée en haut, la barre se décale à droite du bouton de retour (fixe, en haut à gauche). */
+@media (max-width: 600px) {
+    .dict-bar {
+        transition: margin-left 0.2s ease, width 0.2s ease;
+    }
+    .dict-bar.is-stuck {
+        margin-left: 62px;
+        width: calc(100% - 62px);
+    }
+}
+
 .dict-filters {
     display: flex;
     flex-wrap: wrap;
