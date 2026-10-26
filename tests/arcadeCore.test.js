@@ -415,3 +415,26 @@ test('meilleurs scores : quatre jeux', () => {
     assert.equal(A.recordBest(null, 'pacman', 40).pacman, 40);
     assert.equal(A.recordBest(null, 'invaders', 70).invaders, 70);
 });
+
+// --- Les mini-jeux sur des axes choisis (thèmes) ---------------------------------------------------
+
+test('vivier d’un thème : tous les événements des axes retenus, incontournables ou non, une fois chacun', () => {
+    const events = [
+        { id: 'a', titre: 'Un', date: 1500, axe: 'Peinture' },
+        { id: 'b', titre: 'Deux', date: 1510, axe: 'Peinture', essential: true },
+        { id: 'c', titre: 'Trois', date: 1520, axe: 'Musique' },
+        { id: 'a', titre: 'Un', date: 1500, axe: 'Peinture' },
+        { id: 'd', titre: 'Quatre', date: 1530, axe: 'Sculpture' }
+    ];
+    const pool = A.themePool(events, ['Peinture', 'Musique']);
+    assert.deepEqual(pool.map(e => e.id), ['a', 'b', 'c'], 'pas l’axe non retenu, pas de doublon');
+    assert.deepEqual(pool[0], { id: 'a', title: 'Un', date: 1500 });
+    assert.deepEqual(A.themePool(events, []), [], 'aucun axe, aucun événement');
+    assert.deepEqual(A.themePool(null, ['Peinture']), []);
+});
+
+test('clé d’une sélection : indépendante de l’ordre des axes, propre à chaque thème', () => {
+    assert.equal(A.scopeKey('t1', ['B', 'A']), A.scopeKey('t1', ['A', 'B']));
+    assert.notEqual(A.scopeKey('t1', ['A']), A.scopeKey('t2', ['A']));
+    assert.notEqual(A.scopeKey('t1', ['A']), A.scopeKey('t1', ['A', 'B']));
+});

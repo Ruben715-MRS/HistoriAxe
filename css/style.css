@@ -13493,3 +13493,10 @@ input:not([type="range"]), label, select, summary, textarea {
 .geoquiz-chart-svg { width: 100%; height: auto; display: block; }
 .geoquiz-chart-line { fill: none; stroke: #2563eb; stroke-width: 2; stroke-linejoin: round; }
 .geoquiz-chart-dot { fill: #2563eb; }
+
+/* --- Mini-jeux sur des axes choisis : cartes trop petites pour le vivier --- */
+.arcade-card.is-unavailable { opacity: 0.55; cursor: not-allowed; }
+.arcade-why { color: var(--muted-text); font-style: italic; }
+
+/* « Mini-jeux » à droite de « Continuer » : le libellé ne se coupe pas au tiret sur téléphone. */
+#axes-minigames-btn { white-space: nowrap; }

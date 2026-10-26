@@ -74,6 +74,8 @@ function backFromSubcategories() {
 let pendingFadeSwitch = null;
 
 function showScreen(screenId, direction) {
+    // Quitter l'écran d'un thème ou la navigation générale met fin aux mini-jeux sur des axes choisis : la salle entière reprend.
+    if (['screen-categories', 'screen-subcategories', 'screen-themes', 'screen-path'].includes(screenId)) arcadeScope = null;
     if (pendingFadeSwitch) {
         clearTimeout(pendingFadeSwitch);
         pendingFadeSwitch = null;

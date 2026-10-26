@@ -375,6 +375,8 @@
         <div style="margin-top: 30px; margin-bottom: 50px; display:flex; gap:15px; justify-content:center;">
             <button class="btn" id="axes-continue-btn" onclick="confirmAxesSelection()"
                 data-i18n="axes.continue_btn">Continuer ›</button>
+            <button class="btn btn-secondary" id="axes-minigames-btn" onclick="openMinigamesFromAxes()"
+                data-i18n="axes.minigames_btn">Mini-jeux</button>
         </div>
     </div>
 
@@ -721,6 +723,7 @@
         <button class="back-btn" onclick="arcadeBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
         <h2 class="header-title" data-i18n="arcade.title">Salle de jeux</h2>
         <p class="modes-header-subtitle" data-i18n="arcade.subtitle">Mini-jeux, jeux d'arcade et jeux de réflexion pour réviser les dates.</p>
+        <p class="modes-header-subtitle hidden" id="arcade-scope" role="status"></p>
         <section class="games-section" aria-labelledby="games-h-mini">
             <h3 id="games-h-mini" data-i18n="games.mini_title">Mini-jeux</h3>
             <p class="games-section-desc" data-i18n="games.mini_desc"></p>
