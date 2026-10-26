@@ -18,10 +18,15 @@ async function ouvrir(page, texte) {
     await page.locator('#screen-tools .arcade-card', { hasText: texte }).click();
 }
 
-test('la boîte à outils s\'ouvre depuis les catégories, propose onze outils et revient', async ({ page }) => {
+test('l\'Atelier s\'ouvre depuis les catégories, range ses douze entrées en quatre groupes et revient', async ({ page }) => {
     await page.locator('#btn-tools').click();
     expect(await visibleScreen(page)).toBe('screen-tools');
-    await expect(page.locator('#screen-tools .arcade-card')).toHaveCount(11);
+    await expect(page.locator('#screen-tools .arcade-card')).toHaveCount(12);
+    await expect(page.locator('#screen-tools .header-title')).toHaveText('Atelier');
+    await expect(page.locator('#screen-tools .tools-group')).toHaveCount(4);
+    await expect(page.locator('#screen-tools .tools-group .modes-group-title')).toHaveText(['Convertir et calculer', 'Calendriers', 'Repères', 'Cartes et arbres']);
+    await expect(page.locator('#screen-tools .tools-group').nth(0).locator('.arcade-card')).toHaveCount(4);
+    await expect(page.locator('#screen-tools .tools-group').nth(3).locator('.arcade-card', { hasText: 'Généalogie biblique' })).toHaveCount(1);
     await page.locator('#screen-tools .arcade-card', { hasText: 'Chiffres romains' }).click();
     expect(await visibleScreen(page)).toBe('screen-tool-roman');
     await page.locator('#screen-tool-roman .back-btn').click();

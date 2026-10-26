@@ -1277,9 +1277,11 @@
     <!-- ÉCRANS : LA BOÎTE À OUTILS (js/app/tools.js, js/toolsCore.js) — des utilitaires, pas des jeux -->
     <div id="screen-tools" class="list-screen hidden">
         <button class="back-btn" onclick="toolsHubBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
-        <h2 class="header-title" data-i18n="tools.title">Boîte à outils</h2>
-        <p class="modes-header-subtitle" data-i18n="tools.subtitle">Des convertisseurs et des calculs pour les cours d'histoire.</p>
-        <div class="arcade-menu">
+        <h2 class="header-title" data-i18n="tools.title">Atelier</h2>
+        <p class="modes-header-subtitle" data-i18n="tools.subtitle">Convertisseurs, calendriers, repères et cartes pour les cours d'histoire.</p>
+        <section class="tools-group" aria-labelledby="tools-group-convert">
+            <h3 class="modes-group-title modes-group-static" id="tools-group-convert" data-i18n="tools.group_convert"></h3>
+            <div class="arcade-menu">
             <button type="button" class="arcade-card" onclick="openTool('eras', 'screen-tools')">
                 <span class="arcade-card-icon" aria-hidden="true">🔁</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.eras_title"></strong><small data-i18n="tools.eras_desc"></small></span>
@@ -1296,6 +1298,11 @@
                 <span class="arcade-card-icon" aria-hidden="true">⏳</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.duration_title"></strong><small data-i18n="tools.duration_desc"></small></span>
             </button>
+            </div>
+        </section>
+        <section class="tools-group" aria-labelledby="tools-group-calendars">
+            <h3 class="modes-group-title modes-group-static" id="tools-group-calendars" data-i18n="tools.group_calendars"></h3>
+            <div class="arcade-menu">
             <button type="button" class="arcade-card" onclick="openTool('dates', 'screen-tools')">
                 <span class="arcade-card-icon" aria-hidden="true">📅</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.dates_title"></strong><small data-i18n="tools.dates_desc"></small></span>
@@ -1304,18 +1311,28 @@
                 <span class="arcade-card-icon" aria-hidden="true">🗓️</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.calendar_title"></strong><small data-i18n="tools.calendar_desc"></small></span>
             </button>
-            <button type="button" class="arcade-card" onclick="openTool('genealogy', 'screen-tools')">
-                <span class="arcade-card-icon" aria-hidden="true">🌳</span>
-                <span class="arcade-card-text"><strong data-i18n="tools.genealogy_title"></strong><small data-i18n="tools.genealogy_desc"></small></span>
+            </div>
+        </section>
+        <section class="tools-group" aria-labelledby="tools-group-landmarks">
+            <h3 class="modes-group-title modes-group-static" id="tools-group-landmarks" data-i18n="tools.group_landmarks"></h3>
+            <div class="arcade-menu">
+            <button type="button" class="arcade-card" onclick="openTool('periods', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">🧭</span>
+                <span class="arcade-card-text"><strong data-i18n="tools.periods_title"></strong><small data-i18n="tools.periods_desc"></small></span>
             </button>
             <button type="button" class="arcade-card" onclick="openTool('leaders', 'screen-tools')">
                 <span class="arcade-card-icon" aria-hidden="true">🏛️</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.leaders_title"></strong><small data-i18n="tools.leaders_desc"></small></span>
             </button>
-            <button type="button" class="arcade-card" onclick="openTool('periods', 'screen-tools')">
-                <span class="arcade-card-icon" aria-hidden="true">🧭</span>
-                <span class="arcade-card-text"><strong data-i18n="tools.periods_title"></strong><small data-i18n="tools.periods_desc"></small></span>
+            <button type="button" class="arcade-card" onclick="openTool('dictionary', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">📖</span>
+                <span class="arcade-card-text"><strong>Dictionnaire</strong><small>Les termes qu'on confond, définis avec précision. Mode concours.</small></span>
             </button>
+            </div>
+        </section>
+        <section class="tools-group" aria-labelledby="tools-group-maps">
+            <h3 class="modes-group-title modes-group-static" id="tools-group-maps" data-i18n="tools.group_maps"></h3>
+            <div class="arcade-menu">
             <button type="button" class="arcade-card" onclick="openTool('countries', 'screen-tools')">
                 <span class="arcade-card-icon" aria-hidden="true">🌍</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.countries_title"></strong><small data-i18n="tools.countries_desc"></small></span>
@@ -1324,11 +1341,12 @@
                 <span class="arcade-card-icon" aria-hidden="true">🗺️</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.history_title"></strong><small data-i18n="tools.history_desc"></small></span>
             </button>
-            <button type="button" class="arcade-card" onclick="openTool('dictionary', 'screen-tools')">
-                <span class="arcade-card-icon" aria-hidden="true">📖</span>
-                <span class="arcade-card-text"><strong>Dictionnaire</strong><small>Les termes qu'on confond, définis avec précision. Mode concours.</small></span>
+            <button type="button" class="arcade-card" onclick="openTool('genealogy', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">🌳</span>
+                <span class="arcade-card-text"><strong data-i18n="tools.genealogy_title"></strong><small data-i18n="tools.genealogy_desc"></small></span>
             </button>
-        </div>
+            </div>
+        </section>
     </div>
 
     <div id="screen-tool-eras" class="list-screen hidden">

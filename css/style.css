@@ -10387,6 +10387,15 @@ input:not([type="range"]), label, select, summary, textarea {
     max-width: 520px;
 }
 
+/* L'Atelier : des groupes d'outils, chacun sous son titre. */
+.tools-group {
+    width: 100%;
+    max-width: 520px;
+    margin-bottom: 22px;
+}
+
+.tools-group .modes-group-static { margin: 0 0 10px 4px; }
+
 .arcade-card {
     display: flex;
     align-items: center;

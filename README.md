@@ -194,7 +194,7 @@ qu'en partagé — les deux défis ne tournent jamais en même temps, mais des
 - **Onboarding guidé** (`js/onboarding.js`) : des bulles d'aide contextuelles
   (coach-marks), toutes passables d'un seul bouton. **Sept bulles au menu
   principal** (bienvenue, Chemin du Temps, pièces/album/amis/équipe, Défis,
-  Réviser, Salle de jeux + Boîte à outils + Atlas, profil), qui éclairent chacune
+  Réviser, Salle de jeux + Atelier + Atlas, profil), qui éclairent chacune
   leur bouton et reprennent là où on s'est arrêté ; **une** à la première visite
   de la carte des mondes ; **deux** sur l'écran des modes (« Jouer », puis les
   groupes de modes) ; **une** à la fin de la première partie. Chaque pas a un
@@ -633,7 +633,7 @@ Les règles sont pures (`ArcadeCore`, testées sans minuteur) ; l'écran ne fait
 (`historiaxe_arcade_v1`, hors synchronisation). Pas de `touch-action: none` (interdit par `tests/a11y.test.js`) : le glisser du
 Snake retient le défilement par un écouteur `touchmove` non passif, seulement sur le plateau.
 
-**La boîte à outils** (`js/toolsCore.js`, `js/app/tools.js`, écrans `#screen-tools` et `#screen-tool-*`) : une carte « Boîte à outils » sous la salle de
+**L'Atelier** (ex-« boîte à outils » ; `js/toolsCore.js`, `js/app/tools.js`, écrans `#screen-tools` et `#screen-tool-*`) : une carte « Atelier » sous la salle de
 jeux, sur l'écran des catégories. Des utilitaires, pas des jeux : pas d'étoiles, rien n'est enregistré, le résultat s'affiche à mesure qu'on tape
 (`oninput`). Les calculs sont purs et testés (`tests/toolsCore.test.js`) ; tout ce qui vient de la saisie passe par `textContent`. Le contenu écrit à la main
 (leçon, périodes, notes sur les calendriers, fiches des pays) est **à relire par un enseignant**. Huit outils :
