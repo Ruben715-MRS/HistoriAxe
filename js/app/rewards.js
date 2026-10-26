@@ -489,7 +489,11 @@ function renderShop() {
         li.className = 'shop-item' + (owned ? ' is-owned' : '') + (!worldOpen && !owned ? ' is-locked' : '');
         li.dataset.item = item.id;
         li.innerHTML = '<span class="shop-item-emoji" aria-hidden="true"></span><span class="shop-item-text"><strong></strong><small></small></span><button type="button" class="btn shop-item-btn"></button>';
-        li.querySelector('.shop-item-emoji').innerText = worldOpen || owned ? item.emoji : '🔒';
+        // Costume dessiné : Clio habillée en vignette ; sinon l'aperçu en emoji (et un cadenas tant que le monde est fermé).
+        const icon = li.querySelector('.shop-item-emoji');
+        if (!worldOpen && !owned) icon.innerText = '🔒';
+        else if (ClioArt.hasCostume(item.world)) { icon.classList.add('is-drawn'); icon.innerHTML = ClioArt.front('repos', { costume: item.world }); }
+        else icon.innerText = item.emoji;
         li.querySelector('strong').innerText = rewardsCostumeName(item);
         const world = PathCore.findWorld(item.world);
         li.querySelector('small').innerText = worldOpen || owned ? pathWorldTitle(world) : t('rewards.shop_locked', { world: pathWorldTitle(world) });

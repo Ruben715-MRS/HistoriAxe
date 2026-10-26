@@ -76,7 +76,7 @@ test('Clio porte le costume du moment', async ({ page }) => {
         localStorage.setItem('historiaxe_rewards_v1', JSON.stringify({ coins: 0, owned: ['costume-prehistoire'], equipped: { costume: 'costume-prehistoire', decor: null } }));
         showScreen('screen-path'); renderPath();
     });
-    await expect(page.locator('.clio-marker .clio-costume')).toHaveText('🦴');
+    await expect(page.locator('.clio-marker svg.clio-art')).toHaveAttribute('data-costume', 'mammouth');
 });
 
 test('à la fin d\'un niveau : joyeuse à trois étoiles, douce après une défaite', async ({ page }) => {

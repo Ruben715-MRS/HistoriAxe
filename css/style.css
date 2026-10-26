@@ -9947,6 +9947,8 @@ input:not([type="range"]), label, select, summary, textarea {
 
 .shop-item.is-locked { opacity: 0.6; }
 .shop-item-emoji { font-size: 30px; width: 40px; text-align: center; }
+.shop-item-emoji.is-drawn { height: 52px; }
+.shop-item-emoji.is-drawn svg { display: block; width: 100%; height: 100%; overflow: visible; }
 .shop-item-text { flex: 1; min-width: 0; display: flex; flex-direction: column; }
 .shop-item-text strong { font-size: 15px; }
 .shop-item-text small { font-size: 12px; color: var(--muted-text); }

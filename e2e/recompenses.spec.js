@@ -176,7 +176,7 @@ test('la boutique de Clio : un costume s\'achète avec les pièces, s\'enfile, e
     await expect(page.locator('#shop-coins')).toHaveText('30');
     await expect(mammouth).toHaveClass(/is-owned/);
     await expect(mammouth.locator('.shop-item-btn')).toHaveText('Porté');
-    await expect(page.locator('#shop-clio-avatar .clio-costume')).toHaveText('🦴');
+    await expect(page.locator('#shop-clio-avatar svg.clio-art')).toHaveAttribute('data-costume', 'mammouth');
     await expect(page.locator('#shop-clio-caption')).toContainText('Peau de mammouth');
     await expect(page.locator('.shop-item[data-item="costume-orient"] .shop-item-btn')).toBeDisabled();
     const s = await etat(page);
@@ -192,7 +192,7 @@ test('un costume acheté se change à volonté', async ({ page }) => {
     await arrivee(page, 'grece', { coins: 500, earned: 500, owned: ['costume-prehistoire', 'costume-orient'], equipped: { costume: 'costume-orient' } });
     await page.evaluate(() => openShop('screen-categories'));
     await page.locator('.shop-item[data-item="costume-prehistoire"] .shop-item-btn').click();
-    await expect(page.locator('#shop-clio-avatar .clio-costume')).toHaveText('🦴');
+    await expect(page.locator('#shop-clio-avatar svg.clio-art')).toHaveAttribute('data-costume', 'mammouth');
     expect((await etat(page)).equipped.costume).toBe('costume-prehistoire');
     await expect(page.locator('.shop-item[data-item="costume-orient"] .shop-item-btn')).toHaveText('Porter');
 });

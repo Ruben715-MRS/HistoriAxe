@@ -47,9 +47,11 @@ test('les costumes dessinés correspondent à des costumes de la boutique, et s\
         assert.ok(worlds.includes(world), `costume ${world} absent de la boutique`);
         assert.ok(A.hasCostume(world));
         assert.ok(A.front('repos', { costume: world }).length > A.front('repos').length, `costume ${world} invisible`);
-        assertWellFormed(A.front('content', { costume: world }));
+        for (const mood of A.MOODS) assertWellFormed(A.front(mood, { costume: world }));
+        assert.ok(A.front('repos', { costume: world }).includes('data-costume="' + A.COSTUMES[world] + '"'));
     }
-    assert.equal(A.hasCostume('prehistoire'), false);
+    const notDrawn = worlds.find((w) => !Object.keys(A.COSTUMES).includes(w));
+    if (notDrawn) assert.equal(A.hasCostume(notDrawn), false);
     assert.equal(A.hasCostume('toString'), false);
 });
 

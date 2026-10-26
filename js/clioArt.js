@@ -28,7 +28,7 @@
     var MOODS = ['repos', 'salue', 'content', 'ravi', 'fier', 'surpris', 'reflechit', 'triste', 'dort'];
 
     // Costumes déjà dessinés, par monde (les autres restent des aperçus en emoji).
-    var COSTUMES = { rome2: 'toge' };
+    var COSTUMES = { prehistoire: 'mammouth', orient: 'egypte', grece: 'grece', rome1: 'legionnaire', rome2: 'toge' };
 
     var uid = 0;
 
@@ -110,19 +110,119 @@
         return nose + m;
     }
 
-    function costume(kind, layer) {
-        if (kind !== 'toge') return '';
-        if (layer === 'body') {
-            return el('path', { d: 'M56 152 C70 136 132 134 146 150 C150 172 151 192 148 204 C138 214 62 214 52 204 C49 188 50 168 56 152 Z', fill: '#7A2E8C', stroke: '#3E1448', 'stroke-width': 3, 'stroke-linejoin': 'round' }) +
-                el('path', { d: 'M58 152 C82 160 118 186 146 204 L148 194 C122 176 92 156 66 146 Z', fill: '#F3EEE4', stroke: '#B8AE9A', 'stroke-width': 2, 'stroke-linejoin': 'round' }) +
-                line('M58 152 C82 160 118 186 146 204', 3, '#E9C349') +
-                line('M84 176 Q78 192 82 206 M108 190 Q104 200 106 208', 2.5, '#5A1F69') +
-                el('circle', { cx: 64, cy: 150, r: 6.5, fill: '#E9C349', stroke: '#8A6A10', 'stroke-width': 2 });
-        }
-        var leaves = [[58, 66, -60], [64, 56, -45], [72, 48, -30], [82, 43, -15], [118, 43, 15], [128, 48, 30], [136, 56, 45], [142, 66, 60]].map(function (l) {
-            return el('ellipse', { cx: l[0], cy: l[1], rx: 8, ry: 4, fill: '#E9C349', stroke: '#8A6A10', 'stroke-width': 1.5, transform: 'rotate(' + l[2] + ' ' + l[0] + ' ' + l[1] + ')' });
+    // --- Les costumes (de face) -------------------------------------------------------------------------------
+    // Chaque costume habille tout le corps et laisse le visage libre. Calques : `body` (posé sur le corps, sous les
+    // pattes) et `hat` (sur la tête). `id` sert aux découpes propres à un costume.
+    function shape(d, fill, strokeColor, w) { return el('path', { d: d, fill: fill, stroke: strokeColor, 'stroke-width': w || 3, 'stroke-linejoin': 'round' }); }
+    function clipped(id, d, inner) { return el('clipPath', { id: id }, el('path', { d: d })) + '<g clip-path="url(#' + id + ')">' + inner + '</g>'; }
+    function laurel(leaf, edge) {
+        return line('M56 70 Q100 30 144 70', 3, edge) + [[58, 66, -60], [64, 56, -45], [72, 48, -30], [82, 43, -15], [118, 43, 15], [128, 48, 30], [136, 56, 45], [142, 66, 60]].map(function (l) {
+            return el('ellipse', { cx: l[0], cy: l[1], rx: 8, ry: 4, fill: leaf, stroke: edge, 'stroke-width': 1.5, transform: 'rotate(' + l[2] + ' ' + l[0] + ' ' + l[1] + ')' });
         }).join('');
-        return line('M56 70 Q100 30 144 70', 3, '#8A6A10') + leaves + el('circle', { cx: 100, cy: 40, r: 4, fill: '#C8322F', stroke: '#7D1A17', 'stroke-width': 1.5 });
+    }
+    // Un point de la courbe quadratique (x0,y0)→(x2,y2) de contrôle (x1,y1).
+    function quad(t, x0, y0, x1, y1, x2, y2) {
+        var u = 1 - t;
+        return [u * u * x0 + 2 * u * t * x1 + t * t * x2, u * u * y0 + 2 * u * t * y1 + t * t * y2];
+    }
+
+    var DRAW = {
+        // Préhistoire — peau de mammouth : tunique de fourrure à une épaule, bas effrangé, collier de dents.
+        mammouth: {
+            body: function (id) {
+                var TUNIC = 'M58 150 C80 144 120 158 146 168 C150 182 150 196 148 204 L140 210 L132 204 L124 212 L116 205 L108 213 L100 205 L92 213 L84 205 L76 212 L68 204 L58 210 L52 202 C50 184 52 166 58 150 Z';
+                var shag = clipped(id + 'fur', TUNIC,
+                    el('ellipse', { cx: 76, cy: 178, rx: 10, ry: 7, fill: '#A8743F' }) + el('ellipse', { cx: 124, cy: 192, rx: 12, ry: 7, fill: '#A8743F' }) + el('ellipse', { cx: 104, cy: 172, rx: 7, ry: 5, fill: '#A8743F' }) +
+                    line('M62 164 q4 6 0 12 M88 160 q4 6 0 12 M118 170 q4 6 0 12 M140 178 q4 6 0 12 M70 190 q4 6 0 12 M96 186 q4 6 0 12 M132 196 q4 6 0 12', 2.5, '#5A3820'));
+                var teeth = [0.18, 0.34, 0.5, 0.66, 0.82].map(function (t) {
+                    var p = quad(t, 64, 144, 100, 168, 136, 144), big = t === 0.5 ? 1.5 : 1;
+                    return el('path', { d: 'M' + (p[0] - 3.5 * big) + ' ' + p[1] + ' L' + (p[0] + 3.5 * big) + ' ' + p[1] + ' L' + p[0] + ' ' + (p[1] + 10 * big) + ' Z', fill: '#FFF8E8', stroke: '#8A7A60', 'stroke-width': 1.5, 'stroke-linejoin': 'round' });
+                }).join('');
+                return shape(TUNIC, '#8B5A33', '#4E2F17') + shag + line('M64 144 Q100 168 136 144', 3, '#5A3820') + teeth;
+            }
+        },
+        // Égypte — collier du chat sacré : coiffe rayée (némès), large collier, œil d'Horus, pagne de lin plissé.
+        egypte: {
+            body: function () {
+                var KILT = 'M53 182 Q100 192 147 182 L148 204 C138 214 62 214 52 204 Z';
+                return shape(KILT, '#F5F0E1', '#B8AE9A', 2.5) +
+                    line('M66 190 L64 208 M80 192 L79 211 M94 193 L94 212 M108 193 L108 212 M122 192 L123 211 M136 190 L138 208', 1.8, '#C9BFA8') +
+                    line('M53 182 Q100 192 147 182', 5, '#E9C349') +
+                    line('M60 142 Q100 198 140 142', 11, '#8A6A10') + line('M60 142 Q100 198 140 142', 7.5, '#E9C349') +
+                    line('M64 142 Q100 186 136 142', 5, '#1F9A93', { 'stroke-linecap': 'butt' }) +
+                    line('M68 142 Q100 176 132 142', 5, '#2E55A8', { 'stroke-linecap': 'butt' }) +
+                    line('M72 142 Q100 166 128 142', 4, '#E9C349', { 'stroke-linecap': 'butt' }) +
+                    // l'œil d'Horus, en pendentif
+                    el('circle', { cx: 100, cy: 178, r: 9, fill: '#E9C349', stroke: '#8A6A10', 'stroke-width': 2 }) +
+                    el('path', { d: 'M93 177 Q100 171 107 177 Q100 181 93 177 Z', fill: '#FFFFFF', stroke: '#1E2A55', 'stroke-width': 1.5 }) +
+                    el('circle', { cx: 100, cy: 177, r: 2, fill: '#1E2A55' }) + line('M99 180 L97 185 M103 180 Q106 184 108 182', 1.5, '#1E2A55');
+            },
+            hat: function (id) {
+                var NEMES = 'M44 84 C42 38 158 38 156 84 L166 138 L146 140 L138 94 Q100 72 62 94 L54 140 L34 138 Z';
+                return shape(NEMES, '#E9C349', '#8A6A10') +
+                    clipped(id + 'nm', NEMES, line('M40 64 Q100 28 160 64 M38 76 Q100 42 162 76', 5, '#2E55A8') +
+                        line('M30 100 L64 100 M30 112 L64 112 M30 124 L64 124 M136 100 L170 100 M136 112 L170 112 M136 124 L170 124', 5, '#2E55A8')) +
+                    line('M62 94 Q100 72 138 94', 5, '#8A6A10') +
+                    el('path', { d: 'M96 76 Q100 62 104 76 Z', fill: '#E9C349', stroke: '#8A6A10', 'stroke-width': 1.5 });
+            }
+        },
+        // Grèce — couronne de lauriers et chiton blanc à bordure de méandres, ceinture dorée.
+        grece: {
+            body: function (id) {
+                var CHITON = 'M58 150 C76 140 124 140 142 150 C148 168 150 188 148 206 Q100 212 52 206 C50 188 52 168 58 150 Z';
+                var meander = 'M50 198';
+                for (var x = 50; x < 150; x += 12) meander += ' h6 v-6 h6 v6';
+                return shape(CHITON, '#FBF8F0', '#A89F8C') +
+                    clipped(id + 'ch', CHITON, el('rect', { x: 40, y: 189, width: 120, height: 14, fill: '#2E55A8' }) + line(meander, 2, '#FBF8F0', { 'stroke-linecap': 'square', 'stroke-linejoin': 'miter' }) +
+                        line('M72 152 Q70 168 74 184 M128 152 Q130 168 126 184 M86 184 Q84 194 86 200 M114 184 Q116 194 114 200', 2, '#D8D0BE')) +
+                    line('M54 178 Q100 186 146 178', 4, '#C9A23A') +
+                    el('circle', { cx: 64, cy: 150, r: 5, fill: '#C9A23A', stroke: '#7A5E14', 'stroke-width': 1.5 }) + el('circle', { cx: 136, cy: 150, r: 5, fill: '#C9A23A', stroke: '#7A5E14', 'stroke-width': 1.5 });
+            },
+            hat: function () { return laurel('#5E9E4A', '#2F5E25'); }
+        },
+        // Rome I — armure de légionnaire : casque à crête, cuirasse à lames, jupe rouge à lanières, bouclier ovale.
+        legionnaire: {
+            body: function () {
+                var SKIRT = 'M52 186 Q100 194 148 186 L148 204 C138 214 62 214 52 204 Z';
+                var LORICA = 'M56 148 C72 138 128 138 144 148 C148 164 149 178 148 188 Q100 196 52 188 C51 176 52 162 56 148 Z';
+                var straps = '';
+                for (var x = 66; x <= 134; x += 12) straps += el('rect', { x: x - 3, y: 189, width: 6, height: 16, rx: 2, fill: '#7A4E2D', stroke: '#4E2F17', 'stroke-width': 1 });
+                return shape(SKIRT, '#B22A26', '#6E1512', 2.5) + straps +
+                    shape(LORICA, '#B9BEC4', '#5F656C') +
+                    line('M54 160 Q100 170 146 160 M53 173 Q100 183 147 173', 2.5, '#7D838B') +
+                    el('circle', { cx: 100, cy: 156, r: 2.5, fill: '#C9A23A' }) + el('circle', { cx: 100, cy: 170, r: 2.5, fill: '#C9A23A' }) +
+                    line('M52 188 Q100 196 148 188', 5, '#8A5A33') +
+                    // le bouclier, posé contre le flanc
+                    el('ellipse', { cx: 40, cy: 184, rx: 19, ry: 29, fill: '#B22A26', stroke: '#6E1512', 'stroke-width': 3 }) +
+                    el('ellipse', { cx: 40, cy: 184, rx: 15, ry: 25, fill: 'none', stroke: '#E9C349', 'stroke-width': 2 }) +
+                    line('M40 160 L40 178 M40 190 L40 208', 2.5, '#E9C349') + el('circle', { cx: 40, cy: 184, r: 6, fill: '#E9C349', stroke: '#8A6A10', 'stroke-width': 2 });
+            },
+            hat: function () {
+                return el('ellipse', { cx: 100, cy: 24, rx: 9, ry: 20, fill: '#C8322F', stroke: '#7D1A17', 'stroke-width': 2.5 }) +
+                    line('M100 8 L100 40 M95 14 L96 38 M105 14 L104 38', 1.5, '#E05A55') +
+                    el('rect', { x: 95, y: 36, width: 10, height: 10, rx: 2, fill: '#C9A23A', stroke: '#7A5E14', 'stroke-width': 1.5 }) +
+                    shape('M44 78 L40 118 Q48 126 58 116 L60 82 Z', '#C9CDD2', '#6B7178', 2.5) +
+                    shape('M156 78 L160 118 Q152 126 142 116 L140 82 Z', '#C9CDD2', '#6B7178', 2.5) +
+                    shape('M44 78 C44 32 156 32 156 78 Q100 66 44 78 Z', '#C9CDD2', '#6B7178') +
+                    line('M48 76 Q100 64 152 76', 4, '#C9A23A') + line('M70 50 Q100 40 130 50', 3, '#E4E7EA');
+            }
+        },
+        // Rome II — toge d'empereur : toge pourpre drapée, pan blanc bordé d'or, fibule, couronne de laurier d'or.
+        toge: {
+            body: function () {
+                return shape('M56 152 C70 136 132 134 146 150 C150 172 151 192 148 204 C138 214 62 214 52 204 C49 188 50 168 56 152 Z', '#7A2E8C', '#3E1448') +
+                    shape('M58 152 C82 160 118 186 146 204 L148 194 C122 176 92 156 66 146 Z', '#F3EEE4', '#B8AE9A', 2) +
+                    line('M58 152 C82 160 118 186 146 204', 3, '#E9C349') +
+                    line('M84 176 Q78 192 82 206 M108 190 Q104 200 106 208', 2.5, '#5A1F69') +
+                    el('circle', { cx: 64, cy: 150, r: 6.5, fill: '#E9C349', stroke: '#8A6A10', 'stroke-width': 2 });
+            },
+            hat: function () { return laurel('#E9C349', '#8A6A10') + el('circle', { cx: 100, cy: 40, r: 4, fill: '#C8322F', stroke: '#7D1A17', 'stroke-width': 1.5 }); }
+        }
+    };
+
+    function costume(kind, layer, id) {
+        var c = kind && DRAW[kind];
+        return c && c[layer] ? c[layer](id + layer) : '';
     }
 
     function costumeKind(world) { return world && Object.prototype.hasOwnProperty.call(COSTUMES, world) ? COSTUMES[world] : ''; }
@@ -150,7 +250,7 @@
         var blush = happy ? el('ellipse', { cx: 57, cy: 115, rx: 9, ry: 5, fill: P.blush, opacity: 0.4 }) + el('ellipse', { cx: 143, cy: 115, rx: 9, ry: 5, fill: P.blush, opacity: 0.4 }) : '';
         var whiskers = line('M68 118 L36 111 M68 123 L36 126 M132 118 L164 111 M132 123 L164 126', 1.6, L, { opacity: 0.6 });
         var tear = mood === 'triste' ? el('path', { d: 'M66 112 Q61 121 66 124 Q71 121 66 112 Z', fill: P.tear, stroke: P.tearLine, 'stroke-width': 1 }) : '';
-        var headG = '<g class="ca-head">' + ears + head + blush + eyes(mood) + mouth(mood) + whiskers + tear + costume(cos, 'hat') + '</g>';
+        var headG = '<g class="ca-head">' + ears + head + blush + eyes(mood) + mouth(mood) + whiskers + tear + costume(cos, 'hat', id) + '</g>';
 
         var arm = '';
         if (mood === 'salue') arm = '<g class="ca-wave">' + limb('M134 166 C156 160 168 142 167 124', 12) + pad(167, 119, 10, 9) + '</g>';
@@ -163,8 +263,8 @@
         if (mood === 'surpris') fx = text(164, 42, 32, P.alert, '!');
 
         var a11y = opts.label ? ' role="img" aria-label="' + String(opts.label).replace(/[&<>"]/g, '') + '"' : ' aria-hidden="true"';
-        return '<svg xmlns="http://www.w3.org/2000/svg" class="clio-art ca-m-' + mood + '" viewBox="0 0 200 232"' + a11y + ' focusable="false">' + defs +
-            '<g class="ca-whole">' + tail + body + costume(cos, 'body') + paws + headG + arm + fx + '</g></svg>';
+        return '<svg xmlns="http://www.w3.org/2000/svg" class="clio-art ca-m-' + mood + '"' + (cos ? ' data-costume="' + cos + '"' : '') + ' viewBox="0 0 200 232"' + a11y + ' focusable="false">' + defs +
+            '<g class="ca-whole">' + tail + body + costume(cos, 'body', id) + paws + headG + arm + fx + '</g></svg>';
     }
 
     // --- En vol, de profil vers la droite (Flappy Clio) -------------------------------------------------------
