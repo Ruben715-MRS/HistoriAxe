@@ -73,7 +73,6 @@ function openRapport(id) {
         const frame = document.getElementById('rapport-frame');
         frame.title = r.titre;
         frame.src = r.fichier;
-        document.getElementById('rapport-title').textContent = r.titre;
         showScreen('screen-rapport', 'forward');
     });
 }
