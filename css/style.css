@@ -14130,3 +14130,10 @@ input:not([type="range"]), label, select, summary, textarea {
 .measures-mnemonic { font-weight: 700; color: var(--text-dark); }
 .measures-hebrew { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0 0 4px; font-size: 17px; font-weight: 700; color: var(--text-dark); }
 .measures-hebrew bdi { white-space: nowrap; }
+
+/* --- Mini-jeux sur des axes choisis : cartes trop petites pour le vivier --- */
+.arcade-card.is-unavailable { opacity: 0.55; cursor: not-allowed; }
+.arcade-why { color: var(--muted-text); font-style: italic; }
+
+/* « Mini-jeux » à droite de « Continuer » : le libellé ne se coupe pas au tiret sur téléphone. */
+#axes-minigames-btn { white-space: nowrap; }

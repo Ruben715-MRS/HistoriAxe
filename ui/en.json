@@ -71,6 +71,7 @@
     "subtitle_selected": "{theme} — {count} events selected",
     "subtitle_select_one": "{theme} — select at least one thread",
     "continue_btn": "Continue with these threads",
+    "minigames_btn": "Mini-games",
     "select_all": "Select all",
     "select_none": "Clear all",
     "bulk_label": "Thread selection"
@@ -1430,6 +1431,9 @@
     "card_kicker": "Mini-games · Arcade · Brain games",
     "best": "Best score: {score}",
     "no_best": "Not played yet",
+    "scope_banner": "On “{theme}”: {axes} axis/axes, {count} playable event(s).",
+    "scope_too_few": "Not enough distinct events for this game ({count} available).",
+    "scope_periods": "It needs events in every major period of history, and this selection does not cover enough of them.",
     "play": "Play",
     "replay": "Play again",
     "over": "Game over",

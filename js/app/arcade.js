@@ -14,6 +14,13 @@ const ARCADE_BOARD_BG = '#0f1a33';
 const ARCADE_MAX_BOARD = 360;
 
 let arcadePoolCache = null; // { bdd, size, pool }
+// Les mini-jeux sur des axes choisis (depuis l'écran des axes d'un thème) : { key, label, axes, pool }, ou null pour la salle entière.
+let arcadeScope = null;
+const ARCADE_SCOPE_KEY = 'historiaxe_arcade_scope_v1';   // les records de chaque sélection d'axes : { [scopeKey]: best }
+// Les jeux qui tirent leur vivier (les autres ne dépendent pas des événements choisis, et restent à la salle entière).
+const ARCADE_POOL_GAMES = ['snake', 'tetris', 'pacman', 'invaders', 'breakout', 'flappy', 'race', 'memory', 'hangman'];
+// Ceux qui exigent des événements dans chaque grande période de l'histoire (et non seulement un nombre suffisant).
+const ARCADE_PERIOD_GAMES = ['tetris', 'invaders'];
 
 // --- Le vivier ---------------------------------------------------------------------------------------
 // Seuls les ⭐ incontournables des thèmes, un seul par fait, avec leur titre : un événement obscur ne se devine pas, et le jeu n'y
@@ -21,6 +28,7 @@ let arcadePoolCache = null; // { bdd, size, pool }
 const ARCADE_MIN_POOL = 60;
 
 function arcadePool() {
+    if (arcadeScope) return arcadeScope.pool;
     const current = window.bdd || bdd || [];
     const size = current.length;
     if (arcadePoolCache && arcadePoolCache.bdd === current && arcadePoolCache.size === size) return arcadePoolCache.pool;
@@ -45,12 +53,32 @@ function arcadePool() {
 }
 
 function arcadeBest() {
+    if (arcadeScope) return arcadeScopeBest();
     let raw = null;
     try { raw = JSON.parse(localStorage.getItem(ARCADE_KEY)); } catch (e) { raw = null; }
     return ArcadeCore.normalizeBest(raw);
 }
 
+// Les records d'une sélection d'axes, rangés à part : un score sur cinq axes ne se compare pas à un score sur un seul.
+function arcadeScopeLoad() {
+    let raw = null;
+    try { raw = JSON.parse(localStorage.getItem(ARCADE_SCOPE_KEY)); } catch (e) { raw = null; }
+    return raw && typeof raw === 'object' && !Array.isArray(raw) ? raw : {};
+}
+
+function arcadeScopeBest() {
+    return ArcadeCore.normalizeBest(arcadeScopeLoad()[arcadeScope.key]);
+}
+
+function arcadeScopeRecord(game, score) {
+    const all = arcadeScopeLoad();
+    all[arcadeScope.key] = ArcadeCore.recordBest(all[arcadeScope.key], game, score);
+    try { localStorage.setItem(ARCADE_SCOPE_KEY, JSON.stringify(all)); } catch (e) {}
+    return all[arcadeScope.key];
+}
+
 function arcadeRecord(game, score) {
+    if (arcadeScope) return arcadeScopeRecord(game, score);
     const next = ArcadeCore.recordBest(arcadeBest(), game, score);
     try { localStorage.setItem(ARCADE_KEY, JSON.stringify(next)); } catch (e) {}
     return next;
@@ -86,8 +114,57 @@ function arcadeBindSwipe(el, onDir) {
 // L'écran garde son ancien identifiant (`screen-arcade`). Trois sections — mini-jeux, arcade, réflexion — et, sur
 // chaque carte, ce que le joueur y a fait : meilleur score, étoiles, calendriers terminés.
 function openArcade() {
+    arcadeScope = null;
     showScreen('screen-arcade', 'forward');
     renderGamesHub();
+}
+
+// Un jeu peut-il se jouer avec le vivier courant ? Chaque jeu refuse lui-même un vivier trop petit (`empty`) : on le lui demande.
+function arcadeGameFits(game) {
+    const pool = arcadePool();
+    const make = {
+        snake: () => ArcadeCore.createSnake(pool),
+        tetris: () => ArcadeCore.createTetris(pool),
+        pacman: () => ArcadeCore.createPac(pool),
+        invaders: () => ArcadeCore.createInvaders(pool),
+        breakout: () => ArcadeExtraCore.createBreakout(pool),
+        flappy: () => ArcadeExtraCore.createFlappy(pool),
+        race: () => ArcadeExtraCore.createRace(pool),
+        memory: () => ReflexionCore.createMemory(pool),
+        hangman: () => ReflexionCore.createHangman(pool)
+    };
+    return !make[game]().empty;
+}
+
+// Les cartes de la salle, en mode « axes choisis » : seuls les jeux à vivier, et ceux qui ont assez d'événements sont accessibles.
+function renderGamesScope() {
+    const banner = document.getElementById('arcade-scope');
+    banner.classList.toggle('hidden', !arcadeScope);
+    if (arcadeScope) banner.textContent = t('arcade.scope_banner', { theme: arcadeScope.label, axes: arcadeScope.axes, count: arcadeScope.pool.length });
+    // Chaque carte du menu : son jeu (d'après son compteur de meilleur score), ou aucun (le Quiz des pays ne dépend pas des événements).
+    document.querySelectorAll('#screen-arcade .arcade-card').forEach(card => {
+        const best = card.querySelector('[id^="arcade-best-"]');
+        const game = best ? best.id.slice('arcade-best-'.length) : null;
+        const inScope = !arcadeScope || ARCADE_POOL_GAMES.includes(game);
+        card.classList.toggle('hidden', !inScope);
+        const fits = !arcadeScope || !inScope || arcadeGameFits(game);
+        card.disabled = !fits;
+        card.classList.toggle('is-unavailable', !fits);
+        let why = card.querySelector('.arcade-why');
+        if (!fits && !why) {
+            why = document.createElement('small');
+            why.className = 'arcade-why';
+            card.querySelector('.arcade-card-text').appendChild(why);
+        }
+        if (why) {
+            why.classList.toggle('hidden', fits);
+            if (!fits) why.textContent = ARCADE_PERIOD_GAMES.includes(game) ? t('arcade.scope_periods') : t('arcade.scope_too_few', { count: arcadeScope.pool.length });
+        }
+    });
+    // Une section sans carte visible (les jeux géographiques, en portée) n'a pas lieu d'être affichée.
+    document.querySelectorAll('#screen-arcade .games-section').forEach(section => {
+        section.classList.toggle('hidden', !section.querySelector('.arcade-card:not(.hidden)'));
+    });
 }
 
 function renderGamesHub() {
@@ -96,6 +173,7 @@ function renderGamesHub() {
         document.getElementById('arcade-best-' + game).textContent = best[game] > 0
             ? t('arcade.best', { score: best[game] }) : t('arcade.no_best');
     });
+    renderGamesScope();
     const done = Object.keys(wheelProgress()).length;
     document.getElementById('arcade-best-wheel').textContent = done > 0
         ? t('arcade.wheel_progress', { done, total: CalendarWheel.CALENDARS.length }) : t('arcade.no_best');
@@ -116,7 +194,23 @@ function gamesBackTo(screenId) {
 }
 
 function arcadeBack() {
+    if (arcadeScope) {
+        arcadeScope = null;
+        showScreen('screen-axes', 'back');
+        return;
+    }
     showScreen('screen-categories', 'back');
+}
+
+// « Mini-jeux » sur l'écran des axes : la salle s'ouvre sur les seuls événements des axes cochés, tous, incontournables ou non.
+function openMinigamesFromAxes() {
+    const theme = getCurrentTheme();
+    const axes = [...selectedAxes];
+    if (!theme || !axes.length) return;
+    const pool = ArcadeCore.themePool(theme.events, axes);
+    arcadeScope = { key: ArcadeCore.scopeKey(theme.id, axes), label: theme.nom, axes: axes.length, pool: pool };
+    showScreen('screen-arcade', 'forward');
+    renderGamesHub();
 }
 
 // Le canvas, à la taille du conteneur (au plus ARCADE_MAX_BOARD), net sur les écrans à forte densité.

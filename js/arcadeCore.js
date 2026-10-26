@@ -643,7 +643,28 @@
         return best;
     }
 
+    // --- Les mini-jeux sur des axes choisis ----------------------------------------------------------
+    // Le vivier d'un thème : TOUS les événements des axes retenus (incontournables ou non), chacun une fois, au format des jeux
+    // ({ id, title, date }). Les jeux filtrent eux-mêmes ce qu'ils ne peuvent pas jouer (années ambiguës, titre vide).
+    function themePool(events, axes) {
+        var keep = new Set(axes || []);
+        var seen = new Set();
+        var out = [];
+        (events || []).forEach(function (e) {
+            if (!e || !keep.has(e.axe) || seen.has(e.id)) return;
+            seen.add(e.id);
+            out.push({ id: e.id, title: e.titre, date: e.date });
+        });
+        return out;
+    }
+
+    // La clé d'une sélection d'axes : le thème, puis les axes triés (un même choix, quel que soit l'ordre des clics, a la même clé).
+    function scopeKey(themeId, axes) {
+        return themeId + '|' + (axes || []).slice().sort().join('|');
+    }
+
     return {
+        themePool: themePool, scopeKey: scopeKey,
         PERIODS: PERIODS, SNAKE_SIZE: SNAKE_SIZE, SNAKE_FOODS: SNAKE_FOODS, SNAKE_LIVES: SNAKE_LIVES,
         TETRIS_COLS: TETRIS_COLS, TETRIS_ROWS: TETRIS_ROWS, DIRS: DIRS,
         periodOf: periodOf, isAmbiguous: isAmbiguous, playable: playable, pickDistinct: pickDistinct, shuffle: shuffle,

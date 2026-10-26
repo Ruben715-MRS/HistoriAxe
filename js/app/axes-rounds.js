@@ -208,6 +208,7 @@ function renderAxesScreen() {
         ? t('axes.subtitle_selected', { theme: theme.nom, count: totalCount })
         : t('axes.subtitle_select_one', { theme: theme.nom });
     document.getElementById('axes-continue-btn').disabled = selectedAxes.size === 0;
+    document.getElementById('axes-minigames-btn').disabled = selectedAxes.size === 0;
 
     // « Tout sélectionner » / « Tout désélectionner » : l'état courant est
     // celui du bouton enfoncé, comme pour le sélecteur de longueur de manche.

@@ -542,6 +542,8 @@ le vérifie). **Tout ce contenu est à relire par un enseignant.**
 | **Jeux de réflexion** | Memory, Qui suis-je ?, Cause ou conséquence ?, Chasse aux anachronismes, Pendu des dates | au tour par tour, sans minuteur |
 
 Les jeux d'arcade portent sur les événements connus du pack chargé (incontournables, un seul par fait) ; les jeux de réflexion sont décrits plus bas.
+
+**Mini-jeux sur des axes choisis** : sur l'écran des axes d'un thème, le bouton **Mini-jeux** (à droite de « Continuer avec ces axes », actif dès qu'un axe est coché) ouvre la salle sur les seuls événements des axes cochés. Ici, **tous** les événements entrent, incontournables ou non (`ArcadeCore.themePool`, un seul par identifiant). La bannière indique le thème, les axes et le nombre d'événements jouables. Seuls les jeux à vivier restent affichés (Snake, Tetris, Pac-Man, Space Invaders, Casse-briques, Flappy Clio, Course, Mémoire, Pendu) ; un jeu qui refuse le vivier (`game.empty`) est grisé avec sa raison : Tetris et Space Invaders exigent des événements dans chaque grande période de l'histoire, les autres un nombre suffisant d'événements distincts. Les records de chaque sélection d'axes sont rangés à part (`historiaxe_arcade_scope_v1`, clé `ArcadeCore.scopeKey` : le thème et les axes triés), car un score sur cinq axes ne se compare pas à un score sur un seul. Quitter vers les catégories, les thèmes ou le Chemin efface la portée ; la salle de l'accueil est toujours complète.
 Un jeu rend la main à l'écran d'où on l'a ouvert (`gamesBackTo` : la salle de jeux, ou le Chemin). Pour ajouter un jeu : une carte dans la section
 voulue de `#screen-arcade`, ses textes dans `ui/fr.json`, et sa ligne dans `renderGamesHub`.
 
