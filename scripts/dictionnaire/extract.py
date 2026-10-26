@@ -5,6 +5,7 @@
 # Prérequis : pandoc. Le JSON produit est la source de l'app ; le .docx reste la source de vérité des fiches.
 # Une fiche = un titre « N. … » suivi d'un tableau (terme | définition), puis « Critère décisif », « Piège », « Exemples ».
 # L'annexe (méthode des images comparatives) et l'index A–Z sont ignorés.
+# Les exemples de chaque terme sont dans scripts/dictionnaire/exemples/ (premier jet, à relire) : ils sont ajoutés ici.
 import json
 import os
 import re
@@ -15,6 +16,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '..', '..'))
 SOURCE = os.path.join(HERE, 'source', 'termes-proches-agreg-2027.docx')
 OUT = os.path.join(ROOT, 'assets', 'dictionnaire', 'termes.json')
+EXEMPLES = os.path.join(HERE, 'exemples')  # un fichier JSON par domaine : { "id du terme": ["exemple", …] }
 LABELS = ('Critère décisif :', 'Piège :', 'Exemples :')
 DASHES = re.compile(r'^\s*-{3,}(\s+-{3,})*\s*$')
 TOP_BORDER = re.compile(r'^\s{2}-{3,}')
@@ -101,6 +103,19 @@ def parse(lines):
     return domaines, fiches
 
 
+def load_exemples():
+    exemples = {}
+    for name in sorted(os.listdir(EXEMPLES)):
+        if not name.endswith('.json'):
+            continue
+        with open(os.path.join(EXEMPLES, name), encoding='utf-8') as fh:
+            for term_id, items in json.load(fh).items():
+                if term_id in exemples:
+                    sys.exit('Exemples en double pour le terme %s (%s)' % (term_id, name))
+                exemples[term_id] = items
+    return exemples
+
+
 def main():
     domaines, fiches = parse(read_text())
     if len(fiches) != 211:
@@ -112,6 +127,13 @@ def main():
         for k, t in enumerate(f['termes'], 1):
             termes.append({'id': '%d-%d' % (f['id'], k), 'nom': t['nom'], 'definition': t['definition'],
                            'fiche': f['id'], 'domaine': f['domaine']})
+    exemples = load_exemples()
+    ids = {t['id'] for t in termes}
+    orphelins = sorted(set(exemples) - ids)
+    if orphelins:
+        sys.exit('Exemples pour des termes inconnus : %s' % ', '.join(orphelins))
+    for t in termes:
+        t['exemples'] = exemples.get(t['id'], [])
     data = {'version': 1, 'source': 'termes-proches-agreg-2027.docx', 'domaines': domaines, 'fiches': fiches, 'termes': termes}
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, 'w', encoding='utf-8') as fh:

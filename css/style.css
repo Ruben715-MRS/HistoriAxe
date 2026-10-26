@@ -13688,6 +13688,17 @@ input:not([type="range"]), label, select, summary, textarea {
     line-height: 1.5;
 }
 
+.dict-examples {
+    margin: 0 0 0 13px;
+    padding-left: 18px;
+    color: var(--muted-text);
+    line-height: 1.5;
+}
+
+.dict-examples li + li {
+    margin-top: 4px;
+}
+
 .dict-jury-note {
     margin: 0;
     font-size: 13px;
