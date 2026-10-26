@@ -158,9 +158,9 @@
                     el('circle', { cx: 100, cy: 177, r: 2, fill: '#1E2A55' }) + line('M99 180 L97 185 M103 180 Q106 184 108 182', 1.5, '#1E2A55');
             },
             hat: function (id) {
-                var NEMES = 'M44 84 C42 38 158 38 156 84 L166 138 L146 140 L138 94 Q100 72 62 94 L54 140 L34 138 Z';
+                var NEMES = 'M42 84 C38 24 162 24 158 84 L166 138 L146 140 L138 94 Q100 72 62 94 L54 140 L34 138 Z'; // couvre tout le haut du crâne
                 return shape(NEMES, '#E9C349', '#8A6A10') +
-                    clipped(id + 'nm', NEMES, line('M40 64 Q100 28 160 64 M38 76 Q100 42 162 76', 5, '#2E55A8') +
+                    clipped(id + 'nm', NEMES, line('M44 52 Q100 16 156 52 M40 64 Q100 28 160 64 M38 76 Q100 42 162 76', 5, '#2E55A8') +
                         line('M30 100 L64 100 M30 112 L64 112 M30 124 L64 124 M136 100 L170 100 M136 112 L170 112 M136 124 L170 124', 5, '#2E55A8')) +
                     line('M62 94 Q100 72 138 94', 5, '#8A6A10') +
                     el('path', { d: 'M96 76 Q100 62 104 76 Z', fill: '#E9C349', stroke: '#8A6A10', 'stroke-width': 1.5 });
