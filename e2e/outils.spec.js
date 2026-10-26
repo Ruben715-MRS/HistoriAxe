@@ -570,7 +570,19 @@ test('chronologie : un régime parlementaire propose les chefs du gouvernement, 
     await page.locator('#leaders-pick').click();
     await page.locator('.leaders-country-btn', { hasText: 'France' }).click();
     await expect(page.locator('#leaders-modes')).toBeVisible();
-    await expect(page.locator('#leaders-mode-gouv')).toHaveText('Premier ministre');
+    await expect(page.locator('#leaders-mode-gouv')).toHaveText('Premiers ministres');
+    // La seconde ligne dit « Président », plus « Président de la République ».
+    await page.locator('#leaders-mode-gouv').click();
+    await expect(page.locator('#leaders-list')).toContainText('Président : Jules Grévy');
+    await expect(page.locator('#leaders-list')).not.toContainText('Président de la République');
+    // L'Allemagne a son bouton « Chanceliers ».
+    await page.locator('#leaders-pick').click();
+    await page.locator('.leaders-country-btn', { hasText: 'Allemagne' }).click();
+    await expect(page.locator('#leaders-mode-gouv')).toHaveText('Chanceliers');
+    await page.locator('#leaders-mode-gouv').click();
+    await expect(page.locator('#leaders-list .leader-row').first()).toContainText('Otto von Bismarck');
+    await expect(page.locator('#leaders-list .leader-row').first()).toContainText('Empereur : Guillaume Ier'); // la seconde ligne remplace la fonction, comme pour la France
+    await expect(page.locator('#leaders-list .leader-row').last()).toContainText('Friedrich Merz');
     expect(errors).toEqual([]);
 });
 
