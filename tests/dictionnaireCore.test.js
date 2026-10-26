@@ -63,10 +63,15 @@ test('neighbours : les autres termes de la même fiche, jamais le terme lui-mêm
     assert.equal(idx.get(plaine.id).nom, 'Plaine');
 });
 
-test('données : 19 domaines, 211 fiches, 24 signalées « Rapport 2026 »', () => {
-    assert.equal(data.domaines.length, 19);
-    assert.equal(data.fiches.length, 211);
-    assert.equal(data.fiches.filter(f => f.rapport2026).length, 24);
+test('données : 211 fiches du document de travail (19 domaines), 29 fiches du rapport du jury 2026 (5 domaines)', () => {
+    assert.equal(data.domaines.length, 24);
+    assert.equal(data.fiches.filter(f => f.source === 'geo-2027').length, 211);
+    assert.equal(data.fiches.filter(f => f.source === 'jury-2026').length, 29);
+    assert.equal(data.fiches.filter(f => f.source === 'geo-2027' && f.rapport2026).length, 24);
+});
+
+test('données : les fiches du jury 2026 sont toutes signalées « Rapport 2026 »', () => {
+    assert.ok(data.fiches.filter(f => f.source === 'jury-2026').every(f => f.rapport2026));
 });
 
 test('données : identifiants uniques, chaque terme rattaché à une fiche de son domaine', () => {

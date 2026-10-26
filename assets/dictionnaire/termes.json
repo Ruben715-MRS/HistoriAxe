@@ -96,6 +96,31 @@
    "id": 19,
    "nom": "Histoire générale et vocabulaire des épreuves",
    "intro": "Le jury de leçon hors programme relève des confusions historiques gênantes pour un concours bivalent, et les rapports reviennent sur le vocabulaire de la méthode."
+  },
+  {
+   "id": 20,
+   "nom": "Histoire ancienne et philosophie (jury 2026)",
+   "intro": "Termes que le rapport du jury d'agrégation d'histoire, session 2026, relève comme mal employés, mal définis ou anachroniques."
+  },
+  {
+   "id": 21,
+   "nom": "Histoire médiévale (jury 2026)",
+   "intro": "Termes relevés par le rapport du jury 2026 : confusions dans les institutions byzantines, carolingiennes et islamiques."
+  },
+  {
+   "id": 22,
+   "nom": "Histoire moderne (jury 2026)",
+   "intro": "Termes relevés par le rapport du jury 2026 : anachronismes sur les vagabonds, la fiscalité et les campagnes."
+  },
+  {
+   "id": 23,
+   "nom": "Géographie (jury 2026)",
+   "intro": "Termes relevés par le rapport du jury 2026 : vocabulaire courant ou journalistique à remplacer, confusions climatiques et buzzwords."
+  },
+  {
+   "id": 24,
+   "nom": "Concepts transversaux et oral (jury 2026)",
+   "intro": "Termes relevés par le rapport du jury 2026 dans les épreuves orales et les dissertations."
   }
  ],
  "fiches": [
@@ -116,7 +141,8 @@
      "nom": "Plateau",
      "definition": "Étendue plane ou faiblement ondulée qui domine les vallées qui l'entaillent : les cours d'eau y sont encaissés."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 2,
@@ -147,7 +173,8 @@
      "nom": "Cordillère",
      "definition": "Système de chaînes parallèles de grande ampleur."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 3,
@@ -170,7 +197,8 @@
      "nom": "Équidistance",
      "definition": "Écart d'altitude constant entre deux courbes de niveau voisines d'une carte (en général 5 m au 1/25 000, 10 m en montagne)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 4,
@@ -197,7 +225,8 @@
      "nom": "Canyon",
      "definition": "Gorge très profonde aux parois presque verticales, souvent entaillée dans des roches résistantes."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 5,
@@ -224,7 +253,8 @@
      "nom": "Cluse",
      "definition": "Vallée transversale qui coupe un anticlinal de part en part."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 6,
@@ -255,7 +285,8 @@
      "nom": "Rift",
      "definition": "Fossé d'effondrement lié à l'étirement de la lithosphère, souvent accompagné de volcanisme."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 7,
@@ -282,7 +313,8 @@
      "nom": "Butte-témoin",
      "definition": "Relief isolé en avant du front d'une cuesta, témoin de son recul."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 8,
@@ -305,7 +337,8 @@
      "nom": "Érosion différentielle",
      "definition": "Érosion inégale selon la résistance des roches, qui met en relief les roches dures."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 9,
@@ -340,7 +373,8 @@
      "nom": "Exsurgence",
      "definition": "Sortie d'eaux infiltrées de façon diffuse, sans perte identifiée."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 10,
@@ -367,7 +401,8 @@
      "nom": "Volcanisme explosif",
      "definition": "Laves visqueuses, projections et nuées ardentes."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 11,
@@ -390,7 +425,8 @@
      "nom": "Point chaud",
      "definition": "Remontée mantellique fixe qui produit un volcanisme intraplaque et des alignements d'îles d'âge croissant."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 12,
@@ -413,7 +449,8 @@
      "nom": "Lit majeur",
      "definition": "Plaine d'inondation occupée lors des crues."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 13,
@@ -440,7 +477,8 @@
      "nom": "Sécheresse",
      "definition": "Déficit d'eau temporaire, météorologique, agricole ou hydrologique."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 14,
@@ -467,7 +505,8 @@
      "nom": "Confluent (confluence)",
      "definition": "Lieu où deux cours d'eau se rejoignent."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 15,
@@ -494,7 +533,8 @@
      "nom": "Ligne de partage des eaux",
      "definition": "Limite entre deux bassins."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 16,
@@ -517,7 +557,8 @@
      "nom": "Régime",
      "definition": "Variations saisonnières du débit : pluvial, nival, glaciaire ou mixte."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 17,
@@ -544,7 +585,8 @@
      "nom": "Nappe captive",
      "definition": "Nappe prise entre deux couches imperméables, sous pression ; artésienne si l'eau jaillit."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 18,
@@ -567,7 +609,8 @@
      "nom": "Accès à l'eau",
      "definition": "Possibilité effective de disposer d'une eau sûre, qui dépend des réseaux, des prix et de la qualité."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 19,
@@ -590,7 +633,8 @@
      "nom": "Eau virtuelle",
      "definition": "Eau nécessaire à la production d'un bien, échangée avec lui (J. A. Allan)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 20,
@@ -621,7 +665,8 @@
      "nom": "Catastrophe",
      "definition": "Réalisation d'un risque qui dépasse les capacités de réponse d'une société."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 21,
@@ -648,7 +693,8 @@
      "nom": "Adaptation",
      "definition": "Réduction de la vulnérabilité aux effets du changement climatique."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 22,
@@ -675,7 +721,8 @@
      "nom": "Précaution",
      "definition": "Action malgré l'incertitude scientifique face à un risque grave (principe inscrit dans la Charte de l'environnement, 2005)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 23,
@@ -698,7 +745,8 @@
      "nom": "Catastrophe naturelle",
      "definition": "En France, état reconnu par arrêté interministériel qui ouvre l'indemnisation des sinistrés (loi de 1982)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 24,
@@ -721,7 +769,8 @@
      "nom": "Vigilance",
      "definition": "Dispositif d'avertissement gradué par couleurs (Météo-France, Vigicrues)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 25,
@@ -740,7 +789,8 @@
      "nom": "Climat",
      "definition": "Synthèse statistique des états de l'atmosphère sur une longue période (normales calculées sur 30 ans)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 26,
@@ -763,7 +813,8 @@
      "nom": "Changement climatique",
      "definition": "Modification durable du climat (températures, précipitations, extrêmes, niveau marin), dont le réchauffement n'est qu'une composante."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 27,
@@ -786,7 +837,8 @@
      "nom": "Désertification",
      "definition": "Dégradation des terres dans les zones arides, semi-arides et subhumides sèches, due aux variations du climat et aux activités humaines (convention des Nations unies, 1994)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 28,
@@ -821,7 +873,8 @@
      "nom": "Géosystème",
      "definition": "Système intégrant composantes physiques, biologiques et humaines à l'échelle d'un paysage (G. Bertrand)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 29,
@@ -844,7 +897,8 @@
      "nom": "Endémisme",
      "definition": "Présence d'espèces propres à une aire limitée."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 30,
@@ -871,7 +925,8 @@
      "nom": "Restauration",
      "definition": "Rétablissement d'un écosystème dégradé."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 31,
@@ -898,7 +953,8 @@
      "nom": "Aire marine protégée",
      "definition": "Espace maritime doté d'un objectif de protection, sous des statuts variés."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 32,
@@ -925,7 +981,8 @@
      "nom": "Boisement",
      "definition": "Plantation sur des terres qui n'étaient plus forestières depuis longtemps."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 33,
@@ -948,7 +1005,8 @@
      "nom": "Réserve",
      "definition": "Part des ressources connues exploitable dans les conditions économiques et techniques du moment."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 34,
@@ -967,7 +1025,8 @@
      "nom": "Décarbonée",
      "definition": "Source qui émet peu de CO₂, nucléaire compris, bien qu'il ne soit pas renouvelable."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 35,
@@ -990,7 +1049,8 @@
      "nom": "Durabilité forte",
      "definition": "Une partie du capital naturel n'est pas substituable."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 36,
@@ -1013,7 +1073,8 @@
      "nom": "Étalement urbain",
      "definition": "Extension des surfaces urbanisées plus rapide que la croissance de la population."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 37,
@@ -1032,7 +1093,8 @@
      "nom": "Anthropocène",
      "definition": "Époque proposée où l'humanité serait devenue une force géologique ; notion scientifique et politique discutée, non retenue comme unité officielle de l'échelle des temps géologiques (2024)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 38,
@@ -1063,7 +1125,8 @@
      "nom": "Littoral",
      "definition": "Espace d'interface entre terre et mer, arrière-pays et proche espace marin compris, analysé dans ses usages."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 39,
@@ -1098,7 +1161,8 @@
      "nom": "Lido",
      "definition": "Cordon qui isole une lagune de la mer."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 40,
@@ -1117,7 +1181,8 @@
      "nom": "Lagon",
      "definition": "Étendue d'eau marine enclose par un récif corallien, barrière ou atoll."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 41,
@@ -1144,7 +1209,8 @@
      "nom": "Fjord",
      "definition": "Vallée glaciaire envahie par la mer."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 42,
@@ -1171,7 +1237,8 @@
      "nom": "Mangrove",
      "definition": "Formation forestière de palétuviers des littoraux tropicaux vaseux."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 43,
@@ -1190,7 +1257,8 @@
      "nom": "Érosion côtière",
      "definition": "Perte de matériaux qui fait reculer durablement le trait de côte."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 44,
@@ -1209,7 +1277,8 @@
      "nom": "Maritimisation",
      "definition": "Poids croissant des échanges maritimes et des espaces marins dans l'économie et la géopolitique mondiales."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 45,
@@ -1236,7 +1305,8 @@
      "nom": "Foreland (avant-pays)",
      "definition": "Ensemble des ports et espaces maritimes reliés à un port."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 46,
@@ -1263,7 +1333,8 @@
      "nom": "Transbordement",
      "definition": "Transfert d'une cargaison d'un navire à un autre."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 47,
@@ -1294,7 +1365,8 @@
      "nom": "Haute mer",
      "definition": "Au-delà : liberté des mers ; les grands fonds (la « Zone ») relèvent du patrimoine commun de l'humanité."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 48,
@@ -1317,7 +1389,8 @@
      "nom": "Plateau continental (sens juridique)",
      "definition": "Fonds marins sur lesquels l'État côtier a des droits souverains d'exploitation, jusqu'à 200 milles et au-delà sous conditions, après examen par une commission des Nations unies."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 49,
@@ -1344,7 +1417,8 @@
      "nom": "Mer fermée ou semi-fermée",
      "definition": "Mer reliée à l'océan par un ou plusieurs détroits étroits."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 50,
@@ -1375,7 +1449,8 @@
      "nom": "État archipel",
      "definition": "Catégorie du droit de la mer : État formé d'un ou plusieurs archipels, autorisé à tracer des lignes de base archipélagiques."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 51,
@@ -1402,7 +1477,8 @@
      "nom": "Atoll",
      "definition": "Couronne récifale portant des motu autour d'un lagon, sans île haute centrale."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 52,
@@ -1425,7 +1501,8 @@
      "nom": "Couronne récifale",
      "definition": "Récif annulaire d'un atoll, sans île haute centrale."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 53,
@@ -1452,7 +1529,8 @@
      "nom": "Éloignement",
      "definition": "Distance à un centre, en kilomètres, en temps ou en coût."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 54,
@@ -1487,7 +1565,8 @@
      "nom": "Indopacifique",
      "definition": "Notion stratégique réunissant océans Indien et Pacifique, non retenue dans la question 2027."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 55,
@@ -1510,7 +1589,8 @@
      "nom": "Micronésie",
      "definition": "« Petites îles » : au nord de la Mélanésie (Guam, Palaos, Marshall, Kiribati en partie)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 56,
@@ -1537,7 +1617,8 @@
      "nom": "Allochtone",
      "definition": "Venu d'ailleurs."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 57,
@@ -1556,7 +1637,8 @@
      "nom": "Territoire sous tutelle",
      "definition": "Régime onusien (1945-1994) d'administration confiée à une puissance, éteint avec l'indépendance des Palaos."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 58,
@@ -1587,7 +1669,8 @@
      "nom": "PTOM",
      "definition": "Pays et territoires d'outre-mer associés à l'Union mais hors de son territoire (Nouvelle-Calédonie, Polynésie française, Wallis-et-Futuna…)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 59,
@@ -1614,7 +1697,8 @@
      "nom": "État fédéré",
      "definition": "Membre à part entière d'une fédération (Hawaï)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 60,
@@ -1637,7 +1721,8 @@
      "nom": "Indépendance",
      "definition": "Accession à la pleine souveraineté."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 61,
@@ -1660,7 +1745,8 @@
      "nom": "Relocalisation planifiée",
      "definition": "Déplacement organisé d'une communauté exposée (Vunidogoloa, Fidji, 2014)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 62,
@@ -1683,7 +1769,8 @@
      "nom": "PROFIT",
      "definition": "Économies insulaires tirant parti de leurs compétences juridictionnelles (G. Baldacchino, 2006)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 63,
@@ -1710,7 +1797,8 @@
      "nom": "Faubourg",
      "definition": "Quartier né hors des murs de la ville ancienne, aujourd'hui intégré au centre."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 64,
@@ -1737,7 +1825,8 @@
      "nom": "Aire urbaine (zonage de 2010)",
      "definition": "Pôle urbain et couronne où au moins 40 % des actifs travaillent dans le pôle ; remplacée en 2020."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 65,
@@ -1760,7 +1849,8 @@
      "nom": "Urbanité",
      "definition": "Qualité de ce qui est urbain, combinant densité et diversité (J. Lévy)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 66,
@@ -1787,7 +1877,8 @@
      "nom": "Mégalopole",
      "definition": "Vaste région urbanisée polycentrique réunissant plusieurs métropoles en réseau (J. Gottmann, 1961)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 67,
@@ -1806,7 +1897,8 @@
      "nom": "Ville globale",
      "definition": "Ville concentrant les services financiers et de commandement de la mondialisation (S. Sassen, 1991 : New York, Londres, Tokyo)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 68,
@@ -1833,7 +1925,8 @@
      "nom": "Étalement urbain",
      "definition": "Extension des surfaces urbanisées plus rapide que la population."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 69,
@@ -1864,7 +1957,8 @@
      "nom": "Gentrification",
      "definition": "Remplacement progressif des habitants populaires par des catégories plus aisées, avec transformation du bâti et des commerces (R. Glass, 1964)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 70,
@@ -1887,7 +1981,8 @@
      "nom": "Mixité sociale",
      "definition": "Coexistence de groupes sociaux différents dans un même espace ; objectif politique."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 71,
@@ -1910,7 +2005,8 @@
      "nom": "Quartier prioritaire (QPV)",
      "definition": "Zonage en vigueur depuis 2015 (loi de 2014), fondé sur un critère unique de revenu des habitants."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 72,
@@ -1933,7 +2029,8 @@
      "nom": "Taudis",
      "definition": "Logement insalubre, y compris dans des immeubles légaux."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 73,
@@ -1956,7 +2053,8 @@
      "nom": "Réserve foncière",
      "definition": "Terrains acquis par une collectivité pour un aménagement futur."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 74,
@@ -1983,7 +2081,8 @@
      "nom": "Edge city",
      "definition": "Pôle d'emplois et de services périphérique (J. Garreau, 1991)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 75,
@@ -2010,7 +2109,8 @@
      "nom": "Macrocéphalie",
      "definition": "Poids disproportionné de la première ville dans le réseau."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 76,
@@ -2037,7 +2137,8 @@
      "nom": "Densité perçue",
      "definition": "Ressenti lié aux formes bâties et aux usages."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 77,
@@ -2060,7 +2161,8 @@
      "nom": "Commune rurale (INSEE)",
      "definition": "Depuis 2020 : commune peu dense ou très peu dense selon la grille communale de densité ; auparavant, commune hors unité urbaine ; au XIXe siècle, chef-lieu de moins de 2 000 habitants agglomérés."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 78,
@@ -2087,7 +2189,8 @@
      "nom": "Renaissance rurale",
      "definition": "Regain démographique des campagnes observé à partir des années 1975 (B. Kayser, 1990)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 79,
@@ -2114,7 +2217,8 @@
      "nom": "Rotation",
      "definition": "Succession des cultures sur une même parcelle au fil des années."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 80,
@@ -2137,7 +2241,8 @@
      "nom": "Paysage de grande culture remembrée",
      "definition": "Grandes parcelles ouvertes issues du remembrement et de la mécanisation, sans organisation collective ancienne."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 81,
@@ -2160,7 +2265,8 @@
      "nom": "Territoire communal",
      "definition": "Circonscription administrative de la commune."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 82,
@@ -2191,7 +2297,8 @@
      "nom": "Habitat groupé ou dispersé",
      "definition": "Regroupement des maisons en noyaux ou éparpillement en fermes isolées et hameaux."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 83,
@@ -2222,7 +2329,8 @@
      "nom": "Agroécologie",
      "definition": "Pratiques qui s'appuient sur les processus écologiques."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 84,
@@ -2245,7 +2353,8 @@
      "nom": "Commerciale",
      "definition": "Production destinée à la vente, jusqu'aux cultures d'exportation."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 85,
@@ -2272,7 +2381,8 @@
      "nom": "Mode de faire-valoir",
      "definition": "Direct, fermage ou métayage."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 86,
@@ -2295,7 +2405,8 @@
      "nom": "Agrobusiness",
      "definition": "Grandes firmes du secteur ; terme souvent critique."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 87,
@@ -2314,7 +2425,8 @@
      "nom": "Circuit de proximité",
      "definition": "Vente dans un rayon géographique limité."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 88,
@@ -2337,7 +2449,8 @@
      "nom": "Indice synthétique de fécondité",
      "definition": "Nombre moyen d'enfants par femme d'une génération fictive soumise aux taux de l'année."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 89,
@@ -2360,7 +2473,8 @@
      "nom": "Croissance démographique",
      "definition": "Somme des deux soldes."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 90,
@@ -2379,7 +2493,8 @@
      "nom": "Par le haut",
      "definition": "Allongement de l'espérance de vie aux grands âges."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 91,
@@ -2414,7 +2529,8 @@
      "nom": "Déplacé interne",
      "definition": "Personne contrainte de fuir sans franchir de frontière internationale."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 92,
@@ -2437,7 +2553,8 @@
      "nom": "Navette (mobilité pendulaire)",
      "definition": "Déplacement quotidien entre domicile et travail."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 93,
@@ -2460,7 +2577,8 @@
      "nom": "Remises",
      "definition": "Transferts d'argent des migrants vers leur pays ou leur famille."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 94,
@@ -2483,7 +2601,8 @@
      "nom": "Foyer de peuplement",
      "definition": "Concentration durable de population."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 95,
@@ -2510,7 +2629,8 @@
      "nom": "Sous-emploi",
      "definition": "Travail à temps partiel subi ou chômage technique."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 96,
@@ -2541,7 +2661,8 @@
      "nom": "PPA",
      "definition": "Parité de pouvoir d'achat : correction des écarts de prix entre pays."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 97,
@@ -2568,7 +2689,8 @@
      "nom": "Inégalités",
      "definition": "Écarts de répartition des revenus ou des patrimoines (indice de Gini)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 98,
@@ -2599,7 +2721,8 @@
      "nom": "Tiers-monde",
      "definition": "Expression d'A. Sauvy (1952), marquée par la guerre froide."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 99,
@@ -2622,7 +2745,8 @@
      "nom": "Internationalisation",
      "definition": "Extension des relations entre États, ou des activités d'une entreprise à l'étranger."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 100,
@@ -2649,7 +2773,8 @@
      "nom": "Relocalisation",
      "definition": "Retour d'une activité dans son pays d'origine ; le rapprochement vers des pays voisins ou alliés est parfois appelé nearshoring ou friendshoring."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 101,
@@ -2676,7 +2801,8 @@
      "nom": "Régionalisation (géographie)",
      "definition": "Découpage d'un espace en régions."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 102,
@@ -2703,7 +2829,8 @@
      "nom": "Union économique et monétaire",
      "definition": "Marché commun, coordination des politiques économiques et monnaie unique."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 103,
@@ -2730,7 +2857,8 @@
      "nom": "Centre offshore",
      "definition": "Place financière qui sert surtout des non-résidents."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 104,
@@ -2749,7 +2877,8 @@
      "nom": "Transnationale",
      "definition": "Insiste sur une organisation intégrée à l'échelle mondiale, au-delà des cadres nationaux (terme de la CNUCED)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 105,
@@ -2780,7 +2909,8 @@
      "nom": "Pôle de compétitivité",
      "definition": "Label français (2005) réunissant entreprises, recherche et formation autour de projets."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 106,
@@ -2803,7 +2933,8 @@
      "nom": "Système productif",
      "definition": "Ensemble des acteurs, facteurs et relations qui concourent à la production sur un territoire."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 107,
@@ -2826,7 +2957,8 @@
      "nom": "Conteneurisation",
      "definition": "Généralisation d'une boîte standard qui facilite l'intermodalité."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 108,
@@ -2849,7 +2981,8 @@
      "nom": "Connexité",
      "definition": "Propriété d'un réseau dont tous les nœuds sont reliés (théorie des graphes)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 109,
@@ -2876,7 +3009,8 @@
      "nom": "Distance perçue",
      "definition": "Distance telle qu'elle est ressentie."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 110,
@@ -2907,7 +3041,8 @@
      "nom": "Pôle",
      "definition": "Lieu qui attire (emplois, services)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 111,
@@ -2938,7 +3073,8 @@
      "nom": "Angle mort",
      "definition": "Espace délaissé par les flux alors qu'il est proche des centres."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 112,
@@ -2961,7 +3097,8 @@
      "nom": "Illégale",
      "definition": "Activités interdites (trafics)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 113,
@@ -2992,7 +3129,8 @@
      "nom": "Territorialisation",
      "definition": "Processus d'appropriation d'un espace."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 114,
@@ -3027,7 +3165,8 @@
      "nom": "Front pionnier",
      "definition": "Zone mouvante de mise en valeur de terres nouvelles."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 115,
@@ -3054,7 +3193,8 @@
      "nom": "Effet-frontière",
      "definition": "Effets de la frontière sur les flux et les territoires voisins (freinage, différentiels)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 116,
@@ -3081,7 +3221,8 @@
      "nom": "Gouvernement",
      "definition": "Organe exécutif d'un État."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 117,
@@ -3104,7 +3245,8 @@
      "nom": "Autonomie",
      "definition": "Compétences propres d'une collectivité au sein d'un État souverain."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 118,
@@ -3135,7 +3277,8 @@
      "nom": "Soft power",
      "definition": "Puissance d'attraction par la culture et les valeurs (J. Nye, 1990) ; le hard power repose sur la coercition militaire et économique."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 119,
@@ -3158,7 +3301,8 @@
      "nom": "Géostratégie",
      "definition": "Réflexion stratégique, surtout militaire, à l'échelle de grands espaces."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 120,
@@ -3189,7 +3333,8 @@
      "nom": "Zone grise",
      "definition": "Espace qui échappe au contrôle effectif de l'État."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 121,
@@ -3216,7 +3361,8 @@
      "nom": "Confédération",
      "definition": "Association d'États souverains fondée sur un traité."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 122,
@@ -3243,7 +3389,8 @@
      "nom": "Subsidiarité",
      "definition": "Principe selon lequel une question relève du niveau le plus pertinent, souvent le plus proche."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 123,
@@ -3266,7 +3413,8 @@
      "nom": "EPCI",
      "definition": "Établissement public de coopération intercommunale (communautés, métropoles), qui n'est pas une collectivité territoriale."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 124,
@@ -3289,7 +3437,8 @@
      "nom": "Pays enclavé",
      "definition": "État sans accès à la mer."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 125,
@@ -3308,7 +3457,8 @@
      "nom": "Citoyenneté",
      "definition": "Participation à la vie politique et droits qui s'y attachent."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 126,
@@ -3331,7 +3481,8 @@
      "nom": "Métropole",
      "definition": "Grande ville à fonctions de commandement, qui n'est pas forcément capitale."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 127,
@@ -3358,7 +3509,8 @@
      "nom": "Extraterritorialité du droit",
      "definition": "Application d'une loi nationale au-delà du territoire (sanctions étatsuniennes)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 128,
@@ -3389,7 +3541,8 @@
      "nom": "Irrédentisme",
      "definition": "Revendication d'un territoire jugé national mais sous souveraineté étrangère."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 129,
@@ -3420,7 +3573,8 @@
      "nom": "Annexion",
      "definition": "Incorporation unilatérale d'un territoire."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 130,
@@ -3443,7 +3597,8 @@
      "nom": "Rescaling",
      "definition": "Recomposition des niveaux d'action de l'État, par transfert vers le haut, vers le bas ou vers des acteurs non étatiques (N. Brenner)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 131,
@@ -3470,7 +3625,8 @@
      "nom": "Politique de la ville",
      "definition": "Politique ciblée sur les quartiers prioritaires."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 132,
@@ -3489,7 +3645,8 @@
      "nom": "Gouvernance",
      "definition": "Modes de décision qui associent aux pouvoirs publics des acteurs multiples (entreprises, associations, habitants), à plusieurs niveaux."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 133,
@@ -3508,7 +3665,8 @@
      "nom": "Attractivité",
      "definition": "Capacité à attirer et retenir populations, entreprises et capitaux."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 134,
@@ -3535,7 +3693,8 @@
      "nom": "Justice spatiale",
      "definition": "Réflexion sur la répartition juste des biens et des maux dans l'espace (A. Reynaud, 1981 ; E. Soja, 2010)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 135,
@@ -3566,7 +3725,8 @@
      "nom": "Débat public",
      "definition": "Procédure encadrée par la Commission nationale du débat public pour les grands projets."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 136,
@@ -3589,7 +3749,8 @@
      "nom": "NIMBY",
      "definition": "Opposition locale à un équipement jugé acceptable ailleurs."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 137,
@@ -3612,7 +3773,8 @@
      "nom": "SRADDET",
      "definition": "Schéma régional d'aménagement et de développement durable (loi NOTRe, 2015)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 138,
@@ -3631,7 +3793,8 @@
      "nom": "Zone d'aménagement concerté",
      "definition": "Procédure d'aménagement public pour réaliser un projet, souvent à l'initiative d'une collectivité."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 139,
@@ -3654,7 +3817,8 @@
      "nom": "ANCT",
      "definition": "Agence nationale de la cohésion des territoires (depuis 2020)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 140,
@@ -3677,7 +3841,8 @@
      "nom": "Épidémiologie",
      "definition": "Discipline médicale qui étudie la fréquence, la répartition et les déterminants des maladies dans les populations."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 141,
@@ -3712,7 +3877,8 @@
      "nom": "Syndémie",
      "definition": "Interaction de maladies et de conditions sociales qui s'aggravent mutuellement (M. Singer)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 142,
@@ -3731,7 +3897,8 @@
      "nom": "Prévalence",
      "definition": "Nombre total de cas présents à un moment donné, rapporté à la population."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 143,
@@ -3754,7 +3921,8 @@
      "nom": "Létalité",
      "definition": "Proportion de décès parmi les personnes atteintes d'une maladie."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 144,
@@ -3777,7 +3945,8 @@
      "nom": "Transition sanitaire",
      "definition": "Notion plus large intégrant les systèmes de soins et les réponses des sociétés."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 145,
@@ -3800,7 +3969,8 @@
      "nom": "Longévité",
      "definition": "Durée de vie maximale observée."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 146,
@@ -3827,7 +3997,8 @@
      "nom": "Réservoir",
      "definition": "Milieu ou espèce où l'agent se maintient durablement."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 147,
@@ -3846,7 +4017,8 @@
      "nom": "Pathocénose",
      "definition": "Ensemble des maladies présentes dans une population à une époque, en interaction (M. D. Grmek)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 148,
@@ -3873,7 +4045,8 @@
      "nom": "Désert médical",
      "definition": "Expression médiatique ; les agences régionales de santé définissent des zones d'intervention prioritaire."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 149,
@@ -3900,7 +4073,8 @@
      "nom": "One Health",
      "definition": "Approche intégrée des santés humaine, animale et environnementale."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 150,
@@ -3927,7 +4101,8 @@
      "nom": "Gradient social",
      "definition": "Amélioration continue de la santé à chaque échelon de l'échelle sociale."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 151,
@@ -3954,7 +4129,8 @@
      "nom": "Cordon sanitaire",
      "definition": "Barrière qui entoure une zone touchée."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 152,
@@ -3981,7 +4157,8 @@
      "nom": "Soins secondaires et tertiaires",
      "definition": "Spécialistes et hôpitaux, puis centres très spécialisés (CHU)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 153,
@@ -4004,7 +4181,8 @@
      "nom": "Hôpital de proximité",
      "definition": "Établissement de premier niveau hospitalier, sans activité de chirurgie lourde."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 154,
@@ -4027,7 +4205,8 @@
      "nom": "Outre-mer",
      "definition": "Territoires français situés hors d'Europe, de statuts divers."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 155,
@@ -4050,7 +4229,8 @@
      "nom": "Aire d'attraction des villes",
      "definition": "Pôle et couronne définis par les navettes domicile-travail (2020)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 156,
@@ -4073,7 +4253,8 @@
      "nom": "Intercommunalité",
      "definition": "Coopération entre communes au sein d'un EPCI."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 157,
@@ -4100,7 +4281,8 @@
      "nom": "France des marges",
      "definition": "Lecture des espaces « autres » et de leur ambivalence (S. Depraz, 2017)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 158,
@@ -4127,7 +4309,8 @@
      "nom": "Chorème",
      "definition": "Structure spatiale élémentaire, abstraite, qui entre dans la construction d'un modèle (R. Brunet)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 159,
@@ -4154,7 +4337,8 @@
      "nom": "Échelle graphique",
      "definition": "Barre graduée, qui reste juste si la carte est agrandie ou réduite."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 160,
@@ -4181,7 +4365,8 @@
      "nom": "Couleur (teinte)",
      "definition": "Traduit des différences de nature."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 161,
@@ -4208,7 +4393,8 @@
      "nom": "Isoplèthes",
      "definition": "Lignes d'égale valeur interpolées (isothermes)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 162,
@@ -4239,7 +4425,8 @@
      "nom": "Isochrone",
      "definition": "Ligne de même temps d'accès."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 163,
@@ -4262,7 +4449,8 @@
      "nom": "Bloc-diagramme",
      "definition": "Représentation en perspective qui associe surface et structure."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 164,
@@ -4289,7 +4477,8 @@
      "nom": "Image satellite",
      "definition": "Enregistrement numérique, dans le visible ou non, à résolution variable."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 165,
@@ -4312,7 +4501,8 @@
      "nom": "Légende problématisée",
      "definition": "Parties qui répondent à la problématique et suivent la démonstration."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 166,
@@ -4335,7 +4525,8 @@
      "nom": "Modèle",
      "definition": "Représentation simplifiée d'une structure ou d'un processus (modèle gravitaire, centre-périphérie)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 167,
@@ -4354,7 +4545,8 @@
      "nom": "Possibilisme",
      "definition": "Le milieu offre des possibles entre lesquels les sociétés choisissent (Vidal de La Blache ; mot de L. Febvre, 1922)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 168,
@@ -4381,7 +4573,8 @@
      "nom": "Géographie sociale",
      "definition": "Étude des rapports sociaux et des inégalités dans l'espace."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 169,
@@ -4408,7 +4601,8 @@
      "nom": "Imaginaire géographique",
      "definition": "Ensemble des représentations partagées d'un espace, souvent héritées (exotisme)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 170,
@@ -4435,7 +4629,8 @@
      "nom": "Résider",
      "definition": "Avoir son domicile en un lieu."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 171,
@@ -4454,7 +4649,8 @@
      "nom": "Motilité",
      "definition": "Capacité potentielle à être mobile (V. Kaufmann)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 172,
@@ -4477,7 +4673,8 @@
      "nom": "Polarisation",
      "definition": "Attraction et organisation d'un espace par un centre."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 173,
@@ -4496,7 +4693,8 @@
      "nom": "Géohistoire",
      "definition": "Lecture du temps long des rapports entre sociétés et espaces, souvent à l'échelle mondiale (F. Braudel, C. Grataloup)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 174,
@@ -4515,7 +4713,8 @@
      "nom": "Système-monde",
      "definition": "Le monde entier comme système intégré et hiérarchisé (I. Wallerstein ; O. Dollfus)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 175,
@@ -4534,7 +4733,8 @@
      "nom": "Interface",
      "definition": "Discontinuité qui met en relation et produit des échanges spécifiques."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 176,
@@ -4553,7 +4753,8 @@
      "nom": "Le travail",
      "definition": "Catégorie économique et sociale : facteur de production, marché, mondes du travail."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 177,
@@ -4580,7 +4781,8 @@
      "nom": "Exploitant agricole",
      "definition": "Chef d'exploitation, catégorie statistique et syndicale après 1945."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 178,
@@ -4607,7 +4809,8 @@
      "nom": "Ouvrier agricole",
      "definition": "Salarié de l'agriculture, terme générique."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 179,
@@ -4630,7 +4833,8 @@
      "nom": "Métayage",
      "definition": "Les récoltes sont partagées entre propriétaire et exploitant."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 180,
@@ -4657,7 +4861,8 @@
      "nom": "Affouage",
      "definition": "Droit des habitants de prendre du bois de chauffage dans les forêts communales."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 181,
@@ -4676,7 +4881,8 @@
      "nom": "SAFER",
      "definition": "Sociétés créées en 1960 qui achètent et rétrocèdent des terres pour orienter les structures agricoles."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 182,
@@ -4707,7 +4913,8 @@
      "nom": "Chambre d'agriculture",
      "definition": "Établissement public de représentation de la profession (1924)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 183,
@@ -4734,7 +4941,8 @@
      "nom": "Productivisme",
      "definition": "Modèle visant l'augmentation maximale des rendements."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 184,
@@ -4757,7 +4965,8 @@
      "nom": "Proto-industrialisation",
      "definition": "Industrie rurale à domicile pour des marchés lointains, vue comme une phase préparant l'industrialisation (F. Mendels, 1972)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 185,
@@ -4780,7 +4989,8 @@
      "nom": "Émigration définitive",
      "definition": "Installation ailleurs sans retour."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 186,
@@ -4803,7 +5013,8 @@
      "nom": "Mévente",
      "definition": "Impossibilité de vendre à prix rémunérateur (vins du Midi, 1907)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 187,
@@ -4826,7 +5037,8 @@
      "nom": "Laïcisation",
      "definition": "Séparation institutionnelle entre l'État et les Églises (lois scolaires, loi de 1905)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 188,
@@ -4849,7 +5061,8 @@
      "nom": "Instruction",
      "definition": "Savoirs transmis."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 189,
@@ -4868,7 +5081,8 @@
      "nom": "Politisation",
      "definition": "Appropriation par les ruraux des enjeux et des pratiques politiques nationales (M. Agulhon)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 190,
@@ -4891,7 +5105,8 @@
      "nom": "Évangélisation",
      "definition": "Diffusion du christianisme, par les ordres mendiants puis les jésuites."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 191,
@@ -4914,7 +5129,8 @@
      "nom": "Métissage",
      "definition": "Mélanges biologiques et culturels produisant des formes nouvelles."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 192,
@@ -4937,7 +5153,8 @@
      "nom": "Mita",
      "definition": "Travail rotatif obligatoire andin, systématisé par le vice-roi Toledo dans les années 1570 pour les mines de Potosí et de Huancavelica."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 193,
@@ -4968,7 +5185,8 @@
      "nom": "Plantation",
      "definition": "Grande exploitation spécialisée pour l'exportation, fondée sur une main-d'œuvre servile."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 194,
@@ -4999,7 +5217,8 @@
      "nom": "Cabildo",
      "definition": "Conseil municipal d'une ville."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 195,
@@ -5022,7 +5241,8 @@
      "nom": "Carrera de Indias",
      "definition": "Système de navigation en convois (flotas) entre l'Espagne et l'Amérique, sous monopole sévillan."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 196,
@@ -5049,7 +5269,8 @@
      "nom": "Mulâtre",
      "definition": "Né de parents européen et africain."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 197,
@@ -5068,7 +5289,8 @@
      "nom": "Indien",
      "definition": "Catégorie coloniale qui englobe des peuples très divers."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 198,
@@ -5091,7 +5313,8 @@
      "nom": "Travail forcé",
      "definition": "Obligation de travail imposée à des personnes libres (mita, repartimiento)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 199,
@@ -5118,7 +5341,8 @@
      "nom": "Flibustier",
      "definition": "Aventurier des Antilles pratiquant la course ou la piraterie contre l'Espagne au XVIIe siècle."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 200,
@@ -5141,7 +5365,8 @@
      "nom": "Mission",
      "definition": "Implantation religieuse aux frontières de la colonisation."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 201,
@@ -5164,7 +5389,8 @@
      "nom": "« Commerce triangulaire »",
      "definition": "Schéma simplificateur : une large part de la traite se fait en droiture, notamment entre le Brésil et l'Afrique."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 202,
@@ -5187,7 +5413,8 @@
      "nom": "Syncrétisme",
      "definition": "Combinaison de croyances et de pratiques d'origines différentes."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 203,
@@ -5210,7 +5437,8 @@
      "nom": "Annexion",
      "definition": "Incorporation d'un territoire à un autre."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 204,
@@ -5233,7 +5461,8 @@
      "nom": "Colonie de propriétaire",
      "definition": "Colonie concédée à un individu (Maryland, 1632)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 205,
@@ -5260,7 +5489,8 @@
      "nom": "Bloc de l'Est",
      "definition": "URSS et démocraties populaires, liées par le CAEM (1949) et le pacte de Varsovie (1955)."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 206,
@@ -5283,7 +5513,8 @@
      "nom": "Problématique",
      "definition": "Question directrice qui organise la démonstration."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 207,
@@ -5310,7 +5541,8 @@
      "nom": "Commentaire",
      "definition": "Analyse critique des documents au service d'une problématique, avec apport de connaissances."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 208,
@@ -5333,7 +5565,8 @@
      "nom": "Monographie",
      "definition": "Étude exhaustive d'un lieu ou d'un objet pour lui-même."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 209,
@@ -5364,7 +5597,8 @@
      "nom": "Plan à tiroirs",
      "definition": "Juxtaposition de domaines (politique, économie, environnement), proscrite."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 210,
@@ -5387,7 +5621,8 @@
      "nom": "Ouverture",
      "definition": "Élargissement pertinent qui prolonge la réponse."
     }
-   ]
+   ],
+   "source": "geo-2027"
   },
   {
    "id": 211,
@@ -5414,7 +5649,580 @@
      "nom": "Frise analytique",
      "definition": "Frise à plusieurs registres qui met en relation des évolutions."
     }
-   ]
+   ],
+   "source": "geo-2027"
+  },
+  {
+   "id": 212,
+   "domaine": 20,
+   "titre": "Métier de citoyen / Scholè",
+   "rapport2026": true,
+   "critere": "Rome, où le citoyen est un professionnel de la chose publique ; en Grèce, l'activité civique suppose le loisir et s'oppose au travail rémunéré.",
+   "piege": "Appliquer « métier de citoyen » à la Grèce : c'est un contresens, puisque l'activité civique grecque suppose la scholè et s'oppose au travail rémunéré.",
+   "exemples": "",
+   "termes": [
+    {
+     "nom": "Métier de citoyen",
+     "definition": "Formule de C. Nicolet (Le Métier de citoyen dans la Rome républicaine, 1976) : l'exercice régulier du vote, des charges et du service armé, traité comme une occupation à part entière. Elle caractérise Rome, non la Grèce."
+    },
+    {
+     "nom": "Scholè",
+     "definition": "Loisir libre, temps dégagé de la nécessité du travail ; dans la Grèce classique, condition de l'activité civique et philosophique."
+    }
+   ],
+   "source": "jury-2026"
+  },
+  {
+   "id": 213,
+   "domaine": 20,
+   "titre": "Misthos",
+   "rapport2026": true,
+   "critere": "Un paiement ponctuel pour une tâche ou une fonction, et non un revenu régulier lié à un emploi.",
+   "piege": "Traduire misthos par « salaire » projette sur la Grèce une catégorie de l'économie salariée.",
+   "exemples": "",
+   "termes": [
+    {
+     "nom": "Misthos",
+     "definition": "Rétribution versée pour un service, une charge ou une fonction, en Grèce ancienne ; ce n'est pas un salaire régulier au sens moderne."
+    }
+   ],
+   "source": "jury-2026"
+  },
+  {
+   "id": 214,
+   "domaine": 20,
+   "titre": "Technè / Ergon / Trophè",
+   "rapport2026": true,
+   "critere": "Ces notions se définissent dans leur contexte (savoir, œuvre, entretien) avant toute traduction.",
+   "piege": "Traduire technè par « savoir-faire » ou ergon par « acte » vide ces mots de leur sens historique et conceptuel.",
+   "exemples": "",
+   "termes": [
+    {
+     "nom": "Technè",
+     "definition": "Savoir réglé par des principes, qui connaît les causes de ce qu'il produit : l'art ou le métier, distingué de la simple expérience (empeiria) chez Aristote."
+    },
+    {
+     "nom": "Ergon",
+     "definition": "Œuvre, ouvrage ou fonction accomplie ; le mot désigne le produit du travail et, par extension, ce pour quoi une chose est faite."
+    },
+    {
+     "nom": "Trophè",
+     "definition": "Nourriture et entretien ; le mot désigne aussi l'entretien que la cité ou une famille doit assurer à quelqu'un."
+    }
+   ],
+   "source": "jury-2026"
+  },
+  {
+   "id": 215,
+   "domaine": 20,
+   "titre": "Penia / Démiourgos",
+   "rapport2026": true,
+   "critere": "Le sens des mots varie selon les auteurs et les époques : il faut dater et situer la source avant de traduire.",
+   "piege": "Projeter le sens moderne (la pauvreté, le démiurge gnostique) sur des textes archaïques ou classiques.",
+   "exemples": "",
+   "termes": [
+    {
+     "nom": "Penia",
+     "definition": "Manque, besoin ; dans la Grèce classique, la condition de celui qui doit travailler pour vivre (le pénès), distincte de la mendicité (ptôcheia)."
+    },
+    {
+     "nom": "Démiourgos",
+     "definition": "Au sens premier, artisan ou homme de métier qui travaille pour la communauté (chez Homère : devin, médecin, charpentier) ; chez Platon (Timée), le démiurge qui façonne le monde."
+    }
+   ],
+   "source": "jury-2026"
+  },
+  {
+   "id": 216,
+   "domaine": 21,
+   "titre": "Themata / Tagmata",
+   "rapport2026": true,
+   "critere": "Les thèmes sont des circonscriptions territoriales ; les tagmata sont des corps de troupes au service direct du pouvoir central.",
+   "piege": "Les confondre : les thèmes ne sont pas des unités d'armée, et les tagmata ne sont pas des provinces.",
+   "exemples": "",
+   "termes": [
+    {
+     "nom": "Themata",
+     "definition": "Circonscriptions militaires et administratives de l'Empire byzantin, confiées à un stratège, à partir du VIIe siècle."
+    },
+    {
+     "nom": "Tagmata",
+     "definition": "Corps permanents de troupes d'élite, rattachés au pouvoir central et stationnés près de la capitale, à partir du VIIIe siècle."
+    }
+   ],
+   "source": "jury-2026"
+  },
+  {
+   "id": 217,
+   "domaine": 21,
+   "titre": "Musulman / Islamique",
+   "rapport2026": true,
+   "critere": "Musulman qualifie l'individu qui professe l'islam ; islamique qualifie ce qui relève de la civilisation et de la culture.",
+   "piege": "Employer l'un pour l'autre (« l'art musulman », « une société musulmane » au sens de civilisation) mélange la foi de l'individu et le champ de la civilisation.",
+   "exemples": "",
+   "termes": [
+    {
+     "nom": "Musulman",
+     "definition": "Qui professe la religion islamique ; se dit d'une personne, de ses pratiques et de sa foi."
+    },
+    {
+     "nom": "Islamique",
+     "definition": "Qui relève de l'islam comme civilisation, histoire, culture ou institutions (art islamique, droit islamique)."
+    }
+   ],
+   "source": "jury-2026"
+  },
+  {
+   "id": 218,
+   "domaine": 21,
+   "titre": "Maghrébins / Arabes",
+   "rapport2026": true,
+   "critere": "Maghrébin désigne une origine géographique (Maroc, Algérie, Tunisie, Libye) ; arabe désigne une appartenance linguistique et culturelle.",
+   "piege": "Confondre les deux : les Berbères sont maghrébins sans être arabes, et un Maghrébin n'est pas nécessairement arabophone.",
+   "exemples": "",
+   "termes": [
+    {
+     "nom": "Maghrébin",
+     "definition": "Originaire du Maghreb, espace de l'Afrique du Nord-Ouest (Maroc, Algérie, Tunisie, Libye), quelles que soient sa langue et son origine."
+    },
+    {
+     "nom": "Arabe",
+     "definition": "Qui appartient aux peuples et aux cultures de langue arabe ; catégorie linguistique et culturelle, non géographique."
+    },
+    {
+     "nom": "Berbère",
+     "definition": "Peuples autochtones de l'Afrique du Nord, parlant des langues amazighes : maghrébins, mais non arabes."
+    }
+   ],
+   "source": "jury-2026"
+  },
+  {
+   "id": 219,
+   "domaine": 21,
+   "titre": "Beneficium / Honores",
+   "rapport2026": true,
+   "critere": "Le bénéfice est une possession concédée en échange d'un service ; l'honor est une autorité publique, une fonction.",
+   "piege": "Confondre les deux : un vassal reçoit un bénéfice, un comte exerce un honor. Ils peuvent se cumuler sans être la même chose.",
+   "exemples": "",
+   "termes": [
+    {
+     "nom": "Beneficium",
+     "definition": "Bien (terre, revenus) concédé par un seigneur ou le souverain en échange de services, notamment militaires, dans le monde carolingien ; il préfigure le fief."
+    },
+    {
+     "nom": "Honores",
+     "definition": "Dignités et fonctions publiques, c'est-à-dire autorité exercée au nom du roi (comté, mission, charge de justice)."
+    }
+   ],
+   "source": "jury-2026"
+  },
+  {
+   "id": 220,
+   "domaine": 21,
+   "titre": "Basileia / Imperium",
+   "rapport2026": true,
+   "critere": "La basileia est le pouvoir royal du basileus (grec) ; l'imperium est le commandement militaire et civil du magistrat romain (latin).",
+   "piege": "Traiter les deux comme des équivalents : chaque mot renvoie à une tradition politique et à un vocabulaire propres.",
+   "exemples": "",
+   "termes": [
+    {
+     "nom": "Basileia",
+     "definition": "Royauté, règne, pouvoir du basileus. Dans l'Empire byzantin, « basileia tôn Rhômaiôn » désigne l'empire des Romains."
+    },
+    {
+     "nom": "Imperium",
+     "definition": "Pouvoir de commandement, militaire puis civil, des magistrats romains ; sous l'Empire, prérogative de l'empereur."
+    }
+   ],
+   "source": "jury-2026"
+  },
+  {
+   "id": 221,
+   "domaine": 21,
+   "titre": "Légitimer",
+   "rapport2026": true,
+   "critere": "Le verbe correct est « légitimer ».",
+   "piege": "« Légitimiser » est un barbarisme, relevé dans les copies.",
+   "exemples": "",
+   "termes": [
+    {
+     "nom": "Légitimer (et non « légitimiser »)",
+     "definition": "Rendre légitime : justifier un pouvoir, une institution ou une décision au regard d'une norme reconnue (tradition, droit, religion)."
+    }
+   ],
+   "source": "jury-2026"
+  },
+  {
+   "id": 222,
+   "domaine": 22,
+   "titre": "Gens du voyage / Sans-abri",
+   "rapport2026": true,
+   "critere": "Ces catégories sont contemporaines : pour l'Ancien Régime, il faut employer les termes de l'époque ou signaler l'anachronisme.",
+   "piege": "Appliquer ces termes aux vagabonds d'Ancien Régime plaque sur eux une catégorie juridique ou sociale moderne.",
+   "exemples": "",
+   "termes": [
+    {
+     "nom": "Gens du voyage",
+     "definition": "Catégorie juridique et administrative contemporaine (loi de 1969, puis loi du 5 juillet 2000) désignant des populations itinérantes."
+    },
+    {
+     "nom": "Sans-abri",
+     "definition": "Catégorie sociale contemporaine désignant les personnes privées de logement, dont l'usage s'impose au XXe siècle."
+    }
+   ],
+   "source": "jury-2026"
+  },
+  {
+   "id": 223,
+   "domaine": 22,
+   "titre": "Tour de vis fiscal",
+   "rapport2026": true,
+   "critere": "Expression figurée : un durcissement de la pression fiscale ou de la contrainte.",
+   "piege": "« Tournevis fiscal » est une déformation : l'expression correcte est « tour de vis fiscal ».",
+   "exemples": "",
+   "termes": [
+    {
+     "nom": "Tour de vis fiscal",
+     "definition": "Expression figurée, tirée du mouvement de la vis qu'on serre, qui désigne un alourdissement de la pression fiscale."
+    }
+   ],
+   "source": "jury-2026"
+  },
+  {
+   "id": 224,
+   "domaine": 22,
+   "titre": "Pauvre / Indigent / Mendiant / Vagabond",
+   "rapport2026": true,
+   "critere": "Le pauvre reste inséré (travail, famille, paroisse) ; le vagabond est désaffilié, hors de ces réseaux.",
+   "piege": "Confondre l'état de vulnérabilité (le pauvre inséré) et la désaffiliation totale (le vagabond, l'indigent) : ce sont deux états différents (R. Castel).",
+   "exemples": "",
+   "termes": [
+    {
+     "nom": "Pauvre",
+     "definition": "Qui manque de ressources pour vivre, mais reste inséré dans un travail, une famille ou une communauté."
+    },
+    {
+     "nom": "Indigent",
+     "definition": "Qui ne peut subvenir à ses besoins et relève de la charité ou de l'assistance."
+    },
+    {
+     "nom": "Mendiant",
+     "definition": "Qui vit de la quête et de l'aumône ; le mendiant valide est pourchassé à partir du XVIIe siècle."
+    },
+    {
+     "nom": "Vagabond",
+     "definition": "Qui n'a ni domicile fixe, ni travail, ni attache : désaffilié, hors des réseaux de solidarité comme des réseaux de contrôle."
+    }
+   ],
+   "source": "jury-2026"
+  },
+  {
+   "id": 225,
+   "domaine": 22,
+   "titre": "Communaux / Usages collectifs",
+   "rapport2026": true,
+   "critere": "Qui possède (la communauté d'habitants ou la commune) et qui use (les habitants, par des droits précis) ?",
+   "piege": "Confondre le bien commun (la propriété) et les usages collectifs (les droits d'usage) : un usage collectif ne suppose pas la propriété communale.",
+   "exemples": "",
+   "termes": [
+    {
+     "nom": "Communaux",
+     "definition": "Terres dont la propriété appartient à la communauté d'habitants (landes, pâtures, bois), et dont la jouissance est partagée."
+    },
+    {
+     "nom": "Usages collectifs",
+     "definition": "Droits exercés par les habitants sur des terres ou des ressources qui ne leur appartiennent pas : vaine pâture, glanage, ramassage du bois."
+    }
+   ],
+   "source": "jury-2026"
+  },
+  {
+   "id": 226,
+   "domaine": 22,
+   "titre": "Calvin / Calvinisme",
+   "rapport2026": true,
+   "critere": "Le nom propre s'écrit Calvin ; le courant se nomme calvinisme.",
+   "piege": "Écrire « Calvine » est une faute sur le nom propre.",
+   "exemples": "",
+   "termes": [
+    {
+     "nom": "Calvin",
+     "definition": "Jean Calvin (1509-1564), réformateur installé à Genève à partir de 1541."
+    },
+    {
+     "nom": "Calvinisme",
+     "definition": "Courant de la Réforme inspiré par Calvin : prédestination, autorité de l'Écriture, organisation presbytérienne."
+    }
+   ],
+   "source": "jury-2026"
+  },
+  {
+   "id": 227,
+   "domaine": 23,
+   "titre": "Hydrique / Hydrologique",
+   "rapport2026": true,
+   "critere": "Hydrique : l'eau comme ressource mobilisable par les sociétés. Hydrologique : l'eau comme cycle naturel et objet de la géographie physique.",
+   "piege": "Parler de « stress hydrologique » pour une question de ressource, ou de « régime hydrique » pour le cycle naturel.",
+   "exemples": "",
+   "termes": [
+    {
+     "nom": "Hydrique",
+     "definition": "Qui concerne l'eau douce comme ressource mobilisable par les sociétés : disponibilité, usages, accès. Stress hydrique."
+    },
+    {
+     "nom": "Hydrologique",
+     "definition": "Qui concerne le cycle naturel de l'eau (précipitations, écoulement, infiltration) et les cours d'eau comme système physique. Régime hydrologique."
+    }
+   ],
+   "source": "jury-2026"
+  },
+  {
+   "id": 228,
+   "domaine": 23,
+   "titre": "Cercle vicieux / Boucle de rétroaction",
+   "rapport2026": true,
+   "critere": "Préciser le mécanisme : une rétroaction positive amplifie le phénomène, une rétroaction négative le régule.",
+   "piege": "« Cercle vicieux » est une formule courante sans définition du mécanisme : le terme géographique est la boucle de rétroaction.",
+   "exemples": "",
+   "termes": [
+    {
+     "nom": "Cercle vicieux (à remplacer)",
+     "definition": "Formule journalistique désignant un enchaînement qui s'auto-entretient ; en géographie, on parle de boucle de rétroaction."
+    },
+    {
+     "nom": "Boucle de rétroaction",
+     "definition": "Processus où la sortie d'un système agit sur son entrée : positive si elle amplifie le phénomène, négative si elle le régule."
+    }
+   ],
+   "source": "jury-2026"
+  },
+  {
+   "id": 229,
+   "domaine": 23,
+   "titre": "Grignotage / Mitage",
+   "rapport2026": true,
+   "critere": "Le mitage désigne une dispersion de petites emprises bâties dans un espace agricole ou naturel.",
+   "piege": "« Grignotage » est familier : le terme géographique est mitage, qui décrit une fragmentation par habitat dispersé.",
+   "exemples": "",
+   "termes": [
+    {
+     "nom": "Grignotage (à remplacer)",
+     "definition": "Formule familière désignant la progression lente d'une emprise sur un espace."
+    },
+    {
+     "nom": "Mitage",
+     "definition": "Dispersion d'habitats et d'équipements isolés dans un espace agricole ou naturel, qui le fragmente sans le faire disparaître d'un coup."
+    }
+   ],
+   "source": "jury-2026"
+  },
+  {
+   "id": 230,
+   "domaine": 23,
+   "titre": "Climat tropical / Climat équatorial",
+   "rapport2026": true,
+   "critere": "La présence d'une saison sèche marquée : absente en climat équatorial, nette en climat tropical.",
+   "piege": "Confondre les deux : le climat tropical a une saison sèche marquée, l'équatorial n'en a pas.",
+   "exemples": "",
+   "termes": [
+    {
+     "nom": "Climat équatorial",
+     "definition": "Climat chaud et humide toute l'année, sans saison sèche marquée (Af dans la classification de Köppen), proche de l'équateur."
+    },
+    {
+     "nom": "Climat tropical",
+     "definition": "Climat chaud, à saison humide et saison sèche alternées, plus éloigné de l'équateur (Aw dans la classification de Köppen) : savane et forêt sèche."
+    }
+   ],
+   "source": "jury-2026"
+  },
+  {
+   "id": 231,
+   "domaine": 23,
+   "titre": "Climat méditerranéen",
+   "rapport2026": true,
+   "critere": "La concentration des pluies en automne et en hiver, et la sécheresse estivale.",
+   "piege": "Dire qu'il est « sec toute l'année » : il pleut en automne et en hiver, et le climat méditerranéen se définit par son été sec.",
+   "exemples": "",
+   "termes": [
+    {
+     "nom": "Climat méditerranéen",
+     "definition": "Climat à été chaud et sec et à hiver doux et pluvieux (Csa et Csb dans la classification de Köppen) ; la sécheresse estivale en est la marque principale."
+    }
+   ],
+   "source": "jury-2026"
+  },
+  {
+   "id": 232,
+   "domaine": 23,
+   "titre": "Foncier",
+   "rapport2026": true,
+   "critere": "Le foncier concerne le sol comme bien juridique, économique et réglementaire, et non seulement son prix.",
+   "piege": "Le réduire au coût du logement : le foncier couvre la propriété, la mobilisation des terrains et leur régulation.",
+   "exemples": "",
+   "termes": [
+    {
+     "nom": "Foncier",
+     "definition": "Ensemble des règles, des marchés et des acteurs liés à la propriété et à la mobilisation des sols : prix, statuts, cadastre, planification."
+    }
+   ],
+   "source": "jury-2026"
+  },
+  {
+   "id": 233,
+   "domaine": 23,
+   "titre": "Surtourisme / Patrimonialisation",
+   "rapport2026": true,
+   "critere": "Définir chaque terme, puis montrer le processus spatial qu'il décrit.",
+   "piege": "Aligner ces mots comme des buzzwords, sans définition ni lien avec le dossier.",
+   "exemples": "",
+   "termes": [
+    {
+     "nom": "Surtourisme",
+     "definition": "Excès de fréquentation touristique d'un lieu, qui dégrade le cadre de vie des habitants et l'attrait du site."
+    },
+    {
+     "nom": "Patrimonialisation",
+     "definition": "Processus par lequel un bien, un lieu ou une pratique est désigné et valorisé comme patrimoine, par des acteurs publics ou privés (labels, inscriptions)."
+    }
+   ],
+   "source": "jury-2026"
+  },
+  {
+   "id": 234,
+   "domaine": 23,
+   "titre": "Marketing territorial / Ressource territoriale",
+   "rapport2026": true,
+   "critere": "Un territoire est vendu par son image (marketing) ou mobilise ses atouts propres (ressource).",
+   "piege": "Présenter le marketing territorial comme une analyse spatiale : c'est une stratégie de promotion, à articuler avec les dynamiques réelles du territoire.",
+   "exemples": "",
+   "termes": [
+    {
+     "nom": "Marketing territorial",
+     "definition": "Stratégie de promotion de l'image d'un territoire pour attirer des habitants, des entreprises ou des touristes."
+    },
+    {
+     "nom": "Ressource territoriale",
+     "definition": "Atout spécifique d'un territoire (savoir-faire, patrimoine, produit d'origine, réseau) que ses acteurs peuvent mobiliser pour se développer (B. Pecqueur)."
+    }
+   ],
+   "source": "jury-2026"
+  },
+  {
+   "id": 235,
+   "domaine": 23,
+   "titre": "Retraités",
+   "rapport2026": true,
+   "critere": "Le groupe est hétérogène : âge, revenu, santé, patrimoine et lieu de vie varient fortement.",
+   "piege": "Le présenter comme un groupe monolithique et systématiquement aisé.",
+   "exemples": "",
+   "termes": [
+    {
+     "nom": "Retraités",
+     "definition": "Personnes ayant cessé leur activité professionnelle et percevant une pension de retraite. Catégorie statistique, non groupe social homogène."
+    }
+   ],
+   "source": "jury-2026"
+  },
+  {
+   "id": 236,
+   "domaine": 24,
+   "titre": "Capacité d'agir (Agency / Empouvoirement)",
+   "rapport2026": true,
+   "critere": "Distinguer la capacité d'agir (une marge d'action, sous contraintes) et l'émancipation (la sortie de la domination).",
+   "piege": "Restituer l'agency comme une émancipation : les dominés (esclaves, femmes) restaient soumis à de fortes contraintes, et mettre en lumière leur action ne les rend pas libres.",
+   "exemples": "",
+   "termes": [
+    {
+     "nom": "Agency (agentivité)",
+     "definition": "Capacité d'un acteur à agir, à faire des choix et à peser sur son environnement, y compris sous contrainte."
+    },
+    {
+     "nom": "Empouvoirement",
+     "definition": "Traduction d'« empowerment » : processus par lequel des individus ou des groupes acquièrent des moyens d'agir sur leur situation (ressources, savoirs, organisation). À définir à chaque emploi."
+    }
+   ],
+   "source": "jury-2026"
+  },
+  {
+   "id": 237,
+   "domaine": 24,
+   "titre": "Genre / Sexe",
+   "rapport2026": true,
+   "critere": "Le sexe relève du biologique ; le genre, du social et du culturel.",
+   "piege": "Confondre les deux, ce qui arrive neuf fois sur dix à l'oral : parler de « genre » pour des différences biologiques, ou de « sexe » pour des rôles sociaux.",
+   "exemples": "",
+   "termes": [
+    {
+     "nom": "Sexe",
+     "definition": "Ensemble des caractéristiques biologiques (chromosomes, anatomie, hormones) qui distinguent les individus."
+    },
+    {
+     "nom": "Genre",
+     "definition": "Construction sociale et culturelle des attributs, des rôles et des normes attribués à chaque sexe ; notion des sciences sociales."
+    }
+   ],
+   "source": "jury-2026"
+  },
+  {
+   "id": 238,
+   "domaine": 24,
+   "titre": "Propagande / Communication politique / Idéologie",
+   "rapport2026": true,
+   "critere": "Pour les périodes anciennes, parler de communication politique ou d'idéologie, sauf si un appareil de diffusion organisé est attesté.",
+   "piege": "Parler de « propagande » pour Rome, le Moyen Âge ou l'Époque moderne : c'est un anachronisme.",
+   "exemples": "",
+   "termes": [
+    {
+     "nom": "Propagande",
+     "definition": "Diffusion organisée et systématique d'une doctrine ou d'une image politique par un appareil dédié ; sens moderne, surtout au XXe siècle. Le mot vient de la congrégation romaine de la Propaganda Fide (1622)."
+    },
+    {
+     "nom": "Communication politique",
+     "definition": "Ensemble des procédés par lesquels un pouvoir se met en scène et diffuse son message : cérémonies, images, discours."
+    },
+    {
+     "nom": "Idéologie",
+     "definition": "Système de représentations qui justifie et organise un ordre social et politique."
+    }
+   ],
+   "source": "jury-2026"
+  },
+  {
+   "id": 239,
+   "domaine": 24,
+   "titre": "Intellectuel / Humaniste",
+   "rapport2026": true,
+   "critere": "L'intellectuel intervient dans l'espace public au nom de son savoir ou de ses valeurs, sur une question de société : sens né à la fin du XIXe siècle.",
+   "piege": "Parler d'« intellectuel » pour un humaniste de la Renaissance : le substantif n'apparaît qu'à la fin du XIXe siècle, à l'époque de l'affaire Dreyfus.",
+   "exemples": "",
+   "termes": [
+    {
+     "nom": "Intellectuel",
+     "definition": "Personne qui intervient dans l'espace public au nom de son savoir ou de ses valeurs ; substantif attesté vers 1898, lors de l'affaire Dreyfus."
+    },
+    {
+     "nom": "Humaniste",
+     "definition": "Lettré de la Renaissance, qui étudie et édite les textes antiques. Ne pas le nommer « intellectuel »."
+    }
+   ],
+   "source": "jury-2026"
+  },
+  {
+   "id": 240,
+   "domaine": 24,
+   "titre": "Mobiliser",
+   "rapport2026": true,
+   "critere": "Préciser ce qui se déplace ou se rassemble (personnes, capitaux, idées), à quelle échelle et pour quelle durée.",
+   "piege": "« Mobiliser » et « mobilité » sont des mots-valises qui englobent tout (trajets, migrations, engagement) : sans précision, ils ne disent rien.",
+   "exemples": "",
+   "termes": [
+    {
+     "nom": "Mobiliser",
+     "definition": "Réunir des acteurs ou des ressources autour d'une action (mobiliser des habitants, des moyens) ; au sens militaire, rassembler des troupes."
+    }
+   ],
+   "source": "jury-2026"
   }
  ],
  "termes": [
@@ -13003,6 +13811,573 @@
    "exemples": [
     "Une frise qui met en regard la croissance urbaine et l'évolution des transports.",
     "Une frise qui relie l'exode rural et la mécanisation agricole, de 1945 à 1975."
+   ]
+  },
+  {
+   "id": "212-1",
+   "nom": "Métier de citoyen",
+   "definition": "Formule de C. Nicolet (Le Métier de citoyen dans la Rome républicaine, 1976) : l'exercice régulier du vote, des charges et du service armé, traité comme une occupation à part entière. Elle caractérise Rome, non la Grèce.",
+   "fiche": 212,
+   "domaine": 20,
+   "exemples": [
+    "Le cursus honorum d'un sénateur romain : enchaînement de magistratures, de commandements et de charges publiques.",
+    "Le vote dans les comices centuriates, obligation civique régulière du citoyen romain."
+   ]
+  },
+  {
+   "id": "212-2",
+   "nom": "Scholè",
+   "definition": "Loisir libre, temps dégagé de la nécessité du travail ; dans la Grèce classique, condition de l'activité civique et philosophique.",
+   "fiche": 212,
+   "domaine": 20,
+   "exemples": [
+    "Le loisir des citoyens grecs, selon Aristote (Politique, livre VIII), condition de la vie politique et de la philosophie."
+   ]
+  },
+  {
+   "id": "213-1",
+   "nom": "Misthos",
+   "definition": "Rétribution versée pour un service, une charge ou une fonction, en Grèce ancienne ; ce n'est pas un salaire régulier au sens moderne.",
+   "fiche": 213,
+   "domaine": 20,
+   "exemples": [
+    "Le misthos des juges athéniens, instauré au Ve siècle pour permettre aux citoyens pauvres de siéger.",
+    "La solde des rameurs de la flotte athénienne, payée pour la durée d'une campagne."
+   ]
+  },
+  {
+   "id": "214-1",
+   "nom": "Technè",
+   "definition": "Savoir réglé par des principes, qui connaît les causes de ce qu'il produit : l'art ou le métier, distingué de la simple expérience (empeiria) chez Aristote.",
+   "fiche": 214,
+   "domaine": 20,
+   "exemples": [
+    "Le médecin, l'architecte ou le navigateur, dont la technè repose sur des principes transmissibles."
+   ]
+  },
+  {
+   "id": "214-2",
+   "nom": "Ergon",
+   "definition": "Œuvre, ouvrage ou fonction accomplie ; le mot désigne le produit du travail et, par extension, ce pour quoi une chose est faite.",
+   "fiche": 214,
+   "domaine": 20,
+   "exemples": [
+    "L'ergon d'un artisan : l'œuvre achevée, qui atteste sa compétence."
+   ]
+  },
+  {
+   "id": "214-3",
+   "nom": "Trophè",
+   "definition": "Nourriture et entretien ; le mot désigne aussi l'entretien que la cité ou une famille doit assurer à quelqu'un.",
+   "fiche": 214,
+   "domaine": 20,
+   "exemples": [
+    "La trophè des orphelins de guerre, entretenus par la cité à Athènes."
+   ]
+  },
+  {
+   "id": "215-1",
+   "nom": "Penia",
+   "definition": "Manque, besoin ; dans la Grèce classique, la condition de celui qui doit travailler pour vivre (le pénès), distincte de la mendicité (ptôcheia).",
+   "fiche": 215,
+   "domaine": 20,
+   "exemples": [
+    "Le pénès, petit paysan ou artisan contraint de travailler, opposé au ptôchos, le mendiant."
+   ]
+  },
+  {
+   "id": "215-2",
+   "nom": "Démiourgos",
+   "definition": "Au sens premier, artisan ou homme de métier qui travaille pour la communauté (chez Homère : devin, médecin, charpentier) ; chez Platon (Timée), le démiurge qui façonne le monde.",
+   "fiche": 215,
+   "domaine": 20,
+   "exemples": [
+    "Le devin, le médecin ou le charpentier appelé par la communauté (Odyssée, chant XVII).",
+    "Le démiurge du Timée de Platon, qui façonne le monde à partir d'une matière préexistante."
+   ]
+  },
+  {
+   "id": "216-1",
+   "nom": "Themata",
+   "definition": "Circonscriptions militaires et administratives de l'Empire byzantin, confiées à un stratège, à partir du VIIe siècle.",
+   "fiche": 216,
+   "domaine": 21,
+   "exemples": [
+    "Le thème des Anatoliques, circonscription militaire d'Asie Mineure."
+   ]
+  },
+  {
+   "id": "216-2",
+   "nom": "Tagmata",
+   "definition": "Corps permanents de troupes d'élite, rattachés au pouvoir central et stationnés près de la capitale, à partir du VIIIe siècle.",
+   "fiche": 216,
+   "domaine": 21,
+   "exemples": [
+    "Les excubites et les scholes, tagmata de Constantinople."
+   ]
+  },
+  {
+   "id": "217-1",
+   "nom": "Musulman",
+   "definition": "Qui professe la religion islamique ; se dit d'une personne, de ses pratiques et de sa foi.",
+   "fiche": 217,
+   "domaine": 21,
+   "exemples": [
+    "Les musulmans de Bagdad au IXe siècle, qui pratiquent la prière et le jeûne."
+   ]
+  },
+  {
+   "id": "217-2",
+   "nom": "Islamique",
+   "definition": "Qui relève de l'islam comme civilisation, histoire, culture ou institutions (art islamique, droit islamique).",
+   "fiche": 217,
+   "domaine": 21,
+   "exemples": [
+    "L'art islamique de l'Alhambra de Grenade, produit d'une civilisation et non d'une seule foi."
+   ]
+  },
+  {
+   "id": "218-1",
+   "nom": "Maghrébin",
+   "definition": "Originaire du Maghreb, espace de l'Afrique du Nord-Ouest (Maroc, Algérie, Tunisie, Libye), quelles que soient sa langue et son origine.",
+   "fiche": 218,
+   "domaine": 21,
+   "exemples": [
+    "Un Marocain d'origine berbère : maghrébin par son origine géographique, sans être arabe."
+   ]
+  },
+  {
+   "id": "218-2",
+   "nom": "Arabe",
+   "definition": "Qui appartient aux peuples et aux cultures de langue arabe ; catégorie linguistique et culturelle, non géographique.",
+   "fiche": 218,
+   "domaine": 21,
+   "exemples": [
+    "Les tribus arabes qui s'installent en Ifriqiya à partir du XIe siècle (Banu Hilal)."
+   ]
+  },
+  {
+   "id": "218-3",
+   "nom": "Berbère",
+   "definition": "Peuples autochtones de l'Afrique du Nord, parlant des langues amazighes : maghrébins, mais non arabes.",
+   "fiche": 218,
+   "domaine": 21,
+   "exemples": [
+    "Les Kabyles d'Algérie ou les Chleuhs du Maroc, berbérophones."
+   ]
+  },
+  {
+   "id": "219-1",
+   "nom": "Beneficium",
+   "definition": "Bien (terre, revenus) concédé par un seigneur ou le souverain en échange de services, notamment militaires, dans le monde carolingien ; il préfigure le fief.",
+   "fiche": 219,
+   "domaine": 21,
+   "exemples": [
+    "Le vassal carolingien qui reçoit une terre en bénéfice, en échange de son service militaire."
+   ]
+  },
+  {
+   "id": "219-2",
+   "nom": "Honores",
+   "definition": "Dignités et fonctions publiques, c'est-à-dire autorité exercée au nom du roi (comté, mission, charge de justice).",
+   "fiche": 219,
+   "domaine": 21,
+   "exemples": [
+    "Le comte carolingien, qui exerce l'honor du comté au nom du roi."
+   ]
+  },
+  {
+   "id": "220-1",
+   "nom": "Basileia",
+   "definition": "Royauté, règne, pouvoir du basileus. Dans l'Empire byzantin, « basileia tôn Rhômaiôn » désigne l'empire des Romains.",
+   "fiche": 220,
+   "domaine": 21,
+   "exemples": [
+    "La basileia tôn Rhômaiôn, nom grec de l'empire byzantin."
+   ]
+  },
+  {
+   "id": "220-2",
+   "nom": "Imperium",
+   "definition": "Pouvoir de commandement, militaire puis civil, des magistrats romains ; sous l'Empire, prérogative de l'empereur.",
+   "fiche": 220,
+   "domaine": 21,
+   "exemples": [
+    "L'imperium proconsulaire confié à Auguste en 27 av. J.-C."
+   ]
+  },
+  {
+   "id": "221-1",
+   "nom": "Légitimer (et non « légitimiser »)",
+   "definition": "Rendre légitime : justifier un pouvoir, une institution ou une décision au regard d'une norme reconnue (tradition, droit, religion).",
+   "fiche": 221,
+   "domaine": 21,
+   "exemples": [
+    "Le sacre de Reims, qui légitime la royauté capétienne par la religion.",
+    "Charlemagne, qui légitime son autorité par la couronne impériale de l'an 800."
+   ]
+  },
+  {
+   "id": "222-1",
+   "nom": "Gens du voyage",
+   "definition": "Catégorie juridique et administrative contemporaine (loi de 1969, puis loi du 5 juillet 2000) désignant des populations itinérantes.",
+   "fiche": 222,
+   "domaine": 22,
+   "exemples": [
+    "Un statut juridique : la loi du 5 juillet 2000 fixe les obligations des communes envers les gens du voyage."
+   ]
+  },
+  {
+   "id": "222-2",
+   "nom": "Sans-abri",
+   "definition": "Catégorie sociale contemporaine désignant les personnes privées de logement, dont l'usage s'impose au XXe siècle.",
+   "fiche": 222,
+   "domaine": 22,
+   "exemples": [
+    "Les vagabonds de l'Ancien Régime sont désignés par les ordonnances royales comme « mendiants » ou « gueux », non comme sans-abri."
+   ]
+  },
+  {
+   "id": "223-1",
+   "nom": "Tour de vis fiscal",
+   "definition": "Expression figurée, tirée du mouvement de la vis qu'on serre, qui désigne un alourdissement de la pression fiscale.",
+   "fiche": 223,
+   "domaine": 22,
+   "exemples": [
+    "La capitation de 1695, nouvel impôt de guerre qui alourdit la pression fiscale sous Louis XIV."
+   ]
+  },
+  {
+   "id": "224-1",
+   "nom": "Pauvre",
+   "definition": "Qui manque de ressources pour vivre, mais reste inséré dans un travail, une famille ou une communauté.",
+   "fiche": 224,
+   "domaine": 22,
+   "exemples": [
+    "Le journalier de village qui vit de petits travaux, logé chez son employeur ou sa famille."
+   ]
+  },
+  {
+   "id": "224-2",
+   "nom": "Indigent",
+   "definition": "Qui ne peut subvenir à ses besoins et relève de la charité ou de l'assistance.",
+   "fiche": 224,
+   "domaine": 22,
+   "exemples": [
+    "Les indigents admis dans les hôpitaux généraux créés à partir de 1656."
+   ]
+  },
+  {
+   "id": "224-3",
+   "nom": "Mendiant",
+   "definition": "Qui vit de la quête et de l'aumône ; le mendiant valide est pourchassé à partir du XVIIe siècle.",
+   "fiche": 224,
+   "domaine": 22,
+   "exemples": [
+    "Le mendiant valide enfermé à l'Hôpital général de Paris au XVIIe siècle."
+   ]
+  },
+  {
+   "id": "224-4",
+   "nom": "Vagabond",
+   "definition": "Qui n'a ni domicile fixe, ni travail, ni attache : désaffilié, hors des réseaux de solidarité comme des réseaux de contrôle.",
+   "fiche": 224,
+   "domaine": 22,
+   "exemples": [
+    "Un colporteur sans attache ou un soldat démobilisé, sans domicile, arrêté comme vagabond."
+   ]
+  },
+  {
+   "id": "225-1",
+   "nom": "Communaux",
+   "definition": "Terres dont la propriété appartient à la communauté d'habitants (landes, pâtures, bois), et dont la jouissance est partagée.",
+   "fiche": 225,
+   "domaine": 22,
+   "exemples": [
+    "Les communaux de Bourgogne : pâtures et bois appartenant aux habitants, dont la jouissance est partagée."
+   ]
+  },
+  {
+   "id": "225-2",
+   "nom": "Usages collectifs",
+   "definition": "Droits exercés par les habitants sur des terres ou des ressources qui ne leur appartiennent pas : vaine pâture, glanage, ramassage du bois.",
+   "fiche": 225,
+   "domaine": 22,
+   "exemples": [
+    "Le glanage après la moisson, droit de ramasser les épis laissés dans les champs."
+   ]
+  },
+  {
+   "id": "226-1",
+   "nom": "Calvin",
+   "definition": "Jean Calvin (1509-1564), réformateur installé à Genève à partir de 1541.",
+   "fiche": 226,
+   "domaine": 22,
+   "exemples": [
+    "Genève, ville de Calvin à partir de 1541."
+   ]
+  },
+  {
+   "id": "226-2",
+   "nom": "Calvinisme",
+   "definition": "Courant de la Réforme inspiré par Calvin : prédestination, autorité de l'Écriture, organisation presbytérienne.",
+   "fiche": 226,
+   "domaine": 22,
+   "exemples": [
+    "Les calvinistes français, ou huguenots, au XVIe siècle."
+   ]
+  },
+  {
+   "id": "227-1",
+   "nom": "Hydrique",
+   "definition": "Qui concerne l'eau douce comme ressource mobilisable par les sociétés : disponibilité, usages, accès. Stress hydrique.",
+   "fiche": 227,
+   "domaine": 23,
+   "exemples": [
+    "Le stress hydrique du Maghreb, où les ressources par habitant sont très faibles."
+   ]
+  },
+  {
+   "id": "227-2",
+   "nom": "Hydrologique",
+   "definition": "Qui concerne le cycle naturel de l'eau (précipitations, écoulement, infiltration) et les cours d'eau comme système physique. Régime hydrologique.",
+   "fiche": 227,
+   "domaine": 23,
+   "exemples": [
+    "Le régime hydrologique nival des cours d'eau alpins, lié à la fonte du printemps."
+   ]
+  },
+  {
+   "id": "228-1",
+   "nom": "Cercle vicieux (à remplacer)",
+   "definition": "Formule journalistique désignant un enchaînement qui s'auto-entretient ; en géographie, on parle de boucle de rétroaction.",
+   "fiche": 228,
+   "domaine": 23,
+   "exemples": [
+    "L'enchaînement « pauvreté, mal-logement, dévalorisation du quartier », qui gagne à être décrit comme une boucle de rétroaction."
+   ]
+  },
+  {
+   "id": "228-2",
+   "nom": "Boucle de rétroaction",
+   "definition": "Processus où la sortie d'un système agit sur son entrée : positive si elle amplifie le phénomène, négative si elle le régule.",
+   "fiche": 228,
+   "domaine": 23,
+   "exemples": [
+    "La fonte de la banquise : moins de glace, moins d'albédo, plus de réchauffement (rétroaction positive)."
+   ]
+  },
+  {
+   "id": "229-1",
+   "nom": "Grignotage (à remplacer)",
+   "definition": "Formule familière désignant la progression lente d'une emprise sur un espace.",
+   "fiche": 229,
+   "domaine": 23,
+   "exemples": [
+    "Le grignotage progressif des terres agricoles par des lotissements le long des routes."
+   ]
+  },
+  {
+   "id": "229-2",
+   "nom": "Mitage",
+   "definition": "Dispersion d'habitats et d'équipements isolés dans un espace agricole ou naturel, qui le fragmente sans le faire disparaître d'un coup.",
+   "fiche": 229,
+   "domaine": 23,
+   "exemples": [
+    "Le mitage des plateaux agricoles de la périphérie toulousaine par des pavillons isolés."
+   ]
+  },
+  {
+   "id": "230-1",
+   "nom": "Climat équatorial",
+   "definition": "Climat chaud et humide toute l'année, sans saison sèche marquée (Af dans la classification de Köppen), proche de l'équateur.",
+   "fiche": 230,
+   "domaine": 23,
+   "exemples": [
+    "L'Amazonie centrale, dont Manaus, qui ne connaît pas de mois sec."
+   ]
+  },
+  {
+   "id": "230-2",
+   "nom": "Climat tropical",
+   "definition": "Climat chaud, à saison humide et saison sèche alternées, plus éloigné de l'équateur (Aw dans la classification de Köppen) : savane et forêt sèche.",
+   "fiche": 230,
+   "domaine": 23,
+   "exemples": [
+    "Bamako, climat de savane : pluies d'été, saison sèche de novembre à mai."
+   ]
+  },
+  {
+   "id": "231-1",
+   "nom": "Climat méditerranéen",
+   "definition": "Climat à été chaud et sec et à hiver doux et pluvieux (Csa et Csb dans la classification de Köppen) ; la sécheresse estivale en est la marque principale.",
+   "fiche": 231,
+   "domaine": 23,
+   "exemples": [
+    "À Marseille, l'essentiel des pluies tombe à l'automne et en hiver, l'été étant sec.",
+    "Le Chili central ou le sud de la Californie partagent ce type de climat."
+   ]
+  },
+  {
+   "id": "232-1",
+   "nom": "Foncier",
+   "definition": "Ensemble des règles, des marchés et des acteurs liés à la propriété et à la mobilisation des sols : prix, statuts, cadastre, planification.",
+   "fiche": 232,
+   "domaine": 23,
+   "exemples": [
+    "La rétention foncière : des propriétaires qui gardent leurs terrains en attendant la hausse de leur prix.",
+    "Le cadastre, outil de connaissance de la propriété foncière."
+   ]
+  },
+  {
+   "id": "233-1",
+   "nom": "Surtourisme",
+   "definition": "Excès de fréquentation touristique d'un lieu, qui dégrade le cadre de vie des habitants et l'attrait du site.",
+   "fiche": 233,
+   "domaine": 23,
+   "exemples": [
+    "Venise, dont le centre subit une fréquentation touristique qui pousse les habitants à partir."
+   ]
+  },
+  {
+   "id": "233-2",
+   "nom": "Patrimonialisation",
+   "definition": "Processus par lequel un bien, un lieu ou une pratique est désigné et valorisé comme patrimoine, par des acteurs publics ou privés (labels, inscriptions).",
+   "fiche": 233,
+   "domaine": 23,
+   "exemples": [
+    "L'inscription du port de Bordeaux au patrimoine mondial de l'UNESCO (2007)."
+   ]
+  },
+  {
+   "id": "234-1",
+   "nom": "Marketing territorial",
+   "definition": "Stratégie de promotion de l'image d'un territoire pour attirer des habitants, des entreprises ou des touristes.",
+   "fiche": 234,
+   "domaine": 23,
+   "exemples": [
+    "Une collectivité qui lance une campagne d'image pour attirer des sièges d'entreprises."
+   ]
+  },
+  {
+   "id": "234-2",
+   "nom": "Ressource territoriale",
+   "definition": "Atout spécifique d'un territoire (savoir-faire, patrimoine, produit d'origine, réseau) que ses acteurs peuvent mobiliser pour se développer (B. Pecqueur).",
+   "fiche": 234,
+   "domaine": 23,
+   "exemples": [
+    "Le savoir-faire viticole de Champagne, ressource liée au terroir et à l'appellation."
+   ]
+  },
+  {
+   "id": "235-1",
+   "nom": "Retraités",
+   "definition": "Personnes ayant cessé leur activité professionnelle et percevant une pension de retraite. Catégorie statistique, non groupe social homogène.",
+   "fiche": 235,
+   "domaine": 23,
+   "exemples": [
+    "Les retraités modestes des campagnes du Massif central, et les retraités aisés installés sur le littoral méditerranéen."
+   ]
+  },
+  {
+   "id": "236-1",
+   "nom": "Agency (agentivité)",
+   "definition": "Capacité d'un acteur à agir, à faire des choix et à peser sur son environnement, y compris sous contrainte.",
+   "fiche": 236,
+   "domaine": 24,
+   "exemples": [
+    "Les esclaves romains qui négocient leur pécule ou leur affranchissement : une marge réelle, sous un statut qui reste celui d'un bien.",
+    "Les femmes d'Ancien Régime qui gèrent un commerce, sous la tutelle maritale."
+   ]
+  },
+  {
+   "id": "236-2",
+   "nom": "Empouvoirement",
+   "definition": "Traduction d'« empowerment » : processus par lequel des individus ou des groupes acquièrent des moyens d'agir sur leur situation (ressources, savoirs, organisation). À définir à chaque emploi.",
+   "fiche": 236,
+   "domaine": 24,
+   "exemples": [
+    "Les microcrédits accordés aux femmes au Bangladesh (Grameen Bank), qui renforcent leur capacité d'agir."
+   ]
+  },
+  {
+   "id": "237-1",
+   "nom": "Sexe",
+   "definition": "Ensemble des caractéristiques biologiques (chromosomes, anatomie, hormones) qui distinguent les individus.",
+   "fiche": 237,
+   "domaine": 24,
+   "exemples": [
+    "Les caractères sexuels primaires, qui relèvent de l'anatomie."
+   ]
+  },
+  {
+   "id": "237-2",
+   "nom": "Genre",
+   "definition": "Construction sociale et culturelle des attributs, des rôles et des normes attribués à chaque sexe ; notion des sciences sociales.",
+   "fiche": 237,
+   "domaine": 24,
+   "exemples": [
+    "Le partage sexué des tâches domestiques dans les familles paysannes du XIXe siècle relève du genre, non du sexe."
+   ]
+  },
+  {
+   "id": "238-1",
+   "nom": "Propagande",
+   "definition": "Diffusion organisée et systématique d'une doctrine ou d'une image politique par un appareil dédié ; sens moderne, surtout au XXe siècle. Le mot vient de la congrégation romaine de la Propaganda Fide (1622).",
+   "fiche": 238,
+   "domaine": 24,
+   "exemples": [
+    "Les affiches et films de propagande des régimes totalitaires du XXe siècle."
+   ]
+  },
+  {
+   "id": "238-2",
+   "nom": "Communication politique",
+   "definition": "Ensemble des procédés par lesquels un pouvoir se met en scène et diffuse son message : cérémonies, images, discours.",
+   "fiche": 238,
+   "domaine": 24,
+   "exemples": [
+    "La mise en scène du pouvoir de Louis XIV à Versailles, par les cérémonies et les arts."
+   ]
+  },
+  {
+   "id": "238-3",
+   "nom": "Idéologie",
+   "definition": "Système de représentations qui justifie et organise un ordre social et politique.",
+   "fiche": 238,
+   "domaine": 24,
+   "exemples": [
+    "Le discours qui justifie la société des trois ordres (clergé, noblesse, tiers état) au XVIIIe siècle."
+   ]
+  },
+  {
+   "id": "239-1",
+   "nom": "Intellectuel",
+   "definition": "Personne qui intervient dans l'espace public au nom de son savoir ou de ses valeurs ; substantif attesté vers 1898, lors de l'affaire Dreyfus.",
+   "fiche": 239,
+   "domaine": 24,
+   "exemples": [
+    "Émile Zola, « J'accuse…! » (1898), dans l'affaire Dreyfus."
+   ]
+  },
+  {
+   "id": "239-2",
+   "nom": "Humaniste",
+   "definition": "Lettré de la Renaissance, qui étudie et édite les textes antiques. Ne pas le nommer « intellectuel ».",
+   "fiche": 239,
+   "domaine": 24,
+   "exemples": [
+    "Érasme, humaniste européen qui publie le Nouveau Testament grec (1516)."
+   ]
+  },
+  {
+   "id": "240-1",
+   "nom": "Mobiliser",
+   "definition": "Réunir des acteurs ou des ressources autour d'une action (mobiliser des habitants, des moyens) ; au sens militaire, rassembler des troupes.",
+   "fiche": 240,
+   "domaine": 24,
+   "exemples": [
+    "La mobilisation des habitants contre un projet d'aéroport, comme à Notre-Dame-des-Landes."
    ]
   }
  ]
