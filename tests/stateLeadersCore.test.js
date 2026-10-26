@@ -90,7 +90,7 @@ test('chefs d’État : les régimes parlementaires ont aussi la liste des chefs
         });
     });
     assert.strictEqual(S.rowsOf('royaume_uni', 'gouvernement')[0].row.name, 'Robert Walpole');
-    assert.ok(S.hasGovernment('france'), 'la France a le mode « Premier ministre »');
+    assert.ok(S.hasGovernment('france'), 'la France a le mode « Premiers ministres »');
     // Par défaut, on obtient les chefs d’État.
     assert.strictEqual(S.rowsOf('royaume_uni')[0].row.name, 'Jacques Ier (Jacques VI d’Écosse)');
     assert.ok(S.noteOf('royaume_uni', 'gouvernement').startsWith('Premiers ministres'));
@@ -113,7 +113,7 @@ test('chefs d’État : les vice-présidents des États-Unis, dates cohérentes 
     assert.ok(!S.hasVice('france'));
 });
 
-test('premiers ministres français : chaque ligne donne le chef de l\'État en fonction, et le bouton dit « Premier ministre »', () => {
+test('premiers ministres français : chaque ligne donne le chef de l\'État en fonction, et le bouton dit « Premiers ministres »', () => {
     const gov = S.COUNTRIES.france.gouvernement;
     assert.equal(S.govModeKey('france'), 'leaders_mode_pm');
     assert.equal(S.govModeKey('royaume_uni'), 'leaders_mode_gouv');
@@ -121,14 +121,14 @@ test('premiers ministres français : chaque ligne donne le chef de l\'État en f
     assert.ok(gov.rows.length > 100, 'de la IIIe République à aujourd\'hui');
     for (const r of gov.rows) {
         assert.ok(r[6], `${r[2]} : seconde ligne absente`);
-        const m = r[6].match(/^Président de la République : (.+)$/);
+        const m = r[6].match(/^Président : (.+)$/);
         if (m) assert.ok(heads.has(m[1]), `${r[2]} : « ${m[1]} » n'est pas un chef de l'État de la liste`);
     }
 });
 
 test('premiers ministres français : la seconde ligne s\'affiche à la place de la fonction', () => {
     const rows = S.rowsOf('france', 'gouvernement').map(it => it.row);
-    assert.equal(rows[0].sub, 'Président de la République : Jules Grévy');
+    assert.equal(rows[0].sub, 'Président : Jules Grévy');
     assert.equal(rows[0].name, 'William Waddington');
 });
 
@@ -144,4 +144,50 @@ test('chefs d’État : la Chine a le mode « Secrétaires généraux du Parti �
         if (i > 0) assert.ok(r.from >= items[i - 1].row.from, r.name + ' : hors ordre');
     });
     assert.ok(!items.some(it => it.row.name === 'Deng Xiaoping'), 'Deng n’a pas occupé ces fonctions');
+});
+
+test('chefs d’État : tous les titres de tous les pays commencent par une majuscule, dans tous les modes', () => {
+    let n = 0;
+    Object.keys(S.COUNTRIES).forEach(k => {
+        ['etat', 'gouvernement', 'vice', 'parti'].forEach(mode => {
+            S.rowsOf(k, mode).forEach(it => {
+                const t = it.row.title;
+                assert.ok(t && t.charAt(0) === t.charAt(0).toUpperCase() && t.charAt(0) !== t.charAt(0).toLowerCase(), `${k} / ${mode} / ${it.row.name} : « ${t} »`);
+                n++;
+            });
+        });
+    });
+    assert.ok(n > 600);
+    assert.strictEqual(S.rowsOf('france')[0].row.title, 'Roi des Francs');
+    assert.strictEqual(S.rowsOf('france', 'gouvernement').find(it => it.row.name === 'Michel Debré').row.title, 'Premier ministre');
+});
+
+test('allemagne : le mode « Chanceliers », de Bismarck à aujourd’hui, avec le chef de l’État en fonction sur la seconde ligne', () => {
+    assert.ok(S.hasGovernment('allemagne'));
+    assert.equal(S.govModeKey('allemagne'), 'leaders_mode_chancelier');
+    const items = S.rowsOf('allemagne', 'gouvernement');
+    const rows = items.map(it => it.row);
+    assert.equal(rows[0].name, 'Otto von Bismarck');
+    assert.equal(rows[0].title, 'Chancelier de l’Empire');
+    assert.equal(rows[rows.length - 1].name, 'Friedrich Merz');
+    assert.equal(rows[rows.length - 1].to, null);
+    assert.ok(rows.some(r => r.name === 'Adolf Hitler'));
+    assert.ok(rows.some(r => r.name === 'Angela Merkel' && r.title === 'Chancelière fédérale'));
+    // Dates cohérentes et dans l'ordre ; quatre régimes séparés par un trait.
+    rows.forEach((r, i) => {
+        if (r.to !== null) assert.ok(r.to >= r.from, r.name);
+        if (i > 0) assert.ok(r.from >= rows[i - 1].from, r.name + ' : hors ordre');
+    });
+    assert.deepEqual(items.filter(it => it.divider).map(it => it.divider),
+        ['Empire allemand', 'République de Weimar', 'Troisième Reich', 'République fédérale d’Allemagne']);
+    // La seconde ligne : un chef de l'État de la liste, en fonction l'année où le chancelier prend ses fonctions.
+    const heads = S.rowsOf('allemagne', 'etat').map(it => it.row);
+    rows.filter(r => r.sub && r.group !== 'reich3').forEach(r => {
+        const name = r.sub.split(' : ')[1];
+        const head = heads.find(h => h.name.indexOf(name) === 0 || name.indexOf(h.name) === 0);
+        assert.ok(head, `${r.name} : « ${name} » n'est pas dans la liste des chefs d'État`);
+        assert.ok(head.from <= r.from && (head.to === null || head.to >= r.from), `${r.name} (${r.from}) : ${name} n'était pas en fonction`);
+    });
+    // Le mode chefs d'État reste le défaut.
+    assert.equal(S.rowsOf('allemagne')[0].row.name, 'Guillaume Ier');
 });

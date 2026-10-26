@@ -101,7 +101,7 @@ function initCategories() {
                 <div class="quick-actions-row" id="quick-actions-2">
                     ${quickAction('btn-reviser', '🧠', `${quickLabel('categories.special_revision', 'Réviser')} (${weakCount})`)}
                     ${quickAction('btn-arcade', '🕹️', quickLabel('arcade.title', 'Salle de jeux'))}
-                    ${quickAction('btn-tools', '🧰', quickLabel('tools.title', 'Boîte à outils'))}
+                    ${quickAction('btn-tools', '🛠️', quickLabel('tools.title', 'Atelier'))}
                     ${quickAction('btn-atlas', '🗺️', quickLabel('categories.special_atlas', 'Atlas'))}
                 </div>
             `;

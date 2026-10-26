@@ -1277,9 +1277,11 @@
     <!-- ÉCRANS : LA BOÎTE À OUTILS (js/app/tools.js, js/toolsCore.js) — des utilitaires, pas des jeux -->
     <div id="screen-tools" class="list-screen hidden">
         <button class="back-btn" onclick="toolsHubBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
-        <h2 class="header-title" data-i18n="tools.title">Boîte à outils</h2>
-        <p class="modes-header-subtitle" data-i18n="tools.subtitle">Des convertisseurs et des calculs pour les cours d'histoire.</p>
-        <div class="arcade-menu">
+        <h2 class="header-title" data-i18n="tools.title">Atelier</h2>
+        <p class="modes-header-subtitle" data-i18n="tools.subtitle">Convertisseurs, calendriers, repères et cartes pour les cours d'histoire.</p>
+        <section class="tools-group" aria-labelledby="tools-group-convert">
+            <h3 class="modes-group-title modes-group-static" id="tools-group-convert" data-i18n="tools.group_convert"></h3>
+            <div class="arcade-menu">
             <button type="button" class="arcade-card" onclick="openTool('eras', 'screen-tools')">
                 <span class="arcade-card-icon" aria-hidden="true">🔁</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.eras_title"></strong><small data-i18n="tools.eras_desc"></small></span>
@@ -1296,6 +1298,15 @@
                 <span class="arcade-card-icon" aria-hidden="true">⏳</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.duration_title"></strong><small data-i18n="tools.duration_desc"></small></span>
             </button>
+            <button type="button" class="arcade-card" onclick="openTool('measures', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">⚖️</span>
+                <span class="arcade-card-text"><strong data-i18n="tools.measures_title"></strong><small data-i18n="tools.measures_desc"></small></span>
+            </button>
+            </div>
+        </section>
+        <section class="tools-group" aria-labelledby="tools-group-calendars">
+            <h3 class="modes-group-title modes-group-static" id="tools-group-calendars" data-i18n="tools.group_calendars"></h3>
+            <div class="arcade-menu">
             <button type="button" class="arcade-card" onclick="openTool('dates', 'screen-tools')">
                 <span class="arcade-card-icon" aria-hidden="true">📅</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.dates_title"></strong><small data-i18n="tools.dates_desc"></small></span>
@@ -1304,18 +1315,28 @@
                 <span class="arcade-card-icon" aria-hidden="true">🗓️</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.calendar_title"></strong><small data-i18n="tools.calendar_desc"></small></span>
             </button>
-            <button type="button" class="arcade-card" onclick="openTool('genealogy', 'screen-tools')">
-                <span class="arcade-card-icon" aria-hidden="true">🌳</span>
-                <span class="arcade-card-text"><strong data-i18n="tools.genealogy_title"></strong><small data-i18n="tools.genealogy_desc"></small></span>
+            </div>
+        </section>
+        <section class="tools-group" aria-labelledby="tools-group-landmarks">
+            <h3 class="modes-group-title modes-group-static" id="tools-group-landmarks" data-i18n="tools.group_landmarks"></h3>
+            <div class="arcade-menu">
+            <button type="button" class="arcade-card" onclick="openTool('periods', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">🧭</span>
+                <span class="arcade-card-text"><strong data-i18n="tools.periods_title"></strong><small data-i18n="tools.periods_desc"></small></span>
             </button>
             <button type="button" class="arcade-card" onclick="openTool('leaders', 'screen-tools')">
                 <span class="arcade-card-icon" aria-hidden="true">🏛️</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.leaders_title"></strong><small data-i18n="tools.leaders_desc"></small></span>
             </button>
-            <button type="button" class="arcade-card" onclick="openTool('periods', 'screen-tools')">
-                <span class="arcade-card-icon" aria-hidden="true">🧭</span>
-                <span class="arcade-card-text"><strong data-i18n="tools.periods_title"></strong><small data-i18n="tools.periods_desc"></small></span>
+            <button type="button" class="arcade-card" onclick="openTool('dictionary', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">📖</span>
+                <span class="arcade-card-text"><strong>Dictionnaire</strong><small>Les termes qu'on confond, définis avec précision. Mode concours.</small></span>
             </button>
+            </div>
+        </section>
+        <section class="tools-group" aria-labelledby="tools-group-maps">
+            <h3 class="modes-group-title modes-group-static" id="tools-group-maps" data-i18n="tools.group_maps"></h3>
+            <div class="arcade-menu">
             <button type="button" class="arcade-card" onclick="openTool('countries', 'screen-tools')">
                 <span class="arcade-card-icon" aria-hidden="true">🌍</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.countries_title"></strong><small data-i18n="tools.countries_desc"></small></span>
@@ -1324,11 +1345,16 @@
                 <span class="arcade-card-icon" aria-hidden="true">🗺️</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.history_title"></strong><small data-i18n="tools.history_desc"></small></span>
             </button>
-            <button type="button" class="arcade-card" onclick="openTool('dictionary', 'screen-tools')">
-                <span class="arcade-card-icon" aria-hidden="true">📖</span>
-                <span class="arcade-card-text"><strong>Dictionnaire</strong><small>Les termes qu'on confond, définis avec précision. Mode concours.</small></span>
+            <button type="button" class="arcade-card" onclick="openTool('biblical', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">📜</span>
+                <span class="arcade-card-text"><strong data-i18n="tools.biblical_title"></strong><small data-i18n="tools.biblical_desc"></small></span>
             </button>
-        </div>
+            <button type="button" class="arcade-card" onclick="openTool('genealogy', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">🌳</span>
+                <span class="arcade-card-text"><strong data-i18n="tools.genealogy_title"></strong><small data-i18n="tools.genealogy_desc"></small></span>
+            </button>
+            </div>
+        </section>
     </div>
 
     <div id="screen-tool-eras" class="list-screen hidden">
@@ -1738,13 +1764,13 @@
         <button class="back-btn" onclick="toolBack('dictionary')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
         <h2 class="header-title">Dictionnaire d'histoire et de géographie</h2>
         <p class="modes-header-subtitle">Les termes qu'on confond souvent, définis avec précision.</p>
+        <div class="dict-filters">
+            <select id="dict-domain" class="tool-input" aria-label="Domaine" onchange="dictionaryRender()"></select>
+            <label class="dict-toggle"><input type="checkbox" id="dict-concours" onchange="dictionaryToggleConcours(this.checked)"> Mode concours</label>
+        </div>
         <div class="dict-bar">
             <input type="search" id="dict-search" class="tool-input" autocomplete="off" autocapitalize="off" spellcheck="false"
                 placeholder="Rechercher un mot…" aria-label="Rechercher un mot" oninput="dictionaryRender()">
-            <div class="dict-filters">
-                <select id="dict-domain" class="tool-input" aria-label="Domaine" onchange="dictionaryRender()"></select>
-                <label class="dict-toggle"><input type="checkbox" id="dict-concours" onchange="dictionaryToggleConcours(this.checked)"> Mode concours</label>
-            </div>
         </div>
         <nav class="dict-letters" id="dict-letters" aria-label="Aller à une lettre"></nav>
         <p class="tool-msg" id="dict-status" role="status"></p>
@@ -1803,8 +1829,9 @@
                 <button type="button" class="gen-lang-btn" id="gen-lang-he" aria-pressed="false" lang="he" onclick="genSetLang('he')">א</button>
             </div>
         </div>
-        <h2 class="header-title" data-i18n="tools.genealogy_title">Généalogie biblique</h2>
-        <p class="modes-header-subtitle" data-i18n="tools.genealogy_intro"></p>
+        <!-- Titre et consigne ne s'affichent plus (la place revient à l'arbre) ; ils restent lus par les lecteurs d'écran. -->
+        <h2 class="header-title sr-only" data-i18n="tools.genealogy_title">Généalogie biblique</h2>
+        <p class="modes-header-subtitle sr-only" data-i18n="tools.genealogy_intro"></p>
         <div class="gen-bar">
             <input type="search" id="gen-search" class="tool-input" autocomplete="off" placeholder="Chercher un nom" aria-label="Chercher un nom" data-i18n-attr="placeholder:tools.genealogy_search;aria-label:tools.genealogy_search">
             <ul class="gen-results" id="gen-results"></ul>
@@ -1839,6 +1866,37 @@
             <p class="tool-small" id="leaders-count" role="status"></p>
         </div>
         <div class="leaders-list" id="leaders-list"></div>
+    </div>
+
+    <div id="screen-tool-measures" class="list-screen hidden">
+        <button class="back-btn" onclick="toolBack('measures')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="tools.measures_title">Poids et mesures bibliques</h2>
+        <p class="modes-header-subtitle" data-i18n="tools.measures_intro"></p>
+        <div class="tool-panel">
+            <div class="tool-history-chips" id="tool-measures-tabs" role="group" aria-label="Distances, volumes ou monnaies" data-i18n-attr="aria-label:tools.measures_tabs_aria"></div>
+            <div id="tool-measures-body" class="measures-body"></div>
+        </div>
+    </div>
+
+    <div id="screen-tool-biblical" class="list-screen hidden">
+        <button class="back-btn" onclick="toolBack('biblical')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="tools.biblical_title">Cartes bibliques</h2>
+        <p class="modes-header-subtitle" data-i18n="tools.biblical_intro"></p>
+        <div class="tool-panel">
+            <div class="tool-field">
+                <label for="tool-biblical-select" data-i18n="tools.biblical_select_label">Carte</label>
+                <select id="tool-biblical-select" class="tool-input" onchange="toolBiblicalPick(this.value)"></select>
+            </div>
+            <div class="tool-history-chips" id="tool-biblical-views" role="group" aria-label="Choisir une vue" data-i18n-attr="aria-label:tools.biblical_views_label"></div>
+            <div class="tool-field hidden" id="tool-biblical-variant-block">
+                <span class="tool-small" id="tool-biblical-variant-label"></span>
+                <div class="tool-history-chips" id="tool-biblical-variants" role="group" aria-labelledby="tool-biblical-variant-label"></div>
+            </div>
+            <p class="tool-msg" id="tool-biblical-status" role="status"></p>
+            <div id="tool-biblical-map" class="tool-countries-map bib-map" role="application" aria-label="Carte biblique" data-i18n-attr="aria-label:tools.biblical_map_label"></div>
+            <p class="tool-small tool-countries-credit" data-i18n="tools.biblical_credit"></p>
+            <div class="tool-result tool-countries-fiche" id="tool-biblical-fiche" role="region" aria-live="polite" aria-label="Fiche de la carte" data-i18n-attr="aria-label:tools.biblical_fiche_label"></div>
+        </div>
     </div>
 
     <div id="screen-tool-history" class="list-screen hidden">
@@ -3547,6 +3605,10 @@
     <script src="js/app/state-leaders.js"></script>
     <script src="js/historyMapsCore.js"></script>
     <script src="js/app/history-maps.js"></script>
+    <script src="js/measuresCore.js"></script>
+    <script src="js/app/biblical-measures.js"></script>
+    <script src="js/biblicalMapsCore.js"></script>
+    <script src="js/app/biblical-maps.js"></script>
     <script src="js/app/rewards.js"></script>
     <script src="js/app/clio.js"></script>
     <script src="js/teamBadge.js"></script>
