@@ -172,7 +172,7 @@ Une chatte. **Décisions validées (octobre 2026)** :
 | **Caractère** | Curieuse, un peu savante, jamais moqueuse ; elle **encourage**, ne juge pas. |
 
 Le dessin est dans `js/clioArt.js` (de face dans toutes les humeurs, en vol pour Flappy Clio) ; ses animations sont
-dans `css/style.css` (classes `ca-*`). Costumes déjà dessinés : les cinq de l'Antiquité (Préhistoire, Égypte, Grèce, Rome I, Rome II) ; les autres restent des aperçus
+dans `css/style.css` (classes `ca-*`). Costumes déjà dessinés : les cinq de l'Antiquité et les quatre du Moyen Âge (mérovingien, cotte de mailles, cape fleurdelisée, armure de Jeanne) ; les autres restent des aperçus
 en emoji en attendant.
 
 Palette figée : pelage `#EE8A3C`, rayures `#C65E1C`, contour `#9C4A17`, crème `#FFF0DA`, intérieur des oreilles

@@ -28,7 +28,8 @@
     var MOODS = ['repos', 'salue', 'content', 'ravi', 'fier', 'surpris', 'reflechit', 'triste', 'dort'];
 
     // Costumes déjà dessinés, par monde (les autres restent des aperçus en emoji).
-    var COSTUMES = { prehistoire: 'mammouth', orient: 'egypte', grece: 'grece', rome1: 'legionnaire', rome2: 'toge' };
+    var COSTUMES = { prehistoire: 'mammouth', orient: 'egypte', grece: 'grece', rome1: 'legionnaire', rome2: 'toge',
+        'haut-moyen-age': 'merovingien', feodalites: 'mailles', capetiens: 'lys', 'cent-ans': 'jeanne' };
 
     var uid = 0;
 
@@ -126,6 +127,26 @@
         return [u * u * x0 + 2 * u * t * x1 + t * t * x2, u * u * y0 + 2 * u * t * y1 + t * t * y2];
     }
 
+    // Une fleur de lys centrée en (x, y), de taille `k` (1 ≈ 16 px de haut).
+    function lis(x, y, k, fill, edge) {
+        return el('path', {
+            d: 'M0 -9 C3.5 -5 3.5 -1 0 3 C-3.5 -1 -3.5 -5 0 -9 Z M-1.5 2 C-6 -3 -10 1 -7 5 C-6 3 -4 3 -1.5 4.5 Z M1.5 2 C6 -3 10 1 7 5 C6 3 4 3 1.5 4.5 Z M-4.5 3.5 L4.5 3.5 L4.5 6 L-4.5 6 Z M-1.5 6 L1.5 6 L0 9 Z',
+            fill: fill, stroke: edge, 'stroke-width': 0.8 / k, 'stroke-linejoin': 'round', transform: 'translate(' + x + ' ' + y + ') scale(' + k + ')'
+        });
+    }
+    // Des mailles : rangées d'écailles en quinconce, découpées par `d` (règle pair-impair pour les capuches trouées).
+    function mail(id, d, x0, y0, x1, y1) {
+        var p = '';
+        for (var y = y0, row = 0; y <= y1; y += 5, row++) {
+            for (var x = x0 + (row % 2 ? 3 : 0); x <= x1; x += 6) p += 'M' + x + ' ' + y + ' q3 4 6 0 ';
+        }
+        return el('clipPath', { id: id }, el('path', { d: d, 'clip-rule': 'evenodd' })) +
+            '<g clip-path="url(#' + id + ')">' + line(p, 1.3, '#6E757D') + '</g>';
+    }
+    var TUNIC = 'M58 150 C76 140 124 140 142 150 C148 168 150 188 148 206 Q100 212 52 206 C50 188 52 168 58 150 Z';
+    var CAPE_L = 'M56 148 C64 140 80 138 92 140 L84 212 C70 214 58 212 52 206 C49 186 50 164 56 148 Z';
+    var CAPE_R = 'M144 148 C136 140 120 138 108 140 L116 212 C130 214 142 212 148 206 C151 186 150 164 144 148 Z';
+
     var DRAW = {
         // Préhistoire — peau de mammouth : tunique de fourrure à une épaule, bas effrangé, collier de dents.
         mammouth: {
@@ -205,6 +226,73 @@
                     shape('M156 78 L160 118 Q152 126 142 116 L140 82 Z', '#C9CDD2', '#6B7178', 2.5) +
                     shape('M44 78 C44 32 156 32 156 78 Q100 66 44 78 Z', '#C9CDD2', '#6B7178') +
                     line('M48 76 Q100 64 152 76', 4, '#C9A23A') + line('M70 50 Q100 40 130 50', 3, '#E4E7EA');
+            }
+        },
+        // Haut Moyen Âge — manteau mérovingien : manteau de laine bordé, tunique brodée, grande fibule ronde à grenats.
+        merovingien: {
+            body: function (id) {
+                return shape(TUNIC, '#4F7A3A', '#2C4A1F') +
+                    clipped(id + 'tu', TUNIC, line('M48 200 Q100 208 152 200', 5, '#D4A43A') + line('M48 200 Q100 208 152 200', 1.5, '#8E3B2E', { 'stroke-dasharray': '3 3' })) +
+                    line('M88 180 L112 180', 5, '#5A3820') + el('rect', { x: 96, y: 176, width: 8, height: 8, rx: 1.5, fill: '#D4A43A', stroke: '#7A5E14', 'stroke-width': 1.2 }) +
+                    shape(CAPE_L, '#8E3B2E', '#4F1C14') + shape(CAPE_R, '#8E3B2E', '#4F1C14') +
+                    line('M92 140 L84 212 M108 140 L116 212', 3.5, '#D4A43A') +
+                    el('circle', { cx: 124, cy: 160, r: 10, fill: '#D4A43A', stroke: '#7A5E14', 'stroke-width': 2 }) +
+                    el('circle', { cx: 124, cy: 160, r: 6, fill: '#B0262A', stroke: '#7A5E14', 'stroke-width': 1.2 }) +
+                    line('M124 154 L124 166 M118 160 L130 160', 1.2, '#7A5E14') + el('circle', { cx: 124, cy: 160, r: 1.8, fill: '#D4A43A' });
+            }
+        },
+        // Féodalités — cotte de mailles : haubert et camail de mailles, surcot bleu au chevron d'or, petit casque conique.
+        mailles: {
+            body: function (id) {
+                var SURCOT = 'M68 146 L132 146 L138 206 Q100 212 62 206 Z';
+                return shape(TUNIC, '#AEB4BB', '#5F656C') + mail(id + 'm', TUNIC, 44, 140, 156, 214) +
+                    shape(SURCOT, '#2E4F9E', '#1A2E66', 2.5) +
+                    clipped(id + 'sc', SURCOT, el('path', { d: 'M56 194 L100 170 L144 194 L144 204 L100 180 L56 204 Z', fill: '#E9C349', stroke: '#8A6A10', 'stroke-width': 1.5 })) +
+                    line('M66 178 L134 178', 4.5, '#5A3820') + el('rect', { x: 96, y: 174, width: 8, height: 8, rx: 1.5, fill: '#C9CDD2', stroke: '#5F656C', 'stroke-width': 1.2 });
+            },
+            hat: function (id) {
+                // Le camail : une capuche de mailles percée pour le visage.
+                var COIF = 'M28 152 C24 60 60 32 100 32 C140 32 176 60 172 152 Z M100 66 C134 66 148 92 146 112 C144 136 124 148 100 148 C76 148 56 136 54 112 C52 92 66 66 100 66 Z';
+                return el('path', { d: COIF, fill: '#AEB4BB', stroke: '#5F656C', 'stroke-width': 3, 'fill-rule': 'evenodd', 'stroke-linejoin': 'round' }) +
+                    mail(id + 'c', COIF, 24, 30, 176, 154) +
+                    shape('M70 52 L100 12 L130 52 Q100 60 70 52 Z', '#C9CDD2', '#5F656C', 2.5) +
+                    line('M84 32 L100 14', 2.5, '#E4E7EA') + line('M70 52 Q100 60 130 52', 4, '#8A6A10');
+            }
+        },
+        // Capétiens — cape fleurdelisée : cape bleue semée de lys d'or, col d'hermine, tunique rouge, couronne fleuronnée.
+        lys: {
+            body: function (id) {
+                var tails = [[70, 154], [84, 160], [100, 163], [116, 160], [130, 154]].map(function (p) {
+                    return el('path', { d: 'M' + p[0] + ' ' + (p[1] - 2) + ' q2 3 0 6 q-2 -3 0 -6 Z', fill: '#1B1B22' });
+                }).join('');
+                var lysL = [[66, 172], [74, 196], [62, 190]].map(function (p) { return lis(p[0], p[1], 0.75, '#E9C349', '#8A6A10'); }).join('');
+                var lysR = [[134, 172], [126, 196], [138, 190]].map(function (p) { return lis(p[0], p[1], 0.75, '#E9C349', '#8A6A10'); }).join('');
+                return shape(TUNIC, '#B22A26', '#6E1512') + line('M88 182 L112 182', 4.5, '#E9C349') +
+                    shape(CAPE_L, '#2846A0', '#152A66') + clipped(id + 'cl', CAPE_L, lysL) +
+                    shape(CAPE_R, '#2846A0', '#152A66') + clipped(id + 'cr', CAPE_R, lysR) +
+                    shape('M56 148 Q100 170 144 148 L146 158 Q100 182 54 158 Z', '#FFFFFF', '#B8BEC6', 2.5) + tails;
+            },
+            hat: function () {
+                return lis(76, 40, 0.8, '#E9C349', '#8A6A10') + lis(100, 34, 0.95, '#E9C349', '#8A6A10') + lis(124, 40, 0.8, '#E9C349', '#8A6A10') +
+                    shape('M68 60 Q100 52 132 60 L132 48 Q100 40 68 48 Z', '#E9C349', '#8A6A10', 2.5) +
+                    el('circle', { cx: 84, cy: 52, r: 3, fill: '#B22A26' }) + el('circle', { cx: 100, cy: 49, r: 3.4, fill: '#2846A0' }) + el('circle', { cx: 116, cy: 52, r: 3, fill: '#B22A26' });
+            }
+        },
+        // Guerre de Cent Ans — armure de Jeanne : armure claire (plastron, épaulières, braconnière), étendard blanc fleurdelisé.
+        jeanne: {
+            body: function () {
+                var lames = [184, 192, 200].map(function (y) {
+                    return shape('M56 ' + y + ' Q100 ' + (y + 8) + ' 144 ' + y + ' L146 ' + (y + 9) + ' Q100 ' + (y + 17) + ' 54 ' + (y + 9) + ' Z', '#C9CED4', '#7D848C', 2);
+                }).join('');
+                return el('rect', { x: 153, y: 58, width: 5, height: 158, rx: 2, fill: '#8A5A33', stroke: '#4E2F17', 'stroke-width': 1.5 }) +
+                    shape('M158 62 L198 66 L190 80 L198 94 L158 92 Z', '#FFFFFF', '#B8BEC6', 2) + lis(176, 78, 0.8, '#E9C349', '#8A6A10') +
+                    el('circle', { cx: 155.5, cy: 56, r: 4, fill: '#E9C349', stroke: '#8A6A10', 'stroke-width': 1.5 }) +
+                    lames +
+                    shape('M64 146 C80 138 120 138 136 146 C142 160 142 176 138 186 Q100 194 62 186 C58 176 58 160 64 146 Z', '#DDE2E7', '#7D848C') +
+                    line('M100 144 L100 188', 2, '#A9B0B8') + line('M78 152 Q74 166 78 178', 3, '#FFFFFF', { opacity: 0.8 }) +
+                    el('ellipse', { cx: 58, cy: 152, rx: 14, ry: 10, fill: '#C9CED4', stroke: '#7D848C', 'stroke-width': 2.5 }) +
+                    el('ellipse', { cx: 142, cy: 152, rx: 14, ry: 10, fill: '#C9CED4', stroke: '#7D848C', 'stroke-width': 2.5 }) +
+                    line('M62 186 Q100 194 138 186', 4, '#8A5A33') + el('rect', { x: 96, y: 186, width: 8, height: 7, rx: 1.5, fill: '#E9C349', stroke: '#8A6A10', 'stroke-width': 1.2 });
             }
         },
         // Rome II — toge d'empereur : toge pourpre drapée, pan blanc bordé d'or, fibule, couronne de laurier d'or.
