@@ -98,14 +98,42 @@
     {
       "city": "Q61",
       "src": "assets/cities/photos/washington.jpg",
-      "legende": "La pelouse devant la Maison Blanche, Washington",
-      "auteur": "Daniel Schwen",
+      "legende": "Washington : la cathédrale nationale, le Capitole, le Lincoln Memorial, le Smithsonian, le Washington Monument, la Maison Blanche",
+      "auteur": "Collage de plusieurs auteurs (voir la liste)",
       "licence": "CC BY-SA 3.0",
-      "source": "https://commons.wikimedia.org/wiki/File:White_House_lawn_(long_tightly_cropped).jpg",
-      "montage": false,
-      "provisoire": true,
-      "modifie": "Redimensionnée à 800 px de large.",
-      "note": "Une seule photo d'un monument : à remplacer par un montage de la ville si on en trouve un."
+      "source": "https://commons.wikimedia.org/wiki/File:Washington_Montage_2016.png",
+      "montage": true,
+      "modifie": "Collage de six photos de Commons, redimensionné à 800 px de large.",
+      "auteurs": [
+        "AlexTref871",
+        "Ralf Roletschek",
+        "Noclip",
+        "Martin Falbisoner",
+        "Diego Delso",
+        "Daniel Schwen"
+      ],
+      "composantes": [
+        {
+          "fichier": "Washington National Cathedral Twilight-1.jpg"
+        },
+        {
+          "fichier": "12-07-13-washington-by-RalfR-08.jpg",
+          "auteur": "Ralf Roletschek"
+        },
+        {
+          "fichier": "Lincoln Memorial east side.JPG"
+        },
+        {
+          "fichier": "Smithsonian Building NR.jpg"
+        },
+        {
+          "fichier": "Washington Monument, Washington, D.C. USA3.jpg"
+        },
+        {
+          "fichier": "White House lawn.jpg",
+          "auteur": "Daniel Schwen"
+        }
+      ]
     }
   ]
 }
