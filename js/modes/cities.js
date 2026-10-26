@@ -201,8 +201,18 @@ function cityGameRender() {
         document.getElementById('cities-options').replaceChildren(...q.options.map((o, i) => {
             const btn = document.createElement('button');
             btn.type = 'button';
-            btn.className = 'quiz-option';
-            btn.textContent = o.value;
+            btn.className = ordering ? 'quiz-option ordre-card' : 'quiz-option';
+            if (ordering) {
+                // Le même rendu que « Remise en ordre » : une pastille qui reçoit le rang à mesure qu'on choisit.
+                const badge = document.createElement('span');
+                badge.className = 'ordre-rank';
+                const label = document.createElement('span');
+                label.className = 'ordre-card-title';
+                label.textContent = o.value;
+                btn.append(badge, label);
+            } else {
+                btn.textContent = o.value;
+            }
             btn.onclick = () => (ordering ? cityGamePick(i) : cityGameAnswer(i));
             return btn;
         }));
@@ -361,6 +371,8 @@ function cityGamePick(i) {
     const button = document.querySelectorAll('#cities-options .quiz-option')[i];
     citySequence.push(q.options[i].id);
     button.disabled = true;
+    button.classList.add('placed');
+    button.querySelector('.ordre-rank').textContent = String(citySequence.length);
     document.getElementById('cities-sequence').textContent = t('cities.order_sequence', {
         list: citySequence.map(id => cityGameById(id).n).join(' › ')
     });
@@ -371,7 +383,11 @@ function cityGamePick(i) {
 function cityGameResetOrder() {
     if (cityGameAnswered) return;
     citySequence = [];
-    document.querySelectorAll('#cities-options .quiz-option').forEach(b => { b.disabled = false; });
+    document.querySelectorAll('#cities-options .quiz-option').forEach(b => {
+        b.disabled = false;
+        b.classList.remove('placed');
+        b.querySelector('.ordre-rank').textContent = '';
+    });
     document.getElementById('cities-sequence').textContent = '';
     document.getElementById('cities-reset').classList.add('hidden');
 }
