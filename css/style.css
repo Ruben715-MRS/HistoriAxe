@@ -13566,9 +13566,6 @@ input:not([type="range"]), label, select, summary, textarea {
     z-index: 2;
     width: 100%;
     max-width: 520px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
     padding: 8px 0;
 }
 
@@ -13577,6 +13574,9 @@ input:not([type="range"]), label, select, summary, textarea {
     flex-wrap: wrap;
     align-items: center;
     gap: 8px 12px;
+    width: 100%;
+    max-width: 520px;
+    margin-bottom: 8px;
 }
 
 .dict-filters .tool-input {
