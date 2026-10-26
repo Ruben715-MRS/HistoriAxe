@@ -21,11 +21,12 @@ async function ouvrir(page, texte) {
 test('l\'Atelier s\'ouvre depuis les catégories, range ses treize entrées en quatre groupes et revient', async ({ page }) => {
     await page.locator('#btn-tools').click();
     expect(await visibleScreen(page)).toBe('screen-tools');
-    await expect(page.locator('#screen-tools .arcade-card')).toHaveCount(13);
+    await expect(page.locator('#screen-tools .arcade-card')).toHaveCount(14);
     await expect(page.locator('#screen-tools .header-title')).toHaveText('Atelier');
     await expect(page.locator('#screen-tools .tools-group')).toHaveCount(4);
     await expect(page.locator('#screen-tools .tools-group .modes-group-title')).toHaveText(['Convertir et calculer', 'Calendriers', 'Repères', 'Cartes et arbres']);
-    await expect(page.locator('#screen-tools .tools-group').nth(0).locator('.arcade-card')).toHaveCount(4);
+    await expect(page.locator('#screen-tools .tools-group').nth(0).locator('.arcade-card')).toHaveCount(5);
+    await expect(page.locator('#screen-tools .tools-group').nth(0).locator('.arcade-card', { hasText: 'Poids et mesures bibliques' })).toHaveCount(1);
     await expect(page.locator('#screen-tools .tools-group').nth(3).locator('.arcade-card', { hasText: 'Généalogie biblique' })).toHaveCount(1);
     await page.locator('#screen-tools .arcade-card', { hasText: 'Chiffres romains' }).click();
     expect(await visibleScreen(page)).toBe('screen-tool-roman');
@@ -646,4 +647,64 @@ test('généalogie biblique, à l\'horizontale : déplier une branche fait défi
         return r.left >= view.left - 1 && r.right <= view.right + 1;
     });
     expect(visible).toBe(true);
+});
+
+test('poids et mesures bibliques : distances, volumes et monnaies se convertissent, dans les deux sens, avec la leçon dessous', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 900 });
+    await page.locator('#btn-tools').click();
+    await page.locator('#screen-tools .arcade-card', { hasText: 'Poids et mesures bibliques' }).click();
+    expect(await visibleScreen(page)).toBe('screen-tool-measures');
+    const ligne = nom => page.locator('#tool-measures-rows .tool-row', { has: page.locator('strong', { hasText: new RegExp('^' + nom) }) }).locator('.tool-row-value');
+
+    // Distances : une coudée = 48 cm (Rav Naé), 57,6 cm ('Hazon Ich) ; 24 doigts, 2 empans, 6 palmes ; temps de marche.
+    await expect(page.locator('#tool-measures-tab-distances')).toHaveAttribute('aria-pressed', 'true');
+    await expect(ligne('Centimètre')).toHaveText('≈ 48');
+    await expect(ligne('Doigt')).toHaveText('24');
+    await expect(ligne('Empan')).toHaveText('2');
+    await expect(ligne('Palme')).toHaveText('6');
+    await page.locator('.measures-converter .tool-history-chips button', { hasText: 'Hazon Ich' }).click();
+    await expect(ligne('Centimètre')).toHaveText('≈ 57,6');
+    await page.locator('.measures-converter .tool-history-chips button', { hasText: 'Rav Naé' }).click();
+    // Dans l'autre sens : 960 mètres, c'est un mil, soit 18 minutes de marche.
+    await page.locator('#tool-measures-unit').selectOption('m');
+    await page.locator('#tool-measures-value').fill('960');
+    await expect(ligne('Mil')).toHaveText('≈ 1');
+    await expect(page.locator('#tool-measures-rows .tool-row', { hasText: 'Temps de marche' })).toContainText('18 min');
+
+    // La leçon : tableaux, deux opinions.
+    await expect(page.locator('.measures-lesson .measures-table').first()).toBeVisible();
+    await expect(page.locator('.measures-lesson')).toContainText('57,6 cm');
+
+    // Volumes : un épha ≈ 22 L, 3 séa, 432 œufs ; 44 litres font deux éphas.
+    await page.locator('#tool-measures-tab-volumes').click();
+    await expect(ligne('Litre')).toHaveText('≈ 22');
+    await expect(ligne('Séa')).toHaveText('3');
+    await expect(ligne('Œuf')).toHaveText('432');
+    await page.locator('#tool-measures-unit').selectOption('l');
+    await page.locator('#tool-measures-value').fill('44');
+    await expect(ligne('Épha')).toHaveText('≈ 2');
+    await expect(page.locator('.measures-lesson')).toContainText('432');
+
+    // Monnaies : un talent ≈ 17,1 kg d'argent, 1 500 chékels ; un talent pour usages sacrés ≈ 34,2 kg ; le tableau des équivalences.
+    await page.locator('#tool-measures-tab-money').click();
+    await expect(ligne('Kilogramme')).toHaveText('≈ 17,1');
+    await expect(ligne('Chékel')).toHaveText('1 500');
+    await page.locator('#tool-measures-unit').selectOption('talent_sacre');
+    await expect(ligne('Kilogramme')).toHaveText('≈ 34,2');
+    await page.locator('#tool-measures-unit').selectOption('kg');
+    await page.locator('#tool-measures-value').fill('34,2');
+    await expect(ligne('Talent pour usages sacrés')).toHaveText('≈ 1');
+    await expect(page.locator('.measures-table.is-matrix')).toBeVisible();
+    await expect(page.locator('.measures-table.is-matrix tbody tr')).toHaveCount(8);
+    // Rien ne déborde de l'écran en largeur (les tableaux défilent dans leur cadre).
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+
+    // Saisie vide ou invalide : un message, pas de résultat.
+    await page.locator('#tool-measures-value').fill('');
+    await expect(page.locator('#tool-measures-msg')).not.toBeEmpty();
+    await expect(page.locator('#tool-measures-rows .tool-row')).toHaveCount(0);
+    await page.locator('#tool-measures-value').fill('abc');
+    await expect(page.locator('#tool-measures-msg')).not.toBeEmpty();
+    await page.locator('#screen-tool-measures .back-btn').click();
+    expect(await visibleScreen(page)).toBe('screen-tools');
 });
