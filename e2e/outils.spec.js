@@ -485,7 +485,10 @@ test('généalogie biblique : un arbre, hommes en bleu et femmes en rose, bascul
     await page.locator('.gen-actions .btn', { hasText: 'Tout déplier' }).click();
     await expect(page.locator('#gen-stage .gen-card')).toHaveCount(await page.evaluate(() => Object.keys(GenealogyCore.layout({}, () => 40).nodes).length));
     await expect(page.locator('#gen-stage .gen-card[data-id="josue"] .gen-name')).toHaveText('Josué');
-    // Par défaut vertical : Adam en haut, Caïn et Seth plus bas.
+    // Sur téléphone en portrait, l'arbre s'ouvre à l'horizontale (on lit de gauche à droite).
+    await expect(page.locator('#gen-stage.is-vertical')).toHaveCount(0);
+    await page.locator('#gen-dir').click();
+    // En vertical : Adam en haut, Caïn et Seth plus bas.
     await expect(page.locator('#gen-stage.is-vertical')).toHaveCount(1);
     expect(await page.locator('#gen-stage .gen-card[data-id="adam"]').evaluate(el => el.offsetTop)).toBeLessThan(await page.locator('#gen-stage .gen-card[data-id="cain"]').evaluate(el => el.offsetTop));
     await page.locator('#gen-dir').click();

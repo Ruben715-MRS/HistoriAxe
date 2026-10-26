@@ -20,10 +20,21 @@ let genBuilt = false;
 let genHeights = {};
 let genFocus = '';
 
+// Un choix déjà fait par le joueur (bouton 🔄) est mémorisé ; sans choix, le sens dépend de l'écran : sur un téléphone
+// en portrait, l'arbre s'ouvre à l'horizontale (Adam à gauche, on lit de gauche à droite).
+let genDirChosen = false;
 try {
     if (localStorage.getItem('genealogyLang') === 'he') genLang = 'he';
-    if (localStorage.getItem('genealogyDir') === 'h') genDir = 'h';
+    const savedDir = localStorage.getItem('genealogyDir');
+    if (savedDir === 'h' || savedDir === 'v') { genDir = savedDir; genDirChosen = true; }
 } catch (e) { /* stockage indisponible */ }
+
+function genDefaultDir() {
+    if (genDirChosen) return genDir;
+    const phonePortrait = typeof window.matchMedia === 'function'
+        && window.matchMedia('(max-width: 600px) and (orientation: portrait)').matches;
+    return phonePortrait ? 'h' : 'v';
+}
 
 function genName(p) { return genLang === 'he' ? p.he : p.fr; }
 
@@ -32,6 +43,7 @@ function toolGenealogyInit() {
         genBuilt = true;
         document.getElementById('gen-search').addEventListener('input', genOnSearch);
     }
+    genDir = genDefaultDir();
     genApplyLangButtons();
     genApplyDirButton();
     // À l'ouverture : Adam et ses trois fils, les autres branches repliées.
@@ -49,6 +61,7 @@ function genApplyDirButton() {
 // Le sens de l'arbre : vertical (Adam en haut, par défaut) ou horizontal (Adam à gauche). Le choix est mémorisé.
 function genToggleDir() {
     genDir = genDir === 'v' ? 'h' : 'v';
+    genDirChosen = true;
     try { localStorage.setItem('genealogyDir', genDir); } catch (e) { /* stockage indisponible */ }
     genApplyDirButton();
     genRender();
