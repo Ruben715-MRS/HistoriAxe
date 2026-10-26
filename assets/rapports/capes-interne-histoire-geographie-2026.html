@@ -1,0 +1,830 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>CAPES interne histoire-géographie</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F6F3EC; --surface:#FFFFFF; --ink:#221E1A; --muted:#645D54; --rule:#D6CFC2;
+  --contour:#A8802F; --corr:#A5322B; --corr-soft:#F6E5E3;
+  --gre:#B4532A; --imp:#5A3E9B; --ame:#17766B; --aut:#35527A; --fra:#4B7A2E; --pac:#1B6C9F;
+  --gre-soft:#F6E6DD; --imp-soft:#ECE6F6; --ame-soft:#DDEFEC; --aut-soft:#E1E8F2; --fra-soft:#E8F0DF; --pac-soft:#E0EDF5;
+  --serif:"Literata","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --sans:"Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,Roboto,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#171512; --surface:#211E19; --ink:#EAE5DC; --muted:#ADA597; --rule:#3A352D;
+    --contour:#C2A25C; --corr:#E6847A; --corr-soft:#3A201D;
+    --gre:#E08A63; --imp:#B7A0E8; --ame:#5CC2B4; --aut:#8DB0E3; --fra:#9CCB7C; --pac:#66ACDB;
+    --gre-soft:#3A2218; --imp-soft:#261E3A; --ame-soft:#12302C; --aut-soft:#1B2A40; --fra-soft:#1F2E16; --pac-soft:#15303F;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#171512; --surface:#211E19; --ink:#EAE5DC; --muted:#ADA597; --rule:#3A352D;
+  --contour:#C2A25C; --corr:#E6847A; --corr-soft:#3A201D;
+  --gre:#E08A63; --imp:#B7A0E8; --ame:#5CC2B4; --aut:#8DB0E3; --fra:#9CCB7C; --pac:#66ACDB;
+  --gre-soft:#3A2218; --imp-soft:#261E3A; --ame-soft:#12302C; --aut-soft:#1B2A40; --fra-soft:#1F2E16; --pac-soft:#15303F;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:1.0625rem;line-height:1.64;font-optical-sizing:auto;overflow-wrap:break-word}
+svg,img{max-width:100%}
+a{color:inherit;text-decoration-thickness:1px;text-decoration-color:var(--muted);text-underline-offset:.18em}
+a:hover{text-decoration-color:currentColor}
+:focus-visible{outline:3px solid var(--gre);outline-offset:2px}
+strong{font-weight:600}
+
+/* Bandeau */
+.hero{position:relative;overflow:hidden;background:var(--surface);border-bottom:1px solid var(--rule)}
+.hero .frise{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero .frise path{fill:none;stroke:var(--contour);stroke-width:1.2;opacity:.3}
+.hero .frise path.index{stroke-width:2.2;opacity:.55}
+.hero-inner{position:relative;max-width:74rem;margin:0 auto;padding-block:3.25rem 2.25rem;padding-left:max(1.25rem,env(safe-area-inset-left,0px));padding-right:max(1.25rem,env(safe-area-inset-right,0px))}
+.hero .meta{font-family:var(--sans);font-size:.92rem;color:var(--muted);margin:0 0 .75rem}
+h1{font-weight:600;font-size:clamp(2rem,6vw,3.35rem);line-height:1.08;letter-spacing:-.012em;margin:0 0 1rem;max-width:19ch;text-wrap:balance}
+.lede{font-size:1.14rem;line-height:1.55;max-width:42rem;margin:0}
+.legend{margin-top:1.75rem;display:grid;gap:.9rem;font-family:var(--sans);font-size:.93rem;max-width:56rem}
+.legend p{margin:0;color:var(--muted);font-size:.88rem}
+.legend ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.45rem 1.35rem}
+.legend li{display:inline-flex;align-items:center;gap:.5rem;margin:0}
+.fig{display:inline-block;flex:none;width:1.1rem;height:.82rem;border:2px solid currentColor;vertical-align:-.08em}
+.fig.a{background:currentColor}
+.fig.b{background:repeating-linear-gradient(135deg,currentColor 0 2px,transparent 2px 5px)}
+.fig.c{background:transparent}
+.c-gre{color:var(--gre)} .c-imp{color:var(--imp)} .c-ame{color:var(--ame)} .c-aut{color:var(--aut)} .c-fra{color:var(--fra)} .c-pac{color:var(--pac)}
+.legend .lbl{color:var(--ink)}
+
+/* Mise en page */
+.layout{max-width:74rem;margin:0 auto;padding-top:0;padding-bottom:5rem;padding-left:max(1.25rem,env(safe-area-inset-left,0px));padding-right:max(1.25rem,env(safe-area-inset-right,0px));display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+@media (min-width:64rem){.layout{grid-template-columns:15rem minmax(0,1fr);gap:3.25rem}}
+.toc{font-family:var(--sans);font-size:.95rem;line-height:1.35}
+.toc ol{list-style:none;margin:0;padding:0}
+.toc li{margin:0}
+.toc a{display:block;padding:.42rem 0 .42rem .75rem;text-decoration:none;color:var(--muted);border-left:3px solid transparent}
+.toc a:hover{color:var(--ink);border-left-color:var(--rule)}
+.toc a.t-gre{border-left-color:var(--gre);color:var(--ink)}
+.toc a.t-imp{border-left-color:var(--imp);color:var(--ink)}
+.toc a.t-ame{border-left-color:var(--ame);color:var(--ink)}
+.toc a.t-aut{border-left-color:var(--aut);color:var(--ink)}
+.toc a.t-fra{border-left-color:var(--fra);color:var(--ink)}
+.toc a.t-pac{border-left-color:var(--pac);color:var(--ink)}
+.toc-mobile{margin:1.25rem 0 .5rem;border:1px solid var(--rule);background:var(--surface);border-radius:6px}
+.toc-mobile summary{cursor:pointer;padding:.8rem 1rem;font-weight:700;font-family:var(--sans);list-style-position:inside}
+.toc-mobile ol{padding:0 1rem .8rem}
+.toc-desktop{display:none}
+@media (min-width:64rem){
+  .toc-mobile{display:none}
+  .toc-desktop{display:block;position:sticky;top:0;max-height:100vh;overflow:auto;padding:2.5rem 0 2rem}
+  .toc-desktop p{margin:0 0 .6rem;font-weight:700;color:var(--ink)}
+}
+main{min-width:0}
+section{padding:2.6rem 0 .6rem;border-top:1px solid var(--rule);scroll-margin-top:.75rem}
+main > section:first-child,.toc-mobile + section{border-top:0}
+h2{font-size:clamp(1.55rem,3.8vw,2.05rem);line-height:1.18;font-weight:600;letter-spacing:-.005em;margin:0 0 .9rem;max-width:32ch;text-wrap:balance}
+.qsec h2{padding-left:.9rem;border-left:5px solid var(--qc)}
+.gre{--qc:var(--gre);--qs:var(--gre-soft)}
+.imp{--qc:var(--imp);--qs:var(--imp-soft)}
+.ame{--qc:var(--ame);--qs:var(--ame-soft)}
+.aut{--qc:var(--aut);--qs:var(--aut-soft)}
+.fra{--qc:var(--fra);--qs:var(--fra-soft)}
+.pac{--qc:var(--pac);--qs:var(--pac-soft)}
+.standfirst{font-family:var(--sans);color:var(--muted);font-size:.95rem;margin:-.3rem 0 1.2rem}
+h3{font-size:1.24rem;line-height:1.3;font-weight:600;margin:2.1rem 0 .6rem;max-width:40ch;text-wrap:balance}
+h4{font-family:var(--sans);font-size:1.02rem;font-weight:700;margin:1.5rem 0 .45rem}
+p,ul,ol,dl{max-width:68ch}
+p{margin:.6rem 0}
+ul,ol{padding-left:1.2rem;margin:.6rem 0}
+li{margin:.38rem 0}
+li::marker{color:var(--muted)}
+.qsec li::marker{color:var(--qc)}
+
+/* Liste essentielle */
+.essentials{list-style:none;padding:0;display:grid;gap:.85rem;max-width:none}
+@media (min-width:48rem){.essentials{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:2rem}}
+.essentials li{margin:0;padding:.1rem 0 .1rem .9rem;border-left:3px solid var(--k,var(--rule))}
+.essentials li.k-gre{--k:var(--gre)} .essentials li.k-imp{--k:var(--imp)} .essentials li.k-ame{--k:var(--ame)} .essentials li.k-aut{--k:var(--aut)} .essentials li.k-fra{--k:var(--fra)} .essentials li.k-pac{--k:var(--pac)}
+
+/* Tableaux */
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1rem 0 1.25rem;border:1px solid var(--rule);background:var(--surface);border-radius:6px;max-width:100%}
+table{border-collapse:collapse;width:100%;min-width:38rem;font-family:var(--sans);font-size:.92rem;line-height:1.45}
+table.narrow{min-width:30rem}
+table.wide{min-width:52rem}
+caption{caption-side:top;text-align:left;padding:.75rem .85rem .2rem;font-weight:700;color:var(--ink)}
+th,td{padding:.62rem .85rem;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule)}
+thead th{background:var(--paper);font-weight:700}
+tbody th{font-weight:700}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.gap{font-weight:700}
+
+/* Blocs repliables */
+details.fold{margin:1rem 0 1.25rem;border:1px solid var(--rule);background:var(--surface);border-radius:6px}
+details.fold > summary{cursor:pointer;padding:.8rem 1rem;font-family:var(--sans);font-weight:700}
+details.fold[open] > summary{border-bottom:1px solid var(--rule)}
+details.fold > :not(summary){margin-left:1rem;margin-right:1rem}
+details.fold > .table-wrap{margin:0;border:0;border-radius:0}
+details.fold > :last-child{margin-bottom:1rem}
+
+/* Étapes */
+ol.steps{counter-reset:s;list-style:none;padding:0}
+ol.steps > li{counter-increment:s;position:relative;padding-left:2.2rem;margin:.6rem 0}
+ol.steps > li::before{content:counter(s);position:absolute;left:0;top:.05rem;width:1.55rem;height:1.55rem;border:1.5px solid var(--ink);border-radius:50%;font-family:var(--sans);font-size:.85rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+
+/* Encadrés */
+.aside{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:.9rem 1.1rem;margin:1.2rem 0;max-width:68ch}
+.aside p:first-child{margin-top:0}.aside p:last-child{margin-bottom:0}
+.qsec .aside{background:var(--qs);border-color:transparent}
+
+/* Banque de sujets */
+.filters{font-family:var(--sans);display:grid;gap:.7rem;margin:1.2rem 0 1rem}
+.fgroup{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem}
+.fgroup .flabel{font-size:.9rem;color:var(--muted);min-width:5.5rem}
+.chip{font:inherit;font-size:.9rem;display:inline-flex;align-items:center;gap:.45rem;border:1.5px solid var(--rule);background:var(--surface);color:var(--ink);padding:.38rem .8rem;border-radius:999px;cursor:pointer;line-height:1.2}
+.chip:hover{border-color:var(--muted)}
+.chip.c-gre .fig{color:var(--gre)} .chip.c-imp .fig{color:var(--imp)} .chip.c-ame .fig{color:var(--ame)} .chip.c-aut .fig{color:var(--aut)} .chip.c-fra .fig{color:var(--fra)} .chip.c-pac .fig{color:var(--pac)}
+.chip[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.count{font-family:var(--sans);font-size:.9rem;color:var(--muted);margin:.2rem 0 1rem}
+.subjects{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem}
+@media (min-width:52rem){.subjects{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.subject{background:var(--surface);border:1px solid var(--rule);border-top:4px solid var(--qc);border-radius:6px;padding:1rem 1.1rem 1.05rem;min-width:0}
+.subject[hidden]{display:none}
+.subject h4{font-family:var(--serif);font-size:1.1rem;line-height:1.32;font-weight:600;margin:0 0 .35rem}
+.subject .variant{font-size:.95rem;color:var(--muted);margin:0 0 .55rem}
+.subject .tags{display:flex;flex-wrap:wrap;gap:.35rem 1rem;font-family:var(--sans);font-size:.86rem;margin:0 0 .5rem}
+.subject .tags span{display:inline-flex;align-items:center;gap:.4rem}
+.subject .tags .fig{color:var(--qc)}
+.subject dl{margin:0;font-size:.97rem;line-height:1.55}
+.subject dt{font-family:var(--sans);font-weight:700;font-size:.86rem;color:var(--muted);margin-top:.55rem}
+.subject dd{margin:.1rem 0 0}
+.subjects[hidden]{display:none}
+.group-title{font-family:var(--sans);font-size:1.02rem;font-weight:700;margin:1.8rem 0 .7rem;display:flex;align-items:center;gap:.55rem}
+.group-title .fig{color:var(--qc)}
+.group-title[hidden]{display:none}
+
+/* Pastilles de questions */
+.qtags{display:flex;flex-wrap:wrap;gap:.3rem}
+.qt{font-family:var(--sans);font-size:.8rem;line-height:1.2;padding:.18rem .5rem;border-radius:999px;border:1.5px solid currentColor;white-space:nowrap}
+.qt.gre{color:var(--gre)} .qt.imp{color:var(--imp)} .qt.ame{color:var(--ame)} .qt.aut{color:var(--aut)} .qt.fra{color:var(--fra)} .qt.pac{color:var(--pac)}
+
+/* Listes de dossiers plausibles */
+.dossiers{list-style:none;padding:0;max-width:none;display:grid;gap:.55rem}
+@media (min-width:48rem){.dossiers{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:1.5rem}}
+.dossiers li{margin:0;padding:.55rem .75rem;background:var(--surface);border:1px solid var(--rule);border-radius:6px;display:grid;gap:.3rem;min-width:0}
+.dossiers li span.t{font-weight:600;line-height:1.35}
+.dossiers li span.d{font-size:.95rem;color:var(--muted);line-height:1.45}
+
+/* Notions */
+dl.notions{max-width:none;display:grid;grid-template-columns:minmax(0,1fr);gap:0;margin:.8rem 0 1.2rem;border-top:1px solid var(--rule)}
+dl.notions > div{padding:.6rem 0;border-bottom:1px solid var(--rule);display:grid;gap:.2rem}
+@media (min-width:48rem){dl.notions > div{grid-template-columns:15rem minmax(0,1fr);gap:1.25rem}}
+dl.notions dt{font-weight:600}
+dl.notions dd{margin:0}
+
+/* Erreurs */
+.corrections{list-style:none;padding:0;max-width:none;display:grid;gap:.75rem}
+.corrections li{margin:0;background:var(--surface);border:1px solid var(--rule);border-left:4px solid var(--corr);border-radius:6px;padding:.75rem 1rem}
+.corrections .was{font-family:var(--sans);font-size:.9rem;color:var(--muted);display:block;margin-bottom:.2rem}
+
+/* Pastilles de position (graphiques) */
+.dots,.bars{list-style:none;padding:0;margin:.6rem 0 1.2rem;max-width:none;font-family:var(--sans);font-size:.92rem;display:grid;gap:.25rem}
+.dots li,.bars li{margin:0;display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1fr) 3rem;align-items:center;gap:.2rem .7rem}
+.dots .dl,.bars .bl{line-height:1.25;grid-column:1}
+.dots .dt{position:relative;height:1.55rem;border-right:1px solid var(--rule);background:linear-gradient(90deg,var(--rule) 1px,transparent 1px) 0 0/25% 100% repeat-x}
+.dots .dt::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:1px solid var(--rule)}
+.dots .dt::after{content:"";position:absolute;top:0;bottom:0;left:var(--m);border-left:2px dashed var(--ink);opacity:.45}
+.dots .dt i{position:absolute;z-index:1;left:var(--x);top:50%;width:.95rem;height:.95rem;margin:-.475rem 0 0 -.475rem;border-radius:50%;background:var(--qc);border:2px solid var(--surface);box-shadow:0 0 0 1.5px var(--qc)}
+.dots .dv,.bars .bv{font-variant-numeric:tabular-nums;font-weight:700;text-align:right}
+.dots li.axis{color:var(--muted);font-size:.82rem}
+.dots li.axis .dt{height:auto;background:none;border:0;display:flex;justify-content:space-between}
+.dots li.axis .dt::before,.dots li.axis .dt::after{display:none}
+.bars .bt{height:.95rem;background:var(--rule);border-radius:2px;overflow:hidden}
+.bars .bf{display:block;height:100%;width:var(--w);background:var(--qc)}
+.chartnote{font-family:var(--sans);font-size:.86rem;color:var(--muted);margin:-.4rem 0 1.2rem}
+@media (max-width:40rem){
+  .dots li,.bars li{grid-template-columns:minmax(0,1fr) 3rem}
+  .dots .dt,.bars .bt{grid-column:1 / -1;grid-row:2}
+  .dots .dv,.bars .bv{grid-column:2;grid-row:1}
+  .dots li.axis .dl{display:none}
+}
+/* Légende de figures dans les titres de tableau */
+.k{font-family:var(--sans);font-size:.88rem;color:var(--muted)}
+
+.to-top{position:fixed;right:calc(.9rem + env(safe-area-inset-right,0px));bottom:calc(.9rem + env(safe-area-inset-bottom,0px));z-index:5;font-family:var(--sans);font-size:.85rem;font-weight:700;text-decoration:none;background:var(--ink);color:var(--surface);padding:.42rem .8rem;border-radius:999px;visibility:hidden;opacity:0;transition:opacity .2s,visibility .2s}
+.to-top.show{visibility:visible;opacity:1}
+@media (prefers-reduced-motion: reduce){.to-top{transition:none}}
+@media (max-width:47.99rem){
+  .hero .frise path{opacity:.22}
+  .hero .frise path.index{opacity:.3}
+  .fgroup .flabel{flex-basis:100%;min-width:0}
+}
+@media (min-width:64rem){.to-top{display:none}}
+.foot{font-family:var(--sans);font-size:.88rem;color:var(--muted);margin-top:2.5rem}
+
+@media print{
+  .toc,.to-top,.filters,.count{display:none!important}
+  .layout{display:block}
+  details.fold{border:0}
+  details.fold > summary{display:none}
+  .subject[hidden],.group-title[hidden]{display:block!important}
+  body{background:#fff;color:#000}
+}
+</style>
+<header class="hero" id="haut">
+  <svg class="frise" viewBox="0 0 1200 460" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><g transform="translate(0,95)">
+    <path class="index" d="M-40 360 H1260"/>
+    <path d="M40 360 v-34 M100 360 v-14 M160 360 v-14 M220 360 v-34 M280 360 v-14 M340 360 v-14 M400 360 v-34 M460 360 v-14 M520 360 v-14 M580 360 v-34 M640 360 v-14 M700 360 v-14 M760 360 v-34 M820 360 v-14 M880 360 v-14 M940 360 v-34 M1000 360 v-14 M1060 360 v-14 M1120 360 v-34 M1180 360 v-14"/>
+    <path d="M220 360 A 90 90 0 0 1 400 360"/>
+    <path d="M400 360 A 90 90 0 0 1 580 360"/>
+    <path class="index" d="M580 360 A 90 90 0 0 1 760 360"/>
+    <path d="M760 360 A 90 90 0 0 1 940 360"/>
+    <path d="M250 360 A 60 60 0 0 1 370 360"/>
+    <path d="M430 360 A 60 60 0 0 1 550 360"/>
+    <path d="M610 360 A 60 60 0 0 1 730 360"/>
+    <path d="M790 360 A 60 60 0 0 1 910 360"/>
+    <path d="M880 150 a 70 70 0 1 1 140 0 a 70 70 0 1 1 -140 0"/>
+    <path class="index" d="M905 150 a 45 45 0 1 1 90 0 a 45 45 0 1 1 -90 0"/>
+    <path d="M928 150 a 22 22 0 1 1 44 0 a 22 22 0 1 1 -44 0"/>
+  </g></svg>
+  <div class="hero-inner">
+    <p class="meta">Document de travail pour la session 2027, établi le 26 octobre 2026</p>
+    <h1>Rapport du jury 2026 : préparer le CAPES interne 2027</h1>
+    <p class="lede">CAPES interne et CAER-CAPES, section histoire et géographie. Lecture complète du rapport de la session 2026 (dossier de RAEP, épreuve orale d'admission), repositionnement sur la session 2027 et banque de sujets plausibles.</p>
+    <div class="legend" aria-label="Légende du document">
+      <ul>
+        <li class="c-gre"><i class="fig a"></i><span class="lbl">Histoire au collège</span></li>
+        <li class="c-imp"><i class="fig a"></i><span class="lbl">Histoire au lycée</span></li>
+        <li class="c-ame"><i class="fig a"></i><span class="lbl">Géographie au collège</span></li>
+        <li class="c-aut"><i class="fig a"></i><span class="lbl">Géographie au lycée</span></li>
+        <li class="c-fra"><i class="fig a"></i><span class="lbl">RAEP : le dossier d'admissibilité</span></li>
+        <li class="c-pac"><i class="fig a"></i><span class="lbl">Oral : consignes et entretien professionnel</span></li>
+      </ul>
+      <ul>
+        <li><i class="fig a"></i><span class="lbl">Priorité A : difficulté ou exigence signalée par le rapport</span></li>
+        <li><i class="fig b"></i><span class="lbl">Priorité B : sujet voisin d'un sujet 2026 ou cité en exemple</span></li>
+        <li><i class="fig c"></i><span class="lbl">Priorité C : tombé en 2026, à traiter comme entraînement</span></li>
+      </ul>
+      <p>Les couleurs repèrent les groupes de la banque de sujets. Les trois figures donnent la priorité de travail d'un sujet, de la plus forte à la plus faible.</p>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc toc-desktop" aria-label="Sommaire">
+    <p>Sommaire</p>
+    <ol><li><a href="#essentiel">L'essentiel</a></li><li><a href="#chiffres">Chiffres de la session 2026</a></li><li><a href="#formats">Ce qui ne change pas, ce qui reste à vérifier</a></li><li><a class="t-fra" href="#raep">Le dossier de RAEP</a></li><li><a class="t-pac" href="#oral">L'oral d'admission</a></li><li><a class="t-gre" href="#sujets2026">Les sujets d'oral de 2026</a></li><li><a href="#banque">Banque de sujets plausibles</a></li><li><a class="t-aut" href="#notions">Notions et repères</a></li><li><a class="t-ame" href="#outils">Outils et calendrier</a></li><li><a class="t-pac" href="#erreurs">Incohérences et coquilles</a></li><li><a href="#sources">Sources</a></li></ol>
+  </nav>
+  <main>
+    <details class="toc-mobile">
+      <summary>Sommaire</summary>
+      <ol style="list-style:none;margin:0"><li><a href="#essentiel">L'essentiel</a></li><li><a href="#chiffres">Chiffres de la session 2026</a></li><li><a href="#formats">Ce qui ne change pas, ce qui reste à vérifier</a></li><li><a class="t-fra" href="#raep">Le dossier de RAEP</a></li><li><a class="t-pac" href="#oral">L'oral d'admission</a></li><li><a class="t-gre" href="#sujets2026">Les sujets d'oral de 2026</a></li><li><a href="#banque">Banque de sujets plausibles</a></li><li><a class="t-aut" href="#notions">Notions et repères</a></li><li><a class="t-ame" href="#outils">Outils et calendrier</a></li><li><a class="t-pac" href="#erreurs">Incohérences et coquilles</a></li><li><a href="#sources">Sources</a></li></ol>
+    </details>
+
+<section id="essentiel">
+  <h2>L'essentiel</h2>
+  <p class="standfirst">Rapport de la session 2026 du CAPES interne et du CAER-CAPES d'histoire-géographie, présenté par Vincent Duclert, président du jury, au terme de trois années de présidence. À lire comme un état des attentes, pas comme un pronostic de sujets.</p>
+  <ul class="essentials">
+    <li class="k-gre"><strong>Deux étapes, deux concours.</strong> Admissibilité sur un dossier de RAEP (reconnaissance des acquis de l'expérience professionnelle), puis oral d'admission de coefficient 2, que le jury juge « décisif ». Les candidats du CAPES interne et du CAER passent les mêmes épreuves, avec des barres distinctes.</li>
+    <li class="k-imp"><strong>Le RAEP se joue d'abord sur la conformité.</strong> 112 dossiers sur 1 252 (8,9 %) ont été déclarés irrecevables en 2026, un chiffre en hausse : 96 hors normes et 16 erreurs d'inscription (dossier rédigé dans l'autre discipline). Signature, nombre de pages, discipline : tout est éliminatoire.</li>
+    <li class="k-ame"><strong>La partie scientifique est le point de bascule.</strong> Dans l'analyse de la séance, « l'absence ou la faiblesse de la partie scientifique est rédhibitoire ». Ni bibliographie, ni jargon : notions, références actualisées, enjeux didactiques.</li>
+    <li class="k-aut"><strong>L'oral est un dossier à traiter en deux heures.</strong> Le sujet porte sur la discipline que tu n'as pas choisie pour le RAEP. Tu as 2 h de préparation, 15 min d'exposé, puis jusqu'à 45 min d'entretien en trois temps (reprise de l'exposé, autre discipline, système éducatif et métier).</li>
+    <li class="k-fra"><strong>Les lacunes viennent des notions, pas de l'érudition.</strong> Définitions floues (transition, génocide, « grandes découvertes », maritimisation, mondialisation, migrations, risques, État), repères non maîtrisés (régimes politiques, crise de 1929, Napoléon, Waterloo, territoires ultramarins) et confusion étude de cas / exemple illustratif en géographie.</li>
+    <li class="k-pac"><strong>Le métier compte autant que la discipline.</strong> Valeurs et principes de la République, laïcité, EMC, « éducations à », ODD, droits et devoirs du fonctionnaire : l'entretien 3 les convoque par de courtes mises en situation. Le rapport demande aussi une posture irréprochable (pas de « hop, voilà, OK, du coup »).</li>
+    <li class="k-gre"><strong>Barres : 10 pour être admissible, 12 pour être admis au CAPES.</strong> 75 postes tous pourvus au CAPES interne. 140 contrats au CAER, 125 pourvus, barre d'admission à 10. Le jury a choisi de ne pas recruter de candidats sous 10 au CAER.</li>
+    <li class="k-imp"><strong>Programme, format et attendus : « toute leur pertinence » pour 2027.</strong> Le rapport le dit pour l'écrit. Le texte ne donne pas les dates 2027 ni de modification de l'arrêté du 25 janvier 2021 : vérifie le calendrier officiel.</li>
+    <li class="k-ame"><strong>Comment lire la banque de sujets.</strong> Le rapport donne 9 sujets d'oral 2026 et quelques libellés cités en exemple. La banque ne devine rien : elle croise ces indices avec les difficultés signalées pour ranger des sujets en priorités A, B et C.</li>
+  </ul>
+</section>
+
+<section id="chiffres">
+  <h2>Chiffres de la session 2026</h2>
+  <p class="standfirst">Tous les chiffres viennent du rapport, sauf les rapprochements marqués « calculé », que j'ai faits à partir de ses données.</p>
+
+  <div class="table-wrap"><table class="narrow">
+    <caption>Le concours : CAPES interne et CAER</caption>
+    <thead><tr><th>Indicateur</th><th>CAPES interne</th><th>CAER</th></tr></thead>
+    <tbody>
+      <tr><th>Postes ou contrats</th><td class="num">75</td><td class="num">140</td></tr>
+      <tr><th>Inscrits</th><td class="num">907</td><td class="num">699</td></tr>
+      <tr><th>Présents à l'écrit (dossier)</th><td class="num">670</td><td class="num">582</td></tr>
+      <tr><th>Admissibles</th><td class="num">206</td><td class="num">209</td></tr>
+      <tr><th>Présents à l'oral</th><td class="num">202</td><td class="num">203</td></tr>
+      <tr><th>Admis</th><td class="num">75</td><td class="num">125</td></tr>
+      <tr><th>Barre d'admissibilité</th><td class="num">10</td><td class="num">10</td></tr>
+      <tr><th>Barre d'admission</th><td class="num">12</td><td class="num">10</td></tr>
+    </tbody>
+  </table></div>
+  <p>Le rapport dissocie les barres entre public et privé. La moyenne du public est en hausse, et le rapport dit que l'oral reste déterminant. Les notes d'admissibilité vont de 10 à 13 : aucun admissible ne descend sous 10.</p>
+
+  <div class="table-wrap"><table class="narrow">
+    <caption>Rapprochements calculés</caption>
+    <thead><tr><th>Rapport</th><th>CAPES interne</th><th>CAER</th></tr></thead>
+    <tbody>
+      <tr><th>Inscrits par poste</th><td class="num">12,1</td><td class="num">5,0</td></tr>
+      <tr><th>Admissibles par poste</th><td class="num">2,7</td><td class="num">1,5</td></tr>
+      <tr><th>Présents à l'écrit sur inscrits</th><td class="num">74 %</td><td class="num">83 %</td></tr>
+      <tr><th>Admissibles sur présents à l'écrit</th><td class="num">31 %</td><td class="num">36 %</td></tr>
+      <tr><th>Admis sur présents à l'oral</th><td class="num">37 %</td><td class="num">62 %</td></tr>
+      <tr><th>Contrats ou postes pourvus</th><td class="num">100 %</td><td class="num">89 %</td></tr>
+    </tbody>
+  </table></div>
+  <p>Lecture : au CAPES interne, un admissible sur trois environ est admis (75 sur 202 présents). Le CAER est bien plus ouvert une fois admissible : six candidats sur dix y sont admis.</p>
+
+  <h3>Le dossier de RAEP</h3>
+  <div class="table-wrap"><table>
+    <caption>Admissibilité par discipline du dossier (CAPES interne)</caption>
+    <thead><tr><th>Discipline</th><th>Inscrits</th><th>Présents</th><th>Admissibles</th><th>Moyenne des présents</th><th>Moyenne des admissibles</th></tr></thead>
+    <tbody>
+      <tr><th>Histoire</th><td class="num">502</td><td class="num">371</td><td class="num">109</td><td class="num">8,26</td><td class="num">11,05</td></tr>
+      <tr><th>Géographie</th><td class="num">405</td><td class="num">299</td><td class="num">97</td><td class="num">8,29</td><td class="num">10,89</td></tr>
+    </tbody>
+  </table></div>
+  <div class="table-wrap"><table>
+    <caption>Admissibilité par discipline du dossier (CAER)</caption>
+    <thead><tr><th>Discipline</th><th>Inscrits</th><th>Présents</th><th>Admissibles</th><th>Moyenne des présents</th><th>Moyenne des admissibles</th></tr></thead>
+    <tbody>
+      <tr><th>Histoire</th><td class="num">356</td><td class="num">308</td><td class="num">107</td><td class="num">8,60</td><td class="num">10,92</td></tr>
+      <tr><th>Géographie</th><td class="num">343</td><td class="num">274</td><td class="num">102</td><td class="num">8,53</td><td class="num">10,76</td></tr>
+    </tbody>
+  </table></div>
+  <p>Les deux disciplines se valent à l'écrit. Les « hors normes » (HN) pèsent : au CAPES interne, 43 dossiers d'histoire et 22 de géographie, plus 6 et 7 erreurs d'inscription (EI).</p>
+
+  <h3>L'oral d'admission</h3>
+  <div class="table-wrap"><table>
+    <caption>Épreuve professionnelle, note sur 20</caption>
+    <thead><tr><th>Concours et discipline du sujet</th><th>Présents</th><th>Admis</th><th>Moyenne des présents</th><th>Moyenne des admis</th></tr></thead>
+    <tbody>
+      <tr><th>CAPES interne, histoire</th><td class="num">95</td><td class="num">37</td><td class="num">11,34</td><td class="num">15,38</td></tr>
+      <tr><th>CAPES interne, géographie</th><td class="num">107</td><td class="num">38</td><td class="num">11,10</td><td class="num">15,58</td></tr>
+      <tr><th>CAER, histoire</th><td class="num">98</td><td class="num">59</td><td class="num">11,97</td><td class="num">14,80</td></tr>
+      <tr><th>CAER, géographie</th><td class="num">105</td><td class="num">66</td><td class="num">11,16</td><td class="num">13,54</td></tr>
+    </tbody>
+  </table></div>
+  <p>Les notes d'oral s'étalent de 2 à 20 sur 20. Au CAPES interne, les admis ont au minimum 12 en histoire et 13 en géographie sur 20 (24 et 26 sur 40, en comptant le coefficient 2). Les oraux sont toujours préparés sur la discipline qui n'est pas celle du RAEP.</p>
+
+  <h3>Qui réussit ?</h3>
+  <div class="table-wrap"><table>
+    <caption>Profil des admis au CAPES interne (admis / admissibles)</caption>
+    <thead><tr><th>Critère</th><th>Catégorie</th><th>Admis</th><th>Admissibles</th></tr></thead>
+    <tbody>
+      <tr><th rowspan="3">Profession</th><td>Contractuel du second degré</td><td class="num">49</td><td class="num">119</td></tr>
+      <tr><td>Non-titulaire de la fonction publique</td><td class="num">11</td><td class="num">24</td></tr>
+      <tr><td>Assistant d'éducation</td><td class="num">8</td><td class="num">27</td></tr>
+      <tr><th rowspan="5">Diplôme</th><td>Master MEEF</td><td class="num">27</td><td class="num">77</td></tr>
+      <tr><td>Autre master</td><td class="num">25</td><td class="num">56</td></tr>
+      <tr><td>Licence</td><td class="num">4</td><td class="num">24</td></tr>
+      <tr><td>M1</td><td class="num">7</td><td class="num">19</td></tr>
+      <tr><td>Doctorat</td><td class="num">4</td><td class="num">10</td></tr>
+      <tr><th rowspan="4">Académie</th><td>Créteil-Paris-Versailles (SIEC)</td><td class="num">10</td><td class="num">39</td></tr>
+      <tr><td>Lyon</td><td class="num">7</td><td class="num">17</td></tr>
+      <tr><td>Grenoble, Bordeaux, Montpellier, La Réunion</td><td class="num">5 chacune</td><td class="num">10, 9, 12, 13</td></tr>
+      <tr><td>Mayotte</td><td class="num">4</td><td class="num">5</td></tr>
+    </tbody>
+  </table></div>
+  <p>Les contractuels du second degré forment l'essentiel des admis (49 sur 75, soit 65 %, calculé). Au CAER, les maîtres délégués fournissent 107 admis sur 125.</p>
+  <p>Hommes et femmes : au CAPES interne, 383 femmes et 524 hommes sont inscrits, 97 femmes et 109 hommes admissibles, 33 femmes et 42 hommes admis. Les femmes pèsent 42 % des inscrits, 47 % des admissibles et 44 % des admis (calculé).</p>
+</section>
+
+<section id="formats">
+  <h2>Ce qui ne change pas, ce qui reste à vérifier</h2>
+  <p class="standfirst">Le rapport écrit que ses éléments d'analyse « conservent toute leur pertinence » pour l'écrit de 2027. Il ne publie ni calendrier 2027 ni modification de l'arrêté du 25 janvier 2021.</p>
+  <div class="table-wrap"><table class="wide">
+    <caption>Les deux épreuves en un coup d'œil</caption>
+    <thead><tr><th>Épreuve</th><th>Nature</th><th>Ce qui est fixé</th></tr></thead>
+    <tbody>
+      <tr><th>Admissibilité</th><td>Dossier de RAEP, non anonyme, double correction, noté de 0 (éliminatoire) à 20</td><td>8 pages au plus (2 de parcours, 6 d'analyse d'une réalisation pédagogique), annexes de 10 pages au plus, remis sur Cyclades depuis 2023.</td></tr>
+      <tr><th>Admission</th><td>Épreuve professionnelle orale, coefficient 2</td><td>2 h de préparation, 15 min d'exposé au plus, puis 45 min d'entretien au plus, devant trois membres du jury.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="aside">
+    <p><strong>À vérifier pour 2027.</strong> Dates d'inscription et de dépôt du RAEP, calendrier de l'oral, éventuelles modifications des programmes de collège et de lycée. Le rapport indique seulement que les exemples de sujets d'oral des sessions 2022 à 2026 sont en ligne sur le site histoire-géographie de l'académie de Besançon, et que l'avis de la commission d'oral est communicable sur demande depuis 2024.</p>
+  </div>
+</section>
+
+<section id="raep" class="qsec fra">
+  <h2>Le dossier de RAEP</h2>
+  <p class="standfirst">Épreuve prévue par l'arrêté du 25 janvier 2021 (annexe IV). Dossier non anonyme, double correction, noté de 0 (éliminatoire) à 20. Le coefficient n'est pas donné dans le rapport.</p>
+
+  <h3>Les normes qui éliminent</h3>
+  <p>Un dossier hors normes (HN) ou en erreur d'inscription (EI) est écarté avant toute lecture. Le rapport insiste : 8,9 % des dossiers, en hausse. Contrôle ces points avant le dépôt.</p>
+  <div class="table-wrap"><table class="wide">
+    <caption>Normes du dossier, d'après le rapport</caption>
+    <thead><tr><th>Point</th><th>Exigence</th><th>Risque</th></tr></thead>
+    <tbody>
+      <tr><th>Volume</th><td>8 pages au plus : 2 pages de parcours professionnel et 6 pages d'analyse d'une réalisation pédagogique. Annexes facultatives, 10 pages au plus. Pas de sommaire ni de CV.</td><td>Hors normes</td></tr>
+      <tr><th>Mise en forme</th><td>Arial 11, interligne simple, marges droite et gauche de 2,5 cm, en-tête et pied à 1,25 cm du bord, pas de retrait. Vérifier la pagination à l'export en PDF.</td><td>Hors normes</td></tr>
+      <tr><th>Signature</th><td>Obligatoire.</td><td>Hors normes</td></tr>
+      <tr><th>Discipline</th><td>Celle de l'inscription (histoire ou géographie). Pas d'EMC, d'ÉMI ni de HGGSP.</td><td>Erreur d'inscription ou hors normes</td></tr>
+      <tr><th>Langue</th><td>Français. Les travaux d'élèves en langue étrangère ou régionale doivent être traduits.</td><td>Hors normes</td></tr>
+      <tr><th>Dépôt</th><td>Sur Cyclades. Télécharger la première page normée en respectant les consignes.</td><td>Dossier non reçu</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Les deux parties du dossier</h3>
+  <ol class="steps">
+    <li><strong>Parcours professionnel (2 pages).</strong> Un regard réflexif, pas un CV. L'articuler avec le référentiel de compétences des métiers du professorat et de l'éducation (arrêté de 2013), choisir quelques compétences réellement développées, éviter la présentation téléologique, et dire comment la formation en histoire ou en géographie nourrit les finalités de l'enseignement.</li>
+    <li><strong>Analyse d'une réalisation pédagogique (6 pages).</strong> C'est la partie discriminante. Une situation que tu as réellement mise en œuvre (une observation de séance ou une projection est jugée insuffisante). Le rapport recommande une séance plutôt qu'une séquence, avec un titre et un niveau.</li>
+  </ol>
+
+  <h3>Ce que le jury attend de la partie 2</h3>
+  <ul>
+    <li><strong>Une partie scientifique solide.</strong> Notions, références actualisées et maîtrisées, enjeux didactiques ; pas une simple bibliographie ; langue claire sans jargon. Sa faiblesse ou son absence est « rédhibitoire ».</li>
+    <li><strong>Une analyse didactique et pédagogique.</strong> « Enseigner, c'est choisir » : justifier les choix de savoirs, de savoir-faire et de démarches, hiérarchiser les compétences, situer la séance dans la progression, le niveau, les élèves et l'environnement.</li>
+    <li><strong>Des supports discutés.</strong> Manuel, documents : dire pourquoi ces supports, et ce qu'on en fait.</li>
+    <li><strong>Une évaluation.</strong> Elle est trop souvent absente.</li>
+    <li><strong>Les élèves au centre.</strong> Mise en activité, remédiation, diversité des élèves, sans déterminisme (milieu défavorisé ne signifie pas difficulté scolaire) et sans s'appesantir sur des élèves à besoins particuliers sans lien avec la séance.</li>
+    <li><strong>Un propos réaliste.</strong> Authenticité plutôt que formalisme ; pas d'énumération de compétences ni de jargon mal maîtrisé (tâche complexe, carte mentale, évaluation formatrice, classe puzzle, classe inversée, îlots bonifiés).</li>
+    <li><strong>Une mise en page aérée,</strong> avec des titres.</li>
+  </ul>
+  <div class="aside">
+    <p><strong>Si tu enseignes dans le premier degré, en post-bac ou en lycée professionnel.</strong> Le rapport demande un lien explicite avec le second degré : programmes de collège ou de lycée général et technologique.</p>
+  </div>
+
+  <h3>Les annexes</h3>
+  <div class="table-wrap"><table class="narrow">
+    <caption>Annexes : recevables ou non</caption>
+    <thead><tr><th>Prises en compte (illustratives, sans commentaire)</th><th>Non prises en compte</th></tr></thead>
+    <tbody>
+      <tr><td>Travaux d'élèves anonymisés ; supports documentaires référencés ; fiches d'activité ; images d'élèves au travail, sous réserve du droit à l'image ; extrait de cahier de texte.</td><td>Progression détaillée ; fiche récapitulative qui analyse la séance ; bibliographie ; texte scientifique.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Plagiat et intelligence artificielle</h3>
+  <p>Le plagiat entraîne l'exclusion et une note de 1/20, avec procédure de la DGRH (rapport et courrier recommandé). Toute citation se met entre guillemets, avec une note de bas de page. Le rapport juge contraire à l'éthique le recours à l'IA pour rédiger le dossier à la place du candidat.</p>
+
+  <h3>Où se situent les notes</h3>
+  <p>Notes des dossiers recevables (CAPES interne), en nombre de candidats. Ceux de 10 ou plus sont admissibles. Les dossiers hors normes ne sont pas dans ces comptes.</p>
+  <h4>Histoire</h4>
+  <ul class="bars" aria-label="Répartition des notes du RAEP en histoire, CAPES interne">
+    <li><span class="bl">Moins de 5</span><span class="bt"><span class="bf" style="--w:24.1%;--qc:var(--fra)"></span></span><span class="bv">13</span></li>
+    <li><span class="bl">5 à 6</span><span class="bt"><span class="bf" style="--w:55.6%;--qc:var(--fra)"></span></span><span class="bv">30</span></li>
+    <li><span class="bl">6 à 7</span><span class="bt"><span class="bf" style="--w:77.8%;--qc:var(--fra)"></span></span><span class="bv">42</span></li>
+    <li><span class="bl">7 à 8</span><span class="bt"><span class="bf" style="--w:85.2%;--qc:var(--fra)"></span></span><span class="bv">46</span></li>
+    <li><span class="bl">8 à 9</span><span class="bt"><span class="bf" style="--w:100.0%;--qc:var(--fra)"></span></span><span class="bv">54</span></li>
+    <li><span class="bl">9 à 10</span><span class="bt"><span class="bf" style="--w:51.9%;--qc:var(--fra)"></span></span><span class="bv">28</span></li>
+    <li><span class="bl">10 à 11</span><span class="bt"><span class="bf" style="--w:79.6%;--qc:var(--fra)"></span></span><span class="bv">43</span></li>
+    <li><span class="bl">11 à 12</span><span class="bt"><span class="bf" style="--w:53.7%;--qc:var(--fra)"></span></span><span class="bv">29</span></li>
+    <li><span class="bl">12 à 13</span><span class="bt"><span class="bf" style="--w:48.1%;--qc:var(--fra)"></span></span><span class="bv">26</span></li>
+    <li><span class="bl">13 à 14</span><span class="bt"><span class="bf" style="--w:20.4%;--qc:var(--fra)"></span></span><span class="bv">11</span></li>
+  </ul>
+  <h4>Géographie</h4>
+  <ul class="bars" aria-label="Répartition des notes du RAEP en géographie, CAPES interne">
+    <li><span class="bl">Moins de 5</span><span class="bt"><span class="bf" style="--w:42.9%;--qc:var(--fra)"></span></span><span class="bv">18</span></li>
+    <li><span class="bl">5 à 6</span><span class="bt"><span class="bf" style="--w:54.8%;--qc:var(--fra)"></span></span><span class="bv">23</span></li>
+    <li><span class="bl">6 à 7</span><span class="bt"><span class="bf" style="--w:73.8%;--qc:var(--fra)"></span></span><span class="bv">31</span></li>
+    <li><span class="bl">7 à 8</span><span class="bt"><span class="bf" style="--w:61.9%;--qc:var(--fra)"></span></span><span class="bv">26</span></li>
+    <li><span class="bl">8 à 9</span><span class="bt"><span class="bf" style="--w:100.0%;--qc:var(--fra)"></span></span><span class="bv">42</span></li>
+    <li><span class="bl">9 à 10</span><span class="bt"><span class="bf" style="--w:78.6%;--qc:var(--fra)"></span></span><span class="bv">33</span></li>
+    <li><span class="bl">10 à 11</span><span class="bt"><span class="bf" style="--w:100.0%;--qc:var(--fra)"></span></span><span class="bv">42</span></li>
+    <li><span class="bl">11 à 12</span><span class="bt"><span class="bf" style="--w:66.7%;--qc:var(--fra)"></span></span><span class="bv">28</span></li>
+    <li><span class="bl">12 à 13</span><span class="bt"><span class="bf" style="--w:54.8%;--qc:var(--fra)"></span></span><span class="bv">23</span></li>
+    <li><span class="bl">13 à 14</span><span class="bt"><span class="bf" style="--w:9.5%;--qc:var(--fra)"></span></span><span class="bv">4</span></li>
+  </ul>
+  <p class="chartnote">Échelle de 0 au maximum de chaque diagramme (54 candidats en histoire, 42 en géographie), les deux échelles ne sont pas les mêmes. En histoire, 109 dossiers sont à 10 ou plus ; en géographie, 97. Les admissibles sont dans les quatre dernières barres : aucun dossier admissible n'est sous 10.</p>
+</section>
+
+<section id="oral" class="qsec pac">
+  <h2>L'oral d'admission</h2>
+  <p class="standfirst">Épreuve professionnelle, coefficient 2, « décisive » selon le jury. Le dossier porte sur la discipline que tu n'as pas choisie pour le RAEP. Une grille d'évaluation commune à toutes les commissions est donnée en annexe du rapport.</p>
+
+  <h3>Le déroulement</h3>
+  <div class="table-wrap"><table class="narrow">
+    <caption>Une heure d'épreuve après deux heures de préparation</caption>
+    <thead><tr><th>Temps</th><th>Durée</th><th>Contenu</th></tr></thead>
+    <tbody>
+      <tr><th>Préparation</th><td class="num">2 h</td><td>Dossier fourni par le jury, aucune documentation personnelle. Affaires personnelles déposées ; sujet et notes conservés par le candidat.</td></tr>
+      <tr><th>Exposé</th><td class="num">15 min au plus</td><td>Le président prévient à la 14e minute. Un exposé écourté ou trop long est pénalisé. Montre ou chronomètre non connecté conseillé.</td></tr>
+      <tr><th>Entretien 1</th><td class="num">≈ 15 min</td><td>Reprise de l'exposé : enjeux, connaissances, analyse critique des ressources.</td></tr>
+      <tr><th>Entretien 2</th><td class="num">—</td><td>L'autre discipline, celle du RAEP, avec des liens entre les programmes.</td></tr>
+      <tr><th>Entretien 3</th><td class="num">—</td><td>Système éducatif, valeurs et principes de la République, métier d'enseignant, EMC, « éducations à », ressources éducatives.</td></tr>
+    </tbody>
+  </table></div>
+  <p>L'entretien dure 45 min au plus au total. Le rapport ne donne pas la durée de chaque entretien, seulement environ 15 min pour le premier. Le jury compte trois membres. Le sujet peut porter sur un niveau de collège ou de lycée général et technologique, toujours indiqué dans le libellé, sans HGGSP.</p>
+
+  <h3>Les trois consignes du dossier</h3>
+  <ol class="steps">
+    <li><strong>Les enjeux et les objectifs.</strong> « En vous fondant sur les textes officiels et l'état des connaissances scientifiques, présentez les enjeux du sujet et vos objectifs (connaissances, compétences) pour le niveau de classe concerné. » Les enjeux répondent à la question « pourquoi enseigne-t-on cet objet ? ».</li>
+    <li><strong>Le découpage et l'extrait de manuel.</strong> « Présentez un découpage en séances du sujet. Puis expliquez de quelle façon vous utiliseriez en classe tout ou partie de l'extrait de manuel proposé. » Conseil du jury : un découpage global, puis un focus sur une séance.</li>
+    <li><strong>La production d'élève.</strong> « Commentez la production liée à la pratique de la classe et évaluez sa pertinence. » L'évaluation est systématiquement convoquée. Peuvent s'y ajouter la différenciation, le travail à la maison, les faits religieux, l'histoire des arts, le récit, l'interdisciplinarité, le numérique ou l'oral du DNB.</li>
+  </ol>
+  <p>La troisième partie est souvent traitée trop vite, mais mieux qu'avant. La gestion du temps est globalement maîtrisée ; le jury attend un équilibre entre les trois questions.</p>
+
+  <h3>Les cinq facteurs de réussite</h3>
+  <ol class="steps">
+    <li><strong>Enjeux et contenus scientifiques.</strong> Éviter la paraphrase de textes scientifiques et les enjeux mal identifiés. Définir les notions (le rapport cite transition, génocide, « grandes découvertes », maritimisation, mondialisation, migrations, risques, État, monarchie parlementaire, roi absolu, république, loi). Maîtriser les repères (régimes politiques en France, grandes périodes, Europe et Union européenne, Royaume-Uni, Grande-Bretagne et Angleterre, Waterloo, crise de 1929, Napoléon, territoires ultramarins). En géographie, distinguer étude de cas et exemple illustratif, et raisonner de façon inductive.</li>
+    <li><strong>Réflexion didactique et pédagogique.</strong> Mettre les élèves dans le propos ; discuter la double page du manuel ; ne pas confondre carte mentale, schéma heuristique, schéma fléché et sketchnote ; éviter un vocabulaire pédagogique déclaratif (différenciation, étayage, classe puzzle, co-construction de la trace écrite, travail collaboratif ou coopératif) ; assurer la cohérence entre objectifs et situations ; penser l'évaluation.</li>
+    <li><strong>Professionnalisation et appartenance à la fonction publique.</strong> Référentiel de compétences de 2013, programmes de tous niveaux, contributions de l'histoire-géographie au HGGSP, à la défense, à l'histoire des arts, à l'EAC, au développement durable, à l'ÉMI. Connaître concours (CNRD, Flamme de l'égalité) et prix (hommage à Samuel Paty), partenaires de l'École, accompagnement personnalisé, parcours éducatifs, « Devoirs faits », DNB et baccalauréat, valeurs et principes de la République, Constitution de la Ve République avec préambule, État de droit, vie lycéenne, cadre du RGPD et du numérique.</li>
+    <li><strong>Posture professionnelle.</strong> Bienséance ; éviter « hop, voilà, OK, du coup » et la fausse familiarité ; honnêteté intellectuelle (ne pas citer d'ouvrages ni de pratiques qu'on ne connaît pas).</li>
+    <li><strong>Intérêt pour l'actualité des disciplines.</strong> Le rapport cite la panthéonisation de Marc Bloch (16 juin 2026), des discours marquants (Washington, 28 août 1963 ; Panthéon, 19 décembre 1964 ; Assemblée nationale, 26 novembre 1974 et 17 septembre 1981 ; Vel' d'Hiv', 16 juillet 1995 ; Kigali, 27 mai 2021), des festivals, des lectures.</li>
+  </ol>
+
+  <h3>Les trois entretiens</h3>
+  <ul>
+    <li><strong>Entretien 1.</strong> Une posture réflexive et ouverte compense parfois un exposé fragile. Le jury attend une analyse critique des ressources scientifiques, d'Éduscol et de la double page ; l'absence de regard critique dans l'exposé n'est pas pénalisée s'il vient en entretien. Les questions de connaissance sont « mises en situation » (pourquoi cette notion est-elle enseignée à ce niveau ?), pas érudites. Le jury dit : « pas de piège ».</li>
+    <li><strong>Entretien 2.</strong> Liens entre les programmes d'histoire et de géographie, avec progressivité du collège au lycée. Exemple du rapport : pour « Enseigner les relations de l'Empire romain avec les mondes anciens : l'ancienne route de la soie et la Chine des Han », la mondialisation, la Chine et les nouvelles routes de la soie en géographie.</li>
+    <li><strong>Entretien 3.</strong> Mises en situation rapides (élève qui refuse de visiter un lieu de culte lors d'une sortie ; mise en cause d'une partie du programme par un élève ou une famille ; questions sensibles), EMC, « éducations à » (développement durable, défense). Les ODD doivent être définis ; la laïcité se situe par la loi du 9 décembre 1905, la liberté de conscience et de croyance, les combats du long XIXe siècle et l'affaire Dreyfus. Ne pas confondre république et démocratie.</li>
+  </ul>
+
+  <h3>Les conseils du jury</h3>
+  <ul>
+    <li>Utiliser les 15 minutes entières, sans parler à un rythme trop élevé.</li>
+    <li>S'entraîner avec les sujets passés (site de l'académie de Besançon).</li>
+    <li>Ne négliger ni le collège ni le lycée.</li>
+    <li>Préparer l'alternance : discipline du sujet, autre discipline, enseignement et métier.</li>
+    <li>Expliciter les méthodes pédagogiques pour leur intérêt pratique, non pour leur nom.</li>
+    <li>Connaître les territoires ultramarins : le jury l'attend de tous.</li>
+  </ul>
+
+  <h3>Une méthode pour les mises en situation</h3>
+  <p>Suggestion de travail, déduite des attentes ci-dessus et non fournie par le rapport.</p>
+  <ol class="steps">
+    <li><strong>Reformuler la situation</strong> en deux phrases : qui, quoi, quelle tension.</li>
+    <li><strong>Nommer les principes en jeu :</strong> laïcité, neutralité, égalité, liberté de conscience, protection de l'élève.</li>
+    <li><strong>Situer les acteurs :</strong> élève, famille, enseignant, établissement.</li>
+    <li><strong>Mobiliser le cadre :</strong> droits et obligations du fonctionnaire, texte ou principe précis si tu le connais.</li>
+    <li><strong>Conclure sur la posture de l'enseignant,</strong> sans plan d'action détaillé.</li>
+  </ol>
+
+  <h3>Les notes d'oral</h3>
+  <p>Moyennes sur 20, par discipline du sujet. L'échelle va de 0 à 20.</p>
+  <ul class="bars" aria-label="Moyennes des notes d'oral, présents et admis">
+    <li><span class="bl">CAPES interne, histoire : présents</span><span class="bt"><span class="bf" style="--w:56.7%;--qc:var(--pac)"></span></span><span class="bv">11,34</span></li>
+    <li><span class="bl">CAPES interne, histoire : admis</span><span class="bt"><span class="bf" style="--w:76.9%;--qc:var(--pac)"></span></span><span class="bv">15,38</span></li>
+    <li><span class="bl">CAPES interne, géographie : présents</span><span class="bt"><span class="bf" style="--w:55.5%;--qc:var(--pac)"></span></span><span class="bv">11,10</span></li>
+    <li><span class="bl">CAPES interne, géographie : admis</span><span class="bt"><span class="bf" style="--w:77.9%;--qc:var(--pac)"></span></span><span class="bv">15,58</span></li>
+    <li><span class="bl">CAER, histoire : présents</span><span class="bt"><span class="bf" style="--w:59.9%;--qc:var(--pac)"></span></span><span class="bv">11,97</span></li>
+    <li><span class="bl">CAER, histoire : admis</span><span class="bt"><span class="bf" style="--w:74.0%;--qc:var(--pac)"></span></span><span class="bv">14,80</span></li>
+    <li><span class="bl">CAER, géographie : présents</span><span class="bt"><span class="bf" style="--w:55.8%;--qc:var(--pac)"></span></span><span class="bv">11,16</span></li>
+    <li><span class="bl">CAER, géographie : admis</span><span class="bt"><span class="bf" style="--w:67.7%;--qc:var(--pac)"></span></span><span class="bv">13,54</span></li>
+  </ul>
+  <p class="chartnote">Le jury relève que les notes vont de 2/20 à 20/20 et sanctionne les lacunes scientifiques graves, l'absence de réflexion pédagogique, et plus rarement une posture inadaptée. Au CAER, la moyenne des admis est plus proche de celle des présents : la barre y est à 10.</p>
+</section>
+
+<section id="sujets2026" class="qsec gre">
+  <h2>Les sujets d'oral de 2026</h2>
+  <p class="standfirst">L'annexe du rapport donne neuf sujets, cinq en histoire et quatre en géographie. Ils ne disent pas quels seront les sujets de 2027 : ils montrent la forme d'un libellé et la répartition des niveaux.</p>
+  <div class="table-wrap"><table class="wide">
+    <caption>Sujets de la session 2026</caption>
+    <thead><tr><th>Discipline</th><th>Niveau</th><th>Libellé</th></tr></thead>
+    <tbody>
+      <tr><th>Histoire</th><td>5e</td><td>Du Prince de la Renaissance au roi absolu (XVIe-XVIIe siècles)</td></tr>
+      <tr><th>Histoire</th><td>4e</td><td>La Révolution française et l'Empire : nouvel ordre politique et société révolutionnée en France et en Europe</td></tr>
+      <tr><th>Histoire</th><td>3e</td><td>Indépendances et construction de nouveaux États</td></tr>
+      <tr><th>Histoire</th><td>Seconde</td><td>La Méditerranée antique : les empreintes grecque et romaine</td></tr>
+      <tr><th>Histoire</th><td>Première</td><td>La difficile entrée dans l'âge démocratique : la Deuxième République et le Second Empire</td></tr>
+      <tr><th>Géographie</th><td>5e</td><td>Le changement climatique et ses principaux effets géographiques régionaux</td></tr>
+      <tr><th>Géographie</th><td>3e</td><td>L'Union européenne, un nouveau territoire de référence et d'appartenance</td></tr>
+      <tr><th>Géographie</th><td>Seconde</td><td>Des trajectoires démographiques différenciées : les défis du nombre et du vieillissement</td></tr>
+      <tr><th>Géographie</th><td>Première</td><td>La France : la métropolisation et ses effets</td></tr>
+    </tbody>
+  </table></div>
+  <p>Lecture (calculée) : aucun sujet de 6e, et aucun sujet de géographie de 4e, parmi ces neuf. Le texte cite par ailleurs, en exemple et sans préciser la session, « enseigner l'énergie, une ressource à ménager et à mieux utiliser » en 5e, « enseigner les territoires ultramarins : une problématique spécifique » et « enseigner les sociétés face aux risques ». Les sujets des sessions 2022 à 2025 sont sur le site de l'académie de Besançon.</p>
+  <div class="aside">
+    <p><strong>Ce que tu peux en faire.</strong> Prépare chaque niveau, de la 6e à la Première, dans les deux disciplines. Pour chaque thème, écris les enjeux en une phrase, les notions à définir, le découpage en séances et un lien avec l'autre discipline. La <a href="#banque">banque de sujets</a> propose 72 entrées pour t'y entraîner.</p>
+  </div>
+</section>
+
+
+<section id="banque">
+  <h2>Banque de sujets plausibles pour 2027</h2>
+  <p class="standfirst">72 sujets : dossiers d'oral, entretiens et choix de séance pour le RAEP, classés par groupe, par priorité et par épreuve.</p>
+  <div class="aside">
+    <p><strong>Lecture.</strong> Ces sujets ne sont pas des prédictions. Le rapport donne neuf sujets d'oral 2026 et quelques libellés cités en exemple ; il ne dit rien sur le tirage. Priorité A : difficulté ou exigence signalée par le rapport (notion mal définie, repère non maîtrisé, méthode). Priorité B : sujet voisin d'un sujet 2026 ou cité en exemple. Priorité C : sujet tombé en 2026, à traiter comme entraînement.</p>
+    <p>Les intitulés de programme sont repris du rapport quand il les donne. Les autres viennent de ma connaissance des programmes de collège et de lycée et sont marqués « formulation hypothétique » ou « intitulé à vérifier » : contrôle-les sur Éduscol avant de les travailler.</p>
+  </div>
+  <div class="filters">
+    <div class="fgroup" data-filter="q"><span class="flabel">Groupe</span>
+      <button type="button" class="chip" data-value="all" aria-pressed="true">Tous</button>
+      <button type="button" class="chip c-gre" data-value="gre" aria-pressed="false"><i class="fig a"></i>Histoire au collège</button>
+      <button type="button" class="chip c-imp" data-value="imp" aria-pressed="false"><i class="fig a"></i>Histoire au lycée</button>
+      <button type="button" class="chip c-ame" data-value="ame" aria-pressed="false"><i class="fig a"></i>Géographie au collège</button>
+      <button type="button" class="chip c-aut" data-value="aut" aria-pressed="false"><i class="fig a"></i>Géographie au lycée</button>
+      <button type="button" class="chip c-fra" data-value="fra" aria-pressed="false"><i class="fig a"></i>RAEP : le dossier d'admissibilité</button>
+      <button type="button" class="chip c-pac" data-value="pac" aria-pressed="false"><i class="fig a"></i>Oral : consignes et entretien professionnel</button>
+    </div>
+    <div class="fgroup" data-filter="t"><span class="flabel">Épreuve</span>
+      <button type="button" class="chip" data-value="all" aria-pressed="true">Toutes</button>
+      <button type="button" class="chip" data-value="r" aria-pressed="false">RAEP</button>
+      <button type="button" class="chip" data-value="x" aria-pressed="false">Exposé</button>
+      <button type="button" class="chip" data-value="n" aria-pressed="false">Entretien</button>
+    </div>
+    <div class="fgroup" data-filter="p"><span class="flabel">Priorité</span>
+      <button type="button" class="chip" data-value="all" aria-pressed="true">Toutes</button>
+      <button type="button" class="chip" data-value="A" aria-pressed="false"><i class="fig a"></i>A</button>
+      <button type="button" class="chip" data-value="B" aria-pressed="false"><i class="fig b"></i>B</button>
+      <button type="button" class="chip" data-value="C" aria-pressed="false"><i class="fig c"></i>C</button>
+    </div>
+  </div>
+  <p class="count" id="count" aria-live="polite"></p>
+  <h3 class="group-title gre" data-group="gre"><i class="fig a"></i>Histoire au collège</h3>
+  <div class="subjects gre" data-group="gre">
+      <article class="subject gre" data-q="gre" data-p="B" data-t="x"><h4>« Enseigner les relations de l'Empire romain avec les autres mondes anciens : l'ancienne route de la soie et la Chine des Han (6e) »</h4><p class="variant">Piste : enjeu = comprendre qu'il existe des échanges entre mondes anciens ; focus séance sur un document cartographique.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Histoire, 6e (cycle 3).</dd><dt>Pourquoi</dt><dd>Libellé cité par le rapport comme exemple de lien entre les deux disciplines à l'entretien 2 : la mondialisation en géographie, la Chine, les nouvelles routes de la soie. Le sujet tombe en histoire, l'entretien 2 passe en géographie.</dd><dt>Pièges</dt><dd>Ne pas préparer le lien avec la géographie ; oublier la progressivité collège-lycée.</dd></dl></article>
+      <article class="subject gre" data-q="gre" data-p="B" data-t="x"><h4>« Enseigner le monde des cités grecques (6e) »</h4><p class="variant">Piste : enjeu = origine de la citoyenneté ; découpage global puis focus sur une séance de lecture de document. Formulation hypothétique.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Histoire, 6e (cycle 3).</dd><dt>Pourquoi</dt><dd>Le rapport demande de ne négliger ni le collège ni le lycée et relève des définitions floues (État, loi, république, monarchie). La cité grecque est le terrain où elles se testent.</dd><dt>Pièges</dt><dd>Plaquer le vocabulaire moderne (État, démocratie) sans le définir ; confondre cité et État.</dd></dl></article>
+      <article class="subject gre" data-q="gre" data-p="B" data-t="x"><h4>« Enseigner chrétientés et islam (VIe-XIIIe siècles) : des mondes en contact (5e) »</h4><p class="variant">Piste : le fait religieux traité comme fait historique, avec un extrait de manuel à utiliser en partie seulement. Formulation hypothétique.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Histoire, 5e (cycle 4).</dd><dt>Pourquoi</dt><dd>Les faits religieux figurent parmi les aspects que la troisième consigne peut faire convoquer, et l'entretien 3 les rejoint (élève qui refuse un lieu de culte).</dd><dt>Pièges</dt><dd>Paraphraser le manuel ; glisser vers l'apologétique ou le jugement ; confondre croyance et savoir.</dd></dl></article>
+      <article class="subject gre" data-q="gre" data-p="B" data-t="x"><h4>« Enseigner la société, l'Église et le pouvoir politique dans l'Occident féodal (5e) »</h4><p class="variant">Piste : enjeu = pourquoi apprendre la société médiévale ; définir roi, seigneur, monarchie. Formulation hypothétique.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Histoire, 5e (cycle 4).</dd><dt>Pourquoi</dt><dd>Voisin du sujet de 2026 sur le roi absolu : même niveau, même réservoir de notions mal définies (monarchie, roi absolu).</dd><dt>Pièges</dt><dd>Définitions approximatives du pouvoir royal ; anachronisme de « l'État ».</dd></dl></article>
+      <article class="subject gre" data-q="gre" data-p="C" data-t="x"><h4>« Du Prince de la Renaissance au roi absolu (XVIe-XVIIe siècles) (5e) »</h4><p class="variant">Sujet 2026, en 5e. À traiter comme entraînement : enjeux, découpage, usage d'un extrait de manuel.</p><p class="tags"><span><i class="fig c"></i>Priorité C</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Histoire, 5e (cycle 4).</dd><dt>Pourquoi</dt><dd>Tombé en 2026 (annexe du rapport). Le rapport cite « roi absolu » parmi les notions mal définies.</dd><dt>Pièges</dt><dd>Réduire l'absolutisme à Louis XIV ; ne pas définir « roi absolu » ni « Prince ».</dd></dl></article>
+      <article class="subject gre" data-q="gre" data-p="A" data-t="x"><h4>« Enseigner les « grandes découvertes » et les premières mondialisations (5e) »</h4><p class="variant">Piste : interroger le terme « grandes découvertes » et les points de vue. Intitulé exact à vérifier sur Éduscol ; formulation hypothétique.</p><p class="tags"><span><i class="fig a"></i>Priorité A</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Histoire, 5e (cycle 4).</dd><dt>Pourquoi</dt><dd>« Grandes découvertes » figure dans la liste des notions que le rapport dit mal définies. Un candidat doit pouvoir discuter le terme lui-même.</dd><dt>Pièges</dt><dd>Reprendre le vocabulaire sans distance ; ignorer les populations rencontrées ; oublier la mondialisation.</dd></dl></article>
+      <article class="subject gre" data-q="gre" data-p="C" data-t="x"><h4>« La Révolution française et l'Empire : nouvel ordre politique et société révolutionnée en France et en Europe (4e) »</h4><p class="variant">Sujet 2026, en 4e. Entraînement : repères, enjeux, découpage en séances.</p><p class="tags"><span><i class="fig c"></i>Priorité C</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Histoire, 4e (cycle 4).</dd><dt>Pourquoi</dt><dd>Tombé en 2026. Le rapport cite Napoléon et Waterloo parmi les repères non maîtrisés, et « république », « loi » parmi les notions floues.</dd><dt>Pièges</dt><dd>Chronologie approximative ; Napoléon confondu avec la Révolution ; Waterloo mal situé.</dd></dl></article>
+      <article class="subject gre" data-q="gre" data-p="B" data-t="x"><h4>« Enseigner l'Europe et le monde au XVIIIe siècle : Lumières, traites négrières, esclavage (4e) »</h4><p class="variant">Piste : enjeu = comprendre les idées et leurs limites ; document d'époque et production d'élève. Formulation hypothétique.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Histoire, 4e (cycle 4).</dd><dt>Pourquoi</dt><dd>Même niveau que le sujet de 2026 : un candidat peut recevoir un chapitre voisin. Sujet qui appelle un regard critique sur les sources.</dd><dt>Pièges</dt><dd>Traite négrière réduite à une anecdote ; Lumières présentées sans leurs contradictions.</dd></dl></article>
+      <article class="subject gre" data-q="gre" data-p="A" data-t="x"><h4>« Enseigner les régimes politiques de la France au XIXe siècle et le suffrage de 1815 à 1870 (4e) »</h4><p class="variant">Piste : tableau chronologique des régimes, puis focus sur le vote ; définir monarchie parlementaire, république, empire. Formulation hypothétique.</p><p class="tags"><span><i class="fig a"></i>Priorité A</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Histoire, 4e (cycle 4).</dd><dt>Pourquoi</dt><dd>Le rapport cite les régimes politiques en France comme repère non maîtrisé, et « monarchie parlementaire » et « république » comme notions floues. Ce sujet les concentre.</dd><dt>Pièges</dt><dd>Ordre des régimes inexact ; confondre république et démocratie ; ne pas dater.</dd></dl></article>
+      <article class="subject gre" data-q="gre" data-p="B" data-t="x"><h4>« Enseigner la société industrielle et le monde ouvrier au XIXe siècle (4e) »</h4><p class="variant">Piste : étude d'un document de travail ouvrier ; lien avec la géographie (espaces transformés). Formulation hypothétique.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Histoire, 4e (cycle 4).</dd><dt>Pourquoi</dt><dd>Thème voisin du sujet 2026 en 4e. Il permet aussi de préparer un lien entre histoire et géographie à l'entretien 2.</dd><dt>Pièges</dt><dd>Réduire le thème au misérabilisme ; ne pas distinguer industrialisation et mondialisation.</dd></dl></article>
+      <article class="subject gre" data-q="gre" data-p="B" data-t="x"><h4>« Enseigner la conquête coloniale et les sociétés coloniales (4e) »</h4><p class="variant">Piste : enjeu = comprendre une domination ; document-source et regard sur la mémoire. Formulation hypothétique.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Histoire, 4e (cycle 4).</dd><dt>Pourquoi</dt><dd>Sujet sensible : l'entretien 3 peut le prolonger par une mise en situation (élève ou famille contestant un contenu).</dd><dt>Pièges</dt><dd>Jugement moral à la place de l'analyse ; absence d'enjeux ; oublier les points de vue des colonisés.</dd></dl></article>
+      <article class="subject gre" data-q="gre" data-p="C" data-t="x"><h4>« Indépendances et construction de nouveaux États (3e) »</h4><p class="variant">Sujet 2026, en 3e. Entraînement : repères, étude d'un exemple, usage du manuel.</p><p class="tags"><span><i class="fig c"></i>Priorité C</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Histoire, 3e (cycle 4).</dd><dt>Pourquoi</dt><dd>Tombé en 2026. Le rapport signale les difficultés avec « État » et la confusion entre exemple illustratif et étude de cas.</dd><dt>Pièges</dt><dd>Définir « État » trop vite ; réduire à la guerre d'Algérie ; confondre indépendance et décolonisation.</dd></dl></article>
+      <article class="subject gre" data-q="gre" data-p="A" data-t="x"><h4>« Enseigner l'Europe, théâtre des guerres totales : de la guerre au génocide (3e) »</h4><p class="variant">Piste : définir guerre totale et génocide ; document et vocabulaire précis. Intitulé exact à vérifier ; formulation hypothétique.</p><p class="tags"><span><i class="fig a"></i>Priorité A</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Histoire, 3e (cycle 4).</dd><dt>Pourquoi</dt><dd>« Génocide » est dans la liste des définitions floues du rapport. Le sujet impose un vocabulaire exact et une posture irréprochable.</dd><dt>Pièges</dt><dd>Utiliser « génocide » sans le définir ; confondre Shoah et autres violences ; ton inadapté.</dd></dl></article>
+      <article class="subject gre" data-q="gre" data-p="A" data-t="x"><h4>« Enseigner la crise de 1929 et les régimes totalitaires dans les années 1930 (3e) »</h4><p class="variant">Piste : repères et vocabulaire d'abord, puis une séance de comparaison de régimes. Formulation hypothétique.</p><p class="tags"><span><i class="fig a"></i>Priorité A</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Histoire, 3e (cycle 4).</dd><dt>Pourquoi</dt><dd>La crise de 1929 est citée parmi les repères non maîtrisés du rapport.</dd><dt>Pièges</dt><dd>Dater mal la crise ; confondre régimes autoritaires et totalitaires ; chronologie approximative.</dd></dl></article>
+      <article class="subject gre" data-q="gre" data-p="A" data-t="x"><h4>« Enseigner la Ve République et la vie démocratique en France depuis 1944 (3e) »</h4><p class="variant">Piste : Constitution et préambule, élections, alternances ; relier à l'entretien 3. Formulation hypothétique.</p><p class="tags"><span><i class="fig a"></i>Priorité A</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Histoire, 3e (cycle 4).</dd><dt>Pourquoi</dt><dd>Le rapport veut qu'un candidat connaisse la Constitution de la Ve République avec son préambule et distingue valeurs et principes. Le sujet fait basculer l'exposé vers l'entretien 3.</dd><dt>Pièges</dt><dd>Confondre République et démocratie ; ignorer le préambule ; réciter sans enjeux.</dd></dl></article>
+      <article class="subject gre" data-q="gre" data-p="B" data-t="x"><h4>« Enseigner le monde bipolaire de la guerre froide (3e) »</h4><p class="variant">Piste : définir bipolarisation et décolonisations en parallèle. Formulation hypothétique.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Histoire, 3e (cycle 4).</dd><dt>Pourquoi</dt><dd>Sujet voisin de celui des indépendances (2026), même niveau.</dd><dt>Pièges</dt><dd>Réduire la guerre froide à un duel États-Unis / URSS ; chronologie floue.</dd></dl></article>
+  </div>
+  <h3 class="group-title imp" data-group="imp"><i class="fig a"></i>Histoire au lycée</h3>
+  <div class="subjects imp" data-group="imp">
+      <article class="subject imp" data-q="imp" data-p="C" data-t="x"><h4>« La Méditerranée antique : les empreintes grecque et romaine (Seconde) »</h4><p class="variant">Sujet 2026, en Seconde. Entraînement : niveau lycée, autonomie, problématique.</p><p class="tags"><span><i class="fig c"></i>Priorité C</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Histoire, Seconde (lycée général et technologique).</dd><dt>Pourquoi</dt><dd>Tombé en 2026. Le rapport rappelle que le niveau est toujours dans le libellé et qu'il faut parler des capacités du lycée (non des compétences du collège).</dd><dt>Pièges</dt><dd>Plaquer un cours de collège ; confondre empreinte et domination ; oublier le lien avec le collège.</dd></dl></article>
+      <article class="subject imp" data-q="imp" data-p="B" data-t="x"><h4>« Enseigner la Méditerranée médiévale, espace d'échanges et de conflits (Seconde) »</h4><p class="variant">Piste : cartes et circulations ; lien avec la géographie (mobilités, espaces maritimes). Intitulé à vérifier ; formulation hypothétique.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Histoire, Seconde.</dd><dt>Pourquoi</dt><dd>Voisin du sujet 2026 de Seconde. Le rapport attend de voir la progressivité entre collège et lycée.</dd><dt>Pièges</dt><dd>Isoler le Moyen Âge du collège ; poser un fait religieux sans l'historiciser.</dd></dl></article>
+      <article class="subject imp" data-q="imp" data-p="B" data-t="x"><h4>« Enseigner l'ouverture atlantique : la genèse d'un nouvel espace géopolitique (Seconde) »</h4><p class="variant">Piste : cartes et documents d'époque ; lien avec la mondialisation en géographie. Intitulé à vérifier ; formulation hypothétique.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Histoire, Seconde.</dd><dt>Pourquoi</dt><dd>Rejoint le sujet de 5e sur les « grandes découvertes » : la progressivité est un classique de l'entretien 1.</dd><dt>Pièges</dt><dd>Récit trop linéaire ; ignorer la traite atlantique ; vocabulaire non défini.</dd></dl></article>
+      <article class="subject imp" data-q="imp" data-p="B" data-t="x"><h4>« Enseigner les Lumières et la Révolution française (Seconde) »</h4><p class="variant">Piste : circulation des idées et débats politiques ; document-source. Intitulé à vérifier ; formulation hypothétique.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Histoire, Seconde.</dd><dt>Pourquoi</dt><dd>Même noyau de repères que le sujet de 4e de 2026, à un niveau d'exigence supérieur (problématisation, sources).</dd><dt>Pièges</dt><dd>Révolution résumée à une suite d'événements ; oublier l'Europe.</dd></dl></article>
+      <article class="subject imp" data-q="imp" data-p="C" data-t="x"><h4>« La difficile entrée dans l'âge démocratique : la Deuxième République et le Second Empire (Première) »</h4><p class="variant">Sujet 2026, en Première. Entraînement : suffrage, régimes, vocabulaire politique.</p><p class="tags"><span><i class="fig c"></i>Priorité C</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Histoire, Première (lycée général et technologique).</dd><dt>Pourquoi</dt><dd>Tombé en 2026. Le rapport signale « monarchie parlementaire » et « république » comme notions floues.</dd><dt>Pièges</dt><dd>Confondre suffrage universel et démocratie ; chronologie floue ; absence de problématique.</dd></dl></article>
+      <article class="subject imp" data-q="imp" data-p="A" data-t="x"><h4>« Enseigner la Troisième République avant 1914 : un régime, un empire colonial (Première) »</h4><p class="variant">Piste : laïcité (loi de 1905), affaire Dreyfus, école ; relier à l'entretien 3. Intitulé à vérifier ; formulation hypothétique.</p><p class="tags"><span><i class="fig a"></i>Priorité A</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Histoire, Première.</dd><dt>Pourquoi</dt><dd>Le rapport demande de savoir parler de la loi du 9 décembre 1905 et des combats du long XIXe siècle, dont l'affaire Dreyfus, et de ne pas confondre république et démocratie.</dd><dt>Pièges</dt><dd>Plaquer la laïcité d'aujourd'hui sur 1905 ; confondre République et démocratie.</dd></dl></article>
+      <article class="subject imp" data-q="imp" data-p="B" data-t="x"><h4>« Enseigner la Première Guerre mondiale : le « suicide de l'Europe » et la fin des empires européens (Première) »</h4><p class="variant">Piste : cultures de guerre ; document et récit ; lien avec la géographie (frontières). Intitulé à vérifier ; formulation hypothétique.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Histoire, Première.</dd><dt>Pourquoi</dt><dd>Même pivot de repères que la guerre totale en 3e : le candidat doit savoir faire la progression collège-lycée.</dd><dt>Pièges</dt><dd>Réduire la guerre à Verdun ; oublier le monde ; confondre cause et prétexte.</dd></dl></article>
+      <article class="subject imp" data-q="imp" data-p="A" data-t="x"><h4>« Enseigner la Seconde Guerre mondiale, une guerre d'anéantissement (Première) »</h4><p class="variant">Piste : crimes de masse, génocide des Juifs ; usage du vocabulaire. Intitulé à vérifier ; formulation hypothétique.</p><p class="tags"><span><i class="fig a"></i>Priorité A</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Histoire, Première.</dd><dt>Pourquoi</dt><dd>« Génocide » fait partie des définitions floues du rapport et l'exigence de posture professionnelle s'y mesure.</dd><dt>Pièges</dt><dd>Vocabulaire approximatif ; émotion à la place de l'analyse ; exemples non sourcés.</dd></dl></article>
+      <article class="subject imp" data-q="imp" data-p="B" data-t="x"><h4>« Enseigner les indépendances et la construction de nouveaux États : l'Inde et l'Algérie (Première) »</h4><p class="variant">Piste : étude de deux cas ; distinguer cas et exemple. Intitulé à vérifier ; formulation hypothétique.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Histoire, Première.</dd><dt>Pourquoi</dt><dd>Rejoint le sujet de 3e de 2026. Le rapport distingue étude de cas et exemple illustratif, surtout en géographie, mais la méthode se généralise.</dd><dt>Pièges</dt><dd>Les deux cas traités en parallèle sans comparaison ; mémoire à la place de l'histoire.</dd></dl></article>
+  </div>
+  <h3 class="group-title ame" data-group="ame"><i class="fig a"></i>Géographie au collège</h3>
+  <div class="subjects ame" data-group="ame">
+      <article class="subject ame" data-q="ame" data-p="B" data-t="x"><h4>« Enseigner « Habiter une métropole » (6e) »</h4><p class="variant">Piste : étude de cas, démarche inductive ; lien avec la métropolisation de Première. Formulation hypothétique.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Géographie, 6e (cycle 3).</dd><dt>Pourquoi</dt><dd>Le rapport insiste sur la logique inductive et la différence entre étude de cas et exemple illustratif ; la 6e est un bon terrain de test. La métropolisation est tombée en Première en 2026.</dd><dt>Pièges</dt><dd>Exemple illustratif présenté comme étude de cas ; modèle plaqué ; lien avec le lycée oublié.</dd></dl></article>
+      <article class="subject ame" data-q="ame" data-p="B" data-t="x"><h4>« Enseigner « Habiter les littoraux » (6e) »</h4><p class="variant">Piste : étude de cas et croquis ; lien avec les espaces maritimes de 4e. Formulation hypothétique.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Géographie, 6e (cycle 3).</dd><dt>Pourquoi</dt><dd>Voisin des espaces maritimes et de la maritimisation que le rapport met dans les notions floues.</dd><dt>Pièges</dt><dd>Cas non localisé ; vocabulaire flou (littoralisation, maritimisation).</dd></dl></article>
+      <article class="subject ame" data-q="ame" data-p="C" data-t="x"><h4>« Le changement climatique et ses principaux effets géographiques régionaux (5e) »</h4><p class="variant">Sujet 2026, en 5e. Entraînement : notions, échelles, cartes, lien avec le développement durable.</p><p class="tags"><span><i class="fig c"></i>Priorité C</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Géographie, 5e (cycle 4).</dd><dt>Pourquoi</dt><dd>Tombé en 2026. Le rapport invite à savoir définir les ODD et signale la confusion étude de cas / exemple illustratif.</dd><dt>Pièges</dt><dd>Confondre climat et météo ; catastrophisme ; régionalisation absente.</dd></dl></article>
+      <article class="subject ame" data-q="ame" data-p="A" data-t="x"><h4>« Enseigner la question démographique et l'inégal développement (5e) »</h4><p class="variant">Piste : définir transition démographique ; indicateurs. Formulation hypothétique.</p><p class="tags"><span><i class="fig a"></i>Priorité A</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Géographie, 5e (cycle 4).</dd><dt>Pourquoi</dt><dd>« Transition » est la première définition floue citée par le rapport. Voisin de la Seconde (trajectoires démographiques) tombée en 2026.</dd><dt>Pièges</dt><dd>« Transition » employé sans définition ; modèle appliqué mécaniquement ; chiffres sans repère.</dd></dl></article>
+      <article class="subject ame" data-q="ame" data-p="B" data-t="x"><h4>« Enseigner l'énergie, une ressource à ménager et à mieux utiliser (5e) »</h4><p class="variant">Piste : étude de cas ; enjeux de développement durable. Libellé cité en exemple dans le rapport, sans indication de session.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Géographie, 5e (cycle 4).</dd><dt>Pourquoi</dt><dd>Libellé donné par le rapport comme exemple de sujet. Il permet de revoir les ODD et la distinction étude de cas / exemple.</dd><dt>Pièges</dt><dd>Énumérer les énergies ; ignorer les échelles ; discours moralisateur.</dd></dl></article>
+      <article class="subject ame" data-q="ame" data-p="B" data-t="x"><h4>« Enseigner l'eau, ressource essentielle (5e) »</h4><p class="variant">Piste : étude de cas, enjeux géopolitiques et durables. Intitulé à vérifier ; formulation hypothétique.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Géographie, 5e (cycle 4).</dd><dt>Pourquoi</dt><dd>Voisin de l'énergie (même thème de programme) et du changement climatique (2026).</dd><dt>Pièges</dt><dd>Cas non situé ; confusion ressource et risque.</dd></dl></article>
+      <article class="subject ame" data-q="ame" data-p="A" data-t="x"><h4>« Enseigner la prévention des risques industriels et technologiques (5e) »</h4><p class="variant">Piste : définir aléa, enjeu, vulnérabilité, risque ; étude de cas. Formulation hypothétique.</p><p class="tags"><span><i class="fig a"></i>Priorité A</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Géographie, 5e (cycle 4).</dd><dt>Pourquoi</dt><dd>« Risques » est cité parmi les notions mal définies ; le rapport cite aussi le libellé « enseigner les sociétés face aux risques ».</dd><dt>Pièges</dt><dd>Confondre aléa et risque ; catastrophe racontée sans analyse spatiale.</dd></dl></article>
+      <article class="subject ame" data-q="ame" data-p="A" data-t="x"><h4>« Enseigner les mobilités humaines transnationales (4e) »</h4><p class="variant">Piste : définir migrations, flux, réfugiés ; croiser cartes et témoignages. Formulation hypothétique.</p><p class="tags"><span><i class="fig a"></i>Priorité A</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Géographie, 4e (cycle 4).</dd><dt>Pourquoi</dt><dd>« Migrations » figure dans les notions floues du rapport. Sujet sensible ; il appelle aussi une posture adaptée (entretien 3).</dd><dt>Pièges</dt><dd>Confondre migration et immigration ; chiffres sans sources ; jugement.</dd></dl></article>
+      <article class="subject ame" data-q="ame" data-p="B" data-t="x"><h4>« Enseigner un produit mondialisé (4e) »</h4><p class="variant">Piste : étude de cas par la chaîne de valeur ; définir mondialisation. Intitulé à vérifier ; formulation hypothétique.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Géographie, 4e (cycle 4).</dd><dt>Pourquoi</dt><dd>« Mondialisation » est citée comme notion floue. Le sujet est le meilleur test de la différence entre étude de cas et exemple.</dd><dt>Pièges</dt><dd>Mondialisation confondue avec globalisation ou échanges ; schéma sans carte.</dd></dl></article>
+      <article class="subject ame" data-q="ame" data-p="A" data-t="x"><h4>« Enseigner les espaces maritimes, vecteurs de la mondialisation (4e) »</h4><p class="variant">Piste : définir maritimisation ; croquis des flux. Intitulé à vérifier ; formulation hypothétique.</p><p class="tags"><span><i class="fig a"></i>Priorité A</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Géographie, 4e (cycle 4).</dd><dt>Pourquoi</dt><dd>« Maritimisation » est citée parmi les définitions floues du rapport.</dd><dt>Pièges</dt><dd>Maritimisation confondue avec mondialisation ; ports énumérés sans logique.</dd></dl></article>
+      <article class="subject ame" data-q="ame" data-p="C" data-t="x"><h4>« L'Union européenne, un nouveau territoire de référence et d'appartenance (3e) »</h4><p class="variant">Sujet 2026, en 3e. Entraînement : repères, institutions, appartenances.</p><p class="tags"><span><i class="fig c"></i>Priorité C</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Géographie, 3e (cycle 4).</dd><dt>Pourquoi</dt><dd>Tombé en 2026. Le rapport cite Europe / Union européenne et Royaume-Uni / Grande-Bretagne / Angleterre parmi les repères non maîtrisés.</dd><dt>Pièges</dt><dd>Confondre Europe et UE ; Royaume-Uni, Grande-Bretagne et Angleterre pris l'un pour l'autre.</dd></dl></article>
+      <article class="subject ame" data-q="ame" data-p="A" data-t="x"><h4>« Enseigner les territoires ultramarins : une problématique spécifique (3e) »</h4><p class="variant">Piste : localiser, définir DROM / COM, choisir un cas. Libellé cité par le rapport ; niveau de classe supposé.</p><p class="tags"><span><i class="fig a"></i>Priorité A</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Géographie, 3e (cycle 4).</dd><dt>Pourquoi</dt><dd>Le rapport donne ce libellé en exemple et précise que la connaissance des territoires ultramarins est attendue de tous. Les territoires ultramarins sont aussi dans la liste des repères non maîtrisés.</dd><dt>Pièges</dt><dd>Territoires non localisés ; statuts confondus ; métropolo-centrisme.</dd></dl></article>
+      <article class="subject ame" data-q="ame" data-p="B" data-t="x"><h4>« Enseigner les aires urbaines, une nouvelle organisation de l'espace (3e) »</h4><p class="variant">Piste : étude de cas, croquis. Intitulé à vérifier ; formulation hypothétique.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Géographie, 3e (cycle 4).</dd><dt>Pourquoi</dt><dd>Voisin de la métropolisation (Première, 2026) : la progressivité 6e-3e-Première se teste souvent.</dd><dt>Pièges</dt><dd>Aire urbaine confondue avec ville ; schéma sans exemple.</dd></dl></article>
+      <article class="subject ame" data-q="ame" data-p="B" data-t="x"><h4>« Enseigner « Pourquoi et comment aménager le territoire ? » (3e) »</h4><p class="variant">Piste : étude de cas d'un aménagement ; acteurs et échelles. Intitulé à vérifier ; formulation hypothétique.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Géographie, 3e (cycle 4).</dd><dt>Pourquoi</dt><dd>Voisin de l'UE et des territoires ultramarins (même niveau).</dd><dt>Pièges</dt><dd>Acteurs énumérés sans enjeux ; aménagement présenté comme neutre.</dd></dl></article>
+  </div>
+  <h3 class="group-title aut" data-group="aut"><i class="fig a"></i>Géographie au lycée</h3>
+  <div class="subjects aut" data-group="aut">
+      <article class="subject aut" data-q="aut" data-p="C" data-t="x"><h4>« Des trajectoires démographiques différenciées : les défis du nombre et du vieillissement (Seconde) »</h4><p class="variant">Sujet 2026, en Seconde. Entraînement : définir transition, indicateurs, échelles.</p><p class="tags"><span><i class="fig c"></i>Priorité C</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Géographie, Seconde.</dd><dt>Pourquoi</dt><dd>Tombé en 2026. « Transition » ouvre la liste des définitions floues du rapport.</dd><dt>Pièges</dt><dd>Appliquer le modèle de la transition démographique sans nuance ; chiffres sans repère.</dd></dl></article>
+      <article class="subject aut" data-q="aut" data-p="A" data-t="x"><h4>« Enseigner les sociétés face aux risques (Seconde) »</h4><p class="variant">Piste : définir aléa, vulnérabilité, résilience ; cas contrasté. Libellé cité par le rapport ; niveau supposé.</p><p class="tags"><span><i class="fig a"></i>Priorité A</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Géographie, Seconde.</dd><dt>Pourquoi</dt><dd>Le rapport donne « enseigner les sociétés face aux risques » en exemple et range « risques » parmi les notions floues.</dd><dt>Pièges</dt><dd>Aléa et risque confondus ; un seul cas ; cause naturelle sans société.</dd></dl></article>
+      <article class="subject aut" data-q="aut" data-p="B" data-t="x"><h4>« Enseigner l'aménagement de la ville (Seconde) »</h4><p class="variant">Piste : étude de cas, acteurs, durabilité. Intitulé à vérifier ; formulation hypothétique.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Géographie, Seconde.</dd><dt>Pourquoi</dt><dd>Voisin de la démographie (2026) et de la métropolisation. Test classique de la logique inductive.</dd><dt>Pièges</dt><dd>Descriptif sans problématique ; durabilité réduite à un slogan.</dd></dl></article>
+      <article class="subject aut" data-q="aut" data-p="C" data-t="x"><h4>« La France : la métropolisation et ses effets (Première) »</h4><p class="variant">Sujet 2026, en Première. Entraînement : processus, effets, échelles ; articuler avec les aires urbaines de 3e.</p><p class="tags"><span><i class="fig c"></i>Priorité C</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Géographie, Première.</dd><dt>Pourquoi</dt><dd>Tombé en 2026. Le rapport signale la confusion étude de cas / exemple illustratif et les notions floues de mondialisation.</dd><dt>Pièges</dt><dd>Métropole confondue avec métropolisation ; effets limités à l'économie.</dd></dl></article>
+      <article class="subject aut" data-q="aut" data-p="B" data-t="x"><h4>« Enseigner les espaces ruraux en France : multifonctionnalité ou fragmentation (Première) »</h4><p class="variant">Piste : étude de cas, acteurs, fonctions. Intitulé à vérifier ; formulation hypothétique.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Géographie, Première.</dd><dt>Pourquoi</dt><dd>Pendant naturel de la métropolisation (2026) ; sujet souvent traité de façon descriptive.</dd><dt>Pièges</dt><dd>Rural réduit à l'agricole ; opposition ville-campagne simpliste.</dd></dl></article>
+      <article class="subject aut" data-q="aut" data-p="B" data-t="x"><h4>« Enseigner les dynamiques des espaces productifs en France (Première) »</h4><p class="variant">Piste : étude de cas de reconversion ; liens avec la mondialisation. Intitulé à vérifier ; formulation hypothétique.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Géographie, Première.</dd><dt>Pourquoi</dt><dd>Rejoint les sujets de 4e sur la mondialisation ; test de la progressivité.</dd><dt>Pièges</dt><dd>Désindustrialisation présentée comme fatalité ; mondialisation confondue avec délocalisation.</dd></dl></article>
+  </div>
+  <h3 class="group-title fra" data-group="fra"><i class="fig a"></i>RAEP : le dossier d'admissibilité</h3>
+  <div class="subjects fra" data-group="fra">
+      <article class="subject fra" data-q="fra" data-p="A" data-t="r"><h4>« Analyser une séance d'étude de cas en géographie »</h4><p class="variant">Choisir une séance menée, pas seulement observée ; expliciter pourquoi un cas plutôt qu'un exemple.</p><p class="tags"><span><i class="fig a"></i>Priorité A</span><span>RAEP</span></p><dl><dt>Niveau et axe</dt><dd>Partie 2 du dossier (6 pages).</dd><dt>Pourquoi</dt><dd>Le rapport insiste sur la logique inductive et la confusion étude de cas / exemple illustratif. Une séance bien choisie ancre ces notions dans la pratique.</dd><dt>Pièges</dt><dd>Exemple illustratif présenté comme cas ; partie scientifique absente ; élèves invisibles.</dd></dl></article>
+      <article class="subject fra" data-q="fra" data-p="B" data-t="r"><h4>« Analyser une séance d'histoire fondée sur un document »</h4><p class="variant">Séance plutôt que séquence ; titre et niveau en tête ; place dans la progression.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>RAEP</span></p><dl><dt>Niveau et axe</dt><dd>Partie 2 du dossier.</dd><dt>Pourquoi</dt><dd>Le rapport recommande la séance et attend la justification des choix de savoirs, savoir-faire et démarches (« enseigner, c'est choisir »).</dd><dt>Pièges</dt><dd>Descriptif du déroulé ; manuel non discuté ; absence d'évaluation.</dd></dl></article>
+      <article class="subject fra" data-q="fra" data-p="A" data-t="r"><h4>« Analyser une séance dont l'évaluation est un temps fort »</h4><p class="variant">Décrire l'évaluation, ses critères et son usage ; la relier aux compétences.</p><p class="tags"><span><i class="fig a"></i>Priorité A</span><span>RAEP</span></p><dl><dt>Niveau et axe</dt><dd>Partie 2 du dossier.</dd><dt>Pourquoi</dt><dd>Le rapport écrit que l'évaluation est trop souvent absente du dossier. La nommer, la justifier et en tirer des conséquences distingue un dossier.</dd><dt>Pièges</dt><dd>Évaluation omise ; critères vagues ; jargon (évaluation formatrice) non maîtrisé.</dd></dl></article>
+      <article class="subject fra" data-q="fra" data-p="A" data-t="r"><h4>« Analyser une séance de remédiation ou de différenciation »</h4><p class="variant">Partir d'un besoin observé, pas d'une étiquette ; éviter les déterminismes.</p><p class="tags"><span><i class="fig a"></i>Priorité A</span><span>RAEP</span></p><dl><dt>Niveau et axe</dt><dd>Partie 2 du dossier.</dd><dt>Pourquoi</dt><dd>Le rapport demande d'éviter de lier milieu défavorisé et difficulté scolaire, et de ne pas s'appesantir sur des élèves à besoins particuliers sans lien avec la séance.</dd><dt>Pièges</dt><dd>Déterminisme social ; vocabulaire déclaratif (étayage, différenciation) ; absence de preuve de pratique.</dd></dl></article>
+      <article class="subject fra" data-q="fra" data-p="B" data-t="r"><h4>« Analyser une séance de cartographie ou de croquis »</h4><p class="variant">Dire ce que l'élève fait, produit, comprend ; joindre une production anonymisée en annexe.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>RAEP</span></p><dl><dt>Niveau et axe</dt><dd>Partie 2 et annexes.</dd><dt>Pourquoi</dt><dd>Les annexes (10 pages au plus) doivent illustrer sans commenter : travaux d'élèves anonymisés, supports référencés, fiches d'activité.</dd><dt>Pièges</dt><dd>Annexe qui analyse (non prise en compte) ; carte sans source ; croquis non évalué.</dd></dl></article>
+      <article class="subject fra" data-q="fra" data-p="B" data-t="r"><h4>« Analyser une séance en lycée général et technologique (Seconde ou Première) »</h4><p class="variant">Distinguer capacités du lycée et compétences du collège ; viser l'autonomie.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>RAEP</span></p><dl><dt>Niveau et axe</dt><dd>Partie 2 du dossier.</dd><dt>Pourquoi</dt><dd>Le rapport lie explicitement l'analyse à la classe et au programme ; le HGGSP est refusé (hors normes).</dd><dt>Pièges</dt><dd>Séance de HGGSP (hors normes) ; confusion collège-lycée.</dd></dl></article>
+      <article class="subject fra" data-q="fra" data-p="A" data-t="r"><h4>« Écrire la partie scientifique du dossier »</h4><p class="variant">Notions, références actualisées et maîtrisées, enjeux didactiques ; pas une bibliographie.</p><p class="tags"><span><i class="fig a"></i>Priorité A</span><span>RAEP</span></p><dl><dt>Niveau et axe</dt><dd>Partie 2 du dossier.</dd><dt>Pourquoi</dt><dd>Le rapport : « l'absence ou la faiblesse de la partie scientifique est rédhibitoire ». Elle doit aussi être écrite en langue claire, sans jargon.</dd><dt>Pièges</dt><dd>Simple liste de références ; paraphrase de texte scientifique ; notions non définies.</dd></dl></article>
+      <article class="subject fra" data-q="fra" data-p="A" data-t="r"><h4>« Rédiger le parcours professionnel de façon réflexive (2 pages) »</h4><p class="variant">Choisir quelques compétences du référentiel réellement développées ; éviter le CV.</p><p class="tags"><span><i class="fig a"></i>Priorité A</span><span>RAEP</span></p><dl><dt>Niveau et axe</dt><dd>Partie 1 du dossier.</dd><dt>Pourquoi</dt><dd>Le rapport demande un regard réflexif, non téléologique, relié au référentiel de compétences (arrêté de 2013) et à la formation en histoire ou géographie.</dd><dt>Pièges</dt><dd>CV commenté ; énumération de compétences ; récit linéaire.</dd></dl></article>
+      <article class="subject fra" data-q="fra" data-p="A" data-t="r"><h4>« Contrôler la conformité du dossier avant dépôt »</h4><p class="variant">Signature, discipline d'inscription, 8 pages, Arial 11, marges, pagination à l'export PDF.</p><p class="tags"><span><i class="fig a"></i>Priorité A</span><span>RAEP</span></p><dl><dt>Niveau et axe</dt><dd>Conformité éliminatoire.</dd><dt>Pourquoi</dt><dd>Le rapport signale 112 dossiers irrecevables sur 1 252 (8,9 %), en hausse : 96 hors normes et 16 erreurs d'inscription.</dd><dt>Pièges</dt><dd>Absence de signature ; dossier dans l'autre discipline ; HGGSP ; dépassement de pages.</dd></dl></article>
+      <article class="subject fra" data-q="fra" data-p="A" data-t="r"><h4>« Citer, référencer, éviter le plagiat et l'usage non éthique de l'IA »</h4><p class="variant">Guillemets et note de bas de page pour toute citation ; rédaction personnelle.</p><p class="tags"><span><i class="fig a"></i>Priorité A</span><span>RAEP</span></p><dl><dt>Niveau et axe</dt><dd>Éthique du dossier.</dd><dt>Pourquoi</dt><dd>Plagiat : exclusion et note de 1/20, procédure DGRH. Le rapport juge l'usage de l'IA comme rédaction personnelle contraire à l'éthique.</dd><dt>Pièges</dt><dd>Paraphrase de texte scientifique sans guillemets ; texte généré non assumé.</dd></dl></article>
+  </div>
+  <h3 class="group-title pac" data-group="pac"><i class="fig a"></i>Oral : consignes et entretien professionnel</h3>
+  <div class="subjects pac" data-group="pac">
+      <article class="subject pac" data-q="pac" data-p="A" data-t="x"><h4>« Présenter les enjeux du sujet et ses objectifs (consigne 1) »</h4><p class="variant">« En vous fondant sur les textes officiels et l'état des connaissances scientifiques, présentez les enjeux du sujet et vos objectifs. »</p><p class="tags"><span><i class="fig a"></i>Priorité A</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Exposé, consigne 1.</dd><dt>Pourquoi</dt><dd>Le rapport : les enjeux sont les raisons pour lesquelles on enseigne l'objet. Trop de candidats paraphrasent un texte scientifique ou n'identifient pas les enjeux.</dd><dt>Pièges</dt><dd>Paraphrase ; enjeux confondus avec contenus ; textes officiels cités sans lecture critique.</dd></dl></article>
+      <article class="subject pac" data-q="pac" data-p="A" data-t="x"><h4>« Proposer un découpage en séances et utiliser l'extrait de manuel (consigne 2) »</h4><p class="variant">Découpage global, puis focus sur une séance ; dire ce qu'on garde, change ou écarte du manuel.</p><p class="tags"><span><i class="fig a"></i>Priorité A</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Exposé, consigne 2.</dd><dt>Pourquoi</dt><dd>Le rapport conseille un découpage global puis un zoom sur une séance. Le manuel est analysé de façon critique, non paraphrasé ; l'absence de regard critique est rattrapée en entretien.</dd><dt>Pièges</dt><dd>Description de la double page ; découpage non justifié ; jargon (classe puzzle, classe inversée).</dd></dl></article>
+      <article class="subject pac" data-q="pac" data-p="A" data-t="x"><h4>« Commenter la production liée à la pratique de classe et évaluer sa pertinence (consigne 3) »</h4><p class="variant">Évaluer la production : forces, limites, remédiation ; relier aux compétences visées.</p><p class="tags"><span><i class="fig a"></i>Priorité A</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Exposé, consigne 3.</dd><dt>Pourquoi</dt><dd>L'évaluation est systématiquement convoquée par cette consigne. Elle est souvent traitée trop vite, mais mieux qu'avant, selon le rapport.</dd><dt>Pièges</dt><dd>Description sans jugement ; barème absent ; temps insuffisant pour la partie 3.</dd></dl></article>
+      <article class="subject pac" data-q="pac" data-p="A" data-t="x"><h4>« Gérer les 15 minutes d'exposé »</h4><p class="variant">Utiliser les 15 minutes entières ; le président avertit à la 14e minute.</p><p class="tags"><span><i class="fig a"></i>Priorité A</span><span>Exposé</span></p><dl><dt>Niveau et axe</dt><dd>Exposé.</dd><dt>Pourquoi</dt><dd>Un exposé écourté ou trop long est pénalisé. Le rapport recommande une montre ou un chronomètre non connecté, et un rythme pas trop rapide.</dd><dt>Pièges</dt><dd>Exposé de 8 minutes ; troisième consigne sacrifiée ; élocution trop rapide.</dd></dl></article>
+      <article class="subject pac" data-q="pac" data-p="A" data-t="n"><h4>« Un élève refuse de visiter un lieu de culte lors d'une sortie »</h4><p class="variant">Mise en situation rapide de l'entretien 3 : rappeler le cadre, rester neutre, protéger l'élève.</p><p class="tags"><span><i class="fig a"></i>Priorité A</span><span>Entretien</span></p><dl><dt>Niveau et axe</dt><dd>Entretien 3 : valeurs, laïcité, métier.</dd><dt>Pourquoi</dt><dd>Situation citée par le rapport pour l'entretien 3, avec la mise en cause d'une partie du programme par un élève ou une famille.</dd><dt>Pièges</dt><dd>Réponse morale sans cadre ; sanction immédiate ; confondre laïcité et interdit religieux.</dd></dl></article>
+      <article class="subject pac" data-q="pac" data-p="A" data-t="n"><h4>« Un élève ou une famille met en cause une partie du programme »</h4><p class="variant">Distinguer savoir, croyance et opinion ; programme obligatoire ; dialogue.</p><p class="tags"><span><i class="fig a"></i>Priorité A</span><span>Entretien</span></p><dl><dt>Niveau et axe</dt><dd>Entretien 3 : valeurs, métier.</dd><dt>Pourquoi</dt><dd>Situation citée par le rapport. Elle touche aussi à la posture professionnelle (bienséance, honnêteté intellectuelle).</dd><dt>Pièges</dt><dd>Céder ou s'opposer frontalement ; position personnelle imposée.</dd></dl></article>
+      <article class="subject pac" data-q="pac" data-p="A" data-t="n"><h4>« Définir les Objectifs de développement durable et l'éducation au développement durable »</h4><p class="variant">Savoir définir les ODD et les relier à la géographie et à l'EMC.</p><p class="tags"><span><i class="fig a"></i>Priorité A</span><span>Entretien</span></p><dl><dt>Niveau et axe</dt><dd>Entretien 3 : « éducations à ».</dd><dt>Pourquoi</dt><dd>Le rapport demande que les ODD soient définis. Ils se relient au changement climatique (5e, 2026).</dd><dt>Pièges</dt><dd>Liste de mots sans définition ; ODD confondus avec écogestes.</dd></dl></article>
+      <article class="subject pac" data-q="pac" data-p="A" data-t="n"><h4>« Laïcité : la loi du 9 décembre 1905, la liberté de conscience, l'affaire Dreyfus »</h4><p class="variant">Savoir dater, citer et situer ; relier à la Troisième République.</p><p class="tags"><span><i class="fig a"></i>Priorité A</span><span>Entretien</span></p><dl><dt>Niveau et axe</dt><dd>Entretien 3 : valeurs de la République.</dd><dt>Pourquoi</dt><dd>Le rapport demande ces repères et insiste sur les combats du long XIXe siècle.</dd><dt>Pièges</dt><dd>Date approximative ; laïcité réduite à l'interdit ; confondre laïcité et neutralité.</dd></dl></article>
+      <article class="subject pac" data-q="pac" data-p="A" data-t="n"><h4>« Valeurs et principes de la République : quelle différence ? »</h4><p class="variant">Distinguer les valeurs (liberté, égalité, fraternité) des principes (indivisible, laïque, démocratique, sociale).</p><p class="tags"><span><i class="fig a"></i>Priorité A</span><span>Entretien</span></p><dl><dt>Niveau et axe</dt><dd>Entretien 3.</dd><dt>Pourquoi</dt><dd>Le rapport demande de ne pas confondre valeurs et principes, ni république et démocratie.</dd><dt>Pièges</dt><dd>Les deux mots employés comme synonymes ; République et démocratie confondues.</dd></dl></article>
+      <article class="subject pac" data-q="pac" data-p="B" data-t="n"><h4>« La Constitution de la Ve République, son préambule et l'État de droit »</h4><p class="variant">Connaître la hiérarchie des normes et le préambule.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Entretien</span></p><dl><dt>Niveau et axe</dt><dd>Entretien 3.</dd><dt>Pourquoi</dt><dd>Le rapport range la Constitution avec préambule et l'État de droit dans les connaissances institutionnelles attendues.</dd><dt>Pièges</dt><dd>Constitution résumée aux institutions ; État de droit non défini.</dd></dl></article>
+      <article class="subject pac" data-q="pac" data-p="B" data-t="n"><h4>« Parcours éducatifs, EAC, ÉMI, accompagnement personnalisé et « Devoirs faits » »</h4><p class="variant">Savoir situer le rôle d'un professeur d'histoire-géographie dans chacun.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Entretien</span></p><dl><dt>Niveau et axe</dt><dd>Entretien 3 : système éducatif.</dd><dt>Pourquoi</dt><dd>Le rapport cite ces dispositifs, avec l'histoire des arts, le développement durable et les partenaires de l'École.</dd><dt>Pièges</dt><dd>Sigles non développés ; dispositifs ignorés.</dd></dl></article>
+      <article class="subject pac" data-q="pac" data-p="B" data-t="n"><h4>« CNRD, Flamme de l'égalité et prix Samuel Paty »</h4><p class="variant">Savoir présenter un concours et son intérêt pédagogique.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Entretien</span></p><dl><dt>Niveau et axe</dt><dd>Entretien 3 : ressources éducatives.</dd><dt>Pourquoi</dt><dd>Les trois concours sont cités par le rapport parmi les ressources et projets attendus.</dd><dt>Pièges</dt><dd>Confondre les concours ; ne pas pouvoir dire ce qu'ils apportent aux élèves.</dd></dl></article>
+      <article class="subject pac" data-q="pac" data-p="B" data-t="n"><h4>« Le DNB, son oral et le baccalauréat »</h4><p class="variant">Connaître le format et le rôle de l'histoire-géographie.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Entretien</span></p><dl><dt>Niveau et axe</dt><dd>Entretien 3 : système éducatif.</dd><dt>Pourquoi</dt><dd>Le rapport cite le DNB (avec son oral) et le baccalauréat parmi les connaissances attendues sur le système éducatif.</dd><dt>Pièges</dt><dd>Épreuves mal situées ; rôle de la discipline ignoré.</dd></dl></article>
+      <article class="subject pac" data-q="pac" data-p="B" data-t="n"><h4>« Numérique, RGPD et vie lycéenne »</h4><p class="variant">Cadre du numérique en classe ; instances de la vie lycéenne.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Entretien</span></p><dl><dt>Niveau et axe</dt><dd>Entretien 3 : métier d'enseignant.</dd><dt>Pourquoi</dt><dd>Le rapport cite le cadre RGPD du numérique et la vie lycéenne parmi les attendus professionnels.</dd><dt>Pièges</dt><dd>Usage d'outils sans cadre ; données d'élèves exposées.</dd></dl></article>
+      <article class="subject pac" data-q="pac" data-p="B" data-t="n"><h4>« Faire le lien entre un programme d'histoire et un programme de géographie »</h4><p class="variant">Préparer, pour chaque sujet d'histoire, un lien géographique (et inversement).</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Entretien</span></p><dl><dt>Niveau et axe</dt><dd>Entretien 2 : l'autre discipline.</dd><dt>Pourquoi</dt><dd>Le rapport donne l'exemple de la route de la soie en 6e reliée à la mondialisation et à la Chine. L'entretien 2 se passe dans la discipline du RAEP.</dd><dt>Pièges</dt><dd>Lien artificiel ; ignorer la progressivité du collège au lycée.</dd></dl></article>
+      <article class="subject pac" data-q="pac" data-p="B" data-t="n"><h4>« Actualité des disciplines : la panthéonisation de Marc Bloch et les grands discours »</h4><p class="variant">Connaître l'événement du 16 juin 2026 et quelques discours cités.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Entretien</span></p><dl><dt>Niveau et axe</dt><dd>Entretien : culture professionnelle.</dd><dt>Pourquoi</dt><dd>Le rapport cite la panthéonisation de Marc Bloch (16 juin 2026) et des discours (Washington 1963, Panthéon 1964, Vel' d'Hiv' 1995, Kigali 2021).</dd><dt>Pièges</dt><dd>Faire semblant d'avoir lu ; citer sans comprendre.</dd></dl></article>
+      <article class="subject pac" data-q="pac" data-p="B" data-t="n"><h4>« Carte mentale, schéma heuristique, schéma fléché, sketchnote : les distinguer »</h4><p class="variant">Préparer une définition simple de chaque outil et un usage en classe.</p><p class="tags"><span><i class="fig b"></i>Priorité B</span><span>Entretien</span></p><dl><dt>Niveau et axe</dt><dd>Entretien 1 : réflexion didactique.</dd><dt>Pourquoi</dt><dd>Le rapport relève des confusions entre ces outils et un vocabulaire pédagogique déclaratif (différenciation, étayage, co-construction).</dd><dt>Pièges</dt><dd>Outils confondus ; vocabulaire déclaratif sans exemple.</dd></dl></article>
+  </div>
+</section>
+
+<section id="notions" class="qsec aut">
+  <h2>Notions et repères à ne pas rater</h2>
+  <p class="standfirst">Le rapport cite des définitions floues et des repères non maîtrisés. Voici comment les transformer en fiches de révision. Les formules de la colonne de droite sont des pistes de travail, non des définitions du rapport.</p>
+  <dl class="notions">
+    <div><dt>Transition</dt><dd>Citée en premier parmi les définitions floues. Savoir la définir en géographie (transition démographique) comme en histoire, et dire si on parle d'un modèle ou d'un fait.</dd></div>
+    <div><dt>Génocide</dt><dd>À définir avant de l'employer. Le sujet impose un vocabulaire exact, sourcé, et un ton irréprochable.</dd></div>
+    <div><dt>« Grandes découvertes »</dt><dd>Le terme lui-même se discute : pour qui est-ce une découverte ? Lien avec les premières mondialisations.</dd></div>
+    <div><dt>Maritimisation, mondialisation</dt><dd>Ne pas les confondre, ni avec « globalisation » ou « échanges ». Une étude de cas (un produit, un port) les fait vivre.</dd></div>
+    <div><dt>Migrations, risques</dt><dd>Définir flux, migrant, réfugié ; aléa, enjeu, vulnérabilité, risque. Sujets sensibles : le cadre vient avant l'opinion.</dd></div>
+    <div><dt>État, loi, république, monarchie parlementaire, roi absolu</dt><dd>Cinq notions politiques à pouvoir définir sans paraphraser le manuel. Le rapport signale aussi la confusion entre république et démocratie.</dd></div>
+    <div><dt>Régimes politiques de la France</dt><dd>Une frise des régimes de 1789 à aujourd'hui, avec dates et constitutions, à savoir refaire de mémoire.</dd></div>
+    <div><dt>Repères : crise de 1929, Napoléon, Waterloo</dt><dd>Dates et enchaînements précis, avec leur place dans les programmes de 4e et 3e.</dd></div>
+    <div><dt>Europe, Union européenne</dt><dd>Deux objets distincts. Royaume-Uni, Grande-Bretagne et Angleterre : trois désignations à ne pas intervertir.</dd></div>
+    <div><dt>Territoires ultramarins</dt><dd>Attendus de tous. Savoir les localiser, distinguer les statuts et citer des cas.</dd></div>
+    <div><dt>Étude de cas / exemple illustratif</dt><dd>En géographie, une étude de cas suit une logique inductive : on part du cas pour construire la notion. Un exemple illustre ce qu'on a déjà posé.</dd></div>
+    <div><dt>Enjeux</dt><dd>Les raisons pour lesquelles on enseigne l'objet, pas son résumé.</dd></div>
+    <div><dt>Valeurs / principes de la République</dt><dd>Les deux ne sont pas synonymes. Valeurs : liberté, égalité, fraternité. Principes : République indivisible, laïque, démocratique et sociale (Constitution).</dd></div>
+    <div><dt>Carte mentale, schéma heuristique, schéma fléché, sketchnote</dt><dd>Quatre outils que le rapport voit confondus. Une définition courte et un usage de classe pour chacun.</dd></div>
+    <div><dt>Objectifs de développement durable</dt><dd>À définir. Les relier au changement climatique, à l'énergie et à l'EMC.</dd></div>
+  </dl>
+</section>
+
+<section id="outils" class="qsec ame">
+  <h2>Outils et calendrier</h2>
+  <p class="standfirst">Ce que le rapport signale comme ressources, et ce qu'il ne dit pas encore sur 2027.</p>
+  <div class="table-wrap"><table class="wide">
+    <caption>Ressources citées par le rapport</caption>
+    <thead><tr><th>Ressource</th><th>Usage</th></tr></thead>
+    <tbody>
+      <tr><th>Arrêté du 25 janvier 2021, annexe IV</th><td>Attendus du RAEP : à relire avant de rédiger.</td></tr>
+      <tr><th>Référentiel de compétences des métiers du professorat et de l'éducation (2013)</th><td>Cadre du parcours professionnel et de l'entretien 3.</td></tr>
+      <tr><th>Site histoire-géographie de l'académie de Besançon</th><td>Sujets d'oral des sessions 2022 à 2026 : structure du dossier, entraînement.</td></tr>
+      <tr><th>Éduscol et manuels</th><td>Ressources à analyser de façon critique, sans les paraphraser.</td></tr>
+      <tr><th>Avis de la commission d'oral</th><td>Communicable sur demande depuis 2024.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="table-wrap"><table class="narrow">
+    <caption>Calendrier connu</caption>
+    <thead><tr><th>Date</th><th>Événement</th></tr></thead>
+    <tbody>
+      <tr><td>13 au 17 avril 2026</td><td>Oraux à Châlons-en-Champagne (lycée des métiers Oehmichen)</td></tr>
+      <tr><td>17 avril 2026</td><td>Admission prononcée</td></tr>
+      <tr><td>31 mai 2026</td><td>Rapport remis à la DGRH</td></tr>
+      <tr><td>2027</td><td>Dates non données dans le rapport : consulter le calendrier officiel</td></tr>
+    </tbody>
+  </table></div>
+  <p>Cadre de travail suggéré (non fourni par le rapport) : l'été et l'automne pour le dossier de RAEP, le début de l'année pour les fiches de notions, puis des oraux blancs complets de 2 h + 15 min + 45 min.</p>
+</section>
+
+<section id="erreurs" class="qsec pac">
+  <h2>Incohérences et coquilles du rapport</h2>
+  <p class="standfirst">Quelques points à connaître pour ne pas s'y tromper. Ils ne changent pas les conclusions.</p>
+  <ul class="corrections">
+    <li><span class="was">Sessions des sujets en ligne</span>L'introduction annonce des exemples de sujets des sessions 2022 à 2026 ; une note de bas de page n'en cite que 2022 à 2025.</li>
+    <li><span class="was">Renvoi à l'annexe</span>Une note renvoie à l'annexe « p. 45 » ; la table des matières place les annexes à la page 47.</li>
+    <li><span class="was">Barre de recrutement</span>La phrase « Il a fait le choix de ne pas recruter des candidats dont les notes étaient inférieures à 10 » suit celle sur le CAER (125 admis sur 140) : elle vise donc ce concours, où la barre est de 10. Le CAPES interne a une barre d'admission de 12.</li>
+    <li><span class="was">Coquilles dans les conseils</span>« Il convient pour les candidats de ne parler à un rythme trop élevé » (il manque « pas ») ; « Il est important bien maîtriser cette dernière » (il manque « de ») ; « dans un niveau fin plus fin d'analyse » ; « objectifs du reste pleinement intégrés aux programmes ».</li>
+    <li><span class="was">Coefficient de l'écrit</span>Le rapport donne le coefficient 2 de l'oral, mais pas celui du dossier de RAEP ni sa durée de correction.</li>
+    <li><span class="was">Niveaux des libellés cités</span>Les libellés « énergie », « territoires ultramarins » et « sociétés face aux risques » sont cités sans niveau ni session : ceux que la banque leur attribue sont des hypothèses.</li>
+  </ul>
+</section>
+
+<section id="sources">
+  <h2>Sources</h2>
+  <ul>
+    <li>Jury du CAPES interne et du CAER-CAPES, section histoire et géographie, <em>Rapport du jury de la session 2026</em>, président Vincent Duclert, rapport remis à la DGRH le 31 mai 2026 (PDF fourni, 47 pages). Toutes les données chiffrées viennent de ce rapport, sauf mention « calculé ».</li>
+    <li>Arrêté du 25 janvier 2021, annexe IV, cité par le rapport.</li>
+    <li>Programmes de collège et de lycée : intitulés repris du rapport quand il les cite, sinon ma connaissance des programmes en vigueur, à vérifier sur Éduscol.</li>
+  </ul>
+</section>
+
+  </main>
+</div>
+<a class="to-top" id="toTop" href="#haut" aria-label="Retour en haut">Haut</a>
+
+<script>
+(function(){
+  var state={q:'all',p:'all',t:'all'};
+  var cards=[].slice.call(document.querySelectorAll('.subject'));
+  var groups=[].slice.call(document.querySelectorAll('.subjects'));
+  var titles=[].slice.call(document.querySelectorAll('.group-title'));
+  var count=document.getElementById('count');
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var ok=(state.q==='all'||c.getAttribute('data-q')===state.q)&&(state.p==='all'||c.getAttribute('data-p')===state.p)&&(state.t==='all'||c.getAttribute('data-t')===state.t);
+      c.hidden=!ok; if(ok)n++;
+    });
+    groups.forEach(function(g){
+      var any=[].some.call(g.querySelectorAll('.subject'),function(c){return !c.hidden});
+      g.hidden=!any;
+      titles.forEach(function(t){ if(t.getAttribute('data-group')===g.getAttribute('data-group')) t.hidden=!any; });
+    });
+    if(count) count.textContent=n+(n>1?' sujets affichés':' sujet affiché')+' sur '+cards.length;
+  }
+  [].forEach.call(document.querySelectorAll('.fgroup'),function(fg){
+    var key=fg.getAttribute('data-filter');
+    [].forEach.call(fg.querySelectorAll('.chip'),function(b){
+      b.addEventListener('click',function(){
+        state[key]=b.getAttribute('data-value');
+        [].forEach.call(fg.querySelectorAll('.chip'),function(o){o.setAttribute('aria-pressed',o===b?'true':'false')});
+        apply();
+      });
+    });
+  });
+  apply();
+  var mt=document.querySelector('.toc-mobile');
+  if(mt){ [].forEach.call(mt.querySelectorAll('a'),function(a){ a.addEventListener('click',function(){ mt.removeAttribute('open'); }); }); }
+  var top=document.getElementById('toTop');
+  function onScroll(){ if(top) top.classList.toggle('show',(window.scrollY||document.documentElement.scrollTop)>700); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+})();
+</script>
+
+</body></html>
