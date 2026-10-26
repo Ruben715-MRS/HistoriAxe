@@ -6,6 +6,8 @@
 # Une fiche = un titre « N. … » suivi d'un tableau (terme | définition), puis « Critère décisif », « Piège », « Exemples ».
 # L'annexe (méthode des images comparatives) et l'index A–Z sont ignorés.
 # Les exemples de chaque terme sont dans scripts/dictionnaire/exemples/ (premier jet, à relire) : ils sont ajoutés ici.
+# Les définitions réécrites sont dans scripts/dictionnaire/definitions/ : elles remplacent celles du .docx.
+# Leurs sources (definitions/sources.json) servent à la relecture et ne sont pas exportées.
 import json
 import os
 import re
@@ -17,6 +19,8 @@ ROOT = os.path.abspath(os.path.join(HERE, '..', '..'))
 SOURCE = os.path.join(HERE, 'source', 'termes-proches-agreg-2027.docx')
 OUT = os.path.join(ROOT, 'assets', 'dictionnaire', 'termes.json')
 EXEMPLES = os.path.join(HERE, 'exemples')  # un fichier JSON par domaine : { "id du terme": ["exemple", …] }
+DEFINITIONS = os.path.join(HERE, 'definitions')  # un fichier JSON par domaine : { "id du terme": "définition" }
+DEFINITIONS_SOURCES = 'sources.json'  # { "id du terme": ["source", …] }, pour la relecture seulement
 JURY = os.path.join(HERE, 'jury-2026.json')  # termes relevés par le rapport du jury 2026, ajoutés après le document de travail
 LABELS = ('Critère décisif :', 'Piège :', 'Exemples :')
 DASHES = re.compile(r'^\s*-{3,}(\s+-{3,})*\s*$')
@@ -117,6 +121,23 @@ def load_exemples():
     return exemples
 
 
+def load_definitions():
+    definitions = {}
+    if not os.path.isdir(DEFINITIONS):
+        return definitions
+    for name in sorted(os.listdir(DEFINITIONS)):
+        if not name.endswith('.json') or name == DEFINITIONS_SOURCES:
+            continue
+        with open(os.path.join(DEFINITIONS, name), encoding='utf-8') as fh:
+            for term_id, text in json.load(fh).items():
+                if term_id in definitions:
+                    sys.exit('Définition en double pour le terme %s (%s)' % (term_id, name))
+                if not isinstance(text, str) or not text.strip():
+                    sys.exit('Définition vide ou mal formée pour le terme %s (%s)' % (term_id, name))
+                definitions[term_id] = text.strip()
+    return definitions
+
+
 def main():
     domaines, fiches = parse(read_text())
     if len(fiches) != 211:
@@ -147,6 +168,15 @@ def main():
         sys.exit('Exemples pour des termes inconnus : %s' % ', '.join(orphelins))
     for t in termes:
         t['exemples'] = exemples.get(t['id'], [])
+    definitions = load_definitions()
+    inconnues = sorted(set(definitions) - ids)
+    if inconnues:
+        sys.exit('Définitions pour des termes inconnus : %s' % ', '.join(inconnues))
+    for f in fiches:  # la fiche porte aussi ses termes : même définition des deux côtés
+        for k, t in enumerate(f['termes'], 1):
+            t['definition'] = definitions.get('%d-%d' % (f['id'], k), t['definition'])
+    for t in termes:
+        t['definition'] = definitions.get(t['id'], t['definition'])
     data = {'version': 1, 'source': 'termes-proches-agreg-2027.docx', 'domaines': domaines, 'fiches': fiches, 'termes': termes}
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, 'w', encoding='utf-8') as fh:
