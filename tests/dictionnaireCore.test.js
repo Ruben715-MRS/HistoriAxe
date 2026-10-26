@@ -86,3 +86,10 @@ test('données : chaque fiche a un critère décisif et au moins deux termes qu�
         assert.ok(f.termes.length >= 1);
     });
 });
+
+test('données : chaque terme a au moins un exemple, non vide', () => {
+    termes.forEach(t => {
+        assert.ok(Array.isArray(t.exemples) && t.exemples.length >= 1, 'pas d’exemple : ' + t.id);
+        t.exemples.forEach(e => assert.ok(e.trim().length > 0, 'exemple vide : ' + t.id));
+    });
+});

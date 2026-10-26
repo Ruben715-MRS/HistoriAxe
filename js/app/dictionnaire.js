@@ -181,6 +181,26 @@ function dictSection(body, title, text) {
     body.appendChild(wrap);
 }
 
+// Les exemples du terme, en liste. À défaut, l'exemple qui accompagne la fiche.
+function dictExamples(body, term, fiche) {
+    const items = term.exemples && term.exemples.length ? term.exemples : (fiche && fiche.exemples ? [fiche.exemples] : []);
+    if (!items.length) return;
+    const wrap = document.createElement('div');
+    wrap.className = 'dict-section';
+    const h = document.createElement('h3');
+    h.textContent = 'Exemples';
+    const list = document.createElement('ul');
+    list.className = 'dict-examples';
+    items.forEach(text => {
+        const li = document.createElement('li');
+        li.textContent = text;
+        list.appendChild(li);
+    });
+    wrap.appendChild(h);
+    wrap.appendChild(list);
+    body.appendChild(wrap);
+}
+
 function dictRenderTerm(term) {
     const fiche = dictFiche(term);
     document.getElementById('dict-term-name').textContent = term.nom;
@@ -190,7 +210,7 @@ function dictRenderTerm(term) {
     const body = document.getElementById('dict-term-body');
     body.textContent = '';
     dictSection(body, 'Définition', term.definition);
-    if (fiche) dictSection(body, 'Exemples', fiche.exemples);
+    dictExamples(body, term, fiche);
     if (fiche && dictConcours) {
         dictSection(body, 'Critère décisif', fiche.critere);
         dictSection(body, 'Piège', fiche.piege);
