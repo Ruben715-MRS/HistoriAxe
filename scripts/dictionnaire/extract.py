@@ -17,6 +17,7 @@ ROOT = os.path.abspath(os.path.join(HERE, '..', '..'))
 SOURCE = os.path.join(HERE, 'source', 'termes-proches-agreg-2027.docx')
 OUT = os.path.join(ROOT, 'assets', 'dictionnaire', 'termes.json')
 EXEMPLES = os.path.join(HERE, 'exemples')  # un fichier JSON par domaine : { "id du terme": ["exemple", …] }
+JURY = os.path.join(HERE, 'jury-2026.json')  # termes relevés par le rapport du jury 2026, ajoutés après le document de travail
 LABELS = ('Critère décisif :', 'Piège :', 'Exemples :')
 DASHES = re.compile(r'^\s*-{3,}(\s+-{3,})*\s*$')
 TOP_BORDER = re.compile(r'^\s{2}-{3,}')
@@ -120,6 +121,18 @@ def main():
     domaines, fiches = parse(read_text())
     if len(fiches) != 211:
         sys.exit('Attendu 211 fiches, trouvé %d' % len(fiches))
+    for f in fiches:
+        f['source'] = 'geo-2027'
+    with open(JURY, encoding='utf-8') as fh:
+        jury = json.load(fh)
+    if set(d['id'] for d in jury['domaines']) & set(d['id'] for d in domaines):
+        sys.exit('Identifiant de domaine déjà utilisé dans le document de travail')
+    if [f['id'] for f in jury['fiches']] != list(range(212, 212 + len(jury['fiches']))):
+        sys.exit('Les fiches du jury doivent être numérotées à partir de 212, sans trou')
+    domaines += jury['domaines']
+    for f in jury['fiches']:
+        f['source'] = 'jury-2026'
+        fiches.append(f)
     termes = []
     for f in fiches:
         if not f['termes']:
