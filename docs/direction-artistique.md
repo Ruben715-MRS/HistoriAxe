@@ -161,9 +161,18 @@ Les sols et horizons sont **optionnels pour une première livraison** : le jeu a
 
 ## 7. Clio, la mascotte
 
-Un chat. Le reste (âge, couleur, caractère) est à décider avec vous ; **proposition** : chat de gouttière **roux à
-poitrail crème**, grands yeux ronds expressifs, silhouette compacte et rebondie, queue en point d'interrogation. Curieux,
-un peu savant, jamais moqueur ; il **encourage**, ne juge pas.
+Une chatte. **Décisions validées (octobre 2026)** :
+
+| Point | Choix |
+|---|---|
+| **Style** | **Cartoon vectoriel 2D** (SVG) : tête large (≈ 45 % de la hauteur), formes rondes, **contour fin de couleur** (brun roux, jamais noir pur). Le pixel art reste possible pour une variante de Flappy Clio ; le réaliste est écarté. |
+| **Pelage** | **Roux tigré**, poitrail, museau et bout des pattes **crème** ; rayures sobres (front, joues, flancs, queue). |
+| **Yeux** | **Verts**, grands et ronds, pupille verticale, deux reflets blancs. |
+| **Allure** | **Jeune chatte ronde et compacte** (silhouette des premiers croquis), queue en point d'interrogation. Pas de signe distinctif ajouté (la « patte d'encre » est écartée). |
+| **Caractère** | Curieuse, un peu savante, jamais moqueuse ; elle **encourage**, ne juge pas. |
+
+Palette figée : pelage `#EE8A3C`, rayures `#C65E1C`, contour `#9C4A17`, crème `#FFF0DA`, intérieur des oreilles
+`#F7B3A6`, yeux `#5FB46A`, truffe `#E26F80`, pupilles `#17171F`.
 
 > **Pour la propriété intellectuelle, Clio mérite un créateur humain** (illustrateur·rice) ou au minimum une conception
 > très guidée : le droit d'auteur sur des images générées par IA est incertain selon les pays, et Clio est ce que vous
@@ -195,13 +204,15 @@ vectorielle de type Rive ou Lottie, ou calques SVG/WebP animés en code). Format
 | `dort` | oui | rappel de série quotidienne en péril |
 | `essaie` (tourne sur elle-même) | non | essayage d'un costume dans la boutique |
 | `danse` | non | album complété |
+| `vole` | oui | **Flappy Clio** : vue de profil, tournée **vers la droite**, pattes avant tendues, queue au vent (battement à chaque saut) |
 
 Le jeu pilote ces animations par **états** (`repos` → `content` → `repos`…) : chaque animation commence et finit sur la
 pose `repos` pour s'enchaîner proprement.
 
 ### 7.3 Costumes (21, un par monde principal)
-Chaque costume est **un jeu de calques** qui se superpose à Clio (tête / torse / accessoire) avec **points d'ancrage
-communs** : l'essayage fonctionne sur toutes les poses sans redessin. Les prix et la règle d'achat sont dans
+Chaque costume est une **tenue complète, pour tout le corps** (pas seulement un accessoire) : **un jeu de calques** qui se superpose à Clio (tête / corps / pattes / queue si besoin) avec **points d'ancrage
+communs** : un costume est dessiné **une fois par vue** (face, profil — qui sert aussi à la marche et au vol de
+Flappy Clio —, dos), puis suit toutes les poses et expressions de cette vue sans redessin. Les prix et la règle d'achat sont dans
 `js/rewardsCore.js` ; les noms ci-dessous sont ceux de `ui/fr.json`.
 
 | Monde | Costume | Idée visuelle |
