@@ -16,7 +16,7 @@ test('CAPES & Agrégation : la carte « Rapports du jury » ouvre la liste, puis
     await expect(card).toBeVisible();
     await card.locator('.gallery-launcher-btn').click();
     expect(await visibleScreen(page)).toBe('screen-rapports');
-    await expect(page.locator('#rapports-list .btn')).toHaveCount(2);
+    await expect(page.locator('#rapports-list .btn')).toHaveCount(3);
     await page.locator('#rapports-list .btn', { hasText: 'Agrégation de géographie 2027' }).click();
     expect(await visibleScreen(page)).toBe('screen-rapport');
     const frame = page.locator('#rapport-frame');
