@@ -11914,6 +11914,7 @@ input:not([type="range"]), label, select, summary, textarea {
     white-space: nowrap;
 }
 
+.bib-pin .bib-mark.is-icon,
 .bib-pin.bib-mountain .bib-mark:not(:has(.bib-num)),
 .bib-pin.bib-war .bib-mark,
 .bib-pin.bib-altar .bib-mark {

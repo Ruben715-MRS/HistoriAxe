@@ -7,11 +7,12 @@
 // l'ouvrage met un point d'interrogation (`doubt: true`), l'emplacement est discuté. Les noms hébreux sont sans voyelles, comme dans
 // js/genealogyCore.js.
 //
+// Une carte peut aussi avoir des `zones` (des polygones colorés, ex. les tribus) : { id, color, ring, dan?, variant? }.
 // Un lieu : { id, kind, lv, views, note, ref, altar, num, side, doubt, n, he, c } où `kind` est 'city' (un point et son nom), 'region' (un
 // nom posé sur la carte), 'water' (un nom en italique), 'mountain', 'altar' (une flamme seule) ou 'war' (une bataille). `lv` (0 par défaut)
 // est le niveau de détail : un lieu de niveau 1 n'apparaît qu'après un zoom, pour que les noms ne s'empilent pas. `views` restreint un lieu
 // à certaines vues ; une vue `full` (un détail) les montre tous, une vue `top` (un aperçu) ne montre que les lieux `top`, le reste au zoom, une vue `dense` (les étapes du désert) laisse les noms de côté, sauf pour les lieux `key` (`true`, ou la liste des vues où ils gardent leur nom), et une vue `all`
-// montre tous les numéros d'étapes. `wide` élargit l'étiquette (un nom long). Les noms et positions communs à plusieurs cartes sont dans PLACES ; chaque carte les reprend par `id`.
+// montre tous les numéros d'étapes. `icon` remplace le point par un emoji, `offshore` pose l'étiquette d'une zone en mer (hors de son contour), `wide` élargit l'étiquette (un nom long). Les noms et positions communs à plusieurs cartes sont dans PLACES ; chaque carte les reprend par `id`.
 // Pur, sans DOM : testé dans tests/biblicalMapsCore.test.js (positions dans les vues, sur la terre, identifiants).
 (function (root, factory) {
     if (typeof module === 'object' && module.exports) module.exports = factory();
@@ -313,6 +314,80 @@
                     { year: 2488, label: 'Fin de la quarantième année', events: [['Adar', 'Décès de Moïse'], ['Nissan', "Entrée en Erets Israël"]] }
                 ]
             }
+        },
+        {
+            id: 'ebal', icon: '⛰️', name: 'Le mont Guerizim et le mont Ebal', ref: 'Deutéronome 11,29 ; 27,12',
+            summary: "Dès l'entrée en Canaan, Israël se rassemble à Chékhem, entre deux montagnes : six tribus se tiennent sur le mont Guerizim pour la bénédiction, six sur le mont Ebal pour la malédiction, et les cohanim et les Lévites se tiennent entre les montagnes, avec l'Arche (Josué 8,33). Lévi est compté parmi les tribus du Guerizim, mais ce sont les Lévites, avec les cohanim, qui se tiennent entre les deux.",
+            views: [
+                { id: 'chekhem', label: 'Chékhem et les deux monts', bounds: [[35.12, 32.12], [35.46, 32.32]], full: true },
+                { id: 'canaan', label: 'Dans le pays', bounds: [[34.3, 31.3], [36.1, 33.1]] }
+            ],
+            sections: [
+                { title: 'Sur le mont Guerizim (la bénédiction)', items: [
+                    { t: 'Siméon', he: 'שמעון' }, { t: 'Lévi *', he: 'לוי' }, { t: 'Juda', he: 'יהודה' }, { t: 'Issakhar', he: 'יששכר' }, { t: 'Joseph', he: 'יוסף' }, { t: 'Benjamin', he: 'בנימן' }
+                ] },
+                { title: 'Sur le mont Ebal (la malédiction)', items: [
+                    { t: 'Ruben', he: 'ראובן' }, { t: 'Gad', he: 'גד' }, { t: 'Acher', he: 'אשר' }, { t: 'Zabulon', he: 'זבולן' }, { t: 'Dan', he: 'דן' }, { t: 'Naphtali', he: 'נפתלי' }
+                ] },
+                { title: 'Entre les montagnes', items: [{ t: 'Cohanim', he: 'כהנים' }, { t: 'Lévites *', he: 'לוים' }] }
+            ],
+            places: [
+                { id: 'ebal', kind: 'mountain', n: 'Mont Ebal', he: 'הר עיבל', c: [35.265, 32.250], side: 'top', note: "Sur le mont Ebal, au nord de Chékhem, se placent Ruben, Gad, Acher, Zabulon, Dan et Naphtali, pour la malédiction. C'est là aussi que Josué bâtit un autel de pierres brutes et y écrit la Torah.", ref: 'Deutéronome 27,12-13 ; Josué 8,30-32' },
+                { id: 'guerizim', kind: 'mountain', n: 'Mont Guerizim', he: 'הר גריזים', c: [35.265, 32.180], side: 'bottom', note: "Sur le mont Guerizim, au sud de Chékhem, se placent Siméon, Lévi, Juda, Issakhar, Joseph et Benjamin, pour la bénédiction.", ref: 'Deutéronome 27,12 ; 11,29' },
+                { id: 'chekhem', lv: 0, side: 'left', note: "La ville entre les deux montagnes : c'est là qu'Abraham avait bâti son premier autel en Canaan, et là que Jacob avait acheté un champ.", ref: 'Genèse 12,6-7 ; 33,18-20' },
+                { id: 'entre', kind: 'city', icon: '🕍', n: 'Entre les montagnes', he: 'כהנים · לוים', c: [35.345, 32.215], lv: 1, side: 'right', note: "Les cohanim et les Lévites se tiennent entre les deux montagnes, avec l'Arche, face aux tribus : les Lévites répondent « Amen » aux bénédictions et aux malédictions.", ref: 'Josué 8,33 ; Deutéronome 27,14' },
+                { id: 'guilgal', kind: 'city', n: 'Guilgal', he: 'גלגל', c: [35.50, 31.95], lv: 0, side: 'left', views: ['canaan'], note: "Le premier camp d'Israël en Canaan, près du Jourdain, d'où le peuple monte vers Chékhem, puis où il revient après la cérémonie.", ref: 'Josué 4,19 ; 9,6' },
+                { id: 'canaan-r', kind: 'region', n: 'CANAAN', he: 'כנען', c: [34.75, 31.70], lv: 0, views: ['canaan'] },
+                { id: 'arava', kind: 'region', n: 'ARAVA', he: 'ערבה', c: [35.62, 32.35], lv: 0, views: ['canaan'] },
+                { id: 'jourdain-l', kind: 'water', n: 'Jourdain', he: 'ירדן', c: [35.45, 32.72], lv: 0, views: ['canaan'] },
+                { id: 'mer-morte', kind: 'water', n: 'Mer Morte', he: 'ים המלח', c: [35.30, 31.45], lv: 0, views: ['canaan'] },
+                { id: 'mediterranee', kind: 'water', n: 'MER MÉDITERRANÉE', he: 'הים הגדול', c: [34.4, 32.4], views: ['canaan'] }
+            ]
+        },
+        {
+            id: 'tribus', icon: '🗺️', name: "Le partage de la terre d'Israël par tribu", ref: 'Nombres 32 ; Josué 13 – 19',
+            summary: "Après la conquête, la terre est partagée par tirage au sort entre les tribus : neuf tribus et demie en Canaan, deux tribus et demie à l'est du Jourdain, Ruben, Gad et la moitié de Manassé, qui avaient demandé leur part avant la traversée. Siméon reçoit ses villes au milieu du lot de Juda, et Lévi, qui n'a pas de territoire, reçoit des villes dans toutes les tribus. Les contours sont dessinés à la main et approximatifs. La seconde carte montre l'héritage de Dan avec la part supplémentaire, selon Rachi sur Deutéronome 33,22.",
+            views: [
+                { id: 'terre', label: 'Toute la terre', bounds: [[34.0, 30.4], [36.8, 33.5]] },
+                { id: 'centre', label: 'Le centre et le nord', bounds: [[34.7, 31.6], [36.1, 33.4]], full: true }
+            ],
+            variants: { label: 'Version', options: [{ id: 'partage', label: 'Le partage' }, { id: 'dan', label: 'Dan et sa part supplémentaire' }] },
+            legend: [{ color: '#e8896a', text: 'Dan : son lot de la côte (et, dans la seconde carte, Léchem au nord)' }],
+            zones: [
+                { id: 'asher', color: '#6bb7b0', ring: [[34.97, 32.78], [35.07, 32.93], [35.11, 33.09], [35.2, 33.28], [35.37, 33.56], [35.55, 33.45], [35.55, 33.2], [35.45, 33.0], [35.33, 32.85], [35.2, 32.75], [35.05, 32.7]] },
+                { id: 'naphtali', color: '#8e9fe0', ring: [[35.55, 33.45], [35.75, 33.25], [35.65, 33.05], [35.57, 32.88], [35.5, 32.8], [35.4, 32.8], [35.33, 32.85], [35.45, 33.0], [35.55, 33.2]] },
+                { id: 'zabulon', color: '#f2b8a2', ring: [[35.05, 32.7], [35.2, 32.75], [35.33, 32.85], [35.4, 32.8], [35.5, 32.72], [35.45, 32.62], [35.3, 32.6], [35.12, 32.6]] },
+                { id: 'issakhar', color: '#f5b86b', ring: [[35.3, 32.6], [35.45, 32.62], [35.55, 32.72], [35.58, 32.5], [35.5, 32.4], [35.35, 32.45]] },
+                { id: 'manasse-o', color: '#b7a3dc', ring: [[34.95, 32.75], [35.05, 32.7], [35.12, 32.6], [35.3, 32.6], [35.35, 32.45], [35.5, 32.4], [35.55, 32.28], [35.45, 32.12], [35.25, 32.12], [35.05, 32.18], [34.93, 32.4], [34.92, 32.6]] },
+                { id: 'ephraim', color: '#8fcf7e', ring: [[35.05, 32.18], [35.25, 32.12], [35.45, 32.12], [35.52, 32.0], [35.48, 31.92], [35.3, 31.9], [35.15, 31.9], [35.0, 32.05]] },
+                { id: 'benjamin', color: '#6fb4e3', ring: [[35.15, 31.9], [35.3, 31.9], [35.48, 31.92], [35.5, 31.77], [35.3, 31.75], [35.15, 31.8]] },
+                { id: 'dan', color: '#e8896a', ring: [[34.92, 32.6], [34.89, 32.5], [34.85, 32.33], [34.8, 32.17], [34.75, 32.05], [34.66, 31.88], [34.75, 31.85], [34.95, 31.9], [35.0, 32.05], [35.05, 32.18], [34.93, 32.4]], dan: true },
+                { id: 'juda', color: '#d6d24a', ring: [[34.66, 31.88], [34.75, 31.85], [34.95, 31.9], [35.15, 31.8], [35.3, 31.75], [35.5, 31.77], [35.55, 31.55], [35.48, 31.3], [35.4, 31.1], [35.15, 31.15], [34.85, 31.2], [34.55, 31.35], [34.45, 31.5], [34.55, 31.67], [34.64, 31.8]] },
+                { id: 'simeon', color: '#c4be34', ring: [[34.45, 31.5], [34.4, 31.3], [34.25, 31.05], [34.2, 30.6], [34.6, 30.55], [35.0, 30.6], [35.3, 30.85], [35.4, 31.1], [35.15, 31.15], [34.85, 31.2], [34.55, 31.35]] },
+                { id: 'ruben', color: '#e0699f', ring: [[35.55, 31.78], [35.88, 31.8], [35.92, 31.47], [35.55, 31.47]] },
+                { id: 'gad', color: '#f4cf3d', ring: [[35.55, 31.78], [35.88, 31.8], [36.5, 31.85], [36.5, 32.2], [36.0, 32.2], [35.95, 32.7], [35.58, 32.7]] },
+                { id: 'manasse-e', color: '#f0a95a', ring: [[35.6, 32.7], [35.95, 32.7], [36.0, 32.2], [36.5, 32.2], [36.55, 33.3], [35.85, 33.35], [35.75, 33.25], [35.65, 33.05], [35.57, 32.88]] },
+                { id: 'dan-nord', color: '#e8896a', ring: [[35.6, 33.2], [35.7, 33.2], [35.72, 33.32], [35.62, 33.34]], dan: true, variant: 'dan' }
+            ],
+            places: [
+                { id: 'asher', kind: 'region', n: 'ACHER', he: 'אשר', c: [34.88, 33.12], lv: 0, offshore: true, note: "Le littoral du nord, du Carmel jusqu'à la région de Sidon, avec Acco et Tyr à ses limites.", ref: 'Josué 19,24-31' },
+                { id: 'naphtali', kind: 'region', n: 'NAPHTALI', he: 'נפתלי', c: [35.52, 33.00], lv: 0, note: "La haute Galilée, de la vallée du Jourdain et du lac de Tibériade jusqu'aux frontières d'Acher.", ref: 'Josué 19,32-39' },
+                { id: 'zabulon', kind: 'region', n: 'ZABULON', he: 'זבולן', c: [35.25, 32.68], lv: 1, note: "Entre le Carmel et le lac de Tibériade, au nord de la plaine de Jezréel : Jacob l'avait béni « sur le rivage des mers ».", ref: 'Josué 19,10-16 ; Genèse 49,13' },
+                { id: 'issakhar', kind: 'region', n: 'ISSAKHAR', he: 'יששכר', c: [35.45, 32.52], lv: 1, note: 'La vallée de Jezréel, entre Zabulon et le Jourdain.', ref: 'Josué 19,17-23' },
+                { id: 'manasse-o', kind: 'region', n: 'MANASSÉ (OUEST)', he: 'מנשה', c: [35.20, 32.35], lv: 0, note: "La moitié de la tribu de Manassé qui reçoit son lot en Canaan, entre le Carmel et la Samarie, au nord d'Éphraïm.", ref: 'Josué 17,1-13' },
+                { id: 'ephraim', kind: 'region', n: 'ÉPHRAÏM', he: 'אפרים', c: [35.28, 32.00], lv: 0, note: "Au centre du pays, autour de Chékhem (qui est à la limite d'Éphraïm et de Manassé), avec Chilo.", ref: 'Josué 16' },
+                { id: 'benjamin', kind: 'region', n: 'BENJAMIN', he: 'בנימן', c: [35.32, 31.83], lv: 1, note: 'Un lot étroit entre Éphraïm et Juda ; Jérusalem et Jéricho sont dans ses limites. Beit-El est à sa frontière nord.', ref: 'Josué 18,11-28' },
+                { id: 'dan', kind: 'region', n: 'DAN', he: 'דן', c: [34.93, 32.20], lv: 1, note: 'Son lot, sur la côte (Joppé, Eltéqué), est trop étroit : les Danites conquièrent Léchem, au nord, et la nomment Dan.', ref: 'Josué 19,40-48 ; Juges 18' },
+                { id: 'juda', kind: 'region', n: 'JUDA', he: 'יהודה', c: [35.00, 31.50], lv: 0, note: 'Le plus grand lot, du sud de Jérusalem à la mer Morte et au désert de Tsin ; Hébron y est donnée à Caleb. Le roi David en vient.', ref: 'Josué 15' },
+                { id: 'simeon', kind: 'region', n: 'SIMÉON', he: 'שמעון', c: [34.75, 30.95], lv: 0, note: "Siméon n'a pas de territoire à part : ses villes (dont Béer-Chéva) sont prises « au milieu de l'héritage de Juda », car celui-ci était trop grand.", ref: 'Josué 19,1-9' },
+                { id: 'ruben', kind: 'region', n: 'RUBEN', he: 'ראובן', c: [35.72, 31.62], lv: 0, note: "À l'est de la mer Morte, de l'Arnon à Heshbon : Ruben, Gad et la demi-tribu de Manassé reçoivent leur part avant le passage du Jourdain.", ref: 'Nombres 32 ; Josué 13,15-23' },
+                { id: 'gad', kind: 'region', n: 'GAD', he: 'גד', c: [36.10, 32.02], lv: 0, note: 'En Transjordanie, de Heshbon au Jaboc et le long du Jourdain, avec une partie de Guilad.', ref: 'Nombres 32 ; Josué 13,24-28' },
+                { id: 'manasse-e', kind: 'region', n: 'MANASSÉ (EST)', he: 'מנשה', c: [36.00, 32.90], lv: 0, note: "L'autre moitié de Manassé reçoit le Bachan et le nord de Guilad, à l'est du Jourdain.", ref: 'Nombres 32,33-42 ; Josué 13,29-31' },
+                { id: 'dan-nord', kind: 'region', n: 'DAN', he: 'דן לשם', c: [35.66, 33.27], lv: 0, variant: 'dan', note: "Léchem (Laïch), conquise par les Danites, devient Dan. D'après le livre, qui cite Rachi sur Deutéronome 33,22, c'est la part supplémentaire de la tribu, ajoutée à son lot de la côte.", ref: 'Josué 19,47 ; Juges 18,27-29 ; Deutéronome 33,22' },
+                { id: 'mediterranee', kind: 'water', n: 'MER MÉDITERRANÉE', he: 'הים הגדול', c: [34.2, 32.5] },
+                { id: 'tiberiade', kind: 'water', n: 'Lac de Tibériade', he: 'ים כנרת', c: [35.82, 32.80], lv: 1 },
+                { id: 'mer-morte', kind: 'water', n: 'Mer Morte', he: 'ים המלח', c: [35.25, 31.45], lv: 1 }
+            ]
         }
     ];
 
@@ -393,12 +468,18 @@
         return path[Math.floor(path.length / 2)];
     }
 
+    // L'anneau fermé (le premier point répété à la fin), comme l'exige GeoJSON.
+    function closeRing(ring) {
+        var a = ring[0], b = ring[ring.length - 1];
+        return a[0] === b[0] && a[1] === b[1] ? ring.slice() : ring.concat([a]);
+    }
+
     function inBounds(c, bounds) {
         return c[0] >= bounds[0][0] && c[0] <= bounds[1][0] && c[1] >= bounds[0][1] && c[1] <= bounds[1][1];
     }
 
     return {
         MAPS: MAPS, PLACES: PLACES, HYDRO: HYDRO, mapById: mapById, resolvePlace: resolvePlace, placesOf: placesOf, viewById: viewById, visibleIn: visibleIn,
-        curve: curve, smooth: smooth, routePath: routePath, endBearing: endBearing, midPoint: midPoint, inBounds: inBounds
+        closeRing: closeRing, curve: curve, smooth: smooth, routePath: routePath, endBearing: endBearing, midPoint: midPoint, inBounds: inBounds
     };
 }));

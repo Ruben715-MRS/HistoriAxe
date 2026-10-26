@@ -185,6 +185,10 @@ function bibAddLayers() {
     map.addLayer({ id: 'land-fill', type: 'fill', source: 'land', paint: { 'fill-color': BIB_LAND[theme] } });
     // Les pays actuels sont des polygones voisins : un trait de la couleur de la terre referme les fentes qui laissent voir la mer entre eux.
     map.addLayer({ id: 'land-seams', type: 'line', source: 'land', paint: { 'line-color': BIB_LAND[theme], 'line-width': 1.4 } });
+    // Les zones colorées (les tribus), dessinées avant les lacs ; la mer les recouvre (bibEnsureSea) pour que la côte reste nette.
+    map.addSource('zones', { type: 'geojson', data: empty });
+    map.addLayer({ id: 'zones-fill', type: 'fill', source: 'zones', paint: { 'fill-color': ['get', 'color'], 'fill-opacity': theme === 'dark' ? 0.75 : 0.85 } });
+    map.addLayer({ id: 'zones-line', type: 'line', source: 'zones', paint: { 'line-color': theme === 'dark' ? '#1d1a14' : '#5b3a1e', 'line-width': 1, 'line-opacity': 0.7 } });
     const lakes = BiblicalMapsCore.HYDRO.lakes.map(l => ({ type: 'Feature', properties: {}, geometry: { type: 'Polygon', coordinates: [l.ring.concat([l.ring[0]])] } }));
     const rivers = BiblicalMapsCore.HYDRO.rivers.map(r => ({ type: 'Feature', properties: {}, geometry: { type: 'LineString', coordinates: BiblicalMapsCore.smooth(r.pts) } }));
     map.addSource('lakes', { type: 'geojson', data: { type: 'FeatureCollection', features: lakes } });
@@ -208,10 +212,31 @@ function bibRoutesVisible(map) {
     return (map.routes || []).filter(route => !route.variant || route.variant === bibVariant);
 }
 
+// La mer par-dessus les zones : le masque de mer des cartes historiques, chargé seulement pour les cartes qui ont des zones.
+function bibEnsureSea() {
+    if (!bibMap || !bibMapReady || bibMap.getSource('sea') || typeof historyLoadLand !== 'function') return;
+    historyLoadLand().then(ok => {
+        if (!ok || !bibMap || bibMap.getSource('sea')) return;
+        bibMap.addSource('sea', { type: 'geojson', data: historySeaMask(), tolerance: 0, buffer: 512 });
+        bibMap.addLayer({ id: 'sea-mask', type: 'fill', source: 'sea', paint: { 'fill-color': COUNTRIES_OCEAN[countriesTheme()], 'fill-opacity': 1 } }, 'lakes-fill');
+    });
+}
+
+// Les zones visibles : dans la seconde carte de Dan, les autres tribus passent en gris pour faire ressortir son héritage.
+function bibZoneFeatures(map) {
+    return (map.zones || []).filter(z => !z.variant || z.variant === bibVariant).map(z => ({
+        type: 'Feature',
+        properties: { color: bibVariant === 'dan' && !z.dan ? '#c9c2b4' : z.color },
+        geometry: { type: 'Polygon', coordinates: [BiblicalMapsCore.closeRing(z.ring)] }
+    }));
+}
+
 function bibDrawMap(fit) {
     const map = bibCurrent();
     const view = bibCurrentView();
     if (bibPopup) { bibPopup.remove(); bibPopup = null; }
+    bibMap.getSource('zones').setData({ type: 'FeatureCollection', features: bibZoneFeatures(map) });
+    if (map.zones) bibEnsureSea();
     const lines = [];
     const heads = [];
     bibRoutesVisible(map).forEach(route => {
@@ -263,7 +288,8 @@ function bibPinElement(place) {
         const mark = document.createElement('span');
         mark.className = 'bib-mark';
         mark.setAttribute('aria-hidden', 'true');
-        if (place.kind === 'war') mark.textContent = '⚔️';
+        if (place.icon) { mark.textContent = place.icon; mark.classList.add('is-icon'); }
+        else if (place.kind === 'war') mark.textContent = '⚔️';
         else if (place.kind === 'altar') mark.textContent = '🔥';
         else if (place.kind === 'mountain') mark.textContent = '▲';
         if (place.num) {
@@ -282,7 +308,7 @@ function bibPinElement(place) {
             flame.textContent = '🔥';
             el.appendChild(flame);
         }
-        if (place.kind !== 'altar' && place.kind !== 'war') el.appendChild(bibLabel(place));
+        if ((place.kind !== 'altar' && place.kind !== 'war') || place.icon) el.appendChild(bibLabel(place));
     }
     // Le clic ne doit pas remonter jusqu'à la carte : elle fermerait aussitôt la bulle que ce repère ouvre.
     if (interactive) el.onclick = event => { event.stopPropagation(); bibSelect(place.id, false); };

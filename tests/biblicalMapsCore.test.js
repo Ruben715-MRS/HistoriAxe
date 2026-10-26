@@ -12,7 +12,7 @@ const get = id => { const m = B.mapById(id); return { map: m, places: B.placesOf
 const named = (places, id) => places.find(p => p.id === id);
 
 test('quatre cartes, aux identifiants uniques et aux champs complets', () => {
-    assert.deepEqual(B.MAPS.map(m => m.id), ['abraham', 'guerre', 'jacob', 'desert']);
+    assert.deepEqual(B.MAPS.map(m => m.id), ['abraham', 'guerre', 'jacob', 'desert', 'ebal', 'tribus']);
     B.MAPS.forEach(m => {
         ['name', 'icon', 'ref', 'summary'].forEach(k => assert.ok(m[k] && String(m[k]).length >= 1, m.id + ' ' + k));
         assert.ok(m.summary.length > 120, m.id + ' résumé');
@@ -137,6 +137,37 @@ test('les arcs et les lignes lissées : bornés, du départ à l\'arrivée, avec
         assert.ok(p.length >= 3, m.id + '/' + r.id);
         assert.ok(p.every(pt => pt.every(Number.isFinite)), m.id + '/' + r.id + ' points valides');
     }));
+});
+
+test('Guerizim et Ebal : six tribus sur chaque montagne, et les cohanim et Lévites entre les deux', () => {
+    const { map, places } = get('ebal');
+    assert.deepEqual(map.sections.map(s => s.items.length), [6, 6, 2]);
+    const all = map.sections.slice(0, 2).flatMap(s => s.items.map(i => i.t.replace(' *', '')));
+    assert.equal(new Set(all).size, 12, 'douze tribus, chacune une seule fois');
+    // Chékhem est entre les deux montagnes : Ebal au nord, Guerizim au sud
+    const [ebal, guerizim, chekhem] = ['ebal', 'guerizim', 'chekhem'].map(id => named(places, id).c);
+    assert.ok(ebal[1] > chekhem[1] && chekhem[1] > guerizim[1]);
+});
+
+test('le partage par tribu : douze tribus en treize zones, des anneaux simples, une étiquette dans chaque zone', () => {
+    const H = require('../js/historyMapsCore.js');
+    const { map, places } = get('tribus');
+    const main = map.zones.filter(z => !z.variant);
+    assert.equal(main.length, 13, 'Manassé est en deux zones');
+    assert.equal(new Set(map.zones.map(z => z.id)).size, map.zones.length);
+    map.zones.forEach(z => {
+        assert.match(z.color, /^#[0-9a-f]{6}$/i, z.id + ' couleur');
+        assert.equal(H.selfIntersection(z.ring), null, z.id + ' se recoupe');
+        assert.ok(z.ring.every(p => B.inBounds(p, [[33.9, 30.4], [36.8, 33.6]])), z.id + ' hors de la carte');
+        const prepared = C.prepare({ type: 'Polygon', coordinates: [B.closeRing(z.ring)] });
+        const label = named(places, z.id);
+        assert.ok(label, z.id + ' sans étiquette');
+        assert.ok(label.offshore || C.contains(prepared, label.c[0], label.c[1]), z.id + ' : l\'étiquette est hors de sa zone');
+        assert.ok(label.he && label.note && label.ref, z.id + ' fiche');
+    });
+    assert.deepEqual(map.variants.options.map(o => o.id), ['partage', 'dan']);
+    assert.deepEqual(map.zones.filter(z => z.variant).map(z => z.id), ['dan-nord']);
+    assert.ok(map.zones.filter(z => z.dan).length === 2);
 });
 
 test('les eaux : des anneaux fermés et des fleuves de deux points au moins', () => {

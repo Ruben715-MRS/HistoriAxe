@@ -341,11 +341,11 @@ test('atlas des pays : une capitale se cherche aussi, et un statut contesté est
     await expect(page.locator('.tool-countries-none')).toBeVisible();
 });
 
-test('cartes bibliques : quatre cartes, des vues, des lieux avec leur verset, et la poursuite d\'Abraham en deux versions', async ({ page }) => {
+test('cartes bibliques : six cartes, des vues, des lieux avec leur verset, et la poursuite d\'Abraham en deux versions', async ({ page }) => {
     await ouvrir(page, 'Cartes bibliques');
     expect(await visibleScreen(page)).toBe('screen-tool-biblical');
     const menu = page.locator('#tool-biblical-select');
-    await expect(menu.locator('option')).toHaveCount(4);
+    await expect(menu.locator('option')).toHaveCount(6);
     expect(await page.locator('#screen-tool-biblical').innerText()).not.toContain('tools.');
     // Abraham : deux vues, quatre autels, une note par lieu
     await expect(page.locator('#tool-biblical-views .tool-history-chip')).toHaveCount(2);
@@ -368,6 +368,14 @@ test('cartes bibliques : quatre cartes, des vues, des lieux avec leur verset, et
     await page.locator('#tool-biblical-fiche summary').click();
     await page.locator('#tool-biblical-fiche [data-place="mont-hor"]').click();
     await expect(page.locator('.bib-popup')).toContainText('Aaron y meurt');
+    // le partage par tribu : treize zones, et la seconde carte ajoute Dan au nord
+    await menu.selectOption('tribus');
+    await expect(page.locator('.bib-pin[data-place="dan-nord"]')).toHaveCount(0);
+    await page.locator('#tool-biblical-variants [data-variant="dan"]').click();
+    await expect(page.locator('.bib-pin[data-place="dan-nord"]')).toHaveCount(1);
+    // Guerizim et Ebal
+    await menu.selectOption('ebal');
+    await expect(page.locator('#tool-biblical-fiche')).toContainText('Sur le mont Ebal');
 });
 
 test('cartes historiques : un menu groupé par époque, des dates, une fiche, et les événements de l\'app situés dans la zone', async ({ page }) => {
