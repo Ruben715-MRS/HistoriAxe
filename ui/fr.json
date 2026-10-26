@@ -2497,11 +2497,8 @@
     "title": "Villes du monde",
     "card_capital": "Capitale ou plus grande ville ?",
     "card_capital_desc": "Un pays, quatre villes : la capitale, ou la plus grande ville.",
-    "card_country": "Quel pays a cette ville ?",
-    "card_country_desc": "Une ville, quatre pays.",
     "ask_capital": "Quelle est la capitale de {country} ?",
     "ask_largest": "Quelle est la plus grande ville de {country} ?",
-    "ask_country": "Dans quel pays se trouve la ville de {city} ?",
     "progress": "Question {n} sur {total}",
     "score_now": "Score : {score} points",
     "right": "Bonne réponse ! +{points} points.",
@@ -2512,10 +2509,9 @@
     "back": "Retour à la Salle de jeux",
     "credit": "Villes et populations : Wikidata (CC0). Les populations sont des estimations d’années différentes ; elles ne servent qu’à départager les plus grandes villes. Rien n’est enregistré.",
     "card_title": "Villes du monde",
-    "card_desc": "Capitales, plus grandes villes et pays des villes du monde.",
-    "menu_intro": "Deux jeux sur les villes du monde.",
+    "card_desc": "Capitales, villes du nord ou du sud, carte et classements des plus grandes villes du monde.",
+    "menu_intro": "Cinq jeux sur les villes du monde, avec les réglages du Quiz des pays.",
     "menu_capital": "Capitale ou plus grande ville ?",
-    "menu_country": "Quel pays a cette ville ?",
     "menu_touch": "Touchez la ville sur la carte",
     "menu_order": "Classer les villes par population",
     "ask_touch": "Touchez sur la carte : {city}",
@@ -2532,6 +2528,10 @@
     "history_result": "C’était à {city}, à {km} km de votre point : {points} points.",
     "history_error": "Les lieux de l’Atlas des événements n’ont pas pu être chargés. Vérifiez votre connexion et réessayez.",
     "history_credit": "Lieux des faits : Atlas des événements, d’après © les contributeurs d’OpenStreetMap.",
-    "map_hint": "Au clavier : les flèches déplacent la carte, + et − zooment, Entrée pose le repère au centre."
+    "map_hint": "Au clavier : les flèches déplacent la carte, + et − zooment, Entrée pose le repère au centre.",
+    "ask_north": "Laquelle de ces villes est la plus au nord ?",
+    "ask_south": "Laquelle de ces villes est la plus au sud ?",
+    "menu_latitude": "Quelle ville est la plus au nord ?",
+    "score_timed": "Score : {score} points"
   }
 }

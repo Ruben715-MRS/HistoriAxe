@@ -43,13 +43,33 @@ test('plus grande ville : posée seulement si elle devance nettement la suivante
     assert.equal(C.largestQuestion(cities, countries, 'AU', { rng: seeded(2) }), null);
 });
 
-test('ville → pays : seulement pour un nom unique dans la liste', () => {
-    const tokyo = cities.filter(c => c.n === 'Tokyo');
-    assert.equal(tokyo.length, 1);
-    const q = C.countryQuestion(cities, countries, tokyo[0], { rng: seeded(3) });
-    assert.ok(q);
-    assert.equal(q.options.find(o => o.id === q.target).value, 'Japon');
-    assert.equal(C.isValid(q, cities), true);
+test('plus au nord : une ville la plus extrême, nettement devant la suivante ; la question du sud la prend dans l’autre sens', () => {
+    const north = C.latitudeQuestion(cities, countries, { rng: seeded(3) });
+    assert.ok(north);
+    assert.equal(north.ask === 'north' || north.ask === 'south', true);
+    assert.equal(C.isValid(north, cities), true);
+    // Le sens est tiré au sort : on en prend un de chaque en plusieurs essais, chacun valable.
+    const asks = new Set();
+    for (let s = 0; s < 40; s++) {
+        const q = C.latitudeQuestion(cities, countries, { rng: seeded(100 + s), difficulty: 'hard' });
+        if (!q) continue;
+        asks.add(q.ask);
+        assert.equal(C.isValid(q, cities), true, 'seed ' + s);
+        const lat = id => cities.find(c => c.id === id).lat;
+        const values = q.options.map(o => lat(o.id));
+        const extreme = q.ask === 'north' ? Math.max(...values) : Math.min(...values);
+        assert.equal(lat(q.target), extreme, 'la bonne réponse est la plus extrême');
+    }
+    assert.deepEqual([...asks].sort(), ['north', 'south']);
+});
+
+test('bonus de vitesse : le barème du Quiz des pays, proportionnel à la justesse ; sans chrono, rien', () => {
+    assert.equal(C.withSpeed(100, 100, null, 0), 100, 'sans chrono');
+    assert.equal(C.withSpeed(100, 100, 1, 3), 200, 'sur place, en 3 secondes : 100 de bonus');
+    assert.equal(C.withSpeed(100, 100, 0, 3), 100, 'temps écoulé de justesse : pas de bonus');
+    assert.equal(C.withSpeed(100, 100, 1, 15), 120, 'en 15 secondes : 20 de bonus');
+    assert.equal(C.withSpeed(0, 100, 1, 3), 0, 'une erreur ne rapporte rien');
+    assert.equal(C.withSpeed(37, 100, 1, 3), 37 + 37, 'un point loin de la ville prend une part du bonus');
 });
 
 test('parties : chaque forme donne des questions valables, sur des cibles différentes', () => {

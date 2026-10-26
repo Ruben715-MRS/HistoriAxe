@@ -6,27 +6,30 @@
 // 500 000 habitants et toutes les capitales. Les pays sont ceux de l'Atlas (assets/geo/countries-facts.json).
 // Ce module ne touche ni au DOM ni à la carte : il se teste (tests/cityGameCore.test.js). L'écran est dans js/modes/cities.js.
 //
-// TROIS FORMES DE QUESTION, en QCM à quatre réponses :
+// QUATRE FORMES DE QUESTION (les trois premières en QCM à quatre réponses) :
 //   - « capital » : quelle est la capitale de ce pays ? Le piège : la plus grande ville du pays, qui n'est pas la capitale
 //     (Sydney pour l'Australie, Istanbul pour la Turquie, Toronto pour le Canada).
 //   - « largest » : quelle est la plus grande ville de ce pays ? Le piège : la capitale, quand elle n'est pas la plus grande.
 //     Une question n'est posée que si la plus grande ville est nettement plus peuplée que la suivante (MIN_RATIO) :
 //     les populations sont des estimations d'années différentes, un écart faible ne se décide pas.
-//   - « country » : quel pays a pour ville ce nom ? Seulement pour un nom qui ne désigne qu'une ville de la liste.
+//   - « latitude » : laquelle de ces villes est la plus au nord (ou la plus au sud) ? Quatre villes de pays différents, dont l'une
+//     nettement devant les autres (LAT_MIN_GAP degrés) : une question de position, que le Quiz des pays ne pose pas.
 // Les mauvaises réponses viennent de la même région (continent) en mode difficile, et au hasard sinon.
+// Le chrono (dans js/modes/cities.js) ajoute un bonus de vitesse, le même barème que le Quiz des pays : `withSpeed`.
 
 (function (root, factory) {
     if (typeof module === 'object' && typeof module.exports === 'object') {
-        module.exports = factory();
+        module.exports = factory(require('./geoQuizSessionCore.js'));
     } else {
-        root.CityGameCore = factory();
+        root.CityGameCore = factory(root.GeoQuizSessionCore);
     }
-})(typeof self !== 'undefined' ? self : this, function () {
+})(typeof self !== 'undefined' ? self : this, function (GeoQuizSessionCore) {
     'use strict';
 
     var MIN_RATIO = 1.3;
     var OPTIONS = 4;
-    var FORMS = ['capital', 'country', 'touch', 'order'];
+    var FORMS = ['capital', 'latitude', 'touch', 'order'];
+    var LAT_MIN_GAP = 3;
     // Points : 100 pour une bonne réponse en QCM ; « touche la ville » : 100 sur place, moins avec la distance (échelle du monde,
     // comme le Mode Carte) ; « classer » : 25 par ville bien placée.
     var QCM_POINTS = 100;
@@ -130,16 +133,49 @@
         return { form: 'largest', target: big.id, country: cc, ask: 'largest', options: optionsFrom(big, picks, nameOf, random) };
     }
 
-    // « Quel pays a pour ville ce nom ? » : seulement pour un nom unique dans la liste.
-    function countryQuestion(cities, countries, city, opts) {
+    // « Laquelle de ces villes est la plus au nord (ou la plus au sud) ? » : quatre villes de pays différents (les villes d'au moins
+    // ORDER_MIN_POP habitants, comme pour le classement), dont la plus extrême est nettement devant la suivante (LAT_MIN_GAP degrés).
+    function latitudeQuestion(cities, countries, opts) {
         var o = opts || {};
         var random = o.rng || Math.random;
-        if (cities.filter(function (c) { return c.n === city.n; }).length !== 1) return null;
-        var countryName = function (c) { return countries.get(c.cc).n; };
-        var others = cities.filter(function (c) { return c.cc !== city.cc; });
-        var more = distractors(city, others, countries, OPTIONS - 1, o.difficulty, random, countryName, []);
-        if (!more) return null;
-        return { form: 'country', target: city.id, country: city.cc, ask: 'country', options: optionsFrom(city, more, countryName, random) };
+        var pool = cities.filter(function (c) { return c.pop && c.pop >= ORDER_MIN_POP; });
+        if (pool.length < OPTIONS) return null;
+        var south = random() < 0.5;
+        var sign = south ? -1 : 1;
+        for (var attempt = 0; attempt < 60; attempt++) {
+            var anchor = pool[Math.floor(random() * pool.length)];
+            var cont = countries.get(anchor.cc) && countries.get(anchor.cc).cont;
+            var candidates = o.difficulty === 'hard'
+                ? pool.filter(function (c) { var k = countries.get(c.cc); return k && k.cont === cont; })
+                : pool;
+            var picks = [anchor];
+            var tries = 0;
+            while (picks.length < OPTIONS && tries < 200) {
+                var c = candidates[Math.floor(random() * candidates.length)];
+                tries++;
+                if (picks.some(function (p) { return p.cc === c.cc || p.n === c.n; })) continue;
+                picks.push(c);
+            }
+            if (picks.length < OPTIONS) continue;
+            // La plus extrême d'abord : la plus au nord (latitude la plus haute), ou la plus au sud.
+            var ranked = picks.slice().sort(function (a, b) { return sign * (b.lat - a.lat); });
+            if (sign * (ranked[0].lat - ranked[1].lat) < LAT_MIN_GAP) continue;
+            var nameOf = function (x) { return x.n; };
+            return {
+                form: 'latitude', target: ranked[0].id, country: ranked[0].cc, ask: south ? 'south' : 'north',
+                options: optionsFrom(ranked[0], ranked.slice(1), nameOf, random)
+            };
+        }
+        return null;
+    }
+
+    // Le bonus de vitesse (le barème du Quiz des pays) : d'autant plus grand que le temps restant est long et le temps accordé court.
+    // Il est proportionnel à la justesse : une réponse qui vaut `maxPoints` touche le bonus plein. `remaining` : la part du temps
+    // restante (0 à 1), null sans chrono.
+    function withSpeed(points, maxPoints, remaining, seconds) {
+        if (!points || remaining == null || !seconds) return points;
+        var share = Math.min(Math.max(remaining, 0), 1);
+        return points + Math.round(GeoQuizSessionCore.SPEED_BASE / seconds * share * points / maxPoints);
     }
 
     // Points d'une ville touchée, selon la distance au vrai lieu (exp(−d/D), la tolérance de 10 km n'est pas comptée).
@@ -210,7 +246,6 @@
         var out = [];
         var seen = new Set();
         var list = cities.slice();
-        var attempts = 0;
         if (form === 'capital') {
             // La capitale, ou la plus grande ville quand elle est nettement devant : deux questions par pays, au hasard.
             var codes = shuffle(Array.from(byCountry(list).keys()), random);
@@ -230,11 +265,10 @@
                 var oq = orderQuestion(list, countries, { rng: random, difficulty: o.difficulty });
                 if (oq) out.push(oq);
             }
-        } else {
-            list = shuffle(list, random);
-            for (var j = 0; j < list.length && out.length < count && attempts < list.length; j++, attempts++) {
-                var c = countryQuestion(cities, countries, list[j], { rng: random, difficulty: o.difficulty });
-                if (c && !seen.has(c.target)) { seen.add(c.target); out.push(c); }
+        } else if (form === 'latitude') {
+            for (var l = 0; l < 200 && out.length < count; l++) {
+                var lq = latitudeQuestion(list, countries, { rng: random, difficulty: o.difficulty });
+                if (lq && !seen.has(lq.target)) { seen.add(lq.target); out.push(lq); }
             }
         }
         return out;
@@ -243,6 +277,13 @@
     // Contrôle a posteriori : la bonne réponse est proposée une fois, et aucune autre proposition n'a le même libellé.
     function isValid(question, cities) {
         if (question.form === 'touch') return cities.some(function (c) { return c.id === question.target; });
+        if (question.form === 'latitude') {
+            var all = question.options.map(function (o) { return cities.filter(function (c) { return c.id === o.id; })[0]; });
+            if (question.options.length !== OPTIONS || !all.every(Boolean) || new Set(all.map(function (c) { return c.n; })).size !== OPTIONS) return false;
+            var sign = question.ask === 'south' ? -1 : 1;
+            var ranked = all.slice().sort(function (a, b) { return sign * (b.lat - a.lat); });
+            return ranked[0].id === question.target && sign * (ranked[0].lat - ranked[1].lat) >= LAT_MIN_GAP;
+        }
         if (question.form === 'order') {
             var pops = question.ids.map(function (id) { return cities.filter(function (c) { return c.id === id; })[0]; });
             return pops.every(Boolean) && clearlyOrdered(pops.map(function (c) { return c.pop; }))
@@ -259,7 +300,7 @@
     return {
         FORMS: FORMS, MIN_RATIO: MIN_RATIO, OPTIONS: OPTIONS,
         countryIndex: countryIndex, byCountry: byCountry, capitalQuestion: capitalQuestion, largestQuestion: largestQuestion,
-        countryQuestion: countryQuestion, generateCityGame: generateCityGame, isValid: isValid,
+        latitudeQuestion: latitudeQuestion, LAT_MIN_GAP: LAT_MIN_GAP, withSpeed: withSpeed, generateCityGame: generateCityGame, isValid: isValid,
         touchPoints: touchPoints, orderPoints: orderPoints, touchQuestion: touchQuestion, orderQuestion: orderQuestion,
         QCM_POINTS: QCM_POINTS, ORDER_POINTS: ORDER_POINTS, TOUCH_SCALE_KM: TOUCH_SCALE_KM, ORDER_SIZE: ORDER_SIZE
     };

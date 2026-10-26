@@ -2460,11 +2460,8 @@
     "title": "World cities",
     "card_capital": "Capital or largest city?",
     "card_capital_desc": "One country, four cities: the capital, or the largest city.",
-    "card_country": "Which country has this city?",
-    "card_country_desc": "One city, four countries.",
     "ask_capital": "What is the capital of {country}?",
     "ask_largest": "What is the largest city of {country}?",
-    "ask_country": "In which country is the city of {city}?",
     "progress": "Question {n} of {total}",
     "score_now": "Score: {score} points",
     "right": "Correct! +{points} points.",
@@ -2475,10 +2472,9 @@
     "back": "Back to the Salle de jeux",
     "credit": "Cities and populations: Wikidata (CC0). Populations are estimates from different years; they only decide which city is largest. Nothing is saved.",
     "card_title": "World cities",
-    "card_desc": "Capitals, largest cities and the countries of world cities.",
-    "menu_intro": "Two games about the world’s cities.",
+    "card_desc": "Capitals, northernmost or southernmost cities, a map, and rankings of the world’s largest cities.",
+    "menu_intro": "Five games about the world’s cities, with the Countries quiz settings.",
     "menu_capital": "Capital or largest city?",
-    "menu_country": "Which country has this city?",
     "menu_touch": "Touch the city on the map",
     "menu_order": "Order the cities by population",
     "ask_touch": "Touch on the map: {city}",
@@ -2495,6 +2491,10 @@
     "history_result": "It was in {city}, {km} km from your point: {points} points.",
     "history_error": "The places from the events Atlas could not be loaded. Check your connection and try again.",
     "history_credit": "Places of the events: events Atlas, based on © OpenStreetMap contributors.",
-    "map_hint": "With a keyboard: the arrow keys move the map, + and − zoom, Enter places the marker at the centre."
+    "map_hint": "With a keyboard: the arrow keys move the map, + and − zoom, Enter places the marker at the centre.",
+    "ask_north": "Which of these cities is furthest north?",
+    "ask_south": "Which of these cities is furthest south?",
+    "menu_latitude": "Which city is furthest north?",
+    "score_timed": "Score: {score} points"
   }
 }

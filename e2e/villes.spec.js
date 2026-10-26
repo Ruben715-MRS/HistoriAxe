@@ -39,7 +39,7 @@ test('« Villes du monde » est une carte de « Jeux géographiques », premièr
     expect(cards).toEqual(['Quiz des pays', 'Villes du monde']);
     await page.locator('.arcade-card', { hasText: 'Villes du monde' }).click();
     await expect(page.locator('#cities-menu .btn')).toHaveText([
-        'Capitale ou plus grande ville ?', 'Quel pays a cette ville ?', 'Touchez la ville sur la carte',
+        'Capitale ou plus grande ville ?', 'Quelle ville est la plus au nord ?', 'Touchez la ville sur la carte',
         'Classer les villes par population', "Ville de l'histoire"
     ]);
     // « Retour » ramène à la Salle de jeux.
@@ -66,15 +66,44 @@ test('capitale ou plus grande ville : dix questions, 100 points chacune, une err
     await expect(page.locator('#cities-menu')).toBeVisible();
 });
 
-test('quel pays a cette ville : dix bonnes réponses, 1 000 points', async ({ page }) => {
+test('quelle ville est la plus au nord (ou au sud) : dix bonnes réponses, 1 000 points', async ({ page }) => {
     await openCities(page);
-    await startGame(page, 'Quel pays a cette ville');
-    await expect(page.locator('#cities-ask')).toContainText('Dans quel pays se trouve la ville de');
+    await startGame(page, 'Quelle ville est la plus au nord');
+    await expect(page.locator('#cities-ask')).toHaveText(/Laquelle de ces villes est la plus au (nord|sud) \?/);
     for (let i = 0; i < 10; i++) {
         await answer(page, true);
         await page.locator('#cities-next').click();
     }
     await expect(page.locator('#cities-score')).toHaveText('Score : 1000 points sur 1000');
+});
+
+test('réglages partagés avec le Quiz des pays : zone et chrono, bonus de vitesse, temps écoulé = erreur', async ({ page }) => {
+    await openCities(page);
+    await expect(page.locator('#cities-timer')).toBeHidden();
+    await page.locator('#cities-zone .geoquiz-chip', { hasText: 'Afrique' }).click();
+    await page.locator('#cities-timer-choice .geoquiz-chip', { hasText: '3 s' }).click();
+    await expect(page.locator('#cities-zone .geoquiz-chip', { hasText: 'Afrique' })).toHaveAttribute('aria-pressed', 'true');
+    // Le Quiz des pays a les mêmes réglages.
+    await page.locator('#screen-cities .back-btn').click();
+    await page.locator('.arcade-card', { hasText: 'Quiz des pays' }).click();
+    await expect(page.locator('#geoquiz-zone .geoquiz-chip', { hasText: 'Afrique' })).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#geoquiz-timer-choice .geoquiz-chip', { hasText: '3 s' })).toHaveAttribute('aria-pressed', 'true');
+    await page.locator('#geoquiz-zone .geoquiz-chip', { hasText: 'Monde' }).click();
+    await page.locator('#screen-geoquiz .back-btn').click();
+    await page.locator('.arcade-card', { hasText: 'Villes du monde' }).click();
+    expect(await visibleScreen(page)).toBe('screen-cities');
+    await expect(page.locator('#cities-zone .geoquiz-chip', { hasText: 'Monde' })).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#cities-timer-choice .geoquiz-chip', { hasText: '3 s' })).toHaveAttribute('aria-pressed', 'true');
+    await page.locator('#cities-zone .geoquiz-chip', { hasText: 'Afrique' }).click();
+    await startGame(page, 'Capitale ou plus grande ville');
+    await expect(page.locator('#cities-timer')).toBeVisible();
+    // Une réponse juste tout de suite : 100 points plus un bonus de vitesse (3 secondes accordées).
+    await answer(page, true);
+    await expect(page.locator('#cities-feedback')).toContainText(/\+1\d\d points/);
+    await page.locator('#cities-next').click();
+    // Le temps écoulé sans réponse : une erreur, la bonne réponse s'affiche.
+    await expect(page.locator('#cities-feedback')).toContainText('Temps écoulé', { timeout: 6000 });
+    await expect(page.locator('#cities-options .quiz-option.correct')).toHaveCount(1);
 });
 
 test('touchez la ville : une carte sans aucun nom, 100 points sur place, des points qui baissent avec la distance', async ({ page }) => {

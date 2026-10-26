@@ -1506,9 +1506,25 @@
         <h2 class="header-title" data-i18n="cities.title">Villes du monde</h2>
         <p class="tool-msg" id="cities-status" role="status"></p>
         <div id="cities-menu" class="geoquiz-menu">
-            <p class="modes-header-subtitle" data-i18n="cities.menu_intro">Deux jeux sur les villes du monde.</p>
+            <p class="modes-header-subtitle" data-i18n="cities.menu_intro">Cinq jeux sur les villes du monde, avec les réglages du Quiz des pays.</p>
+            <div class="geoquiz-settings">
+                <div class="geoquiz-setting" role="group" aria-labelledby="cities-zone-title">
+                    <h3 class="geoquiz-setting-title" id="cities-zone-title" data-i18n="geoquiz.zone_title">Zone</h3>
+                    <div class="geoquiz-chips" id="cities-zone"></div>
+                </div>
+                <div class="geoquiz-setting" role="group" aria-labelledby="cities-level-title">
+                    <h3 class="geoquiz-setting-title" id="cities-level-title" data-i18n="geoquiz.level_title">Difficulté</h3>
+                    <div class="geoquiz-chips" id="cities-level"></div>
+                    <p class="tool-small" id="cities-level-hint"></p>
+                </div>
+                <div class="geoquiz-setting" role="group" aria-labelledby="cities-timer-title">
+                    <h3 class="geoquiz-setting-title" id="cities-timer-title" data-i18n="geoquiz.timer_title">Chrono (temps accordé par question)</h3>
+                    <div class="geoquiz-chips" id="cities-timer-choice"></div>
+                    <p class="tool-small" data-i18n="geoquiz.timer_hint"></p>
+                </div>
+            </div>
             <button type="button" class="btn" onclick="openCityGame('capital')" data-i18n="cities.menu_capital">Capitale ou plus grande ville ?</button>
-            <button type="button" class="btn" onclick="openCityGame('country')" data-i18n="cities.menu_country">Quel pays a cette ville ?</button>
+            <button type="button" class="btn" onclick="openCityGame('latitude')" data-i18n="cities.menu_latitude">Quelle ville est la plus au nord ?</button>
             <button type="button" class="btn" onclick="openCityGame('touch')" data-i18n="cities.menu_touch">Touchez la ville sur la carte</button>
             <button type="button" class="btn" onclick="openCityGame('order')" data-i18n="cities.menu_order">Classer les villes par population</button>
             <button type="button" class="btn" onclick="openCityGame('history')" data-i18n="cities.menu_history">Ville de l'histoire</button>
@@ -1517,6 +1533,10 @@
             <div class="cities-bar">
                 <p class="tool-small" id="cities-progress" aria-live="polite"></p>
                 <p class="tool-small" id="cities-score-now"></p>
+            </div>
+            <div class="geoquiz-timer hidden" id="cities-timer" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" aria-label="Temps restant" data-i18n-attr="aria-label:geoquiz.timer_label">
+                <span class="geoquiz-timer-fill" id="cities-timer-fill"></span>
+                <span class="geoquiz-timer-text" id="cities-timer-text"></span>
             </div>
             <div class="geoquiz-card">
                 <p class="geoquiz-ask" id="cities-ask"></p>
