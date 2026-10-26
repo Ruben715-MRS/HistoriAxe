@@ -149,11 +149,11 @@ test('Guerizim et Ebal : six tribus sur chaque montagne, et les cohanim et Lévi
     assert.ok(ebal[1] > chekhem[1] && chekhem[1] > guerizim[1]);
 });
 
-test('le partage par tribu : douze tribus en treize zones, des anneaux simples, une étiquette dans chaque zone', () => {
+test('le partage par tribu : douze zones (Siméon fondu dans Juda, Manassé en deux), des anneaux simples, une étiquette dans chaque zone', () => {
     const H = require('../js/historyMapsCore.js');
     const { map, places } = get('tribus');
     const main = map.zones.filter(z => !z.variant);
-    assert.equal(main.length, 13, 'Manassé est en deux zones');
+    assert.equal(main.length, 12, 'Juda et Siméon sont une seule couleur ; Manassé est en deux zones');
     assert.equal(new Set(map.zones.map(z => z.id)).size, map.zones.length);
     map.zones.forEach(z => {
         assert.match(z.color, /^#[0-9a-f]{6}$/i, z.id + ' couleur');
