@@ -1324,6 +1324,10 @@
                 <span class="arcade-card-icon" aria-hidden="true">🗺️</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.history_title"></strong><small data-i18n="tools.history_desc"></small></span>
             </button>
+            <button type="button" class="arcade-card" onclick="openTool('dictionary', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">📖</span>
+                <span class="arcade-card-text"><strong>Dictionnaire</strong><small>Les termes qu'on confond, définis avec précision. Mode concours.</small></span>
+            </button>
         </div>
     </div>
 
@@ -1717,6 +1721,30 @@
             <button type="button" class="btn geoquiz-secondary" onclick="geoQuizShowMenu()" data-i18n="geoquiz.back">Changer de réglage</button>
         </div>
         <p class="tool-small" data-i18n="geoquiz.credit"></p>
+    </div>
+
+    <div id="screen-tool-dictionary" class="list-screen hidden">
+        <button class="back-btn" onclick="toolBack('dictionary')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title">Dictionnaire d'histoire et de géographie</h2>
+        <p class="modes-header-subtitle">Les termes qu'on confond souvent, définis avec précision.</p>
+        <div class="dict-bar">
+            <input type="search" id="dict-search" class="tool-input" autocomplete="off" autocapitalize="off" spellcheck="false"
+                placeholder="Rechercher un mot…" aria-label="Rechercher un mot" oninput="dictionaryRender()">
+            <div class="dict-filters">
+                <select id="dict-domain" class="tool-input" aria-label="Domaine" onchange="dictionaryRender()"></select>
+                <label class="dict-toggle"><input type="checkbox" id="dict-concours" onchange="dictionaryToggleConcours(this.checked)"> Mode concours</label>
+            </div>
+        </div>
+        <nav class="dict-letters" id="dict-letters" aria-label="Aller à une lettre"></nav>
+        <p class="tool-msg" id="dict-status" role="status"></p>
+        <div class="dict-list" id="dict-list"></div>
+    </div>
+
+    <div id="screen-tool-dictionary-term" class="list-screen hidden">
+        <button class="back-btn" onclick="dictionaryBackToList()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" id="dict-term-name"></h2>
+        <p class="modes-header-subtitle" id="dict-term-meta"></p>
+        <div class="tool-panel dict-term" id="dict-term-body"></div>
     </div>
 
     <div id="screen-tool-countries" class="list-screen hidden">
@@ -3483,11 +3511,13 @@
     <script src="js/app/arcade-extra.js"></script>
     <script src="js/periodSystems.js"></script>
     <script src="js/toolsCore.js"></script>
+    <script src="js/dictionnaireCore.js"></script>
     <script src="js/countriesCore.js"></script>
     <script src="js/geoQuizCore.js"></script>
     <script src="js/geoQuizSessionCore.js"></script>
     <script src="js/calendarYearCore.js"></script>
     <script src="js/app/tools.js"></script>
+    <script src="js/app/dictionnaire.js"></script>
     <script src="js/app/countries.js"></script>
     <script src="js/cityGameCore.js"></script>
     <script src="js/cityHistoryCore.js"></script>
