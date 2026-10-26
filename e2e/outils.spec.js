@@ -429,6 +429,14 @@ test('généalogie biblique : un arbre, hommes en bleu et femmes en rose, bascul
     await page.locator('#btn-tools').click();
     await page.locator('#screen-tools .arcade-card', { hasText: 'Généalogie biblique' }).click();
     expect(await visibleScreen(page)).toBe('screen-tool-genealogy');
+    // Ni titre ni consigne à l'écran (la place revient à l'arbre) ; ils restent pour les lecteurs d'écran.
+    for (const sel of ['#screen-tool-genealogy .header-title', '#screen-tool-genealogy .modes-header-subtitle']) {
+        const boite = await page.locator(sel).boundingBox();
+        expect(boite.width).toBeLessThanOrEqual(2);
+        expect(boite.height).toBeLessThanOrEqual(2);
+    }
+    await expect(page.locator('#screen-tool-genealogy .header-title')).toHaveText('Généalogie biblique');
+    await expect(page.locator('#gen-search')).toBeVisible();
     // À l'ouverture : Adam et ses trois fils, les autres branches repliées.
     await expect(page.locator('#gen-stage .gen-card')).toHaveCount(4);
     await expect(page.locator('#gen-stage .gen-card[data-id="seth"]')).toHaveCount(1);

@@ -1803,8 +1803,9 @@
                 <button type="button" class="gen-lang-btn" id="gen-lang-he" aria-pressed="false" lang="he" onclick="genSetLang('he')">א</button>
             </div>
         </div>
-        <h2 class="header-title" data-i18n="tools.genealogy_title">Généalogie biblique</h2>
-        <p class="modes-header-subtitle" data-i18n="tools.genealogy_intro"></p>
+        <!-- Titre et consigne ne s'affichent plus (la place revient à l'arbre) ; ils restent lus par les lecteurs d'écran. -->
+        <h2 class="header-title sr-only" data-i18n="tools.genealogy_title">Généalogie biblique</h2>
+        <p class="modes-header-subtitle sr-only" data-i18n="tools.genealogy_intro"></p>
         <div class="gen-bar">
             <input type="search" id="gen-search" class="tool-input" autocomplete="off" placeholder="Chercher un nom" aria-label="Chercher un nom" data-i18n-attr="placeholder:tools.genealogy_search;aria-label:tools.genealogy_search">
             <ul class="gen-results" id="gen-results"></ul>
