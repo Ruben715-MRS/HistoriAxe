@@ -783,11 +783,11 @@
    "termes": [
     {
      "nom": "Temps",
-     "definition": "État de l'atmosphère en un lieu et à un moment donnés."
+     "definition": "État de l'atmosphère en un lieu et à un moment donnés, décrit par un ensemble de paramètres observables : température, pression, humidité, nébulosité, précipitations, direction et force du vent, visibilité. Le temps relève de la météorologie, qui l'observe et le prévoit à l'échelle de quelques heures à quelques jours ; au-delà d'une dizaine de jours, sa prévision détaillée devient impossible, en raison du caractère chaotique de l'atmosphère. On appelle type de temps une combinaison récurrente de ces paramètres associée à une situation atmosphérique, comme le temps anticyclonique ou le passage d'une perturbation. En français, le même mot désigne la durée : le contexte lève l'ambiguïté, que l'anglais évite en distinguant weather et time."
     },
     {
      "nom": "Climat",
-     "definition": "Synthèse statistique des états de l'atmosphère sur une longue période (normales calculées sur 30 ans)."
+     "definition": "Ensemble des conditions atmosphériques qui caractérisent un lieu ou une région sur une longue période, décrit statistiquement par les moyennes, la variabilité et les extrêmes des paramètres météorologiques. L'Organisation météorologique mondiale calcule des normales sur trente ans, régulièrement actualisées. Le climat ne se réduit pas à des moyennes : le géographe Maximilien Sorre le définissait comme la succession habituelle des états de l'atmosphère en un lieu, ce qui met l'accent sur la fréquence des types de temps et sur leur rythme saisonnier. Les classifications, comme celle de Köppen, regroupent les climats d'après les températures et les précipitations. La climatologie distingue plusieurs échelles, du climat zonal au topoclimat et au microclimat."
     }
    ],
    "source": "geo-2027"
@@ -803,15 +803,15 @@
    "termes": [
     {
      "nom": "Effet de serre",
-     "definition": "Phénomène naturel qui retient une partie du rayonnement terrestre ; les émissions humaines le renforcent."
+     "definition": "Mécanisme physique par lequel certains gaz de l'atmosphère, presque transparents au rayonnement solaire, absorbent une partie du rayonnement infrarouge émis par la surface terrestre et en renvoient une part vers le sol, ce qui élève la température de surface. Sans lui, la température moyenne de la Terre serait d'environ −18 °C, au lieu de quelque 15 °C. Les principaux gaz à effet de serre sont la vapeur d'eau, le dioxyde de carbone, le méthane, le protoxyde d'azote et les gaz fluorés. L'effet de serre naturel est une condition de la vie terrestre ; c'est son renforcement par les émissions humaines, depuis la révolution industrielle, qui provoque le réchauffement actuel. L'image de la serre n'est qu'une analogie imparfaite."
     },
     {
      "nom": "Réchauffement climatique",
-     "definition": "Hausse de la température moyenne à l'échelle mondiale."
+     "definition": "Hausse de la température moyenne à la surface du globe, observée depuis la fin du XIXe siècle et attribuée principalement, selon le GIEC, à l'accroissement des concentrations de gaz à effet de serre d'origine humaine. Le réchauffement se mesure par rapport à une période de référence préindustrielle, conventionnellement 1850-1900 ; c'est cette mesure qui fonde les objectifs de l'accord de Paris : contenir la hausse nettement en dessous de 2 °C et poursuivre l'effort pour la limiter à 1,5 °C. Il s'agit d'une moyenne mondiale de long terme, qui recouvre des écarts importants : les terres se réchauffent plus que les océans, et l'Arctique plusieurs fois plus vite que la moyenne. Le réchauffement n'est qu'une composante du changement climatique."
     },
     {
      "nom": "Changement climatique",
-     "definition": "Modification durable du climat (températures, précipitations, extrêmes, niveau marin), dont le réchauffement n'est qu'une composante."
+     "definition": "Modification durable de l'état du climat, identifiable par des changements de la moyenne ou de la variabilité de ses propriétés sur plusieurs décennies ou davantage. Le GIEC emploie l'expression quelle qu'en soit la cause, naturelle ou humaine, alors que la convention-cadre des Nations unies de 1992 la réserve aux changements attribuables directement ou indirectement aux activités humaines. Le changement climatique actuel associe au réchauffement la modification du régime des précipitations, l'intensification de certains extrêmes, la fonte des glaciers et des calottes, l'élévation du niveau marin et l'acidification des océans. Les expressions « dérèglement » ou « crise climatique » insistent sur ses effets, mais ne sont pas des termes scientifiques."
     }
    ],
    "source": "geo-2027"
@@ -827,15 +827,15 @@
    "termes": [
     {
      "nom": "Aridité",
-     "definition": "Déficit hydrique permanent, caractère structurel d'un climat."
+     "definition": "Caractère permanent d'un climat dans lequel les précipitations sont durablement inférieures à l'évapotranspiration potentielle, de sorte que le déficit en eau est la règle et non l'exception. L'aridité se mesure par des indices, comme le rapport entre les précipitations annuelles et l'évapotranspiration potentielle employé par le Programme des Nations unies pour l'environnement, qui distingue zones hyperarides, arides, semi-arides et subhumides sèches. C'est une notion spatiale : on qualifie d'aride une région, non une année. Ses causes sont zonales, sous les hautes pressions subtropicales, ou régionales et locales : effet d'abri des reliefs, continentalité, courants marins froids le long des côtes, comme dans l'Atacama."
     },
     {
      "nom": "Sécheresse",
-     "definition": "Déficit d'eau temporaire par rapport à la normale."
+     "definition": "Épisode de déficit en eau, temporaire et anormal par rapport à la normale climatique d'un lieu, qui peut survenir sous tous les climats. Sa définition est toujours relative : un mois sans pluie est banal en été méditerranéen et exceptionnel en Bretagne. La sécheresse se mesure par des indices d'anomalie, portant sur les précipitations, l'humidité des sols ou les débits, et se caractérise par sa durée, son intensité et son extension. Elle peut frapper une région aride, où elle s'ajoute au déficit structurel ; elle n'entraîne pas, à elle seule, une dégradation durable des terres, sauf si elle se combine à leur surexploitation. Voir aussi la fiche « Crue / Inondation ; Étiage / Sécheresse »."
     },
     {
      "nom": "Désertification",
-     "definition": "Dégradation des terres dans les zones arides, semi-arides et subhumides sèches, due aux variations du climat et aux activités humaines (convention des Nations unies, 1994)."
+     "definition": "Selon la convention des Nations unies sur la lutte contre la désertification de 1994, dégradation des terres dans les zones arides, semi-arides et subhumides sèches, résultant de facteurs divers, parmi lesquels les variations climatiques et les activités humaines. Il s'agit d'une perte de productivité biologique et économique des sols : érosion, salinisation, appauvrissement du couvert végétal, encroûtement des surfaces. La notion s'est imposée après les grandes sécheresses sahéliennes des années 1970 ; les travaux ultérieurs ont montré une dégradation diffuse, en taches, souvent réversible, concentrée autour des puits, des villages et des champs. Le reverdissement partiel du Sahel observé depuis les années 1990 a relancé le débat sur l'ampleur réelle du phénomène."
     }
    ],
    "source": "geo-2027"
@@ -851,27 +851,27 @@
    "termes": [
     {
      "nom": "Milieu",
-     "definition": "Ensemble des conditions physiques et biologiques d'un lieu, considéré dans ses relations avec les sociétés."
+     "definition": "Ensemble des conditions physiques et biologiques d'un lieu, relief, climat, sols, eaux, végétation, considéré dans ses relations avec les sociétés qui l'occupent et le transforment. Le terme, central dans la géographie classique française, a longtemps porté la question des influences du milieu sur les hommes, puis celle des possibilités qu'il leur offre, selon le possibilisme associé à Vidal de la Blache. Critiqué pour son déterminisme implicite, il a été réhabilité sous la forme d'un milieu à la fois physique et social, notamment par Augustin Berque, qui appelle médiance le sens qu'un milieu prend pour une société. Le milieu se distingue de l'environnement par son ancrage local et par l'idée d'une relation réciproque."
     },
     {
      "nom": "Environnement",
-     "definition": "Ce qui entoure une société, envisagé sous l'angle des interactions et des enjeux ; terme englobant et souvent normatif."
+     "definition": "Ensemble des éléments naturels et artificiels qui entourent un individu, une espèce ou une société, et avec lesquels ceux-ci sont en interaction. Le mot, rare en ce sens avant le XXe siècle, s'est diffusé en français dans les années 1960 et 1970, sous l'influence de l'anglais environment et avec la montée des préoccupations écologiques : un ministère de l'Environnement est créé en France en 1971. Il a pris une forte charge normative et politique, puisqu'il désigne souvent ce qu'il faut protéger. Les géographes en soulignent l'ambiguïté : centré sur l'entité entourée, il sépare l'homme de ce qui l'entoure, alors que milieu et géosystème insistent sur l'intégration. Il s'emploie à toutes les échelles, du logement à la planète."
     },
     {
      "nom": "Nature",
-     "definition": "Catégorie culturelle opposée à l'artifice, dont le contenu varie selon les sociétés."
+     "definition": "Notion polysémique qui désigne, selon les contextes, l'ensemble du monde physique et vivant, ce qui existe indépendamment de l'action humaine, ou l'essence propre d'une chose. En géographie, la nature est une catégorie culturelle et historique : chaque société trace à sa manière la frontière entre ce qui relève de la nature et ce qui relève de la culture, et certaines ne la tracent pas. L'anthropologue Philippe Descola a montré que cette opposition, propre à la pensée occidentale moderne, n'est qu'une façon parmi d'autres de concevoir les relations entre humains et non-humains. Les paysages dits naturels sont d'ailleurs souvent façonnés par les sociétés : la nature « vierge » est rare, et souvent construite comme telle."
     },
     {
      "nom": "Écosystème",
-     "definition": "Communauté vivante et son milieu physique en interaction (notion d'écologie)."
+     "definition": "Unité écologique formée par une communauté d'êtres vivants, la biocénose, et le milieu physico-chimique où elle vit, le biotope, envisagés ensemble avec les échanges de matière et d'énergie qui les relient. Le terme a été proposé en 1935 par le botaniste britannique Arthur Tansley. L'écosystème n'a pas d'échelle fixe : une mare, une forêt ou un océan peuvent être étudiés comme tels, l'essentiel étant de délimiter un système dont on analyse les flux, les chaînes alimentaires et le fonctionnement. La notion vient de l'écologie, où les sociétés humaines apparaissent surtout comme un facteur de perturbation ; les géographes lui ont préféré des notions qui intègrent davantage les sociétés, comme le géosystème."
     },
     {
      "nom": "Biome",
-     "definition": "Grand ensemble écologique à l'échelle planétaire (forêt tropicale humide, toundra)."
+     "definition": "Vaste ensemble d'écosystèmes, à l'échelle d'une zone climatique ou d'un continent, caractérisé par un type de végétation dominant, une faune associée et des conditions climatiques comparables : forêt tropicale humide, savane, désert chaud, forêt tempérée, taïga, toundra. La répartition des biomes suit en grande partie la zonation climatique en latitude et l'étagement en montagne. Le biome est une catégorie de la biogéographie, utile pour les comparaisons à petite échelle, mais il décrit une végétation potentielle : il ignore souvent les transformations humaines, qui ont remplacé une grande part des biomes tempérés par des terres cultivées. Certains écologues proposent pour cette raison la notion d'anthrome, ou biome anthropique."
     },
     {
      "nom": "Géosystème",
-     "definition": "Système intégrant composantes physiques, biologiques et humaines à l'échelle d'un paysage (G. Bertrand)."
+     "definition": "Notion forgée par le géographe soviétique Viktor Sotchava dans les années 1960, puis adaptée en France par Georges Bertrand, pour désigner un système spatial qui intègre les composantes physiques (relief, climat, eaux, sols), biologiques et humaines d'un territoire, à l'échelle du paysage. Le géosystème associe un potentiel abiotique, une exploitation biologique et une action humaine, dont l'équilibre détermine des dynamiques de stabilité ou de dégradation. Bertrand l'a ensuite intégré dans un triptyque, géosystème, territoire, paysage, pour croiser la nature, les sociétés et les représentations. Il se distingue de l'écosystème, centré sur le vivant, par la place qu'il donne au substrat physique et aux sociétés."
     }
    ],
    "source": "geo-2027"
@@ -887,15 +887,15 @@
    "termes": [
     {
      "nom": "Biodiversité",
-     "definition": "Diversité du vivant à trois niveaux : génétique, spécifique et écosystémique."
+     "definition": "Diversité du vivant, appréciée à trois niveaux, la diversité génétique au sein des espèces, la diversité des espèces et la diversité des écosystèmes, ainsi que dans les interactions entre ces niveaux. Le mot, contraction de l'anglais biological diversity, s'est diffusé à la fin des années 1980 et a été consacré par la Convention sur la diversité biologique, ouverte à la signature à Rio en 1992. La biodiversité ne se réduit pas au nombre d'espèces : elle prend en compte leur abondance relative, leurs fonctions et leur répartition. Très inégalement répartie, elle culmine dans les forêts tropicales et les récifs coralliens. Son érosion actuelle est souvent qualifiée de sixième extinction, expression dont l'ampleur réelle est discutée."
     },
     {
      "nom": "Biomasse",
-     "definition": "Masse totale de matière vivante d'un espace."
+     "definition": "Masse totale de matière organique vivante présente, à un moment donné, sur une surface ou dans un volume déterminé, exprimée en masse sèche ou en carbone par unité de surface. On distingue la biomasse végétale, de loin la plus importante sur les continents, la biomasse animale et la biomasse microbienne. La biomasse est un stock ; elle se distingue de la productivité, ou production primaire, qui est le flux de matière produite par unité de temps : une prairie peut produire beaucoup chaque année avec une biomasse sur pied modeste. Par extension, le mot désigne en énergie l'ensemble des matières organiques utilisées comme combustible ou carburant, comme le bois, les résidus agricoles ou les effluents d'élevage."
     },
     {
      "nom": "Endémisme",
-     "definition": "Présence d'espèces propres à une aire limitée."
+     "definition": "Caractère d'un taxon, espèce, genre ou famille, dont l'aire de répartition naturelle est limitée à un territoire déterminé, où il est présent à l'exclusion de tout autre. L'endémisme se rapporte toujours à un espace nommé : une espèce peut être endémique d'une île, d'un massif ou d'un continent. Il est élevé dans les milieux isolés depuis longtemps, comme les îles océaniques, les sommets montagneux ou certains lacs anciens, où l'isolement favorise l'apparition d'espèces nouvelles. Le taux d'endémisme mesure la part des espèces endémiques dans la flore ou la faune d'un territoire. Il ne faut pas confondre ce terme de biogéographie avec l'endémie, présence permanente d'une maladie dans une population."
     }
    ],
    "source": "geo-2027"
@@ -911,19 +911,19 @@
    "termes": [
     {
      "nom": "Préservation",
-     "definition": "Mise à l'écart de toute exploitation pour garder un espace « intact »."
+     "definition": "Approche de la protection de la nature qui vise à soustraire un espace ou une espèce à toute exploitation, afin de le maintenir dans un état jugé naturel, sans intervention humaine. Elle s'est affirmée aux États-Unis à la fin du XIXe siècle autour de John Muir, qui défendait la valeur propre de la nature sauvage, la wilderness, contre l'approche utilitariste de Gifford Pinchot. Elle a inspiré les premiers parcs nationaux et les réserves intégrales. On lui reproche d'ignorer que de nombreux milieux ont été façonnés par des usages anciens, et d'avoir justifié l'expulsion de populations autochtones ou paysannes, en Amérique du Nord comme en Afrique. Dans la langue courante, le mot garde le sens général de sauvegarde."
     },
     {
      "nom": "Conservation",
-     "definition": "Gestion durable des ressources et des espèces, usages humains compris."
+     "definition": "Approche de la protection de la nature qui vise à maintenir sur le long terme les espèces, les habitats et les ressources, en intégrant des usages humains encadrés, jugés compatibles avec leur renouvellement. Héritière de l'approche utilitariste de Gifford Pinchot, premier chef du service des forêts des États-Unis, elle a été élargie par la biologie de la conservation à la gestion de l'ensemble de la biodiversité. Les catégories de l'Union internationale pour la conservation de la nature (UICN) associent d'ailleurs aires strictement protégées et aires de gestion des ressources. En français, le mot est souvent employé comme synonyme général de protection, et la distinction avec préservation, nette en anglais, y est moins stricte."
     },
     {
      "nom": "Protection",
-     "definition": "Terme générique pour l'ensemble des mesures juridiques de sauvegarde."
+     "definition": "Terme générique qui désigne l'ensemble des dispositifs, juridiques, contractuels ou fonciers, par lesquels une société entend sauvegarder un espace, une espèce, un paysage ou un patrimoine contre des atteintes jugées dommageables. La protection peut être réglementaire (interdictions, autorisations), foncière (acquisition de terrains par le Conservatoire du littoral), contractuelle (chartes, mesures agro-environnementales) ou découler de conventions internationales. Elle recouvre des degrés très inégaux, de la réserve intégrale à l'espace simplement inventorié. En France, la loi de 1976 relative à la protection de la nature en a posé les principes ; la stratégie nationale des aires protégées vise 30 % du territoire couvert, dont 10 % sous protection forte."
     },
     {
      "nom": "Restauration",
-     "definition": "Rétablissement d'un écosystème dégradé."
+     "definition": "Action intentionnelle qui vise à favoriser le rétablissement d'un écosystème dégradé, endommagé ou détruit, dans sa structure, sa composition et son fonctionnement. Elle s'appuie sur l'écologie de la restauration et prend des formes variées : effacement de seuils et reméandrage de cours d'eau, réhabilitation de zones humides, replantation, réintroduction d'espèces, dépollution de sites. Elle pose la question de l'état de référence : faut-il revenir à un état antérieur supposé naturel, ou viser un écosystème fonctionnel adapté aux conditions présentes et futures ? Elle se distingue de la compensation écologique, qui restaure un milieu ailleurs pour contrebalancer une destruction. Le règlement européen sur la restauration de la nature, adopté en 2024, en fait une obligation."
     }
    ],
    "source": "geo-2027"
@@ -939,19 +939,19 @@
    "termes": [
     {
      "nom": "Parc national",
-     "definition": "Cœur à réglementation stricte et aire d'adhésion, géré par un établissement public (11 en France)."
+     "definition": "En France, espace protégé créé par décret, composé d'un cœur soumis à une réglementation stricte (chasse, construction, circulation, prélèvements) et d'une aire d'adhésion, où les communes qui adhèrent à la charte s'engagent dans un projet de développement durable. Chaque parc est géré par un établissement public de l'État. Le premier, celui de la Vanoise, a été créé en 1963 en application de la loi de 1960 ; la loi de 2006 a réformé le dispositif en instituant la charte et l'aire d'adhésion. Ailleurs, l'appellation recouvre des statuts différents ; le premier parc national au monde est Yellowstone, aux États-Unis, en 1872. La catégorie II de l'UICN, dite « parc national », ne coïncide pas toujours avec les parcs ainsi nommés."
     },
     {
      "nom": "Parc naturel régional",
-     "definition": "Territoire rural habité engagé dans une charte de développement, sans réglementation spécifique ; initiative régionale."
+     "definition": "En France, territoire rural habité, au patrimoine naturel, culturel et paysager reconnu mais fragile, dont les collectivités s'engagent, autour d'une charte, dans un projet commun de protection et de développement. Institués en 1967, les parcs naturels régionaux sont créés à l'initiative des régions et gérés par un syndicat mixte ; le classement est prononcé par décret pour quinze ans, puis renouvelé après révision de la charte. Ils n'ont pas de réglementation propre sur la chasse ou la construction, mais leur charte s'impose aux documents d'urbanisme, qui doivent être compatibles avec elle. Leur logique est contractuelle : ils expérimentent des formes de développement local fondées sur la valorisation du patrimoine."
     },
     {
      "nom": "Réserve naturelle",
-     "definition": "Protection réglementaire forte d'un espace limité."
+     "definition": "Espace limité, terrestre ou marin, classé pour protéger un patrimoine naturel remarquable, espèces, habitats ou formations géologiques, au moyen d'une réglementation forte et adaptée à chaque site, qui peut interdire ou encadrer toute activité susceptible de lui nuire. En France, on distingue les réserves naturelles nationales, classées par l'État, les réserves naturelles régionales et celles de Corse, créées par la collectivité de Corse. Leur gestion est confiée par convention à des associations, des collectivités ou des établissements publics, avec un plan de gestion et des agents chargés de la surveillance. La réserve naturelle protège plus strictement que la plupart des autres statuts, mais en général sur de petites surfaces."
     },
     {
      "nom": "Aire marine protégée",
-     "definition": "Espace maritime doté d'un objectif de protection, sous des statuts variés."
+     "definition": "Espace délimité en mer, doté d'objectifs de protection de la nature à long terme, souvent associés à des objectifs de gestion durable des usages, notamment de la pêche et du tourisme. Le terme est générique : en France, il recouvre plusieurs catégories, parmi lesquelles les parcs naturels marins, les parties maritimes des parcs nationaux et des réserves naturelles, les sites Natura 2000 en mer et certains terrains du Conservatoire du littoral. Leur niveau de contrainte est très variable, de la zone où tout prélèvement est interdit à l'espace simplement géré. Les engagements internationaux se mesurent en surfaces couvertes, ce qui encourage la création de vastes aires peu contraignantes, que leurs critiques qualifient d'aires « de papier »."
     }
    ],
    "source": "geo-2027"
@@ -967,19 +967,19 @@
    "termes": [
     {
      "nom": "Déforestation",
-     "definition": "Conversion d'une forêt à un autre usage du sol."
+     "definition": "Conversion durable d'une surface boisée à un autre usage du sol, agricole, pastoral, minier ou urbain, qui fait disparaître la forêt en tant que telle. L'Organisation des Nations unies pour l'alimentation et l'agriculture (FAO) la définit par ce changement d'utilisation, et non par la simple coupe : une forêt exploitée qui se régénère n'est pas déforestée. Phénomène ancien en Europe, la déforestation se concentre aujourd'hui dans les forêts tropicales d'Amérique du Sud, d'Afrique centrale et d'Asie du Sud-Est, sous l'effet de l'élevage, des cultures commerciales comme le soja ou le palmier à huile, de l'agriculture vivrière et des mines. La télédétection en révèle les formes caractéristiques, comme les fronts pionniers en arête de poisson le long des routes."
     },
     {
      "nom": "Dégradation forestière",
-     "definition": "Appauvrissement d'une forêt sans changement d'usage."
+     "definition": "Diminution durable de la capacité d'une forêt à fournir des biens et des services écologiques, sans que la surface cesse d'être une forêt : appauvrissement en espèces, baisse du volume de bois et du carbone stocké, fragmentation, ouverture du couvert. Elle résulte de l'exploitation sélective des bois précieux, de la collecte de bois de feu, du pâturage en forêt, d'incendies répétés ou de maladies. Plus difficile à détecter par satellite que la déforestation, elle affecterait selon plusieurs études des surfaces du même ordre, et prépare souvent la conversion ultérieure des terres. Les mécanismes internationaux de réduction des émissions, comme REDD+, l'associent à la déforestation dans leurs objectifs."
     },
     {
      "nom": "Reboisement (reforestation)",
-     "definition": "Plantation ou régénération là où la forêt existait."
+     "definition": "Rétablissement d'un couvert forestier, par plantation ou par régénération naturelle assistée, sur des terres qui portaient une forêt dans un passé récent et l'ont perdue par coupe, incendie, surpâturage ou défrichement ; le terme équivaut à reforestation. En France, les lois de 1860 et de 1882 sur la restauration des terrains en montagne ont organisé de grands reboisements dans les Alpes, les Pyrénées et le Massif central, pour lutter contre l'érosion des versants et les crues torrentielles. Le reboisement ne restaure pas forcément l'écosystème initial : une plantation d'une seule essence, souvent exotique et à croissance rapide, n'a ni la structure ni la biodiversité d'une forêt naturelle."
     },
     {
      "nom": "Boisement",
-     "definition": "Plantation sur des terres qui n'étaient plus forestières depuis longtemps."
+     "definition": "Plantation ou installation d'une forêt sur des terres qui n'étaient plus boisées depuis longtemps, ou ne l'avaient jamais été, comme des landes, des marais, des dunes ou d'anciennes terres agricoles ; on parle aussi d'afforestation. Le boisement des Landes de Gascogne en pins maritimes, encouragé par la loi de 1857, et la fixation des dunes littorales en offrent l'exemple français classique. Ces opérations transforment profondément un paysage et ses usages : dans les Landes, elles ont mis fin au système agropastoral fondé sur les parcours à moutons et ont fait naître une économie du bois et de la résine. Dans un sens plus courant, le mot désigne aussi un peuplement d'arbres, un bois."
     }
    ],
    "source": "geo-2027"
@@ -995,15 +995,15 @@
    "termes": [
     {
      "nom": "Gisement",
-     "definition": "Concentration naturelle d'une substance."
+     "definition": "Concentration naturelle d'une substance minérale ou fossile dans le sol ou le sous-sol, suffisamment importante pour pouvoir être exploitée par une mine, une carrière ou des puits : minerai métallique, charbon, pétrole, gaz, sel, granulats. Le gisement est un fait géologique, produit par des processus de sédimentation, de magmatisme, d'altération ou d'enrichissement, mais sa reconnaissance dépend de la prospection et de la teneur jugée exploitable. On le caractérise par sa géométrie, sa profondeur, son tonnage et sa teneur. Le mot s'emploie aussi en archéologie et en paléontologie pour un lieu riche en vestiges ; par métaphore, on parle de « gisement » d'emplois ou d'économies."
     },
     {
      "nom": "Ressource",
-     "definition": "Ce qu'une société juge utile et sait exploiter : une construction sociale et technique."
+     "definition": "Élément du milieu, matière, énergie, espace ou propriété, qu'une société juge utile et sait mobiliser pour satisfaire ses besoins. La ressource n'existe pas en soi : elle dépend des techniques, des besoins, des prix et des représentations. La bauxite n'est devenue une ressource majeure qu'avec la mise au point de l'électrolyse de l'aluminium, à la fin du XIXe siècle ; un paysage devient ressource avec le tourisme. Les géographes, à la suite de Claude Raffestin, insistent sur ce caractère relationnel. On distingue les ressources renouvelables, qui se reconstituent à l'échelle humaine si leur exploitation reste mesurée, et les ressources non renouvelables, dont le stock s'épuise. La notion s'étend aux ressources territoriales, construites par les acteurs locaux."
     },
     {
      "nom": "Réserve",
-     "definition": "Part des ressources connues exploitable dans les conditions économiques et techniques du moment."
+     "definition": "Part des ressources d'une substance, déjà identifiées, qui peut être extraite de manière rentable dans les conditions techniques et économiques du moment. Les réserves sont un calcul et non un stock physique fixe : elles augmentent avec la découverte de gisements et diminuent avec l'extraction. Pour les hydrocarbures, on distingue réserves prouvées, probables et possibles selon leur degré de certitude. Le rapport entre réserves et production annuelle donne une durée indicative, souvent mal interprétée comme une date d'épuisement. Les déclarations de réserves, notamment pétrolières, sont aussi des enjeux stratégiques et financiers, puisqu'elles conditionnent quotas de production, valeur des entreprises et crédit des États."
     }
    ],
    "source": "geo-2027"
@@ -1019,11 +1019,11 @@
    "termes": [
     {
      "nom": "Renouvelable",
-     "definition": "Source reconstituée à l'échelle humaine : solaire, éolien, hydraulique, biomasse."
+     "definition": "Énergie tirée de flux naturels qui se reconstituent à l'échelle du temps humain, au moins aussi vite qu'on les consomme : rayonnement solaire, vent, écoulement de l'eau, marées, chaleur interne de la Terre, biomasse. Le caractère renouvelable porte sur la source, non sur l'installation, qui consomme des matériaux et de l'espace. Certaines sources ne sont renouvelables que sous condition : la biomasse et la géothermie peuvent s'épuiser localement si on les exploite plus vite qu'elles ne se reconstituent. Les énergies solaire et éolienne sont variables, ce qui impose stockage, réseaux et complémentarités. Une énergie renouvelable n'est pas forcément sans émissions ni sans impact : la combustion du bois émet du CO₂ et des particules."
     },
     {
      "nom": "Décarbonée",
-     "definition": "Source qui émet peu de CO₂, nucléaire compris, bien qu'il ne soit pas renouvelable."
+     "definition": "Énergie dont la production émet peu de gaz à effet de serre, et notamment de dioxyde de carbone, sur l'ensemble de son cycle de vie, de la construction des installations à leur démantèlement. La catégorie inclut la plupart des énergies renouvelables électriques, comme l'hydraulique, l'éolien et le solaire, ainsi que l'énergie nucléaire, qui n'est pas renouvelable puisqu'elle consomme un minerai, l'uranium. Le critère est climatique : il ne dit rien des autres impacts, déchets radioactifs, emprise au sol ou pollutions locales. L'expression « bas carbone » est plus exacte, car aucune source n'est totalement dépourvue d'émissions. La production électrique française, dominée par le nucléaire et l'hydraulique, est l'une des plus décarbonées d'Europe."
     }
    ],
    "source": "geo-2027"
@@ -1039,15 +1039,15 @@
    "termes": [
     {
      "nom": "Développement durable",
-     "definition": "Développement qui répond aux besoins du présent sans compromettre ceux des générations futures (rapport Brundtland, 1987)."
+     "definition": "Mode de développement qui répond aux besoins du présent sans compromettre la capacité des générations futures à répondre aux leurs, selon la définition du rapport Notre avenir à tous, remis en 1987 par la commission présidée par Gro Harlem Brundtland. Il est traditionnellement présenté comme la conciliation de trois piliers, économique, social et environnemental, auxquels on ajoute parfois la gouvernance ou la culture. Consacré par le sommet de Rio en 1992, puis décliné dans les objectifs de développement durable adoptés par l'ONU en 2015, il est devenu une norme de l'action publique. Ses critiques en dénoncent le flou, qui permet de justifier des politiques contradictoires, et la tension non résolue entre croissance et limites écologiques."
     },
     {
      "nom": "Durabilité faible",
-     "definition": "Le capital naturel peut être remplacé par du capital technique."
+     "definition": "Conception de la durabilité, issue de l'économie néoclassique, selon laquelle le capital naturel et le capital produit par l'homme sont substituables : la perte d'une ressource naturelle peut être compensée par l'accumulation de capital technique, de connaissances ou de richesse, pourvu que le stock total de capital transmis aux générations futures ne diminue pas. Elle s'appuie sur les travaux de Robert Solow et de John Hartwick dans les années 1970, et fonde la règle selon laquelle les revenus tirés des ressources épuisables doivent être réinvestis. Elle suppose une grande confiance dans le progrès technique et le marché. Ses critiques soulignent que certaines fonctions écologiques, comme la régulation du climat, n'ont pas de substitut."
     },
     {
      "nom": "Durabilité forte",
-     "definition": "Une partie du capital naturel n'est pas substituable."
+     "definition": "Conception de la durabilité selon laquelle une partie au moins du capital naturel ne peut être remplacée par du capital produit, parce qu'elle assure des fonctions vitales, uniques ou irréversibles : régulation du climat, cycle de l'eau, biodiversité. Défendue notamment par l'économie écologique, avec Herman Daly, elle impose de maintenir ce capital naturel critique au-dessus de certains seuils, indépendamment de l'accumulation de richesse. Elle conduit à des règles physiques de gestion : ne pas exploiter une ressource renouvelable au-delà de son rythme de renouvellement, ne pas rejeter plus de déchets que le milieu ne peut en absorber. La notion de limites planétaires, proposée en 2009, s'inscrit dans cette perspective."
     }
    ],
    "source": "geo-2027"
@@ -1063,15 +1063,15 @@
    "termes": [
     {
      "nom": "Artificialisation",
-     "definition": "Perte de l'état naturel, agricole ou forestier d'un sol, jardins et parcs compris."
+     "definition": "Transformation d'un sol naturel, agricole ou forestier par des opérations d'aménagement qui en altèrent durablement les fonctions écologiques : bâti, routes et parkings, mais aussi jardins, pelouses et terrains de sport selon les définitions statistiques usuelles. La loi Climat et résilience de 2021 l'a définie comme l'altération durable de tout ou partie des fonctions écologiques d'un sol, notamment biologiques, hydriques et climatiques, et de son potentiel agronomique. Sa mesure varie selon les sources, fichiers fonciers, enquête Teruti-Lucas ou bases d'occupation du sol, qui produisent des chiffres différents. L'artificialisation n'implique pas toujours l'imperméabilisation : un jardin est artificialisé, mais son sol reste perméable."
     },
     {
      "nom": "Imperméabilisation",
-     "definition": "Recouvrement du sol par un revêtement étanche, sous-ensemble de l'artificialisation."
+     "definition": "Recouvrement d'un sol par un matériau étanche, enrobé, béton ou bâtiment, qui empêche l'infiltration de l'eau de pluie et supprime l'essentiel de la vie du sol. C'est la forme la plus difficilement réversible de l'artificialisation, dont elle ne représente qu'une partie. Ses effets sont surtout hydrologiques et climatiques : ruissellement accru et accéléré, saturation des réseaux d'assainissement, aggravation des inondations, moindre recharge des nappes, renforcement des îlots de chaleur urbains. Les politiques de désimperméabilisation, ou de « ville perméable », cherchent à rendre aux sols leur capacité d'infiltration par des revêtements poreux, des noues et la végétalisation des cours d'école et des parkings."
     },
     {
      "nom": "Étalement urbain",
-     "definition": "Extension des surfaces urbanisées plus rapide que la croissance de la population."
+     "definition": "Extension des espaces urbanisés en périphérie des villes, sous des formes peu denses et discontinues, plus rapide que la croissance de la population qu'ils accueillent. L'étalement associe lotissements pavillonnaires, zones d'activités et commerciales et infrastructures routières ; il repose sur la généralisation de l'automobile, sur les écarts de prix du foncier et sur l'aspiration à la maison individuelle. Il entraîne la consommation de terres agricoles, l'allongement des déplacements, des coûts accrus de réseaux et la dépendance automobile. Le terme est descriptif et souvent critique ; on le distingue de la périurbanisation, diffusion de la ville dans les campagnes voisines, et de la croissance urbaine, qui peut aussi se faire par densification."
     }
    ],
    "source": "geo-2027"
@@ -1087,11 +1087,11 @@
    "termes": [
     {
      "nom": "Holocène",
-     "definition": "Époque géologique ouverte il y a environ 11 700 ans, à la fin de la dernière glaciation."
+     "definition": "Époque géologique actuelle, la plus récente du Quaternaire, qui a commencé il y a environ 11 700 ans avec la fin de la dernière période glaciaire ; sa base est fixée par un repère officiel dans une carotte de glace du Groenland. L'Holocène se caractérise par un climat interglaciaire relativement stable, qui a permis l'essor de l'agriculture, la sédentarisation et la croissance démographique des sociétés humaines. Il connaît néanmoins des fluctuations, comme l'optimum climatique du milieu de l'Holocène ou le petit âge glaciaire, entre le XIVe et le XIXe siècle. En 2018, la Commission internationale de stratigraphie l'a subdivisé en trois étages : Greenlandien, Northgrippien et Meghalayen."
     },
     {
      "nom": "Anthropocène",
-     "definition": "Époque proposée où l'humanité serait devenue une force géologique ; notion scientifique et politique discutée, non retenue comme unité officielle de l'échelle des temps géologiques (2024)."
+     "definition": "Terme proposé en 2000 par le chimiste Paul Crutzen et le biologiste Eugene Stoermer pour désigner une nouvelle époque géologique, dans laquelle l'humanité serait devenue une force capable de modifier le fonctionnement du système Terre. Le début de cette époque fait débat : révolution néolithique, colonisation des Amériques, révolution industrielle, ou « grande accélération » d'après 1950, marquée notamment par les retombées des essais nucléaires. En 2024, l'Union internationale des sciences géologiques a rejeté la proposition d'en faire une époque officielle. La notion reste très employée en sciences sociales et en géographie, où certains auteurs lui préfèrent celle de Capitalocène pour souligner l'inégale responsabilité des sociétés."
     }
    ],
    "source": "geo-2027"
@@ -1107,23 +1107,23 @@
    "termes": [
     {
      "nom": "Rivage",
-     "definition": "Ligne de contact entre la terre et la mer à un instant donné."
+     "definition": "Ligne mobile où la terre et la mer entrent en contact à un instant donné ; elle se déplace sans cesse avec la marée, les vagues et les variations du niveau marin. Le rivage est une limite instantanée, que l'on ne peut cartographier qu'en précisant le moment ou le niveau d'eau retenu. Dans les mers à faible marnage, comme la Méditerranée, ses déplacements restent limités ; dans les mers à fort marnage, comme la Manche, ils atteignent plusieurs kilomètres sur les côtes plates. En droit français, le « rivage de la mer » désigne en revanche une bande, celle que couvrent et découvrent les plus hautes mers en l'absence de perturbations météorologiques exceptionnelles, et qui appartient au domaine public maritime."
     },
     {
      "nom": "Trait de côte",
-     "definition": "Limite conventionnelle entre terre et mer, fixée par les plus hautes mers."
+     "definition": "Limite conventionnelle entre la terre et la mer, choisie pour cartographier les côtes et suivre leur évolution. En France, le Service hydrographique et océanographique de la Marine (SHOM) et l'IGN retiennent la limite atteinte par les plus hautes mers astronomiques, de coefficient 120, dans des conditions météorologiques normales ; d'autres repères sont utilisés selon les côtes, comme le pied ou le sommet de la dune, le haut de la falaise ou la limite de la végétation. Le trait de côte n'est donc pas une donnée de terrain mais un repère construit, dont le choix conditionne la mesure du recul. Depuis la loi Climat et résilience de 2021, les communes exposées doivent cartographier son recul prévisible à 30 et à 100 ans."
     },
     {
      "nom": "Estran",
-     "definition": "Bande alternativement couverte et découverte par la marée."
+     "definition": "Partie du littoral comprise entre les plus hautes et les plus basses mers, alternativement couverte et découverte par la marée ; on parle aussi de zone intertidale. Sa largeur dépend du marnage et de la pente : presque inexistant en Méditerranée, l'estran dépasse plusieurs kilomètres dans les baies à fort marnage de la Manche. Selon les matériaux, il est rocheux, sableux ou vaseux ; il se divise en bandes selon la durée d'émersion, qui commande la répartition des espèces, algues, coquillages ou vers. Espace public, il accueille des usages variés et parfois concurrents, pêche à pied, conchyliculture, loisirs, récolte des algues, encadrés par le droit du domaine public maritime."
     },
     {
      "nom": "Côte",
-     "definition": "Bande terrestre au contact de la mer, décrite par sa forme (côte basse, côte à falaise)."
+     "definition": "Bande de terre qui borde la mer, envisagée surtout dans sa forme et dans son fonctionnement physique : côte basse ou à falaise, rocheuse ou sableuse, rectiligne ou découpée, d'érosion ou d'accumulation. Le terme s'emploie à des échelles très diverses, de la côte d'un département à la côte ouest d'un continent, et dans de nombreux noms régionaux, comme la Côte d'Azur ou la Côte d'Opale. Il est plus étroit et plus physique que littoral, qui inclut l'arrière-pays, le proche espace marin et les usages. En géomorphologie continentale, côte a un tout autre sens : il désigne une cuesta, relief dissymétrique de couches inclinées, comme les côtes de Meuse et de Moselle (voir la fiche correspondante)."
     },
     {
      "nom": "Littoral",
-     "definition": "Espace d'interface entre terre et mer, arrière-pays et proche espace marin compris, analysé dans ses usages."
+     "definition": "Espace géographique d'interface entre la terre et la mer, qui comprend la côte, l'estran, le proche espace marin et un arrière-pays dont la profondeur varie selon les usages et les échelles considérés. Le littoral se définit autant par ses fonctions que par ses formes : ports, tourisme, résidence, agriculture, conchyliculture, industrie et protection des milieux s'y concentrent et s'y concurrencent. Ses limites sont donc variables et souvent fixées par le droit : en France, la loi Littoral de 1986 s'applique aux communes riveraines des mers, des estuaires et des grands plans d'eau. Espace très convoité et très exposé aux risques, le littoral est un objet privilégié de la géographie de l'aménagement."
     }
    ],
    "source": "geo-2027"
@@ -1139,27 +1139,27 @@
    "termes": [
     {
      "nom": "Falaise",
-     "definition": "Escarpement rocheux littoral qui recule sous l'action de la mer (côte d'érosion)."
+     "definition": "Escarpement littoral à pente forte ou verticale, taillé dans la roche par la mer, qui sape sa base et provoque des éboulements, avec l'aide des processus continentaux qui affectent le haut de la paroi : ruissellement, gel, suintements. La falaise est une forme d'érosion : elle recule plus ou moins vite selon la résistance de la roche, l'exposition aux houles et la présence d'une plage qui protège son pied. Ce recul laisse en avant de la paroi une plate-forme d'abrasion, visible à marée basse. On distingue les falaises vives, encore attaquées par la mer, et les falaises mortes, que des dépôts ont isolées du rivage. Leur recul pose des problèmes aigus d'urbanisme et de sécurité."
     },
     {
      "nom": "Plage",
-     "definition": "Accumulation de sables ou de galets sur le rivage."
+     "definition": "Accumulation littorale de sédiments meubles, sables, graviers ou galets, déposés par les vagues sur le rivage, entre la limite des basses mers et celle qu'atteignent les plus fortes houles. La plage est une forme d'accumulation en équilibre dynamique : son profil change avec les saisons, s'abaissant lors des tempêtes d'hiver et se reconstituant par beau temps. Elle dépend d'un budget sédimentaire alimenté par les fleuves, l'érosion des falaises et la dérive littorale ; tout aménagement qui coupe ces apports, barrage, épi ou port, peut provoquer son amaigrissement. Elle protège naturellement l'arrière-côte et constitue une ressource touristique majeure, d'où la pratique des rechargements en sable."
     },
     {
      "nom": "Cordon littoral",
-     "definition": "Accumulation allongée de sédiments parallèle au rivage."
+     "definition": "Accumulation allongée de sables ou de galets, édifiée par les vagues et la dérive littorale et disposée à peu près parallèlement au rivage, qu'elle double ou prolonge. Le cordon peut porter des dunes, isoler une lagune ou un marais, ou s'appuyer directement sur la côte. Le terme est générique : selon ses points d'attache, il prend des noms particuliers, flèche, tombolo ou lido. Les cordons sont des formes mobiles, sensibles aux tempêtes, qui peuvent les franchir ou y ouvrir des brèches, et à la diminution des apports sédimentaires. Ils protègent les terres basses situées en arrière, ce qui explique les travaux de fixation dont ils ont fait l'objet, comme la plantation de dunes en Aquitaine."
     },
     {
      "nom": "Flèche",
-     "definition": "Cordon rattaché à la côte par une seule extrémité."
+     "definition": "Cordon littoral libre à une extrémité et rattaché à la côte par l'autre, qui s'allonge dans la direction de la dérive littorale, souvent en travers d'une baie ou d'une embouchure. Son extrémité libre se recourbe fréquemment vers la terre sous l'effet de la réfraction des houles, formant un crochet ; une succession de crochets témoigne des étapes de son allongement. Une flèche peut fermer progressivement une baie, mais tant qu'elle laisse une large ouverture, elle ne forme pas un lido. Sa mobilité, parfois rapide, pose des problèmes de navigation et d'urbanisme, comme au cap Ferret, dont l'extrémité a beaucoup varié depuis le XVIIIe siècle."
     },
     {
      "nom": "Tombolo",
-     "definition": "Cordon qui relie une île au continent."
+     "definition": "Cordon littoral de sables ou de galets qui relie une île à la côte, ou deux îles entre elles, et transforme ainsi l'île en presqu'île. Il se forme dans la zone abritée en arrière de l'île, où les houles, déviées autour d'elle par diffraction et réfraction, convergent et déposent leurs sédiments. Lorsque deux cordons rattachent une même île au continent en enserrant un plan d'eau, on parle de double tombolo, comme à Giens, où les deux cordons encadrent des étangs et des salins. Un tombolo peut n'émerger qu'à marée basse, ce qui rend l'île accessible à pied à certaines heures seulement. Le mot est emprunté à l'italien."
     },
     {
      "nom": "Lido",
-     "definition": "Cordon qui isole une lagune de la mer."
+     "definition": "Cordon littoral sableux qui sépare une lagune de la mer, en ne laissant entre elles que d'étroites passes, appelées graus en Languedoc. Le terme vient du nom du cordon qui ferme la lagune de Venise. Le lido résulte de l'accumulation, par les vagues et la dérive littorale, de sables apportés par les fleuves, sur des côtes basses à faible marnage, comme en Méditerranée. Il est menacé par l'érosion et l'élévation du niveau marin, et souvent fortement aménagé, par des routes ou par les stations balnéaires créées en Languedoc par la mission Racine. Les géomorphologues parlent aussi de cordon barrière, ou d'île barrière lorsque le cordon est fragmenté par de nombreuses passes."
     }
    ],
    "source": "geo-2027"
@@ -1175,11 +1175,11 @@
    "termes": [
     {
      "nom": "Lagune",
-     "definition": "Étendue d'eau saumâtre peu profonde, séparée de la mer par un cordon littoral, sur les côtes basses."
+     "definition": "Étendue d'eau littorale peu profonde, séparée de la mer par un cordon sédimentaire et reliée à elle par une ou plusieurs passes, sur des côtes basses à faible marnage. Ses eaux sont saumâtres, leur salinité variant selon les apports d'eau douce des rivières et les échanges avec la mer ; elles peuvent devenir sursalées en climat sec. Milieu riche mais fragile, la lagune est exposée au comblement, à l'eutrophisation et aux pollutions venues du bassin versant ; elle accueille pêche, conchyliculture, salins et tourisme. En Languedoc et en Provence, on l'appelle étang ; en Afrique de l'Ouest, des lagunes bordent une grande partie de la côte du golfe de Guinée."
     },
     {
      "nom": "Lagon",
-     "definition": "Étendue d'eau marine enclose par un récif corallien, barrière ou atoll."
+     "definition": "Étendue d'eau marine, calme et peu profonde, enclose par un récif corallien : récif-barrière qui l'isole de l'océan autour d'une île haute, comme en Nouvelle-Calédonie ou à Bora-Bora, ou couronne récifale d'un atoll, comme à Rangiroa. Le lagon communique avec l'océan par des passes ouvertes dans le récif, qui renouvellent ses eaux ; il conserve une salinité marine. Sa formation est liée à la croissance des coraux constructeurs, qui exige des eaux chaudes, claires et bien éclairées, et, pour les atolls, à l'enfoncement progressif d'une île volcanique, selon le modèle proposé par Darwin. Les lagons abritent une biodiversité remarquable, menacée par le blanchissement des coraux. L'anglais lagoon désigne indifféremment lagon et lagune."
     }
    ],
    "source": "geo-2027"
@@ -1195,19 +1195,19 @@
    "termes": [
     {
      "nom": "Estuaire",
-     "definition": "Embouchure évasée soumise à la marée, où l'eau douce se mêle à l'eau de mer."
+     "definition": "Embouchure d'un fleuve élargie en entonnoir, où la marée pénètre et remonte parfois loin à l'intérieur des terres, et où se mêlent eaux douces et eaux marines. L'estuaire est un milieu de transition, aux eaux saumâtres et turbides : la rencontre des eaux provoque l'agrégation des particules fines et la formation d'un bouchon vaseux, qui se déplace avec les marées et les débits. Il se forme surtout dans les mers à marée notable, où les courants évacuent les sédiments au lieu de les laisser s'accumuler. Les estuaires concentrent de grands ports, des zones industrielles et des milieux humides d'intérêt écologique majeur, d'où de forts conflits d'usage."
     },
     {
      "nom": "Delta",
-     "definition": "Accumulation de sédiments qui avance en mer et se divise en bras."
+     "definition": "Accumulation de sédiments fluviaux à l'embouchure d'un fleuve, qui progresse vers la mer et sur laquelle le cours d'eau se divise en plusieurs bras, ou défluents. Le delta se forme lorsque les apports de sédiments l'emportent sur la capacité de la mer à les disperser, ce qui suppose un faible marnage ou des apports considérables. Sa forme dépend des forces dominantes : en patte d'oiseau quand le fleuve l'emporte, comme le Mississippi ; arquée quand les vagues redistribuent les sédiments, comme le Nil ; découpée par les chenaux de marée, comme le Gange-Brahmapoutre. Fertiles et très peuplés, les deltas sont menacés par la subsidence, la retenue des sédiments par les barrages et l'élévation du niveau marin."
     },
     {
      "nom": "Ria (aber en Bretagne)",
-     "definition": "Vallée fluviale envahie par la mer lors de la remontée postglaciaire."
+     "definition": "Basse vallée fluviale envahie par la mer lors de la remontée du niveau marin qui a suivi la dernière glaciation, la transgression flandrienne, et qui forme un bras de mer étroit et ramifié s'enfonçant loin dans les terres. La ria conserve le tracé sinueux de la vallée fluviale ennoyée et de ses affluents. Le mot vient de Galice, où les rías ont donné leur nom à la forme ; en Bretagne, on parle d'aber dans le Léon et, plus largement, de rivière pour ces vallées ennoyées, comme la rivière d'Étel. Les rias offrent des abris portuaires naturels et des sites favorables à la conchyliculture, mais elles se comblent lentement de vases."
     },
     {
      "nom": "Fjord",
-     "definition": "Vallée glaciaire envahie par la mer."
+     "definition": "Ancienne vallée glaciaire envahie par la mer après la fonte des glaciers, qui forme un bras de mer long, étroit et profond, aux versants abrupts. Le fjord hérite du profil en auge de la vallée glaciaire : ses parois sont raides, ses vallées affluentes suspendues donnent des cascades, et son fond, surcreusé par le glacier, est souvent plus profond qu'à son entrée, où un seuil rocheux ou morainique le ferme partiellement. Les fjords caractérisent les côtes de hautes latitudes englacées au Quaternaire : Norvège, Écosse, Islande, Groenland, Chili méridional, Nouvelle-Zélande, Alaska. Leur profondeur peut dépasser 1 000 m."
     }
    ],
    "source": "geo-2027"
@@ -1223,19 +1223,19 @@
    "termes": [
     {
      "nom": "Slikke",
-     "definition": "Vasière nue, recouverte à chaque marée haute."
+     "definition": "Partie basse d'un marais maritime, faite de vasières nues ou presque, recouvertes à chaque marée haute et découvertes à marée basse ; le mot, d'origine néerlandaise, désigne la vase. La slikke reçoit les sédiments fins apportés par le flot, qui s'y déposent à l'étale ; elle est sillonnée de chenaux de marée, appelés étiers ou criches selon les régions, qui la drainent au jusant. Presque dépourvue de végétation supérieure, hormis quelques plantes pionnières comme les salicornes ou les spartines à sa limite haute, elle est riche en micro-organismes, en vers et en coquillages, et constitue une zone d'alimentation essentielle pour les oiseaux limicoles. Elle s'exhausse peu à peu jusqu'à devenir schorre."
     },
     {
      "nom": "Schorre (herbu, pré salé)",
-     "definition": "Partie haute du marais maritime, végétalisée, submergée aux grandes marées."
+     "definition": "Partie haute d'un marais maritime, couverte d'une végétation dense adaptée au sel, qui n'est submergée que lors des pleines mers de vives eaux, aux plus forts coefficients. Le mot, d'origine néerlandaise, a pour synonymes herbu, en Normandie, et pré salé. Le schorre résulte de l'exhaussement progressif de la slikke par la sédimentation et par la fixation des vases par les plantes ; il est entaillé de chenaux et parsemé de petites mares. Il est traditionnellement pâturé par des moutons, dits de prés salés, comme dans la baie du Mont-Saint-Michel. Les schorres amortissent les houles et stockent du carbone, mais ils sont exposés à l'endiguement et à l'élévation du niveau marin."
     },
     {
      "nom": "Polder",
-     "definition": "Terre gagnée sur la mer ou sur un lac, endiguée et drainée."
+     "definition": "Terre gagnée sur la mer, sur un lac, un marais ou un estuaire par endiguement, assèchement puis drainage, dont le niveau se situe souvent au-dessous de celui des hautes eaux, voire du niveau moyen de la mer. Le polder suppose une maîtrise permanente de l'eau : digues, canaux, écluses et pompes, autrefois actionnées par des moulins à vent, évacuent l'eau excédentaire. Le mot néerlandais rappelle que les Pays-Bas en ont fait, depuis le Moyen Âge, un élément essentiel de leur territoire, jusqu'aux grands polders du Zuiderzee au XXe siècle. Des polders existent aussi en France, dans la baie du Mont-Saint-Michel, le Marais poitevin ou la Flandre maritime ; leur défense se pose à nouveau face à l'élévation de la mer."
     },
     {
      "nom": "Mangrove",
-     "definition": "Formation forestière de palétuviers des littoraux tropicaux vaseux."
+     "definition": "Formation forestière des littoraux tropicaux et subtropicaux, installée sur les vasières de la zone de balancement des marées, dans les estuaires, les deltas et les lagunes abritées. Elle est dominée par les palétuviers, arbres adaptés à l'eau salée et à des sols asphyxiants grâce à des racines-échasses et à des pneumatophores, racines aériennes qui assurent leur respiration. La mangrove remplit des fonctions essentielles : nurserie pour de nombreuses espèces de poissons et de crustacés, piège à sédiments, protection des côtes contre la houle et les cyclones, stockage du carbone. Elle a reculé sous l'effet de l'aquaculture de crevettes, de l'urbanisation et de la riziculture, ce qui fragilise les littoraux qu'elle protégeait."
     }
    ],
    "source": "geo-2027"
@@ -1251,11 +1251,11 @@
    "termes": [
     {
      "nom": "Submersion marine",
-     "definition": "Inondation temporaire du littoral par la mer, lors d'une tempête ou d'une surcote."
+     "definition": "Inondation temporaire de terres littorales basses par la mer, lors de conditions météorologiques et marines extrêmes : tempête ou cyclone, surcote due à la baisse de la pression et au vent qui pousse les eaux vers la côte, forte houle et, souvent, pleine mer de vives eaux. La submersion peut résulter du débordement des eaux par-dessus les ouvrages ou le cordon dunaire, de leur franchissement par les paquets de mer, ou de la rupture d'une digue, cas le plus dangereux. Elle ne dure que quelques heures, mais ses effets sont dévastateurs dans les zones basses urbanisées, comme l'a montré la tempête Xynthia. L'élévation du niveau marin en accroît la fréquence."
     },
     {
      "nom": "Érosion côtière",
-     "definition": "Perte de matériaux qui fait reculer durablement le trait de côte."
+     "definition": "Recul durable du trait de côte vers l'intérieur des terres, dû à une perte de matériaux sur les côtes meubles, plages et dunes, ou à l'éboulement progressif des falaises. Elle résulte d'un déficit du budget sédimentaire, quand les apports des fleuves et de la dérive littorale ne compensent plus les départs, de l'action des houles et des tempêtes, et de l'élévation du niveau marin. Les aménagements y contribuent souvent : barrages qui retiennent les sédiments, extractions de sable, ouvrages portuaires et épis qui interrompent le transit le long de la côte. Les réponses vont de la défense lourde à la gestion souple et à la recomposition spatiale, qui relocalise les biens menacés."
     }
    ],
    "source": "geo-2027"
@@ -1271,11 +1271,11 @@
    "termes": [
     {
      "nom": "Littoralisation",
-     "definition": "Concentration des populations et des activités sur les littoraux."
+     "definition": "Processus de concentration croissante des populations, des activités et des aménagements sur les littoraux, et état qui en résulte. La littoralisation repose sur des facteurs variés : essor des échanges maritimes et industrialisation portuaire depuis le XIXe siècle, développement du tourisme balnéaire, attractivité résidentielle, installation des retraités. On la mesure, à l'échelle mondiale, par la part de la population qui vit à moins d'une certaine distance de la mer et, à l'échelle nationale, par la densité des communes littorales. Elle produit pression foncière, artificialisation, conflits d'usage et exposition accrue aux risques côtiers, d'où les politiques de protection du littoral."
     },
     {
      "nom": "Maritimisation",
-     "definition": "Poids croissant des échanges maritimes et des espaces marins dans l'économie et la géopolitique mondiales."
+     "definition": "Processus par lequel les espaces maritimes et les activités qui s'y rattachent prennent une place croissante dans l'économie, les échanges et la géopolitique mondiale. La maritimisation tient d'abord à l'essor du transport maritime, conteneurisé ou en vrac, qui assure l'essentiel des échanges mondiaux en volume et a fait des grands ports des nœuds de la mondialisation. Elle tient aussi à l'appropriation des mers par les États depuis la convention de Montego Bay, à l'exploitation des ressources en mer (hydrocarbures, pêche, énergies marines) et à l'importance des câbles sous-marins. Elle se traduit enfin par le renforcement des marines de guerre et par des tensions sur les mers disputées, comme la mer de Chine méridionale."
     }
    ],
    "source": "geo-2027"
@@ -1291,19 +1291,19 @@
    "termes": [
     {
      "nom": "Façade maritime",
-     "definition": "Ensemble de ports et de littoraux proches, avec leurs arrière-pays, formant une interface d'échanges."
+     "definition": "Ensemble de ports et de littoraux proches, situés sur une même mer ou un même océan, qui entretiennent des relations de complémentarité ou de concurrence et desservent ensemble des arrière-pays, de manière à former une interface d'échanges entre un continent et le reste du monde. La façade n'est pas une simple portion de côte : c'est une construction fonctionnelle, définie par les flux, la densité des infrastructures et l'organisation des réseaux de transport. En France, la planification de l'espace maritime distingue quatre façades administratives (Manche Est-mer du Nord, Nord Atlantique-Manche Ouest, Sud Atlantique et Méditerranée), dotées chacune d'un document stratégique."
     },
     {
      "nom": "Interface",
-     "definition": "Zone de contact entre deux ensembles différents, où s'organisent des échanges."
+     "definition": "Zone de contact entre deux ensembles différents, espaces, milieux ou systèmes, où leurs différences suscitent des échanges, des flux et des activités spécifiques. Empruntée à la physique, la notion désigne en géographie non une simple limite qui sépare, mais un lieu actif, qui met en relation et tire parti du différentiel entre ses deux côtés. Le littoral, interface entre terre et mer, en est l'exemple classique ; la notion s'applique aussi aux frontières ouvertes, aux villes-portes, aux fronts pionniers ou au contact entre ville et campagne. Une interface peut être linéaire ou zonale, et son épaisseur varie selon l'échelle d'analyse. Le mot est parfois galvaudé quand on l'emploie pour tout espace de contact."
     },
     {
      "nom": "Hinterland (arrière-pays)",
-     "definition": "Espace terrestre desservi par un port."
+     "definition": "Espace terrestre desservi par un port, d'où proviennent les marchandises qu'il exporte et où se dirigent celles qu'il importe ; le mot allemand signifie « arrière-pays ». L'hinterland se mesure par les flux et non par la distance : il dépend des réseaux de transport (fleuves, canaux, voies ferrées, autoroutes, oléoducs), des ports secs, des tarifs et de la qualité des services logistiques. Les arrière-pays des grands ports se recouvrent largement et font l'objet d'une concurrence intense : la conteneurisation a permis à Rotterdam ou à Anvers de desservir une partie de la France. On distingue l'hinterland captif, que le port domine faute d'alternative, et l'hinterland disputé entre plusieurs ports."
     },
     {
      "nom": "Foreland (avant-pays)",
-     "definition": "Ensemble des ports et espaces maritimes reliés à un port."
+     "definition": "Ensemble des ports et des espaces maritimes auxquels un port est relié par des lignes régulières ou des flux de marchandises, c'est-à-dire son aire de relations du côté de la mer ; le mot anglais signifie « avant-pays ». Le foreland se décrit par les destinations desservies, la fréquence des escales, la taille des navires et la place du port dans les réseaux des armateurs. Il dépend largement des choix des grandes compagnies de transport conteneurisé, qui décident des escales. Un port au foreland étendu, relié directement aux grandes routes est-ouest, attire davantage de trafic et renforce son hinterland, ce qui explique la concurrence entre ports pour accueillir les plus grands porte-conteneurs."
     }
    ],
    "source": "geo-2027"
@@ -1319,19 +1319,19 @@
    "termes": [
     {
      "nom": "Hub de transbordement",
-     "definition": "Port où les conteneurs passent des grandes lignes aux lignes de desserte."
+     "definition": "Port dont l'essentiel du trafic consiste à transférer des conteneurs d'un navire à un autre : les grands porte-conteneurs des lignes principales y déposent des boîtes reprises par des navires plus petits, les feeders, vers des ports secondaires, ou par d'autres lignes principales. Ces hubs s'implantent au plus près des grandes routes maritimes, sur des sites qui dépendent peu d'un arrière-pays, comme Singapour, Tanger Med ou Algésiras. Leur trafic, volatil, dépend des choix des armateurs, qui en sont souvent les opérateurs. Le réseau en étoile qu'ils organisent, dit hub and spokes, permet de concentrer les flux sur des navires géants et d'abaisser le coût par conteneur transporté."
     },
     {
      "nom": "Port-porte (gateway)",
-     "definition": "Port qui dessert un vaste arrière-pays."
+     "definition": "Port dont la fonction principale est de faire entrer ou sortir les marchandises d'un vaste arrière-pays continental, dont il constitue l'accès maritime ; on emploie aussi l'anglais gateway. Le port-porte vit de sa connexion avec l'hinterland : desserte fluviale, ferroviaire et routière, plates-formes logistiques, ports secs. Rotterdam, Anvers, Hambourg ou Le Havre en sont des exemples européens. Un même port peut cumuler les fonctions de porte et de hub, mais les ressorts de leur compétitivité diffèrent : celle d'un port-porte dépend de la qualité de ses liaisons terrestres et de la taille du marché qu'il dessert, celle d'un hub de sa position sur les routes maritimes."
     },
     {
      "nom": "Rupture de charge",
-     "definition": "Changement de moyen de transport au cours d'un acheminement."
+     "definition": "Interruption d'un acheminement qui oblige à transférer marchandises ou voyageurs d'un véhicule ou d'un mode de transport à un autre : du navire au train, du camion à la péniche, de l'avion au car. La rupture de charge entraîne des coûts, des délais et des risques de pertes, mais elle crée aussi de la valeur et des emplois : manutention, stockage, transformation, commerce. Elle a longtemps expliqué la localisation des villes et des industries aux points de transfert obligés, ports, confluences ou têtes de navigation. Le conteneur et le transport multimodal en ont réduit le coût sans la supprimer. Elle peut aussi survenir au sein d'un même mode, lors d'un transbordement d'un navire à un autre."
     },
     {
      "nom": "Transbordement",
-     "definition": "Transfert d'une cargaison d'un navire à un autre."
+     "definition": "Transfert d'une cargaison ou de conteneurs d'un navire à un autre, directement ou après un bref stockage sur les quais, sans que la marchandise quitte le transport maritime. Le transbordement est une rupture de charge interne au même mode : il implique un changement de navire et souvent de ligne, non un changement de mode de transport. Il fonde le fonctionnement des hubs, où une boîte peut être manutentionnée deux fois sans sortir de l'enceinte portuaire, ce qui gonfle les statistiques de trafic. Le transbordement en mer, de navire à navire, existe aussi, notamment pour les hydrocarbures ou les produits de la pêche, et pose des problèmes de contrôle."
     }
    ],
    "source": "geo-2027"
@@ -1347,23 +1347,23 @@
    "termes": [
     {
      "nom": "Eaux intérieures",
-     "definition": "Eaux en deçà des lignes de base : pleine souveraineté."
+     "definition": "Selon la convention des Nations unies sur le droit de la mer, dite de Montego Bay (1982), eaux situées en deçà des lignes de base à partir desquelles se mesure la largeur de la mer territoriale : ports, rades, estuaires, baies fermées, et eaux comprises entre la côte et les lignes de base droites tracées le long des côtes découpées ou frangées d'îles. L'État côtier y exerce une souveraineté pleine et entière, comme sur son territoire terrestre : les navires étrangers n'y disposent d'aucun droit de passage inoffensif, sauf lorsque le tracé de lignes de base droites a englobé des eaux qui n'étaient pas auparavant considérées comme intérieures. Elles se distinguent des eaux archipélagiques."
     },
     {
      "nom": "Mer territoriale",
-     "definition": "Jusqu'à 12 milles marins : souveraineté, sous réserve du droit de passage inoffensif."
+     "definition": "Bande de mer adjacente aux côtes, dont la largeur, mesurée à partir des lignes de base, peut atteindre 12 milles marins, soit environ 22 km, selon la convention de Montego Bay. L'État côtier y exerce sa souveraineté, qui s'étend à l'espace aérien, aux fonds et à leur sous-sol, sous réserve du droit de passage inoffensif reconnu aux navires de tous les États : un passage continu et rapide, qui ne porte pas atteinte à la paix, au bon ordre ou à la sécurité de l'État côtier. Dans les détroits servant à la navigation internationale, ce droit devient un droit de passage en transit, qui ne peut être suspendu. Avant la convention, de nombreux États s'en tenaient à la règle des trois milles."
     },
     {
      "nom": "Zone contiguë",
-     "definition": "Jusqu'à 24 milles : contrôles douaniers, fiscaux, sanitaires et d'immigration."
+     "definition": "Zone adjacente à la mer territoriale, qui ne peut s'étendre au-delà de 24 milles marins des lignes de base, dans laquelle l'État côtier peut exercer les contrôles nécessaires pour prévenir et réprimer les infractions à ses lois douanières, fiscales, sanitaires ou d'immigration commises sur son territoire ou dans sa mer territoriale. L'État n'y détient pas la souveraineté : il dispose seulement de compétences de police limitées à ces domaines. La zone contiguë fait partie de l'espace couvert par la zone économique exclusive, dont elle constitue la portion la plus proche des côtes ; les deux régimes s'y superposent. Elle n'existe que si l'État côtier l'a proclamée."
     },
     {
      "nom": "Zone économique exclusive",
-     "definition": "Jusqu'à 200 milles : droits souverains sur les ressources, sans souveraineté pleine."
+     "definition": "Espace maritime situé au-delà de la mer territoriale, qui ne peut s'étendre au-delà de 200 milles marins des lignes de base. L'État côtier y détient des droits souverains pour l'exploration, l'exploitation, la conservation et la gestion des ressources naturelles des eaux, des fonds et de leur sous-sol, ainsi que pour la production d'énergie à partir de l'eau et du vent ; il y exerce aussi une juridiction sur les installations, la recherche scientifique et la protection du milieu marin. Les autres États y conservent les libertés de navigation, de survol et de pose de câbles. La ZEE explique la valeur stratégique des îles, à condition qu'elles se prêtent à l'habitation humaine ou à une vie économique propre."
     },
     {
      "nom": "Haute mer",
-     "definition": "Au-delà : liberté des mers ; les grands fonds (la « Zone ») relèvent du patrimoine commun de l'humanité."
+     "definition": "Ensemble des espaces maritimes qui ne relèvent ni des eaux intérieures, ni de la mer territoriale, ni de la zone économique exclusive d'un État, soit près des deux tiers de la surface des océans. Elle est régie par le principe de liberté, navigation, survol, pêche, recherche scientifique, pose de câbles, chaque navire relevant de la juridiction de l'État dont il bat le pavillon. Les fonds marins situés au-delà des juridictions nationales, appelés la Zone, et leurs ressources minérales ont été déclarés patrimoine commun de l'humanité et sont gérés par l'Autorité internationale des fonds marins. Un accord sur la biodiversité en haute mer, adopté en 2023, organise la création d'aires marines protégées dans ces espaces."
     }
    ],
    "source": "geo-2027"
@@ -1379,15 +1379,15 @@
    "termes": [
     {
      "nom": "Plate-forme continentale",
-     "definition": "Prolongement sous-marin peu profond du continent, jusqu'au talus (vers 200 m de profondeur en moyenne)."
+     "definition": "Prolongement sous-marin des continents, en pente très douce, qui s'étend du rivage jusqu'à la rupture de pente marquant le début du talus continental, en général entre 130 et 200 m de profondeur. Sa largeur varie de quelques kilomètres au large des côtes montagneuses actives à plusieurs centaines de kilomètres, comme dans la mer du Nord. Elle a été en grande partie émergée pendant les glaciations, quand le niveau marin était environ 120 m plus bas, ce qui explique les vallées et les dépôts continentaux qu'on y retrouve. Riche en ressources halieutiques et en hydrocarbures, elle est un objet de la géomorphologie, distinct de la notion juridique de plateau continental."
     },
     {
      "nom": "Talus continental",
-     "definition": "Pente forte qui relie la plate-forme aux grands fonds."
+     "definition": "Pente sous-marine relativement forte, de quelques degrés, qui relie le rebord de la plate-forme continentale, vers 130 à 200 m de profondeur, aux grands fonds océaniques, vers 3 000 à 4 000 m, sur une largeur de quelques dizaines de kilomètres. Sur les marges passives, il marque approximativement la limite entre croûte continentale et croûte océanique. Le talus est entaillé de canyons sous-marins, parfois dans le prolongement de vallées continentales, par où des courants de turbidité acheminent les sédiments vers le glacis continental, accumulation en pente douce qui fait la transition avec la plaine abyssale. Il est le siège de glissements sous-marins, capables de provoquer des tsunamis."
     },
     {
      "nom": "Plateau continental (sens juridique)",
-     "definition": "Fonds marins sur lesquels l'État côtier a des droits souverains d'exploitation, jusqu'à 200 milles et au-delà sous conditions, après examen par une commission des Nations unies."
+     "definition": "Selon la convention de Montego Bay, fonds marins et leur sous-sol au-delà de la mer territoriale, sur toute l'étendue du prolongement naturel du territoire terrestre jusqu'au rebord externe de la marge continentale, ou jusqu'à 200 milles marins lorsque ce rebord est plus proche. L'État côtier y exerce des droits souverains sur les ressources minérales et les espèces sédentaires, mais non sur les eaux surjacentes. Il peut obtenir une extension au-delà des 200 milles, dans la limite de 350 milles ou de 100 milles au-delà de l'isobathe de 2 500 m, en soumettant un dossier à la Commission des limites du plateau continental. Ce plateau juridique ne coïncide pas avec la plate-forme géomorphologique."
     }
    ],
    "source": "geo-2027"
@@ -1403,19 +1403,19 @@
    "termes": [
     {
      "nom": "Détroit",
-     "definition": "Passage maritime naturel entre deux terres, qui relie deux mers."
+     "definition": "Bras de mer resserré entre deux terres, continents ou îles, qui met en communication deux espaces maritimes. Les détroits sont des passages naturels obligés pour la navigation et, de ce fait, des points de passage stratégiques : Ormuz, Malacca, Bab el-Mandeb, Gibraltar, le Bosphore ou le Pas-de-Calais. La convention de Montego Bay garantit, dans ceux qui servent à la navigation internationale, un droit de passage en transit que les États riverains ne peuvent suspendre ; certains relèvent de régimes particuliers, comme les détroits turcs, régis par la convention de Montreux de 1936. Leur fermeture, même temporaire, perturbe les flux mondiaux d'énergie et de marchandises."
     },
     {
      "nom": "Canal",
-     "definition": "Voie d'eau artificielle."
+     "definition": "Voie d'eau artificielle, creusée pour la navigation, l'irrigation, le drainage ou l'alimentation en eau. Les canaux maritimes, comme ceux de Suez, ouvert en 1869, et de Panama, ouvert en 1914, raccourcissent les routes entre mers et océans ; ce sont des points de passage stratégiques, soumis à des régimes juridiques particuliers et à des péages. Les canaux de navigation intérieure relient les bassins fluviaux grâce à des écluses qui franchissent les dénivellations, comme le canal du Midi, achevé en 1681. Par un usage ancien, le mot désigne aussi certains bras de mer naturels, comme le canal de Sicile : il s'agit alors de détroits."
     },
     {
      "nom": "Mer bordière",
-     "definition": "Mer en marge d'un océan, partiellement limitée par des îles ou des péninsules."
+     "definition": "Mer située en marge d'un océan, à la périphérie d'un continent, et partiellement séparée de l'océan par des îles, des archipels ou des péninsules, tout en restant largement ouverte sur lui. Elle recouvre souvent une large part de plate-forme continentale, ce qui explique ses faibles profondeurs, ses ressources halieutiques et pétrolières, et l'intensité de ses usages. Les mers bordières de l'Asie orientale, comme les mers de Chine orientale et méridionale, ou la mer du Nord en Europe, sont des espaces de circulation intense et, pour certaines, de revendications concurrentes sur les îles et les espaces maritimes. Le terme relève de la géographie descriptive et n'a pas de définition juridique propre."
     },
     {
      "nom": "Mer fermée ou semi-fermée",
-     "definition": "Mer reliée à l'océan par un ou plusieurs détroits étroits."
+     "definition": "Selon la convention de Montego Bay, golfe, bassin ou mer entouré par plusieurs États et relié à une autre mer ou à l'océan par un passage étroit, ou constitué entièrement ou principalement par les mers territoriales et les zones économiques exclusives de plusieurs États. La Méditerranée, reliée à l'Atlantique par le détroit de Gibraltar, la mer Noire ou la Baltique en sont des exemples. Le faible renouvellement de leurs eaux les rend vulnérables aux pollutions, et le chevauchement des revendications maritimes y impose la coopération entre riverains, que la convention encourage. Les mers entièrement intérieures, comme la Caspienne, posent des problèmes juridiques particuliers, entre le statut de mer et celui de lac."
     }
    ],
    "source": "geo-2027"
@@ -7144,7 +7144,7 @@
   {
    "id": "25-1",
    "nom": "Temps",
-   "definition": "État de l'atmosphère en un lieu et à un moment donnés.",
+   "definition": "État de l'atmosphère en un lieu et à un moment donnés, décrit par un ensemble de paramètres observables : température, pression, humidité, nébulosité, précipitations, direction et force du vent, visibilité. Le temps relève de la météorologie, qui l'observe et le prévoit à l'échelle de quelques heures à quelques jours ; au-delà d'une dizaine de jours, sa prévision détaillée devient impossible, en raison du caractère chaotique de l'atmosphère. On appelle type de temps une combinaison récurrente de ces paramètres associée à une situation atmosphérique, comme le temps anticyclonique ou le passage d'une perturbation. En français, le même mot désigne la durée : le contexte lève l'ambiguïté, que l'anglais évite en distinguant weather et time.",
    "fiche": 25,
    "domaine": 4,
    "exemples": [
@@ -7154,7 +7154,7 @@
   {
    "id": "25-2",
    "nom": "Climat",
-   "definition": "Synthèse statistique des états de l'atmosphère sur une longue période (normales calculées sur 30 ans).",
+   "definition": "Ensemble des conditions atmosphériques qui caractérisent un lieu ou une région sur une longue période, décrit statistiquement par les moyennes, la variabilité et les extrêmes des paramètres météorologiques. L'Organisation météorologique mondiale calcule des normales sur trente ans, régulièrement actualisées. Le climat ne se réduit pas à des moyennes : le géographe Maximilien Sorre le définissait comme la succession habituelle des états de l'atmosphère en un lieu, ce qui met l'accent sur la fréquence des types de temps et sur leur rythme saisonnier. Les classifications, comme celle de Köppen, regroupent les climats d'après les températures et les précipitations. La climatologie distingue plusieurs échelles, du climat zonal au topoclimat et au microclimat.",
    "fiche": 25,
    "domaine": 4,
    "exemples": [
@@ -7164,7 +7164,7 @@
   {
    "id": "26-1",
    "nom": "Effet de serre",
-   "definition": "Phénomène naturel qui retient une partie du rayonnement terrestre ; les émissions humaines le renforcent.",
+   "definition": "Mécanisme physique par lequel certains gaz de l'atmosphère, presque transparents au rayonnement solaire, absorbent une partie du rayonnement infrarouge émis par la surface terrestre et en renvoient une part vers le sol, ce qui élève la température de surface. Sans lui, la température moyenne de la Terre serait d'environ −18 °C, au lieu de quelque 15 °C. Les principaux gaz à effet de serre sont la vapeur d'eau, le dioxyde de carbone, le méthane, le protoxyde d'azote et les gaz fluorés. L'effet de serre naturel est une condition de la vie terrestre ; c'est son renforcement par les émissions humaines, depuis la révolution industrielle, qui provoque le réchauffement actuel. L'image de la serre n'est qu'une analogie imparfaite.",
    "fiche": 26,
    "domaine": 4,
    "exemples": [
@@ -7174,7 +7174,7 @@
   {
    "id": "26-2",
    "nom": "Réchauffement climatique",
-   "definition": "Hausse de la température moyenne à l'échelle mondiale.",
+   "definition": "Hausse de la température moyenne à la surface du globe, observée depuis la fin du XIXe siècle et attribuée principalement, selon le GIEC, à l'accroissement des concentrations de gaz à effet de serre d'origine humaine. Le réchauffement se mesure par rapport à une période de référence préindustrielle, conventionnellement 1850-1900 ; c'est cette mesure qui fonde les objectifs de l'accord de Paris : contenir la hausse nettement en dessous de 2 °C et poursuivre l'effort pour la limiter à 1,5 °C. Il s'agit d'une moyenne mondiale de long terme, qui recouvre des écarts importants : les terres se réchauffent plus que les océans, et l'Arctique plusieurs fois plus vite que la moyenne. Le réchauffement n'est qu'une composante du changement climatique.",
    "fiche": 26,
    "domaine": 4,
    "exemples": [
@@ -7184,7 +7184,7 @@
   {
    "id": "26-3",
    "nom": "Changement climatique",
-   "definition": "Modification durable du climat (températures, précipitations, extrêmes, niveau marin), dont le réchauffement n'est qu'une composante.",
+   "definition": "Modification durable de l'état du climat, identifiable par des changements de la moyenne ou de la variabilité de ses propriétés sur plusieurs décennies ou davantage. Le GIEC emploie l'expression quelle qu'en soit la cause, naturelle ou humaine, alors que la convention-cadre des Nations unies de 1992 la réserve aux changements attribuables directement ou indirectement aux activités humaines. Le changement climatique actuel associe au réchauffement la modification du régime des précipitations, l'intensification de certains extrêmes, la fonte des glaciers et des calottes, l'élévation du niveau marin et l'acidification des océans. Les expressions « dérèglement » ou « crise climatique » insistent sur ses effets, mais ne sont pas des termes scientifiques.",
    "fiche": 26,
    "domaine": 4,
    "exemples": [
@@ -7194,7 +7194,7 @@
   {
    "id": "27-1",
    "nom": "Aridité",
-   "definition": "Déficit hydrique permanent, caractère structurel d'un climat.",
+   "definition": "Caractère permanent d'un climat dans lequel les précipitations sont durablement inférieures à l'évapotranspiration potentielle, de sorte que le déficit en eau est la règle et non l'exception. L'aridité se mesure par des indices, comme le rapport entre les précipitations annuelles et l'évapotranspiration potentielle employé par le Programme des Nations unies pour l'environnement, qui distingue zones hyperarides, arides, semi-arides et subhumides sèches. C'est une notion spatiale : on qualifie d'aride une région, non une année. Ses causes sont zonales, sous les hautes pressions subtropicales, ou régionales et locales : effet d'abri des reliefs, continentalité, courants marins froids le long des côtes, comme dans l'Atacama.",
    "fiche": 27,
    "domaine": 4,
    "exemples": [
@@ -7204,7 +7204,7 @@
   {
    "id": "27-2",
    "nom": "Sécheresse",
-   "definition": "Déficit d'eau temporaire par rapport à la normale.",
+   "definition": "Épisode de déficit en eau, temporaire et anormal par rapport à la normale climatique d'un lieu, qui peut survenir sous tous les climats. Sa définition est toujours relative : un mois sans pluie est banal en été méditerranéen et exceptionnel en Bretagne. La sécheresse se mesure par des indices d'anomalie, portant sur les précipitations, l'humidité des sols ou les débits, et se caractérise par sa durée, son intensité et son extension. Elle peut frapper une région aride, où elle s'ajoute au déficit structurel ; elle n'entraîne pas, à elle seule, une dégradation durable des terres, sauf si elle se combine à leur surexploitation. Voir aussi la fiche « Crue / Inondation ; Étiage / Sécheresse ».",
    "fiche": 27,
    "domaine": 4,
    "exemples": [
@@ -7214,7 +7214,7 @@
   {
    "id": "27-3",
    "nom": "Désertification",
-   "definition": "Dégradation des terres dans les zones arides, semi-arides et subhumides sèches, due aux variations du climat et aux activités humaines (convention des Nations unies, 1994).",
+   "definition": "Selon la convention des Nations unies sur la lutte contre la désertification de 1994, dégradation des terres dans les zones arides, semi-arides et subhumides sèches, résultant de facteurs divers, parmi lesquels les variations climatiques et les activités humaines. Il s'agit d'une perte de productivité biologique et économique des sols : érosion, salinisation, appauvrissement du couvert végétal, encroûtement des surfaces. La notion s'est imposée après les grandes sécheresses sahéliennes des années 1970 ; les travaux ultérieurs ont montré une dégradation diffuse, en taches, souvent réversible, concentrée autour des puits, des villages et des champs. Le reverdissement partiel du Sahel observé depuis les années 1990 a relancé le débat sur l'ampleur réelle du phénomène.",
    "fiche": 27,
    "domaine": 4,
    "exemples": [
@@ -7224,7 +7224,7 @@
   {
    "id": "28-1",
    "nom": "Milieu",
-   "definition": "Ensemble des conditions physiques et biologiques d'un lieu, considéré dans ses relations avec les sociétés.",
+   "definition": "Ensemble des conditions physiques et biologiques d'un lieu, relief, climat, sols, eaux, végétation, considéré dans ses relations avec les sociétés qui l'occupent et le transforment. Le terme, central dans la géographie classique française, a longtemps porté la question des influences du milieu sur les hommes, puis celle des possibilités qu'il leur offre, selon le possibilisme associé à Vidal de la Blache. Critiqué pour son déterminisme implicite, il a été réhabilité sous la forme d'un milieu à la fois physique et social, notamment par Augustin Berque, qui appelle médiance le sens qu'un milieu prend pour une société. Le milieu se distingue de l'environnement par son ancrage local et par l'idée d'une relation réciproque.",
    "fiche": 28,
    "domaine": 4,
    "exemples": [
@@ -7234,7 +7234,7 @@
   {
    "id": "28-2",
    "nom": "Environnement",
-   "definition": "Ce qui entoure une société, envisagé sous l'angle des interactions et des enjeux ; terme englobant et souvent normatif.",
+   "definition": "Ensemble des éléments naturels et artificiels qui entourent un individu, une espèce ou une société, et avec lesquels ceux-ci sont en interaction. Le mot, rare en ce sens avant le XXe siècle, s'est diffusé en français dans les années 1960 et 1970, sous l'influence de l'anglais environment et avec la montée des préoccupations écologiques : un ministère de l'Environnement est créé en France en 1971. Il a pris une forte charge normative et politique, puisqu'il désigne souvent ce qu'il faut protéger. Les géographes en soulignent l'ambiguïté : centré sur l'entité entourée, il sépare l'homme de ce qui l'entoure, alors que milieu et géosystème insistent sur l'intégration. Il s'emploie à toutes les échelles, du logement à la planète.",
    "fiche": 28,
    "domaine": 4,
    "exemples": [
@@ -7244,7 +7244,7 @@
   {
    "id": "28-3",
    "nom": "Nature",
-   "definition": "Catégorie culturelle opposée à l'artifice, dont le contenu varie selon les sociétés.",
+   "definition": "Notion polysémique qui désigne, selon les contextes, l'ensemble du monde physique et vivant, ce qui existe indépendamment de l'action humaine, ou l'essence propre d'une chose. En géographie, la nature est une catégorie culturelle et historique : chaque société trace à sa manière la frontière entre ce qui relève de la nature et ce qui relève de la culture, et certaines ne la tracent pas. L'anthropologue Philippe Descola a montré que cette opposition, propre à la pensée occidentale moderne, n'est qu'une façon parmi d'autres de concevoir les relations entre humains et non-humains. Les paysages dits naturels sont d'ailleurs souvent façonnés par les sociétés : la nature « vierge » est rare, et souvent construite comme telle.",
    "fiche": 28,
    "domaine": 4,
    "exemples": [
@@ -7254,7 +7254,7 @@
   {
    "id": "28-4",
    "nom": "Écosystème",
-   "definition": "Communauté vivante et son milieu physique en interaction (notion d'écologie).",
+   "definition": "Unité écologique formée par une communauté d'êtres vivants, la biocénose, et le milieu physico-chimique où elle vit, le biotope, envisagés ensemble avec les échanges de matière et d'énergie qui les relient. Le terme a été proposé en 1935 par le botaniste britannique Arthur Tansley. L'écosystème n'a pas d'échelle fixe : une mare, une forêt ou un océan peuvent être étudiés comme tels, l'essentiel étant de délimiter un système dont on analyse les flux, les chaînes alimentaires et le fonctionnement. La notion vient de l'écologie, où les sociétés humaines apparaissent surtout comme un facteur de perturbation ; les géographes lui ont préféré des notions qui intègrent davantage les sociétés, comme le géosystème.",
    "fiche": 28,
    "domaine": 4,
    "exemples": [
@@ -7264,7 +7264,7 @@
   {
    "id": "28-5",
    "nom": "Biome",
-   "definition": "Grand ensemble écologique à l'échelle planétaire (forêt tropicale humide, toundra).",
+   "definition": "Vaste ensemble d'écosystèmes, à l'échelle d'une zone climatique ou d'un continent, caractérisé par un type de végétation dominant, une faune associée et des conditions climatiques comparables : forêt tropicale humide, savane, désert chaud, forêt tempérée, taïga, toundra. La répartition des biomes suit en grande partie la zonation climatique en latitude et l'étagement en montagne. Le biome est une catégorie de la biogéographie, utile pour les comparaisons à petite échelle, mais il décrit une végétation potentielle : il ignore souvent les transformations humaines, qui ont remplacé une grande part des biomes tempérés par des terres cultivées. Certains écologues proposent pour cette raison la notion d'anthrome, ou biome anthropique.",
    "fiche": 28,
    "domaine": 4,
    "exemples": [
@@ -7274,7 +7274,7 @@
   {
    "id": "28-6",
    "nom": "Géosystème",
-   "definition": "Système intégrant composantes physiques, biologiques et humaines à l'échelle d'un paysage (G. Bertrand).",
+   "definition": "Notion forgée par le géographe soviétique Viktor Sotchava dans les années 1960, puis adaptée en France par Georges Bertrand, pour désigner un système spatial qui intègre les composantes physiques (relief, climat, eaux, sols), biologiques et humaines d'un territoire, à l'échelle du paysage. Le géosystème associe un potentiel abiotique, une exploitation biologique et une action humaine, dont l'équilibre détermine des dynamiques de stabilité ou de dégradation. Bertrand l'a ensuite intégré dans un triptyque, géosystème, territoire, paysage, pour croiser la nature, les sociétés et les représentations. Il se distingue de l'écosystème, centré sur le vivant, par la place qu'il donne au substrat physique et aux sociétés.",
    "fiche": 28,
    "domaine": 4,
    "exemples": [
@@ -7284,7 +7284,7 @@
   {
    "id": "29-1",
    "nom": "Biodiversité",
-   "definition": "Diversité du vivant à trois niveaux : génétique, spécifique et écosystémique.",
+   "definition": "Diversité du vivant, appréciée à trois niveaux, la diversité génétique au sein des espèces, la diversité des espèces et la diversité des écosystèmes, ainsi que dans les interactions entre ces niveaux. Le mot, contraction de l'anglais biological diversity, s'est diffusé à la fin des années 1980 et a été consacré par la Convention sur la diversité biologique, ouverte à la signature à Rio en 1992. La biodiversité ne se réduit pas au nombre d'espèces : elle prend en compte leur abondance relative, leurs fonctions et leur répartition. Très inégalement répartie, elle culmine dans les forêts tropicales et les récifs coralliens. Son érosion actuelle est souvent qualifiée de sixième extinction, expression dont l'ampleur réelle est discutée.",
    "fiche": 29,
    "domaine": 4,
    "exemples": [
@@ -7295,7 +7295,7 @@
   {
    "id": "29-2",
    "nom": "Biomasse",
-   "definition": "Masse totale de matière vivante d'un espace.",
+   "definition": "Masse totale de matière organique vivante présente, à un moment donné, sur une surface ou dans un volume déterminé, exprimée en masse sèche ou en carbone par unité de surface. On distingue la biomasse végétale, de loin la plus importante sur les continents, la biomasse animale et la biomasse microbienne. La biomasse est un stock ; elle se distingue de la productivité, ou production primaire, qui est le flux de matière produite par unité de temps : une prairie peut produire beaucoup chaque année avec une biomasse sur pied modeste. Par extension, le mot désigne en énergie l'ensemble des matières organiques utilisées comme combustible ou carburant, comme le bois, les résidus agricoles ou les effluents d'élevage.",
    "fiche": 29,
    "domaine": 4,
    "exemples": [
@@ -7306,7 +7306,7 @@
   {
    "id": "29-3",
    "nom": "Endémisme",
-   "definition": "Présence d'espèces propres à une aire limitée.",
+   "definition": "Caractère d'un taxon, espèce, genre ou famille, dont l'aire de répartition naturelle est limitée à un territoire déterminé, où il est présent à l'exclusion de tout autre. L'endémisme se rapporte toujours à un espace nommé : une espèce peut être endémique d'une île, d'un massif ou d'un continent. Il est élevé dans les milieux isolés depuis longtemps, comme les îles océaniques, les sommets montagneux ou certains lacs anciens, où l'isolement favorise l'apparition d'espèces nouvelles. Le taux d'endémisme mesure la part des espèces endémiques dans la flore ou la faune d'un territoire. Il ne faut pas confondre ce terme de biogéographie avec l'endémie, présence permanente d'une maladie dans une population.",
    "fiche": 29,
    "domaine": 4,
    "exemples": [
@@ -7317,7 +7317,7 @@
   {
    "id": "30-1",
    "nom": "Préservation",
-   "definition": "Mise à l'écart de toute exploitation pour garder un espace « intact ».",
+   "definition": "Approche de la protection de la nature qui vise à soustraire un espace ou une espèce à toute exploitation, afin de le maintenir dans un état jugé naturel, sans intervention humaine. Elle s'est affirmée aux États-Unis à la fin du XIXe siècle autour de John Muir, qui défendait la valeur propre de la nature sauvage, la wilderness, contre l'approche utilitariste de Gifford Pinchot. Elle a inspiré les premiers parcs nationaux et les réserves intégrales. On lui reproche d'ignorer que de nombreux milieux ont été façonnés par des usages anciens, et d'avoir justifié l'expulsion de populations autochtones ou paysannes, en Amérique du Nord comme en Afrique. Dans la langue courante, le mot garde le sens général de sauvegarde.",
    "fiche": 30,
    "domaine": 4,
    "exemples": [
@@ -7327,7 +7327,7 @@
   {
    "id": "30-2",
    "nom": "Conservation",
-   "definition": "Gestion durable des ressources et des espèces, usages humains compris.",
+   "definition": "Approche de la protection de la nature qui vise à maintenir sur le long terme les espèces, les habitats et les ressources, en intégrant des usages humains encadrés, jugés compatibles avec leur renouvellement. Héritière de l'approche utilitariste de Gifford Pinchot, premier chef du service des forêts des États-Unis, elle a été élargie par la biologie de la conservation à la gestion de l'ensemble de la biodiversité. Les catégories de l'Union internationale pour la conservation de la nature (UICN) associent d'ailleurs aires strictement protégées et aires de gestion des ressources. En français, le mot est souvent employé comme synonyme général de protection, et la distinction avec préservation, nette en anglais, y est moins stricte.",
    "fiche": 30,
    "domaine": 4,
    "exemples": [
@@ -7337,7 +7337,7 @@
   {
    "id": "30-3",
    "nom": "Protection",
-   "definition": "Terme générique pour l'ensemble des mesures juridiques de sauvegarde.",
+   "definition": "Terme générique qui désigne l'ensemble des dispositifs, juridiques, contractuels ou fonciers, par lesquels une société entend sauvegarder un espace, une espèce, un paysage ou un patrimoine contre des atteintes jugées dommageables. La protection peut être réglementaire (interdictions, autorisations), foncière (acquisition de terrains par le Conservatoire du littoral), contractuelle (chartes, mesures agro-environnementales) ou découler de conventions internationales. Elle recouvre des degrés très inégaux, de la réserve intégrale à l'espace simplement inventorié. En France, la loi de 1976 relative à la protection de la nature en a posé les principes ; la stratégie nationale des aires protégées vise 30 % du territoire couvert, dont 10 % sous protection forte.",
    "fiche": 30,
    "domaine": 4,
    "exemples": [
@@ -7347,7 +7347,7 @@
   {
    "id": "30-4",
    "nom": "Restauration",
-   "definition": "Rétablissement d'un écosystème dégradé.",
+   "definition": "Action intentionnelle qui vise à favoriser le rétablissement d'un écosystème dégradé, endommagé ou détruit, dans sa structure, sa composition et son fonctionnement. Elle s'appuie sur l'écologie de la restauration et prend des formes variées : effacement de seuils et reméandrage de cours d'eau, réhabilitation de zones humides, replantation, réintroduction d'espèces, dépollution de sites. Elle pose la question de l'état de référence : faut-il revenir à un état antérieur supposé naturel, ou viser un écosystème fonctionnel adapté aux conditions présentes et futures ? Elle se distingue de la compensation écologique, qui restaure un milieu ailleurs pour contrebalancer une destruction. Le règlement européen sur la restauration de la nature, adopté en 2024, en fait une obligation.",
    "fiche": 30,
    "domaine": 4,
    "exemples": [
@@ -7357,7 +7357,7 @@
   {
    "id": "31-1",
    "nom": "Parc national",
-   "definition": "Cœur à réglementation stricte et aire d'adhésion, géré par un établissement public (11 en France).",
+   "definition": "En France, espace protégé créé par décret, composé d'un cœur soumis à une réglementation stricte (chasse, construction, circulation, prélèvements) et d'une aire d'adhésion, où les communes qui adhèrent à la charte s'engagent dans un projet de développement durable. Chaque parc est géré par un établissement public de l'État. Le premier, celui de la Vanoise, a été créé en 1963 en application de la loi de 1960 ; la loi de 2006 a réformé le dispositif en instituant la charte et l'aire d'adhésion. Ailleurs, l'appellation recouvre des statuts différents ; le premier parc national au monde est Yellowstone, aux États-Unis, en 1872. La catégorie II de l'UICN, dite « parc national », ne coïncide pas toujours avec les parcs ainsi nommés.",
    "fiche": 31,
    "domaine": 4,
    "exemples": [
@@ -7367,7 +7367,7 @@
   {
    "id": "31-2",
    "nom": "Parc naturel régional",
-   "definition": "Territoire rural habité engagé dans une charte de développement, sans réglementation spécifique ; initiative régionale.",
+   "definition": "En France, territoire rural habité, au patrimoine naturel, culturel et paysager reconnu mais fragile, dont les collectivités s'engagent, autour d'une charte, dans un projet commun de protection et de développement. Institués en 1967, les parcs naturels régionaux sont créés à l'initiative des régions et gérés par un syndicat mixte ; le classement est prononcé par décret pour quinze ans, puis renouvelé après révision de la charte. Ils n'ont pas de réglementation propre sur la chasse ou la construction, mais leur charte s'impose aux documents d'urbanisme, qui doivent être compatibles avec elle. Leur logique est contractuelle : ils expérimentent des formes de développement local fondées sur la valorisation du patrimoine.",
    "fiche": 31,
    "domaine": 4,
    "exemples": [
@@ -7377,7 +7377,7 @@
   {
    "id": "31-3",
    "nom": "Réserve naturelle",
-   "definition": "Protection réglementaire forte d'un espace limité.",
+   "definition": "Espace limité, terrestre ou marin, classé pour protéger un patrimoine naturel remarquable, espèces, habitats ou formations géologiques, au moyen d'une réglementation forte et adaptée à chaque site, qui peut interdire ou encadrer toute activité susceptible de lui nuire. En France, on distingue les réserves naturelles nationales, classées par l'État, les réserves naturelles régionales et celles de Corse, créées par la collectivité de Corse. Leur gestion est confiée par convention à des associations, des collectivités ou des établissements publics, avec un plan de gestion et des agents chargés de la surveillance. La réserve naturelle protège plus strictement que la plupart des autres statuts, mais en général sur de petites surfaces.",
    "fiche": 31,
    "domaine": 4,
    "exemples": [
@@ -7387,7 +7387,7 @@
   {
    "id": "31-4",
    "nom": "Aire marine protégée",
-   "definition": "Espace maritime doté d'un objectif de protection, sous des statuts variés.",
+   "definition": "Espace délimité en mer, doté d'objectifs de protection de la nature à long terme, souvent associés à des objectifs de gestion durable des usages, notamment de la pêche et du tourisme. Le terme est générique : en France, il recouvre plusieurs catégories, parmi lesquelles les parcs naturels marins, les parties maritimes des parcs nationaux et des réserves naturelles, les sites Natura 2000 en mer et certains terrains du Conservatoire du littoral. Leur niveau de contrainte est très variable, de la zone où tout prélèvement est interdit à l'espace simplement géré. Les engagements internationaux se mesurent en surfaces couvertes, ce qui encourage la création de vastes aires peu contraignantes, que leurs critiques qualifient d'aires « de papier ».",
    "fiche": 31,
    "domaine": 4,
    "exemples": [
@@ -7397,7 +7397,7 @@
   {
    "id": "32-1",
    "nom": "Déforestation",
-   "definition": "Conversion d'une forêt à un autre usage du sol.",
+   "definition": "Conversion durable d'une surface boisée à un autre usage du sol, agricole, pastoral, minier ou urbain, qui fait disparaître la forêt en tant que telle. L'Organisation des Nations unies pour l'alimentation et l'agriculture (FAO) la définit par ce changement d'utilisation, et non par la simple coupe : une forêt exploitée qui se régénère n'est pas déforestée. Phénomène ancien en Europe, la déforestation se concentre aujourd'hui dans les forêts tropicales d'Amérique du Sud, d'Afrique centrale et d'Asie du Sud-Est, sous l'effet de l'élevage, des cultures commerciales comme le soja ou le palmier à huile, de l'agriculture vivrière et des mines. La télédétection en révèle les formes caractéristiques, comme les fronts pionniers en arête de poisson le long des routes.",
    "fiche": 32,
    "domaine": 4,
    "exemples": [
@@ -7407,7 +7407,7 @@
   {
    "id": "32-2",
    "nom": "Dégradation forestière",
-   "definition": "Appauvrissement d'une forêt sans changement d'usage.",
+   "definition": "Diminution durable de la capacité d'une forêt à fournir des biens et des services écologiques, sans que la surface cesse d'être une forêt : appauvrissement en espèces, baisse du volume de bois et du carbone stocké, fragmentation, ouverture du couvert. Elle résulte de l'exploitation sélective des bois précieux, de la collecte de bois de feu, du pâturage en forêt, d'incendies répétés ou de maladies. Plus difficile à détecter par satellite que la déforestation, elle affecterait selon plusieurs études des surfaces du même ordre, et prépare souvent la conversion ultérieure des terres. Les mécanismes internationaux de réduction des émissions, comme REDD+, l'associent à la déforestation dans leurs objectifs.",
    "fiche": 32,
    "domaine": 4,
    "exemples": [
@@ -7417,7 +7417,7 @@
   {
    "id": "32-3",
    "nom": "Reboisement (reforestation)",
-   "definition": "Plantation ou régénération là où la forêt existait.",
+   "definition": "Rétablissement d'un couvert forestier, par plantation ou par régénération naturelle assistée, sur des terres qui portaient une forêt dans un passé récent et l'ont perdue par coupe, incendie, surpâturage ou défrichement ; le terme équivaut à reforestation. En France, les lois de 1860 et de 1882 sur la restauration des terrains en montagne ont organisé de grands reboisements dans les Alpes, les Pyrénées et le Massif central, pour lutter contre l'érosion des versants et les crues torrentielles. Le reboisement ne restaure pas forcément l'écosystème initial : une plantation d'une seule essence, souvent exotique et à croissance rapide, n'a ni la structure ni la biodiversité d'une forêt naturelle.",
    "fiche": 32,
    "domaine": 4,
    "exemples": [
@@ -7427,7 +7427,7 @@
   {
    "id": "32-4",
    "nom": "Boisement",
-   "definition": "Plantation sur des terres qui n'étaient plus forestières depuis longtemps.",
+   "definition": "Plantation ou installation d'une forêt sur des terres qui n'étaient plus boisées depuis longtemps, ou ne l'avaient jamais été, comme des landes, des marais, des dunes ou d'anciennes terres agricoles ; on parle aussi d'afforestation. Le boisement des Landes de Gascogne en pins maritimes, encouragé par la loi de 1857, et la fixation des dunes littorales en offrent l'exemple français classique. Ces opérations transforment profondément un paysage et ses usages : dans les Landes, elles ont mis fin au système agropastoral fondé sur les parcours à moutons et ont fait naître une économie du bois et de la résine. Dans un sens plus courant, le mot désigne aussi un peuplement d'arbres, un bois.",
    "fiche": 32,
    "domaine": 4,
    "exemples": [
@@ -7437,7 +7437,7 @@
   {
    "id": "33-1",
    "nom": "Gisement",
-   "definition": "Concentration naturelle d'une substance.",
+   "definition": "Concentration naturelle d'une substance minérale ou fossile dans le sol ou le sous-sol, suffisamment importante pour pouvoir être exploitée par une mine, une carrière ou des puits : minerai métallique, charbon, pétrole, gaz, sel, granulats. Le gisement est un fait géologique, produit par des processus de sédimentation, de magmatisme, d'altération ou d'enrichissement, mais sa reconnaissance dépend de la prospection et de la teneur jugée exploitable. On le caractérise par sa géométrie, sa profondeur, son tonnage et sa teneur. Le mot s'emploie aussi en archéologie et en paléontologie pour un lieu riche en vestiges ; par métaphore, on parle de « gisement » d'emplois ou d'économies.",
    "fiche": 33,
    "domaine": 4,
    "exemples": [
@@ -7447,7 +7447,7 @@
   {
    "id": "33-2",
    "nom": "Ressource",
-   "definition": "Ce qu'une société juge utile et sait exploiter : une construction sociale et technique.",
+   "definition": "Élément du milieu, matière, énergie, espace ou propriété, qu'une société juge utile et sait mobiliser pour satisfaire ses besoins. La ressource n'existe pas en soi : elle dépend des techniques, des besoins, des prix et des représentations. La bauxite n'est devenue une ressource majeure qu'avec la mise au point de l'électrolyse de l'aluminium, à la fin du XIXe siècle ; un paysage devient ressource avec le tourisme. Les géographes, à la suite de Claude Raffestin, insistent sur ce caractère relationnel. On distingue les ressources renouvelables, qui se reconstituent à l'échelle humaine si leur exploitation reste mesurée, et les ressources non renouvelables, dont le stock s'épuise. La notion s'étend aux ressources territoriales, construites par les acteurs locaux.",
    "fiche": 33,
    "domaine": 4,
    "exemples": [
@@ -7457,7 +7457,7 @@
   {
    "id": "33-3",
    "nom": "Réserve",
-   "definition": "Part des ressources connues exploitable dans les conditions économiques et techniques du moment.",
+   "definition": "Part des ressources d'une substance, déjà identifiées, qui peut être extraite de manière rentable dans les conditions techniques et économiques du moment. Les réserves sont un calcul et non un stock physique fixe : elles augmentent avec la découverte de gisements et diminuent avec l'extraction. Pour les hydrocarbures, on distingue réserves prouvées, probables et possibles selon leur degré de certitude. Le rapport entre réserves et production annuelle donne une durée indicative, souvent mal interprétée comme une date d'épuisement. Les déclarations de réserves, notamment pétrolières, sont aussi des enjeux stratégiques et financiers, puisqu'elles conditionnent quotas de production, valeur des entreprises et crédit des États.",
    "fiche": 33,
    "domaine": 4,
    "exemples": [
@@ -7467,7 +7467,7 @@
   {
    "id": "34-1",
    "nom": "Renouvelable",
-   "definition": "Source reconstituée à l'échelle humaine : solaire, éolien, hydraulique, biomasse.",
+   "definition": "Énergie tirée de flux naturels qui se reconstituent à l'échelle du temps humain, au moins aussi vite qu'on les consomme : rayonnement solaire, vent, écoulement de l'eau, marées, chaleur interne de la Terre, biomasse. Le caractère renouvelable porte sur la source, non sur l'installation, qui consomme des matériaux et de l'espace. Certaines sources ne sont renouvelables que sous condition : la biomasse et la géothermie peuvent s'épuiser localement si on les exploite plus vite qu'elles ne se reconstituent. Les énergies solaire et éolienne sont variables, ce qui impose stockage, réseaux et complémentarités. Une énergie renouvelable n'est pas forcément sans émissions ni sans impact : la combustion du bois émet du CO₂ et des particules.",
    "fiche": 34,
    "domaine": 4,
    "exemples": [
@@ -7477,7 +7477,7 @@
   {
    "id": "34-2",
    "nom": "Décarbonée",
-   "definition": "Source qui émet peu de CO₂, nucléaire compris, bien qu'il ne soit pas renouvelable.",
+   "definition": "Énergie dont la production émet peu de gaz à effet de serre, et notamment de dioxyde de carbone, sur l'ensemble de son cycle de vie, de la construction des installations à leur démantèlement. La catégorie inclut la plupart des énergies renouvelables électriques, comme l'hydraulique, l'éolien et le solaire, ainsi que l'énergie nucléaire, qui n'est pas renouvelable puisqu'elle consomme un minerai, l'uranium. Le critère est climatique : il ne dit rien des autres impacts, déchets radioactifs, emprise au sol ou pollutions locales. L'expression « bas carbone » est plus exacte, car aucune source n'est totalement dépourvue d'émissions. La production électrique française, dominée par le nucléaire et l'hydraulique, est l'une des plus décarbonées d'Europe.",
    "fiche": 34,
    "domaine": 4,
    "exemples": [
@@ -7487,7 +7487,7 @@
   {
    "id": "35-1",
    "nom": "Développement durable",
-   "definition": "Développement qui répond aux besoins du présent sans compromettre ceux des générations futures (rapport Brundtland, 1987).",
+   "definition": "Mode de développement qui répond aux besoins du présent sans compromettre la capacité des générations futures à répondre aux leurs, selon la définition du rapport Notre avenir à tous, remis en 1987 par la commission présidée par Gro Harlem Brundtland. Il est traditionnellement présenté comme la conciliation de trois piliers, économique, social et environnemental, auxquels on ajoute parfois la gouvernance ou la culture. Consacré par le sommet de Rio en 1992, puis décliné dans les objectifs de développement durable adoptés par l'ONU en 2015, il est devenu une norme de l'action publique. Ses critiques en dénoncent le flou, qui permet de justifier des politiques contradictoires, et la tension non résolue entre croissance et limites écologiques.",
    "fiche": 35,
    "domaine": 4,
    "exemples": [
@@ -7497,7 +7497,7 @@
   {
    "id": "35-2",
    "nom": "Durabilité faible",
-   "definition": "Le capital naturel peut être remplacé par du capital technique.",
+   "definition": "Conception de la durabilité, issue de l'économie néoclassique, selon laquelle le capital naturel et le capital produit par l'homme sont substituables : la perte d'une ressource naturelle peut être compensée par l'accumulation de capital technique, de connaissances ou de richesse, pourvu que le stock total de capital transmis aux générations futures ne diminue pas. Elle s'appuie sur les travaux de Robert Solow et de John Hartwick dans les années 1970, et fonde la règle selon laquelle les revenus tirés des ressources épuisables doivent être réinvestis. Elle suppose une grande confiance dans le progrès technique et le marché. Ses critiques soulignent que certaines fonctions écologiques, comme la régulation du climat, n'ont pas de substitut.",
    "fiche": 35,
    "domaine": 4,
    "exemples": [
@@ -7507,7 +7507,7 @@
   {
    "id": "35-3",
    "nom": "Durabilité forte",
-   "definition": "Une partie du capital naturel n'est pas substituable.",
+   "definition": "Conception de la durabilité selon laquelle une partie au moins du capital naturel ne peut être remplacée par du capital produit, parce qu'elle assure des fonctions vitales, uniques ou irréversibles : régulation du climat, cycle de l'eau, biodiversité. Défendue notamment par l'économie écologique, avec Herman Daly, elle impose de maintenir ce capital naturel critique au-dessus de certains seuils, indépendamment de l'accumulation de richesse. Elle conduit à des règles physiques de gestion : ne pas exploiter une ressource renouvelable au-delà de son rythme de renouvellement, ne pas rejeter plus de déchets que le milieu ne peut en absorber. La notion de limites planétaires, proposée en 2009, s'inscrit dans cette perspective.",
    "fiche": 35,
    "domaine": 4,
    "exemples": [
@@ -7517,7 +7517,7 @@
   {
    "id": "36-1",
    "nom": "Artificialisation",
-   "definition": "Perte de l'état naturel, agricole ou forestier d'un sol, jardins et parcs compris.",
+   "definition": "Transformation d'un sol naturel, agricole ou forestier par des opérations d'aménagement qui en altèrent durablement les fonctions écologiques : bâti, routes et parkings, mais aussi jardins, pelouses et terrains de sport selon les définitions statistiques usuelles. La loi Climat et résilience de 2021 l'a définie comme l'altération durable de tout ou partie des fonctions écologiques d'un sol, notamment biologiques, hydriques et climatiques, et de son potentiel agronomique. Sa mesure varie selon les sources, fichiers fonciers, enquête Teruti-Lucas ou bases d'occupation du sol, qui produisent des chiffres différents. L'artificialisation n'implique pas toujours l'imperméabilisation : un jardin est artificialisé, mais son sol reste perméable.",
    "fiche": 36,
    "domaine": 4,
    "exemples": [
@@ -7527,7 +7527,7 @@
   {
    "id": "36-2",
    "nom": "Imperméabilisation",
-   "definition": "Recouvrement du sol par un revêtement étanche, sous-ensemble de l'artificialisation.",
+   "definition": "Recouvrement d'un sol par un matériau étanche, enrobé, béton ou bâtiment, qui empêche l'infiltration de l'eau de pluie et supprime l'essentiel de la vie du sol. C'est la forme la plus difficilement réversible de l'artificialisation, dont elle ne représente qu'une partie. Ses effets sont surtout hydrologiques et climatiques : ruissellement accru et accéléré, saturation des réseaux d'assainissement, aggravation des inondations, moindre recharge des nappes, renforcement des îlots de chaleur urbains. Les politiques de désimperméabilisation, ou de « ville perméable », cherchent à rendre aux sols leur capacité d'infiltration par des revêtements poreux, des noues et la végétalisation des cours d'école et des parkings.",
    "fiche": 36,
    "domaine": 4,
    "exemples": [
@@ -7537,7 +7537,7 @@
   {
    "id": "36-3",
    "nom": "Étalement urbain",
-   "definition": "Extension des surfaces urbanisées plus rapide que la croissance de la population.",
+   "definition": "Extension des espaces urbanisés en périphérie des villes, sous des formes peu denses et discontinues, plus rapide que la croissance de la population qu'ils accueillent. L'étalement associe lotissements pavillonnaires, zones d'activités et commerciales et infrastructures routières ; il repose sur la généralisation de l'automobile, sur les écarts de prix du foncier et sur l'aspiration à la maison individuelle. Il entraîne la consommation de terres agricoles, l'allongement des déplacements, des coûts accrus de réseaux et la dépendance automobile. Le terme est descriptif et souvent critique ; on le distingue de la périurbanisation, diffusion de la ville dans les campagnes voisines, et de la croissance urbaine, qui peut aussi se faire par densification.",
    "fiche": 36,
    "domaine": 4,
    "exemples": [
@@ -7547,7 +7547,7 @@
   {
    "id": "37-1",
    "nom": "Holocène",
-   "definition": "Époque géologique ouverte il y a environ 11 700 ans, à la fin de la dernière glaciation.",
+   "definition": "Époque géologique actuelle, la plus récente du Quaternaire, qui a commencé il y a environ 11 700 ans avec la fin de la dernière période glaciaire ; sa base est fixée par un repère officiel dans une carotte de glace du Groenland. L'Holocène se caractérise par un climat interglaciaire relativement stable, qui a permis l'essor de l'agriculture, la sédentarisation et la croissance démographique des sociétés humaines. Il connaît néanmoins des fluctuations, comme l'optimum climatique du milieu de l'Holocène ou le petit âge glaciaire, entre le XIVe et le XIXe siècle. En 2018, la Commission internationale de stratigraphie l'a subdivisé en trois étages : Greenlandien, Northgrippien et Meghalayen.",
    "fiche": 37,
    "domaine": 4,
    "exemples": [
@@ -7557,7 +7557,7 @@
   {
    "id": "37-2",
    "nom": "Anthropocène",
-   "definition": "Époque proposée où l'humanité serait devenue une force géologique ; notion scientifique et politique discutée, non retenue comme unité officielle de l'échelle des temps géologiques (2024).",
+   "definition": "Terme proposé en 2000 par le chimiste Paul Crutzen et le biologiste Eugene Stoermer pour désigner une nouvelle époque géologique, dans laquelle l'humanité serait devenue une force capable de modifier le fonctionnement du système Terre. Le début de cette époque fait débat : révolution néolithique, colonisation des Amériques, révolution industrielle, ou « grande accélération » d'après 1950, marquée notamment par les retombées des essais nucléaires. En 2024, l'Union internationale des sciences géologiques a rejeté la proposition d'en faire une époque officielle. La notion reste très employée en sciences sociales et en géographie, où certains auteurs lui préfèrent celle de Capitalocène pour souligner l'inégale responsabilité des sociétés.",
    "fiche": 37,
    "domaine": 4,
    "exemples": [
@@ -7567,7 +7567,7 @@
   {
    "id": "38-1",
    "nom": "Rivage",
-   "definition": "Ligne de contact entre la terre et la mer à un instant donné.",
+   "definition": "Ligne mobile où la terre et la mer entrent en contact à un instant donné ; elle se déplace sans cesse avec la marée, les vagues et les variations du niveau marin. Le rivage est une limite instantanée, que l'on ne peut cartographier qu'en précisant le moment ou le niveau d'eau retenu. Dans les mers à faible marnage, comme la Méditerranée, ses déplacements restent limités ; dans les mers à fort marnage, comme la Manche, ils atteignent plusieurs kilomètres sur les côtes plates. En droit français, le « rivage de la mer » désigne en revanche une bande, celle que couvrent et découvrent les plus hautes mers en l'absence de perturbations météorologiques exceptionnelles, et qui appartient au domaine public maritime.",
    "fiche": 38,
    "domaine": 5,
    "exemples": [
@@ -7578,7 +7578,7 @@
   {
    "id": "38-2",
    "nom": "Trait de côte",
-   "definition": "Limite conventionnelle entre terre et mer, fixée par les plus hautes mers.",
+   "definition": "Limite conventionnelle entre la terre et la mer, choisie pour cartographier les côtes et suivre leur évolution. En France, le Service hydrographique et océanographique de la Marine (SHOM) et l'IGN retiennent la limite atteinte par les plus hautes mers astronomiques, de coefficient 120, dans des conditions météorologiques normales ; d'autres repères sont utilisés selon les côtes, comme le pied ou le sommet de la dune, le haut de la falaise ou la limite de la végétation. Le trait de côte n'est donc pas une donnée de terrain mais un repère construit, dont le choix conditionne la mesure du recul. Depuis la loi Climat et résilience de 2021, les communes exposées doivent cartographier son recul prévisible à 30 et à 100 ans.",
    "fiche": 38,
    "domaine": 5,
    "exemples": [
@@ -7589,7 +7589,7 @@
   {
    "id": "38-3",
    "nom": "Estran",
-   "definition": "Bande alternativement couverte et découverte par la marée.",
+   "definition": "Partie du littoral comprise entre les plus hautes et les plus basses mers, alternativement couverte et découverte par la marée ; on parle aussi de zone intertidale. Sa largeur dépend du marnage et de la pente : presque inexistant en Méditerranée, l'estran dépasse plusieurs kilomètres dans les baies à fort marnage de la Manche. Selon les matériaux, il est rocheux, sableux ou vaseux ; il se divise en bandes selon la durée d'émersion, qui commande la répartition des espèces, algues, coquillages ou vers. Espace public, il accueille des usages variés et parfois concurrents, pêche à pied, conchyliculture, loisirs, récolte des algues, encadrés par le droit du domaine public maritime.",
    "fiche": 38,
    "domaine": 5,
    "exemples": [
@@ -7600,7 +7600,7 @@
   {
    "id": "38-4",
    "nom": "Côte",
-   "definition": "Bande terrestre au contact de la mer, décrite par sa forme (côte basse, côte à falaise).",
+   "definition": "Bande de terre qui borde la mer, envisagée surtout dans sa forme et dans son fonctionnement physique : côte basse ou à falaise, rocheuse ou sableuse, rectiligne ou découpée, d'érosion ou d'accumulation. Le terme s'emploie à des échelles très diverses, de la côte d'un département à la côte ouest d'un continent, et dans de nombreux noms régionaux, comme la Côte d'Azur ou la Côte d'Opale. Il est plus étroit et plus physique que littoral, qui inclut l'arrière-pays, le proche espace marin et les usages. En géomorphologie continentale, côte a un tout autre sens : il désigne une cuesta, relief dissymétrique de couches inclinées, comme les côtes de Meuse et de Moselle (voir la fiche correspondante).",
    "fiche": 38,
    "domaine": 5,
    "exemples": [
@@ -7611,7 +7611,7 @@
   {
    "id": "38-5",
    "nom": "Littoral",
-   "definition": "Espace d'interface entre terre et mer, arrière-pays et proche espace marin compris, analysé dans ses usages.",
+   "definition": "Espace géographique d'interface entre la terre et la mer, qui comprend la côte, l'estran, le proche espace marin et un arrière-pays dont la profondeur varie selon les usages et les échelles considérés. Le littoral se définit autant par ses fonctions que par ses formes : ports, tourisme, résidence, agriculture, conchyliculture, industrie et protection des milieux s'y concentrent et s'y concurrencent. Ses limites sont donc variables et souvent fixées par le droit : en France, la loi Littoral de 1986 s'applique aux communes riveraines des mers, des estuaires et des grands plans d'eau. Espace très convoité et très exposé aux risques, le littoral est un objet privilégié de la géographie de l'aménagement.",
    "fiche": 38,
    "domaine": 5,
    "exemples": [
@@ -7622,7 +7622,7 @@
   {
    "id": "39-1",
    "nom": "Falaise",
-   "definition": "Escarpement rocheux littoral qui recule sous l'action de la mer (côte d'érosion).",
+   "definition": "Escarpement littoral à pente forte ou verticale, taillé dans la roche par la mer, qui sape sa base et provoque des éboulements, avec l'aide des processus continentaux qui affectent le haut de la paroi : ruissellement, gel, suintements. La falaise est une forme d'érosion : elle recule plus ou moins vite selon la résistance de la roche, l'exposition aux houles et la présence d'une plage qui protège son pied. Ce recul laisse en avant de la paroi une plate-forme d'abrasion, visible à marée basse. On distingue les falaises vives, encore attaquées par la mer, et les falaises mortes, que des dépôts ont isolées du rivage. Leur recul pose des problèmes aigus d'urbanisme et de sécurité.",
    "fiche": 39,
    "domaine": 5,
    "exemples": [
@@ -7633,7 +7633,7 @@
   {
    "id": "39-2",
    "nom": "Plage",
-   "definition": "Accumulation de sables ou de galets sur le rivage.",
+   "definition": "Accumulation littorale de sédiments meubles, sables, graviers ou galets, déposés par les vagues sur le rivage, entre la limite des basses mers et celle qu'atteignent les plus fortes houles. La plage est une forme d'accumulation en équilibre dynamique : son profil change avec les saisons, s'abaissant lors des tempêtes d'hiver et se reconstituant par beau temps. Elle dépend d'un budget sédimentaire alimenté par les fleuves, l'érosion des falaises et la dérive littorale ; tout aménagement qui coupe ces apports, barrage, épi ou port, peut provoquer son amaigrissement. Elle protège naturellement l'arrière-côte et constitue une ressource touristique majeure, d'où la pratique des rechargements en sable.",
    "fiche": 39,
    "domaine": 5,
    "exemples": [
@@ -7644,7 +7644,7 @@
   {
    "id": "39-3",
    "nom": "Cordon littoral",
-   "definition": "Accumulation allongée de sédiments parallèle au rivage.",
+   "definition": "Accumulation allongée de sables ou de galets, édifiée par les vagues et la dérive littorale et disposée à peu près parallèlement au rivage, qu'elle double ou prolonge. Le cordon peut porter des dunes, isoler une lagune ou un marais, ou s'appuyer directement sur la côte. Le terme est générique : selon ses points d'attache, il prend des noms particuliers, flèche, tombolo ou lido. Les cordons sont des formes mobiles, sensibles aux tempêtes, qui peuvent les franchir ou y ouvrir des brèches, et à la diminution des apports sédimentaires. Ils protègent les terres basses situées en arrière, ce qui explique les travaux de fixation dont ils ont fait l'objet, comme la plantation de dunes en Aquitaine.",
    "fiche": 39,
    "domaine": 5,
    "exemples": [
@@ -7655,7 +7655,7 @@
   {
    "id": "39-4",
    "nom": "Flèche",
-   "definition": "Cordon rattaché à la côte par une seule extrémité.",
+   "definition": "Cordon littoral libre à une extrémité et rattaché à la côte par l'autre, qui s'allonge dans la direction de la dérive littorale, souvent en travers d'une baie ou d'une embouchure. Son extrémité libre se recourbe fréquemment vers la terre sous l'effet de la réfraction des houles, formant un crochet ; une succession de crochets témoigne des étapes de son allongement. Une flèche peut fermer progressivement une baie, mais tant qu'elle laisse une large ouverture, elle ne forme pas un lido. Sa mobilité, parfois rapide, pose des problèmes de navigation et d'urbanisme, comme au cap Ferret, dont l'extrémité a beaucoup varié depuis le XVIIIe siècle.",
    "fiche": 39,
    "domaine": 5,
    "exemples": [
@@ -7666,7 +7666,7 @@
   {
    "id": "39-5",
    "nom": "Tombolo",
-   "definition": "Cordon qui relie une île au continent.",
+   "definition": "Cordon littoral de sables ou de galets qui relie une île à la côte, ou deux îles entre elles, et transforme ainsi l'île en presqu'île. Il se forme dans la zone abritée en arrière de l'île, où les houles, déviées autour d'elle par diffraction et réfraction, convergent et déposent leurs sédiments. Lorsque deux cordons rattachent une même île au continent en enserrant un plan d'eau, on parle de double tombolo, comme à Giens, où les deux cordons encadrent des étangs et des salins. Un tombolo peut n'émerger qu'à marée basse, ce qui rend l'île accessible à pied à certaines heures seulement. Le mot est emprunté à l'italien.",
    "fiche": 39,
    "domaine": 5,
    "exemples": [
@@ -7677,7 +7677,7 @@
   {
    "id": "39-6",
    "nom": "Lido",
-   "definition": "Cordon qui isole une lagune de la mer.",
+   "definition": "Cordon littoral sableux qui sépare une lagune de la mer, en ne laissant entre elles que d'étroites passes, appelées graus en Languedoc. Le terme vient du nom du cordon qui ferme la lagune de Venise. Le lido résulte de l'accumulation, par les vagues et la dérive littorale, de sables apportés par les fleuves, sur des côtes basses à faible marnage, comme en Méditerranée. Il est menacé par l'érosion et l'élévation du niveau marin, et souvent fortement aménagé, par des routes ou par les stations balnéaires créées en Languedoc par la mission Racine. Les géomorphologues parlent aussi de cordon barrière, ou d'île barrière lorsque le cordon est fragmenté par de nombreuses passes.",
    "fiche": 39,
    "domaine": 5,
    "exemples": [
@@ -7688,7 +7688,7 @@
   {
    "id": "40-1",
    "nom": "Lagune",
-   "definition": "Étendue d'eau saumâtre peu profonde, séparée de la mer par un cordon littoral, sur les côtes basses.",
+   "definition": "Étendue d'eau littorale peu profonde, séparée de la mer par un cordon sédimentaire et reliée à elle par une ou plusieurs passes, sur des côtes basses à faible marnage. Ses eaux sont saumâtres, leur salinité variant selon les apports d'eau douce des rivières et les échanges avec la mer ; elles peuvent devenir sursalées en climat sec. Milieu riche mais fragile, la lagune est exposée au comblement, à l'eutrophisation et aux pollutions venues du bassin versant ; elle accueille pêche, conchyliculture, salins et tourisme. En Languedoc et en Provence, on l'appelle étang ; en Afrique de l'Ouest, des lagunes bordent une grande partie de la côte du golfe de Guinée.",
    "fiche": 40,
    "domaine": 5,
    "exemples": [
@@ -7699,7 +7699,7 @@
   {
    "id": "40-2",
    "nom": "Lagon",
-   "definition": "Étendue d'eau marine enclose par un récif corallien, barrière ou atoll.",
+   "definition": "Étendue d'eau marine, calme et peu profonde, enclose par un récif corallien : récif-barrière qui l'isole de l'océan autour d'une île haute, comme en Nouvelle-Calédonie ou à Bora-Bora, ou couronne récifale d'un atoll, comme à Rangiroa. Le lagon communique avec l'océan par des passes ouvertes dans le récif, qui renouvellent ses eaux ; il conserve une salinité marine. Sa formation est liée à la croissance des coraux constructeurs, qui exige des eaux chaudes, claires et bien éclairées, et, pour les atolls, à l'enfoncement progressif d'une île volcanique, selon le modèle proposé par Darwin. Les lagons abritent une biodiversité remarquable, menacée par le blanchissement des coraux. L'anglais lagoon désigne indifféremment lagon et lagune.",
    "fiche": 40,
    "domaine": 5,
    "exemples": [
@@ -7710,7 +7710,7 @@
   {
    "id": "41-1",
    "nom": "Estuaire",
-   "definition": "Embouchure évasée soumise à la marée, où l'eau douce se mêle à l'eau de mer.",
+   "definition": "Embouchure d'un fleuve élargie en entonnoir, où la marée pénètre et remonte parfois loin à l'intérieur des terres, et où se mêlent eaux douces et eaux marines. L'estuaire est un milieu de transition, aux eaux saumâtres et turbides : la rencontre des eaux provoque l'agrégation des particules fines et la formation d'un bouchon vaseux, qui se déplace avec les marées et les débits. Il se forme surtout dans les mers à marée notable, où les courants évacuent les sédiments au lieu de les laisser s'accumuler. Les estuaires concentrent de grands ports, des zones industrielles et des milieux humides d'intérêt écologique majeur, d'où de forts conflits d'usage.",
    "fiche": 41,
    "domaine": 5,
    "exemples": [
@@ -7720,7 +7720,7 @@
   {
    "id": "41-2",
    "nom": "Delta",
-   "definition": "Accumulation de sédiments qui avance en mer et se divise en bras.",
+   "definition": "Accumulation de sédiments fluviaux à l'embouchure d'un fleuve, qui progresse vers la mer et sur laquelle le cours d'eau se divise en plusieurs bras, ou défluents. Le delta se forme lorsque les apports de sédiments l'emportent sur la capacité de la mer à les disperser, ce qui suppose un faible marnage ou des apports considérables. Sa forme dépend des forces dominantes : en patte d'oiseau quand le fleuve l'emporte, comme le Mississippi ; arquée quand les vagues redistribuent les sédiments, comme le Nil ; découpée par les chenaux de marée, comme le Gange-Brahmapoutre. Fertiles et très peuplés, les deltas sont menacés par la subsidence, la retenue des sédiments par les barrages et l'élévation du niveau marin.",
    "fiche": 41,
    "domaine": 5,
    "exemples": [
@@ -7731,7 +7731,7 @@
   {
    "id": "41-3",
    "nom": "Ria (aber en Bretagne)",
-   "definition": "Vallée fluviale envahie par la mer lors de la remontée postglaciaire.",
+   "definition": "Basse vallée fluviale envahie par la mer lors de la remontée du niveau marin qui a suivi la dernière glaciation, la transgression flandrienne, et qui forme un bras de mer étroit et ramifié s'enfonçant loin dans les terres. La ria conserve le tracé sinueux de la vallée fluviale ennoyée et de ses affluents. Le mot vient de Galice, où les rías ont donné leur nom à la forme ; en Bretagne, on parle d'aber dans le Léon et, plus largement, de rivière pour ces vallées ennoyées, comme la rivière d'Étel. Les rias offrent des abris portuaires naturels et des sites favorables à la conchyliculture, mais elles se comblent lentement de vases.",
    "fiche": 41,
    "domaine": 5,
    "exemples": [
@@ -7742,7 +7742,7 @@
   {
    "id": "41-4",
    "nom": "Fjord",
-   "definition": "Vallée glaciaire envahie par la mer.",
+   "definition": "Ancienne vallée glaciaire envahie par la mer après la fonte des glaciers, qui forme un bras de mer long, étroit et profond, aux versants abrupts. Le fjord hérite du profil en auge de la vallée glaciaire : ses parois sont raides, ses vallées affluentes suspendues donnent des cascades, et son fond, surcreusé par le glacier, est souvent plus profond qu'à son entrée, où un seuil rocheux ou morainique le ferme partiellement. Les fjords caractérisent les côtes de hautes latitudes englacées au Quaternaire : Norvège, Écosse, Islande, Groenland, Chili méridional, Nouvelle-Zélande, Alaska. Leur profondeur peut dépasser 1 000 m.",
    "fiche": 41,
    "domaine": 5,
    "exemples": [
@@ -7752,7 +7752,7 @@
   {
    "id": "42-1",
    "nom": "Slikke",
-   "definition": "Vasière nue, recouverte à chaque marée haute.",
+   "definition": "Partie basse d'un marais maritime, faite de vasières nues ou presque, recouvertes à chaque marée haute et découvertes à marée basse ; le mot, d'origine néerlandaise, désigne la vase. La slikke reçoit les sédiments fins apportés par le flot, qui s'y déposent à l'étale ; elle est sillonnée de chenaux de marée, appelés étiers ou criches selon les régions, qui la drainent au jusant. Presque dépourvue de végétation supérieure, hormis quelques plantes pionnières comme les salicornes ou les spartines à sa limite haute, elle est riche en micro-organismes, en vers et en coquillages, et constitue une zone d'alimentation essentielle pour les oiseaux limicoles. Elle s'exhausse peu à peu jusqu'à devenir schorre.",
    "fiche": 42,
    "domaine": 5,
    "exemples": [
@@ -7762,7 +7762,7 @@
   {
    "id": "42-2",
    "nom": "Schorre (herbu, pré salé)",
-   "definition": "Partie haute du marais maritime, végétalisée, submergée aux grandes marées.",
+   "definition": "Partie haute d'un marais maritime, couverte d'une végétation dense adaptée au sel, qui n'est submergée que lors des pleines mers de vives eaux, aux plus forts coefficients. Le mot, d'origine néerlandaise, a pour synonymes herbu, en Normandie, et pré salé. Le schorre résulte de l'exhaussement progressif de la slikke par la sédimentation et par la fixation des vases par les plantes ; il est entaillé de chenaux et parsemé de petites mares. Il est traditionnellement pâturé par des moutons, dits de prés salés, comme dans la baie du Mont-Saint-Michel. Les schorres amortissent les houles et stockent du carbone, mais ils sont exposés à l'endiguement et à l'élévation du niveau marin.",
    "fiche": 42,
    "domaine": 5,
    "exemples": [
@@ -7772,7 +7772,7 @@
   {
    "id": "42-3",
    "nom": "Polder",
-   "definition": "Terre gagnée sur la mer ou sur un lac, endiguée et drainée.",
+   "definition": "Terre gagnée sur la mer, sur un lac, un marais ou un estuaire par endiguement, assèchement puis drainage, dont le niveau se situe souvent au-dessous de celui des hautes eaux, voire du niveau moyen de la mer. Le polder suppose une maîtrise permanente de l'eau : digues, canaux, écluses et pompes, autrefois actionnées par des moulins à vent, évacuent l'eau excédentaire. Le mot néerlandais rappelle que les Pays-Bas en ont fait, depuis le Moyen Âge, un élément essentiel de leur territoire, jusqu'aux grands polders du Zuiderzee au XXe siècle. Des polders existent aussi en France, dans la baie du Mont-Saint-Michel, le Marais poitevin ou la Flandre maritime ; leur défense se pose à nouveau face à l'élévation de la mer.",
    "fiche": 42,
    "domaine": 5,
    "exemples": [
@@ -7782,7 +7782,7 @@
   {
    "id": "42-4",
    "nom": "Mangrove",
-   "definition": "Formation forestière de palétuviers des littoraux tropicaux vaseux.",
+   "definition": "Formation forestière des littoraux tropicaux et subtropicaux, installée sur les vasières de la zone de balancement des marées, dans les estuaires, les deltas et les lagunes abritées. Elle est dominée par les palétuviers, arbres adaptés à l'eau salée et à des sols asphyxiants grâce à des racines-échasses et à des pneumatophores, racines aériennes qui assurent leur respiration. La mangrove remplit des fonctions essentielles : nurserie pour de nombreuses espèces de poissons et de crustacés, piège à sédiments, protection des côtes contre la houle et les cyclones, stockage du carbone. Elle a reculé sous l'effet de l'aquaculture de crevettes, de l'urbanisation et de la riziculture, ce qui fragilise les littoraux qu'elle protégeait.",
    "fiche": 42,
    "domaine": 5,
    "exemples": [
@@ -7792,7 +7792,7 @@
   {
    "id": "43-1",
    "nom": "Submersion marine",
-   "definition": "Inondation temporaire du littoral par la mer, lors d'une tempête ou d'une surcote.",
+   "definition": "Inondation temporaire de terres littorales basses par la mer, lors de conditions météorologiques et marines extrêmes : tempête ou cyclone, surcote due à la baisse de la pression et au vent qui pousse les eaux vers la côte, forte houle et, souvent, pleine mer de vives eaux. La submersion peut résulter du débordement des eaux par-dessus les ouvrages ou le cordon dunaire, de leur franchissement par les paquets de mer, ou de la rupture d'une digue, cas le plus dangereux. Elle ne dure que quelques heures, mais ses effets sont dévastateurs dans les zones basses urbanisées, comme l'a montré la tempête Xynthia. L'élévation du niveau marin en accroît la fréquence.",
    "fiche": 43,
    "domaine": 5,
    "exemples": [
@@ -7802,7 +7802,7 @@
   {
    "id": "43-2",
    "nom": "Érosion côtière",
-   "definition": "Perte de matériaux qui fait reculer durablement le trait de côte.",
+   "definition": "Recul durable du trait de côte vers l'intérieur des terres, dû à une perte de matériaux sur les côtes meubles, plages et dunes, ou à l'éboulement progressif des falaises. Elle résulte d'un déficit du budget sédimentaire, quand les apports des fleuves et de la dérive littorale ne compensent plus les départs, de l'action des houles et des tempêtes, et de l'élévation du niveau marin. Les aménagements y contribuent souvent : barrages qui retiennent les sédiments, extractions de sable, ouvrages portuaires et épis qui interrompent le transit le long de la côte. Les réponses vont de la défense lourde à la gestion souple et à la recomposition spatiale, qui relocalise les biens menacés.",
    "fiche": 43,
    "domaine": 5,
    "exemples": [
@@ -7812,7 +7812,7 @@
   {
    "id": "44-1",
    "nom": "Littoralisation",
-   "definition": "Concentration des populations et des activités sur les littoraux.",
+   "definition": "Processus de concentration croissante des populations, des activités et des aménagements sur les littoraux, et état qui en résulte. La littoralisation repose sur des facteurs variés : essor des échanges maritimes et industrialisation portuaire depuis le XIXe siècle, développement du tourisme balnéaire, attractivité résidentielle, installation des retraités. On la mesure, à l'échelle mondiale, par la part de la population qui vit à moins d'une certaine distance de la mer et, à l'échelle nationale, par la densité des communes littorales. Elle produit pression foncière, artificialisation, conflits d'usage et exposition accrue aux risques côtiers, d'où les politiques de protection du littoral.",
    "fiche": 44,
    "domaine": 5,
    "exemples": [
@@ -7822,7 +7822,7 @@
   {
    "id": "44-2",
    "nom": "Maritimisation",
-   "definition": "Poids croissant des échanges maritimes et des espaces marins dans l'économie et la géopolitique mondiales.",
+   "definition": "Processus par lequel les espaces maritimes et les activités qui s'y rattachent prennent une place croissante dans l'économie, les échanges et la géopolitique mondiale. La maritimisation tient d'abord à l'essor du transport maritime, conteneurisé ou en vrac, qui assure l'essentiel des échanges mondiaux en volume et a fait des grands ports des nœuds de la mondialisation. Elle tient aussi à l'appropriation des mers par les États depuis la convention de Montego Bay, à l'exploitation des ressources en mer (hydrocarbures, pêche, énergies marines) et à l'importance des câbles sous-marins. Elle se traduit enfin par le renforcement des marines de guerre et par des tensions sur les mers disputées, comme la mer de Chine méridionale.",
    "fiche": 44,
    "domaine": 5,
    "exemples": [
@@ -7832,7 +7832,7 @@
   {
    "id": "45-1",
    "nom": "Façade maritime",
-   "definition": "Ensemble de ports et de littoraux proches, avec leurs arrière-pays, formant une interface d'échanges.",
+   "definition": "Ensemble de ports et de littoraux proches, situés sur une même mer ou un même océan, qui entretiennent des relations de complémentarité ou de concurrence et desservent ensemble des arrière-pays, de manière à former une interface d'échanges entre un continent et le reste du monde. La façade n'est pas une simple portion de côte : c'est une construction fonctionnelle, définie par les flux, la densité des infrastructures et l'organisation des réseaux de transport. En France, la planification de l'espace maritime distingue quatre façades administratives (Manche Est-mer du Nord, Nord Atlantique-Manche Ouest, Sud Atlantique et Méditerranée), dotées chacune d'un document stratégique.",
    "fiche": 45,
    "domaine": 5,
    "exemples": [
@@ -7842,7 +7842,7 @@
   {
    "id": "45-2",
    "nom": "Interface",
-   "definition": "Zone de contact entre deux ensembles différents, où s'organisent des échanges.",
+   "definition": "Zone de contact entre deux ensembles différents, espaces, milieux ou systèmes, où leurs différences suscitent des échanges, des flux et des activités spécifiques. Empruntée à la physique, la notion désigne en géographie non une simple limite qui sépare, mais un lieu actif, qui met en relation et tire parti du différentiel entre ses deux côtés. Le littoral, interface entre terre et mer, en est l'exemple classique ; la notion s'applique aussi aux frontières ouvertes, aux villes-portes, aux fronts pionniers ou au contact entre ville et campagne. Une interface peut être linéaire ou zonale, et son épaisseur varie selon l'échelle d'analyse. Le mot est parfois galvaudé quand on l'emploie pour tout espace de contact.",
    "fiche": 45,
    "domaine": 5,
    "exemples": [
@@ -7852,7 +7852,7 @@
   {
    "id": "45-3",
    "nom": "Hinterland (arrière-pays)",
-   "definition": "Espace terrestre desservi par un port.",
+   "definition": "Espace terrestre desservi par un port, d'où proviennent les marchandises qu'il exporte et où se dirigent celles qu'il importe ; le mot allemand signifie « arrière-pays ». L'hinterland se mesure par les flux et non par la distance : il dépend des réseaux de transport (fleuves, canaux, voies ferrées, autoroutes, oléoducs), des ports secs, des tarifs et de la qualité des services logistiques. Les arrière-pays des grands ports se recouvrent largement et font l'objet d'une concurrence intense : la conteneurisation a permis à Rotterdam ou à Anvers de desservir une partie de la France. On distingue l'hinterland captif, que le port domine faute d'alternative, et l'hinterland disputé entre plusieurs ports.",
    "fiche": 45,
    "domaine": 5,
    "exemples": [
@@ -7862,7 +7862,7 @@
   {
    "id": "45-4",
    "nom": "Foreland (avant-pays)",
-   "definition": "Ensemble des ports et espaces maritimes reliés à un port.",
+   "definition": "Ensemble des ports et des espaces maritimes auxquels un port est relié par des lignes régulières ou des flux de marchandises, c'est-à-dire son aire de relations du côté de la mer ; le mot anglais signifie « avant-pays ». Le foreland se décrit par les destinations desservies, la fréquence des escales, la taille des navires et la place du port dans les réseaux des armateurs. Il dépend largement des choix des grandes compagnies de transport conteneurisé, qui décident des escales. Un port au foreland étendu, relié directement aux grandes routes est-ouest, attire davantage de trafic et renforce son hinterland, ce qui explique la concurrence entre ports pour accueillir les plus grands porte-conteneurs.",
    "fiche": 45,
    "domaine": 5,
    "exemples": [
@@ -7872,7 +7872,7 @@
   {
    "id": "46-1",
    "nom": "Hub de transbordement",
-   "definition": "Port où les conteneurs passent des grandes lignes aux lignes de desserte.",
+   "definition": "Port dont l'essentiel du trafic consiste à transférer des conteneurs d'un navire à un autre : les grands porte-conteneurs des lignes principales y déposent des boîtes reprises par des navires plus petits, les feeders, vers des ports secondaires, ou par d'autres lignes principales. Ces hubs s'implantent au plus près des grandes routes maritimes, sur des sites qui dépendent peu d'un arrière-pays, comme Singapour, Tanger Med ou Algésiras. Leur trafic, volatil, dépend des choix des armateurs, qui en sont souvent les opérateurs. Le réseau en étoile qu'ils organisent, dit hub and spokes, permet de concentrer les flux sur des navires géants et d'abaisser le coût par conteneur transporté.",
    "fiche": 46,
    "domaine": 5,
    "exemples": [
@@ -7883,7 +7883,7 @@
   {
    "id": "46-2",
    "nom": "Port-porte (gateway)",
-   "definition": "Port qui dessert un vaste arrière-pays.",
+   "definition": "Port dont la fonction principale est de faire entrer ou sortir les marchandises d'un vaste arrière-pays continental, dont il constitue l'accès maritime ; on emploie aussi l'anglais gateway. Le port-porte vit de sa connexion avec l'hinterland : desserte fluviale, ferroviaire et routière, plates-formes logistiques, ports secs. Rotterdam, Anvers, Hambourg ou Le Havre en sont des exemples européens. Un même port peut cumuler les fonctions de porte et de hub, mais les ressorts de leur compétitivité diffèrent : celle d'un port-porte dépend de la qualité de ses liaisons terrestres et de la taille du marché qu'il dessert, celle d'un hub de sa position sur les routes maritimes.",
    "fiche": 46,
    "domaine": 5,
    "exemples": [
@@ -7893,7 +7893,7 @@
   {
    "id": "46-3",
    "nom": "Rupture de charge",
-   "definition": "Changement de moyen de transport au cours d'un acheminement.",
+   "definition": "Interruption d'un acheminement qui oblige à transférer marchandises ou voyageurs d'un véhicule ou d'un mode de transport à un autre : du navire au train, du camion à la péniche, de l'avion au car. La rupture de charge entraîne des coûts, des délais et des risques de pertes, mais elle crée aussi de la valeur et des emplois : manutention, stockage, transformation, commerce. Elle a longtemps expliqué la localisation des villes et des industries aux points de transfert obligés, ports, confluences ou têtes de navigation. Le conteneur et le transport multimodal en ont réduit le coût sans la supprimer. Elle peut aussi survenir au sein d'un même mode, lors d'un transbordement d'un navire à un autre.",
    "fiche": 46,
    "domaine": 5,
    "exemples": [
@@ -7903,7 +7903,7 @@
   {
    "id": "46-4",
    "nom": "Transbordement",
-   "definition": "Transfert d'une cargaison d'un navire à un autre.",
+   "definition": "Transfert d'une cargaison ou de conteneurs d'un navire à un autre, directement ou après un bref stockage sur les quais, sans que la marchandise quitte le transport maritime. Le transbordement est une rupture de charge interne au même mode : il implique un changement de navire et souvent de ligne, non un changement de mode de transport. Il fonde le fonctionnement des hubs, où une boîte peut être manutentionnée deux fois sans sortir de l'enceinte portuaire, ce qui gonfle les statistiques de trafic. Le transbordement en mer, de navire à navire, existe aussi, notamment pour les hydrocarbures ou les produits de la pêche, et pose des problèmes de contrôle.",
    "fiche": 46,
    "domaine": 5,
    "exemples": [
@@ -7913,7 +7913,7 @@
   {
    "id": "47-1",
    "nom": "Eaux intérieures",
-   "definition": "Eaux en deçà des lignes de base : pleine souveraineté.",
+   "definition": "Selon la convention des Nations unies sur le droit de la mer, dite de Montego Bay (1982), eaux situées en deçà des lignes de base à partir desquelles se mesure la largeur de la mer territoriale : ports, rades, estuaires, baies fermées, et eaux comprises entre la côte et les lignes de base droites tracées le long des côtes découpées ou frangées d'îles. L'État côtier y exerce une souveraineté pleine et entière, comme sur son territoire terrestre : les navires étrangers n'y disposent d'aucun droit de passage inoffensif, sauf lorsque le tracé de lignes de base droites a englobé des eaux qui n'étaient pas auparavant considérées comme intérieures. Elles se distinguent des eaux archipélagiques.",
    "fiche": 47,
    "domaine": 5,
    "exemples": [
@@ -7923,7 +7923,7 @@
   {
    "id": "47-2",
    "nom": "Mer territoriale",
-   "definition": "Jusqu'à 12 milles marins : souveraineté, sous réserve du droit de passage inoffensif.",
+   "definition": "Bande de mer adjacente aux côtes, dont la largeur, mesurée à partir des lignes de base, peut atteindre 12 milles marins, soit environ 22 km, selon la convention de Montego Bay. L'État côtier y exerce sa souveraineté, qui s'étend à l'espace aérien, aux fonds et à leur sous-sol, sous réserve du droit de passage inoffensif reconnu aux navires de tous les États : un passage continu et rapide, qui ne porte pas atteinte à la paix, au bon ordre ou à la sécurité de l'État côtier. Dans les détroits servant à la navigation internationale, ce droit devient un droit de passage en transit, qui ne peut être suspendu. Avant la convention, de nombreux États s'en tenaient à la règle des trois milles.",
    "fiche": 47,
    "domaine": 5,
    "exemples": [
@@ -7933,7 +7933,7 @@
   {
    "id": "47-3",
    "nom": "Zone contiguë",
-   "definition": "Jusqu'à 24 milles : contrôles douaniers, fiscaux, sanitaires et d'immigration.",
+   "definition": "Zone adjacente à la mer territoriale, qui ne peut s'étendre au-delà de 24 milles marins des lignes de base, dans laquelle l'État côtier peut exercer les contrôles nécessaires pour prévenir et réprimer les infractions à ses lois douanières, fiscales, sanitaires ou d'immigration commises sur son territoire ou dans sa mer territoriale. L'État n'y détient pas la souveraineté : il dispose seulement de compétences de police limitées à ces domaines. La zone contiguë fait partie de l'espace couvert par la zone économique exclusive, dont elle constitue la portion la plus proche des côtes ; les deux régimes s'y superposent. Elle n'existe que si l'État côtier l'a proclamée.",
    "fiche": 47,
    "domaine": 5,
    "exemples": [
@@ -7943,7 +7943,7 @@
   {
    "id": "47-4",
    "nom": "Zone économique exclusive",
-   "definition": "Jusqu'à 200 milles : droits souverains sur les ressources, sans souveraineté pleine.",
+   "definition": "Espace maritime situé au-delà de la mer territoriale, qui ne peut s'étendre au-delà de 200 milles marins des lignes de base. L'État côtier y détient des droits souverains pour l'exploration, l'exploitation, la conservation et la gestion des ressources naturelles des eaux, des fonds et de leur sous-sol, ainsi que pour la production d'énergie à partir de l'eau et du vent ; il y exerce aussi une juridiction sur les installations, la recherche scientifique et la protection du milieu marin. Les autres États y conservent les libertés de navigation, de survol et de pose de câbles. La ZEE explique la valeur stratégique des îles, à condition qu'elles se prêtent à l'habitation humaine ou à une vie économique propre.",
    "fiche": 47,
    "domaine": 5,
    "exemples": [
@@ -7953,7 +7953,7 @@
   {
    "id": "47-5",
    "nom": "Haute mer",
-   "definition": "Au-delà : liberté des mers ; les grands fonds (la « Zone ») relèvent du patrimoine commun de l'humanité.",
+   "definition": "Ensemble des espaces maritimes qui ne relèvent ni des eaux intérieures, ni de la mer territoriale, ni de la zone économique exclusive d'un État, soit près des deux tiers de la surface des océans. Elle est régie par le principe de liberté, navigation, survol, pêche, recherche scientifique, pose de câbles, chaque navire relevant de la juridiction de l'État dont il bat le pavillon. Les fonds marins situés au-delà des juridictions nationales, appelés la Zone, et leurs ressources minérales ont été déclarés patrimoine commun de l'humanité et sont gérés par l'Autorité internationale des fonds marins. Un accord sur la biodiversité en haute mer, adopté en 2023, organise la création d'aires marines protégées dans ces espaces.",
    "fiche": 47,
    "domaine": 5,
    "exemples": [
@@ -7963,7 +7963,7 @@
   {
    "id": "48-1",
    "nom": "Plate-forme continentale",
-   "definition": "Prolongement sous-marin peu profond du continent, jusqu'au talus (vers 200 m de profondeur en moyenne).",
+   "definition": "Prolongement sous-marin des continents, en pente très douce, qui s'étend du rivage jusqu'à la rupture de pente marquant le début du talus continental, en général entre 130 et 200 m de profondeur. Sa largeur varie de quelques kilomètres au large des côtes montagneuses actives à plusieurs centaines de kilomètres, comme dans la mer du Nord. Elle a été en grande partie émergée pendant les glaciations, quand le niveau marin était environ 120 m plus bas, ce qui explique les vallées et les dépôts continentaux qu'on y retrouve. Riche en ressources halieutiques et en hydrocarbures, elle est un objet de la géomorphologie, distinct de la notion juridique de plateau continental.",
    "fiche": 48,
    "domaine": 5,
    "exemples": [
@@ -7973,7 +7973,7 @@
   {
    "id": "48-2",
    "nom": "Talus continental",
-   "definition": "Pente forte qui relie la plate-forme aux grands fonds.",
+   "definition": "Pente sous-marine relativement forte, de quelques degrés, qui relie le rebord de la plate-forme continentale, vers 130 à 200 m de profondeur, aux grands fonds océaniques, vers 3 000 à 4 000 m, sur une largeur de quelques dizaines de kilomètres. Sur les marges passives, il marque approximativement la limite entre croûte continentale et croûte océanique. Le talus est entaillé de canyons sous-marins, parfois dans le prolongement de vallées continentales, par où des courants de turbidité acheminent les sédiments vers le glacis continental, accumulation en pente douce qui fait la transition avec la plaine abyssale. Il est le siège de glissements sous-marins, capables de provoquer des tsunamis.",
    "fiche": 48,
    "domaine": 5,
    "exemples": [
@@ -7983,7 +7983,7 @@
   {
    "id": "48-3",
    "nom": "Plateau continental (sens juridique)",
-   "definition": "Fonds marins sur lesquels l'État côtier a des droits souverains d'exploitation, jusqu'à 200 milles et au-delà sous conditions, après examen par une commission des Nations unies.",
+   "definition": "Selon la convention de Montego Bay, fonds marins et leur sous-sol au-delà de la mer territoriale, sur toute l'étendue du prolongement naturel du territoire terrestre jusqu'au rebord externe de la marge continentale, ou jusqu'à 200 milles marins lorsque ce rebord est plus proche. L'État côtier y exerce des droits souverains sur les ressources minérales et les espèces sédentaires, mais non sur les eaux surjacentes. Il peut obtenir une extension au-delà des 200 milles, dans la limite de 350 milles ou de 100 milles au-delà de l'isobathe de 2 500 m, en soumettant un dossier à la Commission des limites du plateau continental. Ce plateau juridique ne coïncide pas avec la plate-forme géomorphologique.",
    "fiche": 48,
    "domaine": 5,
    "exemples": [
@@ -7993,7 +7993,7 @@
   {
    "id": "49-1",
    "nom": "Détroit",
-   "definition": "Passage maritime naturel entre deux terres, qui relie deux mers.",
+   "definition": "Bras de mer resserré entre deux terres, continents ou îles, qui met en communication deux espaces maritimes. Les détroits sont des passages naturels obligés pour la navigation et, de ce fait, des points de passage stratégiques : Ormuz, Malacca, Bab el-Mandeb, Gibraltar, le Bosphore ou le Pas-de-Calais. La convention de Montego Bay garantit, dans ceux qui servent à la navigation internationale, un droit de passage en transit que les États riverains ne peuvent suspendre ; certains relèvent de régimes particuliers, comme les détroits turcs, régis par la convention de Montreux de 1936. Leur fermeture, même temporaire, perturbe les flux mondiaux d'énergie et de marchandises.",
    "fiche": 49,
    "domaine": 5,
    "exemples": [
@@ -8003,7 +8003,7 @@
   {
    "id": "49-2",
    "nom": "Canal",
-   "definition": "Voie d'eau artificielle.",
+   "definition": "Voie d'eau artificielle, creusée pour la navigation, l'irrigation, le drainage ou l'alimentation en eau. Les canaux maritimes, comme ceux de Suez, ouvert en 1869, et de Panama, ouvert en 1914, raccourcissent les routes entre mers et océans ; ce sont des points de passage stratégiques, soumis à des régimes juridiques particuliers et à des péages. Les canaux de navigation intérieure relient les bassins fluviaux grâce à des écluses qui franchissent les dénivellations, comme le canal du Midi, achevé en 1681. Par un usage ancien, le mot désigne aussi certains bras de mer naturels, comme le canal de Sicile : il s'agit alors de détroits.",
    "fiche": 49,
    "domaine": 5,
    "exemples": [
@@ -8014,7 +8014,7 @@
   {
    "id": "49-3",
    "nom": "Mer bordière",
-   "definition": "Mer en marge d'un océan, partiellement limitée par des îles ou des péninsules.",
+   "definition": "Mer située en marge d'un océan, à la périphérie d'un continent, et partiellement séparée de l'océan par des îles, des archipels ou des péninsules, tout en restant largement ouverte sur lui. Elle recouvre souvent une large part de plate-forme continentale, ce qui explique ses faibles profondeurs, ses ressources halieutiques et pétrolières, et l'intensité de ses usages. Les mers bordières de l'Asie orientale, comme les mers de Chine orientale et méridionale, ou la mer du Nord en Europe, sont des espaces de circulation intense et, pour certaines, de revendications concurrentes sur les îles et les espaces maritimes. Le terme relève de la géographie descriptive et n'a pas de définition juridique propre.",
    "fiche": 49,
    "domaine": 5,
    "exemples": [
@@ -8024,7 +8024,7 @@
   {
    "id": "49-4",
    "nom": "Mer fermée ou semi-fermée",
-   "definition": "Mer reliée à l'océan par un ou plusieurs détroits étroits.",
+   "definition": "Selon la convention de Montego Bay, golfe, bassin ou mer entouré par plusieurs États et relié à une autre mer ou à l'océan par un passage étroit, ou constitué entièrement ou principalement par les mers territoriales et les zones économiques exclusives de plusieurs États. La Méditerranée, reliée à l'Atlantique par le détroit de Gibraltar, la mer Noire ou la Baltique en sont des exemples. Le faible renouvellement de leurs eaux les rend vulnérables aux pollutions, et le chevauchement des revendications maritimes y impose la coopération entre riverains, que la convention encourage. Les mers entièrement intérieures, comme la Caspienne, posent des problèmes juridiques particuliers, entre le statut de mer et celui de lac.",
    "fiche": 49,
    "domaine": 5,
    "exemples": [
