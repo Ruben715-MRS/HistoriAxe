@@ -204,8 +204,7 @@ function dictExamples(body, term, fiche) {
 function dictRenderTerm(term) {
     const fiche = dictFiche(term);
     document.getElementById('dict-term-name').textContent = term.nom;
-    document.getElementById('dict-term-meta').textContent =
-        dictDomaineName(term.domaine) + (fiche ? ' · Fiche ' + fiche.id + ' : ' + fiche.titre : '');
+    document.getElementById('dict-term-meta').textContent = dictDomaineName(term.domaine);
 
     const body = document.getElementById('dict-term-body');
     body.textContent = '';

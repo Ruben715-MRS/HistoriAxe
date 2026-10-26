@@ -13570,9 +13570,6 @@ input:not([type="range"]), label, select, summary, textarea {
     flex-direction: column;
     gap: 8px;
     padding: 8px 0;
-    background: var(--glass-bg);
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
 }
 
 .dict-filters {
