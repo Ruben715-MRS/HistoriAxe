@@ -17,6 +17,8 @@ var Auth = (function () {
     var SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_uTIev5ZkPi3GIM02Z-GURw_o4dpZvs_';
     var SESSION_KEY = 'historiaxe_auth_session_v1';
     var MIN_PASSWORD = 8;
+    // Identifiant de l'app iOS (Client ID « natif » côté Apple, voir capacitor.config.ts).
+    var APPLE_BUNDLE_ID = 'com.historiaxe.app';
 
     function isNative() {
         try { return !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform()); }
@@ -51,6 +53,18 @@ var Auth = (function () {
             expires_at: tok.expires_at ? Number(tok.expires_at) : Math.floor(Date.now() / 1000) + Number(tok.expires_in || 3600),
             email: (tok.user && tok.user.email) || null
         };
+    }
+
+    // Nonce aléatoire (32 caractères hexadécimaux) et son empreinte SHA-256, pour Apple.
+    function randomNonce() {
+        var bytes = new Uint8Array(16);
+        crypto.getRandomValues(bytes);
+        return Array.prototype.map.call(bytes, function (b) { return ('0' + b.toString(16)).slice(-2); }).join('');
+    }
+    function sha256Hex(text) {
+        return crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)).then(function (buf) {
+            return Array.prototype.map.call(new Uint8Array(buf), function (b) { return ('0' + b.toString(16)).slice(-2); }).join('');
+        });
     }
 
     function gotrue(method, path, body, accessToken) {
@@ -261,6 +275,34 @@ var Auth = (function () {
                 .catch(function (err) { setBusy(false); setMessage(errorMessage(err), true); });
         },
 
+        // Connexion Apple native (iPhone) : le plugin renvoie un jeton d'identité, que
+        // Supabase vérifie. Le nonce brut va à Supabase ; Apple reçoit son empreinte SHA-256.
+        apple: function () {
+            var plugin = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.SignInWithApple;
+            if (!plugin) return;
+            var rawNonce = randomNonce();
+            setBusy(true);
+            setMessage('');
+            sha256Hex(rawNonce)
+                .then(function (hashedNonce) {
+                    return plugin.authorize({
+                        clientId: APPLE_BUNDLE_ID,
+                        redirectURI: redirectUrl() || window.location.origin + '/',
+                        scopes: 'email name',
+                        nonce: hashedNonce
+                    });
+                })
+                .then(function (res) {
+                    return gotrue('POST', '/token?grant_type=id_token', {
+                        provider: 'apple',
+                        id_token: res.response.identityToken,
+                        nonce: rawNonce
+                    });
+                })
+                .then(function (data) { return completeSignIn(sessionFromTokens(data)); })
+                .catch(function (err) { setBusy(false); setMessage(errorMessage(err), true); });
+        },
+
         google: function () {
             var url = redirectUrl();
             window.location.href = SUPABASE_URL + '/auth/v1/authorize?provider=google' +
@@ -321,6 +363,9 @@ function openAccountModal() {
     // Google dans l'app iPhone demande une configuration native (avec Apple) : pas encore.
     var g = document.getElementById('account-google-btn');
     if (g) g.classList.toggle('hidden', Auth.isNative());
+    // Le bouton Apple n'existe que dans l'app native (iPhone/iPad).
+    var a = document.getElementById('account-apple-btn');
+    if (a) a.classList.toggle('hidden', !Auth.isNative());
     var modal = document.getElementById('modal-account');
     if (modal) modal.classList.remove('hidden');
 }
@@ -336,6 +381,7 @@ function accountMagicLink() { Auth.magicLink(); }
 function accountForgotPassword() { Auth.forgotPassword(); }
 function accountSaveNewPassword() { Auth.saveNewPassword(); }
 function accountGoogle() { Auth.google(); }
+function accountApple() { Auth.apple(); }
 
 function accountSignOut() {
     if (typeof closeSettings === 'function') closeSettings();
