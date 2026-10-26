@@ -127,11 +127,13 @@ const APP_SHELL_FILES = [
     './js/app/arcade-extra.js',
     './js/periodSystems.js',
     './js/toolsCore.js',
+    './js/dictionnaireCore.js',
     './js/countriesCore.js',
     './js/geoQuizCore.js',
     './js/geoQuizSessionCore.js',
     './js/calendarYearCore.js',
     './js/app/tools.js',
+    './js/app/dictionnaire.js',
     './js/app/countries.js',
     './js/cityGameCore.js',
     './js/cityHistoryCore.js',
@@ -169,7 +171,8 @@ const APP_SHELL_FILES = [
     './splash_iphone_portrait.jpg',
     './splash_iphone_landscape.jpg',
     './splash_ipad_portrait.jpg',
-    './assets/geo/theme-country-map.json'
+    './assets/geo/theme-country-map.json',
+    './assets/dictionnaire/termes.json'
 ];
 
 // --- INSTALLATION : Mise en cache de l'App Shell & Pack Français ---
