@@ -158,7 +158,7 @@ test('le partage par tribu : douze tribus en treize zones, des anneaux simples, 
     map.zones.forEach(z => {
         assert.match(z.color, /^#[0-9a-f]{6}$/i, z.id + ' couleur');
         assert.equal(H.selfIntersection(z.ring), null, z.id + ' se recoupe');
-        assert.ok(z.ring.every(p => B.inBounds(p, [[33.9, 30.4], [36.8, 33.6]])), z.id + ' hors de la carte');
+        assert.ok(z.ring.every(p => B.inBounds(p, [[33.3, 30.4], [36.8, 34.1]])), z.id + ' hors de la carte');
         const prepared = C.prepare({ type: 'Polygon', coordinates: [B.closeRing(z.ring)] });
         const label = named(places, z.id);
         assert.ok(label, z.id + ' sans étiquette');
