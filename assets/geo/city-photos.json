@@ -1,0 +1,57 @@
+{
+  "licences": {
+    "CC BY-SA 3.0": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "CC BY-SA 3.0 FR": "https://creativecommons.org/licenses/by-sa/3.0/fr/",
+    "CC BY-SA 4.0": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "photos": [
+    {
+      "city": "Q60",
+      "src": "assets/cities/photos/new-york.jpg",
+      "legende": "Montage de New York City",
+      "auteur": "Jleon (Wikipédia anglais)",
+      "licence": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:NYC_Montage_2014_4_-_Jleon.jpg",
+      "montage": true,
+      "modifie": "Montage de photos de Commons, redimensionné à 800 px de large.",
+      "composantes": [
+        { "auteur": "AngMoKio", "fichier": "Pano Manhattan2007 amk.jpg" },
+        { "auteur": "Steve Cadman", "fichier": "The United Nations Building.jpg" },
+        { "auteur": "Terabass", "fichier": "New york times square-terabass.jpg" },
+        { "auteur": "ZanderZ", "fichier": "Unisphere-20100731.jpg" },
+        { "auteur": "Postdlf", "fichier": "Brooklyn Bridge Postdlf.jpg" },
+        { "auteur": "Cadiomals", "fichier": "LowerManhattanSept2013.png" },
+        { "auteur": "David Shankbone", "fichier": "Lower Central Park Shot 5.JPG" },
+        { "auteur": "à compléter", "fichier": "Statue of Liberty frontal 2.jpg" }
+      ]
+    },
+    {
+      "city": "Q62",
+      "src": "assets/cities/photos/san-francisco.jpg",
+      "legende": "San Francisco : le pont du Golden Gate, les Dames peintes, le cable-car, la pyramide Transamerica",
+      "auteur": "Monsieur Fou (assemblage)",
+      "licence": "CC BY-SA 3.0 FR",
+      "source": "https://fr.wikipedia.org/wiki/Fichier:San_francisco_montage_asemblage.jpg",
+      "montage": true,
+      "modifie": "Assemblage de quatre photos, redimensionné.",
+      "composantes": [
+        { "auteur": "Brocken Inaglory", "fichier": "Golden Gate Bridge and San Francisco at sunset.jpg" },
+        { "auteur": "Bernard Gagnon", "fichier": "Painted Ladies, Alamo Square.jpg" },
+        { "auteur": "Cabe6403", "fichier": "SanFrancablecar.JPG" },
+        { "auteur": "Davefoc", "fichier": "TransAmBldg 3871.jpg" }
+      ]
+    },
+    {
+      "city": "Q61",
+      "src": "assets/cities/photos/washington.jpg",
+      "legende": "La pelouse devant la Maison Blanche, Washington",
+      "auteur": "Daniel Schwen",
+      "licence": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:White_House_lawn_(long_tightly_cropped).jpg",
+      "montage": false,
+      "provisoire": true,
+      "modifie": "Redimensionnée à 800 px de large.",
+      "note": "Une seule photo d'un monument : à remplacer par un montage de la ville si on en trouve un."
+    }
+  ]
+}
