@@ -161,6 +161,14 @@ var HistoriAxeAPI = (function () {
         deleteAccount: function (accessToken) {
             return request('DELETE', '/api/account', undefined, accessToken);
         },
+        // Historique des parties d'un compte (api/account.js) : envoi par lot, relecture paginée.
+        recordGames: function (accessToken, games) {
+            return request('PUT', '/api/account', { games: games }, accessToken);
+        },
+        getGameHistory: function (accessToken, opts) {
+            opts = opts || {};
+            return request('GET', '/api/account' + qs({ limit: opts.limit, offset: opts.offset }), undefined, accessToken);
+        },
         isConfigured: function () { return !!API_BASE; }
     };
 })();

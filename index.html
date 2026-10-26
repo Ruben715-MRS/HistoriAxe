@@ -722,8 +722,29 @@
     <div id="screen-arcade" class="list-screen hidden">
         <button class="back-btn" onclick="arcadeBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
         <h2 class="header-title" data-i18n="arcade.title">Salle de jeux</h2>
-        <p class="modes-header-subtitle" data-i18n="arcade.subtitle">Mini-jeux, jeux d'arcade et jeux de réflexion pour réviser les dates.</p>
+        <p class="modes-header-subtitle" data-i18n="arcade.subtitle">Jeux géographiques, mini-jeux, jeux d'arcade et jeux de réflexion pour réviser les dates et les pays.</p>
         <p class="modes-header-subtitle hidden" id="arcade-scope" role="status"></p>
+        <section class="games-section" aria-labelledby="games-h-geo">
+            <h3 id="games-h-geo" data-i18n="games.geo_title">Jeux géographiques</h3>
+            <p class="games-section-desc" data-i18n="games.geo_desc"></p>
+            <div class="arcade-menu">
+                <button type="button" class="arcade-card" onclick="openGeoQuizMenu('screen-arcade')">
+                    <span class="arcade-card-icon" aria-hidden="true">🗺️</span>
+                    <span class="arcade-card-text">
+                        <strong data-i18n="geoquiz.title"></strong>
+                        <small data-i18n="geoquiz.arcade_desc"></small>
+                    </span>
+                </button>
+                <button type="button" class="arcade-card" onclick="openCitiesMenu('screen-arcade')">
+                    <span class="arcade-card-icon" aria-hidden="true">🏙️</span>
+                    <span class="arcade-card-text">
+                        <strong data-i18n="cities.card_title"></strong>
+                        <small data-i18n="cities.card_desc"></small>
+                    </span>
+                </button>
+            </div>
+        </section>
+
         <section class="games-section" aria-labelledby="games-h-mini">
             <h3 id="games-h-mini" data-i18n="games.mini_title">Mini-jeux</h3>
             <p class="games-section-desc" data-i18n="games.mini_desc"></p>
@@ -734,13 +755,6 @@
                     <strong data-i18n="wheel.title"></strong>
                     <small data-i18n="wheel.desc"></small>
                     <small class="arcade-best" id="arcade-best-wheel"></small>
-                </span>
-            </button>
-            <button type="button" class="arcade-card" onclick="openGeoQuizMenu('screen-arcade')">
-                <span class="arcade-card-icon" aria-hidden="true">🗺️</span>
-                <span class="arcade-card-text">
-                    <strong data-i18n="geoquiz.title"></strong>
-                    <small data-i18n="geoquiz.arcade_desc"></small>
                 </span>
             </button>
             <button type="button" class="arcade-card" onclick="openEras('screen-arcade')">
@@ -1266,9 +1280,11 @@
     <!-- ÉCRANS : LA BOÎTE À OUTILS (js/app/tools.js, js/toolsCore.js) — des utilitaires, pas des jeux -->
     <div id="screen-tools" class="list-screen hidden">
         <button class="back-btn" onclick="toolsHubBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
-        <h2 class="header-title" data-i18n="tools.title">Boîte à outils</h2>
-        <p class="modes-header-subtitle" data-i18n="tools.subtitle">Des convertisseurs et des calculs pour les cours d'histoire.</p>
-        <div class="arcade-menu">
+        <h2 class="header-title" data-i18n="tools.title">Atelier</h2>
+        <p class="modes-header-subtitle" data-i18n="tools.subtitle">Convertisseurs, calendriers, repères et cartes pour les cours d'histoire.</p>
+        <section class="tools-group" aria-labelledby="tools-group-convert">
+            <h3 class="modes-group-title modes-group-static" id="tools-group-convert" data-i18n="tools.group_convert"></h3>
+            <div class="arcade-menu">
             <button type="button" class="arcade-card" onclick="openTool('eras', 'screen-tools')">
                 <span class="arcade-card-icon" aria-hidden="true">🔁</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.eras_title"></strong><small data-i18n="tools.eras_desc"></small></span>
@@ -1285,6 +1301,15 @@
                 <span class="arcade-card-icon" aria-hidden="true">⏳</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.duration_title"></strong><small data-i18n="tools.duration_desc"></small></span>
             </button>
+            <button type="button" class="arcade-card" onclick="openTool('measures', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">⚖️</span>
+                <span class="arcade-card-text"><strong data-i18n="tools.measures_title"></strong><small data-i18n="tools.measures_desc"></small></span>
+            </button>
+            </div>
+        </section>
+        <section class="tools-group" aria-labelledby="tools-group-calendars">
+            <h3 class="modes-group-title modes-group-static" id="tools-group-calendars" data-i18n="tools.group_calendars"></h3>
+            <div class="arcade-menu">
             <button type="button" class="arcade-card" onclick="openTool('dates', 'screen-tools')">
                 <span class="arcade-card-icon" aria-hidden="true">📅</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.dates_title"></strong><small data-i18n="tools.dates_desc"></small></span>
@@ -1293,18 +1318,28 @@
                 <span class="arcade-card-icon" aria-hidden="true">🗓️</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.calendar_title"></strong><small data-i18n="tools.calendar_desc"></small></span>
             </button>
-            <button type="button" class="arcade-card" onclick="openTool('genealogy', 'screen-tools')">
-                <span class="arcade-card-icon" aria-hidden="true">🌳</span>
-                <span class="arcade-card-text"><strong data-i18n="tools.genealogy_title"></strong><small data-i18n="tools.genealogy_desc"></small></span>
+            </div>
+        </section>
+        <section class="tools-group" aria-labelledby="tools-group-landmarks">
+            <h3 class="modes-group-title modes-group-static" id="tools-group-landmarks" data-i18n="tools.group_landmarks"></h3>
+            <div class="arcade-menu">
+            <button type="button" class="arcade-card" onclick="openTool('periods', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">🧭</span>
+                <span class="arcade-card-text"><strong data-i18n="tools.periods_title"></strong><small data-i18n="tools.periods_desc"></small></span>
             </button>
             <button type="button" class="arcade-card" onclick="openTool('leaders', 'screen-tools')">
                 <span class="arcade-card-icon" aria-hidden="true">🏛️</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.leaders_title"></strong><small data-i18n="tools.leaders_desc"></small></span>
             </button>
-            <button type="button" class="arcade-card" onclick="openTool('periods', 'screen-tools')">
-                <span class="arcade-card-icon" aria-hidden="true">🧭</span>
-                <span class="arcade-card-text"><strong data-i18n="tools.periods_title"></strong><small data-i18n="tools.periods_desc"></small></span>
+            <button type="button" class="arcade-card" onclick="openTool('dictionary', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">📖</span>
+                <span class="arcade-card-text"><strong>Dictionnaire</strong><small>Les termes qu'on confond, définis avec précision. Mode concours.</small></span>
             </button>
+            </div>
+        </section>
+        <section class="tools-group" aria-labelledby="tools-group-maps">
+            <h3 class="modes-group-title modes-group-static" id="tools-group-maps" data-i18n="tools.group_maps"></h3>
+            <div class="arcade-menu">
             <button type="button" class="arcade-card" onclick="openTool('countries', 'screen-tools')">
                 <span class="arcade-card-icon" aria-hidden="true">🌍</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.countries_title"></strong><small data-i18n="tools.countries_desc"></small></span>
@@ -1313,7 +1348,16 @@
                 <span class="arcade-card-icon" aria-hidden="true">🗺️</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.history_title"></strong><small data-i18n="tools.history_desc"></small></span>
             </button>
-        </div>
+            <button type="button" class="arcade-card" onclick="openTool('biblical', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">📜</span>
+                <span class="arcade-card-text"><strong data-i18n="tools.biblical_title"></strong><small data-i18n="tools.biblical_desc"></small></span>
+            </button>
+            <button type="button" class="arcade-card" onclick="openTool('genealogy', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">🌳</span>
+                <span class="arcade-card-text"><strong data-i18n="tools.genealogy_title"></strong><small data-i18n="tools.genealogy_desc"></small></span>
+            </button>
+            </div>
+        </section>
     </div>
 
     <div id="screen-tool-eras" class="list-screen hidden">
@@ -1489,6 +1533,97 @@
         </div>
     </div>
 
+    <!-- ÉCRANS : RAPPORTS DU JURY (voir js/app/rapports.js) : la liste, puis un rapport dans son cadre isolé -->
+    <div id="screen-rapports" class="list-screen hidden">
+        <button class="back-btn" onclick="showScreen('screen-themes', 'back')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="rapports.title">Rapports du jury</h2>
+        <div id="rapports-list" class="rapports-list"></div>
+    </div>
+    <div id="screen-rapport" class="list-screen hidden">
+        <button class="back-btn" onclick="closeRapport()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <iframe id="rapport-frame" class="rapport-frame" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer" title=""></iframe>
+    </div>
+
+    <!-- ÉCRAN : VILLES DU MONDE (voir js/modes/cities.js) -->
+    <div id="screen-cities" class="list-screen hidden">
+        <button class="back-btn" onclick="cityGameQuit()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="cities.title">Villes du monde</h2>
+        <p class="tool-msg" id="cities-status" role="status"></p>
+        <div id="cities-menu" class="geoquiz-menu">
+            <p class="modes-header-subtitle" data-i18n="cities.menu_intro">Cinq jeux sur les villes du monde, avec les réglages du Quiz des pays.</p>
+            <div class="geoquiz-settings">
+                <div class="geoquiz-setting" role="group" aria-labelledby="cities-zone-title">
+                    <h3 class="geoquiz-setting-title" id="cities-zone-title" data-i18n="geoquiz.zone_title">Zone</h3>
+                    <div class="geoquiz-chips" id="cities-zone"></div>
+                </div>
+                <div class="geoquiz-setting" role="group" aria-labelledby="cities-level-title">
+                    <h3 class="geoquiz-setting-title" id="cities-level-title" data-i18n="geoquiz.level_title">Difficulté</h3>
+                    <div class="geoquiz-chips" id="cities-level"></div>
+                    <p class="tool-small" id="cities-level-hint"></p>
+                </div>
+                <div class="geoquiz-setting" role="group" aria-labelledby="cities-timer-title">
+                    <h3 class="geoquiz-setting-title" id="cities-timer-title" data-i18n="geoquiz.timer_title">Chrono (temps accordé par question)</h3>
+                    <div class="geoquiz-chips" id="cities-timer-choice"></div>
+                    <p class="tool-small" data-i18n="geoquiz.timer_hint"></p>
+                </div>
+                <div class="geoquiz-setting" role="group" aria-labelledby="cities-period-title">
+                    <h3 class="geoquiz-setting-title" id="cities-period-title" data-i18n="cities.period_title">Période (Villes de l’histoire)</h3>
+                    <div class="geoquiz-chips" id="cities-period"></div>
+                    <p class="tool-small" data-i18n="cities.period_hint"></p>
+                </div>
+            </div>
+            <button type="button" class="btn" onclick="openCityGame('capital')" data-i18n="cities.menu_capital">Capitale ou plus grande ville ?</button>
+            <button type="button" class="btn" onclick="openCityGame('latitude')" data-i18n="cities.menu_latitude">Quelle ville est la plus au nord ?</button>
+            <button type="button" class="btn" onclick="openCityGame('touch')" data-i18n="cities.menu_touch">Touchez la ville sur la carte</button>
+            <button type="button" class="btn" onclick="openCityGame('order')" data-i18n="cities.menu_order">Classer les villes par population</button>
+            <button type="button" class="btn" onclick="openCityGame('photo')" data-i18n="cities.menu_photo">Quelle est cette ville ? (photo)</button>
+            <button type="button" class="btn" onclick="openCityGame('history')" data-i18n="cities.menu_history">Villes de l'histoire</button>
+        </div>
+        <div id="cities-play" class="geoquiz-play hidden">
+            <div class="cities-bar">
+                <p class="tool-small" id="cities-progress" aria-live="polite"></p>
+                <p class="tool-small" id="cities-score-now"></p>
+            </div>
+            <div class="geoquiz-timer hidden" id="cities-timer" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" aria-label="Temps restant" data-i18n-attr="aria-label:geoquiz.timer_label">
+                <span class="geoquiz-timer-fill" id="cities-timer-fill"></span>
+                <span class="geoquiz-timer-text" id="cities-timer-text"></span>
+            </div>
+            <div class="geoquiz-card">
+                <p class="geoquiz-ask" id="cities-ask"></p>
+                <div id="cities-fact" class="cities-fact hidden">
+                    <p class="cities-fact-title" id="cities-fact-title"></p>
+                    <p class="tool-small" id="cities-fact-meta"></p>
+                    <p class="cities-fact-desc hidden" id="cities-fact-desc"></p>
+                </div>
+            </div>
+            <figure id="cities-photo-wrap" class="cities-photo hidden">
+                <img id="cities-photo-img" alt="" src="" decoding="async">
+                <figcaption class="tool-small">
+                    <span id="cities-photo-credit"></span>
+                    <span id="cities-photo-legend" class="hidden"></span>
+                    <a id="cities-photo-link" class="hidden" target="_blank" rel="noopener" data-i18n="cities.photo_source">Voir la source de la photo</a>
+                </figcaption>
+            </figure>
+            <div class="geoquiz-options" id="cities-options"></div>
+            <div id="cities-map-wrap" class="hidden">
+                <div class="cities-map-frame">
+                    <div id="cities-map" class="tool-countries-map geoquiz-map" tabindex="0" role="application" aria-label="Carte du monde : touchez la ville demandée" data-i18n-attr="aria-label:cities.map_label"></div>
+                    <div class="cities-crosshair" aria-hidden="true"></div>
+                </div>
+                <p class="tool-small" data-i18n="cities.map_hint">Au clavier : les flèches déplacent la carte, Entrée pose le repère au centre.</p>
+            </div>
+            <p class="tool-small" id="cities-sequence" role="status" aria-live="polite"></p>
+            <button type="button" class="btn hidden" id="cities-reset" onclick="cityGameResetOrder()" data-i18n="cities.order_reset">Recommencer</button>
+            <p class="geoquiz-feedback" id="cities-feedback" role="status" aria-live="polite"></p>
+            <button type="button" class="btn hidden" id="cities-next" onclick="cityGameNext()"></button>
+        </div>
+        <div id="cities-end" class="geoquiz-end hidden">
+            <p class="geoquiz-score" id="cities-score" tabindex="-1" role="status"></p>
+            <button type="button" class="btn" onclick="openCitiesMenu()" data-i18n="cities.back">Autres jeux sur les villes</button>
+        </div>
+        <p class="tool-small" id="cities-credit" data-i18n="cities.credit"></p>
+    </div>
+
     <!-- ÉCRAN : QUIZ DES PAYS (lancé depuis l'Atlas des pays ou la Salle de jeux — voir js/modes/geoquiz.js) -->
     <div id="screen-geoquiz" class="list-screen hidden">
         <button class="back-btn" onclick="geoQuizQuit()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
@@ -1628,6 +1763,30 @@
         <p class="tool-small" data-i18n="geoquiz.credit"></p>
     </div>
 
+    <div id="screen-tool-dictionary" class="list-screen hidden">
+        <button class="back-btn" onclick="toolBack('dictionary')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title">Dictionnaire d'histoire et de géographie</h2>
+        <p class="modes-header-subtitle">Les termes qu'on confond souvent, définis avec précision.</p>
+        <div class="dict-filters">
+            <select id="dict-domain" class="tool-input" aria-label="Domaine" onchange="dictionaryRender()"></select>
+            <label class="dict-toggle"><input type="checkbox" id="dict-concours" onchange="dictionaryToggleConcours(this.checked)"> Mode concours</label>
+        </div>
+        <div class="dict-bar">
+            <input type="search" id="dict-search" class="tool-input" autocomplete="off" autocapitalize="off" spellcheck="false"
+                placeholder="Rechercher un mot…" aria-label="Rechercher un mot" oninput="dictionaryRender()">
+        </div>
+        <nav class="dict-letters" id="dict-letters" aria-label="Aller à une lettre"></nav>
+        <p class="tool-msg" id="dict-status" role="status"></p>
+        <div class="dict-list" id="dict-list"></div>
+    </div>
+
+    <div id="screen-tool-dictionary-term" class="list-screen hidden">
+        <button class="back-btn" onclick="dictionaryBackToList()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" id="dict-term-name"></h2>
+        <p class="modes-header-subtitle" id="dict-term-meta"></p>
+        <div class="tool-panel dict-term" id="dict-term-body"></div>
+    </div>
+
     <div id="screen-tool-countries" class="list-screen hidden">
         <button class="back-btn" onclick="toolBack('countries')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
         <h2 class="header-title" data-i18n="tools.countries_title">Atlas des pays</h2>
@@ -1673,8 +1832,9 @@
                 <button type="button" class="gen-lang-btn" id="gen-lang-he" aria-pressed="false" lang="he" onclick="genSetLang('he')">א</button>
             </div>
         </div>
-        <h2 class="header-title" data-i18n="tools.genealogy_title">Généalogie biblique</h2>
-        <p class="modes-header-subtitle" data-i18n="tools.genealogy_intro"></p>
+        <!-- Titre et consigne ne s'affichent plus (la place revient à l'arbre) ; ils restent lus par les lecteurs d'écran. -->
+        <h2 class="header-title sr-only" data-i18n="tools.genealogy_title">Généalogie biblique</h2>
+        <p class="modes-header-subtitle sr-only" data-i18n="tools.genealogy_intro"></p>
         <div class="gen-bar">
             <input type="search" id="gen-search" class="tool-input" autocomplete="off" placeholder="Chercher un nom" aria-label="Chercher un nom" data-i18n-attr="placeholder:tools.genealogy_search;aria-label:tools.genealogy_search">
             <ul class="gen-results" id="gen-results"></ul>
@@ -1709,6 +1869,37 @@
             <p class="tool-small" id="leaders-count" role="status"></p>
         </div>
         <div class="leaders-list" id="leaders-list"></div>
+    </div>
+
+    <div id="screen-tool-measures" class="list-screen hidden">
+        <button class="back-btn" onclick="toolBack('measures')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="tools.measures_title">Poids et mesures bibliques</h2>
+        <p class="modes-header-subtitle" data-i18n="tools.measures_intro"></p>
+        <div class="tool-panel">
+            <div class="tool-history-chips" id="tool-measures-tabs" role="group" aria-label="Distances, volumes ou monnaies" data-i18n-attr="aria-label:tools.measures_tabs_aria"></div>
+            <div id="tool-measures-body" class="measures-body"></div>
+        </div>
+    </div>
+
+    <div id="screen-tool-biblical" class="list-screen hidden">
+        <button class="back-btn" onclick="toolBack('biblical')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="tools.biblical_title">Cartes bibliques</h2>
+        <p class="modes-header-subtitle" data-i18n="tools.biblical_intro"></p>
+        <div class="tool-panel">
+            <div class="tool-field">
+                <label for="tool-biblical-select" data-i18n="tools.biblical_select_label">Carte</label>
+                <select id="tool-biblical-select" class="tool-input" onchange="toolBiblicalPick(this.value)"></select>
+            </div>
+            <div class="tool-history-chips" id="tool-biblical-views" role="group" aria-label="Choisir une vue" data-i18n-attr="aria-label:tools.biblical_views_label"></div>
+            <div class="tool-field hidden" id="tool-biblical-variant-block">
+                <span class="tool-small" id="tool-biblical-variant-label"></span>
+                <div class="tool-history-chips" id="tool-biblical-variants" role="group" aria-labelledby="tool-biblical-variant-label"></div>
+            </div>
+            <p class="tool-msg" id="tool-biblical-status" role="status"></p>
+            <div id="tool-biblical-map" class="tool-countries-map bib-map" role="application" aria-label="Carte biblique" data-i18n-attr="aria-label:tools.biblical_map_label"></div>
+            <p class="tool-small tool-countries-credit" data-i18n="tools.biblical_credit"></p>
+            <div class="tool-result tool-countries-fiche" id="tool-biblical-fiche" role="region" aria-live="polite" aria-label="Fiche de la carte" data-i18n-attr="aria-label:tools.biblical_fiche_label"></div>
+        </div>
     </div>
 
     <div id="screen-tool-history" class="list-screen hidden">
@@ -3252,6 +3443,12 @@
                     progression de déverrouillage des modes Chrono/Expert. Vos réglages d'affichage (orientation,
                     apparence) sont conservés.</p>
             </div>
+
+            <div class="settings-group">
+                <p class="settings-hint" style="margin:0; text-align:center;"><a href="mailto:historiaxe@gmail.com"
+                    data-i18n="settings.feedback_hint">Vous avez envie de m'adresser un message ? Compliment, remarque,
+                    question ou autre : vous pouvez m'écrire à historiaxe@gmail.com</a></p>
+            </div>
         </div>
     </div>
 
@@ -3357,6 +3554,7 @@
     <script src="js/app/axes-rounds.js"></script>
     <script src="js/app/categories.js"></script>
     <script src="js/app/themes-screens.js"></script>
+    <script src="js/app/rapports.js"></script>
     <script src="js/app/game-start.js"></script>
     <script src="js/modes/quiz.js"></script>
     <script src="js/modes/simultaneity.js"></script>
@@ -3386,13 +3584,19 @@
     <script src="js/app/arcade-extra.js"></script>
     <script src="js/periodSystems.js"></script>
     <script src="js/toolsCore.js"></script>
+    <script src="js/dictionnaireCore.js"></script>
     <script src="js/countriesCore.js"></script>
     <script src="js/geoQuizCore.js"></script>
     <script src="js/geoQuizSessionCore.js"></script>
     <script src="js/calendarYearCore.js"></script>
     <script src="js/app/tools.js"></script>
+    <script src="js/app/dictionnaire.js"></script>
     <script src="js/app/countries.js"></script>
+    <script src="js/cityGameCore.js"></script>
+    <script src="js/cityHistoryCore.js"></script>
+    <script src="js/cityPhotoCore.js"></script>
     <script src="js/modes/geoquiz.js"></script>
+    <script src="js/modes/cities.js"></script>
     <script src="js/app/calendar.js"></script>
     <script src="js/genealogyCore.js"></script>
     <script src="js/app/genealogy.js"></script>
@@ -3404,6 +3608,10 @@
     <script src="js/app/state-leaders.js"></script>
     <script src="js/historyMapsCore.js"></script>
     <script src="js/app/history-maps.js"></script>
+    <script src="js/measuresCore.js"></script>
+    <script src="js/app/biblical-measures.js"></script>
+    <script src="js/biblicalMapsCore.js"></script>
+    <script src="js/app/biblical-maps.js"></script>
     <script src="js/app/rewards.js"></script>
     <script src="js/app/clio.js"></script>
     <script src="js/teamBadge.js"></script>

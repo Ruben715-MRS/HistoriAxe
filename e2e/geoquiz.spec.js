@@ -62,12 +62,12 @@ test('le menu propose les réglages (sans chrono par défaut), les formes et les
     for (const [group, label] of [['geoquiz-zone', 'Monde'], ['geoquiz-level', 'Facile'], ['geoquiz-length', '10'], ['geoquiz-timer-choice', 'Sans chrono']]) {
         await expect(chip(page, group, label)).toHaveAttribute('aria-pressed', 'true');
     }
-    await expect(page.locator('#geoquiz-zone .geoquiz-chip')).toHaveCount(7);
+    await expect(page.locator('#geoquiz-zone .geoquiz-chip')).toHaveCount(6);   // le monde, l'Afrique, les Amériques, l'Asie, l'Europe, l'Océanie
     await expect(page.locator('#geoquiz-menu > .btn')).toHaveCount(19);   // défi du jour, pays faibles, maîtrise, 4 classiques, 8 autres façons, 2 défis, duel, « Mes scores »
-    await expect(page.locator('#geoquiz-level-hint')).toContainText('40 pays');
+    await expect(page.locator('#geoquiz-level-hint')).toContainText(/20 %.*\d+ pays/);   // facile : 20 % des pays de la zone
     await chip(page, 'geoquiz-level', 'Difficile').click();
-    await expect(page.locator('#geoquiz-level-hint')).toContainText('Tous les pays');
-    await chip(page, 'geoquiz-timer-choice', '30 s').click();
+    await expect(page.locator('#geoquiz-level-hint')).toContainText(/Tous les \d+ pays/);   // difficile : tout le continent
+    await chip(page, 'geoquiz-timer-choice', '7 s').click();
     await chip(page, 'geoquiz-zone', 'Europe').click();
     await expect(chip(page, 'geoquiz-zone', 'Europe')).toHaveAttribute('aria-pressed', 'true');
     await expect(chip(page, 'geoquiz-zone', 'Monde')).toHaveAttribute('aria-pressed', 'false');
@@ -77,7 +77,7 @@ test('le menu propose les réglages (sans chrono par défaut), les formes et les
     await page.locator('.arcade-card', { hasText: 'Quiz des pays' }).click();
     await expect(chip(page, 'geoquiz-level', 'Difficile')).toHaveAttribute('aria-pressed', 'true');
     const prefs = await page.evaluate(() => JSON.parse(localStorage.getItem('historiaxe_geoquiz_prefs_v1')));
-    expect(prefs).toEqual({ zone: 'europe', level: 'hard', length: 10, timer: 30 });
+    expect(prefs).toEqual({ zone: 'europe', level: 'hard', length: 10, timer: 7 });
 });
 
 test('QCM sans faute : points avec série, premier record enregistré, synchronisé avec le compte', async ({ page }) => {
@@ -91,7 +91,7 @@ test('QCM sans faute : points avec série, premier record enregistré, synchroni
         await playQuestion(page, true);
     }
     // 100 + 110 + 120 + 130 + 140
-    await expect(page.locator('#geoquiz-score')).toHaveText('600 points');
+    await expect(page.locator('#geoquiz-score')).toHaveText('600 pts');
     await expect(page.locator('#geoquiz-detail')).toContainText('5 bonne(s) réponse(s) sur 5 · meilleure série : 5');
     await expect(page.locator('#geoquiz-record')).toContainText('Premier score enregistré');
     await expect(page.locator('#geoquiz-errors-title')).toHaveText('Sans faute : bravo !');
@@ -112,7 +112,7 @@ test('les erreurs se listent et se rejouent, sans enregistrer la partie de révi
     await expect(page.locator('#geoquiz-errors li')).toHaveCount(2);
     await expect(page.locator('#geoquiz-errors li').first()).toContainText(/bonne réponse/i);
     await expect(page.locator('#geoquiz-errors li').first()).toContainText(/votre réponse/i);
-    await expect(page.locator('#geoquiz-score')).toHaveText('330 points');   // 0 + 0 + 100 + 110 + 120
+    await expect(page.locator('#geoquiz-score')).toHaveText('330 pts');   // 0 + 0 + 100 + 110 + 120
     const first = await page.evaluate(() => JSON.parse(localStorage.getItem('historiaxe_geoquiz_v1')));
     expect(first.history).toHaveLength(1);
     // Rejouer les deux erreurs : une partie de révision, qui ne s'enregistre pas.
@@ -147,11 +147,11 @@ test('chrono : la barre s\'affiche, un temps écoulé compte comme une erreur sa
     await expect(page.locator('#geoquiz-options .quiz-option:not([disabled])')).toHaveCount(0);
     await expect(page.locator('#geoquiz-points')).toHaveText('0 pts');
     await page.locator('#geoquiz-next').click();
-    // Une réponse rapide rapporte le bonus de vitesse (jusqu'à 50 points de plus).
+    // Une réponse rapide rapporte le bonus de vitesse : 300 / 15 s = 20 points au plus (100 points à 3 s, 43 à 7 s).
     await playQuestion(page, true);
     const points = await page.evaluate(() => geoQuizAnswers[1].points);
-    expect(points).toBeGreaterThanOrEqual(140);
-    expect(points).toBeLessThanOrEqual(150);
+    expect(points).toBeGreaterThanOrEqual(110);
+    expect(points).toBeLessThanOrEqual(120);
     for (let i = 0; i < 3; i++) await playQuestion(page, true);
     await expect(page.locator('#geoquiz-errors-title')).toHaveText('À revoir');
     await expect(page.locator('#geoquiz-errors li').first()).toContainText('temps écoulé');
@@ -171,7 +171,7 @@ test('panaché : plusieurs formes dans une partie, chacune jouable, puis le scor
     const targets = await page.evaluate(() => geoQuizQuestions.map(q => q.target));
     expect(new Set(targets).size).toBe(20);
     for (let i = 0; i < 20; i++) await playQuestion(page, true);
-    await expect(page.locator('#geoquiz-score')).toContainText(/^\d+ points$/);
+    await expect(page.locator('#geoquiz-score')).toContainText(/^\d+ pts$/);
     const saved = await page.evaluate(() => JSON.parse(localStorage.getItem('historiaxe_geoquiz_v1')));
     expect(Object.keys(saved.best)[0]).toBe('mix|world|easy|20|0');
 });
@@ -246,7 +246,7 @@ test('saisie libre : accents, majuscules et fautes légères tolérés ; « je n
         await expect(page.locator('#geoquiz-feedback')).toContainText('Bonne réponse');
         await page.locator('#geoquiz-next').click();
     }
-    await expect(page.locator('#geoquiz-score')).toHaveText('330 points');   // 0 + 0 + 100 + 110 + 120
+    await expect(page.locator('#geoquiz-score')).toHaveText('330 pts');   // 0 + 0 + 100 + 110 + 120
     await expect(page.locator('#geoquiz-errors li')).toHaveCount(2);
     await expect(page.locator('#geoquiz-errors li').first()).toContainText('votre réponse : zzzz');
     await expect(page.locator('#geoquiz-errors li').nth(1)).toContainText('sans réponse');
@@ -260,7 +260,7 @@ test('fêtes nationales : une fête désigne le pays, ou un pays sa fête', asyn
     expect(kinds).toHaveLength(5);
     expect(kinds.every(([kind, ask]) => kind === 'fete' && (ask === 'name' || ask === 'fete'))).toBe(true);
     for (let i = 0; i < 5; i++) await playQuestion(page, true);
-    await expect(page.locator('#geoquiz-score')).toHaveText('600 points');
+    await expect(page.locator('#geoquiz-score')).toHaveText('600 pts');
 });
 
 test('qui suis-je ? : un indice de plus à chaque erreur ou à la demande ; chaque indice caché rapporte des points', async ({ page }) => {
@@ -290,7 +290,7 @@ test('qui suis-je ? : un indice de plus à chaque erreur ou à la demande ; chaq
     expect(await page.evaluate(() => geoQuizAnswers[1].points)).toBe(100 + 10 + (total2 - 2) * 20);
     // Le dernier indice montré : le bouton disparaît.
     for (let i = 0; i < 3; i++) await playQuestion(page, true);
-    await expect(page.locator('#geoquiz-score')).toContainText(/^\d+ points$/);
+    await expect(page.locator('#geoquiz-score')).toContainText(/^\d+ pts$/);
 });
 
 test('pays mystère : distance et direction à chaque proposition, nom inconnu ou déjà proposé refusés', async ({ page }) => {
@@ -354,7 +354,7 @@ test('carte → nom : le pays est surligné sur la carte, sans nom écrit, quatr
     await page.evaluate(() => geoQuizTap(0, 0));
     await expect(page.locator('#geoquiz-feedback')).toHaveText('');
     for (let i = 0; i < 5; i++) await playQuestion(page, true);
-    await expect(page.locator('#geoquiz-score')).toHaveText('600 points');
+    await expect(page.locator('#geoquiz-score')).toHaveText('600 pts');
 });
 
 test('rafale : 60 secondes pour tout, la question suivante arrive seule, la partie s\'arrête au bout du temps', async ({ page }) => {
@@ -373,7 +373,7 @@ test('rafale : 60 secondes pour tout, la question suivante arrive seule, la part
     // Le temps s'écoule : la partie s'arrête, la question en cours n'est pas comptée.
     await page.evaluate(() => { geoQuizTimerStart -= 61000; });
     await expect(page.locator('#geoquiz-end')).toBeVisible({ timeout: 3000 });
-    await expect(page.locator('#geoquiz-score')).toHaveText('330 points');
+    await expect(page.locator('#geoquiz-score')).toHaveText('330 pts');
     await expect(page.locator('#geoquiz-detail')).toContainText('3 bonne(s) réponse(s) sur 3 question(s)');
     const saved = await page.evaluate(() => JSON.parse(localStorage.getItem('historiaxe_geoquiz_v1')));
     expect(Object.keys(saved.best)).toEqual(['burst|world|easy|0|0']);
@@ -494,7 +494,7 @@ test('voisins, plus ou moins, chefs d’État : la bonne réponse est celle des 
     await expect(page.locator('#geoquiz-options .quiz-option')).toHaveCount(2);
     await expect(page.locator('#geoquiz-ask')).toContainText(/plus (peuplé|au nord)/);
     for (let i = 0; i < 5; i++) await playQuestion(page, true);
-    await expect(page.locator('#geoquiz-score')).toContainText('points');
+    await expect(page.locator('#geoquiz-score')).toContainText('pts');
     expect(Object.keys((await quizState(page)).countries)).toHaveLength(5);
     await page.locator('#geoquiz-end .btn', { hasText: 'Changer de réglage' }).click();
 

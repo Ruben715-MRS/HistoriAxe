@@ -245,8 +245,8 @@ test('la salle de jeux : textes, scripts et écrans des jeux de réflexion', () 
     ['games-h-mini', 'games-h-arcade', 'games-h-reflexion'].forEach((id) => assert.ok(html.includes(`id="${id}"`), id));
     // Les cartes de la salle de jeux seulement (la boîte à outils réutilise la même classe, dans son propre écran).
     const hub = html.slice(html.indexOf('id="screen-arcade"'), html.indexOf('<div id="screen-', html.indexOf('id="screen-arcade"') + 10));
-    // 16 + le quiz des pays (js/modes/geoquiz.js), ajouté à la section des mini-jeux.
-    assert.equal((hub.match(/class="arcade-card"/g) || []).length, 17);
+    // 16 + le quiz des pays (js/modes/geoquiz.js) + la carte « Villes du monde » (js/modes/cities.js).
+    assert.equal((hub.match(/class="arcade-card"/g) || []).length, 18);
 });
 
 // --- Contenu rédigé à la main ---------------------------------------------------------------------------

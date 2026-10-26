@@ -58,7 +58,8 @@ const decrireAxe = e =>
 
 for (const [apparence, nom] of THEMES) {
     test(`axe : aucun texte sous le contraste exigé — thème ${nom}`, async ({ page }) => {
-        test.setTimeout(120_000);
+        // Le parcours s'allonge à chaque écran ajouté (e2e/ecrans.js) : une analyse axe par étape, environ 3 s chacune.
+        test.setTimeout(150_000);
         await page.addScriptTag({ path: AXE });
         await appliquerLApparence(page, apparence);
 

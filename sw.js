@@ -12,9 +12,9 @@
 // 'install' recharge tout depuis le réseau. Un pack de langue ou un texte
 // d'UI modifié qui ne s'affiche pas malgré un déploiement réussi est
 // généralement le signe que l'un de ces deux numéros n'a pas été incrémenté.
-const CACHE_VERSION = '1.4.221';
+const CACHE_VERSION = '1.4.258';
 const APP_SHELL_CACHE = `historiaxe-shell-v${CACHE_VERSION}`;
-const DATA_CACHE = 'historiaxe-data-v1.0.115';
+const DATA_CACHE = 'historiaxe-data-v1.0.121';
 
 // Portraits des personnages (assets/portraits/*.jpg, champ `image` des
 // événements). Un cache À PART, et c'est tout l'objet : 'activate' purge tout
@@ -98,6 +98,7 @@ const APP_SHELL_FILES = [
     './js/app/axes-rounds.js',
     './js/app/categories.js',
     './js/app/themes-screens.js',
+    './js/app/rapports.js',
     './js/app/game-start.js',
     './js/modes/quiz.js',
     './js/modes/simultaneity.js',
@@ -127,13 +128,19 @@ const APP_SHELL_FILES = [
     './js/app/arcade-extra.js',
     './js/periodSystems.js',
     './js/toolsCore.js',
+    './js/dictionnaireCore.js',
     './js/countriesCore.js',
     './js/geoQuizCore.js',
     './js/geoQuizSessionCore.js',
     './js/calendarYearCore.js',
     './js/app/tools.js',
+    './js/app/dictionnaire.js',
     './js/app/countries.js',
+    './js/cityGameCore.js',
+    './js/cityHistoryCore.js',
+    './js/cityPhotoCore.js',
     './js/modes/geoquiz.js',
+    './js/modes/cities.js',
     './js/app/calendar.js',
     './js/genealogyCore.js',
     './js/app/genealogy.js',
@@ -145,6 +152,10 @@ const APP_SHELL_FILES = [
     './js/app/state-leaders.js',
     './js/historyMapsCore.js',
     './js/app/history-maps.js',
+    './js/measuresCore.js',
+    './js/app/biblical-measures.js',
+    './js/biblicalMapsCore.js',
+    './js/app/biblical-maps.js',
     './js/app/rewards.js',
     './js/app/clio.js',
     './js/teamBadge.js',
@@ -165,7 +176,8 @@ const APP_SHELL_FILES = [
     './splash_iphone_portrait.jpg',
     './splash_iphone_landscape.jpg',
     './splash_ipad_portrait.jpg',
-    './assets/geo/theme-country-map.json'
+    './assets/geo/theme-country-map.json',
+    './assets/dictionnaire/termes.json'
 ];
 
 // --- INSTALLATION : Mise en cache de l'App Shell & Pack Français ---

@@ -12,8 +12,8 @@
 //   - LE JEU DE PAYS comprend les territoires et les entités contestées (Taïwan, Kosovo, Hong Kong…), sauf la Palestine, que le quiz exclut.
 //   - LA PARTIE : une forme (QCM, drapeau, carte) ou « panaché », qui les mélange. Chaque question porte sa forme (`kind`). En panaché,
 //     un pays n'est demandé qu'une fois et la même forme ne revient pas plus de deux fois de suite.
-//   - LES POINTS : 100 par bonne réponse, + 10 par bonne réponse de suite déjà obtenue (jusqu'à + 50), + jusqu'à 50 pour la vitesse
-//     avec un chrono. Une mauvaise réponse ou un temps écoulé vaut 0 et coupe la série.
+//   - LES POINTS : 100 par bonne réponse, + 10 par bonne réponse de suite déjà obtenue (jusqu'à + 50), + un bonus de vitesse avec un
+//     chrono : plus le temps accordé est court, plus la réponse rapide vaut. Une mauvaise réponse ou un temps écoulé vaut 0 et coupe la série.
 //   - LES RECORDS : le meilleur score de chaque réglage, et les 50 dernières parties. L'état se fusionne entre deux appareils d'un même
 //     compte (js/storage.js : mergeGeoQuiz).
 //   - LA MAÎTRISE : chaque réponse alimente le suivi du pays interrogé (combien de fois vu, réussi, et les cinq dernières réponses). Un pays
@@ -35,25 +35,32 @@
     // Les pays que le quiz n'interroge jamais, même avec les territoires et les entités contestées : la Palestine.
     var EXCLUDED_IDS = ['PSX'];
 
+    // Les zones : le monde, ou un ou plusieurs continents (les Amériques sont une seule zone, assez peuplée pour une partie).
     var ZONES = [
-        { key: 'world', continent: null },
-        { key: 'africa', continent: 'Afrique' },
-        { key: 'north_america', continent: 'Amérique du Nord' },
-        { key: 'south_america', continent: 'Amérique du Sud' },
-        { key: 'asia', continent: 'Asie' },
-        { key: 'europe', continent: 'Europe' },
-        { key: 'oceania', continent: 'Océanie' }
+        { key: 'world', continents: null },
+        { key: 'africa', continents: ['Afrique'] },
+        { key: 'americas', continents: ['Amérique du Nord', 'Amérique du Sud'] },
+        { key: 'asia', continents: ['Asie'] },
+        { key: 'europe', continents: ['Europe'] },
+        { key: 'oceania', continents: ['Océanie'] }
     ];
+    // Les anciennes zones séparées (Amérique du Nord, Amérique du Sud) rejoignent les Amériques dans les réglages enregistrés.
+    var ZONE_ALIASES = { north_america: 'americas', south_america: 'americas' };
 
-    // size : combien de pays (les plus peuplés de la zone) ; distractors : les fausses réponses de la même région ('hard') ou au hasard ('easy').
+    // share : la part des pays de la zone (les plus peuplés d'abord ; 1 = tout le continent) ; distractors : les fausses réponses de la même région ('hard')
+    // ou au hasard ('easy'). Une zone très petite garde au moins MIN_POOL pays, sans quoi quatre propositions ne se départagent plus.
     var LEVELS = {
-        easy: { size: 40, distractors: 'easy' },
-        medium: { size: 80, distractors: 'easy' },
-        hard: { size: Infinity, distractors: 'hard' }
+        easy: { share: 0.2, distractors: 'easy' },
+        medium: { share: 0.5, distractors: 'easy' },
+        hard: { share: 1, distractors: 'hard' }
     };
+    var MIN_POOL = 6;
 
     var LENGTHS = [5, 10, 20, 50];
-    var TIMERS = [0, 30, 15];          // secondes par question ; 0 = sans chrono
+    // Secondes accordées pour répondre à chaque question, dans l'ordre d'affichage ; 0 = sans chrono.
+    var TIMERS = [0, 3, 7, 15];
+    // Le bonus de vitesse maximal est SPEED_BASE / secondes accordées : 100 points à 3 secondes, 43 à 7 secondes, 20 à 15 secondes.
+    var SPEED_BASE = 300;
     // Les formes de jeu. Chaque question porte sa forme (`kind`) ; le panaché les mélange, « Rafale » et « Survie » changent la règle
     // de la partie (60 secondes pour tout, ou trois vies) et piochent dans les formes rapides.
     var FORMS = ['qcm', 'flag', 'map', 'mapname', 'typed', 'fete', 'who', 'mystery', 'burst', 'survival', 'mix', 'weak', 'daily', 'neighbor', 'more', 'leader', 'duel'];
@@ -79,7 +86,6 @@
     var MYSTERY_TRY_BONUS = 20;       // par essai resté dans « Pays mystère »
     var STREAK_STEP = 10;
     var STREAK_MAX = 5;
-    var SPEED_MAX = 50;
     var HISTORY_MAX = 50;
     // La même forme ne revient pas plus de deux fois de suite dans un panaché.
     var MAX_SAME_IN_A_ROW = 2;
@@ -89,11 +95,34 @@
         return ZONES[0];
     }
 
+    // Tous les pays jouables d'une zone, les plus peuplés d'abord (sans limite de difficulté).
+    function zoneCountries(facts, key) {
+        var zone = zoneOf(key);
+        var all = Q.playablePool(facts, { includeSpecial: true }).filter(function (c) {
+            return EXCLUDED_IDS.indexOf(c.id) === -1 && (!zone.continents || zone.continents.indexOf(c.cont) !== -1);
+        });
+        all.sort(function (a, b) { return b.pop - a.pop || (a.id < b.id ? -1 : 1); });
+        return all;
+    }
+
+    // Combien de pays une difficulté garde dans une zone de `total` pays : sa part, avec au moins MIN_POOL (ou tous, si la zone est plus petite).
+    function poolSize(level, total) {
+        return Math.min(total, Math.max(MIN_POOL, Math.round(LEVELS[level].share * total)));
+    }
+
+    // Pour l'écran : la taille du jeu, la part demandée et si le minimum s'applique.
+    function levelInfo(facts, prefs) {
+        var p = normalizePrefs(prefs);
+        var total = zoneCountries(facts, p.zone).length;
+        var size = poolSize(p.level, total);
+        return { size: size, total: total, share: LEVELS[p.level].share, floored: size > Math.round(LEVELS[p.level].share * total) };
+    }
+
     // Les réglages tels qu'on peut les lire dans le stockage : toute valeur inconnue revient à la valeur par défaut.
     function normalizePrefs(raw) {
         var src = raw && typeof raw === 'object' ? raw : {};
         return {
-            zone: ZONES.some(function (z) { return z.key === src.zone; }) ? src.zone : DEFAULT_PREFS.zone,
+            zone: ZONES.some(function (z) { return z.key === (ZONE_ALIASES[src.zone] || src.zone); }) ? (ZONE_ALIASES[src.zone] || src.zone) : DEFAULT_PREFS.zone,
             level: LEVELS[src.level] ? src.level : DEFAULT_PREFS.level,
             length: LENGTHS.indexOf(src.length) !== -1 ? src.length : DEFAULT_PREFS.length,
             timer: TIMERS.indexOf(src.timer) !== -1 ? src.timer : DEFAULT_PREFS.timer
@@ -103,13 +132,8 @@
     // Le jeu de pays d'une partie : les pays jouables de la zone, les plus peuplés d'abord, limités selon la difficulté.
     function quizPool(facts, prefs) {
         var p = normalizePrefs(prefs);
-        var zone = zoneOf(p.zone);
-        var all = Q.playablePool(facts, { includeSpecial: true }).filter(function (c) {
-            return EXCLUDED_IDS.indexOf(c.id) === -1 && (!zone.continent || c.cont === zone.continent);
-        });
-        all.sort(function (a, b) { return b.pop - a.pop || (a.id < b.id ? -1 : 1); });
-        var size = LEVELS[p.level].size;
-        return size >= all.length ? all : all.slice(0, size);
+        var all = zoneCountries(facts, p.zone);
+        return all.slice(0, poolSize(p.level, all.length));
     }
 
     function shuffle(list, rng) {
@@ -208,7 +232,7 @@
         return form === 'burst' ? 'burst' : form === 'survival' ? 'survival' : 'standard';
     }
 
-    // Le chrono par question d'une partie, en secondes (0 = aucun). Il ne s'applique ni à la Rafale (60 secondes pour tout), ni à la Survie,
+    // Le chrono d'une question, en secondes (0 = aucun). Il ne s'applique ni à la Rafale (60 secondes pour tout), ni à la Survie,
     // ni au Pays mystère (six essais), ni à une partie de révision.
     function questionTimer(form, prefs, review) {
         if (review || form === 'mystery' || form === 'weak' || form === 'daily' || rulesOf(form) !== 'standard') return 0;
@@ -228,7 +252,7 @@
         var p = form === 'daily' ? normalizePrefs(DAILY_PREFS) : normalizePrefs(prefs);
         var rng = (opts && opts.rng) || Math.random;
         // Les pays à revoir se cherchent dans toute la zone, quelle que soit la difficulté réglée.
-        var pool = quizPool(facts, form === 'weak' ? { zone: p.zone, level: 'hard' } : p);
+        var pool = form === 'weak' ? zoneCountries(facts, p.zone) : quizPool(facts, p);
         var rules = rulesOf(form);
         var wanted = rules === 'burst' ? BURST_MAX_QUESTIONS : rules === 'survival' ? SURVIVAL_MAX_QUESTIONS : p.length;
         var count = Math.min(form === 'duel' ? 2 * wanted : wanted, pool.length);
@@ -250,24 +274,24 @@
     // --- Les points ---------------------------------------------------------------------------------
 
     // Les points d'une réponse. `streak` : les bonnes réponses de suite avant celle-ci. `remaining` : la part du temps restante (0 à 1),
-    // ou null sans chrono.
-    function pointsFor(correct, streak, remaining) {
+    // ou null sans chrono ; `seconds` : le temps accordé pour la question (un temps court vaut plus de points de vitesse).
+    function pointsFor(correct, streak, remaining, seconds) {
         if (!correct) return 0;
         var bonus = Math.min(Math.max(streak || 0, 0), STREAK_MAX) * STREAK_STEP;
-        var speed = remaining == null ? 0 : Math.round(SPEED_MAX * Math.min(Math.max(remaining, 0), 1));
+        var speed = remaining == null || !seconds ? 0 : Math.round((SPEED_BASE / seconds) * Math.min(Math.max(remaining, 0), 1));
         return BASE_POINTS + bonus + speed;
     }
 
     // « Qui suis-je ? » : les points d'une bonne réponse, plus un bonus pour chaque indice resté caché (`shown` indices montrés sur `total`).
-    function whoPoints(correct, shown, total, streak, remaining) {
+    function whoPoints(correct, shown, total, streak, remaining, seconds) {
         if (!correct) return 0;
-        return pointsFor(true, streak, remaining) + Math.max(0, total - shown) * WHO_CLUE_BONUS;
+        return pointsFor(true, streak, remaining, seconds) + Math.max(0, total - shown) * WHO_CLUE_BONUS;
     }
 
     // « Pays mystère » : les points d'une bonne réponse trouvée à l'essai `tryNo` sur `maxTries`, plus un bonus pour chaque essai resté.
     function mysteryPoints(correct, tryNo, maxTries, streak) {
         if (!correct) return 0;
-        return pointsFor(true, streak, null) + Math.max(0, maxTries - tryNo) * MYSTERY_TRY_BONUS;
+        return pointsFor(true, streak, null, 0) + Math.max(0, maxTries - tryNo) * MYSTERY_TRY_BONUS;
     }
 
     // Le bilan d'une partie à partir de ses réponses : [{ ok, points }].
@@ -521,10 +545,11 @@
     }
 
     return {
+        zoneCountries: zoneCountries, levelInfo: levelInfo, MIN_POOL: MIN_POOL,
         EXCLUDED_IDS: EXCLUDED_IDS, ZONES: ZONES, LEVELS: LEVELS, LENGTHS: LENGTHS, TIMERS: TIMERS, FORMS: FORMS, QUESTION_KINDS: QUESTION_KINDS,
         MIX_KINDS: MIX_KINDS, TRACKED_KINDS: TRACKED_KINDS, MAP_KINDS: MAP_KINDS, BURST_SECONDS: BURST_SECONDS, LIVES: LIVES, rulesOf: rulesOf, questionTimer: questionTimer, kindsOf: kindsOf,
         whoPoints: whoPoints, mysteryPoints: mysteryPoints,
-        DEFAULT_PREFS: DEFAULT_PREFS, BASE_POINTS: BASE_POINTS, SPEED_MAX: SPEED_MAX, HISTORY_MAX: HISTORY_MAX,
+        DEFAULT_PREFS: DEFAULT_PREFS, BASE_POINTS: BASE_POINTS, SPEED_BASE: SPEED_BASE, HISTORY_MAX: HISTORY_MAX,
         normalizePrefs: normalizePrefs, quizPool: quizPool, generateGame: generateGame, pointsFor: pointsFor, summarize: summarize,
         configKey: configKey, statsOf: statsOf, countryRanking: countryRanking, progressionOf: progressionOf, DAILY_PREFS: DAILY_PREFS, RUN_MAX: RUN_MAX, trackAnswer: trackAnswer, masteryOf: masteryOf, masteryCounts: masteryCounts,
         weakTargets: weakTargets, dailyStreak: dailyStreak, recordDaily: recordDaily, badgesEarned: badgesEarned, xpFor: xpFor, emptyState: emptyState, normalizeState: normalizeState, recordGame: recordGame, bestList: bestList

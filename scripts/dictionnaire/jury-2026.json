@@ -1,0 +1,241 @@
+{
+ "domaines": [
+  {"id": 20, "nom": "Histoire ancienne et philosophie (jury 2026)", "intro": "Termes que le rapport du jury d'agrégation d'histoire, session 2026, relève comme mal employés, mal définis ou anachroniques."},
+  {"id": 21, "nom": "Histoire médiévale (jury 2026)", "intro": "Termes relevés par le rapport du jury 2026 : confusions dans les institutions byzantines, carolingiennes et islamiques."},
+  {"id": 22, "nom": "Histoire moderne (jury 2026)", "intro": "Termes relevés par le rapport du jury 2026 : anachronismes sur les vagabonds, la fiscalité et les campagnes."},
+  {"id": 23, "nom": "Géographie (jury 2026)", "intro": "Termes relevés par le rapport du jury 2026 : vocabulaire courant ou journalistique à remplacer, confusions climatiques et buzzwords."},
+  {"id": 24, "nom": "Concepts transversaux et oral (jury 2026)", "intro": "Termes relevés par le rapport du jury 2026 dans les épreuves orales et les dissertations."}
+ ],
+ "fiches": [
+  {"id": 212, "domaine": 20, "titre": "Métier de citoyen / Scholè", "rapport2026": true,
+   "critere": "Rome, où le citoyen est un professionnel de la chose publique ; en Grèce, l'activité civique suppose le loisir et s'oppose au travail rémunéré.",
+   "piege": "Appliquer « métier de citoyen » à la Grèce : c'est un contresens, puisque l'activité civique grecque suppose la scholè et s'oppose au travail rémunéré.",
+   "exemples": "",
+   "termes": [
+    {"nom": "Métier de citoyen", "definition": "Formule de C. Nicolet (Le Métier de citoyen dans la Rome républicaine, 1976) : l'exercice régulier du vote, des charges et du service armé, traité comme une occupation à part entière. Elle caractérise Rome, non la Grèce."},
+    {"nom": "Scholè", "definition": "Loisir libre, temps dégagé de la nécessité du travail ; dans la Grèce classique, condition de l'activité civique et philosophique."}
+   ]},
+  {"id": 213, "domaine": 20, "titre": "Misthos", "rapport2026": true,
+   "critere": "Un paiement ponctuel pour une tâche ou une fonction, et non un revenu régulier lié à un emploi.",
+   "piege": "Traduire misthos par « salaire » projette sur la Grèce une catégorie de l'économie salariée.",
+   "exemples": "",
+   "termes": [
+    {"nom": "Misthos", "definition": "Rétribution versée pour un service, une charge ou une fonction, en Grèce ancienne ; ce n'est pas un salaire régulier au sens moderne."}
+   ]},
+  {"id": 214, "domaine": 20, "titre": "Technè / Ergon / Trophè", "rapport2026": true,
+   "critere": "Ces notions se définissent dans leur contexte (savoir, œuvre, entretien) avant toute traduction.",
+   "piege": "Traduire technè par « savoir-faire » ou ergon par « acte » vide ces mots de leur sens historique et conceptuel.",
+   "exemples": "",
+   "termes": [
+    {"nom": "Technè", "definition": "Savoir réglé par des principes, qui connaît les causes de ce qu'il produit : l'art ou le métier, distingué de la simple expérience (empeiria) chez Aristote."},
+    {"nom": "Ergon", "definition": "Œuvre, ouvrage ou fonction accomplie ; le mot désigne le produit du travail et, par extension, ce pour quoi une chose est faite."},
+    {"nom": "Trophè", "definition": "Nourriture et entretien ; le mot désigne aussi l'entretien que la cité ou une famille doit assurer à quelqu'un."}
+   ]},
+  {"id": 215, "domaine": 20, "titre": "Penia / Démiourgos", "rapport2026": true,
+   "critere": "Le sens des mots varie selon les auteurs et les époques : il faut dater et situer la source avant de traduire.",
+   "piege": "Projeter le sens moderne (la pauvreté, le démiurge gnostique) sur des textes archaïques ou classiques.",
+   "exemples": "",
+   "termes": [
+    {"nom": "Penia", "definition": "Manque, besoin ; dans la Grèce classique, la condition de celui qui doit travailler pour vivre (le pénès), distincte de la mendicité (ptôcheia)."},
+    {"nom": "Démiourgos", "definition": "Au sens premier, artisan ou homme de métier qui travaille pour la communauté (chez Homère : devin, médecin, charpentier) ; chez Platon (Timée), le démiurge qui façonne le monde."}
+   ]},
+  {"id": 216, "domaine": 21, "titre": "Themata / Tagmata", "rapport2026": true,
+   "critere": "Les thèmes sont des circonscriptions territoriales ; les tagmata sont des corps de troupes au service direct du pouvoir central.",
+   "piege": "Les confondre : les thèmes ne sont pas des unités d'armée, et les tagmata ne sont pas des provinces.",
+   "exemples": "",
+   "termes": [
+    {"nom": "Themata", "definition": "Circonscriptions militaires et administratives de l'Empire byzantin, confiées à un stratège, à partir du VIIe siècle."},
+    {"nom": "Tagmata", "definition": "Corps permanents de troupes d'élite, rattachés au pouvoir central et stationnés près de la capitale, à partir du VIIIe siècle."}
+   ]},
+  {"id": 217, "domaine": 21, "titre": "Musulman / Islamique", "rapport2026": true,
+   "critere": "Musulman qualifie l'individu qui professe l'islam ; islamique qualifie ce qui relève de la civilisation et de la culture.",
+   "piege": "Employer l'un pour l'autre (« l'art musulman », « une société musulmane » au sens de civilisation) mélange la foi de l'individu et le champ de la civilisation.",
+   "exemples": "",
+   "termes": [
+    {"nom": "Musulman", "definition": "Qui professe la religion islamique ; se dit d'une personne, de ses pratiques et de sa foi."},
+    {"nom": "Islamique", "definition": "Qui relève de l'islam comme civilisation, histoire, culture ou institutions (art islamique, droit islamique)."}
+   ]},
+  {"id": 218, "domaine": 21, "titre": "Maghrébins / Arabes", "rapport2026": true,
+   "critere": "Maghrébin désigne une origine géographique (Maroc, Algérie, Tunisie, Libye) ; arabe désigne une appartenance linguistique et culturelle.",
+   "piege": "Confondre les deux : les Berbères sont maghrébins sans être arabes, et un Maghrébin n'est pas nécessairement arabophone.",
+   "exemples": "",
+   "termes": [
+    {"nom": "Maghrébin", "definition": "Originaire du Maghreb, espace de l'Afrique du Nord-Ouest (Maroc, Algérie, Tunisie, Libye), quelles que soient sa langue et son origine."},
+    {"nom": "Arabe", "definition": "Qui appartient aux peuples et aux cultures de langue arabe ; catégorie linguistique et culturelle, non géographique."},
+    {"nom": "Berbère", "definition": "Peuples autochtones de l'Afrique du Nord, parlant des langues amazighes : maghrébins, mais non arabes."}
+   ]},
+  {"id": 219, "domaine": 21, "titre": "Beneficium / Honores", "rapport2026": true,
+   "critere": "Le bénéfice est une possession concédée en échange d'un service ; l'honor est une autorité publique, une fonction.",
+   "piege": "Confondre les deux : un vassal reçoit un bénéfice, un comte exerce un honor. Ils peuvent se cumuler sans être la même chose.",
+   "exemples": "",
+   "termes": [
+    {"nom": "Beneficium", "definition": "Bien (terre, revenus) concédé par un seigneur ou le souverain en échange de services, notamment militaires, dans le monde carolingien ; il préfigure le fief."},
+    {"nom": "Honores", "definition": "Dignités et fonctions publiques, c'est-à-dire autorité exercée au nom du roi (comté, mission, charge de justice)."}
+   ]},
+  {"id": 220, "domaine": 21, "titre": "Basileia / Imperium", "rapport2026": true,
+   "critere": "La basileia est le pouvoir royal du basileus (grec) ; l'imperium est le commandement militaire et civil du magistrat romain (latin).",
+   "piege": "Traiter les deux comme des équivalents : chaque mot renvoie à une tradition politique et à un vocabulaire propres.",
+   "exemples": "",
+   "termes": [
+    {"nom": "Basileia", "definition": "Royauté, règne, pouvoir du basileus. Dans l'Empire byzantin, « basileia tôn Rhômaiôn » désigne l'empire des Romains."},
+    {"nom": "Imperium", "definition": "Pouvoir de commandement, militaire puis civil, des magistrats romains ; sous l'Empire, prérogative de l'empereur."}
+   ]},
+  {"id": 221, "domaine": 21, "titre": "Légitimer", "rapport2026": true,
+   "critere": "Le verbe correct est « légitimer ».",
+   "piege": "« Légitimiser » est un barbarisme, relevé dans les copies.",
+   "exemples": "",
+   "termes": [
+    {"nom": "Légitimer (et non « légitimiser »)", "definition": "Rendre légitime : justifier un pouvoir, une institution ou une décision au regard d'une norme reconnue (tradition, droit, religion)."}
+   ]},
+  {"id": 222, "domaine": 22, "titre": "Gens du voyage / Sans-abri", "rapport2026": true,
+   "critere": "Ces catégories sont contemporaines : pour l'Ancien Régime, il faut employer les termes de l'époque ou signaler l'anachronisme.",
+   "piege": "Appliquer ces termes aux vagabonds d'Ancien Régime plaque sur eux une catégorie juridique ou sociale moderne.",
+   "exemples": "",
+   "termes": [
+    {"nom": "Gens du voyage", "definition": "Catégorie juridique et administrative contemporaine (loi de 1969, puis loi du 5 juillet 2000) désignant des populations itinérantes."},
+    {"nom": "Sans-abri", "definition": "Catégorie sociale contemporaine désignant les personnes privées de logement, dont l'usage s'impose au XXe siècle."}
+   ]},
+  {"id": 223, "domaine": 22, "titre": "Tour de vis fiscal", "rapport2026": true,
+   "critere": "Expression figurée : un durcissement de la pression fiscale ou de la contrainte.",
+   "piege": "« Tournevis fiscal » est une déformation : l'expression correcte est « tour de vis fiscal ».",
+   "exemples": "",
+   "termes": [
+    {"nom": "Tour de vis fiscal", "definition": "Expression figurée, tirée du mouvement de la vis qu'on serre, qui désigne un alourdissement de la pression fiscale."}
+   ]},
+  {"id": 224, "domaine": 22, "titre": "Pauvre / Indigent / Mendiant / Vagabond", "rapport2026": true,
+   "critere": "Le pauvre reste inséré (travail, famille, paroisse) ; le vagabond est désaffilié, hors de ces réseaux.",
+   "piege": "Confondre l'état de vulnérabilité (le pauvre inséré) et la désaffiliation totale (le vagabond, l'indigent) : ce sont deux états différents (R. Castel).",
+   "exemples": "",
+   "termes": [
+    {"nom": "Pauvre", "definition": "Qui manque de ressources pour vivre, mais reste inséré dans un travail, une famille ou une communauté."},
+    {"nom": "Indigent", "definition": "Qui ne peut subvenir à ses besoins et relève de la charité ou de l'assistance."},
+    {"nom": "Mendiant", "definition": "Qui vit de la quête et de l'aumône ; le mendiant valide est pourchassé à partir du XVIIe siècle."},
+    {"nom": "Vagabond", "definition": "Qui n'a ni domicile fixe, ni travail, ni attache : désaffilié, hors des réseaux de solidarité comme des réseaux de contrôle."}
+   ]},
+  {"id": 225, "domaine": 22, "titre": "Communaux / Usages collectifs", "rapport2026": true,
+   "critere": "Qui possède (la communauté d'habitants ou la commune) et qui use (les habitants, par des droits précis) ?",
+   "piege": "Confondre le bien commun (la propriété) et les usages collectifs (les droits d'usage) : un usage collectif ne suppose pas la propriété communale.",
+   "exemples": "",
+   "termes": [
+    {"nom": "Communaux", "definition": "Terres dont la propriété appartient à la communauté d'habitants (landes, pâtures, bois), et dont la jouissance est partagée."},
+    {"nom": "Usages collectifs", "definition": "Droits exercés par les habitants sur des terres ou des ressources qui ne leur appartiennent pas : vaine pâture, glanage, ramassage du bois."}
+   ]},
+  {"id": 226, "domaine": 22, "titre": "Calvin / Calvinisme", "rapport2026": true,
+   "critere": "Le nom propre s'écrit Calvin ; le courant se nomme calvinisme.",
+   "piege": "Écrire « Calvine » est une faute sur le nom propre.",
+   "exemples": "",
+   "termes": [
+    {"nom": "Calvin", "definition": "Jean Calvin (1509-1564), réformateur installé à Genève à partir de 1541."},
+    {"nom": "Calvinisme", "definition": "Courant de la Réforme inspiré par Calvin : prédestination, autorité de l'Écriture, organisation presbytérienne."}
+   ]},
+  {"id": 227, "domaine": 23, "titre": "Hydrique / Hydrologique", "rapport2026": true,
+   "critere": "Hydrique : l'eau comme ressource mobilisable par les sociétés. Hydrologique : l'eau comme cycle naturel et objet de la géographie physique.",
+   "piege": "Parler de « stress hydrologique » pour une question de ressource, ou de « régime hydrique » pour le cycle naturel.",
+   "exemples": "",
+   "termes": [
+    {"nom": "Hydrique", "definition": "Qui concerne l'eau douce comme ressource mobilisable par les sociétés : disponibilité, usages, accès. Stress hydrique."},
+    {"nom": "Hydrologique", "definition": "Qui concerne le cycle naturel de l'eau (précipitations, écoulement, infiltration) et les cours d'eau comme système physique. Régime hydrologique."}
+   ]},
+  {"id": 228, "domaine": 23, "titre": "Cercle vicieux / Boucle de rétroaction", "rapport2026": true,
+   "critere": "Préciser le mécanisme : une rétroaction positive amplifie le phénomène, une rétroaction négative le régule.",
+   "piege": "« Cercle vicieux » est une formule courante sans définition du mécanisme : le terme géographique est la boucle de rétroaction.",
+   "exemples": "",
+   "termes": [
+    {"nom": "Cercle vicieux (à remplacer)", "definition": "Formule journalistique désignant un enchaînement qui s'auto-entretient ; en géographie, on parle de boucle de rétroaction."},
+    {"nom": "Boucle de rétroaction", "definition": "Processus où la sortie d'un système agit sur son entrée : positive si elle amplifie le phénomène, négative si elle le régule."}
+   ]},
+  {"id": 229, "domaine": 23, "titre": "Grignotage / Mitage", "rapport2026": true,
+   "critere": "Le mitage désigne une dispersion de petites emprises bâties dans un espace agricole ou naturel.",
+   "piege": "« Grignotage » est familier : le terme géographique est mitage, qui décrit une fragmentation par habitat dispersé.",
+   "exemples": "",
+   "termes": [
+    {"nom": "Grignotage (à remplacer)", "definition": "Formule familière désignant la progression lente d'une emprise sur un espace."},
+    {"nom": "Mitage", "definition": "Dispersion d'habitats et d'équipements isolés dans un espace agricole ou naturel, qui le fragmente sans le faire disparaître d'un coup."}
+   ]},
+  {"id": 230, "domaine": 23, "titre": "Climat tropical / Climat équatorial", "rapport2026": true,
+   "critere": "La présence d'une saison sèche marquée : absente en climat équatorial, nette en climat tropical.",
+   "piege": "Confondre les deux : le climat tropical a une saison sèche marquée, l'équatorial n'en a pas.",
+   "exemples": "",
+   "termes": [
+    {"nom": "Climat équatorial", "definition": "Climat chaud et humide toute l'année, sans saison sèche marquée (Af dans la classification de Köppen), proche de l'équateur."},
+    {"nom": "Climat tropical", "definition": "Climat chaud, à saison humide et saison sèche alternées, plus éloigné de l'équateur (Aw dans la classification de Köppen) : savane et forêt sèche."}
+   ]},
+  {"id": 231, "domaine": 23, "titre": "Climat méditerranéen", "rapport2026": true,
+   "critere": "La concentration des pluies en automne et en hiver, et la sécheresse estivale.",
+   "piege": "Dire qu'il est « sec toute l'année » : il pleut en automne et en hiver, et le climat méditerranéen se définit par son été sec.",
+   "exemples": "",
+   "termes": [
+    {"nom": "Climat méditerranéen", "definition": "Climat à été chaud et sec et à hiver doux et pluvieux (Csa et Csb dans la classification de Köppen) ; la sécheresse estivale en est la marque principale."}
+   ]},
+  {"id": 232, "domaine": 23, "titre": "Foncier", "rapport2026": true,
+   "critere": "Le foncier concerne le sol comme bien juridique, économique et réglementaire, et non seulement son prix.",
+   "piege": "Le réduire au coût du logement : le foncier couvre la propriété, la mobilisation des terrains et leur régulation.",
+   "exemples": "",
+   "termes": [
+    {"nom": "Foncier", "definition": "Ensemble des règles, des marchés et des acteurs liés à la propriété et à la mobilisation des sols : prix, statuts, cadastre, planification."}
+   ]},
+  {"id": 233, "domaine": 23, "titre": "Surtourisme / Patrimonialisation", "rapport2026": true,
+   "critere": "Définir chaque terme, puis montrer le processus spatial qu'il décrit.",
+   "piege": "Aligner ces mots comme des buzzwords, sans définition ni lien avec le dossier.",
+   "exemples": "",
+   "termes": [
+    {"nom": "Surtourisme", "definition": "Excès de fréquentation touristique d'un lieu, qui dégrade le cadre de vie des habitants et l'attrait du site."},
+    {"nom": "Patrimonialisation", "definition": "Processus par lequel un bien, un lieu ou une pratique est désigné et valorisé comme patrimoine, par des acteurs publics ou privés (labels, inscriptions)."}
+   ]},
+  {"id": 234, "domaine": 23, "titre": "Marketing territorial / Ressource territoriale", "rapport2026": true,
+   "critere": "Un territoire est vendu par son image (marketing) ou mobilise ses atouts propres (ressource).",
+   "piege": "Présenter le marketing territorial comme une analyse spatiale : c'est une stratégie de promotion, à articuler avec les dynamiques réelles du territoire.",
+   "exemples": "",
+   "termes": [
+    {"nom": "Marketing territorial", "definition": "Stratégie de promotion de l'image d'un territoire pour attirer des habitants, des entreprises ou des touristes."},
+    {"nom": "Ressource territoriale", "definition": "Atout spécifique d'un territoire (savoir-faire, patrimoine, produit d'origine, réseau) que ses acteurs peuvent mobiliser pour se développer (B. Pecqueur)."}
+   ]},
+  {"id": 235, "domaine": 23, "titre": "Retraités", "rapport2026": true,
+   "critere": "Le groupe est hétérogène : âge, revenu, santé, patrimoine et lieu de vie varient fortement.",
+   "piege": "Le présenter comme un groupe monolithique et systématiquement aisé.",
+   "exemples": "",
+   "termes": [
+    {"nom": "Retraités", "definition": "Personnes ayant cessé leur activité professionnelle et percevant une pension de retraite. Catégorie statistique, non groupe social homogène."}
+   ]},
+  {"id": 236, "domaine": 24, "titre": "Capacité d'agir (Agency / Empouvoirement)", "rapport2026": true,
+   "critere": "Distinguer la capacité d'agir (une marge d'action, sous contraintes) et l'émancipation (la sortie de la domination).",
+   "piege": "Restituer l'agency comme une émancipation : les dominés (esclaves, femmes) restaient soumis à de fortes contraintes, et mettre en lumière leur action ne les rend pas libres.",
+   "exemples": "",
+   "termes": [
+    {"nom": "Agency (agentivité)", "definition": "Capacité d'un acteur à agir, à faire des choix et à peser sur son environnement, y compris sous contrainte."},
+    {"nom": "Empouvoirement", "definition": "Traduction d'« empowerment » : processus par lequel des individus ou des groupes acquièrent des moyens d'agir sur leur situation (ressources, savoirs, organisation). À définir à chaque emploi."}
+   ]},
+  {"id": 237, "domaine": 24, "titre": "Genre / Sexe", "rapport2026": true,
+   "critere": "Le sexe relève du biologique ; le genre, du social et du culturel.",
+   "piege": "Confondre les deux, ce qui arrive neuf fois sur dix à l'oral : parler de « genre » pour des différences biologiques, ou de « sexe » pour des rôles sociaux.",
+   "exemples": "",
+   "termes": [
+    {"nom": "Sexe", "definition": "Ensemble des caractéristiques biologiques (chromosomes, anatomie, hormones) qui distinguent les individus."},
+    {"nom": "Genre", "definition": "Construction sociale et culturelle des attributs, des rôles et des normes attribués à chaque sexe ; notion des sciences sociales."}
+   ]},
+  {"id": 238, "domaine": 24, "titre": "Propagande / Communication politique / Idéologie", "rapport2026": true,
+   "critere": "Pour les périodes anciennes, parler de communication politique ou d'idéologie, sauf si un appareil de diffusion organisé est attesté.",
+   "piege": "Parler de « propagande » pour Rome, le Moyen Âge ou l'Époque moderne : c'est un anachronisme.",
+   "exemples": "",
+   "termes": [
+    {"nom": "Propagande", "definition": "Diffusion organisée et systématique d'une doctrine ou d'une image politique par un appareil dédié ; sens moderne, surtout au XXe siècle. Le mot vient de la congrégation romaine de la Propaganda Fide (1622)."},
+    {"nom": "Communication politique", "definition": "Ensemble des procédés par lesquels un pouvoir se met en scène et diffuse son message : cérémonies, images, discours."},
+    {"nom": "Idéologie", "definition": "Système de représentations qui justifie et organise un ordre social et politique."}
+   ]},
+  {"id": 239, "domaine": 24, "titre": "Intellectuel / Humaniste", "rapport2026": true,
+   "critere": "L'intellectuel intervient dans l'espace public au nom de son savoir ou de ses valeurs, sur une question de société : sens né à la fin du XIXe siècle.",
+   "piege": "Parler d'« intellectuel » pour un humaniste de la Renaissance : le substantif n'apparaît qu'à la fin du XIXe siècle, à l'époque de l'affaire Dreyfus.",
+   "exemples": "",
+   "termes": [
+    {"nom": "Intellectuel", "definition": "Personne qui intervient dans l'espace public au nom de son savoir ou de ses valeurs ; substantif attesté vers 1898, lors de l'affaire Dreyfus."},
+    {"nom": "Humaniste", "definition": "Lettré de la Renaissance, qui étudie et édite les textes antiques. Ne pas le nommer « intellectuel »."}
+   ]},
+  {"id": 240, "domaine": 24, "titre": "Mobiliser", "rapport2026": true,
+   "critere": "Préciser ce qui se déplace ou se rassemble (personnes, capitaux, idées), à quelle échelle et pour quelle durée.",
+   "piege": "« Mobiliser » et « mobilité » sont des mots-valises qui englobent tout (trajets, migrations, engagement) : sans précision, ils ne disent rien.",
+   "exemples": "",
+   "termes": [
+    {"nom": "Mobiliser", "definition": "Réunir des acteurs ou des ressources autour d'une action (mobiliser des habitants, des moyens) ; au sens militaire, rassembler des troupes."}
+   ]}
+ ]
+}

@@ -161,6 +161,10 @@ function renderGamesScope() {
             if (!fits) why.textContent = ARCADE_PERIOD_GAMES.includes(game) ? t('arcade.scope_periods') : t('arcade.scope_too_few', { count: arcadeScope.pool.length });
         }
     });
+    // Une section sans carte visible (les jeux géographiques, en portée) n'a pas lieu d'être affichée.
+    document.querySelectorAll('#screen-arcade .games-section').forEach(section => {
+        section.classList.toggle('hidden', !section.querySelector('.arcade-card:not(.hidden)'));
+    });
 }
 
 function renderGamesHub() {

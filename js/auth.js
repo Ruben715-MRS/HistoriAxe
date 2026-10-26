@@ -287,6 +287,8 @@ var Auth = (function () {
                 if (!res.ok) throw new Error(res.error || 'delete');
                 saveSession(null);
                 resetAllGameData();
+                // Les parties jouées hors ligne appartiennent à ce compte, supprimé avec son historique.
+                historyOutboxSave([]);
                 pseudoSave('');
                 setDeviceId(null);
                 window.location.reload();

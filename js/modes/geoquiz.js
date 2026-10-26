@@ -62,7 +62,7 @@ function geoQuizRight(q) { return q.right || q.target; }
 
 // Tous les pays jouables (le monde, tous niveaux) : pour reconnaître une saisie, et ne jamais prendre un pays pour un autre.
 function geoQuizEveryCountry() {
-    if (!geoQuizAllPool) geoQuizAllPool = GeoQuizSessionCore.quizPool(countriesData.facts, { level: 'hard' });
+    if (!geoQuizAllPool) geoQuizAllPool = GeoQuizSessionCore.zoneCountries(countriesData.facts, 'world');
     return geoQuizAllPool;
 }
 
@@ -114,14 +114,31 @@ function geoQuizPrefsNow() {
     return geoQuizPrefs;
 }
 
-function geoQuizRenderSettings() {
+// Les réglages du Quiz des pays et des Villes du monde sont les mêmes (zone, difficulté, chrono) : ils se rendent dans les deux menus.
+// `prefix` : « geoquiz » ou « cities », le préfixe des identifiants des puces de chaque menu.
+function geoQuizRenderCommonSettings(prefix) {
     const prefs = geoQuizPrefsNow();
     const core = GeoQuizSessionCore;
-    geoQuizFillChips('geoquiz-zone', core.ZONES.map(z => ({ value: z.key, label: t('geoquiz.zone_' + z.key) })), 'zone', prefs.zone);
-    geoQuizFillChips('geoquiz-level', Object.keys(core.LEVELS).map(k => ({ value: k, label: t('geoquiz.level_' + k) })), 'level', prefs.level);
-    geoQuizEl('geoquiz-level-hint').textContent = t('geoquiz.level_' + prefs.level + '_hint');
-    geoQuizFillChips('geoquiz-length', core.LENGTHS.map(n => ({ value: n, label: String(n) })), 'length', prefs.length);
-    geoQuizFillChips('geoquiz-timer-choice', core.TIMERS.map(s => ({ value: s, label: t('geoquiz.timer_' + s) })), 'timer', prefs.timer);
+    geoQuizFillChips(prefix + '-zone', core.ZONES.map(z => ({ value: z.key, label: t('geoquiz.zone_' + z.key) })), 'zone', prefs.zone);
+    geoQuizFillChips(prefix + '-level', Object.keys(core.LEVELS).map(k => ({ value: k, label: t('geoquiz.level_' + k) })), 'level', prefs.level);
+    // L'aide donne le nombre de pays réel : il faut les données des pays, chargées à la demande si l'Atlas n'a pas été ouvert.
+    const hint = geoQuizEl(prefix + '-level-hint');
+    if (countriesData) {
+        const info = core.levelInfo(countriesData.facts, prefs);
+        const pct = Math.round(info.share * 100);
+        hint.textContent = t('geoquiz.level_' + prefs.level + '_hint', { pct: pct, n: info.size })
+            + (info.floored ? ' ' + t('geoquiz.level_floor', { min: core.MIN_POOL }) : '');
+    } else {
+        hint.textContent = '';
+        countriesLoad().then(ok => { if (ok) { geoQuizRenderSettings(); cityGameRenderSettings(); } });
+    }
+    geoQuizFillChips(prefix + '-timer-choice', core.TIMERS.map(s => ({ value: s, label: t('geoquiz.timer_' + s) })), 'timer', prefs.timer);
+}
+
+function geoQuizRenderSettings() {
+    const core = GeoQuizSessionCore;
+    geoQuizRenderCommonSettings('geoquiz');
+    geoQuizFillChips('geoquiz-length', core.LENGTHS.map(n => ({ value: n, label: String(n) })), 'length', geoQuizPrefsNow().length);
 }
 
 function geoQuizFillChips(id, items, key, current) {
@@ -132,17 +149,18 @@ function geoQuizFillChips(id, items, key, current) {
         btn.dataset.pref = key;
         btn.textContent = item.label;
         btn.setAttribute('aria-pressed', item.value === current ? 'true' : 'false');
-        btn.onclick = () => geoQuizSetPref(key, item.value);
+        btn.onclick = () => geoQuizSetPref(key, item.value, id);
         return btn;
     }));
 }
 
-function geoQuizSetPref(key, value) {
+// Un réglage change dans les deux menus à la fois. Le clavier reste sur le choix qu'on vient de faire (`groupId` : sa liste de puces).
+function geoQuizSetPref(key, value, groupId) {
     geoQuizPrefs = GeoQuizSessionCore.normalizePrefs(Object.assign({}, geoQuizPrefsNow(), { [key]: value }));
     geoQuizPrefsSave(geoQuizPrefs);
     geoQuizRenderSettings();
-    // Le menu a été redessiné : le clavier reste sur le choix qu'on vient de faire.
-    const kept = document.querySelector('#geoquiz-menu .geoquiz-chip[data-pref="' + key + '"][aria-pressed="true"]');
+    cityGameRenderSettings();
+    const kept = document.querySelector('#' + groupId + ' .geoquiz-chip[aria-pressed="true"]');
     if (kept) kept.focus({ preventScroll: true });
 }
 
@@ -422,9 +440,9 @@ function geoQuizTimeout() {
 // Les points de la question qu'on clôt : selon sa forme (indices non montrés pour « qui suis-je ? », essais restants pour le mystère).
 function geoQuizPoints(ok, q, remaining) {
     const core = GeoQuizSessionCore;
-    if (q.kind === 'who') return core.whoPoints(ok, geoQuizWhoShown, q.clues.length, geoQuizStreak, remaining);
+    if (q.kind === 'who') return core.whoPoints(ok, geoQuizWhoShown, q.clues.length, geoQuizStreak, remaining, geoQuizTimerSeconds);
     if (q.kind === 'mystery') return core.mysteryPoints(ok, geoQuizMysteryGuesses.length, GeoQuizCore.MYSTERY_TRIES, geoQuizStreak);
-    return core.pointsFor(ok, geoQuizStreak, remaining);
+    return core.pointsFor(ok, geoQuizStreak, remaining, geoQuizTimerSeconds);
 }
 
 // Clôt la question : les points (avec la vitesse si un chrono tourne), la série, les vies, l'entrée du bilan. Renvoie les points gagnés.
@@ -725,8 +743,8 @@ function geoQuizUnlockBadges(summary, masteredCount, dailyFirst) {
     const core = GeoQuizSessionCore;
     const state = geoQuizStateLoad();
     const mystery = geoQuizAnswers.filter(a => a.q.kind === 'mystery' && a.ok).map(a => a.tries);
-    const zoneComplete = core.ZONES.some(z => z.continent && (() => {
-        const pool = core.quizPool(countriesData.facts, { zone: z.key, level: 'hard' });
+    const zoneComplete = core.ZONES.some(z => z.continents && (() => {
+        const pool = core.zoneCountries(countriesData.facts, z.key);
         return pool.length > 0 && pool.every(c => core.masteryOf(state.countries[c.id]) === 'mastered');
     })());
     core.badgesEarned({
@@ -778,8 +796,8 @@ function geoQuizRenderMastery() {
         return li;
     });
     geoQuizEl('geoquiz-mastery-legend').replaceChildren(...legend);
-    const zones = core.ZONES.filter(z => z.continent).map(z => {
-        const list = pool.filter(c => c.cont === z.continent).sort((a, b) => (a.n < b.n ? -1 : 1));
+    const zones = core.ZONES.filter(z => z.continents).map(z => {
+        const list = pool.filter(c => z.continents.indexOf(c.cont) !== -1).sort((a, b) => (a.n < b.n ? -1 : 1));
         const got = core.masteryCounts(state, list);
         const wrap = document.createElement('section');
         wrap.className = 'geoquiz-zone-block';

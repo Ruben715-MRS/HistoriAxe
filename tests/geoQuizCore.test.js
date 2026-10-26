@@ -337,3 +337,15 @@ test('pays mystère : distance, direction et proximité', () => {
     assert.equal(Q.generateMysteryQuestions(allPool, { count: 7, rng: seeded(1) }).length, 7);
     assert.ok(lyonish.id);
 });
+
+test('qui suis-je ? : le premier indice montré sépare toujours des propositions (pas de région commune aux quatre)', () => {
+    const qs = Q.generateWhoQuestions(pool, { count: 80, difficulty: 'hard', rng: seeded(17) });
+    assert.ok(qs.length >= 40, `${qs.length} questions`);
+    for (const q of qs) {
+        const choices = q.options.map(o => pool.find(c => c.id === o.id));
+        const first = q.clues[0];
+        const separates = choices.some(c => Q.clueValues(c, first.key).indexOf(first.value) === -1);
+        assert.ok(separates, `${q.target} : le premier indice (${first.key} : ${first.value}) ne sépare aucune proposition`);
+        assert.equal(Q.isValid({ ...q, ask: 'name' }, pool), true, `${q.target} valable`);
+    }
+});

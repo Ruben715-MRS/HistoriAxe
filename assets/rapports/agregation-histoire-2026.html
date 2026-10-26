@@ -1,0 +1,917 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Agrégation d'histoire 2027, rapport du jury 2026</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F6F3EC; --surface:#FFFFFF; --ink:#221E1A; --muted:#645D54; --rule:#D6CFC2;
+  --contour:#A8802F; --corr:#A5322B; --corr-soft:#F6E5E3;
+  --gre:#B4532A; --imp:#5A3E9B; --ame:#17766B; --aut:#35527A; --fra:#4B7A2E; --pac:#1B6C9F;
+  --gre-soft:#F6E6DD; --imp-soft:#ECE6F6; --ame-soft:#DDEFEC; --aut-soft:#E1E8F2; --fra-soft:#E8F0DF; --pac-soft:#E0EDF5;
+  --serif:"Literata","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --sans:"Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,Roboto,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#171512; --surface:#211E19; --ink:#EAE5DC; --muted:#ADA597; --rule:#3A352D;
+    --contour:#C2A25C; --corr:#E6847A; --corr-soft:#3A201D;
+    --gre:#E08A63; --imp:#B7A0E8; --ame:#5CC2B4; --aut:#8DB0E3; --fra:#9CCB7C; --pac:#66ACDB;
+    --gre-soft:#3A2218; --imp-soft:#261E3A; --ame-soft:#12302C; --aut-soft:#1B2A40; --fra-soft:#1F2E16; --pac-soft:#15303F;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#171512; --surface:#211E19; --ink:#EAE5DC; --muted:#ADA597; --rule:#3A352D;
+  --contour:#C2A25C; --corr:#E6847A; --corr-soft:#3A201D;
+  --gre:#E08A63; --imp:#B7A0E8; --ame:#5CC2B4; --aut:#8DB0E3; --fra:#9CCB7C; --pac:#66ACDB;
+  --gre-soft:#3A2218; --imp-soft:#261E3A; --ame-soft:#12302C; --aut-soft:#1B2A40; --fra-soft:#1F2E16; --pac-soft:#15303F;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:1.0625rem;line-height:1.64;font-optical-sizing:auto;overflow-wrap:break-word}
+svg,img{max-width:100%}
+a{color:inherit;text-decoration-thickness:1px;text-decoration-color:var(--muted);text-underline-offset:.18em}
+a:hover{text-decoration-color:currentColor}
+:focus-visible{outline:3px solid var(--gre);outline-offset:2px}
+strong{font-weight:600}
+
+/* Bandeau */
+.hero{position:relative;overflow:hidden;background:var(--surface);border-bottom:1px solid var(--rule)}
+.hero .frise{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero .frise path{fill:none;stroke:var(--contour);stroke-width:1.2;opacity:.3}
+.hero .frise path.index{stroke-width:2.2;opacity:.55}
+.hero-inner{position:relative;max-width:74rem;margin:0 auto;padding-block:3.25rem 2.25rem;padding-left:max(1.25rem,env(safe-area-inset-left,0px));padding-right:max(1.25rem,env(safe-area-inset-right,0px))}
+.hero .meta{font-family:var(--sans);font-size:.92rem;color:var(--muted);margin:0 0 .75rem}
+h1{font-weight:600;font-size:clamp(2rem,6vw,3.35rem);line-height:1.08;letter-spacing:-.012em;margin:0 0 1rem;max-width:19ch;text-wrap:balance}
+.lede{font-size:1.14rem;line-height:1.55;max-width:42rem;margin:0}
+.legend{margin-top:1.75rem;display:grid;gap:.9rem;font-family:var(--sans);font-size:.93rem;max-width:56rem}
+.legend p{margin:0;color:var(--muted);font-size:.88rem}
+.legend ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.45rem 1.35rem}
+.legend li{display:inline-flex;align-items:center;gap:.5rem;margin:0}
+.fig{display:inline-block;flex:none;width:1.1rem;height:.82rem;border:2px solid currentColor;vertical-align:-.08em}
+.fig.a{background:currentColor}
+.fig.b{background:repeating-linear-gradient(135deg,currentColor 0 2px,transparent 2px 5px)}
+.fig.c{background:transparent}
+.c-gre{color:var(--gre)} .c-imp{color:var(--imp)} .c-ame{color:var(--ame)} .c-aut{color:var(--aut)} .c-fra{color:var(--fra)} .c-pac{color:var(--pac)}
+.legend .lbl{color:var(--ink)}
+
+/* Mise en page */
+.layout{max-width:74rem;margin:0 auto;padding-top:0;padding-bottom:5rem;padding-left:max(1.25rem,env(safe-area-inset-left,0px));padding-right:max(1.25rem,env(safe-area-inset-right,0px));display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+@media (min-width:64rem){.layout{grid-template-columns:15rem minmax(0,1fr);gap:3.25rem}}
+.toc{font-family:var(--sans);font-size:.95rem;line-height:1.35}
+.toc ol{list-style:none;margin:0;padding:0}
+.toc li{margin:0}
+.toc a{display:block;padding:.42rem 0 .42rem .75rem;text-decoration:none;color:var(--muted);border-left:3px solid transparent}
+.toc a:hover{color:var(--ink);border-left-color:var(--rule)}
+.toc a.t-gre{border-left-color:var(--gre);color:var(--ink)}
+.toc a.t-imp{border-left-color:var(--imp);color:var(--ink)}
+.toc a.t-ame{border-left-color:var(--ame);color:var(--ink)}
+.toc a.t-aut{border-left-color:var(--aut);color:var(--ink)}
+.toc a.t-fra{border-left-color:var(--fra);color:var(--ink)}
+.toc a.t-pac{border-left-color:var(--pac);color:var(--ink)}
+.toc-mobile{margin:1.25rem 0 .5rem;border:1px solid var(--rule);background:var(--surface);border-radius:6px}
+.toc-mobile summary{cursor:pointer;padding:.8rem 1rem;font-weight:700;font-family:var(--sans);list-style-position:inside}
+.toc-mobile ol{padding:0 1rem .8rem}
+.toc-desktop{display:none}
+@media (min-width:64rem){
+  .toc-mobile{display:none}
+  .toc-desktop{display:block;position:sticky;top:0;max-height:100vh;overflow:auto;padding:2.5rem 0 2rem}
+  .toc-desktop p{margin:0 0 .6rem;font-weight:700;color:var(--ink)}
+}
+main{min-width:0}
+section{padding:2.6rem 0 .6rem;border-top:1px solid var(--rule);scroll-margin-top:.75rem}
+main > section:first-child,.toc-mobile + section{border-top:0}
+h2{font-size:clamp(1.55rem,3.8vw,2.05rem);line-height:1.18;font-weight:600;letter-spacing:-.005em;margin:0 0 .9rem;max-width:32ch;text-wrap:balance}
+.qsec h2{padding-left:.9rem;border-left:5px solid var(--qc)}
+.gre{--qc:var(--gre);--qs:var(--gre-soft)}
+.imp{--qc:var(--imp);--qs:var(--imp-soft)}
+.ame{--qc:var(--ame);--qs:var(--ame-soft)}
+.aut{--qc:var(--aut);--qs:var(--aut-soft)}
+.fra{--qc:var(--fra);--qs:var(--fra-soft)}
+.pac{--qc:var(--pac);--qs:var(--pac-soft)}
+.standfirst{font-family:var(--sans);color:var(--muted);font-size:.95rem;margin:-.3rem 0 1.2rem}
+h3{font-size:1.24rem;line-height:1.3;font-weight:600;margin:2.1rem 0 .6rem;max-width:40ch;text-wrap:balance}
+h4{font-family:var(--sans);font-size:1.02rem;font-weight:700;margin:1.5rem 0 .45rem}
+p,ul,ol,dl{max-width:68ch}
+p{margin:.6rem 0}
+ul,ol{padding-left:1.2rem;margin:.6rem 0}
+li{margin:.38rem 0}
+li::marker{color:var(--muted)}
+.qsec li::marker{color:var(--qc)}
+
+/* Liste essentielle */
+.essentials{list-style:none;padding:0;display:grid;gap:.85rem;max-width:none}
+@media (min-width:48rem){.essentials{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:2rem}}
+.essentials li{margin:0;padding:.1rem 0 .1rem .9rem;border-left:3px solid var(--k,var(--rule))}
+.essentials li.k-gre{--k:var(--gre)} .essentials li.k-imp{--k:var(--imp)} .essentials li.k-ame{--k:var(--ame)} .essentials li.k-aut{--k:var(--aut)} .essentials li.k-fra{--k:var(--fra)} .essentials li.k-pac{--k:var(--pac)}
+
+/* Tableaux */
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1rem 0 1.25rem;border:1px solid var(--rule);background:var(--surface);border-radius:6px;max-width:100%}
+table{border-collapse:collapse;width:100%;min-width:38rem;font-family:var(--sans);font-size:.92rem;line-height:1.45}
+table.narrow{min-width:30rem}
+table.wide{min-width:52rem}
+caption{caption-side:top;text-align:left;padding:.75rem .85rem .2rem;font-weight:700;color:var(--ink)}
+th,td{padding:.62rem .85rem;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule)}
+thead th{background:var(--paper);font-weight:700}
+tbody th{font-weight:700}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.gap{font-weight:700}
+
+/* Blocs repliables */
+details.fold{margin:1rem 0 1.25rem;border:1px solid var(--rule);background:var(--surface);border-radius:6px}
+details.fold > summary{cursor:pointer;padding:.8rem 1rem;font-family:var(--sans);font-weight:700}
+details.fold[open] > summary{border-bottom:1px solid var(--rule)}
+details.fold > :not(summary){margin-left:1rem;margin-right:1rem}
+details.fold > .table-wrap{margin:0;border:0;border-radius:0}
+details.fold > :last-child{margin-bottom:1rem}
+
+/* Étapes */
+ol.steps{counter-reset:s;list-style:none;padding:0}
+ol.steps > li{counter-increment:s;position:relative;padding-left:2.2rem;margin:.6rem 0}
+ol.steps > li::before{content:counter(s);position:absolute;left:0;top:.05rem;width:1.55rem;height:1.55rem;border:1.5px solid var(--ink);border-radius:50%;font-family:var(--sans);font-size:.85rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+
+/* Encadrés */
+.aside{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:.9rem 1.1rem;margin:1.2rem 0;max-width:68ch}
+.aside p:first-child{margin-top:0}.aside p:last-child{margin-bottom:0}
+.qsec .aside{background:var(--qs);border-color:transparent}
+
+/* Banque de sujets */
+.filters{font-family:var(--sans);display:grid;gap:.7rem;margin:1.2rem 0 1rem}
+.fgroup{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem}
+.fgroup .flabel{font-size:.9rem;color:var(--muted);min-width:5.5rem}
+.chip{font:inherit;font-size:.9rem;display:inline-flex;align-items:center;gap:.45rem;border:1.5px solid var(--rule);background:var(--surface);color:var(--ink);padding:.38rem .8rem;border-radius:999px;cursor:pointer;line-height:1.2}
+.chip:hover{border-color:var(--muted)}
+.chip.c-gre .fig{color:var(--gre)} .chip.c-imp .fig{color:var(--imp)} .chip.c-ame .fig{color:var(--ame)} .chip.c-aut .fig{color:var(--aut)} .chip.c-fra .fig{color:var(--fra)} .chip.c-pac .fig{color:var(--pac)}
+.chip[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.count{font-family:var(--sans);font-size:.9rem;color:var(--muted);margin:.2rem 0 1rem}
+.subjects{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem}
+@media (min-width:52rem){.subjects{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.subject{background:var(--surface);border:1px solid var(--rule);border-top:4px solid var(--qc);border-radius:6px;padding:1rem 1.1rem 1.05rem;min-width:0}
+.subject[hidden]{display:none}
+.subject h4{font-family:var(--serif);font-size:1.1rem;line-height:1.32;font-weight:600;margin:0 0 .35rem}
+.subject .variant{font-size:.95rem;color:var(--muted);margin:0 0 .55rem}
+.subject .tags{display:flex;flex-wrap:wrap;gap:.35rem 1rem;font-family:var(--sans);font-size:.86rem;margin:0 0 .5rem}
+.subject .tags span{display:inline-flex;align-items:center;gap:.4rem}
+.subject .tags .fig{color:var(--qc)}
+.subject dl{margin:0;font-size:.97rem;line-height:1.55}
+.subject dt{font-family:var(--sans);font-weight:700;font-size:.86rem;color:var(--muted);margin-top:.55rem}
+.subject dd{margin:.1rem 0 0}
+.subjects[hidden]{display:none}
+.group-title{font-family:var(--sans);font-size:1.02rem;font-weight:700;margin:1.8rem 0 .7rem;display:flex;align-items:center;gap:.55rem}
+.group-title .fig{color:var(--qc)}
+.group-title[hidden]{display:none}
+
+/* Pastilles de questions */
+.qtags{display:flex;flex-wrap:wrap;gap:.3rem}
+.qt{font-family:var(--sans);font-size:.8rem;line-height:1.2;padding:.18rem .5rem;border-radius:999px;border:1.5px solid currentColor;white-space:nowrap}
+.qt.gre{color:var(--gre)} .qt.imp{color:var(--imp)} .qt.ame{color:var(--ame)} .qt.aut{color:var(--aut)} .qt.fra{color:var(--fra)} .qt.pac{color:var(--pac)}
+
+/* Listes de dossiers plausibles */
+.dossiers{list-style:none;padding:0;max-width:none;display:grid;gap:.55rem}
+@media (min-width:48rem){.dossiers{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:1.5rem}}
+.dossiers li{margin:0;padding:.55rem .75rem;background:var(--surface);border:1px solid var(--rule);border-radius:6px;display:grid;gap:.3rem;min-width:0}
+.dossiers li span.t{font-weight:600;line-height:1.35}
+.dossiers li span.d{font-size:.95rem;color:var(--muted);line-height:1.45}
+
+/* Notions */
+dl.notions{max-width:none;display:grid;grid-template-columns:minmax(0,1fr);gap:0;margin:.8rem 0 1.2rem;border-top:1px solid var(--rule)}
+dl.notions > div{padding:.6rem 0;border-bottom:1px solid var(--rule);display:grid;gap:.2rem}
+@media (min-width:48rem){dl.notions > div{grid-template-columns:15rem minmax(0,1fr);gap:1.25rem}}
+dl.notions dt{font-weight:600}
+dl.notions dd{margin:0}
+
+/* Erreurs */
+.corrections{list-style:none;padding:0;max-width:none;display:grid;gap:.75rem}
+.corrections li{margin:0;background:var(--surface);border:1px solid var(--rule);border-left:4px solid var(--corr);border-radius:6px;padding:.75rem 1rem}
+.corrections .was{font-family:var(--sans);font-size:.9rem;color:var(--muted);display:block;margin-bottom:.2rem}
+
+.to-top{position:fixed;right:calc(.9rem + env(safe-area-inset-right,0px));bottom:calc(.9rem + env(safe-area-inset-bottom,0px));z-index:5;font-family:var(--sans);font-size:.85rem;font-weight:700;text-decoration:none;background:var(--ink);color:var(--surface);padding:.42rem .8rem;border-radius:999px;visibility:hidden;opacity:0;transition:opacity .2s,visibility .2s}
+.to-top.show{visibility:visible;opacity:1}
+@media (prefers-reduced-motion: reduce){.to-top{transition:none}}
+@media (max-width:47.99rem){
+  .hero .frise path{opacity:.22}
+  .hero .frise path.index{opacity:.3}
+  .fgroup .flabel{flex-basis:100%;min-width:0}
+}
+@media (min-width:64rem){.to-top{display:none}}
+.foot{font-family:var(--sans);font-size:.88rem;color:var(--muted);margin-top:2.5rem}
+
+@media print{
+  .toc,.to-top,.filters,.count{display:none!important}
+  .layout{display:block}
+  details.fold{border:0}
+  details.fold > summary{display:none}
+  .subject[hidden],.group-title[hidden]{display:block!important}
+  body{background:#fff;color:#000}
+}
+</style>
+
+<header class="hero" id="haut">
+  <svg class="frise" viewBox="0 0 1200 460" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><g transform="translate(0,95)">
+    <path class="index" d="M-40 360 H1260"/>
+    <path d="M40 360 v-34 M100 360 v-14 M160 360 v-14 M220 360 v-34 M280 360 v-14 M340 360 v-14 M400 360 v-34 M460 360 v-14 M520 360 v-14 M580 360 v-34 M640 360 v-14 M700 360 v-14 M760 360 v-34 M820 360 v-14 M880 360 v-14 M940 360 v-34 M1000 360 v-14 M1060 360 v-14 M1120 360 v-34 M1180 360 v-14"/>
+    <path d="M220 360 A 90 90 0 0 1 400 360"/>
+    <path d="M400 360 A 90 90 0 0 1 580 360"/>
+    <path class="index" d="M580 360 A 90 90 0 0 1 760 360"/>
+    <path d="M760 360 A 90 90 0 0 1 940 360"/>
+    <path d="M250 360 A 60 60 0 0 1 370 360"/>
+    <path d="M430 360 A 60 60 0 0 1 550 360"/>
+    <path d="M610 360 A 60 60 0 0 1 730 360"/>
+    <path d="M790 360 A 60 60 0 0 1 910 360"/>
+    <path d="M880 150 a 70 70 0 1 1 140 0 a 70 70 0 1 1 -140 0"/>
+    <path class="index" d="M905 150 a 45 45 0 1 1 90 0 a 45 45 0 1 1 -90 0"/>
+    <path d="M928 150 a 22 22 0 1 1 44 0 a 22 22 0 1 1 -44 0"/>
+  </g></svg>
+  <div class="hero-inner">
+    <p class="meta">Document de travail pour la session 2027, établi le 26 octobre 2026</p>
+    <h1>Rapport du jury 2026 : ce qui change pour préparer 2027</h1>
+    <p class="lede">Agrégation externe d'histoire. Lecture complète du rapport (écrits et oraux), repositionnement sur les six questions du programme 2027 et banque de sujets plausibles.</p>
+    <div class="legend" aria-label="Légende du document">
+      <ul>
+        <li class="c-gre"><i class="fig a"></i><span class="lbl">Travailler en Grèce ancienne</span></li>
+        <li class="c-imp"><i class="fig a"></i><span class="lbl">Gouvernement impérial, VIIIe-XIe s.</span></li>
+        <li class="c-ame"><i class="fig a"></i><span class="lbl">Les Amériques, années 1560-années 1660</span></li>
+        <li class="c-aut"><i class="fig a"></i><span class="lbl">Régimes et mouvements autoritaires, 1918-1939</span></li>
+        <li class="c-fra"><i class="fig a"></i><span class="lbl">La France</span></li>
+        <li class="c-pac"><i class="fig a"></i><span class="lbl">Le Pacifique</span></li>
+      </ul>
+      <ul>
+        <li><i class="fig a"></i><span class="lbl">Priorité A : angle mort de 2026 ou axe central du cadrage</span></li>
+        <li><i class="fig b"></i><span class="lbl">Priorité B : balisé ou partiel</span></li>
+        <li><i class="fig c"></i><span class="lbl">Priorité C : déjà consommé ou hors cadrage</span></li>
+      </ul>
+      <p>Les couleurs repèrent la question du programme. Les trois figures donnent la priorité de travail d'un sujet, de la plus forte à la plus faible.</p>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc toc-desktop" aria-label="Sommaire">
+    <p>Sommaire</p>
+    <ol>
+      <li><a href="#essentiel">L'essentiel</a></li>
+      <li><a href="#chiffres">Chiffres de la session 2026</a></li>
+      <li><a href="#formats">Changements de format en 2027</a></li>
+      <li><a href="#tirages">Tirages et formulations</a></li>
+      <li><a href="#oraux">Les trois oraux</a></li>
+      <li><a class="t-gre" href="#grece">Travailler en Grèce ancienne</a></li>
+      <li><a class="t-imp" href="#empire">Gouvernement impérial</a></li>
+      <li><a class="t-ame" href="#ameriques">Les Amériques</a></li>
+      <li><a class="t-aut" href="#autoritaires">Régimes autoritaires</a></li>
+      <li><a class="t-fra" href="#france">La France</a></li>
+      <li><a class="t-pac" href="#pacifique">Le Pacifique</a></li>
+      <li><a href="#banque">Banque de sujets plausibles</a></li>
+      <li><a href="#croisees">Études de cas à la croisée</a></li>
+      <li><a href="#notions">Notions et pièges</a></li>
+      <li><a href="#outils">Outils et calendrier</a></li>
+      <li><a href="#erreurs">Coquilles du rapport</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ol>
+  </nav>
+  <main>
+    <details class="toc-mobile">
+      <summary>Sommaire</summary>
+      <ol style="list-style:none;margin:0">
+        <li><a href="#essentiel">L'essentiel</a></li>
+        <li><a href="#chiffres">Chiffres de la session 2026</a></li>
+        <li><a href="#formats">Changements de format en 2027</a></li>
+        <li><a href="#tirages">Tirages et formulations</a></li>
+        <li><a href="#oraux">Les trois oraux</a></li>
+        <li><a href="#grece">Travailler en Grèce ancienne</a></li>
+        <li><a href="#empire">Gouvernement impérial</a></li>
+        <li><a href="#ameriques">Les Amériques</a></li>
+        <li><a href="#autoritaires">Régimes autoritaires</a></li>
+        <li><a href="#france">La France</a></li>
+        <li><a href="#pacifique">Le Pacifique</a></li>
+        <li><a href="#banque">Banque de sujets plausibles</a></li>
+        <li><a href="#croisees">Études de cas à la croisée</a></li>
+        <li><a href="#notions">Notions et pièges</a></li>
+        <li><a href="#outils">Outils et calendrier</a></li>
+        <li><a href="#erreurs">Coquilles du rapport</a></li>
+        <li><a href="#sources">Sources</a></li>
+      </ol>
+    </details>
+
+<section id="essentiel">
+  <h2>L'essentiel</h2>
+  <p class="standfirst">Rapport de la session 2026, présidente du jury : Claire Blandin. À lire comme un état des attentes, pas comme un pronostic de sujets.</p>
+  <ul class="essentials">
+    <li class="k-gre"><strong>Deux questions d'histoire reconduites, deux renouvelées.</strong> Le rapport dit que les questions de moderne et de contemporaine sont renouvelées en 2027 et qu'une question de géographie, le Pacifique, est nouvelle. Grèce ancienne et gouvernement impérial restent au programme : le sujet écrit 2026 et les dossiers d'oral 2026 sont donc des angles déjà vus, pas des pistes de 2027.</li>
+    <li class="k-imp"><strong>Le texte n'est pas un prétexte.</strong> C'est le défaut le plus martelé, à l'écrit (commentaire médiéval) comme à l'oral (EDH) : dissertation sous prétexte du texte, paraphrase, absence de regard critique sur l'auteur. Au commentaire médiéval, le jury a plafonné à 7/20 les copies relevant de l'un de ces trois cas : orthographe grammaticale inacceptable, dissertation au prétexte du texte, paraphrase.</li>
+    <li class="k-ame"><strong>Définir, c'est problématiser.</strong> Sur « Être pauvre à la campagne », le jury reproche des mots jamais définis (pauvre, mendiant, vagabond, pouvoir) et une « obsession du pouvoir » plaquée. Sur la dissertation de géographie : définitions juxtaposées, plans qui séparent ressource et risque.</li>
+    <li class="k-aut"><strong>Le réel avant le concept.</strong> Le jury relève des candidats qui ne savent pas ce qu'est un bœuf, qui voient une ampoule électrique pour une lampe à huile, qui hésitent sur le sens du Rhin. Cartes, calendriers agricoles, matériaux : tout ce qui rend un document concret se prépare.</li>
+    <li class="k-fra"><strong>Les cartes et les lieux.</strong> Situer un sujet dans l'espace est exigé en histoire comme en géographie : Géoportail est disponible en salle de préparation, la Corse est « restée fâcheusement inconnue » pour la deuxième année, les climats sont confondus.</li>
+    <li class="k-pac"><strong>La bibliographie ne remplace pas la tête.</strong> Le jury parle de « substitution de la bibliographie au cerveau » : les meilleurs commentaires ont une bibliographie réduite (atlas, dictionnaire, encyclopédie, un manuel, une référence spécialisée) et l'édition critique de la source.</li>
+    <li class="k-gre"><strong>Écrit sans filet.</strong> 643 présents pour 105 postes, 210 admissibles, barre d'admissibilité à 37,5 points. Les moyennes à l'écrit restent proches de 8/20 ; les copies qui montent prennent un angle, tiennent l'équilibre des parties et écrivent une vraie conclusion.</li>
+    <li class="k-imp"><strong>Comment lire la banque de sujets.</strong> Elle ne devine pas les sujets : elle croise le cadrage officiel 2027 avec ce que 2026 a déjà couvert, pour ranger les angles en A (angle mort), B (balisé) et C (consommé).</li>
+  </ul>
+</section>
+
+<section id="chiffres">
+  <h2>Chiffres de la session 2026</h2>
+  <p class="standfirst">Tous les chiffres viennent du rapport. Les rapprochements calculés sont signalés comme tels.</p>
+  <div class="table-wrap"><table class="narrow">
+    <caption>Concours</caption>
+    <thead><tr><th>Indicateur</th><th>2026</th></tr></thead>
+    <tbody>
+      <tr><th>Postes ouverts</th><td class="num">105</td></tr>
+      <tr><th>Candidats inscrits</th><td class="num">1 016</td></tr>
+      <tr><th>Présents à l'ensemble des écrits</th><td class="num">643</td></tr>
+      <tr><th>Admissibles</th><td class="num">210</td></tr>
+      <tr><th>Barre d'admissibilité</th><td class="num">37,5 points</td></tr>
+      <tr><th>Barre d'admission</th><td class="num">105 points</td></tr>
+      <tr><th>Total admissibles, médiane / moyenne</th><td class="num">104,8 / 104,9 (min. 56,5 ; max. 174)</td></tr>
+    </tbody>
+  </table></div>
+  <p>Rapprochements calculés : environ 6 présents aux écrits pour un poste ; 2 admissibles pour un poste ; la barre d'admission (105) tombe pratiquement sur la médiane des admissibles (104,8), ce qui revient à dire que presque un admissible sur deux est reçu.</p>
+
+  <div class="table-wrap"><table>
+    <caption>Écrits : notes sur 20</caption>
+    <thead><tr><th></th><th>Dissertation 1<br>(histoire ancienne)</th><th>Dissertation 2<br>(histoire moderne)</th><th>Explication<br>(médiéval)</th><th>Géographie</th></tr></thead>
+    <tbody>
+      <tr><th>Moyenne des présents</th><td class="num">7,56</td><td class="num">7,81</td><td class="num">7,60</td><td class="num">8,04</td></tr>
+      <tr><th>Moyenne des admissibles</th><td class="num">11,46</td><td class="num">11,49</td><td class="num">11,56</td><td class="num">12,04</td></tr>
+      <tr><th>Écart-type des présents</th><td class="num">4,05</td><td class="num">3,88</td><td class="num">3,96</td><td class="num">4,12</td></tr>
+      <tr><th>Note la plus haute</th><td class="num">20</td><td class="num">18</td><td class="num">19</td><td class="num">20</td></tr>
+      <tr><th>Note la plus basse des admissibles</th><td class="num">5,00</td><td class="num">3,00</td><td class="num">5,50</td><td class="num">3,50</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="table-wrap"><table>
+    <caption>Oraux : notes sur 20</caption>
+    <thead><tr><th>Épreuve</th><th>Min.</th><th>1er quartile</th><th>Médiane</th><th>Moyenne</th><th>3e quartile</th><th>Max.</th></tr></thead>
+    <tbody>
+      <tr><th>Leçon d'histoire générale (LHG)</th><td class="num">1,0</td><td class="num">6,0</td><td class="num">9,0</td><td class="num">9,5</td><td class="num">14,0</td><td class="num">20,0</td></tr>
+      <tr><th>Explication de documents historiques (EDH)</th><td class="num">2,0</td><td class="num">6,0</td><td class="num">9,0</td><td class="num">9,6</td><td class="num">13,0</td><td class="num">20,0</td></tr>
+      <tr><th>Explication de carte ou de documents géographiques (EDG)</th><td class="num">2,0</td><td class="num">7,0</td><td class="num">10,0</td><td class="num">10,1</td><td class="num">13,0</td><td class="num">19,0</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="table-wrap"><table class="narrow">
+    <caption>Admis et non admis (parmi les admissibles)</caption>
+    <thead><tr><th></th><th>Écrits, moyenne</th><th>Oraux, moyenne</th></tr></thead>
+    <tbody>
+      <tr><th>Non admis</th><td class="num">43,1</td><td class="num">44,0</td></tr>
+      <tr><th>Admis</th><td class="num">50,0</td><td class="num">72,8</td></tr>
+    </tbody>
+  </table></div>
+  <div class="aside">
+    <p><strong>Ce que montre ce tableau.</strong> L'écart entre admis et non admis est d'environ 7 points aux écrits (50,0 contre 43,1) et de près de 29 aux oraux (72,8 contre 44,0). Calcul à partir du rapport : l'admission se joue surtout à l'oral, où les trois épreuves sont décrites comme des exercices de méthode autant que de connaissances.</p>
+  </div>
+  <p>Le rapport note enfin que le concours est « accessible » (105 postes) et regrette la sous-représentation des femmes parmi les candidatures, alors que les études d'histoire sont largement féminisées. Les oraux se sont tenus du 28 mai au 22 juin 2026, avec deux périodes de canicule.</p>
+</section>
+
+<section id="formats">
+  <h2>Changements de format en 2027</h2>
+  <p class="standfirst">Ce que le rapport annonce, et ce qu'il ne dit pas.</p>
+  <ul>
+    <li><strong>Programme.</strong> Le rapport indique que les questions sont renouvelées en moderne et en contemporaine, et qu'une question nouvelle porte sur le Pacifique en géographie.</li>
+    <li><strong>Épreuves.</strong> Le rapport n'annonce aucun changement de structure, de durée ou de coefficient pour l'histoire. Rien n'est dit non plus sur la répartition des périodes aux écrits 2027.</li>
+    <li><strong>Oral.</strong> Les rappels de durée sont ceux de 2026 : EDH, exposé de 25 minutes ; LHG, 15 minutes de questions sur la leçon puis 10 minutes de culture générale ; EDG, 60 minutes (25 minutes de présentation, 35 d'entretien).</li>
+  </ul>
+  <div class="aside">
+    <p><strong>À vérifier.</strong> Absence d'annonce dans un rapport ne vaut pas absence de changement. Relis l'arrêté et la note de cadrage de la session 2027 avant de fixer ton calendrier de préparation (voir <a href="#sources">Sources</a>).</p>
+  </div>
+</section>
+
+<section id="tirages">
+  <h2>Tirages et formulations</h2>
+  <p class="standfirst">Les quatre sujets d'écrit de 2026 et ce que leur libellé enseigne.</p>
+  <div class="table-wrap"><table class="wide">
+    <caption>Les écrits 2026</caption>
+    <thead><tr><th>Épreuve</th><th>Sujet</th><th>Ce que le libellé impose</th></tr></thead>
+    <tbody>
+      <tr><th>Dissertation d'histoire ancienne</th><td>« Travailler en Grèce ancienne selon le genre et le statut (VIIIe-IVe siècles av. n.è.) »</td><td>Un verbe à l'infinitif, qui renvoie aux situations concrètes de mise au travail et pas aux représentations ; deux variables, genre (au sens sociologique) et statut (juridique, mais aussi social et économique), que le libellé laisse volontairement ouvert.</td></tr>
+      <tr><th>Dissertation d'histoire moderne</th><td>« Être pauvre à la campagne, 1634-1814 »</td><td>Le verbe « être » suggère un état et une trajectoire. Toute la période est à traiter, Révolution et Empire compris. Les colonies ne sont pas citées : à ne pas ignorer, à ne pas survaloriser.</td></tr>
+      <tr><th>Commentaire de documents historiques (médiéval)</th><td>« L'Empire byzantin d'après Ibn Hawqal, géographe du Xe siècle » (<em>Kitâb sûrat al-ard</em>, trad. Kramers et Wiet, p. 190-195)</td><td>Regard d'un auteur musulman, pro-fatimide, sur la fiscalité et la stratégie militaire byzantines à la frontière. « Tout le texte, rien que le texte » : l'Occident n'a pas à y être inséré.</td></tr>
+      <tr><th>Composition de géographie</th><td>« Les villes face aux défis hydriques »</td><td>Pluriel de « villes » (tailles, sites, contextes), « défis » (anticipation, adaptation), « hydriques » (eau douce d'abord, eau salée en complément).</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Grille-filtre pour juger un sujet plausible</h3>
+  <ol class="steps">
+    <li><strong>Cadrage.</strong> L'angle se rattache-t-il à un axe de la note de cadrage 2027 ? Sinon, il est hors programme.</li>
+    <li><strong>Doublon 2026.</strong> L'angle a-t-il été le sujet de l'écrit 2026 (genre et statut ; frontière syrienne et fiscalité byzantine) ? Si oui, priorité C.</li>
+    <li><strong>Mots à définir.</strong> Le libellé contient-il un terme polysémique que le jury attend défini (travailler, gouverner, empire, autoritaire, villes) ?</li>
+    <li><strong>Bornes.</strong> Les dates et l'espace permettent-ils un plan synthétique, ou obligent-ils à une chronologie que le jury déconseille ?</li>
+    <li><strong>Sources.</strong> Pour un commentaire ou un dossier : existe-t-il une édition critique, une traduction, un corpus accessible en salle de préparation ?</li>
+  </ol>
+</section>
+
+<section id="oraux">
+  <h2>Les trois oraux</h2>
+  <p class="standfirst">Le rapport consacre l'essentiel de ses pages de méthode à l'oral. Les trois épreuves de 2026 ont un point commun : le jury y a vu des candidats qui ont les connaissances et se trompent d'exercice.</p>
+
+  <h3>Explication de documents historiques (EDH)</h3>
+  <p>Environ 6 heures de préparation, exposé de 25 minutes (bien tenu en 2026), puis entretien. Forme attendue : critique externe en introduction, problématique et plan, trois parties, conclusion.</p>
+  <ul>
+    <li><strong>Défaut majeur : le texte prétexte.</strong> Piquer quelques éléments pour déverser tout ce que l'on sait. Principe répété : « tout le texte, rien que le texte ».</li>
+    <li><strong>Méthode de préparation proposée.</strong> Lire le document une première fois sans rien écrire ; repérer titre et termes à définir avant d'ouvrir la bibliographie (« attendre une heure » est salutaire) ; colorier le texte par parties pour vérifier qu'aucun pan n'est laissé de côté.</li>
+    <li><strong>Documents médiévaux de la pratique</strong> (privilèges, chartes) : analyse diplomatique, même brève (titulature, souscriptions), à commenter une fois dans l'exposé.</li>
+    <li><strong>Demander l'édition du texte, systématiquement.</strong> Exemples cités : le <em>Traité sur la guérilla</em> de Nicéphore Phocas, la <em>Vie de Charlemagne</em> d'Éginhard, le <em>Livre des cérémonies</em> (tous les volumes), les lettres d'Alcuin dans l'édition de Christine Veyrard-Cosme (Sources chrétiennes).</li>
+    <li><strong>Bibliographie sobre.</strong> Atlas, dictionnaire, encyclopédie, un manuel, une référence spécialisée. Les bibliographies d'<em>Historiens et Géographes</em> sont signalées comme sous-utilisées. Dire « Ismard pour l'esclavage à Athènes » ne tient pas lieu de savoir.</li>
+    <li><strong>Diapositives.</strong> Pas de cartes « format timbre-poste » ; une carte a un titre, une orientation, une légende, une source ; la citation affichée ne vaut pas commentaire ; une faute d'orthographe sur la diapositive de problématique dans environ un cas sur cinq.</li>
+    <li><strong>Iconographie et films.</strong> « Généralement maltraités » : postures, cadres, matériaux, commande, taille, localisation ; pour le film, sons, musique, voix off.</li>
+    <li><strong>Entretien.</strong> Il sert à faire monter la note. Dire « je ne sais pas » plutôt que de se hasarder ; ne pas tordre la question ; revenir dans le document quand le jury y ramène.</li>
+  </ul>
+
+  <h3>Leçon d'histoire générale (LHG)</h3>
+  <p>Environ 6 heures de préparation ; leçon, puis 15 minutes de questions sur la leçon et 10 minutes de culture générale. Les sujets débordent le programme : environ cinquante sujets par période dans les listes du rapport.</p>
+  <ul>
+    <li><strong>Analyser les termes du sujet.</strong> « Migrer » n'est pas « voyager » ; « L'Égypte et Rome » n'est pas « Rome et l'Égypte » ; « Les villes et l'écrit » n'est pas « l'écriture » ; l'empire de Tamerlan n'est pas toute la période timouride.</li>
+    <li><strong>Pas de refuge dans l'événementiel, pas de sur-conceptualisation.</strong> Les biographies classiques donnent aussi bien de bonnes leçons (Érasme, Proudhon) que de mauvaises (Périclès, Héraclius, Voltaire, Mendès France).</li>
+    <li><strong>Ressources.</strong> Chercher d'abord dictionnaires, Persée, Cairn, EHNE, <em>L'Histoire</em>, manuels de la collection Nouvelle Clio, manuels d'anciennes questions de concours (le jury cite celui des « circulations internationales en Europe, 1680-1780 » pour une leçon sur le Grand Tour) et catalogues d'exposition.</li>
+    <li><strong>Les 10 minutes de culture.</strong> Elles partent de la leçon ou de son thème et sondent comparaison et mise en perspective, pas un quiz. Un pays étudié peut revenir à une autre période (Égypte antique, Tahiti, Inde). Le jury conseille de préparer de petits aide-mémoires de questions probables.</li>
+    <li><strong>Culture de base exigée en contemporaine</strong> (Seconde Guerre mondiale, Vichy) : ne pas pouvoir répondre est jugé « rédhibitoire ».</li>
+  </ul>
+
+  <h3>Explication de carte ou de documents géographiques (EDG)</h3>
+  <p>60 minutes : 25 de présentation, 35 d'entretien. En 2026 : 43 sujets cartes, 41 sujets dossiers (20 pour « Environnements : approches géographiques », 21 pour « Les littoraux français »). Moyenne 10,10.</p>
+  <ul>
+    <li><strong>Tableau de présentation des documents</strong> : utile s'il nourrit la problématique, avec thèmes, échelles, localisations. Introductions souvent trop longues.</li>
+    <li><strong>Esprit critique sur les sources</strong> : un témoignage d'habitant, un discours politique, un document promotionnel ou un extrait de PLU ne s'analysent pas sur le même pied.</li>
+    <li><strong>Acteurs</strong> : qui commande, met en œuvre, finance ? Ne pas prêter des volontés aux territoires.</li>
+    <li><strong>Statistiques</strong> : connaître définitions de zonage (EPCI, aires d'attraction, unités urbaines, bassins de vie) et ordres de grandeur ; mettre en graphique n'est pas analyser.</li>
+    <li><strong>Vocabulaire</strong> à manier avec précaution : bocage, openfield, marketing territorial, mitage, maquis, garrigue, gentrification, mise en tourisme, conflits d'usage, surtourisme, patrimonialisation, appropriation spatiale, identité territoriale, ressource territoriale.</li>
+  </ul>
+</section>
+
+<section id="grece" class="qsec gre">
+  <h2>Travailler en Grèce ancienne</h2>
+  <p class="standfirst">Programme 2027 : « Travailler en Grèce ancienne aux époques archaïque et classique (VIIIe-IVe siècles av. n.è.) ». Question reconduite : l'angle écrit 2026 est consommé.</p>
+
+  <h3>Ce que le cadrage 2027 met en avant</h3>
+  <ul>
+    <li>Le grec n'a pas de mot unique pour « travail » : la question étudie les réalités du verbe <em>travailler</em> (qui, où, quoi).</li>
+    <li>Espaces : l'oikos, les quartiers artisanaux urbains, les ateliers ruraux, les mines, les carrières, l'agora et l'emporion, les grands chantiers.</li>
+    <li>Libres et esclaves, femmes, étrangers ; travail indépendant et travail rémunéré (misthos).</li>
+    <li>Travail et religion (Héphaïstos, Athéna Ergané), fêtes ; travail et citoyenneté (la guerre comme travail rémunéré).</li>
+    <li>Sources : comptes, décrets honorifiques, contrats. Espaces : monde égéen et cités coloniales.</li>
+  </ul>
+
+  <h3>Ce que l'écrit 2026 a sanctionné</h3>
+  <p>Sujet : « Travailler en Grèce ancienne selon le genre et le statut ». Rapport de Isabelle Pernin et Nicolas Mathieu. Copies catastrophiques en nombre limité, mais traitement « mécanique » du sujet.</p>
+  <ul>
+    <li><strong>Hiérarchies gommées.</strong> Sous couvert de « neutralité », beaucoup de copies oublient les hiérarchies sociales et leurs conséquences sur les femmes et les esclaves. Considérer l'esclavage ou la prostitution comme des moyens de gagner sa vie et de sortir de sa condition est dit « inacceptable ».</li>
+    <li><strong>Plans « émancipation ».</strong> Majoritairement thématiques ; beaucoup de plans dialectiques dont la démonstration voulait que travailler émancipe. Cause probable : des exemples peu variés d'une copie à l'autre et l'incapacité à distinguer l'ordinaire de l'extraordinaire (le « bâtiment Z » à Athènes érigé en généralité).</li>
+    <li><strong>Agency.</strong> Concept mal compris : des dominés qui « agissent » restent des dominés soumis à des contraintes.</li>
+    <li><strong>Le « métier de citoyen ».</strong> Hors sujet : la formule de Claude Nicolet (1976) concerne Rome. Le <em>misthos</em> est une indemnité, pas un salaire.</li>
+    <li><strong>Genre et statut.</strong> « Genre » au sens sociologique ; « statut » d'abord juridique (citoyen, étranger, esclave) mais aussi social et économique, volontairement non précisé dans l'énoncé.</li>
+    <li><strong>Sources.</strong> Se constituer un répertoire d'exemples personnels dont on maîtrise contexte, contenu, enjeux. Translittérer sans variation un petit nombre de termes grecs essentiels.</li>
+    <li><strong>Forme.</strong> Introduction limitée à un cinquième de la copie ; accroche (citation exacte et référencée) liée au sujet ; conclusion réelle et pas un résumé.</li>
+  </ul>
+  <p>Références citées par le jury : Vernant, Finley, Descat (<em>L'acte et l'effort</em>), Zurbach, Lonis, Roubineau, Moatti et Kaiser, Cohen (1989), Canfora pour la formule des métèques « cité de réserve ».</p>
+
+  <details class="fold">
+    <summary>Plan du corrigé proposé par le jury</summary>
+    <p>Problématique : dans quelle mesure travailler révèle-t-il les mécanismes d'exclusion et de domination des sociétés grecques entre le VIIIe et le IVe siècle ?</p>
+    <ol class="steps">
+      <li><strong>Travailler selon des modèles de domination statutaire et genrée.</strong> L'oikos comme premier cercle ; la cité et son cadre juridique ; les espaces de travail.</li>
+      <li><strong>Au bénéfice d'autrui.</strong> Travailler ne permet pas d'échapper socialement ou économiquement aux contraintes de son genre ou de son statut.</li>
+      <li><strong>Reproduction des inégalités.</strong> Le travail ne préserve pas de l'exclusion politique (dette, affranchis) ; statut économique contre statut juridique, le cas des métèques d'Athènes.</li>
+    </ol>
+  </details>
+
+  <h3>Ce que l'oral 2026 a déjà couvert</h3>
+  <p>Les dossiers d'EDH en histoire ancienne ont parcouru un spectre large : marchands de blé (Lysias XXII), médecine, architecte, <em>Travaux et jours</em>, mines du Laurion, prêt maritime (Démosthène XXXV), arsenal de Philon, grands travaux de Périclès (Plutarque), bronzier, fer, textile, foulon, fromage, banque (Isocrate XVII), Thucydide I, 89-93, Phidias, <em>Économique</em> du Ps-Aristote, <em>Ploutos</em> d'Aristophane, oikos de Laërte, <em>Lois</em> de Platon VIII. Remarques du jury : le mot « industrie » entre guillemets dans un titre n'est pas anodin ; l'itinérance n'est ni la migration ni la mobilité.</p>
+
+  <h3>Dossiers d'oral plausibles en 2027</h3>
+  <ul class="dossiers">
+    <li><span class="t">Travailler la pierre : carrières et chantiers sacrés</span><span class="d">Cadrage : carrières et grands chantiers ; comptes de construction. Peu de dossiers 2026 sur l'épigraphie des chantiers publics.</span></li>
+    <li><span class="t">Mercenaires et rameurs : la guerre comme travail</span><span class="d">Cadrage cite la guerre comme travail rémunéré. Angle mort du rapport 2026.</span></li>
+    <li><span class="t">Travail et religion : Héphaïstos, Athéna Ergané, fêtes</span><span class="d">Mentionné par le cadrage ; un seul dossier 2026 s'en approche (travailler au sanctuaire de Delphes).</span></li>
+    <li><span class="t">Décret honorifique pour un étranger bienfaiteur</span><span class="d">Type de source nommé par le cadrage ; entre statut et travail de l'étranger.</span></li>
+    <li><span class="t">Emporion et agora : vendre et acheter</span><span class="d">Espace cité par le cadrage ; cf. la référence de Bresson donnée en exemple par le jury.</span></li>
+    <li><span class="t">Travail dans une cité coloniale</span><span class="d">Le cadrage inclut les cités coloniales ; le rapport 2026 ne mentionne pas de dossier colonial.</span></li>
+  </ul>
+</section>
+
+<section id="empire" class="qsec imp">
+  <h2>Théories et pratiques du gouvernement impérial</h2>
+  <p class="standfirst">Programme 2027 : « Théories et pratiques du gouvernement impérial du début du VIIIe jusqu'au début du XIe siècle : Empire byzantin, monde islamique, Occident latin ». Question reconduite.</p>
+
+  <h3>Ce que le cadrage 2027 met en avant</h3>
+  <ul>
+    <li>Notion d'« impérialité » comparée entre trois mondes ; références données : Burbank et Cooper (<em>Empires</em>) et la formule de Gilbert Dagron, « l'empire est d'abord une croyance ».</li>
+    <li>Deux volets : <strong>théories</strong> (idéologie, titulature, iconographie, légitimité, sacralisation) et <strong>pratiques</strong> (territoire, administration, armée, fiscalité, monnaie, religion, langue, élites, frontières, communautés locales).</li>
+    <li>Repères chronologiques du cadrage : 717 (avènement de Léon III), 750 (révolution abbasside), 762 (fondation de Bagdad), 800 (couronnement de Charlemagne), 945 (mainmise bouyide sur les califes), 996-1021 (al-Hākim), 1002 (mort d'Otton III), 1025 (mort de Basile II), 1031 (fin du califat omeyyade de Cordoue).</li>
+    <li>Liens avec le lycée : HGGSP (Charlemagne ; calife et basileus en approche comparée).</li>
+  </ul>
+
+  <h3>Ce que l'écrit 2026 a sanctionné</h3>
+  <p>Commentaire d'Ibn Hawqal (<em>Kitâb sûrat al-ard</em>). Rapport de Annick Peters-Custot et Emmanuelle Tixier du Mesnil. Constat de départ positif : les candidats se sont approprié la question et les préparations sont jugées de grande qualité.</p>
+  <ul>
+    <li><strong>Plafond de 7/20</strong> dans trois cas : orthographe grammaticale inacceptable ; dissertation au prétexte du texte ; paraphrase.</li>
+    <li><strong>Contexte déséquilibré.</strong> Côté byzantin plus léger que côté califal ; contextualisation géographique floue, d'où des généralités sur « le gouvernement impérial » sans voir qu'il s'agit de la frontière byzantino-islamique de la Syrie du Nord (et, moins, de l'Italie méridionale).</li>
+    <li><strong>Regard critique manquant sur l'auteur.</strong> Ibn Hawqal, pro-fatimide, traduit maladroitement les termes techniques byzantins et veut montrer un empire plus pauvre qu'on ne le croit. Son silence sur l'impôt foncier aurait dû interroger.</li>
+    <li><strong>Hypothèses d'identification valorisées</strong> (agents, taxes, valeurs) avec « peut-être » et « probablement », plutôt que le silence.</li>
+    <li><strong>Chiffres négligés.</strong> Exemple du jury : si la taxe sur le commerce vaut x par an, le commerce global vaut environ 10x.</li>
+    <li><strong>Erreurs récurrentes.</strong> Nicéphore (Phocas, II) confondu avec Nicéphore Ier ; deux sens du mot « tribut » ; dinars et nomismata de valeur voisine (environ 4,30 g d'or) ; themata et tagmata ; « musulman » et « islamique » ; Maghrébins et Arabes ; paysage politique islamique réduit à trois califats sans les dynasties régionales (Hamdanides d'Alep) ; Trébizonde non située.</li>
+    <li><strong>Connaissances de base fragiles.</strong> Dates des califats fatimide et omeyyade, de la fondation du Caire, de la dynastie macédonienne, règnes de Hārūn al-Rashīd et d'al-Muqtadir parfois faux de plus d'un siècle ; fiscalité et organisation militaire byzantines moins bien maîtrisées que celles du monde islamique ; guerre akritique et <em>Traité sur la guérilla</em> omis.</li>
+  </ul>
+  <div class="aside">
+    <p><strong>Angle d'attaque de l'ensemble.</strong> Le jury insiste : les empires ne se gouvernent pas uniquement à coups d'idéologie théologico-politique. Gouverner, c'est disposer d'armées payées par la fiscalité, grâce à une administration à relais locaux, des routes surveillées, des élites composites, des alliances (matrimoniales, commerciales, de revers). L'armée n'est pas un élément de prestige ; le rituel légitime moins qu'il ne manifeste.</p>
+  </div>
+
+  <h3>Ce que l'oral 2026 a déjà couvert</h3>
+  <p>Une cinquantaine de dossiers, avec une forte présence byzantine (ascension de Basile Ier, avènement de Nicéphore Phocas, Livre des cérémonies, sceaux de Basile Lécapène, <em>De administrando imperio</em>, <em>Traité sur la guérilla</em>, chrysobulle de 992 pour les Vénitiens, empire d'après Ibn Hawqal), carolingienne (Ordinatio imperii 817, Saxe, armée, partage de 843, lettres d'Alcuin, Éginhard, Thégan), califale (révolution abbasside, Samarra, al-Mansûr et al-Hakam II à Cordoue, fondation d'al-Qâhira, Bouyides, Abû Yûsuf sur la fiscalité) et ottonienne (représentation du pouvoir). Le jury a signalé des fragilités sur la chronologie politique byzantine.</p>
+
+  <h3>Dossiers d'oral plausibles en 2027</h3>
+  <ul class="dossiers">
+    <li><span class="t">Le gouvernement ottonien et la mort d'Otton III</span><span class="d">Bornes du cadrage (1002) ; un seul dossier ottonien repéré dans la liste 2026 (représentation du pouvoir).</span></li>
+    <li><span class="t">Al-Hākim et les Fatimides (996-1021)</span><span class="d">Date explicite du cadrage ; le rapport cite surtout la fondation du Caire en 969.</span></li>
+    <li><span class="t">Basile II et la fin du siècle byzantin (1025)</span><span class="d">Borne du cadrage ; équilibre byzantin à renforcer, point faible signalé par le jury.</span></li>
+    <li><span class="t">Fin du califat omeyyade de Cordoue (1031)</span><span class="d">Borne du cadrage ; l'Occident latin et al-Andalus se croisent aux frontières.</span></li>
+    <li><span class="t">Un capitulaire carolingien</span><span class="d">Pratiques de gouvernement local en Occident latin ; angle écrit non traité en 2026 (le commentaire portait sur la frontière byzantine).</span></li>
+    <li><span class="t">Titulature et monnaie d'un souverain</span><span class="d">Théories et pratiques réunies ; le jury rappelle que les monnaies ne servent pas qu'à colporter l'image du souverain.</span></li>
+  </ul>
+</section>
+
+<section id="ameriques" class="qsec ame">
+  <h2>Les Amériques des années 1560 aux années 1660</h2>
+  <p class="standfirst">Question nouvelle en histoire moderne. Le rapport 2026 ne porte donc que sur l'ancienne question rurale : on en tire de la méthode, pas du contenu.</p>
+
+  <h3>Ce que le cadrage 2027 met en avant</h3>
+  <ul>
+    <li>Bornes citées : 1624 (fondation de la Nouvelle-Amsterdam) ; 1660 (traité anglo-franco-caraïbe de partage des Petites Antilles) ; installation des puissances non ibériques sur la côte atlantique de l'Amérique du Nord, aux Antilles et aux Guyanes au début du XVIIe siècle.</li>
+    <li>Colonisation économique et sociale ; exploitation des ressources (métaux précieux, plantations, teintures, fourrures, pêche).</li>
+    <li>Formes de travail : esclavage, mita, repartimiento, encomienda, travail salarié, travail pour dettes.</li>
+    <li>Formes de domination, institutions, rôle de l'Église ; agentivité indigène (alliance, résistance, négociation).</li>
+    <li>Migrations et circulations, dont le galion de Manille et l'asiento ; rivalités géopolitiques entre puissances européennes ; connexions atlantiques et transpacifiques.</li>
+    <li>Le cadrage mentionne plus de 503 000 Africains déportés dans la première moitié du XVIIe siècle ; vérifie ce chiffre et sa formulation sur le PDF officiel.</li>
+  </ul>
+
+  <h3>Ce que le rapport 2026 enseigne pour la méthode</h3>
+  <p>Dissertation moderne 2026 : « Être pauvre à la campagne, 1634-1814 » (Laurent Brassart et Olivier Chaline). Les leçons valent pour toute dissertation moderne.</p>
+  <ul>
+    <li><strong>Définir sans plaquer.</strong> Mots jamais définis (mendiant, vagabond), confusion entre « pouvoir » et « pouvoir de faire », « agentivité » invoquée alors que le rapport de forces laisse peu de marge, « empouvoirement » sans définition. Le jury : « C'est une agrégation d'histoire et non d'historiographie ».</li>
+    <li><strong>Plan thématique, pas chronologique.</strong> Les plans chronologiques posent des césures arbitraires, homogénéisent les périodes (tout le XVIIe siècle en malheur, un XVIIIe « beau ») et laissent une dernière partie « croupion ». Les plans hybrides sont jugés pires. Une borne comme 1560-1660 suppose de savoir ce qui change entre les deux.</li>
+    <li><strong>Colonies : ni ignorer ni survaloriser.</strong> Penser aux engagés, aux « petits blancs », aux libres de couleur, à la diversité du monde servile et pas seulement aux esclaves.</li>
+    <li><strong>Le concret.</strong> Les copies récompensées montraient le froid, l'incertitude du lendemain, le fermage, les charges. Pour les Amériques, cela se traduit par les conditions de travail, les maladies, les distances, les saisons.</li>
+    <li><strong>Géographie physique.</strong> L'oral de leçon d'histoire générale a relevé qu'une grande chaîne de montagnes en Amérique du Sud était ignorée, de même que les distances (leçon sur les indépendances ibéro-américaines). Prévoir des fonds de carte.</li>
+  </ul>
+
+  <h3>Documents coloniaux déjà tombés à l'oral 2026 (époques postérieures)</h3>
+  <p>La Hontan sur la Nouvelle-France rurale (1684), l'île d'Orléans près de Québec, les miliciens canadiens vus par Bougainville (1759), le Code noir aux Mascareignes (1723), Saint-Domingue (1788, 1802), Chabanon sur l'esclave et le paysan libre (1790). Ils ne sont pas dans les bornes de 2027, mais ils donnent le type de documents attendus : récit de voyage, législation coloniale, mémoire administratif, discours de colon. À chaque fois, le jury attend la critique du point de vue de l'auteur.</p>
+
+  <h3>Dossiers plausibles en 2027</h3>
+  <ul class="dossiers">
+    <li><span class="t">Travailler dans les mines d'argent andines</span><span class="d">Mita, salariat et travail pour dettes cités par le cadrage ; pont possible avec « Travailler en Grèce » (mines du Laurion).</span></li>
+    <li><span class="t">Un contrat d'engagé pour les îles</span><span class="d">Engagés et « petits blancs » : angle que le jury 2026 a jugé négligé sur les sociétés insulaires.</span></li>
+    <li><span class="t">Le traité de 1660 avec les Caraïbes</span><span class="d">Borne du cadrage ; agentivité indigène et partage des Petites Antilles.</span></li>
+    <li><span class="t">Le galion de Manille</span><span class="d">Circulations transpacifiques citées dans le cadrage.</span></li>
+    <li><span class="t">La Nouvelle-Amsterdam (1624)</span><span class="d">Puissances non ibériques en Amérique du Nord.</span></li>
+    <li><span class="t">Une mission jésuite ou franciscaine</span><span class="d">Rôle de l'Église ; document de l'ordre religieux à passer au crible de la critique externe.</span></li>
+  </ul>
+</section>
+
+<section id="autoritaires" class="qsec aut">
+  <h2>Régimes et mouvements autoritaires en Europe, 1918-1939</h2>
+  <p class="standfirst">Question nouvelle en histoire contemporaine. Le rapport 2026 ne couvre que l'ancienne question rurale ; ses leçons de méthode et de culture générale restent utiles.</p>
+
+  <h3>Ce que le cadrage 2027 met en avant</h3>
+  <ul>
+    <li>Période : de l'armistice de 1918 à l'invasion de la Pologne en 1939. Europe hors URSS, qui sert de contre-champ ; guerres mondiales et empires coloniaux européens comme champs de cadrage.</li>
+    <li>Repères cités : 1919-1920 (traités de paix) ; mars 1920 (arrivée de Horthy au pouvoir) ; une liste de régimes autoritaires de 1920 à 1939.</li>
+    <li>Thèmes : conditions d'émergence, cultures politiques, modes de gouvernement ; adhésion, accommodement, résistance ; propagande et violence ; définition contextualisée du fascisme ; différences entre l'Italie, l'Allemagne et les autres régimes ; débat historiographique sur le totalitarisme.</li>
+    <li>Référence littéraire du cadrage : Paul Valéry, <em>L'idée de dictature</em> (1934).</li>
+  </ul>
+
+  <h3>Ce que le rapport 2026 enseigne</h3>
+  <ul>
+    <li><strong>Culture de base non négociable.</strong> Le jury dit de la LHG : en contemporaine, ne pas répondre à des questions « du niveau du lycée » (Seconde Guerre mondiale, Vichy) est « rédhibitoire ».</li>
+    <li><strong>Documents audiovisuels et iconographiques.</strong> Les films donnés en 2026 ont suscité des commentaires peu attentifs (une ampoule prise pour une lampe à huile). Postures, cadres, couleurs, sons, voix off : le jury attend une analyse précise.</li>
+    <li><strong>Histoire régionale.</strong> Les ouvrages régionaux (Agulhon pour la Provence, Corbin pour le Limousin) donnent cartes et contexte ; ils étaient en libre accès en salle de préparation. Pour 2027, penser aux synthèses nationales par pays.</li>
+    <li><strong>Dossiers de presse et d'archives.</strong> La liste d'EDH 2026 contient des numéros du <em>Monde</em>, des revues militantes (<em>Regards</em>, 1934), des lettres, un monument aux morts (1921), un discours de Dorgères (<em>Haut les fourches !</em>, 1935). Ces types de documents reviendront.</li>
+    <li><strong>Distance critique.</strong> Pour des sources de propagande ou de témoins engagés, identifier émetteur, destinataire, intention (l'équivalent du regard critique sur Ibn Hawqal exigé à l'écrit médiéval).</li>
+  </ul>
+
+  <h3>Dossiers plausibles en 2027</h3>
+  <ul class="dossiers">
+    <li><span class="t">Horthy et la Hongrie en 1920</span><span class="d">Repère du cadrage ; premier régime « contre-révolutionnaire » de la liste.</span></li>
+    <li><span class="t">Un discours ou un programme de mouvement fasciste</span><span class="d">Définition du fascisme à contextualiser ; critique de l'émetteur.</span></li>
+    <li><span class="t">Une affiche ou un film de propagande</span><span class="d">Le jury insiste sur l'analyse iconographique et filmique et recommande d'éviter « propagande » pour les périodes anciennes ; ici le terme est usuel, mais à définir.</span></li>
+    <li><span class="t">Mémoires et lettres de témoins de la violence</span><span class="d">Adhésion, accommodement, résistance.</span></li>
+    <li><span class="t">Un texte sur le totalitarisme</span><span class="d">Débat historiographique du cadrage.</span></li>
+    <li><span class="t">Traités de 1919-1920 vus d'un pays vaincu</span><span class="d">Conditions d'émergence des régimes.</span></li>
+  </ul>
+</section>
+
+<section id="france" class="qsec fra">
+  <h2>La France</h2>
+  <p class="standfirst">Question de géographie du programme 2027. Le rapport indique que le Pacifique est la nouveauté de 2027 ; vérifie sur le programme si « La France » prolonge ou remplace la question « Les littoraux français » de 2026.</p>
+
+  <h3>Ce que le cadrage 2027 met en avant</h3>
+  <ul>
+    <li>Périmètre : France continentale, insulaire, maritime, dont les départements, régions et collectivités d'outre-mer, dans l'Union européenne et la mondialisation.</li>
+    <li>Thèmes : territorialisation et déterritorialisation ; aménagement du territoire ; inégalités et justice spatiale ; risques ; conflits ; métropolisation, périurbanisation, mutations rurales ; rôle des acteurs (État, Union européenne, collectivités, citoyens, entreprises).</li>
+    <li>Repères réglementaires cités : réforme des collectivités de 2010, loi MAPTAM (2014), loi NOTRe (2015), loi 3DS (février 2022).</li>
+    <li>Sources de données citées : Observatoire des territoires, Insee, Agreste.</li>
+  </ul>
+
+  <h3>Ce que le rapport 2026 enseigne</h3>
+  <ul>
+    <li><strong>Connaissances de base de l'espace français.</strong> En EDH, le jury a dû faire préciser dans quel sens coule le Rhin ; la Corse est restée inconnue pour la deuxième année ; le Limousin a été dit « plat ». Remède cité : Géoportail, cartes régionales, ouvrages d'histoire régionale.</li>
+    <li><strong>Outre-mer présent aux cartes.</strong> En 2026, les cartes incluaient Mamoudzou, Mana, Saint-Laurent-du-Maroni et la collectivité de Saint-Martin, à côté d'Aléria, Bastia, Marseille ou Marne-la-Vallée.</li>
+    <li><strong>Zonages et ordres de grandeur.</strong> EPCI, aires d'attraction, unités urbaines, bassins de vie ; revenu médian, taux de chômage, taux de pauvreté, statut d'occupation ; la notion de foncier ne se réduit pas au coût du logement ; les retraités ne forment pas un groupe monolithique et aisé.</li>
+    <li><strong>Carte topographique.</strong> C'est le document principal : commenter l'ensemble de la carte, pas une portion ; s'entraîner sur papier et sur des territoires variés ; relief, couvert végétal, transports et formes littorales sont souvent oubliés.</li>
+    <li><strong>Écrit de géographie 2026 (villes et eau).</strong> Ne pas recycler un corrigé ; ne pas séparer ressource et risque ; distinguer eau salée, douce, potable dès l'introduction ; préférer des exemples de grandes villes ; croquis intégrés à l'argumentation ; erreurs de localisation sanctionnées (Mumbai placée sur le Gange, Katrina en Californie).</li>
+  </ul>
+
+  <h3>Cartes et dossiers plausibles en 2027</h3>
+  <ul class="dossiers">
+    <li><span class="t">Carte topographique d'un espace périurbain (Marne-la-Vallée, Aix, Lyon)</span><span class="d">Cadrage : périurbanisation et métropolisation. Marne-la-Vallée figure dans la liste des cartes 2026 ; d'autres fonds sont à explorer.</span></li>
+    <li><span class="t">Carte d'une petite ville rurale (Mouthe, Vire, Capendu)</span><span class="d">Mutations rurales ; ces trois cartes figurent dans la liste 2026, preuve que le jury aime les petites villes, mais l'angle 2027 diffère.</span></li>
+    <li><span class="t">Dossier sur un EPCI et ses compétences après NOTRe</span><span class="d">Réformes territoriales citées par le cadrage.</span></li>
+    <li><span class="t">Carte ou dossier outre-mer : Guyane, Mayotte, Antilles</span><span class="d">Périmètre étendu du cadrage ; Mamoudzou, Mana, Saint-Laurent-du-Maroni et Saint-Martin figuraient déjà parmi les cartes 2026.</span></li>
+    <li><span class="t">Dossier sur un conflit d'aménagement</span><span class="d">Conflits et acteurs, avec lecture critique d'une presse engagée.</span></li>
+    <li><span class="t">Dossier sur une inégalité spatiale (santé, revenus, accès aux services)</span><span class="d">Justice spatiale ; usage de l'Observatoire des territoires.</span></li>
+  </ul>
+</section>
+
+<section id="pacifique" class="qsec pac">
+  <h2>Le Pacifique</h2>
+  <p class="standfirst">Question nouvelle de géographie. Le rapport n'a rien sur le contenu ; il apporte la méthode de l'EDG et de l'écrit.</p>
+
+  <h3>Ce que le cadrage 2027 met en avant</h3>
+  <ul>
+    <li>Idée directrice : la « mer d'îles » d'Epeli Hau'ofa (1993), le Pacifique comme espace relié et non isolé ; concept d'« iléité ». L'océan et la région, y compris les États riverains et les États-Unis.</li>
+    <li>Repères historiques : Magellan, voyages de Cook et de Darwin, 1788 (Australie), 1840 (traité de Waitangi), 1894-1895 (Taïwan), 1898 (Philippines), décolonisations et autodétermination des années 1960-1990.</li>
+    <li>Repères récents : entrée en vigueur du RCEP en 2022, violences en Nouvelle-Calédonie en 2024.</li>
+    <li>Thèmes : rivalité États-Unis-Chine ; régionalismes (APEC, ASEAN+3, CPTPP, RCEP, organisations du Pacifique) ; vulnérabilité climatique (Tuvalu, Kiribati) ; exploitation des ressources ; territoires français (Nouvelle-Calédonie, Polynésie, Wallis-et-Futuna) ; imaginaires.</li>
+    <li>Références du cadrage : Hau'ofa, Bonnemaison et Antheaume (emboîtement d'espaces), Johnston et al. (Pacific Rim), Gay, Argounès, Duvat, Grataloup.</li>
+  </ul>
+
+  <h3>Ce que le rapport 2026 enseigne</h3>
+  <ul>
+    <li><strong>Climats.</strong> Le jury note une confusion fréquente entre climat tropical et équatorial et une définition erronée du climat méditerranéen (« sec toute l'année ») : à revoir pour un espace tropical et insulaire.</li>
+    <li><strong>Échelles et croquis.</strong> Croquis à grande échelle encouragés (atoll, finage), schémas d'acteurs avec des flèches qui ont un sens, croquis intégrés et non projetés avant la conclusion.</li>
+    <li><strong>Eau salée et risques.</strong> Sur le sujet « villes et eau » de 2026, le jury a jugé l'eau salée (submersion marine) complémentaire. Pour des États insulaires, elle devient centrale ; mais le risque ne doit pas parasiter le raisonnement, ni se confondre avec la pollution.</li>
+    <li><strong>Un seul exemple ne fait pas le sujet.</strong> Le jury a regretté des copies qui concentraient leurs exemples sur de petites localités (Tawara, La Faute-sur-Mer) au détriment des grandes villes ; pour le Pacifique, penser à varier les échelles entre atolls, archipels et façade asiatique.</li>
+    <li><strong>Posture d'acceptation.</strong> Même déroutant, un dossier se traite par un raisonnement géographique et spatialisé : « le loup, les fleurs, sont des objets géographiques ».</li>
+  </ul>
+
+  <h3>Cartes et dossiers plausibles en 2027</h3>
+  <ul class="dossiers">
+    <li><span class="t">Carte topographique d'un atoll ou d'une île haute (Polynésie, Nouvelle-Calédonie)</span><span class="d">Formes littorales et relief, deux points faibles signalés en 2026.</span></li>
+    <li><span class="t">Dossier sur Tuvalu ou Kiribati face au climat</span><span class="d">Vulnérabilité climatique citée par le cadrage.</span></li>
+    <li><span class="t">Dossier sur la Nouvelle-Calédonie en 2024</span><span class="d">Repère du cadrage ; système d'acteurs à analyser avec esprit critique sur les sources.</span></li>
+    <li><span class="t">Dossier sur le RCEP et la rivalité États-Unis-Chine</span><span class="d">Régionalismes économiques ; statistiques à commenter, pas à tracer seulement.</span></li>
+    <li><span class="t">Dossier sur la ressource halieutique ou minière</span><span class="d">Exploitation des ressources ; acteurs, échelles.</span></li>
+    <li><span class="t">Dossier sur le tourisme et les imaginaires insulaires</span><span class="d">Imaginaires cités par le cadrage ; vocabulaire (mise en tourisme, patrimonialisation) à employer à bon escient.</span></li>
+  </ul>
+</section>
+
+<section id="banque">
+  <h2>Banque de sujets plausibles pour 2027</h2>
+  <p class="standfirst">Cinquante sujets d'écrit, de leçon ou de dossier, ordonnés par question et par priorité.</p>
+  <div class="aside">
+    <p><strong>Lecture.</strong> Ces sujets ne sont pas des prédictions : ils croisent le cadrage officiel 2027 avec ce que le rapport 2026 a déjà couvert. Pour la Grèce et le gouvernement impérial, la priorité A désigne un angle que le rapport 2026 laisse de côté. Pour les quatre questions nouvelles (Amériques, régimes autoritaires, France, Pacifique), le rapport ne donne que de la méthode : A désigne alors un axe central du cadrage, B un axe secondaire, C un sujet consommé ou hors cadrage.</p>
+  </div>
+  <div class="filters">
+    <div class="fgroup" data-filter="q"><span class="flabel">Question</span>
+      <button type="button" class="chip" data-value="all" aria-pressed="true">Toutes</button>
+      <button type="button" class="chip c-gre" data-value="gre" aria-pressed="false"><i class="fig a"></i>Travailler en Grèce ancienne</button>
+      <button type="button" class="chip c-imp" data-value="imp" aria-pressed="false"><i class="fig a"></i>Gouvernement impérial, VIIIe-XIe s.</button>
+      <button type="button" class="chip c-ame" data-value="ame" aria-pressed="false"><i class="fig a"></i>Les Amériques, années 1560-années 1660</button>
+      <button type="button" class="chip c-aut" data-value="aut" aria-pressed="false"><i class="fig a"></i>Régimes et mouvements autoritaires, 1918-1939</button>
+      <button type="button" class="chip c-fra" data-value="fra" aria-pressed="false"><i class="fig a"></i>La France</button>
+      <button type="button" class="chip c-pac" data-value="pac" aria-pressed="false"><i class="fig a"></i>Le Pacifique</button>
+    </div>
+    <div class="fgroup" data-filter="p"><span class="flabel">Priorité</span>
+      <button type="button" class="chip" data-value="all" aria-pressed="true">Toutes</button>
+      <button type="button" class="chip" data-value="A" aria-pressed="false"><i class="fig a"></i>A</button>
+      <button type="button" class="chip" data-value="B" aria-pressed="false"><i class="fig b"></i>B</button>
+      <button type="button" class="chip" data-value="C" aria-pressed="false"><i class="fig c"></i>C</button>
+    </div>
+  </div>
+  <p class="count" id="count" aria-live="polite"></p>
+  <h3 class="group-title gre" data-group="gre"><i class="fig a"></i>Travailler en Grèce ancienne</h3>
+  <div class="subjects gre" data-group="gre">
+      <article class="subject gre" data-q="gre" data-p="A"><h4>« Travailler la terre en Grèce ancienne (VIIIe-IVe siècles av. n.è.) »</h4><p class="variant">Variante : « Paysans, domaines et main-d'œuvre rurale en Grèce archaïque et classique »</p><p class="tags"><span><i class="fig a"></i>Priorité A</span></p><dl><dt>Axe du cadrage</dt><dd>Ateliers ruraux et oikos (cadrage).</dd><dt>Pourquoi</dt><dd>L'écrit 2026 traitait l'oikos par le genre et le statut ; le travail agricole lui-même (outils, calendrier, tenures, main-d'œuvre) n'a servi que d'exemple. À l'oral, Hésiode (<em>Travaux et jours</em>) et l'oikos de Laërte sont déjà tombés.</dd><dt>Pièges</dt><dd>Paysan-citoyen autarcique idéalisé ; Hésiode érigé en modèle unique sur trois siècles ; dépendances rurales oubliées (hilotes, servitude pour dettes).</dd></dl></article>
+      <article class="subject gre" data-q="gre" data-p="A"><h4>« Artisans et ateliers dans les cités grecques »</h4><p class="variant">Variante : « Les métiers urbains et ruraux, de l'archaïque au IVe siècle »</p><p class="tags"><span><i class="fig a"></i>Priorité A</span></p><dl><dt>Axe du cadrage</dt><dd>Quartiers artisanaux urbains, ateliers (cadrage).</dd><dt>Pourquoi</dt><dd>Les dossiers d'oral 2026 ont multiplié les métiers (bronzier, foulon, cordonnier, textile), mais aucun sujet d'écrit n'a porté dessus.</dd><dt>Pièges</dt><dd>Plaquer « technè = savoir-faire, ergon = acte » sans portée concrète (reproché par le jury) ; généraliser le bâtiment Z.</dd></dl></article>
+      <article class="subject gre" data-q="gre" data-p="A"><h4>« Les grands chantiers dans les cités grecques : qui travaille, qui paie ? »</h4><p class="variant">Variante : « Bâtir, financer, rémunérer »</p><p class="tags"><span><i class="fig a"></i>Priorité A</span></p><dl><dt>Axe du cadrage</dt><dd>Grands chantiers, comptes, décrets honorifiques (cadrage).</dd><dt>Pourquoi</dt><dd>Le cadrage nomme les chantiers et les comptes comme sources ; le rapport 2026 ne les évoque qu'à l'oral (grands travaux de Périclès chez Plutarque).</dd><dt>Pièges</dt><dd>Confondre misthos et salaire ; faire du citoyen un « travailleur civique » (le « métier de citoyen » est hors sujet en Grèce).</dd></dl></article>
+      <article class="subject gre" data-q="gre" data-p="A"><h4>« La guerre est-elle un travail ? Soldats, mercenaires, rameurs »</h4><p class="variant">Variante : « Servir la cité en armes, être payé pour combattre »</p><p class="tags"><span><i class="fig a"></i>Priorité A</span></p><dl><dt>Axe du cadrage</dt><dd>Travail et citoyenneté ; la guerre comme travail rémunéré (cadrage).</dd><dt>Pourquoi</dt><dd>Entrée explicite du cadrage qui ne ressort pas du rapport 2026.</dd><dt>Pièges</dt><dd>Réduire la guerre à un devoir civique ; projeter l'idée moderne de salaire.</dd></dl></article>
+      <article class="subject gre" data-q="gre" data-p="B"><h4>« Travail, religion et fêtes en Grèce ancienne »</h4><p class="variant">Variante : « Travailler pour les dieux, travailler avec eux »</p><p class="tags"><span><i class="fig b"></i>Priorité B</span></p><dl><dt>Axe du cadrage</dt><dd>Héphaïstos, Athéna Ergané, fêtes (cadrage).</dd><dt>Pourquoi</dt><dd>Un dossier d'oral 2026 s'en approche (travailler au sanctuaire de Delphes) ; l'écrit n'a pas porté dessus.</dd><dt>Pièges</dt><dd>Sortir du travail pour faire un exposé sur la religion grecque ; oublier les sources épigraphiques.</dd></dl></article>
+      <article class="subject gre" data-q="gre" data-p="B"><h4>« Mines et carrières : le travail contraint à l'épreuve des sources »</h4><p class="variant">Variante : « Exploiter les ressources du sous-sol »</p><p class="tags"><span><i class="fig b"></i>Priorité B</span></p><dl><dt>Axe du cadrage</dt><dd>Mines, carrières (cadrage).</dd><dt>Pourquoi</dt><dd>Le Laurion est tombé en dossier d'oral 2026 ; à l'écrit, le sujet reste possible sous l'angle de l'organisation du travail.</dd><dt>Pièges</dt><dd>Se limiter à Athènes ; ignorer les carrières et les chantiers ; ne pas confronter les sources littéraires aux realia.</dd></dl></article>
+      <article class="subject gre" data-q="gre" data-p="B"><h4>« Commercer, prêter, transporter : agora et emporion »</h4><p class="variant">Variante : « Les gens de l'échange »</p><p class="tags"><span><i class="fig b"></i>Priorité B</span></p><dl><dt>Axe du cadrage</dt><dd>Agora, emporion, contrats (cadrage).</dd><dt>Pourquoi</dt><dd>Plusieurs dossiers 2026 (prêt maritime chez Démosthène, banque chez Isocrate, marchands de blé chez Lysias) ; pas d'écrit dessus.</dd><dt>Pièges</dt><dd>Confondre profession et citoyenneté ; oublier le statut des étrangers résidents.</dd></dl></article>
+      <article class="subject gre" data-q="gre" data-p="C"><h4>« Les femmes au travail en Grèce ancienne »</h4><p class="variant">Variante : « Travailler selon le genre »</p><p class="tags"><span><i class="fig c"></i>Priorité C</span></p><dl><dt>Axe du cadrage</dt><dd>Femmes (cadrage).</dd><dt>Pourquoi</dt><dd>Angle consommé par le sujet d'écrit 2026 (genre et statut) : peu de chances d'être reposé tel quel à l'écrit, mais le corrigé reste une matière précieuse pour tout autre sujet.</dd><dt>Pièges</dt><dd>Répéter le corrigé 2026 ; faire des femmes un bloc homogène ; oublier la hiérarchie des statuts.</dd></dl></article>
+  </div>
+  <h3 class="group-title imp" data-group="imp"><i class="fig a"></i>Gouvernement impérial, VIIIe-XIe s.</h3>
+  <div class="subjects imp" data-group="imp">
+      <article class="subject imp" data-q="imp" data-p="A"><h4>« Les relais locaux du gouvernement impérial »</h4><p class="variant">Variante : « Élites, administration provinciale, délégation d'autorité »</p><p class="tags"><span><i class="fig a"></i>Priorité A</span></p><dl><dt>Axe du cadrage</dt><dd>Administration en province et délégation à des élites (cadrage).</dd><dt>Pourquoi</dt><dd>Le commentaire 2026 portait sur la frontière byzantine ; l'Occident latin n'a pas eu d'écrit. Le jury rappelle qu'un empire se gouverne par des relais locaux.</dd><dt>Pièges</dt><dd>Tout expliquer par l'idéologie ; confondre royaume et empire ; tout ramener à Charlemagne.</dd></dl></article>
+      <article class="subject imp" data-q="imp" data-p="A"><h4>« Langues et écritures du gouvernement impérial : grec, arabe, latin »</h4><p class="variant">Variante : « Gouverner par l'écrit et par la traduction »</p><p class="tags"><span><i class="fig a"></i>Priorité A</span></p><dl><dt>Axe du cadrage</dt><dd>Gouvernement linguistique (cadrage).</dd><dt>Pourquoi</dt><dd>Entrée du cadrage rarement visible dans les dossiers 2026 ; elle se prête à la comparaison entre trois mondes.</dd><dt>Pièges</dt><dd>Traiter chaque langue séparément ; oublier que la traduction déforme (Ibn Hawqal rend mal les termes techniques byzantins, relève le jury).</dd></dl></article>
+      <article class="subject imp" data-q="imp" data-p="A"><h4>« Les communautés locales face aux empires »</h4><p class="variant">Variante : « Villes, monastères, minorités religieuses »</p><p class="tags"><span><i class="fig a"></i>Priorité A</span></p><dl><dt>Axe du cadrage</dt><dd>Communautés locales, élites (cadrage).</dd><dt>Pourquoi</dt><dd>Défaut relevé en 2026 : généralités sur « le gouvernement impérial » sans milieu précis.</dd><dt>Pièges</dt><dd>Plaquer des notions (dhimma, monachisme) sans chronologie ; confondre « musulman » et « islamique ».</dd></dl></article>
+      <article class="subject imp" data-q="imp" data-p="A"><h4>« Après 945 : empires fragmentés et recomposés »</h4><p class="variant">Variante : « Bouyides, Fatimides, Omeyyades de Cordoue, Ottoniens, Macédoniens »</p><p class="tags"><span><i class="fig a"></i>Priorité A</span></p><dl><dt>Axe du cadrage</dt><dd>945, 996-1021, 1002, 1025, 1031 (cadrage).</dd><dt>Pourquoi</dt><dd>Le jury reproche de réduire le paysage islamique à trois califats sans dynasties régionales (Hamdanides d'Alep).</dd><dt>Pièges</dt><dd>Lire la fragmentation comme simple déclin ; sacrifier le versant byzantin ou latin.</dd></dl></article>
+      <article class="subject imp" data-q="imp" data-p="B"><h4>« Monnaie et marché dans les empires »</h4><p class="variant">Variante : « Gouverner par la monnaie »</p><p class="tags"><span><i class="fig b"></i>Priorité B</span></p><dl><dt>Axe du cadrage</dt><dd>Gouvernement monétaire et fiscal (cadrage).</dd><dt>Pourquoi</dt><dd>Le commentaire 2026 mobilisait dinars et nomismata ; le jury rappelle que les monnaies ne servent pas qu'à colporter l'image du souverain.</dd><dt>Pièges</dt><dd>Réduire la monnaie à l'iconographie ; mal situer les valeurs (dinar et nomisma proches, environ 4,30 g d'or).</dd></dl></article>
+      <article class="subject imp" data-q="imp" data-p="B"><h4>« Légitimer l'empire : couronnement, titulature, cérémonial »</h4><p class="variant">Variante : « Théories du pouvoir impérial »</p><p class="tags"><span><i class="fig b"></i>Priorité B</span></p><dl><dt>Axe du cadrage</dt><dd>Titulature, iconographie, sacralisation (cadrage).</dd><dt>Pourquoi</dt><dd>Plusieurs dossiers d'oral 2026 (Livre des cérémonies, couronnement, représentation du pouvoir ottonien) ; moins d'écrit.</dd><dt>Pièges</dt><dd>L'idéologie seule ; oublier que le rituel légitime moins qu'il ne manifeste (jury).</dd></dl></article>
+      <article class="subject imp" data-q="imp" data-p="B"><h4>« Le calife et le basileus : un gouvernement comparé »</h4><p class="variant">Variante : « Deux manières de gouverner un empire »</p><p class="tags"><span><i class="fig b"></i>Priorité B</span></p><dl><dt>Axe du cadrage</dt><dd>Comparaison, lien HGGSP (cadrage).</dd><dt>Pourquoi</dt><dd>Le commentaire 2026 était comparatiste ; une dissertation comparée exige de maîtriser symétriquement les deux versants, ce que le jury juge inégal (Byzance moins bien connue).</dd><dt>Pièges</dt><dd>Déséquilibre en faveur du califat ; insérer l'Occident quand le sujet ne le demande pas.</dd></dl></article>
+      <article class="subject imp" data-q="imp" data-p="C"><h4>« Les frontières byzantino-islamiques, lieu du gouvernement »</h4><p class="variant">Variante : « Raids, captifs, fiscalité, information »</p><p class="tags"><span><i class="fig c"></i>Priorité C</span></p><dl><dt>Axe du cadrage</dt><dd>Frontières (cadrage).</dd><dt>Pourquoi</dt><dd>Angle du commentaire 2026 (Ibn Hawqal) : consommé à l'écrit, à garder comme acquis pour l'oral.</dd><dt>Pièges</dt><dd>Reprendre le corrigé 2026 ; oublier l'Italie méridionale face à la Sicile islamique.</dd></dl></article>
+  </div>
+  <h3 class="group-title ame" data-group="ame"><i class="fig a"></i>Les Amériques, années 1560-années 1660</h3>
+  <div class="subjects ame" data-group="ame">
+      <article class="subject ame" data-q="ame" data-p="A"><h4>« Travailler et être contraint dans les Amériques, années 1560-années 1660 »</h4><p class="variant">Variante : « Esclavage, mita, repartimiento, encomienda, salariat, dettes »</p><p class="tags"><span><i class="fig a"></i>Priorité A</span></p><dl><dt>Axe du cadrage</dt><dd>Formes de travail (cadrage).</dd><dt>Pourquoi</dt><dd>Axe le plus détaillé du cadrage. Pour la méthode, le jury 2026 récompense les copies qui montrent le concret des vies de travail.</dd><dt>Pièges</dt><dd>Réduire à l'esclavage atlantique ; oublier salariat et travail pour dettes ; confondre les institutions.</dd></dl></article>
+      <article class="subject ame" data-q="ame" data-p="A"><h4>« Gouverner les Amériques : institutions, Église et sociétés indigènes »</h4><p class="variant">Variante : « Domination et négociation »</p><p class="tags"><span><i class="fig a"></i>Priorité A</span></p><dl><dt>Axe du cadrage</dt><dd>Formes de domination, institutions, Église (cadrage).</dd><dt>Pourquoi</dt><dd>Le jury 2026 demande de définir « pouvoir » et de ne pas en voir partout.</dd><dt>Pièges</dt><dd>Voir du pouvoir partout ; ne parler que de la Couronne d'Espagne.</dd></dl></article>
+      <article class="subject ame" data-q="ame" data-p="A"><h4>« Résister, négocier, s'allier : les Amérindiens face aux Européens »</h4><p class="variant">Variante : « L'agentivité indigène »</p><p class="tags"><span><i class="fig a"></i>Priorité A</span></p><dl><dt>Axe du cadrage</dt><dd>Agentivité indigène : alliance, résistance, négociation (cadrage).</dd><dt>Pourquoi</dt><dd>L'« agentivité » a été sévèrement relevée en 2026 comme concept mal compris.</dd><dt>Pièges</dt><dd>En faire un slogan ; oublier que, face à un rapport de forces déséquilibré, les marges sont réduites.</dd></dl></article>
+      <article class="subject ame" data-q="ame" data-p="A"><h4>« Des mines aux plantations : exploiter les ressources américaines »</h4><p class="variant">Variante : « Métaux précieux, sucre, teintures, fourrures, pêche »</p><p class="tags"><span><i class="fig a"></i>Priorité A</span></p><dl><dt>Axe du cadrage</dt><dd>Exploitation des ressources (cadrage).</dd><dt>Pourquoi</dt><dd>Cadre économique du cadrage ; le jury attend chiffres et ordres de grandeur.</dd><dt>Pièges</dt><dd>Ne parler que de l'argent andin ; plan strictement chronologique.</dd></dl></article>
+      <article class="subject ame" data-q="ame" data-p="A"><h4>« Les Africains déportés aux Amériques avant 1660 »</h4><p class="variant">Variante : « Traite, asiento, mondes serviles »</p><p class="tags"><span><i class="fig a"></i>Priorité A</span></p><dl><dt>Axe du cadrage</dt><dd>Esclavage ; chiffre de déportation cité par le cadrage (à vérifier).</dd><dt>Pourquoi</dt><dd>Le jury 2026 note que la diversité du monde servile est rarement prise en compte.</dd><dt>Pièges</dt><dd>Anachronisme de la grande plantation sucrière de la fin du siècle ; oublier les engagés, les libres de couleur.</dd></dl></article>
+      <article class="subject ame" data-q="ame" data-p="B"><h4>« Circuler dans les Amériques : galion de Manille, asiento, migrations »</h4><p class="variant">Variante : « Réseaux transpacifiques et atlantiques »</p><p class="tags"><span><i class="fig b"></i>Priorité B</span></p><dl><dt>Axe du cadrage</dt><dd>Migrations et circulations (cadrage).</dd><dt>Pourquoi</dt><dd>Le cadrage cite le galion de Manille et l'asiento ; la dimension transpacifique est facile à oublier.</dd><dt>Pièges</dt><dd>Cantonner l'étude à l'Atlantique.</dd></dl></article>
+      <article class="subject ame" data-q="ame" data-p="B"><h4>« Les puissances non ibériques en Amérique (Français, Anglais, Néerlandais) »</h4><p class="variant">Variante : « Nouvelle-Amsterdam (1624), Antilles, Guyanes »</p><p class="tags"><span><i class="fig b"></i>Priorité B</span></p><dl><dt>Axe du cadrage</dt><dd>Puissances non ibériques ; 1624 ; 1660 (cadrage).</dd><dt>Pourquoi</dt><dd>Bornes explicites du cadrage ; le traité de 1660 est une entrée d'oral naturelle.</dd><dt>Pièges</dt><dd>Tout lire à partir de l'Espagne ; confondre colonies de peuplement et colonies de plantation.</dd></dl></article>
+      <article class="subject ame" data-q="ame" data-p="B"><h4>« Sociétés coloniales : hiérarchies, engagés et « petits blancs » »</h4><p class="variant">Variante : « Qui est quoi dans les sociétés insulaires »</p><p class="tags"><span><i class="fig b"></i>Priorité B</span></p><dl><dt>Axe du cadrage</dt><dd>Domination et institutions (cadrage).</dd><dt>Pourquoi</dt><dd>Le jury 2026 relève que engagés et « petits blancs » sont oubliés au profit des seuls esclaves.</dd><dt>Pièges</dt><dd>Ignorer la couleur de peau comme critère de statut dans les sociétés insulaires.</dd></dl></article>
+      <article class="subject ame" data-q="ame" data-p="C"><h4>« La conquête de l'Amérique (1492-1550) »</h4><p class="variant">Variante : « Hors bornes »</p><p class="tags"><span><i class="fig c"></i>Priorité C</span></p><dl><dt>Axe du cadrage</dt><dd>Hors période (le programme commence aux années 1560).</dd><dt>Pourquoi</dt><dd>Le programme part des années 1560 ; la conquête ne sert que de contexte.</dd><dt>Pièges</dt><dd>Faire de la conquête le cœur du devoir.</dd></dl></article>
+  </div>
+  <h3 class="group-title aut" data-group="aut"><i class="fig a"></i>Régimes et mouvements autoritaires, 1918-1939</h3>
+  <div class="subjects aut" data-group="aut">
+      <article class="subject aut" data-q="aut" data-p="A"><h4>« Comment naissent les régimes autoritaires en Europe ? (1918-1939) »</h4><p class="variant">Variante : « Sorties de guerre, crises, traités de 1919-1920 »</p><p class="tags"><span><i class="fig a"></i>Priorité A</span></p><dl><dt>Axe du cadrage</dt><dd>Conditions d'émergence (cadrage).</dd><dt>Pourquoi</dt><dd>Premier axe du cadrage ; repère de mars 1920 (Horthy) pour sortir des seuls cas allemand et italien.</dd><dt>Pièges</dt><dd>Plan chronologique sans césure ; faire de 1933 le centre.</dd></dl></article>
+      <article class="subject aut" data-q="aut" data-p="A"><h4>« Fascisme(s) en Europe : définir, comparer »</h4><p class="variant">Variante : « Italie, Allemagne, autres régimes »</p><p class="tags"><span><i class="fig a"></i>Priorité A</span></p><dl><dt>Axe du cadrage</dt><dd>Définition contextualisée du fascisme (cadrage).</dd><dt>Pourquoi</dt><dd>Le jury exige de définir les termes avant d'argumenter.</dd><dt>Pièges</dt><dd>Étiqueter « fasciste » tout régime autoritaire ; réciter des définitions toutes faites.</dd></dl></article>
+      <article class="subject aut" data-q="aut" data-p="A"><h4>« Gouverner par la violence et la propagande »</h4><p class="variant">Variante : « Contrainte et persuasion »</p><p class="tags"><span><i class="fig a"></i>Priorité A</span></p><dl><dt>Axe du cadrage</dt><dd>Propagande et violence (cadrage).</dd><dt>Pourquoi</dt><dd>Le jury 2026 a jugé « maltraités » les documents iconographiques et audiovisuels : une analyse précise est attendue.</dd><dt>Pièges</dt><dd>Propagande comme manipulation unilatérale ; images lues sans condition de production.</dd></dl></article>
+      <article class="subject aut" data-q="aut" data-p="A"><h4>« Adhérer, s'accommoder, résister »</h4><p class="variant">Variante : « Les sociétés face aux régimes »</p><p class="tags"><span><i class="fig a"></i>Priorité A</span></p><dl><dt>Axe du cadrage</dt><dd>Adhésion, accommodement, résistance (cadrage).</dd><dt>Pourquoi</dt><dd>Le jury 2026 note que l'histoire sociale est peu familière aux candidats, plus sensibles au politique et aux représentations.</dd><dt>Pièges</dt><dd>Ne traiter que les élites politiques ; opposer simplement consentement et contrainte.</dd></dl></article>
+      <article class="subject aut" data-q="aut" data-p="B"><h4>« Les régimes autoritaires d'Europe centrale, orientale et méridionale »</h4><p class="variant">Variante : « Hongrie, Pologne, Portugal, Balkans, pays baltes »</p><p class="tags"><span><i class="fig b"></i>Priorité B</span></p><dl><dt>Axe du cadrage</dt><dd>Liste de régimes de 1920 à 1939 (cadrage).</dd><dt>Pourquoi</dt><dd>Le cadrage demande d'aller au-delà de l'Italie et de l'Allemagne.</dd><dt>Pièges</dt><dd>Tout ramener aux deux grands cas ; ignorer les spécificités nationales.</dd></dl></article>
+      <article class="subject aut" data-q="aut" data-p="B"><h4>« Le totalitarisme : un concept pour l'Europe de l'entre-deux-guerres ? »</h4><p class="variant">Variante : « Débat historiographique »</p><p class="tags"><span><i class="fig b"></i>Priorité B</span></p><dl><dt>Axe du cadrage</dt><dd>Débat sur le totalitarisme (cadrage).</dd><dt>Pourquoi</dt><dd>Sujet de réflexion typique, mais le jury rappelle que « c'est une agrégation d'histoire et non d'historiographie ».</dd><dt>Pièges</dt><dd>Dissertation de pure historiographie, déconnectée de cas précis.</dd></dl></article>
+      <article class="subject aut" data-q="aut" data-p="B"><h4>« Cultures politiques de l'autoritarisme : Église, armée, jeunesses »</h4><p class="variant">Variante : « Les milieux porteurs »</p><p class="tags"><span><i class="fig b"></i>Priorité B</span></p><dl><dt>Axe du cadrage</dt><dd>Cultures politiques (cadrage).</dd><dt>Pourquoi</dt><dd>Axe du cadrage qui se traite par des exemples précis plutôt que par des généralités.</dd><dt>Pièges</dt><dd>Rester dans les idées sans acteurs ni lieux.</dd></dl></article>
+      <article class="subject aut" data-q="aut" data-p="B"><h4>« L'Espagne de la guerre civile à la victoire franquiste »</h4><p class="variant">Variante : « Cas limite de la période (cas à confirmer dans le cadrage) »</p><p class="tags"><span><i class="fig b"></i>Priorité B</span></p><dl><dt>Axe du cadrage</dt><dd>Cas non vérifié dans ce que j'ai consulté du cadrage ; à confirmer.</dd><dt>Pourquoi</dt><dd>Cas régulièrement associé à l'entre-deux-guerres européen ; à vérifier qu'il figure dans la liste du cadrage.</dd><dt>Pièges</dt><dd>Traiter une guerre civile comme un régime déjà stabilisé.</dd></dl></article>
+      <article class="subject aut" data-q="aut" data-p="C"><h4>« L'URSS stalinienne »</h4><p class="variant">Variante : « Le contre-champ »</p><p class="tags"><span><i class="fig c"></i>Priorité C</span></p><dl><dt>Axe du cadrage</dt><dd>L'URSS n'est traitée que comme contre-champ (cadrage).</dd><dt>Pourquoi</dt><dd>Exclue comme objet principal du programme.</dd><dt>Pièges</dt><dd>En faire un chapitre au lieu d'un point de comparaison.</dd></dl></article>
+  </div>
+  <h3 class="group-title fra" data-group="fra"><i class="fig a"></i>La France</h3>
+  <div class="subjects fra" data-group="fra">
+      <article class="subject fra" data-q="fra" data-p="A"><h4>« Les inégalités territoriales en France : mesurer, expliquer, corriger »</h4><p class="variant">Variante : « Justice spatiale »</p><p class="tags"><span><i class="fig a"></i>Priorité A</span></p><dl><dt>Axe du cadrage</dt><dd>Inégalités et justice spatiale (cadrage).</dd><dt>Pourquoi</dt><dd>Axe central du cadrage ; le jury exige maîtrise des indicateurs (revenu médian, taux de pauvreté, catégories socio-professionnelles).</dd><dt>Pièges</dt><dd>Opposer simplement métropoles et périphéries ; statistiques commentées sans lire les catégories (retraités monolithiques).</dd></dl></article>
+      <article class="subject fra" data-q="fra" data-p="A"><h4>« Métropolisation et périurbanisation en France »</h4><p class="variant">Variante : « Concentration et étalement »</p><p class="tags"><span><i class="fig a"></i>Priorité A</span></p><dl><dt>Axe du cadrage</dt><dd>Métropolisation, périurbanisation (cadrage).</dd><dt>Pourquoi</dt><dd>Axe du cadrage ; ordres de grandeur des seuils urbains attendus.</dd><dt>Pièges</dt><dd>Tout lire par les grandes villes ; oublier les villes moyennes et les périphéries.</dd></dl></article>
+      <article class="subject fra" data-q="fra" data-p="A"><h4>« Aménager les territoires français depuis les lois MAPTAM et NOTRe »</h4><p class="variant">Variante : « Acteurs, compétences, échelles »</p><p class="tags"><span><i class="fig a"></i>Priorité A</span></p><dl><dt>Axe du cadrage</dt><dd>Aménagement ; réformes de 2010, 2014, 2015, 2022 (cadrage).</dd><dt>Pourquoi</dt><dd>Réformes explicitement citées ; le jury demande de qualifier acteurs et échelles.</dd><dt>Pièges</dt><dd>Réciter les lois sans montrer leurs effets spatiaux.</dd></dl></article>
+      <article class="subject fra" data-q="fra" data-p="A"><h4>« La France d'outre-mer : territoires, risques et conflits »</h4><p class="variant">Variante : « Guyane, Antilles, océan Indien »</p><p class="tags"><span><i class="fig a"></i>Priorité A</span></p><dl><dt>Axe du cadrage</dt><dd>Périmètre étendu à l'outre-mer (cadrage).</dd><dt>Pourquoi</dt><dd>Les cartes 2026 comprenaient des fonds ultramarins ; l'outre-mer est dans le périmètre de la question.</dd><dt>Pièges</dt><dd>Traiter l'outre-mer comme un chapitre final ou un exotisme.</dd></dl></article>
+      <article class="subject fra" data-q="fra" data-p="B"><h4>« Les campagnes françaises : mutations et nouvelles ruralités »</h4><p class="variant">Variante : « Mutations rurales »</p><p class="tags"><span><i class="fig b"></i>Priorité B</span></p><dl><dt>Axe du cadrage</dt><dd>Mutations rurales (cadrage).</dd><dt>Pourquoi</dt><dd>Axe du cadrage ; le jury demande d'employer à bon escient bocage, openfield, mitage.</dd><dt>Pièges</dt><dd>Vocabulaire plaqué ; campagne = agriculture.</dd></dl></article>
+      <article class="subject fra" data-q="fra" data-p="B"><h4>« Les risques en France : aléas, vulnérabilités, gestion »</h4><p class="variant">Variante : « Hexagone et outre-mer »</p><p class="tags"><span><i class="fig b"></i>Priorité B</span></p><dl><dt>Axe du cadrage</dt><dd>Risques (cadrage).</dd><dt>Pourquoi</dt><dd>Le jury 2026 rappelle qu'une étude environnementale inclut les risques sans s'y résumer, et qu'il faut distinguer risque et pollution.</dd><dt>Pièges</dt><dd>Réduire le sujet aux catastrophes ; confondre risque et pollution.</dd></dl></article>
+      <article class="subject fra" data-q="fra" data-p="B"><h4>« Les conflits d'aménagement en France »</h4><p class="variant">Variante : « Acteurs en tension »</p><p class="tags"><span><i class="fig b"></i>Priorité B</span></p><dl><dt>Axe du cadrage</dt><dd>Conflits ; rôle des acteurs (cadrage).</dd><dt>Pourquoi</dt><dd>Le jury demande une analyse critique des sources engagées et de leurs auteurs.</dd><dt>Pièges</dt><dd>Prêter des intentions aux territoires ; lire un témoignage comme une donnée.</dd></dl></article>
+      <article class="subject fra" data-q="fra" data-p="C"><h4>« Les littoraux français »</h4><p class="variant">Variante : « Question de 2026 »</p><p class="tags"><span><i class="fig c"></i>Priorité C</span></p><dl><dt>Axe du cadrage</dt><dd>Hors intitulé 2027 (à vérifier).</dd><dt>Pourquoi</dt><dd>Question présente au programme 2026 ; l'oral 2026 a utilisé 21 dossiers dessus. Reprise possible comme exemple, non comme intitulé.</dd><dt>Pièges</dt><dd>Recycler un corrigé de l'an passé (le jury sanctionne cette habitude).</dd></dl></article>
+  </div>
+  <h3 class="group-title pac" data-group="pac"><i class="fig a"></i>Le Pacifique</h3>
+  <div class="subjects pac" data-group="pac">
+      <article class="subject pac" data-q="pac" data-p="A"><h4>« Le Pacifique, un espace de rivalité entre les États-Unis et la Chine »</h4><p class="variant">Variante : « Puissances et régionalismes »</p><p class="tags"><span><i class="fig a"></i>Priorité A</span></p><dl><dt>Axe du cadrage</dt><dd>Rivalité États-Unis-Chine ; régionalismes (cadrage).</dd><dt>Pourquoi</dt><dd>Axe central du cadrage ; recoupe les dates 2022 (RCEP) et les organisations régionales.</dd><dt>Pièges</dt><dd>Ne parler que des États riverains ; négliger les petits États insulaires.</dd></dl></article>
+      <article class="subject pac" data-q="pac" data-p="A"><h4>« Le Pacifique, une mer d'îles »</h4><p class="variant">Variante : « Penser l'espace à partir des îles »</p><p class="tags"><span><i class="fig a"></i>Priorité A</span></p><dl><dt>Axe du cadrage</dt><dd>Hau'ofa (1993), iléité (cadrage).</dd><dt>Pourquoi</dt><dd>Idée directrice du cadrage ; le jury attend des notions définies, pas seulement citées.</dd><dt>Pièges</dt><dd>Citer Hau'ofa sans l'articuler à des exemples précis ; opposer simplement isolement et connexion.</dd></dl></article>
+      <article class="subject pac" data-q="pac" data-p="A"><h4>« Les territoires français du Pacifique »</h4><p class="variant">Variante : « Nouvelle-Calédonie, Polynésie, Wallis-et-Futuna »</p><p class="tags"><span><i class="fig a"></i>Priorité A</span></p><dl><dt>Axe du cadrage</dt><dd>Territoires français ; violences de 2024 (cadrage).</dd><dt>Pourquoi</dt><dd>Croisement avec « La France » ; la presse engagée exige une lecture critique.</dd><dt>Pièges</dt><dd>Réduire à l'actualité de 2024 ; oublier l'histoire coloniale et ses acteurs.</dd></dl></article>
+      <article class="subject pac" data-q="pac" data-p="A"><h4>« Les États insulaires face au changement climatique »</h4><p class="variant">Variante : « Tuvalu, Kiribati, vulnérabilité »</p><p class="tags"><span><i class="fig a"></i>Priorité A</span></p><dl><dt>Axe du cadrage</dt><dd>Vulnérabilité climatique (cadrage).</dd><dt>Pourquoi</dt><dd>Le jury 2026 invite à la précision sur les climats, la notion de changements globaux et la boucle de rétroaction.</dd><dt>Pièges</dt><dd>Un seul exemple; confondre risque et pollution; discours catastrophiste.</dd></dl></article>
+      <article class="subject pac" data-q="pac" data-p="B"><h4>« Régionalismes et intégrations dans le Pacifique »</h4><p class="variant">Variante : « APEC, ASEAN+3, CPTPP, RCEP »</p><p class="tags"><span><i class="fig b"></i>Priorité B</span></p><dl><dt>Axe du cadrage</dt><dd>Régionalismes (cadrage).</dd><dt>Pourquoi</dt><dd>Sujet de synthèse où la lecture critique des statistiques est attendue.</dd><dt>Pièges</dt><dd>Énumérer les sigles ; ignorer les petits organismes régionaux du Pacifique.</dd></dl></article>
+      <article class="subject pac" data-q="pac" data-p="B"><h4>« Ressources et exploitation dans le Pacifique »</h4><p class="variant">Variante : « Pêche, minerais, énergie »</p><p class="tags"><span><i class="fig b"></i>Priorité B</span></p><dl><dt>Axe du cadrage</dt><dd>Exploitation des ressources (cadrage).</dd><dt>Pourquoi</dt><dd>Sujet à acteurs multiples, que le jury veut voir qualifiés (qui exploite, qui finance, pour qui).</dd><dt>Pièges</dt><dd>Parler des ressources sans acteurs ; oublier les conflits d'usage.</dd></dl></article>
+      <article class="subject pac" data-q="pac" data-p="B"><h4>« Imaginaires et mises en tourisme des îles du Pacifique »</h4><p class="variant">Variante : « Représentations et pratiques »</p><p class="tags"><span><i class="fig b"></i>Priorité B</span></p><dl><dt>Axe du cadrage</dt><dd>Imaginaires (cadrage).</dd><dt>Pourquoi</dt><dd>Le jury invite à manier « mise en tourisme », « patrimonialisation » à bon escient.</dd><dt>Pièges</dt><dd>Vocabulaire plaqué ; analyse paysagère absente.</dd></dl></article>
+      <article class="subject pac" data-q="pac" data-p="C"><h4>« L'Asie de l'Est dans la mondialisation »</h4><p class="variant">Variante : « Hors-sujet probable »</p><p class="tags"><span><i class="fig c"></i>Priorité C</span></p><dl><dt>Axe du cadrage</dt><dd>Au bord du cadrage (États riverains du Pacifique).</dd><dt>Pourquoi</dt><dd>Les États riverains font partie de l'espace, mais un sujet sur l'Asie de l'Est seule serait hors question.</dd><dt>Pièges</dt><dd>Dériver vers la géographie de la Chine ou du Japon sans lien avec l'océan.</dd></dl></article>
+  </div>
+</section>
+
+<section id="croisees">
+  <h2>Études de cas à la croisée</h2>
+  <p class="standfirst">Six rapprochements qui servent à plusieurs questions à la fois. Chacun est une piste de travail, pas une annonce de sujet.</p>
+
+  <h3>Mines et travail contraint : le Laurion et les Andes</h3>
+  <p class="qtags"><span class="qt gre">Travailler en Grèce ancienne</span><span class="qt ame">Les Amériques</span></p>
+  <p>Les deux cadrages nomment les mines. Le rapprochement oblige à nommer les institutions (misthos, location d'esclaves ; mita, repartimiento, travail salarié) au lieu de parler de « travail forcé » en général. Le jury 2026 rappelle d'ailleurs qu'on ne projette pas le salaire moderne sur la Grèce.</p>
+
+  <h3>Esclavage grec et esclavage américain</h3>
+  <p class="qtags"><span class="qt gre">Travailler en Grèce ancienne</span><span class="qt ame">Les Amériques</span></p>
+  <p>Le rapport 2026 sanctionne l'idée qu'esclavage ou prostitution seraient des moyens de « gagner sa vie ». Même vigilance pour les Amériques : l'esclave est un bien meuble mais aussi un acteur social dont l'autonomie reste exceptionnelle. Attention aux anachronismes dans les deux sens.</p>
+
+  <h3>Gouverner à distance : empires du haut Moyen Âge et Amériques</h3>
+  <p class="qtags"><span class="qt imp">Gouvernement impérial</span><span class="qt ame">Les Amériques</span></p>
+  <p>Deux cadrages parlent d'administration, de fiscalité, d'Église, d'élites locales. La leçon du jury sur les empires médiévaux, « le gouvernement, c'est du pragmatisme », vaut aussi pour les Amériques : l'efficacité d'un pouvoir tient aux relais locaux, aux finances et aux routes, pas seulement à l'idéologie.</p>
+
+  <h3>Images du pouvoir : cérémonial impérial et propagande des années 1930</h3>
+  <p class="qtags"><span class="qt imp">Gouvernement impérial</span><span class="qt aut">Régimes autoritaires</span></p>
+  <p>Le jury demande une lecture matérielle des images (commande, matériau, localisation, public) et recommande d'éviter « propagande » pour les périodes anciennes. Les deux questions entraînent donc au même geste : analyser une image comme un acte de communication.</p>
+
+  <h3>La France d'outre-mer et les territoires français du Pacifique</h3>
+  <p class="qtags"><span class="qt fra">La France</span><span class="qt pac">Le Pacifique</span></p>
+  <p>La Nouvelle-Calédonie (2024), la Polynésie et Wallis-et-Futuna relèvent des deux cadrages. Un dossier sur ces territoires demande un système d'acteurs précis (État, collectivités, groupes locaux) et une lecture critique des sources engagées, deux exigences de l'EDG 2026.</p>
+
+  <h3>Vulnérabilité et risques : outre-mer français et États insulaires</h3>
+  <p class="qtags"><span class="qt fra">La France</span><span class="qt pac">Le Pacifique</span></p>
+  <p>Le jury 2026 distingue risque et pollution et demande de ne pas laisser le risque « parasiter » le raisonnement environnemental. Préparer en parallèle des exemples ultramarins et insulaires (littoraux, cyclones, submersion) donne des appuis pour les deux questions.</p>
+</section>
+
+<section id="notions">
+  <h2>Notions et pièges</h2>
+  <p class="standfirst">Termes que le rapport 2026 signale comme mal maîtrisés, plus les termes du cadrage 2027 à définir avant l'été.</p>
+  <dl class="notions">
+    <div><dt>Ergon, ponos, technè, misthos, trophè</dt><dd>Termes grecs à translittérer et à comprendre : le jury critique l'assimilation « pavlovienne » de technè à savoir-faire et d'ergon à acte. Le misthos est une indemnité, pas un salaire.</dd></div>
+    <div><dt>Oikos, scholè, paramonè</dt><dd>L'oikos est l'unité de travail et de production ; la scholè (loisir) conditionne l'activité civique ; la paramonè est nettement attestée à l'époque hellénistique seulement.</dd></div>
+    <div><dt>Statut</dt><dd>D'abord juridique (citoyen, étranger, esclave), mais aussi social et économique. Il ne se confond pas avec les groupes socio-économiques.</dd></div>
+    <div><dt>Agentivité (agency)</dt><dd>Concept qui revient dans les copies d'ancienne et de moderne, jugé mal compris. Les dominés « agissent » dans des marges contraintes.</dd></div>
+    <div><dt>Themata, tagmata</dt><dd>Confusion fréquente en 2026. À distinguer clairement dans toute étude de l'armée byzantine.</dd></div>
+    <div><dt>Kharâdj, djizya</dt><dd>Impôts du monde islamique ; ne pas les substituer à l'analyse de la fiscalité byzantine quand le sujet porte sur celle-ci.</dd></div>
+    <div><dt>Dinar, nomisma</dt><dd>Valeurs voisines (environ 4,30 g d'or) ; le dinar chez Ibn Hawqal est une transposition de regard, pas un usage fiscal byzantin.</dd></div>
+    <div><dt>Musulman / islamique ; Arabe / Maghrébin</dt><dd>Distinctions à tenir : les Berbères sont des Maghrébins non arabes.</dd></div>
+    <div><dt>Encomienda, repartimiento, mita, asiento</dt><dd>Termes du cadrage 2027 pour les Amériques ; à définir par leurs institutions, régions, dates.</dd></div>
+    <div><dt>Fascisme, autoritarisme, totalitarisme</dt><dd>Le cadrage demande une définition contextualisée du fascisme et un débat sur le totalitarisme : ne pas en faire des étiquettes interchangeables.</dd></div>
+    <div><dt>Environnement, milieu, paysage</dt><dd>Distinction exigée par le jury d'EDG. Ajouter la notion de changements globaux, jugée floue en 2026.</dd></div>
+    <div><dt>Aléa, risque, pollution</dt><dd>Le risque ne résume pas l'étude environnementale ; la pollution n'est pas un risque.</dd></div>
+    <div><dt>Foncier</dt><dd>Ne se réduit pas au coût du logement.</dd></div>
+    <div><dt>Mitage, boucle de rétroaction</dt><dd>À préférer à « grignotage » et « cercle vicieux », jugés trop journalistiques.</dd></div>
+    <div><dt>EPCI, aire d'attraction, unité urbaine, bassin de vie</dt><dd>Zonages à connaître pour commenter des statistiques françaises.</dd></div>
+    <div><dt>Iléité, mer d'îles</dt><dd>Notions du cadrage Pacifique (Hau'ofa 1993) à définir et à illustrer, pas à réciter.</dd></div>
+  </dl>
+</section>
+
+<section id="outils">
+  <h2>Outils et calendrier</h2>
+  <p class="standfirst">Ce que le rapport dit des moyens de la préparation et des étapes de la session.</p>
+
+  <h3>Plan de travail issu des remarques du jury</h3>
+  <ol class="steps">
+    <li><strong>Fonds de carte.</strong> Remplir des fonds de carte pour chacun des trois mondes médiévaux, la Grèce égéenne, les Amériques, l'Europe de l'entre-deux-guerres, la France (Corse et outre-mer compris) et le Pacifique.</li>
+    <li><strong>Répertoire personnel d'exemples.</strong> Pour chaque question, des sources que tu maîtrises (contexte, contenu, enjeux), pas des exemples recopiés de manuels.</li>
+    <li><strong>Éditions critiques.</strong> Repérer pour chaque source majeure l'édition de référence et la lire : introduction, notes, passages voisins.</li>
+    <li><strong>Exercices chronométrés.</strong> Exposés de 25 minutes, leçons avec 15 + 10 minutes de questions, EDG de 60 minutes. Relire le diaporama : fautes, coquilles, plans inversés.</li>
+    <li><strong>Croquis et cartes.</strong> Croquis à différentes échelles, schémas d'acteurs aux flèches signifiantes, cartes en grand format avec titre, orientation, légende, source.</li>
+    <li><strong>Écriture.</strong> Une copie sans fautes d'orthographe grammaticale : le plafond de 7/20 du commentaire médiéval est une alerte pour toutes les épreuves.</li>
+  </ol>
+
+  <details class="fold">
+    <summary>Ressources numériques disponibles en salle de préparation en 2026 (45)</summary>
+    <p>Catalogues de la Sorbonne, de l'ENS (Ulm), de Cujas, de Lavisse ; SUDOC ; Persée ; Cairn ; JSTOR ; HAL-SHS ; OpenEdition (revues et livres) ; <em>L'Histoire</em> ; Encyclopædia Universalis ; <em>Encyclopaedia Iranica</em> ; <em>Encyclopédie de l'Islam</em> ; <em>Encyclopaedia Judaica</em> ; EHNE ; Webgallery of Art ; collections du Louvre ; Classiques Garnier ; Gallica ; British Museum ; Oxford Encyclopedia of Ancient Greece and Rome ; Encyclopedia of Ancient History ; MANTIS ; Perseus et Perseus Scaife ; Dictionnaire des philosophes antiques ; Brepols (livres et revues) ; ATILF ; ARLIMA ; SIGILLA ; Gough Map ; Treccani ; e-codices ; Mandragore ; TELMA ; Regesta Imperii ; Dizionario biografico degli Italiani ; Grand Dictionnaire universel du XIXe siècle ; <em>Revue d'histoire culturelle</em> ; Maitron ; Archives d'outre-mer ; Géoportail.</p>
+    <p>Utilité pour 2027 : Perseus, Brepols, Regesta Imperii et <em>Encyclopédie de l'Islam</em> pour les mondes médiévaux ; Archives d'outre-mer pour les Amériques ; Gallica et le Maitron pour l'entre-deux-guerres ; Géoportail pour la France et les territoires ultramarins.</p>
+  </details>
+
+  <h3>Calendrier</h3>
+  <div class="table-wrap"><table class="narrow">
+    <thead><tr><th>Étape</th><th>2026 (rapport)</th><th>2027</th></tr></thead>
+    <tbody>
+      <tr><th>Épreuves écrites</th><td>Non précisé dans le rapport</td><td>À vérifier</td></tr>
+      <tr><th>Oraux</th><td>28 mai - 22 juin (trois semaines, BIS, Louis-le-Grand, Institut de géographie)</td><td>À vérifier</td></tr>
+      <tr><th>Résultats</th><td>22 juin, Sorbonne</td><td>À vérifier</td></tr>
+      <tr><th>Demande de copies</th><td>Procédure indiquée par le ministère</td><td>Même procédure à confirmer</td></tr>
+    </tbody>
+  </table></div>
+  <p>Les dates 2027 ne figurent pas dans le rapport. Le rapport signale seulement que les oraux 2026 ont subi deux canicules et recommande d'adapter sa tenue à la météo du jour de passage.</p>
+</section>
+
+<section id="erreurs">
+  <h2>Coquilles du rapport</h2>
+  <p class="standfirst">Quelques erreurs formelles du rapport 2026 à ne pas recopier dans tes fiches.</p>
+  <ul class="corrections">
+    <li><span class="was">Intitulé du sujet d'ancienne</span>Le rapport écrit « selon genre et son statut » ; l'énoncé se lit « selon le genre et le statut ».</li>
+    <li><span class="was">Tableau des écrits</span>La ligne « Amissibles (note la plus haute) » est à lire « Admissibles ».</li>
+    <li><span class="was">Nom d'un historien</span>Le rapport écrit « Alan Forrest » puis « Allan Forest » pour le même auteur de <em>La Révolution française et les pauvres</em> ; la graphie correcte est Alan Forrest.</li>
+    <li><span class="was">Géographie</span>« Tawara » est probablement Tarawa (Kiribati).</li>
+    <li><span class="was">Commentaire médiéval</span>« Antalya (Antalya) » : la forme byzantine probable est Attaleia.</li>
+    <li><span class="was">Liste EDH moderne</span>Un « 11/06 » parasite figure devant « Sorciers et incendiaires normands ».</li>
+    <li><span class="was">Listes de LHG</span>Intitulé « Liste des sujets et histoire moderne » (lire « en histoire moderne ») ; « L'empire russe et ses frontières au XIXe siècle » apparaît deux fois dans la liste de contemporaine.</li>
+  </ul>
+</section>
+
+<section id="sources">
+  <h2>Sources</h2>
+  <ul>
+    <li>Rapport du jury, agrégation externe d'histoire, session 2026, présenté par Claire Blandin, présidente du jury (devenirenseignant.gouv.fr).</li>
+    <li><a href="https://www.devenirenseignant.gouv.fr/les-programmes-des-concours-d-enseignants-du-second-degre-de-la-session-2027-1662" target="_blank" rel="noopener">Programmes des concours d'enseignants du second degré de la session 2027</a> (page citée dans le rapport).</li>
+    <li><a href="https://www.devenirenseignant.gouv.fr/media/20305/download" target="_blank" rel="noopener">Cadrage officiel du programme d'histoire 2027</a> : les éléments de cadrage cités plus haut viennent de cette note. Relis-la en entier avant d'arrêter ta bibliographie, car certains détails (chiffres, intitulés, liste de régimes) sont à confirmer sur le texte.</li>
+    <li><a href="https://bibliotheques.pantheonsorbonne.fr/sites/default/files/inline-files/programmes-des-concours-2027_0.pdf" target="_blank" rel="noopener">Programmes des concours 2027</a> (copie hébergée par les bibliothèques de Paris 1 Panthéon-Sorbonne).</li>
+    <li><a href="https://www.devenirenseignant.gouv.fr/comment-obtenir-vos-copies-de-concours-de-recrutement-d-enseignants-1413" target="_blank" rel="noopener">Obtenir ses copies de concours</a> (lien indiqué par le rapport).</li>
+  </ul>
+  <p class="foot">Document établi le 26 octobre 2026 à partir du rapport et du cadrage officiels. Les sujets de la banque sont des hypothèses de travail, non des annonces du jury.</p>
+</section>
+  </main>
+</div>
+<a class="to-top" id="toTop" href="#haut" aria-label="Retour en haut">Haut</a>
+
+<script>
+(function(){
+  var state={q:'all',p:'all'};
+  var cards=[].slice.call(document.querySelectorAll('.subject'));
+  var groups=[].slice.call(document.querySelectorAll('.subjects'));
+  var titles=[].slice.call(document.querySelectorAll('.group-title'));
+  var count=document.getElementById('count');
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var ok=(state.q==='all'||c.getAttribute('data-q')===state.q)&&(state.p==='all'||c.getAttribute('data-p')===state.p);
+      c.hidden=!ok; if(ok)n++;
+    });
+    groups.forEach(function(g){
+      var any=[].some.call(g.querySelectorAll('.subject'),function(c){return !c.hidden});
+      g.hidden=!any;
+      titles.forEach(function(t){ if(t.getAttribute('data-group')===g.getAttribute('data-group')) t.hidden=!any; });
+    });
+    if(count) count.textContent=n+(n>1?' sujets affichés':' sujet affiché')+' sur '+cards.length;
+  }
+  [].forEach.call(document.querySelectorAll('.fgroup'),function(fg){
+    var key=fg.getAttribute('data-filter');
+    [].forEach.call(fg.querySelectorAll('.chip'),function(b){
+      b.addEventListener('click',function(){
+        state[key]=b.getAttribute('data-value');
+        [].forEach.call(fg.querySelectorAll('.chip'),function(o){o.setAttribute('aria-pressed',o===b?'true':'false')});
+        apply();
+      });
+    });
+  });
+  apply();
+  var mt=document.querySelector('.toc-mobile');
+  if(mt){ [].forEach.call(mt.querySelectorAll('a'),function(a){ a.addEventListener('click',function(){ mt.removeAttribute('open'); }); }); }
+  var top=document.getElementById('toTop');
+  function onScroll(){ if(top) top.classList.toggle('show',(window.scrollY||document.documentElement.scrollTop)>700); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+})();
+</script>
+
+</body></html>
