@@ -2893,7 +2893,8 @@ textarea.form-input {
 
 /* Mire : la carte se vise au clavier en posant le repère en son centre (Entrée) ; elle n'apparaît
    donc que lorsque la carte a le focus clavier. */
-.geo-crosshair {
+.geo-crosshair,
+.cities-crosshair {
     display: none;
     position: absolute;
     left: 50%;
@@ -13043,6 +13044,37 @@ input:not([type="range"]), label, select, summary, textarea {
     margin: 4px 0;
     padding-left: 0;
     text-align: center;
+}
+
+/* La carte des villes : la mire (même style que celle du Mode Carte) n'apparaît que lorsque la carte a le focus clavier ; Entrée pose alors le repère
+   en son centre. */
+.cities-map-frame {
+    position: relative;
+}
+
+#cities-map:focus-visible+.cities-crosshair {
+    display: block;
+}
+
+/* « Ville de l'histoire » : le fait à situer (titre, année et thème), puis sa description une fois la réponse donnée. */
+.cities-fact {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-soft);
+}
+
+.cities-fact-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.cities-fact-desc {
+    margin: 8px 0 0;
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--text-dark);
 }
 
 /* La progression et le score courant, sur une même ligne au-dessus de la question. */

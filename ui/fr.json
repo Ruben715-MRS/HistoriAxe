@@ -2526,6 +2526,12 @@
     "order_answer": "L'ordre était : {list}.",
     "touch_result": "À {km} km de {city} : {points} points.",
     "score_end": "Score : {score} points sur {max}",
-    "map_label": "Carte du monde : touchez la ville demandée"
+    "map_label": "Carte du monde : touchez la ville demandée",
+    "menu_history": "Ville de l'histoire",
+    "ask_history": "Où se déroule ce fait ? Touchez la ville sur la carte.",
+    "history_result": "C’était à {city}, à {km} km de votre point : {points} points.",
+    "history_error": "Les lieux de l’Atlas des événements n’ont pas pu être chargés. Vérifiez votre connexion et réessayez.",
+    "history_credit": "Lieux des faits : Atlas des événements, d’après © les contributeurs d’OpenStreetMap.",
+    "map_hint": "Au clavier : les flèches déplacent la carte, + et − zooment, Entrée pose le repère au centre."
   }
 }

@@ -2489,6 +2489,12 @@
     "order_answer": "The order was: {list}.",
     "touch_result": "{km} km from {city}: {points} points.",
     "score_end": "Score: {score} points out of {max}",
-    "map_label": "World map: touch the city asked for"
+    "map_label": "World map: touch the city asked for",
+    "menu_history": "City in history",
+    "ask_history": "Where did this happen? Touch the city on the map.",
+    "history_result": "It was in {city}, {km} km from your point: {points} points.",
+    "history_error": "The places from the events Atlas could not be loaded. Check your connection and try again.",
+    "history_credit": "Places of the events: events Atlas, based on © OpenStreetMap contributors.",
+    "map_hint": "With a keyboard: the arrow keys move the map, + and − zoom, Enter places the marker at the centre."
   }
 }

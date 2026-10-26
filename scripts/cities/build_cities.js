@@ -50,7 +50,49 @@ function sparql(query) {
 
 const qid = uri => uri.replace('http://www.wikidata.org/entity/', '');
 const val = (row, key) => (row[key] ? row[key].value : null);
+// Un nom sans accents ni majuscules : « Málaga » et « Malaga » sont la même ville.
+const plain = name => name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 const isLabelMissing = label => !label || /^Q\d+$/.test(label);
+
+// Wikidata classe parfois une entité administrative comme une ville (« Ville de Madrid », « Métropole de Lyon », « préfecture de
+// Bijie », « Grand New York », « district de Pudong »). Un tel nom ne se montre pas à un joueur :
+//   - si la ville simple existe dans le même pays (« Madrid »), l'entité administrative est écartée ;
+//   - sinon, le préfixe ou le suffixe administratif tombe (« préfecture de Bijie » → « Bijie ») ;
+//   - un district ou une région métropolitaine qui ne désigne pas une ville est écarté.
+const ADMIN_PREFIXES = /^(Ville de |ville de |Ville-préfecture de |préfecture de |Municipalité de |Métropole de )/;
+const ADMIN_SUFFIX = / Métropole$/;
+const NOT_A_CITY = /^(Zone métropolitaine |Région métropolitaine |Région urbaine |Nouveau district |district de |Grand )/;
+
+// Les libellés français de Wikidata qui ne sont pas le nom d'usage (relevés à la main) : le nom du jeu, ou rien s'il n'a pas de nom courant.
+//   - « Bujumbura-Mairie » est la commune ; « Dublin City » le comté-ville ; « Juárezville » une traduction littérale de Ciudad Juárez ;
+//   - « Buffalo City » est une municipalité métropolitaine (East London) : aucun joueur ne la connaît sous ce nom.
+const NAME_FIXES = { 'Bujumbura-Mairie': 'Bujumbura', 'Dublin City': 'Dublin', 'Juárezville': 'Ciudad Juárez', 'Buffalo City': null };
+
+function cleanAdministrativeNames(rawList) {
+    const list = [];
+    rawList.forEach(c => {
+        if (!Object.prototype.hasOwnProperty.call(NAME_FIXES, c.n)) { list.push(c); return; }
+        if (NAME_FIXES[c.n]) list.push(Object.assign({}, c, { n: NAME_FIXES[c.n] }));
+    });
+    const names = new Set(list.map(c => c.cc + '|' + plain(c.n)));
+    const out = [];
+    list.forEach(c => {
+        if (NOT_A_CITY.test(c.n)) return;
+        const base = c.n.replace(ADMIN_PREFIXES, '').replace(ADMIN_SUFFIX, '');
+        if (base === c.n) { out.push(c); return; }
+        if (names.has(c.cc + '|' + plain(base))) return;
+        out.push(Object.assign({}, c, { n: base }));
+    });
+    // Un renommage peut créer un doublon (« Dublin City » → « Dublin ») : on garde l'entrée la plus peuplée de chaque nom.
+    const unique = new Map();
+    out.forEach(c => {
+        const key = c.cc + '|' + plain(c.n);
+        const kept = unique.get(key);
+        if (!kept || (c.pop || 0) > (kept.pop || 0)) unique.set(key, kept && kept.cap ? Object.assign({}, c, { cap: true }) : c);
+        else if (c.cap) kept.cap = true;
+    });
+    return [...unique.values()];
+}
 
 function main() {
     const isoOf = new Map(sparql(QUERY_ISO).map(r => [qid(r.country.value), r.iso.value]));
@@ -84,10 +126,10 @@ function main() {
     const atlas = new Set(JSON.parse(fs.readFileSync(FACTS, 'utf8')).countries.map(c => c.iso2));
     const best = new Map();
     [...cities.values()].filter(c => atlas.has(c.cc) && (c.cap || (c.pop && c.pop >= MIN_POP))).forEach(c => {
-        const key = c.cc + '|' + c.n;
+        const key = c.cc + '|' + plain(c.n);
         if (!best.has(key) || (c.pop || 0) > (best.get(key).pop || 0)) best.set(key, c);
     });
-    const list = [...best.values()];
+    const list = cleanAdministrativeNames([...best.values()]);
     list.sort((a, b) => (b.pop || 0) - (a.pop || 0) || (a.n < b.n ? -1 : 1));
     const out = {
         v: 1,

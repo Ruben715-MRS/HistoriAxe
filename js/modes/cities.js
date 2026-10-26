@@ -4,7 +4,9 @@
 // Quatre jeux, des parties de dix questions tirées par CityGameCore (js/cityGameCore.js) à partir de assets/geo/cities.json :
 //   - « Capitale ou plus grande ville ? » et « Quel pays a cette ville ? » : un QCM à quatre réponses ;
 //   - « Touchez la ville sur la carte » : le point touché rapporte d'autant moins qu'il est loin de la ville ;
-//   - « Classez les villes par population » : quatre villes à remettre de la plus peuplée à la moins peuplée.
+//   - « Classez les villes par population » : quatre villes à remettre de la plus peuplée à la moins peuplée ;
+//   - « Ville de l'histoire » : un fait de l'Atlas des événements, dont le titre ne nomme pas la ville, à situer en touchant la ville
+//     (CityHistoryCore, js/cityHistoryCore.js). Après la réponse, la description du fait s'affiche.
 // Pas de chrono : c'est un entraînement. Rien n'est enregistré. Les populations sont des estimations de Wikidata : elles ne servent
 // qu'à décider qui est la plus grande ville et à classer. Tout ce qui vient des données passe par textContent, jamais par du HTML.
 
@@ -51,23 +53,36 @@ function openCityGame(form) {
     cityGameShowPanel('status');
     const status = document.getElementById('cities-status');
     status.textContent = t('tools.countries_loading');
-    // La bibliothèque de cartes ne se charge qu'avec le jeu de la carte.
-    const library = cityGameForm === 'touch' ? atlasLoadLibrary() : Promise.resolve(true);
-    Promise.all([countriesLoad(), cityGameLoad(), library]).then(([ok, citiesOk, libOk]) => {
+    // La bibliothèque de cartes ne se charge qu'avec un jeu de carte ; les lieux de l'Atlas, qu'avec le jeu d'histoire.
+    const onMap = cityGameForm === 'touch' || cityGameForm === 'history';
+    const library = onMap ? atlasLoadLibrary() : Promise.resolve(true);
+    const events = cityGameForm === 'history' ? atlasEnsureData() : Promise.resolve(true);
+    Promise.all([countriesLoad(), cityGameLoad(), library, events]).then(([ok, citiesOk, libOk, eventsOk]) => {
         if (!ok || !citiesOk) { status.textContent = t('tools.countries_error'); return; }
         if (!libOk) { status.textContent = t('tools.countries_no_map'); return; }
-        if (cityGameForm === 'touch' && !cityGameEnsureMap()) { status.textContent = t('tools.countries_no_webgl'); return; }
+        if (!eventsOk) { status.textContent = t('cities.history_error'); return; }
+        if (onMap && !cityGameEnsureMap()) { status.textContent = t('tools.countries_no_webgl'); return; }
         cityGameStart();
     });
 }
 
+// Les questions de la partie : les faits de l'Atlas rattachés à une ville pour « Ville de l'histoire », les autres jeux selon leur forme.
+function cityGameQuestionsFor(form) {
+    if (form === 'history') {
+        const pool = CityHistoryCore.buildHistoryPool(CityHistoryCore.factsFromAtlas(atlasModel.index), cityGameData);
+        return CityHistoryCore.generateHistoryGame(pool, { count: CITIES_ROUNDS });
+    }
+    return CityGameCore.generateCityGame(cityGameData, countriesData.facts, form, { count: CITIES_ROUNDS, difficulty: CITIES_DIFFICULTY });
+}
+
 function cityGameStart() {
-    const questions = CityGameCore.generateCityGame(cityGameData, countriesData.facts, cityGameForm, { count: CITIES_ROUNDS, difficulty: CITIES_DIFFICULTY });
+    const questions = cityGameQuestionsFor(cityGameForm);
     if (!questions.length) { document.getElementById('cities-status').textContent = t('cities.none'); return; }
     cityGameQuestions = questions;
     cityGameIndex = 0;
     cityGameScore = 0;
     document.getElementById('cities-status').textContent = '';
+    document.getElementById('cities-credit').textContent = t('cities.credit') + (cityGameForm === 'history' ? ' ' + t('cities.history_credit') : '');
     cityGameShowPanel('play');
     cityGameRender();
 }
@@ -93,6 +108,7 @@ function cityGameCountry(cc) {
 function cityGameAsk(q) {
     if (q.ask === 'country') return t('cities.ask_country', { city: cityGameById(q.target).n });
     if (q.ask === 'touch') return t('cities.ask_touch', { city: cityGameById(q.target).n });
+    if (q.ask === 'history') return t('cities.ask_history');
     if (q.ask === 'order') return t('cities.ask_order');
     return t('cities.ask_' + q.ask, { country: cityGameCountry(q.country) });
 }
@@ -104,8 +120,9 @@ function cityGameRender() {
     document.getElementById('cities-progress').textContent = t('cities.progress', { n: cityGameIndex + 1, total: cityGameQuestions.length });
     document.getElementById('cities-score-now').textContent = t('cities.score_now', { score: cityGameScore });
     document.getElementById('cities-ask').textContent = cityGameAsk(q);
-    const onMap = q.ask === 'touch';
+    const onMap = q.ask === 'touch' || q.ask === 'history';
     const ordering = q.ask === 'order';
+    cityGameRenderFact(q);
     document.getElementById('cities-map-wrap').classList.toggle('hidden', !onMap);
     document.getElementById('cities-options').classList.toggle('hidden', onMap);
     document.getElementById('cities-sequence').classList.toggle('hidden', !ordering);
@@ -125,6 +142,33 @@ function cityGameRender() {
     }
     document.getElementById('cities-feedback').textContent = '';
     document.getElementById('cities-next').classList.add('hidden');
+}
+
+// La fiche du fait, pour « Ville de l'histoire » : le titre, l'année et le thème (sans la description, qui nomme souvent la ville :
+// elle ne s'affiche qu'après la réponse).
+function cityGameRenderFact(q) {
+    const fact = document.getElementById('cities-fact');
+    const history = q.ask === 'history';
+    fact.classList.toggle('hidden', !history);
+    document.getElementById('cities-fact-desc').classList.add('hidden');
+    if (!history) return;
+    document.getElementById('cities-fact-title').textContent = q.title;
+    document.getElementById('cities-fact-meta').textContent = atlasYearLabel(q.year) + (q.theme ? ' · ' + q.theme : '');
+    document.getElementById('cities-fact-desc').textContent = '';
+}
+
+// La description du fait, une fois la réponse donnée : elle nomme souvent la ville, et dans un pack découpé elle se charge à la demande
+// (Pack.ensureDescriptions). Si le joueur est déjà passé à la question suivante, elle ne s'affiche pas.
+function cityGameShowDescription(q) {
+    const show = () => {
+        if (cityGameQuestions[cityGameIndex] !== q) return;
+        const text = (q.event && q.event.description) || q.description || '';
+        const el = document.getElementById('cities-fact-desc');
+        el.textContent = text;
+        el.classList.toggle('hidden', !text);
+    };
+    if (q.event && typeof Pack !== 'undefined') Pack.ensureDescriptions([q.event]).then(show);
+    else show();
 }
 
 // Un piège expliqué : la capitale prise pour la plus grande ville, et l'inverse.
@@ -253,6 +297,16 @@ function cityGameEnsureMap() {
     });
     cityMap.on('click', e => cityGameTap(e.lngLat.lng, e.lngLat.lat));
     cityMap.on('error', () => {});
+    // Au clavier : Entrée ou Espace pose le repère au centre de la carte (la mire s'affiche au focus) ; les flèches et +/− déplacent et
+    // zooment la carte, nativement. Même geste que le Mode Carte.
+    const container = document.getElementById('cities-map');
+    container.addEventListener('keydown', e => {
+        if ((e.key === 'Enter' || e.key === ' ') && e.target === container) {
+            e.preventDefault();
+            const c = cityMap.getCenter();
+            cityGameTap(c.lng, c.lat);
+        }
+    });
     return cityMap;
 }
 
@@ -287,7 +341,7 @@ function cityGameResetMap() {
 
 // Un clic : la distance au vrai lieu donne les points ; la vraie ville et le clic s'affichent ensuite.
 function cityGameTap(lon, lat) {
-    if (cityGameAnswered || cityGameForm !== 'touch') return;
+    if (cityGameAnswered || (cityGameForm !== 'touch' && cityGameForm !== 'history')) return;
     const q = cityGameQuestions[cityGameIndex];
     const city = cityGameById(q.target);
     const km = GeoQuizCore.distanceKm([lon, lat], [city.lon, city.lat]);
@@ -298,8 +352,8 @@ function cityGameTap(lon, lat) {
         cityMap.getSource('cities-target').setData(cityGamePoint(city.lon, city.lat));
         cityMap.getSource('cities-tap').setData(cityGamePoint(lon, lat));
     });
-    document.getElementById('cities-feedback').textContent = t('cities.touch_result', {
-        city: city.n, km: Math.round(km).toLocaleString('fr-FR'), points: points
-    });
+    const result = { city: city.n, km: Math.round(km).toLocaleString('fr-FR'), points: points };
+    document.getElementById('cities-feedback').textContent = t(q.ask === 'history' ? 'cities.history_result' : 'cities.touch_result', result);
+    if (q.ask === 'history') cityGameShowDescription(q);
     cityGameShowNext();
 }

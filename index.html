@@ -1511,6 +1511,7 @@
             <button type="button" class="btn" onclick="openCityGame('country')" data-i18n="cities.menu_country">Quel pays a cette ville ?</button>
             <button type="button" class="btn" onclick="openCityGame('touch')" data-i18n="cities.menu_touch">Touchez la ville sur la carte</button>
             <button type="button" class="btn" onclick="openCityGame('order')" data-i18n="cities.menu_order">Classer les villes par population</button>
+            <button type="button" class="btn" onclick="openCityGame('history')" data-i18n="cities.menu_history">Ville de l'histoire</button>
         </div>
         <div id="cities-play" class="geoquiz-play hidden">
             <div class="cities-bar">
@@ -1519,10 +1520,19 @@
             </div>
             <div class="geoquiz-card">
                 <p class="geoquiz-ask" id="cities-ask"></p>
+                <div id="cities-fact" class="cities-fact hidden">
+                    <p class="cities-fact-title" id="cities-fact-title"></p>
+                    <p class="tool-small" id="cities-fact-meta"></p>
+                    <p class="cities-fact-desc hidden" id="cities-fact-desc"></p>
+                </div>
             </div>
             <div class="geoquiz-options" id="cities-options"></div>
             <div id="cities-map-wrap" class="hidden">
-                <div id="cities-map" class="tool-countries-map geoquiz-map" role="application" aria-label="Carte du monde : touchez la ville demandée" data-i18n-attr="aria-label:cities.map_label"></div>
+                <div class="cities-map-frame">
+                    <div id="cities-map" class="tool-countries-map geoquiz-map" tabindex="0" role="application" aria-label="Carte du monde : touchez la ville demandée" data-i18n-attr="aria-label:cities.map_label"></div>
+                    <div class="cities-crosshair" aria-hidden="true"></div>
+                </div>
+                <p class="tool-small" data-i18n="cities.map_hint">Au clavier : les flèches déplacent la carte, Entrée pose le repère au centre.</p>
             </div>
             <p class="tool-small" id="cities-sequence" role="status" aria-live="polite"></p>
             <button type="button" class="btn hidden" id="cities-reset" onclick="cityGameResetOrder()" data-i18n="cities.order_reset">Recommencer</button>
@@ -1533,7 +1543,7 @@
             <p class="geoquiz-score" id="cities-score" tabindex="-1" role="status"></p>
             <button type="button" class="btn" onclick="openCitiesMenu()" data-i18n="cities.back">Autres jeux sur les villes</button>
         </div>
-        <p class="tool-small" data-i18n="cities.credit"></p>
+        <p class="tool-small" id="cities-credit" data-i18n="cities.credit"></p>
     </div>
 
     <!-- ÉCRAN : QUIZ DES PAYS (lancé depuis l'Atlas des pays ou la Salle de jeux — voir js/modes/geoquiz.js) -->
@@ -3446,6 +3456,7 @@
     <script src="js/app/tools.js"></script>
     <script src="js/app/countries.js"></script>
     <script src="js/cityGameCore.js"></script>
+    <script src="js/cityHistoryCore.js"></script>
     <script src="js/modes/geoquiz.js"></script>
     <script src="js/modes/cities.js"></script>
     <script src="js/app/calendar.js"></script>

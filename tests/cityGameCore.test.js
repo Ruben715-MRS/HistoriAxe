@@ -94,3 +94,11 @@ test('classer : 25 points par ville à sa place', () => {
     assert.equal(C.orderPoints(['a', 'c', 'b', 'd'], ['a', 'b', 'c', 'd']), 50);
     assert.equal(C.orderPoints(['d', 'c', 'b', 'a'], ['a', 'b', 'c', 'd']), 0);
 });
+
+test('données : aucun nom administratif (ville de, métropole de, préfecture, district…), ni les libellés corrigés à la main', () => {
+    const admin = /^(Ville de |ville de |Ville-préfecture de |préfecture de |Municipalité de |Métropole de |Zone métropolitaine |Région métropolitaine |Région urbaine |Nouveau district |district de |Grand )| Métropole$/;
+    cities.forEach(c => assert.equal(admin.test(c.n), false, c.n));
+    ['Bujumbura-Mairie', 'Dublin City', 'Juárezville', 'Buffalo City'].forEach(n => assert.equal(cities.some(c => c.n === n), false, n));
+    const keys = cities.map(c => c.cc + '|' + c.n.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase());
+    assert.equal(new Set(keys).size, keys.length, 'un seul nom par pays, accents mis à part');
+});

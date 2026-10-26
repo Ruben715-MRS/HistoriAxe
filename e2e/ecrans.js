@@ -103,6 +103,15 @@ async function parcourirLesEcrans(page, surChaqueEcran) {
     await page.evaluate(() => showScreen('screen-end')); await surChaqueEcran('fin de partie');
     await page.evaluate(() => { openProfileModal(); }); await surChaqueEcran('profil');
     await page.evaluate(() => closeProfileModal());
+    // Villes du monde : le menu, un QCM avec sa correction, puis « Ville de l'histoire » (la carte, la fiche du fait et sa description).
+    await page.evaluate(() => openCitiesMenu('screen-arcade')); await surChaqueEcran('villes du monde : menu');
+    await page.evaluate(() => openCityGame('capital')); await page.waitForSelector('#cities-play:not(.hidden)'); await surChaqueEcran('villes du monde : question');
+    await page.evaluate(() => { const q = cityGameQuestions[cityGameIndex]; document.querySelectorAll('#cities-options .quiz-option')[q.options.findIndex(o => o.id !== q.target)].click(); });
+    await surChaqueEcran('villes du monde : mauvaise réponse corrigée');
+    await page.evaluate(() => { openCitiesMenu(); openCityGame('history'); });
+    await page.waitForSelector('#cities-play:not(.hidden)'); await surChaqueEcran('ville de l’histoire : question');
+    await page.evaluate(() => { const c = cityGameById(cityGameQuestions[cityGameIndex].target); cityGameTap(c.lon, c.lat); });
+    await page.waitForSelector('#cities-fact-desc:not(.hidden)'); await surChaqueEcran('ville de l’histoire : réponse et description');
     for (const ouvrir of ['openSettings()', 'openLeaderboard()', 'openAddThemeModal()', 'openAddEventModal()', 'openScoringInfo()']) {
         await page.evaluate(code => { try { (new Function(code))(); } catch (e) { } }, ouvrir);
         await surChaqueEcran('modale ' + ouvrir);

@@ -195,11 +195,12 @@ test('Space Invaders : une période, des cartes qui descendent, un tir sur un an
     await expect(page.locator('#invaders-over')).toBeVisible();
 });
 
-test('la salle de jeux : trois sections, seize jeux, des mini-jeux qui reviennent au menu', async ({ page }) => {
+test('la salle de jeux : quatre sections, dix-huit jeux, des mini-jeux qui reviennent au menu', async ({ page }) => {
     await page.locator('#btn-arcade').click();
     await expect(page.locator('#screen-arcade h2')).toHaveText('Salle de jeux');
-    await expect(page.locator('#screen-arcade .games-section h3')).toHaveText(['Mini-jeux', "Jeux d'arcade", 'Jeux de réflexion']);
-    await expect(page.locator('#screen-arcade .arcade-card')).toHaveCount(16);
+    await expect(page.locator('#screen-arcade .games-section h3')).toHaveText(['Jeux géographiques', 'Mini-jeux', "Jeux d'arcade", 'Jeux de réflexion']);
+    // Seize jeux d'origine, le quiz des pays et la carte « Villes du monde » (la section des jeux géographiques, en tête).
+    await expect(page.locator('#screen-arcade .arcade-card')).toHaveCount(18);
     // Les cartes du menu disent où l'on en est.
     await expect(page.locator('#arcade-best-wheel')).toContainText('Pas encore joué');
     await page.evaluate(() => {
