@@ -2473,7 +2473,7 @@
     "credit": "Cities and populations: Wikidata (CC0). Populations are estimates from different years; they only decide which city is largest. Nothing is saved.",
     "card_title": "World cities",
     "card_desc": "Capitals, northernmost or southernmost cities, a map, and rankings of the world’s largest cities.",
-    "menu_intro": "Five games about the world’s cities, with the Countries quiz settings.",
+    "menu_intro": "Six games about the world’s cities, with the Countries quiz settings.",
     "menu_capital": "Capital or largest city?",
     "menu_touch": "Touch the city on the map",
     "menu_order": "Order the cities by population",
@@ -2502,6 +2502,13 @@
     "period_middle": "Middle Ages (500–1491)",
     "period_modern": "Early modern (1492–1788)",
     "period_contemporary": "Contemporary (1789 →)",
-    "period_hint": "The fact is drawn from this period. Periods have fewer facts than “All”: a game may be shorter."
+    "period_hint": "The fact is drawn from this period. Periods have fewer facts than “All”: a game may be shorter.",
+    "menu_photo": "Which city is this? (photo)",
+    "ask_photo": "In which city was this photo taken?",
+    "photo_alt": "Photo of a city to identify",
+    "photo_source": "See the photo's source",
+    "photo_credit": "Photo: {author}, licence {licence}",
+    "photo_none": "No photo for this area: try “World”.",
+    "photo_error": "The photos could not be loaded. Check your connection and try again."
   }
 }

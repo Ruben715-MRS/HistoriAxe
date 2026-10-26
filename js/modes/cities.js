@@ -1,7 +1,9 @@
 // =========================================================================
 // === VILLES DU MONDE (écran de jeu, depuis la carte « Villes du monde » de la Salle de jeux) ===
 // =========================================================================
-// Cinq jeux, des parties de dix questions tirées par CityGameCore (js/cityGameCore.js) à partir de assets/geo/cities.json :
+// Six jeux, des parties de dix questions tirées par CityGameCore (js/cityGameCore.js) à partir de assets/geo/cities.json :
+//   - « Quelle est cette ville ? » : une photo libre (assets/geo/city-photos.json, avec ses crédits), quatre villes à choisir
+//     (CityPhotoCore, js/cityPhotoCore.js). La légende et la source ne s'affichent qu'après la réponse : elles nomment la ville ;
 //   - « Capitale ou plus grande ville ? » et « Quelle ville est la plus au nord (ou au sud) ? » : un QCM à quatre réponses ;
 //   - « Touchez la ville sur la carte » : le point touché rapporte d'autant moins qu'il est loin de la ville ;
 //   - « Classez les villes par population » : quatre villes à remettre de la plus peuplée à la moins peuplée ;
@@ -18,6 +20,8 @@ const CITIES_FILL = { light: '#dfe6ee', dark: '#334155' };
 
 let cityGameData = null;          // les villes (assets/geo/cities.json)
 let cityGameLoading = null;
+let cityPhotoData = null;         // les photos (assets/geo/city-photos.json), avec leurs crédits
+let cityPhotoLoading = null;
 let cityGameForm = 'capital';
 let cityGameReturn = 'screen-arcade';
 let cityGameQuestions = [];
@@ -42,6 +46,17 @@ function cityGameLoad() {
             .catch(() => { cityGameLoading = null; return false; });
     }
     return cityGameLoading;
+}
+
+function cityPhotoLoad() {
+    if (cityPhotoData) return Promise.resolve(true);
+    if (!cityPhotoLoading) {
+        cityPhotoLoading = fetch('assets/geo/city-photos.json')
+            .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+            .then(d => { cityPhotoData = d.photos; return true; })
+            .catch(() => { cityPhotoLoading = null; return false; });
+    }
+    return cityPhotoLoading;
 }
 
 // Le menu des jeux sur les villes, ouvert depuis la carte « Villes du monde » de la Salle de jeux (`from`).
@@ -91,8 +106,10 @@ function openCityGame(form) {
     const onMap = cityGameForm === 'touch' || cityGameForm === 'history';
     const library = onMap ? atlasLoadLibrary() : Promise.resolve(true);
     const events = cityGameForm === 'history' ? atlasEnsureData() : Promise.resolve(true);
-    Promise.all([countriesLoad(), cityGameLoad(), library, events]).then(([ok, citiesOk, libOk, eventsOk]) => {
+    const photos = cityGameForm === 'photo' ? cityPhotoLoad() : Promise.resolve(true);
+    Promise.all([countriesLoad(), cityGameLoad(), library, events, photos]).then(([ok, citiesOk, libOk, eventsOk, photosOk]) => {
         if (!ok || !citiesOk) { status.textContent = t('tools.countries_error'); return; }
+        if (!photosOk) { status.textContent = t('cities.photo_error'); return; }
         if (!libOk) { status.textContent = t('tools.countries_no_map'); return; }
         if (!eventsOk) { status.textContent = t('cities.history_error'); return; }
         if (onMap && !cityGameEnsureMap()) { status.textContent = t('tools.countries_no_webgl'); return; }
@@ -110,17 +127,22 @@ function cityGameCities() {
 // Les fausses réponses sont de la même région en difficulté « difficile » (la même règle que le Quiz des pays).
 function cityGameQuestionsFor(form) {
     const cities = cityGameCities();
+    const level = GeoQuizSessionCore.normalizePrefs(geoQuizPrefsNow()).level;
+    const difficulty = GeoQuizSessionCore.LEVELS[level].distractors;
     if (form === 'history') {
         const pool = CityHistoryCore.buildHistoryPool(CityHistoryCore.factsFromAtlas(atlasModel.index), cities);
         return CityHistoryCore.generateHistoryGame(pool, { count: CITIES_ROUNDS, period: cityGamePeriod });
     }
-    const level = GeoQuizSessionCore.normalizePrefs(geoQuizPrefsNow()).level;
-    return CityGameCore.generateCityGame(cities, countriesData.facts, form, { count: CITIES_ROUNDS, difficulty: GeoQuizSessionCore.LEVELS[level].distractors });
+    if (form === 'photo') {
+        const continent = new Map(countriesData.facts.map(f => [f.iso2, f.cont]));
+        return CityPhotoCore.photoQuestions(cityPhotoData, cities, { count: CITIES_ROUNDS, difficulty: difficulty, continent: cc => continent.get(cc) });
+    }
+    return CityGameCore.generateCityGame(cities, countriesData.facts, form, { count: CITIES_ROUNDS, difficulty: difficulty });
 }
 
 function cityGameStart() {
     const questions = cityGameQuestionsFor(cityGameForm);
-    if (!questions.length) { document.getElementById('cities-status').textContent = t('cities.none'); return; }
+    if (!questions.length) { document.getElementById('cities-status').textContent = t(cityGameForm === 'photo' ? 'cities.photo_none' : 'cities.none'); return; }
     cityGameQuestions = questions;
     cityGameSeconds = GeoQuizSessionCore.normalizePrefs(geoQuizPrefsNow()).timer;
     cityGameIndex = 0;
@@ -153,6 +175,7 @@ function cityGameCountry(cc) {
 function cityGameAsk(q) {
     if (q.ask === 'touch') return t('cities.ask_touch', { city: cityGameById(q.target).n });
     if (q.ask === 'history') return t('cities.ask_history');
+    if (q.ask === 'photo') return t('cities.ask_photo');
     if (q.ask === 'order') return t('cities.ask_order');
     if (q.ask === 'north' || q.ask === 'south') return t('cities.ask_' + q.ask);
     return t('cities.ask_' + q.ask, { country: cityGameCountry(q.country) });
@@ -168,6 +191,7 @@ function cityGameRender() {
     const onMap = q.ask === 'touch' || q.ask === 'history';
     const ordering = q.ask === 'order';
     cityGameRenderFact(q);
+    cityGameRenderPhoto(q);
     document.getElementById('cities-map-wrap').classList.toggle('hidden', !onMap);
     document.getElementById('cities-options').classList.toggle('hidden', onMap);
     document.getElementById('cities-sequence').classList.toggle('hidden', !ordering);
@@ -245,6 +269,31 @@ function cityGameTimeout() {
         feedback.textContent = t('geoquiz.timeout', { answer: buttons[correct].textContent });
     }
     cityGameShowNext();
+}
+
+// La photo, pour « Quelle est cette ville ? ». Pendant la question, seuls l'image et son auteur et sa licence : la légende et le lien
+// vers la source (qui nomment la ville) n'apparaissent qu'après la réponse (cityGameRevealPhoto).
+function cityGameRenderPhoto(q) {
+    const wrap = document.getElementById('cities-photo-wrap');
+    wrap.classList.toggle('hidden', !q.photo);
+    if (!q.photo) return;
+    const img = document.getElementById('cities-photo-img');
+    img.src = q.photo.src;
+    img.alt = t('cities.photo_alt');
+    document.getElementById('cities-photo-credit').textContent = t('cities.photo_credit', { author: q.photo.auteur, licence: q.photo.licence });
+    document.getElementById('cities-photo-legend').classList.add('hidden');
+    document.getElementById('cities-photo-link').classList.add('hidden');
+}
+
+function cityGameRevealPhoto() {
+    const q = cityGameQuestions[cityGameIndex];
+    if (!q || !q.photo) return;
+    const legend = document.getElementById('cities-photo-legend');
+    legend.textContent = q.photo.legende;
+    legend.classList.remove('hidden');
+    const link = document.getElementById('cities-photo-link');
+    link.href = q.photo.source;
+    link.classList.remove('hidden');
 }
 
 // La fiche du fait, pour « Ville de l'histoire » : le titre, l'année et le thème (sans la description, qui nomme souvent la ville :
@@ -346,6 +395,7 @@ function cityGameFinishOrder(q) {
 function cityGameShowNext() {
     cityGameAnswered = true;
     cityGameStopTimer();
+    cityGameRevealPhoto();
     const last = cityGameIndex === cityGameQuestions.length - 1;
     const next = document.getElementById('cities-next');
     next.textContent = t(last ? 'geoquiz.finish' : 'geoquiz.next');

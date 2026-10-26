@@ -1532,6 +1532,7 @@
             <button type="button" class="btn" onclick="openCityGame('latitude')" data-i18n="cities.menu_latitude">Quelle ville est la plus au nord ?</button>
             <button type="button" class="btn" onclick="openCityGame('touch')" data-i18n="cities.menu_touch">Touchez la ville sur la carte</button>
             <button type="button" class="btn" onclick="openCityGame('order')" data-i18n="cities.menu_order">Classer les villes par population</button>
+            <button type="button" class="btn" onclick="openCityGame('photo')" data-i18n="cities.menu_photo">Quelle est cette ville ? (photo)</button>
             <button type="button" class="btn" onclick="openCityGame('history')" data-i18n="cities.menu_history">Villes de l'histoire</button>
         </div>
         <div id="cities-play" class="geoquiz-play hidden">
@@ -1551,6 +1552,14 @@
                     <p class="cities-fact-desc hidden" id="cities-fact-desc"></p>
                 </div>
             </div>
+            <figure id="cities-photo-wrap" class="cities-photo hidden">
+                <img id="cities-photo-img" alt="" src="" decoding="async">
+                <figcaption class="tool-small">
+                    <span id="cities-photo-credit"></span>
+                    <span id="cities-photo-legend" class="hidden"></span>
+                    <a id="cities-photo-link" class="hidden" target="_blank" rel="noopener" data-i18n="cities.photo_source">Voir la source de la photo</a>
+                </figcaption>
+            </figure>
             <div class="geoquiz-options" id="cities-options"></div>
             <div id="cities-map-wrap" class="hidden">
                 <div class="cities-map-frame">
@@ -3482,6 +3491,7 @@
     <script src="js/app/countries.js"></script>
     <script src="js/cityGameCore.js"></script>
     <script src="js/cityHistoryCore.js"></script>
+    <script src="js/cityPhotoCore.js"></script>
     <script src="js/modes/geoquiz.js"></script>
     <script src="js/modes/cities.js"></script>
     <script src="js/app/calendar.js"></script>

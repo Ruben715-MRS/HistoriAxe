@@ -40,7 +40,7 @@ test('« Villes du monde » est une carte de « Jeux géographiques », premièr
     await page.locator('.arcade-card', { hasText: 'Villes du monde' }).click();
     await expect(page.locator('#cities-menu .btn')).toHaveText([
         'Capitale ou plus grande ville ?', 'Quelle ville est la plus au nord ?', 'Touchez la ville sur la carte',
-        'Classer les villes par population', "Villes de l'histoire"
+        'Classer les villes par population', 'Quelle est cette ville ? (photo)', "Villes de l'histoire"
     ]);
     // « Retour » ramène à la Salle de jeux.
     await page.locator('#screen-cities .back-btn').click();
@@ -202,4 +202,22 @@ test('ville de l’histoire, période : le choix est gardé, et chaque fait tir�
     const years = await page.evaluate(() => cityGameQuestions.map(q => q.year));
     expect(years.length).toBeGreaterThan(0);
     years.forEach(y => expect(y).toBeLessThanOrEqual(499));
+});
+
+test('quelle est cette ville ? : une photo, quatre villes, la légende et la source seulement après la réponse', async ({ page }) => {
+    await openCities(page);
+    await startGame(page, 'Quelle est cette ville');
+    await expect(page.locator('#cities-photo-wrap')).toBeVisible();
+    await expect(page.locator('#cities-photo-img')).toHaveAttribute('src', /assets\/cities\/photos\/photo-\d\.jpg$/);
+    await expect(page.locator('#cities-photo-credit')).toContainText('Photo :');
+    // Pendant la question, rien ne nomme la ville.
+    await expect(page.locator('#cities-photo-legend')).toBeHidden();
+    await expect(page.locator('#cities-photo-link')).toBeHidden();
+    await expect(page.locator('#cities-ask')).toHaveText('Dans quelle ville a été prise cette photo ?');
+    await expect(page.locator('#cities-options .quiz-option')).toHaveCount(4);
+    await expect(page.locator('#cities-progress')).toHaveText(/Question 1 sur \d+/);
+    await answer(page, true);
+    await expect(page.locator('#cities-photo-legend')).toBeVisible();
+    await expect(page.locator('#cities-photo-link')).toHaveAttribute('href', /commons\.wikimedia\.org|fr\.wikipedia\.org/);
+    await expect(page.locator('#cities-feedback')).toContainText('pts');
 });

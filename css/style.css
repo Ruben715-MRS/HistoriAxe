@@ -13078,6 +13078,26 @@ input:not([type="range"]), label, select, summary, textarea {
 }
 
 /* La progression et le score courant, sur une même ligne au-dessus de la question. */
+/* « Quelle est cette ville ? » : la photo, pleine largeur dans le téléphone, et ses crédits dessous. */
+.cities-photo {
+    margin: 0 0 16px;
+}
+
+.cities-photo img {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    border-radius: 12px;
+}
+
+.cities-photo figcaption {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
 /* Le crédit des données, sous le menu et les parties : un peu d'air après le dernier bouton. */
 #cities-credit {
     margin-top: 24px;
