@@ -40,7 +40,7 @@ test('« Villes du monde » est une carte de « Jeux géographiques », premièr
     await page.locator('.arcade-card', { hasText: 'Villes du monde' }).click();
     await expect(page.locator('#cities-menu .btn')).toHaveText([
         'Capitale ou plus grande ville ?', 'Quelle ville est la plus au nord ?', 'Touchez la ville sur la carte',
-        'Classer les villes par population', "Ville de l'histoire"
+        'Classer les villes par population', "Villes de l'histoire"
     ]);
     // « Retour » ramène à la Salle de jeux.
     await page.locator('#screen-cities .back-btn').click();
@@ -162,7 +162,7 @@ test('classer par population : quatre villes à choisir dans l’ordre, Recommen
 
 test('ville de l’histoire : le titre ne nomme jamais la ville, la description vient après la réponse', async ({ page }) => {
     await openCities(page);
-    await startGame(page, "Ville de l'histoire");
+    await startGame(page, "Villes de l'histoire");
     await page.waitForFunction(() => typeof cityMapReady !== 'undefined' && cityMapReady === true);
     await expect(page.locator('#cities-ask')).toHaveText('Où se déroule ce fait ? Touchez la ville sur la carte.');
     for (let i = 0; i < 10; i++) {
@@ -197,7 +197,7 @@ test('ville de l’histoire, période : le choix est gardé, et chaque fait tir�
     await expect(page.locator('#cities-period .geoquiz-chip', { hasText: 'Toutes' })).toHaveAttribute('aria-pressed', 'true');
     await page.locator('#cities-period .geoquiz-chip', { hasText: 'Antiquité' }).click();
     await expect(page.locator('#cities-period .geoquiz-chip', { hasText: 'Antiquité' })).toHaveAttribute('aria-pressed', 'true');
-    await startGame(page, "Ville de l'histoire");
+    await startGame(page, "Villes de l'histoire");
     await page.waitForFunction(() => typeof cityMapReady !== 'undefined' && cityMapReady === true);
     const years = await page.evaluate(() => cityGameQuestions.map(q => q.year));
     expect(years.length).toBeGreaterThan(0);

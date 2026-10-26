@@ -13078,6 +13078,11 @@ input:not([type="range"]), label, select, summary, textarea {
 }
 
 /* La progression et le score courant, sur une même ligne au-dessus de la question. */
+/* Le crédit des données, sous le menu et les parties : un peu d'air après le dernier bouton. */
+#cities-credit {
+    margin-top: 24px;
+}
+
 .cities-bar {
     display: flex;
     justify-content: space-between;
