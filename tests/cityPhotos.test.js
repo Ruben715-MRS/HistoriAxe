@@ -29,6 +29,7 @@ test('chaque photo porte son auteur, sa légende et sa source ; les montages lis
         if (p.montage) {
             assert.ok(Array.isArray(p.composantes) && p.composantes.length > 0, p.city + ' : montage sans vignettes');
             p.composantes.forEach(c => assert.ok(c.auteur && c.fichier, p.city + ' : vignette sans auteur ni fichier'));
+            p.composantes.forEach(c => { if (c.licence) assert.ok(ALLOWED.includes(c.licence), p.city + ' : licence de vignette non autorisée'); });
         }
     });
 });

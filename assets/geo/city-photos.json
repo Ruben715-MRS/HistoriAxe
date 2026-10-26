@@ -15,14 +15,57 @@
       "montage": true,
       "modifie": "Montage de photos de Commons, redimensionné à 800 px de large.",
       "composantes": [
-        { "auteur": "AngMoKio", "fichier": "Pano Manhattan2007 amk.jpg" },
-        { "auteur": "Steve Cadman", "fichier": "The United Nations Building.jpg" },
-        { "auteur": "Terabass", "fichier": "New york times square-terabass.jpg" },
-        { "auteur": "ZanderZ", "fichier": "Unisphere-20100731.jpg" },
-        { "auteur": "Postdlf", "fichier": "Brooklyn Bridge Postdlf.jpg" },
-        { "auteur": "Cadiomals", "fichier": "LowerManhattanSept2013.png" },
-        { "auteur": "David Shankbone", "fichier": "Lower Central Park Shot 5.JPG" },
-        { "auteur": "à compléter", "fichier": "Statue of Liberty frontal 2.jpg" }
+        {
+          "auteur": "AngMoKio",
+          "fichier": "Pano Manhattan2007 amk.jpg"
+        },
+        {
+          "auteur": "Steve Cadman",
+          "fichier": "The United Nations Building.jpg"
+        },
+        {
+          "auteur": "Terabass",
+          "fichier": "New york times square-terabass.jpg"
+        },
+        {
+          "auteur": "ZanderZ",
+          "fichier": "Unisphere-20100731.jpg"
+        },
+        {
+          "auteur": "Postdlf",
+          "fichier": "Brooklyn Bridge Postdlf.jpg"
+        },
+        {
+          "auteur": "Cadiomals",
+          "fichier": "LowerManhattanSept2013.png"
+        },
+        {
+          "auteur": "David Shankbone",
+          "fichier": "Lower Central Park Shot 5.JPG"
+        },
+        {
+          "auteur": "à compléter",
+          "fichier": "Statue of Liberty frontal 2.jpg",
+          "licence": "CC BY-SA 4.0",
+          "note": "Vignette sous CC BY-SA 4.0 dans un montage déclaré en CC BY-SA 3.0 : compatibilité à vérifier. La statue elle-même est dans le domaine public (États-Unis)."
+        }
+      ],
+      "note": "Auteur de la vignette de la Statue de la Liberté à compléter (« par [1] » sur la page du montage)."
+    },
+    {
+      "city": "Q1297",
+      "src": "assets/cities/photos/chicago.jpg",
+      "legende": "Montage d’images de Chicago : théâtre, skyline, Navy Pier, Willis Tower, Cloud Gate, métro, Field Museum",
+      "auteur": "Valentinois26",
+      "licence": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Chicago_Collage_2023-09-27_22_08_27~2.jpg",
+      "montage": true,
+      "modifie": "Montage d’images de Chicago, redimensionné à 800 px de large.",
+      "composantes": [
+        {
+          "auteur": "Valentinois26",
+          "fichier": "photos de l’auteur (travail personnel)"
+        }
       ]
     },
     {
@@ -35,10 +78,22 @@
       "montage": true,
       "modifie": "Assemblage de quatre photos, redimensionné.",
       "composantes": [
-        { "auteur": "Brocken Inaglory", "fichier": "Golden Gate Bridge and San Francisco at sunset.jpg" },
-        { "auteur": "Bernard Gagnon", "fichier": "Painted Ladies, Alamo Square.jpg" },
-        { "auteur": "Cabe6403", "fichier": "SanFrancablecar.JPG" },
-        { "auteur": "Davefoc", "fichier": "TransAmBldg 3871.jpg" }
+        {
+          "auteur": "Brocken Inaglory",
+          "fichier": "Golden Gate Bridge and San Francisco at sunset.jpg"
+        },
+        {
+          "auteur": "Bernard Gagnon",
+          "fichier": "Painted Ladies, Alamo Square.jpg"
+        },
+        {
+          "auteur": "Cabe6403",
+          "fichier": "SanFrancablecar.JPG"
+        },
+        {
+          "auteur": "Davefoc",
+          "fichier": "TransAmBldg 3871.jpg"
+        }
       ]
     },
     {
