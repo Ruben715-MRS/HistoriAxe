@@ -234,7 +234,12 @@ function genRender() {
             btn.setAttribute('aria-expanded', open ? 'true' : 'false');
             btn.setAttribute('aria-label', t(open ? 'tools.genealogy_fold' : 'tools.genealogy_unfold', { name: genName(p) }));
             btn.textContent = open ? '−' : '+' + GenealogyCore.descendantsCount(id);
-            btn.onclick = () => { genCollapsed[id] = open; genRender(); };
+            btn.onclick = () => {
+                genCollapsed[id] = open;
+                genRender();
+                // Une branche qu'on déplie se montre tout de suite, au lieu de devoir être cherchée au doigt.
+                if (!open) genRevealChildren(id);
+            };
             card.appendChild(btn);
         }
         stage.appendChild(card);
@@ -251,6 +256,31 @@ function genScrollTo(id) {
         left: Math.max(0, (b.left + b.w / 2) * scale - view.clientWidth / 2),
         top: Math.max(0, (b.top + b.h / 2) * scale - view.clientHeight / 3)
     });
+}
+
+// Amène à l'écran les enfants d'une branche qu'on vient de déplier : la vue se déplace (le minimum possible), et si la
+// branche est plus grande que l'écran, son début s'aligne sur le bord. Pas utilisé par « Tout déplier ».
+function genRevealChildren(id) {
+    const kids = GenealogyCore.childrenOf(id).filter(k => genBoxes[k]);
+    if (!kids.length) return;
+    const scale = GEN_ZOOMS[genZoomIdx];
+    let l = Infinity, t = Infinity, r = -Infinity, b = -Infinity;
+    kids.forEach(k => {
+        const bx = genBoxes[k];
+        l = Math.min(l, bx.left); t = Math.min(t, bx.top);
+        r = Math.max(r, bx.left + bx.w); b = Math.max(b, bx.top + bx.h);
+    });
+    const view = document.getElementById('gen-view');
+    const pad = 12;
+    const place = (start, end, current, size) => {
+        if (end - start > size) return start - pad;
+        if (start < current) return start - pad;
+        if (end > current + size) return end - size + pad;
+        return current;
+    };
+    const left = place(l * scale, r * scale, view.scrollLeft, view.clientWidth);
+    const top = place(t * scale, b * scale, view.scrollTop, view.clientHeight);
+    view.scrollTo({ left: Math.max(0, left), top: Math.max(0, top), behavior: 'smooth' });
 }
 
 function genZoom(delta) {

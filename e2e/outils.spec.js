@@ -610,3 +610,40 @@ test('chronologie : la Chine propose les secrétaires généraux du Parti', asyn
     await expect(rows.first()).toContainText('Mao Zedong');
     expect(errors).toEqual([]);
 });
+
+test('généalogie biblique : déplier une branche qui dépasse l\'écran déplace la vue vers ses enfants ; « tout déplier » ne bouge pas la vue', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.locator('#btn-tools').click();
+    await page.locator('#screen-tools .arcade-card', { hasText: 'Généalogie biblique' }).click();
+    await page.locator('#gen-dir').click(); // vertical : les enfants descendent, la vue doit suivre vers le bas
+    await page.locator('#gen-stage .gen-card[data-id="cain"] .gen-toggle').click();
+    await page.waitForTimeout(700);
+    const visible = await page.evaluate(() => {
+        const view = document.getElementById('gen-view').getBoundingClientRect();
+        const enfant = document.querySelector('#gen-stage .gen-card[data-id="henoch_cain"]');
+        const r = enfant.getBoundingClientRect();
+        return r.top >= view.top - 1 && r.bottom <= view.bottom + 1;
+    });
+    expect(visible).toBe(true);
+
+    // « Tout déplier » ne déplace pas la vue.
+    const avant = await page.evaluate(() => document.getElementById('gen-view').scrollTop);
+    await page.locator('.gen-actions .btn', { hasText: 'Tout déplier' }).click();
+    await page.waitForTimeout(700);
+    expect(await page.evaluate(() => document.getElementById('gen-view').scrollTop)).toBe(avant);
+});
+
+test('généalogie biblique, à l\'horizontale : déplier une branche fait défiler vers la droite jusqu\'à ses enfants', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.locator('#btn-tools').click();
+    await page.locator('#screen-tools .arcade-card', { hasText: 'Généalogie biblique' }).click();
+    await expect(page.locator('#gen-stage.is-vertical')).toHaveCount(0);
+    await page.locator('#gen-stage .gen-card[data-id="cain"] .gen-toggle').click();
+    await page.waitForTimeout(700);
+    const visible = await page.evaluate(() => {
+        const view = document.getElementById('gen-view').getBoundingClientRect();
+        const r = document.querySelector('#gen-stage .gen-card[data-id="henoch_cain"]').getBoundingClientRect();
+        return r.left >= view.left - 1 && r.right <= view.right + 1;
+    });
+    expect(visible).toBe(true);
+});
