@@ -1,0 +1,1343 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agrégation de géographie 2027 : ce que change le rapport du jury 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F3F5F4; --surface:#FFFFFF; --ink:#1B2428; --muted:#55626A; --rule:#C9D1CF;
+  --pac:#1B6C9F; --etat:#7A3E8F; --camp:#3D7A34; --contour:#B07A45; --corr:#A5322B;
+  --pac-soft:#E2EEF5; --etat-soft:#F0E6F3; --camp-soft:#E5F0E2; --corr-soft:#F6E5E3;
+  --serif:"Literata","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --sans:"Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,Roboto,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#12181B; --surface:#1A2227; --ink:#E3E8E6; --muted:#A3AFB4; --rule:#34423F;
+    --pac:#66ACDB; --etat:#C590D6; --camp:#84BF76; --contour:#B98C5C; --corr:#E6847A;
+    --pac-soft:#15303F; --etat-soft:#2B1F33; --camp-soft:#1B2F1B; --corr-soft:#3A201D;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#12181B; --surface:#1A2227; --ink:#E3E8E6; --muted:#A3AFB4; --rule:#34423F;
+  --pac:#66ACDB; --etat:#C590D6; --camp:#84BF76; --contour:#B98C5C; --corr:#E6847A;
+  --pac-soft:#15303F; --etat-soft:#2B1F33; --camp-soft:#1B2F1B; --corr-soft:#3A201D;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:1.0625rem;line-height:1.64;font-optical-sizing:auto;overflow-wrap:break-word}
+svg,img{max-width:100%}
+a{color:inherit;text-decoration-thickness:1px;text-decoration-color:var(--muted);text-underline-offset:.18em}
+a:hover{text-decoration-color:currentColor}
+:focus-visible{outline:3px solid var(--pac);outline-offset:2px}
+strong{font-weight:600}
+
+/* Bandeau */
+.hero{position:relative;overflow:hidden;background:var(--surface);border-bottom:1px solid var(--rule)}
+.hero .contours{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero .contours path{fill:none;stroke:var(--contour);stroke-width:1.1;opacity:.38}
+.hero .contours path.index{stroke-width:2;opacity:.5}
+.hero-inner{position:relative;max-width:74rem;margin:0 auto;padding:3.25rem 1.25rem 2.25rem}
+.hero .meta{font-family:var(--sans);font-size:.92rem;color:var(--muted);margin:0 0 .75rem}
+h1{font-weight:600;font-size:clamp(2rem,6vw,3.35rem);line-height:1.08;letter-spacing:-.012em;margin:0 0 1rem;max-width:19ch}
+.lede{font-size:1.14rem;line-height:1.55;max-width:42rem;margin:0}
+.legend{margin-top:1.75rem;display:grid;gap:.9rem;font-family:var(--sans);font-size:.93rem;max-width:52rem}
+.legend p{margin:0;color:var(--muted);font-size:.88rem}
+.legend ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.45rem 1.35rem}
+.legend li{display:inline-flex;align-items:center;gap:.5rem;margin:0}
+.fig{display:inline-block;flex:none;width:1.1rem;height:.82rem;border:2px solid currentColor;vertical-align:-.08em}
+.fig.a{background:currentColor}
+.fig.b{background:repeating-linear-gradient(135deg,currentColor 0 2px,transparent 2px 5px)}
+.fig.c{background:transparent}
+.c-pac{color:var(--pac)} .c-etat{color:var(--etat)} .c-camp{color:var(--camp)}
+.legend .lbl{color:var(--ink)}
+
+/* Mise en page */
+.layout{max-width:74rem;margin:0 auto;padding:0 1.25rem 5rem;display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+@media (min-width:64rem){.layout{grid-template-columns:15rem minmax(0,1fr);gap:3.25rem}}
+.toc{font-family:var(--sans);font-size:.95rem;line-height:1.35}
+.toc ol{list-style:none;margin:0;padding:0}
+.toc li{margin:0}
+.toc a{display:block;padding:.42rem 0 .42rem .75rem;text-decoration:none;color:var(--muted);border-left:3px solid transparent}
+.toc a:hover{color:var(--ink);border-left-color:var(--rule)}
+.toc a.t-pac{border-left-color:var(--pac);color:var(--ink)}
+.toc a.t-etat{border-left-color:var(--etat);color:var(--ink)}
+.toc a.t-camp{border-left-color:var(--camp);color:var(--ink)}
+.toc-mobile{margin:1.25rem 0 .5rem;border:1px solid var(--rule);background:var(--surface);border-radius:6px}
+.toc-mobile summary{cursor:pointer;padding:.8rem 1rem;font-weight:700;list-style-position:inside}
+.toc-mobile ol{padding:0 1rem .8rem}
+.toc-desktop{display:none}
+@media (min-width:64rem){
+  .toc-mobile{display:none}
+  .toc-desktop{display:block;position:sticky;top:0;max-height:100vh;overflow:auto;padding:2.5rem 0 2rem}
+  .toc-desktop p{margin:0 0 .6rem;font-weight:700;color:var(--ink)}
+}
+main{min-width:0}
+section{padding:2.6rem 0 .6rem;border-top:1px solid var(--rule);scroll-margin-top:.75rem}
+main > section:first-child{border-top:0}
+h2{font-size:clamp(1.55rem,3.8vw,2.05rem);line-height:1.18;font-weight:600;letter-spacing:-.005em;margin:0 0 .9rem;max-width:32ch}
+.qsec h2{padding-left:.9rem;border-left:5px solid var(--qc)}
+.pac{--qc:var(--pac);--qs:var(--pac-soft)}
+.etat{--qc:var(--etat);--qs:var(--etat-soft)}
+.camp{--qc:var(--camp);--qs:var(--camp-soft)}
+.standfirst{font-family:var(--sans);color:var(--muted);font-size:.95rem;margin:-.3rem 0 1.2rem}
+h3{font-size:1.24rem;line-height:1.3;font-weight:600;margin:2.1rem 0 .6rem;max-width:40ch}
+h4{font-family:var(--sans);font-size:1.02rem;font-weight:700;margin:1.5rem 0 .45rem}
+p,ul,ol,dl{max-width:68ch}
+p{margin:.6rem 0}
+ul,ol{padding-left:1.2rem;margin:.6rem 0}
+li{margin:.38rem 0}
+li::marker{color:var(--muted)}
+.qsec li::marker{color:var(--qc)}
+
+/* Liste essentielle */
+.essentials{list-style:none;padding:0;display:grid;gap:.85rem;max-width:none}
+@media (min-width:48rem){.essentials{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:2rem}}
+.essentials li{margin:0;padding:.1rem 0 .1rem .9rem;border-left:3px solid var(--k,var(--rule))}
+.essentials li.k-pac{--k:var(--pac)} .essentials li.k-etat{--k:var(--etat)} .essentials li.k-camp{--k:var(--camp)}
+
+/* Tableaux */
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1rem 0 1.25rem;border:1px solid var(--rule);background:var(--surface);border-radius:6px;max-width:100%}
+table{border-collapse:collapse;width:100%;min-width:38rem;font-family:var(--sans);font-size:.92rem;line-height:1.45}
+table.narrow{min-width:30rem}
+table.wide{min-width:52rem}
+caption{caption-side:top;text-align:left;padding:.75rem .85rem .2rem;font-weight:700;color:var(--ink)}
+th,td{padding:.62rem .85rem;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule)}
+thead th{background:var(--paper);font-weight:700}
+tbody th{font-weight:700}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.yes{color:var(--muted)}
+.gap{font-weight:700}
+
+/* Blocs repliables */
+details.fold{margin:1rem 0 1.25rem;border:1px solid var(--rule);background:var(--surface);border-radius:6px}
+details.fold > summary{cursor:pointer;padding:.8rem 1rem;font-family:var(--sans);font-weight:700}
+details.fold[open] > summary{border-bottom:1px solid var(--rule)}
+details.fold .table-wrap{margin:0;border:0;border-radius:0}
+
+/* Étapes */
+ol.steps{counter-reset:s;list-style:none;padding:0}
+ol.steps > li{counter-increment:s;position:relative;padding-left:2.2rem;margin:.6rem 0}
+ol.steps > li::before{content:counter(s);position:absolute;left:0;top:.05rem;width:1.55rem;height:1.55rem;border:1.5px solid var(--ink);border-radius:50%;font-family:var(--sans);font-size:.85rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+
+/* Encadrés */
+.aside{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:.9rem 1.1rem;margin:1.2rem 0;max-width:68ch}
+.aside p:first-child{margin-top:0}.aside p:last-child{margin-bottom:0}
+.qsec .aside{background:var(--qs);border-color:transparent}
+
+/* Banque de sujets */
+.filters{font-family:var(--sans);display:grid;gap:.7rem;margin:1.2rem 0 1rem}
+.fgroup{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem}
+.fgroup .flabel{font-size:.9rem;color:var(--muted);min-width:5.5rem}
+.chip{font:inherit;font-size:.9rem;display:inline-flex;align-items:center;gap:.45rem;border:1.5px solid var(--rule);background:var(--surface);color:var(--ink);padding:.38rem .8rem;border-radius:999px;cursor:pointer;line-height:1.2}
+.chip:hover{border-color:var(--muted)}
+.chip[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.count{font-family:var(--sans);font-size:.9rem;color:var(--muted);margin:.2rem 0 1rem}
+.subjects{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem}
+@media (min-width:52rem){.subjects{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.subject{background:var(--surface);border:1px solid var(--rule);border-top:4px solid var(--qc);border-radius:6px;padding:1rem 1.1rem 1.05rem}
+.subject[hidden]{display:none}
+.subject h4{font-family:var(--serif);font-size:1.1rem;line-height:1.32;font-weight:600;margin:0 0 .35rem}
+.subject .variant{font-size:.95rem;color:var(--muted);margin:0 0 .55rem}
+.subject .tags{display:flex;flex-wrap:wrap;gap:.35rem 1rem;font-family:var(--sans);font-size:.86rem;margin:0 0 .5rem}
+.subject .tags span{display:inline-flex;align-items:center;gap:.4rem}
+.subject .tags .fig{color:var(--qc)}
+.subject dl{margin:0;font-size:.97rem;line-height:1.55}
+.subject dt{font-family:var(--sans);font-weight:700;font-size:.86rem;color:var(--muted);margin-top:.55rem}
+.subject dd{margin:.1rem 0 0}
+.subject.brief .why{margin:.2rem 0 0;font-size:.97rem}
+.subjects[hidden]{display:none}
+.group-title{font-family:var(--sans);font-size:1.02rem;font-weight:700;margin:1.8rem 0 .7rem;display:flex;align-items:center;gap:.55rem}
+.group-title .fig{color:var(--qc)}
+.group-title[hidden]{display:none}
+
+/* Pastilles de questions */
+.qtags{display:flex;flex-wrap:wrap;gap:.3rem}
+.qt{font-family:var(--sans);font-size:.8rem;line-height:1.2;padding:.18rem .5rem;border-radius:999px;border:1.5px solid currentColor;white-space:nowrap}
+.qt.pac{color:var(--pac)} .qt.etat{color:var(--etat)} .qt.camp{color:var(--camp)} .qt.sante,.qt.france,.qt.amer{color:var(--muted)}
+
+/* Listes de dossiers plausibles */
+.dossiers{list-style:none;padding:0;max-width:none;display:grid;gap:.55rem}
+@media (min-width:48rem){.dossiers{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:1.5rem}}
+.dossiers li{margin:0;padding:.55rem .75rem;background:var(--surface);border:1px solid var(--rule);border-radius:6px;display:grid;gap:.3rem}
+.dossiers li span.t{font-weight:600;line-height:1.35}
+.dossiers li span.d{font-size:.95rem;color:var(--muted);line-height:1.45}
+
+/* Notions */
+dl.notions{max-width:none;display:grid;grid-template-columns:minmax(0,1fr);gap:0;margin:.8rem 0 1.2rem;border-top:1px solid var(--rule)}
+dl.notions > div{padding:.6rem 0;border-bottom:1px solid var(--rule);display:grid;gap:.2rem}
+@media (min-width:48rem){dl.notions > div{grid-template-columns:15rem minmax(0,1fr);gap:1.25rem}}
+dl.notions dt{font-weight:600}
+dl.notions dd{margin:0}
+
+/* Erreurs */
+.corrections{list-style:none;padding:0;max-width:none;display:grid;gap:.75rem}
+.corrections li{margin:0;background:var(--surface);border:1px solid var(--rule);border-left:4px solid var(--corr);border-radius:6px;padding:.75rem 1rem}
+.corrections .was{font-family:var(--sans);font-size:.9rem;color:var(--muted);display:block;margin-bottom:.2rem}
+
+.to-top{position:fixed;right:.9rem;bottom:.9rem;z-index:5;font-family:var(--sans);font-size:.85rem;font-weight:700;text-decoration:none;background:var(--ink);color:var(--surface);padding:.42rem .8rem;border-radius:999px;visibility:hidden;opacity:0;transition:opacity .2s,visibility .2s}
+.to-top.show{visibility:visible;opacity:1}
+@media (prefers-reduced-motion: reduce){.to-top{transition:none}}
+@media (max-width:47.99rem){
+  .hero .contours path{opacity:.2}
+  .hero .contours path.index{opacity:.28}
+  .fgroup .flabel{flex-basis:100%;min-width:0}
+}
+@media (min-width:64rem){.to-top{display:none}}
+.foot{font-family:var(--sans);font-size:.88rem;color:var(--muted);margin-top:2.5rem}
+
+@media print{
+  .toc,.to-top,.filters,.count{display:none!important}
+  .layout{display:block}
+  details.fold{border:0}
+  details.fold > summary{display:none}
+  .subject[hidden],.group-title[hidden]{display:block!important}
+  body{background:#fff;color:#000}
+}
+</style>
+</head>
+<body>
+<header class="hero" id="haut">
+  <svg class="contours" viewBox="0 0 1200 460" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+    <path d="M-40 400 C 140 350 260 420 430 380 S 760 280 930 330 S 1160 410 1260 360"/>
+    <path class="index" d="M-40 360 C 150 300 280 380 440 340 S 760 230 940 285 S 1170 370 1260 320"/>
+    <path d="M-40 320 C 160 255 300 340 455 300 S 770 185 950 240 S 1180 330 1260 280"/>
+    <path d="M-40 280 C 170 212 320 300 470 262 S 780 142 960 196 S 1190 290 1260 240"/>
+    <path d="M540 150 C 600 95 720 88 790 120 S 860 205 800 232 S 640 250 580 220 S 505 185 540 150 Z"/>
+    <path class="index" d="M600 158 C 640 124 715 120 760 140 S 800 196 760 212 S 660 222 622 204 S 575 178 600 158 Z"/>
+    <path d="M655 165 C 680 148 715 147 735 158 S 752 186 732 194 S 684 198 666 188 S 640 176 655 165 Z"/>
+    <path d="M1010 70 C 1060 40 1150 48 1190 88 S 1200 170 1130 178 S 1000 160 985 120 S 980 88 1010 70 Z"/>
+    <path d="M1050 92 C 1082 74 1138 80 1160 104 S 1160 150 1118 152 S 1036 142 1030 118 S 1030 102 1050 92 Z"/>
+  </svg>
+  <div class="hero-inner">
+    <p class="meta">Document de travail pour la session 2027, établi le 16 septembre 2026</p>
+    <h1>Rapport du jury 2026 : ce qui change pour préparer 2027</h1>
+    <p class="lede">Agrégation externe de géographie. Lecture du rapport, repositionnement sur les trois questions reconduites et banque de sujets plausibles.</p>
+    <div class="legend" aria-label="Légende du document">
+      <ul>
+        <li class="c-pac"><i class="fig a"></i><span class="lbl">Le Pacifique</span></li>
+        <li class="c-etat"><i class="fig a"></i><span class="lbl">L'État, objet géographique</span></li>
+        <li class="c-camp"><i class="fig a"></i><span class="lbl">Vivre à la campagne en France, de 1815 aux années 1970</span></li>
+      </ul>
+      <ul>
+        <li><i class="fig a"></i><span class="lbl">Priorité A : angle mort du cadrage</span></li>
+        <li><i class="fig b"></i><span class="lbl">Priorité B : angle balisé ou partiel</span></li>
+        <li><i class="fig c"></i><span class="lbl">Priorité C : consommé ou exclu</span></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details class="toc-mobile" id="sommaire">
+      <summary>Sommaire</summary>
+      <ol>
+        <li><a href="#essentiel">L'essentiel</a></li>
+        <li><a href="#chiffres">Les chiffres de la session 2026</a></li>
+        <li><a href="#formats">Les changements de format en 2027</a></li>
+        <li><a href="#tirages">Tirages et formulations</a></li>
+        <li><a class="t-pac" href="#pacifique">Le Pacifique</a></li>
+        <li><a class="t-etat" href="#etat">L'État, objet géographique</a></li>
+        <li><a class="t-camp" href="#campagnes">Vivre à la campagne</a></li>
+        <li><a href="#banque">Banque de sujets plausibles</a></li>
+        <li><a href="#cas">Études de cas à la croisée des questions</a></li>
+        <li><a href="#notions">Notions et pièges</a></li>
+        <li><a href="#outils">Outils et calendrier</a></li>
+        <li><a href="#erreurs">Erreurs du rapport à ne pas recopier</a></li>
+        <li><a href="#sources">Sources</a></li>
+      </ol>
+    </details>
+    <div class="toc-desktop">
+      <p>Sommaire</p>
+      <ol>
+        <li><a href="#essentiel">L'essentiel</a></li>
+        <li><a href="#chiffres">Les chiffres de la session 2026</a></li>
+        <li><a href="#formats">Les changements de format en 2027</a></li>
+        <li><a href="#tirages">Tirages et formulations</a></li>
+        <li><a class="t-pac" href="#pacifique">Le Pacifique</a></li>
+        <li><a class="t-etat" href="#etat">L'État, objet géographique</a></li>
+        <li><a class="t-camp" href="#campagnes">Vivre à la campagne</a></li>
+        <li><a href="#banque">Banque de sujets plausibles</a></li>
+        <li><a href="#cas">Études de cas à la croisée des questions</a></li>
+        <li><a href="#notions">Notions et pièges</a></li>
+        <li><a href="#outils">Outils et calendrier</a></li>
+        <li><a href="#erreurs">Erreurs du rapport à ne pas recopier</a></li>
+        <li><a href="#sources">Sources</a></li>
+      </ol>
+    </div>
+  </nav>
+
+  <main id="contenu">
+    <section id="essentiel">
+      <h2>L'essentiel</h2>
+      <ul class="essentials">
+        <li><strong>L'oral fait le classement.</strong> Chaque oral compte triple : 260 points au total, dont 80 pour l'écrit. Les épreuves adossées au programme représentent 9 coefficients sur 13.</li>
+        <li><strong>ESD : une question graphique.</strong> L'une des quatre questions portera sur une production graphique à réaliser à partir de documents désignés dans la consigne.</li>
+        <li><strong>Commentaire géographique : plus d'étiquette.</strong> Le dossier n'indiquera plus sa question de rattachement. Le jury attend une lecture transversale dès l'exposé.</li>
+        <li><strong>Oral d'histoire : bibliographie en deux parties.</strong> D'un côté les ouvrages généraux, de l'autre les titres spécialisés. Les 8 dernières minutes d'entretien portent sur l'autre question.</li>
+        <li><strong>Aucune question n'est grillée.</strong> L'Amérique latine a donné deux sujets consécutifs en 2024 et 2025. Un second sujet est plus ciblé ou plus croisé que le premier.</li>
+        <li class="k-pac"><strong>Pacifique.</strong> Le sujet 2026 excluait les rives continentales. Priorité à la mer, aux rives et à leurs métropoles, aux circulations, aux ressources et aux rivalités de puissance.</li>
+        <li class="k-etat"><strong>État.</strong> Seul l'angle des marges a servi à l'écrit. Priorité aux capitales, à la mondialisation, à la mer, aux niveaux et échelles.</li>
+        <li class="k-camp"><strong>Campagnes.</strong> La moitié des verbes du cadrage a servi en 2026. Priorité à se soigner, consommer, circuler, à l'État au village, à l'habitat et à la nature.</li>
+      </ul>
+    </section>
+
+    <section id="chiffres">
+      <h2>Les chiffres de la session 2026</h2>
+      <p>346 inscrits, 168 présents à toutes les épreuves écrites, 69 admissibles, 68 présents jusqu'au bout des oraux, 36 admis. La barre d'admissibilité est à 33,5 sur 80 (8,38 de moyenne) et la barre d'admission à 133 sur 260 (10,23). Le major totalise 201 points (15,4) ; 14 lauréats dépassent 12 de moyenne.</p>
+      <div class="table-wrap">
+        <table>
+          <caption>Moyennes par épreuve</caption>
+          <thead>
+            <tr><th scope="col">Épreuve</th><th scope="col">Coef.</th><th scope="col">Présents</th><th scope="col">Admissibles (écrit) ou admis (oral)</th><th scope="col">Écart-type</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Géographie thématique : État et territoires de marge</th><td class="num">1</td><td class="num">8,03</td><td class="num">11,48</td><td>4,14 présents ; 2,95 admissibles</td></tr>
+            <tr><th scope="row">Géographie des territoires : le Pacifique insulaire</th><td class="num">1</td><td class="num">8,06</td><td class="num">11,90</td><td>4,41 présents ; 3,33 admissibles</td></tr>
+            <tr><th scope="row">Épreuve sur dossier, trois options</th><td class="num">1</td><td class="num">7,65</td><td class="num">10,24</td><td>3,60 présents ; 2,87 admissibles</td></tr>
+            <tr><th scope="row">Composition d'histoire : Travailler dans les campagnes françaises</th><td class="num">1</td><td class="num">7,90</td><td class="num">11,02</td><td>3,96 présents ; 3,08 admissibles</td></tr>
+            <tr><th scope="row">Commentaire de documents géographiques</th><td class="num">3</td><td class="num">9,43</td><td class="num">12,31</td><td>4,51 ; médiane à 8</td></tr>
+            <tr><th scope="row">Leçon hors programme</th><td class="num">3</td><td class="num">10,18</td><td class="num">11,73</td><td>3,94 admis</td></tr>
+            <tr><th scope="row">Commentaire et confrontation de documents d'histoire</th><td class="num">3</td><td class="num">10,09</td><td class="num">12,28</td><td>3,17 admis</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>À l'ESD, l'option A a réuni 50 candidats (7,68 de moyenne), l'option B 73 candidats (7,68) et l'option C 36 candidats (7,50, notes de 0 à 18).</p>
+      <h3>Ce qu'il faut en retenir</h3>
+      <ul>
+        <li>Les écrits comptent pour 1, les oraux pour 3. Thématique, territoires et histoire à l'écrit, commentaire géographique et histoire à l'oral totalisent 9 coefficients sur 13, soit près de 70 % des points. Les deux oraux sur programme pèsent plus que les quatre écrits réunis.</li>
+        <li>L'ESD reste l'épreuve la moins maîtrisée. À l'oral, le commentaire de documents géographiques est le plus dispersé : médiane à 8, mais meilleure moyenne des admis.</li>
+        <li>Un peu plus d'une quinzaine d'enseignants en poste étaient admissibles ; cinq ont été reçus (quatre certifiés, un stagiaire). C'est environ un tiers, contre plus d'un sur deux pour l'ensemble des admissibles.</li>
+        <li>Sur les 14 candidats bi-admissibles, 9 ont été admis.</li>
+        <li>Calendrier 2026 : écrits du 3 au 6 mars, oraux du 27 mai au 11 juin. Chaque oral comprend six heures de préparation, 30 minutes d'exposé et 25 minutes d'entretien. Les oraux sont publics et un entretien avec le jury est proposé le jour des résultats.</li>
+      </ul>
+    </section>
+
+    <section id="formats">
+      <h2>Les changements de format en 2027</h2>
+
+      <h3>Épreuve sur dossier : une question graphique</h3>
+      <p>À partir de 2027, le questionnement reste organisé en quatre questions, mais l'une d'elles sera consacrée à la production graphique. Elle devra être réalisée à partir de documents nommés dans la consigne, du type « à partir des documents X, Y et Z ». La copie comptera donc trois réponses rédigées et une réponse graphique, reliées par des transitions. Des productions complémentaires restent permises dans les autres questions, sans jamais remplacer la question dédiée.</p>
+      <p>La plus-value doit venir de la confrontation des documents désignés, pas de leur recopie. Le jury renforcera ses attentes sur la cohérence d'ensemble du questionnement : il faut délimiter le périmètre de chaque question. En option C en 2026, les deux premières réponses avaient débordé sur les suivantes.</p>
+      <h4>Protocole d'entraînement, environ une heure</h4>
+      <ol class="steps">
+        <li>Lire la consigne et les documents désignés : nature, échelle, date, source.</li>
+        <li>Écrire en une phrase ce que leur confrontation révèle et qu'aucun document ne montre seul. Cette phrase deviendra le titre.</li>
+        <li>Choisir la forme à partir des documents (tableau ci-dessous).</li>
+        <li>Construire une légende hiérarchisée en au moins deux niveaux, puis réaliser.</li>
+        <li>Vérifier localisations, orientation et échelle ; rédiger la transition vers la question suivante.</li>
+      </ol>
+      <div class="table-wrap">
+        <table>
+          <caption>Choisir la forme graphique</caption>
+          <thead><tr><th scope="col">Documents désignés</th><th scope="col">Forme adaptée</th><th scope="col">Plus-value attendue</th></tr></thead>
+          <tbody>
+            <tr><td>Carte et texte d'acteurs</td><td>Croquis d'organisation spatiale avec acteurs et flux</td><td>Localiser les jeux d'acteurs, expliquer pourquoi ici et pas ailleurs</td></tr>
+            <tr><td>Séries chiffrées et textes</td><td>Frise analytique ou graphique commenté</td><td>Relier une évolution à ses facteurs ; modèle réussi en option B : superficies forestières et explications</td></tr>
+            <tr><td>Plusieurs textes d'acteurs</td><td>Schéma systémique ou schéma d'acteurs</td><td>Montrer interactions, conflits et niveaux de décision ; le jury juge les organigrammes souvent indigents</td></tr>
+            <tr><td>Photographie et carte topographique</td><td>Croquis de paysage interprété</td><td>Passer du visible aux processus</td></tr>
+            <tr><td>Plusieurs études de cas</td><td>Croquis générique</td><td>Styliser des cas comparables en un seul modèle ; aucune copie ne l'a tenté en option C</td></tr>
+            <tr><td>Informations classables</td><td>Tableau typologique</td><td>Hiérarchiser plutôt qu'énumérer</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Commentaire de documents géographiques : des dossiers sans étiquette</h3>
+      <p>En 2026, chaque dossier portait en première page l'intitulé de la question de rattachement. Ce ne sera plus le cas en 2027, afin de permettre des approches croisées. Le jury donne deux exemples. Le dossier « Nouméa », classé Pacifique, ouvrait sur les littoraux français et l'État. Le dossier sur le Languedoc, construit sur la carte d'Aigues-Mortes et classé État, ouvrait sur les littoraux et l'environnement. L'entretien peut porter sur les autres questions du programme et se termine par des questions de pédagogie et de valeurs de la République.</p>
+      <p>La moitié des dossiers 2026 reposaient sur une carte topographique principale, les autres pouvant inclure des cartes Géoportail. Le tirage est « en ligne » : deux ou trois candidats traitent le même sujet. Dictionnaires et atlas sont en libre accès, et la cartothèque fournit sur demande des cartes d'autres dates ou échelles, qui doivent être présentées au jury.</p>
+      <h4>Grille de départ pour un dossier sans étiquette</h4>
+      <ol class="steps">
+        <li>Trier les documents par registre (scientifique, institutionnel, journalistique, cartographique, iconographique), par échelle et par date.</li>
+        <li>Noter, pour chacune des quatre questions (Santé, État, France, Pacifique), ce que le dossier permet de mobiliser.</li>
+        <li>Fixer la problématique sur le sujet posé, puis placer dans le plan des ouvertures transversales argumentées, jamais une partie fourre-tout.</li>
+        <li>Demander les cartes utiles : carte complète d'un extrait Géoportail, carte ancienne, autre échelle.</li>
+        <li>Prévoir au moins deux productions graphiques de nature différente, à des moments distincts de l'exposé.</li>
+        <li>Préparer deux ou trois réponses pédagogiques liées au dossier : programme concerné, éducations transversales présentées sur Eduscol (défense, développement durable).</li>
+      </ol>
+      <h4>Ajouter de la valeur aux documents</h4>
+      <p>Le jury liste les opérations attendues : expliciter (définir, révéler un implicite, nommer la notion), contextualiser à une autre échelle de temps ou d'espace, croiser et confronter, interroger les sources et la production des données, hiérarchiser, calculer (taux, proportions, distances et densités à partir de l'échelle), transposer sous forme graphique. S'y ajoutent deux réflexes : poser la question « pourquoi ici ? » et repérer les dynamiques.</p>
+      <h4>Défauts relevés en 2026</h4>
+      <ul>
+        <li>Problématiques alambiquées ou purement rhétoriques, notamment en « dans quelle mesure ».</li>
+        <li>Un seul croquis de synthèse monoscalaire, qui reprend le plan ; le jury préfère plusieurs productions de nature différente.</li>
+        <li>Exposé bâti sur la seule carte topographique, au détriment du sujet.</li>
+        <li>Temps mal géré : le candidat relit la légende du croquis à chaque transition puis bâcle la dernière partie.</li>
+        <li>Sujet abordé seulement en deuxième ou troisième partie ; longue énumération des documents en introduction.</li>
+        <li>Lacunes de base : plaine, plateau, montagne, lit mineur et lit majeur, banlieue et espace périurbain, formes littorales, paysages agraires ; sur le programme, lagon, atoll, biodiversité, gouvernance, décentralisation.</li>
+        <li>Populations du Pacifique présentées comme un bloc, sans distinguer l'autochtonie.</li>
+        <li>Peu de références culturelles (cinéma, peinture, littérature) et éducations transversales largement méconnues.</li>
+      </ul>
+
+      <h3>Commentaire et confrontation de documents d'histoire</h3>
+      <p>Le candidat traite un sujet à partir de quatre à cinq documents tirés de sources primaires, les deux questions étant représentées à parts égales. Il dispose d'un ordinateur hors ligne, d'une bibliothèque d'ouvrages de la BIS, de fonds complémentaires (bibliothèques Lavisse, Sainte-Geneviève, ENS) et d'une banque d'articles constituée en lien avec les dossiers. La bibliothèque peut être visitée la veille. Nouveauté 2027 : la bibliographie imprimée remise au jury devra comporter deux parties, ouvrages généraux puis titres spécialisés sur le sujet. Le jury insiste pour que ces ouvrages soient connus avant l'oral, y compris le contenu des volumes collectifs et les titres en anglais.</p>
+      <div class="table-wrap">
+        <table>
+          <caption>Déroulé attendu</caption>
+          <thead><tr><th scope="col">Moment</th><th scope="col">Durée</th><th scope="col">Attendus</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Introduction</th><td>5 min</td><td>Accroche qui fait entrer dans le sujet, souvent par un document ; analyse des termes ; présentation typologique et contextualisée du corpus, par exemple en carte et frise ; problématique sur deux diapositives successives ; plan avec dates de rupture.</td></tr>
+            <tr><th scope="row">Développement</th><td>3 parties de 7 à 8 min</td><td>Une idée étayée par un ou plusieurs documents ; citations entre guillemets, situées, datées, lues et commentées ; synthèses de transition.</td></tr>
+            <tr><th scope="row">Conclusion</th><td>2 à 3 min</td><td>Bilan qui n'est pas un résumé ; ouverture, par exemple sur les silences du corpus.</td></tr>
+            <tr><th scope="row">Entretien</th><td>25 min</td><td>12 minutes avec l'auteur du sujet, 5 avec l'autre spécialiste de la période, puis 8 minutes d'élargissement sur l'autre question du programme.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Critères d'évaluation : compréhension du sujet, problématisation, analyse et confrontation des documents, connaissances, plan, regard critique ; pertinence de la bibliographie ; lisibilité du diaporama et articulation au propos ; respect du temps et équilibre ; niveau de langue, fluidité, posture ; qualité de l'échange. Le jury rappelle les exigences de neutralité et de laïcité, et demande de contextualiser les documents plutôt que de dérouler le contexte général de la question.</p>
+
+      <h3>Leçon hors programme : rappels valables partout</h3>
+      <ul>
+        <li>Depuis 2026, quatre références fournies au lieu de six, avec accès aux ressources numériques (sauf outils collaboratifs, messageries, réseaux sociaux et IA).</li>
+        <li>Problématique simple, affirmative si possible ; plan en trois parties de trois sous-parties non obligatoire ; titres courts et évocateurs, pas de plan « en une phrase ».</li>
+        <li>Au moins une production graphique personnelle : croquis filé, croquis ponctuel ou frise analytique. Cartes topographiques encore trop peu utilisées.</li>
+        <li>Mot-clé du jury en 2026 : « concrètement ». Relief, morphologie urbaine, techniques : la matérialité reste le point faible.</li>
+        <li>Lacunes d'histoire jugées gênantes pour un concours bivalent (confusions entre URSS, Russie et bloc communiste) ; urbanisme et aménagement insuffisamment maîtrisés.</li>
+      </ul>
+    </section>
+
+    <section id="tirages">
+      <h2>Tirages et formulations</h2>
+      <p>En 2027, la géographie thématique portera sur Géographies de la santé (question nouvelle) ou sur L'État, objet géographique. La géographie des territoires portera sur La France (question nouvelle) ou sur Le Pacifique. L'histoire portera sur Les Amériques des années 1550 aux années 1660 (question nouvelle) ou sur Vivre à la campagne en France. L'État, le Pacifique et les campagnes étaient des questions nouvelles en 2026.</p>
+      <div class="table-wrap">
+        <table class="wide">
+          <caption>Sujets d'écrit récents (un tiret signale un sujet non repris ici)</caption>
+          <thead><tr><th scope="col">Session</th><th scope="col">Géographie thématique</th><th scope="col">Géographie des territoires</th><th scope="col">Histoire</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">2021</th><td>Traverser les frontières</td><td>L'Asie du Sud-Est et la mer</td><td>Le travail des femmes dans l'industrie et l'artisanat en Europe occidentale des années 1830 aux années 1930</td></tr>
+            <tr><th scope="row">2022</th><td>Les effets-frontières sur les territoires</td><td>Environnement, conflits et territoires en Amérique latine</td><td>Le prêtre et le magistrat dans le monde romain</td></tr>
+            <tr><th scope="row">2023</th><td>Villes et géographies du politique</td><td>Vieillir en France</td><td>Être ouvrier dans une usine en Europe occidentale des années 1830 aux années 1930</td></tr>
+            <tr><th scope="row">2024</th><td>Systèmes productifs, environnements et territoires</td><td>Se déplacer en Amérique latine</td><td>L'État monarchique et la guerre en France (1380-1715)</td></tr>
+            <tr><th scope="row">2025</th><td>—</td><td>Forêts, cerrados, pampas : des espaces politiques en Amérique latine</td><td>—</td></tr>
+            <tr><th scope="row">2026</th><td>État et territoires de marge</td><td>Le Pacifique insulaire</td><td>Travailler dans les campagnes françaises (1815-années 1970)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Ce que disent les précédents</h3>
+      <ul>
+        <li><strong>Une question peut tomber deux fois de suite.</strong> La question sur l'Amérique latine, au programme en 2024 et 2025, a fourni les deux sujets de territoires. Le premier était une entrée thématique (se déplacer), le second un croisement entre milieux et politique.</li>
+        <li><strong>Une question peut ne jamais tomber.</strong> Les littoraux français, au programme en 2025 et 2026, n'ont donné aucun sujet de territoires à l'agrégation de géographie.</li>
+        <li><strong>Trois familles de formulations.</strong> Un verbe à l'infinitif (Traverser, Vieillir, Se déplacer, Travailler), un couple de notions (État et territoires de marge, Villes et géographies du politique) ou un espace qualifié (Le Pacifique insulaire).</li>
+        <li><strong>Des sujets 2026 très englobants.</strong> « Le Pacifique insulaire » reprend presque l'intitulé de la question et « Travailler » couvrait toute la période. Un nouveau sujet sur ces questions serait plus ciblé ou plus croisé.</li>
+        <li><strong>Le cadrage sert de générateur.</strong> Le dossier d'oral « Les fonctions de l'État et leurs implications spatiales dans un espace de faible densité » reprend un intertitre du cadrage, et les sujets d'oral sur les campagnes reprennent ses verbes.</li>
+      </ul>
+      <h3>Grille-filtre pour tester un sujet</h3>
+      <ol class="steps">
+        <li>L'angle est-il tombé à l'écrit en 2026 ? Si oui, l'écarter.</li>
+        <li>A-t-il fait l'objet d'un dossier d'oral en 2026 ? Il reste possible à l'écrit et le corpus 2026 devient une ressource ; il est peu probable tel quel à l'oral.</li>
+        <li>Correspond-il à un intertitre, une énumération ou un verbe du cadrage ? Si oui, le remonter en priorité.</li>
+        <li>Le cadrage l'exclut-il ou le déconseille-t-il ? Indopacifique, territoires français du Pacifique comme objet en soi ; pour la question rurale, outre-mer, colonies ou histoire réduite à l'agriculture. Si oui, l'écarter ou le reformuler.</li>
+        <li>Permet-il plusieurs échelles et le croisement de deux champs, comme les seconds sujets récents ?</li>
+        <li>En histoire, couvre-t-il toute la période (format de l'écrit 2026) ou une sous-période datée (format des oraux) ?</li>
+        <li>Croise-t-il une question nouvelle (Santé, France, Amériques) ? Si oui, sa rentabilité double.</li>
+      </ol>
+    </section>
+
+    <section id="pacifique" class="qsec pac">
+      <h2>Le Pacifique</h2>
+      <p class="standfirst">Géographie des territoires. Écrit 2026 : « Le Pacifique insulaire », moyenne de 8,06, notes de 1 à 18.</p>
+
+      <h3>Ce que l'écrit 2026 attendait et sanctionnait</h3>
+      <ul>
+        <li><strong>Délimitation.</strong> Le jury entendait les petits États et territoires insulaires de Mélanésie, Polynésie et Micronésie, hors grandes masses (Australie, Nouvelle-Zélande, Japon). Il acceptait une autre délimitation justifiée. Erreurs relevées : toutes les îles du Pacifique, Singapour, voire les Maldives. « Pacifique insulaire » ne veut pas dire « îles du Pacifique ».</li>
+        <li><strong>Accroche.</strong> Epeli Hau'ofa ouvre entre un tiers et la moitié des copies, sans être réinvesti ensuite. À n'employer que comme argument.</li>
+        <li><strong>Problématique.</strong> Définitions juxtaposées dans l'ordre de l'intitulé ; problématiques plaquées (atouts et contraintes, unité et diversité). Le corrigé propose : comment l'insularité façonne à la fois vulnérabilité et singularité ; paradoxe entre marginalité apparente et centralité stratégique ; laboratoire des enjeux globaux.</li>
+        <li><strong>Plan.</strong> Plans à tiroirs proscrits (politique, puis économie, puis environnement) ; dernière partie environnementale non reliée à ce qui précède ; transitions invisibles ; sauts de ligne qui hachent le raisonnement.</li>
+        <li><strong>Exemples.</strong> Un exemple ne tient pas lieu de sous-partie et une dissertation n'est pas une suite de monographies. Citer les travaux scientifiques sans travestir les auteurs.</li>
+        <li><strong>Croquis.</strong> Copies sans croquis pénalisées ; croquis de synthèse rares ; cadres de 5 à 6 cm trop petits ; légende organisée en au moins deux parties ; jamais en planche d'annexes ; le texte doit s'appuyer sur les croquis.</li>
+        <li><strong>Conclusion.</strong> Une réponse à la problématique, sans idée ni exemple nouveau.</li>
+        <li><strong>Préparation.</strong> Manuels nécessaires mais insuffisants, même lus en totalité. Littérature scientifique au moins francophone, exemples assez larges pour servir plusieurs sujets, conférences du FIG, vocabulaire général à consolider.</li>
+      </ul>
+      <h4>Contenus valorisés par le corrigé</h4>
+      <p>Fragmentation et discontinuités (archipels dispersés sur 40 millions de km², îles hautes et basses, points chauds) ; diversité des statuts et laboratoires politiques (ancien condominium des Nouvelles-Hébrides, libre association de Niue et des îles Cook) ; gestion de ZEE immenses avec peu de moyens ; héritages coloniaux (langues, évangélisation, interdits coutumiers, spoliation, cantonnement) ; vulnérabilités économiques (foncier, eau, marchés étroits, modèle MIRAB de Bertram et Watters) ; « mort importée » et émigration, dont plus de la moitié des Wallisiens et Futuniens installés en Nouvelle-Calédonie ; exploitation de l'insularité (tourisme, Palau Pledge, bases, essais nucléaires, Kwajalein et SpaceX) ; rivalités Chine-États-Unis et Chine-Taïwan ; indépendantismes et diasporas ; aérien et câbles ; migrations environnementales, Union Falepili, savoirs traditionnels comme le rahui ; diplomatie climatique (AOSIS, aires marines protégées) ; renouveau culturel et vision océanienne ; Forum des îles du Pacifique ; typologies à plusieurs échelles (Hawaï entité motrice ; Fidji, Salomon, Palaos, Samoa en voie d'intégration ; marges ; côte au vent et sous le vent ; motu principal et secondaires ; fragmentation de Port-Moresby, Nouméa et Papeete).</p>
+
+      <h3>Ce que l'oral 2026 a couvert</h3>
+      <details class="fold">
+        <summary>Les huit dossiers d'oral 2026</summary>
+        <div class="table-wrap">
+          <table class="wide">
+            <thead><tr><th scope="col">Dossier</th><th scope="col">Documents structurants</th><th scope="col">Angle</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Tuvalu, un pays voué à disparaître ?</th><td>Présentation diplomatique (2026) ; V. Duvat sur l'habitabilité des atolls (Géoconfluences, 2024) ; Union Falepili (Ifri) ; projet d'adaptation côtière du PNUD (2023) ; Tuvalu dans le métavers ; photo du discours les pieds dans l'eau</td><td>Habitabilité, adaptation, souveraineté</td></tr>
+              <tr><th scope="row">Les découpages géographiques du Pacifique</th><td>Hau'ofa ; Tcherkézoff (2008) ; Atlas de l'Océanie (2021) ; Heritage Foundation sur les accords de libre association ; Forum de Honiara (2025) ; Chili tricontinental ; zones maritimes australiennes ; carte « corrective » de McArthur (1979) ; première chaîne d'îles ; espace géostratégique japonais</td><td>Représentations, régionalisations, géostratégie</td></tr>
+              <tr><th scope="row">La Californie et le Pacifique</th><td>Population asiatique (Pew) ; Little Tokyo ; port de Los Angeles et droits de douane (2025) ; base de San Diego (Géoimage) ; diffusion du surf (J.-P. Augustin) ; route côtière ; sanctuaire marin Chumash ; risque de tsunami</td><td>Rive américaine, flux, culture, risques</td></tr>
+              <tr><th scope="row">Guam</th><td>Carte ; militarisation (Géoimage) ; câbles sous-marins (2026) ; défense antimissile ; vestiges sous une base ; revendications chamorros</td><td>Territoire stratégique et autochtonie</td></tr>
+              <tr><th scope="row">Centres et périphéries en Polynésie française</th><td>Recensement de 2022 ; organisation de Tahiti ; quartiers de Faa'a ; desserte aérienne ; hébergement à Bora Bora ; migrations entre archipels ; langues et chômage ; « bouts du monde » (J.-C. Gay) ; infirmière des îles isolées ; plan de gestion de l'espace maritime de Moorea</td><td>Centre et périphérie à plusieurs échelles</td></tr>
+              <tr><th scope="row">Le tourisme en Océanie française</th><td>Atlas de l'Océanie ; séries statistiques calédoniennes et polynésiennes ; Wallis-et-Futuna ; plan d'un resort de Bora Bora ; pratiques de plage (C. Blondy) ; tourisme durable en Province Sud ; stratégie de Wallis-et-Futuna 2020-2030</td><td>Tourisme, imaginaires, aménagement</td></tr>
+              <tr><th scope="row">Nouméa</th><td>Carte topographique au 1/50 000 ; vote indépendantiste en 2019 ; carte de 1939 ; tribu de Saint-Louis ; bâtiments scolaires détruits en 2024 ; usine de Doniambo ; habitat</td><td>Ville coloniale, fragmentation, politique</td></tr>
+              <tr><th scope="row">Les atolls du Pacifique</th><td>Kwajalein ; SpaceX sur Omelek ; cyclone Orama à Anaa (1983) ; essais de Bikini (1946) ; abri anticyclonique aux Tuamotu ; V. Duvat (2024) ; resort de Tetiaroa ; récit de voyage (1931)</td><td>Milieux, risques, usages stratégiques et touristiques</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+
+      <h3>Angles morts au regard du cadrage</h3>
+      <p>Le cadrage 2027 dépasse largement le sujet 2026. Il ouvre la question aux façades asiatiques et américaines dans leur rapport au Pacifique. Il pense la région comme un emboîtement (bassin pacifique, Asie-Pacifique, Océanie, Pacifique insulaire) et place la dimension maritime au centre. L'Indopacifique est exclu.</p>
+      <div class="table-wrap">
+        <table class="wide">
+          <thead><tr><th scope="col">Axe du cadrage</th><th scope="col">En 2026</th><th scope="col">Pistes et exemples</th></tr></thead>
+          <tbody>
+            <tr><td>Délimitation large : rives d'Asie et d'Amérique, Pacific Rim, espace gigogne d'Antheaume et Bonnemaison, mers bordières utiles mais non systématiques, iléité et décentrement</td><td>Écrit limité au Pacifique insulaire ; oral : Californie, découpages</td><td class="gap">Japon (Ogasawara, Okinawa), Chili, Pérou, Canada, Philippines, Indonésie</td></tr>
+            <tr><td>Dimension maritime : ZEE et haute mer, frontières, sécurité, gouvernance ; nodules, surpêche, pollutions plastique et radioactive, chasse baleinière</td><td>Mentions ponctuelles (ZEE, aires marines)</td><td class="gap">Zone de Clarion-Clipperton ; Parties à l'accord de Nauru ; Papahānaumokuākea, Marae Moana, sanctuaire de Palaos ; eaux traitées de Fukushima (depuis 2023) ; Okinotorishima ; Clipperton</td></tr>
+            <tr><td>Invention européenne et héritages impériaux : Magellan, Cook, Darwin ; découpages ; imaginaires concurrents (récit sinocentré, diplomatie austronésienne de Taïwan, tricontinentalité chilienne, Moana) ; de Waitangi (1840) aux décolonisations</td><td>Oral : découpages ; écrit : héritages coloniaux</td><td class="gap">Galion de Manille (1565-1815) ; tripartition de Dumont d'Urville (1832) ; blackbirding ; guerre du Pacifique</td></tr>
+            <tr><td>Le Pacifique entre Washington et Pékin : 3e et 7e flottes, Guam, Hawaï ; puissances régionales ; câbles ; APEC, CPTPP, RCEP, CPS, Forum, sous-régionalismes, AOSIS</td><td>Écrit : rivalités vues depuis les îles ; oral : Guam, Californie</td><td class="gap">Pacte sécuritaire sino-salomonais (2022) ; bascule de Nauru vers Pékin (2024) ; accords de libre association renouvelés (2023-2024) ; partenariat îles Cook-Chine (2025)</td></tr>
+            <tr><td>Disparités : Pacifique Nord et Sud, Australie et Nouvelle-Zélande face à leurs voisins, métropoles et dépendances (Équateur et Galápagos)</td><td>Oral : Polynésie française</td><td class="gap">Galápagos, Rapa Nui, contrastes Japon-Vanuatu</td></tr>
+            <tr><td>Peuplement, minorités, migrations : autochtonies aborigène et maorie, immigration asiatique et océanienne, blackbirding</td><td>Jury : autochtonie mal distinguée à l'oral</td><td class="gap">Māori, Kanak, Kānaka Maoli, Chamorros, Rapa Nui ; diasporas samoanes et tongiennes ; travail saisonnier (PALM en Australie, RSE en Nouvelle-Zélande)</td></tr>
+            <tr><td>Transports, mobilités, systèmes productifs : mines, agriculture d'exportation, industrie de pointe, paradis fiscaux, tourisme</td><td>Oral : desserte aérienne, tourisme en Océanie française</td><td class="gap">Nickel calédonien, Panguna, Ok Tedi, phosphate de Nauru, thon, services financiers de Vanuatu et des îles Cook</td></tr>
+            <tr><td>Littoralisation et métropolisation sur toutes les rives</td><td>Oral : Nouméa, Californie</td><td class="gap">Mégalopole japonaise, Busan, Sydney, Auckland, Vancouver, Los Angeles-Long Beach, Lima-Callao</td></tr>
+            <tr><td>Imaginaires et géographie culturelle : tourisme, exotisme, œuvres (Bougainville, Diderot, Golding, Gauguin, Matisse, Eastwood, Pacifiction)</td><td>Jury : références culturelles rares à l'oral</td><td class="gap">Fiche d'œuvres datées et situées</td></tr>
+            <tr><td>Petites nations et changement climatique : Tuvalu, Kiribati, adaptation, souveraineté</td><td class="yes">Très couvert : écrit, Tuvalu, atolls</td><td>Déplacer l'angle vers la continuité de l'État (révision constitutionnelle de Tuvalu en 2023) et l'avis de la CIJ (2025)</td></tr>
+            <tr><td>Territoires français : statuts, relations avec Paris, violences de 2024, insertion régionale ; pas un objet en soi</td><td class="yes">Oral : trois dossiers sur huit</td><td>À mobiliser dans tout sujet ; suivre l'accord de Bougival (2025) et ses suites</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Dossiers d'oral plausibles, non vus en 2026</h3>
+      <ul class="dossiers">
+        <li><span class="t">Hawaï</span><span class="d">État fédéré, militarisation, tourisme, autochtonie ; incendie de Lahaina (2023)</span><span class="qtags"><span class="qt pac">Pacifique</span><span class="qt etat">État</span></span></li>
+        <li><span class="t">Les Galápagos</span><span class="d">Métropole et dépendance, protection, flottes de pêche en limite de ZEE</span><span class="qtags"><span class="qt pac">Pacifique</span><span class="qt etat">État</span></span></li>
+        <li><span class="t">Rapa Nui</span><span class="d">Territoire spécial chilien, patrimoine mondial, tourisme, autochtonie</span><span class="qtags"><span class="qt pac">Pacifique</span><span class="qt etat">État</span></span></li>
+        <li><span class="t">Nauru</span><span class="d">Phosphate, micro-État, centres de rétention australiens, santé</span><span class="qtags"><span class="qt pac">Pacifique</span><span class="qt etat">État</span><span class="qt sante">Santé</span></span></li>
+        <li><span class="t">Bougainville</span><span class="d">Mine de Panguna, conflit, référendum de 2019, projet d'indépendance</span><span class="qtags"><span class="qt pac">Pacifique</span><span class="qt etat">État</span></span></li>
+        <li><span class="t">Wallis-et-Futuna</span><span class="d">Royautés coutumières reconnues, émigration vers la Nouvelle-Calédonie</span><span class="qtags"><span class="qt pac">Pacifique</span><span class="qt etat">État</span></span></li>
+        <li><span class="t">Clipperton et la ZEE française du Pacifique</span><span class="d">Souveraineté sans habitants, surveillance, ressources</span><span class="qtags"><span class="qt pac">Pacifique</span><span class="qt etat">État</span></span></li>
+        <li><span class="t">Okinawa</span><span class="d">Bases étatsuniennes, première chaîne d'îles, rapport à Tokyo</span><span class="qtags"><span class="qt pac">Pacifique</span><span class="qt etat">État</span></span></li>
+        <li><span class="t">Les essais nucléaires en Polynésie</span><span class="d">Moruroa, Fangataufa, Hao ; indemnisation et mémoire</span><span class="qtags"><span class="qt pac">Pacifique</span><span class="qt etat">État</span><span class="qt sante">Santé</span></span></li>
+        <li><span class="t">Port-Moresby</span><span class="d">Croissance urbaine, habitat informel, fragmentation</span><span class="qtags"><span class="qt pac">Pacifique</span></span></li>
+        <li><span class="t">Auckland, métropole polynésienne</span><span class="d">Diasporas, hub aérien, métropolisation</span><span class="qtags"><span class="qt pac">Pacifique</span></span></li>
+        <li><span class="t">La pêche thonière dans le Pacifique occidental</span><span class="d">Parties à l'accord de Nauru, flottes étrangères, ZEE</span><span class="qtags"><span class="qt pac">Pacifique</span><span class="qt etat">État</span></span></li>
+      </ul>
+    </section>
+
+    <section id="etat" class="qsec etat">
+      <h2>L'État, objet géographique</h2>
+      <p class="standfirst">Géographie thématique. Écrit 2026 : « État et territoires de marge », moyenne de 8,03, notes de 1 à 20.</p>
+
+      <h3>Ce que l'écrit 2026 attendait et sanctionnait</h3>
+      <ul>
+        <li><strong>Contextualisation absente.</strong> Tensions internationales, pression sur les frontières, recul de la démocratie libérale, progrès des régimes autoritaires, défiance envers l'État de droit.</li>
+        <li><strong>Définitions.</strong> L'État objet géographique était bien défini à partir de la lettre de cadrage, la marge beaucoup moins. Il fallait discuter la polysémie du terme et ses notions voisines.</li>
+        <li><strong>Définition du jury.</strong> Un territoire de marge fonctionne autrement que les autres ; la distance euclidienne est rarement décisive. La marge est ambivalente, à la fois exclusion et espace des possibles (S. Depraz), et évolue par marginalisation ou démarginalisation. Elle peut être choisie (le Diois, les ZAD).</li>
+        <li><strong>Typologie attendue.</strong> Marges politiques et géopolitiques : États-marges (Corée du Nord, Érythrée), quasi-États (Sahara occidental, Chypre Nord, Transnistrie), États fragmentés (Soudan, Somalie, Yémen), Sahel central, frontières sous tension (Cachemire), espaces criminels. Marges sociales et économiques : quartiers, rural profond, outre-mer paupérisés, désindustrialisation, pays les moins avancés comme Haïti.</li>
+        <li><strong>Rôles de l'État.</strong> Intégration géohistorique des marches ; sécurisation ; État marge, victime ou producteur de marginalité (Donbass) ; État régulateur, réparateur, providence ; politiques ultralibérales ; délégation ; protection des marges (espaces protégés transfrontaliers) ; DATAR, ANCT, Union européenne, UNESCO, UICN.</li>
+        <li><strong>Fautes relevées.</strong> A. Reynaud mal interprété faute de contexte épistémologique ; marge confondue avec périphérie, d'où des dérives vers la diagonale dite du vide, toute la Chine non littorale ou tous les outre-mer ; frontière très intégrée assimilée à une marge (France-Suisse) ; exclaves citées sans démontrer leur marginalité (Kaliningrad, Gibraltar, Ceuta, Melilla) ; transfert de la capitale égyptienne jugé peu opérant ; traitement à une seule échelle ; plans à tiroirs ; ZEE oubliées alors que « merritoire » était partout ; typologies rares ; représentations négligées ; conclusions hâtives.</li>
+        <li><strong>Le rescaling.</strong> Le rapport le cite parmi les éléments de contexte, puis met en garde contre ce terme à la mode employé sans maîtrise. Le cadrage le développe (niveaux et échelles, politique des échelles) : c'est une notion à définir et à discuter, avec Neil Brenner, pas un mot à placer.</li>
+      </ul>
+
+      <h3>Ce que l'oral 2026 a couvert</h3>
+      <details class="fold">
+        <summary>Les sept dossiers d'oral 2026</summary>
+        <div class="table-wrap">
+          <table class="wide">
+            <thead><tr><th scope="col">Dossier</th><th scope="col">Documents structurants</th><th scope="col">Angle</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Versailles, haut lieu étatique</th><td>Géoportail (2024 et 1950) ; machine de Marly (1723) ; plan des étangs et rigoles (1812) ; salle du Jeu de Paume ; épreuves équestres des JO 2024 ; Pierre Nora</td><td>Lieu de pouvoir, mémoire, mise en tourisme</td></tr>
+              <tr><th scope="row">L'État et le développement des territoires languedociens</th><td>Carte IGN d'Aigues-Mortes et La Grande-Motte ; mission Racine ; transferts d'eau du Rhône (Aqua Domitia) ; Conservatoire du littoral ; crise viticole (2025) ; AOP Sable de Camargue</td><td>État aménageur, littoral, eau, viticulture</td></tr>
+              <tr><th scope="row">Les fonctions de l'État et leurs implications spatiales dans un espace de faible densité</th><td>Carte IGN de Millau et Saint-Affrique ; viaduc ; Légion étrangère au Larzac (Insee, 2021) ; mobilisation du Larzac ; Action cœur de ville ; loup et filière roquefort (2025)</td><td>Fonctions régaliennes et d'aménagement en espace rural</td></tr>
+              <tr><th scope="row">L'État français et le plateau de Saclay</th><td>Carte IGN de Palaiseau ; inauguration du campus d'HEC par de Gaulle (1964) ; L. Carroué (Géoconfluences) ; groupes industriels ; ligne 18 du Grand Paris Express ; opération d'intérêt national</td><td>État stratège, déconcentration, cluster</td></tr>
+              <tr><th scope="row">L'État hors de ses frontières : ambassades et réseaux diplomatiques</th><td>Assange à l'ambassade d'Équateur ; A. Laporte sur les ambassades en Allemagne ; Global Diplomacy Index ; réseau taïwanais ; femmes ambassadrices ; méga-ambassade chinoise à Londres (2026) ; instituts culturels chinois et russes</td><td>Extraterritorialité, puissance, réseaux</td></tr>
+              <tr><th scope="row">Contester l'État</th><td>Printemps arabes ; révolution égyptienne ; révolution des parapluies ; Gilets jaunes ; Bangladesh (2026) ; génération Z au Népal et au Maroc ; manifestations anti-ICE (2025-2026)</td><td>Géographie de la contestation</td></tr>
+              <tr><th scope="row">Les États faillis</th><td>Fragile States Index ; J.-B. Bouron (Géoconfluences) ; Haïti ; détroit de Bab-el-Mandeb ; Soudan ; transition syrienne (2025)</td><td>Faillite, zones grises, enjeux géostratégiques</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+      <p>Quatre dossiers sur sept portaient sur le territoire français, dont trois construits sur une carte IGN au 1/25 000, souvent accompagnée de documents anciens. Les documents étaient très récents, jusqu'à des articles de janvier et février 2026 : il faut suivre l'actualité jusqu'au printemps 2027.</p>
+
+      <h3>Angles morts au regard du cadrage</h3>
+      <p>À l'écrit, seul l'angle des marges a servi. À l'oral, les lieux du pouvoir, l'aménagement en France, la diplomatie, la contestation et la faillite ont été balisés.</p>
+      <div class="table-wrap">
+        <table class="wide">
+          <thead><tr><th scope="col">Axe du cadrage</th><th scope="col">En 2026</th><th scope="col">Pistes et exemples</th></tr></thead>
+          <tbody>
+            <tr><td>Dimensions institutionnelle, territoriale et actorielle ; pouvoir et puissance (faire, faire faire, empêcher de faire, refuser de faire, selon S. Sur) ; dispositif de puissance (J. Lévy) ; fonctions régaliennes</td><td class="yes">Arrière-plan des copies</td><td>Fiche notionnelle sur pouvoir, puissance et souveraineté</td></tr>
+            <tr><td>Diversité du fait étatique : de Westphalie aux 193 États ; territoires non autonomes ; quasi-États ; autonomies ; unitaires et fédéraux ; États-continents, micro-États, États archipélagiques ; Taïwan ; Porto Rico ; zones grises</td><td class="yes">Écrit : quasi-États et zones grises ; oral : États faillis</td><td class="gap">Micro-États, États archipélagiques, libre association</td></tr>
+            <tr><td>État et nation : la France où l'État précède la nation (H. Le Bras) ; États-fusion et États-scission ; citoyenneté (Y. Guermond) : vote des expatriés, citoyenneté locale</td><td>Non traité</td><td class="gap">Italie, Allemagne, Timor-Leste, Soudan du Sud, Kurdes, Belgique</td></tr>
+            <tr><td>Fonctions et implications spatiales : subsidiarité, délégation ; États développeurs et extractivisme ; État régulateur, réparateur, providence ; fonction symbolique du soin ; urbanisme et planification</td><td class="yes">Oral : Languedoc, Saclay, faible densité, uniquement en France</td><td class="gap">Échelle mondiale (Brésil, Chine) ; pont avec Géographies de la santé</td></tr>
+            <tr><td>Capitales héritées, créées ou relocalisées (C. Raffestin, A. Laporte)</td><td>Non traité</td><td class="gap">Berlin, Brasília, Canberra, Abuja, Astana, Nusantara, nouvelle capitale administrative égyptienne, La Paz et Sucre</td></tr>
+            <tr><td>Lieux de pouvoir mis en scène et en tourisme ; portes (ports, aéroports) ; dispositifs extérieurs (ambassades, consulats, instituts, cimetières étrangers)</td><td class="yes">Oral : Versailles, ambassades</td><td>Ports-portes, cimetières militaires, bases à l'étranger</td></tr>
+            <tr><td>Œuvres, commandes, grands projets, événements ; usage stratégique de la carte ; propagande en contexte d'érosion démocratique</td><td>JO 2024 évoqués dans le dossier Versailles</td><td class="gap">Cartes officielles de revendication (ligne en neuf traits), expositions, grands événements</td></tr>
+            <tr><td>Conflits environnementaux et légitimité ; États condamnés pour carence climatique</td><td>Non traité</td><td class="gap">Affaire du siècle (2021), Urgenda (2019), KlimaSeniorinnen (CEDH, 2024), avis de la CIJ (2025)</td></tr>
+            <tr><td>État et mondialisation : capacité normative, associations régionales, Union européenne ; souveraineté et nouvelles technologies</td><td>Non traité</td><td class="gap">UE, ASEAN, Mercosur ; câbles, data centers, régulation des plateformes</td></tr>
+            <tr><td>Niveaux et échelles : rescaling, politique des échelles ; acteurs non étatiques ; international et transnational ; déclin des États remis en question</td><td>Terme sanctionné quand mal maîtrisé</td><td class="gap">Métropoles, régions, coopérations transfrontalières</td></tr>
+            <tr><td>État stratège : zones à fiscalité dérogatoire, exonérations ; sociétés privées assumant des tâches régaliennes</td><td class="yes">Oral : Saclay</td><td class="gap">Zones économiques spéciales chinoises, ports francs, sociétés militaires privées</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Dossiers d'oral plausibles, non vus en 2026</h3>
+      <ul class="dossiers">
+        <li><span class="t">Berlin, capitale réunifiée</span><span class="d">Transfert depuis Bonn, quartier gouvernemental, symboles</span><span class="qtags"><span class="qt etat">État</span></span></li>
+        <li><span class="t">Brasília ou Astana</span><span class="d">Capitales créées, projet national, fonctionnement réel</span><span class="qtags"><span class="qt etat">État</span></span></li>
+        <li><span class="t">Strasbourg ou Bruxelles</span><span class="d">Capitales européennes, État et niveaux supranationaux</span><span class="qtags"><span class="qt etat">État</span></span></li>
+        <li><span class="t">La Corse</span><span class="d">Statut particulier et processus d'autonomie</span><span class="qtags"><span class="qt etat">État</span><span class="qt france">France</span></span></li>
+        <li><span class="t">La Nouvelle-Calédonie après Bougival</span><span class="d">Statuts, citoyenneté, nickel, violences de 2024</span><span class="qtags"><span class="qt etat">État</span><span class="qt pac">Pacifique</span></span></li>
+        <li><span class="t">Mayotte</span><span class="d">Frontière, crise de l'eau, santé, cyclone Chido (2024)</span><span class="qtags"><span class="qt etat">État</span><span class="qt france">France</span><span class="qt sante">Santé</span></span></li>
+        <li><span class="t">Le Havre ou Marseille-Fos</span><span class="d">Ports comme portes de l'État, logistique, souveraineté</span><span class="qtags"><span class="qt etat">État</span><span class="qt france">France</span></span></li>
+        <li><span class="t">Kourou et le Centre spatial guyanais</span><span class="d">État stratège, souveraineté spatiale, territoire</span><span class="qtags"><span class="qt etat">État</span><span class="qt france">France</span></span></li>
+        <li><span class="t">Le Groenland</span><span class="d">Autonomie, Danemark, convoitises étatsuniennes, ressources</span><span class="qtags"><span class="qt etat">État</span></span></li>
+        <li><span class="t">Taïwan, un État peu reconnu</span><span class="d">Attributs étatiques, reconnaissance, diplomatie</span><span class="qtags"><span class="qt etat">État</span><span class="qt pac">Pacifique</span></span></li>
+        <li><span class="t">La mer de Chine méridionale</span><span class="d">Revendications, îles artificielles, cartes</span><span class="qtags"><span class="qt etat">État</span><span class="qt pac">Pacifique</span></span></li>
+        <li><span class="t">Les contentieux climatiques</span><span class="d">Affaire du siècle, CEDH, CIJ : l'État jugé</span><span class="qtags"><span class="qt etat">État</span></span></li>
+      </ul>
+    </section>
+
+    <section id="campagnes" class="qsec camp">
+      <h2>Vivre à la campagne en France, de 1815 aux années 1970</h2>
+      <p class="standfirst">Histoire contemporaine. Écrit 2026 : « Travailler dans les campagnes françaises (1815-années 1970) », moyenne de 7,90, notes de 1 à 18.</p>
+
+      <h3>Ce que l'écrit 2026 attendait et sanctionnait</h3>
+      <ul>
+        <li><strong>Niveau.</strong> Environ un quart de belles copies, maîtrisant les codes méthodologiques et épistémologiques de l'histoire.</li>
+        <li><strong>Chronologie.</strong> Rapport trop lâche à la chronologie, bornes à questionner dès l'introduction, exemples non datés, troisièmes parties sacrifiées, introductions trop longues.</li>
+        <li><strong>Lecture du sujet.</strong> Le verbe à l'infinitif plaçait l'acte au centre : gestes, outils, transmission des savoir-faire, rythmes, pénibilité, revenus, crises. Il fallait couvrir toutes les activités rurales (artisans, commerçants, fonctionnaires, professions libérales, pluriactivité, proto-industrie) et se demander qui travaille, pour qui, avec qui, où, comment et dans quels cadres. L'enjeu : le passage d'un travail collectif et vital à un travail individualisé et professionnalisé.</li>
+        <li><strong>Dérive sanctionnée.</strong> Transformer le sujet en « le travail » ou « les mondes du travail », avec des troisièmes parties géo-économiques au lieu d'une histoire sociale. Pour un géographe, c'est l'avertissement le plus direct du rapport.</li>
+        <li><strong>Plan.</strong> Construction chronologique attendue ; plans thématiques rarement convaincants. La césure de 1945 paraît inévitable ; la première césure pouvait se placer dans les années 1880 (choix majoritaire) ou en 1914 (tout aussi convaincant).</li>
+        <li><strong>Sources valorisées.</strong> Témoins (Martin Nadaud, Émilie Carles, Ephraïm Grenadou, Mémé Santerre, Pierre-Jakez Hélias, Roger Thabault) ; tableaux (Millet, Van Gogh, Courbet), photographies, films ; romans (Balzac, Sand, Zola, Flaubert, Elsa Triolet) ; historiens intégrés à la démonstration (Corinne Marache, Fabien Knittel, Jean-Luc Mayaud, Claude-Isabelle Brelot, Alain Corbin, Ronald Hubscher).</li>
+      </ul>
+
+      <h4>Le canevas du jury, ossature réutilisable</h4>
+      <div class="table-wrap">
+        <table class="wide">
+          <thead><tr><th scope="col">Période</th><th scope="col">Contenu du corrigé</th><th scope="col">Repères cités</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">1815-années 1880</th><td>Travailler ensemble dans un monde majoritairement agricole : travail total et familial, hiérarchies de genre et d'âge ; terre et subsistance, spécialisation amorcée ; migrations saisonnières (les « ouvriers nomades » de G. Désert, maçons de la Creuse) ; pluriactivité et proto-industrialisation (F. Mendels ; Morez ; Nans-sous-Sainte-Anne) ; mécanisation lente et inégale ; le village et ses figures (commerçants, gendarmes, gardes champêtres, instituteurs, vétérinaires, médecins)</td><td>Charrue Dombasle (années 1820), loi Guizot (1833), concours d'animaux de boucherie (1844), batteuses (1840-1850), lois Ferry (1881-1882)</td></tr>
+            <tr><th scope="row">Années 1880-1945</th><td>Travailler dans un monde en crise : crises agricoles et modernisation (syndicats, coopératives, JAC, enseignement agricole, crédit) ; campagnes de plus en plus agricoles (exploitations moyennes, recul des journaliers, main-d'œuvre étrangère, artisans qui s'adaptent, fonctionnaires, fin des veillées) ; guerres (mobilisation, femmes à la tête des exploitations, réquisitions, marché noir, Corporation paysanne)</td><td>Loi de 1884, phylloxéra, Office central de la main-d'œuvre agricole (1915), loi de 1918 sur l'enseignement agricole, JAC (1929)</td></tr>
+            <tr><th scope="row">1945-fin des années 1970</th><td>Travailler autrement au temps de la « révolution silencieuse » : productivisme (FNSEA, planification, tracteurs, remembrement, INRA, révolution fourragère, traite mécanique) ; métiers liés à la consommation et aux loisirs (industries rurales, services, tourisme, paysans-ouvriers) ; professionnalisation (statut du fermage, interprofessions, GAEC, assurance maladie, formation)</td><td>Farrebique (1946), statut du fermage (1946), M. Debatisse (1963), lois d'orientation (1960-1962), GAEC (1962), AMEXA (1961), H. Mendras (1967), B. Charbonneau (1973)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Ce que l'oral 2026 a couvert</h3>
+      <details class="fold">
+        <summary>Les quinze sujets d'oral 2026</summary>
+        <div class="table-wrap">
+          <table class="wide">
+            <thead><tr><th scope="col">Sujet</th><th scope="col">Documents du corpus</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">La mécanisation des campagnes françaises dans la seconde moitié du XXe siècle (1945-années 1970)</th><td>Photographies de 1953 et 1972 ; Grenadou ; second plan de modernisation vu en 1954 ; statistique de la mécanisation (1968)</td></tr>
+              <tr><th scope="row">Être une femme dans les campagnes (1815-fin des années 1970)</th><td>Photographie de 1852 ; classe de filles peinte en 1889 ; Hélias ; Guillaumin ; télévision au foyer ; lettre d'auditrice à Ménie Grégoire (1969)</td></tr>
+              <tr><th scope="row">La colère des campagnes (années 1830-fin des années 1840)</th><td>Émeute frumentaire de Châteauroux (1829) ; guerre des Demoiselles (1830) ; Buzançais (1847) ; troubles de Guéret (1848), d'après A. Corbin</td></tr>
+              <tr><th scope="row">Boire et manger dans les campagnes (1815-fin des années 1970)</th><td>Repas de noce normand (1886) ; Guillaumin ; rituel du cochon ; affiche des vendanges (1955) ; Hélias au début du XXe siècle et dans les années 1970</td></tr>
+              <tr><th scope="row">Aller à l'école dans les campagnes dans le dernier quart du XIXe siècle</th><td>Témoignages landais et beauceron ; loi de 1882 ; fréquentation scolaire à Mazières-en-Gâtine ; carte postale de Plan-de-Baix</td></tr>
+              <tr><th scope="row">Vichy dans les campagnes (1940-1944)</th><td>Affiche de Pétain (1941) ; « La terre, elle, ne ment pas » ; productions par zone ; rapports sur le mécontentement (1943) ; maquis ; résistance paysanne</td></tr>
+              <tr><th scope="row">Le christianisme dans les campagnes (1815-fin des années 1970)</th><td>Procession (1857) ; querelle des inventaires ; JAC ; pascalisants du diocèse de Blois ; Hélias</td></tr>
+              <tr><th scope="row">Partir travailler ailleurs (années 1830-début du XXe siècle)</th><td>Mémoires de Léonard, garçon maçon de la Creuse ; migrants de Haute-Auvergne ; colporteur ; saison dans une grande ferme normande</td></tr>
+              <tr><th scope="row">Voter dans les campagnes françaises (1848-1914)</th><td>Élections de 1848 racontées par un paysan ; plébiscite de 1870 vu par Daumier ; Déguignet et les législatives de 1876 ; les socialistes et les campagnes (1893)</td></tr>
+              <tr><th scope="row">Proto-industrialisation dans les campagnes françaises (années 1860-1914)</th><td>Jura (1864) ; draps normands (1867) ; manufactures de Saint-Flour (1883) ; dentellières cévenoles ; mine de Chambon-sur-Voueize (1914)</td></tr>
+              <tr><th scope="row">La Grande Guerre dans les campagnes françaises</th><td>Tocsin à Saint-Loup (Grenadou) ; lettres d'un agriculteur drômois ; femmes en 1917 ; sorties de guerre en pays bigouden ; bilan humain par profession</td></tr>
+              <tr><th scope="row">Les salariés agricoles au début du XXe siècle</th><td>Grande ferme de Beauce (1911) ; ménage d'ouvriers agricoles du Nord ; grand valet breton ; louées de Bayeux (1909) et du Berry (1920)</td></tr>
+              <tr><th scope="row">Loisirs et sociabilités dans les campagnes françaises (1815-années 1970)</th><td>Café, fêtes et bals à Saint-Loup ; veillées bretonnes ; conscrits de 1900, 1926 et 1960 ; bal béarnais des années 1960</td></tr>
+              <tr><th scope="row">Début des années 1930 : les campagnes en crise</th><td>Grenadou ; assemblées et réunions (Creuse, Tours, Chartres) ; manifestation paysanne de Rennes (1934)</td></tr>
+              <tr><th scope="row">Les « années 68 » dans les campagnes françaises</th><td>Bernard Lambert ; grève du lait (1972) ; Larzac (1973) ; le maire et les « hippies » de Malarce-sur-la-Thines (1976)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+      <div class="aside">
+        <p><strong>Trois leçons des corpus.</strong> Vichy est traité comme un objet à part entière : ta trame chronologique doit comporter un chapitre Occupation et Vichy. Les corpus puisent toujours aux mêmes familles de sources : Grenadou, Hélias, Guillaumin, Nadaud, Déguignet, les albums de J.-L. Mayaud, le recueil de Madeleine et Moriceau, la presse sur Gallica, les archives départementales, tableaux, affiches, statistiques. Enfin, les diapositives modèles montrent une accroche tirée d'un document (lettre du sous-préfet du Cantal, 1883) et une carte des rébellions associée à une frise où chaque document est placé : spatialiser et dater le corpus.</p>
+      </div>
+
+      <h3>La matrice des verbes du cadrage</h3>
+      <p>Le cadrage définit la vie rurale par une liste indicative de dix-huit verbes. Exactement la moitié a servi en 2026.</p>
+      <div class="table-wrap">
+        <table class="wide">
+          <thead><tr><th scope="col">Verbe</th><th scope="col">En 2026</th><th scope="col">Pistes 2027</th><th scope="col">Appuis</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Grandir</th><td class="gap">Libre</td><td>Enfances et jeunesses rurales, travail des enfants, enfants placés, conscription</td><td>I. Jablonka, Ni père ni mère (2006) ; JAC</td></tr>
+            <tr><th scope="row">Manger</th><td class="yes">Oral : boire et manger</td><td>Corpus réutilisable</td><td>Guillaumin, Hélias</td></tr>
+            <tr><th scope="row">Apprendre</th><td class="yes">Oral : l'école, fin du XIXe siècle</td><td>À l'écrit, s'instruire et se former sur toute la période (enseignement agricole, JAC, collèges ruraux)</td><td>J.-F. Chanet, L'École républicaine et les petites patries (1996) ; R. Thabault</td></tr>
+            <tr><th scope="row">Travailler</th><td class="yes">Écrit 2026</td><td>Consommé</td><td>Canevas du jury</td></tr>
+            <tr><th scope="row">Consommer</th><td class="gap">Libre</td><td>Autoconsommation, foires, colporteurs, épiceries, supermarchés, équipement ménager, confort</td><td>J.-C. Daumas, La Révolution matérielle (2018)</td></tr>
+            <tr><th scope="row">Se divertir</th><td class="yes">Oral : loisirs et sociabilités</td><td>Corpus réutilisable</td><td>Grenadou, Hélias</td></tr>
+            <tr><th scope="row">Éprouver</th><td class="gap">Libre</td><td>Émotions, peurs, rumeurs, violences, sensibilité au paysage</td><td>A. Corbin, Le Village des cannibales (1990)</td></tr>
+            <tr><th scope="row">Prier</th><td class="yes">Oral : christianisme</td><td>Corpus réutilisable</td><td>Carte religieuse de la France rurale du chanoine Boulard (1947)</td></tr>
+            <tr><th scope="row">Combattre</th><td class="yes">Oral : Grande Guerre</td><td>À l'écrit, les campagnes en guerre de 1870 à 1945 ; conscription</td><td>Grenadou, correspondances</td></tr>
+            <tr><th scope="row">Résister</th><td class="yes">Oral : Vichy</td><td>Corpus réutilisable</td><td>Rapports de 1943, maquis</td></tr>
+            <tr><th scope="row">Lutter</th><td class="yes">Oral : colère, crise des années 1930, années 68</td><td>À l'écrit, conflictualités sur toute la période ; révolte du Midi (1907)</td><td>R. Paxton, Le Temps des chemises vertes (1996)</td></tr>
+            <tr><th scope="row">Voter</th><td class="yes">Oral : 1848-1914</td><td>À l'écrit, politisation des campagnes sur toute la période</td><td>M. Agulhon, La République au village (1970)</td></tr>
+            <tr><th scope="row">Voyager</th><td class="gap">Libre</td><td>Circuler et communiquer : chemins vicinaux (1836), plan Freycinet (1878), vélo, autocar, automobile, téléphone, TSF, télévision</td><td>E. Weber, La Fin des terroirs</td></tr>
+            <tr><th scope="row">Se protéger</th><td class="gap">Libre</td><td>Risques, mutualité agricole (1900), assurances, protection sociale</td><td>Loi sur les mutuelles agricoles (1900), AMEXA (1961)</td></tr>
+            <tr><th scope="row">Souffrir</th><td class="gap">Libre</td><td>Maladies, misère, pénibilité, crises et disettes (1816-1817, 1846-1847)</td><td>Tambora (1815), crise de 1846-1847</td></tr>
+            <tr><th scope="row">Aimer</th><td class="gap">Libre</td><td>Couples, mariage, famille, célibat paysan</td><td>M. Segalen, Mari et femme dans la société paysanne (1980) ; P. Bourdieu, Le Bal des célibataires (2002)</td></tr>
+            <tr><th scope="row">Se soigner</th><td class="gap">Libre</td><td>Médecins, officiers de santé, sages-femmes, remèdes, hygiène, eau</td><td>Fin des officiers de santé (1892), assistance médicale gratuite (1893), loi de santé publique (1902), AMEXA (1961) ; J. Léonard, O. Faure, J.-P. Goubert</td></tr>
+            <tr><th scope="row">Mourir</th><td class="gap">Libre</td><td>Mort, deuil, cimetières, épidémies (choléra de 1832, 1849 et 1854)</td><td>Statistiques de mortalité, registres paroissiaux</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Pans du cadrage peu ou pas traités en 2026</h4>
+      <ul>
+        <li>Systèmes agraires et communs ; forêts et droits d'usage (Code forestier de 1827).</li>
+        <li>Qualité, normes et fraudes (loi de 1905, appellations d'origine contrôlée en 1935) ; filières et agro-industrie.</li>
+        <li>Cadres de vie et bâti (ferme, moulin, fabrique, église, école, mairie, gare, poste, gendarmerie) ; confort et hygiène (électrification rurale, eau courante).</li>
+        <li>Intimité, émotions, rumeurs et violences.</li>
+        <li>Paysage, nature et animaux ; dégradations et protection (reboisement des montagnes en 1860, parcs nationaux en 1960, parcs naturels régionaux en 1967, ministère de l'Environnement en 1971).</li>
+        <li>Langues régionales, identités, petites et grande patries.</li>
+        <li>Encadrement étatique et contrôle social ; étrangers dans les campagnes ; âges de la vie.</li>
+      </ul>
+      <p>Limites à ne pas oublier : la question porte sur la France métropolitaine, Corse comprise, sans outre-mer ni colonies. La définition statistique du village (moins de 2 000 habitants) ne dispense pas d'étudier les perceptions de la ruralité.</p>
+
+      <h3>Sujets d'oral plausibles, non vus en 2026</h3>
+      <ul class="dossiers">
+        <li><span class="t">Le choléra dans les campagnes (1832-1854)</span><span class="d">Rapports médicaux et préfectoraux, peurs et rumeurs</span><span class="qtags"><span class="qt camp">Campagnes</span><span class="qt sante">Santé</span></span></li>
+        <li><span class="t">Médecins et malades au village (1850-1914)</span><span class="d">Officiers de santé, assistance médicale gratuite, recours populaires</span><span class="qtags"><span class="qt camp">Campagnes</span><span class="qt sante">Santé</span></span></li>
+        <li><span class="t">Électrifier les campagnes (années 1920-1960)</span><span class="d">Syndicats d'électrification, confort, inégalités territoriales</span><span class="qtags"><span class="qt camp">Campagnes</span><span class="qt etat">État</span></span></li>
+        <li><span class="t">Le chemin de fer arrive au village (1850-1914)</span><span class="d">Plan Freycinet, gares, marchés élargis, désenclavement</span><span class="qtags"><span class="qt camp">Campagnes</span></span></li>
+        <li><span class="t">Foires et marchés au XIXe siècle</span><span class="d">Échanges, sociabilités, espaces du commerce rural</span><span class="qtags"><span class="qt camp">Campagnes</span></span></li>
+        <li><span class="t">La crise du phylloxéra (années 1860-1890)</span><span class="d">Destruction et reconstitution du vignoble, greffage, migrations</span><span class="qtags"><span class="qt camp">Campagnes</span></span></li>
+        <li><span class="t">La révolte des vignerons du Midi (1907)</span><span class="d">Mévente, fraude, mobilisation, répression</span><span class="qtags"><span class="qt camp">Campagnes</span><span class="qt etat">État</span></span></li>
+        <li><span class="t">Le remembrement (1941-années 1970)</span><span class="d">Lois, commissions communales, conflits, paysages transformés</span><span class="qtags"><span class="qt camp">Campagnes</span><span class="qt etat">État</span><span class="qt france">France</span></span></li>
+        <li><span class="t">Usages et conflits autour des biens communaux au XIXe siècle</span><span class="d">Partages, forêts, droits d'usage</span><span class="qtags"><span class="qt camp">Campagnes</span></span></li>
+        <li><span class="t">Les étrangers dans les campagnes (années 1920-1930)</span><span class="d">Italiens du Sud-Ouest, Polonais, Belges ; accueil et tensions</span><span class="qtags"><span class="qt camp">Campagnes</span></span></li>
+        <li><span class="t">Violences et justice au village</span><span class="d">Faits divers, rumeurs, massacre de Hautefaye (1870)</span><span class="qtags"><span class="qt camp">Campagnes</span></span></li>
+        <li><span class="t">Protéger la nature dans les campagnes (1960-années 1970)</span><span class="d">Parcs nationaux et régionaux, néoruraux, tourisme vert</span><span class="qtags"><span class="qt camp">Campagnes</span><span class="qt etat">État</span></span></li>
+      </ul>
+    </section>
+
+    <section id="banque">
+      <h2>Banque de sujets plausibles 2027</h2>
+      <p>Des hypothèses de travail, pas des pronostics. Chaque sujet a passé la grille-filtre ; la priorité indique un ordre de préparation, pas une probabilité de tirage. Les formulations imitent celles du jury et visent l'écrit ; les dossiers et sujets d'oral plausibles figurent dans la section de chaque question.</p>
+      <div class="filters" role="group" aria-label="Filtrer la banque de sujets">
+        <div class="fgroup" data-filter="q">
+          <span class="flabel">Question</span>
+          <button type="button" class="chip" data-value="all" aria-pressed="true">Toutes</button>
+          <button type="button" class="chip" data-value="pac" aria-pressed="false"><i class="fig a c-pac"></i>Pacifique</button>
+          <button type="button" class="chip" data-value="etat" aria-pressed="false"><i class="fig a c-etat"></i>État</button>
+          <button type="button" class="chip" data-value="camp" aria-pressed="false"><i class="fig a c-camp"></i>Campagnes</button>
+        </div>
+        <div class="fgroup" data-filter="p">
+          <span class="flabel">Priorité</span>
+          <button type="button" class="chip" data-value="all" aria-pressed="true">Toutes</button>
+          <button type="button" class="chip" data-value="A" aria-pressed="false"><i class="fig a"></i>A</button>
+          <button type="button" class="chip" data-value="B" aria-pressed="false"><i class="fig b"></i>B</button>
+          <button type="button" class="chip" data-value="C" aria-pressed="false"><i class="fig c"></i>C</button>
+        </div>
+      </div>
+      <p class="count" id="count" aria-live="polite">46 sujets affichés</p>
+
+      <h3 class="group-title pac" data-group="pac"><i class="fig a"></i>Le Pacifique, géographie des territoires</h3>
+      <div class="subjects pac" data-group="pac">
+        <article class="subject pac" data-q="pac" data-p="A">
+          <h4>« Territoires et souverainetés maritimes dans le Pacifique »</h4>
+          <p class="variant">Variante : « Le Pacifique, un océan approprié »</p>
+          <p class="tags"><span><i class="fig a"></i>Priorité A</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>La dimension maritime, placée au centre : ZEE et haute mer, frontières, contrôle, sécurité, gouvernance, ressources.</dd>
+            <dt>Pourquoi</dt><dd>Cœur du cadrage, à peine effleuré en 2026 ; les ZEE ont même été oubliées dans le sujet sur l'État.</dd>
+            <dt>Pièges</dt><dd>Ne pas réduire le sujet à la mer de Chine, mer bordière. Tenir ensemble micro-terres et immenses ZEE, îlots disputés et haute mer. Spatialiser par un croquis des ZEE.</dd>
+            <dt>Appuis</dt><dd>Kiribati, Polynésie française, Clipperton, Okinotorishima, zone de Clarion-Clipperton, Parties à l'accord de Nauru.</dd>
+          </dl>
+        </article>
+        <article class="subject pac" data-q="pac" data-p="A">
+          <h4>« Littoralisation et métropolisation sur les rives du Pacifique »</h4>
+          <p class="variant">Variante : « Les littoraux du Pacifique »</p>
+          <p class="tags"><span><i class="fig a"></i>Priorité A</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Des processus que le cadrage demande de maîtriser sur toutes les rives, continentales comme insulaires.</dd>
+            <dt>Pourquoi</dt><dd>Le sujet 2026 excluait les rives continentales ; seule la Californie a été vue à l'oral.</dd>
+            <dt>Pièges</dt><dd>Pas de tour des métropoles : hiérarchiser centres d'impulsion et périphéries. Intégrer les rives insulaires. L'Indopacifique reste hors sujet.</dd>
+            <dt>Appuis</dt><dd>Mégalopole japonaise, Busan, Sydney, Auckland, Vancouver, Los Angeles-Long Beach, Lima-Callao, Port-Moresby.</dd>
+          </dl>
+        </article>
+        <article class="subject pac" data-q="pac" data-p="A">
+          <h4>« Circuler dans le Pacifique »</h4>
+          <p class="variant">Variante : « Mobilités et circulations dans le Pacifique »</p>
+          <p class="tags"><span><i class="fig a"></i>Priorité A</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Transports et mobilités, câbles sous-marins, migrations, tourisme.</dd>
+            <dt>Pourquoi</dt><dd>Même facture que « Se déplacer en Amérique latine » (2024). Seules la desserte aérienne polynésienne et les câbles de Guam ont été vus en 2026.</dd>
+            <dt>Pièges</dt><dd>Articuler marchandises, personnes et informations. Montrer hubs et angles morts, distance-temps et distance-coût.</dd>
+            <dt>Appuis</dt><dd>Routes transpacifiques et grands ports, hubs d'Auckland, Honolulu et Nadi, câbles, diasporas samoanes et tongiennes, travail saisonnier (PALM, RSE).</dd>
+          </dl>
+        </article>
+        <article class="subject pac" data-q="pac" data-p="A">
+          <h4>« Exploiter et protéger les ressources dans le Pacifique »</h4>
+          <p class="variant">Variante : « Ressources, environnements et sociétés dans le Pacifique »</p>
+          <p class="tags"><span><i class="fig a"></i>Priorité A</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>La tension entre exploitation et protection ; les systèmes productifs (mines, pêche, agriculture d'exportation, tourisme).</dd>
+            <dt>Pourquoi</dt><dd>Explicitement au cadrage. Croisement entre milieux et politique comparable au sujet 2025 sur l'Amérique latine.</dd>
+            <dt>Pièges</dt><dd>Pas de catalogue de ressources : des acteurs et des échelles (firmes, États, autorités coutumières, ONG), des conflits socio-environnementaux.</dd>
+            <dt>Appuis</dt><dd>Nickel calédonien, Panguna, Ok Tedi, phosphate de Nauru, thon, nodules, aires marines de Papahānaumokuākea, Marae Moana et Palaos.</dd>
+          </dl>
+        </article>
+        <article class="subject pac" data-q="pac" data-p="A">
+          <h4>« Le Pacifique entre Washington et Pékin »</h4>
+          <p class="variant">Variante : « Puissances et rivalités dans le Pacifique »</p>
+          <p class="tags"><span><i class="fig a"></i>Priorité A</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Un intertitre même du cadrage.</dd>
+            <dt>Pourquoi</dt><dd>Le jury reprend des intertitres du cadrage, comme pour un dossier d'oral sur l'État en 2026. Le corrigé 2026 ne voyait les rivalités que depuis les îles.</dd>
+            <dt>Pièges</dt><dd>Spatialiser : bases, chaînes d'îles, ports, câbles, ambassades, aide. Intégrer Japon, Corée du Sud, Taïwan, Australie, France et les stratégies des petits États.</dd>
+            <dt>Appuis</dt><dd>Guam, Hawaï, Okinawa, pacte sino-salomonais (2022), bascule de Nauru vers Pékin (2024), accords de libre association renouvelés.</dd>
+          </dl>
+        </article>
+        <article class="subject pac" data-q="pac" data-p="B">
+          <h4>« Autochtonies dans le Pacifique »</h4>
+          <p class="tags"><span><i class="fig b"></i>Priorité B</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Autochtonies aborigène et maorie, minorités, décentrement du regard.</dd>
+            <dt>Pourquoi</dt><dd>L'autochtonie a été mal distinguée à l'oral 2026 ; c'est une entrée transversale à toutes les rives.</dd>
+            <dt>Pièges</dt><dd>Ne pas essentialiser : droits fonciers, représentation politique, renouveau culturel, décolonisation.</dd>
+            <dt>Appuis</dt><dd>Māori et traité de Waitangi, Kanak, Kānaka Maoli, Chamorros, Rapa Nui, Premières Nations de Colombie-Britannique.</dd>
+          </dl>
+        </article>
+        <article class="subject pac" data-q="pac" data-p="B">
+          <h4>« Centres et périphéries dans le Pacifique »</h4>
+          <p class="variant">Variante : « Inégalités de développement dans le Pacifique »</p>
+          <p class="tags"><span><i class="fig b"></i>Priorité B</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Disparités entre Pacifique Nord et Sud, entre l'Australie, la Nouvelle-Zélande et leurs voisins, entre métropoles et dépendances.</dd>
+            <dt>Pourquoi</dt><dd>Au cadrage ; seule l'échelle polynésienne a été traitée à l'oral.</dd>
+            <dt>Pièges</dt><dd>Emboîter les échelles ; discuter les modèles MIRAB, SITE et PROFIT.</dd>
+            <dt>Appuis</dt><dd>Galápagos, Hawaï, Fidji, Tuvalu, Port-Moresby.</dd>
+          </dl>
+        </article>
+        <article class="subject pac" data-q="pac" data-p="B">
+          <h4>« Tourisme et imaginaires dans le Pacifique »</h4>
+          <p class="tags"><span><i class="fig b"></i>Priorité B</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Imaginaires géographiques, géographie culturelle, tourisme.</dd>
+            <dt>Pourquoi</dt><dd>Fortement valorisé par le cadrage ; l'oral 2026 s'est limité à l'Océanie française.</dd>
+            <dt>Pièges</dt><dd>Définir l'exotisme, intégrer les rives, éviter la carte postale.</dd>
+            <dt>Appuis</dt><dd>Bora Bora, Waikīkī, Galápagos, Palau Pledge, de Gauguin à Pacifiction.</dd>
+          </dl>
+        </article>
+        <article class="subject pac" data-q="pac" data-p="B">
+          <h4>« Risques et sociétés dans le Pacifique »</h4>
+          <p class="tags"><span><i class="fig b"></i>Priorité B</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Risques naturels et technologiques, vulnérabilités.</dd>
+            <dt>Pourquoi</dt><dd>Au cadrage, mais atolls et changement climatique ont déjà été très travaillés en 2026.</dd>
+            <dt>Pièges</dt><dd>Réorienter vers la ceinture de feu et les contrastes de vulnérabilité entre rives ; ne pas oublier les risques technologiques.</dd>
+            <dt>Appuis</dt><dd>Tsunami de 2011, cyclone Pam (2015), éruption du Hunga Tonga (2022), essais nucléaires, Fukushima.</dd>
+          </dl>
+        </article>
+        <article class="subject pac" data-q="pac" data-p="B">
+          <h4>« Inventer et découper le Pacifique »</h4>
+          <p class="tags"><span><i class="fig b"></i>Priorité B</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Invention européenne, découpages, imaginaires concurrents.</dd>
+            <dt>Pourquoi</dt><dd>Entrée géohistorique du cadrage, mais déjà un dossier d'oral en 2026.</dd>
+            <dt>Pièges</dt><dd>Tonalité épistémologique : garder la matérialité des territoires.</dd>
+            <dt>Appuis</dt><dd>Magellan, galion de Manille, tripartition de Dumont d'Urville (1832), S. Tcherkézoff, tricontinentalité chilienne, Moana.</dd>
+          </dl>
+        </article>
+        <article class="subject pac brief" data-q="pac" data-p="C">
+          <h4>« Le Pacifique insulaire »</h4>
+          <p class="tags"><span><i class="fig c"></i>Priorité C</span></p>
+          <p class="why">Sujet de l'écrit 2026.</p>
+        </article>
+        <article class="subject pac brief" data-q="pac" data-p="C">
+          <h4>« Les îles du Pacifique face au changement climatique »</h4>
+          <p class="tags"><span><i class="fig c"></i>Priorité C</span></p>
+          <p class="why">Largement traité en 2026 (écrit, dossiers Tuvalu et atolls) ; sujet voisin à l'ESD 2023, option B.</p>
+        </article>
+        <article class="subject pac brief" data-q="pac" data-p="C">
+          <h4>« La France dans le Pacifique »</h4>
+          <p class="tags"><span><i class="fig c"></i>Priorité C</span></p>
+          <p class="why">Le cadrage refuse d'en faire un objet en soi, mais ces connaissances servent dans tous les sujets.</p>
+        </article>
+        <article class="subject pac brief" data-q="pac" data-p="C">
+          <h4>Tout sujet sur l'Indopacifique</h4>
+          <p class="tags"><span><i class="fig c"></i>Priorité C</span></p>
+          <p class="why">Exclu par le cadrage.</p>
+        </article>
+      </div>
+
+      <h3 class="group-title etat" data-group="etat"><i class="fig a"></i>L'État, géographie thématique</h3>
+      <div class="subjects etat" data-group="etat">
+        <article class="subject etat" data-q="etat" data-p="A">
+          <h4>« Les capitales »</h4>
+          <p class="variant">Variante : « L'État et ses capitales »</p>
+          <p class="tags"><span><i class="fig a"></i>Priorité A</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Capitales héritées, créées ou relocalisées ; mise en scène du pouvoir.</dd>
+            <dt>Pourquoi</dt><dd>Explicitement au cadrage (C. Raffestin, A. Laporte) et jamais traité en 2026 : Versailles n'est pas une capitale.</dd>
+            <dt>Pièges</dt><dd>Pas de catalogue : relier capitale, forme de l'État et nation ; varier les échelles, du quartier gouvernemental au réseau urbain ; penser les capitales multiples.</dd>
+            <dt>Appuis</dt><dd>Paris, Berlin, Washington, Brasília, Canberra, Abuja, Astana, Nusantara, nouvelle capitale administrative égyptienne, La Paz et Sucre.</dd>
+          </dl>
+        </article>
+        <article class="subject etat" data-q="etat" data-p="A">
+          <h4>« L'État et la mondialisation »</h4>
+          <p class="tags"><span><i class="fig a"></i>Priorité A</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Une section entière : capacité normative, associations régionales, souveraineté et technologies, acteurs transnationaux, État stratège.</dd>
+            <dt>Pourquoi</dt><dd>Ni sujet ni dossier en 2026 ; lien avec les programmes du secondaire souligné par le cadrage.</dd>
+            <dt>Pièges</dt><dd>Discuter la thèse du déclin des États ; distinguer international et transnational ; spatialiser (ports, zones franches, câbles, sièges sociaux).</dd>
+            <dt>Appuis</dt><dd>Union européenne, ASEAN, zones économiques spéciales chinoises, zones franches, paradis fiscaux, data centers.</dd>
+          </dl>
+        </article>
+        <article class="subject etat" data-q="etat" data-p="A">
+          <h4>« L'État et la mer »</h4>
+          <p class="variant">Variante : « États et espaces maritimes »</p>
+          <p class="tags"><span><i class="fig a"></i>Priorité A</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Frontières, portes, États archipélagiques, souveraineté.</dd>
+            <dt>Pourquoi</dt><dd>ZEE oubliées en 2026 ; pont avec le Pacifique ; formulation déjà vue avec « L'Asie du Sud-Est et la mer » (2021).</dd>
+            <dt>Pièges</dt><dd>Maîtriser la convention de Montego Bay (mer territoriale, ZEE, plateau continental étendu) ; ne pas s'enfermer dans la géopolitique.</dd>
+            <dt>Appuis</dt><dd>Domaine maritime français, mer de Chine méridionale, Okinotorishima, Kiribati, Indonésie et Philippines.</dd>
+          </dl>
+        </article>
+        <article class="subject etat" data-q="etat" data-p="A">
+          <h4>« L'État aménageur »</h4>
+          <p class="variant">Variante : « Aménager le territoire : l'État à l'œuvre »</p>
+          <p class="tags"><span><i class="fig a"></i>Priorité A</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Fonctions et implications spatiales, planification, États développeurs, grands projets.</dd>
+            <dt>Pourquoi</dt><dd>Jamais traité à l'écrit ; l'oral 2026 s'est limité à la France, avec des corpus réutilisables.</dd>
+            <dt>Pièges</dt><dd>Échelle mondiale attendue ; développementalisme et extractivisme ; effets socio-spatiaux et contestations.</dd>
+            <dt>Appuis</dt><dd>Mission Racine, Saclay, Brasília, barrage des Trois-Gorges, NEOM, Grand Paris Express.</dd>
+          </dl>
+        </article>
+        <article class="subject etat" data-q="etat" data-p="A">
+          <h4>« Niveaux et échelles de l'État »</h4>
+          <p class="variant">Variante : « Décentraliser, fédérer, déléguer : l'État et ses échelons »</p>
+          <p class="tags"><span><i class="fig a"></i>Priorité A</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Subsidiarité, organisation interne, rescaling, politique des échelles.</dd>
+            <dt>Pourquoi</dt><dd>Long développement du cadrage ; notion sanctionnée en 2026 quand elle était mal maîtrisée.</dd>
+            <dt>Pièges</dt><dd>Définir niveau et échelle ; comparer États unitaires, régionalisés et fédéraux ; ne pas plaquer le mot rescaling.</dd>
+            <dt>Appuis</dt><dd>Métropoles françaises, Länder, communautés autonomes espagnoles, Belgique, Corse, Nouvelle-Calédonie.</dd>
+          </dl>
+        </article>
+        <article class="subject etat" data-q="etat" data-p="B">
+          <h4>« État, nation et territoire »</h4>
+          <p class="tags"><span><i class="fig b"></i>Priorité B</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Rapports entre État et nation, États-fusion et États-scission, citoyenneté.</dd>
+            <dt>Pourquoi</dt><dd>Au cadrage et non traité, mais plus conceptuel.</dd>
+            <dt>Pièges</dt><dd>Rester géographique : territorialisation de la nation, frontières, symboles.</dd>
+            <dt>Appuis</dt><dd>France (H. Le Bras), Italie, Allemagne, Timor-Leste, Soudan du Sud, Kurdes, Belgique.</dd>
+          </dl>
+        </article>
+        <article class="subject etat" data-q="etat" data-p="B">
+          <h4>« La puissance des États : approches géographiques »</h4>
+          <p class="tags"><span><i class="fig b"></i>Priorité B</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Pouvoir, puissance, dispositif de puissance.</dd>
+            <dt>Pourquoi</dt><dd>Fil rouge du cadrage, balisé en partie par le dossier sur les ambassades.</dd>
+            <dt>Pièges</dt><dd>Ne pas faire de relations internationales : matérialité des bases, des réseaux et des ressources.</dd>
+            <dt>Appuis</dt><dd>États-Unis, Chine, France, Taïwan, puissances moyennes.</dd>
+          </dl>
+        </article>
+        <article class="subject etat" data-q="etat" data-p="B">
+          <h4>« L'État au-delà de ses frontières »</h4>
+          <p class="tags"><span><i class="fig b"></i>Priorité B</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Ambassades, consulats, instituts, cimetières, bases, diasporas.</dd>
+            <dt>Pourquoi</dt><dd>Le dossier d'oral 2026 fournit un corpus ; l'écrit reste possible à l'échelle mondiale.</dd>
+            <dt>Pièges</dt><dd>Distinguer extraterritorialité juridique et influence ; articuler lieux et réseaux.</dd>
+            <dt>Appuis</dt><dd>Global Diplomacy Index, réseau taïwanais, base française de Djibouti, cimetières militaires, vote des expatriés.</dd>
+          </dl>
+        </article>
+        <article class="subject etat" data-q="etat" data-p="B">
+          <h4>« Les lieux du pouvoir »</h4>
+          <p class="tags"><span><i class="fig b"></i>Priorité B</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Palais, parlements, places, statues ; mise en scène et mise en tourisme.</dd>
+            <dt>Pourquoi</dt><dd>Balisé par Versailles à l'oral ; possible à l'écrit, souvent couplé aux capitales.</dd>
+            <dt>Pièges</dt><dd>Pas d'histoire de l'art : usages politiques et contestations des lieux.</dd>
+            <dt>Appuis</dt><dd>Versailles, place Tiananmen, Maïdan, Capitole de Washington, Brasília.</dd>
+          </dl>
+        </article>
+        <article class="subject etat" data-q="etat" data-p="B">
+          <h4>« États et conflits environnementaux »</h4>
+          <p class="tags"><span><i class="fig b"></i>Priorité B</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Légitimité de l'État, contentieux climatiques, attentes et défiance.</dd>
+            <dt>Pourquoi</dt><dd>Au cadrage et non traité.</dd>
+            <dt>Pièges</dt><dd>Ne pas refaire la question Environnements, sortie du programme ; centrer sur l'État.</dd>
+            <dt>Appuis</dt><dd>Affaire du siècle, KlimaSeniorinnen, avis de la CIJ (2025), Notre-Dame-des-Landes.</dd>
+          </dl>
+        </article>
+        <article class="subject etat" data-q="etat" data-p="B">
+          <h4>« Les petits États »</h4>
+          <p class="tags"><span><i class="fig b"></i>Priorité B</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Micro-États, États archipélagiques, libre association.</dd>
+            <dt>Pourquoi</dt><dd>Au cadrage ; pont direct avec le Pacifique.</dd>
+            <dt>Pièges</dt><dd>Définir la petitesse (superficie, population, capacités) ; stratégies de niche.</dd>
+            <dt>Appuis</dt><dd>Tuvalu, Nauru, Palaos, Monaco, Liechtenstein, Singapour, Malte.</dd>
+          </dl>
+        </article>
+        <article class="subject etat" data-q="etat" data-p="B">
+          <h4>« Souveraineté et nouvelles technologies »</h4>
+          <p class="tags"><span><i class="fig b"></i>Priorité B</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Matérialité et régulation du numérique.</dd>
+            <dt>Pourquoi</dt><dd>Au cadrage ; illustré par les câbles du dossier Guam.</dd>
+            <dt>Pièges</dt><dd>Partir de la matérialité (câbles, data centers, satellites) plutôt que des discours ; varier les échelles.</dd>
+            <dt>Appuis</dt><dd>Hubs de câbles de Marseille et de Guam, data centers, régulation européenne des plateformes.</dd>
+          </dl>
+        </article>
+        <article class="subject etat" data-q="etat" data-p="B">
+          <h4>« État et citoyenneté »</h4>
+          <p class="tags"><span><i class="fig b"></i>Priorité B</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Citoyenneté locale et nationale, vote des expatriés (Y. Guermond).</dd>
+            <dt>Pourquoi</dt><dd>Au cadrage, mais littérature géographique plus mince.</dd>
+            <dt>Pièges</dt><dd>Géographie électorale et territoires de la citoyenneté, pas droit constitutionnel.</dd>
+            <dt>Appuis</dt><dd>Français de l'étranger, citoyenneté calédonienne, Porto Rico.</dd>
+          </dl>
+        </article>
+        <article class="subject etat brief" data-q="etat" data-p="C">
+          <h4>« État et territoires de marge »</h4>
+          <p class="tags"><span><i class="fig c"></i>Priorité C</span></p>
+          <p class="why">Sujet de l'écrit 2026.</p>
+        </article>
+        <article class="subject etat brief" data-q="etat" data-p="C">
+          <h4>« Les États faillis » ou « Contester l'État »</h4>
+          <p class="tags"><span><i class="fig c"></i>Priorité C</span></p>
+          <p class="why">Dossiers d'oral 2026 ; zones grises et quasi-États déjà mobilisés par le corrigé des marges.</p>
+        </article>
+        <article class="subject etat brief" data-q="etat" data-p="C">
+          <h4>Sujets sur les frontières au sens strict</h4>
+          <p class="tags"><span><i class="fig c"></i>Priorité C</span></p>
+          <p class="why">Voisins des sujets de 2021 et 2022, et largement abordés par l'écrit 2026 à travers les frontières sous tension.</p>
+        </article>
+      </div>
+
+      <h3 class="group-title camp" data-group="camp"><i class="fig a"></i>Vivre à la campagne, histoire contemporaine</h3>
+      <div class="subjects camp" data-group="camp">
+        <article class="subject camp" data-q="camp" data-p="A">
+          <h4>« Se soigner dans les campagnes françaises (1815-années 1970) »</h4>
+          <p class="tags"><span><i class="fig a"></i>Priorité A</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Un verbe du cadrage encore inutilisé ; les effets sanitaires du productivisme.</dd>
+            <dt>Pourquoi</dt><dd>Pont direct avec Géographies de la santé, donc double rentabilité.</dd>
+            <dt>Pièges</dt><dd>Rester à hauteur des ruraux (recours, remèdes, sages-femmes, rebouteux) plutôt qu'écrire une histoire de la médecine ; périodiser.</dd>
+            <dt>Appuis</dt><dd>Fin des officiers de santé (1892), assistance médicale gratuite (1893), loi de santé publique (1902), AMEXA (1961) ; J. Léonard, O. Faure, J.-P. Goubert.</dd>
+          </dl>
+        </article>
+        <article class="subject camp" data-q="camp" data-p="A">
+          <h4>« Consommer à la campagne (1815-années 1970) »</h4>
+          <p class="tags"><span><i class="fig a"></i>Priorité A</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Culture matérielle et consommation de masse : alimentation, vêtement, hygiène, confort.</dd>
+            <dt>Pourquoi</dt><dd>Verbe inutilisé ; transformations visibles sur toute la période.</dd>
+            <dt>Pièges</dt><dd>Relier production et consommation ; inégalités sociales, régionales et de genre.</dd>
+            <dt>Appuis</dt><dd>Foires, colporteurs, épiciers (Charles Ernest Petit à Montbarrey, cité par le canevas), supermarchés, équipement ménager ; J.-C. Daumas.</dd>
+          </dl>
+        </article>
+        <article class="subject camp" data-q="camp" data-p="A">
+          <h4>« Circuler et communiquer dans les campagnes françaises (1815-années 1970) »</h4>
+          <p class="tags"><span><i class="fig a"></i>Priorité A</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Révolution des transports et des communications, désenclavement.</dd>
+            <dt>Pourquoi</dt><dd>Un pan entier du cadrage ; le verbe voyager n'a pas servi.</dd>
+            <dt>Pièges</dt><dd>Pas d'histoire des techniques : effets sociaux et politiques, débat sur la « fin des terroirs ».</dd>
+            <dt>Appuis</dt><dd>Chemins vicinaux (1836), plan Freycinet (1878), vélo, autocar, automobile, téléphone, TSF, télévision ; E. Weber.</dd>
+          </dl>
+        </article>
+        <article class="subject camp" data-q="camp" data-p="A">
+          <h4>« L'État dans les campagnes françaises (1815-années 1970) »</h4>
+          <p class="variant">Variante : « Encadrer les campagnes »</p>
+          <p class="tags"><span><i class="fig a"></i>Priorité A</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Emprise étatique, administrative et juridique ; encadrement et contrôle social.</dd>
+            <dt>Pourquoi</dt><dd>Pont avec la question sur l'État ; figures déjà présentes dans le canevas 2026 (gendarmes, gardes champêtres, instituteurs).</dd>
+            <dt>Pièges</dt><dd>Montrer appropriations, résistances et négociations plutôt qu'une histoire institutionnelle.</dd>
+            <dt>Appuis</dt><dd>Code forestier (1827), loi Guizot (1833), conscription, lois Ferry, Corporation paysanne, lois d'orientation ; M. Agulhon, J.-F. Chanet, A.-D. Houte.</dd>
+          </dl>
+        </article>
+        <article class="subject camp" data-q="camp" data-p="A">
+          <h4>« Habiter la campagne (1815-années 1970) »</h4>
+          <p class="variant">Variante : « Maisons, villages et cadres de vie »</p>
+          <p class="tags"><span><i class="fig a"></i>Priorité A</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Cadres de vie, bâti, confort, hygiène.</dd>
+            <dt>Pourquoi</dt><dd>Au cadrage, sans aucun sujet en 2026.</dd>
+            <dt>Pièges</dt><dd>Le géographe risque une géographie de l'habitat sans habitants : rester sur le vécu.</dd>
+            <dt>Appuis</dt><dd>Électrification rurale (FACÉ, 1936), eau courante, reconstruction, habitat groupé et dispersé.</dd>
+          </dl>
+        </article>
+        <article class="subject camp" data-q="camp" data-p="A">
+          <h4>« Les ruraux et la nature (1815-années 1970) »</h4>
+          <p class="variant">Variante : « Paysages et environnements des campagnes françaises »</p>
+          <p class="tags"><span><i class="fig a"></i>Priorité A</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Expériences sensorielles, paysage, nature et animaux, dégradations et protection.</dd>
+            <dt>Pourquoi</dt><dd>Au cadrage, sans sujet en 2026 ; la fin de la période y renvoie (ministère de l'Environnement, 1971).</dd>
+            <dt>Pièges</dt><dd>Faire une histoire sociale et culturelle des usages et des représentations, pas une géographie des paysages.</dd>
+            <dt>Appuis</dt><dd>Reboisement des montagnes (1860), remembrement, parcs nationaux (1960), parcs naturels régionaux (1967) ; G. Quenet pour l'histoire environnementale.</dd>
+          </dl>
+        </article>
+        <article class="subject camp" data-q="camp" data-p="B">
+          <h4>« Les campagnes françaises et la politique (1815-années 1970) »</h4>
+          <p class="tags"><span><i class="fig b"></i>Priorité B</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Politisation, votes, mobilisations.</dd>
+            <dt>Pourquoi</dt><dd>Balisé par trois oraux (voter, colère, années 68), mais jamais traité sur toute la période.</dd>
+            <dt>Pièges</dt><dd>La politisation déborde le vote : notables, syndicats, rumeurs, violences.</dd>
+            <dt>Appuis</dt><dd>M. Agulhon, 1848, révolte du Midi (1907), Dorgères et les Chemises vertes (R. Paxton).</dd>
+          </dl>
+        </article>
+        <article class="subject camp" data-q="camp" data-p="B">
+          <h4>« Grandir à la campagne »</h4>
+          <p class="tags"><span><i class="fig b"></i>Priorité B</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Âges de la vie, enfance et jeunesse.</dd>
+            <dt>Pourquoi</dt><dd>Verbe inutilisé, mais sources plus dispersées.</dd>
+            <dt>Pièges</dt><dd>Ne pas se limiter à l'école, déjà vue à l'oral.</dd>
+            <dt>Appuis</dt><dd>Travail des enfants, enfants placés (I. Jablonka), JAC, conscription.</dd>
+          </dl>
+        </article>
+        <article class="subject camp" data-q="camp" data-p="B">
+          <h4>« Aimer et fonder une famille à la campagne »</h4>
+          <p class="tags"><span><i class="fig b"></i>Priorité B</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Couples, mariage, famille, célibat.</dd>
+            <dt>Pourquoi</dt><dd>Verbe inutilisé.</dd>
+            <dt>Pièges</dt><dd>Articuler stratégies familiales, patrimoine et sentiments.</dd>
+            <dt>Appuis</dt><dd>M. Segalen, P. Bourdieu (Le Bal des célibataires), bal béarnais du corpus 2026.</dd>
+          </dl>
+        </article>
+        <article class="subject camp" data-q="camp" data-p="B">
+          <h4>« La terre : posséder, exploiter, transmettre »</h4>
+          <p class="tags"><span><i class="fig b"></i>Priorité B</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Systèmes agraires, propriété, communs.</dd>
+            <dt>Pourquoi</dt><dd>Au cadrage, en partie abordé par le canevas 2026 (fermage, GAEC).</dd>
+            <dt>Pièges</dt><dd>Ne pas réduire à une histoire agricole : la terre comme patrimoine et enjeu social.</dd>
+            <dt>Appuis</dt><dd>Biens communaux (N. Vivier), fermage et métayage, SAFER, remembrement.</dd>
+          </dl>
+        </article>
+        <article class="subject camp" data-q="camp" data-p="B">
+          <h4>« Les campagnes françaises en guerre (1870-1945) »</h4>
+          <p class="tags"><span><i class="fig b"></i>Priorité B</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Combattre, résister, subir.</dd>
+            <dt>Pourquoi</dt><dd>Balisé par deux oraux (Grande Guerre, Vichy).</dd>
+            <dt>Pièges</dt><dd>Comparer les trois conflits plutôt que les juxtaposer.</dd>
+            <dt>Appuis</dt><dd>Mobilisation, réquisitions, Corporation paysanne, maquis.</dd>
+          </dl>
+        </article>
+        <article class="subject camp" data-q="camp" data-p="B">
+          <h4>« Partir et rester : les ruraux en mouvement »</h4>
+          <p class="tags"><span><i class="fig b"></i>Priorité B</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Migrations saisonnières et définitives, exode, retours.</dd>
+            <dt>Pourquoi</dt><dd>Balisé par un oral (partir travailler ailleurs).</dd>
+            <dt>Pièges</dt><dd>Nuancer l'exode rural ; penser aussi ceux qui arrivent.</dd>
+            <dt>Appuis</dt><dd>Maçons de la Creuse, Bretons à Paris, étrangers dans les campagnes, néoruraux.</dd>
+          </dl>
+        </article>
+        <article class="subject camp" data-q="camp" data-p="B">
+          <h4>« Traverser les crises dans les campagnes françaises »</h4>
+          <p class="tags"><span><i class="fig b"></i>Priorité B</span></p>
+          <dl>
+            <dt>Axe du cadrage</dt><dd>Crises frumentaires, agricoles, sanitaires et politiques.</dd>
+            <dt>Pourquoi</dt><dd>En partie balisé (colère des années 1840, crise des années 1930) et présent dans le canevas 2026.</dd>
+            <dt>Pièges</dt><dd>Définir la crise et ses échelles ; ne pas en faire un fil uniquement agricole.</dd>
+            <dt>Appuis</dt><dd>Disette de 1846-1847, phylloxéra, mévente de 1907, années 1930.</dd>
+          </dl>
+        </article>
+        <article class="subject camp brief" data-q="camp" data-p="C">
+          <h4>« Travailler dans les campagnes françaises (1815-années 1970) »</h4>
+          <p class="tags"><span><i class="fig c"></i>Priorité C</span></p>
+          <p class="why">Sujet de l'écrit 2026.</p>
+        </article>
+        <article class="subject camp brief" data-q="camp" data-p="C">
+          <h4>Tout sujet incluant l'outre-mer ou les colonies</h4>
+          <p class="tags"><span><i class="fig c"></i>Priorité C</span></p>
+          <p class="why">Exclu par le cadrage.</p>
+        </article>
+        <article class="subject camp brief" data-q="camp" data-p="C">
+          <h4>Sujets réduits à l'histoire agricole</h4>
+          <p class="tags"><span><i class="fig c"></i>Priorité C</span></p>
+          <p class="why">Déconseillés par le cadrage : reformuler au prisme de la vie rurale.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="cas">
+      <h2>Études de cas à la croisée des questions</h2>
+      <p>Avec des dossiers sans étiquette et 8 minutes d'entretien sur l'autre question d'histoire, les études de cas qui servent plusieurs questions deviennent les plus rentables. Pour chacune, prévoir une carte topographique, un document ancien et deux productions graphiques de nature différente.</p>
+      <div class="table-wrap">
+        <table class="wide">
+          <thead><tr><th scope="col">Étude de cas</th><th scope="col">Questions</th><th scope="col">Cartes et documents</th><th scope="col">Productions graphiques</th><th scope="col">Repères</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Les essais nucléaires en Polynésie</th><td><span class="qtags"><span class="qt pac">Pacifique</span><span class="qt etat">État</span><span class="qt sante">Santé</span></span></td><td>Cartes des Tuamotu-Gambier ; archives du Centre d'expérimentations du Pacifique</td><td>Frise analytique ; croquis du réseau Papeete, Hao, Moruroa</td><td>193 essais de 1966 à 1996 ; loi Morin (2010) ; dette de la nation reconnue par le président de la République (2021)</td></tr>
+            <tr><th scope="row">La Nouvelle-Calédonie, de l'accord de Nouméa à Bougival</th><td><span class="qtags"><span class="qt pac">Pacifique</span><span class="qt etat">État</span></span></td><td>Carte topographique de Nouméa ; carte de 1939 (corpus 2026)</td><td>Croquis des provinces, du nickel et des votes ; schéma des statuts</td><td>Accord de Nouméa (1998) ; référendums de 2018, 2020 et 2021 ; violences de 2024 ; accord de Bougival (2025) et suites</td></tr>
+            <tr><th scope="row">Vanuatu et l'avis de la CIJ</th><td><span class="qtags"><span class="qt pac">Pacifique</span><span class="qt etat">État</span></span></td><td>Carte des aléas de l'archipel ; résolution de l'Assemblée générale des Nations unies (2023)</td><td>Schéma d'acteurs à plusieurs niveaux</td><td>Initiative d'étudiants océaniens, portage par l'État, AOSIS, avis du 23 juillet 2025</td></tr>
+            <tr><th scope="row">Les États librement associés</th><td><span class="qtags"><span class="qt pac">Pacifique</span><span class="qt etat">État</span></span></td><td>Carte des ZEE et des bases</td><td>Schéma des liens de souveraineté</td><td>Palaos, Marshall, Micronésie et États-Unis ; îles Cook, Niue et Nouvelle-Zélande ; partenariat îles Cook-Chine (2025)</td></tr>
+            <tr><th scope="row">Clipperton et la ZEE française du Pacifique</th><td><span class="qtags"><span class="qt pac">Pacifique</span><span class="qt etat">État</span></span></td><td>Carte des espaces maritimes français</td><td>Croquis des ZEE françaises du Pacifique</td><td>Souveraineté sans habitants, surveillance, pêche illégale</td></tr>
+            <tr><th scope="row">Hawaï</th><td><span class="qtags"><span class="qt pac">Pacifique</span><span class="qt etat">État</span><span class="qt sante">Santé</span></span></td><td>Carte topographique de l'USGS pour Oahu</td><td>Croquis d'Oahu : bases, tourisme, terres autochtones</td><td>Annexion (1898), État fédéré (1959) ; Kalaupapa, lieu d'isolement des malades de la lèpre (1866-1969) ; incendie de Lahaina (2023)</td></tr>
+            <tr><th scope="row">Le plateau de Millevaches et la Creuse</th><td><span class="qtags"><span class="qt france">France</span><span class="qt etat">État</span><span class="qt camp">Campagnes</span><span class="qt sante">Santé</span></span></td><td>Carte IGN au 1/25 000 ; photographies aériennes des années 1950 (Remonter le temps)</td><td>Croquis de la déprise, de l'enrésinement et des services ; frise des migrations</td><td>Maçons de la Creuse (Nadaud) ; A. Corbin sur le Limousin ; faible densité ; accès aux soins ; parc naturel régional (2004)</td></tr>
+            <tr><th scope="row">Le bocage breton et le remembrement</th><td><span class="qtags"><span class="qt camp">Campagnes</span><span class="qt france">France</span><span class="qt etat">État</span><span class="qt sante">Santé</span></span></td><td>Carte IGN au 1/25 000 ; photographies aériennes avant et après remembrement</td><td>Croquis comparatif avant et après</td><td>Loi de 1941, lois d'orientation (1960-1962) ; Hélias ; grève du lait (1972) ; algues vertes</td></tr>
+            <tr><th scope="row">Mayotte</th><td><span class="qtags"><span class="qt etat">État</span><span class="qt france">France</span><span class="qt sante">Santé</span></span></td><td>Carte IGN de Mamoudzou</td><td>Croquis de la crise de l'eau, de l'accès aux soins et des circulations</td><td>Département (2011) ; épidémie de choléra (2024) ; cyclone Chido (2024)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="notions">
+      <h2>Notions et pièges</h2>
+      <p>Les couples de notions que le rapport signale comme mal maîtrisés, ou que le cadrage rend incontournables. Chaque ligne peut devenir une carte Anki.</p>
+      <h3>Le Pacifique</h3>
+      <dl class="notions">
+        <div><dt>Pacifique insulaire, îles du Pacifique</dt><dd>Le premier désigne les petits États et territoires de Mélanésie, Polynésie et Micronésie ; le second inclut aussi le Japon, les Philippines ou Taïwan.</dd></div>
+        <div><dt>Bassin pacifique, Asie-Pacifique, Océanie</dt><dd>Un emboîtement d'échelles à expliciter ; l'Indopacifique est hors question.</dd></div>
+        <div><dt>Insularité, iléité</dt><dd>La condition géographique d'une part, le rapport vécu et identitaire à l'île d'autre part (J. Bonnemaison). L'insularité n'implique pas l'isolement.</dd></div>
+        <div><dt>Île haute, île basse, atoll, lagon, motu</dt><dd>Vocabulaire jugé fragile à l'oral ; savoir le reconnaître sur une carte et sur une photographie.</dd></div>
+        <div><dt>Mer territoriale, ZEE, plateau continental, haute mer</dt><dd>12 milles, 200 milles, extension possible du plateau, espace hors juridiction nationale (convention de Montego Bay, 1982).</dd></div>
+        <div><dt>Statuts</dt><dd>État souverain ; libre association (îles Cook et Niue avec la Nouvelle-Zélande ; Palaos, Marshall et Micronésie avec les États-Unis) ; territoire non incorporé (Guam, Samoa américaines) ; Commonwealth (Mariannes du Nord) ; État fédéré (Hawaï) ; collectivité sui generis (Nouvelle-Calédonie) ; pays d'outre-mer (Polynésie française) ; collectivité d'outre-mer (Wallis-et-Futuna) ; territoire spécial (Rapa Nui) ; région autonome (Bougainville) ; territoire non autonome au sens de l'ONU.</dd></div>
+        <div><dt>MIRAB, SITE, PROFIT</dt><dd>Trois modèles de développement insulaire : migrations, remises, aide et administration (Bertram et Watters, 1985) ; économies touristiques (McElroy, 2006) ; usage stratégique des compétences juridictionnelles (Baldacchino, 2006).</dd></div>
+        <div><dt>Autochtonie, allochtonie, diaspora</dt><dd>Distinguer les populations plutôt que parler des Océaniens en bloc.</dd></div>
+      </dl>
+      <h3>L'État, objet géographique</h3>
+      <dl class="notions">
+        <div><dt>Marge, périphérie</dt><dd>La périphérie se définit par sa relation à un centre ; la marge par un fonctionnement autre, subi ou choisi. C'est la confusion la plus sanctionnée en 2026.</dd></div>
+        <div><dt>Confins, marche, zone grise, antimonde</dt><dd>Notions voisines à situer : extrémités d'une aire, espace frontalier intégré par l'histoire, espace qui échappe à l'État, envers du monde officiel (R. Brunet).</dd></div>
+        <div><dt>Niveau, échelle, échelon</dt><dd>Le niveau est institutionnel, l'échelle est un rapport de taille et une focale d'analyse ; le rescaling désigne la recomposition des niveaux d'action de l'État (N. Brenner).</dd></div>
+        <div><dt>International, transnational, supranational</dt><dd>Entre États ; par-delà les États ; au-dessus des États.</dd></div>
+        <div><dt>Pouvoir, puissance, souveraineté</dt><dd>Faire, faire faire, empêcher de faire, refuser de faire (S. Sur) ; dispositif de puissance (J. Lévy).</dd></div>
+        <div><dt>État, nation, pays</dt><dd>États-nations, États plurinationaux, nations sans État ; États-fusion et États-scission.</dd></div>
+        <div><dt>Quasi-État, État de facto, État failli, État fragile</dt><dd>Reconnaissance, contrôle effectif du territoire et capacités ne se recouvrent pas.</dd></div>
+        <div><dt>Unitaire, régionalisé, fédéral</dt><dd>Et, à ne pas confondre, décentralisation et déconcentration.</dd></div>
+        <div><dt>Frontière linéaire, réticulaire, immatérielle</dt><dd>La frontière ne se limite pas à une ligne : aéroports, consulats, contrôles numériques.</dd></div>
+        <div><dt>Merritoire</dt><dd>L'espace maritime approprié comme un territoire : un terme fréquent dans les copies 2026, alors que les ZEE y étaient rarement traitées.</dd></div>
+      </dl>
+      <h3>Vivre à la campagne</h3>
+      <dl class="notions">
+        <div><dt>Travailler, le travail</dt><dd>L'acte, ses gestes et ses cadres, contre la catégorie économique : la dérive la plus sanctionnée en 2026.</dd></div>
+        <div><dt>Rural, agricole, paysan, exploitant</dt><dd>Toute la population rurale n'est pas agricole ; les mots paysan et exploitant ont une histoire et des usages militants.</dd></div>
+        <div><dt>Commune rurale, ruralité perçue</dt><dd>Le seuil statistique des 2 000 habitants ne dit pas les perceptions.</dd></div>
+        <div><dt>Exode rural, dépeuplement, déprise</dt><dd>Des processus distincts, aux chronologies et aux géographies différentes.</dd></div>
+        <div><dt>Pluriactivité, proto-industrialisation</dt><dd>Une pratique ancienne des ménages ruraux d'un côté, un modèle historiographique (F. Mendels) de l'autre.</dd></div>
+        <div><dt>Remembrement, SAFER</dt><dd>Réorganisation parcellaire menée par des commissions communales ; sociétés créées en 1960 pour acheter et rétrocéder des terres.</dd></div>
+        <div><dt>Fermage, métayage, faire-valoir direct</dt><dd>Loyer fixe, partage des récoltes, exploitation par le propriétaire ; statut du fermage en 1946.</dd></div>
+        <div><dt>Biens communaux, droits d'usage</dt><dd>Pâturage, bois, glanage : des ressources collectives au cœur des conflits du XIXe siècle.</dd></div>
+        <div><dt>Fin des paysans, révolution silencieuse</dt><dd>H. Mendras (1967) et M. Debatisse (1963) : des diagnostics d'époque à historiciser, pas à reprendre tels quels.</dd></div>
+      </dl>
+    </section>
+
+    <section id="outils">
+      <h2>Outils et calendrier</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Outil</th><th scope="col">Ajustement</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Liste de sujets plausibles</th><td>Passer chaque sujet à la grille-filtre, fusionner avec la banque de ce document, marquer chaque ligne A, B ou C.</td></tr>
+            <tr><th scope="row">Banque d'exemples</th><td>Chaque exemple doit démontrer, être daté, localisé et sourcé. Retravailler les cas que le jury juge plaqués (exclaves non justifiées, frontière franco-suisse, diagonale dite du vide, Chine intérieure, ensemble des outre-mer) ; ajouter des exemples maritimes et pris sur les rives du Pacifique.</td></tr>
+            <tr><th scope="row">Cartes Anki</th><td>Vocabulaire de base (plaine, plateau, lit mineur et majeur, banlieue et périurbain, formes littorales, openfield et bocage) ; vocabulaire des îles ; statuts du Pacifique ; organisations régionales ; dates de la question rurale ; couples de notions ci-dessus.</td></tr>
+            <tr><th scope="row">Carnet de croquis</th><td>Trois formats : croquis de composition (grand cadre, légende à deux niveaux, synthèse intégrée au texte) ; question graphique d'ESD à partir de documents imposés ; productions multiples d'oral (croquis filé, croquis ponctuel, frise analytique).</td></tr>
+            <tr><th scope="row">Frises chronologiques</th><td>En faire un outil de présentation de corpus à l'oral d'histoire, avec une carte, comme la diapositive modèle sur la colère des campagnes ; dater chaque exemple de copie.</td></tr>
+            <tr><th scope="row">Fiches historiographiques</th><td>Les réorganiser en ouvrages généraux et titres spécialisés ; connaître le contenu des volumes collectifs et les titres en anglais.</td></tr>
+            <tr><th scope="row">Veille d'actualité</th><td>Journal État et Pacifique tenu jusqu'au printemps 2027 : les dossiers 2026 intégraient des documents de l'année même.</td></tr>
+            <tr><th scope="row">Études de cas</th><td>Les choisir aux carrefours des questions, avec pour chacune une carte topographique, un document ancien et deux productions graphiques.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Calendrier indicatif</h3>
+      <p>En supposant un calendrier 2027 proche de celui de 2026.</p>
+      <div class="table-wrap">
+        <table class="narrow">
+          <thead><tr><th scope="col">Période</th><th scope="col">Priorités</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Septembre à novembre 2026</th><td>Études de cas carrefours, banque de sujets, fiches de notions, lectures ciblées sur les angles morts.</td></tr>
+            <tr><th scope="row">Décembre 2026 à février 2027</th><td>Compositions chronométrées sur les sujets A ; ESD avec question graphique ; veille d'actualité.</td></tr>
+            <tr><th scope="row">Début mars 2027</th><td>Écrits (du 3 au 6 mars en 2026).</td></tr>
+            <tr><th scope="row">Mars à mai 2027</th><td>Oraux blancs : commentaire sans étiquette, histoire avec bibliographie en deux parties, leçon hors programme.</td></tr>
+            <tr><th scope="row">Fin mai à juin 2027</th><td>Oraux (du 27 mai au 11 juin en 2026) ; entretien avec le jury le jour des résultats.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="erreurs">
+      <h2>Erreurs du rapport à ne pas recopier</h2>
+      <p>Le rapport reste la meilleure source sur les attentes du jury, mais quelques inexactitudes s'y sont glissées.</p>
+      <ul class="corrections">
+        <li><span class="was">Discours du ministre des Affaires étrangères de Tuvalu, les pieds dans l'eau, daté de 2022</span>Il a été enregistré pour la COP26, en novembre 2021.</li>
+        <li><span class="was">Nouvelle-Calédonie et Polynésie française présentées comme territoires sous tutelle</span>Ce sont des territoires non autonomes au sens de l'ONU (réinscrits en 1986 et en 2013). La Nouvelle-Calédonie est une collectivité sui generis, la Polynésie française un pays d'outre-mer doté de l'autonomie.</li>
+        <li><span class="was">Indépendance de Bougainville présentée comme actée pour 2027</span>Le référendum de 2019 (97,7 % pour l'indépendance) était consultatif ; l'indépendance suppose une ratification par le Parlement de Papouasie-Nouvelle-Guinée. 2027 est un horizon politique.</li>
+        <li><span class="was">Union Falepili (2024) présentée comme traité de relocalisation de la population de Tuvalu</span>Signée en novembre 2023 et entrée en vigueur en août 2024, elle ouvre une voie de mobilité (jusqu'à 280 personnes par an) assortie de garanties de sécurité ; ce n'est pas un plan de relocalisation.</li>
+        <li><span class="was">Relocalisation prévue des habitants de Kiribati aux Fidji</span>Les terres achetées aux Fidji en 2014 ont surtout été présentées comme un investissement pour la sécurité alimentaire ; aucune relocalisation n'y a été organisée.</li>
+        <li><span class="was">Office national du crédit agricole daté de 1929</span>Il a été créé en 1920.</li>
+        <li><span class="was">SAFER présentées comme actrices clés du remembrement</span>Le remembrement relève de commissions communales ; les SAFER, créées en 1960, achètent et rétrocèdent des terres.</li>
+        <li><span class="was">Question d'histoire citée comme « Vivre dans les campagnes 1850-1950 » dans le rapport d'ESD</span>L'intitulé exact est « Vivre à la campagne en France, de 1815 aux années 1970 ».</li>
+        <li><span class="was">Commentaire de la diapositive modèle sur la proto-industrialisation</span>Le texte évoque le nationalisme algérien : un reste d'un autre rapport, sans lien avec la diapositive.</li>
+        <li><span class="was">Sujet « Partir travailler ailleurs (années 1830-début du XIXe siècle) »</span>Lire début du XXe siècle.</li>
+      </ul>
+    </section>
+
+    <section id="sources">
+      <h2>Sources</h2>
+      <ul>
+        <li>Rapport du jury de l'agrégation externe de géographie, session 2026 (DGRH, présidente Catherine Biaggi).</li>
+        <li>Programme de la session 2027 et textes de cadrage, <a href="https://www.devenirenseignant.gouv.fr/media/20180/download">devenirenseignant.gouv.fr</a>.</li>
+        <li>Géoconfluences : sujets des écrits des sessions précédentes et ressources sur les questions au programme.</li>
+      </ul>
+      <p>Les repères ajoutés au rapport (dates, exemples, références bibliographiques) sont à vérifier dans ta bibliographie avant tout usage en copie. La banque de sujets est une hypothèse de travail construite à partir du rapport, des sujets 2026 et du cadrage.</p>
+      <p class="foot">Document établi le 16 septembre 2026.</p>
+    </section>
+  </main>
+</div>
+<a class="to-top" href="#haut">Haut de page</a>
+<script>
+(function () {
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.subject'));
+  var groups = Array.prototype.slice.call(document.querySelectorAll('.subjects'));
+  var count = document.getElementById('count');
+  var state = { q: 'all', p: 'all' };
+
+  function apply() {
+    var shown = 0;
+    cards.forEach(function (c) {
+      var okQ = state.q === 'all' || c.getAttribute('data-q') === state.q;
+      var okP = state.p === 'all' || c.getAttribute('data-p') === state.p;
+      c.hidden = !(okQ && okP);
+      if (okQ && okP) { shown += 1; }
+    });
+    groups.forEach(function (g) {
+      var visible = g.querySelector('.subject:not([hidden])') !== null;
+      g.hidden = !visible;
+      var title = document.querySelector('.group-title[data-group="' + g.getAttribute('data-group') + '"]');
+      if (title) { title.hidden = !visible; }
+    });
+    if (count) {
+      count.textContent = shown === 0 ? 'Aucun sujet ne correspond : élargis un filtre.' : shown + (shown > 1 ? ' sujets affichés' : ' sujet affiché');
+    }
+  }
+
+  Array.prototype.slice.call(document.querySelectorAll('.fgroup')).forEach(function (group) {
+    var key = group.getAttribute('data-filter');
+    var buttons = Array.prototype.slice.call(group.querySelectorAll('.chip'));
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () {
+        state[key] = b.getAttribute('data-value');
+        buttons.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        apply();
+      });
+    });
+  });
+
+  var tocMobile = document.querySelector('.toc-mobile');
+  if (tocMobile) {
+    tocMobile.addEventListener('click', function (e) {
+      if (e.target.closest && e.target.closest('a')) { tocMobile.open = false; }
+    });
+  }
+
+  var toTop = document.querySelector('.to-top');
+  if (toTop) {
+    var onScroll = function () { toTop.classList.toggle('show', window.scrollY > 700); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  apply();
+})();
+</script>
+</body>
+</html>

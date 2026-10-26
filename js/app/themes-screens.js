@@ -173,8 +173,12 @@ function initThemes() {
     // Mode Carte (voir js/geoMap.js), même logique qu'à l'écran des
     // sous-catégories : disponible dès que ce nœud — ici le dernier niveau
     // avant la liste de thèmes — contient assez d'événements géolocalisables.
+    // Les rapports du jury (js/app/rapports.js) rejoignent cette rangée, sur la catégorie « CAPES & Agrégation » elle-même.
+    const rapports = category.nom === RAPPORTS_CATEGORY && node === category ? buildRapportsLauncher() : null;
     if (!category.isCustomCategory && typeof isGeoEligible === 'function' && isGeoEligible(node)) {
-        container.appendChild(buildGeoModeRow(node, node.nom));
+        container.appendChild(buildGeoModeRow(node, node.nom, rapports));
+    } else if (rapports) {
+        container.appendChild(rapports);
     }
 
     if (themeList.length === 0 && !category.isCustomCategory) {

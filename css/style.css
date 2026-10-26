@@ -13712,3 +13712,20 @@ input:not([type="range"]), label, select, summary, textarea {
     font-weight: 700;
     cursor: pointer;
 }
+
+/* Rapports du jury : le cadre du document occupe tout l'écran sous le titre. */
+.rapport-frame {
+    display: block;
+    width: 100%;
+    height: calc(100vh - 140px);
+    border: 0;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.rapports-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 16px;
+}

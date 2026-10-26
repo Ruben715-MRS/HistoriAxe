@@ -1504,6 +1504,18 @@
         </div>
     </div>
 
+    <!-- ÉCRANS : RAPPORTS DU JURY (voir js/app/rapports.js) : la liste, puis un rapport dans son cadre isolé -->
+    <div id="screen-rapports" class="list-screen hidden">
+        <button class="back-btn" onclick="showScreen('screen-themes', 'back')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="rapports.title">Rapports du jury</h2>
+        <div id="rapports-list" class="rapports-list"></div>
+    </div>
+    <div id="screen-rapport" class="list-screen hidden">
+        <button class="back-btn" onclick="closeRapport()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" id="rapport-title"></h2>
+        <iframe id="rapport-frame" class="rapport-frame" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer" title=""></iframe>
+    </div>
+
     <!-- ÉCRAN : VILLES DU MONDE (voir js/modes/cities.js) -->
     <div id="screen-cities" class="list-screen hidden">
         <button class="back-btn" onclick="cityGameQuit()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
@@ -3482,6 +3494,7 @@
     <script src="js/app/axes-rounds.js"></script>
     <script src="js/app/categories.js"></script>
     <script src="js/app/themes-screens.js"></script>
+    <script src="js/app/rapports.js"></script>
     <script src="js/app/game-start.js"></script>
     <script src="js/modes/quiz.js"></script>
     <script src="js/modes/simultaneity.js"></script>

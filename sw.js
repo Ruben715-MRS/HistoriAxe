@@ -12,7 +12,7 @@
 // 'install' recharge tout depuis le réseau. Un pack de langue ou un texte
 // d'UI modifié qui ne s'affiche pas malgré un déploiement réussi est
 // généralement le signe que l'un de ces deux numéros n'a pas été incrémenté.
-const CACHE_VERSION = '1.4.239';
+const CACHE_VERSION = '1.4.240';
 const APP_SHELL_CACHE = `historiaxe-shell-v${CACHE_VERSION}`;
 const DATA_CACHE = 'historiaxe-data-v1.0.115';
 
@@ -98,6 +98,7 @@ const APP_SHELL_FILES = [
     './js/app/axes-rounds.js',
     './js/app/categories.js',
     './js/app/themes-screens.js',
+    './js/app/rapports.js',
     './js/app/game-start.js',
     './js/modes/quiz.js',
     './js/modes/simultaneity.js',
