@@ -60,13 +60,13 @@ test('capitale ou plus grande ville : dix questions, 100 points chacune, une err
         await page.locator('#cities-next').click();
     }
     await expect(page.locator('#cities-end')).toBeVisible();
-    await expect(page.locator('#cities-score')).toHaveText('Score : 900 points sur 1000');
+    await expect(page.locator('#cities-score')).toHaveText('Score : 900 pts sur 1000');
     // « Autres jeux sur les villes » revient au menu, « Retour » à la Salle de jeux.
     await page.locator('#cities-end .btn').click();
     await expect(page.locator('#cities-menu')).toBeVisible();
 });
 
-test('quelle ville est la plus au nord (ou au sud) : dix bonnes réponses, 1 000 points', async ({ page }) => {
+test('quelle ville est la plus au nord (ou au sud) : dix bonnes réponses, 1 000 pts', async ({ page }) => {
     await openCities(page);
     await startGame(page, 'Quelle ville est la plus au nord');
     await expect(page.locator('#cities-ask')).toHaveText(/Laquelle de ces villes est la plus au (nord|sud) \?/);
@@ -74,7 +74,7 @@ test('quelle ville est la plus au nord (ou au sud) : dix bonnes réponses, 1 000
         await answer(page, true);
         await page.locator('#cities-next').click();
     }
-    await expect(page.locator('#cities-score')).toHaveText('Score : 1000 points sur 1000');
+    await expect(page.locator('#cities-score')).toHaveText('Score : 1000 pts sur 1000');
 });
 
 test('réglages partagés avec le Quiz des pays : zone et chrono, bonus de vitesse, temps écoulé = erreur', async ({ page }) => {
@@ -97,16 +97,16 @@ test('réglages partagés avec le Quiz des pays : zone et chrono, bonus de vites
     await page.locator('#cities-zone .geoquiz-chip', { hasText: 'Afrique' }).click();
     await startGame(page, 'Capitale ou plus grande ville');
     await expect(page.locator('#cities-timer')).toBeVisible();
-    // Une réponse juste tout de suite : 100 points plus un bonus de vitesse (3 secondes accordées).
+    // Une réponse juste tout de suite : 100 pts plus un bonus de vitesse (3 secondes accordées).
     await answer(page, true);
-    await expect(page.locator('#cities-feedback')).toContainText(/\+1\d\d points/);
+    await expect(page.locator('#cities-feedback')).toContainText(/\+1\d\d pts/);
     await page.locator('#cities-next').click();
     // Le temps écoulé sans réponse : une erreur, la bonne réponse s'affiche.
     await expect(page.locator('#cities-feedback')).toContainText('Temps écoulé', { timeout: 6000 });
     await expect(page.locator('#cities-options .quiz-option.correct')).toHaveCount(1);
 });
 
-test('touchez la ville : une carte sans aucun nom, 100 points sur place, des points qui baissent avec la distance', async ({ page }) => {
+test('touchez la ville : une carte sans aucun nom, 100 pts sur place, des points qui baissent avec la distance', async ({ page }) => {
     await openCities(page);
     await startGame(page, 'Touchez la ville');
     await expect(page.locator('#cities-map-wrap')).toBeVisible();
@@ -115,7 +115,7 @@ test('touchez la ville : une carte sans aucun nom, 100 points sur place, des poi
     expect(await page.evaluate(() => cityMap.getStyle().layers.every(l => l.type !== 'symbol'))).toBe(true);
     // Sur place : 100 points. Puis un point à environ 1 300 km : de l'ordre de 37 points.
     await page.evaluate(() => { const c = cityGameById(cityGameQuestions[cityGameIndex].target); cityGameTap(c.lon, c.lat); });
-    await expect(page.locator('#cities-feedback')).toContainText('100 points');
+    await expect(page.locator('#cities-feedback')).toContainText('100 pts');
     await page.locator('#cities-next').click();
     await page.evaluate(() => { const c = cityGameById(cityGameQuestions[cityGameIndex].target); cityGameTap(c.lon + 13 / Math.cos(c.lat * Math.PI / 180), c.lat); });
     const points = await page.evaluate(() => cityGameScore) - 100;
@@ -150,7 +150,7 @@ test('classer par population : quatre villes à choisir dans l’ordre, Recommen
         const q = cityGameQuestions[cityGameIndex];
         q.ids.forEach(id => document.querySelectorAll('#cities-options .quiz-option')[q.options.findIndex(o => o.id === id)].click());
     });
-    await expect(page.locator('#cities-feedback')).toContainText('4 ville(s) bien placée(s) : 100 points');
+    await expect(page.locator('#cities-feedback')).toContainText('4 ville(s) bien placée(s) : 100 pts');
     // Un mauvais ordre : le bon est dit.
     await page.locator('#cities-next').click();
     await page.evaluate(() => {
@@ -183,11 +183,23 @@ test('ville de l’histoire : le titre ne nomme jamais la ville, la description 
         expect(info.descHidden).toBe(true);
         await page.evaluate(() => { const c = cityGameById(cityGameQuestions[cityGameIndex].target); cityGameTap(c.lon, c.lat); });
         await expect(page.locator('#cities-feedback')).toContainText('C’était à');
-        await expect(page.locator('#cities-feedback')).toContainText('100 points');
+        await expect(page.locator('#cities-feedback')).toContainText('100 pts');
         // La description se charge à la demande (pack découpé) : elle apparaît, sans que la partie attende.
         await expect(page.locator('#cities-fact-desc')).toBeVisible();
         await page.locator('#cities-next').click();
     }
-    await expect(page.locator('#cities-score')).toHaveText('Score : 1000 points sur 1000');
+    await expect(page.locator('#cities-score')).toHaveText('Score : 1000 pts sur 1000');
     await expect(page.locator('#cities-credit')).toContainText('Atlas des événements');
+});
+
+test('ville de l’histoire, période : le choix est gardé, et chaque fait tiré est de la période demandée', async ({ page }) => {
+    await openCities(page);
+    await expect(page.locator('#cities-period .geoquiz-chip', { hasText: 'Toutes' })).toHaveAttribute('aria-pressed', 'true');
+    await page.locator('#cities-period .geoquiz-chip', { hasText: 'Antiquité' }).click();
+    await expect(page.locator('#cities-period .geoquiz-chip', { hasText: 'Antiquité' })).toHaveAttribute('aria-pressed', 'true');
+    await startGame(page, "Ville de l'histoire");
+    await page.waitForFunction(() => typeof cityMapReady !== 'undefined' && cityMapReady === true);
+    const years = await page.evaluate(() => cityGameQuestions.map(q => q.year));
+    expect(years.length).toBeGreaterThan(0);
+    years.forEach(y => expect(y).toBeLessThanOrEqual(499));
 });

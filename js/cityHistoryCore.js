@@ -113,13 +113,28 @@
     var PERSON_TITLE = /^(Naissance|D[ée]c[èe]s|Mort)\s+(de (?!la |le |les |l['’])|d['’](?!un |une ))/i;
     var MAX_PEOPLE = 2;
 
-    // `count` questions, chacune sur une ville différente ; dans une ville, un fait au hasard.
+    // Les périodes du jeu, par année (négatif : avant notre ère). « all » ne filtre rien.
+    var PERIODS = [
+        { key: 'all', from: -Infinity, to: Infinity },
+        { key: 'antiquity', from: -Infinity, to: 499 },
+        { key: 'middle', from: 500, to: 1491 },
+        { key: 'modern', from: 1492, to: 1788 },
+        { key: 'contemporary', from: 1789, to: Infinity }
+    ];
+
+    function inPeriod(year, key) {
+        var p = PERIODS.filter(function (x) { return x.key === key; })[0];
+        if (!p) return true;
+        return year >= p.from && year <= p.to;
+    }
+
+    // `count` questions, chacune sur une ville différente ; dans une ville, un fait au hasard. `period` : une période de PERIODS.
     function generateHistoryGame(pool, opts) {
         var o = opts || {};
         var random = o.rng || Math.random;
         var count = o.count || 10;
         var byCity = new Map();
-        pool.forEach(function (p) {
+        pool.filter(function (p) { return inPeriod(p.fact.year, o.period || 'all'); }).forEach(function (p) {
             if (!byCity.has(p.city.id)) byCity.set(p.city.id, []);
             byCity.get(p.city.id).push(p);
         });
@@ -152,7 +167,7 @@
     }
 
     return {
-        MATCH_KM: MATCH_KM, NEAR_KM: NEAR_KM, MAX_PEOPLE: MAX_PEOPLE, PERSON_TITLE: PERSON_TITLE,
+        MATCH_KM: MATCH_KM, NEAR_KM: NEAR_KM, MAX_PEOPLE: MAX_PEOPLE, PERSON_TITLE: PERSON_TITLE, PERIODS: PERIODS, inPeriod: inPeriod,
         normalize: normalize, mainName: mainName, titleNames: titleNames, matchCity: matchCity,
         factsFromAtlas: factsFromAtlas, buildHistoryPool: buildHistoryPool, generateHistoryGame: generateHistoryGame, isValid: isValid
     };

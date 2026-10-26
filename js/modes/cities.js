@@ -28,6 +28,7 @@ let citySequence = [];            // « classer » : les villes choisies, dans l
 let cityMap = null;
 let cityMapReady = false;
 let cityMapQueue = [];
+let cityGamePeriod = 'all';       // « Ville de l'histoire » : la période des faits (CityHistoryCore.PERIODS)
 let cityGameSeconds = 0;          // le chrono de la partie, en secondes par question (0 = sans chrono)
 let cityGameTimerId = null;
 let cityGameTimerStart = 0;
@@ -54,6 +55,29 @@ function openCitiesMenu(from) {
 // Les réglages du menu : ceux du Quiz des pays, affichés ici aussi (zone, difficulté, chrono).
 function cityGameRenderSettings() {
     geoQuizRenderCommonSettings('cities');
+    cityGameRenderPeriods();
+}
+
+// Les périodes de « Ville de l'histoire » : un choix, gardé pendant la session.
+function cityGameRenderPeriods() {
+    const chips = CityHistoryCore.PERIODS.map(p => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'geoquiz-chip';
+        btn.dataset.pref = 'period';
+        btn.textContent = t('cities.period_' + p.key);
+        btn.setAttribute('aria-pressed', p.key === cityGamePeriod ? 'true' : 'false');
+        btn.onclick = () => cityGameSetPeriod(p.key);
+        return btn;
+    });
+    document.getElementById('cities-period').replaceChildren(...chips);
+}
+
+function cityGameSetPeriod(key) {
+    cityGamePeriod = key;
+    cityGameRenderPeriods();
+    const kept = document.querySelector('#cities-period .geoquiz-chip[aria-pressed="true"]');
+    if (kept) kept.focus({ preventScroll: true });
 }
 
 // Ouvre une partie de la forme donnée (depuis le menu des villes).
@@ -88,7 +112,7 @@ function cityGameQuestionsFor(form) {
     const cities = cityGameCities();
     if (form === 'history') {
         const pool = CityHistoryCore.buildHistoryPool(CityHistoryCore.factsFromAtlas(atlasModel.index), cities);
-        return CityHistoryCore.generateHistoryGame(pool, { count: CITIES_ROUNDS });
+        return CityHistoryCore.generateHistoryGame(pool, { count: CITIES_ROUNDS, period: cityGamePeriod });
     }
     const level = GeoQuizSessionCore.normalizePrefs(geoQuizPrefsNow()).level;
     return CityGameCore.generateCityGame(cities, countriesData.facts, form, { count: CITIES_ROUNDS, difficulty: GeoQuizSessionCore.LEVELS[level].distractors });

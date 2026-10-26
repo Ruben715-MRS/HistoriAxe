@@ -102,3 +102,26 @@ test('naissances et décès : « Naissance de Wang Yangming » compte, pas un é
     assert.equal(H.PERSON_TITLE.test("Assassinat de Murtala Mohammed"), false);
     assert.equal(H.PERSON_TITLE.test('Coup d’État contre Mohamed Bazoum'), false);
 });
+
+test('périodes : une partie ne tire que des faits de la période demandée', () => {
+    assert.equal(H.inPeriod(-300, 'antiquity'), true);
+    assert.equal(H.inPeriod(499, 'antiquity'), true);
+    assert.equal(H.inPeriod(500, 'antiquity'), false);
+    assert.equal(H.inPeriod(1491, 'middle'), true);
+    assert.equal(H.inPeriod(1492, 'middle'), false);
+    assert.equal(H.inPeriod(1789, 'contemporary'), true);
+    assert.equal(H.inPeriod(1788, 'contemporary'), false);
+    assert.equal(H.inPeriod(1900, 'all'), true);
+    // Trois faits à Rome, un par période : le tirage « Moyen Âge » ne garde que celui de 800.
+    const rome = cities.find(c => c.n === 'Rome');
+    const facts = [
+        { id: 'p:1', title: 'Sac de Rome par les Wisigoths', year: 410, lat: rome.lat, lon: rome.lon, label: 'Rome' },
+        { id: 'p:2', title: 'Couronnement de Charlemagne', year: 800, lat: rome.lat, lon: rome.lon, label: 'Rome' },
+        { id: 'p:3', title: 'Proclamation de la République romaine', year: 1849, lat: rome.lat, lon: rome.lon, label: 'Rome' }
+    ];
+    const pool = H.buildHistoryPool(facts, cities);
+    const game = H.generateHistoryGame(pool, { count: 10, rng: seeded(9), period: 'middle' });
+    assert.equal(game.length, 1);
+    assert.equal(game[0].year, 800);
+    assert.equal(H.generateHistoryGame(pool, { count: 10, rng: seeded(9), period: 'contemporary' })[0].year, 1849);
+});
