@@ -171,6 +171,10 @@ Une chatte. **Décisions validées (octobre 2026)** :
 | **Allure** | **Jeune chatte ronde et compacte** (silhouette des premiers croquis), queue en point d'interrogation. Pas de signe distinctif ajouté (la « patte d'encre » est écartée). |
 | **Caractère** | Curieuse, un peu savante, jamais moqueuse ; elle **encourage**, ne juge pas. |
 
+Le dessin est dans `js/clioArt.js` (de face dans toutes les humeurs, en vol pour Flappy Clio) ; ses animations sont
+dans `css/style.css` (classes `ca-*`). Costumes déjà dessinés : toge d'empereur (Rome II) ; les autres restent des aperçus
+en emoji en attendant.
+
 Palette figée : pelage `#EE8A3C`, rayures `#C65E1C`, contour `#9C4A17`, crème `#FFF0DA`, intérieur des oreilles
 `#F7B3A6`, yeux `#5FB46A`, truffe `#E26F80`, pupilles `#17171F`.
 

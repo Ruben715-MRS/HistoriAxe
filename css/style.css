@@ -9911,17 +9911,7 @@ input:not([type="range"]), label, select, summary, textarea {
 }
 
 .shop-clio-avatar {
-    position: relative;
     display: inline-block;
-    font-size: 72px;
-    line-height: 1;
-}
-
-.shop-clio-costume {
-    position: absolute;
-    right: -18px;
-    bottom: -6px;
-    font-size: 36px;
 }
 
 .shop-clio p {
@@ -10055,28 +10045,48 @@ input:not([type="range"]), label, select, summary, textarea {
 .rewards-friends-btn small:empty { display: none; }
 @media (prefers-reduced-motion: reduce) { .team-chest-bar { transition: none; } }
 
-/* --- Clio, la mascotte (js/app/clio.js) : un chat en emoji en attendant les dessins --- */
+/* --- Clio, la mascotte (js/app/clio.js, dessin : js/clioArt.js) --- */
 .clio { position: relative; display: inline-block; flex: none; line-height: 1; transform-origin: 50% 90%; }
-.clio-medium { width: 60px; height: 60px; font-size: 52px; }
-.clio-small { width: 38px; height: 38px; font-size: 32px; }
-.clio-cat { display: block; text-align: center; filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2)); }
-.clio-costume { position: absolute; top: -4%; right: -8%; font-size: 0.5em; }
-.clio-fx { position: absolute; top: -10%; left: -12%; font-size: 0.45em; }
+.clio-small { width: 40px; height: 46px; }
+.clio-medium { width: 64px; height: 74px; }
+.clio-large { width: 132px; height: 152px; }
+.clio > svg { display: block; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.18)); }
+/* Costume pas encore dessiné : un aperçu en emoji, posé contre Clio. */
+.clio-costume { position: absolute; right: -10%; bottom: 0; font-size: 0.42em; }
+.clio-small .clio-costume { font-size: 18px; }
+.clio-medium .clio-costume { font-size: 26px; }
+.clio-large .clio-costume { font-size: 44px; }
 
+/* Le personnage entier (une fois, à l'apparition) */
 .clio.is-content { animation: clio-hop 1.4s ease-in-out 2; }
 .clio.is-ravi { animation: clio-jump 0.8s ease-in-out 3; }
-.clio.is-triste { animation: clio-droop 2.4s ease-in-out infinite; }
-.clio.is-dort { animation: clio-breathe 3s ease-in-out infinite; opacity: 0.9; }
-.clio.is-salue .clio-fx { animation: clio-wave 1s ease-in-out 3; display: inline-block; }
 .clio.is-walking { animation: clio-walk 0.35s ease-in-out infinite; }
 @keyframes clio-hop { 0%, 100% { transform: translateY(0); } 40% { transform: translateY(-6px); } }
 @keyframes clio-jump { 0%, 100% { transform: translateY(0) scale(1); } 45% { transform: translateY(-14px) scale(1.08); } }
-@keyframes clio-droop { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(-6deg) translateY(2px); } }
-@keyframes clio-breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
-@keyframes clio-wave { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(24deg); } }
 @keyframes clio-walk { 0%, 100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-5px) rotate(4deg); } }
+
+/* Les parties du dessin (en continu) : queue, respiration, clignement, patte qui salue, oreilles tristes */
+.clio-art .ca-tail { transform-box: view-box; transform-origin: 136px 204px; animation: ca-tail 2.6s ease-in-out infinite; }
+.clio-art .ca-breath { transform-box: view-box; transform-origin: 100px 218px; animation: ca-breath 3.4s ease-in-out infinite; }
+.clio-art .ca-blink { transform-box: fill-box; transform-origin: center; animation: ca-blink 5.2s infinite; }
+.clio-art .ca-wave { transform-box: view-box; transform-origin: 134px 166px; animation: ca-wave 0.9s ease-in-out infinite alternate; }
+.clio-art .ca-zz { animation: ca-float 2.4s ease-in-out infinite; }
+.clio-art .ca-earL, .clio-art .ca-earR, .clio-art .ca-head { transform-box: view-box; }
+.clio-art .ca-earL { transform-origin: 74px 66px; }
+.clio-art .ca-earR { transform-origin: 126px 66px; }
+.clio-art .ca-head { transform-origin: 100px 140px; }
+.clio-art.ca-m-triste .ca-earL { transform: rotate(-24deg); }
+.clio-art.ca-m-triste .ca-earR { transform: rotate(24deg); }
+.clio-art.ca-m-dort .ca-head { transform: rotate(7deg); }
+.clio-art.ca-m-fier .ca-head { transform: rotate(-5deg); }
+@keyframes ca-tail { 0%, 100% { transform: rotate(-7deg); } 50% { transform: rotate(11deg); } }
+@keyframes ca-breath { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(1.018); } }
+@keyframes ca-blink { 0%, 93%, 100% { transform: scaleY(1); } 95.5% { transform: scaleY(0.08); } }
+@keyframes ca-wave { from { transform: rotate(-10deg); } to { transform: rotate(12deg); } }
+@keyframes ca-float { 0%, 100% { transform: translateY(0); opacity: 0.9; } 50% { transform: translateY(-5px); opacity: 0.5; } }
+
 @media (prefers-reduced-motion: reduce) {
-    .clio, .clio .clio-fx { animation: none !important; }
+    .clio, .clio-art .ca-tail, .clio-art .ca-breath, .clio-art .ca-blink, .clio-art .ca-wave, .clio-art .ca-zz { animation: none !important; }
 }
 
 .clio-react {
@@ -10102,14 +10112,14 @@ input:not([type="range"]), label, select, summary, textarea {
     position: absolute;
     z-index: 3;
     width: 44px;
-    height: 44px;
+    height: 48px;
     padding: 0;
     border: 0;
     background: none;
     cursor: pointer;
 }
-.clio-marker.on-left { margin: -30px 0 0 -88px; }
-.clio-marker.on-right { margin: -30px 0 0 44px; }
+.clio-marker.on-left { margin: -34px 0 0 -88px; }
+.clio-marker.on-right { margin: -34px 0 0 44px; }
 .clio-marker-bubble {
     position: absolute;
     bottom: 100%;

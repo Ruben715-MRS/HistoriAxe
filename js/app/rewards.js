@@ -474,9 +474,9 @@ function rewardsCostumeName(item) { return t('rewards.costumes.' + item.world); 
 function renderShop() {
     const state = rewardsState();
     document.getElementById('shop-coins').innerText = state.coins;
-    // Clio : un chat de remplacement (emoji) portant le costume du moment, en attendant les dessins.
+    // Clio en grand, avec le costume du moment (js/app/clio.js).
     const worn = state.equipped.costume ? RewardsCore.findItem(state.equipped.costume) : null;
-    document.getElementById('shop-clio-costume').innerText = worn ? worn.emoji : '';
+    document.getElementById('shop-clio-avatar').replaceChildren(clioAvatar(worn ? 'content' : 'repos', 'large'));
     document.getElementById('shop-clio-caption').innerText = worn
         ? t('rewards.clio_wears', { name: rewardsCostumeName(worn) })
         : t('rewards.clio_bare');
