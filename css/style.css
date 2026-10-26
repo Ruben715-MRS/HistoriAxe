@@ -13724,14 +13724,24 @@ input:not([type="range"]), label, select, summary, textarea {
     cursor: pointer;
 }
 
-/* Rapports du jury : le cadre du document occupe tout l'écran, sous le bouton « retour » (le document a son propre titre). */
+/* Rapports du jury : le document occupe tout l'écran (le document a son propre titre). Le bouton « retour » reste par-dessus,
+   avec son z-index de .back-btn. */
+#screen-rapport {
+    padding: 0;
+    overflow: hidden;
+}
+
 .rapport-frame {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
     display: block;
     width: 100%;
-    height: calc(100vh - 72px);
-    margin-top: 72px;
+    height: 100%;
+    height: 100dvh;
+    margin: 0;
     border: 0;
-    border-radius: 12px;
+    border-radius: 0;
     background: #fff;
 }
 
