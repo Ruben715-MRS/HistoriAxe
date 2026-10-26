@@ -1341,6 +1341,10 @@
                 <span class="arcade-card-icon" aria-hidden="true">🗺️</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.history_title"></strong><small data-i18n="tools.history_desc"></small></span>
             </button>
+            <button type="button" class="arcade-card" onclick="openTool('biblical', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">📜</span>
+                <span class="arcade-card-text"><strong data-i18n="tools.biblical_title"></strong><small data-i18n="tools.biblical_desc"></small></span>
+            </button>
             <button type="button" class="arcade-card" onclick="openTool('genealogy', 'screen-tools')">
                 <span class="arcade-card-icon" aria-hidden="true">🌳</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.genealogy_title"></strong><small data-i18n="tools.genealogy_desc"></small></span>
@@ -1858,6 +1862,27 @@
             <p class="tool-small" id="leaders-count" role="status"></p>
         </div>
         <div class="leaders-list" id="leaders-list"></div>
+    </div>
+
+    <div id="screen-tool-biblical" class="list-screen hidden">
+        <button class="back-btn" onclick="toolBack('biblical')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="tools.biblical_title">Cartes bibliques</h2>
+        <p class="modes-header-subtitle" data-i18n="tools.biblical_intro"></p>
+        <div class="tool-panel">
+            <div class="tool-field">
+                <label for="tool-biblical-select" data-i18n="tools.biblical_select_label">Carte</label>
+                <select id="tool-biblical-select" class="tool-input" onchange="toolBiblicalPick(this.value)"></select>
+            </div>
+            <div class="tool-history-chips" id="tool-biblical-views" role="group" aria-label="Choisir une vue" data-i18n-attr="aria-label:tools.biblical_views_label"></div>
+            <div class="tool-field hidden" id="tool-biblical-variant-block">
+                <span class="tool-small" id="tool-biblical-variant-label"></span>
+                <div class="tool-history-chips" id="tool-biblical-variants" role="group" aria-labelledby="tool-biblical-variant-label"></div>
+            </div>
+            <p class="tool-msg" id="tool-biblical-status" role="status"></p>
+            <div id="tool-biblical-map" class="tool-countries-map bib-map" role="application" aria-label="Carte biblique" data-i18n-attr="aria-label:tools.biblical_map_label"></div>
+            <p class="tool-small tool-countries-credit" data-i18n="tools.biblical_credit"></p>
+            <div class="tool-result tool-countries-fiche" id="tool-biblical-fiche" role="region" aria-live="polite" aria-label="Fiche de la carte" data-i18n-attr="aria-label:tools.biblical_fiche_label"></div>
+        </div>
     </div>
 
     <div id="screen-tool-history" class="list-screen hidden">
@@ -3566,6 +3591,8 @@
     <script src="js/app/state-leaders.js"></script>
     <script src="js/historyMapsCore.js"></script>
     <script src="js/app/history-maps.js"></script>
+    <script src="js/biblicalMapsCore.js"></script>
+    <script src="js/app/biblical-maps.js"></script>
     <script src="js/app/rewards.js"></script>
     <script src="js/app/clio.js"></script>
     <script src="js/teamBadge.js"></script>

@@ -8,7 +8,7 @@
 
 const TOOL_SCREENS = {
     eras: 'screen-tool-eras', roman: 'screen-tool-roman', centuries: 'screen-tool-centuries',
-    duration: 'screen-tool-duration', dates: 'screen-tool-dates', periods: 'screen-tool-periods', countries: 'screen-tool-countries', history: 'screen-tool-history',
+    duration: 'screen-tool-duration', dates: 'screen-tool-dates', periods: 'screen-tool-periods', countries: 'screen-tool-countries', history: 'screen-tool-history', biblical: 'screen-tool-biblical',
     calendar: 'screen-tool-calendar', genealogy: 'screen-tool-genealogy', leaders: 'screen-tool-leaders',
     dictionary: 'screen-tool-dictionary'
 };
@@ -30,7 +30,7 @@ function openTool(id, from) {
     showScreen(TOOL_SCREENS[id], 'forward');
     const init = {
         eras: toolErasInit, roman: toolRomanInit, centuries: toolCenturiesInit,
-        duration: toolDurationInit, dates: toolDatesInit, periods: toolPeriodsInit, countries: toolCountriesInit, history: toolHistoryInit,
+        duration: toolDurationInit, dates: toolDatesInit, periods: toolPeriodsInit, countries: toolCountriesInit, history: toolHistoryInit, biblical: toolBiblicalInit,
         calendar: toolCalendarInit, genealogy: toolGenealogyInit, leaders: toolLeadersInit, dictionary: toolDictionaryInit
     }[id];
     if (init) init();

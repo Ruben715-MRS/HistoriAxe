@@ -18,10 +18,10 @@ async function ouvrir(page, texte) {
     await page.locator('#screen-tools .arcade-card', { hasText: texte }).click();
 }
 
-test('l\'Atelier s\'ouvre depuis les catégories, range ses douze entrées en quatre groupes et revient', async ({ page }) => {
+test('l\'Atelier s\'ouvre depuis les catégories, range ses treize entrées en quatre groupes et revient', async ({ page }) => {
     await page.locator('#btn-tools').click();
     expect(await visibleScreen(page)).toBe('screen-tools');
-    await expect(page.locator('#screen-tools .arcade-card')).toHaveCount(12);
+    await expect(page.locator('#screen-tools .arcade-card')).toHaveCount(13);
     await expect(page.locator('#screen-tools .header-title')).toHaveText('Atelier');
     await expect(page.locator('#screen-tools .tools-group')).toHaveCount(4);
     await expect(page.locator('#screen-tools .tools-group .modes-group-title')).toHaveText(['Convertir et calculer', 'Calendriers', 'Repères', 'Cartes et arbres']);
@@ -339,6 +339,35 @@ test('atlas des pays : une capitale se cherche aussi, et un statut contesté est
     await expect(page.locator('.tool-countries-badge')).toContainText('Statut contesté');
     await page.locator('#tool-countries-input').fill('zzzzz');
     await expect(page.locator('.tool-countries-none')).toBeVisible();
+});
+
+test('cartes bibliques : quatre cartes, des vues, des lieux avec leur verset, et la poursuite d\'Abraham en deux versions', async ({ page }) => {
+    await ouvrir(page, 'Cartes bibliques');
+    expect(await visibleScreen(page)).toBe('screen-tool-biblical');
+    const menu = page.locator('#tool-biblical-select');
+    await expect(menu.locator('option')).toHaveCount(4);
+    expect(await page.locator('#screen-tool-biblical').innerText()).not.toContain('tools.');
+    // Abraham : deux vues, quatre autels, une note par lieu
+    await expect(page.locator('#tool-biblical-views .tool-history-chip')).toHaveCount(2);
+    await page.locator('#tool-biblical-views [data-view="canaan"]').click();
+    await expect(page.locator('.bib-pin.bib-altar, .bib-flame')).toHaveCount(4, { timeout: 20_000 });
+    await page.locator('.bib-pin[data-place="chekhem"]').click();
+    await expect(page.locator('.bib-popup')).toContainText('Genèse 12,6-7');
+    // la guerre des rois : deux versions de la poursuite, un seul Dan à la fois
+    await menu.selectOption('guerre');
+    await expect(page.locator('#tool-biblical-fiche')).toContainText('Genèse 14');
+    await expect(page.locator('.bib-pin[data-place="dan"]')).toHaveCount(1);
+    await expect(page.locator('.bib-pin[data-place="dan2"]')).toHaveCount(0);
+    await page.locator('#tool-biblical-variants [data-variant="v2"]').click();
+    await expect(page.locator('.bib-pin[data-place="dan"]')).toHaveCount(0);
+    await expect(page.locator('.bib-pin[data-place="dan2"]')).toHaveCount(1);
+    // les quarante-deux étapes : la liste des lieux ouvre la note, la chronologie des quarante années est dans la fiche
+    await menu.selectOption('desert');
+    await expect(page.locator('#tool-biblical-views .tool-history-chip')).toHaveCount(3);
+    await expect(page.locator('.bib-timeline')).toContainText('Entrée en Erets Israël');
+    await page.locator('#tool-biblical-fiche summary').click();
+    await page.locator('#tool-biblical-fiche [data-place="mont-hor"]').click();
+    await expect(page.locator('.bib-popup')).toContainText('Aaron y meurt');
 });
 
 test('cartes historiques : un menu groupé par époque, des dates, une fiche, et les événements de l\'app situés dans la zone', async ({ page }) => {

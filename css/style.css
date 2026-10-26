@@ -11807,6 +11807,346 @@ input:not([type="range"]), label, select, summary, textarea {
     margin-right: 4px;
 }
 
+/* --- LES CARTES BIBLIQUES (js/app/biblical-maps.js) --- */
+/* Les lieux sont des repères HTML posés sur la carte : un point (ou un numéro, une flamme, une bataille), et son nom en français avec le nom
+   hébreu dessous. Le halo suit le fond de la carte (sable le jour, brun la nuit) pour que le texte reste lisible sur la terre comme sur l'eau. */
+.bib-map {
+    --bib-ink: #3b2a14;
+    --bib-sub: #6b5230;
+    --bib-halo: #ecdcb8;
+    --bib-water: #1f5a85;
+    --bib-dot: #7a2e12;
+}
+
+:root[data-theme="dark"] .bib-map {
+    --bib-ink: #f3e7cf;
+    --bib-sub: #cdbb97;
+    --bib-halo: #1d1a14;
+    --bib-water: #8fc2e8;
+    --bib-dot: #f0a47c;
+}
+
+.bib-pin {
+    position: relative;
+    display: block;
+    width: 28px;
+    height: 28px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    color: var(--bib-ink);
+    cursor: default;
+}
+
+.bib-pin.has-note {
+    cursor: pointer;
+}
+
+.bib-pin.is-off {
+    display: none;
+}
+
+.bib-pin .bib-mark {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--bib-dot);
+    border: 2px solid var(--bib-halo);
+    box-shadow: 0 0 0 1px var(--bib-dot);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    line-height: 1;
+}
+
+.bib-pin.is-doubt .bib-mark {
+    background: var(--bib-halo);
+    border: 2px dashed var(--bib-dot);
+    box-shadow: none;
+}
+
+.bib-pin.has-note::before {
+    /* une cible tactile de 44 px autour du repère */
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 44px;
+    height: 44px;
+    transform: translate(-50%, -50%);
+}
+
+.bib-pin.is-selected .bib-mark {
+    box-shadow: 0 0 0 3px var(--bib-halo), 0 0 0 5px var(--bib-dot);
+}
+
+.bib-pin .bib-mark:has(.bib-num) {
+    width: auto;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 4px;
+    border-radius: 10px;
+    background: #4d7c0f;
+    box-shadow: 0 0 0 1px #2f4c08;
+}
+
+.bib-pin.is-doubt .bib-mark:has(.bib-num) {
+    background: #4d7c0f;
+    border: 2px dashed var(--bib-halo);
+    box-shadow: 0 0 0 1px #2f4c08;
+}
+
+.bib-pin .bib-mark.is-mountain {
+    border-radius: 4px;
+}
+
+.bib-num {
+    font-size: 11px;
+    font-weight: 800;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+.bib-pin.bib-mountain .bib-mark:not(:has(.bib-num)),
+.bib-pin.bib-war .bib-mark,
+.bib-pin.bib-altar .bib-mark {
+    width: auto;
+    height: auto;
+    border: 0;
+    background: none;
+    box-shadow: none;
+    font-size: 20px;
+    color: var(--bib-dot);
+}
+
+.bib-pin.bib-altar .bib-mark {
+    transform: translate(-50%, -85%);
+}
+
+.bib-flame {
+    position: absolute;
+    left: 50%;
+    top: calc(50% - 8px);
+    transform: translate(-50%, -100%);
+    font-size: 21px;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.bib-label {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: max-content;
+    max-width: 130px;
+    text-align: center;
+    pointer-events: none;
+    line-height: 1.15;
+    text-shadow: 0 0 2px var(--bib-halo), 0 0 3px var(--bib-halo), 0 0 5px var(--bib-halo), 0 0 5px var(--bib-halo);
+}
+
+.bib-label strong {
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.bib-label small {
+    font-size: 11px;
+    color: var(--bib-sub);
+}
+
+.bib-pin.side-bottom .bib-label { left: 50%; top: calc(50% + 9px); transform: translateX(-50%); }
+.bib-pin.side-top .bib-label { left: 50%; bottom: calc(50% + 11px); transform: translateX(-50%); }
+.bib-pin.side-left .bib-label { right: calc(50% + 11px); top: 50%; transform: translateY(-50%); align-items: flex-end; text-align: right; }
+.bib-pin.side-right .bib-label { left: calc(50% + 11px); top: 50%; transform: translateY(-50%); align-items: flex-start; text-align: left; }
+
+.bib-pin.is-wide .bib-label {
+    max-width: 150px;
+}
+
+.bib-pin.no-label .bib-label {
+    display: none;
+}
+
+/* Un numéro d'étape est plus large qu'un point : l'étiquette s'écarte d'autant. */
+.bib-pin.is-numbered.side-bottom .bib-label { top: calc(50% + 14px); }
+.bib-pin.is-numbered.side-top .bib-label { bottom: calc(50% + 16px); }
+.bib-pin.is-numbered.side-left .bib-label { right: calc(50% + 18px); }
+.bib-pin.is-numbered.side-right .bib-label { left: calc(50% + 18px); }
+
+.bib-pin.bib-region .bib-label,
+.bib-pin.bib-water .bib-label {
+    left: 50%;
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    transform: translate(-50%, -50%);
+    max-width: 96px;
+}
+
+.bib-pin.bib-region .bib-label strong {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--bib-sub);
+}
+
+.bib-pin.bib-water .bib-label strong {
+    font-style: italic;
+    font-weight: 600;
+    color: var(--bib-water);
+}
+
+.bib-pin.bib-water .bib-label small {
+    color: var(--bib-water);
+}
+
+.bib-pin.bib-region.has-note .bib-label,
+.bib-pin.bib-mountain .bib-label {
+    pointer-events: none;
+}
+
+.bib-route-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    pointer-events: none;
+}
+
+.bib-map .maplibregl-popup-content {
+    padding: 12px 14px 10px;
+    border-radius: 12px;
+    background: var(--surface);
+    color: var(--text-dark);
+    font-size: 13px;
+}
+
+.bib-map .maplibregl-popup-tip {
+    border-top-color: var(--surface);
+    border-bottom-color: var(--surface);
+}
+
+.bib-map .maplibregl-popup-close-button {
+    min-width: 32px;
+    min-height: 32px;
+    color: var(--text-dark);
+    font-size: 18px;
+}
+
+.bib-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding-right: 14px;
+}
+
+.bib-card strong {
+    font-size: 14px;
+}
+
+.bib-card p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+.bib-card small {
+    color: var(--muted-text);
+}
+
+.bib-card-he {
+    font-size: 14px;
+    color: var(--muted-text);
+}
+
+.bib-card-doubt {
+    font-size: 12px;
+    color: var(--muted-text);
+}
+
+#tool-biblical-selected:not(:empty) {
+    padding: 10px 12px;
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    background: var(--surface);
+}
+
+.bib-places {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.bib-places summary {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--text-dark);
+    cursor: pointer;
+}
+
+.bib-places .tool-countries-event-list {
+    margin-top: 6px;
+}
+
+.bib-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+.bib-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.bib-list small {
+    color: var(--muted-text);
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.bib-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bib-year {
+    padding: 8px 12px;
+    border-left: 3px solid var(--border-soft);
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+.bib-year ul {
+    margin: 4px 0 0;
+    padding-left: 18px;
+}
+
 /* --- LES CARTES HISTORIQUES (js/app/history-maps.js) --- */
 .tool-history-chips {
     display: flex;
