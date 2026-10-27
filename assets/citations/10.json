@@ -1,0 +1,376 @@
+{
+  "citations": [
+    {
+      "id": "cit_hippocrate_nuire",
+      "texte": "Avoir, dans les maladies, deux choses en vue : être utile, ou du moins ne pas nuire.",
+      "original": "ἀσκέειν περὶ τὰ νοσήματα δύο, ὠφελέειν ἢ μὴ βλάπτειν",
+      "langue": "grec ancien",
+      "auteur": "Hippocrate",
+      "classement": "Hippocrate",
+      "annee": -410,
+      "vers": true,
+      "theme": "savoir",
+      "fiabilite": "attestee",
+      "contexte": "Dans ce traité de médecine, qui contient des observations de malades à Thasos, l'auteur résume en quelques mots le devoir du médecin : aider le malade, et au moins ne pas aggraver son état. On y voit souvent l'origine de la règle d'éthique médicale de ne pas nuire.",
+      "source": {
+        "oeuvre": "Épidémies",
+        "ref": "livre I, 11 (section 5 dans certaines éditions)"
+      },
+      "note": "Le Corpus hippocratique est l'œuvre d'une école : on ne sait pas quels traités sont d'Hippocrate lui-même. La formule latine bien connue, « primum non nocere » (d'abord ne pas nuire), n'est pas antique : elle apparaît au XIXᵉ siècle. Elle n'est pas dans le serment d'Hippocrate.",
+      "repere": true,
+      "naissance": "pan_gr_hippocrate"
+    },
+    {
+      "id": "cit_euclide_route_royale",
+      "texte": "Il n'y a pas de route royale vers la géométrie.",
+      "original": "μὴ εἶναι βασιλικὴν ἀτραπὸν πρὸς γεωμετρίαν",
+      "langue": "grec ancien",
+      "auteur": "Euclide",
+      "classement": "Euclide",
+      "annee": -300,
+      "vers": true,
+      "theme": "savoir",
+      "fiabilite": "attribuee",
+      "contexte": "Le roi Ptolémée Iᵉʳ d'Égypte aurait demandé à Euclide s'il n'existait pas un moyen plus court d'apprendre la géométrie que d'étudier les Éléments. Euclide lui aurait répondu que, pour la géométrie, même les rois n'ont pas de chemin particulier : il faut travailler comme tout le monde.",
+      "source": {
+        "oeuvre": "Proclus, Commentaire sur le premier livre des Éléments d'Euclide",
+        "ref": "Ve siècle de notre ère"
+      },
+      "note": "Proclus écrit plus de sept siècles après Euclide, et il est le seul témoin ancien. La même histoire est racontée par Stobée au sujet du mathématicien Ménechme et d'Alexandre le Grand : les historiens pensent qu'elle a été transposée à Euclide."
+    },
+    {
+      "id": "cit_archimede_eureka",
+      "texte": "J'ai trouvé !",
+      "original": "εὕρηκα (Eurêka)",
+      "langue": "grec ancien",
+      "auteur": "Archimède",
+      "classement": "Archimède",
+      "annee": -250,
+      "vers": true,
+      "theme": "savoir",
+      "fiabilite": "attribuee",
+      "contexte": "Le roi Hiéron II de Syracuse soupçonne un orfèvre d'avoir mêlé de l'argent à l'or de sa couronne. Archimède cherche comment le prouver sans la détruire. En entrant dans son bain, il remarque que l'eau déborde, comprend le principe de la poussée de l'eau et, dit-on, sort nu dans la rue en criant ce mot.",
+      "source": {
+        "oeuvre": "Vitruve, De l'architecture",
+        "ref": "livre IX, préface, 9-10 (vers 25 av. J.-C.)"
+      },
+      "note": "Vitruve écrit environ deux siècles après Archimède, et aucun écrit d'Archimède ne rapporte l'épisode. Le principe de la poussée est démontré dans son traité Des corps flottants, sans aucun bain ni couronne : l'histoire est probablement une légende.",
+      "naissance": "pan_it_archimede",
+      "repere": true
+    },
+    {
+      "id": "cit_hypatie_penser",
+      "texte": "Défendez votre droit de penser : car même penser de travers vaut mieux que ne pas penser du tout.",
+      "original": "Reserve your right to think, for even to think wrongly is better than not to think at all.",
+      "langue": "anglais",
+      "auteur": "Hypatie d'Alexandrie",
+      "classement": "Hypatie",
+      "annee": 1908,
+      "anneeNote": "première trace connue",
+      "theme": "savoir",
+      "fiabilite": "apocryphe",
+      "contexte": "Hypatie (vers 355-415), mathématicienne et philosophe d'Alexandrie, enseignait l'astronomie et la philosophie. Elle est assassinée en 415 par une foule, dans un climat de conflits entre pouvoirs et religions. Elle est devenue au fil des siècles le symbole de la liberté de pensée et la phrase lui est attribuée sur de nombreux sites.",
+      "source": {
+        "oeuvre": "Elbert Hubbard, Little Journeys to the Homes of Great Teachers",
+        "ref": "1908, plus ancienne mention connue"
+      },
+      "note": "Aucun texte d'Hypatie n'a survécu : on ne la connaît que par des témoignages, qui ne contiennent pas cette phrase. Elle apparaît en 1908 dans un livre d'Elbert Hubbard, un auteur américain dont les récits mêlent histoire et fiction. Selon certaines sources, une édition de 1916 l'attribue plutôt à son père, Théon.",
+      "naissance": "pan_eg_hypatie"
+    },
+    {
+      "id": "cit_copernic_soleil",
+      "texte": "Au milieu de toutes choses réside le Soleil. Qui, en effet, dans ce très beau temple, placerait ce flambeau en un autre lieu, ou meilleur, d'où il puisse tout éclairer à la fois ?",
+      "original": "In medio vero omnium residet Sol. Quis enim in hoc pulcherrimo templo lampadem hanc in alio vel meliori loco poneret, quam unde totum simul possit illuminare?",
+      "langue": "latin",
+      "auteur": "Nicolas Copernic",
+      "classement": "Copernic",
+      "annee": 1543,
+      "theme": "savoir",
+      "fiabilite": "attestee",
+      "contexte": "Dans Des révolutions des sphères célestes, publié l'année de sa mort, Copernic soutient que la Terre tourne autour du Soleil, et non l'inverse. Ce livre ouvre la révolution scientifique. Une préface, ajoutée sans signature par un théologien, Osiander, présentait ses idées comme de simples hypothèses de calcul : ce n'est pas la pensée de Copernic.",
+      "source": {
+        "oeuvre": "Des révolutions des orbes célestes (De revolutionibus)",
+        "ref": "livre I, chapitre 10 (1543)"
+      },
+      "repere": true,
+      "naissance": "pan_pl_copernic"
+    },
+    {
+      "id": "cit_kepler_lecteur",
+      "texte": "Le dé est jeté : j'écris ce livre, pour qu'on le lise maintenant ou dans l'avenir, peu importe. Il peut attendre cent ans un lecteur, puisque Dieu lui-même a attendu six mille ans un observateur.",
+      "auteur": "Johannes Kepler",
+      "classement": "Kepler",
+      "annee": 1619,
+      "theme": "savoir",
+      "fiabilite": "attestee",
+      "contexte": "Kepler écrit ces lignes en tête du livre V de L'Harmonie du monde, après avoir découvert la loi qui relie la durée d'une orbite à sa taille (la troisième loi). Il est transporté de joie : il a trouvé, pense-t-il, l'ordre caché de la création. Six mille ans, c'est à peu près l'âge du monde dans la chronologie biblique de son temps.",
+      "source": {
+        "oeuvre": "L'Harmonie du monde (Harmonices Mundi)",
+        "ref": "livre V, préface (1619)"
+      },
+      "note": "Le texte est cité d'après des traductions anglaises : la formulation varie d'une traduction à l'autre (lecteur, observateur, témoin). Le latin n'est pas reproduit ici.",
+      "naissance": "pan_dach_kepler"
+    },
+    {
+      "id": "cit_newton_galet",
+      "texte": "Je ne sais pas ce que le monde pensera de moi ; mais à moi-même il me semble n'avoir été qu'un enfant jouant au bord de la mer, qui s'amuse à trouver de temps en temps un galet plus lisse ou un coquillage plus joli que les autres, tandis que le grand océan de la vérité s'étend, inexploré, devant moi.",
+      "original": "I do not know what I may appear to the world, but to myself I seem to have been only like a boy playing on the sea-shore, and diverting myself in now and then finding a smoother pebble or a prettier shell than ordinary, whilst the great ocean of truth lay all undiscovered before me.",
+      "langue": "anglais",
+      "auteur": "Isaac Newton",
+      "classement": "Newton",
+      "annee": 1720,
+      "vers": true,
+      "anneeNote": "fin de sa vie",
+      "theme": "savoir",
+      "fiabilite": "attribuee",
+      "contexte": "À la fin de sa vie, Newton, devenu célèbre dans toute l'Europe, auteur des Principia (1687) et de la théorie de la gravitation, aurait prononcé ces mots pour dire sa modestie devant l'étendue de ce qui restait à connaître.",
+      "source": {
+        "oeuvre": "Joseph Spence, Observations, Anecdotes, and Characters of Books and Men",
+        "ref": "écrit vers 1730-1740, publié en 1820"
+      },
+      "note": "On ne connaît pas d'écrit de Newton qui contienne ces mots. La phrase est rapportée de seconde main par Spence, d'après le chevalier Ramsay : le texte exact a pu être arrangé.",
+      "naissance": "pan_gb_newton"
+    },
+    {
+      "id": "cit_lavoisier_conservation",
+      "texte": "Rien ne se crée, ni dans les opérations de l'art, ni dans celles de la nature, et l'on peut poser en principe que, dans toute opération, il y a une égale quantité de matière avant et après l'opération.",
+      "auteur": "Antoine Lavoisier",
+      "classement": "Lavoisier",
+      "annee": 1789,
+      "theme": "savoir",
+      "fiabilite": "attestee",
+      "contexte": "Dans son Traité élémentaire de chimie, considéré comme le premier manuel de chimie moderne, Lavoisier s'appuie sur la balance : en pesant tout ce qui entre et sort d'une réaction, il montre que la quantité de matière ne change pas. Ce principe fonde la chimie quantitative. Lavoisier, fermier général, est guillotiné en 1794.",
+      "source": {
+        "oeuvre": "Traité élémentaire de chimie",
+        "ref": "première partie, chapitre XIII (1789)"
+      },
+      "note": "La maxime que l'on cite, « Rien ne se perd, rien ne se crée, tout se transforme », est une condensation postérieure : elle n'est pas dans le traité sous cette forme.",
+      "naissance": "pan_fr_lavoisier"
+    },
+    {
+      "id": "cit_laplace_preuves",
+      "texte": "Plus un fait est extraordinaire, plus il a besoin d'être appuyé de fortes preuves. Car, ceux qui l'attestent pouvant ou tromper ou avoir été trompés, ces deux causes sont d'autant plus probables que le fait est moins vraisemblable.",
+      "auteur": "Pierre-Simon de Laplace",
+      "classement": "Laplace",
+      "annee": 1814,
+      "theme": "savoir",
+      "fiabilite": "attestee",
+      "contexte": "Dans son Essai philosophique sur les probabilités, Laplace applique le calcul des probabilités au jugement des témoignages : plus un récit est invraisemblable, plus il faut de preuves, car la chance que le témoin se trompe ou mente devient plus forte que celle du fait lui-même. C'est l'ancêtre de la formule « des affirmations extraordinaires exigent des preuves extraordinaires », popularisée par Carl Sagan.",
+      "source": {
+        "oeuvre": "Essai philosophique sur les probabilités",
+        "ref": "1814"
+      },
+      "note": "La formule de Sagan est postérieure d'un siècle et demi. Des formulations voisines existent aussi chez d'autres auteurs de son temps.",
+      "repere": true,
+      "naissance": "pan_fr_laplace"
+    },
+    {
+      "id": "cit_laplace_hypothese",
+      "texte": "Je n'ai pas eu besoin de cette hypothèse.",
+      "auteur": "Pierre-Simon de Laplace",
+      "classement": "Laplace",
+      "annee": 1802,
+      "vers": true,
+      "anneeNote": "date supposée de l'entretien",
+      "theme": "savoir",
+      "fiabilite": "attribuee",
+      "contexte": "Napoléon Bonaparte aurait fait remarquer à Laplace que son grand traité de mécanique céleste ne parlait jamais de Dieu. Laplace lui aurait répondu cette phrase : pour expliquer le mouvement des planètes, il n'avait pas besoin d'invoquer l'intervention divine. L'anecdote est devenue le symbole de la séparation entre science et religion.",
+      "source": {
+        "oeuvre": "W. W. Rouse Ball, A Short Account of the History of Mathematics",
+        "ref": "rapportée notamment dans cet ouvrage"
+      },
+      "note": "On ne connaît pas de source du temps de l'entretien : l'anecdote est rapportée bien plus tard, avec des variantes, et sa date (entre 1799 et 1805) n'est pas établie. Les historiens ne savent pas exactement ce que Laplace voulait dire.",
+      "naissance": "pan_fr_laplace"
+    },
+    {
+      "id": "cit_faraday_merveilleux",
+      "texte": "Rien n'est trop merveilleux pour être vrai, s'il est conforme aux lois de la nature.",
+      "original": "Nothing is too wonderful to be true, if it be consistent with the laws of nature.",
+      "langue": "anglais",
+      "auteur": "Michael Faraday",
+      "classement": "Faraday",
+      "annee": 1849,
+      "theme": "savoir",
+      "fiabilite": "attestee",
+      "contexte": "Le 19 mars 1849, Faraday note dans son journal de laboratoire cette phrase en réfléchissant à un possible lien entre la gravité et l'électricité. Il ajoute que c'est l'expérience qui permet de juger de cette cohérence. La phrase, souvent citée en partie, est gravée au-dessus d'une porte de l'université de Californie à Los Angeles.",
+      "source": {
+        "oeuvre": "Henry Bence Jones, The Life and Letters of Faraday",
+        "ref": "tome II, p. 248 (1870), d'après son journal de laboratoire"
+      },
+      "note": "La phrase est tirée d'une note de travail, et non d'un texte publié par Faraday lui-même.",
+      "naissance": "pan_gb_faraday"
+    },
+    {
+      "id": "cit_lovelace_metier",
+      "texte": "Nous pouvons dire, très justement, que la Machine analytique tisse des motifs algébriques comme le métier Jacquard tisse des fleurs et des feuilles.",
+      "original": "We may say most aptly that the Analytical Engine weaves algebraical patterns just as the Jacquard-loom weaves flowers and leaves.",
+      "langue": "anglais",
+      "auteur": "Ada Lovelace",
+      "classement": "Lovelace",
+      "annee": 1843,
+      "theme": "savoir",
+      "fiabilite": "attestee",
+      "contexte": "En 1843, Ada Lovelace traduit en anglais un article sur la Machine analytique, l'ordinateur mécanique imaginé par Charles Babbage, et y ajoute des notes, trois fois plus longues que le texte. Elle y explique que la machine, programmée par des cartes perforées comme les métiers à tisser de Jacquard, peut manipuler des symboles et pas seulement des nombres. Elle y décrit un programme pour calculer les nombres de Bernoulli, souvent considéré comme le premier programme informatique.",
+      "source": {
+        "oeuvre": "Notes de la traductrice, dans Scientific Memoirs",
+        "ref": "tome III (1843), signées « A. A. L. »"
+      },
+      "naissance": "pan_gb_lovelace"
+    },
+    {
+      "id": "cit_darwin_grandeur",
+      "texte": "Il y a de la grandeur dans cette manière de voir la vie… à partir d'un commencement si simple, une infinité de formes, les plus belles et les plus merveilleuses, se sont développées et se développent encore.",
+      "original": "There is grandeur in this view of life … from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.",
+      "langue": "anglais",
+      "auteur": "Charles Darwin",
+      "classement": "Darwin",
+      "annee": 1859,
+      "theme": "savoir",
+      "fiabilite": "attestee",
+      "contexte": "Ce sont les dernières lignes de L'Origine des espèces. Après avoir exposé sa théorie de l'évolution par sélection naturelle, Darwin conclut sur une note d'émerveillement devant la diversité du vivant. Le livre, publié le 24 novembre 1859, est épuisé dès le premier jour.",
+      "source": {
+        "oeuvre": "L'Origine des espèces",
+        "ref": "dernière phrase (1859)"
+      },
+      "repere": true,
+      "naissance": "pan_gb_darwin"
+    },
+    {
+      "id": "cit_poincare_douter",
+      "texte": "Douter de tout ou tout croire, ce sont deux solutions également commodes, qui l'une et l'autre nous dispensent de réfléchir.",
+      "auteur": "Henri Poincaré",
+      "classement": "Poincaré",
+      "annee": 1902,
+      "theme": "savoir",
+      "fiabilite": "attestee",
+      "contexte": "Dans l'introduction de La Science et l'Hypothèse, Poincaré, l'un des plus grands mathématiciens et physiciens de son temps, explique qu'il faut distinguer, dans les théories, ce qui est vérifié et ce qui est une hypothèse. Le scepticisme absolu et la crédulité sont deux manières de fuir cet effort de réflexion.",
+      "source": {
+        "oeuvre": "La Science et l'Hypothèse",
+        "ref": "introduction (1902)"
+      },
+      "naissance": "pan_fr_poincare"
+    },
+    {
+      "id": "cit_bachelard_construit",
+      "texte": "Pour un esprit scientifique, toute connaissance est une réponse à une question. S'il n'y a pas eu de question, il ne peut y avoir connaissance scientifique. Rien ne va de soi. Rien n'est donné. Tout est construit.",
+      "auteur": "Gaston Bachelard",
+      "classement": "Bachelard",
+      "annee": 1938,
+      "theme": "savoir",
+      "fiabilite": "attestee",
+      "contexte": "Dans La Formation de l'esprit scientifique, le philosophe Gaston Bachelard montre que la connaissance ne vient pas de l'observation directe : elle se construit en rompant avec les évidences du sens commun. Il appelle « obstacles épistémologiques » les habitudes d'esprit qui nous empêchent de comprendre. Ces pages sont depuis étudiées dans les cours de philosophie des sciences.",
+      "source": {
+        "oeuvre": "La Formation de l'esprit scientifique",
+        "ref": "chapitre premier (1938)"
+      }
+    },
+    {
+      "id": "cit_curie_beaute",
+      "texte": "Je fais partie de ceux qui pensent que la science est d'une grande beauté. Un savant dans son laboratoire n'est pas seulement un technicien : c'est aussi un enfant placé devant des phénomènes naturels qui l'impressionnent comme des contes de fées.",
+      "auteur": "Marie Curie",
+      "classement": "Curie",
+      "annee": 1933,
+      "anneeNote": "conférence de Madrid, d'après sa fille",
+      "theme": "savoir",
+      "fiabilite": "attribuee",
+      "contexte": "Marie Curie, première personne à recevoir deux prix Nobel (physique en 1903, chimie en 1911) et la seule à l'avoir fait dans deux sciences différentes, dit ces mots à la fin de sa vie, dans une conférence sur l'avenir de la culture. Elle y défend l'idée que la recherche est une aventure de l'esprit, ni utilitaire ni froide.",
+      "source": {
+        "oeuvre": "Ève Curie, Madame Curie",
+        "ref": "chapitre XXIV (1937), citant la conférence de Madrid de 1933"
+      },
+      "note": "On ne retrouve pas le texte français d'origine : la citation vient du récit de sa fille, publié après sa mort. Certains sites la placent dans Ma vie (1921) sans donner de page : l'attribution exacte n'est pas établie.",
+      "repere": true,
+      "naissance": "pan_fr_curie"
+    },
+    {
+      "id": "cit_einstein_simple",
+      "texte": "Tout doit être rendu aussi simple que possible, mais pas plus simple.",
+      "original": "Everything should be made as simple as possible, but not simpler.",
+      "langue": "anglais",
+      "auteur": "Albert Einstein",
+      "classement": "Einstein",
+      "annee": 1950,
+      "anneeNote": "première mention connue",
+      "theme": "savoir",
+      "fiabilite": "apocryphe",
+      "contexte": "La phrase est citée pour défendre une science claire sans simplifier à l'excès. On la rattache à une conférence de 1933 d'Einstein à Oxford, où il dit que le but de toute théorie est de rendre les éléments de base aussi simples et aussi peu nombreux que possible, sans renoncer à rendre compte de l'expérience.",
+      "source": {
+        "oeuvre": "Roger Sessions, The New York Times",
+        "ref": "8 janvier 1950"
+      },
+      "note": "Einstein n'a pas écrit cette formule. Il a dit autre chose, de plus long, en 1933. La phrase brève apparaît en 1950 sous la plume du compositeur Roger Sessions, qui résumait à sa manière une idée d'Einstein, puis elle est reprise comme sienne.",
+      "naissance": "pan_dach_einstein",
+      "repere": true
+    },
+    {
+      "id": "cit_turing_court_distance",
+      "texte": "Nous ne pouvons voir qu'à une courte distance devant nous, mais nous voyons déjà beaucoup de choses à faire.",
+      "original": "We can only see a short distance ahead, but we can see plenty there that needs to be done.",
+      "langue": "anglais",
+      "auteur": "Alan Turing",
+      "classement": "Turing",
+      "annee": 1950,
+      "theme": "savoir",
+      "fiabilite": "attestee",
+      "contexte": "C'est la dernière phrase de l'article « Computing Machinery and Intelligence », publié en octobre 1950 dans la revue Mind. Turing y pose la question « Les machines peuvent-elles penser ? » et propose le « jeu de l'imitation », devenu le test de Turing. Sa conclusion dit à la fois l'humilité et l'ambition de ce qui devient l'intelligence artificielle.",
+      "source": {
+        "oeuvre": "Computing Machinery and Intelligence",
+        "ref": "Mind, vol. LIX, n° 236, octobre 1950"
+      },
+      "naissance": "pan_gb_turing"
+    },
+    {
+      "id": "cit_carson_controle",
+      "texte": "Le « contrôle de la nature » est une expression conçue dans l'arrogance, née de l'âge néandertalien de la biologie et de la philosophie, quand on supposait que la nature existe pour la commodité de l'homme.",
+      "original": "The 'control of nature' is a phrase conceived in arrogance, born of the Neanderthal age of biology and philosophy, when it was supposed that nature exists for the convenience of man.",
+      "langue": "anglais",
+      "auteur": "Rachel Carson",
+      "classement": "Carson",
+      "annee": 1962,
+      "theme": "savoir",
+      "fiabilite": "attestee",
+      "contexte": "Dans Printemps silencieux, la biologiste américaine Rachel Carson montre que les pesticides comme le DDT s'accumulent dans les chaînes alimentaires et menacent les oiseaux et les hommes. Le livre déclenche l'un des premiers grands débats publics sur l'environnement, et conduit aux États-Unis à l'interdiction du DDT en 1972, huit ans après la mort de l'autrice.",
+      "source": {
+        "oeuvre": "Printemps silencieux (Silent Spring)",
+        "ref": "chapitre 17, « L'autre route » (1962)"
+      },
+      "naissance": "pan_us_carson"
+    },
+    {
+      "id": "cit_feynman_nature",
+      "texte": "Pour qu'une technologie réussisse, la réalité doit passer avant les relations publiques, car on ne peut pas tromper la nature.",
+      "original": "For a successful technology, reality must take precedence over public relations, for nature cannot be fooled.",
+      "langue": "anglais",
+      "auteur": "Richard Feynman",
+      "classement": "Feynman",
+      "annee": 1986,
+      "theme": "savoir",
+      "fiabilite": "attestee",
+      "contexte": "Le 28 janvier 1986, la navette spatiale Challenger explose, quelques minutes après son décollage. Le physicien Richard Feynman, prix Nobel, fait partie de la commission d'enquête. Il montre en public que le joint en caoutchouc d'un propulseur perd son élasticité dans l'eau glacée, puis écrit un rapport personnel sur l'écart entre ce que disent les dirigeants de la NASA et ce que disent les ingénieurs. Cette phrase en est la conclusion.",
+      "source": {
+        "oeuvre": "Rapport de la Commission Rogers sur l'accident de la navette Challenger",
+        "ref": "annexe F, « Observations personnelles sur la fiabilité de la navette » (1986)"
+      },
+      "note": "Son texte a failli être écarté du rapport : il a été publié en annexe.",
+      "naissance": "pan_us_feynman"
+    },
+    {
+      "id": "cit_sagan_etoiles",
+      "texte": "Le cosmos est en nous. Nous sommes faits de poussière d'étoiles.",
+      "original": "The cosmos is within us. We are made of star-stuff.",
+      "langue": "anglais",
+      "auteur": "Carl Sagan",
+      "classement": "Sagan",
+      "annee": 1980,
+      "theme": "savoir",
+      "fiabilite": "attestee",
+      "contexte": "Dans la série télévisée Cosmos (1980), qui a touché des centaines de millions de spectateurs dans le monde, l'astronome américain Carl Sagan explique que presque tous les éléments qui composent notre corps ont été fabriqués dans des étoiles, qui ont explosé avant la formation du Soleil. L'humanité est donc une manière pour le cosmos de se connaître lui-même.",
+      "source": {
+        "oeuvre": "Cosmos (série télévisée)",
+        "ref": "épisode 1, « Les rivages de l'océan cosmique » (1980)"
+      },
+      "repere": true,
+      "naissance": "pan_us_sagan"
+    }
+  ]
+}
