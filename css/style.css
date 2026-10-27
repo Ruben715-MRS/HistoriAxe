@@ -13952,21 +13952,28 @@ input:not([type="range"]), label, select, summary, textarea {
 /* --- LE DICTIONNAIRE (js/app/dictionnaire.js) --- */
 .dict-bar {
     position: sticky;
-    top: 0;
+    /* Le haut de l'écran compte son rembourrage (20px) : à top: 0, la liste se verrait dans cette bande, au-dessus de la barre. */
+    top: -20px;
     z-index: 2;
     width: 100%;
     max-width: 520px;
     padding: 8px 0;
+    /* Le fond de la page : sans lui, la liste qui défile se voit à travers et autour du champ. */
+    background: var(--bg-color);
 }
 
-/* Sur téléphone, collée en haut, la barre se décale à droite du bouton de retour (fixe, en haut à gauche). */
+/* Sur téléphone, collée en haut, la barre déborde jusqu'aux bords de l'écran (pour que la liste ne se voie pas derrière le bouton de retour,
+   fixe, en haut à gauche) et son champ se décale à droite de ce bouton. */
 @media (max-width: 600px) {
     .dict-bar {
-        transition: margin-left 0.2s ease, width 0.2s ease;
+        transition: padding 0.2s ease;
     }
     .dict-bar.is-stuck {
-        margin-left: 62px;
-        width: calc(100% - 62px);
+        margin-left: -20px;
+        margin-right: -20px;
+        width: calc(100% + 40px);
+        max-width: none;
+        padding: 16px 20px 8px 82px;
     }
 }
 

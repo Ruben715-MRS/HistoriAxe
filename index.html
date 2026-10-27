@@ -1771,13 +1771,13 @@
         <button class="back-btn" onclick="toolBack('dictionary')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
         <h2 class="header-title">Dictionnaire d'histoire et de géographie</h2>
         <p class="modes-header-subtitle">Les termes qu'on confond souvent, définis avec précision.</p>
-        <div class="dict-filters">
-            <select id="dict-domain" class="tool-input" aria-label="Domaine" onchange="dictionaryRender()"></select>
-            <label class="dict-toggle"><input type="checkbox" id="dict-concours" onchange="dictionaryToggleConcours(this.checked)"> Mode concours</label>
-        </div>
         <div class="dict-bar">
             <input type="search" id="dict-search" class="tool-input" autocomplete="off" autocapitalize="off" spellcheck="false"
                 placeholder="Rechercher un mot…" aria-label="Rechercher un mot" oninput="dictionaryRender()">
+        </div>
+        <div class="dict-filters">
+            <select id="dict-domain" class="tool-input" aria-label="Domaine" onchange="dictionaryRender()"></select>
+            <label class="dict-toggle"><input type="checkbox" id="dict-concours" onchange="dictionaryToggleConcours(this.checked)"> Mode concours</label>
         </div>
         <nav class="dict-letters" id="dict-letters" aria-label="Aller à une lettre"></nav>
         <p class="tool-msg" id="dict-status" role="status"></p>

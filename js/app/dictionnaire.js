@@ -50,10 +50,10 @@ function dictFiche(term) {
     return dictData.fiches.find(f => f.id === term.fiche);
 }
 
-// La barre de recherche se décale quand elle est collée en haut (voir le CSS, .dict-bar.is-stuck).
-function dictSyncStuck() {
-    const screen = document.getElementById('screen-tool-dictionary');
-    const bar = document.querySelector('#screen-tool-dictionary .dict-bar');
+// La barre de recherche se décale quand elle est collée en haut (voir le CSS, .dict-bar.is-stuck). Réutilisée par l'écran des citations.
+function dictSyncStuck(screenId) {
+    const screen = document.getElementById(screenId || 'screen-tool-dictionary');
+    const bar = screen.querySelector('.dict-bar');
     // Collée : la barre touche le haut de l'écran, au rembourrage près.
     const pad = parseFloat(getComputedStyle(screen).paddingTop) || 0;
     const stuck = bar.getBoundingClientRect().top - screen.getBoundingClientRect().top <= pad + 1;
@@ -64,7 +64,7 @@ let dictScrollBound = false;
 
 function toolDictionaryInit() {
     if (!dictScrollBound) {
-        document.getElementById('screen-tool-dictionary').addEventListener('scroll', dictSyncStuck, { passive: true });
+        document.getElementById('screen-tool-dictionary').addEventListener('scroll', () => dictSyncStuck(), { passive: true });
         dictScrollBound = true;
     }
     document.getElementById('dict-concours').checked = dictConcours;

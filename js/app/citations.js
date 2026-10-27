@@ -54,7 +54,14 @@ function citFillSelect(id, allLabel, options) {
     });
 }
 
+let citScrollBound = false;
+
 function toolCitationsInit() {
+    // La barre de recherche se décale à droite du bouton « retour » quand elle est collée en haut, comme celle du dictionnaire.
+    if (!citScrollBound) {
+        citEl('screen-tool-citations').addEventListener('scroll', () => dictSyncStuck('screen-tool-citations'), { passive: true });
+        citScrollBound = true;
+    }
     citationsLoad().then(ok => {
         const status = citEl('cit-status');
         if (!ok) {
