@@ -1500,6 +1500,11 @@ textarea.form-input {
     border: 1.5px solid var(--border-soft);
 }
 
+/* Réglages ouverts depuis la frise : seulement orientation, disposition en paysage et apparence. */
+#modal-settings.is-quick > .modal-content > .settings-group:not(.settings-quick) {
+    display: none !important;
+}
+
 .layout-btn {
     flex: none;
     min-width: 34px;

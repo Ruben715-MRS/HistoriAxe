@@ -167,12 +167,23 @@ test('en Découverte, sur grand écran : un bouton « disposition » à gauche d
     await expect(page.locator('#modal-settings')).toBeVisible();
     await expect(page.locator('#settings-landscape-flow')).toBeVisible();
     await expect(page.locator('#settings-landscape-flow button.active')).toHaveCount(1);
+    // Seulement les trois réglages d'affichage : le reste (langue, son, notifications…) n'est pas proposé ici.
+    await expect(page.locator('#settings-orientation')).toBeVisible();
+    await expect(page.locator('#settings-appearance')).toBeVisible();
+    await expect(page.locator('#settings-play-mode')).toBeHidden();
+    await expect(page.locator('#settings-account')).toBeHidden();
+    await expect(page.locator('#settings-axis-under-events')).toBeHidden();
     // Le réglage se change ici, et le menu principal garde le sien.
     await page.locator('#settings-landscape-flow button', { hasText: /^Ligne$/ }).click();
     await expect(page.locator('#settings-landscape-flow button', { hasText: /^Ligne$/ })).toHaveClass(/active/);
     await page.locator('#modal-settings .close-btn').click();
     await expect(page.locator('#modal-settings')).toBeHidden();
     await expect(page.locator('#screen-game')).toBeVisible();
+    // Depuis le menu principal, les Réglages restent complets.
+    await page.evaluate(() => openSettings());
+    await expect(page.locator('#settings-play-mode')).toBeVisible();
+    await expect(page.locator('#settings-account')).toBeVisible();
+    await page.locator('#modal-settings .close-btn').click();
 });
 
 test('le bouton « disposition » n\'apparaît ni sur téléphone, ni en partie', async ({ page }) => {

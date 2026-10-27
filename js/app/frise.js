@@ -257,7 +257,7 @@ function updateLayoutButton() {
 }
 
 function openLayoutSettings() {
-    openSettings();
+    openSettings(true);
     const group = document.getElementById('settings-group-landscape');
     if (!group) return;
     group.scrollIntoView({ block: 'center' });
