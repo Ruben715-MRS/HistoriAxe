@@ -1,0 +1,334 @@
+{
+  "citations": [
+    {
+      "id": "cit_danton_audace",
+      "texte": "Il nous faut de l'audace, encore de l'audace, toujours de l'audace, et la France est sauvée !",
+      "auteur": "Georges Danton",
+      "classement": "Danton",
+      "annee": 1792,
+      "theme": "guerre",
+      "fiabilite": "attestee",
+      "contexte": "Le 2 septembre 1792, alors que les armées prussiennes avancent vers Paris et que Verdun est sur le point de tomber, Danton, ministre de la Justice, s'adresse à l'Assemblée législative. Il demande de lever des volontaires pour la défense du pays. Les massacres de Septembre commencent le jour même.",
+      "source": {
+        "oeuvre": "Discours à l'Assemblée législative, Le Moniteur universel",
+        "ref": "2 septembre 1792"
+      }
+    },
+    {
+      "id": "cit_robespierre_terreur",
+      "texte": "La terreur n'est autre chose que la justice prompte, sévère, inflexible ; elle est donc une émanation de la vertu.",
+      "auteur": "Maximilien de Robespierre",
+      "classement": "Robespierre",
+      "annee": 1794,
+      "theme": "pouvoir",
+      "fiabilite": "attestee",
+      "contexte": "Le 5 février 1794, Robespierre présente à la Convention un rapport sur les principes de la République. Il y justifie la Terreur, qui permet de condamner à mort sans délai les ennemis de la Révolution. Moins de six mois plus tard, il est arrêté le 27 juillet 1794 (9 thermidor) et guillotiné le lendemain.",
+      "source": {
+        "oeuvre": "Rapport sur les principes de morale politique",
+        "ref": "5 février 1794 (17 pluviôse an II)"
+      },
+      "naissance": "pan_fr_robespierre"
+    },
+    {
+      "id": "cit_toussaint_arbre",
+      "texte": "En me renversant, on n'a abattu à Saint-Domingue que le tronc de l'arbre de la liberté des Noirs ; il repoussera par les racines, parce qu'elles sont profondes et nombreuses.",
+      "auteur": "Toussaint Louverture",
+      "classement": "Louverture",
+      "annee": 1802,
+      "theme": "liberte",
+      "fiabilite": "attribuee",
+      "contexte": "Ancien esclave devenu chef de la révolution de Saint-Domingue, Toussaint Louverture est arrêté par les Français en juin 1802 et embarqué pour la France, où il meurt au fort de Joux en 1803. On rapporte qu'il aurait dit ces mots à bord du navire. La colonie devient Haïti en 1804, première république noire indépendante.",
+      "source": {
+        "oeuvre": "Rapportée par les historiens de la révolution haïtienne",
+        "ref": "juin 1802, embarquement au Cap"
+      },
+      "note": "Aucun témoin direct n'a noté la phrase ; elle est rapportée par la tradition et par des historiens postérieurs.",
+      "naissance": "pan_caraibes_toussaint"
+    },
+    {
+      "id": "cit_napoleon_sublime",
+      "texte": "Du sublime au ridicule, il n'y a qu'un pas.",
+      "auteur": "Napoléon Ier",
+      "classement": "Napoléon",
+      "annee": 1812,
+      "anneeNote": "retour de Russie",
+      "theme": "pouvoir",
+      "fiabilite": "attribuee",
+      "contexte": "En décembre 1812, Napoléon rentre précipitamment de Russie, où la Grande Armée vient d'être détruite. Passant par Varsovie, il aurait lancé la formule à l'ambassadeur de France, l'abbé de Pradt, pour commenter sa propre défaite.",
+      "source": {
+        "oeuvre": "Abbé de Pradt, Histoire de l'ambassade dans le grand-duché de Varsovie en 1812",
+        "ref": "1815"
+      },
+      "note": "La seule source est Pradt, qui n'aimait pas Napoléon et écrit trois ans plus tard. L'expression est plus ancienne : Marmontel et Thomas Paine l'avaient employée avant lui.",
+      "naissance": "pan_fr_napoleon"
+    },
+    {
+      "id": "cit_hegel_chouette",
+      "texte": "La chouette de Minerve ne prend son envol qu'à la tombée de la nuit.",
+      "auteur": "Georg Wilhelm Friedrich Hegel",
+      "classement": "Hegel",
+      "annee": 1820,
+      "theme": "savoir",
+      "fiabilite": "attestee",
+      "contexte": "Dans la préface de ses Principes de la philosophie du droit, Hegel soutient que la philosophie vient toujours trop tard pour dire comment le monde devrait être : elle ne comprend une époque que lorsqu'elle s'achève, comme la chouette, oiseau de Minerve (Athéna), qui ne vole qu'au crépuscule.",
+      "source": {
+        "oeuvre": "Principes de la philosophie du droit",
+        "ref": "préface (1820)"
+      },
+      "naissance": "pan_dach_hegel"
+    },
+    {
+      "id": "cit_bolivar_bonheur",
+      "texte": "Le système de gouvernement le plus parfait est celui qui produit la plus grande somme de bonheur possible, la plus grande somme de sécurité sociale et la plus grande somme de stabilité politique.",
+      "original": "El sistema de gobierno más perfecto es aquel que produce mayor suma de felicidad posible, mayor suma de seguridad social y mayor suma de estabilidad política.",
+      "langue": "espagnol",
+      "auteur": "Simón Bolívar",
+      "classement": "Bolívar",
+      "annee": 1819,
+      "theme": "pouvoir",
+      "fiabilite": "attestee",
+      "contexte": "Le 15 février 1819, devant le congrès d'Angostura, dans l'actuel Venezuela, Bolívar présente un projet de Constitution pour la nouvelle république. Ce discours définit les principes d'un État libre et stable pour l'Amérique du Sud, au moment où elle se libère de l'Espagne.",
+      "source": {
+        "oeuvre": "Discours d'Angostura",
+        "ref": "15 février 1819"
+      },
+      "naissance": "pan_hispam_bolivar"
+    },
+    {
+      "id": "cit_marx_opium",
+      "texte": "La détresse religieuse est, pour une part, l'expression de la détresse réelle et, pour une autre, la protestation contre la détresse réelle. La religion est le soupir de la créature opprimée, l'âme d'un monde sans cœur, comme elle est l'esprit d'une époque sans esprit. Elle est l'opium du peuple.",
+      "auteur": "Karl Marx",
+      "classement": "Marx",
+      "annee": 1844,
+      "theme": "pouvoir",
+      "fiabilite": "attestee",
+      "contexte": "Dans l'introduction d'un texte sur la philosophie du droit de Hegel, Marx, alors à Paris, juge que la religion soulage la souffrance sans la supprimer. À son époque, l'opium était aussi un médicament contre la douleur : la phrase, citée seule, perd cette nuance.",
+      "source": {
+        "oeuvre": "Contribution à la critique de la philosophie du droit de Hegel, introduction",
+        "ref": "Deutsch-Französische Jahrbücher, 1844"
+      },
+      "note": "La phrase est souvent coupée de ce qui la précède. Marx décrit la religion à la fois comme un soupir et comme une consolation, pas seulement comme une drogue.",
+      "naissance": "pan_dach_marx"
+    },
+    {
+      "id": "cit_marx_farce",
+      "texte": "Hegel fait quelque part cette remarque que tous les grands événements et personnages historiques se produisent pour ainsi dire deux fois. Il a oublié d'ajouter : la première fois comme tragédie, la seconde fois comme farce.",
+      "auteur": "Karl Marx",
+      "classement": "Marx",
+      "annee": 1852,
+      "theme": "savoir",
+      "fiabilite": "attestee",
+      "contexte": "Marx analyse le coup d'État de Louis-Napoléon Bonaparte du 2 décembre 1851 : le neveu de Napoléon, devenu Napoléon III, répète le 18 brumaire de son oncle (1799), mais en version parodique. L'ouvrage est un modèle d'analyse politique d'un événement récent.",
+      "source": {
+        "oeuvre": "Le 18 Brumaire de Louis Bonaparte",
+        "ref": "chapitre I (1852)"
+      },
+      "naissance": "pan_dach_marx"
+    },
+    {
+      "id": "cit_douglass_pouvoir",
+      "texte": "Le pouvoir ne cède rien sans qu'on le lui demande. Il ne l'a jamais fait et ne le fera jamais.",
+      "original": "Power concedes nothing without a demand. It never did and it never will.",
+      "langue": "anglais",
+      "auteur": "Frederick Douglass",
+      "classement": "Douglass",
+      "annee": 1857,
+      "theme": "liberte",
+      "fiabilite": "attestee",
+      "contexte": "Ancien esclave devenu l'un des grands orateurs de l'abolitionnisme, Douglass prononce ce discours le 3 août 1857 à Canandaigua (État de New York), à l'occasion de l'anniversaire de l'abolition de l'esclavage dans les Antilles britanniques. Il rappelle que les libertés ne s'obtiennent que par la lutte : « S'il n'y a pas de lutte, il n'y a pas de progrès. »",
+      "source": {
+        "oeuvre": "Discours sur l'émancipation dans les Antilles britanniques",
+        "ref": "3 août 1857, Canandaigua"
+      },
+      "repere": true,
+      "naissance": "pan_us_douglass"
+    },
+    {
+      "id": "cit_truth_femme",
+      "texte": "Ne suis-je pas une femme ?",
+      "original": "Ain't I a woman?",
+      "langue": "anglais",
+      "auteur": "Sojourner Truth",
+      "classement": "Truth",
+      "annee": 1851,
+      "theme": "liberte",
+      "fiabilite": "attribuee",
+      "contexte": "Ancienne esclave devenue prédicatrice, Sojourner Truth prend la parole à la convention des droits des femmes d'Akron (Ohio), le 29 mai 1851, pour répondre à des orateurs qui jugeaient les femmes trop faibles pour voter. Son intervention est devenue un symbole du féminisme et de la lutte contre le racisme.",
+      "source": {
+        "oeuvre": "Frances Dana Gage, compte rendu publié dans The Independent",
+        "ref": "1863"
+      },
+      "note": "Le compte rendu de 1851 (Marius Robinson) ne contient pas cette question. La version célèbre est celle de Frances Gage, douze ans après, en dialecte du Sud que Sojourner Truth, née à New York et de langue maternelle néerlandaise, ne parlait pas.",
+      "naissance": "pan_us_truth"
+    },
+    {
+      "id": "cit_lincoln_tromper",
+      "texte": "On peut tromper tout le monde pendant un certain temps, on peut tromper une partie du monde tout le temps, mais on ne peut pas tromper tout le monde tout le temps.",
+      "original": "You can fool all the people some of the time, and some of the people all the time, but you cannot fool all the people all the time.",
+      "langue": "anglais",
+      "auteur": "Abraham Lincoln",
+      "classement": "Lincoln",
+      "annee": 1858,
+      "anneeNote": "date alléguée",
+      "theme": "pouvoir",
+      "fiabilite": "attribuee",
+      "contexte": "On la cite pour rappeler que les mensonges d'un dirigeant finissent par se voir. Elle serait tirée d'un discours de campagne de Lincoln à Clinton, dans l'Illinois, en 1858.",
+      "source": {
+        "oeuvre": "Alexander K. McClure, Abe Lincoln's Yarns and Stories",
+        "ref": "début du XXe siècle"
+      },
+      "note": "Aucune trace écrite de l'époque ne confirme que Lincoln l'ait dite. Elle apparaît au début du XXe siècle, dans les souvenirs d'un homme politique qui prétendait l'avoir entendue plus de quarante ans plus tôt.",
+      "naissance": "pan_us_lincoln"
+    },
+    {
+      "id": "cit_darwin_survie",
+      "texte": "Ce ne sont pas les espèces les plus fortes qui survivent, ni les plus intelligentes, mais celles qui s'adaptent le mieux au changement.",
+      "auteur": "Charles Darwin",
+      "classement": "Darwin",
+      "annee": 1963,
+      "anneeNote": "première trace connue",
+      "theme": "savoir",
+      "fiabilite": "apocryphe",
+      "contexte": "La phrase est devenue le résumé le plus répété de la théorie de l'évolution, citée dans les conférences de management et les livres de développement personnel.",
+      "source": {
+        "oeuvre": "Leon C. Megginson, conférence puis article",
+        "ref": "1963, paraphrase de Darwin"
+      },
+      "note": "Darwin ne l'a jamais écrite. Elle vient d'un professeur américain de management, Leon Megginson, qui résumait ainsi, en 1963, la théorie de Darwin à sa manière.",
+      "repere": true,
+      "naissance": "pan_gb_darwin"
+    },
+    {
+      "id": "cit_nietzsche_dieu_mort",
+      "texte": "Dieu est mort ! Dieu reste mort ! Et c'est nous qui l'avons tué !",
+      "original": "Gott ist tot! Gott bleibt tot! Und wir haben ihn getötet!",
+      "langue": "allemand",
+      "auteur": "Friedrich Nietzsche",
+      "classement": "Nietzsche",
+      "annee": 1882,
+      "theme": "humain",
+      "fiabilite": "attestee",
+      "contexte": "Dans un court récit, un « insensé » court sur la place publique, une lanterne à la main, en plein jour, et annonce la mort de Dieu à des gens qui rient. Pour Nietzsche, ce n'est pas un cri de joie : l'Occident ne croit plus au Dieu chrétien, et il n'a pas encore mesuré les conséquences de cette perte pour les valeurs morales.",
+      "source": {
+        "oeuvre": "Le Gai Savoir",
+        "ref": "livre III, § 125 (1882)"
+      },
+      "note": "Ce n'est pas Nietzsche qui parle : c'est un personnage, l'insensé. La formule a d'abord paru dans le § 108 du même livre, sous une forme plus brève.",
+      "repere": true,
+      "naissance": "pan_dach_nietzsche"
+    },
+    {
+      "id": "cit_nietzsche_plus_fort",
+      "texte": "Ce qui ne me tue pas me rend plus fort.",
+      "original": "Was mich nicht umbringt, macht mich stärker.",
+      "langue": "allemand",
+      "auteur": "Friedrich Nietzsche",
+      "classement": "Nietzsche",
+      "annee": 1888,
+      "theme": "humain",
+      "fiabilite": "attestee",
+      "contexte": "C'est la huitième des « Maximes et traits » qui ouvrent le Crépuscule des idoles, le livre que Nietzsche écrit en quelques semaines pendant l'été 1888, quelques mois avant son effondrement psychique. La phrase est devenue un proverbe de résilience.",
+      "source": {
+        "oeuvre": "Crépuscule des idoles",
+        "ref": "Maximes et traits, § 8"
+      },
+      "naissance": "pan_dach_nietzsche"
+    },
+    {
+      "id": "cit_bismarck_fer_sang",
+      "texte": "Ce ne sont pas les discours ni les décisions de majorité qui résoudront les grandes questions de l'époque — c'est là la grande erreur de 1848 et 1849 —, mais le fer et le sang.",
+      "original": "Nicht durch Reden und Majoritätsbeschlüsse werden die großen Fragen der Zeit entschieden – das ist der große Fehler von 1848 und 1849 gewesen –, sondern durch Eisen und Blut.",
+      "langue": "allemand",
+      "auteur": "Otto von Bismarck",
+      "classement": "Bismarck",
+      "annee": 1862,
+      "theme": "guerre",
+      "fiabilite": "attestee",
+      "contexte": "Le 30 septembre 1862, tout juste nommé ministre-président de Prusse, Bismarck parle devant la commission du budget de la Chambre, qui refuse de financer la réforme de l'armée voulue par le roi. Il dit que l'unité allemande se fera par la force. Elle se fait en 1871, après trois guerres, dont celle contre la France.",
+      "source": {
+        "oeuvre": "Discours à la commission du budget de la Chambre des députés de Prusse",
+        "ref": "30 septembre 1862"
+      },
+      "naissance": "pan_dach_bismarck"
+    },
+    {
+      "id": "cit_pasteur_hasard",
+      "texte": "Dans les champs de l'observation, le hasard ne favorise que les esprits préparés.",
+      "auteur": "Louis Pasteur",
+      "classement": "Pasteur",
+      "annee": 1854,
+      "theme": "savoir",
+      "fiabilite": "attestee",
+      "contexte": "Le 7 décembre 1854, Pasteur, nommé doyen de la nouvelle faculté des sciences de Lille, prononce son discours d'installation. Il y explique que les découvertes ne tombent pas du ciel : il faut avoir préparé son esprit pour savoir reconnaître ce que le hasard met sous les yeux.",
+      "source": {
+        "oeuvre": "Discours d'installation à la faculté des sciences de Lille",
+        "ref": "7 décembre 1854"
+      },
+      "naissance": "pan_fr_pasteur"
+    },
+    {
+      "id": "cit_zola_verite_en_marche",
+      "texte": "La vérité est en marche et rien ne l'arrêtera.",
+      "auteur": "Émile Zola",
+      "classement": "Zola",
+      "annee": 1897,
+      "theme": "liberte",
+      "fiabilite": "attestee",
+      "contexte": "Le 25 novembre 1897, Zola prend publiquement le parti d'Alfred Dreyfus, condamné pour trahison en 1894, dans un article du Figaro consacré au vice-président du Sénat, Scheurer-Kestner, qui se bat pour la révision du procès. Quelques semaines plus tard viendra « J'accuse… ! ».",
+      "source": {
+        "oeuvre": "Le Figaro, article « M. Scheurer-Kestner »",
+        "ref": "25 novembre 1897"
+      },
+      "naissance": "pan_fr_zola"
+    },
+    {
+      "id": "cit_jaures_courage",
+      "texte": "Le courage, c'est de chercher la vérité et de la dire ; c'est de ne pas subir la loi du mensonge triomphant.",
+      "auteur": "Jean Jaurès",
+      "classement": "Jaurès",
+      "annee": 1903,
+      "theme": "humain",
+      "fiabilite": "attestee",
+      "contexte": "Le 30 juillet 1903, Jaurès, député socialiste, est invité à la distribution des prix du lycée d'Albi, où il avait enseigné la philosophie. Il s'adresse aux élèves et leur parle de ce que doit être le courage dans une démocratie. Il est assassiné en juillet 1914, à la veille de la Première Guerre mondiale.",
+      "source": {
+        "oeuvre": "Discours à la jeunesse",
+        "ref": "lycée d'Albi, 30 juillet 1903"
+      },
+      "naissance": "pan_fr_jaures"
+    },
+    {
+      "id": "cit_santayana_passe",
+      "texte": "Ceux qui ne peuvent se souvenir du passé sont condamnés à le répéter.",
+      "original": "Those who cannot remember the past are condemned to repeat it.",
+      "langue": "anglais",
+      "auteur": "George Santayana",
+      "classement": "Santayana",
+      "annee": 1905,
+      "theme": "savoir",
+      "fiabilite": "attestee",
+      "contexte": "Le philosophe George Santayana, né à Madrid et formé aux États-Unis, écrit cette phrase dans un chapitre consacré au progrès : sans mémoire, dit-il, aucun progrès n'est possible, car on recommence sans cesse. On la cite aussi, à tort, sous le nom de Churchill.",
+      "source": {
+        "oeuvre": "La Vie de la raison (The Life of Reason), tome I : La Raison dans le sens commun",
+        "ref": "chapitre XII (1905)"
+      }
+    },
+    {
+      "id": "cit_herzl_pas_un_conte",
+      "texte": "Si vous le voulez, ce n'est pas un conte de fées.",
+      "original": "Wenn ihr wollt, ist es kein Märchen.",
+      "langue": "allemand",
+      "auteur": "Theodor Herzl",
+      "classement": "Herzl",
+      "annee": 1902,
+      "theme": "liberte",
+      "fiabilite": "attestee",
+      "contexte": "En 1902, six ans après avoir publié L'État des Juifs, Herzl, fondateur du mouvement sioniste, écrit un roman, Altneuland (« Vieille Nouvelle Terre »), où il imagine une société juive moderne en Palestine. Cette phrase est la devise du livre. Herzl meurt en 1904 ; l'État d'Israël est proclamé en 1948.",
+      "source": {
+        "oeuvre": "Altneuland",
+        "ref": "épigraphe (1902)"
+      },
+      "note": "Märchen veut dire « conte de fées » ; on traduit souvent « ce n'est pas un rêve » ou « ce n'est pas une légende ».",
+      "naissance": "pan_il_herzl"
+    }
+  ]
+}

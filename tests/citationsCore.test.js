@@ -94,7 +94,7 @@ test('données : chaque lot de l’index existe et aucun fichier de lot n’est 
 });
 
 test('données : chaque citation est valable, les identifiants sont uniques', () => {
-    assert.ok(all.length >= 20);
+    assert.ok(all.length >= 100);
     assert.deepEqual(C.duplicateIds(all), []);
     all.forEach(c => assert.deepEqual(C.validate(c), [], c.id));
 });
@@ -123,10 +123,10 @@ test('données : une citation traduite garde sa version originale visible, une c
     });
 });
 
-test('données : les guillemets français tiennent à leur texte par une espace insécable', () => {
+test('données : typographie française, guillemets et ponctuation haute tiennent à leur texte par une espace insécable', () => {
     all.forEach(c => {
         [c.texte, c.contexte, c.note].filter(Boolean).forEach(text => {
-            assert.ok(!/« | »/.test(text), `${c.id} : guillemet français suivi ou précédé d'une espace ordinaire`);
+            assert.ok(!/« | [»:;!?]/.test(text), `${c.id} : espace ordinaire autour d'un guillemet ou avant : ; ! ? (il faut une espace insécable)`);
         });
     });
 });

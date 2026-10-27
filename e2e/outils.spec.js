@@ -721,24 +721,34 @@ test('poids et mesures bibliques : distances, volumes et monnaies se convertisse
     expect(await visibleScreen(page)).toBe('screen-tools');
 });
 
-test('citations : recherche, filtre de fiabilité, fiche, lien vers la carte de naissance', async ({ page }) => {
+test('citations : recherche, filtre de fiabilité, tranches, fiche, lien vers la carte de naissance', async ({ page }) => {
     await ouvrir(page, 'Citations');
     expect(await visibleScreen(page)).toBe('screen-tool-citations');
     const items = page.locator('#cit-list .cit-item');
     await expect(items.first()).toBeVisible();
-    const total = await items.count();
-    expect(total).toBeGreaterThanOrEqual(20);
+    const total = await page.evaluate(() => citData.length);
+    expect(total).toBeGreaterThanOrEqual(100);
+    // Une première tranche seulement, puis « Voir plus ».
+    await expect(items).toHaveCount(30);
     await expect(page.locator('#cit-status')).toHaveText(`${total} citations`);
+    await expect(page.locator('#cit-more')).toBeVisible();
+    await page.locator('#cit-more').click();
+    await expect(items).toHaveCount(60);
 
     await page.locator('#cit-search').fill('descartes');
-    await expect(items).toHaveCount(1);
-    await expect(page.locator('#cit-status')).toContainText(`1 sur ${total}`);
+    await expect(items).toHaveCount(2);
+    await expect(page.locator('#cit-status')).toContainText(`2 sur ${total}`);
+    await expect(page.locator('#cit-more')).toBeHidden();
     await page.locator('#cit-search').fill('');
 
     await page.locator('#cit-reliability').selectOption('apocryphe');
     expect(await items.count()).toBeGreaterThanOrEqual(3);
     await expect(items.locator('.cit-badge-apocryphe')).toHaveCount(await items.count());
     await page.locator('#cit-reliability').selectOption('all');
+
+    await page.locator('#cit-era').selectOption('avant500');
+    await expect(items.first()).toContainText('Exode');
+    await page.locator('#cit-era').selectOption('all');
 
     await page.locator('#cit-search').fill('je pense donc');
     await items.first().click();
