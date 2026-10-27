@@ -235,7 +235,7 @@ Flappy Clio —, dos), puis suit toutes les poses et expressions de cette vue sa
 | Renaissances | Pourpoint de Léonard | pourpoint, béret, carnet de croquis |
 | Religion | Fraise et pourpoint | collerette blanche, pourpoint sobre |
 | Rois absolus | Perruque du Roi-Soleil | grande perruque, manteau doré |
-| Lumières | Habit de philosophe | redingote, plume d'oie, perruque poudrée |
+| Lumières | Habit de philosophe | redingote, gilet et jabot, perruque poudrée (sans plume) |
 | Révolution | Bonnet phrygien | bonnet rouge, cocarde |
 | Révolution inachevée | Haut-de-forme | haut-de-forme, redingote |
 | République | Costume Belle Époque | canotier, nœud papillon |

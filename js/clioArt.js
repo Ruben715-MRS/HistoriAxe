@@ -367,7 +367,7 @@
                 }).join('');
             }
         },
-        // Lumières — habit de philosophe : redingote, gilet crème, jabot, perruque poudrée à rouleaux, plume d'oie.
+        // Lumières — habit de philosophe : redingote, gilet crème, jabot, perruque poudrée à rouleaux.
         philosophe: {
             sleeve: ['#3D5E7A', '#1F3346'],
             body: function () {
@@ -384,10 +384,7 @@
                         line('M' + (p[0] - 5) + ' ' + p[1] + ' q5 -4 9 0', 1.5, '#B5BAC0');
                 }).join('');
                 return shape('M40 92 C34 22 166 22 160 92 Q150 70 100 64 Q50 70 40 92 Z', '#EFEFEA', '#9EA3A8') +
-                    line('M60 56 Q100 40 140 56', 2, '#D5D8DC') + rolls +
-                    // la plume d'oie, glissée dans la perruque
-                    el('path', { d: 'M128 58 C140 36 160 22 182 14 C174 30 156 46 134 60 Z', fill: '#FFFFFF', stroke: '#9EA3A8', 'stroke-width': 1.8, 'stroke-linejoin': 'round' }) +
-                    line('M124 64 L178 18', 1.6, '#9EA3A8');
+                    line('M60 56 Q100 40 140 56', 2, '#D5D8DC') + rolls;
             }
         },
         // Révolution — bonnet phrygien : bonnet rouge à cocarde, carmagnole bleue, chemise, pantalon rayé de sans-culotte.
@@ -493,6 +490,7 @@
         },
         // Trente Glorieuses — combinaison spatiale : casque bulle, combinaison blanche, boîtier de poitrine, écusson étoilé neutre.
         spatiale: {
+            earScale: 0.85,
             sleeve: ['#F2F4F7', '#8C939B'],
             body: function () {
                 return shape(TUNIC, '#F2F4F7', '#8C939B') +
@@ -501,11 +499,12 @@
                     el('circle', { cx: 93, cy: 175, r: 3, fill: '#E05A55' }) + el('circle', { cx: 103, cy: 175, r: 3, fill: '#5FB46A' }) + el('rect', { x: 108, y: 171, width: 3, height: 8, fill: '#E9C349' }) +
                     el('rect', { x: 120, y: 152, width: 16, height: 12, rx: 2, fill: '#2846A0', stroke: '#152A66', 'stroke-width': 1.5 }) +
                     el('polygon', { points: '128,154 129.6,157 133,157.4 130.5,159.6 131.2,163 128,161.3 124.8,163 125.5,159.6 123,157.4 126.4,157', fill: '#FFFFFF' }) +
-                    el('ellipse', { cx: 100, cy: 150, rx: 32, ry: 8, fill: '#C3C9D0', stroke: '#6B7178', 'stroke-width': 2.5 });
+                    el('ellipse', { cx: 100, cy: 157, rx: 46, ry: 9, fill: '#C3C9D0', stroke: '#6B7178', 'stroke-width': 2.5 });
             },
             hat: function () {
-                return el('ellipse', { cx: 100, cy: 88, rx: 72, ry: 74, fill: '#BFE3F7', 'fill-opacity': 0.08, stroke: '#B8C4CF', 'stroke-width': 3 }) +
-                    line('M48 52 Q62 30 86 22', 5, '#FFFFFF', { opacity: 0.85 }) + line('M150 130 Q160 116 164 100', 3, '#FFFFFF', { opacity: 0.6 });
+                // Une bulle assez grande pour toute la tête, oreilles comprises.
+                return el('ellipse', { cx: 100, cy: 84, rx: 80, ry: 82, fill: '#BFE3F7', 'fill-opacity': 0.08, stroke: '#B8C4CF', 'stroke-width': 3 }) +
+                    line('M40 52 Q54 24 82 12', 5, '#FFFFFF', { opacity: 0.85 }) + line('M158 132 Q170 116 174 98', 3, '#FFFFFF', { opacity: 0.6 });
             }
         },
         // Crises et fin de la guerre froide (années 80) — perfecto : blouson de cuir, tee-shirt blanc, baladeur et son casque, lunettes relevées.
@@ -516,7 +515,10 @@
                     shape('M56 148 C66 140 82 138 94 140 L110 206 Q80 212 52 206 C49 186 50 164 56 148 Z', '#24252B', '#0E1015') +
                     shape(CAPE_R, '#24252B', '#0E1015') +
                     line('M94 140 L110 206', 2.5, '#C9CDD2', { 'stroke-dasharray': '2 2' }) +
-                    el('path', { d: 'M94 140 L78 160 L88 164 Z M108 140 L124 160 L114 164 Z', fill: '#3A3C44', stroke: '#0E1015', 'stroke-width': 1.5, 'stroke-linejoin': 'round' }) +
+                    // les revers du col, larges et rabattus, puis une seule tirette sur la fermeture
+                    el('path', { d: 'M94 140 L72 144 L64 156 L84 172 Z M108 140 L130 144 L138 156 L118 168 Z', fill: '#2E3036', stroke: '#0E1015', 'stroke-width': 1.8, 'stroke-linejoin': 'round' }) +
+                    el('circle', { cx: 74, cy: 154, r: 1.8, fill: '#C9CDD2' }) + el('circle', { cx: 128, cy: 152, r: 1.8, fill: '#C9CDD2' }) +
+                    el('rect', { x: 97, y: 162, width: 6, height: 9, rx: 1.5, fill: '#C9CDD2', stroke: '#5F656C', 'stroke-width': 1 }) +
                     line('M56 188 Q80 194 108 192', 4, '#3A3C44') +
                     // le baladeur à la ceinture, et son fil
                     el('rect', { x: 120, y: 182, width: 18, height: 22, rx: 3, fill: '#C8322F', stroke: '#7D1A17', 'stroke-width': 1.8 }) +
@@ -524,8 +526,8 @@
             },
             hat: function () {
                 return line('M42 92 C42 40 158 40 158 92', 5, '#2E3238') +
-                    el('ellipse', { cx: 40, cy: 98, rx: 9, ry: 12, fill: '#F28C38', stroke: '#9C4A17', 'stroke-width': 2 }) +
-                    el('ellipse', { cx: 160, cy: 98, rx: 9, ry: 12, fill: '#F28C38', stroke: '#9C4A17', 'stroke-width': 2 }) +
+                    el('ellipse', { cx: 40, cy: 98, rx: 9, ry: 12, fill: '#C8322F', stroke: '#7D1A17', 'stroke-width': 2 }) +
+                    el('ellipse', { cx: 160, cy: 98, rx: 9, ry: 12, fill: '#C8322F', stroke: '#7D1A17', 'stroke-width': 2 }) +
                     // lunettes de soleil relevées sur la tête (le regard reste libre)
                     el('path', { d: 'M66 58 Q80 50 94 58 Q92 68 80 68 Q68 68 66 58 Z M106 58 Q120 50 134 58 Q132 68 120 68 Q108 68 106 58 Z', fill: '#1B1B22', stroke: '#0E1015', 'stroke-width': 1.5 }) +
                     line('M94 58 Q100 55 106 58', 2.5, '#0E1015') + line('M72 57 L78 55 M112 57 L118 55', 1.5, '#7A8494');
@@ -570,6 +572,8 @@
     };
 
     // La manche du bras qui bouge (salue, réfléchit) : [couleur, contour], ou rien pour un bras nu.
+    // Taille des oreilles sous un costume (1 = normale ; moins, sous un casque fermé).
+    function earScaleOf(kind) { return kind && DRAW[kind] && DRAW[kind].earScale ? DRAW[kind].earScale : 1; }
     function sleeveOf(kind) { return kind && DRAW[kind] && DRAW[kind].sleeve ? DRAW[kind].sleeve : null; }
     function arm(d, w, sl) { return line(d, w + 6, sl ? sl[1] : P.line) + line(d, w, sl ? sl[0] : P.fur); }
 
@@ -593,8 +597,9 @@
             line('M54 170 l14 3 M52 186 l14 1 M146 170 l-14 3 M148 186 l-14 1', 4, P.stripes) + '</g>' +
             el('path', { d: BODY, fill: 'none', stroke: L, 'stroke-width': 3 }) + '</g>';
         var paws = pad(82, 213, 15, 9) + pad(118, 213, 15, 9);
-        var ears = '<g class="ca-earL">' + el('path', { d: 'M50 80 L55 24 Q59 18 66 22 L98 50 Z', fill: P.fur, stroke: L, 'stroke-width': 3, 'stroke-linejoin': 'round' }) + el('path', { d: 'M61 66 L62 35 L87 52 Z', fill: P.inner }) + '</g>' +
-            '<g class="ca-earR">' + el('path', { d: 'M150 80 L145 24 Q141 18 134 22 L102 50 Z', fill: P.fur, stroke: L, 'stroke-width': 3, 'stroke-linejoin': 'round' }) + el('path', { d: 'M139 66 L138 35 L113 52 Z', fill: P.inner }) + '</g>';
+        var es = earScaleOf(cos), earT = function (cx, cy) { return es === 1 ? '' : ' transform="translate(' + cx + ' ' + cy + ') scale(' + es + ') translate(' + (-cx) + ' ' + (-cy) + ')"'; };
+        var ears = '<g class="ca-earL"><g' + earT(74, 66) + '>' + el('path', { d: 'M50 80 L55 24 Q59 18 66 22 L98 50 Z', fill: P.fur, stroke: L, 'stroke-width': 3, 'stroke-linejoin': 'round' }) + el('path', { d: 'M61 66 L62 35 L87 52 Z', fill: P.inner }) + '</g></g>' +
+            '<g class="ca-earR"><g' + earT(126, 66) + '>' + el('path', { d: 'M150 80 L145 24 Q141 18 134 22 L102 50 Z', fill: P.fur, stroke: L, 'stroke-width': 3, 'stroke-linejoin': 'round' }) + el('path', { d: 'M139 66 L138 35 L113 52 Z', fill: P.inner }) + '</g></g>';
         var head = el('ellipse', { cx: 100, cy: 96, rx: 64, ry: 52, fill: P.fur }) +
             '<g clip-path="url(#' + id + 'h)">' + line('M100 46 L100 62 M87 49 L90 61 M113 49 L110 61 M38 90 L52 93 M38 101 L51 101 M162 90 L148 93 M162 101 L149 101', 4, P.stripes) + '</g>' +
             el('ellipse', { cx: 100, cy: 96, rx: 64, ry: 52, fill: 'none', stroke: L, 'stroke-width': 3 }) +
