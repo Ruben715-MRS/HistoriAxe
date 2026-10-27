@@ -149,6 +149,7 @@ try {
     largeScreenQuery.addEventListener('change', () => {
         applyOrientationLayout();
         renderSettingsUI();
+        if (typeof updateLayoutButton === 'function') updateLayoutButton();
     });
     // Les retours à la ligne de la frise changent avec la largeur, et ne se
     // mesurent qu'une fois l'écran de jeu affiché : on les recalcule dès que

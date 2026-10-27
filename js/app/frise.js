@@ -249,9 +249,26 @@ function toggleAxesLegendPin() {
 // RENDU DE LA COLONNE CHRONOLOGIQUE
 // Un intervalle d'insertion nommé est intercalé entre chaque repère :
 // le joueur choisit explicitement la fourchette où il pense placer l'événement.
+// Le bouton « disposition » de la barre : en Découverte seulement, et seulement sur les grands écrans (là où la
+// disposition en paysage existe). Il ouvre les Réglages sur ce choix, pour le changer au moment où l'on en a besoin.
+function updateLayoutButton() {
+    const btn = document.getElementById('hud-layout-btn');
+    if (btn) btn.classList.toggle('hidden', !(currentMode === 'discovery' && largeScreenQuery.matches));
+}
+
+function openLayoutSettings() {
+    openSettings();
+    const group = document.getElementById('settings-group-landscape');
+    if (!group) return;
+    group.scrollIntoView({ block: 'center' });
+    const active = group.querySelector('#settings-landscape-flow button.active') || group.querySelector('#settings-landscape-flow button');
+    if (active) active.focus({ preventScroll: true });
+}
+
 function renderTimeline() {
     const timeline = document.getElementById('timeline');
     const isPlaying = currentMode !== 'discovery';
+    updateLayoutButton();
     // Chaque placement reconstruit toute la frise, ce qui détruisait le
     // créneau qui avait le focus. On en retient la position : après un
     // placement, le focus reste au voisinage de la carte posée, et l'on peut

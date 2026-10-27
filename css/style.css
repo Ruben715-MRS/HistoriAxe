@@ -1500,6 +1500,23 @@ textarea.form-input {
     border: 1.5px solid var(--border-soft);
 }
 
+.layout-btn {
+    flex: none;
+    min-width: 34px;
+    height: 28px;
+    padding: 0 8px;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    background: var(--surface);
+    font-size: 15px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.layout-btn:active {
+    background: var(--surface-2);
+}
+
 .type-size {
     display: inline-flex;
     border: 1px solid var(--rule);

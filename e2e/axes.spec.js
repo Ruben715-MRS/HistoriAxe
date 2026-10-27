@@ -147,3 +147,45 @@ test('en paysage sur téléphone, le seul défilement possible est horizontal', 
     await page.waitForTimeout(600);
     expect(await page.locator('#screen-game .board').evaluate(el => getComputedStyle(el).touchAction)).toBe('pan-x');
 });
+
+test('en Découverte, sur grand écran : un bouton « disposition » à gauche de A-/A+ ouvre le réglage de disposition ; il est absent sur téléphone et en partie', async ({ page }) => {
+    await page.setViewportSize({ width: 1024, height: 768 });
+    await clickThemeCard(page, THEME_B);
+    await page.locator('#axes-continue-btn').click();
+    await page.locator('#mode-card-discovery').click();
+    await page.locator('#discovery-picker .mode-picker-btn').first().click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const btn = page.locator('#hud-layout-btn');
+    await expect(btn).toBeVisible();
+    // Placé juste avant le bouton de taille de texte, sur la même ligne.
+    const ordre = await page.evaluate(() => {
+        const b = document.getElementById('hud-layout-btn');
+        return b.nextElementSibling && b.nextElementSibling.classList.contains('type-size');
+    });
+    expect(ordre).toBe(true);
+    await btn.click();
+    await expect(page.locator('#modal-settings')).toBeVisible();
+    await expect(page.locator('#settings-landscape-flow')).toBeVisible();
+    await expect(page.locator('#settings-landscape-flow button.active')).toHaveCount(1);
+    // Le réglage se change ici, et le menu principal garde le sien.
+    await page.locator('#settings-landscape-flow button', { hasText: /^Ligne$/ }).click();
+    await expect(page.locator('#settings-landscape-flow button', { hasText: /^Ligne$/ })).toHaveClass(/active/);
+    await page.locator('#modal-settings .close-btn').click();
+    await expect(page.locator('#modal-settings')).toBeHidden();
+    await expect(page.locator('#screen-game')).toBeVisible();
+});
+
+test('le bouton « disposition » n\'apparaît ni sur téléphone, ni en partie', async ({ page }) => {
+    await clickThemeCard(page, THEME_B);
+    await page.locator('#axes-continue-btn').click();
+    await page.locator('#mode-card-discovery').click();
+    await page.locator('#discovery-picker .mode-picker-btn').first().click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    await expect(page.locator('#hud-layout-btn')).toBeHidden(); // téléphone (390 px)
+    await page.setViewportSize({ width: 1024, height: 768 });
+    await expect(page.locator('#hud-layout-btn')).toBeVisible();
+    // En partie (Classique), le bouton n'est pas proposé.
+    await page.evaluate(() => startActualGame('classic'));
+    await expect(page.locator('#screen-game')).toBeVisible();
+    await expect(page.locator('#hud-layout-btn')).toBeHidden();
+});
