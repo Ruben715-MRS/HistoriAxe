@@ -10587,8 +10587,13 @@ input:not([type="range"]), label, select, summary, textarea {
 .arcade-difficulty {
     flex: 0 0 auto;
     width: min(100%, 360px);
-    margin: 0 0 10px;
+    /* `auto` à gauche et à droite : centré aussi dans un conteneur plus large (écran de départ, écran de fin). */
+    margin: 0 auto 10px;
     text-align: center;
+}
+
+.arcade-over .arcade-difficulty {
+    margin-top: 14px;
 }
 
 .arcade-difficulty.hidden {
