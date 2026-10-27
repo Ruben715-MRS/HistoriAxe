@@ -1424,6 +1424,9 @@
   },
   "pacman": {
     "title": "Pac-Man della linea del tempo",
+    "level_easy": "3 date, un fantasma lento, Pac-Man tranquillo.",
+    "level_normal": "4 date, un secondo fantasma dal turno 3.",
+    "level_hard": "5 date, due poi tre fantasmi, sempre più veloci.",
     "desc": "Mangia la data dell’evento richiesto, fuggi dai fantasmi.",
     "board_aria": "Labirinto di Pac-Man",
     "status": "Manche {round} · {lives} · {score} pt",
@@ -1454,6 +1457,9 @@
   },
   "snake": {
     "title": "Snake cronologico",
+    "level_easy": "3 eventi, serpente lento.",
+    "level_normal": "3 eventi, velocità normale.",
+    "level_hard": "4 eventi, serpente veloce.",
     "desc": "Mangia gli eventi dal più antico al più recente.",
     "entry": "🐍 Snake cronologico",
     "rule": "Mangia le pastiglie in ordine cronologico, dall’evento più antico al più recente. Un errore, un muro o la tua coda: una vita in meno.",
@@ -1469,6 +1475,9 @@
   },
   "tetris": {
     "title": "Tetris dei secoli",
+    "level_easy": "I blocchi cadono lentamente.",
+    "level_normal": "I blocchi cadono a velocità normale.",
+    "level_hard": "I blocchi cadono veloci.",
     "desc": "Sistema ogni evento che cade nel suo periodo.",
     "entry": "🧱 Minigioco: Tetris dei secoli",
     "status": "{score} pt · {rows} righe · livello {level}",
@@ -1935,6 +1944,10 @@
   },
   "scene": {
     "title": "Caccia agli anacronismi",
+    "level_easy": "Il numero di intrusi è annunciato, un errore toglie solo mezzo punto.",
+    "level_normal": "Bisogna indovinare quanti sono gli intrusi.",
+    "level_hard": "Bisogna indovinare quanti sono gli intrusi, un errore toglie il doppio.",
+    "count_hint": "Intrusi da trovare: {count}.",
     "desc": "Individua in una scena ciò che non appartiene a quell’epoca.",
     "status": "Scena {n} / {total} · {score} pt",
     "grid_aria": "Elementi della scena",
@@ -2071,6 +2084,9 @@
   },
   "hangman": {
     "title": "Impiccato delle date",
+    "level_easy": "6 vite, prima cifra regalata.",
+    "level_normal": "4 vite.",
+    "level_hard": "3 vite, nessun indizio «prima / dopo».",
     "desc": "Indovina l’anno cifra per cifra: ogni errore costa una vita.",
     "status": "Evento {n} / {total} · {score} pt",
     "prompt": "{title}: in che anno?",

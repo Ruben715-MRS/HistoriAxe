@@ -45,8 +45,8 @@ test('pickDistinct : des années toutes différentes', () => {
     assert.equal(new Set(out.map((e) => e.date)).size, 3);
 });
 
-test('Snake : quatre pastilles aux lettres distinctes, dans une grille, hors du serpent', () => {
-    const g = A.createSnake(pool(), seeded(5));
+test('Snake : quatre pastilles (en difficile) aux lettres distinctes, dans une grille, hors du serpent', () => {
+    const g = A.createSnake(pool(), seeded(5), { difficulty: 'hard' });
     assert.equal(g.foods.length, 4);
     assert.deepEqual(g.items.map((i) => i.letter).sort(), ['A', 'B', 'C', 'D']);
     assert.equal(g.order.length, 4);
@@ -58,8 +58,36 @@ test('Snake : quatre pastilles aux lettres distinctes, dans une grille, hors du 
     assert.equal(new Set(g.foods.map((f) => f.x + ',' + f.y)).size, 4);
 });
 
+test('Snake : trois pastilles en facile et en moyen, quatre en difficile', () => {
+    ['easy', 'normal', 'hard'].forEach((difficulty) => {
+        const n = difficulty === 'hard' ? 4 : 3;
+        const g = A.createSnake(pool(), seeded(5), { difficulty });
+        assert.equal(g.foods.length, n, difficulty);
+        assert.equal(new Set(g.items.map((i) => i.letter)).size, n);
+        assert.equal(g.order.length, n);
+    });
+    assert.equal(A.createSnake(pool(), seeded(5)).difficulty, 'normal', 'sans niveau : moyen');
+});
+
+test('Snake : trois manches de pastilles font une manche, quel que soit le niveau', () => {
+    const g = A.createSnake(pool(), seeded(11), { difficulty: 'easy' });
+    let last = [];
+    g.order.slice().forEach((item) => { last = feed(g, item); g.snake = [{ x: 2, y: 6 }, { x: 1, y: 6 }, { x: 0, y: 6 }]; });
+    assert.ok(last.includes('round'));
+    assert.equal(g.score, 3 * 10 + 100);
+    assert.equal(g.foods.length, 3);
+});
+
+test('Snake : la vitesse suit le niveau (300 / 220 / 170 ms au départ), plus vite à chaque manche sans passer sous le plancher', () => {
+    const at = (difficulty, rounds) => { const g = A.createSnake(pool(), seeded(1), { difficulty }); g.rounds = rounds; return A.snakeInterval(g); };
+    assert.deepEqual(['easy', 'normal', 'hard'].map((d) => at(d, 0)), [300, 220, 170]);
+    assert.deepEqual(['easy', 'normal', 'hard'].map((d) => at(d, 1000)), [200, 120, 90]);
+    assert.ok(at('easy', 3) < at('easy', 0));
+});
+
 test('Snake : un vivier trop pauvre ne démarre pas', () => {
-    assert.ok(A.createSnake(pool().slice(0, 3), seeded(1)).empty);
+    assert.ok(A.createSnake(pool().slice(0, 3), seeded(1), { difficulty: 'hard' }).empty);
+    assert.ok(A.createSnake(pool().slice(0, 2), seeded(1)).empty);
 });
 
 // Place la pastille voulue juste devant la tête, et fait faire un pas.
@@ -92,7 +120,7 @@ test('Snake : manger dans l\'ordre fait grandir, manger dans le désordre coûte
 });
 
 test('Snake : les quatre dans l\'ordre font une manche, et une nouvelle manche arrive', () => {
-    const g = A.createSnake(pool(), seeded(11));
+    const g = A.createSnake(pool(), seeded(11), { difficulty: 'hard' });
     const first = g.order.slice();
     let last = [];
     first.forEach((item) => { last = feed(g, item); g.snake = [g.snake[0], g.snake[1], g.snake[2]]; g.snake[0] = { x: 2, y: 6 }; g.snake[1] = { x: 1, y: 6 }; g.snake[2] = { x: 0, y: 6 }; });
@@ -102,7 +130,7 @@ test('Snake : les quatre dans l\'ordre font une manche, et une nouvelle manche a
     assert.equal(g.foods.length, 4);
     assert.equal(g.eaten, 0);
     assert.equal(g.doneRounds.length, 1);
-    assert.ok(A.snakeInterval(g) < 220);
+    assert.ok(A.snakeInterval(g) < 170);
 });
 
 test('Snake : un mur coûte une vie, trois vies et c\'est fini ; on ne fait pas demi-tour', () => {
@@ -202,6 +230,14 @@ test('Tetris : un vivier sans une période ne démarre pas, la gravité accélè
     g.cleared = 10;
     assert.ok(A.tetrisInterval(g) < slow);
     assert.ok(A.tetrisInterval(g) >= 250);
+});
+
+test('Tetris : la gravité suit le niveau (900 / 700 / 550 ms au départ), de plus en plus vite sans passer sous le plancher', () => {
+    const at = (difficulty, cleared) => { const g = A.createTetris(pool(), seeded(1), { difficulty }); g.cleared = cleared; return A.tetrisInterval(g); };
+    assert.deepEqual(['easy', 'normal', 'hard'].map((d) => at(d, 0)), [900, 700, 550]);
+    assert.deepEqual(['easy', 'normal', 'hard'].map((d) => at(d, 1000)), [400, 250, 180]);
+    assert.ok(at('hard', 4) < at('hard', 0));
+    assert.equal(A.createTetris(pool(), seeded(1)).difficulty, 'normal');
 });
 
 test('meilleurs scores : on garde le plus haut, on ignore ce qui est abîmé', () => {

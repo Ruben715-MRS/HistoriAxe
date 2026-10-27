@@ -1424,6 +1424,9 @@
   },
   "pacman": {
     "title": "Pac-Man de la línea de tiempo",
+    "level_easy": "3 fechas, un fantasma lento, Pac-Man tranquilo.",
+    "level_normal": "4 fechas, un segundo fantasma a partir de la ronda 3.",
+    "level_hard": "5 fechas, dos y luego tres fantasmas, cada vez más rápido.",
     "desc": "Come la fecha del acontecimiento pedido y huye de los fantasmas.",
     "board_aria": "Laberinto del Pac-Man",
     "status": "Ronda {round} · {lives} · {score} pts",
@@ -1454,6 +1457,9 @@
   },
   "snake": {
     "title": "Snake cronológico",
+    "level_easy": "3 hechos, serpiente lenta.",
+    "level_normal": "3 hechos, velocidad normal.",
+    "level_hard": "4 hechos, serpiente rápida.",
     "desc": "Come los acontecimientos del más antiguo al más reciente.",
     "entry": "🐍 Snake cronológico",
     "rule": "Come las bolitas en orden cronológico, del acontecimiento más antiguo al más reciente. Un error, una pared o tu propia cola: una vida menos.",
@@ -1469,6 +1475,9 @@
   },
   "tetris": {
     "title": "Tetris de los siglos",
+    "level_easy": "Los bloques caen despacio.",
+    "level_normal": "Los bloques caen a velocidad normal.",
+    "level_hard": "Los bloques caen rápido.",
     "desc": "Coloca cada acontecimiento que cae en su periodo.",
     "entry": "🧱 Minijuego: Tetris de los siglos",
     "status": "{score} pts · {rows} líneas · nivel {level}",
@@ -1935,6 +1944,10 @@
   },
   "scene": {
     "title": "Caza de anacronismos",
+    "level_easy": "Se anuncia el número de intrusos, un error resta solo medio punto.",
+    "level_normal": "Hay que adivinar cuántos intrusos hay.",
+    "level_hard": "Hay que adivinar cuántos intrusos hay, un error resta el doble.",
+    "count_hint": "Intrusos por encontrar: {count}.",
     "desc": "Detecta en una escena lo que no corresponde a esa época.",
     "status": "Escena {n} / {total} · {score} pts",
     "grid_aria": "Elementos de la escena",
@@ -2071,6 +2084,9 @@
   },
   "hangman": {
     "title": "Ahorcado de fechas",
+    "level_easy": "6 vidas, primera cifra regalada.",
+    "level_normal": "4 vidas.",
+    "level_hard": "3 vidas, sin pista «antes / después».",
     "desc": "Adivina el año cifra a cifra: cada error cuesta una vida.",
     "status": "Acontecimiento {n} / {total} · {score} pts",
     "prompt": "{title}: ¿en qué año?",

@@ -7,7 +7,7 @@ const { test, expect, visibleScreen } = require('./fixtures');
 test.beforeEach(async ({ page }) => {
     await page.evaluate(() => {
         markRecapShownThisWeek();
-        ['historiaxe_arcade_v1', 'historiaxe_eras_v1', 'historiaxe_wheel_v1', 'historiaxe_advent_v1'].forEach(k => localStorage.removeItem(k));
+        ['historiaxe_arcade_v1', 'historiaxe_arcade_difficulty_v1', 'historiaxe_eras_v1', 'historiaxe_wheel_v1', 'historiaxe_advent_v1'].forEach(k => localStorage.removeItem(k));
         localStorage.setItem('historiaxe_path_v1', JSON.stringify({ levels: {}, skipped: [] }));
         showScreen('screen-categories');
         initCategories();
@@ -29,11 +29,12 @@ test('la salle d\'arcade s\'ouvre depuis les catégories et mène aux deux jeux'
     expect(await visibleScreen(page)).toBe('screen-categories');
 });
 
-test('Snake : quatre pastilles lettrées, un serpent qui avance, une fin de partie qui garde le score', async ({ page }) => {
+test('Snake : trois pastilles lettrées (niveau moyen), un serpent qui avance, une fin de partie qui garde le score', async ({ page }) => {
     await page.locator('#btn-arcade').click();
     await page.locator('.arcade-card', { hasText: 'Snake' }).click();
+    await expect(page.locator('#snake-difficulty .is-active')).toHaveText('Moyen');
     await page.locator('#snake-start').click();
-    await expect(page.locator('#snake-legend .snake-legend-item')).toHaveCount(4);
+    await expect(page.locator('#snake-legend .snake-legend-item')).toHaveCount(3);
     await expect(page.locator('#snake-status')).toContainText('3 vies'.replace('3 vies', '♥♥♥'));
     const x0 = await page.evaluate(() => snakeGame.snake[0].x);
     await expect.poll(() => page.evaluate(() => snakeGame.snake[0].x)).toBeGreaterThan(x0);
@@ -324,6 +325,7 @@ test('Chasse aux anachronismes : désigner, valider, voir pourquoi, cinq scènes
     await page.locator('#btn-arcade').click();
     await page.locator('.arcade-card', { hasText: 'Chasse aux anachronismes' }).click();
     expect(await visibleScreen(page)).toBe('screen-scene');
+    await page.locator('#scene-setup .btn').click();
     await expect(page.locator('#scene-status')).toContainText('Scène 1 / 5');
     await expect(page.locator('#scene-grid .scene-tile')).toHaveCount(8);
     await expect(page.locator('#scene-check')).toContainText('Rien à signaler');
@@ -622,6 +624,7 @@ test('Pendu des dates : des chiffres à proposer, une année entière avec « pl
     await page.locator('#btn-arcade').click();
     await page.locator('.arcade-card', { hasText: 'Pendu des dates' }).click();
     expect(await visibleScreen(page)).toBe('screen-hangman');
+    await page.locator('#hangman-setup .btn').click();
     await expect(page.locator('#hangman-status')).toContainText('Événement 1 / 5');
     await expect(page.locator('#hangman-pad .hangman-digit')).toHaveCount(10);
     const info = await page.evaluate(() => { const q = ReflexionCore.hangmanQuestion(hangmanGame); return { digits: q.digits, date: q.event.date }; });
@@ -629,7 +632,7 @@ test('Pendu des dates : des chiffres à proposer, une année entière avec « pl
     // Un chiffre qui n'y est pas : une vie de moins.
     const absent = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].find(d => !info.digits.includes(String(d)));
     await page.locator(`#hangman-pad .hangman-digit[data-digit="${absent}"]`).click();
-    await expect(page.locator('#hangman-lives')).toHaveAttribute('aria-label', '5 vies');
+    await expect(page.locator('#hangman-lives')).toHaveAttribute('aria-label', '3 vies');
     await expect(page.locator(`#hangman-pad .hangman-digit[data-digit="${absent}"]`)).toHaveClass(/wrong/);
     // Un chiffre qui y est : il se dévoile.
     await page.locator(`#hangman-pad .hangman-digit[data-digit="${info.digits[0]}"]`).click();
@@ -658,4 +661,36 @@ test('Pendu des dates : des chiffres à proposer, une année entière avec « pl
     await expect(page.locator('#hangman-over-list li')).toHaveCount(5);
     await page.locator('#screen-hangman .back-btn').click();
     await expect(page.locator('#arcade-best-hangman')).toContainText('Meilleur score');
+});
+
+test('Difficulté : le niveau choisi est retenu, change les règles (pendu, anachronismes) et pèse sur le score', async ({ page }) => {
+    await page.locator('#btn-arcade').click();
+    // Pendu, facile : six vies et le premier chiffre offert.
+    await page.locator('.arcade-card', { hasText: 'Pendu des dates' }).click();
+    await page.locator('#hangman-difficulty .arcade-difficulty-btn', { hasText: 'Facile' }).click();
+    await expect(page.locator('#hangman-difficulty')).toContainText('premier chiffre offert');
+    await page.locator('#hangman-setup .btn').click();
+    await expect(page.locator('#hangman-lives')).toHaveAttribute('aria-label', '6 vies');
+    const info = await page.evaluate(() => { const q = ReflexionCore.hangmanQuestion(hangmanGame); return { digits: q.digits }; });
+    if (info.digits.length >= 3) {
+        await expect(page.locator('#hangman-slots .hangman-slot.is-found').first()).toHaveText(info.digits[0]);
+        await expect(page.locator(`#hangman-pad .hangman-digit[data-digit="${info.digits[0]}"]`)).toBeDisabled();
+    }
+    // Le score compté : ×0,5 en facile.
+    await page.evaluate(() => { hangmanGame.score = 200; hangmanGame.over = true; hangmanFinish(); });
+    await expect(page.locator('#hangman-over-text')).toContainText('Facile ×0,5 : 100 pts comptés');
+    await expect(page.locator('#hangman-over-text')).toContainText('Meilleur score : 100');
+    await page.locator('#screen-hangman .back-btn').click();
+    // Retenu d'une visite à l'autre.
+    await page.locator('.arcade-card', { hasText: 'Pendu des dates' }).click();
+    await expect(page.locator('#hangman-difficulty .is-active')).toHaveText('Facile');
+    await page.locator('#hangman-difficulty .arcade-difficulty-btn', { hasText: 'Difficile' }).click();
+    await page.locator('#hangman-setup .btn').click();
+    await expect(page.locator('#hangman-lives')).toHaveAttribute('aria-label', '3 vies');
+    await page.locator('#screen-hangman .back-btn').click();
+    // Anachronismes, facile : le nombre d'intrus est annoncé.
+    await page.locator('.arcade-card', { hasText: 'Chasse aux anachronismes' }).click();
+    await page.locator('#scene-difficulty .arcade-difficulty-btn', { hasText: 'Facile' }).click();
+    await page.locator('#scene-setup .btn').click();
+    await expect(page.locator('#scene-intro')).toContainText('Intrus à trouver :');
 });

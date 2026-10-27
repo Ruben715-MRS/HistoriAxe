@@ -1424,6 +1424,9 @@
   },
   "pacman": {
     "title": "Zeitleisten-Pac-Man",
+    "level_easy": "3 Daten, ein langsames Gespenst, gemütlicher Pac-Man.",
+    "level_normal": "4 Daten, ab Runde 3 ein zweites Gespenst.",
+    "level_hard": "5 Daten, zwei, dann drei Gespenster, immer schneller.",
     "desc": "Friss das Datum des gesuchten Ereignisses, fliehe vor den Geistern.",
     "board_aria": "Pac-Man-Labyrinth",
     "status": "Runde {round} · {lives} · {score} Pkt.",
@@ -1454,6 +1457,9 @@
   },
   "snake": {
     "title": "Chronologische Schlange",
+    "level_easy": "3 Ereignisse, langsame Schlange.",
+    "level_normal": "3 Ereignisse, normales Tempo.",
+    "level_hard": "4 Ereignisse, schnelle Schlange.",
     "desc": "Friss die Ereignisse vom ältesten zum jüngsten.",
     "entry": "🐍 Chronologische Schlange",
     "rule": "Friss die Punkte in chronologischer Reihenfolge, vom ältesten zum jüngsten Ereignis. Ein Fehler, eine Wand oder dein eigener Schwanz: ein Leben weniger.",
@@ -1469,6 +1475,9 @@
   },
   "tetris": {
     "title": "Tetris der Jahrhunderte",
+    "level_easy": "Die Blöcke fallen langsam.",
+    "level_normal": "Die Blöcke fallen in normalem Tempo.",
+    "level_hard": "Die Blöcke fallen schnell.",
     "desc": "Ordne jedes fallende Ereignis seiner Epoche zu.",
     "entry": "🧱 Minispiel: Tetris der Jahrhunderte",
     "status": "{score} Pkt. · {rows} Reihen · Level {level}",
@@ -1935,6 +1944,10 @@
   },
   "scene": {
     "title": "Anachronismen-Jagd",
+    "level_easy": "Anzahl der Eindringlinge wird genannt, ein Fehler kostet nur einen halben Punkt.",
+    "level_normal": "Die Anzahl der Eindringlinge muss man erraten.",
+    "level_hard": "Die Anzahl der Eindringlinge muss man erraten, ein Fehler kostet doppelt.",
+    "count_hint": "Zu findende Eindringlinge: {count}.",
     "desc": "Entdecke in einer Szene, was nicht in diese Epoche gehört.",
     "status": "Szene {n} / {total} · {score} Pkt.",
     "grid_aria": "Elemente der Szene",
@@ -2071,6 +2084,9 @@
   },
   "hangman": {
     "title": "Datums-Galgenmännchen",
+    "level_easy": "6 Leben, erste Ziffer geschenkt.",
+    "level_normal": "4 Leben.",
+    "level_hard": "3 Leben, kein Hinweis „früher / später“.",
     "desc": "Errate das Jahr Ziffer für Ziffer: Jeder Fehler kostet ein Leben.",
     "status": "Ereignis {n} / {total} · {score} Pkt.",
     "prompt": "{title}: In welchem Jahr?",

@@ -393,7 +393,16 @@ let sceneReturn = 'screen-arcade';
 function openScene(fromScreen) {
     sceneReturn = fromScreen || 'screen-arcade';
     showScreen('screen-scene', 'forward');
-    sceneStart();
+    sceneSetup();
+}
+
+// Avant la partie : le choix du niveau.
+function sceneSetup() {
+    document.getElementById('scene-play').classList.add('hidden');
+    document.getElementById('scene-over').classList.add('hidden');
+    document.getElementById('scene-status').textContent = '';
+    renderArcadeDifficulty('scene');
+    document.getElementById('scene-setup').classList.remove('hidden');
 }
 
 function sceneBack() {
@@ -401,7 +410,8 @@ function sceneBack() {
 }
 
 function sceneStart() {
-    sceneGame = ReflexionCore.createScenes(ReflexionContent.SCENES);
+    sceneGame = ReflexionCore.createScenes(ReflexionContent.SCENES, undefined, undefined, { difficulty: arcadeDifficulty('scene') });
+    document.getElementById('scene-setup').classList.add('hidden');
     document.getElementById('scene-over').classList.add('hidden');
     document.getElementById('scene-play').classList.remove('hidden');
     sceneRender();
@@ -413,7 +423,9 @@ function sceneRender() {
     const scene = round.scene;
     document.getElementById('scene-status').textContent = t('scene.status', { n: g.index + 1, total: g.rounds.length, score: g.score });
     document.getElementById('scene-title').textContent = t('scene.when', { title: scene.title, when: scene.when });
-    document.getElementById('scene-intro').textContent = scene.intro + ' ' + t('scene.hint');
+    // En facile, on dit combien d'intrus la scène en compte ; sinon, c'est à deviner.
+    const announce = g.level.announce ? ' ' + t('scene.count_hint', { count: ReflexionCore.sceneTotal(scene) }) : '';
+    document.getElementById('scene-intro').textContent = scene.intro + ' ' + t('scene.hint') + announce;
     document.getElementById('scene-feedback').classList.add('hidden');
     const grid = document.getElementById('scene-grid');
     grid.innerHTML = '';
@@ -503,13 +515,14 @@ function sceneContinue() {
 
 function sceneFinish() {
     const g = sceneGame;
-    const best = arcadeRecord('scene', g.score);
+    const weighted = arcadeWeighted('scene', g.score, g.difficulty);
+    const best = arcadeRecord('scene', weighted.total);
     const found = g.results.reduce((n, r) => n + r.found, 0);
     const total = g.results.reduce((n, r) => n + r.total, 0);
     document.getElementById('scene-play').classList.add('hidden');
     document.getElementById('scene-status').textContent = '';
     document.getElementById('scene-over-text').textContent =
-        t('scene.over_text', { found, total, score: g.score }) + ' ' + t('arcade.best', { score: best.scene });
+        t('scene.over_text', { found, total, score: g.score }) + weighted.note + ' ' + t('arcade.best', { score: best.scene });
     const list = document.getElementById('scene-over-list');
     list.innerHTML = '';
     g.results.forEach(r => {
@@ -517,6 +530,7 @@ function sceneFinish() {
         li.textContent = t('scene.result_line', { title: r.title, found: r.found, total: r.total, wrong: r.wrong });
         list.appendChild(li);
     });
+    renderArcadeDifficulty('scene', 'scene-difficulty-over');
     document.getElementById('scene-over').classList.remove('hidden');
 }
 
@@ -531,7 +545,17 @@ function openHangman(fromScreen) {
     hangmanReturn = fromScreen || 'screen-arcade';
     showScreen('screen-hangman', 'forward');
     hangmanBindKeys();
-    hangmanStart();
+    hangmanSetup();
+}
+
+// Avant la partie : le choix du niveau.
+function hangmanSetup() {
+    hangmanGame = null;
+    document.getElementById('hangman-play').classList.add('hidden');
+    document.getElementById('hangman-over').classList.add('hidden');
+    document.getElementById('hangman-status').textContent = '';
+    renderArcadeDifficulty('hangman');
+    document.getElementById('hangman-setup').classList.remove('hidden');
 }
 
 function hangmanBack() {
@@ -539,8 +563,9 @@ function hangmanBack() {
 }
 
 function hangmanStart() {
-    hangmanGame = ReflexionCore.createHangman(arcadePool());
+    hangmanGame = ReflexionCore.createHangman(arcadePool(), undefined, undefined, { difficulty: arcadeDifficulty('hangman') });
     if (hangmanGame.empty) { alert(t('arcade.empty')); return; }
+    document.getElementById('hangman-setup').classList.add('hidden');
     document.getElementById('hangman-over').classList.add('hidden');
     document.getElementById('hangman-play').classList.remove('hidden');
     hangmanRender();
@@ -554,7 +579,7 @@ function hangmanRenderStatus() {
 function hangmanRenderLives() {
     const g = hangmanGame;
     const el = document.getElementById('hangman-lives');
-    el.textContent = '♥'.repeat(g.lives) + '♡'.repeat(ReflexionCore.HANGMAN_LIVES - g.lives);
+    el.textContent = '♥'.repeat(g.lives) + '♡'.repeat(g.level.lives - g.lives);
     el.setAttribute('aria-label', t('hangman.lives', { lives: g.lives }));
 }
 
@@ -584,6 +609,10 @@ function hangmanRender() {
         pad.appendChild(btn);
     }
     hangmanSetFormDisabled(false);
+    // Un chiffre déjà offert (facile) n'est plus à proposer.
+    pad.querySelectorAll('.hangman-digit').forEach(btn => {
+        if (g.guessed[btn.dataset.digit]) { btn.disabled = true; btn.classList.add('correct'); }
+    });
 }
 
 function hangmanRenderSlots() {
@@ -664,11 +693,12 @@ function hangmanContinue() {
 
 function hangmanFinish() {
     const g = hangmanGame;
-    const best = arcadeRecord('hangman', g.score);
+    const weighted = arcadeWeighted('hangman', g.score, g.difficulty);
+    const best = arcadeRecord('hangman', weighted.total);
     document.getElementById('hangman-play').classList.add('hidden');
     document.getElementById('hangman-status').textContent = '';
     document.getElementById('hangman-over-text').textContent =
-        t('hangman.found', { found: g.found, total: g.questions.length, score: g.score }) + ' ' + t('arcade.best', { score: best.hangman });
+        t('hangman.found', { found: g.found, total: g.questions.length, score: g.score }) + weighted.note + ' ' + t('arcade.best', { score: best.hangman });
     const list = document.getElementById('hangman-over-list');
     list.innerHTML = '';
     g.results.forEach(r => {
@@ -678,6 +708,7 @@ function hangmanFinish() {
             : t('hangman.result_lost', { title: r.title, year: formatYear(r.date) });
         list.appendChild(li);
     });
+    renderArcadeDifficulty('hangman', 'hangman-difficulty-over');
     document.getElementById('hangman-over').classList.remove('hidden');
 }
 

@@ -7,7 +7,7 @@
 //
 // Un événement du vivier : { id, title, date } (l'année, négative avant J.-C.).
 //
-//  - SNAKE : quatre événements sont posés sur la grille, des pastilles lettrées ; le serpent doit les manger du
+//  - SNAKE : trois événements (quatre en difficile) sont posés sur la grille, des pastilles lettrées ; le serpent doit les manger du
 //    plus ancien au plus récent. Dans le désordre : une vie en moins. Un mur ou sa queue : une vie en moins.
 //  - TETRIS : un événement tombe dans une des cinq colonnes (Antiquité, Moyen Âge, Temps modernes, 1789-1914,
 //    depuis 1914) ; on choisit la colonne. Un bloc bien rangé est vert, un autre est rouge et reste là. Une ligne
@@ -89,8 +89,13 @@
 
     // --- SNAKE ---------------------------------------------------------------------------------------
     var SNAKE_SIZE = 12;
-    var SNAKE_FOODS = 4;
     var SNAKE_LIVES = 3;
+    // Les niveaux : événements par manche, puis pas du serpent en ms : `start`, moins `step` par manche réussie, sans descendre sous `min`.
+    var SNAKE_LEVELS = {
+        easy: { foods: 3, start: 300, step: 8, min: 200 },
+        normal: { foods: 3, start: 220, step: 10, min: 120 },
+        hard: { foods: 4, start: 170, step: 10, min: 90 }
+    };
     var SNAKE_LETTERS = ['A', 'B', 'C', 'D'];
     var DIRS = { up: { x: 0, y: -1 }, down: { x: 0, y: 1 }, left: { x: -1, y: 0 }, right: { x: 1, y: 0 } };
 
@@ -122,7 +127,7 @@
 
     // Une manche : quatre événements, des lettres mélangées ; `order` est l'ordre chronologique attendu.
     function snakeNewRound(state, rng) {
-        var events = pickDistinct(state.pool, rng, SNAKE_FOODS);
+        var events = pickDistinct(state.pool, rng, state.level.foods);
         var letters = shuffle(SNAKE_LETTERS, rng);
         state.foods = [];
         state.items = events.map(function (event, i) { return { event: event, letter: letters[i], eaten: false }; });
@@ -133,15 +138,18 @@
         });
     }
 
-    function createSnake(pool, rng) {
+    // `options` : { difficulty: 'easy' | 'normal' | 'hard' } ; trois événements par manche (quatre en difficile).
+    function createSnake(pool, rng, options) {
+        var difficulty = normalizeDifficulty(options && options.difficulty);
         var state = {
+            difficulty: difficulty, level: SNAKE_LEVELS[difficulty],
             pool: playable(pool), rng: rng || Math.random, size: SNAKE_SIZE,
             snake: snakeStart(), dir: DIRS.right, nextDir: DIRS.right,
             foods: [], items: [], order: [], eaten: 0,
             lives: SNAKE_LIVES, score: 0, rounds: 0, over: false,
             mistakes: [], doneRounds: []
         };
-        if (pickDistinct(state.pool, state.rng, SNAKE_FOODS).length < SNAKE_FOODS) { state.over = true; state.empty = true; return state; }
+        if (pickDistinct(state.pool, state.rng, state.level.foods).length < state.level.foods) { state.over = true; state.empty = true; return state; }
         snakeNewRound(state, state.rng);
         return state;
     }
@@ -198,7 +206,7 @@
             state.score += 10;
             state.foods.splice(state.foods.indexOf(food), 1);
             events.push('ok');
-            if (state.eaten >= SNAKE_FOODS) {
+            if (state.eaten >= state.level.foods) {
                 state.rounds += 1;
                 state.score += 100;
                 state.doneRounds.push(state.order.map(function (it) { return it.event; }));
@@ -216,14 +224,20 @@
         return events;
     }
 
-    // Millisecondes entre deux pas : 220 au départ, 120 au mieux, une manche réussie accélère un peu.
+    // Millisecondes entre deux pas : 300 / 220 / 170 au départ selon le niveau ; une manche réussie accélère un peu (200 / 120 / 90 au mieux).
     function snakeInterval(state) {
-        return Math.max(120, 220 - state.rounds * 10);
+        return Math.max(state.level.min, state.level.start - state.rounds * state.level.step);
     }
 
     // --- TETRIS ---------------------------------------------------------------------------------------
     var TETRIS_COLS = PERIODS.length;
     var TETRIS_ROWS = 10;
+    // Les niveaux : millisecondes entre deux pas de gravité, `start` moins `step` par niveau, sans descendre sous `min`.
+    var TETRIS_LEVELS = {
+        easy: { start: 900, step: 40, min: 400 },
+        normal: { start: 700, step: 60, min: 250 },
+        hard: { start: 550, step: 70, min: 180 }
+    };
 
     function emptyRow() {
         var row = [];
@@ -231,8 +245,11 @@
         return row;
     }
 
-    function createTetris(pool, rng) {
+    // `options` : { difficulty: 'easy' | 'normal' | 'hard' } ; seule la vitesse de chute change.
+    function createTetris(pool, rng, options) {
+        var difficulty = normalizeDifficulty(options && options.difficulty);
         var state = {
+            difficulty: difficulty, level: TETRIS_LEVELS[difficulty],
             pool: playable(pool), rng: rng || Math.random, cols: TETRIS_COLS, rows: TETRIS_ROWS,
             grid: [], piece: null, byPeriod: [], bag: [], used: {},
             score: 0, cleared: 0, placed: 0, good: 0, mistakes: [], over: false
@@ -346,8 +363,8 @@
     }
 
     function tetrisLevel(state) { return 1 + Math.floor(state.cleared / 2); }
-    // Millisecondes entre deux pas de gravité : 700 au départ, 250 au mieux.
-    function tetrisInterval(state) { return Math.max(250, 700 - (tetrisLevel(state) - 1) * 60); }
+    // Millisecondes entre deux pas de gravité : 900 / 700 / 550 au départ selon le niveau, 400 / 250 / 180 au mieux.
+    function tetrisInterval(state) { return Math.max(state.level.min, state.level.start - (tetrisLevel(state) - 1) * state.level.step); }
 
 
     // --- PAC-MAN ---------------------------------------------------------------------------------------
@@ -698,10 +715,10 @@
 
     return {
         themePool: themePool, scopeKey: scopeKey,
-        PERIODS: PERIODS, SNAKE_SIZE: SNAKE_SIZE, SNAKE_FOODS: SNAKE_FOODS, SNAKE_LIVES: SNAKE_LIVES,
+        PERIODS: PERIODS, SNAKE_SIZE: SNAKE_SIZE, SNAKE_LIVES: SNAKE_LIVES,
         TETRIS_COLS: TETRIS_COLS, TETRIS_ROWS: TETRIS_ROWS, DIRS: DIRS,
         periodOf: periodOf, isAmbiguous: isAmbiguous, playable: playable, pickDistinct: pickDistinct, shuffle: shuffle,
-        createSnake: createSnake, snakeTurn: snakeTurn, snakeStep: snakeStep, snakeInterval: snakeInterval,
+        createSnake: createSnake, SNAKE_LEVELS: SNAKE_LEVELS, TETRIS_LEVELS: TETRIS_LEVELS, snakeTurn: snakeTurn, snakeStep: snakeStep, snakeInterval: snakeInterval,
         createTetris: createTetris, tetrisMove: tetrisMove, tetrisMoveTo: tetrisMoveTo, tetrisTick: tetrisTick,
         tetrisDrop: tetrisDrop, tetrisLevel: tetrisLevel, tetrisInterval: tetrisInterval,
         PAC_SIZE: PAC_SIZE, PAC_MAZE: PAC_MAZE, PAC_START: PAC_START, PAC_LIVES: PAC_LIVES, INV_LANES: INV_LANES, INV_BREACH: INV_BREACH,

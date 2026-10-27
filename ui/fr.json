@@ -1453,6 +1453,9 @@
   },
   "pacman": {
     "title": "Pac-Man de la frise",
+    "level_easy": "3 dates, un fantôme lent, Pac-Man tranquille.",
+    "level_normal": "4 dates, un second fantôme à partir de la manche 3.",
+    "level_hard": "5 dates, deux puis trois fantômes, de plus en plus vite.",
     "desc": "Mangez la date de l'événement demandé, fuyez les fantômes.",
     "board_aria": "Labyrinthe du Pac-Man",
     "status": "Manche {round} · {lives} · {score} pts",
@@ -1483,6 +1486,9 @@
   },
   "snake": {
     "title": "Snake chronologique",
+    "level_easy": "3 événements, serpent lent.",
+    "level_normal": "3 événements, vitesse normale.",
+    "level_hard": "4 événements, serpent rapide.",
     "desc": "Mangez les événements du plus ancien au plus récent.",
     "entry": "🐍 Snake chronologique",
     "rule": "Mangez les pastilles dans l'ordre chronologique, de l'événement le plus ancien au plus récent. Une erreur, un mur ou votre queue : une vie en moins.",
@@ -1498,6 +1504,9 @@
   },
   "tetris": {
     "title": "Tetris des siècles",
+    "level_easy": "Les blocs tombent lentement.",
+    "level_normal": "Les blocs tombent à vitesse normale.",
+    "level_hard": "Les blocs tombent vite.",
     "desc": "Rangez chaque événement qui tombe dans sa période.",
     "entry": "🧱 Mini-jeu : le Tetris des siècles",
     "status": "{score} pts · {rows} lignes · niveau {level}",
@@ -1966,6 +1975,10 @@
   },
   "scene": {
     "title": "Chasse aux anachronismes",
+    "level_easy": "Nombre d'intrus annoncé, une erreur ne retire que la moitié d'un point.",
+    "level_normal": "Nombre d'intrus à deviner.",
+    "level_hard": "Nombre d'intrus à deviner, une erreur retire le double.",
+    "count_hint": "Intrus à trouver : {count}.",
     "desc": "Repérez dans une scène ce qui n'a pas sa place à cette époque.",
     "status": "Scène {n} / {total} · {score} pts",
     "grid_aria": "Éléments de la scène",
@@ -2093,6 +2106,9 @@
   },
   "hangman": {
     "title": "Pendu des dates",
+    "level_easy": "6 vies, premier chiffre offert.",
+    "level_normal": "4 vies.",
+    "level_hard": "3 vies, pas de « plus tôt / plus tard ».",
     "desc": "Devinez l'année chiffre par chiffre : chaque erreur coûte une vie.",
     "status": "Événement {n} / {total} · {score} pts",
     "prompt": "{title} : en quelle année ?",

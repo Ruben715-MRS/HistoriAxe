@@ -898,6 +898,7 @@
         <button class="back-btn" onclick="snakeBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
         <h2 class="header-title" data-i18n="snake.title">Snake chronologique</h2>
         <p class="modes-header-subtitle" id="snake-status" role="status"></p>
+        <div class="arcade-difficulty" id="snake-difficulty"></div>
         <p class="arcade-rule" data-i18n="snake.rule">Mangez les pastilles dans l'ordre chronologique, de l'événement le plus ancien au plus récent. Une erreur, un mur ou votre queue : une vie en moins.</p>
         <div class="arcade-board" id="snake-board">
             <canvas id="snake-canvas" class="arcade-canvas" role="img" aria-label="Plateau du Snake" data-i18n-attr="aria-label:snake.board_aria"></canvas>
@@ -924,6 +925,7 @@
         <h2 class="header-title" data-i18n="tetris.title">Tetris des siècles</h2>
         <p class="modes-header-subtitle" id="tetris-status" role="status"></p>
         <p class="tetris-banner" id="tetris-banner" role="status"></p>
+        <div class="arcade-difficulty" id="tetris-difficulty"></div>
         <div class="tetris-heads" id="tetris-heads"></div>
         <div class="arcade-board" id="tetris-board">
             <canvas id="tetris-canvas" class="arcade-canvas" role="img" aria-label="Plateau du Tetris" data-i18n-attr="aria-label:tetris.board_aria"></canvas>
@@ -1064,7 +1066,11 @@
         <button class="back-btn" onclick="sceneBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
         <h2 class="header-title" data-i18n="scene.title">Chasse aux anachronismes</h2>
         <p class="modes-header-subtitle" id="scene-status" role="status"></p>
-        <div id="scene-play">
+        <div id="scene-setup" class="race-setup">
+            <div class="arcade-difficulty" id="scene-difficulty"></div>
+            <button type="button" class="btn" onclick="sceneStart()" data-i18n="arcade.play">Jouer</button>
+        </div>
+        <div id="scene-play" class="hidden">
             <h3 class="scene-title" id="scene-title"></h3>
             <p class="scene-intro" id="scene-intro"></p>
             <div class="scene-grid" id="scene-grid" role="group" aria-label="Éléments de la scène" data-i18n-attr="aria-label:scene.grid_aria"></div>
@@ -1079,6 +1085,7 @@
             <h3 data-i18n="arcade.over">Partie terminée</h3>
             <p id="scene-over-text"></p>
             <ul class="arcade-mistakes" id="scene-over-list"></ul>
+            <div class="arcade-difficulty" id="scene-difficulty-over"></div>
             <button type="button" class="btn" onclick="sceneStart()" data-i18n="arcade.replay">Rejouer</button>
         </div>
     </div>
@@ -1212,7 +1219,11 @@
         <button class="back-btn" onclick="hangmanBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
         <h2 class="header-title" data-i18n="hangman.title">Pendu des dates</h2>
         <p class="modes-header-subtitle" id="hangman-status" role="status"></p>
-        <div id="hangman-play">
+        <div id="hangman-setup" class="race-setup">
+            <div class="arcade-difficulty" id="hangman-difficulty"></div>
+            <button type="button" class="btn" onclick="hangmanStart()" data-i18n="arcade.play">Jouer</button>
+        </div>
+        <div id="hangman-play" class="hidden">
             <p class="cause-question" id="hangman-prompt"></p>
             <p class="hangman-bc hidden" id="hangman-bc" data-i18n="hangman.bc">av. J.-C.</p>
             <div class="hangman-slots" id="hangman-slots" aria-live="polite"></div>
@@ -1235,6 +1246,7 @@
             <h3 data-i18n="arcade.over">Partie terminée</h3>
             <p id="hangman-over-text"></p>
             <ul class="arcade-mistakes" id="hangman-over-list"></ul>
+            <div class="arcade-difficulty" id="hangman-difficulty-over"></div>
             <button type="button" class="btn" onclick="hangmanStart()" data-i18n="arcade.replay">Rejouer</button>
         </div>
     </div>

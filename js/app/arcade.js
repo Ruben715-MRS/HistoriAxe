@@ -105,9 +105,11 @@ function arcadeMultiplierLabel(difficulty) {
     return new Intl.NumberFormat(document.documentElement.lang || 'fr').format(ArcadeCore.DIFFICULTY_MULTIPLIER[difficulty]);
 }
 
-// Trois boutons à choix unique dans `#<game>-difficulty`, et une ligne qui dit ce que le niveau change aux points.
-function renderArcadeDifficulty(game) {
-    const box = document.getElementById(game + '-difficulty');
+// Trois boutons à choix unique dans `#<game>-difficulty` (ou `containerId`), une ligne qui dit ce que le niveau change dans le jeu
+// (`<game>.level_<niveau>`), et une autre ce qu'il change aux points.
+function renderArcadeDifficulty(game, containerId) {
+    const id = containerId || game + '-difficulty';
+    const box = document.getElementById(id);
     if (!box) return;
     const current = arcadeDifficulty(game);
     box.innerHTML = '';
@@ -121,13 +123,17 @@ function renderArcadeDifficulty(game) {
         btn.className = 'arcade-difficulty-btn' + (level === current ? ' is-active' : '');
         btn.setAttribute('aria-pressed', level === current ? 'true' : 'false');
         btn.textContent = t('arcade.difficulty_' + level);
-        btn.addEventListener('click', () => { arcadeSetDifficulty(game, level); renderArcadeDifficulty(game); });
+        btn.addEventListener('click', () => { arcadeSetDifficulty(game, level); renderArcadeDifficulty(game, id); });
         group.appendChild(btn);
     });
+    const detail = document.createElement('small');
+    detail.className = 'arcade-difficulty-hint';
+    detail.textContent = t(game + '.level_' + current);
     const hint = document.createElement('small');
     hint.className = 'arcade-difficulty-hint';
     hint.textContent = t('arcade.difficulty_hint', { mult: arcadeMultiplierLabel(current) });
     box.appendChild(group);
+    box.appendChild(detail);
     box.appendChild(hint);
 }
 
@@ -325,6 +331,8 @@ function openSnake(fromScreen) {
     document.getElementById('snake-start').classList.remove('hidden');
     document.getElementById('snake-legend').innerHTML = '';
     document.getElementById('snake-status').textContent = '';
+    renderArcadeDifficulty('snake');
+    document.getElementById('snake-difficulty').classList.remove('hidden');
     snakeBindInput();
     snakeDraw();
 }
@@ -341,10 +349,11 @@ function snakeStop() {
 
 function snakeStart() {
     const pool = arcadePool();
-    const game = ArcadeCore.createSnake(pool);
+    const game = ArcadeCore.createSnake(pool, undefined, { difficulty: arcadeDifficulty('snake') });
     if (game.empty) { alert(t('arcade.empty')); return; }
     snakeStop();
     snakeGame = game;
+    document.getElementById('snake-difficulty').classList.add('hidden');
     document.getElementById('snake-start').classList.add('hidden');
     document.getElementById('snake-over').classList.add('hidden');
     snakeRenderLegend();
@@ -436,10 +445,11 @@ function snakeDraw() {
 function snakeFinish() {
     snakeStop();
     const g = snakeGame;
-    const best = arcadeRecord('snake', g.score);
+    const weighted = arcadeWeighted('snake', g.score, g.difficulty);
+    const best = arcadeRecord('snake', weighted.total);
     const over = document.getElementById('snake-over');
     document.getElementById('snake-over-text').textContent =
-        t('snake.over_text', { rounds: g.rounds, score: g.score }) + ' ' + t('arcade.best', { score: best.snake });
+        t('snake.over_text', { rounds: g.rounds, score: g.score }) + weighted.note + ' ' + t('arcade.best', { score: best.snake });
     const list = document.getElementById('snake-over-list');
     list.innerHTML = '';
     g.mistakes.slice(0, 5).forEach(m => {
@@ -451,6 +461,8 @@ function snakeFinish() {
     });
     over.classList.remove('hidden');
     document.getElementById('snake-start').classList.add('hidden');
+    renderArcadeDifficulty('snake');
+    document.getElementById('snake-difficulty').classList.remove('hidden');
 }
 
 // Les commandes : flèches (et WASD) au clavier, glisser du doigt sur le plateau (arcadeBindSwipe).
@@ -488,6 +500,8 @@ function openTetris(fromScreen) {
     document.getElementById('tetris-start').classList.remove('hidden');
     document.getElementById('tetris-banner').textContent = '';
     document.getElementById('tetris-status').textContent = '';
+    renderArcadeDifficulty('tetris');
+    document.getElementById('tetris-difficulty').classList.remove('hidden');
     tetrisRenderHeads();
     tetrisBindInput();
     tetrisDraw();
@@ -523,10 +537,11 @@ function tetrisRenderHeads() {
 }
 
 function tetrisStart() {
-    const game = ArcadeCore.createTetris(arcadePool());
+    const game = ArcadeCore.createTetris(arcadePool(), undefined, { difficulty: arcadeDifficulty('tetris') });
     if (game.empty) { alert(t('arcade.empty')); return; }
     tetrisStop();
     tetrisGame = game;
+    document.getElementById('tetris-difficulty').classList.add('hidden');
     document.getElementById('tetris-start').classList.add('hidden');
     document.getElementById('tetris-over').classList.add('hidden');
     tetrisRender();
@@ -607,9 +622,10 @@ function tetrisDraw() {
 function tetrisFinish() {
     tetrisStop();
     const g = tetrisGame;
-    const best = arcadeRecord('tetris', g.score);
+    const weighted = arcadeWeighted('tetris', g.score, g.difficulty);
+    const best = arcadeRecord('tetris', weighted.total);
     document.getElementById('tetris-over-text').textContent =
-        t('tetris.over_text', { placed: g.placed, good: g.good, rows: g.cleared, score: g.score }) + ' ' + t('arcade.best', { score: best.tetris });
+        t('tetris.over_text', { placed: g.placed, good: g.good, rows: g.cleared, score: g.score }) + weighted.note + ' ' + t('arcade.best', { score: best.tetris });
     const list = document.getElementById('tetris-over-list');
     list.innerHTML = '';
     g.mistakes.slice(0, 5).forEach(m => {
@@ -622,6 +638,8 @@ function tetrisFinish() {
     });
     document.getElementById('tetris-over').classList.remove('hidden');
     document.getElementById('tetris-start').classList.add('hidden');
+    renderArcadeDifficulty('tetris');
+    document.getElementById('tetris-difficulty').classList.remove('hidden');
 }
 
 function tetrisBindInput() {
