@@ -85,3 +85,15 @@ test('les poses de la boutique et de l\'album : essayage et danse, aussi en cost
     assert.ok(danse.includes('ca-danceL') && danse.includes('ca-danceR'), 'deux pattes levées');
     assert.equal((danse.match(/#25272E/g) || []).length >= 3, true, 'les deux bras portent la manche du pourpoint');
 });
+
+test('chaque costume existe de profil, en marche comme en vol', () => {
+    for (const [world, kind] of Object.entries(A.COSTUMES)) {
+        for (const svg of [A.walk({ costume: world }), A.fly({ costume: world }), A.fly({ costume: world, hurt: true })]) {
+            assertWellFormed(svg);
+            assert.ok(svg.includes('data-costume="' + kind + '"'), world);
+            assert.ok(svg.length > A.walk().length * 0.9, world + ' : dessin de profil vide');
+        }
+        assert.ok(A.walk({ costume: world }) !== A.walk().replace(/clio-art-\d+/g, ''), world);
+    }
+    assert.ok(!A.walk().includes('data-costume'));
+});

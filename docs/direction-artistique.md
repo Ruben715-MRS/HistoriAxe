@@ -176,7 +176,7 @@ marche sur le Chemin, en vol pour Flappy Clio) ; ses animations sont
 dans `css/style.css` (classes `ca-*`). Costumes déjà dessinés : les cinq de l'Antiquité, les quatre du Moyen Âge (mérovingien, cotte de mailles, cape fleurdelisée, armure de Jeanne) les quatre des Temps
 modernes (Léonard, fraise, Roi-Soleil, philosophe) les trois du XIXᵉ siècle (bonnet phrygien, haut-de-forme, Belle Époque) et les cinq du XXᵉ siècle et
 d'aujourd'hui (casque Adrian, années folles, combinaison spatiale, perfecto, tenue connectée) : **les 21 costumes sont
-dessinés**, de face.
+dessinés**, de face et de profil (Clio marche sur le Chemin et vole dans Flappy Clio avec son costume).
 
 Palette figée : pelage `#EE8A3C`, rayures `#C65E1C`, contour `#9C4A17`, crème `#FFF0DA`, intérieur des oreilles
 `#F7B3A6`, yeux `#5FB46A`, truffe `#E26F80`, pupilles `#17171F`.

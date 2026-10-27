@@ -196,14 +196,17 @@ function breakoutBindInput() {
 // =====================================================================================================
 // === FLAPPY CLIO ===
 // =====================================================================================================
-// Le dessin de Clio en vol, converti une fois en image pour le canevas (normale, et yeux en croix après un choc).
+// Le dessin de Clio en vol, avec son costume, converti une fois en image pour le canevas (normale, et yeux en croix
+// après un choc).
 const FLAPPY_CLIO_ANCHOR = { x: 140 / ClioArt.FLY.W, y: 94 / ClioArt.FLY.H };
 const flappyClioSprites = {};
+let flappyClioCostume = ''; // lu une fois par partie (flappyStart), pas à chaque image
 function flappyClioSprite(hurt) {
-    const key = hurt ? 'hurt' : 'ok';
+    const costume = flappyClioCostume;
+    const key = (hurt ? 'hurt' : 'ok') + ':' + costume;
     if (!flappyClioSprites[key]) {
         const img = new Image();
-        img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(ClioArt.fly({ hurt: hurt }));
+        img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(ClioArt.fly({ hurt: hurt, costume: costume }));
         flappyClioSprites[key] = img;
     }
     return flappyClioSprites[key];
@@ -243,6 +246,8 @@ function flappyStop() {
 }
 
 function flappyStart() {
+    const worn = typeof clioWornCostume === 'function' ? clioWornCostume() : null;
+    flappyClioCostume = worn ? worn.world : '';
     const game = ArcadeExtraCore.createFlappy(arcadePool());
     if (game.empty) { alert(t('arcade.empty')); return; }
     flappyStop();

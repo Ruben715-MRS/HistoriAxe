@@ -139,6 +139,16 @@ test('après une première victoire, Clio marche jusqu\'au niveau suivant', asyn
     expect(nodeId).toBe('prehistoire-2');
 });
 
+test('costumée, Clio marche aussi de profil avec son costume', async ({ page }) => {
+    await page.evaluate(() => {
+        localStorage.setItem('historiaxe_rewards_v1', JSON.stringify({ coins: 0, owned: ['costume-prehistoire'], equipped: { costume: 'costume-prehistoire', decor: null } }));
+        pathStartLevel('prehistoire-1');
+    });
+    await jouerNiveau(page, { vies: 3 });
+    await page.evaluate(() => { expeditionAbort(); showScreen('screen-path'); renderPath(); });
+    await expect(page.locator('.clio-marker .clio-walk svg.clio-walk-art')).toHaveAttribute('data-costume', 'mammouth');
+});
+
 test('avec « réduire les animations », Clio ne marche pas', async ({ page }) => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.evaluate(() => pathStartLevel('prehistoire-1'));
