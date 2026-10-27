@@ -12,8 +12,9 @@
 //  - TETRIS : un événement tombe dans une des cinq colonnes (Antiquité, Moyen Âge, Temps modernes, 1789-1914,
 //    depuis 1914) ; on choisit la colonne. Un bloc bien rangé est vert, un autre est rouge et reste là. Une ligne
 //    de cinq blocs verts disparaît.
-//  - PAC-MAN : dans un labyrinthe, cinq pastilles portent des années ; la consigne nomme un événement, il faut manger
-//    la pastille de sa date. Une autre année, ou un fantôme : une vie en moins.
+//  - PAC-MAN : dans un labyrinthe, trois à cinq pastilles (selon le niveau) portent des années ; la consigne nomme un événement,
+//    il faut manger la pastille de sa date. Une autre année, ou un fantôme : une vie en moins. Un compte à rebours fige le jeu
+//    à chaque départ.
 //  - SPACE INVADERS : des cartes-événements descendent sur trois voies, sous l'intitulé d'une période. On tire sur
 //    celles qui n'en font PAS partie (les anachronismes) et on laisse passer les autres.
 
@@ -71,6 +72,19 @@
             out.push(e);
         });
         return out;
+    }
+
+    // --- Les niveaux de difficulté (communs à tous les jeux d'arcade et de réflexion) ---------------------
+    // Un seul score par jeu, pas un par niveau : le niveau pèse sur les points comptés pour le record (facile ×0,5, difficile ×1,5).
+    var DIFFICULTIES = ['easy', 'normal', 'hard'];
+    var DIFFICULTY_MULTIPLIER = { easy: 0.5, normal: 1, hard: 1.5 };
+
+    function normalizeDifficulty(difficulty) {
+        return DIFFICULTY_MULTIPLIER[difficulty] ? difficulty : 'normal';
+    }
+
+    function difficultyScore(score, difficulty) {
+        return Math.round((score || 0) * DIFFICULTY_MULTIPLIER[normalizeDifficulty(difficulty)]);
     }
 
     // --- SNAKE ---------------------------------------------------------------------------------------
@@ -354,8 +368,14 @@
     var PAC_SIZE = PAC_MAZE.length;
     var PAC_START = { x: 5, y: 9 };
     var PAC_GHOST_STARTS = [{ x: 1, y: 1 }, { x: 9, y: 1 }, { x: 1, y: 5 }];
-    var PAC_PELLETS = 5;
     var PAC_LIVES = 3;
+    // Les niveaux : nombre de dates à manger par manche ; un fantôme avance un pas sur `ghostEvery` ; `ghosts` au départ, puis `ghostsLater` à partir de
+    // la manche `laterFromRound` (0 = la première) ; pas de Pac-Man en ms : `start`, moins `step` par manche, sans descendre sous `min`.
+    var PAC_LEVELS = {
+        easy: { pellets: 3, ghostEvery: 3, ghosts: 1, ghostsLater: 1, laterFromRound: 0, start: 320, step: 6, min: 260 },
+        normal: { pellets: 4, ghostEvery: 2, ghosts: 1, ghostsLater: 2, laterFromRound: 2, start: 260, step: 8, min: 200 },
+        hard: { pellets: 5, ghostEvery: 2, ghosts: 2, ghostsLater: 3, laterFromRound: 1, start: 200, step: 12, min: 120 }
+    };
 
     function pacOpen(x, y) {
         return x >= 0 && y >= 0 && x < PAC_SIZE && y < PAC_SIZE && PAC_MAZE[y].charAt(x) === ' ';
@@ -381,14 +401,15 @@
         state.player = { x: PAC_START.x, y: PAC_START.y };
         state.dir = DIRS.left;
         state.nextDir = DIRS.left;
-        var count = Math.min(PAC_GHOST_STARTS.length, 1 + state.rounds);
+        var level = state.level;
+        var count = Math.min(PAC_GHOST_STARTS.length, state.rounds >= level.laterFromRound ? level.ghostsLater : level.ghosts);
         state.ghosts = [];
         for (var i = 0; i < count; i++) state.ghosts.push({ x: PAC_GHOST_STARTS[i].x, y: PAC_GHOST_STARTS[i].y, last: null });
     }
 
-    // Une manche : cinq événements aux années différentes, posés loin du départ ; la consigne les prend dans le désordre.
+    // Une manche : trois à cinq événements (selon le niveau) aux années différentes, posés loin du départ ; la consigne les prend dans le désordre.
     function pacNewRound(state) {
-        var events = pickDistinct(state.pool, state.rng, PAC_PELLETS);
+        var events = pickDistinct(state.pool, state.rng, state.level.pellets);
         var dist = pacDistances(PAC_START);
         var cells = [];
         for (var y = 0; y < PAC_SIZE; y++) {
@@ -403,13 +424,17 @@
         state.targetIndex = 0;
     }
 
-    function createPac(pool, rng) {
+    // `options` : { difficulty: 'easy' | 'normal' | 'hard' }. La partie démarre figée (`frozen`) : l'écran fait son compte à rebours, puis appelle
+    // pacRelease. Le jeu se fige de nouveau après chaque vie perdue et chaque manche réussie.
+    function createPac(pool, rng, options) {
+        var difficulty = normalizeDifficulty(options && options.difficulty);
         var state = {
+            difficulty: difficulty, level: PAC_LEVELS[difficulty], frozen: true,
             pool: playable(pool), rng: rng || Math.random, size: PAC_SIZE, maze: PAC_MAZE,
             player: null, dir: DIRS.left, nextDir: DIRS.left, ghosts: [], pellets: [], targets: [], targetIndex: 0,
             lives: PAC_LIVES, score: 0, rounds: 0, tick: 0, over: false, mistakes: []
         };
-        if (pickDistinct(state.pool, state.rng, PAC_PELLETS).length < PAC_PELLETS) { state.over = true; state.empty = true; return state; }
+        if (pickDistinct(state.pool, state.rng, state.level.pellets).length < state.level.pellets) { state.over = true; state.empty = true; return state; }
         pacResetPositions(state);
         pacNewRound(state);
         return state;
@@ -426,7 +451,13 @@
     function pacLoseLife(state, why, events) {
         state.lives -= 1;
         events.push(why);
-        if (state.lives <= 0) { state.over = true; events.push('over'); }
+        if (state.lives <= 0) { state.over = true; events.push('over'); return; }
+        state.frozen = true;
+    }
+
+    // Fin du compte à rebours : le jeu repart.
+    function pacRelease(state) {
+        state.frozen = false;
     }
 
     function pacCaught(state) {
@@ -453,10 +484,11 @@
         ghost.y = pick.y;
     }
 
-    // Un pas de temps. Renvoie : 'ok', 'wrong', 'caught', 'round', 'over'. Les fantômes avancent un pas sur deux.
+    // Un pas de temps. Renvoie : 'ok', 'wrong', 'caught', 'round', 'over'. Les fantômes avancent un pas sur deux (un sur trois en facile).
+    // Figé (départ, nouvelle manche, vie perdue), rien ne bouge jusqu'à pacRelease.
     function pacStep(state) {
         var events = [];
-        if (state.over) return events;
+        if (state.over || state.frozen) return events;
         state.tick += 1;
         var p = state.player;
         if (pacOpen(p.x + state.nextDir.x, p.y + state.nextDir.y)) state.dir = state.nextDir;
@@ -477,6 +509,7 @@
                     events.push('round');
                     pacResetPositions(state);
                     pacNewRound(state);
+                    state.frozen = true;
                 }
             } else {
                 state.mistakes.push({ ate: pellet.event, wanted: target });
@@ -491,7 +524,7 @@
             if (!state.over) pacResetPositions(state);
             return events;
         }
-        if (state.tick % 2 === 0) {
+        if (state.tick % state.level.ghostEvery === 0) {
             var dist = pacDistances(state.player);
             state.ghosts.forEach(function (g) { pacMoveGhost(state, g, dist); });
             if (pacCaught(state)) {
@@ -502,8 +535,8 @@
         return events;
     }
 
-    // Millisecondes entre deux pas : 200 au départ, 120 au mieux.
-    function pacInterval(state) { return Math.max(120, 200 - state.rounds * 12); }
+    // Millisecondes entre deux pas : 320 / 260 / 200 au départ selon le niveau, de moins en moins à chaque manche (120 au mieux en difficile).
+    function pacInterval(state) { return Math.max(state.level.min, state.level.start - state.rounds * state.level.step); }
 
     // --- SPACE INVADERS ----------------------------------------------------------------------------------
     var INV_LANES = 3;
@@ -673,7 +706,8 @@
         tetrisDrop: tetrisDrop, tetrisLevel: tetrisLevel, tetrisInterval: tetrisInterval,
         PAC_SIZE: PAC_SIZE, PAC_MAZE: PAC_MAZE, PAC_START: PAC_START, PAC_LIVES: PAC_LIVES, INV_LANES: INV_LANES, INV_BREACH: INV_BREACH,
         pacOpen: pacOpen, pacDistances: pacDistances, createPac: createPac, pacTurn: pacTurn, pacStep: pacStep, pacTarget: pacTarget,
-        pacInterval: pacInterval,
+        pacInterval: pacInterval, pacRelease: pacRelease, PAC_LEVELS: PAC_LEVELS,
+        DIFFICULTIES: DIFFICULTIES, DIFFICULTY_MULTIPLIER: DIFFICULTY_MULTIPLIER, normalizeDifficulty: normalizeDifficulty, difficultyScore: difficultyScore,
         createInvaders: createInvaders, invMove: invMove, invMoveTo: invMoveTo, invFire: invFire, invStep: invStep, invSpeed: invSpeed,
         normalizeBest: normalizeBest, recordBest: recordBest
     };

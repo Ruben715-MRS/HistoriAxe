@@ -10559,6 +10559,91 @@ input:not([type="range"]), label, select, summary, textarea {
     display: none;
 }
 
+/* La difficulté (facile / moyen / difficile) au-dessus du plateau d'un jeu. */
+.arcade-difficulty {
+    flex: 0 0 auto;
+    width: min(100%, 360px);
+    margin: 0 0 10px;
+    text-align: center;
+}
+
+.arcade-difficulty.hidden {
+    display: none;
+}
+
+.arcade-difficulty-group {
+    display: flex;
+    gap: 6px;
+}
+
+.arcade-difficulty-btn {
+    flex: 1;
+    min-height: 44px;
+    padding: 0 8px;
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    background: var(--surface);
+    color: var(--text-dark);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.arcade-difficulty-btn.is-active {
+    background: var(--text-dark);
+    color: var(--surface);
+    border-color: var(--text-dark);
+}
+
+.arcade-difficulty-hint {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    color: var(--muted-text);
+}
+
+/* « 3, 2, 1, Go ! » par-dessus le plateau : le chiffre arrive en grand et se pose (façon départ de course). */
+.arcade-countdown {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    font-size: 96px;
+    font-weight: 900;
+    line-height: 1;
+    color: #fde047;
+    text-shadow: 0 4px 0 #b45309, 0 0 24px rgba(0, 0, 0, 0.6);
+}
+
+.arcade-countdown.is-go {
+    font-size: 72px;
+    color: #4ade80;
+    text-shadow: 0 4px 0 #166534, 0 0 24px rgba(0, 0, 0, 0.6);
+}
+
+.arcade-countdown.hidden {
+    display: none;
+}
+
+.arcade-countdown.is-pop {
+    animation: arcade-count-pop 0.5s ease-out;
+}
+
+@keyframes arcade-count-pop {
+    from { transform: scale(2.4); opacity: 0; }
+    60% { opacity: 1; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .arcade-countdown.is-pop {
+        animation: none;
+    }
+}
+
 .snake-legend {
     flex: 0 0 auto;
     list-style: none;

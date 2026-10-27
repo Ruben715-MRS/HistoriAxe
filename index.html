@@ -949,8 +949,10 @@
         <h2 class="header-title" data-i18n="pacman.title">Pac-Man de la frise</h2>
         <p class="modes-header-subtitle" id="pacman-status" role="status"></p>
         <p class="tetris-banner" id="pacman-banner" role="status"></p>
+        <div class="arcade-difficulty" id="pacman-difficulty"></div>
         <div class="arcade-board" id="pacman-board">
             <canvas id="pacman-canvas" class="arcade-canvas" role="img" aria-label="Labyrinthe du Pac-Man" data-i18n-attr="aria-label:pacman.board_aria"></canvas>
+            <div class="arcade-countdown hidden" id="pacman-countdown" role="status" aria-live="assertive"></div>
             <button type="button" class="btn arcade-start" id="pacman-start" onclick="pacmanStart()" data-i18n="arcade.play">Jouer</button>
         </div>
         <p class="wheel-feedback hidden arcade-message" id="pacman-message" role="status"></p>

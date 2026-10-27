@@ -197,7 +197,7 @@ function playNoiseBurst(ctx, start, duration, opts = {}) {
 let chompToggle = false;
 
 // `kind` : 'shoot' (tir du vaisseau), 'explosion' (une carte touchée), 'chomp' (un pas de Pac-Man, en « ouaka-ouaka »), 'flap' (un battement
-// d'ailes), 'move' (un décalage de pièce), 'drop' (une chute). Sans effet quand le son est coupé.
+// d'ailes), 'move' (un décalage de pièce), 'drop' (une chute), 'count' / 'go' (le compte à rebours). Sans effet quand le son est coupé.
 function playArcadeSfx(kind) {
     const ctx = getAudioCtx();
     if (!ctx) return;
@@ -214,6 +214,10 @@ function playArcadeSfx(kind) {
     } else if (kind === 'flap') {
         playNote(ctx, 320, now, 0.09, { type: 'sine', glideTo: 640, volume: 0.07, attack: 0.004 });
         playNoiseBurst(ctx, now, 0.06, { type: 'highpass', from: 2500, volume: 0.03 });
+    } else if (kind === 'count') {
+        playNote(ctx, 440, now, 0.16, { type: 'square', volume: 0.05, attack: 0.004 });
+    } else if (kind === 'go') {
+        playNote(ctx, 880, now, 0.42, { type: 'square', volume: 0.06, attack: 0.004 });
     } else if (kind === 'move') {
         playNote(ctx, 190, now, 0.035, { type: 'square', volume: 0.025, attack: 0.002 });
     } else if (kind === 'drop') {

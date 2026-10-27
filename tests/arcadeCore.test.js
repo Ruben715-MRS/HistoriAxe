@@ -229,20 +229,39 @@ test('Pac-Man : le labyrinthe est connexe et carré, le départ et les fantômes
     g.ghosts.forEach((gh) => assert.ok(A.pacOpen(gh.x, gh.y)));
 });
 
-test('Pac-Man : cinq pastilles aux années différentes, loin du départ, une consigne par pastille', () => {
-    const g = A.createPac(pool(), seeded(7));
-    assert.equal(g.pellets.length, 5);
-    assert.equal(new Set(g.pellets.map((p) => p.event.date)).size, 5);
-    assert.equal(new Set(g.pellets.map((p) => p.x + ',' + p.y)).size, 5);
-    const dist = A.pacDistances(A.PAC_START);
-    g.pellets.forEach((p) => { assert.ok(A.pacOpen(p.x, p.y)); assert.ok(dist[p.y][p.x] >= 3); });
-    assert.deepEqual(g.targets.map((e) => e.id).sort(), g.pellets.map((p) => p.event.id).sort());
-    assert.ok(A.createPac(pool().slice(0, 3), seeded(1)).empty);
+test('Pac-Man : trois, quatre ou cinq pastilles selon le niveau, aux années différentes, loin du départ, une consigne par pastille', () => {
+    [['easy', 3], ['normal', 4], ['hard', 5]].forEach(([difficulty, count]) => {
+        const g = A.createPac(pool(), seeded(7), { difficulty });
+        assert.equal(g.pellets.length, count);
+        assert.equal(new Set(g.pellets.map((p) => p.event.date)).size, count);
+        assert.equal(new Set(g.pellets.map((p) => p.x + ',' + p.y)).size, count);
+        const dist = A.pacDistances(A.PAC_START);
+        g.pellets.forEach((p) => { assert.ok(A.pacOpen(p.x, p.y)); assert.ok(dist[p.y][p.x] >= 3); });
+        assert.deepEqual(g.targets.map((e) => e.id).sort(), g.pellets.map((p) => p.event.id).sort());
+    });
+    assert.ok(A.createPac(pool().slice(0, 3), seeded(1), { difficulty: 'hard' }).empty);
+    assert.equal(A.createPac(pool(), seeded(7)).difficulty, 'normal', 'sans niveau : moyen');
+    assert.equal(A.createPac(pool(), seeded(7), { difficulty: 'nimporte' }).difficulty, 'normal');
+});
+
+test('Pac-Man : la partie démarre figée, rien ne bouge avant pacRelease', () => {
+    const g = A.createPac(pool(), seeded(4));
+    assert.equal(g.frozen, true);
+    const player = { x: g.player.x, y: g.player.y };
+    const ghosts = JSON.stringify(g.ghosts);
+    for (let i = 0; i < 10; i++) assert.deepEqual(A.pacStep(g), []);
+    assert.deepEqual(g.player, player);
+    assert.equal(JSON.stringify(g.ghosts), ghosts);
+    assert.equal(g.tick, 0);
+    A.pacRelease(g);
+    A.pacStep(g);
+    assert.equal(g.tick, 1);
 });
 
 // Place Pac-Man à côté de la pastille de `event` (à sa gauche) et le fait avancer dessus ; les fantômes sont loin.
 function walkOnto(g, event) {
     const p = g.pellets.find((it) => it.event === event);
+    A.pacRelease(g);
     g.player = { x: p.x - 1, y: p.y };
     if (!A.pacOpen(g.player.x, g.player.y)) g.player = { x: p.x + 1, y: p.y };
     g.dir = g.nextDir = g.player.x < p.x ? A.DIRS.right : A.DIRS.left;
@@ -250,37 +269,79 @@ function walkOnto(g, event) {
     return A.pacStep(g);
 }
 
-test('Pac-Man : la bonne pastille rapporte, une autre coûte une vie et reste en place', () => {
+test('Pac-Man : la bonne pastille rapporte, une autre coûte une vie, reste en place et refige le jeu', () => {
     const g = A.createPac(pool(), seeded(10));
     const target = A.pacTarget(g);
     assert.deepEqual(walkOnto(g, target), ['ok']);
     assert.equal(g.score, 10);
-    assert.equal(g.pellets.length, 4);
+    assert.equal(g.pellets.length, 3);
     assert.notEqual(A.pacTarget(g), target);
+    assert.equal(g.frozen, false);
 
     const h = A.createPac(pool(), seeded(10));
     const other = h.pellets.find((p) => p.event !== A.pacTarget(h)).event;
     assert.ok(walkOnto(h, other).includes('wrong'));
     assert.equal(h.lives, A.PAC_LIVES - 1);
-    assert.equal(h.pellets.length, 5);
+    assert.equal(h.pellets.length, 4);
     assert.equal(h.mistakes[0].ate, other);
     assert.equal(h.mistakes[0].wanted, A.pacTarget(h));
+    assert.equal(h.frozen, true, 'une vie perdue : compte à rebours');
 });
 
-test('Pac-Man : cinq bonnes pastilles font une manche, et un fantôme de plus', () => {
-    const g = A.createPac(pool(), seeded(12));
+test('Pac-Man : toutes les pastilles font une manche, nouvelle consigne, jeu figé ; les fantômes suivent le niveau', () => {
+    const g = A.createPac(pool(), seeded(12), { difficulty: 'hard' });
+    assert.equal(g.ghosts.length, 2, 'difficile : deux fantômes dès le départ');
     let last = [];
     for (let i = 0; i < 5; i++) last = walkOnto(g, A.pacTarget(g));
     assert.ok(last.includes('round'));
     assert.equal(g.rounds, 1);
     assert.equal(g.score, 5 * 10 + 100);
     assert.equal(g.pellets.length, 5);
-    assert.equal(g.ghosts.length, 2);
+    assert.equal(g.ghosts.length, 3, 'difficile : trois fantômes dès la manche 2');
+    assert.equal(g.frozen, true, 'une manche réussie : compte à rebours');
     assert.ok(A.pacInterval(g) < 200);
+
+    const e = A.createPac(pool(), seeded(12), { difficulty: 'easy' });
+    for (let i = 0; i < 3; i++) walkOnto(e, A.pacTarget(e));
+    assert.equal(e.rounds, 1);
+    assert.equal(e.ghosts.length, 1, 'facile : toujours un seul fantôme');
+
+    const m = A.createPac(pool(), seeded(12));
+    assert.equal(m.ghosts.length, 1);
+    for (let r = 0; r < 2; r++) for (let i = 0; i < 4; i++) walkOnto(m, A.pacTarget(m));
+    assert.equal(m.rounds, 2);
+    assert.equal(m.ghosts.length, 2, 'moyen : deux fantômes à partir de la manche 3');
+});
+
+test('Pac-Man : la vitesse suit le niveau (320 / 260 / 200 ms au départ), de plus en plus vite sans passer sous le plancher', () => {
+    const at = (difficulty, rounds) => { const g = A.createPac(pool(), seeded(1), { difficulty }); g.rounds = rounds; return A.pacInterval(g); };
+    assert.deepEqual(['easy', 'normal', 'hard'].map((d) => at(d, 0)), [320, 260, 200]);
+    assert.deepEqual(['easy', 'normal', 'hard'].map((d) => at(d, 1000)), [260, 200, 120]);
+    assert.ok(at('hard', 3) < at('hard', 0));
+});
+
+test('Pac-Man : un fantôme avance un pas sur deux, un sur trois en facile', () => {
+    ['easy', 'normal'].forEach((difficulty) => {
+        const g = A.createPac(pool(), () => 0.5, { difficulty });
+        A.pacRelease(g);
+        g.pellets = [];
+        g.player = { x: 9, y: 9 };
+        g.ghosts = [{ x: 1, y: 1, last: null }];
+        const moves = [];
+        for (let i = 0; i < 6; i++) {
+            const before = g.ghosts[0].x + ',' + g.ghosts[0].y;
+            g.player = { x: 9, y: 9 };
+            g.dir = g.nextDir = A.DIRS.right;
+            A.pacStep(g);
+            moves.push(g.ghosts[0].x + ',' + g.ghosts[0].y !== before);
+        }
+        assert.equal(moves.filter(Boolean).length, difficulty === 'easy' ? 2 : 3, difficulty);
+    });
 });
 
 test('Pac-Man : on ne traverse pas un mur, et un fantôme qui rattrape coûte une vie puis tout repart du départ', () => {
     const g = A.createPac(pool(), seeded(2));
+    A.pacRelease(g);
     g.player = { x: 1, y: 1 };
     g.dir = g.nextDir = A.DIRS.up;
     g.ghosts = [];
@@ -294,15 +355,17 @@ test('Pac-Man : on ne traverse pas un mur, et un fantôme qui rattrape coûte un
     assert.ok(events.includes('caught'));
     assert.equal(g.lives, A.PAC_LIVES - 1);
     assert.deepEqual(g.player, A.PAC_START);
+    assert.equal(g.frozen, true);
 });
 
 test('Pac-Man : la partie finit à la dernière vie ; les fantômes poursuivent Pac-Man', () => {
     const g = A.createPac(pool(), seeded(5));
-    for (let i = 0; i < 600 && !g.over; i++) A.pacStep(g);
+    for (let i = 0; i < 600 && !g.over; i++) { A.pacRelease(g); A.pacStep(g); }
     assert.ok(g.over, 'laissé sans pilote, Pac-Man finit par être rattrapé');
     assert.deepEqual(A.pacStep(g), []);
     // Un fantôme, sans hasard, se rapproche à chaque pas.
     const h = A.createPac(pool(), () => 0.5);
+    A.pacRelease(h);
     h.player = { x: 9, y: 9 };
     h.ghosts = [{ x: 1, y: 1, last: null }];
     const dist = A.pacDistances(h.player);
@@ -314,6 +377,18 @@ test('Pac-Man : la partie finit à la dernière vie ; les fantômes poursuivent 
     for (let i = 0; i < 4; i++) { h.player = { x: 9, y: 9 }; A.pacStep(h); }
     const after = A.pacDistances({ x: 9, y: 9 })[h.ghosts[0].y][h.ghosts[0].x];
     assert.ok(after < before, `${after} < ${before}`);
+});
+
+test('Difficulté : trois niveaux, un multiplicateur de score (×0,5 / ×1 / ×1,5), moyen par défaut', () => {
+    assert.deepEqual(A.DIFFICULTIES, ['easy', 'normal', 'hard']);
+    assert.equal(A.difficultyScore(100, 'easy'), 50);
+    assert.equal(A.difficultyScore(100, 'normal'), 100);
+    assert.equal(A.difficultyScore(100, 'hard'), 150);
+    assert.equal(A.difficultyScore(110, 'hard'), 165);
+    assert.equal(A.difficultyScore(15, 'easy'), 8);
+    assert.equal(A.difficultyScore(100, 'inconnu'), 100);
+    assert.equal(A.difficultyScore(undefined, 'hard'), 0);
+    assert.equal(A.normalizeDifficulty(undefined), 'normal');
 });
 
 // --- Space Invaders ----------------------------------------------------------------------------------------

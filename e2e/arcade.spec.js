@@ -123,9 +123,18 @@ test('Pac-Man : un labyrinthe, une consigne, un bon et un mauvais bonbon, une pa
     await page.locator('#btn-arcade').click();
     await page.locator('.arcade-card', { hasText: 'Pac-Man' }).click();
     expect(await visibleScreen(page)).toBe('screen-pacman');
+    // Trois niveaux au choix avant de jouer ; moyen par défaut.
+    await expect(page.locator('#pacman-difficulty .arcade-difficulty-btn')).toHaveCount(3);
+    await expect(page.locator('#pacman-difficulty .is-active')).toHaveText('Moyen');
     await page.locator('#pacman-start').click();
     await expect(page.locator('#pacman-banner')).toContainText('Où est la date de');
     await expect(page.locator('#pacman-status')).toContainText('♥♥♥');
+    // La consigne est lisible pendant le compte à rebours, et Pac-Man ne bouge pas avant le « Go ! ».
+    await expect(page.locator('#pacman-countdown')).toBeVisible();
+    const frozenAt = await page.evaluate(() => JSON.stringify(pacGame.player));
+    expect(await page.evaluate(() => pacGame.frozen)).toBe(true);
+    await expect(page.locator('#pacman-countdown')).toHaveText('Go !', { timeout: 6000 });
+    await expect(page.locator('#pacman-countdown')).toBeHidden();
     // Pac-Man avance tout seul.
     const before = await page.evaluate(() => JSON.stringify(pacGame.player));
     await expect.poll(() => page.evaluate(() => JSON.stringify(pacGame.player))).not.toBe(before);
@@ -134,6 +143,8 @@ test('Pac-Man : un labyrinthe, une consigne, un bon et un mauvais bonbon, une pa
         pacmanStop();
         const g = pacGame;
         g.ghosts = [];
+        g.lives = 3;
+        ArcadeCore.pacRelease(g);
         const p = g.pellets.find(it => it.event === ArcadeCore.pacTarget(g));
         g.player = { x: p.x - 1, y: p.y };
         if (!ArcadeCore.pacOpen(g.player.x, g.player.y)) g.player = { x: p.x + 1, y: p.y };
@@ -147,6 +158,7 @@ test('Pac-Man : un labyrinthe, une consigne, un bon et un mauvais bonbon, une pa
         const g = pacGame;
         const p = g.pellets.find(it => it.event !== ArcadeCore.pacTarget(g));
         g.ghosts = [];
+        ArcadeCore.pacRelease(g);
         g.player = { x: p.x - 1, y: p.y };
         if (!ArcadeCore.pacOpen(g.player.x, g.player.y)) g.player = { x: p.x + 1, y: p.y };
         g.dir = g.nextDir = g.player.x < p.x ? ArcadeCore.DIRS.right : ArcadeCore.DIRS.left;
@@ -154,6 +166,8 @@ test('Pac-Man : un labyrinthe, une consigne, un bon et un mauvais bonbon, une pa
         pacmanStop();
     });
     await expect(page.locator('#pacman-message')).toContainText('Pas celle-là');
+    // Une vie perdue : le jeu se fige (le compte à rebours repart ensuite).
+    expect(await page.evaluate(() => pacGame.frozen)).toBe(true);
     await page.evaluate(() => { pacGame.lives = 0; pacGame.over = true; pacmanFinish(); });
     await expect(page.locator('#pacman-over')).toBeVisible();
     await expect(page.locator('#pacman-over-list li').first()).toContainText('au lieu de');
