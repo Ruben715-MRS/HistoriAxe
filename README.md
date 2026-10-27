@@ -615,6 +615,14 @@ Deux mini-jeux de plus, dont le contenu écrit à la main est **à relire par un
   100, 80, 60, 40 ou 20 points selon le nombre d'indices vus ; une mauvaise réponse retire l'option et dévoile l'indice suivant. Les notices d'un pack
   découpé arrivent thème par thème (`Pack.ensureDescriptions`) : une figure dont la notice ne se charge pas (hors ligne) est écartée. Limite connue :
   une notice qui donne un autre nom de la figure (nom de scène, nom de naissance) le laisse passer.
+  **Niveaux** : chaque figure des panthéons porte une notoriété dans le monde, `etoiles` (1 : peu connue, 2 : moyennement, 3 : connue presque partout).
+  Facile tire des figures à trois étoiles avec deux indices dès le départ, moyen des figures à deux étoiles, difficile des figures à une étoile, et leurs
+  mauvaises réponses sont aussi peu connues que la bonne (`ReflexionCore.whoSelect`). **Mesure** : le nombre de liens interlangues de l'élément Wikidata
+  de la personne, collecté par `python3 scripts/pantheon_notoriete.py collecte` (résultat dans `scripts/notoriete/mesures.json`, repris là où il s'est arrêté),
+  seuils à 60 et 150 liens, quelques corrections de jugement écrites avec leur raison dans le script (`CORRECTIONS`) ;
+  `python3 scripts/pantheon_notoriete.py etoiles --ecrire` écrit `etoiles` dans `scripts/pantheon/*.json` et la liste à relire dans `scripts/notoriete/a_relire.md`
+  (cas limites, corrections, liens Wikipédia qui mènent à une page d'homonymie). Puis `python3 scripts/build_pantheon.py <code>` pour chaque panthéon, et
+  `npm run build:pack`. Un nouveau personnage sans `etoiles` donne un avertissement à la construction et compte pour « moyennement connu ».
 
 - **Cause ou conséquence ?** (`ReflexionContent.CAUSES`) : huit questions sur 52 paires écrites à la main (de Salamine à la crise des subprimes). Deux
   événements s'affichent, sans date ; on désigne celui qui a **provoqué** l'autre, ou celui qui est la **conséquence** de l'autre (les deux sens se mêlent,

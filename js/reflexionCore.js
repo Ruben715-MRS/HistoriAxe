@@ -91,6 +91,35 @@
     // Points selon le nombre d'indices déjà montrés quand on trouve : 100, 80, 60, 40, 20.
     var WHO_POINTS = [100, 80, 60, 40, 20];
     var WHO_MAX_TEXT_CLUES = 2;
+    // Les niveaux : `stars`, la notoriété des figures à deviner (3 : connues presque partout ; 2 : moyennement ; 1 : peu connues dans le
+    // monde — voir scripts/pantheon_notoriete.py) ; `shown`, le nombre d'indices déjà montrés au départ d'une manche (ils comptent
+    // dans les points : 100, 80, 60, 40, 20) ; `distractors`, la notoriété des mauvaises réponses : des inconnus à côté d'un nom célèbre
+    // se repèrent vite, des figures aussi peu connues que la bonne, non.
+    var WHO_LEVELS = {
+        easy: { stars: 3, shown: 2, distractors: [1, 2, 3] },
+        normal: { stars: 2, shown: 1, distractors: [2, 3] },
+        hard: { stars: 1, shown: 1, distractors: [1] }
+    };
+    // En dessous, un niveau manquerait de figures différentes : on retombe sur toutes les figures.
+    var WHO_MIN_FIGURES = 20;
+    var WHO_MIN_DISTRACTORS = 30;
+
+    // La notoriété d'une figure (`etoiles`, de 1 à 3) ; une figure qui n'en a pas compte pour « moyennement connue ».
+    function whoStars(evt) {
+        return evt && evt.etoiles >= 1 && evt.etoiles <= 3 ? evt.etoiles : 2;
+    }
+
+    // Les figures d'un niveau : { correct : celles à deviner, distractors : celles dont on tire les mauvaises réponses }.
+    function whoSelect(candidates, difficulty) {
+        var level = WHO_LEVELS[Arcade.normalizeDifficulty(difficulty)];
+        var all = candidates || [];
+        var correct = all.filter(function (e) { return whoStars(e) === level.stars; });
+        var distractors = all.filter(function (e) { return level.distractors.indexOf(whoStars(e)) !== -1; });
+        return {
+            correct: correct.length >= WHO_MIN_FIGURES ? correct : all,
+            distractors: distractors.length >= WHO_MIN_DISTRACTORS ? distractors : all
+        };
+    }
 
     var ROMAN = [[1000, 'M'], [900, 'CM'], [500, 'D'], [400, 'CD'], [100, 'C'], [90, 'XC'], [50, 'L'], [40, 'XL'], [10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I']];
 
@@ -195,10 +224,18 @@
     }
 
     // `questions` : { correctId, name, options: [{ id, name }], clues }.
-    function createWho(questions) {
-        var state = { questions: questions, index: 0, shown: 1, disabled: {}, score: 0, found: 0, errors: 0, results: [], resolved: null, over: !questions.length };
+    // `options` : { difficulty: 'easy' | 'normal' | 'hard' }.
+    function createWho(questions, options) {
+        var difficulty = Arcade.normalizeDifficulty(options && options.difficulty);
+        var level = WHO_LEVELS[difficulty];
+        var state = { difficulty: difficulty, level: level, questions: questions, index: 0, shown: whoStartShown(level, questions[0]), disabled: {}, score: 0, found: 0, errors: 0, results: [], resolved: null, over: !questions.length };
         if (!questions.length) state.empty = true;
         return state;
+    }
+
+    // Les indices montrés d'emblée : ceux du niveau, sans dépasser le nombre d'indices de la question.
+    function whoStartShown(level, question) {
+        return question ? Math.max(1, Math.min(level.shown, question.clues.length)) : 1;
     }
 
     function whoQuestion(state) {
@@ -248,7 +285,7 @@
     function whoNext(state) {
         if (state.over || !state.resolved) return [];
         state.index += 1;
-        state.shown = 1;
+        state.shown = whoStartShown(state.level, state.questions[state.index]);
         state.disabled = {};
         state.resolved = null;
         if (state.index >= state.questions.length) { state.over = true; return ['done']; }
@@ -478,7 +515,7 @@
     }
 
     return {
-        MEMORY_PAIRS: MEMORY_PAIRS, MEMORY_LEVELS: MEMORY_LEVELS, WHO_ROUNDS: WHO_ROUNDS, WHO_POINTS: WHO_POINTS,
+        MEMORY_PAIRS: MEMORY_PAIRS, MEMORY_LEVELS: MEMORY_LEVELS, WHO_ROUNDS: WHO_ROUNDS, WHO_LEVELS: WHO_LEVELS, whoSelect: whoSelect, whoStars: whoStars, WHO_POINTS: WHO_POINTS,
         createMemory: createMemory, memoryFlip: memoryFlip, memoryHide: memoryHide, memoryScore: memoryScore,
         centuryLabel: centuryLabel, nameTokens: nameTokens, maskName: maskName, splitSentences: splitSentences, buildClues: buildClues,
         HANGMAN_ROUNDS: HANGMAN_ROUNDS, HANGMAN_LEVELS: HANGMAN_LEVELS, SCENE_LEVELS: SCENE_LEVELS,

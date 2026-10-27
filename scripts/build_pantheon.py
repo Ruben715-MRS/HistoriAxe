@@ -176,6 +176,13 @@ def validate(src, code, bio_themes, other_pantheons, errors, warnings):
             extra = [w for w in re.findall(r'\w+', classement.lower()) if w not in known]
             if extra:
                 errors.append(f'{who}: « classement » ({classement}) contient des mots absents du nom : {", ".join(extra)}')
+        # Notoriété dans le monde, pour les niveaux de « Qui suis-je ? » : 1 (peu connu) à 3 (connu presque partout). Mesurée par
+        # scripts/pantheon_notoriete.py (voir son en-tête) ; un nouveau personnage s'en passe d'abord, avec un avertissement.
+        etoiles = p.get('etoiles')
+        if etoiles is None:
+            warnings.append(f'{who}: pas de notoriété (python3 scripts/pantheon_notoriete.py collecte, puis etoiles --ecrire)')
+        elif etoiles not in (1, 2, 3) or isinstance(etoiles, bool):
+            errors.append(f'{who}: « etoiles » doit valoir 1, 2 ou 3, pas {etoiles!r}')
         if errors and 'naissance' not in p:
             continue
         if p['axe'] not in axes:
@@ -279,6 +286,8 @@ def build_theme(src, code, warnings):
         if bloc or p.get('pays'):
             event['pays'] = p['pays']
         event['classement'] = p['classement']
+        if p.get('etoiles'):
+            event['etoiles'] = p['etoiles']
         if p.get('biographie'):
             event['biographie'] = p['biographie']
         portrait = p.get('portrait')

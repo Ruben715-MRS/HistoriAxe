@@ -269,6 +269,8 @@ test('Qui suis-je ? : des indices un à un, une mauvaise réponse dévoile le su
     await page.locator('#btn-arcade').click();
     await page.locator('.arcade-card', { hasText: 'Qui suis-je' }).click();
     expect(await visibleScreen(page)).toBe('screen-who');
+    await expect(page.locator('#who-difficulty .is-active')).toHaveText('Moyen');
+    await page.locator('#who-setup .btn').click();
     await expect(page.locator('#who-status')).toContainText('Manche 1 / 6');
     await expect(page.locator('#who-options .who-option')).toHaveCount(4);
     // Un seul indice au départ ; « Un indice de plus » en ajoute un, sans le portrait avant la fin.
@@ -607,24 +609,28 @@ test('Course de chars : l\'adversaire qui franchit la ligne le premier met fin �
     expect(await page.evaluate(() => raceMusicTimer)).toBe(0);
 });
 
-test('la salle de jeux ne tire que des événements ⭐ incontournables (le vivier et les figures de « Qui suis-je ? »)', async ({ page }) => {
+test('la salle de jeux ne tire que des événements ⭐ incontournables ; « Qui suis-je ? » tire ses figures selon leur notoriété (étoiles)', async ({ page }) => {
     await page.waitForFunction(() => window.bdd && window.bdd.some(c => (c.themes || []).some(t => t.id === 'thm_aut')), null, { timeout: 45_000 });
     const result = await page.evaluate(() => {
         const items = PathCore.flattenEvents(window.bdd);
         const essential = new Set(items.filter(i => i.essential).map(i => i.id));
         const pool = arcadePool();
-        const figures = whoFigures().known;
+        const candidates = whoFigures().candidates;
+        const tier = d => ReflexionCore.whoSelect(candidates, d).correct;
         return {
             pool: pool.length,
             poolOutside: pool.filter(e => !essential.has(e.id)).length,
-            figures: figures.length,
-            figuresOutside: figures.filter(e => !essential.has(e.id)).length
+            easy: tier('easy').length, easyWrong: tier('easy').filter(e => e.etoiles !== 3).length,
+            normal: tier('normal').length, normalWrong: tier('normal').filter(e => e.etoiles !== 2).length,
+            hard: tier('hard').length, hardWrong: tier('hard').filter(e => e.etoiles !== 1).length
         };
     });
     expect(result.pool).toBeGreaterThan(100);
     expect(result.poolOutside).toBe(0);
-    expect(result.figures).toBeGreaterThan(40);
-    expect(result.figuresOutside).toBe(0);
+    expect(result.easy).toBeGreaterThan(100);
+    expect(result.normal).toBeGreaterThan(500);
+    expect(result.hard).toBeGreaterThan(1000);
+    expect(result.easyWrong + result.normalWrong + result.hardWrong).toBe(0);
 });
 
 test('Pendu des dates : des chiffres à proposer, une année entière avec « plus tôt / plus tard », cinq événements', async ({ page }) => {
@@ -787,4 +793,27 @@ test('Flappy Clio : le bandeau donne les deux événements de la prochaine porte
     await page.evaluate(() => { flGame.score = 100; flGame.over = true; flappyFinish(); });
     await expect(page.locator('#flappy-over-text')).toContainText('Facile ×0,5 : 50 pts comptés');
     await expect(page.locator('#flappy-over-list li').first()).toContainText('au lieu de');
+});
+
+test('Qui suis-je ? : le niveau choisit les figures (étoiles) et les indices montrés au départ', async ({ page }) => {
+    await page.locator('#btn-arcade').click();
+    await page.locator('.arcade-card', { hasText: 'Qui suis-je' }).click();
+    await page.locator('#who-difficulty .arcade-difficulty-btn', { hasText: 'Facile' }).click();
+    await expect(page.locator('#who-difficulty')).toContainText('connues presque partout');
+    await page.locator('#who-setup .btn').click();
+    await expect(page.locator('#who-status')).toContainText('Manche 1 / 6');
+    // Facile : des figures à trois étoiles, deux indices dès le départ, mauvaises réponses de toutes notoriétés.
+    expect(await page.evaluate(() => ({ d: whoGame.difficulty, stars: whoGame.questions.map(q => q.event.etoiles) }))).toEqual({ d: 'easy', stars: [3, 3, 3, 3, 3, 3] });
+    await expect(page.locator('#who-clues .who-clue')).toHaveCount(2);
+    const name = await page.evaluate(() => ReflexionCore.whoQuestion(whoGame).name);
+    await page.locator('#who-options .who-option', { hasText: name }).first().click();
+    await expect(page.locator('#who-feedback-title')).toContainText('80');
+    // Difficile : des figures à une étoile, un seul indice.
+    await page.evaluate(() => { whoGame.over = true; whoFinish(); });
+    await expect(page.locator('#who-over-text')).toContainText('Facile ×0,5');
+    await page.locator('#who-difficulty-over .arcade-difficulty-btn', { hasText: 'Difficile' }).click();
+    await page.locator('#who-over .btn').click();
+    await expect(page.locator('#who-status')).toContainText('Manche 1 / 6');
+    expect(await page.evaluate(() => ({ d: whoGame.difficulty, stars: [...new Set(whoGame.questions.map(q => q.event.etoiles))] }))).toEqual({ d: 'hard', stars: [1] });
+    await expect(page.locator('#who-clues .who-clue')).toHaveCount(1);
 });

@@ -440,6 +440,69 @@ test('Anachronismes : une erreur retire la moitié d\'un anachronisme en facile,
     assert.equal(R.createScenes(C.SCENES, seeded(5)).difficulty, 'normal');
 });
 
+// --- Qui suis-je ? : les niveaux ------------------------------------------------------------------------------
+function figures(n, stars) {
+    return Array.from({ length: n }, (_, i) => ({ id: `f${stars}_${i}`, titre: `Figure ${stars} ${i}`, etoiles: stars }));
+}
+
+test('Qui suis-je : chaque niveau tire ses figures selon leur notoriété, et ses mauvaises réponses selon le niveau', () => {
+    const all = [...figures(40, 1), ...figures(40, 2), ...figures(40, 3), { id: 'sans', titre: 'Sans étoiles' }];
+    const easy = R.whoSelect(all, 'easy'), normal = R.whoSelect(all, 'normal'), hard = R.whoSelect(all, 'hard');
+    assert.ok(easy.correct.length === 40 && easy.correct.every((e) => e.etoiles === 3));
+    assert.ok(normal.correct.every((e) => R.whoStars(e) === 2), 'une figure sans étoiles compte pour moyennement connue');
+    assert.equal(normal.correct.length, 41);
+    assert.ok(hard.correct.length === 40 && hard.correct.every((e) => e.etoiles === 1));
+    // Mauvaises réponses : toutes en facile, les plus connues en moyen, aussi peu connues que la bonne en difficile.
+    assert.equal(easy.distractors.length, all.length);
+    assert.ok(normal.distractors.every((e) => R.whoStars(e) >= 2));
+    assert.ok(hard.distractors.every((e) => e.etoiles === 1));
+    assert.equal(R.whoSelect(all).correct.length, 41, 'sans niveau : moyen');
+    // Trop peu de figures pour un niveau : on retombe sur toutes (jamais une partie vide).
+    const few = [...figures(5, 3), ...figures(60, 1)];
+    assert.equal(R.whoSelect(few, 'easy').correct.length, few.length);
+    assert.equal(R.whoSelect(few, 'easy').distractors.length, few.length);
+    assert.deepEqual(R.whoSelect([], 'hard'), { correct: [], distractors: [] });
+});
+
+test('Qui suis-je : deux indices dès le départ en facile, un en moyen et en difficile, à chaque manche', () => {
+    const q = (id) => ({ correctId: id, name: id, options: [{ id: 'x', name: 'X' }, { id, name: id }], clues: [{ type: 'domain' }, { type: 'period' }, { type: 'text' }, { type: 'portrait' }] });
+    const start = (difficulty) => R.createWho([q('a'), q('b')], { difficulty });
+    assert.deepEqual(['easy', 'normal', 'hard'].map((d) => start(d).shown), [2, 1, 1]);
+    assert.equal(R.createWho([q('a')]).difficulty, 'normal');
+    // Les points suivent les indices montrés : au mieux 80 en facile (deux indices), 100 sinon.
+    const easy = start('easy');
+    R.whoPick(easy, 'a');
+    assert.equal(easy.score, 80);
+    R.whoNext(easy);
+    assert.equal(easy.shown, 2, 'la manche suivante repart avec deux indices');
+    const hard = start('hard');
+    R.whoPick(hard, 'a');
+    assert.equal(hard.score, 100);
+    // Une question qui n'a qu'un indice n'en montre jamais deux.
+    const one = R.createWho([{ correctId: 'a', name: 'a', options: [{ id: 'a', name: 'a' }], clues: [{ type: 'portrait' }] }], { difficulty: 'easy' });
+    assert.equal(one.shown, 1);
+});
+
+test('Qui suis-je : sur le pack français, chaque figure à portrait a ses étoiles (1 à 3) et chaque niveau a de quoi jouer', () => {
+    const events = [];
+    const walk = (n) => { (n.themes || []).forEach((t) => (t.events || []).forEach((e) => events.push(e))); (n.subcategories || []).forEach(walk); };
+    fr.categories.forEach(walk);
+    const withPortrait = events.filter((e) => e.image && e.image.src);
+    assert.ok(withPortrait.length > 4000);
+    const bad = withPortrait.filter((e) => ![1, 2, 3].includes(e.etoiles));
+    assert.deepEqual(bad.map((e) => e.id).slice(0, 5), [], 'figures sans étoiles');
+    const candidates = G.whoCandidates(events).filter((e) => String(e.description || '').length >= 80);
+    ['easy', 'normal', 'hard'].forEach((difficulty, i) => {
+        const { correct, distractors } = R.whoSelect(candidates, difficulty);
+        assert.ok(correct.length >= [200, 800, 1500][i], `${difficulty} : ${correct.length} figures`);
+        assert.ok(correct.every((e) => e.etoiles === 3 - i), difficulty);
+        assert.ok(distractors.length >= 200, `${difficulty} : ${distractors.length} mauvaises réponses possibles`);
+    });
+    // Quelques repères : les noms que tout le monde connaît sont ★★★, un héros local ★.
+    const stars = (name) => withPortrait.find((e) => e.titre.includes(name));
+    ['Napoléon Bonaparte', 'Albert Einstein', 'Charles de Gaulle', 'Mozart'].forEach((n) => assert.equal(stars(n).etoiles, 3, n));
+});
+
 // --- Pendu des dates ------------------------------------------------------------------------------------------
 function hangmanPool() {
     return [{ id: 'a', title: 'Prise de la Bastille', date: 1789 }, { id: 'b', title: 'Découverte de l\'Amérique', date: 1492 },
