@@ -244,7 +244,7 @@ Flappy Clio —, dos), puis suit toutes les poses et expressions de cette vue sa
 | Entre-deux-guerres | Tenue des années folles | cloche, long collier de perles |
 | Trente Glorieuses | Combinaison spatiale | **combinaison intégrale** : casque bulle, queue gainée, bottes et gants ; seule la tête se voit ; écusson étoilé neutre |
 | Crises | Perfecto des années 80 | blouson, lunettes de soleil teintées (le regard reste visible), baladeur et casque rouges |
-| Depuis 1991 | Tenue connectée | casque audio, lunettes lumineuses |
+| Depuis 1991 | Tenue connectée | sweat à capuche, lunettes lumineuses à verres clairs, **écouteurs filaires** des oreilles jusque dans la poche avant (téléphone caché) |
 
 Chaque costume est livré **avec une icône carrée de boutique** (256 × 256, Clio habillée de face, fond transparent).
 

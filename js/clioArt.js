@@ -130,6 +130,8 @@
         return [u * u * x0 + 2 * u * t * x1 + t * t * x2, u * u * y0 + 2 * u * t * y1 + t * t * y2];
     }
 
+    // Un fil d'écouteurs : blanc, liseré de gris pour se détacher du pelage comme du tissu.
+    function wire(d) { return line(d, 3.6, '#9EA6AF') + line(d, 2, '#FFFFFF'); }
     // Une fleur de lys centrée en (x, y), de taille `k` (1 ≈ 16 px de haut).
     function lis(x, y, k, fill, edge) {
         return el('path', {
@@ -537,29 +539,29 @@
                     line('M62 90 L70 86 M110 90 L118 86', 2.5, '#FFFFFF', { opacity: 0.7 });
             }
         },
-        // Le monde depuis 1991 — tenue connectée : sweat à capuche, lunettes lumineuses (verres clairs), casque audio autour du cou.
+        // Le monde depuis 1991 — tenue connectée : sweat à capuche, lunettes lumineuses (verres clairs), écouteurs filaires jusque dans la poche.
         connectee: {
             sleeve: ['#5B4BC4', '#2E2470'],
             body: function () {
                 return el('path', { d: 'M48 150 Q100 128 152 150 L150 164 Q100 146 50 164 Z', fill: '#4A3CA8', stroke: '#2E2470', 'stroke-width': 2.5, 'stroke-linejoin': 'round' }) +
                     shape(TUNIC, '#5B4BC4', '#2E2470') +
-                    shape('M72 182 L128 182 L134 204 Q100 208 66 204 Z', '#4A3CA8', '#2E2470', 2) +
-                    line('M90 152 L88 172 M110 152 L112 172', 2, '#E8E6FF') + el('circle', { cx: 88, cy: 173, r: 2, fill: '#E8E6FF' }) + el('circle', { cx: 112, cy: 173, r: 2, fill: '#E8E6FF' });
+                    shape('M72 182 L128 182 L134 204 Q100 208 66 204 Z', '#4A3CA8', '#2E2470', 2);
             },
             hat: function () {
                 var glow = { stroke: '#35D0E8', 'stroke-width': 7, fill: 'none', opacity: 0.25 };
                 return el('ellipse', Object.assign({ cx: 76, cy: 96, rx: 19, ry: 17 }, glow)) + el('ellipse', Object.assign({ cx: 124, cy: 96, rx: 19, ry: 17 }, glow)) +
                     el('ellipse', { cx: 76, cy: 96, rx: 19, ry: 17, fill: '#BFF4FC', 'fill-opacity': 0.18, stroke: '#1BA9C4', 'stroke-width': 3 }) +
                     el('ellipse', { cx: 124, cy: 96, rx: 19, ry: 17, fill: '#BFF4FC', 'fill-opacity': 0.18, stroke: '#1BA9C4', 'stroke-width': 3 }) +
-                    line('M95 94 Q100 90 105 94 M57 92 L42 88 M143 92 L158 88', 3, '#1BA9C4');
+                    line('M95 94 Q100 90 105 94 M57 92 L42 88 M143 92 L158 88', 3, '#1BA9C4') +
+                    // les écouteurs filaires, un dans chaque oreille ; le fil longe la joue jusque sous le menton
+                    wire('M80 60 C66 66 48 82 46 104 C45 122 54 136 66 144 M120 60 C134 66 152 82 154 104 C155 122 146 136 134 144') +
+                    el('ellipse', { cx: 80, cy: 58, rx: 5, ry: 6, fill: '#FFFFFF', stroke: '#9EA6AF', 'stroke-width': 1.5 }) +
+                    el('ellipse', { cx: 120, cy: 58, rx: 5, ry: 6, fill: '#FFFFFF', stroke: '#9EA6AF', 'stroke-width': 1.5 });
             },
-            // Le casque audio, posé autour du cou par-dessus la naissance du bras.
+            // Sous le menton, les deux fils se rejoignent sur la poitrine et filent dans la poche (le téléphone y est caché).
             collar: function () {
-                return line('M62 148 Q100 178 138 148', 6, '#2E3238') +
-                    el('ellipse', { cx: 62, cy: 150, rx: 10, ry: 13, fill: '#F2F4F7', stroke: '#2E3238', 'stroke-width': 2.5 }) +
-                    el('ellipse', { cx: 138, cy: 150, rx: 10, ry: 13, fill: '#F2F4F7', stroke: '#2E3238', 'stroke-width': 2.5 }) +
-                    el('ellipse', { cx: 62, cy: 150, rx: 5, ry: 7, fill: 'none', stroke: '#35D0E8', 'stroke-width': 2 }) +
-                    el('ellipse', { cx: 138, cy: 150, rx: 5, ry: 7, fill: 'none', stroke: '#35D0E8', 'stroke-width': 2 });
+                return wire('M66 144 C76 152 90 160 100 168 M134 144 C124 152 110 160 100 168 M100 168 L100 185') +
+                    el('rect', { x: 97, y: 165, width: 6, height: 7, rx: 2, fill: '#FFFFFF', stroke: '#9EA6AF', 'stroke-width': 1.2 });
             }
         },
         // Rome II — toge d'empereur : toge pourpre drapée, pan blanc bordé d'or, fibule, couronne de laurier d'or.
