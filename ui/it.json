@@ -800,8 +800,19 @@
   "home": {
     "start_aria": "Inizia"
   },
+  "renown": {
+    "title": "Fama",
+    "local": "Fama locale",
+    "regional": "Fama regionale",
+    "world": "Fama mondiale",
+    "local_short": "Locale",
+    "regional_short": "Regionale",
+    "world_short": "Mondiale"
+  },
   "gallery": {
     "title": "Galleria dei ritratti",
+    "renown_show": "Mostra la fama",
+    "renown_help": "Il contorno del ritratto indica quanto una figura è conosciuta nel mondo: un filetto (bronzo) per una fama locale, due (argento) per regionale, tre (oro) per mondiale.",
     "launcher_sub": "{count} volti da sfogliare",
     "order_alpha": "Ordine alfabetico",
     "order_famille": "Per cognome",

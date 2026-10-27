@@ -7262,6 +7262,163 @@ input:not([type="range"]), label, select, summary, textarea {
 
 /* L'en-tête de la galerie reste bas : les visages sont ce qu'on vient voir, et sur un téléphone
    chaque ligne de commandes repousse la première carte sous le pli. */
+/* =====================================================================
+   RENOMMÉE DES PERSONNAGES (js/renown.js) : le contour du portrait.
+   1 filet bronze = renommée locale · 2 filets argent = régionale · 3 filets or = mondiale.
+   La couleur ne porte jamais seule le sens : le nombre de filets et le libellé le disent aussi.
+   ===================================================================== */
+.renown-1 { --rn: #b0703c; }
+.renown-2 { --rn: #8d99a6; }
+.renown-3 { --rn: #d4a017; }
+
+/* Image libre (fiche, révélation d'une réponse) : les filets entourent le portrait, dessinés par des ombres sans flou ; les marges
+   laissent la place du dernier filet. */
+.renown-img.renown-1 {
+    box-shadow: 0 0 0 3px var(--rn);
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+.renown-img.renown-2 {
+    box-shadow: 0 0 0 3px var(--rn), 0 0 0 5px var(--surface), 0 0 0 8px var(--rn);
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.renown-img.renown-3 {
+    box-shadow: 0 0 0 3px var(--rn), 0 0 0 5px var(--surface), 0 0 0 8px var(--rn), 0 0 0 10px var(--surface), 0 0 0 13px var(--rn);
+    margin-top: 14px;
+    margin-bottom: 24px;
+}
+
+/* Vignette de la galerie : le cadre rogne ce qui dépasse, les filets sont donc posés à l'intérieur, par-dessus la photo. */
+.renown-frame {
+    position: relative;
+}
+
+.renown-frame::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.renown-frame.renown-1::after {
+    box-shadow: inset 0 0 0 3px var(--rn);
+}
+
+.renown-frame.renown-2::after {
+    box-shadow: inset 0 0 0 3px var(--rn), inset 0 0 0 5px rgba(255, 255, 255, 0.9), inset 0 0 0 8px var(--rn);
+}
+
+.renown-frame.renown-3::after {
+    box-shadow: inset 0 0 0 3px var(--rn), inset 0 0 0 5px rgba(255, 255, 255, 0.9), inset 0 0 0 8px var(--rn),
+        inset 0 0 0 10px rgba(255, 255, 255, 0.9), inset 0 0 0 13px var(--rn);
+}
+
+/* L'étiquette : trois pastilles dont autant sont pleines que de filets, puis le libellé. */
+.renown-chip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin: 2px auto 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.renown-chip.hidden {
+    display: none;
+}
+
+.renown-pips {
+    display: inline-flex;
+    gap: 3px;
+}
+
+.renown-pips i {
+    display: block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--rn);
+}
+
+.renown-1 .renown-pips i:nth-child(n + 2),
+.renown-2 .renown-pips i:nth-child(3) {
+    background: transparent;
+    box-shadow: inset 0 0 0 1.5px var(--rn);
+}
+
+/* La galerie : la case, les trois boutons du filtre, une ligne d'explication. */
+.gallery-renown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin: 4px 0 12px;
+    width: 100%;
+    max-width: 520px;
+}
+
+.gallery-renown-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-dark);
+    cursor: pointer;
+}
+
+.gallery-renown-toggle input {
+    width: 20px;
+    height: 20px;
+}
+
+.gallery-renown-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.gallery-renown-filter.hidden,
+.gallery-renown-help.hidden {
+    display: none;
+}
+
+.gallery-renown-btn {
+    min-height: 44px;
+    margin: 0;
+    padding: 0 12px;
+    border: 2px solid var(--rn);
+    border-radius: 999px;
+    background: var(--surface);
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-dark);
+    cursor: pointer;
+}
+
+.gallery-renown-btn[aria-pressed="true"] {
+    background: color-mix(in srgb, var(--rn) 22%, var(--surface));
+    box-shadow: 0 0 0 2px var(--rn);
+}
+
+.gallery-renown-help {
+    margin: 0;
+    max-width: 440px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--muted-text);
+}
+
 .gallery-header-title {
     font-size: 22px;
     margin-top: 12px;

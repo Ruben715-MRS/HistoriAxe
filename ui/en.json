@@ -825,8 +825,19 @@
   "home": {
     "start_aria": "Start"
   },
+  "renown": {
+    "title": "Renown",
+    "local": "Local renown",
+    "regional": "Regional renown",
+    "world": "Worldwide renown",
+    "local_short": "Local",
+    "regional_short": "Regional",
+    "world_short": "Worldwide"
+  },
   "gallery": {
     "title": "Portrait gallery",
+    "renown_show": "Show renown",
+    "renown_help": "The portrait frame shows how widely known a figure is around the world: one line (bronze) for local renown, two (silver) for regional, three (gold) for worldwide.",
     "launcher_sub": "{count} faces to browse",
     "order_alpha": "Alphabetical order",
     "order_famille": "By family name",

@@ -623,6 +623,12 @@ Deux mini-jeux de plus, dont le contenu écrit à la main est **à relire par un
   `python3 scripts/pantheon_notoriete.py etoiles --ecrire` écrit `etoiles` dans `scripts/pantheon/*.json` et la liste à relire dans `scripts/notoriete/a_relire.md`
   (cas limites, corrections, liens Wikipédia qui mènent à une page d'homonymie). Puis `python3 scripts/build_pantheon.py <code>` pour chaque panthéon, et
   `npm run build:pack`. Un nouveau personnage sans `etoiles` donne un avertissement à la construction et compte pour « moyennement connu ».
+  **Affichage** (`js/renown.js`, `js/app/renown.js`) : le niveau se montre comme une *renommée* — locale (1), régionale (2), mondiale (3) — par un contour
+  autour du portrait : un filet bronze, deux filets argent, trois filets or, avec une étiquette (trois pastilles et le libellé) ; la couleur ne porte jamais
+  seule le sens. Il décrit la diffusion d'un nom dans le monde, pas la valeur de la personne. On le voit dans la galerie (avec un filtre par niveau), sur la
+  fiche d'une figure et, **seulement une fois la réponse donnée**, dans « Qui est-ce ? » et « Qui suis-je ? » (avant, il dirait si la figure est célèbre).
+  La case « Afficher la renommée » de la galerie cache les contours et le filtre partout (réglage retenu : `historiaxe_renown_v1`). Le champ de données
+  garde son premier nom, `etoiles`.
 
 - **Cause ou conséquence ?** (`ReflexionContent.CAUSES`) : huit questions sur 52 paires écrites à la main (de Salamine à la crise des subprimes). Deux
   événements s'affichent, sans date ; on désigne celui qui a **provoqué** l'autre, ou celui qui est la **conséquence** de l'autre (les deux sens se mêlent,

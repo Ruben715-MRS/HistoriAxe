@@ -806,8 +806,12 @@ test('Qui suis-je ? : le niveau choisit les figures (étoiles) et les indices mo
     expect(await page.evaluate(() => ({ d: whoGame.difficulty, stars: whoGame.questions.map(q => q.event.etoiles) }))).toEqual({ d: 'easy', stars: [3, 3, 3, 3, 3, 3] });
     await expect(page.locator('#who-clues .who-clue')).toHaveCount(2);
     const name = await page.evaluate(() => ReflexionCore.whoQuestion(whoGame).name);
+    // Pas de contour de renommée avant la réponse (il dirait que la figure est célèbre), le contour or et l'étiquette après.
+    await expect(page.locator('#who-portrait-img')).not.toHaveClass(/renown/);
     await page.locator('#who-options .who-option', { hasText: name }).first().click();
     await expect(page.locator('#who-feedback-title')).toContainText('80');
+    await expect(page.locator('#who-portrait-img')).toHaveClass(/renown-img renown-3/);
+    await expect(page.locator('#who-feedback-renown')).toContainText('Renommée mondiale');
     // Difficile : des figures à une étoile, un seul indice.
     await page.evaluate(() => { whoGame.over = true; whoFinish(); });
     await expect(page.locator('#who-over-text')).toContainText('Facile ×0,5');

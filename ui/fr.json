@@ -826,8 +826,19 @@
   "home": {
     "start_aria": "Commencer"
   },
+  "renown": {
+    "title": "Renommée",
+    "local": "Renommée locale",
+    "regional": "Renommée régionale",
+    "world": "Renommée mondiale",
+    "local_short": "Locale",
+    "regional_short": "Régionale",
+    "world_short": "Mondiale"
+  },
   "gallery": {
     "title": "Galerie des portraits",
+    "renown_show": "Afficher la renommée",
+    "renown_help": "Le contour du portrait dit à quel point une figure est connue dans le monde : un filet (bronze) pour une renommée locale, deux (argent) pour régionale, trois (or) pour mondiale.",
     "launcher_sub": "{count} visages à feuilleter",
     "order_alpha": "Ordre alphabétique",
     "order_famille": "Par nom de famille",

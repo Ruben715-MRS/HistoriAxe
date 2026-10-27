@@ -800,8 +800,19 @@
   "home": {
     "start_aria": "Empezar"
   },
+  "renown": {
+    "title": "Renombre",
+    "local": "Renombre local",
+    "regional": "Renombre regional",
+    "world": "Renombre mundial",
+    "local_short": "Local",
+    "regional_short": "Regional",
+    "world_short": "Mundial"
+  },
   "gallery": {
     "title": "Galería de retratos",
+    "renown_show": "Mostrar el renombre",
+    "renown_help": "El contorno del retrato indica lo conocida que es una figura en el mundo: un filete (bronce) para un renombre local, dos (plata) para regional, tres (oro) para mundial.",
     "launcher_sub": "{count} rostros para hojear",
     "order_alpha": "Orden alfabético",
     "order_famille": "Por apellido",

@@ -2829,3 +2829,77 @@ test('la recherche — « ukraine », « ukrainien », « kiev », « cosaque »
         await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
     }
 });
+
+// ---- Renommée : le contour du portrait (js/renown.js) ----------------------------------------------
+
+// Ouvre la galerie comme un joueur (catégorie, bouton, ordre).
+async function ouvrirGalerie(page) {
+    const index = await page.evaluate(() => bdd.findIndex(c => c.nom === 'Personnages illustres'));
+    await page.locator('#cat-grid > div').nth(index).click();
+    await page.locator('#btn-gallery').click();
+    await page.locator('#gallery-order-picker button', { hasText: 'Ordre alphabétique' }).click();
+    await expect(page.locator('#screen-gallery')).toBeVisible();
+}
+
+test('la galerie : un contour de renommée sur chaque portrait, un filtre par niveau, et une case pour tout cacher', async ({ page }) => {
+    await ouvrirGalerie(page);
+    const total = await page.locator('#gallery-container .gallery-card').count();
+    expect(total).toBeGreaterThan(800);
+    // Affichée par défaut : un contour par portrait, aux trois niveaux, et le libellé pour les lecteurs d'écran.
+    await expect(page.locator('#gallery-renown-show')).toBeChecked();
+    await expect(page.locator('#gallery-container .gallery-card-frame.renown-frame')).toHaveCount(total);
+    const parNiveau = await page.evaluate(() => [1, 2, 3].map(n => galleryEntries.filter(e => e.level === n).length));
+    expect(parNiveau.every(n => n > 100)).toBe(true);
+    expect(parNiveau.reduce((a, b) => a + b, 0)).toBe(total);
+    await expect(page.locator('#gallery-renown-filter [data-level]')).toHaveCount(3);
+    await expect(page.locator('#gallery-renown-filter [data-level="3"]')).toContainText('Mondiale');
+    await expect(page.locator('#gallery-renown-filter [data-level="3"]')).toContainText(`(${parNiveau[2]})`);
+    const napoleon = page.locator('.gallery-card', { hasText: 'Napoléon Bonaparte' }).first();
+    await expect(napoleon).toHaveAttribute('aria-label', /Renommée mondiale/);
+    await expect(napoleon.locator('.gallery-card-frame')).toHaveClass(/renown-3/);
+
+    // Le filtre : « Mondiale » ne garde que les figures du niveau 3 ; avec « Locale », les deux ensemble ; « Tout effacer » les lâche.
+    await page.locator('#gallery-renown-filter [data-level="3"]').click();
+    await expect(page.locator('#gallery-renown-filter [data-level="3"]')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#gallery-container .gallery-card')).toHaveCount(parNiveau[2]);
+    await expect(page.locator('#gallery-container .gallery-card-frame.renown-3')).toHaveCount(parNiveau[2]);
+    await page.locator('#gallery-renown-filter [data-level="1"]').click();
+    await expect(page.locator('#gallery-container .gallery-card')).toHaveCount(parNiveau[0] + parNiveau[2]);
+    await expect(page.locator('#gallery-reset')).toBeVisible();
+    await page.locator('#gallery-reset').click();
+    await expect(page.locator('#gallery-container .gallery-card')).toHaveCount(total);
+
+    // La fiche : le portrait prend son contour, et une étiquette dit le niveau.
+    await napoleon.click();
+    await expect(page.locator('#modal-portrait-img')).toHaveClass(/renown-img renown-3/);
+    await expect(page.locator('#modal-portrait-renown')).toContainText('Renommée mondiale');
+    await page.keyboard.press('Escape');
+
+    // La case : cachée, plus de contour ni de filtre ; un filtre actif est lâché ; le choix survit au rechargement de l'écran.
+    await page.locator('#gallery-renown-filter [data-level="2"]').click();
+    await expect(page.locator('#gallery-container .gallery-card')).toHaveCount(parNiveau[1]);
+    await page.locator('#gallery-renown-show').uncheck();
+    await expect(page.locator('#gallery-renown-filter')).toBeHidden();
+    await expect(page.locator('#gallery-container .gallery-card')).toHaveCount(total);
+    await expect(page.locator('#gallery-container .renown-frame')).toHaveCount(0);
+    await expect(napoleon).not.toHaveAttribute('aria-label', /Renommée/);
+    expect(await page.evaluate(() => localStorage.getItem('historiaxe_renown_v1'))).toBe('0');
+    await napoleon.click();
+    await expect(page.locator('#modal-portrait-img')).not.toHaveClass(/renown/);
+    await expect(page.locator('#modal-portrait-renown')).toBeHidden();
+    await page.keyboard.press('Escape');
+    await page.locator('#gallery-renown-show').check();
+    await expect(page.locator('#gallery-container .gallery-card-frame.renown-frame')).toHaveCount(total);
+});
+
+test('« Qui est-ce ? » : pas de contour pendant la question (il serait un indice), le contour et son étiquette à la réponse', async ({ page }) => {
+    await lancerQuiEstCe(page);
+    const portrait = page.locator('#whois-portrait-img');
+    await expect(portrait).not.toHaveClass(/renown/);
+    await repondre(page, true);
+    const niveau = await page.evaluate(() => whoQuestions[whoIndex].correct.etoiles);
+    await expect(portrait).toHaveClass(new RegExp(`renown-img renown-${niveau}`));
+    await expect(page.locator('#whois-reveal .renown-chip')).toContainText(['Renommée locale', 'Renommée régionale', 'Renommée mondiale'][niveau - 1]);
+    await page.locator('#whois-continue').click();
+    await expect(portrait).not.toHaveClass(/renown/);
+});

@@ -244,6 +244,8 @@ function whoRender() {
         const img = document.getElementById('who-portrait-img');
         img.alt = g.resolved ? q.name : t('whois.portrait_alt');
         img.src = image.src;
+        // Le contour de renommée ne vient qu'avec la réponse : avant, il dirait si la figure est célèbre.
+        renownFrameImage(img, q.event, !!g.resolved);
         fillPortraitCredit(document.getElementById('who-portrait-credit'), image);
     }
 
@@ -289,6 +291,7 @@ function whoAnswer(optionId) {
     feedback.classList.toggle('is-wrong', g.resolved === 'lost');
     document.getElementById('who-feedback-title').textContent = g.resolved === 'right' ? t('who.right', { points: result.points }) : t('who.lost');
     document.getElementById('who-feedback-text').textContent = t('who.answer', { name: q.name });
+    renownFillChip(document.getElementById('who-feedback-renown'), q.event, true);
     const last = g.index + 1 >= g.questions.length;
     const next = document.getElementById('who-next');
     next.textContent = t(last ? 'who.finish' : 'who.next');

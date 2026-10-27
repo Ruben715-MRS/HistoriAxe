@@ -287,6 +287,21 @@
             <button type="button" class="gallery-reset hidden" id="gallery-reset"
                 data-i18n="gallery.filter_reset">Tout effacer</button>
         </div>
+        <!-- Renommée (voir js/renown.js) : la case affiche ou cache les contours de portrait et le filtre. -->
+        <div class="gallery-renown" id="gallery-renown">
+            <!-- La case à l'intérieur est le contrôle clavier de cette étiquette cliquable (data-kbd-proxy, voir e2e/clavier.spec.js). -->
+            <label class="gallery-renown-toggle" data-kbd-proxy>
+                <input type="checkbox" id="gallery-renown-show" checked>
+                <span data-i18n="gallery.renown_show">Afficher la renommée</span>
+            </label>
+            <div class="gallery-renown-filter" id="gallery-renown-filter" role="group" aria-label="Renommée"
+                data-i18n-attr="aria-label:renown.title">
+                <button type="button" class="gallery-renown-btn renown-chip renown-1" data-level="1" aria-pressed="false"></button>
+                <button type="button" class="gallery-renown-btn renown-chip renown-2" data-level="2" aria-pressed="false"></button>
+                <button type="button" class="gallery-renown-btn renown-chip renown-3" data-level="3" aria-pressed="false"></button>
+            </div>
+            <p class="gallery-renown-help" id="gallery-renown-help" data-i18n="gallery.renown_help">Le contour du portrait dit à quel point une figure est connue dans le monde : un filet (bronze) pour une renommée locale, deux (argent) pour régionale, trois (or) pour mondiale.</p>
+        </div>
         <div id="gallery-container" class="gallery-container"></div>
     </div>
 
@@ -1037,6 +1052,7 @@
             <div class="wheel-feedback hidden" id="who-feedback" role="status">
                 <strong id="who-feedback-title"></strong>
                 <p id="who-feedback-text"></p>
+                <p id="who-feedback-renown" class="renown-chip hidden"></p>
                 <button type="button" class="btn" id="who-next" onclick="whoContinue()"></button>
             </div>
         </div>
@@ -2937,6 +2953,7 @@
             <figure id="modal-portrait" class="modal-portrait hidden">
                 <img id="modal-portrait-img" class="modal-portrait-img" alt="" width="160" height="200" decoding="async">
                 <figcaption>
+                    <span id="modal-portrait-renown" class="renown-chip hidden"></span>
                     <span id="modal-portrait-caption" class="modal-portrait-caption"></span>
                     <span id="modal-portrait-credit" class="modal-portrait-credit"></span>
                 </figcaption>
@@ -3598,6 +3615,7 @@
     <script src="js/arcadeExtraCore.js"></script>
     <script src="js/reflexionContent.js"></script>
     <script src="js/reflexionCore.js"></script>
+    <script src="js/renown.js"></script>
     <script src="js/rewardsCore.js"></script>
     <script src="js/clioCore.js"></script>
     <script src="js/clioArt.js"></script>
@@ -3642,6 +3660,7 @@
     <script src="js/app/frise.js"></script>
     <script src="js/app/motion.js"></script>
     <script src="js/app/session-end.js"></script>
+    <script src="js/app/renown.js"></script>
     <script src="js/app/modal.js"></script>
     <script src="js/app/play-mode.js"></script>
     <script src="js/app/expedition.js"></script>

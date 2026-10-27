@@ -20,6 +20,8 @@ let galleryOrder = 'alpha';
 let galleryQuery = '';
 let galleryCountry = '';
 let galleryAxis = '';
+// Les niveaux de renommée retenus (1, 2, 3) ; vide : toutes. Sans effet quand la renommée est désactivée (voir js/renown.js).
+let galleryRenown = [];
 // Toutes les figures, et celles qui restent après recherche et filtres, dans
 // l'ordre où elles s'affichent : la fiche s'en sert pour passer à la voisine.
 let galleryEntries = [];
@@ -111,6 +113,8 @@ function collectGalleryEntries(pantheon) {
                 evt,
                 item,
                 iso: galleryCountryOf(evt, item.theme),
+                // Renommée dans le monde (1 à 3, 0 si les données ne la disent pas) : le contour du portrait et le filtre.
+                level: Renown.levelOf(evt),
                 // Le nom de classement est écrit dans les données (voir
                 // scripts/pantheon_classement.py) ; à défaut, le nom lui-même.
                 hasBio: !!evt.biographie && themeIds.has(evt.biographie),
@@ -125,11 +129,12 @@ function collectGalleryEntries(pantheon) {
 
 // Recherche et filtres, sans toucher à l'ordre. Chaque mot tapé doit se trouver
 // dans le nom : « hugo victor » et « victor hugo » trouvent la même figure.
-function filterGalleryEntries(entries, { query = '', country = '', axis = '' } = {}) {
+function filterGalleryEntries(entries, { query = '', country = '', axis = '', renown = [] } = {}) {
     const words = galleryNormalize(query).split(/\s+/).filter(Boolean);
     return entries.filter(entry =>
         (!country || entry.iso === country)
         && (!axis || entry.evt.axe === axis)
+        && (!renown.length || renown.includes(entry.level))
         && words.every(word => entry.haystack.includes(word)));
 }
 
@@ -220,6 +225,7 @@ function openGallery(order) {
     galleryQuery = '';
     galleryCountry = '';
     galleryAxis = '';
+    galleryRenown = [];
     galleryReturnPending = false;
     galleryScope = { ci: selectedCategoryIndex, si: Array.isArray(selectedSubcategoryIndex) ? [...selectedSubcategoryIndex] : [] };
     showScreen('screen-gallery', 'forward');
@@ -299,6 +305,7 @@ function initGallery() {
     galleryModalIndex = -1;
 
     initGalleryFilters();
+    initGalleryRenown();
     renderGalleryCollection();
 
     const search = document.getElementById('gallery-search');
@@ -322,9 +329,11 @@ function initGallery() {
         galleryQuery = '';
         galleryCountry = '';
         galleryAxis = '';
+        galleryRenown = [];
         search.value = '';
         document.getElementById('gallery-filter-country').value = '';
         document.getElementById('gallery-filter-axis').value = '';
+        renderGalleryRenown();
         renderGalleryGrid();
     };
 
@@ -333,6 +342,53 @@ function initGallery() {
     // Après showScreen, qui replace le focus et peut remonter la page : on
     // attend la fin de la bascule avant de remettre la liste où on l'avait laissée.
     requestAnimationFrame(() => scrollGalleryTo(returning ? galleryScrollTop : 0));
+}
+
+// La renommée : une case pour afficher ou cacher les contours (et avec eux le filtre), et trois boutons, un par niveau, qui retiennent
+// les figures de ce niveau (plusieurs à la fois : « locale » et « régionale »).
+function initGalleryRenown() {
+    const box = document.getElementById('gallery-renown-show');
+    if (!box) return;
+    box.checked = Renown.shown();
+    box.onchange = () => {
+        Renown.setShown(box.checked);
+        if (!box.checked) galleryRenown = [];
+        renderGalleryRenown();
+        renderGalleryGrid();
+    };
+    renderGalleryRenown();
+}
+
+function renderGalleryRenown() {
+    const filter = document.getElementById('gallery-renown-filter');
+    const help = document.getElementById('gallery-renown-help');
+    if (!filter) return;
+    const on = Renown.shown();
+    filter.classList.toggle('hidden', !on);
+    help.classList.toggle('hidden', !on);
+    document.getElementById('gallery-renown-show').checked = on;
+    if (!on) return;
+    const counts = { 1: 0, 2: 0, 3: 0 };
+    galleryEntries.forEach(entry => { if (entry.level) counts[entry.level] += 1; });
+    filter.querySelectorAll('[data-level]').forEach(btn => {
+        const level = Number(btn.dataset.level);
+        const pressed = galleryRenown.includes(level);
+        btn.textContent = '';
+        const pips = document.createElement('span');
+        pips.className = 'renown-pips';
+        pips.setAttribute('aria-hidden', 'true');
+        for (let i = 0; i < 3; i++) pips.appendChild(document.createElement('i'));
+        const text = document.createElement('span');
+        text.textContent = `${t('renown.' + Renown.KEYS[level] + '_short')} (${counts[level]})`;
+        btn.append(pips, text);
+        btn.setAttribute('aria-pressed', String(pressed));
+        btn.setAttribute('aria-label', `${t('renown.' + Renown.KEYS[level])} (${counts[level]})`);
+        btn.onclick = () => {
+            galleryRenown = pressed ? galleryRenown.filter(n => n !== level) : [...galleryRenown, level];
+            renderGalleryRenown();
+            renderGalleryGrid();
+        };
+    });
 }
 
 function scrollGalleryTo(top) {
@@ -353,11 +409,13 @@ function renderGalleryGrid() {
         b.setAttribute('aria-pressed', String(active));
     });
 
-    const matching = filterGalleryEntries(galleryEntries, { query: galleryQuery, country: galleryCountry, axis: galleryAxis });
+    // Renommée désactivée : ni contour ni filtre (un filtre caché ne doit pas rester actif).
+    const showRenown = Renown.shown();
+    const matching = filterGalleryEntries(galleryEntries, { query: galleryQuery, country: galleryCountry, axis: galleryAxis, renown: showRenown ? galleryRenown : [] });
     const groups = sortGalleryEntries(matching, galleryOrder);
     galleryVisible = groups.flatMap(group => group.entries);
 
-    const filtered = !!(galleryQuery.trim() || galleryCountry || galleryAxis);
+    const filtered = !!(galleryQuery.trim() || galleryCountry || galleryAxis || (showRenown && galleryRenown.length));
     document.getElementById('gallery-reset').classList.toggle('hidden', !filtered);
     // En mode collection, le compteur « 30 / 2400 portraits débloqués » dit déjà le total : le décompte
     // ne reparaît que filtré (« 12 portraits sur 2400 »).
@@ -386,7 +444,7 @@ function renderGalleryGrid() {
         section.appendChild(heading);
         const grid = document.createElement('div');
         grid.className = 'gallery-grid';
-        group.entries.forEach(entry => grid.appendChild(buildGalleryCard(entry, !!srs && !srs[entry.evt.id])));
+        group.entries.forEach(entry => grid.appendChild(buildGalleryCard(entry, !!srs && !srs[entry.evt.id], showRenown)));
         section.appendChild(grid);
         fragment.appendChild(section);
     });
@@ -396,14 +454,14 @@ function renderGalleryGrid() {
 // Une carte du trombinoscope : portrait, nom, drapeau et année de naissance.
 // Un vrai <button>, dont le nom accessible est celui de la figure ; le portrait
 // est décoratif (alt vide), comme la pastille de la frise.
-function buildGalleryCard(entry, locked = false) {
+function buildGalleryCard(entry, locked = false, showRenown = false) {
     const card = document.createElement('button');
     card.type = 'button';
     card.className = 'gallery-card' + (locked ? ' is-locked' : '');
     card.dataset.eventId = entry.evt.id || '';
 
     const frame = document.createElement('span');
-    frame.className = 'gallery-card-frame';
+    frame.className = 'gallery-card-frame' + (showRenown && entry.level ? ' renown-frame renown-' + entry.level : '');
     const img = document.createElement('img');
     img.className = 'gallery-card-img';
     img.alt = '';
@@ -437,7 +495,9 @@ function buildGalleryCard(entry, locked = false) {
     if (entry.iso && typeof countryDisplayName === 'function') meta.title = countryDisplayName(entry.iso);
 
     card.append(frame, name, meta);
-    card.setAttribute('aria-label', `${entry.name}, ${formatEventDate(entry.evt)}${entry.hasBio ? ', ' + t('gallery.bio_aria') : ''}${locked ? ', ' + t('gallery.locked_aria') : ''}`);
+    // Le contour est doublé par son libellé pour les lecteurs d'écran (et par le nombre de filets pour ceux qui ne distinguent pas les couleurs).
+    const renownAria = showRenown && entry.level ? ', ' + renownLabel(entry.evt) : '';
+    card.setAttribute('aria-label', `${entry.name}, ${formatEventDate(entry.evt)}${renownAria}${entry.hasBio ? ', ' + t('gallery.bio_aria') : ''}${locked ? ', ' + t('gallery.locked_aria') : ''}`);
     card.onclick = () => openGalleryPortrait(entry);
     return card;
 }

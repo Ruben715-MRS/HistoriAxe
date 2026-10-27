@@ -800,8 +800,19 @@
   "home": {
     "start_aria": "はじめる"
   },
+  "renown": {
+    "title": "知名度",
+    "local": "地域での知名度",
+    "regional": "広い地域での知名度",
+    "world": "世界的な知名度",
+    "local_short": "地域",
+    "regional_short": "広域",
+    "world_short": "世界"
+  },
   "gallery": {
     "title": "肖像ギャラリー",
+    "renown_show": "知名度を表示",
+    "renown_help": "肖像の縁取りは、その人物が世界でどれだけ知られているかを表します。1本線（銅）は地域、2本線（銀）は広域、3本線（金）は世界的です。",
     "launcher_sub": "{count}人の肖像を眺める",
     "order_alpha": "名前順",
     "order_famille": "姓の順",

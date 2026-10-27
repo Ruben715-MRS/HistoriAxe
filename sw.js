@@ -12,9 +12,9 @@
 // 'install' recharge tout depuis le réseau. Un pack de langue ou un texte
 // d'UI modifié qui ne s'affiche pas malgré un déploiement réussi est
 // généralement le signe que l'un de ces deux numéros n'a pas été incrémenté.
-const CACHE_VERSION = '1.4.298';
+const CACHE_VERSION = '1.4.299';
 const APP_SHELL_CACHE = `historiaxe-shell-v${CACHE_VERSION}`;
-const DATA_CACHE = 'historiaxe-data-v1.0.127';
+const DATA_CACHE = 'historiaxe-data-v1.0.128';
 
 // Portraits des personnages (assets/portraits/*.jpg, champ `image` des
 // événements). Un cache À PART, et c'est tout l'objet : 'activate' purge tout
@@ -71,6 +71,7 @@ const APP_SHELL_FILES = [
     './js/arcadeExtraCore.js',
     './js/reflexionContent.js',
     './js/reflexionCore.js',
+    './js/renown.js',
     './js/rewardsCore.js',
     './js/clioCore.js',
     './js/clioArt.js',
@@ -115,6 +116,7 @@ const APP_SHELL_FILES = [
     './js/app/frise.js',
     './js/app/motion.js',
     './js/app/session-end.js',
+    './js/app/renown.js',
     './js/app/modal.js',
     './js/app/play-mode.js',
     './js/app/expedition.js',

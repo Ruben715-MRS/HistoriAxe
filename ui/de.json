@@ -800,8 +800,19 @@
   "home": {
     "start_aria": "Starten"
   },
+  "renown": {
+    "title": "Bekanntheit",
+    "local": "Lokale Bekanntheit",
+    "regional": "Regionale Bekanntheit",
+    "world": "Weltweite Bekanntheit",
+    "local_short": "Lokal",
+    "regional_short": "Regional",
+    "world_short": "Weltweit"
+  },
   "gallery": {
     "title": "Porträtgalerie",
+    "renown_show": "Bekanntheit anzeigen",
+    "renown_help": "Der Rahmen um das Porträt zeigt, wie bekannt eine Persönlichkeit in der Welt ist: eine Linie (Bronze) für lokale, zwei (Silber) für regionale, drei (Gold) für weltweite Bekanntheit.",
     "launcher_sub": "{count} Gesichter zum Blättern",
     "order_alpha": "Alphabetisch",
     "order_famille": "Nach Familienname",
