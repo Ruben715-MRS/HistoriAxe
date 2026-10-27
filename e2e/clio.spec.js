@@ -62,10 +62,20 @@ test('sur le Chemin, Clio se tient près du niveau à jouer et se présente la p
     const box = await marker.boundingBox();
     const node = await page.locator('.path-node.is-next').boundingBox();
     expect(Math.abs(box.y + box.height / 2 - (node.y + node.height / 2))).toBeLessThan(40);
-    await expect(marker.locator('.clio-marker-bubble')).toContainText('Clio');
+    // Première visite : Clio se présente en cinq bulles, puis la carte disparaît.
+    const intro = page.locator('#clio-intro');
+    await expect(intro).toBeVisible();
+    await expect(intro.locator('.clio-intro-bubble')).toContainText('Clio');
+    await expect(intro.locator('.clio-intro-count')).toHaveText('1 / 5');
+    for (let i = 1; i <= 4; i++) await intro.locator('.clio-intro-next').click();
+    await expect(intro.locator('.clio-intro-count')).toHaveText('5 / 5');
+    await expect(intro.locator('.clio-intro-next')).toHaveText("C'est parti !");
+    await intro.locator('.clio-intro-next').click();
+    await expect(intro).toHaveCount(0);
     expect((await clioState(page)).introSeen).toBe(true);
     // Elle ne se présente qu'une fois ; en la touchant, elle encourage.
     await page.evaluate(() => renderPath());
+    await expect(page.locator('#clio-intro')).toHaveCount(0);
     await expect(page.locator('.clio-marker-bubble')).toHaveCount(0);
     await page.locator('.clio-marker').click();
     await expect(page.locator('.clio-marker-bubble')).toBeVisible();
@@ -76,7 +86,7 @@ test('Clio porte le costume du moment', async ({ page }) => {
         localStorage.setItem('historiaxe_rewards_v1', JSON.stringify({ coins: 0, owned: ['costume-prehistoire'], equipped: { costume: 'costume-prehistoire', decor: null } }));
         showScreen('screen-path'); renderPath();
     });
-    await expect(page.locator('.clio-marker .clio-costume')).toHaveText('🦴');
+    await expect(page.locator('.clio-marker svg.clio-art')).toHaveAttribute('data-costume', 'mammouth');
 });
 
 test('à la fin d\'un niveau : joyeuse à trois étoiles, douce après une défaite', async ({ page }) => {
@@ -133,9 +143,20 @@ test('après une première victoire, Clio marche jusqu\'au niveau suivant', asyn
     await page.evaluate(() => { expeditionAbort(); showScreen('screen-path'); renderPath(); });
     const marker = page.locator('.clio-marker');
     await expect(marker.locator('.clio')).toHaveClass(/is-walking/);
+    await expect(marker.locator('.clio-walk svg.clio-walk-art')).toHaveCount(1); // de profil, sans costume
     await expect(marker.locator('.clio')).not.toHaveClass(/is-walking/, { timeout: 4000 });
     const nodeId = await page.evaluate(() => document.querySelector('.path-node.is-next').dataset.level);
     expect(nodeId).toBe('prehistoire-2');
+});
+
+test('costumée, Clio marche aussi de profil avec son costume', async ({ page }) => {
+    await page.evaluate(() => {
+        localStorage.setItem('historiaxe_rewards_v1', JSON.stringify({ coins: 0, owned: ['costume-prehistoire'], equipped: { costume: 'costume-prehistoire', decor: null } }));
+        pathStartLevel('prehistoire-1');
+    });
+    await jouerNiveau(page, { vies: 3 });
+    await page.evaluate(() => { expeditionAbort(); showScreen('screen-path'); renderPath(); });
+    await expect(page.locator('.clio-marker .clio-walk svg.clio-walk-art')).toHaveAttribute('data-costume', 'mammouth');
 });
 
 test('avec « réduire les animations », Clio ne marche pas', async ({ page }) => {
@@ -144,4 +165,49 @@ test('avec « réduire les animations », Clio ne marche pas', async ({ page }) 
     await jouerNiveau(page, { vies: 3 });
     await page.evaluate(() => { expeditionAbort(); showScreen('screen-path'); renderPath(); });
     await expect(page.locator('.clio-marker .clio')).not.toHaveClass(/is-walking/);
+});
+
+test('dans la boutique, Clio fait une pirouette pour essayer le costume qu\'on enfile', async ({ page }) => {
+    await page.evaluate(() => {
+        localStorage.setItem('historiaxe_rewards_v1', JSON.stringify({ coins: 0, owned: ['costume-prehistoire'], equipped: { costume: null, decor: null } }));
+        openShop('screen-categories');
+    });
+    await expect(page.locator('#shop-clio-avatar .clio')).not.toHaveClass(/is-essaie/);
+    await page.locator('.shop-item[data-item="costume-prehistoire"] .shop-item-btn').click();
+    await expect(page.locator('#shop-clio-avatar .clio')).toHaveClass(/is-essaie/);
+    await expect(page.locator('#shop-clio-avatar svg.clio-art')).toHaveAttribute('data-costume', 'mammouth');
+});
+
+test('la carte qui complète un album fait danser Clio', async ({ page }) => {
+    await page.evaluate(() => {
+        const albums = rewardsData().albums;
+        const world = Object.keys(albums).find(k => albums[k].length > 1);
+        const album = albums[world], last = album[album.length - 1];
+        const cards = {};
+        album.forEach(c => { cards[c.id] = 1; });
+        localStorage.setItem('historiaxe_rewards_v1', JSON.stringify({ coins: 0, cards, owned: [], equipped: { costume: null, decor: null } }));
+        rewardsReveal = { cards: [{ id: last.id, rarity: last.rarity, isNew: true, coins: 0 }], index: 0 };
+        document.getElementById('modal-card-reveal').classList.remove('hidden');
+        rewardsRevealShow();
+    });
+    const clio = page.locator('#card-reveal-clio .clio-react');
+    await expect(clio).toHaveAttribute('data-event', 'album');
+    await expect(clio.locator('.clio')).toHaveAttribute('data-mood', 'danse');
+    await expect(clio.locator('.clio-bubble')).not.toBeEmpty();
+});
+
+test('dans la boutique, toucher un costume l\'agrandit sans l\'acheter ; Échap referme', async ({ page }) => {
+    await page.evaluate(() => {
+        localStorage.setItem('historiaxe_rewards_v1', JSON.stringify({ coins: 500, owned: [], equipped: { costume: null, decor: null } }));
+        openShop('screen-categories');
+    });
+    const item = page.locator('.shop-item[data-item="costume-prehistoire"]');
+    await item.locator('.shop-item-view').click();
+    await expect(page.locator('#shop-zoom')).toBeVisible();
+    await expect(page.locator('#shop-zoom .shop-zoom-name')).toHaveText('Peau de mammouth');
+    await expect(page.locator('#shop-zoom svg.clio-art')).toHaveAttribute('data-costume', 'mammouth');
+    expect((await clioState(page)).equipped).toBeUndefined();
+    expect(await page.evaluate(() => JSON.parse(localStorage.getItem('historiaxe_rewards_v1')).coins)).toBe(500);
+    await page.keyboard.press('Escape');
+    await expect(page.locator('#shop-zoom')).toHaveCount(0);
 });

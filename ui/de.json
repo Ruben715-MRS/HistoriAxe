@@ -1366,8 +1366,8 @@
     "album_subtitle": "Gefundene Karten: {have} von {total}",
     "card_missing_aria": "Karte „{rarity}“ noch nicht gefunden",
     "shop_title": "Clios Shop",
-    "clio_soon": "Clio wird bald gezeichnet: Diese Kostüme sind Vorschauen.",
     "clio_wears": "Clio trägt: {name}",
+    "shop_zoom": "Vergrößern: {name}",
     "clio_bare": "Clio hat noch kein Kostüm.",
     "shop_decors": "Hintergrunddekors kommen später.",
     "shop_locked": "Erreiche „{world}“, um es zu kaufen",
@@ -1786,6 +1786,16 @@
     "pending_aria": "{n} offene Freundschaftsanfrage(n)"
   },
   "clio": {
+    "intro": {
+      "0": "Hallo, ich bin Clio, die Muse der Geschichte. In der griechischen Mythologie bin ich eine der neun Musen; man zeigt mich oft mit einer Schriftrolle, um festzuhalten, was geschehen ist.",
+      "1": "Ich begleite dich auf dem Weg der Zeit, Epoche für Epoche, und stille deinen Wissensdurst.",
+      "2": "Warum eine Katze? Katzen leben schon sehr lange bei den Menschen. Im alten Ägypten waren sie heilig: Herodot erzählt, dass Familien sich bei einem Katzentod zum Zeichen der Trauer die Augenbrauen rasierten.",
+      "3": "Im Lauf der Jahrhunderte wurden Katzen bewundert und manchmal gefürchtet. Ich behalte vor allem eines im Sinn: Eine gute Katze beobachtet, bevor sie handelt, wie ein guter Historiker seine Quellen befragt.",
+      "4": "Bereit für die erste Reise? Tippe auf das Level, und los geht's!"
+    },
+    "intro_next": "Weiter",
+    "intro_start": "Los geht's!",
+    "intro_skip": "Überspringen",
     "name": "Clio",
     "aria": "Clio, das Maskottchen",
     "dismiss": "Schließen",
@@ -1843,15 +1853,16 @@
         "2": "Miau! Gehen wir?",
         "3": "Jeder Stern zählt."
       },
-      "first": {
-        "0": "Willkommen! Ich bin Clio. Tippe auf das grüne Level, um zu beginnen."
-      },
       "costume": {
         "0": "Das Kostüm „{name}“ wartet im Shop auf dich ({price} 🪙).",
         "1": "Zur Feier des Tages: „{name}“, {price} 🪙 im Shop!"
       },
       "costumeShort": {
         "0": "Dir fehlen {missing} 🪙 für das Kostüm „{name}“."
+      },
+      "album": {
+        "0": "Album komplett! Ich tanze vor Freude!",
+        "1": "Alle Figuren aus {world} sind beisammen!"
       }
     }
   },

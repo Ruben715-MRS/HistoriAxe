@@ -362,6 +362,10 @@ function rewardsRevealShow() {
     const prog = world ? RewardsCore.albumProgress(state, rewardsData().albums[world]) : null;
     document.getElementById('card-reveal-kicker').innerText = card.isNew ? t('rewards.card_new') : t('rewards.card_duplicate', { coins: card.coins });
     document.getElementById('card-reveal-note').innerText = prog ? t('rewards.card_progress', { have: prog.have, total: prog.total, world: pathWorldTitle(PathCore.findWorld(world)) }) : '';
+    // La carte qui complète un album : Clio danse.
+    const clioBox = document.getElementById('card-reveal-clio');
+    clioBox.replaceChildren();
+    if (card.isNew && prog && prog.complete) clioBox.appendChild(clioReaction('album', { world: pathWorldTitle(PathCore.findWorld(world)) }, 'clio-album'));
     const last = r.index >= r.cards.length - 1;
     document.getElementById('card-reveal-next').innerText = t(last ? 'rewards.card_done' : 'rewards.card_next');
     // On retourne la carte tout de suite si l'on a demandé moins d'animations, sinon après un battement.
@@ -471,12 +475,13 @@ function openShop(from) {
 
 function rewardsCostumeName(item) { return t('rewards.costumes.' + item.world); }
 
-function renderShop() {
+// `tryOn` : un costume vient d'être acheté ou enfilé, Clio fait une pirouette pour l'essayer.
+function renderShop(tryOn) {
     const state = rewardsState();
     document.getElementById('shop-coins').innerText = state.coins;
-    // Clio : un chat de remplacement (emoji) portant le costume du moment, en attendant les dessins.
+    // Clio en grand, avec le costume du moment (js/app/clio.js).
     const worn = state.equipped.costume ? RewardsCore.findItem(state.equipped.costume) : null;
-    document.getElementById('shop-clio-costume').innerText = worn ? worn.emoji : '';
+    document.getElementById('shop-clio-avatar').replaceChildren(clioAvatar(tryOn && worn ? 'essaie' : (worn ? 'content' : 'repos'), 'large'));
     document.getElementById('shop-clio-caption').innerText = worn
         ? t('rewards.clio_wears', { name: rewardsCostumeName(worn) })
         : t('rewards.clio_bare');
@@ -488,9 +493,15 @@ function renderShop() {
         const li = document.createElement('li');
         li.className = 'shop-item' + (owned ? ' is-owned' : '') + (!worldOpen && !owned ? ' is-locked' : '');
         li.dataset.item = item.id;
-        li.innerHTML = '<span class="shop-item-emoji" aria-hidden="true"></span><span class="shop-item-text"><strong></strong><small></small></span><button type="button" class="btn shop-item-btn"></button>';
-        li.querySelector('.shop-item-emoji').innerText = worldOpen || owned ? item.emoji : '🔒';
-        li.querySelector('strong').innerText = rewardsCostumeName(item);
+        li.innerHTML = '<button type="button" class="shop-item-emoji shop-item-view"></button><span class="shop-item-text"><strong></strong><small></small></span><button type="button" class="btn shop-item-btn"></button>';
+        // Le costume dessiné, habillé sur Clio ; touché, il s'agrandit. Grisé tant que le monde n'est pas atteint.
+        const icon = li.querySelector('.shop-item-emoji');
+        const name = rewardsCostumeName(item);
+        icon.setAttribute('aria-label', t('rewards.shop_zoom', { name: name }));
+        if (ClioArt.hasCostume(item.world)) { icon.classList.add('is-drawn'); icon.innerHTML = ClioArt.front('repos', { costume: item.world }); }
+        else icon.innerText = item.emoji;
+        icon.onclick = () => shopZoomCostume(item.id);
+        li.querySelector('strong').innerText = name;
         const world = PathCore.findWorld(item.world);
         li.querySelector('small').innerText = worldOpen || owned ? pathWorldTitle(world) : t('rewards.shop_locked', { world: pathWorldTitle(world) });
         const btn = li.querySelector('.shop-item-btn');
@@ -509,6 +520,43 @@ function renderShop() {
     });
 }
 
+// L'agrandissement d'un costume : Clio habillée, en grand. Fermé par le bouton, un appui à côté ou la touche Échap.
+function shopZoomCostume(id) {
+    const item = RewardsCore.findItem(id);
+    if (!item || !ClioArt.hasCostume(item.world)) return;
+    const old = document.getElementById('shop-zoom');
+    if (old) old.remove();
+    const state = rewardsState();
+    const owned = state.owned.indexOf(item.id) !== -1;
+    const worldOpen = rewardsWorldReached(item.world);
+    const box = document.createElement('div');
+    box.id = 'shop-zoom';
+    box.className = 'shop-zoom';
+    box.setAttribute('role', 'dialog');
+    box.setAttribute('aria-label', rewardsCostumeName(item));
+    const card = document.createElement('div');
+    card.className = 'shop-zoom-card' + (!worldOpen && !owned ? ' is-locked' : '');
+    const art = document.createElement('div');
+    art.className = 'shop-zoom-art';
+    art.innerHTML = ClioArt.front('content', { costume: item.world, label: rewardsCostumeName(item) });
+    const caption = document.createElement('p');
+    caption.className = 'shop-zoom-name';
+    caption.innerText = rewardsCostumeName(item);
+    const close = document.createElement('button');
+    close.type = 'button';
+    close.className = 'btn shop-zoom-close';
+    close.innerText = t('clio.dismiss');
+    const closeIt = () => { box.remove(); document.removeEventListener('keydown', onKey); };
+    const onKey = e => { if (e.key === 'Escape') closeIt(); };
+    close.onclick = closeIt;
+    box.onclick = e => { if (e.target === box) closeIt(); };
+    document.addEventListener('keydown', onKey);
+    card.append(art, caption, close);
+    box.appendChild(card);
+    document.body.appendChild(box);
+    close.focus();
+}
+
 function shopBuy(id) {
     const res = RewardsCore.buy(rewardsState(), id, rewardsWorldReached(RewardsCore.findItem(id).world));
     if (!res.ok) {
@@ -519,12 +567,12 @@ function shopBuy(id) {
     if (typeof playVictorySound === 'function') playVictorySound();
     if (typeof triggerConfetti === 'function') triggerConfetti(1500);
     showToast(t('rewards.shop_bought', { name: rewardsCostumeName(RewardsCore.findItem(id)) }), 2600);
-    renderShop();
+    renderShop(true);
 }
 
 function shopEquip(id) {
     const item = RewardsCore.findItem(id);
     if (!item) return;
     rewardsCommit(RewardsCore.equip(rewardsState(), item.slot, id));
-    renderShop();
+    renderShop(true);
 }

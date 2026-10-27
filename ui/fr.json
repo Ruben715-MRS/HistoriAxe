@@ -1392,8 +1392,8 @@
     "album_subtitle": "Cartes trouvées : {have} sur {total}",
     "card_missing_aria": "Carte {rarity} pas encore trouvée",
     "shop_title": "Boutique de Clio",
-    "clio_soon": "Clio sera dessinée bientôt : ces costumes sont des aperçus.",
     "clio_wears": "Clio porte : {name}",
+    "shop_zoom": "Agrandir : {name}",
     "clio_bare": "Clio n'a encore aucun costume.",
     "shop_decors": "Les décors d'arrière-plan arrivent plus tard.",
     "shop_locked": "Atteignez « {world} » pour l'acheter",
@@ -1815,6 +1815,16 @@
     "pending_aria": "{n} demande(s) d'ami en attente"
   },
   "clio": {
+    "intro": {
+      "0": "Bonjour, je suis Clio, la muse de l'Histoire. Dans la mythologie grecque, je suis l'une des neuf Muses. On me représente avec un rouleau, pour écrire ce qui s'est passé.",
+      "1": "Je t'accompagnerai sur le Chemin du Temps, époque après époque, et je nourrirai ta soif de connaissances.",
+      "2": "Pourquoi un chat ? Les chats vivent auprès des humains depuis très longtemps. Dans l'Égypte ancienne, ils étaient sacrés : Hérodote raconte que les familles se rasaient les sourcils en signe de deuil quand un chat mourait.",
+      "3": "Au fil des siècles, on les a admirés, et parfois craints. Moi, je retiens surtout une chose : un bon chat observe avant d'agir, comme un bon historien qui interroge ses sources.",
+      "4": "Alors, prêt·e pour le premier voyage ? Touche le niveau à jouer, et c'est parti !"
+    },
+    "intro_next": "Suivant",
+    "intro_start": "C'est parti !",
+    "intro_skip": "Passer",
     "name": "Clio",
     "aria": "Clio, la mascotte",
     "dismiss": "Fermer",
@@ -1872,15 +1882,16 @@
         "2": "Miaou ! On y va ?",
         "3": "Chaque étoile compte."
       },
-      "first": {
-        "0": "Bienvenue ! Je suis Clio. Touche le niveau vert pour commencer."
-      },
       "costume": {
         "0": "Le costume « {name} » t'attend à la boutique ({price} 🪙).",
         "1": "Pour fêter ça : « {name} », {price} 🪙 à la boutique !"
       },
       "costumeShort": {
         "0": "Il te manque {missing} 🪙 pour le costume « {name} »."
+      },
+      "album": {
+        "0": "Album complet ! J'en danse de joie !",
+        "1": "Tous les personnages de {world} sont réunis !"
       }
     }
   },

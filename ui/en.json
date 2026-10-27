@@ -1391,8 +1391,8 @@
     "album_subtitle": "Cards found: {have} out of {total}",
     "card_missing_aria": "{rarity} card not found yet",
     "shop_title": "Clio’s Shop",
-    "clio_soon": "Clio will be drawn soon: these costumes are previews.",
     "clio_wears": "Clio is wearing: {name}",
+    "shop_zoom": "Enlarge: {name}",
     "clio_bare": "Clio has no costume yet.",
     "shop_decors": "Background scenery is coming later.",
     "shop_locked": "Reach “{world}” to buy it",
@@ -1814,6 +1814,16 @@
     "pending_aria": "{n} pending friend request(s)"
   },
   "clio": {
+    "intro": {
+      "0": "Hello, I'm Clio, the Muse of History. In Greek mythology I am one of the nine Muses, usually shown with a scroll to record what happened.",
+      "1": "I'll walk with you along the Path of Time, age after age, and feed your thirst for knowledge.",
+      "2": "Why a cat? Cats have lived alongside people for a very long time. In ancient Egypt they were sacred: Herodotus tells how families shaved their eyebrows in mourning when a cat died.",
+      "3": "Over the centuries, cats have been admired, and sometimes feared. I remember one thing above all: a good cat watches before it acts, just like a good historian questions their sources.",
+      "4": "So, ready for your first journey? Touch the level to play, and let's go!"
+    },
+    "intro_next": "Next",
+    "intro_start": "Let's go!",
+    "intro_skip": "Skip",
     "name": "Clio",
     "aria": "Clio, the mascot",
     "dismiss": "Close",
@@ -1871,15 +1881,16 @@
         "2": "Meow! Shall we go?",
         "3": "Every star counts."
       },
-      "first": {
-        "0": "Welcome! I’m Clio. Tap the green level to begin."
-      },
       "costume": {
         "0": "The “{name}” costume is waiting for you in the shop ({price} 🪙).",
         "1": "To celebrate: “{name}”, {price} 🪙 in the shop!"
       },
       "costumeShort": {
         "0": "You’re {missing} 🪙 short for the “{name}” costume."
+      },
+      "album": {
+        "0": "Album complete! I'm dancing for joy!",
+        "1": "All the characters of {world} are together!"
       }
     }
   },

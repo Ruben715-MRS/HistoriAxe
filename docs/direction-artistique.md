@@ -161,9 +161,25 @@ Les sols et horizons sont **optionnels pour une première livraison** : le jeu a
 
 ## 7. Clio, la mascotte
 
-Un chat. Le reste (âge, couleur, caractère) est à décider avec vous ; **proposition** : chat de gouttière **roux à
-poitrail crème**, grands yeux ronds expressifs, silhouette compacte et rebondie, queue en point d'interrogation. Curieux,
-un peu savant, jamais moqueur ; il **encourage**, ne juge pas.
+Une chatte. **Décisions validées (octobre 2026)** :
+
+| Point | Choix |
+|---|---|
+| **Style** | **Cartoon vectoriel 2D** (SVG) : tête large (≈ 45 % de la hauteur), formes rondes, **contour fin de couleur** (brun roux, jamais noir pur). Le pixel art reste possible pour une variante de Flappy Clio ; le réaliste est écarté. |
+| **Pelage** | **Roux tigré**, poitrail, museau et bout des pattes **crème** ; rayures sobres (front, joues, flancs, queue). |
+| **Yeux** | **Verts**, grands et ronds, pupille verticale, deux reflets blancs. |
+| **Allure** | **Jeune chatte ronde et compacte** (silhouette des premiers croquis), queue en point d'interrogation. Pas de signe distinctif ajouté (la « patte d'encre » est écartée). |
+| **Caractère** | Curieuse, un peu savante, jamais moqueuse ; elle **encourage**, ne juge pas. |
+
+Le dessin est dans `js/clioArt.js` (de face dans toutes les humeurs et les poses `essaie` et `danse`, de profil en
+marche sur le Chemin, en vol pour Flappy Clio) ; ses animations sont
+dans `css/style.css` (classes `ca-*`). Costumes déjà dessinés : les cinq de l'Antiquité, les quatre du Moyen Âge (mérovingien, cotte de mailles, cape fleurdelisée, armure de Jeanne) les quatre des Temps
+modernes (Léonard, fraise, Roi-Soleil, philosophe) les trois du XIXᵉ siècle (bonnet phrygien, haut-de-forme, Belle Époque) et les cinq du XXᵉ siècle et
+d'aujourd'hui (casque Adrian, années folles, combinaison spatiale, perfecto, tenue connectée) : **les 21 costumes sont
+dessinés**, de face et de profil (Clio marche sur le Chemin et vole dans Flappy Clio avec son costume).
+
+Palette figée : pelage `#EE8A3C`, rayures `#C65E1C`, contour `#9C4A17`, crème `#FFF0DA`, intérieur des oreilles
+`#F7B3A6`, yeux `#5FB46A`, truffe `#E26F80`, pupilles `#17171F`.
 
 > **Pour la propriété intellectuelle, Clio mérite un créateur humain** (illustrateur·rice) ou au minimum une conception
 > très guidée : le droit d'auteur sur des images générées par IA est incertain selon les pays, et Clio est ce que vous
@@ -195,13 +211,17 @@ vectorielle de type Rive ou Lottie, ou calques SVG/WebP animés en code). Format
 | `dort` | oui | rappel de série quotidienne en péril |
 | `essaie` (tourne sur elle-même) | non | essayage d'un costume dans la boutique |
 | `danse` | non | album complété |
+| `vole` | oui | **Flappy Clio** : vue de profil, tournée **vers la droite**, pattes avant tendues, queue au vent (battement à chaque saut) |
+
+**Présentation** : à la première visite du Chemin, Clio se présente en cinq bulles (muse de l'Histoire, elle accompagne le joueur, pourquoi un chat, « un bon chat observe avant d'agir », le premier voyage). Lue une seule fois ; ses textes sont dans `ui/<lang>.json` (`clio.intro`). Elle attend la fin du tutoriel.
 
 Le jeu pilote ces animations par **états** (`repos` → `content` → `repos`…) : chaque animation commence et finit sur la
 pose `repos` pour s'enchaîner proprement.
 
 ### 7.3 Costumes (21, un par monde principal)
-Chaque costume est **un jeu de calques** qui se superpose à Clio (tête / torse / accessoire) avec **points d'ancrage
-communs** : l'essayage fonctionne sur toutes les poses sans redessin. Les prix et la règle d'achat sont dans
+Chaque costume est une **tenue complète, pour tout le corps** (pas seulement un accessoire) : **un jeu de calques** qui se superpose à Clio (tête / corps / pattes / queue si besoin) avec **points d'ancrage
+communs** : un costume est dessiné **une fois par vue** (face, profil — qui sert aussi à la marche et au vol de
+Flappy Clio —, dos), puis suit toutes les poses et expressions de cette vue sans redessin. Les prix et la règle d'achat sont dans
 `js/rewardsCore.js` ; les noms ci-dessous sont ceux de `ui/fr.json`.
 
 | Monde | Costume | Idée visuelle |
@@ -218,15 +238,15 @@ communs** : l'essayage fonctionne sur toutes les poses sans redessin. Les prix e
 | Renaissances | Pourpoint de Léonard | pourpoint, béret, carnet de croquis |
 | Religion | Fraise et pourpoint | collerette blanche, pourpoint sobre |
 | Rois absolus | Perruque du Roi-Soleil | grande perruque, manteau doré |
-| Lumières | Habit de philosophe | redingote, plume d'oie, perruque poudrée |
+| Lumières | Habit de philosophe | redingote, gilet et jabot, perruque poudrée (sans plume) |
 | Révolution | Bonnet phrygien | bonnet rouge, cocarde |
 | Révolution inachevée | Haut-de-forme | haut-de-forme, redingote |
 | République | Costume Belle Époque | canotier, nœud papillon |
-| Grande Guerre | Casque Adrian | casque bleu horizon, **sans arme ni uniforme complet** |
+| Grande Guerre | Casque Adrian | casque et capote bleu horizon (tenue complète, comme tous les costumes), **sans arme ni insigne** |
 | Entre-deux-guerres | Tenue des années folles | cloche, long collier de perles |
-| Trente Glorieuses | Combinaison spatiale | casque bulle, drapeau étoilé neutre |
-| Crises | Perfecto des années 80 | blouson, lunettes, walkman |
-| Depuis 1991 | Tenue connectée | casque audio, lunettes lumineuses |
+| Trente Glorieuses | Combinaison spatiale | **combinaison intégrale** : casque bulle, queue gainée, bottes et gants ; seule la tête se voit ; écusson étoilé neutre |
+| Crises | Perfecto des années 80 | blouson, lunettes de soleil teintées (le regard reste visible), baladeur et casque rouges |
+| Depuis 1991 | Tenue connectée | sweat à capuche, lunettes lumineuses à verres clairs, **écouteurs filaires** dans le creux des oreilles, fils autour de la tête, réunis sur le côté droit de la poitrine et entrant par l'ouverture droite de la poche avant (téléphone caché) |
 
 Chaque costume est livré **avec une icône carrée de boutique** (256 × 256, Clio habillée de face, fond transparent).
 

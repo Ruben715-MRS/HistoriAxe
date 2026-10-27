@@ -9834,6 +9834,9 @@ input:not([type="range"]), label, select, summary, textarea {
     color: var(--muted-text);
 }
 
+.card-reveal-clio:empty { display: none; }
+.card-reveal-clio .clio-react { margin: 8px 0 0; }
+
 .card-reveal-actions {
     display: flex;
     flex-wrap: wrap;
@@ -9911,17 +9914,7 @@ input:not([type="range"]), label, select, summary, textarea {
 }
 
 .shop-clio-avatar {
-    position: relative;
     display: inline-block;
-    font-size: 72px;
-    line-height: 1;
-}
-
-.shop-clio-costume {
-    position: absolute;
-    right: -18px;
-    bottom: -6px;
-    font-size: 36px;
 }
 
 .shop-clio p {
@@ -9930,10 +9923,6 @@ input:not([type="range"]), label, select, summary, textarea {
     color: var(--text-dark);
 }
 
-.shop-clio .shop-clio-soon {
-    font-size: 12px;
-    color: var(--muted-text);
-}
 
 .shop-list {
     list-style: none;
@@ -9957,6 +9946,17 @@ input:not([type="range"]), label, select, summary, textarea {
 
 .shop-item.is-locked { opacity: 0.6; }
 .shop-item-emoji { font-size: 30px; width: 40px; text-align: center; }
+.shop-item-emoji.is-drawn { height: 64px; width: 56px; }
+.shop-item-view { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.shop-item.is-locked .shop-item-emoji.is-drawn svg { filter: grayscale(1); opacity: 0.45; }
+.shop-zoom { position: fixed; inset: 0; z-index: 1100; display: grid; place-items: center; padding: max(16px, env(safe-area-inset-top, 0px)) 16px max(16px, env(safe-area-inset-bottom, 0px)); background: rgba(10, 16, 28, 0.6); }
+.shop-zoom-card { width: min(360px, 100%); display: grid; justify-items: center; gap: 12px; padding: 18px; border-radius: 20px; background: var(--surface); color: var(--text-dark); box-shadow: var(--card-shadow); }
+.shop-zoom-art { width: min(260px, 70vw); }
+.shop-zoom-art svg { display: block; width: 100%; height: auto; overflow: visible; }
+.shop-zoom-card.is-locked .shop-zoom-art svg { filter: grayscale(1); opacity: 0.5; }
+.shop-zoom-name { margin: 0; font-size: 18px; font-weight: 800; text-align: center; text-wrap: balance; }
+.shop-zoom-close { width: 100%; }
+.shop-item-emoji.is-drawn svg { display: block; width: 100%; height: 100%; overflow: visible; }
 .shop-item-text { flex: 1; min-width: 0; display: flex; flex-direction: column; }
 .shop-item-text strong { font-size: 15px; }
 .shop-item-text small { font-size: 12px; color: var(--muted-text); }
@@ -10055,28 +10055,74 @@ input:not([type="range"]), label, select, summary, textarea {
 .rewards-friends-btn small:empty { display: none; }
 @media (prefers-reduced-motion: reduce) { .team-chest-bar { transition: none; } }
 
-/* --- Clio, la mascotte (js/app/clio.js) : un chat en emoji en attendant les dessins --- */
+/* --- Clio, la mascotte (js/app/clio.js, dessin : js/clioArt.js) --- */
 .clio { position: relative; display: inline-block; flex: none; line-height: 1; transform-origin: 50% 90%; }
-.clio-medium { width: 60px; height: 60px; font-size: 52px; }
-.clio-small { width: 38px; height: 38px; font-size: 32px; }
-.clio-cat { display: block; text-align: center; filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2)); }
-.clio-costume { position: absolute; top: -4%; right: -8%; font-size: 0.5em; }
-.clio-fx { position: absolute; top: -10%; left: -12%; font-size: 0.45em; }
+.clio-small { width: 40px; height: 46px; }
+.clio-medium { width: 64px; height: 74px; }
+.clio-large { width: 132px; height: 152px; }
+.clio > svg { display: block; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.18)); }
+/* Costume pas encore dessiné : un aperçu en emoji, posé contre Clio. */
+.clio-costume { position: absolute; right: -10%; bottom: 0; font-size: 0.42em; }
+.clio-small .clio-costume { font-size: 18px; }
+.clio-medium .clio-costume { font-size: 26px; }
+.clio-large .clio-costume { font-size: 44px; }
 
+/* Le personnage entier (une fois, à l'apparition) */
 .clio.is-content { animation: clio-hop 1.4s ease-in-out 2; }
 .clio.is-ravi { animation: clio-jump 0.8s ease-in-out 3; }
-.clio.is-triste { animation: clio-droop 2.4s ease-in-out infinite; }
-.clio.is-dort { animation: clio-breathe 3s ease-in-out infinite; opacity: 0.9; }
-.clio.is-salue .clio-fx { animation: clio-wave 1s ease-in-out 3; display: inline-block; }
 .clio.is-walking { animation: clio-walk 0.35s ease-in-out infinite; }
 @keyframes clio-hop { 0%, 100% { transform: translateY(0); } 40% { transform: translateY(-6px); } }
 @keyframes clio-jump { 0%, 100% { transform: translateY(0) scale(1); } 45% { transform: translateY(-14px) scale(1.08); } }
-@keyframes clio-droop { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(-6deg) translateY(2px); } }
-@keyframes clio-breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
-@keyframes clio-wave { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(24deg); } }
 @keyframes clio-walk { 0%, 100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-5px) rotate(4deg); } }
+
+/* Les parties du dessin (en continu) : queue, respiration, clignement, patte qui salue, oreilles tristes */
+.clio-art .ca-tail { transform-box: view-box; transform-origin: 136px 204px; animation: ca-tail 2.6s ease-in-out infinite; }
+.clio-art .ca-breath { transform-box: view-box; transform-origin: 100px 218px; animation: ca-breath 3.4s ease-in-out infinite; }
+.clio-art .ca-blink { transform-box: fill-box; transform-origin: center; animation: ca-blink 5.2s infinite; }
+.clio-art .ca-wave { transform-box: view-box; transform-origin: 136px 162px; animation: ca-wave 0.9s ease-in-out infinite alternate; }
+.clio-art .ca-zz { animation: ca-float 2.4s ease-in-out infinite; }
+.clio-art .ca-earL, .clio-art .ca-earR, .clio-art .ca-head { transform-box: view-box; }
+.clio-art .ca-earL { transform-origin: 74px 66px; }
+.clio-art .ca-earR { transform-origin: 126px 66px; }
+.clio-art .ca-head { transform-origin: 100px 140px; }
+.clio-art.ca-m-triste .ca-earL { transform: rotate(-24deg); }
+.clio-art.ca-m-triste .ca-earR { transform: rotate(24deg); }
+.clio-art.ca-m-dort .ca-head { transform: rotate(7deg); }
+.clio-art.ca-m-fier .ca-head { transform: rotate(-5deg); }
+@keyframes ca-tail { 0%, 100% { transform: rotate(-7deg); } 50% { transform: rotate(11deg); } }
+@keyframes ca-breath { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(1.018); } }
+@keyframes ca-blink { 0%, 93%, 100% { transform: scaleY(1); } 95.5% { transform: scaleY(0.08); } }
+@keyframes ca-wave { from { transform: rotate(-10deg); } to { transform: rotate(12deg); } }
+@keyframes ca-float { 0%, 100% { transform: translateY(0); opacity: 0.9; } 50% { transform: translateY(-5px); opacity: 0.5; } }
+
+/* Les poses : danse (album complété), essayage (boutique), marche de profil (le Chemin) */
+.clio-art.ca-m-danse .ca-whole { transform-box: view-box; transform-origin: 100px 218px; animation: ca-sway 0.8s ease-in-out infinite alternate; }
+.clio-art .ca-danceL { transform-box: view-box; transform-origin: 64px 162px; animation: ca-beat-l 0.4s ease-in-out infinite alternate; }
+.clio-art .ca-danceR { transform-box: view-box; transform-origin: 136px 162px; animation: ca-beat-r 0.4s ease-in-out infinite alternate-reverse; }
+.clio.is-essaie { animation: clio-spin 1.2s ease-in-out 1; }
+.clio-walk { width: 58px; height: 46px; }
+.clio.clio-walk.is-walking { animation: none; }
+.clio-walk.is-left > svg { transform: scaleX(-1); }
+.clio-walk-art .ca-walk-body { animation: ca-walk-bob 0.35s ease-in-out infinite alternate; }
+.clio-walk-art .ca-tail-walk { transform-box: view-box; transform-origin: 58px 112px; animation: ca-tail 1.4s ease-in-out infinite; }
+.clio-walk-art .ca-leg-nf, .clio-walk-art .ca-leg-fb, .clio-walk-art .ca-leg-nb, .clio-walk-art .ca-leg-ff { transform-box: view-box; animation: ca-step 0.35s ease-in-out infinite alternate; }
+.clio-walk-art .ca-leg-nb, .clio-walk-art .ca-leg-ff { animation-direction: alternate-reverse; }
+.clio-walk-art .ca-leg-nf { transform-origin: 150px 134px; }
+.clio-walk-art .ca-leg-nb { transform-origin: 82px 134px; }
+.clio-walk-art .ca-leg-ff { transform-origin: 140px 134px; }
+.clio-walk-art .ca-leg-fb { transform-origin: 72px 134px; }
+@keyframes ca-sway { from { transform: rotate(-6deg); } to { transform: rotate(6deg) translateY(-4px); } }
+@keyframes ca-beat-l { from { transform: rotate(10deg); } to { transform: rotate(-12deg); } }
+@keyframes ca-beat-r { from { transform: rotate(-12deg); } to { transform: rotate(10deg); } }
+@keyframes clio-spin { 0%, 100% { transform: scaleX(1) translateY(0); } 25% { transform: scaleX(0.1) translateY(-8px); } 50% { transform: scaleX(-1) translateY(-12px); } 75% { transform: scaleX(-0.1) translateY(-8px); } }
+@keyframes ca-walk-bob { from { transform: translateY(0); } to { transform: translateY(-3px); } }
+@keyframes ca-step { from { transform: rotate(-22deg); } to { transform: rotate(22deg); } }
+
 @media (prefers-reduced-motion: reduce) {
-    .clio, .clio .clio-fx { animation: none !important; }
+    .clio, .clio-art .ca-tail, .clio-art .ca-breath, .clio-art .ca-blink, .clio-art .ca-wave, .clio-art .ca-zz,
+    .clio-art.ca-m-danse .ca-whole, .clio-art .ca-danceL, .clio-art .ca-danceR, .clio.is-essaie,
+    .clio-walk-art .ca-walk-body, .clio-walk-art .ca-tail-walk, .clio-walk-art .ca-leg-nf, .clio-walk-art .ca-leg-fb,
+    .clio-walk-art .ca-leg-nb, .clio-walk-art .ca-leg-ff { animation: none !important; }
 }
 
 .clio-react {
@@ -10095,6 +10141,31 @@ input:not([type="range"]), label, select, summary, textarea {
 .clio-bubble { flex: 1; margin: 0; font-size: 14px; font-weight: 700; line-height: 1.35; text-align: left; }
 .clio-close { position: absolute; top: 2px; right: 6px; min-width: 32px; min-height: 32px; border: 0; background: none; color: var(--muted-text); font-size: 20px; cursor: pointer; }
 .clio-home { margin: 8px 0 4px; }
+/* La présentation de Clio, à la première visite du Chemin : une carte en bas de l'écran, bulle par bulle. */
+.clio-intro {
+    position: fixed;
+    left: max(16px, env(safe-area-inset-left, 0px));
+    right: max(16px, env(safe-area-inset-right, 0px));
+    bottom: max(16px, env(safe-area-inset-bottom, 0px));
+    z-index: 1000;
+    max-width: 460px;
+    margin: 0 auto;
+    display: grid;
+    gap: 10px;
+    padding: 10px 18px 16px;
+    border-radius: 20px;
+    background: var(--surface);
+    color: var(--text-dark);
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-soft);
+}
+.clio-intro-head { display: flex; justify-content: flex-end; }
+.clio-intro-skip { min-height: 32px; border: 0; background: none; color: var(--muted-text); font-size: 14px; cursor: pointer; }
+.clio-intro-body { display: flex; justify-content: center; }
+.clio-intro-bubble { margin: 0; font-size: 17px; font-weight: 700; line-height: 1.4; text-align: left; min-height: 4.2em; }
+.clio-intro-count { justify-self: start; font-size: 12px; color: var(--muted-text); font-variant-numeric: tabular-nums; }
+.clio-intro-next { width: 100%; }
+@media (max-height: 560px) { .clio-intro .clio-large { width: 96px; height: 110px; } }
 .clio-costume-hint { flex-wrap: wrap; }
 .clio-shop-btn { flex-basis: 100%; margin-top: 4px; }
 
@@ -10102,14 +10173,14 @@ input:not([type="range"]), label, select, summary, textarea {
     position: absolute;
     z-index: 3;
     width: 44px;
-    height: 44px;
+    height: 48px;
     padding: 0;
     border: 0;
     background: none;
     cursor: pointer;
 }
-.clio-marker.on-left { margin: -30px 0 0 -88px; }
-.clio-marker.on-right { margin: -30px 0 0 44px; }
+.clio-marker.on-left { margin: -34px 0 0 -88px; }
+.clio-marker.on-right { margin: -34px 0 0 44px; }
 .clio-marker-bubble {
     position: absolute;
     bottom: 100%;
@@ -13915,21 +13986,28 @@ input:not([type="range"]), label, select, summary, textarea {
 /* --- LE DICTIONNAIRE (js/app/dictionnaire.js) --- */
 .dict-bar {
     position: sticky;
-    top: 0;
+    /* Le haut de l'écran compte son rembourrage (20px) : à top: 0, la liste se verrait dans cette bande, au-dessus de la barre. */
+    top: -20px;
     z-index: 2;
     width: 100%;
     max-width: 520px;
     padding: 8px 0;
+    /* Le fond de la page : sans lui, la liste qui défile se voit à travers et autour du champ. */
+    background: var(--bg-color);
 }
 
-/* Sur téléphone, collée en haut, la barre se décale à droite du bouton de retour (fixe, en haut à gauche). */
+/* Sur téléphone, collée en haut, la barre déborde jusqu'aux bords de l'écran (pour que la liste ne se voie pas derrière le bouton de retour,
+   fixe, en haut à gauche) et son champ se décale à droite de ce bouton. */
 @media (max-width: 600px) {
     .dict-bar {
-        transition: margin-left 0.2s ease, width 0.2s ease;
+        transition: padding 0.2s ease;
     }
     .dict-bar.is-stuck {
-        margin-left: 62px;
-        width: calc(100% - 62px);
+        margin-left: -20px;
+        margin-right: -20px;
+        width: calc(100% + 40px);
+        max-width: none;
+        padding: 16px 20px 8px 82px;
     }
 }
 
@@ -14083,6 +14161,97 @@ input:not([type="range"]), label, select, summary, textarea {
     font: inherit;
     font-weight: 700;
     cursor: pointer;
+}
+
+/* --- LES CITATIONS (js/app/citations.js) : la barre, les filtres et la fiche réutilisent ceux du dictionnaire --- */
+.cit-order {
+    margin: 0 0 4px;
+}
+
+.cit-list {
+    width: 100%;
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+.cit-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    width: 100%;
+    min-height: 44px;
+    padding: 10px;
+    border: 0;
+    border-bottom: 1px solid var(--border-soft);
+    background: transparent;
+    color: var(--text-dark);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.cit-item-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.cit-item-meta {
+    color: var(--muted-text);
+    font-size: 12px;
+}
+
+.cit-badge {
+    font-size: 11px;
+    font-weight: 700;
+    border: 1px solid var(--border-soft);
+    border-radius: 999px;
+    padding: 1px 8px;
+    color: var(--text-dark);
+}
+
+.cit-quote {
+    margin: 0 0 4px;
+    padding: 4px 0 4px 14px;
+    border-left: 3px solid var(--text-dark);
+    font-size: 19px;
+    font-style: italic;
+    line-height: 1.45;
+    color: var(--text-dark);
+}
+
+/* La version originale est sur sa propre ligne, un vers par ligne (\n dans les données) : dir="auto" la range à droite pour l'hébreu, l'arabe ou le persan. */
+.cit-original span {
+    display: block;
+    white-space: pre-line;
+    text-align: start;
+    margin-top: 2px;
+}
+
+.cit-status,
+.cit-original {
+    margin: 0 0 0 13px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--muted-text);
+}
+
+.cit-status {
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.cit-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
 }
 
 /* Rapports du jury : le document occupe tout l'écran (le document a son propre titre). Le bouton « retour » reste par-dessus,

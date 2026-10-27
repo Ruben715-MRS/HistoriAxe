@@ -196,6 +196,22 @@ function breakoutBindInput() {
 // =====================================================================================================
 // === FLAPPY CLIO ===
 // =====================================================================================================
+// Le dessin de Clio en vol, avec son costume, converti une fois en image pour le canevas (normale, et yeux en croix
+// après un choc).
+const FLAPPY_CLIO_ANCHOR = { x: 140 / ClioArt.FLY.W, y: 94 / ClioArt.FLY.H };
+const flappyClioSprites = {};
+let flappyClioCostume = ''; // lu une fois par partie (flappyStart), pas à chaque image
+function flappyClioSprite(hurt) {
+    const costume = flappyClioCostume;
+    const key = (hurt ? 'hurt' : 'ok') + ':' + costume;
+    if (!flappyClioSprites[key]) {
+        const img = new Image();
+        img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(ClioArt.fly({ hurt: hurt, costume: costume }));
+        flappyClioSprites[key] = img;
+    }
+    return flappyClioSprites[key];
+}
+
 let flGame = null;
 let flFrame = 0;
 let flLast = 0;
@@ -230,6 +246,8 @@ function flappyStop() {
 }
 
 function flappyStart() {
+    const worn = typeof clioWornCostume === 'function' ? clioWornCostume() : null;
+    flappyClioCostume = worn ? worn.world : '';
     const game = ArcadeExtraCore.createFlappy(arcadePool());
     if (game.empty) { alert(t('arcade.empty')); return; }
     flappyStop();
@@ -347,8 +365,15 @@ function flappyDraw() {
         ctx.save();
         ctx.translate(g.clio.x, g.clio.y + bob);
         ctx.rotate(Math.max(-0.45, Math.min(0.7, g.clio.vy / 600)));
-        ctx.font = '26px sans-serif';
-        ctx.fillText('🐱', 0, 1);
+        const sprite = flappyClioSprite(g.invulnerable > 0);
+        if (sprite.complete && sprite.naturalWidth) {
+            // Clio en vol (js/clioArt.js) : le point d'ancrage, entre le corps et la tête, tombe sur le centre du cercle de collision.
+            const w = FL.CLIO_R * 5, h = w * ClioArt.FLY.H / ClioArt.FLY.W;
+            ctx.drawImage(sprite, -w * FLAPPY_CLIO_ANCHOR.x, -h * FLAPPY_CLIO_ANCHOR.y, w, h);
+        } else {
+            ctx.font = '26px sans-serif';
+            ctx.fillText('🐱', 0, 1);
+        }
         ctx.restore();
     }
     if (g.waiting && !g.over) {
