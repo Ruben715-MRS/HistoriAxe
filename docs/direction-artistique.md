@@ -172,7 +172,7 @@ Une chatte. **Décisions validées (octobre 2026)** :
 | **Caractère** | Curieuse, un peu savante, jamais moqueuse ; elle **encourage**, ne juge pas. |
 
 Le dessin est dans `js/clioArt.js` (de face dans toutes les humeurs, en vol pour Flappy Clio) ; ses animations sont
-dans `css/style.css` (classes `ca-*`). Costumes déjà dessinés : les cinq de l'Antiquité les quatre du Moyen Âge (mérovingien, cotte de mailles, cape fleurdelisée, armure de Jeanne) et les quatre des Temps
+dans `css/style.css` (classes `ca-*`). Costumes déjà dessinés : les cinq de l'Antiquité, les quatre du Moyen Âge (mérovingien, cotte de mailles, cape fleurdelisée, armure de Jeanne) et les quatre des Temps
 modernes (Léonard, fraise, Roi-Soleil, philosophe) ; les autres restent des aperçus
 en emoji en attendant.
 
