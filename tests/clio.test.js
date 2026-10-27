@@ -45,7 +45,6 @@ test('une phrase ne se répète jamais deux fois de suite, et toutes les variant
         }
         assert.equal(seen.size, n);
     }
-    assert.equal(C.pickLine('first', 0, Math.random), 0, 'une seule variante : toujours la même');
 });
 
 test('la série quotidienne : en danger la veille d\'une extinction seulement', () => {
@@ -62,4 +61,16 @@ test('le costume du monde fini : proposé seulement s\'il n\'est pas possédé',
     assert.equal(C.costumeHint(null, false, 500), 'none');
     assert.equal(C.costumeHint(item, false, 100), 'costume');
     assert.equal(C.costumeHint(item, false, 40), 'costumeShort');
+});
+
+test('la présentation de Clio existe dans toutes les langues, en cinq bulles', () => {
+    const fs = require('node:fs'), path = require('node:path');
+    const dir = path.join(__dirname, '..', 'ui');
+    for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.json'))) {
+        const d = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
+        const intro = d.clio.intro;
+        assert.deepEqual(Object.keys(intro).sort(), ['0', '1', '2', '3', '4'], f);
+        for (const k of ['intro_next', 'intro_start', 'intro_skip']) assert.ok(d.clio[k] && d.clio[k].length, f + ' ' + k);
+        assert.ok(!d.clio.line.first, f + ' : ancienne phrase de première visite encore présente');
+    }
 });

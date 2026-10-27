@@ -1785,6 +1785,16 @@
     "pending_aria": "{n} offene Freundschaftsanfrage(n)"
   },
   "clio": {
+    "intro": {
+      "0": "Hallo, ich bin Clio, die Muse der Geschichte. In der griechischen Mythologie bin ich eine der neun Musen; man zeigt mich oft mit einer Schriftrolle, um festzuhalten, was geschehen ist.",
+      "1": "Ich begleite dich auf dem Weg der Zeit, Epoche für Epoche, und stille deinen Wissensdurst.",
+      "2": "Warum eine Katze? Katzen leben schon sehr lange bei den Menschen. Im alten Ägypten waren sie heilig: Herodot erzählt, dass Familien sich bei einem Katzentod zum Zeichen der Trauer die Augenbrauen rasierten.",
+      "3": "Im Lauf der Jahrhunderte wurden Katzen bewundert und manchmal gefürchtet. Ich behalte vor allem eines im Sinn: Eine gute Katze beobachtet, bevor sie handelt, wie ein guter Historiker seine Quellen befragt.",
+      "4": "Bereit für die erste Reise? Tippe auf das Level, und los geht's!"
+    },
+    "intro_next": "Weiter",
+    "intro_start": "Los geht's!",
+    "intro_skip": "Überspringen",
     "name": "Clio",
     "aria": "Clio, das Maskottchen",
     "dismiss": "Schließen",
@@ -1841,9 +1851,6 @@
         "1": "Ich folge dir, los!",
         "2": "Miau! Gehen wir?",
         "3": "Jeder Stern zählt."
-      },
-      "first": {
-        "0": "Willkommen! Ich bin Clio. Tippe auf das grüne Level, um zu beginnen."
       },
       "costume": {
         "0": "Das Kostüm „{name}“ wartet im Shop auf dich ({price} 🪙).",

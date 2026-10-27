@@ -62,10 +62,20 @@ test('sur le Chemin, Clio se tient près du niveau à jouer et se présente la p
     const box = await marker.boundingBox();
     const node = await page.locator('.path-node.is-next').boundingBox();
     expect(Math.abs(box.y + box.height / 2 - (node.y + node.height / 2))).toBeLessThan(40);
-    await expect(marker.locator('.clio-marker-bubble')).toContainText('Clio');
+    // Première visite : Clio se présente en cinq bulles, puis la carte disparaît.
+    const intro = page.locator('#clio-intro');
+    await expect(intro).toBeVisible();
+    await expect(intro.locator('.clio-intro-bubble')).toContainText('Clio');
+    await expect(intro.locator('.clio-intro-count')).toHaveText('1 / 5');
+    for (let i = 1; i <= 4; i++) await intro.locator('.clio-intro-next').click();
+    await expect(intro.locator('.clio-intro-count')).toHaveText('5 / 5');
+    await expect(intro.locator('.clio-intro-next')).toHaveText("C'est parti !");
+    await intro.locator('.clio-intro-next').click();
+    await expect(intro).toHaveCount(0);
     expect((await clioState(page)).introSeen).toBe(true);
     // Elle ne se présente qu'une fois ; en la touchant, elle encourage.
     await page.evaluate(() => renderPath());
+    await expect(page.locator('#clio-intro')).toHaveCount(0);
     await expect(page.locator('.clio-marker-bubble')).toHaveCount(0);
     await page.locator('.clio-marker').click();
     await expect(page.locator('.clio-marker-bubble')).toBeVisible();

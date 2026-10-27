@@ -5,8 +5,8 @@
 //  1. /api/* — les fonctions serverless ne tournent pas derrière le serveur
 //     statique des tests ; sans réponse, chaque appel best-effort du client
 //     laisse une erreur dans la console et polluerait l'assertion finale ;
-//  2. le tutoriel — ses bulles se superposent aux écrans et interceptent
-//     les clics des premiers pas ;
+//  2. le tutoriel et la présentation de Clio — leurs bulles se superposent aux
+//     écrans et interceptent les clics des premiers pas ;
 //  3. le fond de carte (tuiles OpenStreetMap servies par OpenFreeMap) — le Mode Carte
 //     et l'Atlas le demandent au réseau ; les tests ne doivent dépendre ni d'internet ni
 //     d'un tiers. Il est remplacé par un style réduit à un aplat : la carte se charge, on y
@@ -63,6 +63,11 @@ const test = base.test.extend({
             try {
                 localStorage.setItem('historiaxe_onboarding_v1', JSON.stringify({ completed: true, shownSteps: [] }));
             } catch (e) { /* stockage indisponible : le tutoriel s'affichera, tant pis */ }
+            // La présentation de Clio (carte du premier passage sur le Chemin) couvrirait les clics des
+            // parcours qui n'en parlent pas : elle est donc déjà vue. clio.spec.js la remet à zéro.
+            try {
+                if (!localStorage.getItem('historiaxe_clio_v1')) localStorage.setItem('historiaxe_clio_v1', JSON.stringify({ introSeen: true }));
+            } catch (e) { /* stockage indisponible : la présentation s'affichera, tant pis */ }
             // La question « collectionner les portraits ? » est posée à la première ouverture de
             // « Personnages illustres » ; sa fenêtre intercepterait les clics des parcours qui n'en
             // parlent pas. Ils partent donc d'un choix déjà fait (en couleur) — sauf s'il l'est

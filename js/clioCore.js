@@ -27,7 +27,6 @@
         greetStreak: { mood: 'content', lines: 3 },
         streakRisk: { mood: 'dort', lines: 3 },
         tap: { mood: 'content', lines: 4 },
-        first: { mood: 'salue', lines: 1 },
         costume: { mood: 'reflechit', lines: 2 },
         costumeShort: { mood: 'reflechit', lines: 1 },
         album: { mood: 'danse', lines: 2 }

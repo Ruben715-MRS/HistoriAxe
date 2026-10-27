@@ -1785,6 +1785,16 @@
     "pending_aria": "{n} richiesta/e di amicizia in sospeso"
   },
   "clio": {
+    "intro": {
+      "0": "Ciao, sono Clio, la musa della Storia. Nella mitologia greca sono una delle nove Muse, e mi si raffigura con una pergamena per registrare ciò che accade.",
+      "1": "Ti accompagnerò lungo il Sentiero del Tempo, epoca dopo epoca, e nutrirò la tua sete di sapere.",
+      "2": "Perché un gatto? I gatti vivono accanto agli uomini da moltissimo tempo. Nell'antico Egitto erano sacri: Erodoto racconta che le famiglie si rasavano le sopracciglia in segno di lutto quando un gatto moriva.",
+      "3": "Nei secoli sono stati ammirati e a volte temuti. Io ricordo soprattutto una cosa: un buon gatto osserva prima di agire, come un buon storico che interroga le sue fonti.",
+      "4": "Pronto per il primo viaggio? Tocca il livello per giocare, andiamo!"
+    },
+    "intro_next": "Avanti",
+    "intro_start": "Andiamo!",
+    "intro_skip": "Salta",
     "name": "Clio",
     "aria": "Clio, la mascotte",
     "dismiss": "Chiudi",
@@ -1841,9 +1851,6 @@
         "1": "Ti seguo, vai!",
         "2": "Miao! Andiamo?",
         "3": "Ogni stella conta."
-      },
-      "first": {
-        "0": "Benvenuto! Sono Clio. Tocca il livello verde per cominciare."
       },
       "costume": {
         "0": "Il costume «{name}» ti aspetta nel negozio ({price} 🪙).",
