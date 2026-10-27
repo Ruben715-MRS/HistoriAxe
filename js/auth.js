@@ -360,9 +360,7 @@ function openAccountModal() {
     if (typeof closeSettings === 'function') closeSettings();
     Auth.showNewPasswordForm(false);
     Auth.setMessage('');
-    // Google dans l'app iPhone demande une configuration native (avec Apple) : pas encore.
-    var g = document.getElementById('account-google-btn');
-    if (g) g.classList.toggle('hidden', Auth.isNative());
+    // Le bouton Google est visible partout (web et app iPhone).
     // Le bouton Apple n'existe que dans l'app native (iPhone/iPad).
     var a = document.getElementById('account-apple-btn');
     if (a) a.classList.toggle('hidden', !Auth.isNative());
