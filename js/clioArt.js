@@ -488,17 +488,20 @@
                     el('circle', { cx: 136, cy: 64, r: 2.5, fill: '#E9C349' }) + line('M70 46 Q100 36 130 46', 2.5, '#9A4A78');
             }
         },
-        // Trente Glorieuses — combinaison spatiale : casque bulle, combinaison blanche, boîtier de poitrine, écusson étoilé neutre.
+        // Trente Glorieuses — combinaison spatiale intégrale : casque bulle, combinaison, queue gainée, bottes et gants ; écusson étoilé neutre.
         spatiale: {
             earScale: 0.85,
             sleeve: ['#F2F4F7', '#8C939B'],
+            tail: ['#F2F4F7', '#8C939B', '#C3C9D0'],
+            paws: ['#C3C9D0', '#5F656C'],
+            // Combinaison intégrale : elle couvre toute la silhouette du corps, rien de roux ne dépasse sous la bulle.
             body: function () {
-                return shape(TUNIC, '#F2F4F7', '#8C939B') +
+                return shape(BODY, '#F2F4F7', '#8C939B') +
                     line('M60 168 Q100 176 140 168 M58 196 Q100 204 142 196', 2, '#C3C9D0') +
                     el('rect', { x: 86, y: 166, width: 28, height: 18, rx: 3, fill: '#5F656C', stroke: '#2E3238', 'stroke-width': 2 }) +
                     el('circle', { cx: 93, cy: 175, r: 3, fill: '#E05A55' }) + el('circle', { cx: 103, cy: 175, r: 3, fill: '#5FB46A' }) + el('rect', { x: 108, y: 171, width: 3, height: 8, fill: '#E9C349' }) +
-                    el('rect', { x: 120, y: 152, width: 16, height: 12, rx: 2, fill: '#2846A0', stroke: '#152A66', 'stroke-width': 1.5 }) +
-                    el('polygon', { points: '128,154 129.6,157 133,157.4 130.5,159.6 131.2,163 128,161.3 124.8,163 125.5,159.6 123,157.4 126.4,157', fill: '#FFFFFF' }) +
+                    el('rect', { x: 120, y: 168, width: 16, height: 12, rx: 2, fill: '#2846A0', stroke: '#152A66', 'stroke-width': 1.5 }) +
+                    el('polygon', { points: '128,170 129.6,173 133,173.4 130.5,175.6 131.2,179 128,177.3 124.8,179 125.5,175.6 123,173.4 126.4,173', fill: '#FFFFFF' }) +
                     el('ellipse', { cx: 100, cy: 157, rx: 46, ry: 9, fill: '#C3C9D0', stroke: '#6B7178', 'stroke-width': 2.5 });
             },
             hat: function () {
@@ -507,7 +510,7 @@
                     line('M40 52 Q54 24 82 12', 5, '#FFFFFF', { opacity: 0.85 }) + line('M158 132 Q170 116 174 98', 3, '#FFFFFF', { opacity: 0.6 });
             }
         },
-        // Crises et fin de la guerre froide (années 80) — perfecto : blouson de cuir, tee-shirt blanc, baladeur et son casque, lunettes relevées.
+        // Crises et fin de la guerre froide (années 80) — perfecto : blouson de cuir, tee-shirt blanc, baladeur et son casque, lunettes de soleil teintées.
         perfecto: {
             sleeve: ['#24252B', '#0E1015'],
             body: function () {
@@ -525,12 +528,13 @@
                     el('rect', { x: 123, y: 186, width: 12, height: 7, rx: 1, fill: '#2E3238' }) + line('M126 182 Q118 168 130 150', 1.6, '#2E3238');
             },
             hat: function () {
-                return line('M42 92 C42 40 158 40 158 92', 5, '#2E3238') +
-                    el('ellipse', { cx: 40, cy: 98, rx: 9, ry: 12, fill: '#C8322F', stroke: '#7D1A17', 'stroke-width': 2 }) +
-                    el('ellipse', { cx: 160, cy: 98, rx: 9, ry: 12, fill: '#C8322F', stroke: '#7D1A17', 'stroke-width': 2 }) +
-                    // lunettes de soleil relevées sur la tête (le regard reste libre)
-                    el('path', { d: 'M66 58 Q80 50 94 58 Q92 68 80 68 Q68 68 66 58 Z M106 58 Q120 50 134 58 Q132 68 120 68 Q108 68 106 58 Z', fill: '#1B1B22', stroke: '#0E1015', 'stroke-width': 1.5 }) +
-                    line('M94 58 Q100 55 106 58', 2.5, '#0E1015') + line('M72 57 L78 55 M112 57 L118 55', 1.5, '#7A8494');
+                return line('M35 100 A65 57 0 0 1 165 100', 6, '#2E3238') +
+                    el('ellipse', { cx: 37, cy: 100, rx: 9, ry: 13, fill: '#C8322F', stroke: '#7D1A17', 'stroke-width': 2 }) +
+                    el('ellipse', { cx: 163, cy: 100, rx: 9, ry: 13, fill: '#C8322F', stroke: '#7D1A17', 'stroke-width': 2 }) +
+                    // lunettes de soleil sur les yeux, verres teintés : on devine le regard au travers
+                    el('path', { d: 'M56 84 Q76 79 96 84 Q97 102 87 109 Q76 114 65 109 Q55 102 56 84 Z M104 84 Q124 79 144 84 Q145 102 135 109 Q124 114 113 109 Q103 102 104 84 Z', fill: '#1B1B22', 'fill-opacity': 0.5, stroke: '#0E1015', 'stroke-width': 3, 'stroke-linejoin': 'round' }) +
+                    line('M96 88 Q100 85 104 88 M56 87 L40 92 M144 87 L160 92', 3, '#0E1015') +
+                    line('M62 90 L70 86 M110 90 L118 86', 2.5, '#FFFFFF', { opacity: 0.7 });
             }
         },
         // Le monde depuis 1991 — tenue connectée : sweat à capuche, lunettes lumineuses (verres clairs), casque audio autour du cou.
@@ -572,6 +576,11 @@
     };
 
     // La manche du bras qui bouge (salue, réfléchit) : [couleur, contour], ou rien pour un bras nu.
+    // Queue gainée ([couleur, contour, coutures]) et pattes chaussées et gantées ([couleur, contour]) : costumes intégraux.
+    function tailOf(kind) { return kind && DRAW[kind] && DRAW[kind].tail ? DRAW[kind].tail : null; }
+    function pawsOf(kind) { return kind && DRAW[kind] && DRAW[kind].paws ? DRAW[kind].paws : null; }
+    function padC(cx, cy, rx, ry, pc) { return pc ? el('ellipse', { cx: cx, cy: cy, rx: rx, ry: ry, fill: pc[0], stroke: pc[1], 'stroke-width': 2.5 }) : pad(cx, cy, rx, ry); }
+
     // Taille des oreilles sous un costume (1 = normale ; moins, sous un casque fermé).
     function earScaleOf(kind) { return kind && DRAW[kind] && DRAW[kind].earScale ? DRAW[kind].earScale : 1; }
     function sleeveOf(kind) { return kind && DRAW[kind] && DRAW[kind].sleeve ? DRAW[kind].sleeve : null; }
@@ -591,12 +600,14 @@
         var id = 'clio-art-' + (++uid), L = P.line, cos = costumeKind(opts.costume);
         var defs = '<defs>' + el('clipPath', { id: id + 'h' }, el('ellipse', { cx: 100, cy: 96, rx: 64, ry: 52 })) +
             el('clipPath', { id: id + 'b' }, el('path', { d: BODY })) + '</defs>';
-        var tail = '<g class="ca-tail">' + line(TAIL, 19, L) + line(TAIL, 13, P.fur) + line('M170 128 l9 -4 M178 150 l9 1 M168 176 l7 6', 4, P.stripes) + '</g>';
+        var tl = tailOf(cos), pc = pawsOf(cos);
+        var tail = '<g class="ca-tail">' + line(TAIL, 19, tl ? tl[1] : L) + line(TAIL, 13, tl ? tl[0] : P.fur) +
+            (tl ? line('M168 126 l12 -5 M176 150 l13 1 M166 178 l9 8', 2, tl[2]) : line('M170 128 l9 -4 M178 150 l9 1 M168 176 l7 6', 4, P.stripes)) + '</g>';
         var body = '<g class="ca-breath">' + el('path', { d: BODY, fill: P.fur }) +
             '<g clip-path="url(#' + id + 'b)">' + el('ellipse', { cx: 100, cy: 186, rx: 24, ry: 34, fill: P.belly }) +
             line('M54 170 l14 3 M52 186 l14 1 M146 170 l-14 3 M148 186 l-14 1', 4, P.stripes) + '</g>' +
             el('path', { d: BODY, fill: 'none', stroke: L, 'stroke-width': 3 }) + '</g>';
-        var paws = pad(82, 213, 15, 9) + pad(118, 213, 15, 9);
+        var paws = pc ? padC(82, 213, 16, 10, pc) + padC(118, 213, 16, 10, pc) + line('M68 216 Q82 223 96 216 M104 216 Q118 223 132 216', 2.5, pc[1]) : pad(82, 213, 15, 9) + pad(118, 213, 15, 9);
         var es = earScaleOf(cos), earT = function (cx, cy) { return es === 1 ? '' : ' transform="translate(' + cx + ' ' + cy + ') scale(' + es + ') translate(' + (-cx) + ' ' + (-cy) + ')"'; };
         var ears = '<g class="ca-earL"><g' + earT(74, 66) + '>' + el('path', { d: 'M50 80 L55 24 Q59 18 66 22 L98 50 Z', fill: P.fur, stroke: L, 'stroke-width': 3, 'stroke-linejoin': 'round' }) + el('path', { d: 'M61 66 L62 35 L87 52 Z', fill: P.inner }) + '</g></g>' +
             '<g class="ca-earR"><g' + earT(126, 66) + '>' + el('path', { d: 'M150 80 L145 24 Q141 18 134 22 L102 50 Z', fill: P.fur, stroke: L, 'stroke-width': 3, 'stroke-linejoin': 'round' }) + el('path', { d: 'M139 66 L138 35 L113 52 Z', fill: P.inner }) + '</g></g>';
@@ -612,8 +623,8 @@
 
         var armG = '';
         var sl = sleeveOf(cos);
-        if (mood === 'salue') armG = '<g class="ca-wave">' + arm('M136 162 C158 157 168 142 167 124', 12, sl) + pad(167, 119, 10, 9) + '</g>';
-        if (mood === 'reflechit') armG = arm('M132 176 Q136 152 118 142', 12, sl) + pad(116, 140, 10, 8.5);
+        if (mood === 'salue') armG = '<g class="ca-wave">' + arm('M136 162 C158 157 168 142 167 124', 12, sl) + padC(167, 119, 10, 9, pc) + '</g>';
+        if (mood === 'reflechit') armG = arm('M132 176 Q136 152 118 142', 12, sl) + padC(116, 140, 10, 8.5, pc);
 
         var fx = '';
         if (mood === 'ravi' || mood === 'fier') fx = star(30, 46, 9) + star(172, 36, 11) + (mood === 'ravi' ? star(182, 82, 6) : '');

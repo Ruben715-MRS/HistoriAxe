@@ -241,8 +241,8 @@ Flappy Clio —, dos), puis suit toutes les poses et expressions de cette vue sa
 | République | Costume Belle Époque | canotier, nœud papillon |
 | Grande Guerre | Casque Adrian | casque et capote bleu horizon (tenue complète, comme tous les costumes), **sans arme ni insigne** |
 | Entre-deux-guerres | Tenue des années folles | cloche, long collier de perles |
-| Trente Glorieuses | Combinaison spatiale | casque bulle, drapeau étoilé neutre |
-| Crises | Perfecto des années 80 | blouson, lunettes, walkman |
+| Trente Glorieuses | Combinaison spatiale | **combinaison intégrale** : casque bulle, queue gainée, bottes et gants ; seule la tête se voit ; écusson étoilé neutre |
+| Crises | Perfecto des années 80 | blouson, lunettes de soleil teintées (le regard reste visible), baladeur et casque rouges |
 | Depuis 1991 | Tenue connectée | casque audio, lunettes lumineuses |
 
 Chaque costume est livré **avec une icône carrée de boutique** (256 × 256, Clio habillée de face, fond transparent).
