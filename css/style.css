@@ -14122,6 +14122,89 @@ input:not([type="range"]), label, select, summary, textarea {
     cursor: pointer;
 }
 
+/* --- LES CITATIONS (js/app/citations.js) : la barre, les filtres et la fiche réutilisent ceux du dictionnaire --- */
+.cit-order {
+    margin: 0 0 4px;
+}
+
+.cit-list {
+    width: 100%;
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+.cit-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    width: 100%;
+    min-height: 44px;
+    padding: 10px;
+    border: 0;
+    border-bottom: 1px solid var(--border-soft);
+    background: transparent;
+    color: var(--text-dark);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.cit-item-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.cit-item-meta {
+    color: var(--muted-text);
+    font-size: 12px;
+}
+
+.cit-badge {
+    font-size: 11px;
+    font-weight: 700;
+    border: 1px solid var(--border-soft);
+    border-radius: 999px;
+    padding: 1px 8px;
+    color: var(--text-dark);
+}
+
+.cit-quote {
+    margin: 0 0 4px;
+    padding: 4px 0 4px 14px;
+    border-left: 3px solid var(--text-dark);
+    font-size: 19px;
+    font-style: italic;
+    line-height: 1.45;
+    color: var(--text-dark);
+}
+
+.cit-status,
+.cit-original {
+    margin: 0 0 0 13px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--muted-text);
+}
+
+.cit-status {
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.cit-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+}
+
 /* Rapports du jury : le document occupe tout l'écran (le document a son propre titre). Le bouton « retour » reste par-dessus,
    avec son z-index de .back-btn. */
 #screen-rapport {

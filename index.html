@@ -1335,6 +1335,10 @@
                 <span class="arcade-card-icon" aria-hidden="true">📖</span>
                 <span class="arcade-card-text"><strong>Dictionnaire</strong><small>Les termes qu'on confond, définis avec précision. Mode concours.</small></span>
             </button>
+            <button type="button" class="arcade-card" onclick="openTool('citations', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">💬</span>
+                <span class="arcade-card-text"><strong>Citations</strong><small>Les phrases qui ont marqué l'histoire : contexte, source, et ce qui est vraiment attesté.</small></span>
+            </button>
             </div>
         </section>
         <section class="tools-group" aria-labelledby="tools-group-maps">
@@ -1785,6 +1789,36 @@
         <h2 class="header-title" id="dict-term-name"></h2>
         <p class="modes-header-subtitle" id="dict-term-meta"></p>
         <div class="tool-panel dict-term" id="dict-term-body"></div>
+    </div>
+
+    <div id="screen-tool-citations" class="list-screen hidden">
+        <button class="back-btn" onclick="toolBack('citations')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title">Citations</h2>
+        <p class="modes-header-subtitle">Les phrases qui ont marqué l'histoire, avec leur contexte et leur source. Certaines n'ont jamais été dites : la fiche le précise.</p>
+        <div class="dict-bar">
+            <input type="search" id="cit-search" class="tool-input" autocomplete="off" autocapitalize="off" spellcheck="false"
+                placeholder="Phrase, auteur, mot…" aria-label="Rechercher une citation" oninput="citationsFilterChanged()">
+        </div>
+        <div class="dict-filters">
+            <select id="cit-era" class="tool-input" aria-label="Époque" onchange="citationsFilterChanged()"></select>
+            <select id="cit-theme" class="tool-input" aria-label="Thème" onchange="citationsFilterChanged()"></select>
+            <select id="cit-reliability" class="tool-input" aria-label="Fiabilité" onchange="citationsFilterChanged()"></select>
+            <label class="dict-toggle"><input type="checkbox" id="cit-repere" onchange="citationsFilterChanged()"> Incontournables</label>
+        </div>
+        <div class="tool-history-chips cit-order" role="group" aria-label="Ordre d'affichage">
+            <button type="button" class="tool-history-chip" id="cit-order-chrono" aria-pressed="true" onclick="citationsSetOrder('chrono')">Par date</button>
+            <button type="button" class="tool-history-chip" id="cit-order-alpha" aria-pressed="false" onclick="citationsSetOrder('alpha')">Par auteur</button>
+        </div>
+        <p class="tool-msg" id="cit-status" role="status"></p>
+        <div class="cit-list" id="cit-list"></div>
+        <button type="button" class="btn hidden" id="cit-more" onclick="citationsMore()">Voir plus</button>
+    </div>
+
+    <div id="screen-tool-citation" class="list-screen hidden">
+        <button class="back-btn" onclick="citationBackToList()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" id="cit-card-author"></h2>
+        <p class="modes-header-subtitle" id="cit-card-meta"></p>
+        <div class="tool-panel dict-term" id="cit-card-body"></div>
     </div>
 
     <div id="screen-tool-countries" class="list-screen hidden">
@@ -3590,12 +3624,14 @@
     <script src="js/periodSystems.js"></script>
     <script src="js/toolsCore.js"></script>
     <script src="js/dictionnaireCore.js"></script>
+    <script src="js/citationsCore.js"></script>
     <script src="js/countriesCore.js"></script>
     <script src="js/geoQuizCore.js"></script>
     <script src="js/geoQuizSessionCore.js"></script>
     <script src="js/calendarYearCore.js"></script>
     <script src="js/app/tools.js"></script>
     <script src="js/app/dictionnaire.js"></script>
+    <script src="js/app/citations.js"></script>
     <script src="js/app/countries.js"></script>
     <script src="js/cityGameCore.js"></script>
     <script src="js/cityHistoryCore.js"></script>
