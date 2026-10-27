@@ -30,7 +30,8 @@
     // Costumes déjà dessinés, par monde (les autres restent des aperçus en emoji).
     var COSTUMES = { prehistoire: 'mammouth', orient: 'egypte', grece: 'grece', rome1: 'legionnaire', rome2: 'toge',
         'haut-moyen-age': 'merovingien', feodalites: 'mailles', capetiens: 'lys', 'cent-ans': 'jeanne',
-        renaissances: 'leonard', religion: 'fraise', absolus: 'roisoleil', lumieres: 'philosophe' };
+        renaissances: 'leonard', religion: 'fraise', absolus: 'roisoleil', lumieres: 'philosophe',
+        revolution: 'phrygien', 'revolution-inachevee': 'hautdeforme', republique: 'belleepoque' };
 
     var uid = 0;
 
@@ -386,6 +387,64 @@
                     // la plume d'oie, glissée dans la perruque
                     el('path', { d: 'M128 58 C140 36 160 22 182 14 C174 30 156 46 134 60 Z', fill: '#FFFFFF', stroke: '#9EA3A8', 'stroke-width': 1.8, 'stroke-linejoin': 'round' }) +
                     line('M124 64 L178 18', 1.6, '#9EA3A8');
+            }
+        },
+        // Révolution — bonnet phrygien : bonnet rouge à cocarde, carmagnole bleue, chemise, pantalon rayé de sans-culotte.
+        phrygien: {
+            sleeve: ['#2B3F7A', '#16224A'],
+            body: function (id) {
+                var PANTS = 'M52 184 Q100 192 148 184 L148 204 C138 214 62 214 52 204 Z';
+                return shape(TUNIC, '#F6F1E6', '#A89F8C') +
+                    shape(PANTS, '#F6F1E6', '#A89F8C', 2.5) +
+                    clipped(id + 'pa', PANTS, line('M60 184 L60 214 M72 184 L72 214 M84 184 L84 214 M96 184 L96 214 M108 184 L108 214 M120 184 L120 214 M132 184 L132 214 M144 184 L144 214', 4, '#2B3F7A') +
+                        line('M66 184 L66 214 M90 184 L90 214 M114 184 L114 214 M138 184 L138 214', 3, '#C8322F')) +
+                    shape(CAPE_L.replace('L84 212', 'L84 186').replace('C70 214 58 212 52 206 C49 186', 'C70 188 58 188 52 186 C49 176'), '#2B3F7A', '#16224A') +
+                    shape(CAPE_R.replace('L116 212', 'L116 186').replace('C130 214 142 212 148 206 C151 186', 'C130 188 142 188 148 186 C151 176'), '#2B3F7A', '#16224A') +
+                    el('path', { d: 'M88 146 Q100 156 112 146 L104 164 L100 160 L96 164 Z', fill: '#C8322F', stroke: '#7D1A17', 'stroke-width': 1.8, 'stroke-linejoin': 'round' }) +
+                    el('circle', { cx: 76, cy: 166, r: 2.4, fill: '#E9C349' }) + el('circle', { cx: 124, cy: 166, r: 2.4, fill: '#E9C349' });
+            },
+            hat: function () {
+                return shape('M56 66 C52 34 72 10 102 9 C124 9 134 22 122 32 C134 38 146 50 144 66 Q100 76 56 66 Z', '#C8322F', '#7D1A17') +
+                    line('M80 22 Q96 14 112 18', 4, '#E05A55') + line('M56 66 Q100 76 144 66', 3, '#7D1A17') +
+                    el('circle', { cx: 130, cy: 56, r: 10, fill: '#2B4AA0', stroke: '#1A2E66', 'stroke-width': 1.5 }) +
+                    el('circle', { cx: 130, cy: 56, r: 6.5, fill: '#FFFFFF' }) + el('circle', { cx: 130, cy: 56, r: 3.2, fill: '#C8322F' });
+            }
+        },
+        // Révolution inachevée (1830-1848) — haut-de-forme : chapeau haut, redingote brune, gilet bordeaux, cravate noire.
+        hautdeforme: {
+            sleeve: ['#4A3A30', '#241A14'],
+            body: function () {
+                var buttons = [168, 180, 192].map(function (y) { return el('circle', { cx: 100, cy: y, r: 2.4, fill: '#E9C349', stroke: '#8A6A10', 'stroke-width': 1 }); }).join('');
+                return shape(TUNIC, '#7A2234', '#3E0F1A') + buttons +
+                    shape(CAPE_L, '#4A3A30', '#241A14') + shape(CAPE_R, '#4A3A30', '#241A14') +
+                    line('M92 140 L76 168 M108 140 L124 168', 3, '#241A14') +
+                    el('path', { d: 'M86 144 L100 152 L114 144 L112 152 L100 158 L88 152 Z', fill: '#FFFFFF', stroke: '#B8BEC6', 'stroke-width': 1.5, 'stroke-linejoin': 'round' }) +
+                    el('path', { d: 'M92 152 Q100 158 108 152 L104 160 L100 158 L96 160 Z', fill: '#1B1B22' });
+            },
+            hat: function () {
+                return el('ellipse', { cx: 100, cy: 58, rx: 48, ry: 8, fill: '#25262C', stroke: '#0E1015', 'stroke-width': 2.5 }) +
+                    shape('M70 56 L66 12 Q100 6 134 12 L130 56 Q100 62 70 56 Z', '#25262C', '#0E1015') +
+                    shape('M69 46 Q100 52 131 46 L130 56 Q100 62 70 56 Z', '#7A2234', '#3E0F1A', 1.5) +
+                    line('M76 18 L78 44', 3, '#45474F');
+            }
+        },
+        // République et empires (Belle Époque) — costume : canotier de paille, veston clair, nœud papillon, chaîne de montre.
+        belleepoque: {
+            sleeve: ['#D9C9A3', '#8F7E58'],
+            body: function () {
+                return shape(TUNIC, '#FFFFFF', '#B8BEC6') +
+                    shape(CAPE_L, '#D9C9A3', '#8F7E58') + shape(CAPE_R, '#D9C9A3', '#8F7E58') +
+                    line('M92 140 L80 166 M108 140 L120 166', 3, '#8F7E58') +
+                    el('circle', { cx: 88, cy: 182, r: 2.6, fill: '#6B5E40' }) + el('circle', { cx: 88, cy: 196, r: 2.6, fill: '#6B5E40' }) +
+                    line('M114 176 Q122 186 132 178', 2, '#E9C349') + el('circle', { cx: 114, cy: 176, r: 2.2, fill: '#E9C349' }) +
+                    el('path', { d: 'M100 152 L86 144 L86 160 Z M100 152 L114 144 L114 160 Z', fill: '#C8322F', stroke: '#7D1A17', 'stroke-width': 1.5, 'stroke-linejoin': 'round' }) +
+                    el('circle', { cx: 100, cy: 152, r: 3.5, fill: '#A82623', stroke: '#7D1A17', 'stroke-width': 1.2 });
+            },
+            hat: function () {
+                return el('ellipse', { cx: 100, cy: 56, rx: 52, ry: 9, fill: '#E8C77A', stroke: '#9A7A30', 'stroke-width': 2.5 }) +
+                    shape('M66 54 L68 32 Q100 26 132 32 L134 54 Q100 60 66 54 Z', '#E8C77A', '#9A7A30') +
+                    shape('M67 44 Q100 50 133 44 L134 54 Q100 60 66 54 Z', '#1B1B22', '#0E1015', 1.5) +
+                    line('M70 36 Q100 30 130 36', 1.5, '#C9A55A') + line('M56 58 Q100 66 144 58', 1.5, '#C9A55A');
             }
         },
         // Rome II — toge d'empereur : toge pourpre drapée, pan blanc bordé d'or, fibule, couronne de laurier d'or.
