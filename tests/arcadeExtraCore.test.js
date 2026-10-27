@@ -192,6 +192,70 @@ test('Flappy : une chaîne de huit portes aux repères croissants ; la première
     assert.ok(E.createFlappy(pool().slice(0, 5), seeded(1)).empty);
 });
 
+// Une pool plus fournie (années tous les ~25 ans) pour juger la distance de l'événement faux.
+function widePool() {
+    const out = [];
+    for (let y = -1000, i = 0; y <= 2020; y += 37, i++) if (y !== 0) out.push({ id: 'w' + i, title: 'Fait ' + i, date: y });
+    return out;
+}
+
+test('Flappy : chaque ouverture porte un événement ; le faux est un vrai événement du vivier, plus ancien que le dernier repère, hors chaîne', () => {
+    ['easy', 'normal', 'hard'].forEach((difficulty) => {
+        for (let seed = 1; seed <= 6; seed++) {
+            const g = E.createFlappy(widePool(), seeded(seed), { difficulty });
+            const chain = g.gates.map((gate) => gate.event);
+            const chainIds = new Set(chain.map((e) => e.id));
+            g.gates.slice(1).forEach((gate, i) => {
+                assert.equal(gate.gaps.length, 2, difficulty);
+                const good = gate.gaps.find((p) => p.correct), bad = gate.gaps.find((p) => !p.correct);
+                assert.equal(good.event, chain[i + 1]);
+                assert.ok(bad.event && bad.event.title && bad.event.id, 'un événement, pas seulement une année');
+                assert.equal(bad.year, bad.event.date);
+                assert.ok(bad.event.date < chain[i].date, 'plus ancien que le dernier repère');
+                assert.ok(!chainIds.has(bad.event.id), 'pas un événement de la chaîne');
+            });
+            const wrongIds = g.gates.slice(1).map((gate) => gate.gaps.find((p) => !p.correct).event.id);
+            assert.equal(new Set(wrongIds).size, wrongIds.length, 'une mauvaise réponse ne revient pas dans la chaîne');
+        }
+    });
+});
+
+test('Flappy : l\'événement faux est loin du repère en facile, à distance moyenne en moyen, tout près en difficile', () => {
+    const meanDistance = (difficulty) => {
+        let total = 0, count = 0;
+        for (let seed = 1; seed <= 40; seed++) {
+            const g = E.createFlappy(widePool(), seeded(seed), { difficulty });
+            const chain = g.gates.map((gate) => gate.event);
+            g.gates.slice(1).forEach((gate, i) => { total += chain[i].date - gate.gaps.find((p) => !p.correct).event.date; count += 1; });
+        }
+        return total / count;
+    };
+    const easy = meanDistance('easy'), normal = meanDistance('normal'), hard = meanDistance('hard');
+    assert.ok(easy > normal && normal > hard, `${easy} > ${normal} > ${hard}`);
+    assert.ok(hard < 300 && easy > 500, `${hard} / ${easy}`);
+});
+
+test('Flappy : trois niveaux de vitesse de défilement, qui montent chaque chaîne jusqu\'à un plafond', () => {
+    const at = (difficulty, rounds) => { const g = E.createFlappy(pool(), seeded(4), { difficulty }); g.rounds = rounds; return E.flappySpeed(g); };
+    assert.deepEqual(['easy', 'normal', 'hard'].map((d) => at(d, 0)), [65, 80, 95]);
+    assert.deepEqual(['easy', 'normal', 'hard'].map((d) => at(d, 1000)), [110, 130, 150]);
+    assert.ok(at('easy', 2) > at('easy', 0));
+    assert.equal(E.createFlappy(pool(), seeded(4)).difficulty, 'normal');
+});
+
+test('Flappy : la chaîne laisse toujours assez d\'événements plus anciens à opposer ; sinon une grande ouverture, jamais un trou', () => {
+    for (let seed = 1; seed <= 60; seed++) {
+        const g = E.createFlappy(widePool(), seeded(seed), { difficulty: 'easy' });
+        assert.ok(g.gates.slice(1).every((gate) => gate.gaps.length === 2), `seed ${seed}`);
+    }
+    // Un petit vivier peut ne pas suffire : la porte n'a alors qu'une grande ouverture (correcte), la partie reste jouable.
+    for (let seed = 1; seed <= 15; seed++) {
+        const small = E.createFlappy(pool().slice(0, 9), seeded(seed));
+        if (small.empty) continue;
+        small.gates.forEach((gate) => assert.ok(gate.gaps.length >= 1 && gate.gaps.some((p) => p.correct)));
+    }
+});
+
 test('Flappy : Clio flotte tant qu\'on n\'a pas battu des ailes ; un battement la fait monter, la gravité la fait tomber', () => {
     const g = E.createFlappy(pool(), seeded(4));
     const y0 = g.clio.y;
@@ -229,7 +293,7 @@ test('Flappy : la bonne ouverture rapporte 10 points ; une chaîne finie fait un
     assert.equal(g.score, 8 * 10 + 50);
     assert.equal(g.lives, 3);
     assert.equal(g.gates.filter((x) => !x.done).length, 8, 'la chaîne suivante est posée');
-    assert.ok(E.flappySpeed(g) > E.FL.BASE_SPEED);
+    assert.ok(E.flappySpeed(g) > g.level.baseSpeed);
 });
 
 test('Flappy : la mauvaise ouverture (une date plus ancienne) coûte une vie et se retient', () => {

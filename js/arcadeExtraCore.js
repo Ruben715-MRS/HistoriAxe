@@ -187,12 +187,19 @@
     // === FLAPPY CLIO ===
     // =====================================================================================================
     var FL = {
-        W: 360, H: 440, CLIO_X: 80, CLIO_R: 11, GRAVITY: 1000, FLAP: -330, MAX_FALL: 360, GATE_W: 46, SPACING: 215, GAP: 112, FIRST_GAP: 150,
-        GROUND: 18, READY_GAP: 150, STEP: 1 / 120, LIVES: 3, CHAIN: 8, INVULN: 1.5, BASE_SPEED: 95, SPEED_GAIN: 6, MAX_SPEED: 150
+        W: 360, H: 440, CLIO_X: 80, CLIO_R: 11, GRAVITY: 1000, FLAP: -330, MAX_FALL: 360, GATE_W: 46, SPACING: 240, GAP: 112, FIRST_GAP: 150,
+        GROUND: 18, READY_GAP: 150, STEP: 1 / 120, LIVES: 3, CHAIN: 8, INVULN: 1.5, SPEED_GAIN: 6
+    };
+    // Les niveaux : vitesse de défilement des piliers au départ puis plafond (px/s ; elle monte de 6 par chaîne réussie) ; `wrong`, à quelle
+    // distance dans le temps se trouve l'événement faux (plus ancien que le dernier repère) : loin, à distance moyenne, ou tout près.
+    var FL_LEVELS = {
+        easy: { baseSpeed: 65, maxSpeed: 110, wrong: 'far' },
+        normal: { baseSpeed: 80, maxSpeed: 130, wrong: 'mid' },
+        hard: { baseSpeed: 95, maxSpeed: 150, wrong: 'near' }
     };
 
     function flappySpeed(state) {
-        return Math.min(FL.MAX_SPEED, FL.BASE_SPEED + FL.SPEED_GAIN * state.rounds);
+        return Math.min(state.level.maxSpeed, state.level.baseSpeed + FL.SPEED_GAIN * state.rounds);
     }
 
     // L'époque du décor, d'après une année : prehistoire, orient, antique, medieval, moderne, industriel, contemporain.
@@ -206,10 +213,46 @@
         return 'contemporain';
     }
 
-    // Une chaîne : des repères de plus en plus récents. À chaque porte, deux années : la suivante de la chaîne, et une plus ancienne
-    // que le dernier repère franchi (la mauvaise). La première porte n'a qu'une seule grande ouverture : le départ.
+    // Les événements du vivier plus anciens que `year`, hors ceux de la chaîne et ceux déjà proposés comme mauvaise réponse dans cette chaîne.
+    function flappyEarlier(state, year, taken) {
+        return state.pool.filter(function (e) { return e.date < year && !taken[e.id]; });
+    }
+
+    function flappyChainHasWrongs(state, events) {
+        var ids = {};
+        events.forEach(function (e) { ids[e.id] = true; });
+        return events.slice(1).every(function (event, i) {
+            var earlier = state.pool.filter(function (e) { return e.date < events[i].date && !ids[e.id]; });
+            return earlier.length >= i + 1;
+        });
+    }
+
+    // L'événement faux d'une porte : un événement plus ancien que le dernier repère, pris dans le tiers le plus éloigné (facile), le tiers du
+    // milieu (moyen) ou le tiers le plus proche (difficile) de ce repère. S'il n'en existe aucun, null (la porte n'aura qu'une grande ouverture).
+    function flappyWrongEvent(state, year, taken) {
+        var list = flappyEarlier(state, year, taken).sort(function (a, b) { return a.date - b.date; });   // du plus éloigné au plus proche
+        var n = list.length;
+        if (!n) return null;
+        if (state.level.wrong === 'near') {
+            // Pas collé au repère : au moins quelques années d'écart, sinon on prend ce qu'il y a.
+            var apart = list.filter(function (e) { return year - e.date >= 5; });
+            if (apart.length) { list = apart; n = list.length; }
+        }
+        var from = state.level.wrong === 'far' ? 0 : state.level.wrong === 'mid' ? Math.floor(n / 3) : Math.floor(n * 2 / 3);
+        var to = state.level.wrong === 'far' ? Math.ceil(n / 3) : state.level.wrong === 'mid' ? Math.ceil(n * 2 / 3) : n;
+        if (to <= from) to = Math.min(n, from + 1);
+        return list[from + Math.floor(state.rng() * (to - from))];
+    }
+
+    // Une chaîne : des repères de plus en plus récents. À chaque porte, deux événements : le suivant de la chaîne, et un plus ancien
+    // que le dernier repère franchi (le mauvais). La première porte n'a qu'une seule grande ouverture : le départ.
     function flappyChain(state) {
         var events = ascendingYears(state.pool, state.rng, FL.CHAIN);
+        // Chaque porte doit avoir un événement plus ancien à opposer au dernier repère, toujours différent des précédents : à la porte k, il en faut
+        // au moins k hors de la chaîne (sinon une porte n'aurait qu'une grande ouverture). On retire la chaîne tant qu'elle ne convient pas.
+        for (var tries = 0; tries < 40 && !flappyChainHasWrongs(state, events); tries++) events = ascendingYears(state.pool, state.rng, FL.CHAIN);
+        var taken = {};
+        events.forEach(function (e) { taken[e.id] = true; });
         var years = events.map(function (e) { return e.date; });
         var startX = state.gates.length ? state.gates[state.gates.length - 1].x + FL.SPACING + 120 : FL.W + 80;
         events.forEach(function (event, k) {
@@ -217,16 +260,20 @@
             if (k === 0) {
                 gate.gaps = [{ y: (FL.H - FL.GROUND) / 2, h: FL.FIRST_GAP, year: event.date, correct: true, event: event }];
             } else {
-                var prev = years[k - 1];
-                var spread = Math.max(10, Math.round(Math.abs(prev) * 0.15));
-                var wrong = prev - (1 + Math.floor(state.rng() * spread));
-                for (var guard = 0; guard < 20 && (years.indexOf(wrong) !== -1 || wrong === 0); guard++) wrong -= 1;
+                var wrongEvent = flappyWrongEvent(state, years[k - 1], taken);
+                if (!wrongEvent) {
+                    // Rien de plus ancien dans le vivier : une seule grande ouverture, comme au départ.
+                    gate.gaps = [{ y: (FL.H - FL.GROUND) / 2, h: FL.FIRST_GAP, year: event.date, correct: true, event: event }];
+                    state.gates.push(gate);
+                    return;
+                }
+                taken[wrongEvent.id] = true;
                 var okFirst = state.rng() < 0.5;
                 // Deux ouvertures assez proches pour passer de l'une à l'autre en trois ou quatre battements.
                 var top = { y: 108 + state.rng() * 34, h: FL.GAP };
                 var bottom = { y: 262 + state.rng() * 34, h: FL.GAP };
                 var good = { year: event.date, correct: true, event: event };
-                var bad = { year: wrong, correct: false };
+                var bad = { year: wrongEvent.date, correct: false, event: wrongEvent };
                 gate.gaps = okFirst ? [Object.assign(top, good), Object.assign(bottom, bad)] : [Object.assign(top, bad), Object.assign(bottom, good)];
             }
             state.gates.push(gate);
@@ -235,8 +282,11 @@
         state.chainDone = 0;
     }
 
-    function createFlappy(pool, rng) {
+    // `options` : { difficulty: 'easy' | 'normal' | 'hard' }.
+    function createFlappy(pool, rng, options) {
+        var difficulty = Arcade.normalizeDifficulty(options && options.difficulty);
         var state = {
+            difficulty: difficulty, level: FL_LEVELS[difficulty],
             pool: Arcade.playable(pool), rng: rng || Math.random, w: FL.W, h: FL.H,
             clio: { x: FL.CLIO_X, y: (FL.H - FL.GROUND) / 2, vy: 0, r: FL.CLIO_R }, started: false, waiting: true, invulnerable: 0, distance: 0,
             gates: [], chains: 0, chainDone: 0, lives: FL.LIVES, score: 0, passed: 0, rounds: 0, last: null, over: false, mistakes: []
@@ -349,7 +399,7 @@
                     events.push('good');
                 } else {
                     var expected = g.gaps.filter(function (p) { return p.correct; })[0];
-                    state.mistakes.push({ chosen: gap.year, expected: expected.event, previous: state.last });
+                    state.mistakes.push({ chosen: gap.year, chosenEvent: gap.event, expected: expected.event, previous: state.last });
                     flappyLoseLife(state, events, 'wrong');
                     return;
                 }
@@ -486,7 +536,7 @@
     }
 
     return {
-        BO: BO, BO_LEVELS: BO_LEVELS, FL: FL, RACE: RACE,
+        BO: BO, BO_LEVELS: BO_LEVELS, FL_LEVELS: FL_LEVELS, FL: FL, RACE: RACE,
         createBreakout: createBreakout, breakoutTarget: breakoutTarget, breakoutSpeed: breakoutSpeed, breakoutMovePaddle: breakoutMovePaddle,
         breakoutLaunch: breakoutLaunch, breakoutStep: breakoutStep,
         createFlappy: createFlappy, flappyEra: flappyEra, flappyFlap: flappyFlap, flappyPause: flappyPause, flappyStep: flappyStep, flappySpeed: flappySpeed, gateSolids: gateSolids,

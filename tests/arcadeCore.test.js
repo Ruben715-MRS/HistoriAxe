@@ -554,7 +554,7 @@ test('clé d’une sélection : indépendante de l’ordre des axes, propre à c
 test('Difficulté : chaque langue a les textes du sélecteur et la description des trois niveaux de chaque jeu', () => {
     const fs = require('node:fs');
     const path = require('node:path');
-    const games = ['pacman', 'snake', 'tetris', 'hangman', 'scene', 'memory', 'breakout'];
+    const games = ['pacman', 'snake', 'tetris', 'hangman', 'scene', 'memory', 'breakout', 'flappy'];
     ['fr', 'en', 'de', 'es', 'it', 'ja'].forEach((lang) => {
         const ui = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'ui', lang + '.json'), 'utf8'));
         ['difficulty_label', 'difficulty_easy', 'difficulty_normal', 'difficulty_hard', 'difficulty_hint', 'weighted', 'go'].forEach((k) => {

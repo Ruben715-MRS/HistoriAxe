@@ -1167,6 +1167,11 @@
         <h2 class="header-title" data-i18n="flappy.title">Flappy Clio</h2>
         <p class="modes-header-subtitle" id="flappy-status" role="status"></p>
         <p class="tetris-banner" id="flappy-banner" role="status"></p>
+        <div class="flappy-choices hidden" id="flappy-choices" role="status" aria-live="polite">
+            <p id="flappy-choice-up"></p>
+            <p id="flappy-choice-down"></p>
+        </div>
+        <div class="arcade-difficulty" id="flappy-difficulty"></div>
         <div class="arcade-board" id="flappy-board">
             <canvas id="flappy-canvas" class="arcade-canvas arcade-canvas-wide" role="img" aria-label="Plateau de Flappy Clio" data-i18n-attr="aria-label:flappy.board_aria"></canvas>
             <button type="button" class="btn arcade-start" id="flappy-start" onclick="flappyStart()" data-i18n="arcade.play">Jouer</button>

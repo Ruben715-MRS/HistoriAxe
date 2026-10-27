@@ -10559,6 +10559,30 @@ input:not([type="range"]), label, select, summary, textarea {
     display: none;
 }
 
+/* Flappy Clio : les deux événements de la prochaine porte, l'un pour l'ouverture du haut, l'autre pour celle du bas. */
+.flappy-choices {
+    flex: 0 0 auto;
+    width: min(100%, 360px);
+    margin: 0 0 8px;
+}
+
+.flappy-choices.hidden {
+    display: none;
+}
+
+.flappy-choices p {
+    margin: 3px 0;
+    padding: 6px 10px;
+    border: 1px solid var(--border-soft);
+    border-radius: 10px;
+    background: var(--surface);
+    color: var(--text-dark);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
 /* La difficulté (facile / moyen / difficile) au-dessus du plateau d'un jeu. */
 .arcade-difficulty {
     flex: 0 0 auto;

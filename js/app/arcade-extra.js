@@ -233,6 +233,7 @@ let flInputBound = false;
 let flEra = '';
 let flEraFrom = '';
 let flFade = 1;
+let flChoiceGate = null; // la porte dont le bandeau montre les deux titres
 
 function openFlappy(fromScreen) {
     flReturn = fromScreen || 'screen-arcade';
@@ -243,7 +244,10 @@ function openFlappy(fromScreen) {
     document.getElementById('flappy-start').classList.remove('hidden');
     document.getElementById('flappy-status').textContent = '';
     document.getElementById('flappy-banner').textContent = '';
+    flappyRenderChoices(true);
     arcadeMessage('flappy-message', '');
+    renderArcadeDifficulty('flappy');
+    document.getElementById('flappy-difficulty').classList.remove('hidden');
     flappyBindInput();
     flappyDraw();
 }
@@ -261,17 +265,19 @@ function flappyStop() {
 function flappyStart() {
     const worn = typeof clioWornCostume === 'function' ? clioWornCostume() : null;
     flappyClioCostume = worn ? worn.world : '';
-    const game = ArcadeExtraCore.createFlappy(arcadePool());
+    const game = ArcadeExtraCore.createFlappy(arcadePool(), undefined, { difficulty: arcadeDifficulty('flappy') });
     if (game.empty) { alert(t('arcade.empty')); return; }
     flappyStop();
     flGame = game;
     flEra = flappyEraOf(game);
     flEraFrom = flEra;
     flFade = 1;
+    document.getElementById('flappy-difficulty').classList.add('hidden');
     document.getElementById('flappy-start').classList.add('hidden');
     document.getElementById('flappy-over').classList.add('hidden');
     arcadeMessage('flappy-message', '');
     flappyRenderStatus();
+    flappyRenderChoices(true);
     flLast = performance.now();
     flFrame = requestAnimationFrame(flappyLoop);
 }
@@ -284,6 +290,19 @@ function flappyRenderStatus() {
         : t('flappy.banner_start');
 }
 
+// Le bandeau des choix : les deux événements de la prochaine porte, celui de l'ouverture du haut puis celui de l'ouverture du bas. La porte de
+// départ (une seule grande ouverture) n'en a pas. Mis à jour quand la porte à venir change, pas à chaque image.
+function flappyRenderChoices(force) {
+    const box = document.getElementById('flappy-choices');
+    const gate = flGame && !flGame.over ? flGame.gates.find(g => !g.done) : null;
+    if (!force && gate === flChoiceGate) return;
+    flChoiceGate = gate || null;
+    const gaps = gate && gate.gaps.length === 2 ? gate.gaps.slice().sort((a, b) => a.y - b.y) : null;
+    box.classList.toggle('hidden', !gaps);
+    document.getElementById('flappy-choice-up').textContent = gaps ? '↑ ' + gaps[0].event.title : '';
+    document.getElementById('flappy-choice-down').textContent = gaps ? '↓ ' + gaps[1].event.title : '';
+}
+
 function flappyLoop(now) {
     flFrame = 0;
     if (!flGame || !arcadeScreenVisible('screen-flappy')) return;
@@ -292,6 +311,7 @@ function flappyLoop(now) {
     const events = ArcadeExtraCore.flappyStep(flGame, dt);
     flappyEraTick(dt);
     flappyAfter(events);
+    flappyRenderChoices();
     flappyDraw();
     if (flGame.over) { flappyFinish(); return; }
     flFrame = requestAnimationFrame(flappyLoop);
@@ -307,7 +327,9 @@ function flappyAfter(events) {
     if (events.includes('wrong')) {
         const m = g.mistakes[g.mistakes.length - 1];
         arcadeSound('bad');
-        arcadeMessage('flappy-message', t('flappy.wrong', { expected_year: formatYear(m.expected.date) }), true);
+        arcadeMessage('flappy-message', t('flappy.wrong', {
+            chosen: m.chosenEvent.title, chosen_year: formatYear(m.chosen), expected: m.expected.title, expected_year: formatYear(m.expected.date)
+        }), true);
     }
     if (events.includes('hit')) {
         arcadeSound('bad');
@@ -361,16 +383,17 @@ function flappyDraw() {
     ctx.textBaseline = 'middle';
     g.gates.forEach(gate => {
         ArcadeExtraCore.gateSolids(gate).forEach(s => flappyDrawPillar(ctx, s, FL.H));
-        // L'année de chaque ouverture, sur une pastille au centre du passage.
-        gate.gaps.forEach(gap => {
-            const text = arcadeShortYear(gap.year);
-            ctx.font = '700 13px sans-serif';
-            const w = Math.max(gate.w, ctx.measureText(text).width + 12);
-            ctx.fillStyle = 'rgba(15,26,51,0.85)';
-            ctx.fillRect(gate.x + gate.w / 2 - w / 2, gap.y - 11, w, 22);
-            ctx.fillStyle = '#fde68a';
-            ctx.fillText(text, gate.x + gate.w / 2, gap.y + 1);
-        });
+        // Pas de date sur les ouvertures (elles donneraient la réponse) : une flèche ↑ ou ↓, qui renvoie au bandeau des deux événements.
+        if (gate.gaps.length === 2) {
+            const sorted = gate.gaps.slice().sort((a, b) => a.y - b.y);
+            sorted.forEach((gap, i) => {
+                ctx.fillStyle = 'rgba(15,26,51,0.85)';
+                ctx.fillRect(gate.x, gap.y - 11, gate.w, 22);
+                ctx.font = '700 15px sans-serif';
+                ctx.fillStyle = '#fde68a';
+                ctx.fillText(i === 0 ? '↑' : '↓', gate.x + gate.w / 2, gap.y + 1);
+            });
+        }
     });
     // Clio : un chat qui s'incline selon sa vitesse, et qui clignote pendant le répit qui suit un choc.
     const bob = g.waiting ? Math.sin(performance.now() / 260) * 4 : 0;
@@ -404,18 +427,24 @@ function flappyDraw() {
 function flappyFinish() {
     flappyStop();
     const g = flGame;
-    const best = arcadeRecord('flappy', g.score);
+    const weighted = arcadeWeighted('flappy', g.score, g.difficulty);
+    const best = arcadeRecord('flappy', weighted.total);
     document.getElementById('flappy-over-text').textContent =
-        t('flappy.over_text', { passed: g.passed, score: g.score }) + ' ' + t('arcade.best', { score: best.flappy });
+        t('flappy.over_text', { passed: g.passed, score: g.score }) + weighted.note + ' ' + t('arcade.best', { score: best.flappy });
     const list = document.getElementById('flappy-over-list');
     list.innerHTML = '';
     g.mistakes.slice(0, 5).forEach(m => {
         const li = document.createElement('li');
-        li.textContent = t('flappy.mistake', { chosen: formatYear(m.chosen), expected_year: formatYear(m.expected.date), expected: m.expected.title });
+        li.textContent = t('flappy.mistake', {
+            chosen_title: m.chosenEvent.title, chosen: formatYear(m.chosen), expected_year: formatYear(m.expected.date), expected: m.expected.title
+        });
         list.appendChild(li);
     });
     document.getElementById('flappy-over').classList.remove('hidden');
     document.getElementById('flappy-start').classList.add('hidden');
+    renderArcadeDifficulty('flappy');
+    document.getElementById('flappy-difficulty').classList.remove('hidden');
+    flappyRenderChoices(true);
     flappyDraw();
 }
 

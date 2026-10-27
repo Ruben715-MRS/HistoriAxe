@@ -498,8 +498,11 @@ test('Flappy Clio : Clio attend le premier battement, vole, passe une porte et f
     await page.locator('#btn-arcade').click();
     await page.locator('.arcade-card', { hasText: 'Flappy Clio' }).click();
     expect(await visibleScreen(page)).toBe('screen-flappy');
+    await expect(page.locator('#flappy-difficulty .is-active')).toHaveText('Moyen');
     await page.locator('#flappy-start').click();
     await expect(page.locator('#flappy-banner')).toContainText('grande ouverture');
+    // La porte de départ n'a pas de choix : le bandeau des deux événements est masqué.
+    await expect(page.locator('#flappy-choices')).toBeHidden();
     expect(await page.evaluate(() => flGame.gates.length)).toBe(8);
     const y0 = await page.evaluate(() => flGame.clio.y);
     await page.waitForTimeout(300);
@@ -745,4 +748,43 @@ test('Casse-briques : le niveau règle la raquette et la balle ; en facile, la b
     await page.locator('#breakout-over .btn').click();
     expect(await page.evaluate(() => ({ w: boGame.paddle.w, d: boGame.difficulty }))).toEqual({ w: 72, d: 'hard' });
     await page.evaluate(() => breakoutStop());
+});
+
+test('Flappy Clio : le bandeau donne les deux événements de la prochaine porte (↑ haut, ↓ bas), sans date sur les ouvertures ; le niveau règle la vitesse', async ({ page }) => {
+    await page.locator('#btn-arcade').click();
+    await page.locator('.arcade-card', { hasText: 'Flappy Clio' }).click();
+    await page.locator('#flappy-difficulty .arcade-difficulty-btn', { hasText: 'Facile' }).click();
+    await expect(page.locator('#flappy-difficulty')).toContainText('Défilement lent');
+    await page.locator('#flappy-start').click();
+    expect(await page.evaluate(() => ({ d: flGame.difficulty, speed: ArcadeExtraCore.flappySpeed(flGame) }))).toEqual({ d: 'easy', speed: 65 });
+    // On franchit la porte de départ : la porte suivante a deux événements, dans le bandeau, dans l'ordre des ouvertures.
+    await page.evaluate(() => {
+        flappyStop();
+        flGame.invulnerable = 0; flGame.started = true; flGame.waiting = false;
+        const gate = flGame.gates.find(g => !g.done);
+        gate.x = flGame.clio.x - gate.w / 2;
+        flGame.clio.y = gate.gaps[0].y; flGame.clio.vy = 0;
+        flappyAfter(ArcadeExtraCore.flappyStep(flGame, 0.01));
+        flappyRenderChoices();
+    });
+    await expect(page.locator('#flappy-choices')).toBeVisible();
+    const expected = await page.evaluate(() => {
+        const gate = flGame.gates.find(g => !g.done);
+        const sorted = gate.gaps.slice().sort((a, b) => a.y - b.y);
+        return { up: '↑ ' + sorted[0].event.title, down: '↓ ' + sorted[1].event.title, last: flGame.last.title };
+    });
+    await expect(page.locator('#flappy-choice-up')).toHaveText(expected.up);
+    await expect(page.locator('#flappy-choice-down')).toHaveText(expected.down);
+    await expect(page.locator('#flappy-banner')).toContainText(expected.last);
+    // La mauvaise ouverture : le message nomme les deux événements.
+    await page.evaluate(() => {
+        const gate = flGame.gates.find(g => !g.done);
+        gate.x = flGame.clio.x - gate.w / 2;
+        flGame.clio.y = gate.gaps.find(p => !p.correct).y; flGame.clio.vy = 0;
+        flappyAfter(ArcadeExtraCore.flappyStep(flGame, 0.01));
+    });
+    await expect(page.locator('#flappy-message')).toContainText('est plus ancien que le dernier repère');
+    await page.evaluate(() => { flGame.score = 100; flGame.over = true; flappyFinish(); });
+    await expect(page.locator('#flappy-over-text')).toContainText('Facile ×0,5 : 50 pts comptés');
+    await expect(page.locator('#flappy-over-list li').first()).toContainText('au lieu de');
 });
