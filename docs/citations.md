@@ -80,6 +80,18 @@ C'est le point le plus important : beaucoup de phrases célèbres ne sont pas de
 6. **Typographie** : espace insécable (U+00A0) à l'intérieur des guillemets français « comme ceci », avant `:`, `;`, `!` et `?`. Le test
    refuse un guillemet suivi d'une espace ordinaire.
 
+## Textes hébreux (Pirké Avot, Kohélet) et autres langues
+
+- **L'hébreu n'est jamais recopié à la main.** Il est extrait de Sefaria (domaine public, `https://www.sefaria.org/api/texts/<référence>`) : pour Kohélet, les accents de cantillation sont retirés et les voyelles gardées ; pour la Mishna, le texte est celui de Torat Emet. Une faute de copie dans un texte sacré serait pire qu'une absence de texte.
+- **Numérotation des Pirké Avot** : celle de l'édition de Sefaria, qui est celle de la plupart des éditions modernes. Certaines éditions décalent d'un numéro dans quelques chapitres : la fiche le dit quand on le sait.
+- **Statut des maximes** : pour les Pirké Avot, mis par écrit vers 200, une maxime d'un sage antérieur à la destruction du Temple (70) est **attribuée** (de deux à quatre siècles d'écart : Shimon le Juste, Yehoshua ben Perachia, Hillel, Shammaï) ; celle d'un sage du Iᵉʳ-IIᵉ siècle (Tarfon, Akiva, Ben Zoma, Rabbi) est **attestée**. Kohélet est **attesté** : c'est le texte biblique lui-même, dont la date reste discutée.
+- **Plusieurs vers ou lignes** dans `original` : les séparer par `\n`, un vers par ligne ; l'écran les range selon la direction de la langue (hébreu, arabe, persan, araméen vont de droite à gauche).
+- **Langues à déclarer** dans `langue`, avec leur code dans `citLangCode` (`js/app/citations.js`) pour que le lecteur d'écran les prononce bien.
+
+## Vérifier une source
+
+Avant d'écrire une citation, la retrouver dans un texte, pas dans un recueil de citations : le texte de l'œuvre (Wikisource, Sefaria, un PDF du livre), ou un compte rendu daté. Si l'on ne retrouve que des pages de citations sans référence, la phrase est au mieux **attribuée**, et souvent **apocryphe** : on l'écrit alors avec une note qui dit ce qu'on n'a pas pu établir.
+
 ## Retrouver l'identifiant « Naissance de… » d'un auteur
 
 Les cartes des panthéons ont un identifiant `pan_<pays>_<nom>` (voir `docs/personnages-illustres.md`). Pour le retrouver :

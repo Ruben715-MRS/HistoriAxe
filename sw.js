@@ -12,7 +12,7 @@
 // 'install' recharge tout depuis le réseau. Un pack de langue ou un texte
 // d'UI modifié qui ne s'affiche pas malgré un déploiement réussi est
 // généralement le signe que l'un de ces deux numéros n'a pas été incrémenté.
-const CACHE_VERSION = '1.4.277';
+const CACHE_VERSION = '1.4.279';
 const APP_SHELL_CACHE = `historiaxe-shell-v${CACHE_VERSION}`;
 const DATA_CACHE = 'historiaxe-data-v1.0.121';
 
@@ -186,7 +186,9 @@ const APP_SHELL_FILES = [
     './assets/citations/02.json',
     './assets/citations/03.json',
     './assets/citations/04.json',
-    './assets/citations/05.json'
+    './assets/citations/05.json',
+    './assets/citations/06.json',
+    './assets/citations/07.json'
 ];
 
 // --- INSTALLATION : Mise en cache de l'App Shell & Pack Français ---

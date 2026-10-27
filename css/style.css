@@ -14192,6 +14192,14 @@ input:not([type="range"]), label, select, summary, textarea {
     color: var(--text-dark);
 }
 
+/* La version originale est sur sa propre ligne, un vers par ligne (\n dans les données) : dir="auto" la range à droite pour l'hébreu, l'arabe ou le persan. */
+.cit-original span {
+    display: block;
+    white-space: pre-line;
+    text-align: start;
+    margin-top: 2px;
+}
+
 .cit-status,
 .cit-original {
     margin: 0 0 0 13px;
