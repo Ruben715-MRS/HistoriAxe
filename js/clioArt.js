@@ -547,21 +547,26 @@
                     shape(TUNIC, '#5B4BC4', '#2E2470') +
                     shape('M72 182 L128 182 L134 204 Q100 208 66 204 Z', '#4A3CA8', '#2E2470', 2);
             },
-            hat: function () {
+            // Un écouteur dans chaque oreille (dans le creux rose), et le début du fil jusqu'au bord de l'oreille.
+            earL: function () { return wire('M68 48 Q58 50 52 56') + el('ellipse', { cx: 68, cy: 48, rx: 5.5, ry: 6.5, fill: '#FFFFFF', stroke: '#9EA6AF', 'stroke-width': 1.5 }); },
+            earR: function () { return wire('M132 48 Q142 50 148 56') + el('ellipse', { cx: 132, cy: 48, rx: 5.5, ry: 6.5, fill: '#FFFFFF', stroke: '#9EA6AF', 'stroke-width': 1.5 }); },
+            hat: function (id, mood) {
                 var glow = { stroke: '#35D0E8', 'stroke-width': 7, fill: 'none', opacity: 0.25 };
                 return el('ellipse', Object.assign({ cx: 76, cy: 96, rx: 19, ry: 17 }, glow)) + el('ellipse', Object.assign({ cx: 124, cy: 96, rx: 19, ry: 17 }, glow)) +
                     el('ellipse', { cx: 76, cy: 96, rx: 19, ry: 17, fill: '#BFF4FC', 'fill-opacity': 0.18, stroke: '#1BA9C4', 'stroke-width': 3 }) +
                     el('ellipse', { cx: 124, cy: 96, rx: 19, ry: 17, fill: '#BFF4FC', 'fill-opacity': 0.18, stroke: '#1BA9C4', 'stroke-width': 3 }) +
                     line('M95 94 Q100 90 105 94 M57 92 L42 88 M143 92 L158 88', 3, '#1BA9C4') +
-                    // les écouteurs filaires, un dans chaque oreille ; le fil longe la joue jusque sous le menton
-                    wire('M80 60 C66 66 48 82 46 104 C45 122 54 136 66 144 M120 60 C134 66 152 82 154 104 C155 122 146 136 134 144') +
-                    el('ellipse', { cx: 80, cy: 58, rx: 5, ry: 6, fill: '#FFFFFF', stroke: '#9EA6AF', 'stroke-width': 1.5 }) +
-                    el('ellipse', { cx: 120, cy: 58, rx: 5, ry: 6, fill: '#FFFFFF', stroke: '#9EA6AF', 'stroke-width': 1.5 });
+                    // Les fils, de l'oreille jusque sous le menton, en longeant le tour de la tête. Oreilles tombantes (triste) :
+                    // le fil part du bord de l'oreille baissée.
+                    wire((mood === 'triste' ? 'M50 66 C40 72' : 'M52 56 C40 64') + ' 32 84 33 100 C34 118 44 132 58 138 ' +
+                        (mood === 'triste' ? 'M150 66 C160 72' : 'M148 56 C160 64') + ' 168 84 167 100 C166 118 156 132 142 138');
             },
-            // Sous le menton, les deux fils se rejoignent sur la poitrine et filent dans la poche (le téléphone y est caché).
+            // Sous le menton, les deux fils se rejoignent sur le côté droit de la poitrine, puis le fil unique entre dans la
+            // poche par son ouverture droite (le téléphone y est caché) : le bord de la poche est redessiné par-dessus.
             collar: function () {
-                return wire('M66 144 C76 152 90 160 100 168 M134 144 C124 152 110 160 100 168 M100 168 L100 185') +
-                    el('rect', { x: 97, y: 165, width: 6, height: 7, rx: 2, fill: '#FFFFFF', stroke: '#9EA6AF', 'stroke-width': 1.2 });
+                return wire('M58 138 C78 150 104 160 122 168 M142 138 C138 150 130 160 122 168 M122 168 C134 170 142 180 138 188 Q135 192 130 192') +
+                    el('rect', { x: 119, y: 164, width: 6, height: 8, rx: 2, fill: '#FFFFFF', stroke: '#9EA6AF', 'stroke-width': 1.2, transform: 'rotate(-20 122 168)' }) +
+                    line('M128 182 L134 204', 2, '#2E2470') + line('M129.6 186 L133 200', 2, '#241C5C');
             }
         },
         // Rome II — toge d'empereur : toge pourpre drapée, pan blanc bordé d'or, fibule, couronne de laurier d'or.
@@ -588,9 +593,10 @@
     function sleeveOf(kind) { return kind && DRAW[kind] && DRAW[kind].sleeve ? DRAW[kind].sleeve : null; }
     function arm(d, w, sl) { return line(d, w + 6, sl ? sl[1] : P.line) + line(d, w, sl ? sl[0] : P.fur); }
 
-    function costume(kind, layer, id) {
+    // `mood` permet à un costume de suivre une pose (ex. les fils d'écouteurs quand les oreilles tombent).
+    function costume(kind, layer, id, mood) {
         var c = kind && DRAW[kind];
-        return c && c[layer] ? c[layer](id + layer) : '';
+        return c && c[layer] ? c[layer](id + layer, mood) : '';
     }
 
     function costumeKind(world) { return world && Object.prototype.hasOwnProperty.call(COSTUMES, world) ? COSTUMES[world] : ''; }
@@ -611,8 +617,8 @@
             el('path', { d: BODY, fill: 'none', stroke: L, 'stroke-width': 3 }) + '</g>';
         var paws = pc ? padC(82, 213, 16, 10, pc) + padC(118, 213, 16, 10, pc) + line('M68 216 Q82 223 96 216 M104 216 Q118 223 132 216', 2.5, pc[1]) : pad(82, 213, 15, 9) + pad(118, 213, 15, 9);
         var es = earScaleOf(cos), earT = function (cx, cy) { return es === 1 ? '' : ' transform="translate(' + cx + ' ' + cy + ') scale(' + es + ') translate(' + (-cx) + ' ' + (-cy) + ')"'; };
-        var ears = '<g class="ca-earL"><g' + earT(74, 66) + '>' + el('path', { d: 'M50 80 L55 24 Q59 18 66 22 L98 50 Z', fill: P.fur, stroke: L, 'stroke-width': 3, 'stroke-linejoin': 'round' }) + el('path', { d: 'M61 66 L62 35 L87 52 Z', fill: P.inner }) + '</g></g>' +
-            '<g class="ca-earR"><g' + earT(126, 66) + '>' + el('path', { d: 'M150 80 L145 24 Q141 18 134 22 L102 50 Z', fill: P.fur, stroke: L, 'stroke-width': 3, 'stroke-linejoin': 'round' }) + el('path', { d: 'M139 66 L138 35 L113 52 Z', fill: P.inner }) + '</g></g>';
+        var ears = '<g class="ca-earL"><g' + earT(74, 66) + '>' + el('path', { d: 'M50 80 L55 24 Q59 18 66 22 L98 50 Z', fill: P.fur, stroke: L, 'stroke-width': 3, 'stroke-linejoin': 'round' }) + el('path', { d: 'M61 66 L62 35 L87 52 Z', fill: P.inner }) + costume(cos, 'earL', id) + '</g></g>' +
+            '<g class="ca-earR"><g' + earT(126, 66) + '>' + el('path', { d: 'M150 80 L145 24 Q141 18 134 22 L102 50 Z', fill: P.fur, stroke: L, 'stroke-width': 3, 'stroke-linejoin': 'round' }) + el('path', { d: 'M139 66 L138 35 L113 52 Z', fill: P.inner }) + costume(cos, 'earR', id) + '</g></g>';
         var head = el('ellipse', { cx: 100, cy: 96, rx: 64, ry: 52, fill: P.fur }) +
             '<g clip-path="url(#' + id + 'h)">' + line('M100 46 L100 62 M87 49 L90 61 M113 49 L110 61 M38 90 L52 93 M38 101 L51 101 M162 90 L148 93 M162 101 L149 101', 4, P.stripes) + '</g>' +
             el('ellipse', { cx: 100, cy: 96, rx: 64, ry: 52, fill: 'none', stroke: L, 'stroke-width': 3 }) +
@@ -621,7 +627,7 @@
         var blush = happy ? el('ellipse', { cx: 57, cy: 115, rx: 9, ry: 5, fill: P.blush, opacity: 0.4 }) + el('ellipse', { cx: 143, cy: 115, rx: 9, ry: 5, fill: P.blush, opacity: 0.4 }) : '';
         var whiskers = line('M68 118 L36 111 M68 123 L36 126 M132 118 L164 111 M132 123 L164 126', 1.6, L, { opacity: 0.6 });
         var tear = mood === 'triste' ? el('path', { d: 'M66 112 Q61 121 66 124 Q71 121 66 112 Z', fill: P.tear, stroke: P.tearLine, 'stroke-width': 1 }) : '';
-        var headG = '<g class="ca-head">' + ears + head + blush + eyes(mood) + mouth(mood) + whiskers + tear + costume(cos, 'hat', id) + '</g>';
+        var headG = '<g class="ca-head">' + ears + head + blush + eyes(mood) + mouth(mood) + whiskers + tear + costume(cos, 'hat', id, mood) + '</g>';
 
         var armG = '';
         var sl = sleeveOf(cos);
@@ -641,7 +647,7 @@
 
         var a11y = opts.label ? ' role="img" aria-label="' + String(opts.label).replace(/[&<>"]/g, '') + '"' : ' aria-hidden="true"';
         return '<svg xmlns="http://www.w3.org/2000/svg" class="clio-art ca-m-' + mood + '"' + (cos ? ' data-costume="' + cos + '"' : '') + ' viewBox="0 0 200 232"' + a11y + ' focusable="false">' + defs +
-            '<g class="ca-whole">' + tail + body + costume(cos, 'body', id) + paws + headG + armG + costume(cos, 'collar', id) + fx + '</g></svg>';
+            '<g class="ca-whole">' + tail + body + costume(cos, 'body', id) + paws + headG + armG + costume(cos, 'collar', id, mood) + fx + '</g></svg>';
     }
 
     // --- En marche, de profil vers la droite (le Chemin) -------------------------------------------------------
