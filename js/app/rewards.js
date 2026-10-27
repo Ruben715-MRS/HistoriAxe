@@ -362,6 +362,10 @@ function rewardsRevealShow() {
     const prog = world ? RewardsCore.albumProgress(state, rewardsData().albums[world]) : null;
     document.getElementById('card-reveal-kicker').innerText = card.isNew ? t('rewards.card_new') : t('rewards.card_duplicate', { coins: card.coins });
     document.getElementById('card-reveal-note').innerText = prog ? t('rewards.card_progress', { have: prog.have, total: prog.total, world: pathWorldTitle(PathCore.findWorld(world)) }) : '';
+    // La carte qui complète un album : Clio danse.
+    const clioBox = document.getElementById('card-reveal-clio');
+    clioBox.replaceChildren();
+    if (card.isNew && prog && prog.complete) clioBox.appendChild(clioReaction('album', { world: pathWorldTitle(PathCore.findWorld(world)) }, 'clio-album'));
     const last = r.index >= r.cards.length - 1;
     document.getElementById('card-reveal-next').innerText = t(last ? 'rewards.card_done' : 'rewards.card_next');
     // On retourne la carte tout de suite si l'on a demandé moins d'animations, sinon après un battement.
@@ -471,12 +475,13 @@ function openShop(from) {
 
 function rewardsCostumeName(item) { return t('rewards.costumes.' + item.world); }
 
-function renderShop() {
+// `tryOn` : un costume vient d'être acheté ou enfilé, Clio fait une pirouette pour l'essayer.
+function renderShop(tryOn) {
     const state = rewardsState();
     document.getElementById('shop-coins').innerText = state.coins;
     // Clio en grand, avec le costume du moment (js/app/clio.js).
     const worn = state.equipped.costume ? RewardsCore.findItem(state.equipped.costume) : null;
-    document.getElementById('shop-clio-avatar').replaceChildren(clioAvatar(worn ? 'content' : 'repos', 'large'));
+    document.getElementById('shop-clio-avatar').replaceChildren(clioAvatar(tryOn && worn ? 'essaie' : (worn ? 'content' : 'repos'), 'large'));
     document.getElementById('shop-clio-caption').innerText = worn
         ? t('rewards.clio_wears', { name: rewardsCostumeName(worn) })
         : t('rewards.clio_bare');
@@ -523,12 +528,12 @@ function shopBuy(id) {
     if (typeof playVictorySound === 'function') playVictorySound();
     if (typeof triggerConfetti === 'function') triggerConfetti(1500);
     showToast(t('rewards.shop_bought', { name: rewardsCostumeName(RewardsCore.findItem(id)) }), 2600);
-    renderShop();
+    renderShop(true);
 }
 
 function shopEquip(id) {
     const item = RewardsCore.findItem(id);
     if (!item) return;
     rewardsCommit(RewardsCore.equip(rewardsState(), item.slot, id));
-    renderShop();
+    renderShop(true);
 }

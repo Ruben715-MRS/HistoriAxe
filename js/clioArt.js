@@ -25,7 +25,7 @@
     };
 
     // Humeurs dessinées : celles de ClioCore.MOODS, plus « fier » et « surpris » (planche d'expressions).
-    var MOODS = ['repos', 'salue', 'content', 'ravi', 'fier', 'surpris', 'reflechit', 'triste', 'dort'];
+    var MOODS = ['repos', 'salue', 'content', 'ravi', 'fier', 'surpris', 'reflechit', 'triste', 'dort', 'essaie', 'danse'];
 
     // Costumes déjà dessinés, par monde (les autres restent des aperçus en emoji).
     var COSTUMES = { prehistoire: 'mammouth', orient: 'egypte', grece: 'grece', rome1: 'legionnaire', rome2: 'toge',
@@ -74,7 +74,7 @@
 
     function eyes(mood) {
         var L = P.line, out;
-        if (mood === 'content' || mood === 'ravi') {
+        if (mood === 'content' || mood === 'ravi' || mood === 'essaie' || mood === 'danse') {
             out = line('M64 100 Q76 84 88 100', 4, L) + line('M112 100 Q124 84 136 100', 4, L);
         } else if (mood === 'dort') {
             out = line('M64 97 Q76 106 88 97', 4, L) + line('M112 97 Q124 106 136 97', 4, L);
@@ -99,7 +99,7 @@
         var L = P.line, m;
         var nose = el('path', { d: 'M94 111 Q100 108.5 106 111 Q103 117 100 118 Q97 117 94 111 Z', fill: P.nose, stroke: L, 'stroke-width': 1.5, 'stroke-linejoin': 'round' });
         switch (mood) {
-            case 'ravi':
+            case 'ravi': case 'danse':
                 m = el('path', { d: 'M89 121 Q100 142 111 121 Q100 125 89 121 Z', fill: P.mouth, stroke: L, 'stroke-width': 2, 'stroke-linejoin': 'round' }) +
                     el('ellipse', { cx: 100, cy: 131.5, rx: 5, ry: 3.2, fill: P.tongue });
                 break;
@@ -108,7 +108,7 @@
             case 'dort': m = line('M96 123 Q100 126 104 123', 2.5, L); break;
             case 'reflechit': m = line('M93 124 Q100 123 107 120', 2.5, L); break;
             case 'fier': m = line('M100 117 L100 121 M89 121 Q94.5 127 100 121 Q106.5 128 114 118', 2.5, L); break;
-            case 'content': case 'salue': m = line('M100 117 L100 121 M87 120 Q93.5 129 100 121 Q106.5 129 113 120', 2.5, L); break;
+            case 'content': case 'salue': case 'essaie': m = line('M100 117 L100 121 M87 120 Q93.5 129 100 121 Q106.5 129 113 120', 2.5, L); break;
             default: m = line('M100 117 L100 121 M89 121 Q94.5 127 100 121 Q105.5 127 111 121', 2.5, L);
         }
         return nose + m;
@@ -615,7 +615,7 @@
             '<g clip-path="url(#' + id + 'h)">' + line('M100 46 L100 62 M87 49 L90 61 M113 49 L110 61 M38 90 L52 93 M38 101 L51 101 M162 90 L148 93 M162 101 L149 101', 4, P.stripes) + '</g>' +
             el('ellipse', { cx: 100, cy: 96, rx: 64, ry: 52, fill: 'none', stroke: L, 'stroke-width': 3 }) +
             el('path', { d: 'M100 108 C84 104 70 112 72 124 C74 135 90 137 100 131 C110 137 126 135 128 124 C130 112 116 104 100 108 Z', fill: P.belly });
-        var happy = mood === 'content' || mood === 'ravi' || mood === 'salue' || mood === 'fier';
+        var happy = mood === 'content' || mood === 'ravi' || mood === 'salue' || mood === 'fier' || mood === 'essaie' || mood === 'danse';
         var blush = happy ? el('ellipse', { cx: 57, cy: 115, rx: 9, ry: 5, fill: P.blush, opacity: 0.4 }) + el('ellipse', { cx: 143, cy: 115, rx: 9, ry: 5, fill: P.blush, opacity: 0.4 }) : '';
         var whiskers = line('M68 118 L36 111 M68 123 L36 126 M132 118 L164 111 M132 123 L164 126', 1.6, L, { opacity: 0.6 });
         var tear = mood === 'triste' ? el('path', { d: 'M66 112 Q61 121 66 124 Q71 121 66 112 Z', fill: P.tear, stroke: P.tearLine, 'stroke-width': 1 }) : '';
@@ -625,8 +625,13 @@
         var sl = sleeveOf(cos);
         if (mood === 'salue') armG = '<g class="ca-wave">' + arm('M136 162 C158 157 168 142 167 124', 12, sl) + padC(167, 119, 10, 9, pc) + '</g>';
         if (mood === 'reflechit') armG = arm('M132 176 Q136 152 118 142', 12, sl) + padC(116, 140, 10, 8.5, pc);
+        // La danse : les deux pattes en l'air, qui battent la mesure chacune à son tour.
+        if (mood === 'danse') armG = '<g class="ca-danceL">' + arm('M64 162 C42 157 32 142 33 124', 12, sl) + padC(33, 119, 10, 9, pc) + '</g>' +
+            '<g class="ca-danceR">' + arm('M136 162 C158 157 168 142 167 124', 12, sl) + padC(167, 119, 10, 9, pc) + '</g>';
 
         var fx = '';
+        if (mood === 'essaie') fx = star(28, 60, 8) + star(176, 50, 9);
+        if (mood === 'danse') fx = '<g class="ca-zz">' + text(14, 52, 26, P.mark, '♪') + text(170, 40, 30, P.mark, '♫') + '</g>';
         if (mood === 'ravi' || mood === 'fier') fx = star(30, 46, 9) + star(172, 36, 11) + (mood === 'ravi' ? star(182, 82, 6) : '');
         if (mood === 'dort') fx = '<g class="ca-zz">' + text(148, 46, 18, P.mark, 'z') + text(162, 28, 26, P.mark, 'Z') + '</g>';
         if (mood === 'reflechit') fx = text(160, 44, 32, P.mark, '?');
@@ -637,14 +642,41 @@
             '<g class="ca-whole">' + tail + body + costume(cos, 'body', id) + paws + headG + armG + costume(cos, 'collar', id) + fx + '</g></svg>';
     }
 
+    // --- En marche, de profil vers la droite (le Chemin) -------------------------------------------------------
+    // viewBox 0 0 250 200, pattes au sol vers y = 190. Les pattes battent deux par deux (classes ca-leg-*, css/style.css).
+    var WALK = { W: 250, H: 200 };
+
+    function walk() {
+        var id = 'clio-art-' + (++uid), L = P.line, shade = '#D9772F';
+        var defs = '<defs>' + el('clipPath', { id: id + 'sh' }, el('ellipse', { cx: 118, cy: 92, rx: 54, ry: 48 })) +
+            el('clipPath', { id: id + 'wb' }, el('ellipse', { cx: 112, cy: 122, rx: 60, ry: 30 })) + '</defs>';
+        function leg(cls, x, color) {
+            return '<g class="' + cls + '">' + line('M' + x + ' 134 L' + x + ' 180', 18, L) + line('M' + x + ' 134 L' + x + ' 180', 12, color) +
+                el('ellipse', { cx: x + 4, cy: 184, rx: 10, ry: 6.5, fill: P.belly, stroke: L, 'stroke-width': 2.5 }) + '</g>';
+        }
+        var TAIL_W = 'M58 112 C36 104 30 78 42 62 C48 52 40 44 32 48';
+        var tail = '<g class="ca-tail-walk">' + line(TAIL_W, 19, L) + line(TAIL_W, 13, P.fur) + line('M40 96 l-9 -2 M38 72 l-8 -4', 4, P.stripes) + '</g>';
+        var body = el('ellipse', { cx: 112, cy: 122, rx: 60, ry: 30, fill: P.fur }) + '<g clip-path="url(#' + id + 'wb)">' +
+            el('ellipse', { cx: 118, cy: 150, rx: 44, ry: 14, fill: P.belly }) + line('M84 94 L86 106 M100 92 L101 105 M116 93 L115 106 M68 100 L72 110', 4, P.stripes) + '</g>' +
+            el('ellipse', { cx: 112, cy: 122, rx: 60, ry: 30, fill: 'none', stroke: L, 'stroke-width': 3 });
+        var head = '<g class="ca-walk-head" transform="translate(60 -2) scale(.92)">' + sideHead(id, false, true) + '</g>';
+        return '<svg xmlns="http://www.w3.org/2000/svg" class="clio-art clio-walk-art" viewBox="0 0 ' + WALK.W + ' ' + WALK.H + '" aria-hidden="true" focusable="false">' + defs +
+            '<g class="ca-walk-body">' + tail + leg('ca-leg-fb', 72, shade) + leg('ca-leg-ff', 140, shade) + body +
+            leg('ca-leg-nb', 82, P.fur) + leg('ca-leg-nf', 150, P.fur) + head + '</g></svg>';
+    }
+
     // --- En vol, de profil vers la droite (Flappy Clio) -------------------------------------------------------
     // viewBox 0 0 250 170 ; le corps est centré en (106, 96). `opts.hurt` : yeux en croix (juste après un choc).
     var FLY = { W: 250, H: 170, CX: 106, CY: 96 };
 
-    function sideHead(id, hurt) {
+    function sideHead(id, hurt, upright) {
         var L = P.line;
-        // Oreilles couchées par le vent : leur base reste bien dans la tête, seule la pointe file vers l'arrière.
-        var ears = el('path', { d: 'M94 60 L70 34 Q66 29 73 29 L118 50 Z', fill: P.fur, stroke: L, 'stroke-width': 3, 'stroke-linejoin': 'round' }) +
+        // Oreilles dressées (marche) ou couchées par le vent (vol) : leur base reste bien dans la tête.
+        var ears = upright
+            ? el('path', { d: 'M86 62 L88 28 Q91 23 97 26 L116 50 Z', fill: P.fur, stroke: L, 'stroke-width': 3, 'stroke-linejoin': 'round' }) +
+                el('path', { d: 'M110 52 L126 18 Q130 13 135 18 L150 58 Z', fill: P.fur, stroke: L, 'stroke-width': 3, 'stroke-linejoin': 'round' }) +
+                el('path', { d: 'M121 47 L130 26 L141 53 Z', fill: P.inner })
+            : el('path', { d: 'M94 60 L70 34 Q66 29 73 29 L118 50 Z', fill: P.fur, stroke: L, 'stroke-width': 3, 'stroke-linejoin': 'round' }) +
             el('path', { d: 'M112 54 L92 24 Q89 18 96 20 L148 56 Z', fill: P.fur, stroke: L, 'stroke-width': 3, 'stroke-linejoin': 'round' }) +
             el('path', { d: 'M119 50 L100 29 L138 53 Z', fill: P.inner });
         var head = el('ellipse', { cx: 118, cy: 92, rx: 54, ry: 48, fill: P.fur }) +
@@ -659,7 +691,8 @@
         } else {
             eye = el('ellipse', { cx: 142, cy: 90, rx: 9, ry: 13.5, fill: P.eye, stroke: L, 'stroke-width': 2 }) +
                 el('ellipse', { cx: 145.5, cy: 91, rx: 4.5, ry: 9, fill: P.pupil }) + el('circle', { cx: 140, cy: 84.5, r: 3, fill: '#fff' }) + el('circle', { cx: 146, cy: 97, r: 1.4, fill: '#fff' });
-            mouthS = el('path', { d: 'M170 113 Q166 124 156 119 Q164 117 170 113 Z', fill: P.mouth, stroke: L, 'stroke-width': 2, 'stroke-linejoin': 'round' });
+            mouthS = upright ? line('M171 111 Q167 118 159 116', 2.5, L)
+                : el('path', { d: 'M170 113 Q166 124 156 119 Q164 117 170 113 Z', fill: P.mouth, stroke: L, 'stroke-width': 2, 'stroke-linejoin': 'round' });
         }
         var blush = el('ellipse', { cx: 144, cy: 110, rx: 7, ry: 4, fill: P.blush, opacity: 0.4 });
         var whiskers = line('M164 114 L196 107 M164 119 L196 123', 1.6, L, { opacity: 0.6 });
@@ -685,5 +718,5 @@
             '<g class="ca-fly-body">' + tail + hind + farPaw + body + head + nearPaw + '</g></svg>';
     }
 
-    return { PALETTE: P, MOODS: MOODS, COSTUMES: COSTUMES, FLY: FLY, front: front, fly: fly, hasCostume: function (world) { return costumeKind(world) !== ''; } };
+    return { PALETTE: P, MOODS: MOODS, COSTUMES: COSTUMES, FLY: FLY, WALK: WALK, front: front, fly: fly, walk: walk, hasCostume: function (world) { return costumeKind(world) !== ''; } };
 });

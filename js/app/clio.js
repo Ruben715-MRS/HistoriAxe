@@ -37,6 +37,17 @@ function clioAvatar(mood, size) {
     return el;
 }
 
+// Clio qui marche, de profil (petite taille, pour le Chemin). `toLeft` : elle va vers la gauche, on la retourne.
+function clioWalker(toLeft) {
+    const el = document.createElement('span');
+    el.className = 'clio clio-small clio-walk is-walking' + (toLeft ? ' is-left' : '');
+    el.dataset.mood = 'marche';
+    el.setAttribute('role', 'img');
+    el.setAttribute('aria-label', t('clio.aria'));
+    el.innerHTML = ClioArt.walk();
+    return el;
+}
+
 // La phrase d'un événement : une variante différente de la dernière entendue (mémorisée sur l'appareil).
 function clioLine(event, params) {
     const state = clioLoad();
@@ -124,11 +135,18 @@ function clioAfterPathRender(map) {
         const dy = from.offsetTop - target.offsetTop;
         marker.style.transition = 'none';
         marker.style.transform = `translate(${dx}px, ${dy}px)`;
-        marker.querySelector('.clio').classList.add('is-walking');
+        // Sans costume, Clio marche de profil, tournée vers sa destination ; costumée, elle sautille de face (les
+        // costumes ne sont pas encore dessinés de profil).
+        const front = marker.querySelector('.clio');
+        const walker = clioWornCostume() ? null : clioWalker(dx > 0);
+        if (walker) front.replaceWith(walker); else front.classList.add('is-walking');
         void marker.offsetWidth;
         marker.style.transition = 'transform 1.1s ease-in-out';
         marker.style.transform = '';
-        setTimeout(() => marker.querySelector('.clio') && marker.querySelector('.clio').classList.remove('is-walking'), 1200);
+        setTimeout(() => {
+            if (walker) { if (walker.isConnected) walker.replaceWith(front); }
+            else front.classList.remove('is-walking');
+        }, 1200);
     }
     const state = clioLoad();
     if (!state.introSeen) {

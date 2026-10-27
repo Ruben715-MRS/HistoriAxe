@@ -9834,6 +9834,9 @@ input:not([type="range"]), label, select, summary, textarea {
     color: var(--muted-text);
 }
 
+.card-reveal-clio:empty { display: none; }
+.card-reveal-clio .clio-react { margin: 8px 0 0; }
+
 .card-reveal-actions {
     display: flex;
     flex-wrap: wrap;
@@ -10083,8 +10086,34 @@ input:not([type="range"]), label, select, summary, textarea {
 @keyframes ca-wave { from { transform: rotate(-10deg); } to { transform: rotate(12deg); } }
 @keyframes ca-float { 0%, 100% { transform: translateY(0); opacity: 0.9; } 50% { transform: translateY(-5px); opacity: 0.5; } }
 
+/* Les poses : danse (album complété), essayage (boutique), marche de profil (le Chemin) */
+.clio-art.ca-m-danse .ca-whole { transform-box: view-box; transform-origin: 100px 218px; animation: ca-sway 0.8s ease-in-out infinite alternate; }
+.clio-art .ca-danceL { transform-box: view-box; transform-origin: 64px 162px; animation: ca-beat-l 0.4s ease-in-out infinite alternate; }
+.clio-art .ca-danceR { transform-box: view-box; transform-origin: 136px 162px; animation: ca-beat-r 0.4s ease-in-out infinite alternate-reverse; }
+.clio.is-essaie { animation: clio-spin 1.2s ease-in-out 1; }
+.clio-walk { width: 58px; height: 46px; }
+.clio.clio-walk.is-walking { animation: none; }
+.clio-walk.is-left > svg { transform: scaleX(-1); }
+.clio-walk-art .ca-walk-body { animation: ca-walk-bob 0.35s ease-in-out infinite alternate; }
+.clio-walk-art .ca-tail-walk { transform-box: view-box; transform-origin: 58px 112px; animation: ca-tail 1.4s ease-in-out infinite; }
+.clio-walk-art .ca-leg-nf, .clio-walk-art .ca-leg-fb, .clio-walk-art .ca-leg-nb, .clio-walk-art .ca-leg-ff { transform-box: view-box; animation: ca-step 0.35s ease-in-out infinite alternate; }
+.clio-walk-art .ca-leg-nb, .clio-walk-art .ca-leg-ff { animation-direction: alternate-reverse; }
+.clio-walk-art .ca-leg-nf { transform-origin: 150px 134px; }
+.clio-walk-art .ca-leg-nb { transform-origin: 82px 134px; }
+.clio-walk-art .ca-leg-ff { transform-origin: 140px 134px; }
+.clio-walk-art .ca-leg-fb { transform-origin: 72px 134px; }
+@keyframes ca-sway { from { transform: rotate(-6deg); } to { transform: rotate(6deg) translateY(-4px); } }
+@keyframes ca-beat-l { from { transform: rotate(10deg); } to { transform: rotate(-12deg); } }
+@keyframes ca-beat-r { from { transform: rotate(-12deg); } to { transform: rotate(10deg); } }
+@keyframes clio-spin { 0%, 100% { transform: scaleX(1) translateY(0); } 25% { transform: scaleX(0.1) translateY(-8px); } 50% { transform: scaleX(-1) translateY(-12px); } 75% { transform: scaleX(-0.1) translateY(-8px); } }
+@keyframes ca-walk-bob { from { transform: translateY(0); } to { transform: translateY(-3px); } }
+@keyframes ca-step { from { transform: rotate(-22deg); } to { transform: rotate(22deg); } }
+
 @media (prefers-reduced-motion: reduce) {
-    .clio, .clio-art .ca-tail, .clio-art .ca-breath, .clio-art .ca-blink, .clio-art .ca-wave, .clio-art .ca-zz { animation: none !important; }
+    .clio, .clio-art .ca-tail, .clio-art .ca-breath, .clio-art .ca-blink, .clio-art .ca-wave, .clio-art .ca-zz,
+    .clio-art.ca-m-danse .ca-whole, .clio-art .ca-danceL, .clio-art .ca-danceR, .clio.is-essaie,
+    .clio-walk-art .ca-walk-body, .clio-walk-art .ca-tail-walk, .clio-walk-art .ca-leg-nf, .clio-walk-art .ca-leg-fb,
+    .clio-walk-art .ca-leg-nb, .clio-walk-art .ca-leg-ff { animation: none !important; }
 }
 
 .clio-react {

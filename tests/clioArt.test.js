@@ -68,3 +68,20 @@ test('le texte alternatif est échappé, et le dessin est muet sans lui', () => 
     const svg = A.front('repos', { label: 'Clio <"x">' });
     assert.ok(svg.includes('aria-label="Clio x"'));
 });
+
+test('la marche : SVG bien formé, quatre pattes animées deux par deux', () => {
+    const svg = A.walk();
+    assertWellFormed(svg);
+    assert.ok(svg.includes('viewBox="0 0 ' + A.WALK.W + ' ' + A.WALK.H + '"'));
+    for (const leg of ['ca-leg-nf', 'ca-leg-nb', 'ca-leg-ff', 'ca-leg-fb']) assert.ok(svg.includes(leg), leg);
+});
+
+test('les poses de la boutique et de l\'album : essayage et danse, aussi en costume', () => {
+    for (const pose of ['essaie', 'danse']) {
+        assert.ok(A.MOODS.includes(pose) && ClioCore.MOODS.includes(pose), pose);
+        assert.ok(A.front(pose).includes('ca-m-' + pose));
+    }
+    const danse = A.front('danse', { costume: 'religion' });
+    assert.ok(danse.includes('ca-danceL') && danse.includes('ca-danceR'), 'deux pattes levées');
+    assert.equal((danse.match(/#25272E/g) || []).length >= 3, true, 'les deux bras portent la manche du pourpoint');
+});

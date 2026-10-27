@@ -171,7 +171,8 @@ Une chatte. **Décisions validées (octobre 2026)** :
 | **Allure** | **Jeune chatte ronde et compacte** (silhouette des premiers croquis), queue en point d'interrogation. Pas de signe distinctif ajouté (la « patte d'encre » est écartée). |
 | **Caractère** | Curieuse, un peu savante, jamais moqueuse ; elle **encourage**, ne juge pas. |
 
-Le dessin est dans `js/clioArt.js` (de face dans toutes les humeurs, en vol pour Flappy Clio) ; ses animations sont
+Le dessin est dans `js/clioArt.js` (de face dans toutes les humeurs et les poses `essaie` et `danse`, de profil en
+marche sur le Chemin, en vol pour Flappy Clio) ; ses animations sont
 dans `css/style.css` (classes `ca-*`). Costumes déjà dessinés : les cinq de l'Antiquité, les quatre du Moyen Âge (mérovingien, cotte de mailles, cape fleurdelisée, armure de Jeanne) les quatre des Temps
 modernes (Léonard, fraise, Roi-Soleil, philosophe) les trois du XIXᵉ siècle (bonnet phrygien, haut-de-forme, Belle Époque) et les cinq du XXᵉ siècle et
 d'aujourd'hui (casque Adrian, années folles, combinaison spatiale, perfecto, tenue connectée) : **les 21 costumes sont
