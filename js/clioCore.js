@@ -14,7 +14,7 @@
     'use strict';
 
     // Humeurs = poses d'animation (voir docs/direction-artistique.md §7.2 ; le chat provisoire en joue une version simplifiée).
-    var MOODS = ['repos', 'content', 'ravi', 'triste', 'reflechit', 'salue', 'dort'];
+    var MOODS = ['repos', 'content', 'ravi', 'triste', 'reflechit', 'salue', 'dort', 'essaie', 'danse'];
 
     // Événements : humeur et nombre de variantes de phrase.
     var EVENTS = {
@@ -29,7 +29,8 @@
         tap: { mood: 'content', lines: 4 },
         first: { mood: 'salue', lines: 1 },
         costume: { mood: 'reflechit', lines: 2 },
-        costumeShort: { mood: 'reflechit', lines: 1 }
+        costumeShort: { mood: 'reflechit', lines: 1 },
+        album: { mood: 'danse', lines: 2 }
     };
 
     // L'événement qui suit la fin d'un niveau du Chemin.

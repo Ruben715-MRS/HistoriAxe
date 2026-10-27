@@ -1366,7 +1366,6 @@
     "album_subtitle": "Carte trovate: {have} su {total}",
     "card_missing_aria": "Carta {rarity} non ancora trovata",
     "shop_title": "Il negozio di Clio",
-    "clio_soon": "Clio verrà disegnata presto: questi costumi sono anteprime.",
     "clio_wears": "Clio indossa: {name}",
     "clio_bare": "Clio non ha ancora nessun costume.",
     "shop_decors": "Gli sfondi arriveranno più avanti.",
@@ -1852,6 +1851,10 @@
       },
       "costumeShort": {
         "0": "Ti mancano {missing} 🪙 per il costume «{name}»."
+      },
+      "album": {
+        "0": "Album completo! Ballo di gioia!",
+        "1": "Tutti i personaggi di {world} sono riuniti!"
       }
     }
   },

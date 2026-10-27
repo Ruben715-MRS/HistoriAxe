@@ -1391,7 +1391,6 @@
     "album_subtitle": "Cards found: {have} out of {total}",
     "card_missing_aria": "{rarity} card not found yet",
     "shop_title": "Clio’s Shop",
-    "clio_soon": "Clio will be drawn soon: these costumes are previews.",
     "clio_wears": "Clio is wearing: {name}",
     "clio_bare": "Clio has no costume yet.",
     "shop_decors": "Background scenery is coming later.",
@@ -1880,6 +1879,10 @@
       },
       "costumeShort": {
         "0": "You’re {missing} 🪙 short for the “{name}” costume."
+      },
+      "album": {
+        "0": "Album complete! I'm dancing for joy!",
+        "1": "All the characters of {world} are together!"
       }
     }
   },

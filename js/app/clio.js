@@ -1,8 +1,8 @@
 // =========================================================================
 // === HISTORIAXE — CLIO, LA MASCOTTE : APPARITIONS (voir js/clioCore.js) ===
 // =========================================================================
-// En attendant les dessins (docs/direction-artistique.md), Clio est un chat en emoji portant le costume du moment. Quand
-// les vrais visuels arriveront, `clioAvatar` est le seul endroit à changer : toutes les apparitions passent par lui.
+// Clio est dessinée en SVG par js/clioArt.js (docs/direction-artistique.md §7). `clioAvatar` est le seul endroit qui la
+// pose à l'écran : toutes les apparitions passent par lui. Un costume pas encore dessiné s'affiche en aperçu (emoji).
 //
 // Où elle apparaît :
 //   - sur le Chemin, debout près du niveau à jouer (elle marche jusqu'au suivant après une victoire) ;
@@ -11,27 +11,42 @@
 //   - à l'accueil, une fois par jour : bonjour, ou « ta série s'endort ».
 // Jamais pendant une partie chronométrée ; toujours discrète, passable et courte.
 
-const CLIO_FACES = { repos: '🐱', content: '😺', ravi: '😸', triste: '😿', reflechit: '🐱', salue: '🐱', dort: '🐱' };
-const CLIO_FX = { ravi: '✨', reflechit: '🤔', dort: '💤', salue: '👋' };
-
-function clioCostumeEmoji() {
+function clioWornCostume() {
     const state = typeof rewardsState === 'function' ? rewardsState() : null;
-    const worn = state && state.equipped.costume ? RewardsCore.findItem(state.equipped.costume) : null;
-    return worn ? worn.emoji : '';
+    return state && state.equipped.costume ? RewardsCore.findItem(state.equipped.costume) : null;
 }
 
-// Clio dans une humeur : un chat, son costume, un petit effet (étincelles, sommeil…). `size` : 'small' | 'medium'.
+// Clio dans une humeur, avec son costume. `size` : 'small' | 'medium'.
 function clioAvatar(mood, size) {
     const safeMood = ClioCore.MOODS.includes(mood) ? mood : 'repos';
+    const worn = clioWornCostume();
+    const drawn = worn && ClioArt.hasCostume(worn.world);
     const el = document.createElement('span');
     el.className = 'clio clio-' + (size || 'medium') + ' is-' + safeMood;
     el.dataset.mood = safeMood;
     el.setAttribute('role', 'img');
     el.setAttribute('aria-label', t('clio.aria'));
-    el.innerHTML = '<span class="clio-cat" aria-hidden="true"></span><span class="clio-costume" aria-hidden="true"></span><span class="clio-fx" aria-hidden="true"></span>';
-    el.querySelector('.clio-cat').innerText = CLIO_FACES[safeMood];
-    el.querySelector('.clio-costume').innerText = clioCostumeEmoji();
-    el.querySelector('.clio-fx').innerText = CLIO_FX[safeMood] || '';
+    el.innerHTML = ClioArt.front(safeMood, { costume: drawn ? worn.world : '' });
+    if (worn && !drawn) {
+        const badge = document.createElement('span');
+        badge.className = 'clio-costume';
+        badge.setAttribute('aria-hidden', 'true');
+        badge.innerText = worn.emoji;
+        el.appendChild(badge);
+    }
+    return el;
+}
+
+// Clio qui marche, de profil, avec son costume (petite taille, pour le Chemin). `toLeft` : elle va vers la gauche,
+// on la retourne.
+function clioWalker(toLeft) {
+    const worn = clioWornCostume();
+    const el = document.createElement('span');
+    el.className = 'clio clio-small clio-walk is-walking' + (toLeft ? ' is-left' : '');
+    el.dataset.mood = 'marche';
+    el.setAttribute('role', 'img');
+    el.setAttribute('aria-label', t('clio.aria'));
+    el.innerHTML = ClioArt.walk({ costume: worn ? worn.world : '' });
     return el;
 }
 
@@ -122,11 +137,14 @@ function clioAfterPathRender(map) {
         const dy = from.offsetTop - target.offsetTop;
         marker.style.transition = 'none';
         marker.style.transform = `translate(${dx}px, ${dy}px)`;
-        marker.querySelector('.clio').classList.add('is-walking');
+        // Clio marche de profil, avec son costume, tournée vers sa destination.
+        const front = marker.querySelector('.clio');
+        const walker = clioWalker(dx > 0);
+        front.replaceWith(walker);
         void marker.offsetWidth;
         marker.style.transition = 'transform 1.1s ease-in-out';
         marker.style.transform = '';
-        setTimeout(() => marker.querySelector('.clio') && marker.querySelector('.clio').classList.remove('is-walking'), 1200);
+        setTimeout(() => { if (walker.isConnected) walker.replaceWith(front); }, 1200);
     }
     const state = clioLoad();
     if (!state.introSeen) {
