@@ -562,9 +562,9 @@
                         (mood === 'triste' ? 'M150 66 C160 72' : 'M148 56 C160 64') + ' 168 84 167 100 C166 118 156 132 142 138');
             },
             // Sous le menton, les deux fils se rejoignent sur le côté droit de la poitrine, puis le fil unique entre dans la
-            // poche par son ouverture droite (le téléphone y est caché) : le bord de la poche est redessiné par-dessus.
+            // poche par son ouverture droite (le téléphone y est caché) : il s'arrête au bord de la poche, redessiné par-dessus.
             collar: function () {
-                return wire('M58 138 C78 150 104 160 122 168 M142 138 C138 150 130 160 122 168 M122 168 C134 170 142 180 138 188 Q135 192 130 192') +
+                return wire('M58 138 C78 150 104 160 122 168 M142 138 C138 150 130 160 122 168 M122 168 C134 170 142 180 140 187 Q138 191 133.5 192') +
                     el('rect', { x: 119, y: 164, width: 6, height: 8, rx: 2, fill: '#FFFFFF', stroke: '#9EA6AF', 'stroke-width': 1.2, transform: 'rotate(-20 122 168)' }) +
                     line('M128 182 L134 204', 2, '#2E2470') + line('M129.6 186 L133 200', 2, '#241C5C');
             }
