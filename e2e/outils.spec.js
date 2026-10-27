@@ -751,7 +751,7 @@ test('citations : recherche, filtre de fiabilité, tranches, fiche, lien vers la
     await page.locator('#cit-reliability').selectOption('all');
 
     await page.locator('#cit-era').selectOption('avant500');
-    await expect(items.first()).toContainText('Exode');
+    await expect(items.first()).toContainText('Hammurabi');
     await page.locator('#cit-era').selectOption('all');
 
     await page.locator('#cit-search').fill('je pense donc');
