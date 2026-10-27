@@ -10071,7 +10071,7 @@ input:not([type="range"]), label, select, summary, textarea {
 .clio-art .ca-tail { transform-box: view-box; transform-origin: 136px 204px; animation: ca-tail 2.6s ease-in-out infinite; }
 .clio-art .ca-breath { transform-box: view-box; transform-origin: 100px 218px; animation: ca-breath 3.4s ease-in-out infinite; }
 .clio-art .ca-blink { transform-box: fill-box; transform-origin: center; animation: ca-blink 5.2s infinite; }
-.clio-art .ca-wave { transform-box: view-box; transform-origin: 134px 166px; animation: ca-wave 0.9s ease-in-out infinite alternate; }
+.clio-art .ca-wave { transform-box: view-box; transform-origin: 136px 162px; animation: ca-wave 0.9s ease-in-out infinite alternate; }
 .clio-art .ca-zz { animation: ca-float 2.4s ease-in-out infinite; }
 .clio-art .ca-earL, .clio-art .ca-earR, .clio-art .ca-head { transform-box: view-box; }
 .clio-art .ca-earL { transform-origin: 74px 66px; }

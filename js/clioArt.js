@@ -231,6 +231,7 @@
         },
         // Haut Moyen Âge — manteau mérovingien : manteau de laine bordé, tunique brodée, grande fibule ronde à grenats.
         merovingien: {
+            sleeve: ['#4F7A3A', '#2C4A1F'],
             body: function (id) {
                 return shape(TUNIC, '#4F7A3A', '#2C4A1F') +
                     clipped(id + 'tu', TUNIC, line('M48 200 Q100 208 152 200', 5, '#D4A43A') + line('M48 200 Q100 208 152 200', 1.5, '#8E3B2E', { 'stroke-dasharray': '3 3' })) +
@@ -244,6 +245,7 @@
         },
         // Féodalités — cotte de mailles : haubert et camail de mailles, surcot bleu au chevron d'or, petit casque conique.
         mailles: {
+            sleeve: ['#AEB4BB', '#5F656C'],
             body: function (id) {
                 var SURCOT = 'M68 146 L132 146 L138 206 Q100 212 62 206 Z';
                 return shape(TUNIC, '#AEB4BB', '#5F656C') + mail(id + 'm', TUNIC, 44, 140, 156, 214) +
@@ -262,6 +264,7 @@
         },
         // Capétiens — cape fleurdelisée : cape bleue semée de lys d'or, col d'hermine, tunique rouge, couronne fleuronnée.
         lys: {
+            sleeve: ['#B22A26', '#6E1512'],
             body: function (id) {
                 var tails = [[70, 154], [84, 160], [100, 163], [116, 160], [130, 154]].map(function (p) {
                     return el('path', { d: 'M' + p[0] + ' ' + (p[1] - 2) + ' q2 3 0 6 q-2 -3 0 -6 Z', fill: '#1B1B22' });
@@ -281,6 +284,7 @@
         },
         // Guerre de Cent Ans — armure de Jeanne : armure claire (plastron, épaulières, braconnière), étendard blanc fleurdelisé.
         jeanne: {
+            sleeve: ['#C9CED4', '#7D848C'],
             body: function () {
                 var lames = [184, 192, 200].map(function (y) {
                     return shape('M56 ' + y + ' Q100 ' + (y + 8) + ' 144 ' + y + ' L146 ' + (y + 9) + ' Q100 ' + (y + 17) + ' 54 ' + (y + 9) + ' Z', '#C9CED4', '#7D848C', 2);
@@ -298,6 +302,7 @@
         },
         // Renaissances — pourpoint de Léonard : pourpoint à crevés, béret de velours, carnet de croquis sous le bras.
         leonard: {
+            sleeve: ['#2F6B6B', '#173B3B'],
             body: function () {
                 var buttons = [158, 170, 182, 194].map(function (y) { return el('circle', { cx: 100, cy: y, r: 2.6, fill: '#E9C349', stroke: '#8A6A10', 'stroke-width': 1 }); }).join('');
                 return shape(TUNIC, '#2F6B6B', '#173B3B') +
@@ -320,21 +325,29 @@
         },
         // Guerres de Religion — fraise et pourpoint : pourpoint noir sobre, fraise blanche plissée, boutons d'argent.
         fraise: {
+            sleeve: ['#25272E', '#0E1015'],
             body: function () {
-                var ruff = '';
-                for (var i = 0; i <= 12; i++) {
-                    var a = Math.PI * i / 12, x = 100 + 54 * Math.cos(a), y = 151 + 17 * Math.sin(a);
-                    ruff += el('circle', { cx: x.toFixed(1), cy: y.toFixed(1), r: 8, fill: '#FFFFFF', stroke: '#B8BEC6', 'stroke-width': 1.5 });
-                }
                 var buttons = [166, 178, 190, 202].map(function (y) { return el('circle', { cx: 100, cy: y, r: 2.4, fill: '#C9CDD2', stroke: '#5F656C', 'stroke-width': 1 }); }).join('');
                 return shape(TUNIC, '#25272E', '#0E1015') +
                     line('M70 160 Q66 180 70 202 M130 160 Q134 180 130 202', 2, '#3A3D46') + buttons +
-                    line('M54 186 Q100 194 146 186', 4, '#0E1015') +
-                    ruff + line('M50 151 Q100 174 150 151', 1.5, '#D8DCE1');
+                    line('M54 186 Q100 194 146 186', 4, '#0E1015');
+            },
+            // La fraise, à la largeur des épaules, posée par-dessus la naissance du bras.
+            collar: function () {
+                var N = 12, cx = 100, cy = 148, rx = 42, ry = 17, d = 'M' + (cx + rx) + ' ' + cy, pleats = '';
+                for (var i = 1; i <= N; i++) {
+                    var a = Math.PI * i / N, m = Math.PI * (i - 0.5) / N;
+                    d += ' Q' + (cx + rx * 1.1 * Math.cos(m)).toFixed(1) + ' ' + (cy + ry * 1.3 * Math.sin(m)).toFixed(1) +
+                        ' ' + (cx + rx * Math.cos(a)).toFixed(1) + ' ' + (cy + ry * Math.sin(a)).toFixed(1);
+                    if (i < N) pleats += 'M' + (cx + 29 * Math.cos(a)).toFixed(1) + ' ' + (cy + 7 * Math.sin(a)).toFixed(1) + ' L' + (cx + 39 * Math.cos(a)).toFixed(1) + ' ' + (cy + 15 * Math.sin(a)).toFixed(1) + ' ';
+                }
+                d += ' L72 148 A28 7 0 0 0 128 148 Z';
+                return shape(d, '#FFFFFF', '#9EA6AF', 2) + line(pleats, 1.4, '#C3C9D0');
             }
         },
         // Rois absolus — perruque du Roi-Soleil : grande perruque bouclée, habit doré, cravate de dentelle, cordon bleu.
         roisoleil: {
+            sleeve: ['#D9A93A', '#7A5E14'],
             body: function (id) {
                 return shape(TUNIC, '#D9A93A', '#7A5E14') +
                     clipped(id + 'br', TUNIC, line('M60 170 q6 -6 12 0 q6 6 12 0 M118 170 q6 -6 12 0 q6 6 12 0 M56 196 q6 -6 12 0 q6 6 12 0 M124 196 q6 -6 12 0 q6 6 12 0', 2, '#A97E1C') +
@@ -354,6 +367,7 @@
         },
         // Lumières — habit de philosophe : redingote, gilet crème, jabot, perruque poudrée à rouleaux, plume d'oie.
         philosophe: {
+            sleeve: ['#3D5E7A', '#1F3346'],
             body: function () {
                 var buttons = [164, 176, 188, 200].map(function (y) { return el('circle', { cx: 100, cy: y, r: 2.4, fill: '#E9C349', stroke: '#8A6A10', 'stroke-width': 1 }); }).join('');
                 return shape(TUNIC, '#F1E6CC', '#A89F8C') + buttons +
@@ -387,6 +401,10 @@
         }
     };
 
+    // La manche du bras qui bouge (salue, réfléchit) : [couleur, contour], ou rien pour un bras nu.
+    function sleeveOf(kind) { return kind && DRAW[kind] && DRAW[kind].sleeve ? DRAW[kind].sleeve : null; }
+    function arm(d, w, sl) { return line(d, w + 6, sl ? sl[1] : P.line) + line(d, w, sl ? sl[0] : P.fur); }
+
     function costume(kind, layer, id) {
         var c = kind && DRAW[kind];
         return c && c[layer] ? c[layer](id + layer) : '';
@@ -419,9 +437,10 @@
         var tear = mood === 'triste' ? el('path', { d: 'M66 112 Q61 121 66 124 Q71 121 66 112 Z', fill: P.tear, stroke: P.tearLine, 'stroke-width': 1 }) : '';
         var headG = '<g class="ca-head">' + ears + head + blush + eyes(mood) + mouth(mood) + whiskers + tear + costume(cos, 'hat', id) + '</g>';
 
-        var arm = '';
-        if (mood === 'salue') arm = '<g class="ca-wave">' + limb('M134 166 C156 160 168 142 167 124', 12) + pad(167, 119, 10, 9) + '</g>';
-        if (mood === 'reflechit') arm = limb('M132 176 Q136 152 118 142', 12) + pad(116, 140, 10, 8.5);
+        var armG = '';
+        var sl = sleeveOf(cos);
+        if (mood === 'salue') armG = '<g class="ca-wave">' + arm('M136 162 C158 157 168 142 167 124', 12, sl) + pad(167, 119, 10, 9) + '</g>';
+        if (mood === 'reflechit') armG = arm('M132 176 Q136 152 118 142', 12, sl) + pad(116, 140, 10, 8.5);
 
         var fx = '';
         if (mood === 'ravi' || mood === 'fier') fx = star(30, 46, 9) + star(172, 36, 11) + (mood === 'ravi' ? star(182, 82, 6) : '');
@@ -431,7 +450,7 @@
 
         var a11y = opts.label ? ' role="img" aria-label="' + String(opts.label).replace(/[&<>"]/g, '') + '"' : ' aria-hidden="true"';
         return '<svg xmlns="http://www.w3.org/2000/svg" class="clio-art ca-m-' + mood + '"' + (cos ? ' data-costume="' + cos + '"' : '') + ' viewBox="0 0 200 232"' + a11y + ' focusable="false">' + defs +
-            '<g class="ca-whole">' + tail + body + costume(cos, 'body', id) + paws + headG + arm + fx + '</g></svg>';
+            '<g class="ca-whole">' + tail + body + costume(cos, 'body', id) + paws + headG + armG + costume(cos, 'collar', id) + fx + '</g></svg>';
     }
 
     // --- En vol, de profil vers la droite (Flappy Clio) -------------------------------------------------------
