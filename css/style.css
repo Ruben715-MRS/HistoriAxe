@@ -10574,10 +10574,13 @@ input:not([type="range"]), label, select, summary, textarea {
 .arcade-difficulty-group {
     display: flex;
     gap: 6px;
+    width: 100%;
 }
 
 .arcade-difficulty-btn {
     flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
     min-height: 44px;
     padding: 0 8px;
     border: 1px solid var(--border-soft);

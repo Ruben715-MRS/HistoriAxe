@@ -549,3 +549,20 @@ test('clé d’une sélection : indépendante de l’ordre des axes, propre à c
     assert.notEqual(A.scopeKey('t1', ['A']), A.scopeKey('t2', ['A']));
     assert.notEqual(A.scopeKey('t1', ['A']), A.scopeKey('t1', ['A', 'B']));
 });
+
+// Les textes de la difficulté : dans les six langues, pour le sélecteur et pour chaque jeu qui en a un.
+test('Difficulté : chaque langue a les textes du sélecteur et la description des trois niveaux de chaque jeu', () => {
+    const fs = require('node:fs');
+    const path = require('node:path');
+    const games = ['pacman', 'snake', 'tetris', 'hangman', 'scene', 'memory', 'breakout'];
+    ['fr', 'en', 'de', 'es', 'it', 'ja'].forEach((lang) => {
+        const ui = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'ui', lang + '.json'), 'utf8'));
+        ['difficulty_label', 'difficulty_easy', 'difficulty_normal', 'difficulty_hard', 'difficulty_hint', 'weighted', 'go'].forEach((k) => {
+            assert.ok(ui.arcade && typeof ui.arcade[k] === 'string' && ui.arcade[k], `${lang}: arcade.${k}`);
+        });
+        games.forEach((game) => A.DIFFICULTIES.forEach((level) => {
+            assert.ok(ui[game] && typeof ui[game]['level_' + level] === 'string' && ui[game]['level_' + level], `${lang}: ${game}.level_${level}`);
+        }));
+        assert.ok(ui.scene.count_hint && ui.memory.card_hidden_event && ui.memory.card_hidden_date, `${lang}: textes scène / memory`);
+    });
+});
