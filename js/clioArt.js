@@ -29,7 +29,8 @@
 
     // Costumes déjà dessinés, par monde (les autres restent des aperçus en emoji).
     var COSTUMES = { prehistoire: 'mammouth', orient: 'egypte', grece: 'grece', rome1: 'legionnaire', rome2: 'toge',
-        'haut-moyen-age': 'merovingien', feodalites: 'mailles', capetiens: 'lys', 'cent-ans': 'jeanne' };
+        'haut-moyen-age': 'merovingien', feodalites: 'mailles', capetiens: 'lys', 'cent-ans': 'jeanne',
+        renaissances: 'leonard', religion: 'fraise', absolus: 'roisoleil', lumieres: 'philosophe' };
 
     var uid = 0;
 
@@ -293,6 +294,84 @@
                     el('ellipse', { cx: 58, cy: 152, rx: 14, ry: 10, fill: '#C9CED4', stroke: '#7D848C', 'stroke-width': 2.5 }) +
                     el('ellipse', { cx: 142, cy: 152, rx: 14, ry: 10, fill: '#C9CED4', stroke: '#7D848C', 'stroke-width': 2.5 }) +
                     line('M62 186 Q100 194 138 186', 4, '#8A5A33') + el('rect', { x: 96, y: 186, width: 8, height: 7, rx: 1.5, fill: '#E9C349', stroke: '#8A6A10', 'stroke-width': 1.2 });
+            }
+        },
+        // Renaissances — pourpoint de Léonard : pourpoint à crevés, béret de velours, carnet de croquis sous le bras.
+        leonard: {
+            body: function () {
+                var buttons = [158, 170, 182, 194].map(function (y) { return el('circle', { cx: 100, cy: y, r: 2.6, fill: '#E9C349', stroke: '#8A6A10', 'stroke-width': 1 }); }).join('');
+                return shape(TUNIC, '#2F6B6B', '#173B3B') +
+                    line('M100 146 L100 208', 3, '#173B3B') + buttons + line('M54 186 Q100 194 146 186', 4.5, '#5A3820') +
+                    // épaules bouffantes à crevés
+                    el('ellipse', { cx: 60, cy: 154, rx: 13, ry: 11, fill: '#2F6B6B', stroke: '#173B3B', 'stroke-width': 2.5 }) +
+                    el('ellipse', { cx: 140, cy: 154, rx: 13, ry: 11, fill: '#2F6B6B', stroke: '#173B3B', 'stroke-width': 2.5 }) +
+                    line('M55 146 L53 162 M62 145 L62 163 M135 145 L133 163 M142 146 L144 162', 3, '#F1E6CC') +
+                    // le carnet, avec un croquis d'homme dans un cercle
+                    '<g transform="rotate(-12 42 186)">' +
+                    el('rect', { x: 26, y: 166, width: 32, height: 40, rx: 3, fill: '#8A5A33', stroke: '#4E2F17', 'stroke-width': 2.5 }) +
+                    el('rect', { x: 30, y: 170, width: 24, height: 32, rx: 1.5, fill: '#F6EBD2' }) +
+                    el('circle', { cx: 42, cy: 186, r: 9, fill: 'none', stroke: '#8A6A50', 'stroke-width': 1.2 }) +
+                    line('M42 179 L42 193 M35 184 L49 184 M42 193 L37 199 M42 193 L47 199', 1.2, '#8A6A50') + '</g>';
+            },
+            hat: function () {
+                return shape('M48 66 C42 40 92 24 132 32 C160 38 164 58 152 68 Q100 78 48 66 Z', '#4A2E55', '#26162E') +
+                    line('M50 66 Q100 77 152 67', 4, '#26162E') + line('M76 42 Q104 32 132 38', 3, '#6A4A78');
+            }
+        },
+        // Guerres de Religion — fraise et pourpoint : pourpoint noir sobre, fraise blanche plissée, boutons d'argent.
+        fraise: {
+            body: function () {
+                var ruff = '';
+                for (var i = 0; i <= 12; i++) {
+                    var a = Math.PI * i / 12, x = 100 + 54 * Math.cos(a), y = 151 + 17 * Math.sin(a);
+                    ruff += el('circle', { cx: x.toFixed(1), cy: y.toFixed(1), r: 8, fill: '#FFFFFF', stroke: '#B8BEC6', 'stroke-width': 1.5 });
+                }
+                var buttons = [166, 178, 190, 202].map(function (y) { return el('circle', { cx: 100, cy: y, r: 2.4, fill: '#C9CDD2', stroke: '#5F656C', 'stroke-width': 1 }); }).join('');
+                return shape(TUNIC, '#25272E', '#0E1015') +
+                    line('M70 160 Q66 180 70 202 M130 160 Q134 180 130 202', 2, '#3A3D46') + buttons +
+                    line('M54 186 Q100 194 146 186', 4, '#0E1015') +
+                    ruff + line('M50 151 Q100 174 150 151', 1.5, '#D8DCE1');
+            }
+        },
+        // Rois absolus — perruque du Roi-Soleil : grande perruque bouclée, habit doré, cravate de dentelle, cordon bleu.
+        roisoleil: {
+            body: function (id) {
+                return shape(TUNIC, '#D9A93A', '#7A5E14') +
+                    clipped(id + 'br', TUNIC, line('M60 170 q6 -6 12 0 q6 6 12 0 M118 170 q6 -6 12 0 q6 6 12 0 M56 196 q6 -6 12 0 q6 6 12 0 M124 196 q6 -6 12 0 q6 6 12 0', 2, '#A97E1C') +
+                        line('M56 150 L150 206', 9, '#2846A0', { 'stroke-linecap': 'butt' })) +
+                    el('path', { d: 'M86 146 Q100 154 114 146 L110 176 Q100 182 90 176 Z', fill: '#FFFFFF', stroke: '#B8BEC6', 'stroke-width': 2, 'stroke-linejoin': 'round' }) +
+                    line('M90 158 Q100 163 110 158 M91 168 Q100 173 109 168', 1.5, '#C9CFD6');
+            },
+            hat: function () {
+                var curls = [];
+                [[38, 92], [46, 70], [60, 52], [78, 42], [100, 38], [122, 42], [140, 52], [154, 70], [162, 92]].forEach(function (p) { curls.push([p[0], p[1], 13]); });
+                [100, 116, 132, 148].forEach(function (y) { curls.push([34, y, 12]); curls.push([166, y, 12]); });
+                return curls.map(function (c) {
+                    return el('circle', { cx: c[0], cy: c[1], r: c[2], fill: '#5A3A22', stroke: '#2E1C0E', 'stroke-width': 2 }) +
+                        line('M' + (c[0] - 5) + ' ' + c[1] + ' q5 -6 8 1', 2, '#7A5236');
+                }).join('');
+            }
+        },
+        // Lumières — habit de philosophe : redingote, gilet crème, jabot, perruque poudrée à rouleaux, plume d'oie.
+        philosophe: {
+            body: function () {
+                var buttons = [164, 176, 188, 200].map(function (y) { return el('circle', { cx: 100, cy: y, r: 2.4, fill: '#E9C349', stroke: '#8A6A10', 'stroke-width': 1 }); }).join('');
+                return shape(TUNIC, '#F1E6CC', '#A89F8C') + buttons +
+                    shape(CAPE_L, '#3D5E7A', '#1F3346') + shape(CAPE_R, '#3D5E7A', '#1F3346') +
+                    line('M92 140 L78 166 M108 140 L122 166', 3, '#1F3346') +
+                    el('circle', { cx: 80, cy: 186, r: 2.6, fill: '#E9C349' }) + el('circle', { cx: 120, cy: 186, r: 2.6, fill: '#E9C349' }) +
+                    el('path', { d: 'M90 146 Q100 152 110 146 L106 166 Q100 170 94 166 Z', fill: '#FFFFFF', stroke: '#B8BEC6', 'stroke-width': 2, 'stroke-linejoin': 'round' });
+            },
+            hat: function () {
+                var rolls = [[36, 96], [36, 114], [164, 96], [164, 114]].map(function (p) {
+                    return el('ellipse', { cx: p[0], cy: p[1], rx: 11, ry: 7.5, fill: '#EFEFEA', stroke: '#9EA3A8', 'stroke-width': 2 }) +
+                        line('M' + (p[0] - 5) + ' ' + p[1] + ' q5 -4 9 0', 1.5, '#B5BAC0');
+                }).join('');
+                return shape('M40 92 C34 22 166 22 160 92 Q150 70 100 64 Q50 70 40 92 Z', '#EFEFEA', '#9EA3A8') +
+                    line('M60 56 Q100 40 140 56', 2, '#D5D8DC') + rolls +
+                    // la plume d'oie, glissée dans la perruque
+                    el('path', { d: 'M128 58 C140 36 160 22 182 14 C174 30 156 46 134 60 Z', fill: '#FFFFFF', stroke: '#9EA3A8', 'stroke-width': 1.8, 'stroke-linejoin': 'round' }) +
+                    line('M124 64 L178 18', 1.6, '#9EA3A8');
             }
         },
         // Rome II — toge d'empereur : toge pourpre drapée, pan blanc bordé d'or, fibule, couronne de laurier d'or.
