@@ -206,7 +206,7 @@ function citRenderCard(c) {
     if (c.original) {
         const orig = document.createElement('p');
         orig.className = 'cit-original';
-        orig.appendChild(document.createTextNode('Version originale (' + c.langue + ') : '));
+        orig.appendChild(document.createTextNode('Version originale (' + c.langue + ') :'));
         // dir="auto" : l'arabe, l'araméen et l'hébreu s'écrivent de droite à gauche, sans bousculer la phrase française autour.
         const text = document.createElement('span');
         text.dir = 'auto';
@@ -225,7 +225,7 @@ function citRenderCard(c) {
 
 // Le code de langue de la version originale, pour que le lecteur d'écran la prononce correctement.
 function citLangCode(langue) {
-    return { latin: 'la', anglais: 'en', allemand: 'de', italien: 'it', 'chinois classique': 'zh', chinois: 'zh', grec: 'el', espagnol: 'es', arabe: 'ar', araméen: 'arc', russe: 'ru' }[langue] || '';
+    return { latin: 'la', anglais: 'en', allemand: 'de', italien: 'it', 'chinois classique': 'zh', chinois: 'zh', grec: 'el', espagnol: 'es', arabe: 'ar', araméen: 'arc', russe: 'ru', hébreu: 'he', persan: 'fa', japonais: 'ja', vietnamien: 'vi', maori: 'mi', pali: 'pi' }[langue] || '';
 }
 
 // --- Les liens vers l'auteur ---------------------------------------------------------------------------

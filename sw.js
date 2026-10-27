@@ -186,7 +186,9 @@ const APP_SHELL_FILES = [
     './assets/citations/02.json',
     './assets/citations/03.json',
     './assets/citations/04.json',
-    './assets/citations/05.json'
+    './assets/citations/05.json',
+    './assets/citations/06.json',
+    './assets/citations/07.json'
 ];
 
 // --- INSTALLATION : Mise en cache de l'App Shell & Pack Français ---
