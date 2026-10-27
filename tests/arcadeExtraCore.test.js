@@ -50,6 +50,50 @@ test('Casse-briques : la balle part du plateau, immobile tant qu\'on ne la lance
     assert.ok(!E.breakoutLaunch(g));
 });
 
+test('Casse-briques : trois niveaux — raquette, vitesse de départ et plafond, angle de renvoi, briques par vague', () => {
+    const make = (difficulty) => E.createBreakout(pool(), seeded(3), { difficulty });
+    const levels = ['easy', 'normal', 'hard'];
+    assert.deepEqual(levels.map((d) => make(d).paddle.w), [96, 80, 72]);
+    assert.deepEqual(levels.map((d) => make(d).bricks.length), [4, 5, 5]);
+    assert.deepEqual(levels.map((d) => Math.round(E.breakoutSpeed(make(d)))), [190, 220, 230]);
+    assert.equal(make('hard').difficulty, 'hard');
+    assert.equal(E.createBreakout(pool(), seeded(3)).difficulty, 'normal', 'sans niveau : moyen');
+    assert.equal(E.createBreakout(pool(), seeded(3), { difficulty: 'n_importe_quoi' }).difficulty, 'normal');
+    assert.deepEqual(levels.map((d) => make(d).level.showTarget), [true, false, false]);
+
+    // Le plafond de vitesse : × 1,5 / × 1,9 / × 2,4 la vitesse de départ, à force de briques.
+    levels.forEach((d) => {
+        const g = make(d);
+        g.broken = 1000;
+        assert.ok(Math.abs(E.breakoutSpeed(g) - g.level.baseSpeed * g.level.maxSpeedFactor) < 1e-9, d);
+    });
+
+    // Les vagues grandissent d'une brique, sans dépasser 6 (facile) ou 8.
+    const easy = make('easy');
+    easy.rounds = 10;
+    assert.equal(Math.min(E.BO.SLOTS, easy.level.maxBricks, easy.level.firstBricks + easy.rounds), 6);
+    assert.equal(E.BO_LEVELS.hard.maxBricks, 8);
+
+    // L'angle de renvoi au bord de la raquette : 45° / 55° / 60°.
+    const edgeAngle = (d) => {
+        const g = make(d);
+        g.bricks = [];
+        g.ball.stuck = false;
+        g.ball.x = g.paddle.x + g.paddle.w / 2;
+        g.ball.y = g.paddle.y - g.paddle.h / 2 - E.BO.BALL_R;
+        g.ball.vx = 0;
+        g.ball.vy = 100;
+        E.breakoutStep(g, 1 / 120);
+        return Math.round(Math.atan2(Math.abs(g.ball.vx), -g.ball.vy) * 180 / Math.PI);
+    };
+    assert.deepEqual(levels.map(edgeAngle), [45, 55, 60]);
+});
+
+test('Casse-briques : un vivier de quatre années suffit en facile, pas en moyen', () => {
+    assert.ok(!E.createBreakout(pool().slice(0, 4), seeded(1), { difficulty: 'easy' }).empty);
+    assert.ok(E.createBreakout(pool().slice(0, 4), seeded(1)).empty);
+});
+
 // Place la balle juste sous une brique, montant vers elle.
 function aimAt(g, brick) {
     g.ball.stuck = false;

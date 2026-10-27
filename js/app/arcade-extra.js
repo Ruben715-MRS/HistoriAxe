@@ -43,6 +43,8 @@ function openBreakout(fromScreen) {
     document.getElementById('breakout-start').classList.remove('hidden');
     document.getElementById('breakout-status').textContent = '';
     arcadeMessage('breakout-message', '');
+    renderArcadeDifficulty('breakout');
+    document.getElementById('breakout-difficulty').classList.remove('hidden');
     breakoutBindInput();
     breakoutDraw();
 }
@@ -58,10 +60,11 @@ function breakoutStop() {
 }
 
 function breakoutStart() {
-    const game = ArcadeExtraCore.createBreakout(arcadePool());
+    const game = ArcadeExtraCore.createBreakout(arcadePool(), undefined, { difficulty: arcadeDifficulty('breakout') });
     if (game.empty) { alert(t('arcade.empty')); return; }
     breakoutStop();
     boGame = game;
+    document.getElementById('breakout-difficulty').classList.add('hidden');
     document.getElementById('breakout-start').classList.add('hidden');
     document.getElementById('breakout-over').classList.add('hidden');
     arcadeMessage('breakout-message', '');
@@ -129,6 +132,13 @@ function breakoutDraw() {
             ctx.font = '700 ' + (year.length > 4 ? 10 : 12) + 'px sans-serif';
             ctx.fillText(year, b.x + b.w / 2, b.y + b.h / 2 + 1);
         });
+        // Facile : la brique à casser est entourée.
+        const target = g.level.showTarget ? ArcadeExtraCore.breakoutTarget(g) : null;
+        if (target) {
+            ctx.strokeStyle = '#fde047';
+            ctx.lineWidth = 3;
+            if (ctx.roundRect) { ctx.beginPath(); ctx.roundRect(target.x - 2, target.y - 2, target.w + 4, target.h + 4, 7); ctx.stroke(); } else ctx.strokeRect(target.x - 2, target.y - 2, target.w + 4, target.h + 4);
+        }
         ctx.fillStyle = '#fbbf24';
         ctx.fillRect(g.paddle.x - g.paddle.w / 2, g.paddle.y - g.paddle.h / 2, g.paddle.w, g.paddle.h);
         ctx.fillStyle = '#fff';
@@ -140,9 +150,10 @@ function breakoutDraw() {
 function breakoutFinish() {
     breakoutStop();
     const g = boGame;
-    const best = arcadeRecord('breakout', g.score);
+    const weighted = arcadeWeighted('breakout', g.score, g.difficulty);
+    const best = arcadeRecord('breakout', weighted.total);
     document.getElementById('breakout-over-text').textContent =
-        t('breakout.over_text', { broken: g.broken, score: g.score }) + ' ' + t('arcade.best', { score: best.breakout });
+        t('breakout.over_text', { broken: g.broken, score: g.score }) + weighted.note + ' ' + t('arcade.best', { score: best.breakout });
     const list = document.getElementById('breakout-over-list');
     list.innerHTML = '';
     g.mistakes.slice(0, 5).forEach(m => {
@@ -154,6 +165,8 @@ function breakoutFinish() {
     });
     document.getElementById('breakout-over').classList.remove('hidden');
     document.getElementById('breakout-start').classList.add('hidden');
+    renderArcadeDifficulty('breakout');
+    document.getElementById('breakout-difficulty').classList.remove('hidden');
     breakoutDraw();
 }
 

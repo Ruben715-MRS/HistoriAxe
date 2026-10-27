@@ -2048,6 +2048,9 @@
   },
   "breakout": {
     "title": "Casse-briques des repères",
+    "level_easy": "Raquette large, balle lente et prévisible, 4 à 6 briques ; la brique à casser est entourée.",
+    "level_normal": "Raquette moyenne, balle un peu plus lente qu'avant, jusqu'à 8 briques.",
+    "level_hard": "Raquette étroite, balle rapide et renvois en biais, jusqu'à 8 briques.",
     "desc": "Cassez les briques de la plus ancienne à la plus récente.",
     "board_aria": "Plateau du Casse-briques",
     "rule": "Cassez les briques de la plus ancienne à la plus récente. Une autre brique, ou une balle perdue : une vie en moins. La balle accélère à chaque brique.",

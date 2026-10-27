@@ -31,13 +31,21 @@
     // === CASSE-BRIQUES ===
     // =====================================================================================================
     var BO = {
-        W: 360, H: 440, PADDLE_W: 72, PADDLE_H: 10, PADDLE_Y: 410, BALL_R: 7,
+        W: 360, H: 440, PADDLE_H: 10, PADDLE_Y: 410, BALL_R: 7,
         BRICK_W: 38, BRICK_H: 24, BRICK_Y: 70, SLOTS: 8, LIVES: 3,
-        BASE_SPEED: 230, SPEED_GAIN: 0.06, MAX_SPEED_FACTOR: 2.4, MAX_ANGLE: Math.PI / 3
+        SPEED_GAIN: 0.06
+    };
+    // Les niveaux : largeur de la raquette ; vitesse de la balle au départ (px/s) et plafond (× la vitesse de départ, atteint à force de
+    // casser des briques) ; angle de renvoi maximal (au bord de la raquette : plus il est petit, plus la balle reste prévisible) ;
+    // briques de la première vague, puis une de plus à chaque vague, jusqu'à `maxBricks` ; `showTarget` : la brique à viser est entourée.
+    var BO_LEVELS = {
+        easy: { paddleW: 96, baseSpeed: 190, maxSpeedFactor: 1.5, maxAngle: Math.PI / 4, firstBricks: 4, maxBricks: 6, showTarget: true },
+        normal: { paddleW: 80, baseSpeed: 220, maxSpeedFactor: 1.9, maxAngle: Math.PI * 55 / 180, firstBricks: 5, maxBricks: 8, showTarget: false },
+        hard: { paddleW: 72, baseSpeed: 230, maxSpeedFactor: 2.4, maxAngle: Math.PI / 3, firstBricks: 5, maxBricks: 8, showTarget: false }
     };
 
     function breakoutBricks(state) {
-        var n = Math.min(BO.SLOTS, 5 + state.rounds);
+        var n = Math.min(BO.SLOTS, state.level.maxBricks, state.level.firstBricks + state.rounds);
         var events = Arcade.pickDistinct(state.pool, state.rng, n);
         // Les briques sont posées au hasard sur huit emplacements : les années ne sont jamais rangées de gauche à droite.
         var slots = shuffle([0, 1, 2, 3, 4, 5, 6, 7], state.rng).slice(0, n);
@@ -47,14 +55,18 @@
         });
     }
 
-    function createBreakout(pool, rng) {
+    // `options` : { difficulty: 'easy' | 'normal' | 'hard' }.
+    function createBreakout(pool, rng, options) {
+        var difficulty = Arcade.normalizeDifficulty(options && options.difficulty);
+        var level = BO_LEVELS[difficulty];
         var state = {
+            difficulty: difficulty, level: level,
             pool: Arcade.playable(pool), rng: rng || Math.random, w: BO.W, h: BO.H,
-            paddle: { x: BO.W / 2, w: BO.PADDLE_W, y: BO.PADDLE_Y, h: BO.PADDLE_H },
+            paddle: { x: BO.W / 2, w: level.paddleW, y: BO.PADDLE_Y, h: BO.PADDLE_H },
             ball: { x: BO.W / 2, y: BO.PADDLE_Y - BO.PADDLE_H / 2 - BO.BALL_R, vx: 0, vy: 0, stuck: true },
             bricks: [], lives: BO.LIVES, score: 0, broken: 0, rounds: 0, over: false, mistakes: [], log: []
         };
-        if (Arcade.pickDistinct(state.pool, state.rng, 5).length < 5) { state.over = true; state.empty = true; return state; }
+        if (Arcade.pickDistinct(state.pool, state.rng, level.firstBricks).length < level.firstBricks) { state.over = true; state.empty = true; return state; }
         breakoutBricks(state);
         return state;
     }
@@ -67,7 +79,7 @@
     }
 
     function breakoutSpeed(state) {
-        return BO.BASE_SPEED * Math.min(BO.MAX_SPEED_FACTOR, 1 + BO.SPEED_GAIN * state.broken);
+        return state.level.baseSpeed * Math.min(state.level.maxSpeedFactor, 1 + BO.SPEED_GAIN * state.broken);
     }
 
     function setSpeed(ball, speed) {
@@ -118,8 +130,8 @@
         if (b.vy > 0 && b.y + BO.BALL_R >= p.y - p.h / 2 && b.y - BO.BALL_R <= p.y + p.h / 2 && Math.abs(b.x - p.x) <= p.w / 2 + BO.BALL_R) {
             var off = clamp((b.x - p.x) / (p.w / 2), -1, 1);
             var speed = breakoutSpeed(state);
-            b.vx = speed * Math.sin(off * BO.MAX_ANGLE);
-            b.vy = -speed * Math.cos(off * BO.MAX_ANGLE);
+            b.vx = speed * Math.sin(off * state.level.maxAngle);
+            b.vy = -speed * Math.cos(off * state.level.maxAngle);
             b.y = p.y - p.h / 2 - BO.BALL_R;
         }
 
@@ -474,7 +486,7 @@
     }
 
     return {
-        BO: BO, FL: FL, RACE: RACE,
+        BO: BO, BO_LEVELS: BO_LEVELS, FL: FL, RACE: RACE,
         createBreakout: createBreakout, breakoutTarget: breakoutTarget, breakoutSpeed: breakoutSpeed, breakoutMovePaddle: breakoutMovePaddle,
         breakoutLaunch: breakoutLaunch, breakoutStep: breakoutStep,
         createFlappy: createFlappy, flappyEra: flappyEra, flappyFlap: flappyFlap, flappyPause: flappyPause, flappyStep: flappyStep, flappySpeed: flappySpeed, gateSolids: gateSolids,

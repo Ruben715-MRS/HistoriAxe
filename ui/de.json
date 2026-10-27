@@ -2017,6 +2017,9 @@
   },
   "breakout": {
     "title": "Marksteine-Breakout",
+    "level_easy": "Breiter Schläger, langsamer, berechenbarer Ball, 4 bis 6 Steine; der nächste Stein ist umrandet.",
+    "level_normal": "Mittlerer Schläger, etwas langsamerer Ball als bisher, bis zu 8 Steine.",
+    "level_hard": "Schmaler Schläger, schneller Ball und schräge Abpraller, bis zu 8 Steine.",
     "desc": "Zerstöre die Steine vom ältesten zum jüngsten.",
     "board_aria": "Breakout-Spielfeld",
     "rule": "Zerstöre die Steine vom ältesten zum jüngsten. Ein anderer Stein oder ein verlorener Ball: ein Leben weniger. Der Ball wird mit jedem Stein schneller.",

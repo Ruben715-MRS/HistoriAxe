@@ -2047,6 +2047,9 @@
   },
   "breakout": {
     "title": "Landmark Breakout",
+    "level_easy": "Wide paddle, slow and predictable ball, 4 to 6 bricks; the brick to break is outlined.",
+    "level_normal": "Medium paddle, ball a little slower than before, up to 8 bricks.",
+    "level_hard": "Narrow paddle, fast ball and sharp rebounds, up to 8 bricks.",
     "desc": "Break the bricks from the oldest to the most recent.",
     "board_aria": "Breakout board",
     "rule": "Break the bricks from the oldest to the most recent. Hitting another brick, or losing the ball: one life less. The ball speeds up with every brick.",

@@ -463,6 +463,7 @@ test('Casse-briques : cinq briques, la balle part au lancer, la plus ancienne se
     await page.locator('#btn-arcade').click();
     await page.locator('.arcade-card', { hasText: 'Casse-briques' }).click();
     expect(await visibleScreen(page)).toBe('screen-breakout');
+    await expect(page.locator('#breakout-difficulty .is-active')).toHaveText('Moyen');
     await page.locator('#breakout-start').click();
     await expect(page.locator('#breakout-status')).toContainText('♥♥♥');
     expect(await page.evaluate(() => boGame.bricks.length)).toBe(5);
@@ -728,4 +729,20 @@ test('Memory : facile, le dos des cartes dit leur genre (couleur et symbole) ; d
     await expect(page.locator('#memory-over')).toBeVisible();
     await expect(page.locator('#memory-over-text')).toContainText('0 erreurs, 900 points');
     await expect(page.locator('#memory-over-text')).toContainText('Difficile ×1,5 : 1350 pts comptés');
+});
+
+test('Casse-briques : le niveau règle la raquette et la balle ; en facile, la brique à casser est entourée', async ({ page }) => {
+    await page.locator('#btn-arcade').click();
+    await page.locator('.arcade-card', { hasText: 'Casse-briques' }).click();
+    await page.locator('#breakout-difficulty .arcade-difficulty-btn', { hasText: 'Facile' }).click();
+    await expect(page.locator('#breakout-difficulty')).toContainText('Raquette large');
+    await page.locator('#breakout-start').click();
+    expect(await page.evaluate(() => ({ w: boGame.paddle.w, bricks: boGame.bricks.length, d: boGame.difficulty, target: boGame.level.showTarget })))
+        .toEqual({ w: 96, bricks: 4, d: 'easy', target: true });
+    await page.evaluate(() => { breakoutStop(); boGame.score = 100; boGame.over = true; breakoutFinish(); });
+    await expect(page.locator('#breakout-over-text')).toContainText('Facile ×0,5 : 50 pts comptés');
+    await page.locator('#breakout-difficulty .arcade-difficulty-btn', { hasText: 'Difficile' }).click();
+    await page.locator('#breakout-over .btn').click();
+    expect(await page.evaluate(() => ({ w: boGame.paddle.w, d: boGame.difficulty }))).toEqual({ w: 72, d: 'hard' });
+    await page.evaluate(() => breakoutStop());
 });
