@@ -17,7 +17,18 @@ let memoryReturn = 'screen-arcade';
 function openMemory(fromScreen) {
     memoryReturn = fromScreen || 'screen-arcade';
     showScreen('screen-memory', 'forward');
-    memoryStart();
+    memorySetup();
+}
+
+// Avant la partie : le choix du niveau.
+function memorySetup() {
+    memoryGame = null;
+    document.getElementById('memory-grid').innerHTML = '';
+    document.getElementById('memory-status').textContent = '';
+    document.getElementById('memory-over').classList.add('hidden');
+    arcadeMessage('memory-message', '');
+    renderArcadeDifficulty('memory');
+    document.getElementById('memory-setup').classList.remove('hidden');
 }
 
 function memoryBack() {
@@ -29,9 +40,10 @@ function memoryBack() {
 function memoryStart() {
     clearTimeout(memoryHideTimer);
     memoryHideTimer = 0;
-    const game = ReflexionCore.createMemory(arcadePool());
+    const game = ReflexionCore.createMemory(arcadePool(), undefined, undefined, { difficulty: arcadeDifficulty('memory') });
     if (game.empty) { alert(t('arcade.empty')); return; }
     memoryGame = game;
+    document.getElementById('memory-setup').classList.add('hidden');
     document.getElementById('memory-over').classList.add('hidden');
     arcadeMessage('memory-message', '');
     memoryRender();
@@ -44,14 +56,23 @@ function memoryRender() {
     });
     const grid = document.getElementById('memory-grid');
     grid.innerHTML = '';
+    // Dix-huit cartes en difficile : six rangées, des cartes un peu moins hautes.
+    grid.classList.toggle('is-dense', g.cards.length > 12);
     g.cards.forEach((card, i) => {
         const up = g.flipped.indexOf(i) !== -1 || g.matched[card.pair];
         const btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'memory-card' + (up ? ' is-up' : '') + (g.matched[card.pair] ? ' is-matched' : '') + (up ? ' is-' + card.side : '');
         if (!up) {
-            btn.textContent = '?';
-            btn.setAttribute('aria-label', t('memory.card_hidden', { n: i + 1 }));
+            if (g.level.colors) {
+                // Facile : le dos dit le genre (couleur ET symbole, jamais la couleur seule).
+                btn.classList.add('is-back-' + card.side);
+                btn.textContent = card.side === 'date' ? '📅' : '📜';
+                btn.setAttribute('aria-label', t(card.side === 'date' ? 'memory.card_hidden_date' : 'memory.card_hidden_event', { n: i + 1 }));
+            } else {
+                btn.textContent = '?';
+                btn.setAttribute('aria-label', t('memory.card_hidden', { n: i + 1 }));
+            }
         } else {
             const text = card.side === 'date' ? formatYear(card.event.date) : card.event.title;
             btn.textContent = text;
@@ -94,9 +115,11 @@ function memoryTap(index) {
 function memoryFinish() {
     const g = memoryGame;
     const score = ReflexionCore.memoryScore(g);
-    const best = arcadeRecord('memory', score);
+    const weighted = arcadeWeighted('memory', score, g.difficulty);
+    const best = arcadeRecord('memory', weighted.total);
     document.getElementById('memory-over-text').textContent =
-        t('memory.over_text', { errors: g.errors, score }) + ' ' + t('arcade.best', { score: best.memory });
+        t('memory.over_text', { errors: g.errors, score }) + weighted.note + ' ' + t('arcade.best', { score: best.memory });
+    renderArcadeDifficulty('memory', 'memory-difficulty-over');
     document.getElementById('memory-over').classList.remove('hidden');
 }
 

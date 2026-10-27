@@ -239,7 +239,10 @@ test('Memory : douze cartes, une erreur recachée, toutes les paires, un meilleu
     await page.locator('#btn-arcade').click();
     await page.locator('.arcade-card', { hasText: 'Memory' }).click();
     expect(await visibleScreen(page)).toBe('screen-memory');
+    await expect(page.locator('#memory-difficulty .is-active')).toHaveText('Moyen');
+    await page.locator('#memory-setup .btn').click();
     await expect(page.locator('#memory-grid .memory-card')).toHaveCount(12);
+    await expect(page.locator('#memory-grid .is-back-date')).toHaveCount(0);
     await expect(page.locator('#memory-status')).toContainText('0 / 6');
     // Deux événements ne font pas une paire : message, erreur, puis les cartes se recachent.
     const events = await page.evaluate(() => memoryGame.cards.map((c, i) => c.side === 'event' ? i : -1).filter(i => i >= 0));
@@ -693,4 +696,36 @@ test('Difficulté : le niveau choisi est retenu, change les règles (pendu, anac
     await page.locator('#scene-difficulty .arcade-difficulty-btn', { hasText: 'Facile' }).click();
     await page.locator('#scene-setup .btn').click();
     await expect(page.locator('#scene-intro')).toContainText('Intrus à trouver :');
+});
+
+test('Memory : facile, le dos des cartes dit leur genre (couleur et symbole) ; difficile, dix-huit cartes', async ({ page }) => {
+    await page.locator('#btn-arcade').click();
+    await page.locator('.arcade-card', { hasText: 'Memory' }).click();
+    await page.locator('#memory-difficulty .arcade-difficulty-btn', { hasText: 'Facile' }).click();
+    await page.locator('#memory-setup .btn').click();
+    await expect(page.locator('#memory-grid .memory-card')).toHaveCount(12);
+    await expect(page.locator('#memory-grid .is-back-date')).toHaveCount(6);
+    await expect(page.locator('#memory-grid .is-back-event')).toHaveCount(6);
+    await expect(page.locator('#memory-grid .is-back-date').first()).toHaveText('📅');
+    await expect(page.locator('#memory-grid .is-back-event').first()).toHaveAttribute('aria-label', /face cachée : événement/);
+    // Retourner une carte la montre face visible, sans la couleur du dos.
+    await page.locator('#memory-grid .is-back-date').first().click();
+    await expect(page.locator('#memory-grid .memory-card.is-up')).toHaveCount(1);
+    await expect(page.locator('#memory-grid .is-back-date')).toHaveCount(5);
+    await page.locator('#screen-memory .back-btn').click();
+
+    await page.locator('.arcade-card', { hasText: 'Memory' }).click();
+    await page.locator('#memory-difficulty .arcade-difficulty-btn', { hasText: 'Difficile' }).click();
+    await page.locator('#memory-setup .btn').click();
+    await expect(page.locator('#memory-grid .memory-card')).toHaveCount(18);
+    await expect(page.locator('#memory-status')).toContainText('0 / 9');
+    await expect(page.locator('#memory-grid .is-back-date')).toHaveCount(0);
+    for (let pair = 0; pair < 9; pair++) {
+        const idx = await page.evaluate((pair) => [memoryGame.cards.findIndex(c => c.pair === pair && c.side === 'event'), memoryGame.cards.findIndex(c => c.pair === pair && c.side === 'date')], pair);
+        await page.locator('#memory-grid .memory-card').nth(idx[0]).click();
+        await page.locator('#memory-grid .memory-card').nth(idx[1]).click();
+    }
+    await expect(page.locator('#memory-over')).toBeVisible();
+    await expect(page.locator('#memory-over-text')).toContainText('0 erreurs, 900 points');
+    await expect(page.locator('#memory-over-text')).toContainText('Difficile ×1,5 : 1350 pts comptés');
 });

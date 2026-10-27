@@ -64,6 +64,30 @@ test('Memory : une paire reste, une erreur recache les cartes et compte', () => 
     assert.deepEqual(R.memoryFlip(g, e3), ['flip']);
 });
 
+test('Memory : six paires en facile et en moyen (dos colorés en facile), neuf paires en difficile', () => {
+    const make = (difficulty) => R.createMemory(pool(), seeded(5), undefined, { difficulty });
+    assert.deepEqual(['easy', 'normal', 'hard'].map((d) => make(d).cards.length), [12, 12, 18]);
+    assert.deepEqual(['easy', 'normal', 'hard'].map((d) => make(d).pairs), [6, 6, 9]);
+    assert.deepEqual(['easy', 'normal', 'hard'].map((d) => make(d).level.colors), [true, false, false]);
+    assert.equal(R.createMemory(pool(), seeded(5)).difficulty, 'normal');
+    // Neuf paires : neuf années différentes, chaque paire a ses deux cartes.
+    const hard = make('hard');
+    assert.equal(new Set(hard.cards.map((c) => c.event.date)).size, 9);
+    for (let pair = 0; pair < 9; pair++) assert.equal(hard.cards.filter((c) => c.pair === pair).length, 2);
+    // Gagner en difficile demande les neuf paires ; le score maximal monte avec le nombre de paires.
+    let last = [];
+    for (let pair = 0; pair < 9; pair++) { const [e, d] = pairOf(hard, pair); R.memoryFlip(hard, e); last = R.memoryFlip(hard, d); }
+    assert.deepEqual(last, ['match', 'done']);
+    assert.equal(R.memoryScore(hard), 900);
+    assert.equal(R.memoryScore(make('normal')), 600, 'six paires : 600 points au mieux');
+    // Le nombre de paires donné l'emporte sur celui du niveau.
+    assert.equal(R.createMemory(pool(), seeded(5), 4, { difficulty: 'hard' }).cards.length, 8);
+    // Un vivier trop pauvre pour neuf paires ne démarre pas en difficile, mais joue en moyen.
+    const small = pool().slice(0, 7);
+    assert.ok(R.createMemory(small, seeded(1), undefined, { difficulty: 'hard' }).empty);
+    assert.ok(!R.createMemory(small, seeded(1)).empty);
+});
+
 test('Memory : deux événements, ou deux dates, ne font pas une paire ; la même carte deux fois ne compte pas', () => {
     const g = R.createMemory(pool(), seeded(8));
     const events = g.cards.map((c, i) => [c, i]).filter(([c]) => c.side === 'event').map(([, i]) => i);

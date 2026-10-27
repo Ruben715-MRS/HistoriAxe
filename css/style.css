@@ -11036,6 +11036,11 @@ input:not([type="range"]), label, select, summary, textarea {
     width: min(100%, 360px);
 }
 
+/* Difficile : dix-huit cartes, six rangées. */
+.memory-grid.is-dense .memory-card {
+    min-height: 64px;
+}
+
 .memory-card {
     min-height: 84px;
     padding: 6px;
@@ -11056,6 +11061,17 @@ input:not([type="range"]), label, select, summary, textarea {
     font-size: 12px;
     font-weight: 700;
     line-height: 1.25;
+}
+
+/* Facile : le dos de la carte dit si c'est un événement (bleu, 📜) ou une date (ambre, 📅). */
+.memory-card.is-back-date {
+    border-color: #92400e;
+    background: #92400e;
+}
+
+.memory-card.is-back-event {
+    border-color: var(--primary-blue);
+    background: var(--primary-blue);
 }
 
 .memory-card.is-up.is-date {

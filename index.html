@@ -1003,11 +1003,16 @@
         <h2 class="header-title" data-i18n="memory.title">Memory chronologique</h2>
         <p class="modes-header-subtitle" id="memory-status" role="status"></p>
         <p class="arcade-rule" data-i18n="memory.rule">Retournez deux cartes : un événement et sa date forment une paire.</p>
+        <div id="memory-setup" class="race-setup">
+            <div class="arcade-difficulty" id="memory-difficulty"></div>
+            <button type="button" class="btn" onclick="memoryStart()" data-i18n="arcade.play">Jouer</button>
+        </div>
         <div class="memory-grid" id="memory-grid" role="group" aria-label="Cartes du Memory" data-i18n-attr="aria-label:memory.grid_aria"></div>
         <p class="wheel-feedback hidden arcade-message" id="memory-message" role="status"></p>
         <div class="arcade-over hidden" id="memory-over">
             <h3 data-i18n="memory.won">Toutes les paires !</h3>
             <p id="memory-over-text"></p>
+            <div class="arcade-difficulty" id="memory-difficulty-over"></div>
             <button type="button" class="btn" onclick="memoryStart()" data-i18n="arcade.replay">Rejouer</button>
         </div>
     </div>

@@ -26,15 +26,24 @@
 
     // --- MEMORY ---------------------------------------------------------------------------------------
     var MEMORY_PAIRS = 6;
+    // Les niveaux : paires (donc 12 ou 18 cartes) ; `colors` : le dos d'une carte dit déjà si c'est un événement ou une date.
+    var MEMORY_LEVELS = {
+        easy: { pairs: 6, colors: true },
+        normal: { pairs: 6, colors: false },
+        hard: { pairs: 9, colors: false }
+    };
     // 100 points par paire, 25 de moins par erreur.
     var MEMORY_PAIR_POINTS = 100;
     var MEMORY_ERROR_COST = 25;
 
-    // Un événement du vivier : { id, title, date }. Douze cartes : { pair, side: 'event' | 'date', event }.
-    function createMemory(pool, rng, pairs) {
-        var n = pairs || MEMORY_PAIRS;
+    // Un événement du vivier : { id, title, date }. Douze cartes (dix-huit en difficile) : { pair, side: 'event' | 'date', event }.
+    // `options` : { difficulty: 'easy' | 'normal' | 'hard' } ; `pairs`, s'il est donné, l'emporte sur le nombre du niveau.
+    function createMemory(pool, rng, pairs, options) {
+        var difficulty = Arcade.normalizeDifficulty(options && options.difficulty);
+        var level = MEMORY_LEVELS[difficulty];
+        var n = pairs || level.pairs;
         var events = Arcade.pickDistinct(Arcade.playable(pool), rng, n);
-        var state = { pairs: n, cards: [], flipped: [], matched: {}, moves: 0, errors: 0, over: false };
+        var state = { difficulty: difficulty, level: level, pairs: n, cards: [], flipped: [], matched: {}, moves: 0, errors: 0, over: false };
         if (events.length < n) { state.over = true; state.empty = true; return state; }
         var cards = [];
         events.forEach(function (event, pair) {
@@ -469,7 +478,7 @@
     }
 
     return {
-        MEMORY_PAIRS: MEMORY_PAIRS, WHO_ROUNDS: WHO_ROUNDS, WHO_POINTS: WHO_POINTS,
+        MEMORY_PAIRS: MEMORY_PAIRS, MEMORY_LEVELS: MEMORY_LEVELS, WHO_ROUNDS: WHO_ROUNDS, WHO_POINTS: WHO_POINTS,
         createMemory: createMemory, memoryFlip: memoryFlip, memoryHide: memoryHide, memoryScore: memoryScore,
         centuryLabel: centuryLabel, nameTokens: nameTokens, maskName: maskName, splitSentences: splitSentences, buildClues: buildClues,
         HANGMAN_ROUNDS: HANGMAN_ROUNDS, HANGMAN_LEVELS: HANGMAN_LEVELS, SCENE_LEVELS: SCENE_LEVELS,
