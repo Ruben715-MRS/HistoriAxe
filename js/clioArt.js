@@ -31,7 +31,8 @@
     var COSTUMES = { prehistoire: 'mammouth', orient: 'egypte', grece: 'grece', rome1: 'legionnaire', rome2: 'toge',
         'haut-moyen-age': 'merovingien', feodalites: 'mailles', capetiens: 'lys', 'cent-ans': 'jeanne',
         renaissances: 'leonard', religion: 'fraise', absolus: 'roisoleil', lumieres: 'philosophe',
-        revolution: 'phrygien', 'revolution-inachevee': 'hautdeforme', republique: 'belleepoque' };
+        revolution: 'phrygien', 'revolution-inachevee': 'hautdeforme', republique: 'belleepoque',
+        'grande-guerre': 'adrian', 'entre-deux-guerres': 'anneesfolles', 'trente-glorieuses': 'spatiale', crises: 'perfecto', 'depuis-1991': 'connectee' };
 
     var uid = 0;
 
@@ -445,6 +446,114 @@
                     shape('M66 54 L68 32 Q100 26 132 32 L134 54 Q100 60 66 54 Z', '#E8C77A', '#9A7A30') +
                     shape('M67 44 Q100 50 133 44 L134 54 Q100 60 66 54 Z', '#1B1B22', '#0E1015', 1.5) +
                     line('M70 36 Q100 30 130 36', 1.5, '#C9A55A') + line('M56 58 Q100 66 144 58', 1.5, '#C9A55A');
+            }
+        },
+        // Grande Guerre — casque Adrian : casque et capote bleu horizon, boutons de laiton ; ni arme ni insigne.
+        adrian: {
+            sleeve: ['#7F98B5', '#3F5574'],
+            body: function () {
+                var buttons = '';
+                [160, 172, 184].forEach(function (y) {
+                    buttons += el('circle', { cx: 88, cy: y, r: 2.6, fill: '#C9A23A', stroke: '#7A5E14', 'stroke-width': 1 }) +
+                        el('circle', { cx: 112, cy: y, r: 2.6, fill: '#C9A23A', stroke: '#7A5E14', 'stroke-width': 1 });
+                });
+                return shape(TUNIC, '#7F98B5', '#3F5574') +
+                    line('M100 146 L100 208', 2, '#5E7896') + buttons +
+                    line('M54 192 Q100 200 146 192', 5, '#6B4A2B') + el('rect', { x: 95, y: 190, width: 10, height: 8, rx: 1.5, fill: '#C9A23A', stroke: '#7A5E14', 'stroke-width': 1.2 }) +
+                    el('path', { d: 'M76 146 L100 160 L124 146 L120 156 L100 168 L80 156 Z', fill: '#6E87A6', stroke: '#3F5574', 'stroke-width': 2, 'stroke-linejoin': 'round' });
+            },
+            hat: function () {
+                return el('path', { d: 'M90 36 Q100 6 110 36 Z', fill: '#6E87A6', stroke: '#3F5574', 'stroke-width': 2.5, 'stroke-linejoin': 'round' }) +
+                    shape('M50 68 C50 20 150 20 150 68 Z', '#7F98B5', '#3F5574') +
+                    line('M64 46 Q100 30 136 46', 4, '#A7BCD3') +
+                    el('ellipse', { cx: 100, cy: 68, rx: 60, ry: 7, fill: '#6E87A6', stroke: '#3F5574', 'stroke-width': 3 });
+            }
+        },
+        // Entre-deux-guerres — tenue des années folles : chapeau cloche à fleur, robe à taille basse et franges, sautoir de perles.
+        anneesfolles: {
+            body: function (id) {
+                var fringe = '';
+                for (var x = 54; x <= 146; x += 5) fringe += 'M' + x + ' 192 L' + x + ' 210 ';
+                var pearls = '';
+                for (var i = 0; i <= 14; i++) {
+                    var p = quad(i / 14, 74, 146, 100, 222, 126, 146);
+                    pearls += el('circle', { cx: p[0].toFixed(1), cy: p[1].toFixed(1), r: 2.6, fill: '#FBF8F0', stroke: '#B8BEC6', 'stroke-width': 0.8 });
+                }
+                return shape(TUNIC, '#1F7A6B', '#0F4A40') +
+                    clipped(id + 'fr', TUNIC, line(fringe, 2, '#E9C349') + el('rect', { x: 40, y: 184, width: 120, height: 8, fill: '#E9C349' }) +
+                        line('M60 160 L70 178 M80 156 L88 176 M120 156 L112 176 M140 160 L130 178', 2, '#2E9C8A')) +
+                    pearls;
+            },
+            hat: function () {
+                return shape('M42 82 C40 34 160 34 158 82 Q150 70 100 66 Q50 70 42 82 Z', '#7A2E5A', '#40122E') +
+                    line('M44 74 Q100 58 156 74', 6, '#2B1B30') +
+                    el('circle', { cx: 136, cy: 64, r: 7, fill: '#F07F8E', stroke: '#A33A4E', 'stroke-width': 1.5 }) +
+                    el('circle', { cx: 136, cy: 64, r: 2.5, fill: '#E9C349' }) + line('M70 46 Q100 36 130 46', 2.5, '#9A4A78');
+            }
+        },
+        // Trente Glorieuses — combinaison spatiale : casque bulle, combinaison blanche, boîtier de poitrine, écusson étoilé neutre.
+        spatiale: {
+            sleeve: ['#F2F4F7', '#8C939B'],
+            body: function () {
+                return shape(TUNIC, '#F2F4F7', '#8C939B') +
+                    line('M60 168 Q100 176 140 168 M58 196 Q100 204 142 196', 2, '#C3C9D0') +
+                    el('rect', { x: 86, y: 166, width: 28, height: 18, rx: 3, fill: '#5F656C', stroke: '#2E3238', 'stroke-width': 2 }) +
+                    el('circle', { cx: 93, cy: 175, r: 3, fill: '#E05A55' }) + el('circle', { cx: 103, cy: 175, r: 3, fill: '#5FB46A' }) + el('rect', { x: 108, y: 171, width: 3, height: 8, fill: '#E9C349' }) +
+                    el('rect', { x: 120, y: 152, width: 16, height: 12, rx: 2, fill: '#2846A0', stroke: '#152A66', 'stroke-width': 1.5 }) +
+                    el('polygon', { points: '128,154 129.6,157 133,157.4 130.5,159.6 131.2,163 128,161.3 124.8,163 125.5,159.6 123,157.4 126.4,157', fill: '#FFFFFF' }) +
+                    el('ellipse', { cx: 100, cy: 150, rx: 32, ry: 8, fill: '#C3C9D0', stroke: '#6B7178', 'stroke-width': 2.5 });
+            },
+            hat: function () {
+                return el('ellipse', { cx: 100, cy: 88, rx: 72, ry: 74, fill: '#BFE3F7', 'fill-opacity': 0.08, stroke: '#B8C4CF', 'stroke-width': 3 }) +
+                    line('M48 52 Q62 30 86 22', 5, '#FFFFFF', { opacity: 0.85 }) + line('M150 130 Q160 116 164 100', 3, '#FFFFFF', { opacity: 0.6 });
+            }
+        },
+        // Crises et fin de la guerre froide (années 80) — perfecto : blouson de cuir, tee-shirt blanc, baladeur et son casque, lunettes relevées.
+        perfecto: {
+            sleeve: ['#24252B', '#0E1015'],
+            body: function () {
+                return shape(TUNIC, '#FFFFFF', '#B8BEC6') +
+                    shape('M56 148 C66 140 82 138 94 140 L110 206 Q80 212 52 206 C49 186 50 164 56 148 Z', '#24252B', '#0E1015') +
+                    shape(CAPE_R, '#24252B', '#0E1015') +
+                    line('M94 140 L110 206', 2.5, '#C9CDD2', { 'stroke-dasharray': '2 2' }) +
+                    el('path', { d: 'M94 140 L78 160 L88 164 Z M108 140 L124 160 L114 164 Z', fill: '#3A3C44', stroke: '#0E1015', 'stroke-width': 1.5, 'stroke-linejoin': 'round' }) +
+                    line('M56 188 Q80 194 108 192', 4, '#3A3C44') +
+                    // le baladeur à la ceinture, et son fil
+                    el('rect', { x: 120, y: 182, width: 18, height: 22, rx: 3, fill: '#C8322F', stroke: '#7D1A17', 'stroke-width': 1.8 }) +
+                    el('rect', { x: 123, y: 186, width: 12, height: 7, rx: 1, fill: '#2E3238' }) + line('M126 182 Q118 168 130 150', 1.6, '#2E3238');
+            },
+            hat: function () {
+                return line('M42 92 C42 40 158 40 158 92', 5, '#2E3238') +
+                    el('ellipse', { cx: 40, cy: 98, rx: 9, ry: 12, fill: '#F28C38', stroke: '#9C4A17', 'stroke-width': 2 }) +
+                    el('ellipse', { cx: 160, cy: 98, rx: 9, ry: 12, fill: '#F28C38', stroke: '#9C4A17', 'stroke-width': 2 }) +
+                    // lunettes de soleil relevées sur la tête (le regard reste libre)
+                    el('path', { d: 'M66 58 Q80 50 94 58 Q92 68 80 68 Q68 68 66 58 Z M106 58 Q120 50 134 58 Q132 68 120 68 Q108 68 106 58 Z', fill: '#1B1B22', stroke: '#0E1015', 'stroke-width': 1.5 }) +
+                    line('M94 58 Q100 55 106 58', 2.5, '#0E1015') + line('M72 57 L78 55 M112 57 L118 55', 1.5, '#7A8494');
+            }
+        },
+        // Le monde depuis 1991 — tenue connectée : sweat à capuche, lunettes lumineuses (verres clairs), casque audio autour du cou.
+        connectee: {
+            sleeve: ['#5B4BC4', '#2E2470'],
+            body: function () {
+                return el('path', { d: 'M48 150 Q100 128 152 150 L150 164 Q100 146 50 164 Z', fill: '#4A3CA8', stroke: '#2E2470', 'stroke-width': 2.5, 'stroke-linejoin': 'round' }) +
+                    shape(TUNIC, '#5B4BC4', '#2E2470') +
+                    shape('M72 182 L128 182 L134 204 Q100 208 66 204 Z', '#4A3CA8', '#2E2470', 2) +
+                    line('M90 152 L88 172 M110 152 L112 172', 2, '#E8E6FF') + el('circle', { cx: 88, cy: 173, r: 2, fill: '#E8E6FF' }) + el('circle', { cx: 112, cy: 173, r: 2, fill: '#E8E6FF' });
+            },
+            hat: function () {
+                var glow = { stroke: '#35D0E8', 'stroke-width': 7, fill: 'none', opacity: 0.25 };
+                return el('ellipse', Object.assign({ cx: 76, cy: 96, rx: 19, ry: 17 }, glow)) + el('ellipse', Object.assign({ cx: 124, cy: 96, rx: 19, ry: 17 }, glow)) +
+                    el('ellipse', { cx: 76, cy: 96, rx: 19, ry: 17, fill: '#BFF4FC', 'fill-opacity': 0.18, stroke: '#1BA9C4', 'stroke-width': 3 }) +
+                    el('ellipse', { cx: 124, cy: 96, rx: 19, ry: 17, fill: '#BFF4FC', 'fill-opacity': 0.18, stroke: '#1BA9C4', 'stroke-width': 3 }) +
+                    line('M95 94 Q100 90 105 94 M57 92 L42 88 M143 92 L158 88', 3, '#1BA9C4');
+            },
+            // Le casque audio, posé autour du cou par-dessus la naissance du bras.
+            collar: function () {
+                return line('M62 148 Q100 178 138 148', 6, '#2E3238') +
+                    el('ellipse', { cx: 62, cy: 150, rx: 10, ry: 13, fill: '#F2F4F7', stroke: '#2E3238', 'stroke-width': 2.5 }) +
+                    el('ellipse', { cx: 138, cy: 150, rx: 10, ry: 13, fill: '#F2F4F7', stroke: '#2E3238', 'stroke-width': 2.5 }) +
+                    el('ellipse', { cx: 62, cy: 150, rx: 5, ry: 7, fill: 'none', stroke: '#35D0E8', 'stroke-width': 2 }) +
+                    el('ellipse', { cx: 138, cy: 150, rx: 5, ry: 7, fill: 'none', stroke: '#35D0E8', 'stroke-width': 2 });
             }
         },
         // Rome II — toge d'empereur : toge pourpre drapée, pan blanc bordé d'or, fibule, couronne de laurier d'or.

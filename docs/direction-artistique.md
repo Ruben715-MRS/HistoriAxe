@@ -173,8 +173,9 @@ Une chatte. **Décisions validées (octobre 2026)** :
 
 Le dessin est dans `js/clioArt.js` (de face dans toutes les humeurs, en vol pour Flappy Clio) ; ses animations sont
 dans `css/style.css` (classes `ca-*`). Costumes déjà dessinés : les cinq de l'Antiquité, les quatre du Moyen Âge (mérovingien, cotte de mailles, cape fleurdelisée, armure de Jeanne) les quatre des Temps
-modernes (Léonard, fraise, Roi-Soleil, philosophe) et les trois du XIXᵉ siècle (bonnet phrygien, haut-de-forme, Belle Époque) ; les autres restent des aperçus
-en emoji en attendant.
+modernes (Léonard, fraise, Roi-Soleil, philosophe) les trois du XIXᵉ siècle (bonnet phrygien, haut-de-forme, Belle Époque) et les cinq du XXᵉ siècle et
+d'aujourd'hui (casque Adrian, années folles, combinaison spatiale, perfecto, tenue connectée) : **les 21 costumes sont
+dessinés**, de face.
 
 Palette figée : pelage `#EE8A3C`, rayures `#C65E1C`, contour `#9C4A17`, crème `#FFF0DA`, intérieur des oreilles
 `#F7B3A6`, yeux `#5FB46A`, truffe `#E26F80`, pupilles `#17171F`.
@@ -238,7 +239,7 @@ Flappy Clio —, dos), puis suit toutes les poses et expressions de cette vue sa
 | Révolution | Bonnet phrygien | bonnet rouge, cocarde |
 | Révolution inachevée | Haut-de-forme | haut-de-forme, redingote |
 | République | Costume Belle Époque | canotier, nœud papillon |
-| Grande Guerre | Casque Adrian | casque bleu horizon, **sans arme ni uniforme complet** |
+| Grande Guerre | Casque Adrian | casque et capote bleu horizon (tenue complète, comme tous les costumes), **sans arme ni insigne** |
 | Entre-deux-guerres | Tenue des années folles | cloche, long collier de perles |
 | Trente Glorieuses | Combinaison spatiale | casque bulle, drapeau étoilé neutre |
 | Crises | Perfecto des années 80 | blouson, lunettes, walkman |
