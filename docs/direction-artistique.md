@@ -213,6 +213,8 @@ vectorielle de type Rive ou Lottie, ou calques SVG/WebP animés en code). Format
 | `danse` | non | album complété |
 | `vole` | oui | **Flappy Clio** : vue de profil, tournée **vers la droite**, pattes avant tendues, queue au vent (battement à chaque saut) |
 
+**Présentation** : à la première visite du Chemin, Clio se présente en cinq bulles (muse de l'Histoire, elle accompagne le joueur, pourquoi un chat, « un bon chat observe avant d'agir », le premier voyage). Lue une seule fois ; ses textes sont dans `ui/<lang>.json` (`clio.intro`). Elle attend la fin du tutoriel.
+
 Le jeu pilote ces animations par **états** (`repos` → `content` → `repos`…) : chaque animation commence et finit sur la
 pose `repos` pour s'enchaîner proprement.
 

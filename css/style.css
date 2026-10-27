@@ -9946,7 +9946,16 @@ input:not([type="range"]), label, select, summary, textarea {
 
 .shop-item.is-locked { opacity: 0.6; }
 .shop-item-emoji { font-size: 30px; width: 40px; text-align: center; }
-.shop-item-emoji.is-drawn { height: 52px; }
+.shop-item-emoji.is-drawn { height: 64px; width: 56px; }
+.shop-item-view { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.shop-item.is-locked .shop-item-emoji.is-drawn svg { filter: grayscale(1); opacity: 0.45; }
+.shop-zoom { position: fixed; inset: 0; z-index: 1100; display: grid; place-items: center; padding: max(16px, env(safe-area-inset-top, 0px)) 16px max(16px, env(safe-area-inset-bottom, 0px)); background: rgba(10, 16, 28, 0.6); }
+.shop-zoom-card { width: min(360px, 100%); display: grid; justify-items: center; gap: 12px; padding: 18px; border-radius: 20px; background: var(--surface); color: var(--text-dark); box-shadow: var(--card-shadow); }
+.shop-zoom-art { width: min(260px, 70vw); }
+.shop-zoom-art svg { display: block; width: 100%; height: auto; overflow: visible; }
+.shop-zoom-card.is-locked .shop-zoom-art svg { filter: grayscale(1); opacity: 0.5; }
+.shop-zoom-name { margin: 0; font-size: 18px; font-weight: 800; text-align: center; text-wrap: balance; }
+.shop-zoom-close { width: 100%; }
 .shop-item-emoji.is-drawn svg { display: block; width: 100%; height: 100%; overflow: visible; }
 .shop-item-text { flex: 1; min-width: 0; display: flex; flex-direction: column; }
 .shop-item-text strong { font-size: 15px; }
@@ -10132,6 +10141,31 @@ input:not([type="range"]), label, select, summary, textarea {
 .clio-bubble { flex: 1; margin: 0; font-size: 14px; font-weight: 700; line-height: 1.35; text-align: left; }
 .clio-close { position: absolute; top: 2px; right: 6px; min-width: 32px; min-height: 32px; border: 0; background: none; color: var(--muted-text); font-size: 20px; cursor: pointer; }
 .clio-home { margin: 8px 0 4px; }
+/* La présentation de Clio, à la première visite du Chemin : une carte en bas de l'écran, bulle par bulle. */
+.clio-intro {
+    position: fixed;
+    left: max(16px, env(safe-area-inset-left, 0px));
+    right: max(16px, env(safe-area-inset-right, 0px));
+    bottom: max(16px, env(safe-area-inset-bottom, 0px));
+    z-index: 1000;
+    max-width: 460px;
+    margin: 0 auto;
+    display: grid;
+    gap: 10px;
+    padding: 10px 18px 16px;
+    border-radius: 20px;
+    background: var(--surface);
+    color: var(--text-dark);
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-soft);
+}
+.clio-intro-head { display: flex; justify-content: flex-end; }
+.clio-intro-skip { min-height: 32px; border: 0; background: none; color: var(--muted-text); font-size: 14px; cursor: pointer; }
+.clio-intro-body { display: flex; justify-content: center; }
+.clio-intro-bubble { margin: 0; font-size: 17px; font-weight: 700; line-height: 1.4; text-align: left; min-height: 4.2em; }
+.clio-intro-count { justify-self: start; font-size: 12px; color: var(--muted-text); font-variant-numeric: tabular-nums; }
+.clio-intro-next { width: 100%; }
+@media (max-height: 560px) { .clio-intro .clio-large { width: 96px; height: 110px; } }
 .clio-costume-hint { flex-wrap: wrap; }
 .clio-shop-btn { flex-basis: 100%; margin-top: 4px; }
 

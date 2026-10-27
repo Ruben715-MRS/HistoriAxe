@@ -493,13 +493,15 @@ function renderShop(tryOn) {
         const li = document.createElement('li');
         li.className = 'shop-item' + (owned ? ' is-owned' : '') + (!worldOpen && !owned ? ' is-locked' : '');
         li.dataset.item = item.id;
-        li.innerHTML = '<span class="shop-item-emoji" aria-hidden="true"></span><span class="shop-item-text"><strong></strong><small></small></span><button type="button" class="btn shop-item-btn"></button>';
-        // Costume dessiné : Clio habillée en vignette ; sinon l'aperçu en emoji (et un cadenas tant que le monde est fermé).
+        li.innerHTML = '<button type="button" class="shop-item-emoji shop-item-view"></button><span class="shop-item-text"><strong></strong><small></small></span><button type="button" class="btn shop-item-btn"></button>';
+        // Le costume dessiné, habillé sur Clio ; touché, il s'agrandit. Grisé tant que le monde n'est pas atteint.
         const icon = li.querySelector('.shop-item-emoji');
-        if (!worldOpen && !owned) icon.innerText = '🔒';
-        else if (ClioArt.hasCostume(item.world)) { icon.classList.add('is-drawn'); icon.innerHTML = ClioArt.front('repos', { costume: item.world }); }
+        const name = rewardsCostumeName(item);
+        icon.setAttribute('aria-label', t('rewards.shop_zoom', { name: name }));
+        if (ClioArt.hasCostume(item.world)) { icon.classList.add('is-drawn'); icon.innerHTML = ClioArt.front('repos', { costume: item.world }); }
         else icon.innerText = item.emoji;
-        li.querySelector('strong').innerText = rewardsCostumeName(item);
+        icon.onclick = () => shopZoomCostume(item.id);
+        li.querySelector('strong').innerText = name;
         const world = PathCore.findWorld(item.world);
         li.querySelector('small').innerText = worldOpen || owned ? pathWorldTitle(world) : t('rewards.shop_locked', { world: pathWorldTitle(world) });
         const btn = li.querySelector('.shop-item-btn');
@@ -516,6 +518,43 @@ function renderShop(tryOn) {
         }
         list.appendChild(li);
     });
+}
+
+// L'agrandissement d'un costume : Clio habillée, en grand. Fermé par le bouton, un appui à côté ou la touche Échap.
+function shopZoomCostume(id) {
+    const item = RewardsCore.findItem(id);
+    if (!item || !ClioArt.hasCostume(item.world)) return;
+    const old = document.getElementById('shop-zoom');
+    if (old) old.remove();
+    const state = rewardsState();
+    const owned = state.owned.indexOf(item.id) !== -1;
+    const worldOpen = rewardsWorldReached(item.world);
+    const box = document.createElement('div');
+    box.id = 'shop-zoom';
+    box.className = 'shop-zoom';
+    box.setAttribute('role', 'dialog');
+    box.setAttribute('aria-label', rewardsCostumeName(item));
+    const card = document.createElement('div');
+    card.className = 'shop-zoom-card' + (!worldOpen && !owned ? ' is-locked' : '');
+    const art = document.createElement('div');
+    art.className = 'shop-zoom-art';
+    art.innerHTML = ClioArt.front('content', { costume: item.world, label: rewardsCostumeName(item) });
+    const caption = document.createElement('p');
+    caption.className = 'shop-zoom-name';
+    caption.innerText = rewardsCostumeName(item);
+    const close = document.createElement('button');
+    close.type = 'button';
+    close.className = 'btn shop-zoom-close';
+    close.innerText = t('clio.dismiss');
+    const closeIt = () => { box.remove(); document.removeEventListener('keydown', onKey); };
+    const onKey = e => { if (e.key === 'Escape') closeIt(); };
+    close.onclick = closeIt;
+    box.onclick = e => { if (e.target === box) closeIt(); };
+    document.addEventListener('keydown', onKey);
+    card.append(art, caption, close);
+    box.appendChild(card);
+    document.body.appendChild(box);
+    close.focus();
 }
 
 function shopBuy(id) {

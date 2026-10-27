@@ -1367,6 +1367,7 @@
     "card_missing_aria": "Carta {rarity} aún sin encontrar",
     "shop_title": "La tienda de Clío",
     "clio_wears": "Clío lleva: {name}",
+    "shop_zoom": "Ampliar: {name}",
     "clio_bare": "Clío aún no tiene ningún disfraz.",
     "shop_decors": "Los decorados de fondo llegarán más adelante.",
     "shop_locked": "Llega a «{world}» para comprarlo",
@@ -1785,6 +1786,16 @@
     "pending_aria": "{n} solicitud(es) de amistad pendiente(s)"
   },
   "clio": {
+    "intro": {
+      "0": "Hola, soy Clio, la musa de la Historia. En la mitología griega soy una de las nueve Musas, y se me representa con un pergamino para dejar constancia de lo que pasó.",
+      "1": "Te acompañaré por el Camino del Tiempo, época tras época, y alimentaré tu sed de saber.",
+      "2": "¿Por qué un gato? Los gatos conviven con las personas desde hace muchísimo tiempo. En el antiguo Egipto eran sagrados: Heródoto cuenta que las familias se afeitaban las cejas en señal de duelo cuando moría un gato.",
+      "3": "A lo largo de los siglos se los ha admirado y, a veces, temido. Yo recuerdo sobre todo una cosa: un buen gato observa antes de actuar, como un buen historiador que interroga sus fuentes.",
+      "4": "¿Lista para el primer viaje? ¡Toca el nivel para jugar y vamos!"
+    },
+    "intro_next": "Siguiente",
+    "intro_start": "¡Vamos!",
+    "intro_skip": "Saltar",
     "name": "Clío",
     "aria": "Clío, la mascota",
     "dismiss": "Cerrar",
@@ -1841,9 +1852,6 @@
         "1": "Te sigo, ¡adelante!",
         "2": "¡Miau! ¿Vamos?",
         "3": "Cada estrella cuenta."
-      },
-      "first": {
-        "0": "¡Bienvenido! Soy Clío. Toca el nivel verde para empezar."
       },
       "costume": {
         "0": "El disfraz «{name}» te espera en la tienda ({price} 🪙).",

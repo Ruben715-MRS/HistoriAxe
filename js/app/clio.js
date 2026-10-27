@@ -146,12 +146,65 @@ function clioAfterPathRender(map) {
         marker.style.transform = '';
         setTimeout(() => { if (walker.isConnected) walker.replaceWith(front); }, 1200);
     }
+    // Pendant le tutoriel, la présentation attend la visite suivante : deux cartes à l'écran se gêneraient.
     const state = clioLoad();
-    if (!state.introSeen) {
+    if (!state.introSeen && !document.querySelector('.onboarding-overlay')) {
         state.introSeen = true;
         clioSave(state);
-        clioMarkerSpeak(marker, 'first');
+        clioIntro();
     }
+}
+
+// --- La présentation, à la première visite du Chemin ----------------------------------------------------------
+// Cinq bulles, lues une seule fois : Clio se présente, dit qu'elle accompagnera le joueur, pourquoi un chat.
+const CLIO_INTRO = [
+    { mood: 'salue' }, { mood: 'content' }, { mood: 'reflechit' }, { mood: 'content' }, { mood: 'ravi' }
+];
+
+function clioIntro() {
+    if (document.getElementById('clio-intro')) return;
+    const box = document.createElement('div');
+    box.id = 'clio-intro';
+    box.className = 'clio-intro';
+    box.setAttribute('role', 'dialog');
+    box.setAttribute('aria-modal', 'false');
+    box.setAttribute('aria-label', t('clio.aria'));
+    const head = document.createElement('div');
+    head.className = 'clio-intro-head';
+    const skip = document.createElement('button');
+    skip.type = 'button';
+    skip.className = 'clio-intro-skip';
+    skip.innerText = t('clio.intro_skip');
+    skip.onclick = () => box.remove();
+    head.appendChild(skip);
+    const body = document.createElement('div');
+    body.className = 'clio-intro-body';
+    const bubble = document.createElement('p');
+    bubble.className = 'clio-intro-bubble';
+    bubble.setAttribute('aria-live', 'polite');
+    const count = document.createElement('span');
+    count.className = 'clio-intro-count';
+    const next = document.createElement('button');
+    next.type = 'button';
+    next.className = 'btn clio-intro-next';
+    box.append(head, body, bubble, count, next);
+    document.body.appendChild(box);
+
+    let step = 0;
+    const show = () => {
+        const last = step === CLIO_INTRO.length - 1;
+        body.replaceChildren(clioAvatar(CLIO_INTRO[step].mood, 'large'));
+        bubble.innerText = t('clio.intro.' + step);
+        count.innerText = (step + 1) + ' / ' + CLIO_INTRO.length;
+        next.innerText = t(last ? 'clio.intro_start' : 'clio.intro_next');
+        next.focus();
+    };
+    next.onclick = () => {
+        if (step >= CLIO_INTRO.length - 1) { box.remove(); return; }
+        step += 1;
+        show();
+    };
+    show();
 }
 
 // --- À l'accueil -------------------------------------------------------------------------------------------------
