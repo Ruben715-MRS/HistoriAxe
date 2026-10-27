@@ -191,3 +191,24 @@ test('allemagne : le mode « Chanceliers », de Bismarck à aujourd’hui, avec 
     // Le mode chefs d'État reste le défaut.
     assert.equal(S.rowsOf('allemagne')[0].row.name, 'Guillaume Ier');
 });
+
+test('vice-présidents américains : le sous-texte dit sous quel président chacun a servi, et ce président était en fonction pendant son mandat', () => {
+    const presidents = S.rowsOf('etats_unis').map(it => it.row);
+    const vices = S.rowsOf('etats_unis', 'vice').map(it => it.row);
+    assert.ok(vices.length >= 50);
+    vices.forEach(v => {
+        const m = v.title.match(/^Vice-présidente? sous (.+)$/);
+        assert.ok(m, `${v.name} : « ${v.title} »`);
+        m[1].split(', puis ').forEach(name => {
+            // Un président en fonction à un moment du mandat du vice-président (les années de début et de fin comptent).
+            const ok = presidents.some(p => p.name === name && p.from <= (v.to === null ? 9999 : v.to) && (p.to === null || p.to >= v.from));
+            assert.ok(ok, `${v.name} (${v.from}-${v.to}) : « ${name} » n'était pas président à ce moment`);
+        });
+    });
+    assert.strictEqual(vices.find(v => v.name === 'Kamala Harris').title, 'Vice-présidente sous Joe Biden');
+    assert.strictEqual(vices.find(v => v.name === 'JD Vance').title, 'Vice-président sous Donald Trump');
+    assert.strictEqual(vices.find(v => v.name === 'George Clinton').title, 'Vice-président sous Thomas Jefferson, puis James Madison');
+    // La recherche par nom de président trouve aussi ses vice-présidents.
+    const found = S.search(S.rowsOf('etats_unis', 'vice'), 'Eisenhower').map(it => it.row.name);
+    assert.deepStrictEqual(found, ['Richard Nixon']);
+});

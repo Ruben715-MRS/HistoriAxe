@@ -600,6 +600,10 @@ test('chronologie : les États-Unis proposent les vice-présidents, en couleur s
     await page.locator('#leaders-mode-vice').click();
     await expect(rows.first()).toContainText('John Adams');
     await expect(rows.last()).toContainText('JD Vance');
+    // Le sous-texte dit sous quel président chacun a servi.
+    await expect(rows.first()).toContainText('Vice-président sous George Washington');
+    await expect(rows.filter({ hasText: 'Kamala Harris' })).toContainText('Vice-présidente sous Joe Biden');
+    await expect(rows.filter({ hasText: 'George Clinton' })).toContainText('Vice-président sous Thomas Jefferson, puis James Madison');
     await expect(rows.filter({ hasText: 'Kamala Harris' })).toHaveCSS('background-color', 'rgb(191, 219, 254)');
     await expect(rows.filter({ hasText: 'Mike Pence' })).toHaveCSS('background-color', 'rgb(254, 202, 202)');
     await page.locator('#leaders-mode-etat').click();
