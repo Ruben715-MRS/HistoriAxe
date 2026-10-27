@@ -195,3 +195,19 @@ test('la carte qui complète un album fait danser Clio', async ({ page }) => {
     await expect(clio.locator('.clio')).toHaveAttribute('data-mood', 'danse');
     await expect(clio.locator('.clio-bubble')).not.toBeEmpty();
 });
+
+test('dans la boutique, toucher un costume l\'agrandit sans l\'acheter ; Échap referme', async ({ page }) => {
+    await page.evaluate(() => {
+        localStorage.setItem('historiaxe_rewards_v1', JSON.stringify({ coins: 500, owned: [], equipped: { costume: null, decor: null } }));
+        openShop('screen-categories');
+    });
+    const item = page.locator('.shop-item[data-item="costume-prehistoire"]');
+    await item.locator('.shop-item-view').click();
+    await expect(page.locator('#shop-zoom')).toBeVisible();
+    await expect(page.locator('#shop-zoom .shop-zoom-name')).toHaveText('Peau de mammouth');
+    await expect(page.locator('#shop-zoom svg.clio-art')).toHaveAttribute('data-costume', 'mammouth');
+    expect((await clioState(page)).equipped).toBeUndefined();
+    expect(await page.evaluate(() => JSON.parse(localStorage.getItem('historiaxe_rewards_v1')).coins)).toBe(500);
+    await page.keyboard.press('Escape');
+    await expect(page.locator('#shop-zoom')).toHaveCount(0);
+});

@@ -9946,7 +9946,16 @@ input:not([type="range"]), label, select, summary, textarea {
 
 .shop-item.is-locked { opacity: 0.6; }
 .shop-item-emoji { font-size: 30px; width: 40px; text-align: center; }
-.shop-item-emoji.is-drawn { height: 52px; }
+.shop-item-emoji.is-drawn { height: 64px; width: 56px; }
+.shop-item-view { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.shop-item.is-locked .shop-item-emoji.is-drawn svg { filter: grayscale(1); opacity: 0.45; }
+.shop-zoom { position: fixed; inset: 0; z-index: 1100; display: grid; place-items: center; padding: max(16px, env(safe-area-inset-top, 0px)) 16px max(16px, env(safe-area-inset-bottom, 0px)); background: rgba(10, 16, 28, 0.6); }
+.shop-zoom-card { width: min(360px, 100%); display: grid; justify-items: center; gap: 12px; padding: 18px; border-radius: 20px; background: var(--surface); color: var(--text-dark); box-shadow: var(--card-shadow); }
+.shop-zoom-art { width: min(260px, 70vw); }
+.shop-zoom-art svg { display: block; width: 100%; height: auto; overflow: visible; }
+.shop-zoom-card.is-locked .shop-zoom-art svg { filter: grayscale(1); opacity: 0.5; }
+.shop-zoom-name { margin: 0; font-size: 18px; font-weight: 800; text-align: center; text-wrap: balance; }
+.shop-zoom-close { width: 100%; }
 .shop-item-emoji.is-drawn svg { display: block; width: 100%; height: 100%; overflow: visible; }
 .shop-item-text { flex: 1; min-width: 0; display: flex; flex-direction: column; }
 .shop-item-text strong { font-size: 15px; }
