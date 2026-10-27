@@ -18,10 +18,10 @@ async function ouvrir(page, texte) {
     await page.locator('#screen-tools .arcade-card', { hasText: texte }).click();
 }
 
-test('l\'Atelier s\'ouvre depuis les catégories, range ses treize entrées en quatre groupes et revient', async ({ page }) => {
+test('l\'Atelier s\'ouvre depuis les catégories, range ses quinze entrées en quatre groupes et revient', async ({ page }) => {
     await page.locator('#btn-tools').click();
     expect(await visibleScreen(page)).toBe('screen-tools');
-    await expect(page.locator('#screen-tools .arcade-card')).toHaveCount(14);
+    await expect(page.locator('#screen-tools .arcade-card')).toHaveCount(15);
     await expect(page.locator('#screen-tools .header-title')).toHaveText('Atelier');
     await expect(page.locator('#screen-tools .tools-group')).toHaveCount(4);
     await expect(page.locator('#screen-tools .tools-group .modes-group-title')).toHaveText(['Convertir et calculer', 'Calendriers', 'Repères', 'Cartes et arbres']);
@@ -719,4 +719,47 @@ test('poids et mesures bibliques : distances, volumes et monnaies se convertisse
     await expect(page.locator('#tool-measures-msg')).not.toBeEmpty();
     await page.locator('#screen-tool-measures .back-btn').click();
     expect(await visibleScreen(page)).toBe('screen-tools');
+});
+
+test('citations : recherche, filtre de fiabilité, fiche, lien vers la carte de naissance', async ({ page }) => {
+    await ouvrir(page, 'Citations');
+    expect(await visibleScreen(page)).toBe('screen-tool-citations');
+    const items = page.locator('#cit-list .cit-item');
+    await expect(items.first()).toBeVisible();
+    const total = await items.count();
+    expect(total).toBeGreaterThanOrEqual(20);
+    await expect(page.locator('#cit-status')).toHaveText(`${total} citations`);
+
+    await page.locator('#cit-search').fill('descartes');
+    await expect(items).toHaveCount(1);
+    await expect(page.locator('#cit-status')).toContainText(`1 sur ${total}`);
+    await page.locator('#cit-search').fill('');
+
+    await page.locator('#cit-reliability').selectOption('apocryphe');
+    expect(await items.count()).toBeGreaterThanOrEqual(3);
+    await expect(items.locator('.cit-badge-apocryphe')).toHaveCount(await items.count());
+    await page.locator('#cit-reliability').selectOption('all');
+
+    await page.locator('#cit-search').fill('je pense donc');
+    await items.first().click();
+    expect(await visibleScreen(page)).toBe('screen-tool-citation');
+    await expect(page.locator('#cit-card-author')).toHaveText('René Descartes');
+    await expect(page.locator('#cit-card-body .cit-quote')).toContainText('Je pense, donc je suis.');
+    await expect(page.locator('#cit-card-body')).toContainText('Discours de la méthode');
+    await page.getByRole('button', { name: 'Naissance de René Descartes' }).click();
+    await expect(page.locator('#modal-titre')).toHaveText('Naissance de René Descartes');
+    await page.evaluate(() => closeModal());
+    await page.locator('#screen-tool-citation .back-btn').click();
+    expect(await visibleScreen(page)).toBe('screen-tool-citations');
+    await page.locator('#screen-tool-citations .back-btn').click();
+    expect(await visibleScreen(page)).toBe('screen-tools');
+});
+
+test('citations : une phrase apocryphe le dit sur sa fiche, sans lien quand l\'auteur n\'a pas de carte', async ({ page }) => {
+    await ouvrir(page, 'Citations');
+    await page.locator('#cit-search').fill('brioche');
+    await page.locator('#cit-list .cit-item').first().click();
+    await expect(page.locator('#cit-card-body .cit-status-apocryphe')).toContainText('Apocryphe');
+    await expect(page.locator('#cit-card-body')).toContainText('Pourquoi ce statut');
+    await expect(page.locator('#cit-card-body .cit-links')).toHaveCount(0);
 });

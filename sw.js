@@ -12,7 +12,7 @@
 // 'install' recharge tout depuis le réseau. Un pack de langue ou un texte
 // d'UI modifié qui ne s'affiche pas malgré un déploiement réussi est
 // généralement le signe que l'un de ces deux numéros n'a pas été incrémenté.
-const CACHE_VERSION = '1.4.258';
+const CACHE_VERSION = '1.4.259';
 const APP_SHELL_CACHE = `historiaxe-shell-v${CACHE_VERSION}`;
 const DATA_CACHE = 'historiaxe-data-v1.0.121';
 
@@ -129,12 +129,14 @@ const APP_SHELL_FILES = [
     './js/periodSystems.js',
     './js/toolsCore.js',
     './js/dictionnaireCore.js',
+    './js/citationsCore.js',
     './js/countriesCore.js',
     './js/geoQuizCore.js',
     './js/geoQuizSessionCore.js',
     './js/calendarYearCore.js',
     './js/app/tools.js',
     './js/app/dictionnaire.js',
+    './js/app/citations.js',
     './js/app/countries.js',
     './js/cityGameCore.js',
     './js/cityHistoryCore.js',
@@ -177,7 +179,9 @@ const APP_SHELL_FILES = [
     './splash_iphone_landscape.jpg',
     './splash_ipad_portrait.jpg',
     './assets/geo/theme-country-map.json',
-    './assets/dictionnaire/termes.json'
+    './assets/dictionnaire/termes.json',
+    './assets/citations/index.json',
+    './assets/citations/01.json'
 ];
 
 // --- INSTALLATION : Mise en cache de l'App Shell & Pack Français ---
