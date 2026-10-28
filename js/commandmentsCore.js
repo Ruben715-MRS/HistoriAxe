@@ -53,7 +53,19 @@
             ]
         },
         // Les 613 : pas d'éléments ici, ils viennent de js/commandments613Data.js (voir LISTS613).
-        { id: 'mitzvot', icon: '📜', count: 613, kind: 'list613', groups: [] }
+        { id: 'mitzvot', icon: '📜', count: 613, kind: 'list613', groups: [] },
+        // Mitsvot pratiques : trois petites listes, chacune un thème (d'où le menu déroulant par thème).
+        {
+            id: 'pratiques',
+            icon: '🌿',
+            count: 10,
+            themeMenu: true,
+            groups: [
+                { id: 'women', items: ['hallah', 'nidda', 'ner'] },
+                { id: 'pesah', items: ['pesah', 'matsa', 'maror'] },
+                { id: 'soukkot', items: ['etrog', 'lulav', 'hadass', 'arava'] }
+            ]
+        }
     ];
 
     // Les 613 commandements : deux listes, les positifs (de 1 à 248) et les négatifs (de 1 à 365), regroupées par thème. Chaque regroupement

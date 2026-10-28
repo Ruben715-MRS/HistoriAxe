@@ -709,7 +709,7 @@ test('commandements bibliques : sept lois de Noé, dix commandements, trente-neu
     await expect(page.locator('#tool-commandments-613 .cmd-item').first()).toContainText('Savoir qu\'il y a un Dieu');
     await expect(page.locator('#tool-commandments-613 .cmd-item').first()).toContainText('Exode 20:2');
     await expect(page.locator('#tool-commandments-count')).toContainText('613 commandements sur 613');
-    await expect(page.locator('.cmd-nav-btn')).toHaveCount(1);
+    await expect(page.locator('.cmd-nav-btn')).toHaveCount(2);
 
     // Le menu des thèmes en compte 35, sous deux intitulés ; en choisir un y mène sans cacher les autres commandements.
     await expect(page.locator('#tool-commandments-theme optgroup')).toHaveCount(2);
@@ -740,6 +740,21 @@ test('commandements bibliques : sept lois de Noé, dix commandements, trente-neu
     await expect(page.locator('#tool-commandments-613 .cmd-item')).toHaveCount(1);
     await expect(page.locator('#tool-commandments-613 .cmd-item')).toContainText('Honorer son père et sa mère');
     expect(await page.locator('#screen-tool-commandments').innerText()).not.toContain('tools.');
+
+    // Enfin les « Mitsvot pratiques » : dix mitsvot en trois listes ; le menu mène à chacune sans cacher les autres.
+    await page.locator('.cmd-nav-btn', { hasText: 'Mitsvot pratiques' }).click();
+    await expect(page.locator('#tool-commandments-tab-pratiques')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(10);
+    await expect(page.locator('#tool-commandments-body .cmd-group-title').first()).toContainText('Les trois mitsvot des femmes');
+    await expect(page.locator('#tool-commandments-theme-pratiques option')).toHaveCount(4); // 3 thèmes + l'invite
+    await page.locator('#tool-commandments-theme-pratiques').selectOption({ label: 'Les quatre espèces de Soukkot' });
+    await expect(page.locator('#cmd-group-pratiques-soukkot')).toBeInViewport();
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(10);
+    await expect(page.locator('#cmd-group-pratiques-soukkot .cmd-item').first()).toContainText('L\'étrog');
+    await expect(page.locator('.cmd-nav-btn')).toHaveCount(1); // seulement « précédent » : c'est la dernière liste
+    await page.locator('#tool-commandments-lang-he').click();
+    await expect(page.locator('#cmd-group-pratiques-soukkot .cmd-item').first().locator('.cmd-heb')).toHaveText('אתרוג');
+    await page.locator('#tool-commandments-lang-fr').click();
 
     // Les onglets font aussi revenir en arrière ; le choix « א » suit : les lois de Noé s'affichent avec leur nom hébreu.
     await page.locator('#tool-commandments-tab-noah').click();

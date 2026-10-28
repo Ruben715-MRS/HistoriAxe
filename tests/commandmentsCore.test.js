@@ -10,7 +10,7 @@ const fr = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'ui', 'fr.json'
 const text = key => fr.tools[key.replace(/^tools\./, '')];
 
 test('les listes sont dans l\'ordre : lois de Noé, dix commandements, travaux du Chabbat, 613 commandements', () => {
-    assert.deepEqual(C.SETS.map(s => s.id), ['noah', 'decalogue', 'shabbat', 'mitzvot']);
+    assert.deepEqual(C.SETS.map(s => s.id), ['noah', 'decalogue', 'shabbat', 'mitzvot', 'pratiques']);
 });
 
 test('effectifs de la tradition : 7 lois de Noé, 10 commandements, 39 travaux (11 + 13 + 9 + 6)', () => {
@@ -62,7 +62,8 @@ test('on passe d\'une liste à la suivante, et il n\'y a rien avant la première
     assert.equal(C.neighbor('shabbat', 1).id, 'mitzvot');
     assert.equal(C.neighbor('mitzvot', -1).id, 'shabbat');
     assert.equal(C.neighbor('noah', -1), null);
-    assert.equal(C.neighbor('mitzvot', 1), null);
+    assert.equal(C.neighbor('mitzvot', 1).id, 'pratiques');
+    assert.equal(C.neighbor('pratiques', 1), null);
 });
 
 test('les travaux du Chabbat suivent l\'ordre de la Michna : le premier est « semer », le dernier « transporter »', () => {
@@ -145,7 +146,7 @@ test('613 : la recherche ignore les accents, les majuscules, les apostrophes et 
 test('bouton « A / א » : chaque liste et chaque élément ont leur nom en lettres hébraïques, et ce sont bien des lettres hébraïques', () => {
     const hebreu = /^[\u05D0-\u05EA\u05F3\u05F4\u05BE\s׳״]+$/;
     C.SETS.forEach(s => assert.match(text('cmd_' + s.id + '_he'), hebreu, 'liste ' + s.id));
-    ['noah', 'decalogue', 'shabbat'].forEach(id => C.itemsOf(id).forEach(item => {
+    ['noah', 'decalogue', 'shabbat', 'pratiques'].forEach(id => C.itemsOf(id).forEach(item => {
         const value = text(C.itemKey(id, item.id, 'he'));
         assert.match(value, hebreu, `${id}/${item.id}`);
     }));
@@ -180,4 +181,17 @@ test('613 : le menu des thèmes a de quoi nommer les 35 thèmes (15 positifs, 20
     });
     ['pos', 'neg'].forEach(k => assert.ok(text('cmd_mitzvot_kind_title_' + k)));
     assert.ok(text('cmd_mitzvot_theme_label') && text('cmd_mitzvot_theme_placeholder'));
+});
+
+test('mitsvot pratiques : trois listes courtes (femmes, Pessa\'h, Soukkot), dix mitsvot, un menu par thème', () => {
+    const set = C.getSet('pratiques');
+    assert.equal(set.themeMenu, true);
+    assert.deepEqual(set.groups.map(g => g.items.length), [3, 3, 4]);
+    assert.equal(C.itemsOf('pratiques').length, 10);
+    C.itemsOf('pratiques').forEach(item => {
+        assert.ok(text(C.itemKey('pratiques', item.id, 'ref')), item.id + ' : source');
+        assert.ok(text(C.itemKey('pratiques', item.id, 'he')), item.id + ' : nom hébreu');
+    });
+    ['women', 'pesah', 'soukkot'].forEach(g => assert.ok(text('cmd_pratiques_group_' + g), 'titre ' + g));
+    assert.equal(C.getSet('mitzvot').themeMenu, undefined);
 });

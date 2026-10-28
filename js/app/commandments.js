@@ -79,6 +79,8 @@ function renderCommandments() {
     head.append(h, sub, lead);
     body.appendChild(head);
 
+    if (set.themeMenu) body.appendChild(sectionThemeMenu(set));
+
     if (set.kind === 'list613') render613(body, set);
 
     // Les éléments, par groupe. Les numéros courent d'un groupe à l'autre.
@@ -86,6 +88,7 @@ function renderCommandments() {
     set.groups.forEach(group => {
         const section = document.createElement('section');
         section.className = 'cmd-group';
+        section.id = 'cmd-group-' + set.id + '-' + group.id;
         if (set.groups.length > 1) {
             const gh = document.createElement('h4');
             gh.className = 'cmd-group-title';
@@ -287,6 +290,33 @@ function update613() {
         });
         if (kinds.length > 1 && outer.children.length) theme.appendChild(outer);
     });
+}
+
+// Un menu déroulant par thème, pour une liste faite de petites sous-listes : on y va directement, sans cacher les autres.
+function sectionThemeMenu(set) {
+    const select = document.createElement('select');
+    select.id = 'tool-commandments-theme-' + set.id;
+    select.className = 'tool-input';
+    select.setAttribute('aria-label', cmdText('cmd_mitzvot_theme_label'));
+    const placeholder = document.createElement('option');
+    placeholder.value = '';
+    placeholder.textContent = cmdText('cmd_mitzvot_theme_placeholder');
+    select.appendChild(placeholder);
+    set.groups.forEach(group => {
+        const option = document.createElement('option');
+        option.value = 'cmd-group-' + set.id + '-' + group.id;
+        option.textContent = cmdText('cmd_' + set.id + '_group_' + group.id);
+        select.appendChild(option);
+    });
+    select.onchange = () => {
+        const target = select.value && document.getElementById(select.value);
+        if (target) {
+            const calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            target.scrollIntoView({ behavior: calm ? 'auto' : 'smooth', block: 'start' });
+        }
+        select.value = ''; // pour pouvoir choisir deux fois de suite le même thème
+    };
+    return select;
 }
 
 function commandmentItem(setId, itemId, hebrew) {

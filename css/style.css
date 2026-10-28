@@ -14662,6 +14662,8 @@ input:not([type="range"]), label, select, summary, textarea {
 .cmd-613-controls { display: flex; flex-direction: column; gap: 8px; }
 .cmd-613-list { display: flex; flex-direction: column; gap: 18px; }
 .cmd-613-list .cmd-group { scroll-margin-top: 12px; }
+/* Le défilement vers un thème laisse la place au bouton « retour », qui flotte en haut à gauche. */
+#tool-commandments-body .cmd-group { scroll-margin-top: 72px; }
 .cmd-kind-title { margin: 6px 0 -6px; font-size: 18px; padding-top: 12px; border-top: 2px solid var(--border-soft); }
 .cmd-kind-title:first-child { border-top: 0; padding-top: 0; }
 .cmd-613-list .cmd-item { padding-top: 8px; padding-bottom: 8px; }
