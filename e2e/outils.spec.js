@@ -778,6 +778,8 @@ test('commandements bibliques : sept lois de Noé, dix commandements, trente-neu
 
     // Les onglets font aussi revenir en arrière ; le choix « א » suit : les lois de Noé s'affichent avec leur nom hébreu.
     await page.locator('#tool-commandments-tab-noah').click();
+    await page.locator('#tool-commandments-lang-he').click();
+    await expect(page.locator('#tool-commandments-lang-he')).toHaveAttribute('aria-pressed', 'true');
     await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(7);
     await expect(page.locator('#tool-commandments-body .cmd-item').first().locator('.cmd-heb')).toHaveText('עבודה זרה');
     await expect(page.locator('.cmd-nav-btn')).toHaveCount(1);

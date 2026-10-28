@@ -389,6 +389,8 @@ test('le détecteur détecte : un clic sans clavier est bien signalé', async ({
 });
 
 test('aucun écran de l’app n’a de zone cliquable hors d’atteinte du clavier', async ({ page }) => {
+    // Le parcours visite tous les écrans (e2e/ecrans.js) : il dépasse le délai par défaut de 60 s.
+    test.setTimeout(150_000);
     const trouvailles = new Map();
     // Le parcours est partagé avec les contrastes (voir e2e/ecrans.js).
     await parcourirLesEcrans(page, async etape => {

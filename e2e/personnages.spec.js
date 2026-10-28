@@ -52,9 +52,9 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
     const index = await page.evaluate(() => bdd.findIndex(c => c.nom === 'Personnages illustres'));
     expect(index, 'la catégorie « Personnages illustres » doit exister').toBeGreaterThanOrEqual(0);
 
-    // La tuile de la catégorie reprend l'image des anciennes Biographies.
+    // La tuile de la catégorie reprend son image propre (js/app/categories.js : « illustres »).
     await expect(page.locator('#cat-grid > div').nth(index).locator('div[style*="background-image"]').first())
-        .toHaveAttribute('style', /cat_biographies\.webp/);
+        .toHaveAttribute('style', /cat_personnages_illustres\.webp/);
 
     await page.locator('#cat-grid > div').nth(index).click();
     expect(await visibleScreen(page)).toBe('screen-subcategories');
@@ -2595,14 +2595,14 @@ test('la pastille « biographie disponible » n’apparaît que sur les figures 
 
 // ---- « Découvrir » : un événement ou un personnage -----------------------------------------------------
 
-test('« Découvrir » propose deux boutons, « Événement » et « Personnage », et un seul volet à la fois', async ({ page }) => {
+test('« Découvrir » propose trois boutons, « Événement », « Personnage » et « Pays », et un seul volet à la fois', async ({ page }) => {
     await quitterLAccueil(page);
     const picker = page.locator('#discover-picker');
     await expect(picker).toBeHidden();
     await page.locator('#btn-discover').click();
     await expect(picker).toBeVisible();
     await expect(page.locator('#btn-discover')).toHaveAttribute('aria-expanded', 'true');
-    await expect(picker.locator('button > span:last-child')).toHaveText(['Événement', 'Personnage']);
+    await expect(picker.locator('button > span:last-child')).toHaveText(['Événement', 'Personnage', 'Pays']);
     // Ouvrir « Défis » referme « Découvrir », et inversement.
     await page.locator('#btn-daily').click();
     await expect(page.locator('#challenge-picker')).toBeVisible();

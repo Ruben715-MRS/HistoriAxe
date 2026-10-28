@@ -79,6 +79,15 @@ const test = base.test.extend({
                     localStorage.setItem('historiaxe_settings', JSON.stringify(settings));
                 }
             } catch (e) { /* idem */ }
+            // La fenêtre « Me localiser » de l'Atlas (js/location.js) s'ouvre à la première ouverture de
+            // la carte ; elle couvrirait les clics des parcours de l'Atlas. Déjà présentée ici.
+            try {
+                const settings = JSON.parse(localStorage.getItem('historiaxe_settings') || '{}');
+                if (!settings.locationPromptShown) {
+                    settings.locationPromptShown = true;
+                    localStorage.setItem('historiaxe_settings', JSON.stringify(settings));
+                }
+            } catch (e) { /* idem */ }
         });
 
         await page.goto('/index.html');
