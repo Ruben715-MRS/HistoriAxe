@@ -666,10 +666,10 @@ test('généalogie biblique, à l\'horizontale : déplier une branche fait défi
     expect(visible).toBe(true);
 });
 
-test('commandements bibliques : sept lois de Noé, dix commandements, trente-neuf travaux, 613 mitsvot, avec des boutons pour passer de l\'une à l\'autre', async ({ page }) => {
+test('textes de référence : navigation entre les sections, par les onglets', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 900 });
     await page.locator('#btn-tools').click();
-    await page.locator('#screen-tools .arcade-card', { hasText: 'Mitsvot et principes' }).click();
+    await page.locator('#screen-tools .arcade-card', { hasText: 'Textes de référence' }).click();
     expect(await visibleScreen(page)).toBe('screen-tool-commandments');
     expect(await page.locator('#screen-tool-commandments').innerText()).not.toContain('tools.');
 
@@ -679,17 +679,16 @@ test('commandements bibliques : sept lois de Noé, dix commandements, trente-neu
     await expect(page.locator('#tool-commandments-body')).toContainText('Genèse 9:6');
 
     // Le bouton « suivant » ouvre le Décalogue : dix paroles, deux tables.
-    await page.locator('.cmd-nav-btn', { hasText: '10 commandements' }).click();
+    await page.locator('#tool-commandments-tab-decalogue').click();
     await expect(page.locator('#tool-commandments-tab-decalogue')).toHaveAttribute('aria-pressed', 'true');
     await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(10);
     await expect(page.locator('#tool-commandments-body .cmd-group-title').first()).toContainText('Première table');
 
     // Puis les travaux du Chabbat : trente-neuf, dans l'ordre de la Michna ; plus de bouton « suivant ».
-    await page.locator('.cmd-nav-btn', { hasText: '39 travaux' }).click();
+    await page.locator('#tool-commandments-tab-shabbat').click();
     await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(39);
     await expect(page.locator('#tool-commandments-body .cmd-item').first()).toContainText('Semer');
     await expect(page.locator('#tool-commandments-body .cmd-item').last()).toContainText('Transporter');
-    await expect(page.locator('.cmd-nav-btn')).toHaveCount(2);
 
     // Le bouton « A / א » remplace la transcription des noms par les lettres hébraïques (et se retire pour les 613).
     await expect(page.locator('#tool-commandments-lang-fr')).toHaveAttribute('aria-pressed', 'true');
@@ -701,7 +700,7 @@ test('commandements bibliques : sept lois de Noé, dix commandements, trente-neu
     await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(39);
 
     // Enfin les 613 : « Tous » d'abord (à gauche de « Positifs »), avec le verset de chaque commandement ; plus de bouton « suivant ».
-    await page.locator('.cmd-nav-btn', { hasText: '613 mitsvot' }).click();
+    await page.locator('#tool-commandments-tab-mitzvot').click();
     await expect(page.locator('#tool-commandments-lang')).toBeHidden();
     await expect(page.locator('#tool-commandments-tab-mitzvot')).toHaveAttribute('aria-pressed', 'true');
     await expect(page.locator('#tool-commandments-kind-all')).toHaveAttribute('aria-pressed', 'true');
@@ -710,7 +709,6 @@ test('commandements bibliques : sept lois de Noé, dix commandements, trente-neu
     await expect(page.locator('#tool-commandments-613 .cmd-item').first()).toContainText('Savoir qu\'il y a un Dieu');
     await expect(page.locator('#tool-commandments-613 .cmd-item').first()).toContainText('Exode 20:2');
     await expect(page.locator('#tool-commandments-count')).toContainText('613 commandements sur 613');
-    await expect(page.locator('.cmd-nav-btn')).toHaveCount(2);
 
     // Le menu des thèmes en compte 35, sous deux intitulés ; en choisir un y mène sans cacher les autres commandements.
     await expect(page.locator('#tool-commandments-theme optgroup')).toHaveCount(2);
@@ -743,7 +741,7 @@ test('commandements bibliques : sept lois de Noé, dix commandements, trente-neu
     expect(await page.locator('#screen-tool-commandments').innerText()).not.toContain('tools.');
 
     // Enfin les « Mitsvot pratiques » : dix mitsvot en trois listes ; le menu mène à chacune sans cacher les autres.
-    await page.locator('.cmd-nav-btn', { hasText: 'Mitsvot pratiques' }).click();
+    await page.locator('#tool-commandments-tab-pratiques').click();
     await expect(page.locator('#tool-commandments-tab-pratiques')).toHaveAttribute('aria-pressed', 'true');
     await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(26);
     await expect(page.locator('#tool-commandments-body .cmd-group-title').first()).toContainText('Les trois mitsvot des femmes');
@@ -752,36 +750,32 @@ test('commandements bibliques : sept lois de Noé, dix commandements, trente-neu
     await expect(page.locator('#cmd-group-pratiques-soukkot')).toBeInViewport();
     await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(10);
     await expect(page.locator('#cmd-group-pratiques-soukkot .cmd-item').first()).toContainText('L\'étrog');
-    await expect(page.locator('.cmd-nav-btn')).toHaveCount(2); // « précédent » et « Principes et textes »
     await page.locator('#tool-commandments-lang-he').click();
     await expect(page.locator('#cmd-group-pratiques-soukkot .cmd-item').first().locator('.cmd-heb')).toHaveText('אתרוג');
     await page.locator('#tool-commandments-lang-fr').click();
 
     // Enfin « Principes et textes » : cinq thèmes, 58 textes, et le menu mène à celui qu'on choisit.
-    await page.locator('.cmd-nav-btn', { hasText: 'Principes et textes' }).click();
+    await page.locator('#tool-commandments-tab-principes').click();
     await expect(page.locator('#tool-commandments-tab-principes')).toHaveAttribute('aria-pressed', 'true');
     await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(58);
     await expect(page.locator('#tool-commandments-theme-principes option')).toHaveCount(6); // 5 thèmes + l'invite
     await page.locator('#tool-commandments-theme-principes').selectOption({ label: 'Les treize attributs de miséricorde' });
     await expect(page.locator('#cmd-group-principes-mercy')).toBeInViewport();
     await expect(page.locator('#cmd-group-principes-mercy .cmd-item').first()).toContainText('Adonaï');
-    await expect(page.locator('.cmd-nav-btn')).toHaveCount(2); // « précédent » et « Pirkei Avot »
 
     // Enfin « Pirkei Avot » : trois thèmes, 65 textes ; le menu mène à la qualité voulue sans cacher les autres.
-    await page.locator('.cmd-nav-btn', { hasText: 'Pirkei Avot' }).click();
+    await page.locator('#tool-commandments-tab-avot').click();
     await expect(page.locator('#tool-commandments-tab-avot')).toHaveAttribute('aria-pressed', 'true');
     await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(65);
     await expect(page.locator('#tool-commandments-theme-avot option')).toHaveCount(4); // 3 thèmes + l'invite
     await page.locator('#tool-commandments-theme-avot').selectOption({ label: 'Les qualités pour acquérir la Torah (6:6)' });
     await expect(page.locator('#cmd-group-avot-qualites')).toBeInViewport();
     await expect(page.locator('#cmd-group-avot-qualites .cmd-item').first()).toContainText("L'étude");
-    await expect(page.locator('.cmd-nav-btn')).toHaveCount(1); // « précédent » seulement : c'est la dernière section
 
     // Les onglets font aussi revenir en arrière ; le choix « א » suit : les lois de Noé s'affichent avec leur nom hébreu.
     await page.locator('#tool-commandments-tab-noah').click();
     await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(7);
     await expect(page.locator('#tool-commandments-body .cmd-item').first().locator('.cmd-heb')).toHaveText('עבודה זרה');
-    await expect(page.locator('.cmd-nav-btn')).toHaveCount(1);
 });
 
 test('poids et mesures bibliques : distances, volumes et monnaies se convertissent, dans les deux sens, avec la leçon dessous', async ({ page }) => {
@@ -900,7 +894,7 @@ test('citations : une phrase apocryphe le dit sur sa fiche, sans lien quand l\'a
 test('54 parachiot : les cinq livres dans le menu, et la numérotation continue jusqu\'à 54', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 900 });
     await page.locator('#btn-tools').click();
-    await page.locator('#screen-tools .arcade-card', { hasText: 'Mitsvot et principes' }).click();
+    await page.locator('#screen-tools .arcade-card', { hasText: 'Textes de référence' }).click();
     await page.locator('#tool-commandments-tab-parachiot').click();
     await expect(page.locator('#tool-commandments-tab-parachiot')).toHaveAttribute('aria-pressed', 'true');
     await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(54);
@@ -915,7 +909,7 @@ test('54 parachiot : les cinq livres dans le menu, et la numérotation continue 
 test('La Michna : les six ordres dans le menu, et la numérotation continue jusqu\'à 63', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 900 });
     await page.locator('#btn-tools').click();
-    await page.locator('#screen-tools .arcade-card', { hasText: 'Mitsvot et principes' }).click();
+    await page.locator('#screen-tools .arcade-card', { hasText: 'Textes de référence' }).click();
     await page.locator('#tool-commandments-tab-michna').click();
     await expect(page.locator('#tool-commandments-tab-michna')).toHaveAttribute('aria-pressed', 'true');
     await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(63);
@@ -930,7 +924,7 @@ test('La Michna : les six ordres dans le menu, et la numérotation continue jusq
 test('Les dix épreuves d\'Abraham : les deux avis dans le menu, chacun numéroté de 1 à 10', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 900 });
     await page.locator('#btn-tools').click();
-    await page.locator('#screen-tools .arcade-card', { hasText: 'Mitsvot et principes' }).click();
+    await page.locator('#screen-tools .arcade-card', { hasText: 'Textes de référence' }).click();
     await page.locator('#tool-commandments-tab-epreuves').click();
     await expect(page.locator('#tool-commandments-tab-epreuves')).toHaveAttribute('aria-pressed', 'true');
     await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(20);
@@ -944,7 +938,7 @@ test('Les dix épreuves d\'Abraham : les deux avis dans le menu, chacun numérot
 test('5 méguilot : les cinq livres dans le menu, et les chapitres numérotés dans chaque livre', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 900 });
     await page.locator('#btn-tools').click();
-    await page.locator('#screen-tools .arcade-card', { hasText: 'Mitsvot et principes' }).click();
+    await page.locator('#screen-tools .arcade-card', { hasText: 'Textes de référence' }).click();
     await page.locator('#tool-commandments-tab-megilot').click();
     await expect(page.locator('#tool-commandments-tab-megilot')).toHaveAttribute('aria-pressed', 'true');
     await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(39);
@@ -952,5 +946,5 @@ test('5 méguilot : les cinq livres dans le menu, et les chapitres numérotés d
     await page.locator('#tool-commandments-theme-megilot').selectOption({ label: 'Ruth' });
     await expect(page.locator('#cmd-group-megilot-ruth')).toBeInViewport();
     await expect(page.locator('#cmd-group-megilot-ruth .cmd-item').first()).toContainText('retour de Naomi');
-    await expect(page.locator('.cmd-nav-btn')).toHaveCount(1); // « précédent » seulement : dernière section
+    await expect(page.locator('.cmd-nav-btn')).toHaveCount(2); // « précédent » et « suivant » : le Chabbat
 });

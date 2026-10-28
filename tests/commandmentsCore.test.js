@@ -10,7 +10,7 @@ const fr = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'ui', 'fr.json'
 const text = key => fr.tools[key.replace(/^tools\./, '')];
 
 test('les listes sont dans l\'ordre : lois de Noé, dix commandements, travaux du Chabbat, 613 commandements', () => {
-    assert.deepEqual(C.SETS.map(s => s.id), ['noah', 'decalogue', 'shabbat', 'mitzvot', 'pratiques', 'principes', 'avot', 'parachiot', 'michna', 'epreuves', 'megilot']);
+    assert.deepEqual(C.SETS.map(s => s.id), ['parachiot', 'noah', 'epreuves', 'decalogue', 'megilot', 'shabbat', 'mitzvot', 'pratiques', 'principes', 'avot', 'michna']);
 });
 
 test('effectifs de la tradition : 7 lois de Noé, 10 commandements, 39 travaux (11 + 13 + 9 + 6)', () => {
@@ -60,19 +60,11 @@ test('chaque liste a son titre, son chapeau et ses « à savoir » ; chaque grou
 });
 
 test('on passe d\'une liste à la suivante, et il n\'y a rien avant la première ni après la dernière', () => {
-    assert.equal(C.neighbor('noah', 1).id, 'decalogue');
-    assert.equal(C.neighbor('decalogue', 1).id, 'shabbat');
-    assert.equal(C.neighbor('shabbat', 1).id, 'mitzvot');
-    assert.equal(C.neighbor('mitzvot', -1).id, 'shabbat');
-    assert.equal(C.neighbor('noah', -1), null);
-    assert.equal(C.neighbor('mitzvot', 1).id, 'pratiques');
-    assert.equal(C.neighbor('pratiques', 1).id, 'principes');
-    assert.equal(C.neighbor('principes', 1).id, 'avot');
-    assert.equal(C.neighbor('avot', 1).id, 'parachiot');
-    assert.equal(C.neighbor('parachiot', 1).id, 'michna');
-    assert.equal(C.neighbor('michna', 1).id, 'epreuves');
-    assert.equal(C.neighbor('epreuves', 1).id, 'megilot');
-    assert.equal(C.neighbor('megilot', 1), null);
+    const ids = C.SETS.map(s => s.id);
+    ids.slice(0, -1).forEach((id, i) => assert.equal(C.neighbor(id, 1).id, ids[i + 1]));
+    ids.slice(1).forEach((id, i) => assert.equal(C.neighbor(id, -1).id, ids[i]));
+    assert.equal(C.neighbor('parachiot', -1), null);
+    assert.equal(C.neighbor('michna', 1), null);
 });
 
 test('les travaux du Chabbat suivent l\'ordre de la Michna : le premier est « semer », le dernier « transporter »', () => {

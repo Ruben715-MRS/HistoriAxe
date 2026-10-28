@@ -33,11 +33,37 @@
     }
 
     var SETS = [
+        // Les 54 parachiot, lues une par Chabbat sur l'année : classées par livre. Numérotation continue, de 1 à 54.
+        {
+            id: 'parachiot',
+            icon: '📑',
+            count: 54,
+            themeMenu: true,
+            groups: [
+                { id: 'genese', items: ['g1', 'g2', 'g3', 'g4', 'g5', 'g6', 'g7', 'g8', 'g9', 'g10', 'g11', 'g12'] },
+                { id: 'exode', items: ['e1', 'e2', 'e3', 'e4', 'e5', 'e6', 'e7', 'e8', 'e9', 'e10', 'e11'] },
+                { id: 'levitique', items: ['l1', 'l2', 'l3', 'l4', 'l5', 'l6', 'l7', 'l8', 'l9', 'l10'] },
+                { id: 'nombres', items: ['n1', 'n2', 'n3', 'n4', 'n5', 'n6', 'n7', 'n8', 'n9', 'n10'] },
+                { id: 'deuteronome', items: ['d1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9', 'd10', 'd11'] }
+            ]
+        },
         {
             id: 'noah',
             icon: '🌈',
             count: 7,
             groups: [{ id: 'all', items: ['idolatry', 'blasphemy', 'bloodshed', 'relations', 'theft', 'limb', 'courts'] }]
+        },
+        // Les dix épreuves d'Abraham : deux avis (Bartenura, et Avot de Rabbi Natan 33), chacun numéroté de 1 à 10. Pas de prière dans cette section.
+        {
+            id: 'epreuves',
+            icon: '🔥',
+            count: 20,
+            themeMenu: true,
+            restartPerGroup: true,
+            groups: [
+                { id: 'bartenura', items: ['b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'b10'] },
+                { id: 'arn', items: ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10'] }
+            ]
         },
         {
             id: 'decalogue',
@@ -46,6 +72,21 @@
             groups: [
                 { id: 'god', items: ['d1', 'd2', 'd3', 'd4', 'd5'] },       // la première table : entre l'homme et Dieu
                 { id: 'neighbor', items: ['d6', 'd7', 'd8', 'd9', 'd10'] }  // la seconde : entre l'homme et son prochain
+            ]
+        },
+        // Les cinq Méguilot : un livre par thème, un chapitre par élément. Chaque chapitre est numéroté dans son livre.
+        {
+            id: 'megilot',
+            icon: '📕',
+            count: 39,
+            themeMenu: true,
+            restartPerGroup: true,
+            groups: [
+                { id: 'shir', items: ['sh1', 'sh2', 'sh3', 'sh4', 'sh5', 'sh6', 'sh7', 'sh8'] },
+                { id: 'ruth', items: ['ru1', 'ru2', 'ru3', 'ru4'] },
+                { id: 'eikha', items: ['ei1', 'ei2', 'ei3', 'ei4', 'ei5'] },
+                { id: 'kohelet', items: ['ko1', 'ko2', 'ko3', 'ko4', 'ko5', 'ko6', 'ko7', 'ko8', 'ko9', 'ko10', 'ko11', 'ko12'] },
+                { id: 'esther', items: ['es1', 'es2', 'es3', 'es4', 'es5', 'es6', 'es7', 'es8', 'es9', 'es10'] }
             ]
         },
         {
@@ -106,20 +147,6 @@
                 { id: 'maximes', items: ['x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x7', 'x8', 'x9', 'x10', 'x11'] }
             ]
         },
-        // Les 54 parachiot, lues une par Chabbat sur l'année : classées par livre. Numérotation continue, de 1 à 54.
-        {
-            id: 'parachiot',
-            icon: '📑',
-            count: 54,
-            themeMenu: true,
-            groups: [
-                { id: 'genese', items: ['g1', 'g2', 'g3', 'g4', 'g5', 'g6', 'g7', 'g8', 'g9', 'g10', 'g11', 'g12'] },
-                { id: 'exode', items: ['e1', 'e2', 'e3', 'e4', 'e5', 'e6', 'e7', 'e8', 'e9', 'e10', 'e11'] },
-                { id: 'levitique', items: ['l1', 'l2', 'l3', 'l4', 'l5', 'l6', 'l7', 'l8', 'l9', 'l10'] },
-                { id: 'nombres', items: ['n1', 'n2', 'n3', 'n4', 'n5', 'n6', 'n7', 'n8', 'n9', 'n10'] },
-                { id: 'deuteronome', items: ['d1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9', 'd10', 'd11'] }
-            ]
-        },
         // La Michna : six ordres, soixante-trois traités, numérotés de 1 à 63 dans l'ordre traditionnel. Chaque ordre a son résumé.
         {
             id: 'michna',
@@ -133,33 +160,6 @@
                 { id: 'nezikin', items: ['bkm', 'bmt', 'bba', 'san', 'mak', 'shu', 'edu', 'avz', 'avo', 'hor'] },
                 { id: 'kodashim', items: ['zev', 'men', 'hul', 'bek', 'ara', 'tem', 'ker', 'mei', 'tmd', 'mid', 'kin'] },
                 { id: 'tahorot', items: ['kel', 'oha', 'neg', 'par', 'toh', 'miq', 'nid', 'mac', 'zab', 'tvy', 'yad', 'ukz'] }
-            ]
-        },
-        // Les dix épreuves d'Abraham : deux avis (Bartenura, et Avot de Rabbi Natan 33), chacun numéroté de 1 à 10. Pas de prière dans cette section.
-        {
-            id: 'epreuves',
-            icon: '🔥',
-            count: 20,
-            themeMenu: true,
-            restartPerGroup: true,
-            groups: [
-                { id: 'bartenura', items: ['b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'b10'] },
-                { id: 'arn', items: ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10'] }
-            ]
-        },
-        // Les cinq Méguilot : un livre par thème, un chapitre par élément. Chaque chapitre est numéroté dans son livre.
-        {
-            id: 'megilot',
-            icon: '📕',
-            count: 39,
-            themeMenu: true,
-            restartPerGroup: true,
-            groups: [
-                { id: 'shir', items: ['sh1', 'sh2', 'sh3', 'sh4', 'sh5', 'sh6', 'sh7', 'sh8'] },
-                { id: 'ruth', items: ['ru1', 'ru2', 'ru3', 'ru4'] },
-                { id: 'eikha', items: ['ei1', 'ei2', 'ei3', 'ei4', 'ei5'] },
-                { id: 'kohelet', items: ['ko1', 'ko2', 'ko3', 'ko4', 'ko5', 'ko6', 'ko7', 'ko8', 'ko9', 'ko10', 'ko11', 'ko12'] },
-                { id: 'esther', items: ['es1', 'es2', 'es3', 'es4', 'es5', 'es6', 'es7', 'es8', 'es9', 'es10'] }
             ]
         }
     ];
