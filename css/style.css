@@ -7883,6 +7883,27 @@ input:not([type="range"]), label, select, summary, textarea {
     inset: 0;
 }
 
+/* Point de la position du joueur sur l'Atlas (js/location.js, js/atlas.js). */
+.atlas-me-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #2f6fdb;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 4px rgba(47, 111, 219, 0.3);
+}
+
+.location-ctrl-btn {
+    width: 29px;
+    height: 29px;
+    font-size: 18px;
+    line-height: 1;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    color: var(--text-dark);
+}
+
 .atlas-status {
     position: absolute;
     top: calc(env(safe-area-inset-top, 0px) + 68px);

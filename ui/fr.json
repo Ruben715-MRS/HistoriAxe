@@ -699,6 +699,13 @@
     "collapse_all": "Tout replier",
     "revise_axis": "Réviser cet axe : {axe}"
   },
+  "location": {
+    "ask_body": "Où se trouve ton histoire ? Autorise la localisation pour repérer d'un coup d'œil les événements qui se sont passés près de chez toi. Ta position reste sur ton appareil : elle n'est ni enregistrée ni partagée.",
+    "ask_ok": "Me localiser",
+    "locate_label": "Me localiser",
+    "unavailable": "Position indisponible. Autorise la localisation d'HistoriAxe dans les réglages de ton appareil pour te placer sur la carte.",
+    "you_are_here": "Tu es ici"
+  },
   "notifications": {
     "review_title": "🧠 Révisions du jour",
     "review_body": "{count} événements à réviser aujourd'hui — cinq minutes suffisent.",
@@ -716,7 +723,9 @@
     "comeback3_title": "🌍 L'Histoire t'attend",
     "comeback3_body": "Ça fait trois jours. Une partie de cinq minutes suffit pour reprendre le fil.",
     "comeback7_title": "📜 Une semaine sans toi",
-    "comeback7_body": "Reviens quand tu veux : ta progression et tes révisions sont toujours là."
+    "comeback7_body": "Reviens quand tu veux : ta progression et tes révisions sont toujours là.",
+    "ask_body": "Garde ta série de jours, sois prévenu quand un ami te lance un duel et reçois tes rappels de révision au bon moment. Tu peux changer ce choix à tout moment dans les réglages.",
+    "ask_ok": "Activer"
   },
   "scoring": {
     "title": "Comment sont calculés les points ?",
@@ -1690,7 +1699,7 @@
     "err_generic": "Une erreur est survenue. Réessayez.",
     "sign_out_confirm": "Se déconnecter ? Votre progression reste sauvegardée dans votre compte ; cet appareil repartira de zéro jusqu'à votre prochaine connexion.",
     "delete_confirm": "Supprimer définitivement votre compte, vos scores et votre progression sauvegardée ? Cette action est irréversible.",
-    "err_delete": "La suppression a échoué. Vérifiez votre connexion et réessayez, ou écrivez à ruben.arditti@gmail.com."
+    "err_delete": "La suppression a échoué. Vérifiez votre connexion et réessayez, ou écrivez à historiaxe.app@gmail.com."
   },
   "team": {
     "title": "Équipe",

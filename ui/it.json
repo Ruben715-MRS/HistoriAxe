@@ -673,6 +673,13 @@
     "collapse_all": "Comprimi tutto",
     "revise_axis": "Ripassa questo asse: {axe}"
   },
+  "location": {
+    "ask_body": "Dov'è la tua storia? Consenti la localizzazione per individuare a colpo d'occhio gli eventi accaduti vicino a te. La tua posizione resta sul dispositivo: non viene mai salvata né condivisa.",
+    "ask_ok": "Localizzami",
+    "locate_label": "Localizzami",
+    "unavailable": "Posizione non disponibile. Consenti la localizzazione per HistoriAxe nelle impostazioni del dispositivo per comparire sulla mappa.",
+    "you_are_here": "Sei qui"
+  },
   "notifications": {
     "review_title": "🧠 Ripasso di oggi",
     "review_body": "{count} eventi da ripassare oggi: bastano cinque minuti.",
@@ -690,7 +697,9 @@
     "comeback3_title": "🌍 La Storia ti aspetta",
     "comeback3_body": "Sono passati tre giorni. Una partita di cinque minuti basta per riprendere il filo.",
     "comeback7_title": "📜 Una settimana senza di te",
-    "comeback7_body": "Torna quando vuoi: i tuoi progressi e i tuoi ripassi sono ancora qui."
+    "comeback7_body": "Torna quando vuoi: i tuoi progressi e i tuoi ripassi sono ancora qui.",
+    "ask_body": "Mantieni la tua serie di giorni, ricevi un avviso quando un amico ti sfida a un duello e ricevi i promemoria di ripasso al momento giusto. Puoi cambiarlo in qualsiasi momento nelle impostazioni.",
+    "ask_ok": "Attiva"
   },
   "scoring": {
     "title": "Come vengono calcolati i punti?",
@@ -1661,7 +1670,7 @@
     "err_generic": "Si è verificato un errore. Riprova.",
     "sign_out_confirm": "Uscire? I tuoi progressi restano salvati nel tuo account; questo dispositivo ripartirà da zero fino al prossimo accesso.",
     "delete_confirm": "Eliminare definitivamente il tuo account, i tuoi punteggi e i progressi salvati? L'operazione è irreversibile.",
-    "err_delete": "Eliminazione non riuscita. Controlla la connessione e riprova, oppure scrivi a ruben.arditti@gmail.com."
+    "err_delete": "Eliminazione non riuscita. Controlla la connessione e riprova, oppure scrivi a historiaxe.app@gmail.com."
   },
   "team": {
     "title": "Squadra",

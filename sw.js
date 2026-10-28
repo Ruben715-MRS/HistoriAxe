@@ -87,6 +87,7 @@ const APP_SHELL_FILES = [
     './js/linkedEvents.js',
     './js/atlasCore.js',
     './js/geoPlace.js',
+    './js/location.js',
     './js/atlas.js',
     './js/gameModes.js',
     './js/classModes.js',

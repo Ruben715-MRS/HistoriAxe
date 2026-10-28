@@ -673,6 +673,13 @@
     "collapse_all": "Alle einklappen",
     "revise_axis": "Diesen Strang wiederholen: {axe}"
   },
+  "location": {
+    "ask_body": "Wo spielt deine Geschichte? Erlaube die Standortabfrage, um auf einen Blick die Ereignisse in deiner Nähe zu finden. Deine Position bleibt auf deinem Gerät: Sie wird nie gespeichert oder weitergegeben.",
+    "ask_ok": "Standort anzeigen",
+    "locate_label": "Standort anzeigen",
+    "unavailable": "Standort nicht verfügbar. Erlaube HistoriAxe den Standortzugriff in den Geräteeinstellungen, um dich auf der Karte zu zeigen.",
+    "you_are_here": "Du bist hier"
+  },
   "notifications": {
     "review_title": "🧠 Heutige Wiederholung",
     "review_body": "{count} Ereignisse heute zu wiederholen – fünf Minuten genügen.",
@@ -690,7 +697,9 @@
     "comeback3_title": "🌍 Die Geschichte wartet auf dich",
     "comeback3_body": "Es sind drei Tage vergangen. Eine Partie von fünf Minuten genügt, um wieder einzusteigen.",
     "comeback7_title": "📜 Eine Woche ohne dich",
-    "comeback7_body": "Komm zurück, wann du möchtest: Dein Fortschritt und deine Wiederholungen sind noch da."
+    "comeback7_body": "Komm zurück, wann du möchtest: Dein Fortschritt und deine Wiederholungen sind noch da.",
+    "ask_body": "Behalte deine Tagesserie, werde benachrichtigt, wenn dich ein Freund zu einem Duell herausfordert, und erhalte deine Wiederholungs-Erinnerungen zur richtigen Zeit. Du kannst das jederzeit in den Einstellungen ändern.",
+    "ask_ok": "Aktivieren"
   },
   "scoring": {
     "title": "Wie werden die Punkte berechnet?",
@@ -1661,7 +1670,7 @@
     "err_generic": "Ein Fehler ist aufgetreten. Bitte versuche es erneut.",
     "sign_out_confirm": "Abmelden? Dein Fortschritt bleibt in deinem Konto gespeichert; dieses Gerät beginnt bis zur nächsten Anmeldung von vorn.",
     "delete_confirm": "Dein Konto, deine Punkte und deinen gespeicherten Fortschritt endgültig löschen? Das kann nicht rückgängig gemacht werden.",
-    "err_delete": "Löschen fehlgeschlagen. Prüfe deine Verbindung und versuche es erneut, oder schreibe an ruben.arditti@gmail.com."
+    "err_delete": "Löschen fehlgeschlagen. Prüfe deine Verbindung und versuche es erneut, oder schreibe an historiaxe.app@gmail.com."
   },
   "team": {
     "title": "Team",

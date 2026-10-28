@@ -673,6 +673,13 @@
     "collapse_all": "Plegar todo",
     "revise_axis": "Repasar este eje: {axe}"
   },
+  "location": {
+    "ask_body": "¿Dónde está tu historia? Permite la ubicación para ver de un vistazo los acontecimientos que ocurrieron cerca de ti. Tu posición se queda en tu dispositivo: nunca se guarda ni se comparte.",
+    "ask_ok": "Localizarme",
+    "locate_label": "Localizarme",
+    "unavailable": "Ubicación no disponible. Permite la ubicación de HistoriAxe en los ajustes de tu dispositivo para situarte en el mapa.",
+    "you_are_here": "Estás aquí"
+  },
   "notifications": {
     "review_title": "🧠 Repaso de hoy",
     "review_body": "{count} acontecimientos por repasar hoy: bastan cinco minutos.",
@@ -690,7 +697,9 @@
     "comeback3_title": "🌍 La Historia te espera",
     "comeback3_body": "Han pasado tres días. Una partida de cinco minutos basta para retomar el hilo.",
     "comeback7_title": "📜 Una semana sin ti",
-    "comeback7_body": "Vuelve cuando quieras: tu progreso y tus repasos siguen ahí."
+    "comeback7_body": "Vuelve cuando quieras: tu progreso y tus repasos siguen ahí.",
+    "ask_body": "Mantén tu racha diaria, recibe aviso cuando un amigo te rete a un duelo y recibe tus recordatorios de repaso a tiempo. Puedes cambiarlo en cualquier momento en los ajustes.",
+    "ask_ok": "Activar"
   },
   "scoring": {
     "title": "¿Cómo se calculan los puntos?",
@@ -1661,7 +1670,7 @@
     "err_generic": "Se ha producido un error. Inténtalo de nuevo.",
     "sign_out_confirm": "¿Cerrar sesión? Tu progreso queda guardado en tu cuenta; este dispositivo empezará de cero hasta que vuelvas a iniciar sesión.",
     "delete_confirm": "¿Eliminar definitivamente tu cuenta, tus puntuaciones y tu progreso guardado? Esta acción es irreversible.",
-    "err_delete": "No se pudo eliminar. Comprueba tu conexión e inténtalo de nuevo, o escribe a ruben.arditti@gmail.com."
+    "err_delete": "No se pudo eliminar. Comprueba tu conexión e inténtalo de nuevo, o escribe a historiaxe.app@gmail.com."
   },
   "team": {
     "title": "Equipo",

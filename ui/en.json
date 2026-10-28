@@ -698,6 +698,13 @@
     "collapse_all": "Collapse all",
     "revise_axis": "Revise this strand: {axe}"
   },
+  "location": {
+    "ask_body": "Where is your history happening? Allow location to spot, at a glance, the events that took place near you. Your position stays on your device: it is never saved or shared.",
+    "ask_ok": "Locate me",
+    "locate_label": "Locate me",
+    "unavailable": "Location unavailable. Allow location for HistoriAxe in your device settings to place yourself on the map.",
+    "you_are_here": "You are here"
+  },
   "notifications": {
     "review_title": "🧠 Today's review",
     "review_body": "{count} events to review today — five minutes is enough.",
@@ -715,7 +722,9 @@
     "comeback3_title": "🌍 History is waiting for you",
     "comeback3_body": "It's been three days. A five-minute game is enough to pick up where you left off.",
     "comeback7_title": "📜 A week without you",
-    "comeback7_body": "Come back whenever you like: your progress and your reviews are still here."
+    "comeback7_body": "Come back whenever you like: your progress and your reviews are still here.",
+    "ask_body": "Keep your daily streak going, get notified when a friend challenges you to a duel, and receive your review reminders at the right time. You can change this at any time in Settings.",
+    "ask_ok": "Turn on"
   },
   "scoring": {
     "title": "How are points calculated?",
@@ -1689,7 +1698,7 @@
     "err_generic": "Something went wrong. Please try again.",
     "sign_out_confirm": "Sign out? Your progress stays saved in your account; this device will start from scratch until you sign in again.",
     "delete_confirm": "Permanently delete your account, your scores and your saved progress? This cannot be undone.",
-    "err_delete": "Deletion failed. Check your connection and try again, or write to ruben.arditti@gmail.com."
+    "err_delete": "Deletion failed. Check your connection and try again, or write to historiaxe.app@gmail.com."
   },
   "team": {
     "title": "Team",

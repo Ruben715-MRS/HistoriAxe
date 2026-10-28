@@ -8,13 +8,13 @@ const vm = require('node:vm');
 const SRS = require('../js/srs.js');
 const src = fs.readFileSync(path.join(__dirname, '..', 'js', 'notifications.js'), 'utf8');
 
-function load({ entries = [], enabled = true, supported = true, settings = {}, streak = 0, playedToday = false, pending = [] }) {
-    const calls = { scheduled: [], cancelled: [] };
+function load({ entries = [], enabled = true, supported = true, settings = {}, streak = 0, playedToday = false, pending = [], permission = 'granted' }) {
+    const calls = { scheduled: [], cancelled: [], confirms: [] };
     const sandbox = {
         window: supported ? { Capacitor: { isNativePlatform: () => true, Plugins: { LocalNotifications: {
             schedule: (o) => calls.scheduled.push(...o.notifications),
             cancel: (o) => calls.cancelled.push(...o.notifications.map((n) => n.id)),
-            checkPermissions: async () => ({ display: 'granted' }),
+            checkPermissions: async () => ({ display: permission }),
             requestPermissions: async () => ({ display: 'granted' }),
             getPending: async () => ({ notifications: pending.map((id) => ({ id })) })
         } } } } : {},
@@ -25,7 +25,8 @@ function load({ entries = [], enabled = true, supported = true, settings = {}, s
         streakLoad: () => ({ lastPlayedDate: playedToday ? '2026-01-01' : null }),
         getTodayStringUTC: () => '2026-01-01',
         t: (key, params) => (params ? `${key}:${params.count}` : key),
-        Date, Math, Promise, console
+        showConfirm: (message, onOk, options) => calls.confirms.push({ message, onOk, options }),
+        Date, Math, Promise, console, setTimeout
     };
     vm.createContext(sandbox);
     vm.runInContext(src + '\nthis.N = HistoriAxeNotifications;', sandbox);
@@ -71,6 +72,27 @@ test('enableAndSchedule et refreshAll programment les rappels de révision', asy
     b.N.refreshAll();
     await new Promise((r) => setTimeout(r, 10));
     assert.ok(b.calls.scheduled.some((n) => n.id === 1010));
+});
+
+test('askAfterFirstGame explique les rappels une seule fois, puis ne redemande plus', async () => {
+    const { N, calls } = load({ entries: many, permission: 'prompt' });
+    N.askAfterFirstGame();
+    await new Promise((r) => setTimeout(r, 1600));
+    assert.equal(calls.confirms.length, 1);
+    assert.equal(calls.confirms[0].message, 'notifications.ask_body');
+    calls.confirms[0].onOk();
+    await new Promise((r) => setTimeout(r, 10));
+    assert.ok(calls.scheduled.some((n) => n.id === 1010));
+    N.askAfterFirstGame();
+    await new Promise((r) => setTimeout(r, 1600));
+    assert.equal(calls.confirms.length, 1);
+});
+
+test('askAfterFirstGame ne montre rien si les notifications sont désactivées', async () => {
+    const { N, calls } = load({ entries: many, enabled: false, permission: 'prompt' });
+    N.askAfterFirstGame();
+    await new Promise((r) => setTimeout(r, 1600));
+    assert.equal(calls.confirms.length, 0);
 });
 
 const ids = (calls) => calls.scheduled.map((n) => n.id).sort((a, b) => a - b);
