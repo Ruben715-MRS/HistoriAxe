@@ -63,13 +63,19 @@ function loadHandlers() {
     const classroom = require('../api/classroom.js');
     const dbModule = require('../api/_lib/db.js');
     Module._load = original;
+    deviceTokens.clear();
     return { team, classroom, query: dbModule.query };
 }
 
+// Jeton de chaque appareil, tel que le client le garde : renvoyé par le serveur, présenté ensuite.
+const deviceTokens = new Map();
 async function call(handler, method, payload) {
+    const id = payload && payload.deviceId;
+    const headers = id && deviceTokens.has(id) ? { 'x-device-token': deviceTokens.get(id) } : {};
     const res = { headers: {}, setHeader(k, v) { this.headers[k] = v; }, status(n) { this.code = n; return this; }, json(o) { this.body = o; return this; }, end() { return this; } };
-    const req = method === 'GET' ? { method, query: payload } : { method, body: payload };
+    const req = method === 'GET' ? { method, query: payload, headers } : { method, body: payload, headers };
     await handler(req, res);
+    if (id && res.headers['X-Device-Token']) deviceTokens.set(id, res.headers['X-Device-Token']);
     return res;
 }
 
@@ -384,4 +390,22 @@ maybe('visible dans la recherche : décidé par le créateur, privé par défaut
     assert.equal((await call(h, 'POST', { action: 'profile', code, deviceId: TEACHER, listed: true })).body.listed, true);
     assert.equal((await call(h, 'GET', { code })).body.listed, true);
     assert.equal((await call(h, 'POST', { action: 'search', q: 'entre amis' })).body.teams[0].code, code);
+});
+
+maybe('lire une équipe ne donne les membres qu\'à ses membres et à l\'enseignant', async () => {
+    const { team: h } = loadHandlers();
+    const code = (await call(h, 'POST', { action: 'create', deviceId: TEACHER, name: '2de C' })).body.code;
+    await call(h, 'POST', { action: 'join', code, deviceId: dev(1), name: 'Léa' });
+
+    // Un inconnu, qui n'a que le code : le nombre de membres, pas leurs prénoms.
+    const dehors = (await call(h, 'GET', { code, deviceId: dev(9) })).body;
+    assert.deepEqual(dehors.members, []);
+    assert.equal(dehors.memberCount, 2);
+    assert.equal(dehors.me, null);
+
+    // Un membre, et l'enseignant, voient la liste ; seul l'enseignant reçoit les références.
+    assert.equal((await call(h, 'GET', { code, deviceId: dev(1) })).body.members.length, 1);
+    const prof = (await call(h, 'GET', { code, deviceId: TEACHER })).body;
+    assert.equal(prof.members.length, 1);
+    assert.ok(prof.members.every((m) => m.ref));
 });

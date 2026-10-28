@@ -38,12 +38,18 @@ function loadHandlers() {
     const friends = require('../api/friends.js');
     const dbModule = require('../api/_lib/db.js');
     Module._load = original;
+    deviceTokens.clear();
     return { friends, query: dbModule.query, ensureSchema: dbModule.ensureSchema };
 }
 
+// Jeton de chaque appareil, tel que le client le garde : renvoyé par le serveur, présenté ensuite.
+const deviceTokens = new Map();
 async function call(handler, payload, method = 'POST') {
+    const id = payload && payload.deviceId;
+    const headers = id && deviceTokens.has(id) ? { 'x-device-token': deviceTokens.get(id) } : {};
     const res = { headers: {}, setHeader(k, v) { this.headers[k] = v; }, status(n) { this.code = n; return this; }, json(o) { this.body = o; return this; }, end() { return this; } };
-    await handler({ method, body: payload }, res);
+    await handler({ method, headers, body: payload }, res);
+    if (id && res.headers['X-Device-Token']) deviceTokens.set(id, res.headers['X-Device-Token']);
     return res;
 }
 

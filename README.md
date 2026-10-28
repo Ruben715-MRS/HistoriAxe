@@ -70,6 +70,31 @@ dans `js/auth.js` et `api/_lib/auth.js`.
 Côté Supabase : Authentication → URL Configuration → Site URL
 `https://histori-axe.vercel.app`, Redirect URLs `https://histori-axe.vercel.app/**`.
 
+### Identité de l'appareil (jeton secret)
+
+Un joueur est identifié par un **jeton secret** tiré côté serveur, pas par le
+`deviceId` (généré par l'appareil, donc non prouvé). Le serveur ne garde que son
+empreinte SHA-256 (table `device_tokens`, `api/_lib/players.js`).
+
+- **Émission.** La première requête qui crée un joueur reçoit le jeton dans
+  l'en-tête de réponse `X-Device-Token`. Le client le garde en `localStorage`
+  (`historiaxe_device_token_v1`, jamais synchronisé) et le renvoie dans l'en-tête
+  `X-Device-Token` de chaque requête.
+- **Identifiants envoyés.** L'appareil envoie aussi `X-Device-Id` (son `deviceId`),
+  pour la migration. Aucun identifiant n'est plus dans l'URL des requêtes GET.
+- **Migration.** Un ancien client n'envoie que son `deviceId`. Tant que son joueur
+  n'a encore aucun jeton, il en reçoit un au premier appel. Ensuite, le `deviceId`
+  seul est refusé (401). Le premier appel reste donc un accord de confiance :
+  un attaquant qui connaît le `deviceId` d'un joueur n'ayant jamais rejoué depuis la
+  mise en place peut prendre son jeton.
+- **Liaison de compte.** Connecter un compte émet un jeton pour le joueur du compte.
+  Chaque appareil connecté a le sien.
+- **Déconnexion.** Le jeton est oublié avec le `deviceId`.
+
+Limite connue : si la réponse qui porte le jeton est perdue (coupure réseau au
+premier appel), le serveur a un jeton que le client n'a pas. Le joueur ne synchronise
+plus, jusqu'à réinstallation. Un mécanisme de récupération reste à écrire.
+
 ### 3. App native iOS (Capacitor)
 
 La PWA web fonctionne sans réglage supplémentaire (elle appelle `/api/...`
@@ -124,6 +149,20 @@ l'ordre du pack ni, pour l'essentiel, des ajouts de contenu.
 
 Modifier le score en local (DevTools, JS altéré...) n'a donc aucun effet :
 le serveur ne fait jamais confiance à un score, seulement aux actions.
+
+**Limite assumée : c'est un jeu de connaissance, pas une épreuve sans triche.**
+Les dates des événements sont dans `data/<lang>.json`, publics, et le tirage du
+jour se calcule dans le navigateur. Un joueur qui lit ces données peut donc
+envoyer une partie parfaite. Ce que le serveur fait pour limiter ça :
+
+- une manche placée en moins de **600 ms** (`MIN_HUMAN_ROUND_MS`, `js/dailyEngine.js`)
+  est suspecte ; trois manches suspectes marquent la partie ;
+- une partie suspecte est **exclue de tous les classements** (quotidien, hebdomadaire,
+  cumulé, duels, ligue) : elle reste enregistrée, pour mesure.
+
+Ces réglages renchérissent la triche sans la supprimer : une partie parfaite jouée
+au rythme minimal passe. Corriger vraiment supposerait que le client ne reçoive plus
+les dates (un aller-retour serveur par carte), ce qui casse le mode hors ligne.
 
 Le Défi hebdomadaire (`js/weekly.js`, `api/_lib/weeklyChallenge.js`,
 `api/weeklyScores.js`, `api/weeklyLeaderboard.js`) est un miroir volontaire

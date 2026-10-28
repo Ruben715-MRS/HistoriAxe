@@ -14,6 +14,8 @@ const GAMIFICATION_KEY = 'historiaxe_gamification_v1';
 const LANG_KEY = 'historiaxe_language_v1';
 const INSTALLED_LANGS_KEY = 'historiaxe_installed_languages_v1';
 const DEVICE_ID_KEY = 'historiaxe_device_id_v1';
+// Jeton secret de l'appareil, émis par le serveur (api/_lib/players.js). Propre à l'appareil : jamais synchronisé.
+const DEVICE_TOKEN_KEY = 'historiaxe_device_token_v1';
 const PSEUDO_KEY = 'historiaxe_pseudo_v1';
 const ONBOARDING_KEY = 'historiaxe_onboarding_v1';
 const RECAP_LOG_KEY = 'historiaxe_recap_log_v1';
@@ -715,8 +717,22 @@ function setDeviceId(newId) {
         if (newId) localStorage.setItem(DEVICE_ID_KEY, newId);
         else localStorage.removeItem(DEVICE_ID_KEY);
     } catch (e) {}
+    // Sans identifiant, le jeton n'a plus de sens : il est oublié avec lui. Un nouvel identifiant (connexion) garde
+    // le jeton reçu dans la même réponse.
+    if (!newId) deviceTokenSave('');
     syncMetaSave(null);
     return getOrCreateDeviceId();
+}
+
+function deviceTokenLoad() {
+    try { return localStorage.getItem(DEVICE_TOKEN_KEY) || ''; } catch (e) { return ''; }
+}
+
+function deviceTokenSave(token) {
+    try {
+        if (token) localStorage.setItem(DEVICE_TOKEN_KEY, token);
+        else localStorage.removeItem(DEVICE_TOKEN_KEY);
+    } catch (e) {}
 }
 
 // --- FUSION DE DEUX PROGRESSIONS (deux appareils sur un même compte) ---

@@ -211,3 +211,10 @@ test('replayDailyGame : une erreur ne rapporte aucun point', () => {
     const r = replayDailyGame(dates, [{ slotIndex: 0, elapsedMs: 5000 }]);
     assert.equal(r.score, 0);
 });
+
+test('replayDailyGame : une manche sous 600 ms est suspecte, à 600 ms elle ne l\'est plus', () => {
+    const orderedDates = [1000, 1100, 1200, 1300, 1400];
+    const run = (elapsedMs) => replayDailyGame(orderedDates, [0, 0, 0].map((slotIndex) => ({ slotIndex, elapsedMs })));
+    assert.equal(run(599).suspicious, true);
+    assert.equal(run(600).suspicious, false);
+});

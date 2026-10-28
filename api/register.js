@@ -3,7 +3,7 @@
 // lancement de l'app et à chaque changement de pseudo.
 
 const { ensureSchema } = require('./_lib/db');
-const { upsertPlayer, isValidDeviceId } = require('./_lib/players');
+const { identifyDevice, isValidDeviceId } = require('./_lib/players');
 const { handlePreflight, readJsonBody, sendError } = require('./_lib/http');
 
 module.exports = async (req, res) => {
@@ -22,7 +22,7 @@ module.exports = async (req, res) => {
         }
 
         await ensureSchema();
-        const player = await upsertPlayer(deviceId, pseudo);
+        const player = await identifyDevice(req, res, deviceId, { create: true, pseudo });
 
         return res.status(200).json({ playerId: player.id, pseudo: player.pseudo });
     } catch (err) {

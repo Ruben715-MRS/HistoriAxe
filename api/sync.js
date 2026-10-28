@@ -9,7 +9,7 @@
 // appareils (comme les ligues évoquées à terme) est un chantier ultérieur.
 
 const { ensureSchema, query } = require('./_lib/db');
-const { upsertPlayer, isValidDeviceId } = require('./_lib/players');
+const { identifyDevice } = require('./_lib/players');
 const { handlePreflight, readJsonBody, sendError } = require('./_lib/http');
 
 const MAX_PAYLOAD_BYTES = 512 * 1024; // 512 Ko : largement suffisant pour SRS/badges/favoris/contenu perso
@@ -21,24 +21,15 @@ module.exports = async (req, res) => {
         await ensureSchema();
 
         if (req.method === 'GET') {
-            const deviceId = req.query && req.query.deviceId;
-            if (!isValidDeviceId(deviceId)) {
-                return sendError(res, 400, 'deviceId invalide.');
-            }
-            const { rows } = await query(
-                `select pp.data, pp.updated_at, p.pseudo
-                 from players p
-                 left join player_progress pp on pp.player_id = p.id
-                 where p.device_id = $1`,
-                [deviceId]
-            );
-            if (!rows[0]) {
+            const player = await identifyDevice(req, res, (req.query || {}).deviceId);
+            if (!player) {
                 return res.status(200).json({ data: null, updatedAt: null, pseudo: null });
             }
+            const { rows } = await query('select data, updated_at from player_progress where player_id = $1', [player.id]);
             return res.status(200).json({
-                data: rows[0].data || null,
-                updatedAt: rows[0].updated_at,
-                pseudo: rows[0].pseudo,
+                data: rows[0] ? rows[0].data || null : null,
+                updatedAt: rows[0] ? rows[0].updated_at : null,
+                pseudo: player.pseudo,
             });
         }
 
@@ -46,9 +37,6 @@ module.exports = async (req, res) => {
             const body = await readJsonBody(req);
             const { deviceId, pseudo, data } = body || {};
 
-            if (!isValidDeviceId(deviceId)) {
-                return sendError(res, 400, 'deviceId invalide.');
-            }
             if (data == null || typeof data !== 'object' || Array.isArray(data)) {
                 return sendError(res, 400, 'data doit être un objet JSON.');
             }
@@ -57,7 +45,7 @@ module.exports = async (req, res) => {
                 return sendError(res, 413, 'Progression trop volumineuse.');
             }
 
-            const player = await upsertPlayer(deviceId, pseudo);
+            const player = await identifyDevice(req, res, deviceId, { create: true, pseudo });
             const { rows } = await query(
                 `insert into player_progress (player_id, data, updated_at)
                  values ($1, $2::jsonb, now())

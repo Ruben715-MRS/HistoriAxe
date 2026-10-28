@@ -12,6 +12,7 @@ const { ensureSchema, query } = require('./_lib/db');
 const { SUPPORTED_LANGS } = require('./_lib/dataset');
 const DailyEngine = require('../js/dailyEngine.js');
 const { handlePreflight, sendError } = require('./_lib/http');
+const { identifyOptional, requestDeviceId } = require('./_lib/players');
 
 const DEFAULT_LIMIT = 10;
 const MAX_LIMIT = 50;
@@ -28,9 +29,10 @@ module.exports = async (req, res) => {
         const scope = q.scope === 'allTime' ? 'allTime' : 'daily';
         const lang = typeof q.lang === 'string' && SUPPORTED_LANGS.includes(q.lang) ? q.lang : 'fr';
         const limit = Math.max(1, Math.min(MAX_LIMIT, parseInt(q.limit, 10) || DEFAULT_LIMIT));
-        const deviceId = typeof q.deviceId === 'string' && q.deviceId ? q.deviceId : null;
+        const deviceId = requestDeviceId(req, typeof q.deviceId === 'string' ? q.deviceId : '');
 
         await ensureSchema();
+        const me0 = await identifyOptional(req, res, deviceId);
 
         if (scope === 'daily') {
             const date = typeof q.date === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(q.date)
@@ -47,7 +49,7 @@ module.exports = async (req, res) => {
                         rank() over (order by s.score desc, s.time_seconds asc) as rank
                  from daily_scores s
                  join players p on p.id = s.player_id
-                 where s.challenge_date = $1 and s.lang = $2
+                 where s.challenge_date = $1 and s.lang = $2 and not s.suspicious
                  order by s.score desc, s.time_seconds asc
                  limit $3`,
                 [date, lang, limit]
@@ -62,19 +64,19 @@ module.exports = async (req, res) => {
             }));
 
             let me = null;
-            if (deviceId) {
+            if (me0) {
                 const mine = await query(
                     `select p.pseudo, s.score, s.time_seconds, s.won
                      from daily_scores s
                      join players p on p.id = s.player_id
-                     where s.challenge_date = $1 and s.lang = $2 and p.device_id = $3`,
-                    [date, lang, deviceId]
+                     where s.challenge_date = $1 and s.lang = $2 and not s.suspicious and p.id = $3`,
+                    [date, lang, me0.id]
                 );
                 if (mine.rows[0]) {
                     const r = mine.rows[0];
                     const rankResult = await query(
                         `select count(*)::int + 1 as rank from daily_scores
-                         where challenge_date = $1 and lang = $2
+                         where challenge_date = $1 and lang = $2 and not suspicious
                            and (score > $3 or (score = $3 and time_seconds < $4))`,
                         [date, lang, r.score, r.time_seconds]
                     );
@@ -83,7 +85,7 @@ module.exports = async (req, res) => {
             }
 
             const totalResult = await query(
-                'select count(*)::int as total from daily_scores where challenge_date = $1 and lang = $2',
+                'select count(*)::int as total from daily_scores where challenge_date = $1 and lang = $2 and not suspicious',
                 [date, lang]
             );
 
@@ -98,7 +100,7 @@ module.exports = async (req, res) => {
                     rank() over (order by sum(s.score) desc) as rank
              from daily_scores s
              join players p on p.id = s.player_id
-             where s.lang = $1
+             where s.lang = $1 and not s.suspicious
              group by p.id, p.pseudo
              order by total_score desc
              limit $2`,
@@ -113,16 +115,16 @@ module.exports = async (req, res) => {
         }));
 
         let me = null;
-        if (deviceId) {
+        if (me0) {
             const mine = await query(
                 `select p.pseudo, coalesce(sum(s.score), 0)::int as total_score,
                         count(s.player_id)::int as days_played,
                         count(*) filter (where s.won)::int as wins
                  from players p
-                 left join daily_scores s on s.player_id = p.id and s.lang = $1
-                 where p.device_id = $2
+                 left join daily_scores s on s.player_id = p.id and s.lang = $1 and not s.suspicious
+                 where p.id = $2
                  group by p.id, p.pseudo`,
-                [lang, deviceId]
+                [lang, me0.id]
             );
             if (mine.rows[0]) {
                 const r = mine.rows[0];
@@ -130,7 +132,7 @@ module.exports = async (req, res) => {
                     `select count(*)::int + 1 as rank from (
                         select s.player_id, sum(s.score)::int as total_score
                         from daily_scores s
-                        where s.lang = $1
+                        where s.lang = $1 and not s.suspicious
                         group by s.player_id
                      ) totals
                      where totals.total_score > $2`,

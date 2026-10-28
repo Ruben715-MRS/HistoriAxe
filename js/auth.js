@@ -40,6 +40,22 @@ var Auth = (function () {
     function loadSession() {
         try { return JSON.parse(localStorage.getItem(SESSION_KEY)) || null; } catch (e) { return null; }
     }
+    // Retire du cache du service worker toute réponse de l'API : elles portent les données du compte qui se
+    // déconnecte, et resteraient servies hors ligne à la personne suivante sur cet appareil (voir sw.js).
+    function clearApiCaches() {
+        if (!('caches' in window)) return Promise.resolve();
+        return caches.keys().then(function (names) {
+            return Promise.all(names.map(function (name) {
+                return caches.open(name).then(function (cache) {
+                    return cache.keys().then(function (reqs) {
+                        return Promise.all(reqs.filter(function (req) {
+                            return new URL(req.url).pathname.indexOf('/api/') === 0;
+                        }).map(function (req) { return cache.delete(req); }));
+                    });
+                });
+            }));
+        }).catch(function () {});
+    }
     function saveSession(s) {
         try {
             if (s) localStorage.setItem(SESSION_KEY, JSON.stringify(s));
@@ -318,7 +334,7 @@ var Auth = (function () {
             resetAllGameData();
             pseudoSave('');
             setDeviceId(null);
-            window.location.reload();
+            clearApiCaches().then(function () { window.location.reload(); });
         },
 
         deleteAccount: function () {
@@ -333,7 +349,7 @@ var Auth = (function () {
                 historyOutboxSave([]);
                 pseudoSave('');
                 setDeviceId(null);
-                window.location.reload();
+                return clearApiCaches().then(function () { window.location.reload(); });
             });
         },
 

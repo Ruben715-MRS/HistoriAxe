@@ -81,13 +81,19 @@ function loadHandler() {
     const handler = require('../api/classroom.js');
     const dbModule = require('../api/_lib/db.js');
     Module._load = original;
+    deviceTokens.clear();
     return { handler, query: dbModule.query };
 }
 
+// Jeton de chaque appareil, tel que le client le garde : renvoyé par le serveur, présenté ensuite.
+const deviceTokens = new Map();
 async function call(handler, method, payload) {
+    const id = payload && payload.deviceId;
+    const headers = id && deviceTokens.has(id) ? { 'x-device-token': deviceTokens.get(id) } : {};
     const res = { headers: {}, setHeader(k, v) { this.headers[k] = v; }, status(n) { this.code = n; return this; }, json(o) { this.body = o; return this; }, end() { return this; } };
-    const req = method === 'GET' ? { method, query: payload } : { method, body: payload };
+    const req = method === 'GET' ? { method, query: payload, headers } : { method, body: payload, headers };
     await handler(req, res);
+    if (id && res.headers['X-Device-Token']) deviceTokens.set(id, res.headers['X-Device-Token']);
     return res;
 }
 
@@ -248,4 +254,21 @@ test('le rejeu sans élimination : toutes les manches se jouent, avec le détail
     assert.deepEqual(classe.details.map((d) => d.correct), [false, false, false]);
     const defi = DailyEngine.replayDailyGame(dates, rounds);
     assert.equal(defi.roundsPlayed, 3, 'trois erreurs = trois vies : la 3e manche est la dernière');
+});
+
+maybe('lire une séance ne donne les prénoms qu\'à l\'enseignant et aux élèves inscrits', async () => {
+    const { handler } = loadHandler();
+    const { loadLangEvents } = require('../api/_lib/dataset.js');
+    const seen = new Set();
+    const deck = [];
+    for (const e of loadLangEvents('fr')) { if (!seen.has(e.date)) { seen.add(e.date); deck.push(e); } if (deck.length === 8) break; }
+    const ids = deck.map((e) => e.id);
+    const code = (await call(handler, 'POST', { action: 'create', deviceId: TEACHER, lang: 'fr', themeName: 'T', eventIds: ids })).body.code;
+    await call(handler, 'POST', { action: 'join', code, deviceId: dev(1), name: 'Léa' });
+
+    const dehors = (await call(handler, 'GET', { code, deviceId: dev(9) })).body;
+    assert.deepEqual(dehors.players, []);
+    assert.equal(dehors.playerCount, 1, 'le nombre d\'élèves reste visible');
+    assert.equal((await call(handler, 'GET', { code, deviceId: dev(1) })).body.players.length, 1);
+    assert.equal((await call(handler, 'GET', { code, deviceId: TEACHER })).body.players[0].name, 'Léa');
 });

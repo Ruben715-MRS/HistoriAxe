@@ -11,7 +11,7 @@
 //             totalPlayers, isNewBest, suspicious }
 
 const { ensureSchema, query } = require('./_lib/db');
-const { upsertPlayer, isValidDeviceId } = require('./_lib/players');
+const { identifyDevice, isValidDeviceId } = require('./_lib/players');
 const { SUPPORTED_LANGS } = require('./_lib/dataset');
 const { getDailyOrderedItems, resolveChallengeDate } = require('./_lib/dailyChallenge');
 const { drawMatches, STALE_DRAW_MESSAGE } = require('./_lib/drawCheck');
@@ -46,7 +46,7 @@ module.exports = async (req, res) => {
 
         await ensureSchema();
 
-        const player = await upsertPlayer(deviceId, pseudo);
+        const player = await identifyDevice(req, res, deviceId, { create: true, pseudo });
         const challengeDate = resolveChallengeDate(typeof date === 'string' ? date : '', new Date());
 
         const orderedItems = getDailyOrderedItems(lang, challengeDate);
@@ -88,12 +88,12 @@ module.exports = async (req, res) => {
         const rankResult = await query(
             `select count(*)::int + 1 as rank
              from daily_scores
-             where challenge_date = $1 and lang = $2
+             where challenge_date = $1 and lang = $2 and not suspicious
                and (score > $3 or (score = $3 and time_seconds < $4))`,
             [challengeDate, lang, bestScore, bestTime]
         );
         const totalResult = await query(
-            'select count(*)::int as total from daily_scores where challenge_date = $1 and lang = $2',
+            'select count(*)::int as total from daily_scores where challenge_date = $1 and lang = $2 and not suspicious',
             [challengeDate, lang]
         );
 

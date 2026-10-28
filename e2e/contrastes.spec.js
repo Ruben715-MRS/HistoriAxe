@@ -59,8 +59,8 @@ const decrireAxe = e =>
 for (const [apparence, nom] of THEMES) {
     test(`axe : aucun texte sous le contraste exigé — thème ${nom}`, async ({ page }) => {
         // Le parcours s'allonge à chaque écran ajouté (e2e/ecrans.js) : une analyse axe par étape, environ 3 s chacune.
-        // Mesuré : environ 165 s sur un poste de travail seul, d'où une marge au-delà de 150 s.
-        test.setTimeout(300_000);
+        // Mesuré : 165 s en série, plus de 5 min à deux workers : le délai laisse de la marge.
+        test.setTimeout(600_000);
         await page.addScriptTag({ path: AXE });
         await appliquerLApparence(page, apparence);
 

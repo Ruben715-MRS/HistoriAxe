@@ -50,12 +50,20 @@ var HistoriAxeAPI = (function () {
         var url = API_BASE + path;
         var opts = { method: method, headers: {} };
         if (accessToken) opts.headers['Authorization'] = 'Bearer ' + accessToken;
+        // Identité de l'appareil : en-têtes, jamais dans l'URL. Le jeton (une fois émis) identifie le joueur ;
+        // le deviceId sert aux anciens serveurs et à la première utilisation.
+        var deviceId = typeof getOrCreateDeviceId === 'function' ? getOrCreateDeviceId() : '';
+        if (deviceId) opts.headers['X-Device-Id'] = deviceId;
+        var deviceToken = typeof deviceTokenLoad === 'function' ? deviceTokenLoad() : '';
+        if (deviceToken) opts.headers['X-Device-Token'] = deviceToken;
         if (body !== undefined) {
             opts.headers['Content-Type'] = 'application/json';
             opts.body = JSON.stringify(body);
         }
         return withTimeout(fetch(url, opts), TIMEOUT_MS)
             .then(function (res) {
+                var issued = res.headers && res.headers.get('X-Device-Token');
+                if (issued && typeof deviceTokenSave === 'function') deviceTokenSave(issued);
                 return res.json().catch(function () { return {}; }).then(function (data) {
                     if (!res.ok) return { ok: false, status: res.status, error: (data && data.error) || ('HTTP ' + res.status) };
                     return { ok: true, data: data };
@@ -86,13 +94,13 @@ var HistoriAxeAPI = (function () {
         getDailyLeaderboard: function (opts) {
             opts = opts || {};
             return request('GET', '/api/leaderboard' + qs({
-                scope: 'daily', lang: opts.lang, date: opts.date, deviceId: opts.deviceId, limit: opts.limit
+                scope: 'daily', lang: opts.lang, date: opts.date, limit: opts.limit
             }));
         },
         getAllTimeLeaderboard: function (opts) {
             opts = opts || {};
             return request('GET', '/api/leaderboard' + qs({
-                scope: 'allTime', lang: opts.lang, deviceId: opts.deviceId, limit: opts.limit
+                scope: 'allTime', lang: opts.lang, limit: opts.limit
             }));
         },
         // Défi hebdomadaire (30 événements/semaine ISO) — à ne pas confondre
@@ -105,14 +113,14 @@ var HistoriAxeAPI = (function () {
         getWeeklyChallengeLeaderboard: function (opts) {
             opts = opts || {};
             return request('GET', '/api/weeklyLeaderboard' + qs({
-                scope: 'weekly', lang: opts.lang, isoWeek: opts.isoWeek, deviceId: opts.deviceId, limit: opts.limit
+                scope: 'weekly', lang: opts.lang, isoWeek: opts.isoWeek, limit: opts.limit
             }));
         },
         // scope : 'group' (ligue), 'country' (classement national) ou 'world' (mondial) — voir api/league.js
         getWeeklyLeague: function (opts) {
             opts = opts || {};
             return request('GET', '/api/league' + qs({
-                isoWeek: opts.isoWeek, deviceId: opts.deviceId, limit: opts.limit, scope: opts.scope
+                isoWeek: opts.isoWeek, limit: opts.limit, scope: opts.scope
             }));
         },
         // country : code ISO de la liste fermée, '' pour retirer le pays
@@ -125,10 +133,10 @@ var HistoriAxeAPI = (function () {
             return request('POST', '/api/duels', { deviceId: deviceId, pseudo: pseudo, lang: lang, date: date });
         },
         getDuel: function (id, deviceId) {
-            return request('GET', '/api/duels' + qs({ id: id, deviceId: deviceId }));
+            return request('GET', '/api/duels' + qs({ id: id }));
         },
         getMyDuels: function (deviceId) {
-            return request('GET', '/api/duels' + qs({ mine: '1', deviceId: deviceId }));
+            return request('GET', '/api/duels' + qs({ mine: '1' }));
         },
         ackDuel: function (id, deviceId) {
             return request('PATCH', '/api/duels', { id: id, deviceId: deviceId });
@@ -139,7 +147,7 @@ var HistoriAxeAPI = (function () {
         // d'origine https utilisable pour un lien, voir NATIVE_APP_API_BASE_URL).
         getApiBase: function () { return API_BASE; },
         pullProgress: function (deviceId) {
-            return request('GET', '/api/sync' + qs({ deviceId: deviceId }));
+            return request('GET', '/api/sync');
         },
         pushProgress: function (deviceId, pseudo, data) {
             return request('POST', '/api/sync', { deviceId: deviceId, pseudo: pseudo, data: data });
@@ -149,14 +157,14 @@ var HistoriAxeAPI = (function () {
             return request('POST', '/api/classroom', Object.assign({ action: action }, payload));
         },
         getClassroom: function (code, deviceId) {
-            return request('GET', '/api/classroom' + qs({ code: code, deviceId: deviceId }));
+            return request('GET', '/api/classroom' + qs({ code: code }));
         },
         // Équipe de classe (api/team.js) : action ∈ create | join | contribute | claim | kick | leave | delete | badge | profile | level | search | challenge | challenge_reply | challenge_cancel.
         team: function (action, payload) {
             return request('POST', '/api/team', Object.assign({ action: action }, payload));
         },
         getTeam: function (code, deviceId) {
-            return request('GET', '/api/team' + qs({ code: code, deviceId: deviceId }));
+            return request('GET', '/api/team' + qs({ code: code }));
         },
         // Amis (api/friends.js) : action ∈ list | request | respond | cancel | remove | block | unblock | settings.
         friends: function (action, payload) {

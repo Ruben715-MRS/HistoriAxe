@@ -212,6 +212,11 @@
     //
     // options.lives : nombre de vies (3 par défaut ; Infinity pour une partie sans élimination, comme en
     // classe — voir api/classroom.js). result.details : { correct } pour chaque manche jouée, dans l'ordre.
+    // Temps minimal, en ms, qu'un humain met pour placer une carte. En dessous, la manche est suspecte ; trois manches
+    // suspectes marquent la partie (exclue des classements). 120 ms ne s'appuyait sur rien : une partie connue
+    // d'avance passait avec 120 ms par carte.
+    var MIN_HUMAN_ROUND_MS = 600;
+
     function replayDailyGame(orderedDates, rounds, options) {
         orderedDates = (orderedDates || []).map(Number).filter(function (d) { return isFinite(d); });
         rounds = Array.isArray(rounds) ? rounds : [];
@@ -259,7 +264,7 @@
 
             var elapsedMs = Number(round.elapsedMs);
             if (!isFinite(elapsedMs) || elapsedMs < 0) elapsedMs = 0;
-            if (elapsedMs < 120) suspiciousRounds++; // temps de réaction humain implausible
+            if (elapsedMs < MIN_HUMAN_ROUND_MS) suspiciousRounds++; // temps de réaction implausible pour un humain
             elapsedMs = Math.min(Math.max(elapsedMs, 0), 120000); // borne : 0 à 120s/manche
             timeSeconds += elapsedMs / 1000;
             roundsPlayed++;

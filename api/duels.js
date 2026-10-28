@@ -15,7 +15,7 @@
 
 const crypto = require('crypto');
 const { ensureSchema, query } = require('./_lib/db');
-const { upsertPlayer, findPlayerByDeviceId, isValidDeviceId } = require('./_lib/players');
+const { identifyDevice, identifyOptional, isValidDeviceId, requestDeviceId } = require('./_lib/players');
 const { SUPPORTED_LANGS } = require('./_lib/dataset');
 const DailyEngine = require('../js/dailyEngine.js');
 const { handlePreflight, readJsonBody, sendError } = require('./_lib/http');
@@ -74,7 +74,7 @@ module.exports = async (req, res) => {
                 ? body.date
                 : DailyEngine.getDailySeedString(new Date());
 
-            const player = await upsertPlayer(deviceId, pseudo);
+            const player = await identifyDevice(req, res, deviceId, { create: true, pseudo });
             const id = await createDuel(player.id, challengeDate, lang);
 
             return res.status(200).json({ id, challengeDate, lang });
@@ -83,10 +83,10 @@ module.exports = async (req, res) => {
         if (req.method === 'PATCH') {
             const body = await readJsonBody(req);
             const { id, deviceId } = body || {};
-            if (!DUEL_ID_RE.test(id || '') || !isValidDeviceId(deviceId)) {
+            if (!DUEL_ID_RE.test(id || '')) {
                 return sendError(res, 400, 'Requête invalide.');
             }
-            const me = await findPlayerByDeviceId(deviceId);
+            const me = await identifyDevice(req, res, deviceId);
             if (!me) return sendError(res, 404, 'Joueur inconnu.');
 
             await query('update duels set notified = true where id = $1 and creator_player_id = $2', [id, me.id]);
@@ -98,9 +98,8 @@ module.exports = async (req, res) => {
 
             // --- Mes duels perdus, pas encore vus ---
             if (q.mine === '1') {
-                const deviceId = typeof q.deviceId === 'string' ? q.deviceId : '';
-                if (!isValidDeviceId(deviceId)) return sendError(res, 400, 'deviceId invalide.');
-                const me = await findPlayerByDeviceId(deviceId);
+                const deviceId = requestDeviceId(req, typeof q.deviceId === 'string' ? q.deviceId : '');
+                const me = await identifyOptional(req, res, deviceId);
                 if (!me) return res.status(200).json({ duels: [] });
 
                 // Suppose que le créateur a déjà joué au moment de la création du
@@ -113,10 +112,10 @@ module.exports = async (req, res) => {
                             sc.score as creator_score
                      from duels d
                      join daily_scores so on so.player_id = d.opponent_player_id
-                         and so.challenge_date = d.challenge_date and so.lang = d.lang
+                         and so.challenge_date = d.challenge_date and so.lang = d.lang and not so.suspicious
                      join players po on po.id = d.opponent_player_id
                      join daily_scores sc on sc.player_id = d.creator_player_id
-                         and sc.challenge_date = d.challenge_date and sc.lang = d.lang
+                         and sc.challenge_date = d.challenge_date and sc.lang = d.lang and not sc.suspicious
                      where d.creator_player_id = $1
                        and d.notified = false
                        and so.score > sc.score
@@ -148,9 +147,9 @@ module.exports = async (req, res) => {
             const creatorScore = await fetchScore(duel.creator_player_id, duel.challenge_date, duel.lang);
 
             let myScore = null;
-            const deviceId = typeof q.deviceId === 'string' ? q.deviceId : '';
-            if (deviceId && isValidDeviceId(deviceId)) {
-                const me = await upsertPlayer(deviceId, null);
+            const deviceId = requestDeviceId(req, typeof q.deviceId === 'string' ? q.deviceId : '');
+            const me = await identifyOptional(req, res, deviceId);
+            if (me) {
                 if (me.id !== duel.creator_player_id) {
                     // Premier ouvreur du lien qui n'est pas le créateur : enregistré
                     // comme adversaire, au plus une fois (un duel n'a qu'un adversaire).

@@ -24,7 +24,7 @@
 
 const crypto = require('crypto');
 const { ensureSchema, getPool, query } = require('./_lib/db');
-const { isValidDeviceId, sanitizePseudo } = require('./_lib/players');
+const { identifyDevice, issueDeviceToken, isValidDeviceId, sanitizePseudo } = require('./_lib/players');
 const { getAuthUser, deleteAuthUser } = require('./_lib/auth');
 const { handlePreflight, readJsonBody, sendError } = require('./_lib/http');
 const { normalizeBatch, pageParams } = require('./_lib/history');
@@ -84,23 +84,25 @@ async function mergePlayerInto(client, fromId, toId) {
     await client.query('delete from players where id = $1', [fromId]);
 }
 
-async function linkAccount(user, deviceId, pseudo) {
+async function linkAccount(user, req, res, deviceId, pseudo) {
+    // L'appareil qui se connecte doit prouver qu'il est bien le sien (jeton) : un deviceId seul ne suffit pas.
+    const current = await identifyDevice(req, res, deviceId);
     const client = await getPool().connect();
     try {
         await client.query('begin');
         const acct = (await client.query(
             'select id, device_id, pseudo from players where auth_user_id = $1 for update', [user.id]
         )).rows[0];
-        const dev = (await client.query(
-            'select id, auth_user_id from players where device_id = $1 for update', [deviceId]
-        )).rows[0];
+        const dev = current ? (await client.query(
+            'select id, auth_user_id from players where id = $1 for update', [current.id]
+        )).rows[0] : undefined;
         let result;
 
         if (!acct) {
             if (dev && !dev.auth_user_id) {
                 const { rows } = await client.query(
                     `update players set auth_user_id = $1, pseudo = coalesce($2, pseudo), last_seen_at = now()
-                     where id = $3 returning device_id, pseudo`,
+                     where id = $3 returning id, device_id, pseudo`,
                     [user.id, pseudo, dev.id]
                 );
                 result = rows[0];
@@ -110,7 +112,7 @@ async function linkAccount(user, deviceId, pseudo) {
                 const { rows } = await client.query(
                     `insert into players (id, device_id, pseudo, auth_user_id, created_at, last_seen_at)
                      values ($1, $2, coalesce($3, 'Anonyme'), $4, now(), now())
-                     returning device_id, pseudo`,
+                     returning id, device_id, pseudo`,
                     [crypto.randomUUID(), newDeviceId, pseudo, user.id]
                 );
                 result = rows[0];
@@ -121,10 +123,12 @@ async function linkAccount(user, deviceId, pseudo) {
             }
             // Le pseudo du compte prime : c'est celui que le joueur retrouve partout.
             await client.query('update players set last_seen_at = now() where id = $1', [acct.id]);
-            result = { device_id: acct.device_id, pseudo: acct.pseudo };
+            result = { id: acct.id, device_id: acct.device_id, pseudo: acct.pseudo };
         }
 
         await client.query('commit');
+        // Jeton de l'appareil connecté : il s'ajoute à ceux du compte (un par appareil).
+        await issueDeviceToken(res, result.id);
         return { deviceId: result.device_id, pseudo: result.pseudo, email: user.email };
     } catch (err) {
         await client.query('rollback').catch(() => {});
@@ -207,7 +211,7 @@ module.exports = async (req, res) => {
         if (req.method === 'POST') {
             const body = (await readJsonBody(req)) || {};
             if (!isValidDeviceId(body.deviceId)) return sendError(res, 400, 'deviceId invalide.');
-            const linked = await linkAccount(user, body.deviceId, sanitizePseudo(body.pseudo));
+            const linked = await linkAccount(user, req, res, body.deviceId, sanitizePseudo(body.pseudo));
             return res.status(200).json(linked);
         }
 

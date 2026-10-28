@@ -235,9 +235,20 @@ function precachePackSkeleton() {
 }
 
 // --- ACTIVATION : Nettoyage des anciens caches obsolètes ---
+// Les réponses de l'API (/api/…) ne sont jamais mises en cache : elles portent des données personnelles (progression,
+// historique de parties, prénoms d'élèves), et des identifiants d'appareil apparaissent dans leur URL. Une entrée
+// déjà stockée par une version antérieure est retirée à l'activation, puis à chaque déconnexion (js/auth.js).
+function purgeApiResponses() {
+    return caches.keys().then((names) => Promise.all(names.map((name) =>
+        caches.open(name).then((cache) => cache.keys().then((reqs) => Promise.all(
+            reqs.filter((req) => new URL(req.url).pathname.startsWith('/api/')).map((req) => cache.delete(req))
+        )))
+    )));
+}
+
 self.addEventListener('activate', (event) => {
     event.waitUntil(
-        caches.keys().then((keys) => {
+        purgeApiResponses().then(() => caches.keys()).then((keys) => {
             return Promise.all(
                 keys.map((key) => {
                     if (key !== APP_SHELL_CACHE && key !== DATA_CACHE && key !== PORTRAIT_CACHE) {
@@ -256,6 +267,12 @@ self.addEventListener('fetch', (event) => {
 
     // Ne pas intercepter les requêtes externes (Wikipédia, polices Google CDN si en ligne)
     if (url.origin !== self.location.origin) {
+        return;
+    }
+
+    // API : réseau seul, jamais de cache (voir purgeApiResponses). Hors ligne, la requête échoue comme prévu.
+    if (url.pathname.startsWith('/api/')) {
+        event.respondWith(fetch(event.request));
         return;
     }
 

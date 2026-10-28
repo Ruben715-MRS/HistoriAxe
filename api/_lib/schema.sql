@@ -17,6 +17,14 @@ create table if not exists players (
     last_seen_at  timestamptz not null default now()
 );
 
+-- Jetons secrets des appareils (voir api/_lib/players.js) : seule l'empreinte SHA-256 est gardée.
+create table if not exists device_tokens (
+    token_hash  text primary key,
+    player_id   uuid not null references players(id) on delete cascade,
+    created_at  timestamptz not null default now()
+);
+create index if not exists idx_device_tokens_player on device_tokens (player_id);
+
 -- Comptes (voir api/account.js) : identifiant Supabase Auth du joueur connecté.
 alter table players add column if not exists auth_user_id uuid unique;
 

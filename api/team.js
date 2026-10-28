@@ -30,7 +30,7 @@
 // part du coffre.
 
 const { ensureSchema, query } = require('./_lib/db');
-const { upsertPlayer, isValidDeviceId } = require('./_lib/players');
+const { identifyDevice, identifyOptional, requestDeviceId } = require('./_lib/players');
 const { handlePreflight, readJsonBody, sendError } = require('./_lib/http');
 const T = require('./_lib/team');
 const { creditTeam } = require('./_lib/teamStore');
@@ -49,8 +49,10 @@ function httpError(status, message) {
     return err;
 }
 
-async function playerOf(deviceId) {
-    const { rows } = await query('select id, auth_user_id is not null as account, team_points from players where device_id = $1', [deviceId]);
+// Le joueur appelant (identifié par le handler), avec ses champs d'équipe.
+async function playerOf(caller) {
+    if (!caller) return null;
+    const { rows } = await query('select id, auth_user_id is not null as account, team_points from players where id = $1', [caller.id]);
     return rows[0] || null;
 }
 
@@ -65,7 +67,6 @@ async function loadTeam(code) {
 function readCode(body) {
     const code = T.normalizeCode(body.code);
     if (!code) throw httpError(400, 'Code invalide : 6 caractères.');
-    if (!isValidDeviceId(body.deviceId)) throw httpError(400, 'deviceId invalide.');
     return code;
 }
 
@@ -89,9 +90,7 @@ function readProfile(body) {
     return out;
 }
 
-async function createTeam(body) {
-    const { deviceId, pseudo } = body;
-    if (!isValidDeviceId(deviceId)) throw httpError(400, 'deviceId invalide.');
+async function createTeam(body, caller) {
     const name = T.sanitizeTeamName(body.name);
     if (!name) throw httpError(400, 'Donnez un nom à l\'équipe.');
     // L'écusson est facultatif à la création (un client plus ancien n'en envoie pas) ; une équipe neuve n'a
@@ -104,7 +103,7 @@ async function createTeam(body) {
     const profile = readProfile(body);
     const leaderLevel = body.level === undefined ? 1 : Profile.sanitizeLevel(body.level);
     if (!leaderLevel) throw httpError(400, 'Niveau invalide.');
-    const teacher = await upsertPlayer(deviceId, pseudo);
+    const teacher = caller;
     await query(`delete from class_teams where last_activity_at < ${RETENTION_SQL}`);
     for (let i = 0; i < MAX_CREATE_RETRIES; i++) {
         const code = T.generateCode();
@@ -122,14 +121,14 @@ async function createTeam(body) {
     throw httpError(500, 'Impossible de créer l\'équipe, réessayez.');
 }
 
-async function joinTeam(body) {
+async function joinTeam(body, caller) {
     const code = readCode(body);
     const name = T.sanitizeName(body.name);
     if (!name) throw httpError(400, 'Indiquez votre prénom.');
     const team = await loadTeam(code);
     const level = body.level === undefined ? 1 : Profile.sanitizeLevel(body.level);
     if (!level) throw httpError(400, 'Niveau invalide.');
-    const player = await upsertPlayer(body.deviceId, null);
+    const player = caller;
     const already = await query('select 1 from team_members where code = $1 and player_id = $2', [code, player.id]);
     if (!already.rows[0]) {
         const count = await query('select count(*)::int as n from team_members where code = $1 and player_id <> $2', [code, team.teacher_id]);
@@ -144,9 +143,9 @@ async function joinTeam(body) {
     return { code };
 }
 
-async function contribute(body) {
+async function contribute(body, caller) {
     const code = readCode(body);
-    const me = await playerOf(body.deviceId);
+    const me = await playerOf(caller);
     if (!me) throw httpError(404, 'Rejoignez d\'abord l\'équipe.');
     const level = Profile.sanitizeLevel(body.level);
     if (level) await query('update team_members set level = $3 where code = $1 and player_id = $2', [code, me.id, level]);
@@ -155,9 +154,9 @@ async function contribute(body) {
     return result;
 }
 
-async function claim(body) {
+async function claim(body, caller) {
     const code = readCode(body);
-    const me = await playerOf(body.deviceId);
+    const me = await playerOf(caller);
     const team = await loadTeam(code);
     const row = me && (await query('select claimed from team_members where code = $1 and player_id = $2', [code, me.id])).rows[0];
     if (!row) throw httpError(404, 'Rejoignez d\'abord l\'équipe.');
@@ -170,23 +169,23 @@ async function claim(body) {
     return { chests: done.rows[0] ? chests : [] };
 }
 
-async function teacherOnly(body) {
+async function teacherOnly(body, caller) {
     const code = readCode(body);
     const team = await loadTeam(code);
-    const me = await playerOf(body.deviceId);
+    const me = await playerOf(caller);
     if (!me || me.id !== team.teacher_id) throw httpError(403, 'Seul l\'enseignant peut faire cela.');
     return code;
 }
 
-async function kick(body) {
-    const code = await teacherOnly(body);
+async function kick(body, caller) {
+    const code = await teacherOnly(body, caller);
     if (typeof body.ref !== 'string' || !/^[0-9a-f-]{36}$/i.test(body.ref)) throw httpError(400, 'Membre invalide.');
     await query('delete from team_members where code = $1 and player_id = $2', [code, body.ref]);
     return { ok: true };
 }
 
-async function setBadge(body) {
-    const code = await teacherOnly(body);
+async function setBadge(body, caller) {
+    const code = await teacherOnly(body, caller);
     const team = await loadTeam(code);
     const badge = T.sanitizeBadge(body.badge, team.chest_index);
     if (!badge) throw httpError(400, 'Écusson invalide, ou bordure pas encore débloquée.');
@@ -195,11 +194,11 @@ async function setBadge(body) {
 }
 
 // Le niveau du joueur (celui de son grade) : membre → sa ligne ; enseignant → le niveau du chef d'équipe.
-async function setLevel(body) {
+async function setLevel(body, caller) {
     const code = readCode(body);
     const level = Profile.sanitizeLevel(body.level);
     if (!level) throw httpError(400, 'Niveau invalide.');
-    const me = await playerOf(body.deviceId);
+    const me = await playerOf(caller);
     if (!me) throw httpError(404, 'Rejoignez d\'abord l\'équipe.');
     const team = await loadTeam(code);
     if (me.id === team.teacher_id) await query('update class_teams set leader_level = $2 where code = $1', [code, level]);
@@ -207,8 +206,8 @@ async function setLevel(body) {
     return { ok: true };
 }
 
-async function setProfile(body) {
-    const code = await teacherOnly(body);
+async function setProfile(body, caller) {
+    const code = await teacherOnly(body, caller);
     const profile = readProfile(body);
     const keys = Object.keys(profile);
     if (!keys.length) throw httpError(400, 'Rien à modifier.');
@@ -245,7 +244,7 @@ async function memberCounts(codes) {
 
 // Chercher une équipe par son nom (morceau de nom) ou par son identifiant (#ABC234 ou ABC234). Le nom ne trouve que les
 // équipes « visibles dans la recherche » ; l'identifiant, lui, trouve toujours son équipe (qui le connaît l'a reçu).
-async function searchTeams(body) {
+async function searchTeams(body, caller) {
     const q = String(body.q === undefined ? '' : body.q).replace(/[%_\\]/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 40);
     if (q.length < 2) throw httpError(400, 'Tapez au moins deux caractères.');
     const asCode = T.normalizeCode(q.replace(/^#/, '')) || '';
@@ -289,8 +288,8 @@ async function openChallengeOf(code) {
     return rows[0] || null;
 }
 
-async function startChallenge(body) {
-    const code = await teacherOnly(body);
+async function startChallenge(body, caller) {
+    const code = await teacherOnly(body, caller);
     const target = T.normalizeCode(typeof body.target === 'string' ? body.target.replace(/^#/, '') : '');
     if (!target) throw httpError(400, 'Identifiant d\'équipe invalide.');
     if (target === code) throw httpError(400, 'Une équipe ne peut pas se défier elle-même.');
@@ -302,8 +301,8 @@ async function startChallenge(body) {
     return { id: Number(rows[0].id) };
 }
 
-async function replyChallenge(body) {
-    const code = await teacherOnly(body);
+async function replyChallenge(body, caller) {
+    const code = await teacherOnly(body, caller);
     await settleChallenges();
     const id = Number(body.id);
     const c = Number.isInteger(id) ? (await query('select id, from_code, to_code, status from team_challenges where id = $1', [id])).rows[0] : null;
@@ -321,8 +320,8 @@ async function replyChallenge(body) {
     return { ok: true };
 }
 
-async function cancelChallenge(body) {
-    const code = await teacherOnly(body);
+async function cancelChallenge(body, caller) {
+    const code = await teacherOnly(body, caller);
     await query("delete from team_challenges where from_code = $1 and status = 'pending'", [code]);
     return { ok: true };
 }
@@ -355,27 +354,27 @@ async function challengeOf(code, team) {
     };
 }
 
-async function leave(body) {
+async function leave(body, caller) {
     const code = readCode(body);
-    const me = await playerOf(body.deviceId);
+    const me = await playerOf(caller);
     if (me) await query('delete from team_members where code = $1 and player_id = $2', [code, me.id]);
     return { ok: true };
 }
 
-async function deleteTeam(body) {
-    const code = await teacherOnly(body);
+async function deleteTeam(body, caller) {
+    const code = await teacherOnly(body, caller);
     await query('delete from class_teams where code = $1', [code]);
     return { ok: true };
 }
 
-async function buildState(code, deviceId) {
+async function buildState(code, caller) {
     const team = await loadTeam(code);
     // Les membres se classent par niveau de joueur, puis par points apportés.
     const { rows } = await query(
         'select player_id, name, points, claimed, level from team_members where code = $1 order by level desc, points desc, joined_at asc', [code]
     );
     const leader = (await query('select pseudo from players where id = $1', [team.teacher_id])).rows[0];
-    const me = deviceId && isValidDeviceId(deviceId) ? await playerOf(deviceId) : null;
+    const me = await playerOf(caller);
     const isTeacher = !!me && me.id === team.teacher_id;
     const mine = me ? rows.find((r) => r.player_id === me.id) : null;
     const total = rows.filter((r) => r.player_id !== team.teacher_id).length + 1;
@@ -401,7 +400,9 @@ async function buildState(code, deviceId) {
         cards: team.cards,
         // Combien de coffres avant le prochain qui contient une carte rare.
         untilCard: T.CARD_EVERY - (team.chest_index % T.CARD_EVERY),
-        members: rows.map((r) => ({
+        // Les membres (prénoms, points) ne se lisent qu'à l'intérieur de l'équipe : membre ou enseignant.
+        // Un identifiant d'équipe seul ne suffit pas à voir qui en fait partie.
+        members: !mine && !isTeacher ? [] : rows.map((r) => ({
             name: r.name, points: r.points, level: r.level, me: !!mine && r.player_id === mine.player_id,
             // La référence de renvoi n'est donnée qu'à l'enseignant.
             ...(isTeacher ? { ref: r.player_id } : {})
@@ -432,25 +433,31 @@ module.exports = async (req, res) => {
             const q = req.query || {};
             const code = T.normalizeCode(q.code);
             if (!code) return sendError(res, 400, 'Code invalide : 6 caractères.');
-            return res.status(200).json(await buildState(code, typeof q.deviceId === 'string' ? q.deviceId : ''));
+            const caller = await identifyOptional(req, res, requestDeviceId(req, typeof q.deviceId === 'string' ? q.deviceId : ''));
+            return res.status(200).json(await buildState(code, caller));
         }
         if (req.method !== 'POST') return sendError(res, 405, 'Méthode non autorisée.');
         const body = (await readJsonBody(req)) || {};
+        // L'appelant est identifié une fois ici : à la création ou à l'adhésion, son joueur est créé s'il n'existe pas.
+        const creating = body.action === 'create' || body.action === 'join';
+        const caller = creating
+            ? await identifyDevice(req, res, body.deviceId, { create: true, pseudo: body.action === 'create' ? body.pseudo : undefined })
+            : await identifyOptional(req, res, requestDeviceId(req, body.deviceId));
         switch (body.action) {
-            case 'create': return res.status(200).json(await createTeam(body));
-            case 'join': return res.status(200).json(await joinTeam(body));
-            case 'contribute': return res.status(200).json(await contribute(body));
-            case 'claim': return res.status(200).json(await claim(body));
-            case 'badge': return res.status(200).json(await setBadge(body));
-            case 'profile': return res.status(200).json(await setProfile(body));
-            case 'level': return res.status(200).json(await setLevel(body));
-            case 'search': return res.status(200).json(await searchTeams(body));
-            case 'challenge': return res.status(200).json(await startChallenge(body));
-            case 'challenge_reply': return res.status(200).json(await replyChallenge(body));
-            case 'challenge_cancel': return res.status(200).json(await cancelChallenge(body));
-            case 'kick': return res.status(200).json(await kick(body));
-            case 'leave': return res.status(200).json(await leave(body));
-            case 'delete': return res.status(200).json(await deleteTeam(body));
+            case 'create': return res.status(200).json(await createTeam(body, caller));
+            case 'join': return res.status(200).json(await joinTeam(body, caller));
+            case 'contribute': return res.status(200).json(await contribute(body, caller));
+            case 'claim': return res.status(200).json(await claim(body, caller));
+            case 'badge': return res.status(200).json(await setBadge(body, caller));
+            case 'profile': return res.status(200).json(await setProfile(body, caller));
+            case 'level': return res.status(200).json(await setLevel(body, caller));
+            case 'search': return res.status(200).json(await searchTeams(body, caller));
+            case 'challenge': return res.status(200).json(await startChallenge(body, caller));
+            case 'challenge_reply': return res.status(200).json(await replyChallenge(body, caller));
+            case 'challenge_cancel': return res.status(200).json(await cancelChallenge(body, caller));
+            case 'kick': return res.status(200).json(await kick(body, caller));
+            case 'leave': return res.status(200).json(await leave(body, caller));
+            case 'delete': return res.status(200).json(await deleteTeam(body, caller));
             default: return sendError(res, 400, 'action inconnue.');
         }
     } catch (err) {

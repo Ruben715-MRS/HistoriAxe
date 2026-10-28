@@ -4,15 +4,17 @@
 
 // CORS ouvert : l'app native iOS (Capacitor) charge ses pages depuis un
 // bundle local (scheme https://localhost), donc les appels vers ce backend
-// sont par nature cross-origin. L'API ne repose sur aucun cookie de session
-// (identité = device_id applicatif dans le corps de la requête), autoriser
-// toute origine n'expose donc pas plus que l'API elle-même. Les comptes
-// (api/account.js) passent leur jeton dans l'en-tête Authorization, jamais
-// dans un cookie : même raisonnement.
+// sont par nature cross-origin. L'API ne repose sur aucun cookie : l'appareil
+// s'identifie par son jeton secret (en-tête X-Device-Token, voir
+// api/_lib/players.js) et les comptes par leur jeton Supabase (Authorization).
+// Ni l'un ni l'autre n'est un cookie, donc autoriser toute origine n'expose
+// pas plus que l'API elle-même.
 function setCors(res) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Device-Id, X-Device-Token');
+    // Le jeton de l'appareil est renvoyé dans un en-tête de réponse : l'app native (origine différente) doit pouvoir le lire.
+    res.setHeader('Access-Control-Expose-Headers', 'X-Device-Token');
     res.setHeader('Access-Control-Max-Age', '86400');
 }
 

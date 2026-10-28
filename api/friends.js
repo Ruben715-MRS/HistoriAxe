@@ -19,7 +19,7 @@
 // réponse (404) : on ne peut pas deviner qui existe ni qui nous a bloqués.
 
 const { ensureSchema, query } = require('./_lib/db');
-const { isValidDeviceId } = require('./_lib/players');
+const { identifyDevice } = require('./_lib/players');
 const { handlePreflight, readJsonBody, sendError } = require('./_lib/http');
 const F = require('./_lib/friends');
 const Profile = require('../js/teamProfile.js');
@@ -33,13 +33,13 @@ function httpError(status, message) {
 const NOT_FOUND = 'Aucun joueur avec cet identifiant.';
 
 // Le joueur de cet appareil, avec un compte — sinon 404 (inconnu) ou 403 (pas de compte).
-async function accountPlayer(deviceId) {
-    if (!isValidDeviceId(deviceId)) throw httpError(400, 'deviceId invalide.');
+async function accountPlayer(req, res, deviceId) {
+    const base = await identifyDevice(req, res, deviceId);
+    if (!base) throw httpError(404, 'Joueur inconnu.');
     const { rows } = await query(
-        'select id, pseudo, friend_code, friend_requests, auth_user_id is not null as account from players where device_id = $1', [deviceId]
+        'select id, pseudo, friend_code, friend_requests, auth_user_id is not null as account from players where id = $1', [base.id]
     );
     const me = rows[0];
-    if (!me) throw httpError(404, 'Joueur inconnu.');
     if (!me.account) throw httpError(403, 'Connectez-vous avec un compte pour utiliser les amis.');
     return me;
 }
@@ -195,7 +195,7 @@ module.exports = async (req, res) => {
         await ensureSchema();
         if (req.method !== 'POST') return sendError(res, 405, 'Méthode non autorisée.');
         const body = (await readJsonBody(req)) || {};
-        const me = await accountPlayer(body.deviceId);
+        const me = await accountPlayer(req, res, body.deviceId);
         switch (body.action) {
             case 'list': return res.status(200).json(await overview(me, body));
             case 'request': return res.status(200).json(await requestFriend(body, me));

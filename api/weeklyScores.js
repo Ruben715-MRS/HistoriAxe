@@ -11,7 +11,7 @@
 //             totalPlayers, isNewBest, suspicious }
 
 const { ensureSchema, query } = require('./_lib/db');
-const { upsertPlayer, isValidDeviceId } = require('./_lib/players');
+const { identifyDevice, isValidDeviceId } = require('./_lib/players');
 const { SUPPORTED_LANGS } = require('./_lib/dataset');
 const { drawMatches, STALE_DRAW_MESSAGE } = require('./_lib/drawCheck');
 const { getWeeklyChallengeOrderedItems, resolveChallengeWeek, WEEKLY_CHALLENGE_EVENT_COUNT } = require('./_lib/weeklyChallenge');
@@ -46,7 +46,7 @@ module.exports = async (req, res) => {
 
         await ensureSchema();
 
-        const player = await upsertPlayer(deviceId, pseudo);
+        const player = await identifyDevice(req, res, deviceId, { create: true, pseudo });
         const challengeWeek = resolveChallengeWeek(typeof isoWeek === 'string' ? isoWeek : '', new Date());
 
         const orderedItems = getWeeklyChallengeOrderedItems(lang, challengeWeek);
@@ -94,12 +94,12 @@ module.exports = async (req, res) => {
         const rankResult = await query(
             `select count(*)::int + 1 as rank
              from weekly_challenge_scores
-             where challenge_week = $1 and lang = $2
+             where challenge_week = $1 and lang = $2 and not suspicious
                and (score > $3 or (score = $3 and time_seconds < $4))`,
             [challengeWeek, lang, bestScore, bestTime]
         );
         const totalResult = await query(
-            'select count(*)::int as total from weekly_challenge_scores where challenge_week = $1 and lang = $2',
+            'select count(*)::int as total from weekly_challenge_scores where challenge_week = $1 and lang = $2 and not suspicious',
             [challengeWeek, lang]
         );
 

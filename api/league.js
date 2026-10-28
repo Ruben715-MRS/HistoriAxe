@@ -34,7 +34,7 @@
 // api/_lib/schema.sql).
 
 const { ensureSchema, query } = require('./_lib/db');
-const { upsertPlayer, findPlayerByDeviceId, setPlayerCountry, isValidDeviceId } = require('./_lib/players');
+const { identifyDevice, identifyOptional, setPlayerCountry, requestDeviceId } = require('./_lib/players');
 const { getIsoWeekString } = require('../js/storage.js');
 const { handlePreflight, readJsonBody, sendError } = require('./_lib/http');
 const TeamProfile = require('../js/teamProfile.js');
@@ -107,9 +107,6 @@ module.exports = async (req, res) => {
             const body = await readJsonBody(req);
             const { deviceId, pseudo } = body || {};
             const isoWeek = resolveIsoWeek(body && body.isoWeek);
-            if (!isValidDeviceId(deviceId)) {
-                return sendError(res, 400, 'deviceId invalide.');
-            }
             // Pays : liste fermée (ISO) ; absent = inchangé, '' ou null = retiré.
             let country;
             if (body && body.country !== undefined) {
@@ -120,9 +117,9 @@ module.exports = async (req, res) => {
             }
             // Enregistre seulement le joueur (pseudo, pays) : l'XP déclaré est ignoré,
             // les anciens clients qui l'envoient encore reçoivent donc une réponse valide.
-            await upsertPlayer(deviceId, pseudo);
+            const player = await identifyDevice(req, res, deviceId, { create: true, pseudo });
             if (country !== undefined) {
-                await setPlayerCountry(deviceId, country);
+                await setPlayerCountry(player.id, country);
             }
             return res.status(200).json({ isoWeek, xp: null, verified: true });
         }
@@ -132,13 +129,8 @@ module.exports = async (req, res) => {
             const isoWeek = resolveIsoWeek(q.isoWeek);
             const scope = SCOPES.includes(q.scope) ? q.scope : 'group';
             const limit = Math.max(1, Math.min(MAX_LIMIT, parseInt(q.limit, 10) || DEFAULT_LIMIT));
-            const deviceId = typeof q.deviceId === 'string' ? q.deviceId : '';
-
-            if (!isValidDeviceId(deviceId)) {
-                return sendError(res, 400, 'deviceId invalide.');
-            }
-
-            const me = await findPlayerByDeviceId(deviceId);
+            const deviceId = requestDeviceId(req, typeof q.deviceId === 'string' ? q.deviceId : '');
+            const me = await identifyOptional(req, res, deviceId);
             const empty = { isoWeek, scope, country: me ? me.country : '', groupSize: 0, minRanked: MIN_RANKED_PLAYERS, ranked: false, entries: [], me: null };
             if (!me) {
                 return res.status(200).json(empty);
