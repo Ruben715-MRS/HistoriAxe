@@ -86,6 +86,7 @@ function renderCommandments() {
     // Les éléments, par groupe. Les numéros courent d'un groupe à l'autre.
     let number = 0;
     set.groups.forEach(group => {
+        if (set.restartPerGroup) number = 0; // chaque thème recommence à 1
         const section = document.createElement('section');
         section.className = 'cmd-group';
         section.id = 'cmd-group-' + set.id + '-' + group.id;

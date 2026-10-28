@@ -60,6 +60,7 @@
             icon: '🌿',
             count: 10,
             themeMenu: true,
+            restartPerGroup: true,
             groups: [
                 { id: 'women', items: ['hallah', 'nidda', 'ner'] },
                 { id: 'pesah', items: ['pesah', 'matsa', 'maror'] },
@@ -126,13 +127,15 @@
         return null;
     }
 
-    // Tous les éléments d'une liste, dans l'ordre, avec leur numéro (1, 2, 3…).
+    // Tous les éléments d'une liste, dans l'ordre, avec leur numéro (1, 2, 3…). Par défaut, les numéros se suivent d'un thème à l'autre (c'est le
+    // cas des travaux du Chabbat, numérotés selon la Michna) ; avec `restartPerGroup`, chaque thème recommence à 1.
     function itemsOf(setId) {
         var set = getSet(setId);
         if (!set) return [];
         var out = [];
         set.groups.forEach(function (g) {
-            g.items.forEach(function (id) { out.push({ id: id, group: g.id, n: out.length + 1 }); });
+            var start = set.restartPerGroup ? 0 : out.length;
+            g.items.forEach(function (id, i) { out.push({ id: id, group: g.id, n: start + i + 1 }); });
         });
         return out;
     }

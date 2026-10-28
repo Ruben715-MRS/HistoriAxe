@@ -26,7 +26,8 @@ test('effectifs de la tradition : 7 lois de Noé, 10 commandements, 39 travaux (
 test('les éléments sont numérotés de 1 à N sans trou ni doublon', () => {
     C.SETS.filter(s => s.kind !== 'list613').forEach(s => {
         const items = C.itemsOf(s.id);
-        assert.deepEqual(items.map(i => i.n), items.map((_, i) => i + 1), s.id);
+        const sets = s.restartPerGroup ? s.groups.map(g => g.items.map((_, i) => i + 1)).flat() : items.map((_, i) => i + 1);
+        assert.deepEqual(items.map(i => i.n), sets, s.id);
         assert.equal(new Set(items.map(i => i.id)).size, items.length, 'identifiants uniques : ' + s.id);
     });
 });
@@ -188,6 +189,7 @@ test('mitsvot pratiques : trois listes courtes (femmes, Pessa\'h, Soukkot), dix 
     assert.equal(set.themeMenu, true);
     assert.deepEqual(set.groups.map(g => g.items.length), [3, 3, 4]);
     assert.equal(C.itemsOf('pratiques').length, 10);
+    assert.deepEqual(C.itemsOf('pratiques').map(i => i.n), [1, 2, 3, 1, 2, 3, 1, 2, 3, 4]);
     C.itemsOf('pratiques').forEach(item => {
         assert.ok(text(C.itemKey('pratiques', item.id, 'ref')), item.id + ' : source');
         assert.ok(text(C.itemKey('pratiques', item.id, 'he')), item.id + ' : nom hébreu');
