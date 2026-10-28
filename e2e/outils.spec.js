@@ -18,10 +18,10 @@ async function ouvrir(page, texte) {
     await page.locator('#screen-tools .arcade-card', { hasText: texte }).click();
 }
 
-test('l\'Atelier s\'ouvre depuis les catégories, range ses quinze entrées en quatre groupes et revient', async ({ page }) => {
+test('l\'Atelier s\'ouvre depuis les catégories, range ses seize entrées en quatre groupes et revient', async ({ page }) => {
     await page.locator('#btn-tools').click();
     expect(await visibleScreen(page)).toBe('screen-tools');
-    await expect(page.locator('#screen-tools .arcade-card')).toHaveCount(15);
+    await expect(page.locator('#screen-tools .arcade-card')).toHaveCount(16);
     await expect(page.locator('#screen-tools .header-title')).toHaveText('Atelier');
     await expect(page.locator('#screen-tools .tools-group')).toHaveCount(4);
     await expect(page.locator('#screen-tools .tools-group .modes-group-title')).toHaveText(['Convertir et calculer', 'Calendriers', 'Repères', 'Cartes et arbres']);
@@ -663,6 +663,37 @@ test('généalogie biblique, à l\'horizontale : déplier une branche fait défi
         return r.left >= view.left - 1 && r.right <= view.right + 1;
     });
     expect(visible).toBe(true);
+});
+
+test('commandements bibliques : sept lois de Noé, dix commandements, trente-neuf travaux, avec des boutons pour passer de l\'une à l\'autre', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 900 });
+    await page.locator('#btn-tools').click();
+    await page.locator('#screen-tools .arcade-card', { hasText: 'Commandements bibliques' }).click();
+    expect(await visibleScreen(page)).toBe('screen-tool-commandments');
+    expect(await page.locator('#screen-tool-commandments').innerText()).not.toContain('tools.');
+
+    // Les lois de Noé d'abord : sept, avec leur source.
+    await expect(page.locator('#tool-commandments-tab-noah')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(7);
+    await expect(page.locator('#tool-commandments-body')).toContainText('Genèse 9:6');
+
+    // Le bouton « suivant » ouvre le Décalogue : dix paroles, deux tables.
+    await page.locator('.cmd-nav-btn', { hasText: '10 commandements' }).click();
+    await expect(page.locator('#tool-commandments-tab-decalogue')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(10);
+    await expect(page.locator('#tool-commandments-body .cmd-group-title').first()).toContainText('Première table');
+
+    // Puis les travaux du Chabbat : trente-neuf, dans l'ordre de la Michna ; plus de bouton « suivant ».
+    await page.locator('.cmd-nav-btn', { hasText: '39 travaux' }).click();
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(39);
+    await expect(page.locator('#tool-commandments-body .cmd-item').first()).toContainText('Semer');
+    await expect(page.locator('#tool-commandments-body .cmd-item').last()).toContainText('Transporter');
+    await expect(page.locator('.cmd-nav-btn')).toHaveCount(1);
+
+    // Les onglets font aussi revenir en arrière.
+    await page.locator('#tool-commandments-tab-noah').click();
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(7);
+    await expect(page.locator('.cmd-nav-btn')).toHaveCount(1);
 });
 
 test('poids et mesures bibliques : distances, volumes et monnaies se convertissent, dans les deux sens, avec la leçon dessous', async ({ page }) => {

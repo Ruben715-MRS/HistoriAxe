@@ -14612,6 +14612,29 @@ input:not([type="range"]), label, select, summary, textarea {
 .measures-hebrew { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0 0 4px; font-size: 17px; font-weight: 700; color: var(--text-dark); }
 .measures-hebrew bdi { white-space: nowrap; }
 
+/* --- COMMANDEMENTS BIBLIQUES (js/app/commandments.js) --- */
+.cmd-panel { max-width: 640px; }
+.cmd-body { display: flex; flex-direction: column; gap: 18px; margin-top: 14px; }
+.cmd-head { display: flex; flex-direction: column; gap: 6px; }
+.cmd-title { margin-top: 0; font-size: 20px; }
+.cmd-subtitle { margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted-text); }
+.cmd-group { display: flex; flex-direction: column; gap: 8px; }
+.cmd-group-title { margin: 0; font-size: 15px; color: var(--text-dark); }
+.cmd-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.cmd-item { position: relative; padding: 10px 12px 10px 52px; background: var(--surface); border: 1px solid var(--border-soft); border-radius: 12px; }
+.cmd-item::before { content: counter(list-item); position: absolute; left: 12px; top: 10px; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--surface-2); color: var(--text-dark); font-size: 13px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.cmd-name { display: block; font-size: 15px; line-height: 1.35; color: var(--text-dark); }
+.cmd-heb { display: block; margin-top: 1px; font-size: 13px; color: var(--muted-text); }
+.cmd-text { margin: 4px 0 0; }
+.cmd-ref { margin: 6px 0 0; font-size: 12px; line-height: 1.4; color: var(--muted-text); }
+.cmd-ref span { font-weight: 700; }
+.cmd-know { border-top: 1px solid var(--border-soft); padding-top: 16px; display: flex; flex-direction: column; gap: 8px; }
+.cmd-know-list { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.45; color: var(--muted-text); }
+.cmd-note { font-style: italic; }
+.cmd-nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; }
+.cmd-nav-btn { flex: 1 1 200px; display: flex; flex-direction: column; gap: 2px; min-height: 44px; }
+.cmd-nav-btn small { font-size: 11px; font-weight: 600; opacity: 0.8; }
+
 /* --- Mini-jeux sur des axes choisis : cartes trop petites pour le vivier --- */
 .arcade-card.is-unavailable { opacity: 0.55; cursor: not-allowed; }
 .arcade-why { color: var(--muted-text); font-style: italic; }

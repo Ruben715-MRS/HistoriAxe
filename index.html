@@ -1381,6 +1381,10 @@
                 <span class="arcade-card-icon" aria-hidden="true">📖</span>
                 <span class="arcade-card-text"><strong>Dictionnaire</strong><small>Les termes qu'on confond, définis avec précision. Mode concours.</small></span>
             </button>
+            <button type="button" class="arcade-card" onclick="openTool('commandments', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">🕎</span>
+                <span class="arcade-card-text"><strong data-i18n="tools.commandments_title"></strong><small data-i18n="tools.commandments_desc"></small></span>
+            </button>
             <button type="button" class="arcade-card" onclick="openTool('citations', 'screen-tools')">
                 <span class="arcade-card-icon" aria-hidden="true">💬</span>
                 <span class="arcade-card-text"><strong>Citations</strong><small>Les phrases qui ont marqué l'histoire : contexte, source, et ce qui est vraiment attesté.</small></span>
@@ -1958,6 +1962,16 @@
         <div class="tool-panel">
             <div class="tool-history-chips" id="tool-measures-tabs" role="group" aria-label="Distances, volumes ou monnaies" data-i18n-attr="aria-label:tools.measures_tabs_aria"></div>
             <div id="tool-measures-body" class="measures-body"></div>
+        </div>
+    </div>
+
+    <div id="screen-tool-commandments" class="list-screen hidden">
+        <button class="back-btn" onclick="toolBack('commandments')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="tools.commandments_title">Commandements bibliques</h2>
+        <p class="modes-header-subtitle" data-i18n="tools.commandments_intro"></p>
+        <div class="tool-panel cmd-panel">
+            <div class="tool-history-chips" id="tool-commandments-tabs" role="group" aria-label="Choisir une liste de commandements" data-i18n-attr="aria-label:tools.commandments_tabs_aria"></div>
+            <div id="tool-commandments-body" class="cmd-body"></div>
         </div>
     </div>
 
@@ -3705,6 +3719,8 @@
     <script src="js/app/biblical-measures.js"></script>
     <script src="js/biblicalMapsCore.js"></script>
     <script src="js/app/biblical-maps.js"></script>
+    <script src="js/commandmentsCore.js"></script>
+    <script src="js/app/commandments.js"></script>
     <script src="js/app/rewards.js"></script>
     <script src="js/app/clio.js"></script>
     <script src="js/teamBadge.js"></script>
