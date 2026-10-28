@@ -65,13 +65,16 @@
         {
             id: 'pratiques',
             icon: '🌿',
-            count: 10,
+            count: 21,
             themeMenu: true,
             restartPerGroup: true,
             groups: [
                 { id: 'women', items: ['hallah', 'nidda', 'ner'] },
-                { id: 'pesah', items: ['pesah', 'matsa', 'maror'] },
-                { id: 'soukkot', items: ['etrog', 'lulav', 'hadass', 'arava'] }
+                { id: 'pesah', items: ['pesah', 'matsa', 'maror', 'hametz', 'omer'] },
+                { id: 'soukkot', items: ['etrog', 'lulav', 'hadass', 'arava'] },
+                { id: 'foyer', items: ['mezouza', 'birkat', 'havdala'] },
+                { id: 'fetes', items: ['hanouka', 'mishloah', 'matanot', 'megila'] },
+                { id: 'vie', items: ['brit', 'pidyon'] }
             ]
         },
         // Principes et textes : ce ne sont pas des mitsvot. Chaque thème recommence à 1, comme les mitsvot pratiques.

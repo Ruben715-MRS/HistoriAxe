@@ -189,9 +189,9 @@ test('613 : le menu des thèmes a de quoi nommer les 35 thèmes (15 positifs, 20
 test('mitsvot pratiques : trois listes courtes (femmes, Pessa\'h, Soukkot), dix mitsvot, un menu par thème', () => {
     const set = C.getSet('pratiques');
     assert.equal(set.themeMenu, true);
-    assert.deepEqual(set.groups.map(g => g.items.length), [3, 3, 4]);
-    assert.equal(C.itemsOf('pratiques').length, 10);
-    assert.deepEqual(C.itemsOf('pratiques').map(i => i.n), [1, 2, 3, 1, 2, 3, 1, 2, 3, 4]);
+    assert.deepEqual(set.groups.map(g => g.items.length), [3, 5, 4, 3, 4, 2]);
+    assert.equal(C.itemsOf('pratiques').length, 21);
+    assert.deepEqual(C.itemsOf('pratiques').map(i => i.n), [1, 2, 3, 1, 2, 3, 4, 5, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2]);
     C.itemsOf('pratiques').forEach(item => {
         assert.ok(text(C.itemKey('pratiques', item.id, 'ref')), item.id + ' : source');
         assert.ok(text(C.itemKey('pratiques', item.id, 'he')), item.id + ' : nom hébreu');

@@ -744,9 +744,9 @@ test('commandements bibliques : sept lois de Noé, dix commandements, trente-neu
     // Enfin les « Mitsvot pratiques » : dix mitsvot en trois listes ; le menu mène à chacune sans cacher les autres.
     await page.locator('.cmd-nav-btn', { hasText: 'Mitsvot pratiques' }).click();
     await expect(page.locator('#tool-commandments-tab-pratiques')).toHaveAttribute('aria-pressed', 'true');
-    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(10);
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(21);
     await expect(page.locator('#tool-commandments-body .cmd-group-title').first()).toContainText('Les trois mitsvot des femmes');
-    await expect(page.locator('#tool-commandments-theme-pratiques option')).toHaveCount(4); // 3 thèmes + l'invite
+    await expect(page.locator('#tool-commandments-theme-pratiques option')).toHaveCount(7); // 6 thèmes + l'invite
     await page.locator('#tool-commandments-theme-pratiques').selectOption({ label: 'Les quatre espèces de Soukkot' });
     await expect(page.locator('#cmd-group-pratiques-soukkot')).toBeInViewport();
     await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(10);
