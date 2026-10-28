@@ -690,8 +690,18 @@ test('commandements bibliques : sept lois de Noé, dix commandements, trente-neu
     await expect(page.locator('#tool-commandments-body .cmd-item').last()).toContainText('Transporter');
     await expect(page.locator('.cmd-nav-btn')).toHaveCount(2);
 
+    // Le bouton « A / א » remplace la transcription des noms par les lettres hébraïques (et se retire pour les 613).
+    await expect(page.locator('#tool-commandments-lang-fr')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-commandments-body .cmd-item').first().locator('.cmd-heb')).toHaveText('Zoré\'a');
+    await page.locator('#tool-commandments-lang-he').click();
+    await expect(page.locator('#tool-commandments-lang-he')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-commandments-body .cmd-item').first().locator('.cmd-heb')).toHaveText('זורע');
+    await expect(page.locator('#tool-commandments-body .cmd-item').first().locator('.cmd-heb')).toHaveAttribute('dir', 'rtl');
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(39);
+
     // Enfin les 613 : 248 positifs d'abord, avec leur verset ; plus de bouton « suivant ».
     await page.locator('.cmd-nav-btn', { hasText: '613 mitsvot' }).click();
+    await expect(page.locator('#tool-commandments-lang')).toBeHidden();
     await expect(page.locator('#tool-commandments-tab-mitzvot')).toHaveAttribute('aria-pressed', 'true');
     await expect(page.locator('#tool-commandments-kind-pos')).toHaveAttribute('aria-pressed', 'true');
     await expect(page.locator('#tool-commandments-613 .cmd-item')).toHaveCount(248);
@@ -714,9 +724,10 @@ test('commandements bibliques : sept lois de Noé, dix commandements, trente-neu
     await expect(page.locator('#tool-commandments-613 .cmd-item')).toContainText('Honorer son père et sa mère');
     expect(await page.locator('#screen-tool-commandments').innerText()).not.toContain('tools.');
 
-    // Les onglets font aussi revenir en arrière.
+    // Les onglets font aussi revenir en arrière ; le choix « א » suit : les lois de Noé s'affichent avec leur nom hébreu.
     await page.locator('#tool-commandments-tab-noah').click();
     await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(7);
+    await expect(page.locator('#tool-commandments-body .cmd-item').first().locator('.cmd-heb')).toHaveText('עבודה זרה');
     await expect(page.locator('.cmd-nav-btn')).toHaveCount(1);
 });
 

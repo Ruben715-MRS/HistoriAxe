@@ -1970,6 +1970,12 @@
         <h2 class="header-title" data-i18n="tools.commandments_title">Commandements bibliques</h2>
         <p class="modes-header-subtitle" data-i18n="tools.commandments_intro"></p>
         <div class="tool-panel cmd-panel">
+            <div class="cmd-toolbar">
+                <div class="gen-lang" id="tool-commandments-lang" role="group" aria-label="Noms hébreux : en transcription (A) ou en lettres hébraïques (א)" data-i18n-attr="aria-label:tools.commandments_lang_aria">
+                    <button type="button" class="gen-lang-btn" id="tool-commandments-lang-fr" aria-pressed="true" lang="fr" onclick="commandmentsSetLang('fr')">A</button>
+                    <button type="button" class="gen-lang-btn" id="tool-commandments-lang-he" aria-pressed="false" lang="he" onclick="commandmentsSetLang('he')">א</button>
+                </div>
+            </div>
             <div class="tool-history-chips" id="tool-commandments-tabs" role="group" aria-label="Choisir une liste de commandements" data-i18n-attr="aria-label:tools.commandments_tabs_aria"></div>
             <div id="tool-commandments-body" class="cmd-body"></div>
         </div>

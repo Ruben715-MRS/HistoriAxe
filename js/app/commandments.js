@@ -9,11 +9,28 @@
 let commandmentsSet = 'noah';
 let commandments613Kind = 'pos';
 let commandments613Query = '';
+// Le bouton « A / א » (comme sur la généalogie) : les noms hébreux en transcription (« A », par défaut) ou en lettres hébraïques (« א »).
+let commandmentsLang = 'fr';
+try { if (localStorage.getItem('commandmentsLang') === 'he') commandmentsLang = 'he'; } catch (e) { /* stockage indisponible : « A » */ }
 
 function cmdText(key) { return t(key.indexOf('tools.') === 0 ? key : 'tools.' + key); }
 
 function toolCommandmentsInit() {
     renderCommandments();
+}
+
+function commandmentsSetLang(lang) {
+    commandmentsLang = lang === 'he' ? 'he' : 'fr';
+    try { localStorage.setItem('commandmentsLang', commandmentsLang); } catch (e) { /* stockage indisponible */ }
+    renderCommandments();
+}
+
+// Un texte en lettres hébraïques : lu de droite à gauche, avec la langue déclarée pour les lecteurs d'écran.
+function cmdHebrew(el, text) {
+    el.lang = 'he';
+    el.dir = 'rtl';
+    el.textContent = text;
+    return el;
 }
 
 function toolCommandmentsPick(setId) {
@@ -38,6 +55,12 @@ function renderCommandments() {
         tabs.appendChild(btn);
     });
 
+    // Le bouton « A / א » : sans objet pour les 613, dont les énoncés sont en français.
+    toolEl('tool-commandments-lang').parentNode.classList.toggle('hidden', set.kind === 'list613');
+    toolEl('tool-commandments-lang-fr').setAttribute('aria-pressed', commandmentsLang === 'fr' ? 'true' : 'false');
+    toolEl('tool-commandments-lang-he').setAttribute('aria-pressed', commandmentsLang === 'he' ? 'true' : 'false');
+    const hebrew = commandmentsLang === 'he' && set.kind !== 'list613';
+
     const body = toolEl('tool-commandments-body');
     toolClear(body);
 
@@ -48,7 +71,8 @@ function renderCommandments() {
     h.textContent = cmdText('cmd_' + set.id + '_title');
     const sub = document.createElement('p');
     sub.className = 'cmd-subtitle';
-    sub.textContent = cmdText('cmd_' + set.id + '_subtitle');
+    if (hebrew) cmdHebrew(sub, cmdText('cmd_' + set.id + '_he'));
+    else sub.textContent = cmdText('cmd_' + set.id + '_subtitle');
     const lead = document.createElement('p');
     lead.className = 'tool-small';
     lead.textContent = cmdText('cmd_' + set.id + '_lead');
@@ -73,7 +97,7 @@ function renderCommandments() {
         list.start = number + 1;
         group.items.forEach(itemId => {
             number++;
-            list.appendChild(commandmentItem(set.id, itemId));
+            list.appendChild(commandmentItem(set.id, itemId, hebrew));
         });
         section.appendChild(list);
         body.appendChild(section);
@@ -219,7 +243,7 @@ function update613() {
     });
 }
 
-function commandmentItem(setId, itemId) {
+function commandmentItem(setId, itemId, hebrew) {
     const key = field => CommandmentsCore.itemKey(setId, itemId, field);
     const li = document.createElement('li');
     li.className = 'cmd-item';
@@ -230,7 +254,10 @@ function commandmentItem(setId, itemId) {
     name.textContent = cmdText(key('name'));
     li.appendChild(name);
 
-    if (CommandmentsCore.fieldsOf(setId).indexOf('heb') >= 0) {
+    // Sous le nom : sa transcription (travaux du Chabbat) ou, avec « א », le nom en lettres hébraïques.
+    if (hebrew) {
+        li.appendChild(cmdHebrew(Object.assign(document.createElement('span'), { className: 'cmd-heb' }), cmdText(key('he'))));
+    } else if (CommandmentsCore.fieldsOf(setId).indexOf('heb') >= 0) {
         const heb = document.createElement('em');
         heb.className = 'cmd-heb';
         heb.textContent = cmdText(key('heb'));

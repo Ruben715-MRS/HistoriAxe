@@ -141,3 +141,16 @@ test('613 : la recherche ignore les accents, les majuscules, les apostrophes et 
     // Tous les mots doivent y être.
     assert.ok(C.search613('neg', 'ne pas travailler chabbat').length < C.search613('neg', 'travailler').length);
 });
+
+test('bouton « A / א » : chaque liste et chaque élément ont leur nom en lettres hébraïques, et ce sont bien des lettres hébraïques', () => {
+    const hebreu = /^[\u05D0-\u05EA\u05F3\u05F4\u05BE\s׳״]+$/;
+    C.SETS.forEach(s => assert.match(text('cmd_' + s.id + '_he'), hebreu, 'liste ' + s.id));
+    ['noah', 'decalogue', 'shabbat'].forEach(id => C.itemsOf(id).forEach(item => {
+        const value = text(C.itemKey(id, item.id, 'he'));
+        assert.match(value, hebreu, `${id}/${item.id}`);
+    }));
+    assert.equal(text('cmd_shabbat_m01_he'), 'זורע');
+    assert.equal(text('cmd_shabbat_m39_he'), 'מוציא מרשות לרשות');
+    assert.equal(text('cmd_decalogue_d6_he'), 'לא תרצח');
+    assert.ok(text('commandments_lang_aria'));
+});

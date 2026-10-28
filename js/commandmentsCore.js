@@ -128,8 +128,9 @@
     // Les clés de texte dans ui/fr.json : tools.cmd_<liste>_<élément>_<champ>.
     function itemKey(setId, itemId, field) { return 'tools.cmd_' + setId + '_' + itemId + '_' + field; }
 
-    // Les champs de texte d'un élément : son nom, sa source (verset ou traité), son explication ; les travaux du Chabbat ont aussi leur nom hébreu.
-    function fieldsOf(setId) { return setId === 'shabbat' ? ['name', 'heb', 'ref', 'text'] : ['name', 'ref', 'text']; }
+    // Les champs de texte d'un élément : son nom, son nom en lettres hébraïques (`he`, pour le bouton « א »), sa source (verset ou traité), son
+    // explication ; les travaux du Chabbat ont aussi leur nom hébreu en transcription (`heb`).
+    function fieldsOf(setId) { return setId === 'shabbat' ? ['name', 'heb', 'he', 'ref', 'text'] : ['name', 'he', 'ref', 'text']; }
 
     // La liste qui suit (ou précède) celle-ci, pour les boutons « suivant » ; null aux deux bouts.
     function neighbor(setId, step) {
