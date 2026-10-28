@@ -146,6 +146,21 @@
                 { id: 'bartenura', items: ['b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'b10'] },
                 { id: 'arn', items: ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10'] }
             ]
+        },
+        // Les cinq Méguilot : un livre par thème, un chapitre par élément. Chaque chapitre est numéroté dans son livre.
+        {
+            id: 'megilot',
+            icon: '📕',
+            count: 39,
+            themeMenu: true,
+            restartPerGroup: true,
+            groups: [
+                { id: 'shir', items: ['sh1', 'sh2', 'sh3', 'sh4', 'sh5', 'sh6', 'sh7', 'sh8'] },
+                { id: 'ruth', items: ['ru1', 'ru2', 'ru3', 'ru4'] },
+                { id: 'eikha', items: ['ei1', 'ei2', 'ei3', 'ei4', 'ei5'] },
+                { id: 'kohelet', items: ['ko1', 'ko2', 'ko3', 'ko4', 'ko5', 'ko6', 'ko7', 'ko8', 'ko9', 'ko10', 'ko11', 'ko12'] },
+                { id: 'esther', items: ['es1', 'es2', 'es3', 'es4', 'es5', 'es6', 'es7', 'es8', 'es9', 'es10'] }
+            ]
         }
     ];
 

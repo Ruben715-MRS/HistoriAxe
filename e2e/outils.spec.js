@@ -938,5 +938,19 @@ test('Les dix épreuves d\'Abraham : les deux avis dans le menu, chacun numérot
     await page.locator('#tool-commandments-theme-epreuves').selectOption({ label: 'Avot de Rabbi Natan 33' });
     await expect(page.locator('#cmd-group-epreuves-arn')).toBeInViewport();
     await expect(page.locator('#cmd-group-epreuves-arn .cmd-item').first()).toContainText('Lekh lekha, première épreuve');
+    await expect(page.locator('.cmd-nav-btn')).toHaveCount(2); // « précédent » et « 5 méguilot »
+});
+
+test('5 méguilot : les cinq livres dans le menu, et les chapitres numérotés dans chaque livre', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 900 });
+    await page.locator('#btn-tools').click();
+    await page.locator('#screen-tools .arcade-card', { hasText: 'Mitsvot et principes' }).click();
+    await page.locator('#tool-commandments-tab-megilot').click();
+    await expect(page.locator('#tool-commandments-tab-megilot')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(39);
+    await expect(page.locator('#tool-commandments-theme-megilot option')).toHaveCount(6); // 5 livres + l'invite
+    await page.locator('#tool-commandments-theme-megilot').selectOption({ label: 'Ruth' });
+    await expect(page.locator('#cmd-group-megilot-ruth')).toBeInViewport();
+    await expect(page.locator('#cmd-group-megilot-ruth .cmd-item').first()).toContainText('retour de Naomi');
     await expect(page.locator('.cmd-nav-btn')).toHaveCount(1); // « précédent » seulement : dernière section
 });

@@ -10,7 +10,7 @@ const fr = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'ui', 'fr.json'
 const text = key => fr.tools[key.replace(/^tools\./, '')];
 
 test('les listes sont dans l\'ordre : lois de Noé, dix commandements, travaux du Chabbat, 613 commandements', () => {
-    assert.deepEqual(C.SETS.map(s => s.id), ['noah', 'decalogue', 'shabbat', 'mitzvot', 'pratiques', 'principes', 'avot', 'parachiot', 'michna', 'epreuves']);
+    assert.deepEqual(C.SETS.map(s => s.id), ['noah', 'decalogue', 'shabbat', 'mitzvot', 'pratiques', 'principes', 'avot', 'parachiot', 'michna', 'epreuves', 'megilot']);
 });
 
 test('effectifs de la tradition : 7 lois de Noé, 10 commandements, 39 travaux (11 + 13 + 9 + 6)', () => {
@@ -39,7 +39,7 @@ test('chaque élément a son nom, son explication et sa source dans ui/fr.json (
                 const value = text(C.itemKey(s.id, item.id, field));
                 assert.equal(typeof value, 'string', `${s.id}/${item.id}/${field} manque`);
                 // Pas de source sous chaque traité de la Michna : l'ordre, affiché au-dessus, la donne déjà.
-                const sansSource = (field === 'ref' && (s.id === 'shabbat' || s.id === 'michna'));
+                const sansSource = (field === 'ref' && (s.id === 'shabbat' || s.id === 'michna' || s.id === 'megilot'));
                 if (!sansSource) assert.ok(value.trim().length > 0, `${s.id}/${item.id}/${field} est vide`);
             });
         });
@@ -71,7 +71,8 @@ test('on passe d\'une liste à la suivante, et il n\'y a rien avant la première
     assert.equal(C.neighbor('avot', 1).id, 'parachiot');
     assert.equal(C.neighbor('parachiot', 1).id, 'michna');
     assert.equal(C.neighbor('michna', 1).id, 'epreuves');
-    assert.equal(C.neighbor('epreuves', 1), null);
+    assert.equal(C.neighbor('epreuves', 1).id, 'megilot');
+    assert.equal(C.neighbor('megilot', 1), null);
 });
 
 test('les travaux du Chabbat suivent l\'ordre de la Michna : le premier est « semer », le dernier « transporter »', () => {
@@ -154,7 +155,7 @@ test('613 : la recherche ignore les accents, les majuscules, les apostrophes et 
 test('bouton « A / א » : chaque liste et chaque élément ont leur nom en lettres hébraïques, et ce sont bien des lettres hébraïques', () => {
     const hebreu = /^[\u05D0-\u05EA\u05F3\u05F4\u05BE\s׳״]+$/;
     C.SETS.forEach(s => assert.match(text('cmd_' + s.id + '_he'), hebreu, 'liste ' + s.id));
-    ['noah', 'decalogue', 'shabbat', 'pratiques', 'principes', 'avot', 'parachiot', 'michna', 'epreuves'].forEach(id => C.itemsOf(id).forEach(item => {
+    ['noah', 'decalogue', 'shabbat', 'pratiques', 'principes', 'avot', 'parachiot', 'michna', 'epreuves', 'megilot'].forEach(id => C.itemsOf(id).forEach(item => {
         const value = text(C.itemKey(id, item.id, 'he'));
         assert.match(value, hebreu, `${id}/${item.id}`);
     }));
@@ -274,4 +275,16 @@ test('Les dix épreuves d\'Abraham : deux avis, chacun de dix épreuves numérot
     });
     // Pas de prière : les textes de cette section sont des récits ou des commentaires, jamais une formule à réciter.
     C.itemsOf('epreuves').forEach(i => assert.doesNotMatch(text(C.itemKey('epreuves', i.id, 'text')), /Béni|Seigneur, Dieu|Tu es béni|Amen/));
+});
+
+test('Les cinq Méguilot : un livre par thème (8, 4, 5, 12, 10 chapitres), chaque chapitre numéroté dans son livre, chaque livre avec son résumé', () => {
+    const set = C.getSet('megilot');
+    assert.equal(set.restartPerGroup, true);
+    assert.deepEqual(set.groups.map(g => g.items.length), [8, 4, 5, 12, 10]);
+    assert.equal(C.itemsOf('megilot').length, 39);
+    set.groups.forEach(g => {
+        assert.ok(text('cmd_megilot_group_' + g.id), 'titre ' + g.id);
+        assert.ok(text('cmd_megilot_group_' + g.id + '_summary'), 'résumé ' + g.id);
+    });
+    assert.deepEqual(C.itemsOf('megilot').filter(i => i.group === 'ruth').map(i => i.n), [1, 2, 3, 4]);
 });
