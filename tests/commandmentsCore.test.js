@@ -10,7 +10,7 @@ const fr = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'ui', 'fr.json'
 const text = key => fr.tools[key.replace(/^tools\./, '')];
 
 test('les listes sont dans l\'ordre : lois de Noé, dix commandements, travaux du Chabbat, 613 commandements', () => {
-    assert.deepEqual(C.SETS.map(s => s.id), ['noah', 'decalogue', 'shabbat', 'mitzvot', 'pratiques', 'principes', 'avot', 'parachiot', 'michna']);
+    assert.deepEqual(C.SETS.map(s => s.id), ['noah', 'decalogue', 'shabbat', 'mitzvot', 'pratiques', 'principes', 'avot', 'parachiot', 'michna', 'epreuves']);
 });
 
 test('effectifs de la tradition : 7 lois de Noé, 10 commandements, 39 travaux (11 + 13 + 9 + 6)', () => {
@@ -70,7 +70,8 @@ test('on passe d\'une liste à la suivante, et il n\'y a rien avant la première
     assert.equal(C.neighbor('principes', 1).id, 'avot');
     assert.equal(C.neighbor('avot', 1).id, 'parachiot');
     assert.equal(C.neighbor('parachiot', 1).id, 'michna');
-    assert.equal(C.neighbor('michna', 1), null);
+    assert.equal(C.neighbor('michna', 1).id, 'epreuves');
+    assert.equal(C.neighbor('epreuves', 1), null);
 });
 
 test('les travaux du Chabbat suivent l\'ordre de la Michna : le premier est « semer », le dernier « transporter »', () => {
@@ -153,7 +154,7 @@ test('613 : la recherche ignore les accents, les majuscules, les apostrophes et 
 test('bouton « A / א » : chaque liste et chaque élément ont leur nom en lettres hébraïques, et ce sont bien des lettres hébraïques', () => {
     const hebreu = /^[\u05D0-\u05EA\u05F3\u05F4\u05BE\s׳״]+$/;
     C.SETS.forEach(s => assert.match(text('cmd_' + s.id + '_he'), hebreu, 'liste ' + s.id));
-    ['noah', 'decalogue', 'shabbat', 'pratiques', 'principes', 'avot', 'parachiot', 'michna'].forEach(id => C.itemsOf(id).forEach(item => {
+    ['noah', 'decalogue', 'shabbat', 'pratiques', 'principes', 'avot', 'parachiot', 'michna', 'epreuves'].forEach(id => C.itemsOf(id).forEach(item => {
         const value = text(C.itemKey(id, item.id, 'he'));
         assert.match(value, hebreu, `${id}/${item.id}`);
     }));
@@ -260,4 +261,17 @@ test('La Michna : six ordres (11, 12, 7, 10, 11, 12), soixante-trois traités nu
         assert.ok(text('cmd_michna_group_' + g.id), 'titre ' + g.id);
         assert.ok(text('cmd_michna_group_' + g.id + '_summary'), 'résumé ' + g.id);
     });
+});
+
+test('Les dix épreuves d\'Abraham : deux avis, chacun de dix épreuves numérotées de 1 à 10, et aucun texte de prière dans la section', () => {
+    const set = C.getSet('epreuves');
+    assert.equal(set.restartPerGroup, true);
+    assert.deepEqual(set.groups.map(g => g.items.length), [10, 10]);
+    ['bartenura', 'arn'].forEach(g => {
+        assert.ok(text('cmd_epreuves_group_' + g), 'titre ' + g);
+        assert.ok(text('cmd_epreuves_group_' + g + '_summary'), 'résumé ' + g);
+        assert.deepEqual(C.itemsOf('epreuves').filter(i => i.group === g).map(i => i.n), Array.from({ length: 10 }, (_, i) => i + 1));
+    });
+    // Pas de prière : les textes de cette section sont des récits ou des commentaires, jamais une formule à réciter.
+    C.itemsOf('epreuves').forEach(i => assert.doesNotMatch(text(C.itemKey('epreuves', i.id, 'text')), /Béni|Seigneur, Dieu|Tu es béni|Amen/));
 });

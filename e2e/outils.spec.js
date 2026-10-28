@@ -926,3 +926,17 @@ test('La Michna : les six ordres dans le menu, et la numérotation continue jusq
     await expect(page.locator('#cmd-group-michna-tahorot .cmd-item').first()).toContainText('Kélim');
     await expect(page.locator('.cmd-nav-btn')).toHaveCount(1); // « précédent » seulement : dernière section
 });
+
+test('Les dix épreuves d\'Abraham : les deux avis dans le menu, chacun numéroté de 1 à 10', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 900 });
+    await page.locator('#btn-tools').click();
+    await page.locator('#screen-tools .arcade-card', { hasText: 'Mitsvot et principes' }).click();
+    await page.locator('#tool-commandments-tab-epreuves').click();
+    await expect(page.locator('#tool-commandments-tab-epreuves')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(20);
+    await expect(page.locator('#tool-commandments-theme-epreuves option')).toHaveCount(3); // 2 avis + l'invite
+    await page.locator('#tool-commandments-theme-epreuves').selectOption({ label: 'Avot de Rabbi Natan 33' });
+    await expect(page.locator('#cmd-group-epreuves-arn')).toBeInViewport();
+    await expect(page.locator('#cmd-group-epreuves-arn .cmd-item').first()).toContainText('Lekh lekha, première épreuve');
+    await expect(page.locator('.cmd-nav-btn')).toHaveCount(1); // « précédent » seulement : dernière section
+});

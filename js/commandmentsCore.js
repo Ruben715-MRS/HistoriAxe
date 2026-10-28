@@ -133,6 +133,18 @@
                 { id: 'kodashim', items: ['zev', 'men', 'hul', 'bek', 'ara', 'tem', 'ker', 'mei', 'tmd', 'mid', 'kin'] },
                 { id: 'tahorot', items: ['kel', 'oha', 'neg', 'par', 'toh', 'miq', 'nid', 'mac', 'zab', 'tvy', 'yad', 'ukz'] }
             ]
+        },
+        // Les dix épreuves d'Abraham : deux avis (Bartenura, et Avot de Rabbi Natan 33), chacun numéroté de 1 à 10. Pas de prière dans cette section.
+        {
+            id: 'epreuves',
+            icon: '🔥',
+            count: 20,
+            themeMenu: true,
+            restartPerGroup: true,
+            groups: [
+                { id: 'bartenura', items: ['b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'b10'] },
+                { id: 'arn', items: ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10'] }
+            ]
         }
     ];
 
