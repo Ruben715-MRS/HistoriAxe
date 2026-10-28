@@ -38,7 +38,7 @@ const ISO_WEEK_RE = /^\d{4}-W\d{2}$/;
 // Fragment SQL réutilisé pour le calcul du groupe : "w" doit être l'alias de
 // la ligne weekly_xp courante dans la requête où ce fragment est inséré.
 const GROUP_MATCH_SQL =
-    'abs(hashtext(w.player_id::text || \':\' || $1)) % $2 = abs(hashtext($3::text || \':\' || $1)) % $2';
+    'abs(hashtext(w.player_id::text || \':\' || $1)) % $2 = abs(hashtext($3::uuid::text || \':\' || $1)) % $2';
 
 // XP d'une partie de défi vérifiée : même barème que la fin de partie du
 // client (js/app.js: endGame) SANS les éléments invérifiables côté serveur
