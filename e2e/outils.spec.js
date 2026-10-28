@@ -764,6 +764,16 @@ test('commandements bibliques : sept lois de Noé, dix commandements, trente-neu
     await page.locator('#tool-commandments-theme-principes').selectOption({ label: 'Les treize attributs de miséricorde' });
     await expect(page.locator('#cmd-group-principes-mercy')).toBeInViewport();
     await expect(page.locator('#cmd-group-principes-mercy .cmd-item').first()).toContainText('Adonaï');
+    await expect(page.locator('.cmd-nav-btn')).toHaveCount(2); // « précédent » et « Pirkei Avot »
+
+    // Enfin « Pirkei Avot » : trois thèmes, 65 textes ; le menu mène à la qualité voulue sans cacher les autres.
+    await page.locator('.cmd-nav-btn', { hasText: 'Pirkei Avot' }).click();
+    await expect(page.locator('#tool-commandments-tab-avot')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(65);
+    await expect(page.locator('#tool-commandments-theme-avot option')).toHaveCount(4); // 3 thèmes + l'invite
+    await page.locator('#tool-commandments-theme-avot').selectOption({ label: 'Les qualités pour acquérir la Torah (6:6)' });
+    await expect(page.locator('#cmd-group-avot-qualites')).toBeInViewport();
+    await expect(page.locator('#cmd-group-avot-qualites .cmd-item').first()).toContainText("L'étude");
     await expect(page.locator('.cmd-nav-btn')).toHaveCount(1); // « précédent » seulement : c'est la dernière section
 
     // Les onglets font aussi revenir en arrière ; le choix « א » suit : les lois de Noé s'affichent avec leur nom hébreu.

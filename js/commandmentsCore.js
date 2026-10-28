@@ -88,6 +88,19 @@
                 { id: 'mercy', items: range13('m') },
                 { id: 'psoukim', items: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8', 'p9', 'p10', 'p11', 'p12'] }
             ]
+        },
+        // Pirkei Avot : trois thèmes (les trois piliers, les qualités de 6:6, une sélection de maximes), chacun numéroté à partir de 1.
+        {
+            id: 'avot',
+            icon: '📚',
+            count: 65,
+            themeMenu: true,
+            restartPerGroup: true,
+            groups: [
+                { id: 'piliers', items: ['p1', 'p2', 'p3'] },
+                { id: 'qualites', items: ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10', 'q11', 'q12', 'q13', 'q14', 'q15', 'q16', 'q17', 'q18', 'q19', 'q20', 'q21', 'q22', 'q23', 'q24', 'q25', 'q26', 'q27', 'q28', 'q29', 'q30', 'q31', 'q32', 'q33', 'q34', 'q35', 'q36', 'q37', 'q38', 'q39', 'q40', 'q41', 'q42', 'q43', 'q44', 'q45', 'q46', 'q47', 'q48', 'q49', 'q50', 'q51'] },
+                { id: 'maximes', items: ['x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x7', 'x8', 'x9', 'x10', 'x11'] }
+            ]
         }
     ];
 
