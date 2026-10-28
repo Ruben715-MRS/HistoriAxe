@@ -210,3 +210,13 @@ test('principes et textes : cinq thèmes (13 principes, 7 règles de Hillel, 13 
     // Les attributs de miséricorde s'appuient tous sur Exode 34:6-7 : c'est le texte qui les fonde.
     C.itemsOf('principes').filter(i => i.group === 'mercy').forEach(i => assert.equal(text(C.itemKey('principes', i.id, 'ref')), 'Exode 34:6-7'));
 });
+
+test('les douze Psoukim ont leur passage hébreu complet, en lettres hébraïques, qui commence par le mot de leur nom', () => {
+    const hebreu = /^[\u05D0-\u05EA\u05F3\u05F4\u05BE\s׳״']+$/;
+    C.itemsOf('principes').filter(i => i.group === 'psoukim').forEach(i => {
+        const full = text(C.itemKey('principes', i.id, 'full'));
+        assert.match(full, hebreu, 'p' + i.n);
+        assert.ok(full.split(' ').length >= 5, 'p' + i.n + ' : passage trop court');
+    });
+    ['p6', 'p11', 'p12'].forEach(id => assert.doesNotMatch(text(C.itemKey('principes', id, 'ref')), /à compléter/));
+});

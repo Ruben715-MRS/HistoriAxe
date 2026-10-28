@@ -334,6 +334,9 @@ function commandmentItem(setId, itemId, hebrew) {
     // Sous le nom : sa transcription (travaux du Chabbat) ou, avec « א », le nom en lettres hébraïques.
     if (hebrew) {
         li.appendChild(cmdHebrew(Object.assign(document.createElement('span'), { className: 'cmd-heb' }), cmdText(key('he'))));
+        // Le passage complet en hébreu, en petits caractères, quand il existe (les douze Psoukim).
+        const full = t(key('full'));
+        if (full && full !== key('full')) li.appendChild(cmdHebrew(Object.assign(document.createElement('p'), { className: 'cmd-full' }), full));
     } else if (CommandmentsCore.fieldsOf(setId).indexOf('heb') >= 0) {
         const heb = document.createElement('em');
         heb.className = 'cmd-heb';

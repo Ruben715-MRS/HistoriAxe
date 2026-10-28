@@ -14637,6 +14637,7 @@ input:not([type="range"]), label, select, summary, textarea {
 .cmd-panel { max-width: 640px; }
 .cmd-toolbar { display: flex; justify-content: flex-end; }
 .cmd-toolbar.hidden { display: none; }
+.cmd-full[dir="rtl"] { margin: 6px 0 0; font-size: 13px; font-weight: 400; line-height: 1.7; color: var(--muted-text); text-align: right; }
 .cmd-heb[dir="rtl"] { font-size: 18px; font-style: normal; font-weight: 600; color: var(--text-dark); }
 .cmd-subtitle[dir="rtl"] { font-size: 16px; letter-spacing: 0; text-transform: none; }
 .cmd-body { display: flex; flex-direction: column; gap: 18px; margin-top: 14px; }
