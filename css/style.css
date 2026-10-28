@@ -14640,6 +14640,9 @@ input:not([type="range"]), label, select, summary, textarea {
 .cmd-nav-btn small { font-size: 11px; font-weight: 600; opacity: 0.8; }
 .cmd-613-controls { display: flex; flex-direction: column; gap: 8px; }
 .cmd-613-list { display: flex; flex-direction: column; gap: 18px; }
+.cmd-613-list .cmd-group { scroll-margin-top: 12px; }
+.cmd-kind-title { margin: 6px 0 -6px; font-size: 18px; padding-top: 12px; border-top: 2px solid var(--border-soft); }
+.cmd-kind-title:first-child { border-top: 0; padding-top: 0; }
 .cmd-613-list .cmd-item { padding-top: 8px; padding-bottom: 8px; }
 .cmd-613-list .cmd-item::before { top: 8px; width: 34px; height: 24px; border-radius: 12px; font-size: 12px; }
 .cmd-613-list .cmd-item { padding-left: 58px; }

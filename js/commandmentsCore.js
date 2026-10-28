@@ -142,13 +142,19 @@
 
     // --- Les 613 ---------------------------------------------------------------------------------------------------------------------------
 
-    // Les commandements d'une liste ('pos' ou 'neg'), dans l'ordre : { n, text, ref, group }.
+    // Les listes que recouvre un choix : 'pos', 'neg', ou 'all' (les positifs, puis les négatifs).
+    function kindsOf(kind) { return kind === 'all' ? ['pos', 'neg'] : LISTS613[kind] ? [kind] : []; }
+
+    // Les commandements d'un choix ('pos', 'neg' ou 'all'), dans l'ordre : { kind, n, text, ref, group }. Le numéro est celui de la liste d'origine :
+    // dans « tous », il y a donc deux commandements n° 1 (le premier positif, le premier négatif).
     function list613(kind) {
-        var list = LISTS613[kind];
-        if (!list) return [];
-        return list.data.map(function (entry, i) {
-            return { n: i + 1, text: entry[0], ref: entry[1], group: groupOf(kind, i + 1) };
+        var out = [];
+        kindsOf(kind).forEach(function (k) {
+            LISTS613[k].data.forEach(function (entry, i) {
+                out.push({ kind: k, n: i + 1, text: entry[0], ref: entry[1], group: groupOf(k, i + 1) });
+            });
         });
+        return out;
     }
 
     // Le regroupement (identifiant) du commandement numéro n ; null hors de la liste.
@@ -180,6 +186,6 @@
     return {
         SETS: SETS, LISTS613: LISTS613,
         getSet: getSet, itemsOf: itemsOf, itemKey: itemKey, fieldsOf: fieldsOf, neighbor: neighbor,
-        list613: list613, groupOf: groupOf, search613: search613, normalize: normalize
+        kindsOf: kindsOf, list613: list613, groupOf: groupOf, search613: search613, normalize: normalize
     };
 });

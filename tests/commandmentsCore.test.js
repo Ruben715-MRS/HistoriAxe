@@ -154,3 +154,30 @@ test('bouton « A / א » : chaque liste et chaque élément ont leur nom en let
     assert.equal(text('cmd_decalogue_d6_he'), 'לא תרצח');
     assert.ok(text('commandments_lang_aria'));
 });
+
+test('613 : le choix « tous » met les 248 positifs puis les 365 négatifs, chacun gardant son numéro d\'origine', () => {
+    const all = C.list613('all');
+    assert.equal(all.length, 613);
+    assert.deepEqual(C.kindsOf('all'), ['pos', 'neg']);
+    assert.deepEqual(C.kindsOf('neg'), ['neg']);
+    assert.deepEqual(C.kindsOf('zzz'), []);
+    assert.deepEqual([all[0].kind, all[0].n], ['pos', 1]);
+    assert.deepEqual([all[247].kind, all[247].n], ['pos', 248]);
+    assert.deepEqual([all[248].kind, all[248].n], ['neg', 1]);
+    assert.deepEqual([all[612].kind, all[612].n], ['neg', 365]);
+    assert.equal(C.search613('all', '').length, 613);
+    // Une recherche porte sur les deux listes : « convoit » trouve le commandement négatif 265 (et rien chez les positifs).
+    assert.deepEqual(C.search613('all', 'convoiter').map(c => c.kind + c.n), ['neg265']);
+    assert.ok(C.search613('all', 'Chabbat').some(c => c.kind === 'pos') && C.search613('all', 'Chabbat').some(c => c.kind === 'neg'));
+});
+
+test('613 : le menu des thèmes a de quoi nommer les 35 thèmes (15 positifs, 20 négatifs) et leurs deux intitulés', () => {
+    assert.equal(C.LISTS613.pos.groups.length, 15);
+    assert.equal(C.LISTS613.neg.groups.length, 20);
+    ['all', 'pos', 'neg'].forEach(k => {
+        assert.ok(text('cmd_mitzvot_' + k), 'bouton ' + k);
+        assert.ok(text('cmd_mitzvot_' + k + '_lead'), 'chapeau ' + k);
+    });
+    ['pos', 'neg'].forEach(k => assert.ok(text('cmd_mitzvot_kind_title_' + k)));
+    assert.ok(text('cmd_mitzvot_theme_label') && text('cmd_mitzvot_theme_placeholder'));
+});

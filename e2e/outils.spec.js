@@ -710,9 +710,28 @@ test('commandements bibliques : sept lois de Noé, dix commandements, trente-neu
     await expect(page.locator('#tool-commandments-count')).toContainText('248 commandements sur 248');
     await expect(page.locator('.cmd-nav-btn')).toHaveCount(1);
 
+    // « Tous » (à gauche de « Positifs ») : les 613, positifs puis négatifs ; le menu des thèmes en compte 35, sous deux intitulés.
+    expect(await page.locator('#tool-commandments-kind-all').evaluate(b => b.nextElementSibling.id)).toBe('tool-commandments-kind-pos'); // à gauche de « Positifs »
+    await page.locator('#tool-commandments-kind-all').click();
+    await expect(page.locator('#tool-commandments-613 .cmd-item')).toHaveCount(613);
+    await expect(page.locator('#tool-commandments-count')).toContainText('613 commandements sur 613');
+    await expect(page.locator('#tool-commandments-theme optgroup')).toHaveCount(2);
+    await expect(page.locator('#tool-commandments-theme option')).toHaveCount(36); // 35 thèmes + l'invite
+    // Choisir un thème y mène sans cacher les autres commandements.
+    await page.locator('#tool-commandments-theme').selectOption({ label: 'Relations interdites et mariages interdits' });
+    await expect(page.locator('#tool-commandments-613 .cmd-item')).toHaveCount(613);
+    await expect(page.locator('#cmd-613-group-neg-arayot')).toBeInViewport();
+    await expect(page.locator('#tool-commandments-theme')).toHaveValue('');
+
+    // Les 365 négatifs : 20 thèmes seulement ; les positifs : 15.
+    await page.locator('#tool-commandments-kind-pos').click();
+    await expect(page.locator('#tool-commandments-theme option')).toHaveCount(16);
+    await expect(page.locator('#tool-commandments-theme optgroup')).toHaveCount(0);
+
     // Les 365 négatifs, puis la recherche : un mot, ou un verset ; le numéro affiché reste celui du commandement.
     await page.locator('#tool-commandments-kind-neg').click();
     await expect(page.locator('#tool-commandments-613 .cmd-item')).toHaveCount(365);
+    await expect(page.locator('#tool-commandments-theme option')).toHaveCount(21);
     await page.locator('#tool-commandments-search').fill('convoiter');
     await expect(page.locator('#tool-commandments-613 .cmd-item')).toHaveCount(1);
     await expect(page.locator('#tool-commandments-613 .cmd-item')).toContainText('Ne pas convoiter');
