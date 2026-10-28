@@ -507,7 +507,7 @@ function pathOnLevelFinish(exp, won) {
     }
     // Finir un niveau compte pour la série quotidienne, comme n'importe quelle victoire.
     if (won && typeof streakRecordToday === 'function') streakRecordToday();
-    if (typeof HistoriAxeNotifications !== 'undefined') HistoriAxeNotifications.enableAndSchedule();
+    if (typeof HistoriAxeNotifications !== 'undefined') HistoriAxeNotifications.askAfterFirstGame();
 
     // Pièces, série de victoires, cartes (js/app/rewards.js) : un niveau perdu paie quand même une consolation.
     if (typeof rewardsOnLevelFinish === 'function') {

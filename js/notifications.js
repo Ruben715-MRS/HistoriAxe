@@ -351,11 +351,24 @@ var HistoriAxeNotifications = (function () {
         });
     }
 
-    // Au lancement de l'app : demande la permission dès l'ouverture (si le
-    // joueur n'a pas désactivé les notifications), puis programme les rappels.
-    function requestAtLaunch() {
-        if (!isSupported() || !userEnabled()) return Promise.resolve(false);
-        return enableAndSchedule();
+    // Après la première partie terminée : une seule fois, une fenêtre explique à quoi servent les rappels
+    // avant la demande système d'iOS (qui n'accepte pas de texte personnalisé). Un refus n'est jamais
+    // redemandé. Si la permission a déjà été tranchée, on se contente de reprogrammer.
+    function askAfterFirstGame() {
+        if (!isSupported() || !userEnabled()) return;
+        var alreadyAsked = !!(typeof appSettings !== 'undefined' && appSettings && appSettings.notifPromptShown);
+        if (alreadyAsked || typeof showConfirm !== 'function') { refreshAll(); return; }
+        plugin().checkPermissions().then(function (res) {
+            if (!res || res.display !== 'prompt') { refreshAll(); return; }
+            appSettings.notifPromptShown = true;
+            if (typeof settingsSave === 'function') settingsSave(appSettings);
+            var tFn = (typeof t === 'function') ? t : function (key) { return key; };
+            // Laisse l'écran de fin de partie s'afficher avant d'ouvrir la fenêtre.
+            setTimeout(function () {
+                showConfirm(tFn('notifications.ask_body'), function () { enableAndSchedule(); },
+                    { okLabel: tFn('notifications.ask_ok') });
+            }, 1500);
+        }).catch(function () {});
     }
 
     function cancelAll() {
@@ -372,7 +385,7 @@ var HistoriAxeNotifications = (function () {
         isSupported: isSupported,
         requestPermission: requestPermission,
         enableAndSchedule: enableAndSchedule,
-        requestAtLaunch: requestAtLaunch,
+        askAfterFirstGame: askAfterFirstGame,
         refreshAll: refreshAll,
         scheduleAll: scheduleAll,
         scheduleStreakReminder: scheduleStreakReminder,

@@ -83,12 +83,12 @@ window.onload = async () => {
     if (typeof checkIncomingDuelLink === 'function') checkIncomingDuelLink();
     if (typeof checkMyDuels === 'function') checkMyDuels();
 
-    // Notifications locales (voir js/notifications.js) : la permission est
-    // demandée dès le lancement (sauf réglage désactivé), puis les rappels
-    // sont reprogrammés à chaque retour au premier plan (le plugin
-    // @capacitor/app est déjà une dépendance native).
+    // Notifications locales (voir js/notifications.js) : reprogrammées à
+    // chaque retour au premier plan (le plugin @capacitor/app est déjà
+    // une dépendance native, jusqu'ici inutilisée). N'a d'effet que si la
+    // permission a déjà été accordée — jamais demandée au démarrage.
     if (typeof HistoriAxeNotifications !== 'undefined' && HistoriAxeNotifications.isSupported()) {
-        HistoriAxeNotifications.requestAtLaunch();
+        HistoriAxeNotifications.refreshAll();
         try {
             if (window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.App) {
                 window.Capacitor.Plugins.App.addListener('appStateChange', (state) => {
