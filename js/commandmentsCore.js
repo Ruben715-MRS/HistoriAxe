@@ -119,7 +119,7 @@
                 { id: 'vie', items: ['brit', 'pidyon'] }
             ]
         },
-        // Principes et textes : ce ne sont pas des mitsvot. Chaque thème recommence à 1, comme les mitsvot pratiques.
+        // Principes et textes : ce ne sont pas des mitsvot. Thèmes classés du plus ancien texte au plus récent ; chacun recommence à 1.
         {
             id: 'principes',
             icon: '📖',
@@ -127,10 +127,10 @@
             themeMenu: true,
             restartPerGroup: true,
             groups: [
-                { id: 'faith', items: range13('f') },
+                { id: 'mercy', items: range13('m') },
                 { id: 'hillel', items: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'h7'] },
                 { id: 'ishmael', items: range13('i') },
-                { id: 'mercy', items: range13('m') },
+                { id: 'faith', items: range13('f') },
                 { id: 'psoukim', items: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8', 'p9', 'p10', 'p11', 'p12'] }
             ]
         },

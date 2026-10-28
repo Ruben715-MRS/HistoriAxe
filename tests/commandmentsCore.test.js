@@ -203,8 +203,9 @@ test('principes et textes : cinq thèmes (13 principes, 7 règles de Hillel, 13 
     assert.equal(set.themeMenu, true);
     assert.equal(set.restartPerGroup, true);
     assert.deepEqual(set.groups.map(g => g.items.length), [13, 7, 13, 13, 12]);
+    assert.deepEqual(set.groups.map(g => g.id), ['mercy', 'hillel', 'ishmael', 'faith', 'psoukim']);
     assert.deepEqual(C.itemsOf('principes').map(i => i.n), [].concat(...[13, 7, 13, 13, 12].map(k => Array.from({ length: k }, (_, i) => i + 1))));
-    ['faith', 'hillel', 'ishmael', 'mercy', 'psoukim'].forEach(g => assert.ok(text('cmd_principes_group_' + g), 'titre ' + g));
+    ['mercy', 'hillel', 'ishmael', 'faith', 'psoukim'].forEach(g => assert.ok(text('cmd_principes_group_' + g), 'titre ' + g));
     C.itemsOf('principes').forEach(item => assert.ok(text(C.itemKey('principes', item.id, 'ref')), item.id + ' : source'));
     // Les attributs de miséricorde s'appuient tous sur Exode 34:6-7 : c'est le texte qui les fonde.
     C.itemsOf('principes').filter(i => i.group === 'mercy').forEach(i => assert.equal(text(C.itemKey('principes', i.id, 'ref')), 'Exode 34:6-7'));
