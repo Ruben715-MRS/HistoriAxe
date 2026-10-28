@@ -10,7 +10,7 @@ const fr = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'ui', 'fr.json'
 const text = key => fr.tools[key.replace(/^tools\./, '')];
 
 test('les listes sont dans l\'ordre : lois de Noé, dix commandements, travaux du Chabbat, 613 commandements', () => {
-    assert.deepEqual(C.SETS.map(s => s.id), ['noah', 'decalogue', 'shabbat', 'mitzvot', 'pratiques', 'principes', 'avot']);
+    assert.deepEqual(C.SETS.map(s => s.id), ['noah', 'decalogue', 'shabbat', 'mitzvot', 'pratiques', 'principes', 'avot', 'parachiot']);
 });
 
 test('effectifs de la tradition : 7 lois de Noé, 10 commandements, 39 travaux (11 + 13 + 9 + 6)', () => {
@@ -66,7 +66,8 @@ test('on passe d\'une liste à la suivante, et il n\'y a rien avant la première
     assert.equal(C.neighbor('mitzvot', 1).id, 'pratiques');
     assert.equal(C.neighbor('pratiques', 1).id, 'principes');
     assert.equal(C.neighbor('principes', 1).id, 'avot');
-    assert.equal(C.neighbor('avot', 1), null);
+    assert.equal(C.neighbor('avot', 1).id, 'parachiot');
+    assert.equal(C.neighbor('parachiot', 1), null);
 });
 
 test('les travaux du Chabbat suivent l\'ordre de la Michna : le premier est « semer », le dernier « transporter »', () => {
@@ -149,7 +150,7 @@ test('613 : la recherche ignore les accents, les majuscules, les apostrophes et 
 test('bouton « A / א » : chaque liste et chaque élément ont leur nom en lettres hébraïques, et ce sont bien des lettres hébraïques', () => {
     const hebreu = /^[\u05D0-\u05EA\u05F3\u05F4\u05BE\s׳״]+$/;
     C.SETS.forEach(s => assert.match(text('cmd_' + s.id + '_he'), hebreu, 'liste ' + s.id));
-    ['noah', 'decalogue', 'shabbat', 'pratiques', 'principes', 'avot'].forEach(id => C.itemsOf(id).forEach(item => {
+    ['noah', 'decalogue', 'shabbat', 'pratiques', 'principes', 'avot', 'parachiot'].forEach(id => C.itemsOf(id).forEach(item => {
         const value = text(C.itemKey(id, item.id, 'he'));
         assert.match(value, hebreu, `${id}/${item.id}`);
     }));
@@ -234,4 +235,14 @@ test('Pirkei Avot : trois thèmes (3 piliers, 51 formulations de 6:6, 11 maximes
     // La règle de Hillel n'est pas une maxime de Pirkei Avot : elle figure en « à savoir », avec sa source talmudique.
     assert.match(text('cmd_avot_know_1'), /Chabbat 31a/);
     assert.ok(!C.itemsOf('avot').some(i => /haïssable/.test(text(C.itemKey('avot', i.id, 'text')))));
+});
+
+test('54 parachiot : cinq livres (12, 11, 10, 10, 11), numérotées de 1 à 54 sans recommencer, chacune avec son premier verset', () => {
+    const set = C.getSet('parachiot');
+    assert.equal(set.themeMenu, true);
+    assert.deepEqual(set.groups.map(g => g.items.length), [12, 11, 10, 10, 11]);
+    assert.equal(C.itemsOf('parachiot').length, 54);
+    assert.deepEqual(C.itemsOf('parachiot').map(i => i.n), Array.from({ length: 54 }, (_, i) => i + 1));
+    C.itemsOf('parachiot').forEach(i => assert.match(text(C.itemKey('parachiot', i.id, 'ref')), /^(Genèse|Exode|Lévitique|Nombres|Deutéronome) \d+:\d+/, i.id));
+    ['genese', 'exode', 'levitique', 'nombres', 'deuteronome'].forEach(g => assert.ok(text('cmd_parachiot_group_' + g), 'titre ' + g));
 });

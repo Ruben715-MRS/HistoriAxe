@@ -896,3 +896,18 @@ test('citations : une phrase apocryphe le dit sur sa fiche, sans lien quand l\'a
     await expect(page.locator('#cit-card-body')).toContainText('Pourquoi ce statut');
     await expect(page.locator('#cit-card-body .cit-links')).toHaveCount(0);
 });
+
+test('54 parachiot : les cinq livres dans le menu, et la numérotation continue jusqu\'à 54', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 900 });
+    await page.locator('#btn-tools').click();
+    await page.locator('#screen-tools .arcade-card', { hasText: 'Mitsvot et principes' }).click();
+    await page.locator('#tool-commandments-tab-parachiot').click();
+    await expect(page.locator('#tool-commandments-tab-parachiot')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(54);
+    await expect(page.locator('#tool-commandments-theme-parachiot option')).toHaveCount(6); // 5 livres + l'invite
+    await page.locator('#tool-commandments-theme-parachiot').selectOption({ label: 'Lévitique' });
+    await expect(page.locator('#cmd-group-parachiot-levitique')).toBeInViewport();
+    await expect(page.locator('#cmd-group-parachiot-levitique .cmd-item').first()).toContainText('Vayikra');
+    await expect(page.locator('#cmd-group-parachiot-levitique .cmd-item').first()).toContainText('24');
+    await expect(page.locator('.cmd-nav-btn')).toHaveCount(1); // « précédent » seulement : c'est la dernière section
+});
