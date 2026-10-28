@@ -1,4 +1,4 @@
-// Commandements bibliques (js/commandmentsCore.js) : les effectifs de la tradition, et un texte pour chaque élément dans ui/fr.json.
+// Mitsvot et principes (js/commandmentsCore.js) : les effectifs de la tradition, et un texte pour chaque élément dans ui/fr.json.
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
@@ -199,13 +199,13 @@ test('mitsvot pratiques : trois listes courtes (femmes, Pessa\'h, Soukkot), dix 
     assert.equal(C.getSet('mitzvot').themeMenu, undefined);
 });
 
-test('principes et textes : quatre thèmes (13 principes, 7 règles de Hillel, 13 de Rabbi Ismaël, 13 attributs), 46 éléments, numérotés par thème', () => {
+test('principes et textes : cinq thèmes (13 principes, 7 règles de Hillel, 13 de Rabbi Ismaël, 13 attributs, 12 Psoukim), 58 éléments, numérotés par thème', () => {
     const set = C.getSet('principes');
     assert.equal(set.themeMenu, true);
     assert.equal(set.restartPerGroup, true);
-    assert.deepEqual(set.groups.map(g => g.items.length), [13, 7, 13, 13]);
-    assert.deepEqual(C.itemsOf('principes').map(i => i.n), [].concat(...[13, 7, 13, 13].map(k => Array.from({ length: k }, (_, i) => i + 1))));
-    ['faith', 'hillel', 'ishmael', 'mercy'].forEach(g => assert.ok(text('cmd_principes_group_' + g), 'titre ' + g));
+    assert.deepEqual(set.groups.map(g => g.items.length), [13, 7, 13, 13, 12]);
+    assert.deepEqual(C.itemsOf('principes').map(i => i.n), [].concat(...[13, 7, 13, 13, 12].map(k => Array.from({ length: k }, (_, i) => i + 1))));
+    ['faith', 'hillel', 'ishmael', 'mercy', 'psoukim'].forEach(g => assert.ok(text('cmd_principes_group_' + g), 'titre ' + g));
     C.itemsOf('principes').forEach(item => assert.ok(text(C.itemKey('principes', item.id, 'ref')), item.id + ' : source'));
     // Les attributs de miséricorde s'appuient tous sur Exode 34:6-7 : c'est le texte qui les fonde.
     C.itemsOf('principes').filter(i => i.group === 'mercy').forEach(i => assert.equal(text(C.itemKey('principes', i.id, 'ref')), 'Exode 34:6-7'));

@@ -668,7 +668,7 @@ test('généalogie biblique, à l\'horizontale : déplier une branche fait défi
 test('commandements bibliques : sept lois de Noé, dix commandements, trente-neuf travaux, 613 mitsvot, avec des boutons pour passer de l\'une à l\'autre', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 900 });
     await page.locator('#btn-tools').click();
-    await page.locator('#screen-tools .arcade-card', { hasText: 'Commandements bibliques' }).click();
+    await page.locator('#screen-tools .arcade-card', { hasText: 'Mitsvot et principes' }).click();
     expect(await visibleScreen(page)).toBe('screen-tool-commandments');
     expect(await page.locator('#screen-tool-commandments').innerText()).not.toContain('tools.');
 
@@ -756,11 +756,11 @@ test('commandements bibliques : sept lois de Noé, dix commandements, trente-neu
     await expect(page.locator('#cmd-group-pratiques-soukkot .cmd-item').first().locator('.cmd-heb')).toHaveText('אתרוג');
     await page.locator('#tool-commandments-lang-fr').click();
 
-    // Enfin « Principes et textes » : quatre thèmes, 46 textes, et le menu mène à celui qu'on choisit.
+    // Enfin « Principes et textes » : cinq thèmes, 58 textes, et le menu mène à celui qu'on choisit.
     await page.locator('.cmd-nav-btn', { hasText: 'Principes et textes' }).click();
     await expect(page.locator('#tool-commandments-tab-principes')).toHaveAttribute('aria-pressed', 'true');
-    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(46);
-    await expect(page.locator('#tool-commandments-theme-principes option')).toHaveCount(5); // 4 thèmes + l'invite
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(58);
+    await expect(page.locator('#tool-commandments-theme-principes option')).toHaveCount(6); // 5 thèmes + l'invite
     await page.locator('#tool-commandments-theme-principes').selectOption({ label: 'Les treize attributs de miséricorde' });
     await expect(page.locator('#cmd-group-principes-mercy')).toBeInViewport();
     await expect(page.locator('#cmd-group-principes-mercy .cmd-item').first()).toContainText('Adonaï');

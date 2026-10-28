@@ -78,14 +78,15 @@
         {
             id: 'principes',
             icon: '📖',
-            count: 46,
+            count: 58,
             themeMenu: true,
             restartPerGroup: true,
             groups: [
                 { id: 'faith', items: range13('f') },
                 { id: 'hillel', items: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'h7'] },
                 { id: 'ishmael', items: range13('i') },
-                { id: 'mercy', items: range13('m') }
+                { id: 'mercy', items: range13('m') },
+                { id: 'psoukim', items: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8', 'p9', 'p10', 'p11', 'p12'] }
             ]
         }
     ];
