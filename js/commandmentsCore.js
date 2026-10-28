@@ -65,12 +65,13 @@
         {
             id: 'pratiques',
             icon: '🌿',
-            count: 21,
+            count: 26,
             themeMenu: true,
             restartPerGroup: true,
             groups: [
                 { id: 'women', items: ['hallah', 'nidda', 'ner'] },
                 { id: 'pesah', items: ['pesah', 'matsa', 'maror', 'hametz', 'omer'] },
+                { id: 'kippour', items: ['ky1', 'ky2', 'ky3', 'ky4', 'ky5'] },
                 { id: 'soukkot', items: ['etrog', 'lulav', 'hadass', 'arava'] },
                 { id: 'foyer', items: ['mezouza', 'birkat', 'havdala'] },
                 { id: 'fetes', items: ['hanouka', 'mishloah', 'matanot', 'megila'] },
