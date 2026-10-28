@@ -660,7 +660,15 @@
     "loading": "Loading…",
     "error": "League temporarily unavailable.",
     "empty": "No one in your league yet this week — be the first to score points!",
-    "you_suffix": "(you)"
+    "you_suffix": "(you)",
+    "tab_group": "Weekly league",
+    "tab_country": "National ranking",
+    "tab_world": "World ranking",
+    "week_hint_ranking": "Your XP this week: {xp}. Ranked on verified XP for the week (challenge games replayed by the server). It resets every Monday.",
+    "country_label": "Your country:",
+    "country_placeholder": "— choose —",
+    "country_prompt": "Pick your country to see the national ranking.",
+    "not_ranked": "Not enough players in this ranking this week yet: at least {min} need to score points."
   },
   "duels": {
     "title_btn": "⚔️ Challenge a friend",

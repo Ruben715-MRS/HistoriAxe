@@ -1370,6 +1370,20 @@ textarea.form-input {
     color: var(--primary-blue);
 }
 
+.league-country-row {
+    text-align: center;
+    font-size: 13.5px;
+    margin-bottom: 12px;
+}
+
+.league-country-row select {
+    margin-left: 6px;
+    max-width: 100%;
+    font-size: 13.5px;
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+
 #league-list-container .leaderboard-row {
     display: grid;
     grid-template-columns: 28px 1fr auto;

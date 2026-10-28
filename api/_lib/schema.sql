@@ -20,6 +20,9 @@ create table if not exists players (
 -- Comptes (voir api/account.js) : identifiant Supabase Auth du joueur connecté.
 alter table players add column if not exists auth_user_id uuid unique;
 
+-- Pays déclaré par le joueur (classement national, voir api/league.js) : code ISO, '' si non renseigné.
+alter table players add column if not exists country text not null default '';
+
 create table if not exists daily_scores (
     id             bigserial primary key,
     player_id      uuid not null references players(id) on delete cascade,

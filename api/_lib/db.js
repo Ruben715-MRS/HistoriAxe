@@ -247,6 +247,8 @@ async function ensureSchema() {
         await query(`alter table players add column if not exists friend_code text unique;`);
         await query(`alter table players add column if not exists friend_requests boolean not null default true;`);
         await query(`alter table players add column if not exists level smallint not null default 1;`);
+        // Classement national (api/league.js, scope=country) : pays déclaré par le joueur, code ISO ou '' si non renseigné.
+        await query(`alter table players add column if not exists country text not null default '';`);
         await query(`
             create table if not exists friendships (
                 id           bigserial primary key,
