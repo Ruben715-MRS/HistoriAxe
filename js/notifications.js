@@ -351,6 +351,13 @@ var HistoriAxeNotifications = (function () {
         });
     }
 
+    // Au lancement de l'app : demande la permission dès l'ouverture (si le
+    // joueur n'a pas désactivé les notifications), puis programme les rappels.
+    function requestAtLaunch() {
+        if (!isSupported() || !userEnabled()) return Promise.resolve(false);
+        return enableAndSchedule();
+    }
+
     function cancelAll() {
         cancel(IDS.STREAK_REMINDER);
         cancel(IDS.DAILY_AVAILABLE);
@@ -365,6 +372,7 @@ var HistoriAxeNotifications = (function () {
         isSupported: isSupported,
         requestPermission: requestPermission,
         enableAndSchedule: enableAndSchedule,
+        requestAtLaunch: requestAtLaunch,
         refreshAll: refreshAll,
         scheduleAll: scheduleAll,
         scheduleStreakReminder: scheduleStreakReminder,

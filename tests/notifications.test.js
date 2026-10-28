@@ -73,6 +73,17 @@ test('enableAndSchedule et refreshAll programment les rappels de révision', asy
     assert.ok(b.calls.scheduled.some((n) => n.id === 1010));
 });
 
+test('requestAtLaunch demande la permission et programme les rappels, sauf réglage désactivé', async () => {
+    const on = load({ entries: many });
+    on.N.requestAtLaunch();
+    await new Promise((r) => setTimeout(r, 10));
+    assert.ok(on.calls.scheduled.some((n) => n.id === 1010));
+    const off = load({ entries: many, enabled: false });
+    const granted = await off.N.requestAtLaunch();
+    assert.equal(granted, false);
+    assert.equal(off.calls.scheduled.length, 0);
+});
+
 const ids = (calls) => calls.scheduled.map((n) => n.id).sort((a, b) => a - b);
 
 test('le récap hebdomadaire part le dimanche à 19 h (Capacitor : 1 = dimanche)', () => {
