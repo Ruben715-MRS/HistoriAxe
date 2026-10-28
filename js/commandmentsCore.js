@@ -18,6 +18,13 @@
 
     var DATA = typeof module === 'object' && typeof module.exports === 'object' ? require('./commandments613Data.js') : Commandments613Data;
 
+    // Treize éléments, identifiants préfixés : f1…f13, i1…i13, m1…m13.
+    function range13(prefix) {
+        var out = [];
+        for (var n = 1; n <= 13; n++) out.push(prefix + n);
+        return out;
+    }
+
     // Les travaux du Chabbat sont numérotés dans l'ordre de la Michna (Chabbat 7:2), de 1 à 39.
     function range(from, to) {
         var out = [];
@@ -65,6 +72,20 @@
                 { id: 'women', items: ['hallah', 'nidda', 'ner'] },
                 { id: 'pesah', items: ['pesah', 'matsa', 'maror'] },
                 { id: 'soukkot', items: ['etrog', 'lulav', 'hadass', 'arava'] }
+            ]
+        },
+        // Principes et textes : ce ne sont pas des mitsvot. Chaque thème recommence à 1, comme les mitsvot pratiques.
+        {
+            id: 'principes',
+            icon: '📖',
+            count: 46,
+            themeMenu: true,
+            restartPerGroup: true,
+            groups: [
+                { id: 'faith', items: range13('f') },
+                { id: 'hillel', items: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'h7'] },
+                { id: 'ishmael', items: range13('i') },
+                { id: 'mercy', items: range13('m') }
             ]
         }
     ];

@@ -751,10 +751,20 @@ test('commandements bibliques : sept lois de Noé, dix commandements, trente-neu
     await expect(page.locator('#cmd-group-pratiques-soukkot')).toBeInViewport();
     await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(10);
     await expect(page.locator('#cmd-group-pratiques-soukkot .cmd-item').first()).toContainText('L\'étrog');
-    await expect(page.locator('.cmd-nav-btn')).toHaveCount(1); // seulement « précédent » : c'est la dernière liste
+    await expect(page.locator('.cmd-nav-btn')).toHaveCount(2); // « précédent » et « Principes et textes »
     await page.locator('#tool-commandments-lang-he').click();
     await expect(page.locator('#cmd-group-pratiques-soukkot .cmd-item').first().locator('.cmd-heb')).toHaveText('אתרוג');
     await page.locator('#tool-commandments-lang-fr').click();
+
+    // Enfin « Principes et textes » : quatre thèmes, 46 textes, et le menu mène à celui qu'on choisit.
+    await page.locator('.cmd-nav-btn', { hasText: 'Principes et textes' }).click();
+    await expect(page.locator('#tool-commandments-tab-principes')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(46);
+    await expect(page.locator('#tool-commandments-theme-principes option')).toHaveCount(5); // 4 thèmes + l'invite
+    await page.locator('#tool-commandments-theme-principes').selectOption({ label: 'Les treize attributs de miséricorde' });
+    await expect(page.locator('#cmd-group-principes-mercy')).toBeInViewport();
+    await expect(page.locator('#cmd-group-principes-mercy .cmd-item').first()).toContainText('Adonaï');
+    await expect(page.locator('.cmd-nav-btn')).toHaveCount(1); // « précédent » seulement : c'est la dernière section
 
     // Les onglets font aussi revenir en arrière ; le choix « א » suit : les lois de Noé s'affichent avec leur nom hébreu.
     await page.locator('#tool-commandments-tab-noah').click();
