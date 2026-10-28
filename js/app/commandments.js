@@ -7,7 +7,7 @@
 // deux sous-listes, positifs et négatifs, regroupées par thème, et une recherche. Tout passe par textContent, jamais par du HTML.
 
 let commandmentsSet = 'noah';
-let commandments613Kind = 'pos';
+let commandments613Kind = 'all';
 let commandments613Query = '';
 // Le bouton « A / א » (comme sur la généalogie) : les noms hébreux en transcription (« A », par défaut) ou en lettres hébraïques (« א »).
 let commandmentsLang = 'fr';

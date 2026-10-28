@@ -699,32 +699,30 @@ test('commandements bibliques : sept lois de Noé, dix commandements, trente-neu
     await expect(page.locator('#tool-commandments-body .cmd-item').first().locator('.cmd-heb')).toHaveAttribute('dir', 'rtl');
     await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(39);
 
-    // Enfin les 613 : 248 positifs d'abord, avec leur verset ; plus de bouton « suivant ».
+    // Enfin les 613 : « Tous » d'abord (à gauche de « Positifs »), avec le verset de chaque commandement ; plus de bouton « suivant ».
     await page.locator('.cmd-nav-btn', { hasText: '613 mitsvot' }).click();
     await expect(page.locator('#tool-commandments-lang')).toBeHidden();
     await expect(page.locator('#tool-commandments-tab-mitzvot')).toHaveAttribute('aria-pressed', 'true');
-    await expect(page.locator('#tool-commandments-kind-pos')).toHaveAttribute('aria-pressed', 'true');
-    await expect(page.locator('#tool-commandments-613 .cmd-item')).toHaveCount(248);
+    await expect(page.locator('#tool-commandments-kind-all')).toHaveAttribute('aria-pressed', 'true');
+    expect(await page.locator('#tool-commandments-kind-all').evaluate(b => b.nextElementSibling.id)).toBe('tool-commandments-kind-pos');
+    await expect(page.locator('#tool-commandments-613 .cmd-item')).toHaveCount(613);
     await expect(page.locator('#tool-commandments-613 .cmd-item').first()).toContainText('Savoir qu\'il y a un Dieu');
     await expect(page.locator('#tool-commandments-613 .cmd-item').first()).toContainText('Exode 20:2');
-    await expect(page.locator('#tool-commandments-count')).toContainText('248 commandements sur 248');
+    await expect(page.locator('#tool-commandments-count')).toContainText('613 commandements sur 613');
     await expect(page.locator('.cmd-nav-btn')).toHaveCount(1);
 
-    // « Tous » (à gauche de « Positifs ») : les 613, positifs puis négatifs ; le menu des thèmes en compte 35, sous deux intitulés.
-    expect(await page.locator('#tool-commandments-kind-all').evaluate(b => b.nextElementSibling.id)).toBe('tool-commandments-kind-pos'); // à gauche de « Positifs »
-    await page.locator('#tool-commandments-kind-all').click();
-    await expect(page.locator('#tool-commandments-613 .cmd-item')).toHaveCount(613);
-    await expect(page.locator('#tool-commandments-count')).toContainText('613 commandements sur 613');
+    // Le menu des thèmes en compte 35, sous deux intitulés ; en choisir un y mène sans cacher les autres commandements.
     await expect(page.locator('#tool-commandments-theme optgroup')).toHaveCount(2);
     await expect(page.locator('#tool-commandments-theme option')).toHaveCount(36); // 35 thèmes + l'invite
-    // Choisir un thème y mène sans cacher les autres commandements.
     await page.locator('#tool-commandments-theme').selectOption({ label: 'Relations interdites et mariages interdits' });
     await expect(page.locator('#tool-commandments-613 .cmd-item')).toHaveCount(613);
     await expect(page.locator('#cmd-613-group-neg-arayot')).toBeInViewport();
     await expect(page.locator('#tool-commandments-theme')).toHaveValue('');
 
-    // Les 365 négatifs : 20 thèmes seulement ; les positifs : 15.
+    // Les 248 positifs : 15 thèmes seulement.
     await page.locator('#tool-commandments-kind-pos').click();
+    await expect(page.locator('#tool-commandments-613 .cmd-item')).toHaveCount(248);
+    await expect(page.locator('#tool-commandments-count')).toContainText('248 commandements sur 248');
     await expect(page.locator('#tool-commandments-theme option')).toHaveCount(16);
     await expect(page.locator('#tool-commandments-theme optgroup')).toHaveCount(0);
 
