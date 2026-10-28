@@ -921,7 +921,7 @@ test('La Michna : les six ordres dans le menu, et la numérotation continue jusq
     await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(63);
     await expect(page.locator('#tool-commandments-body .cmd-group-summary').first()).toContainText('Les lois agricoles');
     await expect(page.locator('#tool-commandments-theme-michna option')).toHaveCount(7); // 6 ordres + l'invite
-    await page.locator('#tool-commandments-theme-michna').selectOption({ label: 'Tohorot (Pureté)' });
+    await page.locator('#tool-commandments-theme-michna').selectOption({ label: 'Taharot (Pureté)' });
     await expect(page.locator('#cmd-group-michna-tahorot')).toBeInViewport();
     await expect(page.locator('#cmd-group-michna-tahorot .cmd-item').first()).toContainText('Kélim');
     await expect(page.locator('.cmd-nav-btn')).toHaveCount(1); // « précédent » seulement : dernière section

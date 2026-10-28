@@ -38,7 +38,9 @@ test('chaque élément a son nom, son explication et sa source dans ui/fr.json (
             C.fieldsOf(s.id).forEach(field => {
                 const value = text(C.itemKey(s.id, item.id, field));
                 assert.equal(typeof value, 'string', `${s.id}/${item.id}/${field} manque`);
-                if (field !== 'ref' || s.id !== 'shabbat') assert.ok(value.trim().length > 0, `${s.id}/${item.id}/${field} est vide`);
+                // Pas de source sous chaque traité de la Michna : l'ordre, affiché au-dessus, la donne déjà.
+                const sansSource = (field === 'ref' && (s.id === 'shabbat' || s.id === 'michna'));
+                if (!sansSource) assert.ok(value.trim().length > 0, `${s.id}/${item.id}/${field} est vide`);
             });
         });
     });
