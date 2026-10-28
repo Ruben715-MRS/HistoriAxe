@@ -673,7 +673,12 @@ test('textes de référence : navigation entre les sections, par les onglets', a
     expect(await visibleScreen(page)).toBe('screen-tool-commandments');
     expect(await page.locator('#screen-tool-commandments').innerText()).not.toContain('tools.');
 
-    // Les lois de Noé d'abord : sept, avec leur source.
+    // La section s'ouvre sur les 54 parachiot.
+    await expect(page.locator('#tool-commandments-tab-parachiot')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(54);
+
+    // Puis les lois de Noé : sept, avec leur source.
+    await page.locator('#tool-commandments-tab-noah').click();
     await expect(page.locator('#tool-commandments-tab-noah')).toHaveAttribute('aria-pressed', 'true');
     await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(7);
     await expect(page.locator('#tool-commandments-body')).toContainText('Genèse 9:6');

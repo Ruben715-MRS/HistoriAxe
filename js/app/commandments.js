@@ -6,7 +6,7 @@
 // « à savoir ». La structure est dans js/commandmentsCore.js, les textes dans ui/fr.json (`tools.cmd_*`). Les 613 (js/commandments613Data.js) ont
 // deux sous-listes, positifs et négatifs, regroupées par thème, et une recherche. Tout passe par textContent, jamais par du HTML.
 
-let commandmentsSet = 'noah';
+let commandmentsSet = 'parachiot';
 let commandments613Kind = 'all';
 let commandments613Query = '';
 // Le bouton « A / א » (comme sur la généalogie) : les noms hébreux en transcription (« A », par défaut) ou en lettres hébraïques (« א »).
