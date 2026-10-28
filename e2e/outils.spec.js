@@ -18,16 +18,17 @@ async function ouvrir(page, texte) {
     await page.locator('#screen-tools .arcade-card', { hasText: texte }).click();
 }
 
-test('l\'Atelier s\'ouvre depuis les catégories, range ses seize entrées en quatre groupes et revient', async ({ page }) => {
+test('l\'Atelier s\'ouvre depuis les catégories, range ses seize entrées en cinq groupes et revient', async ({ page }) => {
     await page.locator('#btn-tools').click();
     expect(await visibleScreen(page)).toBe('screen-tools');
     await expect(page.locator('#screen-tools .arcade-card')).toHaveCount(16);
     await expect(page.locator('#screen-tools .header-title')).toHaveText('Atelier');
-    await expect(page.locator('#screen-tools .tools-group')).toHaveCount(4);
-    await expect(page.locator('#screen-tools .tools-group .modes-group-title')).toHaveText(['Convertir et calculer', 'Calendriers', 'Repères', 'Cartes et arbres']);
-    await expect(page.locator('#screen-tools .tools-group').nth(0).locator('.arcade-card')).toHaveCount(5);
-    await expect(page.locator('#screen-tools .tools-group').nth(0).locator('.arcade-card', { hasText: 'Poids et mesures bibliques' })).toHaveCount(1);
-    await expect(page.locator('#screen-tools .tools-group').nth(3).locator('.arcade-card', { hasText: 'Généalogie biblique' })).toHaveCount(1);
+    await expect(page.locator('#screen-tools .tools-group')).toHaveCount(5);
+    await expect(page.locator('#screen-tools .tools-group .modes-group-title')).toHaveText(['Convertir et calculer', 'Calendriers', 'Repères', 'Cartes', 'Bible et tradition']);
+    await expect(page.locator('#screen-tools .tools-group').nth(0).locator('.arcade-card')).toHaveCount(4);
+    await expect(page.locator('#screen-tools .tools-group').nth(4).locator('.arcade-card')).toHaveCount(4);
+    await expect(page.locator('#screen-tools .tools-group').nth(4).locator('.arcade-card', { hasText: 'Poids et mesures bibliques' })).toHaveCount(1);
+    await expect(page.locator('#screen-tools .tools-group').nth(4).locator('.arcade-card', { hasText: 'Généalogie biblique' })).toHaveCount(1);
     await page.locator('#screen-tools .arcade-card', { hasText: 'Chiffres romains' }).click();
     expect(await visibleScreen(page)).toBe('screen-tool-roman');
     await page.locator('#screen-tool-roman .back-btn').click();
