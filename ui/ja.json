@@ -673,6 +673,13 @@
     "collapse_all": "すべて閉じる",
     "revise_axis": "この軸を復習する：{axe}"
   },
+  "location": {
+    "ask_body": "あなたの歴史はどこにある？位置情報を許可すると、近くで起きた出来事が地図上で一目でわかります。位置情報は端末内にとどまり、保存も共有もされません。",
+    "ask_ok": "現在地を表示",
+    "locate_label": "現在地を表示",
+    "unavailable": "位置情報を取得できません。端末の設定でHistoriAxeの位置情報を許可すると、地図に現在地を表示できます。",
+    "you_are_here": "現在地"
+  },
   "notifications": {
     "review_title": "🧠 今日の復習",
     "review_body": "今日復習する出来事は {count} 件。5分あれば十分です。",
