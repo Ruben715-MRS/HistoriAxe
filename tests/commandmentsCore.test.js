@@ -10,7 +10,7 @@ const fr = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'ui', 'fr.json'
 const text = key => fr.tools[key.replace(/^tools\./, '')];
 
 test('les listes sont dans l\'ordre : lois de Noé, dix commandements, travaux du Chabbat, 613 commandements', () => {
-    assert.deepEqual(C.SETS.map(s => s.id), ['noah', 'decalogue', 'shabbat', 'mitzvot', 'pratiques', 'principes', 'avot', 'parachiot']);
+    assert.deepEqual(C.SETS.map(s => s.id), ['noah', 'decalogue', 'shabbat', 'mitzvot', 'pratiques', 'principes', 'avot', 'parachiot', 'michna']);
 });
 
 test('effectifs de la tradition : 7 lois de Noé, 10 commandements, 39 travaux (11 + 13 + 9 + 6)', () => {
@@ -67,7 +67,8 @@ test('on passe d\'une liste à la suivante, et il n\'y a rien avant la première
     assert.equal(C.neighbor('pratiques', 1).id, 'principes');
     assert.equal(C.neighbor('principes', 1).id, 'avot');
     assert.equal(C.neighbor('avot', 1).id, 'parachiot');
-    assert.equal(C.neighbor('parachiot', 1), null);
+    assert.equal(C.neighbor('parachiot', 1).id, 'michna');
+    assert.equal(C.neighbor('michna', 1), null);
 });
 
 test('les travaux du Chabbat suivent l\'ordre de la Michna : le premier est « semer », le dernier « transporter »', () => {
@@ -150,7 +151,7 @@ test('613 : la recherche ignore les accents, les majuscules, les apostrophes et 
 test('bouton « A / א » : chaque liste et chaque élément ont leur nom en lettres hébraïques, et ce sont bien des lettres hébraïques', () => {
     const hebreu = /^[\u05D0-\u05EA\u05F3\u05F4\u05BE\s׳״]+$/;
     C.SETS.forEach(s => assert.match(text('cmd_' + s.id + '_he'), hebreu, 'liste ' + s.id));
-    ['noah', 'decalogue', 'shabbat', 'pratiques', 'principes', 'avot', 'parachiot'].forEach(id => C.itemsOf(id).forEach(item => {
+    ['noah', 'decalogue', 'shabbat', 'pratiques', 'principes', 'avot', 'parachiot', 'michna'].forEach(id => C.itemsOf(id).forEach(item => {
         const value = text(C.itemKey(id, item.id, 'he'));
         assert.match(value, hebreu, `${id}/${item.id}`);
     }));
@@ -245,4 +246,16 @@ test('54 parachiot : cinq livres (12, 11, 10, 10, 11), numérotées de 1 à 54 s
     assert.deepEqual(C.itemsOf('parachiot').map(i => i.n), Array.from({ length: 54 }, (_, i) => i + 1));
     C.itemsOf('parachiot').forEach(i => assert.match(text(C.itemKey('parachiot', i.id, 'ref')), /^(Genèse|Exode|Lévitique|Nombres|Deutéronome) \d+:\d+/, i.id));
     ['genese', 'exode', 'levitique', 'nombres', 'deuteronome'].forEach(g => assert.ok(text('cmd_parachiot_group_' + g), 'titre ' + g));
+});
+
+test('La Michna : six ordres (11, 12, 7, 10, 11, 12), soixante-trois traités numérotés de 1 à 63, chaque ordre avec son résumé', () => {
+    const set = C.getSet('michna');
+    assert.equal(set.themeMenu, true);
+    assert.deepEqual(set.groups.map(g => g.items.length), [11, 12, 7, 10, 11, 12]);
+    assert.equal(C.itemsOf('michna').length, 63);
+    assert.deepEqual(C.itemsOf('michna').map(i => i.n), Array.from({ length: 63 }, (_, i) => i + 1));
+    set.groups.forEach(g => {
+        assert.ok(text('cmd_michna_group_' + g.id), 'titre ' + g.id);
+        assert.ok(text('cmd_michna_group_' + g.id + '_summary'), 'résumé ' + g.id);
+    });
 });

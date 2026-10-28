@@ -118,6 +118,21 @@
                 { id: 'nombres', items: ['n1', 'n2', 'n3', 'n4', 'n5', 'n6', 'n7', 'n8', 'n9', 'n10'] },
                 { id: 'deuteronome', items: ['d1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9', 'd10', 'd11'] }
             ]
+        },
+        // La Michna : six ordres, soixante-trois traités, numérotés de 1 à 63 dans l'ordre traditionnel. Chaque ordre a son résumé.
+        {
+            id: 'michna',
+            icon: '📘',
+            count: 63,
+            themeMenu: true,
+            groups: [
+                { id: 'zeraim', items: ['ber', 'peah', 'dem', 'kil', 'shv', 'ter', 'maa', 'mas', 'hal', 'org', 'bik'] },
+                { id: 'moed', items: ['sha', 'eru', 'pes', 'shk', 'yom', 'suk', 'bei', 'rhs', 'tan', 'meg', 'mkt', 'hag'] },
+                { id: 'nashim', items: ['yev', 'ket', 'ned', 'naz', 'sot', 'git', 'kid'] },
+                { id: 'nezikin', items: ['bkm', 'bmt', 'bba', 'san', 'mak', 'shu', 'edu', 'avz', 'avo', 'hor'] },
+                { id: 'kodashim', items: ['zev', 'men', 'hul', 'bek', 'ara', 'tem', 'ker', 'mei', 'tmd', 'mid', 'kin'] },
+                { id: 'tahorot', items: ['kel', 'oha', 'neg', 'par', 'toh', 'miq', 'nid', 'mac', 'zab', 'tvy', 'yad', 'ukz'] }
+            ]
         }
     ];
 

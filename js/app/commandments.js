@@ -95,6 +95,14 @@ function renderCommandments() {
             gh.className = 'cmd-group-title';
             gh.textContent = cmdText('cmd_' + set.id + '_group_' + group.id);
             section.appendChild(gh);
+            // Le résumé du thème, sous son titre, quand il existe (les six ordres de la Michna).
+            const sumKey = 'tools.cmd_' + set.id + '_group_' + group.id + '_summary';
+            if (t(sumKey) !== sumKey) {
+                const sum = document.createElement('p');
+                sum.className = 'tool-small cmd-group-summary';
+                sum.textContent = t(sumKey);
+                section.appendChild(sum);
+            }
         }
         const list = document.createElement('ol');
         list.className = 'cmd-list';

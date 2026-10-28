@@ -911,3 +911,18 @@ test('54 parachiot : les cinq livres dans le menu, et la numérotation continue 
     await expect(page.locator('#cmd-group-parachiot-levitique .cmd-item').first()).toContainText('24');
     await expect(page.locator('.cmd-nav-btn')).toHaveCount(1); // « précédent » seulement : c'est la dernière section
 });
+
+test('La Michna : les six ordres dans le menu, et la numérotation continue jusqu\'à 63', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 900 });
+    await page.locator('#btn-tools').click();
+    await page.locator('#screen-tools .arcade-card', { hasText: 'Mitsvot et principes' }).click();
+    await page.locator('#tool-commandments-tab-michna').click();
+    await expect(page.locator('#tool-commandments-tab-michna')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(63);
+    await expect(page.locator('#tool-commandments-body .cmd-group-summary').first()).toContainText('Les lois agricoles');
+    await expect(page.locator('#tool-commandments-theme-michna option')).toHaveCount(7); // 6 ordres + l'invite
+    await page.locator('#tool-commandments-theme-michna').selectOption({ label: 'Tohorot (Pureté)' });
+    await expect(page.locator('#cmd-group-michna-tahorot')).toBeInViewport();
+    await expect(page.locator('#cmd-group-michna-tahorot .cmd-item').first()).toContainText('Kélim');
+    await expect(page.locator('.cmd-nav-btn')).toHaveCount(1); // « précédent » seulement : dernière section
+});
