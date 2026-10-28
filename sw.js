@@ -12,9 +12,9 @@
 // 'install' recharge tout depuis le réseau. Un pack de langue ou un texte
 // d'UI modifié qui ne s'affiche pas malgré un déploiement réussi est
 // généralement le signe que l'un de ces deux numéros n'a pas été incrémenté.
-const CACHE_VERSION = '1.4.301';
+const CACHE_VERSION = '1.4.302';
 const APP_SHELL_CACHE = `historiaxe-shell-v${CACHE_VERSION}`;
-const DATA_CACHE = 'historiaxe-data-v1.0.130';
+const DATA_CACHE = 'historiaxe-data-v1.0.131';
 
 // Portraits des personnages (assets/portraits/*.jpg, champ `image` des
 // événements). Un cache À PART, et c'est tout l'objet : 'activate' purge tout
@@ -161,6 +161,7 @@ const APP_SHELL_FILES = [
     './js/app/biblical-measures.js',
     './js/biblicalMapsCore.js',
     './js/app/biblical-maps.js',
+    './js/commandments613Data.js',
     './js/commandmentsCore.js',
     './js/app/commandments.js',
     './js/app/rewards.js',

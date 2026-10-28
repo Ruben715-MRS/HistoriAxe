@@ -1,19 +1,22 @@
 // =========================================================================
 // === HISTORIAXE — COMMANDEMENTS BIBLIQUES (données, sans DOM) ===
 // =========================================================================
-// Trois listes, présentées selon la tradition juive et rabbinique, dans cet ordre : les sept lois de Noé (pour toute l'humanité), les dix
-// commandements (le Décalogue), les trente-neuf travaux interdits le Chabbat. Une quatrième viendra : les 613 commandements, selon le décompte
-// du Rambam (Maïmonide), classés en positifs et négatifs.
+// Quatre listes, présentées selon la tradition juive et rabbinique, dans cet ordre : les sept lois de Noé (pour toute l'humanité), les dix
+// commandements (le Décalogue), les trente-neuf travaux interdits le Chabbat, et les 613 commandements selon le décompte du Rambam (Maïmonide),
+// classés en positifs (248) et négatifs (365).
 //
-// Ce fichier ne contient que la structure (les identifiants, l'ordre, les regroupements). Les textes (nom, verset ou source, explication) sont
-// dans ui/fr.json, sous `tools.cmd_*` ; tests/commandmentsCore.test.js vérifie que chaque élément a les siens et que les effectifs sont ceux
-// de la tradition : 7, 10 et 39 (11 + 13 + 9 + 6 pour les travaux). Voir js/app/commandments.js pour l'écran.
+// Pour les trois premières, ce fichier ne contient que la structure (les identifiants, l'ordre, les regroupements) : les textes (nom, verset ou
+// source, explication) sont dans ui/fr.json, sous `tools.cmd_*`. Pour les 613, les énoncés et les versets sont dans js/commandments613Data.js ;
+// ce fichier y ajoute les regroupements par thème, et la recherche. tests/commandmentsCore.test.js vérifie les effectifs de la tradition :
+// 7, 10 et 39 (11 + 13 + 9 + 6 pour les travaux), 248 et 365. Voir js/app/commandments.js pour l'écran.
 
 (function (root, factory) {
     if (typeof module === 'object' && typeof module.exports === 'object') module.exports = factory();
     else root.CommandmentsCore = factory();
 })(typeof self !== 'undefined' ? self : this, function () {
     'use strict';
+
+    var DATA = typeof module === 'object' && typeof module.exports === 'object' ? require('./commandments613Data.js') : Commandments613Data;
 
     // Les travaux du Chabbat sont numérotés dans l'ordre de la Michna (Chabbat 7:2), de 1 à 39.
     function range(from, to) {
@@ -48,8 +51,63 @@
                 { id: 'skin', items: range(25, 33) },    // de la chasse à l'écriture sur parchemin
                 { id: 'build', items: range(34, 39) }    // construire, feu, transport
             ]
-        }
+        },
+        // Les 613 : pas d'éléments ici, ils viennent de js/commandments613Data.js (voir LISTS613).
+        { id: 'mitzvot', icon: '📜', count: 613, kind: 'list613', groups: [] }
     ];
+
+    // Les 613 commandements : deux listes, les positifs (de 1 à 248) et les négatifs (de 1 à 365), regroupées par thème. Chaque regroupement
+    // couvre une plage de numéros ; les plages se suivent sans trou. Le titre de chaque regroupement est dans ui/fr.json :
+    // tools.cmd_mitzvot_<pos|neg>_group_<id>.
+    var LISTS613 = {
+        pos: {
+            id: 'pos',
+            data: DATA.POSITIVE,
+            groups: [
+                { id: 'god', from: 1, to: 10 },
+                { id: 'torah', from: 11, to: 19 },
+                { id: 'temple', from: 20, to: 38 },
+                { id: 'offerings', from: 39, to: 62 },
+                { id: 'sacrifices', from: 63, to: 91 },
+                { id: 'vows', from: 92, to: 95 },
+                { id: 'purity', from: 96, to: 113 },
+                { id: 'consecrations', from: 114, to: 118 },
+                { id: 'land', from: 119, to: 145 },
+                { id: 'food', from: 146, to: 152 },
+                { id: 'calendar', from: 153, to: 171 },
+                { id: 'authority', from: 172, to: 193 },
+                { id: 'neighbor', from: 194, to: 211 },
+                { id: 'family', from: 212, to: 223 },
+                { id: 'justice', from: 224, to: 248 }
+            ]
+        },
+        neg: {
+            id: 'neg',
+            data: DATA.NEGATIVE,
+            groups: [
+                { id: 'idolatry', from: 1, to: 38 },
+                { id: 'ways', from: 39, to: 47 },
+                { id: 'nations', from: 48, to: 59 },
+                { id: 'name', from: 60, to: 66 },
+                { id: 'temple', from: 67, to: 88 },
+                { id: 'offerings', from: 89, to: 128 },
+                { id: 'holyfood', from: 129, to: 154 },
+                { id: 'vows', from: 155, to: 157 },
+                { id: 'priests', from: 158, to: 171 },
+                { id: 'food', from: 172, to: 201 },
+                { id: 'nazir', from: 202, to: 209 },
+                { id: 'land', from: 210, to: 229 },
+                { id: 'money', from: 230, to: 242 },
+                { id: 'theft', from: 243, to: 270 },
+                { id: 'justice', from: 271, to: 296 },
+                { id: 'neighbor', from: 297, to: 311 },
+                { id: 'authority', from: 312, to: 319 },
+                { id: 'shabbat', from: 320, to: 329 },
+                { id: 'arayot', from: 330, to: 360 },
+                { id: 'king', from: 361, to: 365 }
+            ]
+        }
+    };
 
     function getSet(id) {
         for (var i = 0; i < SETS.length; i++) if (SETS[i].id === id) return SETS[i];
@@ -81,5 +139,46 @@
         return null;
     }
 
-    return { SETS: SETS, getSet: getSet, itemsOf: itemsOf, itemKey: itemKey, fieldsOf: fieldsOf, neighbor: neighbor };
+    // --- Les 613 ---------------------------------------------------------------------------------------------------------------------------
+
+    // Les commandements d'une liste ('pos' ou 'neg'), dans l'ordre : { n, text, ref, group }.
+    function list613(kind) {
+        var list = LISTS613[kind];
+        if (!list) return [];
+        return list.data.map(function (entry, i) {
+            return { n: i + 1, text: entry[0], ref: entry[1], group: groupOf(kind, i + 1) };
+        });
+    }
+
+    // Le regroupement (identifiant) du commandement numéro n ; null hors de la liste.
+    function groupOf(kind, n) {
+        var list = LISTS613[kind];
+        if (!list) return null;
+        for (var i = 0; i < list.groups.length; i++) {
+            if (n >= list.groups[i].from && n <= list.groups[i].to) return list.groups[i].id;
+        }
+        return null;
+    }
+
+    // Pour chercher sans se soucier des accents, des majuscules, des apostrophes ni des tirets : « pessa'h », « Pessah » et « PESSA’H » se valent.
+    function normalize(s) {
+        return String(s).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/['’`\-]/g, '');
+    }
+
+    // Les commandements d'une liste qui répondent à une recherche : par mots (tous doivent s'y trouver), dans l'énoncé, le verset ou le numéro.
+    function search613(kind, query) {
+        var all = list613(kind);
+        var words = normalize(query).split(/\s+/).filter(Boolean);
+        if (!words.length) return all;
+        return all.filter(function (c) {
+            var hay = normalize(c.text + ' ' + c.ref + ' ' + c.n);
+            return words.every(function (w) { return hay.indexOf(w) >= 0; });
+        });
+    }
+
+    return {
+        SETS: SETS, LISTS613: LISTS613,
+        getSet: getSet, itemsOf: itemsOf, itemKey: itemKey, fieldsOf: fieldsOf, neighbor: neighbor,
+        list613: list613, groupOf: groupOf, search613: search613, normalize: normalize
+    };
 });

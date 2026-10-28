@@ -14634,6 +14634,12 @@ input:not([type="range"]), label, select, summary, textarea {
 .cmd-nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; }
 .cmd-nav-btn { flex: 1 1 200px; display: flex; flex-direction: column; gap: 2px; min-height: 44px; }
 .cmd-nav-btn small { font-size: 11px; font-weight: 600; opacity: 0.8; }
+.cmd-613-controls { display: flex; flex-direction: column; gap: 8px; }
+.cmd-613-list { display: flex; flex-direction: column; gap: 18px; }
+.cmd-613-list .cmd-item { padding-top: 8px; padding-bottom: 8px; }
+.cmd-613-list .cmd-item::before { top: 8px; width: 34px; height: 24px; border-radius: 12px; font-size: 12px; }
+.cmd-613-list .cmd-item { padding-left: 58px; }
+.cmd-613-list .cmd-ref { margin-top: 3px; }
 
 /* --- Mini-jeux sur des axes choisis : cartes trop petites pour le vivier --- */
 .arcade-card.is-unavailable { opacity: 0.55; cursor: not-allowed; }

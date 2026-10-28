@@ -665,7 +665,7 @@ test('généalogie biblique, à l\'horizontale : déplier une branche fait défi
     expect(visible).toBe(true);
 });
 
-test('commandements bibliques : sept lois de Noé, dix commandements, trente-neuf travaux, avec des boutons pour passer de l\'une à l\'autre', async ({ page }) => {
+test('commandements bibliques : sept lois de Noé, dix commandements, trente-neuf travaux, 613 mitsvot, avec des boutons pour passer de l\'une à l\'autre', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 900 });
     await page.locator('#btn-tools').click();
     await page.locator('#screen-tools .arcade-card', { hasText: 'Commandements bibliques' }).click();
@@ -688,7 +688,31 @@ test('commandements bibliques : sept lois de Noé, dix commandements, trente-neu
     await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(39);
     await expect(page.locator('#tool-commandments-body .cmd-item').first()).toContainText('Semer');
     await expect(page.locator('#tool-commandments-body .cmd-item').last()).toContainText('Transporter');
+    await expect(page.locator('.cmd-nav-btn')).toHaveCount(2);
+
+    // Enfin les 613 : 248 positifs d'abord, avec leur verset ; plus de bouton « suivant ».
+    await page.locator('.cmd-nav-btn', { hasText: '613 mitsvot' }).click();
+    await expect(page.locator('#tool-commandments-tab-mitzvot')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-commandments-kind-pos')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-commandments-613 .cmd-item')).toHaveCount(248);
+    await expect(page.locator('#tool-commandments-613 .cmd-item').first()).toContainText('Savoir qu\'il y a un Dieu');
+    await expect(page.locator('#tool-commandments-613 .cmd-item').first()).toContainText('Exode 20:2');
+    await expect(page.locator('#tool-commandments-count')).toContainText('248 commandements sur 248');
     await expect(page.locator('.cmd-nav-btn')).toHaveCount(1);
+
+    // Les 365 négatifs, puis la recherche : un mot, ou un verset ; le numéro affiché reste celui du commandement.
+    await page.locator('#tool-commandments-kind-neg').click();
+    await expect(page.locator('#tool-commandments-613 .cmd-item')).toHaveCount(365);
+    await page.locator('#tool-commandments-search').fill('convoiter');
+    await expect(page.locator('#tool-commandments-613 .cmd-item')).toHaveCount(1);
+    await expect(page.locator('#tool-commandments-613 .cmd-item')).toContainText('Ne pas convoiter');
+    expect(await page.locator('#tool-commandments-613 .cmd-item').evaluate(li => li.value)).toBe(265);
+    await page.locator('#tool-commandments-search').fill('Exode 20:12');
+    await expect(page.locator('#tool-commandments-count')).toContainText('Aucun commandement');
+    await page.locator('#tool-commandments-kind-pos').click();
+    await expect(page.locator('#tool-commandments-613 .cmd-item')).toHaveCount(1);
+    await expect(page.locator('#tool-commandments-613 .cmd-item')).toContainText('Honorer son père et sa mère');
+    expect(await page.locator('#screen-tool-commandments').innerText()).not.toContain('tools.');
 
     // Les onglets font aussi revenir en arrière.
     await page.locator('#tool-commandments-tab-noah').click();
