@@ -1980,6 +1980,12 @@
         <h2 class="header-title" data-i18n="tools.measures_title">Poids et mesures bibliques</h2>
         <p class="modes-header-subtitle" data-i18n="tools.measures_intro"></p>
         <div class="tool-panel">
+            <div class="measures-toolbar">
+                <div class="gen-lang" role="group" aria-label="Noms en transcription ou en hébreu" data-i18n-attr="aria-label:tools.measures_he_toggle_aria">
+                    <button type="button" class="gen-lang-btn" id="measures-lang-fr" aria-pressed="true" lang="fr" onclick="measuresSetLang('fr')">A</button>
+                    <button type="button" class="gen-lang-btn" id="measures-lang-he" aria-pressed="false" lang="he" onclick="measuresSetLang('he')">א</button>
+                </div>
+            </div>
             <div class="tool-history-chips" id="tool-measures-tabs" role="group" aria-label="Distances, volumes ou monnaies" data-i18n-attr="aria-label:tools.measures_tabs_aria"></div>
             <div id="tool-measures-body" class="measures-body"></div>
         </div>

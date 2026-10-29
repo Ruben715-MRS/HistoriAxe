@@ -958,3 +958,18 @@ test('5 méguilot : les cinq livres dans le menu, et les chapitres numérotés d
     await expect(page.locator('#cmd-group-megilot-ruth .cmd-item').first()).toContainText('retour de Naomi');
     await expect(page.locator('.cmd-nav-btn')).toHaveCount(2); // « précédent » et « suivant » : le Chabbat
 });
+
+test('mesures : le bouton A / א passe les noms d\'unités et des avis en hébreu, dans les trois domaines', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 900 });
+    await page.locator('#btn-tools').click();
+    await page.locator('#screen-tools .arcade-card', { hasText: 'Poids et mesures bibliques' }).click();
+    await page.locator('#measures-lang-he').click();
+    await expect(page.locator('#measures-lang-he')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-measures-unit option').first()).toHaveText('אצבע');
+    await expect(page.locator('.measures-converter .tool-history-chips button').first()).toHaveText('הרב אברהם חיים נאה');
+    await page.locator('#tool-measures-tab-money').click();
+    await expect(page.locator('.measures-converter .tool-history-chips button')).toHaveCount(3);
+    await expect(page.locator('#tool-measures-opinion-label')).toHaveText('משקל הסלע');
+    await page.locator('#measures-lang-fr').click();
+    await expect(page.locator('#tool-measures-opinion-label')).toHaveText("Poids de la sela (argent)");
+});

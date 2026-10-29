@@ -15,12 +15,27 @@ const MEASURES_TABS = [
 ];
 
 function measuresLang() { return (typeof i18n !== 'undefined' && i18n.currentLang) || 'fr'; }
-function measuresName(id) { return t('tools.measures_u_' + id); }
+// Le bouton « A / א » : noms d'unités et avis en hébreu (choix mémorisé, comme sur la généalogie).
+let measuresHe = false;
+try { measuresHe = localStorage.getItem('measuresHebrew') === '1'; } catch (e) { /* stockage indisponible : transcription */ }
+function measuresSetLang(lang) {
+    measuresHe = lang === 'he';
+    try { localStorage.setItem('measuresHebrew', measuresHe ? '1' : '0'); } catch (e) { /* stockage indisponible */ }
+    toolMeasuresInit();
+}
+// Le libellé hébreu d'une clé, ou null s'il n'existe pas : l'appelant reprend alors le libellé français.
+function measuresHebrew(key) {
+    const he = t('tools.' + key);
+    return he !== 'tools.' + key ? he : null;
+}
+function measuresName(id) { return (measuresHe && measuresHebrew('measures_he_u_' + id)) || t('tools.measures_u_' + id); }
 // Le nom sans son équivalent entre parenthèses : « Coudée (amah) » → « Coudée ».
 function measuresShort(id) { return measuresName(id).split(/ \(| \/ /)[0]; }
 function measuresFmt(value) { return MeasuresCore.formatNumber(value, measuresLang()); }
 
 function toolMeasuresInit() {
+    const fr = toolEl('measures-lang-fr'), he = toolEl('measures-lang-he');
+    if (fr && he) { fr.setAttribute('aria-pressed', measuresHe ? 'false' : 'true'); he.setAttribute('aria-pressed', measuresHe ? 'true' : 'false'); }
     const tabs = toolEl('tool-measures-tabs');
     toolClear(tabs);
     MEASURES_TABS.forEach(tab => {
@@ -102,7 +117,8 @@ function measuresConverter(cat) {
         const ol = document.createElement('span');
         ol.className = 'tool-small';
         ol.id = 'tool-measures-opinion-label';
-        ol.textContent = t({ volumes: 'tools.measures_opinion_label_vol', money: 'tools.measures_opinion_label_money' }[cat] || 'tools.measures_opinion_label');
+        ol.textContent = (measuresHe && measuresHebrew('measures_he_label_' + cat))
+            || t({ volumes: 'tools.measures_opinion_label_vol', money: 'tools.measures_opinion_label_money' }[cat] || 'tools.measures_opinion_label');
         const chips = document.createElement('div');
         chips.className = 'tool-history-chips';
         chips.setAttribute('role', 'group');
@@ -112,7 +128,8 @@ function measuresConverter(cat) {
             btn.type = 'button';
             btn.className = 'tool-history-chip';
             btn.setAttribute('aria-pressed', op === measuresOpinion ? 'true' : 'false');
-            btn.textContent = t('tools.measures_opinion_' + ({ volumes: 'vol_', money: 'money_' }[cat] || '') + op);
+            btn.textContent = (measuresHe && measuresHebrew('measures_he_op_' + op))
+                || t('tools.measures_opinion_' + ({ volumes: 'vol_', money: 'money_' }[cat] || '') + op);
             btn.onclick = () => {
                 measuresOpinion = op;
                 chips.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));

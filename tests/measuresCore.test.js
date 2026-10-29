@@ -183,3 +183,17 @@ test('volumes : avec l\'avis du \'Hazon Ich, l\'œuf vaut 90 à 100 mL, le log 0
     const epha = M.factor('volumes', 'epha', 'hazon');
     assert.ok(epha >= 40 && epha <= 43, 'épha : ' + epha);
 });
+
+test('bouton A / א : chaque unité et chaque avis a son nom en hébreu dans ui/fr.json (lettres hébraïques uniquement)', () => {
+    const d = JSON.parse(require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'ui', 'fr.json'), 'utf8')).tools;
+    const hebreu = /^[\u05D0-\u05EA\u05F3\u05F4\s\/()\-]+$/;
+    ['distances', 'volumes', 'money'].forEach(cat => {
+        M.unitsOf(cat).forEach(u => {
+            const he = d['measures_he_u_' + u.id];
+            assert.ok(he, `nom hébreu manquant : ${cat}/${u.id}`);
+            if (u.group === 'biblical') assert.match(he, hebreu, `${u.id} : ${he}`);
+        });
+        M.CATEGORIES[cat].opinions.forEach(op => assert.ok(d['measures_he_op_' + op], `avis ${op}`));
+        assert.ok(d['measures_he_label_' + cat], `intitulé ${cat}`);
+    });
+});
