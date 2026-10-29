@@ -5,6 +5,8 @@
 let selectedCategoryIndex = null;
 let selectedSubcategoryIndex = null;
 let selectedThemeIndex = null;
+// Thème « Année entière » (lycée) en cours : construit à la volée à partir de la classe, hors de bdd. null pour un thème normal.
+let selectedYearTheme = null;
 let currentMode = 'classic';
 let revisionMode = false;
 // Origine de la session de révision en cours : 'weak' (points faibles) ou 'due' (échéances).

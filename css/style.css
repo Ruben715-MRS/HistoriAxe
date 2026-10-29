@@ -3062,6 +3062,11 @@ textarea.form-input {
     margin-top: 0;
 }
 
+/* « Année entière » occupe toute la largeur sur téléphone, comme la galerie. */
+.geo-mode-row .year-mode-card {
+    grid-column: 1 / -1;
+}
+
 @media (min-width: 768px) {
     .geo-mode-row {
         gap: 16px;
@@ -3073,6 +3078,10 @@ textarea.form-input {
     }
 
     .geo-mode-row .gallery-launcher-btn {
+        grid-column: auto;
+    }
+
+    .geo-mode-row .year-mode-card {
         grid-column: auto;
     }
 
@@ -4638,18 +4647,68 @@ textarea.form-input {
     box-shadow: var(--card-shadow);
 }
 
+/* Note repliée par défaut : seul le titre est visible, avec un « + » ; un clic déplie le texte. */
 .subcategory-note-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 4px;
+    background: none;
+    border: 0;
+    font: inherit;
     font-weight: 700;
     font-size: 14px;
     color: var(--text-dark);
-    margin-bottom: 4px;
+    text-align: left;
+    cursor: pointer;
 }
 
-.subcategory-note p {
+.subcategory-note-toggle {
+    flex-shrink: 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--ink-soft);
+    transition: transform 0.2s;
+}
+
+.subcategory-note.is-open .subcategory-note-toggle {
+    transform: rotate(45deg);
+}
+
+/* Le texte se déploie et se replie en hauteur (grille 0fr → 1fr) : la transition porte sur la hauteur réelle. */
+.subcategory-note-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    visibility: hidden;
+    transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.22s ease, visibility 0.3s;
+}
+
+.subcategory-note.is-open .subcategory-note-body {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    visibility: visible;
+    transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.26s ease 0.04s, visibility 0.3s;
+}
+
+.subcategory-note-body > p {
+    min-height: 0;
+    overflow: hidden;
     font-size: 13px;
     line-height: 1.5;
     color: var(--ink-soft);
     margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .subcategory-note-body,
+    .subcategory-note-toggle {
+        transition: none;
+    }
 }
 
 .reset-srs-btn {

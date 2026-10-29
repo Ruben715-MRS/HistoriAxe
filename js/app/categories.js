@@ -14,6 +14,19 @@ function quickAction(id, emoji, label, attrs = '', disabled = false) {
                     </div>`;
 }
 
+// Notes « Note importante » (sous-catégories, thèmes, axes) : repliées par défaut, le titre sert de bouton.
+function toggleImportantNote(titleBtn) {
+    const box = titleBtn.closest('.subcategory-note');
+    const open = box.classList.toggle('is-open');
+    titleBtn.setAttribute('aria-expanded', String(open));
+}
+
+// À appeler quand une note est remplacée par celle d'un autre nœud : elle repart repliée.
+function collapseImportantNote(box) {
+    box.classList.remove('is-open');
+    box.querySelector('.subcategory-note-title').setAttribute('aria-expanded', 'false');
+}
+
 // INIT CATÉGORIES (Dossiers)
 function initCategories() {
     updateHeaderProfileBar();
@@ -333,6 +346,7 @@ function initSubcategories() {
     const noteBox = document.getElementById('subcategory-note');
     if (node.note) {
         document.getElementById('subcategory-note-text').innerText = node.note;
+        collapseImportantNote(noteBox);
         noteBox.classList.remove('hidden');
     } else {
         noteBox.classList.add('hidden');
@@ -357,7 +371,7 @@ function initSubcategories() {
     const launcher = pantheon ? buildGalleryLauncher(pantheon) : null;
     const geoEligible = typeof isGeoEligible === 'function' && isGeoEligible(node);
     if (geoEligible) {
-        gridSection.appendChild(buildGeoModeRow(node, node.nom, launcher));
+        gridSection.appendChild(buildGeoModeRow(node, node.nom, launcher ? [launcher] : []));
     }
 
     node.subcategories.forEach((sub, index) => {

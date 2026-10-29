@@ -37,6 +37,7 @@ function getCurrentThemeList() {
     return node.themes || [];
 }
 function getCurrentTheme() {
+    if (selectedYearTheme) return selectedYearTheme;
     return getCurrentThemeList()[selectedThemeIndex];
 }
 

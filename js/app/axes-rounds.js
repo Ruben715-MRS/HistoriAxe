@@ -201,6 +201,7 @@ function renderAxesScreen() {
     const noteBox = document.getElementById('axes-theme-note');
     if (noteBox) {
         document.getElementById('axes-theme-note-text').innerText = theme.note || '';
+        collapseImportantNote(noteBox);
         noteBox.classList.toggle('hidden', !theme.note);
     }
     const subtitle = document.getElementById('axes-subtitle');
