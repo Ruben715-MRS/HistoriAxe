@@ -21,8 +21,8 @@ THEME_ID = 'thm_catastrophes_transport'
 THEME_NAME = 'Grandes catastrophes de transport'
 PARENT = 'Société et Géopolitique'
 # Note importante affichée à l'ouverture du thème (écran des axes, js/app/axes-rounds.js).
-THEME_NOTE = ("Seuil principal : un accident entre dans ce thème lorsqu'il a fait au moins 50 morts. "
-              "Seuil élargi : au moins 20 morts, pour inclure des accidents très médiatisés ou importants dans l'histoire. "
+THEME_NOTE = ("Seuil principal : ≥ 50 morts. "
+              "Seuil élargi : ≥ 20 morts (événements significatifs mais sous le seuil principal). "
               "En dessous de 20 morts, quelques évènements sont conservés pour leur portée sur la sécurité des transports : "
               "l'accident de Brétigny-sur-Orge (7 morts, défaut de maintenance), les accidents d'Apollo 1, de Challenger et de "
               "Columbia (3 à 7 morts, sécurité des vols habités), l'incendie du tunnel du Saint-Gothard (11 morts, sécurité des "

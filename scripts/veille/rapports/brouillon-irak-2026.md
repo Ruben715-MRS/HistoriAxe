@@ -14,7 +14,7 @@ Retiré des données publiées le 29 octobre 2026, sur la recommandation de la f
 
 - Une seconde source indépendante, datée, qui confirme la date, le lieu et le bilan.
 - Une formulation « bilan provisoire » si le bilan n'est pas définitif.
-- Une décision sur le seuil : à 21 morts, l'évènement n'atteint pas 50 morts ; il entrerait dans le seuil élargi seulement si le seuil élargi reste à 20 morts.
+- Seuil : à 21 morts, l'évènement n'atteint pas le seuil principal de 50 morts, mais il entre dans le seuil élargi de 20 morts retenu le 29 octobre 2026.
 
 ## Ce qui reste à faire
 
