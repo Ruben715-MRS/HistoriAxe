@@ -11,7 +11,7 @@ avant toute modification des données.
 | Iran (guide suprême) | Mojtaba Khamenei (2026) | Désigné par l'Assemblée des experts début mars 2026, après la mort d'Ali Khamenei | Cohérent. Point à relire : le guide suprême n'est pas le président ; vérifier la fonction affichée et la note du pays |
 | Canada (Premier ministre) | Mark Carney (2025) | Majorité obtenue lors d'élections partielles d'avril 2026 | Cohérent |
 | Allemagne (chancelier) | Friedrich Merz (2025) | En fonction selon les sources de mai 2026 et après | Cohérent |
-| Israël (Premier ministre) | Benyamin Netanyahou (2022) | Élections législatives annoncées pour le 27 octobre 2026. Résultat non trouvé | **Urgent** : vérifier si le scrutin a eu lieu et son résultat, qui peut changer la ligne |
+| Israël (Premier ministre) | Benyamin Netanyahou (2022) | Élections législatives du 27 octobre 2026 : Netanyahou donné gagnant, selon l'information transmise par le titulaire du projet (source non relevée par la recherche) | Pas de changement de ligne. Un Premier ministre ne change qu'à la formation du nouveau gouvernement : à surveiller |
 
 ## Constats du pilote
 
