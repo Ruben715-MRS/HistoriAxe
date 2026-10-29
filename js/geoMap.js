@@ -694,16 +694,17 @@ function buildChronoGeoCard(node, label) {
     return card;
 }
 
-// Mode Carte à gauche, Chrono-Géo au milieu, et — quand il y en a un — le bouton de la galerie à droite :
-// une seule rangée sur toute la largeur de la grille (voir .geo-mode-row pour la disposition sur téléphone).
-function buildGeoModeRow(node, label, extra) {
+// Mode Carte à gauche, Chrono-Géo au milieu, et — quand il y en a — les boutons supplémentaires (galerie des
+// portraits, « Année entière ») à droite : une seule rangée sur toute la largeur de la grille
+// (voir .geo-mode-row pour la disposition sur téléphone).
+function buildGeoModeRow(node, label, extras = []) {
     const row = document.createElement('div');
     row.className = 'geo-mode-row';
     row.appendChild(buildGeoModeCard(node, label));
     row.appendChild(buildChronoGeoCard(node, label));
-    if (extra) {
+    if (extras.length) {
         row.classList.add('has-extra');
-        row.appendChild(extra);
+        extras.forEach(extra => row.appendChild(extra));
     }
     return row;
 }

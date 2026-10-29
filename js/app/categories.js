@@ -371,7 +371,7 @@ function initSubcategories() {
     const launcher = pantheon ? buildGalleryLauncher(pantheon) : null;
     const geoEligible = typeof isGeoEligible === 'function' && isGeoEligible(node);
     if (geoEligible) {
-        gridSection.appendChild(buildGeoModeRow(node, node.nom, launcher));
+        gridSection.appendChild(buildGeoModeRow(node, node.nom, launcher ? [launcher] : []));
     }
 
     node.subcategories.forEach((sub, index) => {

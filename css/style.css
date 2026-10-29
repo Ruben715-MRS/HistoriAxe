@@ -3062,6 +3062,11 @@ textarea.form-input {
     margin-top: 0;
 }
 
+/* « Année entière » occupe toute la largeur sur téléphone, comme la galerie. */
+.geo-mode-row .year-mode-card {
+    grid-column: 1 / -1;
+}
+
 @media (min-width: 768px) {
     .geo-mode-row {
         gap: 16px;
@@ -3073,6 +3078,10 @@ textarea.form-input {
     }
 
     .geo-mode-row .gallery-launcher-btn {
+        grid-column: auto;
+    }
+
+    .geo-mode-row .year-mode-card {
         grid-column: auto;
     }
 

@@ -98,11 +98,16 @@ function openThemeAt(ci, si, ti) {
     selectedCategoryIndex = ci;
     selectedSubcategoryIndex = si;
     selectedThemeIndex = ti;
+    selectedYearTheme = null;
+    startTheme(getCurrentThemeList()[ti]);
+}
+
+// Lance un thème, réel ou « Année entière » : mêmes réglages et même écran d'entrée dans les deux cas.
+function startTheme(theme) {
     revisionMode = false;
     essentialFilterActive = false;
     axisFilterActive = false;
     isSelectionActive = false;
-    const theme = getCurrentThemeList()[ti];
     lastThemeSave(theme.id);
     currentThemeAxes = [...new Set(theme.events.map(e => e.axe).filter(Boolean))];
     if (theme.axeOrder) {
@@ -110,6 +115,53 @@ function openThemeAt(ci, si, ti) {
     }
     const hasAxes = theme.events.some(e => e.axe);
     showScreen(hasAxes ? 'screen-axes' : 'screen-modes', 'forward');
+}
+
+// --- ANNÉE ENTIÈRE (lycée) ---
+// Une classe du lycée (« Classe de Seconde », etc.) est un nœud dont le parent est « Programmes du lycée ».
+// Le collège n'est pas concerné : ses classes sont déjà un thème par année, découpé en axes.
+const LYCEE_PROGRAMS_NAME = 'Programmes du lycée';
+
+function isLyceeClass(node) {
+    const isChildOfLycee = n => !!n.subcategories && (
+        (n.nom === LYCEE_PROGRAMS_NAME && n.subcategories.includes(node)) ||
+        n.subcategories.some(isChildOfLycee)
+    );
+    return bdd.some(isChildOfLycee);
+}
+
+// Un thème qui réunit tous les thèmes de la classe. Un événement présent dans deux thèmes n'est compté qu'une fois.
+function buildYearTheme(node) {
+    const themes = geoThemesOf(node);
+    const seen = new Set();
+    const events = [];
+    themes.forEach(theme => theme.events.forEach(event => {
+        if (seen.has(event.id)) return;
+        seen.add(event.id);
+        events.push(event);
+    }));
+    const axeOrder = [...new Set(themes.flatMap(theme => [...(theme.axeOrder || []), ...theme.events.map(e => e.axe)]))].filter(Boolean);
+    return { id: 'annee-' + node.nom, nom: node.nom, events, axeOrder };
+}
+
+function openYearTheme(node) {
+    selectedYearTheme = buildYearTheme(node);
+    startTheme(selectedYearTheme);
+}
+
+// Carte « Année entière », placée à droite de Chrono-Géo dans la rangée des modes (voir buildGeoModeRow).
+function buildYearCard(node) {
+    const card = document.createElement('div');
+    card.className = 'special-card geo-mode-card year-mode-card';
+    card.style.background = 'linear-gradient(135deg, #7D4A0B, #A65F0E)';
+    const label = escapeHtml(node.nom);
+    card.innerHTML = `
+        <div class="special-card-title">${t('yearTheme.mode_title')}</div>
+        <div class="special-card-subtitle">${t('yearTheme.mode_subtitle', { label })}</div>
+    `;
+    card.onclick = () => openYearTheme(node);
+    A11y.activatable(card);
+    return card;
 }
 
 function backFromModes() {
@@ -176,8 +228,11 @@ function initThemes() {
     // avant la liste de thèmes — contient assez d'événements géolocalisables.
     // Les rapports du jury (js/app/rapports.js) rejoignent cette rangée, sur la catégorie « CAPES & Agrégation » elle-même.
     const rapports = category.nom === RAPPORTS_CATEGORY && node === category ? buildRapportsLauncher() : null;
-    if (!category.isCustomCategory && typeof isGeoEligible === 'function' && isGeoEligible(node)) {
-        container.appendChild(buildGeoModeRow(node, node.nom, rapports));
+    // « Année entière » rejoint la rangée Mode Carte / Chrono-Géo, à droite, pour les classes du lycée seulement.
+    const geoEligible = !category.isCustomCategory && typeof isGeoEligible === 'function' && isGeoEligible(node);
+    const yearCard = geoEligible && isLyceeClass(node) ? buildYearCard(node) : null;
+    if (geoEligible) {
+        container.appendChild(buildGeoModeRow(node, node.nom, [rapports, yearCard].filter(Boolean)));
     } else if (rapports) {
         container.appendChild(rapports);
     }
