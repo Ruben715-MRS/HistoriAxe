@@ -820,14 +820,18 @@ test('poids et mesures bibliques : distances, volumes et monnaies se convertisse
     await expect(ligne('Épha')).toHaveText('≈ 1,768');
     await expect(page.locator('.measures-lesson')).toContainText('432');
 
-    // Monnaies : un talent ≈ 17,1 kg d'argent, 1 500 chékels ; un talent pour usages sacrés ≈ 34,2 kg ; le tableau des équivalences.
+    // Monnaies (Rav Naé) : un talent ≈ 28,8 kg d'argent, 1 500 sela ; un talent pour usages sacrés ≈ 57,6 kg ; le tableau des équivalences.
     await page.locator('#tool-measures-tab-money').click();
-    await expect(ligne('Kilogramme')).toHaveText('≈ 17,1');
+    await expect(ligne('Kilogramme')).toHaveText('≈ 28,8');
     await expect(ligne('Chékel')).toHaveText('1 500');
     await page.locator('#tool-measures-unit').selectOption('talent_sacre');
-    await expect(ligne('Kilogramme')).toHaveText('≈ 34,2');
+    await expect(ligne('Kilogramme')).toHaveText('≈ 57,6');
+    // Avec l'avis de Gueonim, la sela pèse 17 g : le talent ordinaire vaut 25,5 kg.
+    await page.locator('#tool-measures-unit').selectOption('talent');
+    await page.locator('.measures-converter .tool-history-chips button', { hasText: 'Gueonim' }).click();
+    await expect(ligne('Kilogramme')).toHaveText('≈ 25,5');
     await page.locator('#tool-measures-unit').selectOption('kg');
-    await page.locator('#tool-measures-value').fill('34,2');
+    await page.locator('#tool-measures-value').fill('57,6');
     await expect(ligne('Talent pour usages sacrés')).toHaveText('≈ 1');
     await expect(page.locator('.measures-table.is-matrix')).toBeVisible();
     await expect(page.locator('.measures-table.is-matrix tbody tr')).toHaveCount(8);

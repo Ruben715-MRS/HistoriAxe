@@ -7,38 +7,64 @@ const M = require('../js/measuresCore.js');
 const size = (cat, id) => M.findUnit(cat, id).size;
 const close = (a, b, eps = 1e-9) => assert.ok(Math.abs(a - b) <= eps * Math.max(1, Math.abs(b)), `${a} ≠ ${b}`);
 
-test('monnaies : chaque case du tableau « Vaut / Cette monnaie » se retrouve par le calcul, et les cases vides sont les rapports d\'au plus 1 (la case de la monnaie elle-même est vide)', () => {
-    const { columns, rows } = M.MONEY_TABLE;
-    rows.forEach(row => {
-        row.cells.forEach((cell, i) => {
-            const ratio = size('money', columns[i]) / size('money', row.id);
-            if (cell === null) assert.ok(ratio <= 1, `${columns[i]} / ${row.id} devrait être vide (${ratio})`);
-            else assert.equal(ratio, cell, `${columns[i]} en ${row.id}`);
-        });
-    });
+test('monnaies : la chaîne commune aux trois avis — 1 issar = 8 proutot, 1 dinar = 6 ma\'ot, 1 sela = 4 dinars, 1 sicle = 2 dinars, 1 mine = 25 sela, 1 talent = 60 mines', () => {
+    assert.equal(size('money', 'issar'), 8);
+    assert.equal(size('money', 'pundion'), 16);
+    assert.equal(size('money', 'maah'), 32);
+    assert.equal(size('money', 'dinar'), 6 * 32);
+    assert.equal(size('money', 'shekel'), 4 * size('money', 'dinar'));
+    assert.equal(size('money', 'beka'), 2 * size('money', 'dinar'));
+    assert.equal(size('money', 'mane'), 25 * size('money', 'shekel'));
+    assert.equal(size('money', 'talent'), 60 * size('money', 'mane'));
+    assert.equal(size('money', 'talent_sacre'), 2 * size('money', 'talent'));
 });
 
-test('monnaies : le chékel pèse 11,4 g d\'argent ; le talent du sanctuaire ≈ 34 kg, le talent ≈ 17 kg, la mine du sanctuaire ≈ 570 g', () => {
-    const g = id => M.factor('money', id);
-    close(g('shekel'), 11.4);
-    close(g('maah'), 0.57);                  // la guéra
-    close(g('beka'), 5.7);                   // le demi-chékel
-    close(g('mane_sacre'), 570);             // 50 chékels
-    close(g('mane'), 285);                   // 25 chékels
-    close(g('talent'), 17100);               // 1 500 chékels
-    close(g('talent_sacre'), 34200);         // 3 000 chékels
-    close(g('proutah'), 11.4 / 640);
+test('monnaies : le tableau « Vaut / Cette monnaie » suit la chaîne (1 dinar = 6 ma\'ot, 1 sela = 24 ma\'ot, 1 sela = 768 proutot)', () => {
+    const cell = (row, col) => M.MONEY_TABLE.rows.find(r => r.id === row).cells[M.MONEY_TABLE.columns.indexOf(col)];
+    assert.equal(cell('maah', 'dinar'), 6);
+    assert.equal(cell('maah', 'shekel'), 24);
+    assert.equal(cell('proutah', 'shekel'), 768);
+    assert.equal(cell('dinar', 'shekel'), 4);
+    assert.equal(cell('beka', 'shekel'), 2);
+    assert.equal(cell('mane', 'talent'), 60);
+    assert.equal(cell('shekel', 'talent'), 1500);
+    assert.equal(cell('shekel', 'talent_sacre'), 3000);
+    assert.equal(cell('talent', 'talent_sacre'), 2);
+    // Case vide : la monnaie de la ligne n'est pas plus petite que celle de la colonne.
+    assert.equal(cell('talent', 'talent'), null);
+    assert.equal(cell('talent', 'mane'), null);
 });
 
-test('monnaies : convertir un talent en kilos, et des kilos en talents', () => {
-    const talent = M.convert('money', 1, 'talent_sacre').find(r => r.id === 'kg');
-    close(talent.value, 34.2);
+test('monnaies : la sela pèse 19,2 g (Rav Naé), 17 g (Gueonim), 14,1 g (Rashi) ; le talent 28,8 kg, 25,5 kg, 21,15 kg', () => {
+    close(M.factor('money', 'shekel', 'nae'), 19.2);
+    close(M.factor('money', 'shekel'), 19.2);
+    close(M.factor('money', 'shekel', 'gueonim'), 17);
+    close(M.factor('money', 'shekel', 'rashi'), 14.1);
+    close(M.factor('money', 'talent', 'nae'), 28800);
+    close(M.factor('money', 'talent', 'gueonim'), 25500);
+    close(M.factor('money', 'talent', 'rashi'), 21150);
+    close(M.factor('money', 'talent_sacre', 'nae'), 57600);
+    // Les tableaux de l'avis : dinar, demi-sela, mine, proutah.
+    close(M.factor('money', 'dinar', 'nae'), 4.8);
+    close(M.factor('money', 'dinar', 'gueonim'), 4.25);
+    close(M.factor('money', 'beka', 'nae'), 9.6);
+    close(M.factor('money', 'beka', 'gueonim'), 8.5);
+    close(M.factor('money', 'mane', 'nae'), 480);
+    close(M.factor('money', 'maah', 'nae'), 0.8);
+    close(M.factor('money', 'issar', 'nae'), 0.2);
+    close(M.factor('money', 'proutah', 'nae'), 0.025);
+    close(M.factor('money', 'proutah', 'gueonim') * 192, 4.25);
+});
+
+test('monnaies : convertir un talent des usages sacrés en kilos (avis de Rav Naé), et des kilos en talents', () => {
+    const talent = M.convert('money', 1, 'talent_sacre', 'nae').find(r => r.id === 'kg');
+    close(talent.value, 57.6);
     assert.equal(talent.approx, true);
-    const retour = M.convert('money', 34.2, 'kg').find(r => r.id === 'talent_sacre');
+    const retour = M.convert('money', 57.6, 'kg', 'nae').find(r => r.id === 'talent_sacre');
     close(retour.value, 1);
     // Entre deux monnaies bibliques, le rapport est exact.
-    const chekels = M.convert('money', 1, 'talent').find(r => r.id === 'shekel');
-    assert.equal(chekels.value, 1500);
+    const chekels = M.convert('money', 1, 'talent', 'nae').find(r => r.id === 'shekel');
+    close(chekels.value, 1500);
     assert.equal(chekels.approx, false);
 });
 

@@ -56,19 +56,32 @@
         { id: 'l', group: 'modern', litres: 1 }
     ];
 
-    // --- Monnaies : l'unité de base est la proutah. Ce sont des POIDS d'argent : le chékel pèse ≈ 11,4 g. ---------------------------
-    var SHEKEL_GRAMS = 11.4;
-    var PROUTOT_PER_SHEKEL = 640;
+    // --- Monnaies : l'unité de base est la proutah (un poids d'argent). Chaîne fixe, commune aux trois traditions :
+    // 1 issar = 8 proutot ; 1 pundion = 2 issar ; 1 ma'ah = 2 pundion ; 1 dinar = 6 ma'ot ; 1 sela = 4 dinars ; 1 sicle (demi-sela) = 2 dinars.
+    // Le poids du dinar dépend de l'avis : Rav Naé 4,8 g (sela 19,2 g), Gueonim 4,25 g (sela 17 g), Rashi 3,525 g (sela 14,1 g,
+    // milieu de la fourchette 14 à 14,2 g). Chaque avis donne donc le poids d'une proutah, puis tout le reste en découle.
+    var PROUTOT = { issar: 8, pundion: 16, maah: 32, dinar: 192, beka: 384, shekel: 768 };
+    var MONEY_OPINIONS = {
+        nae: { id: 'nae', dinarGrams: 4.8 },
+        gueonim: { id: 'gueonim', dinarGrams: 4.25 },
+        rashi: { id: 'rashi', dinarGrams: 3.525 }
+    };
+    function proutahGrams(opinion) {
+        var op = MONEY_OPINIONS[opinion] || MONEY_OPINIONS.nae;
+        return op.dinarGrams / PROUTOT.dinar;
+    }
     var MONEY_UNITS = [
         { id: 'proutah', group: 'biblical', size: 1 },
-        { id: 'maah', group: 'biblical', size: 32 },             // ma'a / guéra / agoura : 20 par chékel
-        { id: 'dinar', group: 'biblical', size: 160 },           // dinar / zouz / zahouv : 4 par chékel
-        { id: 'beka', group: 'biblical', size: 320 },            // béka / demi-chékel
-        { id: 'shekel', group: 'biblical', size: 640 },          // chékel / séla
-        { id: 'mane', group: 'biblical', size: 16000 },          // 25 chékels
-        { id: 'mane_sacre', group: 'biblical', size: 32000 },    // 50 chékels
-        { id: 'talent', group: 'biblical', size: 960000 },       // 1 500 chékels
-        { id: 'talent_sacre', group: 'biblical', size: 1920000 },// 3 000 chékels
+        { id: 'issar', group: 'biblical', size: PROUTOT.issar },            // issar : 8 proutot
+        { id: 'pundion', group: 'biblical', size: PROUTOT.pundion },        // pundion : 2 issar
+        { id: 'maah', group: 'biblical', size: PROUTOT.maah },              // ma'ah / guéra : 6 par dinar
+        { id: 'dinar', group: 'biblical', size: PROUTOT.dinar },            // dinar / zouz : 4 par sela
+        { id: 'beka', group: 'biblical', size: PROUTOT.beka },              // béka / demi-sela (sicle talmudique) : 2 dinars
+        { id: 'shekel', group: 'biblical', size: PROUTOT.shekel },          // chékel / séla : 4 dinars
+        { id: 'mane', group: 'biblical', size: 25 * PROUTOT.shekel },       // mine : 25 sela
+        { id: 'mane_sacre', group: 'biblical', size: 50 * PROUTOT.shekel }, // mine des usages sacrés : 50 sela
+        { id: 'talent', group: 'biblical', size: 1500 * PROUTOT.shekel },   // talent : 60 mines, soit 1 500 sela
+        { id: 'talent_sacre', group: 'biblical', size: 3000 * PROUTOT.shekel }, // talent des usages sacrés : 3 000 sela
         { id: 'kg', group: 'modern', grams: 1000 },
         { id: 'g', group: 'modern', grams: 1 }
     ];
@@ -76,7 +89,7 @@
     var CATEGORIES = {
         distances: { units: DISTANCE_UNITS, opinions: ['nae', 'hazon'], defaultUnit: 'amah' },
         volumes: { units: VOLUME_UNITS, opinions: ['nae', 'hazon'], defaultUnit: 'epha' },
-        money: { units: MONEY_UNITS, opinions: [], defaultUnit: 'shekel' }
+        money: { units: MONEY_UNITS, opinions: ['nae', 'gueonim', 'rashi'], defaultUnit: 'shekel' }
     };
 
     function unitsOf(category) { return CATEGORIES[category].units; }
@@ -102,7 +115,7 @@
             return u.size * vop.eppaLitres / EGGS_PER_EPHA;
         }
         if (u.group === 'modern') return u.grams;
-        return u.size * SHEKEL_GRAMS / PROUTOT_PER_SHEKEL;
+        return u.size * proutahGrams(opinion);
     }
 
     // Convertit `value` (dans l'unité `fromId`) vers toutes les unités de la famille. `approx` : la ligne mêle une unité biblique et
@@ -147,19 +160,18 @@
     // --- Les tableaux de référence des livres, tels quels, pour la leçon (et pour vérifier le calcul dans les tests). -------------
 
     // « Vaut / Cette monnaie » : combien de chaque monnaie (en ligne) vaut chaque monnaie en colonne. null = case vide du tableau.
-    var MONEY_TABLE = {
-        columns: ['talent_sacre', 'talent', 'mane_sacre', 'mane', 'shekel', 'beka', 'dinar', 'maah'],
-        rows: [
-            { id: 'talent', cells: [2, null, null, null, null, null, null, null] },
-            { id: 'mane_sacre', cells: [60, 30, null, null, null, null, null, null] },
-            { id: 'mane', cells: [120, 60, 2, null, null, null, null, null] },
-            { id: 'shekel', cells: [3000, 1500, 50, 25, null, null, null, null] },
-            { id: 'beka', cells: [6000, 3000, 100, 50, 2, null, null, null] },
-            { id: 'dinar', cells: [12000, 6000, 200, 100, 4, 2, null, null] },
-            { id: 'maah', cells: [60000, 30000, 1000, 500, 20, 10, 5, null] },
-            { id: 'proutah', cells: [1920000, 960000, 32000, 16000, 640, 320, 160, 32] }
-        ]
-    };
+    var MONEY_TABLE = (function () {
+        var columns = ['talent_sacre', 'talent', 'mane_sacre', 'mane', 'shekel', 'beka', 'dinar', 'maah'];
+        var rowIds = ['talent', 'mane_sacre', 'mane', 'shekel', 'beka', 'dinar', 'maah', 'proutah'];
+        var size = id => MONEY_UNITS.filter(u => u.id === id)[0].size;
+        // Combien de chaque unité (en ligne) entrent dans une unité (en colonne). Case vide : l'unité de la ligne n'est pas plus petite.
+        return {
+            columns: columns,
+            rows: rowIds.map(function (r) {
+                return { id: r, cells: columns.map(function (c) { return size(r) < size(c) ? size(c) / size(r) : null; }) };
+            })
+        };
+    })();
 
     // Les solides, en œufs (bétsim) : pour chaque unité, ce qu'elle vaut dans les plus petites, tel que le donne le livre.
     // Chaque relation : [unité, nombre, texte affiché] (les fractions s'écrivent comme dans le livre).
@@ -186,7 +198,8 @@
         DISTANCE_OPINIONS: DISTANCE_OPINIONS,
         MIL_WALK_MINUTES: MIL_WALK_MINUTES,
         EPHA_LITRES: EPHA_LITRES,
-        SHEKEL_GRAMS: SHEKEL_GRAMS,
+        MONEY_OPINIONS: MONEY_OPINIONS,
+        proutahGrams: proutahGrams,
         CATEGORIES: CATEGORIES,
         MONEY_TABLE: MONEY_TABLE,
         VOLUME_TABLE: VOLUME_TABLE,

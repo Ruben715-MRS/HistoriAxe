@@ -30,7 +30,13 @@ function toolMeasuresInit() {
         btn.id = 'tool-measures-tab-' + tab.id;
         btn.setAttribute('aria-pressed', tab.id === measuresTab ? 'true' : 'false');
         btn.textContent = tab.icon + ' ' + t('tools.measures_tab_' + tab.id);
-        btn.onclick = () => { measuresTab = tab.id; toolMeasuresInit(); };
+        btn.onclick = () => {
+            measuresTab = tab.id;
+            // L'avis choisi reste le même d'une famille à l'autre, sauf s'il n'existe pas dans la nouvelle (ex. 'Hazon Ich pour les monnaies).
+            const ops = MeasuresCore.CATEGORIES[tab.id].opinions;
+            if (ops.length && ops.indexOf(measuresOpinion) < 0) measuresOpinion = ops[0];
+            toolMeasuresInit();
+        };
         tabs.appendChild(btn);
     });
     toolMeasuresRender();
@@ -96,7 +102,7 @@ function measuresConverter(cat) {
         const ol = document.createElement('span');
         ol.className = 'tool-small';
         ol.id = 'tool-measures-opinion-label';
-        ol.textContent = t(cat === 'volumes' ? 'tools.measures_opinion_label_vol' : 'tools.measures_opinion_label');
+        ol.textContent = t({ volumes: 'tools.measures_opinion_label_vol', money: 'tools.measures_opinion_label_money' }[cat] || 'tools.measures_opinion_label');
         const chips = document.createElement('div');
         chips.className = 'tool-history-chips';
         chips.setAttribute('role', 'group');
@@ -106,7 +112,7 @@ function measuresConverter(cat) {
             btn.type = 'button';
             btn.className = 'tool-history-chip';
             btn.setAttribute('aria-pressed', op === measuresOpinion ? 'true' : 'false');
-            btn.textContent = t('tools.measures_opinion_' + (cat === 'volumes' ? 'vol_' : '') + op);
+            btn.textContent = t('tools.measures_opinion_' + ({ volumes: 'vol_', money: 'money_' }[cat] || '') + op);
             btn.onclick = () => {
                 measuresOpinion = op;
                 chips.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
@@ -285,7 +291,8 @@ function measuresLessonVolumes(box) {
 }
 
 function measuresLessonMoney(box) {
-    measuresPara(box, 'tools.measures_money_1', { grams: measuresFmt(MeasuresCore.SHEKEL_GRAMS) });
+    const sela = op => measuresFmt(MeasuresCore.factor('money', 'shekel', op));
+    measuresPara(box, 'tools.measures_money_1', { nae: sela('nae'), gueonim: sela('gueonim'), rashi: sela('rashi') });
     const ids = ['proutah', 'maah', 'dinar', 'beka', 'shekel', 'mane', 'mane_sacre', 'talent', 'talent_sacre'];
     measuresTable(box, [t('tools.measures_col_unit'), t('tools.measures_col_proutot'), t('tools.measures_col_weight')],
         ids.slice().reverse().map(id => [measuresName(id), measuresFmt(MeasuresCore.findUnit('money', id).size), '≈ ' + measuresWeight(MeasuresCore.factor('money', id))]),
