@@ -15,7 +15,7 @@ AXES = [MER, AIR, RAIL, ROUTE]
 EVENTS = [
  # ------------------------------------------------------------------ MER
  ("cat1", MER, 1628, "Naufrage du Vasa dans le port de Stockholm", "Vasa_(navire)",
-  "Le 10 août 1628, le Vasa, fleuron de la marine suédoise, quitte le quai pour son voyage inaugural. Instable à cause de sa conception, il chavire et coule après environ 1 300 mètres, sous les yeux de la foule. Renfloué en 1961, il est aujourd'hui exposé dans un musée de Stockholm, l'un des navires anciens les mieux conservés.",
+  "Le 10 août 1628, le Vasa, fleuron de la marine suédoise, quitte le quai pour son voyage inaugural. Instable à cause de sa conception, il chavire et coule après environ 1 300 mètres, sous les yeux de la foule. Une trentaine de personnes meurent, selon les estimations les plus prudentes. Renfloué en 1961, il est aujourd'hui exposé dans un musée de Stockholm, l'un des navires anciens les mieux conservés.",
   59.328, 18.091, 's', "Port de Stockholm", 0),
  ("cat2", MER, 1816, "Naufrage de la Méduse", "Méduse_(frégate)",
   "Le 2 juillet 1816, la frégate française La Méduse s'échoue sur le banc d'Arguin, au large de la Mauritanie. Faute de canots pour tous, environ 150 personnes embarquent sur un radeau improvisé, dont une quinzaine seulement survivent après treize jours de dérive. L'affaire provoque un scandale politique sous la Restauration et inspire à Géricault son célèbre Radeau de la Méduse.",
@@ -199,9 +199,6 @@ EVENTS = [
   "Le 2 septembre 2026, un bus s'écrase sur la route entre Dahab et Nuweiba, dans le sud du Sinaï égyptien. Le bilan, d'abord de 16 morts, est ensuite porté à 21 ou 22 morts selon les sources, avec 28 blessés. Plusieurs victimes sont jordaniennes.",
   28.7, 34.6, 'v', "Route Dahab–Nuweiba, Sinaï (Égypte)", 1),
  # ------------------------------------------------------------------ RATTRAPAGE 2014-2025
- ("cat62", AIR, 2014, "Destruction du vol MH17 au-dessus de l'Ukraine", "Vol_Malaysia_Airlines_17",
-  "Le 17 juillet 2014, le Boeing 777 du vol MH17 de Malaysia Airlines, qui relie Amsterdam à Kuala Lumpur, est abattu au-dessus de l'est de l'Ukraine, près de Hrabove. Les 298 personnes à bord périssent. L'enquête néerlandaise attribue la destruction à un missile du système Buk, et la justice néerlandaise condamne par contumace trois hommes à la perpétuité ; la Russie nie toute implication.",
-  48.1, 38.2, 'v', "Près de Hrabove, Ukraine (région de Donetsk)", 1),
  ("cat63", MER, 2014, "Naufrage du ferry Sewol, au large de la Corée du Sud", "Naufrage_du_Sewol",
   "Le 16 avril 2014, le ferry Sewol chavire au large de l'île de Jindo, en Corée du Sud. Sur 476 personnes à bord, la plupart des lycéens d'un même établissement, environ 300 meurent ou disparaissent. La lenteur des secours provoque une crise politique durable et une réforme de la sécurité maritime.",
   34.2, 125.9, 'v', "Au large de l'île de Jindo (Corée du Sud)", 1),

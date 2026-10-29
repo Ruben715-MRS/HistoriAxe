@@ -22,13 +22,17 @@ THEME_NAME = 'Grandes catastrophes de transport'
 PARENT = 'Société et Géopolitique'
 # Note importante affichée à l'ouverture du thème (écran des axes, js/app/axes-rounds.js).
 THEME_NOTE = ("Seuil principal : un accident entre dans ce thème lorsqu'il a fait au moins 50 morts. "
-              "Un seuil élargi, de 20 à 25 morts, permet d'inclure des accidents très médiatisés ou importants dans l'histoire. "
-              "D'autres évènements plus petits sont conservés pour leur portée : l'effondrement du pont de Tacoma (1940, "
-              "aucun mort), l'accident de Brétigny-sur-Orge (2013, 7 morts) ou la catastrophe du vol Fuerza Aérea Uruguaya 571 "
-              "(1972, 29 morts). Les bilans sont ceux connus à la date de rédaction (octobre 2026) et peuvent évoluer : "
-              "ceux de 2025 et 2026 sont souvent provisoires. Les lieux marqués « approximatif » ne sont pas des positions "
-              "précises. La liste n'est pas exhaustive : les catastrophes routières et maritimes sont les moins bien "
-              "couvertes, surtout entre 2015 et 2025.")
+              "Seuil élargi : au moins 20 morts, pour inclure des accidents très médiatisés ou importants dans l'histoire. "
+              "En dessous de 20 morts, quelques évènements sont conservés pour leur portée : le pont de Tacoma (aucun mort, "
+              "étude de l'aérodynamique des ponts), l'accident de Brétigny-sur-Orge (7 morts, défaut de maintenance), les "
+              "accidents d'Apollo 1, de Challenger et de Columbia (3 à 7 morts, sécurité des vols habités), l'incendie du tunnel "
+              "du Saint-Gothard (11 morts, sécurité des tunnels) et l'accident de la gare Montparnasse (1 mort, image emblématique "
+              "des débuts du chemin de fer). Les marées noires de l'Amoco Cadiz, de l'Exxon Valdez et de l'Erika sont aussi "
+              "conservées, avec peu ou pas de victimes humaines, parce qu'elles ont changé la réglementation du transport maritime. "
+              "Les bilans sont ceux connus à la date de rédaction (octobre 2026) et peuvent évoluer : ceux de 2025 et 2026 "
+              "sont souvent provisoires. Les lieux marqués « approximatif » ne sont pas des positions précises. "
+              "La liste n'est pas exhaustive : les catastrophes routières et maritimes sont les moins bien couvertes, "
+              "surtout entre 2015 et 2025.")
 FR = os.path.join(ROOT, 'data', 'fr.json')
 GEO = os.path.join(ROOT, 'assets', 'geo', 'events-geo.json')
 
