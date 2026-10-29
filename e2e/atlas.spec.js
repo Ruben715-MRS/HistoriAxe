@@ -106,6 +106,20 @@ test('retour : l\'Atlas ramène aux catégories', async ({ page }) => {
     expect(await visibleScreen(page)).toBe('screen-categories');
 });
 
+test('retour : la carte ouverte depuis une partie ramène à la partie, sans la relancer', async ({ page }) => {
+    await page.goto('/');
+    await page.waitForFunction(() => window.bdd && window.bdd.some(c => (c.themes || []).some(t => t.id === 'thm_aut')), null, { timeout: 45_000 });
+    await page.evaluate(() => {
+        // La demande de localisation de la carte ne doit pas recouvrir le bouton « Retour » du test.
+        appSettings.locationPromptShown = true;
+        showScreen('screen-game');
+        openAtlasAt(bdd.flatMap(c => c.themes || []).find(t => t.id === 'thm_aut').events[0]);
+    });
+    expect(await visibleScreen(page)).toBe('screen-atlas');
+    await page.locator('#screen-atlas .back-btn').click();
+    expect(await visibleScreen(page)).toBe('screen-game');
+});
+
 test('la recherche propose des lieux et des événements, et choisir un résultat ouvre la feuille', async ({ page }) => {
     await page.goto('/');
     await ouvrirAtlas(page);

@@ -43,6 +43,8 @@ let atlasMapLoaded = false;
 let atlasFilter = { from: null, to: null, cats: null };
 let atlasFilterTimer = null;
 let atlasPendingFocus = null;
+// L'écran qu'on quitte pour la carte (la frise d'une partie, une fiche…) : « Retour » y revient.
+let atlasReturnScreen = null;
 
 function atlasStatus(text) {
     const el = document.getElementById('atlas-status');
@@ -138,7 +140,9 @@ function initAtlas() {
 
 function backFromAtlas() {
     closeAtlasSheet();
-    showScreen('screen-categories', 'back');
+    const target = atlasReturnScreen || 'screen-categories';
+    atlasReturnScreen = null;
+    showScreen(target, 'back');
 }
 
 function atlasEnsureMap() {
@@ -587,6 +591,12 @@ function openAtlasAt(evt) {
     atlasPendingFocus = evt;
     // Un filtre qui cacherait l'événement qu'on vient chercher n'aurait pas de sens.
     atlasFilter = { from: null, to: null, cats: null };
+    // Le fond de la carte est l'écran visible au moment de l'ouverture (une partie en cours reste intacte) :
+    // « Retour » le rouvre tel quel, sans relancer ni réinitialiser quoi que ce soit.
+    const visible = Array.from(document.querySelectorAll('body > div')).find(div =>
+        !div.classList.contains('hidden') && !div.id.startsWith('modal-')
+    );
+    atlasReturnScreen = visible ? visible.id : null;
     showScreen('screen-atlas');
 }
 

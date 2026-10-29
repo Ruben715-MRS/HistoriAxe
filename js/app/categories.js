@@ -132,7 +132,7 @@ function initCategories() {
     const btnTools = gridSection.querySelector('#btn-tools');
     if (btnTools) btnTools.onclick = () => openTools();
     const btnAtlas = gridSection.querySelector('#btn-atlas');
-    if (btnAtlas) btnAtlas.onclick = () => showScreen('screen-atlas', 'forward');
+    if (btnAtlas) btnAtlas.onclick = () => { atlasReturnScreen = 'screen-categories'; showScreen('screen-atlas', 'forward'); };
     const btnFav = gridSection.querySelector('#btn-favoris');
     if (btnFav) btnFav.onclick = () => openFavorites();
     const btnDisc = gridSection.querySelector('#btn-discover');
