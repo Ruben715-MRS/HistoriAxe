@@ -10,9 +10,9 @@ let measuresOpinion = 'nae';
 const measuresInputs = { distances: { value: '1', unit: 'amah' }, volumes: { value: '1', unit: 'epha' }, money: { value: '1', unit: 'talent' }, surfaces: { value: '1', unit: 'beitseah' } };
 const MEASURES_TABS = [
     { id: 'distances', icon: '📏' },
+    { id: 'surfaces', icon: '📐' },
     { id: 'volumes', icon: '🏺' },
-    { id: 'money', icon: '🪙' },
-    { id: 'surfaces', icon: '📐' }
+    { id: 'money', icon: '🪙' }
 ];
 
 function measuresLang() { return (typeof i18n !== 'undefined' && i18n.currentLang) || 'fr'; }
