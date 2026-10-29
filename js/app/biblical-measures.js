@@ -7,11 +7,12 @@
 
 let measuresTab = 'distances';
 let measuresOpinion = 'nae';
-const measuresInputs = { distances: { value: '1', unit: 'amah' }, volumes: { value: '1', unit: 'epha' }, money: { value: '1', unit: 'talent' } };
+const measuresInputs = { distances: { value: '1', unit: 'amah' }, volumes: { value: '1', unit: 'epha' }, money: { value: '1', unit: 'talent' }, surfaces: { value: '1', unit: 'beitseah' } };
 const MEASURES_TABS = [
     { id: 'distances', icon: '📏' },
     { id: 'volumes', icon: '🏺' },
-    { id: 'money', icon: '🪙' }
+    { id: 'money', icon: '🪙' },
+    { id: 'surfaces', icon: '📐' }
 ];
 
 function measuresLang() { return (typeof i18n !== 'undefined' && i18n.currentLang) || 'fr'; }
@@ -119,7 +120,7 @@ function measuresConverter(cat) {
         ol.className = 'tool-small';
         ol.id = 'tool-measures-opinion-label';
         ol.textContent = (measuresHe && measuresHebrew('measures_he_label_' + cat))
-            || t({ volumes: 'tools.measures_opinion_label_vol', money: 'tools.measures_opinion_label_money' }[cat] || 'tools.measures_opinion_label');
+            || t({ volumes: 'tools.measures_opinion_label_vol', money: 'tools.measures_opinion_label_money', surfaces: 'tools.measures_opinion_label_surf' }[cat] || 'tools.measures_opinion_label');
         const chips = document.createElement('div');
         chips.className = 'tool-history-chips';
         chips.setAttribute('role', 'group');
@@ -130,7 +131,7 @@ function measuresConverter(cat) {
             btn.className = 'tool-history-chip';
             btn.setAttribute('aria-pressed', op === measuresOpinion ? 'true' : 'false');
             btn.textContent = (measuresHe && measuresHebrew('measures_he_op_' + op))
-                || t('tools.measures_opinion_' + ({ volumes: 'vol_', money: 'money_' }[cat] || '') + op);
+                || t('tools.measures_opinion_' + ({ volumes: 'vol_', money: 'money_', surfaces: 'surf_' }[cat] || '') + op);
             btn.onclick = () => {
                 measuresOpinion = op;
                 chips.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
@@ -248,7 +249,7 @@ function measuresLesson(cat) {
     h.className = 'tool-h';
     h.textContent = t('tools.measures_lesson_title');
     box.appendChild(h);
-    ({ distances: measuresLessonDistances, volumes: measuresLessonVolumes, money: measuresLessonMoney }[cat])(box);
+    ({ distances: measuresLessonDistances, volumes: measuresLessonVolumes, money: measuresLessonMoney, surfaces: measuresLessonSurfaces }[cat])(box);
     return box;
 }
 
@@ -306,6 +307,17 @@ function measuresLessonVolumes(box) {
     });
     box.appendChild(hebrew);
     measuresPara(box, 'tools.measures_vol_4');
+}
+
+function measuresLessonSurfaces(box) {
+    measuresPara(box, 'tools.measures_surf_1');
+    measuresPara(box, 'tools.measures_surf_2');
+    const ops = ['nae', 'feinstein', 'hazon'];
+    const units = ['beitrova', 'beitseah', 'beitletech', 'beitkor'];
+    measuresTable(box, [t('tools.measures_col_unit')].concat(ops.map(op => t('tools.measures_surf_col_' + op))),
+        units.map(id => [measuresName(id)].concat(ops.map(op => measuresFmt(MeasuresCore.factor('surfaces', id, op)) + ' m²'))),
+        { matrix: true, caption: t('tools.measures_surf_table') });
+    measuresPara(box, 'tools.measures_surf_3');
 }
 
 function measuresLessonMoney(box) {

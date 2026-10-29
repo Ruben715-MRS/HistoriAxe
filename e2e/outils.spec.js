@@ -980,3 +980,16 @@ test('mesures : le bouton A / א passe les noms d\'unités et des avis en hébre
     await page.locator('#measures-lang-fr').click();
     await expect(page.locator('#tool-measures-opinion-label')).toHaveText("Poids de la sela (argent)");
 });
+
+test('superficies : le beit seah vaut 576 m² avec Rav Naé, et l\'onglet propose les trois avis', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 900 });
+    await page.locator('#btn-tools').click();
+    await page.locator('#screen-tools .arcade-card', { hasText: 'Poids et mesures bibliques' }).click();
+    await page.locator('#tool-measures-tab-surfaces').click();
+    await expect(page.locator('#tool-measures-tab-surfaces')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('.measures-converter .tool-history-chips button')).toHaveCount(3);
+    await expect(page.locator('#tool-measures-rows .tool-row', { hasText: 'Mètre carré' }).locator('.tool-row-value')).toHaveText('≈ 576');
+    await page.locator('.measures-converter .tool-history-chips button', { hasText: 'Hazon' }).click();
+    await expect(page.locator('#tool-measures-rows .tool-row', { hasText: 'Mètre carré' }).locator('.tool-row-value')).toHaveText('≈ 829,4');
+    await expect(page.locator('.measures-lesson .measures-table')).toBeVisible();
+});

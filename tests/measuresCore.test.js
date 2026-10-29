@@ -187,7 +187,7 @@ test('volumes : avec l\'avis du \'Hazon Ich, l\'œuf vaut 90 à 100 mL, le log 0
 test('bouton A / א : chaque unité et chaque avis a son nom en hébreu dans ui/fr.json (lettres hébraïques uniquement)', () => {
     const d = JSON.parse(require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'ui', 'fr.json'), 'utf8')).tools;
     const hebreu = /^[\u05D0-\u05EA\u05F3\u05F4\s\/()\-]+$/;
-    ['distances', 'volumes', 'money'].forEach(cat => {
+    ['distances', 'volumes', 'money', 'surfaces'].forEach(cat => {
         M.unitsOf(cat).forEach(u => {
             const he = d['measures_he_u_' + u.id];
             assert.ok(he, `nom hébreu manquant : ${cat}/${u.id}`);
@@ -196,4 +196,24 @@ test('bouton A / א : chaque unité et chaque avis a son nom en hébreu dans ui/
         M.CATEGORIES[cat].opinions.forEach(op => assert.ok(d['measures_he_op_' + op], `avis ${op}`));
         assert.ok(d['measures_he_label_' + cat], `intitulé ${cat}`);
     });
+});
+
+test('superficies : le beit seah = 2 500 coudées carrées ; 576 m² (Rav Naé, 48 cm), 729 m² (Feinstein, 54 cm), 829,44 m² (\'Hazon Ich, 57,6 cm)', () => {
+    close(M.factor('surfaces', 'beitseah', 'nae'), 576);
+    close(M.factor('surfaces', 'beitseah'), 576);
+    close(M.factor('surfaces', 'beitseah', 'feinstein'), 729);
+    close(M.factor('surfaces', 'beitseah', 'hazon'), 829.44);
+});
+
+test('superficies : les rapports du livre (beit rova = ¼ beit seah, beit kor = 30 beit seah, beit letech = 15 beit seah) et les conversions', () => {
+    close(M.factor('surfaces', 'beitrova', 'nae'), 144);
+    close(M.factor('surfaces', 'beitkor', 'nae'), 17280);
+    close(M.factor('surfaces', 'beitletech', 'nae'), 8640);
+    close(M.factor('surfaces', 'beitkor', 'nae') / M.factor('surfaces', 'beitseah', 'nae'), 30);
+    close(M.factor('surfaces', 'beitseah', 'nae') / M.factor('surfaces', 'beitrova', 'nae'), 4);
+    // Un beit kor (Rav Naé) = 1,728 hectare = 172,8 ares.
+    const ha = M.convert('surfaces', 1, 'beitkor', 'nae').find(r => r.id === 'ha');
+    close(ha.value, 1.728);
+    assert.equal(ha.approx, true);
+    close(M.convert('surfaces', 1, 'beitkor', 'nae').find(r => r.id === 'are').value, 172.8);
 });

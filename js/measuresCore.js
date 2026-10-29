@@ -86,10 +86,28 @@
         { id: 'g', group: 'modern', grams: 1 }
     ];
 
+    // --- Superficies : l'unité de base est la coudée carrée. Le beit seah (surface semée avec un séa de grain) vaut 50 × 50 coudées.
+    // La coudée dépend de l'avis : Rav Naé 48 cm, Rav Moché Feinstein 54 cm, 'Hazon Ich 57,6 cm.
+    var SURFACE_OPINIONS = {
+        nae: { id: 'nae', amahMetres: 0.48 },
+        feinstein: { id: 'feinstein', amahMetres: 0.54 },
+        hazon: { id: 'hazon', amahMetres: 0.576 }
+    };
+    var SURFACE_UNITS = [
+        { id: 'beitrova', group: 'biblical', size: 625 },       // ¼ beit seah
+        { id: 'beitseah', group: 'biblical', size: 2500 },     // 50 × 50 coudées
+        { id: 'beitletech', group: 'biblical', size: 37500 },  // 15 beit seah
+        { id: 'beitkor', group: 'biblical', size: 75000 },     // 30 beit seah
+        { id: 'm2', group: 'modern', m2: 1 },
+        { id: 'are', group: 'modern', m2: 100 },
+        { id: 'ha', group: 'modern', m2: 10000 }
+    ];
+
     var CATEGORIES = {
         distances: { units: DISTANCE_UNITS, opinions: ['nae', 'hazon'], defaultUnit: 'amah' },
         volumes: { units: VOLUME_UNITS, opinions: ['nae', 'hazon'], defaultUnit: 'epha' },
-        money: { units: MONEY_UNITS, opinions: ['nae', 'gueonim', 'rashi'], defaultUnit: 'shekel' }
+        money: { units: MONEY_UNITS, opinions: ['nae', 'gueonim', 'rashi'], defaultUnit: 'shekel' },
+        surfaces: { units: SURFACE_UNITS, opinions: ['nae', 'feinstein', 'hazon'], defaultUnit: 'beitseah' }
     };
 
     function unitsOf(category) { return CATEGORIES[category].units; }
@@ -113,6 +131,11 @@
             if (u.group === 'modern') return u.litres;
             var vop = VOLUME_OPINIONS[opinion] || VOLUME_OPINIONS.nae;
             return u.size * vop.eppaLitres / EGGS_PER_EPHA;
+        }
+        if (category === 'surfaces') {
+            if (u.group === 'modern') return u.m2;
+            var sop = SURFACE_OPINIONS[opinion] || SURFACE_OPINIONS.nae;
+            return u.size * sop.amahMetres * sop.amahMetres;
         }
         if (u.group === 'modern') return u.grams;
         return u.size * proutahGrams(opinion);
@@ -199,6 +222,7 @@
         MIL_WALK_MINUTES: MIL_WALK_MINUTES,
         EPHA_LITRES: EPHA_LITRES,
         MONEY_OPINIONS: MONEY_OPINIONS,
+        SURFACE_OPINIONS: SURFACE_OPINIONS,
         proutahGrams: proutahGrams,
         CATEGORIES: CATEGORIES,
         MONEY_TABLE: MONEY_TABLE,
