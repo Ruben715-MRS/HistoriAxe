@@ -6173,15 +6173,57 @@ textarea.form-input {
     --sar: env(safe-area-inset-right, 0px);
 }
 
+/* Le contenu va jusqu'aux bords de l'écran : l'heure et l'indicateur d'accueil passent par-dessus
+   (StatusBar overlaysWebView). Les marges haute et basse ne sont donc plus sur body mais sur chaque
+   écran : son défilement remonte ainsi sous la barre d'état au lieu d'être coupé net. */
 body {
-    padding-top: var(--sat);
-    padding-bottom: var(--sab);
     padding-left: var(--sal);
     padding-right: var(--sar);
     -webkit-user-select: none;
     user-select: none;
     -webkit-touch-callout: none;
 }
+
+body > [id^="screen-"] {
+    padding-top: var(--sat);
+    padding-bottom: var(--sab);
+}
+
+/* Les listes gardent leur marge de 20px, ajoutée à la zone de sécurité. */
+body > .list-screen {
+    padding-top: calc(var(--sat) + 20px);
+    padding-bottom: calc(var(--sab) + 20px);
+}
+
+/* Écrans qui occupent tout l'écran (accueil, carte, cadre des rapports) : aucune marge. */
+#screen-home,
+#screen-atlas,
+#screen-multi-turn,
+#screen-rapport {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#screen-end {
+    padding-top: calc(var(--sat) + 20px);
+    padding-bottom: calc(var(--sab) + 20px);
+}
+
+/* Bande d'état floue : le contenu qui remonte sous l'heure se floute, comme dans les apps iOS natives. */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--sat);
+    z-index: 50;
+    pointer-events: none;
+    background: color-mix(in srgb, var(--bg-color) 75%, transparent);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
 input,
 textarea {
     -webkit-user-select: auto;
@@ -6418,7 +6460,7 @@ textarea {
 }
 
 #screen-mindmap {
-    padding-bottom: 60px;
+    padding-bottom: calc(var(--sab) + 60px);
 }
 
 .mindmap-subtitle {
