@@ -156,7 +156,7 @@ EVENTS = [
   39.4278, -3.8181, 's', "LGV Madrid–Séville, point kilométrique 118, entre Los Yébenes et Urda", 0),
  ("cat56", RAIL, 2026, "Collision ferroviaire d'Adamuz, en Andalousie", "Catastrophe_d'Adamuz",
   "Le 18 janvier 2026, à Adamuz, dans la province de Cordoue, un train Iryo déraille avant de heurter un train Renfe circulant en sens inverse sur la ligne Madrid–Séville. L'accident fait 46 morts et plus de 150 blessés, et relance en Espagne le débat sur l'entretien du réseau, la signalisation et la sécurité des voyageurs.",
-  37.9, -4.5, 'v', "Adamuz, province de Cordoue (lieu approximatif)", 1),
+  38.0105, -4.5647, 's', "Point de collision, PK 318,2, près de la gare d'Adamuz, province de Cordoue", 0),
  # ------------------------------------------------------------------ ROUTE ET TERRESTRE
  ("cat44", ROUTE, 1940, "Effondrement du pont de Tacoma", "Pont_du_détroit_de_Tacoma",
   "Le 7 novembre 1940, le pont suspendu du détroit de Tacoma, dans l'État de Washington, s'effondre sous un vent modéré, quatre mois seulement après son ouverture. Sa déformation en torsion, filmée, devient l'une des séquences les plus célèbres de l'ingénierie. Aucun être humain n'est tué, et l'accident impose d'étudier l'aérodynamique des tabliers de pont.",
