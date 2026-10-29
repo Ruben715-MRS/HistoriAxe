@@ -107,7 +107,7 @@ EVENTS = [
   44.27, 6.44, 's', "Massif des Trois-Évêchés, Alpes-de-Haute-Provence", 0),
  # ------------------------------------------------------------------ RAIL
  ("cat32", RAIL, 1842, "Catastrophe ferroviaire de Meudon", "Catastrophe_ferroviaire_de_Meudon",
-  "Le 8 mai 1842, un train revenant de Versailles déraille à Meudon, dans la région parisienne, après la rupture de l'essieu de la locomotive. Les voitures, fermées à clef selon l'usage, prennent feu et une cinquantaine de voyageurs périssent, dont l'explorateur Dumont d'Urville. C'est la première grande catastrophe ferroviaire de France, et elle met fin à l'enfermement des voyageurs dans les compartiments.",
+  "Le 8 mai 1842, un train revenant de Versailles déraille à Meudon, dans la région parisienne, après la rupture de l'essieu de la locomotive. Les voitures, fermées à clef selon l'usage, prennent feu et au moins 55 voyageurs périssent selon le bilan officiel, dont l'explorateur Dumont d'Urville. Les estimations historiques varient fortement, certaines évoquant plus de 150 morts. C'est la première grande catastrophe ferroviaire de France, et elle met fin à l'enfermement des voyageurs dans les compartiments.",
   48.8, 2.23, 'v', "Meudon, Hauts-de-Seine", 0),
  ("cat33", RAIL, 1895, "Accident de la gare Montparnasse", "Accident_ferroviaire_de_la_gare_Montparnasse",
   "Le 22 octobre 1895, un train venant de Granville ne parvient pas à s'arrêter en gare Montparnasse, à Paris, traverse le mur du bâtiment et tombe sur la place de Rennes. Il n'y a qu'une seule victime, une passante, mais la photographie de la locomotive dressée sur le trottoir fait le tour du monde. L'image reste l'un des symboles des débuts du chemin de fer.",
@@ -180,11 +180,8 @@ EVENTS = [
  ("cat58", MER, 2026, "Chavirement du ferry MV Barima, en Guyana", "Naufrage_du_MV_Barima",
   "Le 19 juillet 2026, le ferry MV Barima, vieux de 87 ans, chavire au large de la côte de l'Essequibo, en Guyana. Le bilan confirmé atteint au moins 72 morts, pour 76 rescapés sur environ 179 personnes à bord, et le gouvernement estime que jusqu'à une centaine de personnes ont pu périr. Des survivants évoquent une surcharge, que les autorités contestent, et le capitaine a été placé en garde à vue.",
   6.8, -58.45, 'v', "Au large de la côte de l'Essequibo (Guyana)", 1),
- ("cat59", ROUTE, 2026, "Bus de pèlerins renversé dans le sud de l'Irak", "Accident_de_bus_de_pèlerins_en_Irak_en_2026",
-  "Le 7 juin 2026, un bus transportant des pèlerins se renverse sur l'axe reliant Nassiriya à Bassorah, dans le sud de l'Irak. Le ministère de la Santé annonce 21 morts et 19 blessés, parmi lesquels figurent des pèlerins iraniens.",
-  30.8, 47.0, 'v', "Axe Nassiriya–Bassorah (Irak)", 1),
  ("cat61", ROUTE, 2026, "Bus renversé sur la route du Sinaï, en Égypte", "Accident_de_bus_du_Sinaï_en_2026",
-  "Le 2 septembre 2026, un bus s'écrase sur la route entre Dahab et Nuweiba, dans le sud du Sinaï égyptien. Le bilan, d'abord de 16 morts, est ensuite porté à 21 ou 22 morts selon les sources, avec 28 blessés. Plusieurs victimes sont jordaniennes.",
+  "Le 2 septembre 2026, un bus s'écrase sur la route entre Dahab et Nuweiba, dans le sud du Sinaï égyptien. Le bilan, d'abord de 16 morts, est porté à au moins 22 morts et 28 blessés, dont dix Jordaniens, selon un bilan provisoire du ministère égyptien de la Santé.",
   28.7, 34.6, 'v', "Route Dahab–Nuweiba, Sinaï (Égypte)", 1),
  # ------------------------------------------------------------------ RATTRAPAGE 2014-2025
  ("cat63", MER, 2014, "Naufrage du ferry Sewol, au large de la Corée du Sud", "Naufrage_du_Sewol",
