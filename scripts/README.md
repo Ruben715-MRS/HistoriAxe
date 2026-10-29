@@ -13,7 +13,7 @@ Outils du projet. Ce qui est là sert encore ; le reste a été retiré (voir pl
 | `fetch_portraits.py`, `search_portraits.py` | collecte des portraits (Wikimedia) |
 | `geo/` | chaîne de géolocalisation des événements → `assets/geo/events-geo.json` (voir `geo/README.md`) |
 | `transport/` | génération du thème « Grandes catastrophes de transport » |
-| `veille/` | veille des chefs d'État et de gouvernement : `node scripts/veille/dirigeants.js` écrit un rapport daté dans `veille/rapports/` (lecture seule, aucune donnée modifiée) |
+| `veille/` | veille d'actualité, lecture seule : `dirigeants.js` (chefs d'État et de gouvernement), `prix.py` (lauréats des prix suivis, calendrier dans `calendrier_prix.json`), `transport.py` (couverture des catastrophes de transport). Rapports datés dans `veille/rapports/`. Aucune donnée modifiée : les ajouts se font après validation |
 
 ## Ce qui a été retiré
 

@@ -1,0 +1,27 @@
+{
+  "note": "Prix suivis par la veille. « mois » : mois où le lauréat est annoncé ou décerné. « decalage » (facultatif) : nombre d'années entre l'annonce et l'année du millésime retenue dans les sources (le prix Turing de 2025 est annoncé en mars 2026). « continu » : true si la série est suivie chaque année (une absence est alors un manque) ; false pour les prix sans rythme annuel ou partiellement couverts par le jeu.",
+  "prix": [
+    {"nom": "Festival de Cannes", "fichier": "prix/festivals.json", "axe": "Festival de Cannes", "mois": 5, "continu": true},
+    {"nom": "Mostra de Venise", "fichier": "prix/festivals.json", "axe": "Mostra de Venise", "mois": 9, "continu": true},
+    {"nom": "Berlinale", "fichier": "prix/festivals.json", "axe": "Berlinale", "mois": 2, "continu": true},
+    {"nom": "César", "fichier": "prix/festivals.json", "axe": "César", "mois": 2, "continu": true},
+    {"nom": "Prix Goncourt", "fichier": "prix/litteraires.json", "axe": "Prix Goncourt", "mois": 11, "continu": true},
+    {"nom": "Booker Prize", "fichier": "prix/litteraires.json", "axe": "Booker Prize", "mois": 11, "continu": true},
+    {"nom": "Prix Pulitzer de la fiction", "fichier": "prix/litteraires.json", "axe": "Prix Pulitzer de la fiction", "mois": 5, "continu": true},
+    {"nom": "Grammy Awards", "fichier": "prix/musique.json", "axe": "Grammy Awards", "mois": 2, "continu": true},
+    {"nom": "Concours Eurovision de la chanson", "fichier": "prix/musique.json", "axe": "Concours Eurovision de la chanson", "mois": 5, "continu": true},
+    {"nom": "Oscars : meilleur film", "fichier": "prix/oscars.json", "axe": "Meilleur film", "mois": 3, "continu": true},
+    {"nom": "Oscars : réalisation", "fichier": "prix/oscars.json", "axe": "Réalisation", "mois": 3, "continu": true},
+    {"nom": "Médaille Fields", "fichier": "prix/sciences.json", "axe": "Médaille Fields", "mois": 7, "continu": false},
+    {"nom": "Prix Abel", "fichier": "prix/sciences.json", "axe": "Prix Abel", "mois": 3, "continu": true},
+    {"nom": "Prix Turing", "fichier": "prix/sciences.json", "axe": "Prix Turing", "mois": 3, "decalage": 1, "continu": true},
+    {"nom": "Ballon d'or masculin", "fichier": "prix/sport.json", "axe": "Ballon d'or masculin", "mois": 10, "continu": true},
+    {"nom": "Ballon d'or féminin", "fichier": "prix/sport.json", "axe": "Ballon d'or féminin", "mois": 10, "continu": true},
+    {"nom": "Nobel de chimie", "fichier": "nobel/chimie.json", "axe": null, "mois": 10, "continu": true},
+    {"nom": "Nobel de physique", "fichier": "nobel/physique.json", "axe": null, "mois": 10, "continu": true},
+    {"nom": "Nobel de médecine", "fichier": "nobel/medecine.json", "axe": null, "mois": 10, "continu": true},
+    {"nom": "Nobel de littérature", "fichier": "nobel/litterature.json", "axe": null, "mois": 10, "continu": true},
+    {"nom": "Nobel de la paix", "fichier": "nobel/paix.json", "axe": null, "mois": 10, "continu": true},
+    {"nom": "Nobel d'économie", "fichier": "nobel/economie.json", "axe": null, "mois": 10, "continu": true}
+  ]
+}
