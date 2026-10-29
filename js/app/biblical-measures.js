@@ -96,7 +96,7 @@ function measuresConverter(cat) {
         const ol = document.createElement('span');
         ol.className = 'tool-small';
         ol.id = 'tool-measures-opinion-label';
-        ol.textContent = t('tools.measures_opinion_label');
+        ol.textContent = t(cat === 'volumes' ? 'tools.measures_opinion_label_vol' : 'tools.measures_opinion_label');
         const chips = document.createElement('div');
         chips.className = 'tool-history-chips';
         chips.setAttribute('role', 'group');
@@ -106,7 +106,7 @@ function measuresConverter(cat) {
             btn.type = 'button';
             btn.className = 'tool-history-chip';
             btn.setAttribute('aria-pressed', op === measuresOpinion ? 'true' : 'false');
-            btn.textContent = t('tools.measures_opinion_' + op);
+            btn.textContent = t('tools.measures_opinion_' + (cat === 'volumes' ? 'vol_' : '') + op);
             btn.onclick = () => {
                 measuresOpinion = op;
                 chips.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));

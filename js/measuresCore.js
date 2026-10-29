@@ -38,6 +38,9 @@
     // modernes usuelles (log ≈ 0,31 L ; kav ≈ 1,2 L ; omer = 2,2 L ; séa ≈ 7,3 L ; hin ≈ 3,7 L).
     var EPHA_LITRES = 22;
     var EGGS_PER_EPHA = 432;
+    // Deux avis sur l'épha : Rav Naé (≈ 22 L, œuf ≈ 51 mL, la valeur de la leçon) et 'Hazon Ich (≈ 40 à 43 L, œuf ≈ 90 à 100 mL) ;
+    // on prend le milieu de la fourchette, 41,5 L. Les rapports entre unités bibliques restent exacts dans les deux cas.
+    var VOLUME_OPINIONS = { nae: { id: 'nae', eppaLitres: EPHA_LITRES }, hazon: { id: 'hazon', eppaLitres: 41.5 } };
     var VOLUME_UNITS = [
         { id: 'betsa', group: 'biblical', size: 1 },
         { id: 'log', group: 'biblical', size: 6 },
@@ -72,7 +75,7 @@
 
     var CATEGORIES = {
         distances: { units: DISTANCE_UNITS, opinions: ['nae', 'hazon'], defaultUnit: 'amah' },
-        volumes: { units: VOLUME_UNITS, opinions: [], defaultUnit: 'epha' },
+        volumes: { units: VOLUME_UNITS, opinions: ['nae', 'hazon'], defaultUnit: 'epha' },
         money: { units: MONEY_UNITS, opinions: [], defaultUnit: 'shekel' }
     };
 
@@ -95,7 +98,8 @@
         }
         if (category === 'volumes') {
             if (u.group === 'modern') return u.litres;
-            return u.size * EPHA_LITRES / EGGS_PER_EPHA;
+            var vop = VOLUME_OPINIONS[opinion] || VOLUME_OPINIONS.nae;
+            return u.size * vop.eppaLitres / EGGS_PER_EPHA;
         }
         if (u.group === 'modern') return u.grams;
         return u.size * SHEKEL_GRAMS / PROUTOT_PER_SHEKEL;

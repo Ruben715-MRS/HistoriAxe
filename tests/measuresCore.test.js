@@ -131,3 +131,21 @@ test('formatNumber et formatDuration : lisibles', () => {
     assert.equal(M.formatDuration(125), '2 h 05');
     assert.equal(M.formatDuration(0.2), '< 1 min');
 });
+
+test('volumes : deux avis sur l\'épha, Rav Naé (≈ 22 L, par défaut) et \'Hazon Ich (≈ 41,5 L, milieu de 40 à 43 L)', () => {
+    close(M.factor('volumes', 'epha'), 22);
+    close(M.factor('volumes', 'epha', 'nae'), 22);
+    close(M.factor('volumes', 'epha', 'hazon'), 41.5);
+    // Les rapports entre unités bibliques restent exacts quel que soit l'avis.
+    close(M.factor('volumes', 'log', 'hazon') / M.factor('volumes', 'betsa', 'hazon'), 6);
+    close(M.factor('volumes', 'epha', 'hazon') / M.factor('volumes', 'epha', 'nae'), 41.5 / 22);
+});
+
+test('volumes : avec l\'avis du \'Hazon Ich, l\'œuf vaut 90 à 100 mL, le log 0,55 à 0,60 L, et l\'épha 40 à 43 L (tableau de l\'avis)', () => {
+    const egg = M.factor('volumes', 'betsa', 'hazon') * 1000;
+    assert.ok(egg >= 90 && egg <= 100, 'œuf : ' + egg);
+    const log = M.factor('volumes', 'log', 'hazon');
+    assert.ok(log >= 0.55 && log <= 0.60, 'log : ' + log);
+    const epha = M.factor('volumes', 'epha', 'hazon');
+    assert.ok(epha >= 40 && epha <= 43, 'épha : ' + epha);
+});
