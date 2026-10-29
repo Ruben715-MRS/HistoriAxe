@@ -151,6 +151,9 @@ EVENTS = [
  ("cat43", RAIL, 2013, "Accident ferroviaire de Saint-Jacques-de-Compostelle", "Accident_ferroviaire_de_Saint-Jacques-de-Compostelle",
   "Le 24 juillet 2013, un train à grande vitesse déraille à l'entrée de Saint-Jacques-de-Compostelle, en Espagne, dans une courbe abordée à plus de deux fois la vitesse autorisée. L'accident fait 79 morts, à la veille des fêtes de la ville. Le conducteur est condamné pour homicides par imprudence.",
   42.8667, -8.5122, 's', "Angrois, Saint-Jacques-de-Compostelle", 0),
+ ("cat55", RAIL, 2026, "Collision de deux trains à grande vitesse en Espagne", "Accident_ferroviaire_de_2026_en_Espagne",
+  "Le 28 octobre 2026, deux trains à grande vitesse entrent en collision à environ 150 km au sud de Madrid. L'accident fait au moins 68 morts et 108 blessés, dont 58 hospitalisés. Le gouvernement évoque une possible erreur humaine, et trois jours de deuil national sont décrétés : c'est la pire tragédie ferroviaire espagnole depuis 2013, moins d'un an après la collision d'Adamuz, en Andalousie, qui avait fait 46 morts.",
+  39.1, -3.8, 'v', "Environ 150 km au sud de Madrid (lieu approximatif)", 1),
  # ------------------------------------------------------------------ ROUTE ET TERRESTRE
  ("cat44", ROUTE, 1940, "Effondrement du pont de Tacoma", "Pont_du_détroit_de_Tacoma",
   "Le 7 novembre 1940, le pont suspendu du détroit de Tacoma, dans l'État de Washington, s'effondre sous un vent modéré, quatre mois seulement après son ouverture. Sa déformation en torsion, filmée, devient l'une des séquences les plus célèbres de l'ingénierie. Aucun être humain n'est tué, et l'accident impose d'étudier l'aérodynamique des tabliers de pont.",
