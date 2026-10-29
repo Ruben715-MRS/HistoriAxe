@@ -123,10 +123,11 @@
         {
             id: 'principes',
             icon: '📖',
-            count: 58,
+            count: 68,
             themeMenu: true,
             restartPerGroup: true,
             groups: [
+                { id: 'rappels', items: ['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8', 'r9', 'r10'] },
                 { id: 'mercy', items: range13('m') },
                 { id: 'hillel', items: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'h7'] },
                 { id: 'ishmael', items: range13('i') },

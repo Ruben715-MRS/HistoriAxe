@@ -759,12 +759,12 @@ test('textes de référence : navigation entre les sections, par les onglets', a
     await expect(page.locator('#cmd-group-pratiques-soukkot .cmd-item').first().locator('.cmd-heb')).toHaveText('אתרוג');
     await page.locator('#tool-commandments-lang-fr').click();
 
-    // Enfin « Principes et textes » : cinq thèmes, 58 textes, et le menu mène à celui qu'on choisit.
+    // Enfin « Principes et textes » : six thèmes, 68 textes, et le menu mène à celui qu'on choisit.
     await page.locator('#tool-commandments-tab-principes').click();
     await expect(page.locator('#tool-commandments-tab-principes')).toHaveAttribute('aria-pressed', 'true');
-    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(58);
-    await expect(page.locator('#tool-commandments-body .cmd-group-title').first()).toContainText('attributs de miséricorde');
-    await expect(page.locator('#tool-commandments-theme-principes option')).toHaveCount(6); // 5 thèmes + l'invite
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(68);
+    await expect(page.locator('#tool-commandments-body .cmd-group-title').first()).toContainText('Les dix rappels');
+    await expect(page.locator('#tool-commandments-theme-principes option')).toHaveCount(7); // 6 thèmes + l'invite
     await page.locator('#tool-commandments-theme-principes').selectOption({ label: 'Les treize attributs de miséricorde' });
     await expect(page.locator('#cmd-group-principes-mercy')).toBeInViewport();
     await expect(page.locator('#cmd-group-principes-mercy .cmd-item').first()).toContainText('Adonaï');
