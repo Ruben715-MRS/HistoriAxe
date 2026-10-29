@@ -233,7 +233,10 @@
         <h2 class="header-title" id="subcategory-screen-title" data-i18n="subcategories.choose_region">Choisissez une
             région</h2>
         <div id="subcategory-note" class="subcategory-note hidden">
-            <div class="subcategory-note-title" data-i18n="subcategories.note_title">Note importante</div>
+            <button type="button" class="subcategory-note-title" aria-expanded="false" onclick="toggleImportantNote(this)">
+                <span data-i18n="subcategories.note_title">Note importante</span>
+                <span class="subcategory-note-toggle" aria-hidden="true">+</span>
+            </button>
             <p id="subcategory-note-text"></p>
         </div>
         <div class="list-categories" id="subcategories-container"></div>
@@ -362,7 +365,10 @@
             data-i18n-attr="aria-label:nav.back">‹</button>
         <h2 class="header-title" id="theme-screen-title" data-i18n="themes.choose_theme">Thèmes</h2>
         <div id="theme-screen-note" class="subcategory-note hidden">
-            <div class="subcategory-note-title" data-i18n="subcategories.note_title">Note importante</div>
+            <button type="button" class="subcategory-note-title" aria-expanded="false" onclick="toggleImportantNote(this)">
+                <span data-i18n="subcategories.note_title">Note importante</span>
+                <span class="subcategory-note-toggle" aria-hidden="true">+</span>
+            </button>
             <p id="theme-screen-note-text"></p>
         </div>
         <div class="grid-cards" id="themes-container"></div>
@@ -378,7 +384,10 @@
         <!-- Note facultative du thème (champ `note`), par exemple un renvoi vers un autre panthéon :
              remplie par renderAxesScreen (js/app/axes-rounds.js). -->
         <div id="axes-theme-note" class="subcategory-note hidden">
-            <div class="subcategory-note-title" data-i18n="subcategories.note_title">Note importante</div>
+            <button type="button" class="subcategory-note-title" aria-expanded="false" onclick="toggleImportantNote(this)">
+                <span data-i18n="subcategories.note_title">Note importante</span>
+                <span class="subcategory-note-toggle" aria-hidden="true">+</span>
+            </button>
             <p id="axes-theme-note-text"></p>
         </div>
         <p id="axes-subtitle" style="font-size:14px; color:var(--muted-text); margin-bottom:20px;"></p>

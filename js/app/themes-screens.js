@@ -139,6 +139,7 @@ function initThemes() {
     const themeNoteBox = document.getElementById('theme-screen-note');
     if (node.note) {
         document.getElementById('theme-screen-note-text').innerText = node.note;
+        collapseImportantNote(themeNoteBox);
         themeNoteBox.classList.remove('hidden');
     } else {
         themeNoteBox.classList.add('hidden');
