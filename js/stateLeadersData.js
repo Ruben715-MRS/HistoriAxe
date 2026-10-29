@@ -1,5 +1,5 @@
 // =========================================================================
-// === LES CHEFS D'ÉTAT : DONNÉES DE VINGT PAYS (complète js/stateLeadersCore.js) ===
+// === LES CHEFS D'ÉTAT : DONNÉES DE TRENTE-DEUX PAYS (complète js/stateLeadersCore.js, qui a la France : trente-trois pays) ===
 // =========================================================================
 // Même forme que la France : [début, fin (null = en fonction), nom, fonction, groupe]. Chaque pays a ses groupes (dynastie ou régime),
 // dont la couleur de fond et le nom apparaissent quand le régime change. Liste indicative, « à relire par un enseignant ».
