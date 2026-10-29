@@ -16,8 +16,13 @@
     'use strict';
 
     // --- Distances : l'unité de base est le doigt (etzba). 1 coudée = 24 doigts. ------------------------------------------------
-    // Deux opinions sur la longueur de la coudée : 48 cm (Rav Naé) ou 57,6 cm ('Hazon Ich) ; toutes les autres unités suivent.
-    var DISTANCE_OPINIONS = { nae: { id: 'nae', fingerMetres: 0.02 }, hazon: { id: 'hazon', fingerMetres: 0.024 } };
+    // Trois opinions sur la longueur de la coudée : 48 cm (Rav Naé), 21,25 pouces = 53,975 cm (Rav Moché Feinstein, Igrot Moshé OC 1:136),
+    // 57,6 cm ('Hazon Ich) ; toutes les autres unités suivent. Le pouce (inch) vaut 2,54 cm.
+    var DISTANCE_OPINIONS = {
+        nae: { id: 'nae', fingerMetres: 0.02 },
+        feinstein: { id: 'feinstein', fingerMetres: 0.53975 / 24 },
+        hazon: { id: 'hazon', fingerMetres: 0.024 }
+    };
     var MIL_WALK_MINUTES = 18; // un mil se marche en 18 minutes (avis de la majorité des décisionnaires)
 
     var DISTANCE_UNITS = [
@@ -28,6 +33,7 @@
         { id: 'mil', group: 'biblical', size: 48000 },      // 2 000 coudées
         { id: 'parsa', group: 'biblical', size: 192000 },   // 4 mil
         { id: 'yom', group: 'biblical', size: 1920000 },    // journée de marche : 10 parsa
+        { id: 'inch', group: 'modern', metres: 0.0254 },
         { id: 'cm', group: 'modern', metres: 0.01 },
         { id: 'm', group: 'modern', metres: 1 },
         { id: 'km', group: 'modern', metres: 1000 }
@@ -87,10 +93,10 @@
     ];
 
     // --- Superficies : l'unité de base est la coudée carrée. Le beit seah (surface semée avec un séa de grain) vaut 50 × 50 coudées.
-    // La coudée dépend de l'avis : Rav Naé 48 cm, Rav Moché Feinstein 54 cm, 'Hazon Ich 57,6 cm.
+    // La coudée dépend de l'avis : Rav Naé 48 cm, Rav Moché Feinstein 53,975 cm, 'Hazon Ich 57,6 cm.
     var SURFACE_OPINIONS = {
         nae: { id: 'nae', amahMetres: 0.48 },
-        feinstein: { id: 'feinstein', amahMetres: 0.54 },
+        feinstein: { id: 'feinstein', amahMetres: 0.53975 },
         hazon: { id: 'hazon', amahMetres: 0.576 }
     };
     var SURFACE_UNITS = [
@@ -104,7 +110,7 @@
     ];
 
     var CATEGORIES = {
-        distances: { units: DISTANCE_UNITS, opinions: ['nae', 'hazon'], defaultUnit: 'amah' },
+        distances: { units: DISTANCE_UNITS, opinions: ['nae', 'feinstein', 'hazon'], defaultUnit: 'amah' },
         volumes: { units: VOLUME_UNITS, opinions: ['nae', 'hazon'], defaultUnit: 'epha' },
         money: { units: MONEY_UNITS, opinions: ['nae', 'gueonim', 'rashi'], defaultUnit: 'shekel' },
         surfaces: { units: SURFACE_UNITS, opinions: ['nae', 'feinstein', 'hazon'], defaultUnit: 'beitseah' }

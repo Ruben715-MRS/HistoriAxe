@@ -114,7 +114,7 @@ test('distances : la chaîne doigt, palme, empan, coudée, mil, parsa, journée 
     assert.equal(size('distances', 'amah'), 2 * size('distances', 'zeret'), 'une coudée = 2 empans');
 });
 
-test('distances : deux opinions — coudée de 48 cm (Rav Naé) ou de 57,6 cm (\'Hazon Ich), et tout le reste suit', () => {
+test('distances : trois opinions — coudée de 48 cm (Rav Naé), 53,975 cm (Feinstein) ou 57,6 cm (\'Hazon Ich), et tout le reste suit', () => {
     const m = (id, op) => M.factor('distances', id, op);
     close(m('amah', 'nae'), 0.48);
     close(m('amah', 'hazon'), 0.576);
@@ -127,6 +127,13 @@ test('distances : deux opinions — coudée de 48 cm (Rav Naé) ou de 57,6 cm (\
     close(m('parsa', 'hazon'), 4608);
     close(m('yom', 'nae'), 38400);
     close(m('yom', 'hazon'), 46080);
+    // Rav Moché Feinstein : 21,25 pouces = 53,975 cm ; le tefach vaut 9,0 cm, le doigt 2,25 cm, le mil 1 079,5 m.
+    close(m('amah', 'feinstein'), 0.53975);
+    close(m('amah', 'feinstein') * 100 / 2.54, 21.25, 1e-9);
+    close(m('tefach', 'feinstein'), 0.09, 1e-3);
+    close(m('etzba', 'feinstein'), 0.0225, 1e-3);
+    close(m('mil', 'feinstein'), 1079.5, 1e-3);
+    close(m('inch', 'nae'), 0.0254);
     // Sans opinion précisée : Rav Naé.
     close(m('amah'), 0.48);
 });
@@ -198,10 +205,10 @@ test('bouton A / א : chaque unité et chaque avis a son nom en hébreu dans ui/
     });
 });
 
-test('superficies : le beit seah = 2 500 coudées carrées ; 576 m² (Rav Naé, 48 cm), 729 m² (Feinstein, 54 cm), 829,44 m² (\'Hazon Ich, 57,6 cm)', () => {
+test('superficies : le beit seah = 2 500 coudées carrées ; 576 m² (Rav Naé, 48 cm), 728,3 m² (Feinstein, 53,975 cm), 829,44 m² (\'Hazon Ich, 57,6 cm)', () => {
     close(M.factor('surfaces', 'beitseah', 'nae'), 576);
     close(M.factor('surfaces', 'beitseah'), 576);
-    close(M.factor('surfaces', 'beitseah', 'feinstein'), 729);
+    close(M.factor('surfaces', 'beitseah', 'feinstein'), 2500 * 0.53975 * 0.53975);
     close(M.factor('surfaces', 'beitseah', 'hazon'), 829.44);
 });
 

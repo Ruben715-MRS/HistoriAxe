@@ -261,8 +261,8 @@ function measuresLessonDistances(box) {
     };
     const metres = (id, op) => MeasuresCore.factor('distances', id, op);
     const ids = ['etzba', 'tefach', 'zeret', 'amah', 'mil', 'parsa', 'yom'];
-    measuresTable(box, [t('tools.measures_col_unit'), t('tools.measures_col_relation'), t('tools.measures_opinion_nae'), t('tools.measures_opinion_hazon')],
-        ids.map(id => [measuresShort(id), rel(id), measuresLength(metres(id, 'nae')), measuresLength(metres(id, 'hazon'))]));
+    measuresTable(box, [t('tools.measures_col_unit'), t('tools.measures_col_relation'), t('tools.measures_surf_col_nae'), t('tools.measures_surf_col_feinstein'), t('tools.measures_surf_col_hazon')],
+        ids.map(id => [measuresShort(id), rel(id), measuresLength(metres(id, 'nae')), measuresLength(metres(id, 'feinstein')), measuresLength(metres(id, 'hazon'))]));
     measuresPara(box, 'tools.measures_dist_2');
     measuresPara(box, 'tools.measures_dist_3', {
         mil: MeasuresCore.MIL_WALK_MINUTES, parsa: MeasuresCore.formatDuration(4 * MeasuresCore.MIL_WALK_MINUTES),
