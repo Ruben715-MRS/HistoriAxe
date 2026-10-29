@@ -81,6 +81,9 @@ def main():
     doc = json.load(open(FR, encoding='utf-8'))
     geo = json.load(open(GEO, encoding='utf-8'))
     points = geo['points']
+    # Points d'évènements retirés du thème (ex. Marrakech) : ils ne doivent pas rester orphelins.
+    for stale in [k for k in points if k.startswith(THEME_ID + ':')]:
+        del points[stale]
 
     parent = None
     for cat in doc['categories']:
