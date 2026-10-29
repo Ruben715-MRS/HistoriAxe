@@ -3,7 +3,7 @@
   "lang": "fr",
   "name": "Français (Intégral)",
   "totalThemes": 853,
-  "totalEvents": 25811,
+  "totalEvents": 25807,
   "categories": [
     {
       "nom": "Culture générale",
@@ -44174,7 +44174,7 @@
               "id": "thm_catastrophes_transport",
               "nom": "Grandes catastrophes de transport",
               "difficulte": "Tous niveaux",
-              "note": "Seuil principal : un accident entre dans ce thème lorsqu'il a fait au moins 50 morts. Seuil élargi : au moins 20 morts, pour inclure des accidents très médiatisés ou importants dans l'histoire. En dessous de 20 morts, quelques évènements sont conservés pour leur portée : le pont de Tacoma (aucun mort, étude de l'aérodynamique des ponts), l'accident de Brétigny-sur-Orge (7 morts, défaut de maintenance), les accidents d'Apollo 1, de Challenger et de Columbia (3 à 7 morts, sécurité des vols habités), l'incendie du tunnel du Saint-Gothard (11 morts, sécurité des tunnels) et l'accident de la gare Montparnasse (1 mort, image emblématique des débuts du chemin de fer). Les marées noires de l'Amoco Cadiz, de l'Exxon Valdez et de l'Erika sont aussi conservées, avec peu ou pas de victimes humaines, parce qu'elles ont changé la réglementation du transport maritime. Les bilans sont ceux connus à la date de rédaction (octobre 2026) et peuvent évoluer : ceux de 2025 et 2026 sont souvent provisoires. Les lieux marqués « approximatif » ne sont pas des positions précises. La liste n'est pas exhaustive : les catastrophes routières et maritimes sont les moins bien couvertes, surtout entre 2015 et 2025.",
+              "note": "Seuil principal : un accident entre dans ce thème lorsqu'il a fait au moins 50 morts. Seuil élargi : au moins 20 morts, pour inclure des accidents très médiatisés ou importants dans l'histoire. En dessous de 20 morts, quelques évènements sont conservés pour leur portée sur la sécurité des transports : l'accident de Brétigny-sur-Orge (7 morts, défaut de maintenance), les accidents d'Apollo 1, de Challenger et de Columbia (3 à 7 morts, sécurité des vols habités), l'incendie du tunnel du Saint-Gothard (11 morts, sécurité des tunnels) et l'accident de la gare Montparnasse (1 mort, image emblématique des débuts du chemin de fer). Les marées noires et l'effondrement du pont de Tacoma ne sont pas dans ce thème : elles sont traitées ailleurs, dans les thèmes sur le littoral et l'environnement. Les bilans sont ceux connus à la date de rédaction (octobre 2026) et peuvent évoluer : ceux de 2025 et 2026 sont souvent provisoires. Les lieux marqués « approximatif » ne sont pas des positions précises. La liste n'est pas exhaustive : les catastrophes routières et maritimes sont les moins bien couvertes, surtout entre 2015 et 2025.",
               "axeOrder": [
                 "Catastrophes maritimes et fluviales",
                 "Catastrophes aériennes et spatiales",
@@ -44202,7 +44202,6 @@
                 "cat39",
                 "cat42",
                 "cat41",
-                "cat44",
                 "cat46",
                 "cat47",
                 "cat52",
@@ -44268,14 +44267,6 @@
                   "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Catastrophe+de+Texas+City"
                 },
                 {
-                  "id": "cat8",
-                  "axe": "Catastrophes maritimes et fluviales",
-                  "date": 1978,
-                  "titre": "Marée noire de l'Amoco Cadiz",
-                  "description": "Le 16 mars 1978, le superpétrolier libérien Amoco Cadiz, privé de gouvernail à la suite d'une avarie, s'échoue sur les récifs de Portsall, en Bretagne. Ses plus de 220 000 tonnes de pétrole brut se répandent et souillent environ 360 kilomètres de côtes. Cette marée noire, alors la plus grave jamais connue, conduit à renforcer la surveillance du trafic en Manche.",
-                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Amoco+Cadiz"
-                },
-                {
                   "id": "cat9",
                   "axe": "Catastrophes maritimes et fluviales",
                   "date": 1987,
@@ -44292,28 +44283,12 @@
                   "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Do%C3%B1a+Paz"
                 },
                 {
-                  "id": "cat11",
-                  "axe": "Catastrophes maritimes et fluviales",
-                  "date": 1989,
-                  "titre": "Marée noire de l'Exxon Valdez",
-                  "description": "Le 24 mars 1989, le pétrolier Exxon Valdez s'échoue sur le récif de Bligh, dans le détroit du Prince-William, en Alaska. Il déverse environ quarante mille tonnes de brut sur un littoral d'une grande richesse écologique. La catastrophe conduit les États-Unis à adopter en 1990 l'Oil Pollution Act, qui impose progressivement la double coque aux pétroliers.",
-                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Marée+noire+de+l'Exxon+Valdez"
-                },
-                {
                   "id": "cat12",
                   "axe": "Catastrophes maritimes et fluviales",
                   "date": 1994,
                   "titre": "Naufrage de l'Estonia",
                   "description": "Dans la nuit du 28 septembre 1994, le ferry Estonia sombre en mer Baltique, au large de la Finlande, par gros temps, après la rupture de sa visière d'étrave. Le navire coule en moins d'une heure et 852 personnes périssent, pour la plupart suédoises et estoniennes. C'est la plus grave catastrophe maritime survenue en temps de paix en Europe au XXe siècle.",
                   "wikipedia": "https://fr.wikipedia.org/w/index.php?search=MS+Estonia"
-                },
-                {
-                  "id": "cat13",
-                  "axe": "Catastrophes maritimes et fluviales",
-                  "date": 1999,
-                  "titre": "Naufrage de l'Erika",
-                  "description": "Le 12 décembre 1999, le pétrolier maltais Erika, vieux de vingt-quatre ans, se brise en deux dans le golfe de Gascogne, au large de la Bretagne. Environ vingt mille tonnes de fioul lourd souillent quelque quatre cents kilomètres de côtes françaises. Le procès qui suit fait reconnaître le préjudice écologique, et l'Union européenne durcit ses règles de sécurité maritime.",
-                  "wikipedia": "https://fr.wikipedia.org/wiki/Erika_(p%C3%A9trolier)"
                 },
                 {
                   "id": "cat14",
@@ -44586,14 +44561,6 @@
                   "titre": "Collision ferroviaire d'Urda, près de Tolède",
                   "description": "Le 28 octobre 2026, un AVE de Renfe percute par l'arrière un train Iryo immobilisé sur la ligne à grande vitesse Madrid–Séville, près d'Urda. Plusieurs voitures de l'Iryo déraillent et tombent en contrebas d'un talus, et au moins 68 personnes périssent et 108 sont blessées, selon un bilan provisoire susceptible d'évoluer. L'enquête initiale évoque une décision erronée du gestionnaire de l'infrastructure, qui aurait autorisé le train Renfe à repartir alors que la voie était encore occupée. C'est la deuxième catastrophe majeure de 2026 sur cet axe, moins d'un an après Adamuz.",
                   "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Catastrophe+d%27Urda"
-                },
-                {
-                  "id": "cat44",
-                  "axe": "Catastrophes routières et terrestres",
-                  "date": 1940,
-                  "titre": "Effondrement du pont de Tacoma",
-                  "description": "Le 7 novembre 1940, le pont suspendu du détroit de Tacoma, dans l'État de Washington, s'effondre sous un vent modéré, quatre mois seulement après son ouverture. Sa déformation en torsion, filmée, devient l'une des séquences les plus célèbres de l'ingénierie. Aucun être humain n'est tué, et l'accident impose d'étudier l'aérodynamique des tabliers de pont.",
-                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Pont+du+d%C3%A9troit+de+Tacoma"
                 },
                 {
                   "id": "cat45",
