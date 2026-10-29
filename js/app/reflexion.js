@@ -17,7 +17,18 @@ let memoryReturn = 'screen-arcade';
 function openMemory(fromScreen) {
     memoryReturn = fromScreen || 'screen-arcade';
     showScreen('screen-memory', 'forward');
-    memoryStart();
+    memorySetup();
+}
+
+// Avant la partie : le choix du niveau.
+function memorySetup() {
+    memoryGame = null;
+    document.getElementById('memory-grid').innerHTML = '';
+    document.getElementById('memory-status').textContent = '';
+    document.getElementById('memory-over').classList.add('hidden');
+    arcadeMessage('memory-message', '');
+    renderArcadeDifficulty('memory');
+    document.getElementById('memory-setup').classList.remove('hidden');
 }
 
 function memoryBack() {
@@ -29,9 +40,10 @@ function memoryBack() {
 function memoryStart() {
     clearTimeout(memoryHideTimer);
     memoryHideTimer = 0;
-    const game = ReflexionCore.createMemory(arcadePool());
+    const game = ReflexionCore.createMemory(arcadePool(), undefined, undefined, { difficulty: arcadeDifficulty('memory') });
     if (game.empty) { alert(t('arcade.empty')); return; }
     memoryGame = game;
+    document.getElementById('memory-setup').classList.add('hidden');
     document.getElementById('memory-over').classList.add('hidden');
     arcadeMessage('memory-message', '');
     memoryRender();
@@ -44,14 +56,23 @@ function memoryRender() {
     });
     const grid = document.getElementById('memory-grid');
     grid.innerHTML = '';
+    // Dix-huit cartes en difficile : six rangées, des cartes un peu moins hautes.
+    grid.classList.toggle('is-dense', g.cards.length > 12);
     g.cards.forEach((card, i) => {
         const up = g.flipped.indexOf(i) !== -1 || g.matched[card.pair];
         const btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'memory-card' + (up ? ' is-up' : '') + (g.matched[card.pair] ? ' is-matched' : '') + (up ? ' is-' + card.side : '');
         if (!up) {
-            btn.textContent = '?';
-            btn.setAttribute('aria-label', t('memory.card_hidden', { n: i + 1 }));
+            if (g.level.colors) {
+                // Facile : le dos dit le genre (couleur ET symbole, jamais la couleur seule).
+                btn.classList.add('is-back-' + card.side);
+                btn.textContent = card.side === 'date' ? '📅' : '📜';
+                btn.setAttribute('aria-label', t(card.side === 'date' ? 'memory.card_hidden_date' : 'memory.card_hidden_event', { n: i + 1 }));
+            } else {
+                btn.textContent = '?';
+                btn.setAttribute('aria-label', t('memory.card_hidden', { n: i + 1 }));
+            }
         } else {
             const text = card.side === 'date' ? formatYear(card.event.date) : card.event.title;
             btn.textContent = text;
@@ -94,9 +115,11 @@ function memoryTap(index) {
 function memoryFinish() {
     const g = memoryGame;
     const score = ReflexionCore.memoryScore(g);
-    const best = arcadeRecord('memory', score);
+    const weighted = arcadeWeighted('memory', score, g.difficulty);
+    const best = arcadeRecord('memory', weighted.total);
     document.getElementById('memory-over-text').textContent =
-        t('memory.over_text', { errors: g.errors, score }) + ' ' + t('arcade.best', { score: best.memory });
+        t('memory.over_text', { errors: g.errors, score }) + weighted.note + ' ' + t('arcade.best', { score: best.memory });
+    renderArcadeDifficulty('memory', 'memory-difficulty-over');
     document.getElementById('memory-over').classList.remove('hidden');
 }
 
@@ -105,7 +128,7 @@ function memoryFinish() {
 // =====================================================================================================
 let whoGame = null;
 let whoReturn = 'screen-arcade';
-let whoFiguresCache = null; // { bdd, size, candidates, known }
+let whoFiguresCache = null; // { bdd, size, candidates }
 let whoLoadToken = 0;      // pour ignorer un chargement dont le joueur n'attend plus le résultat
 
 function whoCountryName(iso) {
@@ -121,29 +144,25 @@ function whoDescriptionLength(evt) {
     return evt.description !== undefined ? String(evt.description).length : (evt.dl || 0);
 }
 
-// Les figures à portrait du pack chargé. Seulement les ⭐ incontournables de leur panthéon quand il y en a assez (sinon aussi celles
-// citées par plusieurs thèmes) : un joueur ne devine pas un chef oorlam du XIXe siècle. Il faut aussi une notice, d'où viennent les indices.
+// Les figures à portrait du pack chargé, avec une notice (d'où viennent les indices). Le niveau choisit parmi elles selon leur notoriété
+// dans le monde (`etoiles`, de 1 à 3) : voir ReflexionCore.whoSelect.
 function whoFigures() {
     const current = window.bdd || bdd || [];
     const size = current.length;
     if (whoFiguresCache && whoFiguresCache.bdd === current && whoFiguresCache.size === size) return whoFiguresCache;
     const raw = getAllEventsWithLocation().map(item => item.event);
     const candidates = GameModes.whoCandidates(raw).filter(e => portraitOf(e) && whoDescriptionLength(e) >= 80);
-    const items = PathCore.flattenEvents(current);
-    const among = known => { const ids = new Set(); items.forEach(item => { if (known(item)) ids.add(item.id); }); return candidates.filter(e => ids.has(e.id)); };
-    let known = among(item => item.essential);
-    if (known.length < 40) known = among(item => item.essential || item.fame >= 2);
-    whoFiguresCache = { bdd: current, size, candidates, known: known.length >= 40 ? known : candidates };
+    whoFiguresCache = { bdd: current, size, candidates };
     return whoFiguresCache;
 }
 
-// Les manches : un tirage parmi les figures connues, trois mauvaises réponses prises parmi toutes (voisines en date et
+// Les manches : un tirage parmi les figures du niveau, trois mauvaises réponses prises parmi celles du niveau aussi (voisines en date et
 // en domaine, comme au mode « Qui est-ce ? »), puis les notices (qui arrivent thème par thème dans un pack découpé) et
 // les indices de chaque figure. Une figure dont la notice n'a pas pu être chargée (hors ligne) est écartée.
-async function whoBuildQuestions() {
-    const figures = whoFigures();
-    const sample = ArcadeCore.shuffle(figures.known).slice(0, 60);
-    const questions = GameModes.buildWhoQuestions(sample, { pool: figures.candidates, count: ReflexionCore.WHO_ROUNDS + 2 });
+async function whoBuildQuestions(difficulty) {
+    const figures = ReflexionCore.whoSelect(whoFigures().candidates, difficulty);
+    const sample = ArcadeCore.shuffle(figures.correct).slice(0, 60);
+    const questions = GameModes.buildWhoQuestions(sample, { pool: figures.distractors, count: ReflexionCore.WHO_ROUNDS + 2 });
     await ensureDescriptions(questions.map(q => q.correct));
     return questions
         .filter(q => String(q.correct.description || '').length >= 80)
@@ -157,7 +176,18 @@ async function whoBuildQuestions() {
 function openWho(fromScreen) {
     whoReturn = fromScreen || 'screen-arcade';
     showScreen('screen-who', 'forward');
-    whoStart();
+    whoSetup();
+}
+
+// Avant la partie : le choix du niveau.
+function whoSetup() {
+    whoLoadToken += 1;
+    whoGame = null;
+    document.getElementById('who-play').classList.add('hidden');
+    document.getElementById('who-over').classList.add('hidden');
+    document.getElementById('who-status').textContent = '';
+    renderArcadeDifficulty('who');
+    document.getElementById('who-setup').classList.remove('hidden');
 }
 
 function whoBack() {
@@ -167,14 +197,16 @@ function whoBack() {
 
 async function whoStart() {
     const token = ++whoLoadToken;
+    const difficulty = arcadeDifficulty('who');
+    document.getElementById('who-setup').classList.add('hidden');
     document.getElementById('who-over').classList.add('hidden');
     document.getElementById('who-play').classList.add('hidden');
     document.getElementById('who-status').textContent = t('who.loading');
-    const questions = await whoBuildQuestions();
+    const questions = await whoBuildQuestions(difficulty);
     // Le joueur est reparti, ou a relancé une partie, pendant le chargement des notices.
     if (token !== whoLoadToken) return;
-    if (questions.length < 3) { alert(t('who.empty')); return; }
-    whoGame = ReflexionCore.createWho(questions);
+    if (questions.length < 3) { alert(t('who.empty')); whoSetup(); return; }
+    whoGame = ReflexionCore.createWho(questions, { difficulty });
     document.getElementById('who-play').classList.remove('hidden');
     whoRender();
 }
@@ -212,6 +244,8 @@ function whoRender() {
         const img = document.getElementById('who-portrait-img');
         img.alt = g.resolved ? q.name : t('whois.portrait_alt');
         img.src = image.src;
+        // Le contour de renommée ne vient qu'avec la réponse : avant, il dirait si la figure est célèbre.
+        renownFrameImage(img, q.event, !!g.resolved);
         fillPortraitCredit(document.getElementById('who-portrait-credit'), image);
     }
 
@@ -257,6 +291,7 @@ function whoAnswer(optionId) {
     feedback.classList.toggle('is-wrong', g.resolved === 'lost');
     document.getElementById('who-feedback-title').textContent = g.resolved === 'right' ? t('who.right', { points: result.points }) : t('who.lost');
     document.getElementById('who-feedback-text').textContent = t('who.answer', { name: q.name });
+    renownFillChip(document.getElementById('who-feedback-renown'), q.event, true);
     const last = g.index + 1 >= g.questions.length;
     const next = document.getElementById('who-next');
     next.textContent = t(last ? 'who.finish' : 'who.next');
@@ -273,11 +308,12 @@ function whoContinue() {
 
 function whoFinish() {
     const g = whoGame;
-    const best = arcadeRecord('who', g.score);
+    const weighted = arcadeWeighted('who', g.score, g.difficulty);
+    const best = arcadeRecord('who', weighted.total);
     document.getElementById('who-play').classList.add('hidden');
     document.getElementById('who-status').textContent = '';
     document.getElementById('who-over-text').textContent =
-        t('who.found', { found: g.found, total: g.questions.length, score: g.score }) + ' ' + t('arcade.best', { score: best.who });
+        t('who.found', { found: g.found, total: g.questions.length, score: g.score }) + weighted.note + ' ' + t('arcade.best', { score: best.who });
     const list = document.getElementById('who-over-list');
     list.innerHTML = '';
     g.results.forEach(r => {
@@ -285,6 +321,7 @@ function whoFinish() {
         li.textContent = r.points > 0 ? t('who.result_found', { name: r.name, points: r.points }) : t('who.result_lost', { name: r.name });
         list.appendChild(li);
     });
+    renderArcadeDifficulty('who', 'who-difficulty-over');
     document.getElementById('who-over').classList.remove('hidden');
 }
 
@@ -393,7 +430,16 @@ let sceneReturn = 'screen-arcade';
 function openScene(fromScreen) {
     sceneReturn = fromScreen || 'screen-arcade';
     showScreen('screen-scene', 'forward');
-    sceneStart();
+    sceneSetup();
+}
+
+// Avant la partie : le choix du niveau.
+function sceneSetup() {
+    document.getElementById('scene-play').classList.add('hidden');
+    document.getElementById('scene-over').classList.add('hidden');
+    document.getElementById('scene-status').textContent = '';
+    renderArcadeDifficulty('scene');
+    document.getElementById('scene-setup').classList.remove('hidden');
 }
 
 function sceneBack() {
@@ -401,7 +447,8 @@ function sceneBack() {
 }
 
 function sceneStart() {
-    sceneGame = ReflexionCore.createScenes(ReflexionContent.SCENES);
+    sceneGame = ReflexionCore.createScenes(ReflexionContent.SCENES, undefined, undefined, { difficulty: arcadeDifficulty('scene') });
+    document.getElementById('scene-setup').classList.add('hidden');
     document.getElementById('scene-over').classList.add('hidden');
     document.getElementById('scene-play').classList.remove('hidden');
     sceneRender();
@@ -413,7 +460,9 @@ function sceneRender() {
     const scene = round.scene;
     document.getElementById('scene-status').textContent = t('scene.status', { n: g.index + 1, total: g.rounds.length, score: g.score });
     document.getElementById('scene-title').textContent = t('scene.when', { title: scene.title, when: scene.when });
-    document.getElementById('scene-intro').textContent = scene.intro + ' ' + t('scene.hint');
+    // En facile, on dit combien d'intrus la scène en compte ; sinon, c'est à deviner.
+    const announce = g.level.announce ? ' ' + t('scene.count_hint', { count: ReflexionCore.sceneTotal(scene) }) : '';
+    document.getElementById('scene-intro').textContent = scene.intro + ' ' + t('scene.hint') + announce;
     document.getElementById('scene-feedback').classList.add('hidden');
     const grid = document.getElementById('scene-grid');
     grid.innerHTML = '';
@@ -503,13 +552,14 @@ function sceneContinue() {
 
 function sceneFinish() {
     const g = sceneGame;
-    const best = arcadeRecord('scene', g.score);
+    const weighted = arcadeWeighted('scene', g.score, g.difficulty);
+    const best = arcadeRecord('scene', weighted.total);
     const found = g.results.reduce((n, r) => n + r.found, 0);
     const total = g.results.reduce((n, r) => n + r.total, 0);
     document.getElementById('scene-play').classList.add('hidden');
     document.getElementById('scene-status').textContent = '';
     document.getElementById('scene-over-text').textContent =
-        t('scene.over_text', { found, total, score: g.score }) + ' ' + t('arcade.best', { score: best.scene });
+        t('scene.over_text', { found, total, score: g.score }) + weighted.note + ' ' + t('arcade.best', { score: best.scene });
     const list = document.getElementById('scene-over-list');
     list.innerHTML = '';
     g.results.forEach(r => {
@@ -517,6 +567,7 @@ function sceneFinish() {
         li.textContent = t('scene.result_line', { title: r.title, found: r.found, total: r.total, wrong: r.wrong });
         list.appendChild(li);
     });
+    renderArcadeDifficulty('scene', 'scene-difficulty-over');
     document.getElementById('scene-over').classList.remove('hidden');
 }
 
@@ -531,7 +582,17 @@ function openHangman(fromScreen) {
     hangmanReturn = fromScreen || 'screen-arcade';
     showScreen('screen-hangman', 'forward');
     hangmanBindKeys();
-    hangmanStart();
+    hangmanSetup();
+}
+
+// Avant la partie : le choix du niveau.
+function hangmanSetup() {
+    hangmanGame = null;
+    document.getElementById('hangman-play').classList.add('hidden');
+    document.getElementById('hangman-over').classList.add('hidden');
+    document.getElementById('hangman-status').textContent = '';
+    renderArcadeDifficulty('hangman');
+    document.getElementById('hangman-setup').classList.remove('hidden');
 }
 
 function hangmanBack() {
@@ -539,8 +600,9 @@ function hangmanBack() {
 }
 
 function hangmanStart() {
-    hangmanGame = ReflexionCore.createHangman(arcadePool());
+    hangmanGame = ReflexionCore.createHangman(arcadePool(), undefined, undefined, { difficulty: arcadeDifficulty('hangman') });
     if (hangmanGame.empty) { alert(t('arcade.empty')); return; }
+    document.getElementById('hangman-setup').classList.add('hidden');
     document.getElementById('hangman-over').classList.add('hidden');
     document.getElementById('hangman-play').classList.remove('hidden');
     hangmanRender();
@@ -554,7 +616,7 @@ function hangmanRenderStatus() {
 function hangmanRenderLives() {
     const g = hangmanGame;
     const el = document.getElementById('hangman-lives');
-    el.textContent = '♥'.repeat(g.lives) + '♡'.repeat(ReflexionCore.HANGMAN_LIVES - g.lives);
+    el.textContent = '♥'.repeat(g.lives) + '♡'.repeat(g.level.lives - g.lives);
     el.setAttribute('aria-label', t('hangman.lives', { lives: g.lives }));
 }
 
@@ -584,6 +646,10 @@ function hangmanRender() {
         pad.appendChild(btn);
     }
     hangmanSetFormDisabled(false);
+    // Un chiffre déjà offert (facile) n'est plus à proposer.
+    pad.querySelectorAll('.hangman-digit').forEach(btn => {
+        if (g.guessed[btn.dataset.digit]) { btn.disabled = true; btn.classList.add('correct'); }
+    });
 }
 
 function hangmanRenderSlots() {
@@ -664,11 +730,12 @@ function hangmanContinue() {
 
 function hangmanFinish() {
     const g = hangmanGame;
-    const best = arcadeRecord('hangman', g.score);
+    const weighted = arcadeWeighted('hangman', g.score, g.difficulty);
+    const best = arcadeRecord('hangman', weighted.total);
     document.getElementById('hangman-play').classList.add('hidden');
     document.getElementById('hangman-status').textContent = '';
     document.getElementById('hangman-over-text').textContent =
-        t('hangman.found', { found: g.found, total: g.questions.length, score: g.score }) + ' ' + t('arcade.best', { score: best.hangman });
+        t('hangman.found', { found: g.found, total: g.questions.length, score: g.score }) + weighted.note + ' ' + t('arcade.best', { score: best.hangman });
     const list = document.getElementById('hangman-over-list');
     list.innerHTML = '';
     g.results.forEach(r => {
@@ -678,6 +745,7 @@ function hangmanFinish() {
             : t('hangman.result_lost', { title: r.title, year: formatYear(r.date) });
         list.appendChild(li);
     });
+    renderArcadeDifficulty('hangman', 'hangman-difficulty-over');
     document.getElementById('hangman-over').classList.remove('hidden');
 }
 

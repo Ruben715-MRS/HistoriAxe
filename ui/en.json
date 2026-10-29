@@ -205,6 +205,7 @@
     "xp_gain": "+{xp} XP",
     "duration_years": "{n} years",
     "decrease_text_aria": "Decrease text size",
+    "layout_aria": "Change the timeline layout",
     "increase_text_aria": "Increase text size",
     "hint_btn_full": "💡 Hint",
     "erase_btn": "Clear",
@@ -494,7 +495,7 @@
     "notifications_hint": "Reminders to keep your streak, not miss the Daily Challenge and review events that fall due. Available in the iOS app (not on the web).",
     "onboarding_btn": "🧭 Replay the tutorial",
     "reset_hint": "Permanently deletes your favorites, all custom themes and events you created, your revision history (weak spots), and your Chrono/Expert mode unlock progress. Your display settings (orientation, appearance) are kept.",
-    "feedback_hint": "Feel like sending me a message? Compliment, remark, question or anything else: you can write to historiaxe@gmail.com",
+    "feedback_hint": "Feel like sending me a message? Compliment, remark, question or anything else: you can write to historiaxe.app@gmail.com",
     "reset_confirm_full": "This action permanently deletes your favorite themes, all your custom themes and events, your entire revision history (weak spots, memorization boxes), and your Chrono/Expert mode unlock progress. This action is irreversible. Do you want to continue?",
     "reset_confirm_ok": "Reset everything",
     "size_mb": "{val} MB",
@@ -659,7 +660,15 @@
     "loading": "Loading…",
     "error": "League temporarily unavailable.",
     "empty": "No one in your league yet this week — be the first to score points!",
-    "you_suffix": "(you)"
+    "you_suffix": "(you)",
+    "tab_group": "Weekly league",
+    "tab_country": "National ranking",
+    "tab_world": "World ranking",
+    "week_hint_ranking": "Your XP this week: {xp}. Ranked on verified XP for the week (challenge games replayed by the server). It resets every Monday.",
+    "country_label": "Your country:",
+    "country_placeholder": "— choose —",
+    "country_prompt": "Pick your country to see the national ranking.",
+    "not_ranked": "Not enough players in this ranking this week yet: at least {min} need to score points."
   },
   "duels": {
     "title_btn": "⚔️ Challenge a friend",
@@ -697,6 +706,13 @@
     "collapse_all": "Collapse all",
     "revise_axis": "Revise this strand: {axe}"
   },
+  "location": {
+    "ask_body": "Where is your history happening? Allow location to spot, at a glance, the events that took place near you. Your position stays on your device: it is never saved or shared.",
+    "ask_ok": "Locate me",
+    "locate_label": "Locate me",
+    "unavailable": "Location unavailable. Allow location for HistoriAxe in your device settings to place yourself on the map.",
+    "you_are_here": "You are here"
+  },
   "notifications": {
     "review_title": "🧠 Today's review",
     "review_body": "{count} events to review today — five minutes is enough.",
@@ -714,7 +730,9 @@
     "comeback3_title": "🌍 History is waiting for you",
     "comeback3_body": "It's been three days. A five-minute game is enough to pick up where you left off.",
     "comeback7_title": "📜 A week without you",
-    "comeback7_body": "Come back whenever you like: your progress and your reviews are still here."
+    "comeback7_body": "Come back whenever you like: your progress and your reviews are still here.",
+    "ask_body": "Keep your daily streak going, get notified when a friend challenges you to a duel, and receive your review reminders at the right time. You can change this at any time in Settings.",
+    "ask_ok": "Turn on"
   },
   "scoring": {
     "title": "How are points calculated?",
@@ -824,8 +842,19 @@
   "home": {
     "start_aria": "Start"
   },
+  "renown": {
+    "title": "Renown",
+    "local": "Local renown",
+    "regional": "Regional renown",
+    "world": "Worldwide renown",
+    "local_short": "Local",
+    "regional_short": "Regional",
+    "world_short": "Worldwide"
+  },
   "gallery": {
     "title": "Portrait gallery",
+    "renown_show": "Show renown",
+    "renown_help": "The portrait frame shows how widely known a figure is around the world: one line (bronze) for local renown, two (silver) for regional, three (gold) for worldwide.",
     "launcher_sub": "{count} faces to browse",
     "order_alpha": "Alphabetical order",
     "order_famille": "By family name",
@@ -1431,6 +1460,13 @@
     "card_kicker": "Mini-games · Arcade · Brain games",
     "best": "Best score: {score}",
     "no_best": "Not played yet",
+    "difficulty_label": "Difficulty",
+    "difficulty_easy": "Easy",
+    "difficulty_normal": "Medium",
+    "difficulty_hard": "Hard",
+    "difficulty_hint": "Points count ×{mult} towards your best score.",
+    "weighted": "{level} ×{mult}: {total} pts counted.",
+    "go": "Go!",
     "scope_banner": "On “{theme}”: {axes} axis/axes, {count} playable event(s).",
     "scope_too_few": "Not enough distinct events for this game ({count} available).",
     "scope_periods": "It needs events in every major period of history, and this selection does not cover enough of them.",
@@ -1444,6 +1480,9 @@
   },
   "pacman": {
     "title": "Timeline Pac-Man",
+    "level_easy": "3 dates, one slow ghost, relaxed Pac-Man.",
+    "level_normal": "4 dates, a second ghost from round 3.",
+    "level_hard": "5 dates, two then three ghosts, faster and faster.",
     "desc": "Eat the date of the requested event, flee the ghosts.",
     "board_aria": "Pac-Man maze",
     "status": "Round {round} · {lives} · {score} pts",
@@ -1474,6 +1513,9 @@
   },
   "snake": {
     "title": "Chronological Snake",
+    "level_easy": "3 events, slow snake.",
+    "level_normal": "3 events, normal speed.",
+    "level_hard": "4 events, fast snake.",
     "desc": "Eat the events from oldest to most recent.",
     "entry": "🐍 Chronological Snake",
     "rule": "Eat the pellets in chronological order, from the oldest event to the most recent. One mistake, a wall or your own tail: one life less.",
@@ -1489,6 +1531,9 @@
   },
   "tetris": {
     "title": "Tetris of the Centuries",
+    "level_easy": "Blocks fall slowly.",
+    "level_normal": "Blocks fall at normal speed.",
+    "level_hard": "Blocks fall fast.",
     "desc": "Put each falling event into its period.",
     "entry": "🧱 Mini-game: Tetris of the Centuries",
     "status": "{score} pts · {rows} lines · level {level}",
@@ -1661,7 +1706,7 @@
     "err_generic": "Something went wrong. Please try again.",
     "sign_out_confirm": "Sign out? Your progress stays saved in your account; this device will start from scratch until you sign in again.",
     "delete_confirm": "Permanently delete your account, your scores and your saved progress? This cannot be undone.",
-    "err_delete": "Deletion failed. Check your connection and try again, or write to ruben.arditti@gmail.com."
+    "err_delete": "Deletion failed. Check your connection and try again, or write to historiaxe.app@gmail.com."
   },
   "team": {
     "title": "Team",
@@ -1911,6 +1956,11 @@
     "grid_aria": "Memory cards",
     "status": "Pairs: {matched} / {pairs} · Mistakes: {errors}",
     "card_hidden": "Card {n}, face down",
+    "card_hidden_event": "Card {n}, face down: event",
+    "card_hidden_date": "Card {n}, face down: date",
+    "level_easy": "Card backs are coloured: blue for an event, amber for a date. 6 pairs.",
+    "level_normal": "6 pairs, all cards look alike.",
+    "level_hard": "9 pairs (18 cards), all cards look alike.",
     "card_event": "Card {n}: event “{text}”",
     "card_date": "Card {n}: date {text}",
     "match": "✓ {year} — {title}",
@@ -1921,6 +1971,9 @@
   },
   "who": {
     "title": "Who am I?",
+    "level_easy": "Figures known almost everywhere; two clues from the start (so the most you can score is 80).",
+    "level_normal": "Figures moderately well known worldwide; one clue at the start.",
+    "level_hard": "Figures little known worldwide; the wrong answers are just as obscure.",
     "loading": "Choosing the figures…",
     "desc": "Guess the historical figure, with clues added one by one.",
     "status": "Round {n} / {total} · {score} pts",
@@ -1957,6 +2010,10 @@
   },
   "scene": {
     "title": "Anachronism hunt",
+    "level_easy": "Number of intruders announced, a mistake costs only half a point.",
+    "level_normal": "Guess how many intruders there are.",
+    "level_hard": "Guess how many intruders there are, a mistake costs double.",
+    "count_hint": "Intruders to find: {count}.",
     "desc": "Spot what doesn’t belong in a scene from that era.",
     "status": "Scene {n} / {total} · {score} pts",
     "grid_aria": "Scene elements",
@@ -2021,6 +2078,9 @@
   },
   "breakout": {
     "title": "Landmark Breakout",
+    "level_easy": "Wide paddle, slow and predictable ball, 4 to 6 bricks; the brick to break is outlined.",
+    "level_normal": "Medium paddle, ball a little slower than before, up to 8 bricks.",
+    "level_hard": "Narrow paddle, fast ball and sharp rebounds, up to 8 bricks.",
     "desc": "Break the bricks from the oldest to the most recent.",
     "board_aria": "Breakout board",
     "rule": "Break the bricks from the oldest to the most recent. Hitting another brick, or losing the ball: one life less. The ball speeds up with every brick.",
@@ -2037,18 +2097,21 @@
   },
   "flappy": {
     "title": "Flappy Clio",
-    "desc": "Fly between the pillars: go through the date that follows the last landmark.",
+    "level_easy": "Slow scrolling; the wrong event is very far away in time.",
+    "level_normal": "Medium scrolling; the wrong event is at a medium distance.",
+    "level_hard": "Fast scrolling; the wrong event is very close in time.",
+    "desc": "Fly between the pillars: go through the event that follows the last landmark.",
     "board_aria": "Flappy Clio board",
     "flap": "🐾 Fly",
-    "hint": "Tap the screen (or the space bar) to flap your wings. At each gate, go through the date that FOLLOWS the last landmark.",
+    "hint": "Tap the screen (or the space bar) to flap your wings. At each gate, two events are shown above: go through the one that FOLLOWS the last landmark (↑ top opening, ↓ bottom opening). The scenery changes with the era. After a crash, the game waits for your next flap.",
     "status": "Round {round} · {lives} · {score} pts",
     "banner_start": "First landmark: go through the big opening.",
     "banner_last": "Last landmark: {year} — {title}",
     "good": "✓ {year} — {title}",
-    "wrong": "This year is older than the last landmark: you had to go through {expected_year}.",
+    "wrong": "Not that one: “{chosen}” ({chosen_year}) is older than the last landmark. You had to go through “{expected}” ({expected_year}).",
     "hit": "Ouch! A pillar, the ground or the ceiling.",
     "over_text": "{passed} landmarks passed, {score} points.",
-    "mistake": "You took {chosen}, older than the last landmark, instead of {expected_year} (“{expected}”).",
+    "mistake": "You took “{chosen_title}” ({chosen}), older than the last landmark, instead of “{expected}” ({expected_year}).",
     "tap": "Tap to fly"
   },
   "race": {
@@ -2093,6 +2156,9 @@
   },
   "hangman": {
     "title": "Date hangman",
+    "level_easy": "6 lives, first digit given.",
+    "level_normal": "4 lives.",
+    "level_hard": "3 lives, no “earlier / later” clue.",
     "desc": "Guess the year digit by digit: each mistake costs a life.",
     "status": "Event {n} / {total} · {score} pts",
     "prompt": "{title}: in which year?",
@@ -2198,7 +2264,8 @@
     "group_convert": "Convert and calculate",
     "group_calendars": "Calendars",
     "group_landmarks": "Landmarks",
-    "group_maps": "Maps and trees",
+    "group_maps": "Maps",
+    "group_bible": "Bible and tradition",
     "card_kicker": "Converters · Calculations",
     "ad": "AD",
     "bc": "BC",

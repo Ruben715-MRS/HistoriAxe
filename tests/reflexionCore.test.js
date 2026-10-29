@@ -64,6 +64,30 @@ test('Memory : une paire reste, une erreur recache les cartes et compte', () => 
     assert.deepEqual(R.memoryFlip(g, e3), ['flip']);
 });
 
+test('Memory : six paires en facile et en moyen (dos colorés en facile), neuf paires en difficile', () => {
+    const make = (difficulty) => R.createMemory(pool(), seeded(5), undefined, { difficulty });
+    assert.deepEqual(['easy', 'normal', 'hard'].map((d) => make(d).cards.length), [12, 12, 18]);
+    assert.deepEqual(['easy', 'normal', 'hard'].map((d) => make(d).pairs), [6, 6, 9]);
+    assert.deepEqual(['easy', 'normal', 'hard'].map((d) => make(d).level.colors), [true, false, false]);
+    assert.equal(R.createMemory(pool(), seeded(5)).difficulty, 'normal');
+    // Neuf paires : neuf années différentes, chaque paire a ses deux cartes.
+    const hard = make('hard');
+    assert.equal(new Set(hard.cards.map((c) => c.event.date)).size, 9);
+    for (let pair = 0; pair < 9; pair++) assert.equal(hard.cards.filter((c) => c.pair === pair).length, 2);
+    // Gagner en difficile demande les neuf paires ; le score maximal monte avec le nombre de paires.
+    let last = [];
+    for (let pair = 0; pair < 9; pair++) { const [e, d] = pairOf(hard, pair); R.memoryFlip(hard, e); last = R.memoryFlip(hard, d); }
+    assert.deepEqual(last, ['match', 'done']);
+    assert.equal(R.memoryScore(hard), 900);
+    assert.equal(R.memoryScore(make('normal')), 600, 'six paires : 600 points au mieux');
+    // Le nombre de paires donné l'emporte sur celui du niveau.
+    assert.equal(R.createMemory(pool(), seeded(5), 4, { difficulty: 'hard' }).cards.length, 8);
+    // Un vivier trop pauvre pour neuf paires ne démarre pas en difficile, mais joue en moyen.
+    const small = pool().slice(0, 7);
+    assert.ok(R.createMemory(small, seeded(1), undefined, { difficulty: 'hard' }).empty);
+    assert.ok(!R.createMemory(small, seeded(1)).empty);
+});
+
 test('Memory : deux événements, ou deux dates, ne font pas une paire ; la même carte deux fois ne compte pas', () => {
     const g = R.createMemory(pool(), seeded(8));
     const events = g.cards.map((c, i) => [c, i]).filter(([c]) => c.side === 'event').map(([, i]) => i);
@@ -395,6 +419,90 @@ test('Anachronismes : cinq scènes parfaites font 500 points et finissent la par
     assert.deepEqual(R.sceneNext(g), []);
 });
 
+test('Anachronismes : une erreur retire la moitié d\'un anachronisme en facile, un seul en moyen, deux en difficile ; seul le facile annonce le nombre', () => {
+    const play = (difficulty) => {
+        const g = R.createScenes(C.SCENES, seeded(5), undefined, { difficulty });
+        const scene = R.sceneRound(g).scene;
+        const bad = indexOfAnachronisms(scene);
+        bad.forEach((i) => R.sceneToggle(g, i));
+        scene.elements.forEach((e, i) => { if (!e.anachronism && R.sceneRound(g).scene === scene && Object.keys(g.selected).length < bad.length + 1) R.sceneToggle(g, i); });
+        R.sceneValidate(g);
+        return { g, total: bad.length };
+    };
+    const easy = play('easy'), normal = play('normal'), hard = play('hard');
+    const expected = (r, penalty) => Math.max(0, Math.round(100 * (r.total - penalty) / r.total));
+    assert.equal(easy.g.resolved.wrong.length, 1);
+    assert.equal(easy.g.resolved.points, expected(easy, 0.5));
+    assert.equal(normal.g.resolved.points, expected(normal, 1));
+    assert.equal(hard.g.resolved.points, expected(hard, 2));
+    assert.ok(easy.g.resolved.points >= normal.g.resolved.points && normal.g.resolved.points >= hard.g.resolved.points);
+    assert.deepEqual(['easy', 'normal', 'hard'].map((d) => R.SCENE_LEVELS[d].announce), [true, false, false]);
+    assert.equal(R.createScenes(C.SCENES, seeded(5)).difficulty, 'normal');
+});
+
+// --- Qui suis-je ? : les niveaux ------------------------------------------------------------------------------
+function figures(n, stars) {
+    return Array.from({ length: n }, (_, i) => ({ id: `f${stars}_${i}`, titre: `Figure ${stars} ${i}`, etoiles: stars }));
+}
+
+test('Qui suis-je : chaque niveau tire ses figures selon leur notoriété, et ses mauvaises réponses selon le niveau', () => {
+    const all = [...figures(40, 1), ...figures(40, 2), ...figures(40, 3), { id: 'sans', titre: 'Sans étoiles' }];
+    const easy = R.whoSelect(all, 'easy'), normal = R.whoSelect(all, 'normal'), hard = R.whoSelect(all, 'hard');
+    assert.ok(easy.correct.length === 40 && easy.correct.every((e) => e.etoiles === 3));
+    assert.ok(normal.correct.every((e) => R.whoStars(e) === 2), 'une figure sans étoiles compte pour moyennement connue');
+    assert.equal(normal.correct.length, 41);
+    assert.ok(hard.correct.length === 40 && hard.correct.every((e) => e.etoiles === 1));
+    // Mauvaises réponses : toutes en facile, les plus connues en moyen, aussi peu connues que la bonne en difficile.
+    assert.equal(easy.distractors.length, all.length);
+    assert.ok(normal.distractors.every((e) => R.whoStars(e) >= 2));
+    assert.ok(hard.distractors.every((e) => e.etoiles === 1));
+    assert.equal(R.whoSelect(all).correct.length, 41, 'sans niveau : moyen');
+    // Trop peu de figures pour un niveau : on retombe sur toutes (jamais une partie vide).
+    const few = [...figures(5, 3), ...figures(60, 1)];
+    assert.equal(R.whoSelect(few, 'easy').correct.length, few.length);
+    assert.equal(R.whoSelect(few, 'easy').distractors.length, few.length);
+    assert.deepEqual(R.whoSelect([], 'hard'), { correct: [], distractors: [] });
+});
+
+test('Qui suis-je : deux indices dès le départ en facile, un en moyen et en difficile, à chaque manche', () => {
+    const q = (id) => ({ correctId: id, name: id, options: [{ id: 'x', name: 'X' }, { id, name: id }], clues: [{ type: 'domain' }, { type: 'period' }, { type: 'text' }, { type: 'portrait' }] });
+    const start = (difficulty) => R.createWho([q('a'), q('b')], { difficulty });
+    assert.deepEqual(['easy', 'normal', 'hard'].map((d) => start(d).shown), [2, 1, 1]);
+    assert.equal(R.createWho([q('a')]).difficulty, 'normal');
+    // Les points suivent les indices montrés : au mieux 80 en facile (deux indices), 100 sinon.
+    const easy = start('easy');
+    R.whoPick(easy, 'a');
+    assert.equal(easy.score, 80);
+    R.whoNext(easy);
+    assert.equal(easy.shown, 2, 'la manche suivante repart avec deux indices');
+    const hard = start('hard');
+    R.whoPick(hard, 'a');
+    assert.equal(hard.score, 100);
+    // Une question qui n'a qu'un indice n'en montre jamais deux.
+    const one = R.createWho([{ correctId: 'a', name: 'a', options: [{ id: 'a', name: 'a' }], clues: [{ type: 'portrait' }] }], { difficulty: 'easy' });
+    assert.equal(one.shown, 1);
+});
+
+test('Qui suis-je : sur le pack français, chaque figure à portrait a ses étoiles (1 à 3) et chaque niveau a de quoi jouer', () => {
+    const events = [];
+    const walk = (n) => { (n.themes || []).forEach((t) => (t.events || []).forEach((e) => events.push(e))); (n.subcategories || []).forEach(walk); };
+    fr.categories.forEach(walk);
+    const withPortrait = events.filter((e) => e.image && e.image.src);
+    assert.ok(withPortrait.length > 4000);
+    const bad = withPortrait.filter((e) => ![1, 2, 3].includes(e.etoiles));
+    assert.deepEqual(bad.map((e) => e.id).slice(0, 5), [], 'figures sans étoiles');
+    const candidates = G.whoCandidates(events).filter((e) => String(e.description || '').length >= 80);
+    ['easy', 'normal', 'hard'].forEach((difficulty, i) => {
+        const { correct, distractors } = R.whoSelect(candidates, difficulty);
+        assert.ok(correct.length >= [200, 800, 1500][i], `${difficulty} : ${correct.length} figures`);
+        assert.ok(correct.every((e) => e.etoiles === 3 - i), difficulty);
+        assert.ok(distractors.length >= 200, `${difficulty} : ${distractors.length} mauvaises réponses possibles`);
+    });
+    // Quelques repères : les noms que tout le monde connaît sont ★★★, un héros local ★.
+    const stars = (name) => withPortrait.find((e) => e.titre.includes(name));
+    ['Napoléon Bonaparte', 'Albert Einstein', 'Charles de Gaulle', 'Mozart'].forEach((n) => assert.equal(stars(n).etoiles, 3, n));
+});
+
 // --- Pendu des dates ------------------------------------------------------------------------------------------
 function hangmanPool() {
     return [{ id: 'a', title: 'Prise de la Bastille', date: 1789 }, { id: 'b', title: 'Découverte de l\'Amérique', date: 1492 },
@@ -412,10 +520,11 @@ test('Pendu : cinq événements aux années différentes ; l\'année est cachée
     assert.ok(R.createHangman([], seeded(1)).empty);
 });
 
-// Une partie dont la première année est connue.
-function hangmanOn(date) {
-    const g = R.createHangman(hangmanPool(), seeded(3));
+// Une partie dont la première année est connue (moyen par défaut : quatre vies, pas de chiffre offert).
+function hangmanOn(date, difficulty) {
+    const g = R.createHangman(hangmanPool(), seeded(3), undefined, { difficulty });
     g.questions[0] = { event: { id: 'z', title: 'Test', date }, digits: String(Math.abs(date)), bc: date < 0 };
+    g.guessed = {};
     return g;
 }
 
@@ -425,19 +534,19 @@ test('Pendu : un chiffre juste se dévoile partout où il est ; un chiffre faux 
     assert.deepEqual(R.hangmanSlots(g), ['1', null, '1', null]);
     assert.deepEqual(R.hangmanGuess(g, '1'), [], 'un chiffre déjà proposé ne se rejoue pas');
     assert.deepEqual(R.hangmanGuess(g, '7'), ['miss']);
-    assert.equal(g.lives, 5);
+    assert.equal(g.lives, 3);
     assert.deepEqual(R.hangmanGuess(g, 'x'), []);
     R.hangmanGuess(g, '9');
     assert.deepEqual(R.hangmanGuess(g, '4'), ['hit', 'solved']);
     assert.equal(g.resolved, 'solved');
-    assert.equal(g.score, 30 + 10 * 5);
+    assert.equal(g.score, 30 + 10 * 3);
     assert.deepEqual(R.hangmanGuess(g, '0'), [], 'manche résolue');
 });
 
-test('Pendu : six erreurs perdent la manche (0 point), la réponse se dévoile', () => {
+test('Pendu : quatre erreurs (moyen) perdent la manche (0 point), la réponse se dévoile', () => {
     const g = hangmanOn(1914);
     let last = [];
-    ['0', '2', '3', '5', '6', '7'].forEach((d) => { last = R.hangmanGuess(g, d); });
+    ['0', '2', '3', '5'].forEach((d) => { last = R.hangmanGuess(g, d); });
     assert.deepEqual(last, ['miss', 'lost']);
     assert.equal(g.resolved, 'lost');
     assert.equal(g.score, 0);
@@ -449,21 +558,56 @@ test('Pendu : proposer une année entière — juste, c\'est gagné ; fausse, un
     const g = hangmanOn(1789);
     assert.deepEqual(R.hangmanTryYear(g, 1800), ['wrong', 'earlier', ]);
     assert.equal(g.hint, 'earlier');
-    assert.equal(g.lives, 5);
+    assert.equal(g.lives, 3);
     assert.deepEqual(R.hangmanTryYear(g, 1700), ['wrong', 'later']);
     assert.equal(g.hint, 'later');
-    assert.equal(g.lives, 4);
+    assert.equal(g.lives, 2);
     assert.deepEqual(R.hangmanTryYear(g, 0), [], 'pas d\'an 0');
     assert.deepEqual(R.hangmanTryYear(g, 17.5), []);
     assert.deepEqual(R.hangmanTryYear(g, 1789), ['solved']);
-    assert.equal(g.score, 30 + 10 * 4);
+    assert.equal(g.score, 30 + 10 * 2);
     // Avant J.-C. : −44 contre −27 (plus tard dans le temps) : la vraie date est plus tôt.
     const h = hangmanOn(-44);
     assert.deepEqual(R.hangmanTryYear(h, -27), ['wrong', 'earlier']);
     assert.deepEqual(R.hangmanTryYear(h, -44), ['solved']);
 });
 
-test('Pendu : cinq événements trouvés d\'emblée font 5 × 90 = 450 points ; une manche se quitte par hangmanNext', () => {
+test('Pendu : six vies en facile (avec le premier chiffre offert), quatre en moyen, trois en difficile (sans « plus tôt / plus tard »)', () => {
+    assert.deepEqual(['easy', 'normal', 'hard'].map((d) => R.createHangman(hangmanPool(), seeded(3), undefined, { difficulty: d }).lives), [6, 4, 3]);
+    assert.equal(R.createHangman(hangmanPool(), seeded(3)).difficulty, 'normal');
+    assert.equal(R.createHangman(hangmanPool(), seeded(3), undefined, { difficulty: 'bizarre' }).lives, 4);
+
+    // Facile : le premier chiffre est déjà dévoilé (partout où il est), à chaque manche, sans coûter de vie.
+    const easy = R.createHangman(hangmanPool(), seeded(3), undefined, { difficulty: 'easy' });
+    easy.questions[1] = { event: { id: 'c', title: 'Court', date: 44 }, digits: '44', bc: false };
+    easy.questions[2] = { event: { id: 'r', title: 'Répété', date: 1111 }, digits: '1111', bc: false };
+    for (let i = 0; i < easy.questions.length; i++) {
+        const q = R.hangmanQuestion(easy);
+        assert.equal(easy.lives, 6, 'une manche commence avec toutes ses vies');
+        if (q.digits.length < 3) assert.deepEqual(easy.guessed, {}, 'trop court : rien d\'offert');
+        else if (q.digits === '1111') assert.deepEqual(easy.guessed, {}, 'un seul chiffre répété : rien d\'offert');
+        else {
+            assert.equal(easy.guessed[q.digits.charAt(0)], true);
+            assert.equal(R.hangmanSlots(easy)[0], q.digits.charAt(0));
+            assert.equal(easy.resolved, null, 'le chiffre offert ne gagne pas la manche');
+        }
+        R.hangmanTryYear(easy, q.event.date);
+        R.hangmanNext(easy);
+    }
+    assert.ok(easy.over);
+
+    // Difficile : une année fausse coûte une vie sans dire si la vraie date est plus tôt ou plus tard.
+    const h = hangmanOn(1789, 'hard');
+    assert.deepEqual(R.hangmanTryYear(h, 1800), ['wrong']);
+    assert.equal(h.hint, null);
+    assert.equal(h.lives, 2);
+    // Facile : l'indice est donné.
+    const e = hangmanOn(1789, 'easy');
+    assert.deepEqual(R.hangmanTryYear(e, 1800), ['wrong', 'earlier']);
+    assert.equal(e.lives, 5);
+});
+
+test('Pendu : cinq événements trouvés d\'emblée font 5 × 70 = 350 points (moyen) ; une manche se quitte par hangmanNext', () => {
     const g = R.createHangman(hangmanPool(), seeded(7));
     let last = [];
     while (!g.over) {
@@ -472,7 +616,7 @@ test('Pendu : cinq événements trouvés d\'emblée font 5 × 90 = 450 points ; 
         assert.deepEqual(R.hangmanNext(g).length > 0, true);
         last = [g.over];
     }
-    assert.equal(g.score, 5 * 90);
+    assert.equal(g.score, 5 * 70);
     assert.equal(g.found, 5);
     assert.deepEqual(R.hangmanNext(g), []);
     assert.equal(last[0], true);

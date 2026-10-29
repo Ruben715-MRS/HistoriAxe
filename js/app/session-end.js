@@ -203,12 +203,11 @@ function endGame(isWin) {
         weeklyChallengeStreakRecordThisWeek();
     }
 
-    // Notifications locales (voir js/notifications.js) : demande la
-    // permission (no-op si déjà répondue ou déjà accordée) puis
-    // reprogramme les rappels — en particulier le rappel de série, qui
-    // doit maintenant tenir compte de la partie qui vient d'être jouée.
+    // Notifications locales (voir js/notifications.js) : après la première partie, une explication
+    // puis la demande de permission (une seule fois) ; ensuite, reprogrammation des rappels — en
+    // particulier le rappel de série, qui doit tenir compte de la partie qui vient d'être jouée.
     if (currentMode !== 'discovery' && typeof HistoriAxeNotifications !== 'undefined') {
-        HistoriAxeNotifications.enableAndSchedule();
+        HistoriAxeNotifications.askAfterFirstGame();
     }
 
     // Calcul des erreurs de la session

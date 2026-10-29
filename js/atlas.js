@@ -168,6 +168,8 @@ function atlasEnsureMap() {
     }
     atlasMap = map;
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
+    map.addControl(HistoriAxeLocation.locateControl(atlasShowMe, atlasLocateFailed), 'top-right');
+    HistoriAxeLocation.askOnce(atlasShowMe);
     map.touchZoomRotate.disableRotation();
     map.on('load', function () {
         atlasLocalizeLabels();
@@ -183,6 +185,29 @@ function atlasEnsureMap() {
             atlasStatus(t('atlas.offline_basemap'));
         }
     });
+}
+
+// Position du joueur (js/location.js) : un point bleu, la carte se centre dessus.
+let atlasMeMarker = null;
+
+function atlasShowMe(pos) {
+    if (!atlasMap) return;
+    const lngLat = [pos.lon, pos.lat];
+    if (!atlasMeMarker) {
+        const el = document.createElement('div');
+        el.className = 'atlas-me-dot';
+        el.setAttribute('role', 'img');
+        el.setAttribute('aria-label', t('location.you_are_here'));
+        atlasMeMarker = new maplibregl.Marker({ element: el }).setLngLat(lngLat).addTo(atlasMap);
+    } else {
+        atlasMeMarker.setLngLat(lngLat);
+    }
+    atlasMap.flyTo({ center: lngLat, zoom: Math.max(atlasMap.getZoom(), 4), essential: true });
+}
+
+function atlasLocateFailed() {
+    atlasStatus(t('location.unavailable'));
+    setTimeout(function () { atlasStatus(''); }, 5000);
 }
 
 // Les noms de lieux du fond de carte, dans la langue de l'app quand OpenStreetMap la connaît

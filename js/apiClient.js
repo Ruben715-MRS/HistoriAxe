@@ -108,11 +108,18 @@ var HistoriAxeAPI = (function () {
                 scope: 'weekly', lang: opts.lang, isoWeek: opts.isoWeek, deviceId: opts.deviceId, limit: opts.limit
             }));
         },
+        // scope : 'group' (ligue), 'country' (classement national) ou 'world' (mondial) — voir api/league.js
         getWeeklyLeague: function (opts) {
             opts = opts || {};
             return request('GET', '/api/league' + qs({
-                isoWeek: opts.isoWeek, deviceId: opts.deviceId, limit: opts.limit
+                isoWeek: opts.isoWeek, deviceId: opts.deviceId, limit: opts.limit, scope: opts.scope
             }));
+        },
+        // country : code ISO de la liste fermée, '' pour retirer le pays
+        setWeeklyLeagueCountry: function (opts) {
+            return request('POST', '/api/league', {
+                deviceId: opts.deviceId, isoWeek: opts.isoWeek, country: opts.country
+            });
         },
         createDuel: function (deviceId, pseudo, lang, date) {
             return request('POST', '/api/duels', { deviceId: deviceId, pseudo: pseudo, lang: lang, date: date });

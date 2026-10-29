@@ -84,6 +84,68 @@ function arcadeRecord(game, score) {
     return next;
 }
 
+// --- La difficulté : facile / moyen / difficile, retenue jeu par jeu --------------------------------------------
+// Le niveau choisi pèse sur le score compté pour le record (ArcadeCore.difficultyScore) : un seul meilleur score par jeu.
+const ARCADE_DIFFICULTY_KEY = 'historiaxe_arcade_difficulty_v1';
+
+function arcadeDifficulty(game) {
+    let raw = null;
+    try { raw = JSON.parse(localStorage.getItem(ARCADE_DIFFICULTY_KEY)); } catch (e) { raw = null; }
+    return ArcadeCore.normalizeDifficulty(raw && typeof raw === 'object' ? raw[game] : null);
+}
+
+function arcadeSetDifficulty(game, difficulty) {
+    let raw = null;
+    try { raw = JSON.parse(localStorage.getItem(ARCADE_DIFFICULTY_KEY)); } catch (e) { raw = null; }
+    const next = Object.assign({}, raw && typeof raw === 'object' ? raw : {}, { [game]: ArcadeCore.normalizeDifficulty(difficulty) });
+    try { localStorage.setItem(ARCADE_DIFFICULTY_KEY, JSON.stringify(next)); } catch (e) {}
+}
+
+function arcadeMultiplierLabel(difficulty) {
+    return new Intl.NumberFormat(document.documentElement.lang || 'fr').format(ArcadeCore.DIFFICULTY_MULTIPLIER[difficulty]);
+}
+
+// Trois boutons à choix unique dans `#<game>-difficulty` (ou `containerId`), une ligne qui dit ce que le niveau change dans le jeu
+// (`<game>.level_<niveau>`), et une autre ce qu'il change aux points.
+function renderArcadeDifficulty(game, containerId) {
+    const id = containerId || game + '-difficulty';
+    const box = document.getElementById(id);
+    if (!box) return;
+    const current = arcadeDifficulty(game);
+    box.innerHTML = '';
+    const group = document.createElement('div');
+    group.className = 'arcade-difficulty-group';
+    group.setAttribute('role', 'group');
+    group.setAttribute('aria-label', t('arcade.difficulty_label'));
+    ArcadeCore.DIFFICULTIES.forEach(level => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'arcade-difficulty-btn' + (level === current ? ' is-active' : '');
+        btn.setAttribute('aria-pressed', level === current ? 'true' : 'false');
+        btn.textContent = t('arcade.difficulty_' + level);
+        btn.addEventListener('click', () => { arcadeSetDifficulty(game, level); renderArcadeDifficulty(game, id); });
+        group.appendChild(btn);
+    });
+    const detail = document.createElement('small');
+    detail.className = 'arcade-difficulty-hint';
+    detail.textContent = t(game + '.level_' + current);
+    const hint = document.createElement('small');
+    hint.className = 'arcade-difficulty-hint';
+    hint.textContent = t('arcade.difficulty_hint', { mult: arcadeMultiplierLabel(current) });
+    box.appendChild(group);
+    box.appendChild(detail);
+    box.appendChild(hint);
+}
+
+// La fin d'une partie : le score compté pour le record, et une phrase qui montre le calcul quand le niveau le change.
+function arcadeWeighted(game, rawScore, difficulty) {
+    const total = ArcadeCore.difficultyScore(rawScore, difficulty);
+    const note = difficulty === 'normal' ? '' : ' ' + t('arcade.weighted', {
+        level: t('arcade.difficulty_' + difficulty), mult: arcadeMultiplierLabel(difficulty), total
+    });
+    return { total, note };
+}
+
 // L'année sur un bloc : courte (−461 pour 461 av. J.-C.), elle doit tenir dans une case.
 function arcadeShortYear(year) {
     return year < 0 ? '−' + Math.abs(year) : String(year);
@@ -269,6 +331,8 @@ function openSnake(fromScreen) {
     document.getElementById('snake-start').classList.remove('hidden');
     document.getElementById('snake-legend').innerHTML = '';
     document.getElementById('snake-status').textContent = '';
+    renderArcadeDifficulty('snake');
+    document.getElementById('snake-difficulty').classList.remove('hidden');
     snakeBindInput();
     snakeDraw();
 }
@@ -285,10 +349,11 @@ function snakeStop() {
 
 function snakeStart() {
     const pool = arcadePool();
-    const game = ArcadeCore.createSnake(pool);
+    const game = ArcadeCore.createSnake(pool, undefined, { difficulty: arcadeDifficulty('snake') });
     if (game.empty) { alert(t('arcade.empty')); return; }
     snakeStop();
     snakeGame = game;
+    document.getElementById('snake-difficulty').classList.add('hidden');
     document.getElementById('snake-start').classList.add('hidden');
     document.getElementById('snake-over').classList.add('hidden');
     snakeRenderLegend();
@@ -380,10 +445,11 @@ function snakeDraw() {
 function snakeFinish() {
     snakeStop();
     const g = snakeGame;
-    const best = arcadeRecord('snake', g.score);
+    const weighted = arcadeWeighted('snake', g.score, g.difficulty);
+    const best = arcadeRecord('snake', weighted.total);
     const over = document.getElementById('snake-over');
     document.getElementById('snake-over-text').textContent =
-        t('snake.over_text', { rounds: g.rounds, score: g.score }) + ' ' + t('arcade.best', { score: best.snake });
+        t('snake.over_text', { rounds: g.rounds, score: g.score }) + weighted.note + ' ' + t('arcade.best', { score: best.snake });
     const list = document.getElementById('snake-over-list');
     list.innerHTML = '';
     g.mistakes.slice(0, 5).forEach(m => {
@@ -395,6 +461,8 @@ function snakeFinish() {
     });
     over.classList.remove('hidden');
     document.getElementById('snake-start').classList.add('hidden');
+    renderArcadeDifficulty('snake');
+    document.getElementById('snake-difficulty').classList.remove('hidden');
 }
 
 // Les commandes : flèches (et WASD) au clavier, glisser du doigt sur le plateau (arcadeBindSwipe).
@@ -432,6 +500,8 @@ function openTetris(fromScreen) {
     document.getElementById('tetris-start').classList.remove('hidden');
     document.getElementById('tetris-banner').textContent = '';
     document.getElementById('tetris-status').textContent = '';
+    renderArcadeDifficulty('tetris');
+    document.getElementById('tetris-difficulty').classList.remove('hidden');
     tetrisRenderHeads();
     tetrisBindInput();
     tetrisDraw();
@@ -467,10 +537,11 @@ function tetrisRenderHeads() {
 }
 
 function tetrisStart() {
-    const game = ArcadeCore.createTetris(arcadePool());
+    const game = ArcadeCore.createTetris(arcadePool(), undefined, { difficulty: arcadeDifficulty('tetris') });
     if (game.empty) { alert(t('arcade.empty')); return; }
     tetrisStop();
     tetrisGame = game;
+    document.getElementById('tetris-difficulty').classList.add('hidden');
     document.getElementById('tetris-start').classList.add('hidden');
     document.getElementById('tetris-over').classList.add('hidden');
     tetrisRender();
@@ -551,9 +622,10 @@ function tetrisDraw() {
 function tetrisFinish() {
     tetrisStop();
     const g = tetrisGame;
-    const best = arcadeRecord('tetris', g.score);
+    const weighted = arcadeWeighted('tetris', g.score, g.difficulty);
+    const best = arcadeRecord('tetris', weighted.total);
     document.getElementById('tetris-over-text').textContent =
-        t('tetris.over_text', { placed: g.placed, good: g.good, rows: g.cleared, score: g.score }) + ' ' + t('arcade.best', { score: best.tetris });
+        t('tetris.over_text', { placed: g.placed, good: g.good, rows: g.cleared, score: g.score }) + weighted.note + ' ' + t('arcade.best', { score: best.tetris });
     const list = document.getElementById('tetris-over-list');
     list.innerHTML = '';
     g.mistakes.slice(0, 5).forEach(m => {
@@ -566,6 +638,8 @@ function tetrisFinish() {
     });
     document.getElementById('tetris-over').classList.remove('hidden');
     document.getElementById('tetris-start').classList.add('hidden');
+    renderArcadeDifficulty('tetris');
+    document.getElementById('tetris-difficulty').classList.remove('hidden');
 }
 
 function tetrisBindInput() {
@@ -587,9 +661,14 @@ function tetrisBindInput() {
 // =====================================================================================================
 // === PAC-MAN DE LA FRISE ===
 // =====================================================================================================
+// Durée de chaque chiffre du compte à rebours : plus longue au départ et pour une nouvelle manche (nouvelle consigne à lire).
+const PAC_COUNT_ROUND_MS = 1000;
+const PAC_COUNT_LIFE_MS = 750;
 const PAC_GHOST_COLORS = ['#ef4444', '#f472b6', '#22d3ee'];
 let pacGame = null;
 let pacTimer = 0;
+let pacCountTimer = 0;
+let pacCountHideTimer = 0;
 let pacReturn = 'screen-arcade';
 let pacInputBound = false;
 
@@ -610,6 +689,8 @@ function openPacman(fromScreen) {
     document.getElementById('pacman-banner').textContent = '';
     document.getElementById('pacman-status').textContent = '';
     arcadeMessage('pacman-message', '');
+    renderArcadeDifficulty('pacman');
+    document.getElementById('pacman-difficulty').classList.remove('hidden');
     pacmanBindInput();
     pacmanDraw();
 }
@@ -621,19 +702,53 @@ function pacmanBack() {
 
 function pacmanStop() {
     clearTimeout(pacTimer);
-    pacTimer = 0;
+    clearTimeout(pacCountTimer);
+    clearTimeout(pacCountHideTimer);
+    pacTimer = pacCountTimer = pacCountHideTimer = 0;
+    const box = document.getElementById('pacman-countdown');
+    if (box) box.classList.add('hidden');
+}
+
+// « 3, 2, 1, Go ! » sur le labyrinthe : la consigne et les dates restent lisibles, le jeu est figé jusqu'au « Go ! ».
+// `stepMs` : la durée de chaque chiffre (plus longue quand il y a une nouvelle consigne à lire).
+function pacmanCountdown(stepMs) {
+    const box = document.getElementById('pacman-countdown');
+    const steps = ['3', '2', '1', t('arcade.go')];
+    let i = 0;
+    box.classList.remove('hidden');
+    const next = () => {
+        pacCountTimer = 0;
+        if (!pacGame || pacGame.over || !arcadeScreenVisible('screen-pacman')) { box.classList.add('hidden'); return; }
+        box.textContent = steps[i];
+        box.classList.toggle('is-go', i === steps.length - 1);
+        // Relance l'animation d'arrivée du chiffre.
+        box.classList.remove('is-pop');
+        void box.offsetWidth;
+        box.classList.add('is-pop');
+        arcadeSfx(i === steps.length - 1 ? 'go' : 'count');
+        if (i === steps.length - 1) {
+            ArcadeCore.pacRelease(pacGame);
+            pacTimer = setTimeout(pacmanLoop, ArcadeCore.pacInterval(pacGame));
+            pacCountHideTimer = setTimeout(() => { pacCountHideTimer = 0; box.classList.add('hidden'); }, 700);
+            return;
+        }
+        i += 1;
+        pacCountTimer = setTimeout(next, stepMs);
+    };
+    next();
 }
 
 function pacmanStart() {
-    const game = ArcadeCore.createPac(arcadePool());
+    const game = ArcadeCore.createPac(arcadePool(), undefined, { difficulty: arcadeDifficulty('pacman') });
     if (game.empty) { alert(t('arcade.empty')); return; }
     pacmanStop();
     pacGame = game;
     document.getElementById('pacman-start').classList.add('hidden');
     document.getElementById('pacman-over').classList.add('hidden');
     arcadeMessage('pacman-message', '');
+    document.getElementById('pacman-difficulty').classList.add('hidden');
     pacmanRender();
-    pacTimer = setTimeout(pacmanLoop, ArcadeCore.pacInterval(game));
+    pacmanCountdown(PAC_COUNT_ROUND_MS);
 }
 
 function pacmanLoop() {
@@ -659,6 +774,8 @@ function pacmanLoop() {
         }
         pacmanRender();
         if (pacGame.over) { pacmanFinish(); return; }
+        // Une vie perdue ou une manche réussie : on refige, on laisse relire la consigne, puis « 3, 2, 1, Go ! ».
+        if (pacGame.frozen) { pacmanCountdown(events.includes('round') ? PAC_COUNT_ROUND_MS : PAC_COUNT_LIFE_MS); return; }
     }
     pacTimer = setTimeout(pacmanLoop, ArcadeCore.pacInterval(pacGame));
 }
@@ -729,9 +846,10 @@ function pacmanDraw() {
 function pacmanFinish() {
     pacmanStop();
     const g = pacGame;
-    const best = arcadeRecord('pacman', g.score);
+    const weighted = arcadeWeighted('pacman', g.score, g.difficulty);
+    const best = arcadeRecord('pacman', weighted.total);
     document.getElementById('pacman-over-text').textContent =
-        t('pacman.over_text', { rounds: g.rounds, score: g.score }) + ' ' + t('arcade.best', { score: best.pacman });
+        t('pacman.over_text', { rounds: g.rounds, score: g.score }) + weighted.note + ' ' + t('arcade.best', { score: best.pacman });
     const list = document.getElementById('pacman-over-list');
     list.innerHTML = '';
     g.mistakes.slice(0, 5).forEach(m => {
@@ -743,6 +861,8 @@ function pacmanFinish() {
     });
     document.getElementById('pacman-over').classList.remove('hidden');
     document.getElementById('pacman-start').classList.add('hidden');
+    renderArcadeDifficulty('pacman');
+    document.getElementById('pacman-difficulty').classList.remove('hidden');
 }
 
 function pacmanBindInput() {

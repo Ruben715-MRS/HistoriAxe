@@ -66,6 +66,8 @@ function renderWhoQuestion() {
     img.src = image.src;
     fillPortraitCredit(document.getElementById('whois-portrait-credit'), image);
     document.getElementById('whois-reveal').classList.add('hidden');
+    // Pas de contour de renommée pendant la question : il dirait si la figure est célèbre.
+    renownFrameImage(img, q.correct, false);
     document.getElementById('whois-kicker').innerText = t(whoDailyMode ? 'whois.daily_kicker' : 'whois.kicker');
 
     const container = document.getElementById('whois-options');
@@ -146,6 +148,13 @@ function renderWhoReveal(q, correct) {
     born.innerText = ` · ${formatEventDate(q.correct)}`;
     name.appendChild(born);
     reveal.appendChild(name);
+
+    // La réponse est donnée : le portrait prend son contour de renommée, et son étiquette dit ce que le contour veut dire.
+    renownFrameImage(document.getElementById('whois-portrait-img'), q.correct, true);
+    const renown = document.createElement('p');
+    renown.className = 'renown-chip';
+    renownFillChip(renown, q.correct, true);
+    reveal.appendChild(renown);
 
     if (image && image.legende) {
         const caption = document.createElement('div');

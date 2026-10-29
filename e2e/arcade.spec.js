@@ -7,7 +7,7 @@ const { test, expect, visibleScreen } = require('./fixtures');
 test.beforeEach(async ({ page }) => {
     await page.evaluate(() => {
         markRecapShownThisWeek();
-        ['historiaxe_arcade_v1', 'historiaxe_eras_v1', 'historiaxe_wheel_v1', 'historiaxe_advent_v1'].forEach(k => localStorage.removeItem(k));
+        ['historiaxe_arcade_v1', 'historiaxe_arcade_difficulty_v1', 'historiaxe_eras_v1', 'historiaxe_wheel_v1', 'historiaxe_advent_v1'].forEach(k => localStorage.removeItem(k));
         localStorage.setItem('historiaxe_path_v1', JSON.stringify({ levels: {}, skipped: [] }));
         showScreen('screen-categories');
         initCategories();
@@ -29,11 +29,12 @@ test('la salle d\'arcade s\'ouvre depuis les catégories et mène aux deux jeux'
     expect(await visibleScreen(page)).toBe('screen-categories');
 });
 
-test('Snake : quatre pastilles lettrées, un serpent qui avance, une fin de partie qui garde le score', async ({ page }) => {
+test('Snake : trois pastilles lettrées (niveau moyen), un serpent qui avance, une fin de partie qui garde le score', async ({ page }) => {
     await page.locator('#btn-arcade').click();
     await page.locator('.arcade-card', { hasText: 'Snake' }).click();
+    await expect(page.locator('#snake-difficulty .is-active')).toHaveText('Moyen');
     await page.locator('#snake-start').click();
-    await expect(page.locator('#snake-legend .snake-legend-item')).toHaveCount(4);
+    await expect(page.locator('#snake-legend .snake-legend-item')).toHaveCount(3);
     await expect(page.locator('#snake-status')).toContainText('3 vies'.replace('3 vies', '♥♥♥'));
     const x0 = await page.evaluate(() => snakeGame.snake[0].x);
     await expect.poll(() => page.evaluate(() => snakeGame.snake[0].x)).toBeGreaterThan(x0);
@@ -123,9 +124,18 @@ test('Pac-Man : un labyrinthe, une consigne, un bon et un mauvais bonbon, une pa
     await page.locator('#btn-arcade').click();
     await page.locator('.arcade-card', { hasText: 'Pac-Man' }).click();
     expect(await visibleScreen(page)).toBe('screen-pacman');
+    // Trois niveaux au choix avant de jouer ; moyen par défaut.
+    await expect(page.locator('#pacman-difficulty .arcade-difficulty-btn')).toHaveCount(3);
+    await expect(page.locator('#pacman-difficulty .is-active')).toHaveText('Moyen');
     await page.locator('#pacman-start').click();
     await expect(page.locator('#pacman-banner')).toContainText('Où est la date de');
     await expect(page.locator('#pacman-status')).toContainText('♥♥♥');
+    // La consigne est lisible pendant le compte à rebours, et Pac-Man ne bouge pas avant le « Go ! ».
+    await expect(page.locator('#pacman-countdown')).toBeVisible();
+    const frozenAt = await page.evaluate(() => JSON.stringify(pacGame.player));
+    expect(await page.evaluate(() => pacGame.frozen)).toBe(true);
+    await expect(page.locator('#pacman-countdown')).toHaveText('Go !', { timeout: 6000 });
+    await expect(page.locator('#pacman-countdown')).toBeHidden();
     // Pac-Man avance tout seul.
     const before = await page.evaluate(() => JSON.stringify(pacGame.player));
     await expect.poll(() => page.evaluate(() => JSON.stringify(pacGame.player))).not.toBe(before);
@@ -134,6 +144,8 @@ test('Pac-Man : un labyrinthe, une consigne, un bon et un mauvais bonbon, une pa
         pacmanStop();
         const g = pacGame;
         g.ghosts = [];
+        g.lives = 3;
+        ArcadeCore.pacRelease(g);
         const p = g.pellets.find(it => it.event === ArcadeCore.pacTarget(g));
         g.player = { x: p.x - 1, y: p.y };
         if (!ArcadeCore.pacOpen(g.player.x, g.player.y)) g.player = { x: p.x + 1, y: p.y };
@@ -147,6 +159,7 @@ test('Pac-Man : un labyrinthe, une consigne, un bon et un mauvais bonbon, une pa
         const g = pacGame;
         const p = g.pellets.find(it => it.event !== ArcadeCore.pacTarget(g));
         g.ghosts = [];
+        ArcadeCore.pacRelease(g);
         g.player = { x: p.x - 1, y: p.y };
         if (!ArcadeCore.pacOpen(g.player.x, g.player.y)) g.player = { x: p.x + 1, y: p.y };
         g.dir = g.nextDir = g.player.x < p.x ? ArcadeCore.DIRS.right : ArcadeCore.DIRS.left;
@@ -154,6 +167,8 @@ test('Pac-Man : un labyrinthe, une consigne, un bon et un mauvais bonbon, une pa
         pacmanStop();
     });
     await expect(page.locator('#pacman-message')).toContainText('Pas celle-là');
+    // Une vie perdue : le jeu se fige (le compte à rebours repart ensuite).
+    expect(await page.evaluate(() => pacGame.frozen)).toBe(true);
     await page.evaluate(() => { pacGame.lives = 0; pacGame.over = true; pacmanFinish(); });
     await expect(page.locator('#pacman-over')).toBeVisible();
     await expect(page.locator('#pacman-over-list li').first()).toContainText('au lieu de');
@@ -224,7 +239,10 @@ test('Memory : douze cartes, une erreur recachée, toutes les paires, un meilleu
     await page.locator('#btn-arcade').click();
     await page.locator('.arcade-card', { hasText: 'Memory' }).click();
     expect(await visibleScreen(page)).toBe('screen-memory');
+    await expect(page.locator('#memory-difficulty .is-active')).toHaveText('Moyen');
+    await page.locator('#memory-setup .btn').click();
     await expect(page.locator('#memory-grid .memory-card')).toHaveCount(12);
+    await expect(page.locator('#memory-grid .is-back-date')).toHaveCount(0);
     await expect(page.locator('#memory-status')).toContainText('0 / 6');
     // Deux événements ne font pas une paire : message, erreur, puis les cartes se recachent.
     const events = await page.evaluate(() => memoryGame.cards.map((c, i) => c.side === 'event' ? i : -1).filter(i => i >= 0));
@@ -251,6 +269,8 @@ test('Qui suis-je ? : des indices un à un, une mauvaise réponse dévoile le su
     await page.locator('#btn-arcade').click();
     await page.locator('.arcade-card', { hasText: 'Qui suis-je' }).click();
     expect(await visibleScreen(page)).toBe('screen-who');
+    await expect(page.locator('#who-difficulty .is-active')).toHaveText('Moyen');
+    await page.locator('#who-setup .btn').click();
     await expect(page.locator('#who-status')).toContainText('Manche 1 / 6');
     await expect(page.locator('#who-options .who-option')).toHaveCount(4);
     // Un seul indice au départ ; « Un indice de plus » en ajoute un, sans le portrait avant la fin.
@@ -310,6 +330,7 @@ test('Chasse aux anachronismes : désigner, valider, voir pourquoi, cinq scènes
     await page.locator('#btn-arcade').click();
     await page.locator('.arcade-card', { hasText: 'Chasse aux anachronismes' }).click();
     expect(await visibleScreen(page)).toBe('screen-scene');
+    await page.locator('#scene-setup .btn').click();
     await expect(page.locator('#scene-status')).toContainText('Scène 1 / 5');
     await expect(page.locator('#scene-grid .scene-tile')).toHaveCount(8);
     await expect(page.locator('#scene-check')).toContainText('Rien à signaler');
@@ -444,6 +465,7 @@ test('Casse-briques : cinq briques, la balle part au lancer, la plus ancienne se
     await page.locator('#btn-arcade').click();
     await page.locator('.arcade-card', { hasText: 'Casse-briques' }).click();
     expect(await visibleScreen(page)).toBe('screen-breakout');
+    await expect(page.locator('#breakout-difficulty .is-active')).toHaveText('Moyen');
     await page.locator('#breakout-start').click();
     await expect(page.locator('#breakout-status')).toContainText('♥♥♥');
     expect(await page.evaluate(() => boGame.bricks.length)).toBe(5);
@@ -478,8 +500,11 @@ test('Flappy Clio : Clio attend le premier battement, vole, passe une porte et f
     await page.locator('#btn-arcade').click();
     await page.locator('.arcade-card', { hasText: 'Flappy Clio' }).click();
     expect(await visibleScreen(page)).toBe('screen-flappy');
+    await expect(page.locator('#flappy-difficulty .is-active')).toHaveText('Moyen');
     await page.locator('#flappy-start').click();
     await expect(page.locator('#flappy-banner')).toContainText('grande ouverture');
+    // La porte de départ n'a pas de choix : le bandeau des deux événements est masqué.
+    await expect(page.locator('#flappy-choices')).toBeHidden();
     expect(await page.evaluate(() => flGame.gates.length)).toBe(8);
     const y0 = await page.evaluate(() => flGame.clio.y);
     await page.waitForTimeout(300);
@@ -584,30 +609,35 @@ test('Course de chars : l\'adversaire qui franchit la ligne le premier met fin �
     expect(await page.evaluate(() => raceMusicTimer)).toBe(0);
 });
 
-test('la salle de jeux ne tire que des événements ⭐ incontournables (le vivier et les figures de « Qui suis-je ? »)', async ({ page }) => {
+test('la salle de jeux ne tire que des événements ⭐ incontournables ; « Qui suis-je ? » tire ses figures selon leur notoriété (étoiles)', async ({ page }) => {
     await page.waitForFunction(() => window.bdd && window.bdd.some(c => (c.themes || []).some(t => t.id === 'thm_aut')), null, { timeout: 45_000 });
     const result = await page.evaluate(() => {
         const items = PathCore.flattenEvents(window.bdd);
         const essential = new Set(items.filter(i => i.essential).map(i => i.id));
         const pool = arcadePool();
-        const figures = whoFigures().known;
+        const candidates = whoFigures().candidates;
+        const tier = d => ReflexionCore.whoSelect(candidates, d).correct;
         return {
             pool: pool.length,
             poolOutside: pool.filter(e => !essential.has(e.id)).length,
-            figures: figures.length,
-            figuresOutside: figures.filter(e => !essential.has(e.id)).length
+            easy: tier('easy').length, easyWrong: tier('easy').filter(e => e.etoiles !== 3).length,
+            normal: tier('normal').length, normalWrong: tier('normal').filter(e => e.etoiles !== 2).length,
+            hard: tier('hard').length, hardWrong: tier('hard').filter(e => e.etoiles !== 1).length
         };
     });
     expect(result.pool).toBeGreaterThan(100);
     expect(result.poolOutside).toBe(0);
-    expect(result.figures).toBeGreaterThan(40);
-    expect(result.figuresOutside).toBe(0);
+    expect(result.easy).toBeGreaterThan(100);
+    expect(result.normal).toBeGreaterThan(500);
+    expect(result.hard).toBeGreaterThan(1000);
+    expect(result.easyWrong + result.normalWrong + result.hardWrong).toBe(0);
 });
 
 test('Pendu des dates : des chiffres à proposer, une année entière avec « plus tôt / plus tard », cinq événements', async ({ page }) => {
     await page.locator('#btn-arcade').click();
     await page.locator('.arcade-card', { hasText: 'Pendu des dates' }).click();
     expect(await visibleScreen(page)).toBe('screen-hangman');
+    await page.locator('#hangman-setup .btn').click();
     await expect(page.locator('#hangman-status')).toContainText('Événement 1 / 5');
     await expect(page.locator('#hangman-pad .hangman-digit')).toHaveCount(10);
     const info = await page.evaluate(() => { const q = ReflexionCore.hangmanQuestion(hangmanGame); return { digits: q.digits, date: q.event.date }; });
@@ -615,7 +645,7 @@ test('Pendu des dates : des chiffres à proposer, une année entière avec « pl
     // Un chiffre qui n'y est pas : une vie de moins.
     const absent = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].find(d => !info.digits.includes(String(d)));
     await page.locator(`#hangman-pad .hangman-digit[data-digit="${absent}"]`).click();
-    await expect(page.locator('#hangman-lives')).toHaveAttribute('aria-label', '5 vies');
+    await expect(page.locator('#hangman-lives')).toHaveAttribute('aria-label', '3 vies');
     await expect(page.locator(`#hangman-pad .hangman-digit[data-digit="${absent}"]`)).toHaveClass(/wrong/);
     // Un chiffre qui y est : il se dévoile.
     await page.locator(`#hangman-pad .hangman-digit[data-digit="${info.digits[0]}"]`).click();
@@ -644,4 +674,150 @@ test('Pendu des dates : des chiffres à proposer, une année entière avec « pl
     await expect(page.locator('#hangman-over-list li')).toHaveCount(5);
     await page.locator('#screen-hangman .back-btn').click();
     await expect(page.locator('#arcade-best-hangman')).toContainText('Meilleur score');
+});
+
+test('Difficulté : le niveau choisi est retenu, change les règles (pendu, anachronismes) et pèse sur le score', async ({ page }) => {
+    await page.locator('#btn-arcade').click();
+    // Pendu, facile : six vies et le premier chiffre offert.
+    await page.locator('.arcade-card', { hasText: 'Pendu des dates' }).click();
+    await page.locator('#hangman-difficulty .arcade-difficulty-btn', { hasText: 'Facile' }).click();
+    await expect(page.locator('#hangman-difficulty')).toContainText('premier chiffre offert');
+    await page.locator('#hangman-setup .btn').click();
+    await expect(page.locator('#hangman-lives')).toHaveAttribute('aria-label', '6 vies');
+    const info = await page.evaluate(() => { const q = ReflexionCore.hangmanQuestion(hangmanGame); return { digits: q.digits }; });
+    if (info.digits.length >= 3) {
+        await expect(page.locator('#hangman-slots .hangman-slot.is-found').first()).toHaveText(info.digits[0]);
+        await expect(page.locator(`#hangman-pad .hangman-digit[data-digit="${info.digits[0]}"]`)).toBeDisabled();
+    }
+    // Le score compté : ×0,5 en facile.
+    await page.evaluate(() => { hangmanGame.score = 200; hangmanGame.over = true; hangmanFinish(); });
+    await expect(page.locator('#hangman-over-text')).toContainText('Facile ×0,5 : 100 pts comptés');
+    await expect(page.locator('#hangman-over-text')).toContainText('Meilleur score : 100');
+    await page.locator('#screen-hangman .back-btn').click();
+    // Retenu d'une visite à l'autre.
+    await page.locator('.arcade-card', { hasText: 'Pendu des dates' }).click();
+    await expect(page.locator('#hangman-difficulty .is-active')).toHaveText('Facile');
+    await page.locator('#hangman-difficulty .arcade-difficulty-btn', { hasText: 'Difficile' }).click();
+    await page.locator('#hangman-setup .btn').click();
+    await expect(page.locator('#hangman-lives')).toHaveAttribute('aria-label', '3 vies');
+    await page.locator('#screen-hangman .back-btn').click();
+    // Anachronismes, facile : le nombre d'intrus est annoncé.
+    await page.locator('.arcade-card', { hasText: 'Chasse aux anachronismes' }).click();
+    await page.locator('#scene-difficulty .arcade-difficulty-btn', { hasText: 'Facile' }).click();
+    await page.locator('#scene-setup .btn').click();
+    await expect(page.locator('#scene-intro')).toContainText('Intrus à trouver :');
+});
+
+test('Memory : facile, le dos des cartes dit leur genre (couleur et symbole) ; difficile, dix-huit cartes', async ({ page }) => {
+    await page.locator('#btn-arcade').click();
+    await page.locator('.arcade-card', { hasText: 'Memory' }).click();
+    await page.locator('#memory-difficulty .arcade-difficulty-btn', { hasText: 'Facile' }).click();
+    await page.locator('#memory-setup .btn').click();
+    await expect(page.locator('#memory-grid .memory-card')).toHaveCount(12);
+    await expect(page.locator('#memory-grid .is-back-date')).toHaveCount(6);
+    await expect(page.locator('#memory-grid .is-back-event')).toHaveCount(6);
+    await expect(page.locator('#memory-grid .is-back-date').first()).toHaveText('📅');
+    await expect(page.locator('#memory-grid .is-back-event').first()).toHaveAttribute('aria-label', /face cachée : événement/);
+    // Retourner une carte la montre face visible, sans la couleur du dos.
+    await page.locator('#memory-grid .is-back-date').first().click();
+    await expect(page.locator('#memory-grid .memory-card.is-up')).toHaveCount(1);
+    await expect(page.locator('#memory-grid .is-back-date')).toHaveCount(5);
+    await page.locator('#screen-memory .back-btn').click();
+
+    await page.locator('.arcade-card', { hasText: 'Memory' }).click();
+    await page.locator('#memory-difficulty .arcade-difficulty-btn', { hasText: 'Difficile' }).click();
+    await page.locator('#memory-setup .btn').click();
+    await expect(page.locator('#memory-grid .memory-card')).toHaveCount(18);
+    await expect(page.locator('#memory-status')).toContainText('0 / 9');
+    await expect(page.locator('#memory-grid .is-back-date')).toHaveCount(0);
+    for (let pair = 0; pair < 9; pair++) {
+        const idx = await page.evaluate((pair) => [memoryGame.cards.findIndex(c => c.pair === pair && c.side === 'event'), memoryGame.cards.findIndex(c => c.pair === pair && c.side === 'date')], pair);
+        await page.locator('#memory-grid .memory-card').nth(idx[0]).click();
+        await page.locator('#memory-grid .memory-card').nth(idx[1]).click();
+    }
+    await expect(page.locator('#memory-over')).toBeVisible();
+    await expect(page.locator('#memory-over-text')).toContainText('0 erreurs, 900 points');
+    await expect(page.locator('#memory-over-text')).toContainText('Difficile ×1,5 : 1350 pts comptés');
+});
+
+test('Casse-briques : le niveau règle la raquette et la balle ; en facile, la brique à casser est entourée', async ({ page }) => {
+    await page.locator('#btn-arcade').click();
+    await page.locator('.arcade-card', { hasText: 'Casse-briques' }).click();
+    await page.locator('#breakout-difficulty .arcade-difficulty-btn', { hasText: 'Facile' }).click();
+    await expect(page.locator('#breakout-difficulty')).toContainText('Raquette large');
+    await page.locator('#breakout-start').click();
+    expect(await page.evaluate(() => ({ w: boGame.paddle.w, bricks: boGame.bricks.length, d: boGame.difficulty, target: boGame.level.showTarget })))
+        .toEqual({ w: 96, bricks: 4, d: 'easy', target: true });
+    await page.evaluate(() => { breakoutStop(); boGame.score = 100; boGame.over = true; breakoutFinish(); });
+    await expect(page.locator('#breakout-over-text')).toContainText('Facile ×0,5 : 50 pts comptés');
+    await page.locator('#breakout-difficulty .arcade-difficulty-btn', { hasText: 'Difficile' }).click();
+    await page.locator('#breakout-over .btn').click();
+    expect(await page.evaluate(() => ({ w: boGame.paddle.w, d: boGame.difficulty }))).toEqual({ w: 72, d: 'hard' });
+    await page.evaluate(() => breakoutStop());
+});
+
+test('Flappy Clio : le bandeau donne les deux événements de la prochaine porte (↑ haut, ↓ bas), sans date sur les ouvertures ; le niveau règle la vitesse', async ({ page }) => {
+    await page.locator('#btn-arcade').click();
+    await page.locator('.arcade-card', { hasText: 'Flappy Clio' }).click();
+    await page.locator('#flappy-difficulty .arcade-difficulty-btn', { hasText: 'Facile' }).click();
+    await expect(page.locator('#flappy-difficulty')).toContainText('Défilement lent');
+    await page.locator('#flappy-start').click();
+    expect(await page.evaluate(() => ({ d: flGame.difficulty, speed: ArcadeExtraCore.flappySpeed(flGame) }))).toEqual({ d: 'easy', speed: 65 });
+    // On franchit la porte de départ : la porte suivante a deux événements, dans le bandeau, dans l'ordre des ouvertures.
+    await page.evaluate(() => {
+        flappyStop();
+        flGame.invulnerable = 0; flGame.started = true; flGame.waiting = false;
+        const gate = flGame.gates.find(g => !g.done);
+        gate.x = flGame.clio.x - gate.w / 2;
+        flGame.clio.y = gate.gaps[0].y; flGame.clio.vy = 0;
+        flappyAfter(ArcadeExtraCore.flappyStep(flGame, 0.01));
+        flappyRenderChoices();
+    });
+    await expect(page.locator('#flappy-choices')).toBeVisible();
+    const expected = await page.evaluate(() => {
+        const gate = flGame.gates.find(g => !g.done);
+        const sorted = gate.gaps.slice().sort((a, b) => a.y - b.y);
+        return { up: '↑ ' + sorted[0].event.title, down: '↓ ' + sorted[1].event.title, last: flGame.last.title };
+    });
+    await expect(page.locator('#flappy-choice-up')).toHaveText(expected.up);
+    await expect(page.locator('#flappy-choice-down')).toHaveText(expected.down);
+    await expect(page.locator('#flappy-banner')).toContainText(expected.last);
+    // La mauvaise ouverture : le message nomme les deux événements.
+    await page.evaluate(() => {
+        const gate = flGame.gates.find(g => !g.done);
+        gate.x = flGame.clio.x - gate.w / 2;
+        flGame.clio.y = gate.gaps.find(p => !p.correct).y; flGame.clio.vy = 0;
+        flappyAfter(ArcadeExtraCore.flappyStep(flGame, 0.01));
+    });
+    await expect(page.locator('#flappy-message')).toContainText('est plus ancien que le dernier repère');
+    await page.evaluate(() => { flGame.score = 100; flGame.over = true; flappyFinish(); });
+    await expect(page.locator('#flappy-over-text')).toContainText('Facile ×0,5 : 50 pts comptés');
+    await expect(page.locator('#flappy-over-list li').first()).toContainText('au lieu de');
+});
+
+test('Qui suis-je ? : le niveau choisit les figures (étoiles) et les indices montrés au départ', async ({ page }) => {
+    await page.locator('#btn-arcade').click();
+    await page.locator('.arcade-card', { hasText: 'Qui suis-je' }).click();
+    await page.locator('#who-difficulty .arcade-difficulty-btn', { hasText: 'Facile' }).click();
+    await expect(page.locator('#who-difficulty')).toContainText('connues presque partout');
+    await page.locator('#who-setup .btn').click();
+    await expect(page.locator('#who-status')).toContainText('Manche 1 / 6');
+    // Facile : des figures à trois étoiles, deux indices dès le départ, mauvaises réponses de toutes notoriétés.
+    expect(await page.evaluate(() => ({ d: whoGame.difficulty, stars: whoGame.questions.map(q => q.event.etoiles) }))).toEqual({ d: 'easy', stars: [3, 3, 3, 3, 3, 3] });
+    await expect(page.locator('#who-clues .who-clue')).toHaveCount(2);
+    const name = await page.evaluate(() => ReflexionCore.whoQuestion(whoGame).name);
+    // Pas de contour de renommée avant la réponse (il dirait que la figure est célèbre), le contour or et l'étiquette après.
+    await expect(page.locator('#who-portrait-img')).not.toHaveClass(/renown/);
+    await page.locator('#who-options .who-option', { hasText: name }).first().click();
+    await expect(page.locator('#who-feedback-title')).toContainText('80');
+    await expect(page.locator('#who-portrait-img')).toHaveClass(/renown-img renown-3/);
+    await expect(page.locator('#who-feedback-renown')).toContainText('Renommée mondiale');
+    // Difficile : des figures à une étoile, un seul indice.
+    await page.evaluate(() => { whoGame.over = true; whoFinish(); });
+    await expect(page.locator('#who-over-text')).toContainText('Facile ×0,5');
+    await page.locator('#who-difficulty-over .arcade-difficulty-btn', { hasText: 'Difficile' }).click();
+    await page.locator('#who-over .btn').click();
+    await expect(page.locator('#who-status')).toContainText('Manche 1 / 6');
+    expect(await page.evaluate(() => ({ d: whoGame.difficulty, stars: [...new Set(whoGame.questions.map(q => q.event.etoiles))] }))).toEqual({ d: 'hard', stars: [1] });
+    await expect(page.locator('#who-clues .who-clue')).toHaveCount(1);
 });

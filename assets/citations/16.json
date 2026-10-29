@@ -1,0 +1,570 @@
+{
+  "citations": [
+    {
+      "id": "cit_gita_action_fruits",
+      "texte": "Tu as droit à l'action, mais jamais à ses fruits.",
+      "original": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।",
+      "langue": "sanskrit",
+      "auteur": "Bhagavad-Gita",
+      "classement": "Bhagavad-Gita",
+      "annee": -200,
+      "vers": true,
+      "anneeNote": "datation débattue",
+      "theme": "humain",
+      "fiabilite": "attestee",
+      "contexte": "Sur le champ de bataille de Kurukshetra, le guerrier Arjuna hésite à combattre des parents et des maîtres. Son cocher, le dieu Krishna, lui enseigne à agir sans s'attacher au résultat. L'action juste vaut par elle-même, non par ce qu'elle rapporte.",
+      "source": {
+        "oeuvre": "Mahabharata, Bhagavad-Gita",
+        "ref": "chapitre II, verset 47"
+      },
+      "note": "La Gita est un épisode du grand poème épique indien, dont la rédaction s'étend sur plusieurs siècles. Gandhi en faisait son livre de chevet : il y trouvait un enseignement de l'action désintéressée.",
+      "repere": true
+    },
+    {
+      "id": "cit_dhammapada_eveil",
+      "texte": "Ne commettre aucun mal, cultiver le bien, purifier son propre esprit : tel est l'enseignement des Bouddhas.",
+      "original": "Sabbapāpassa akaraṇaṃ, kusalassa upasampadā, sacittapariyodapanaṃ, etaṃ buddhāna sāsanaṃ.",
+      "langue": "pali",
+      "auteur": "Bouddha (Siddhartha Gautama)",
+      "classement": "Bouddha",
+      "annee": -250,
+      "vers": true,
+      "anneeNote": "recueil tardif",
+      "theme": "humain",
+      "fiabilite": "attribuee",
+      "contexte": "Le Dhammapada est un recueil de 423 versets que la tradition rattache à l'enseignement du Bouddha et que les bouddhistes ont mis par écrit bien après sa mort. Ce verset résume l'éthique du bouddhisme en trois gestes : éviter le mal, faire le bien, discipliner l'esprit.",
+      "source": {
+        "oeuvre": "Dhammapada",
+        "ref": "verset 183"
+      },
+      "note": "Le Bouddha n'a rien écrit : le texte est transmis oralement par ses disciples, puis fixé en pali. Les spécialistes tiennent ce verset pour très ancien, sans pouvoir garantir que ces mots sont les siens.",
+      "naissance": "pan_indien_bouddha"
+    },
+    {
+      "id": "cit_bouddha_kalamas",
+      "texte": "Ne croyez pas sur la foi de la tradition, ni parce que l'on vous le répète depuis longtemps, ni sur la foi d'un livre, ni sur l'autorité de votre maître : quand vous voyez par vous-mêmes qu'une chose est bonne et mène au bonheur, alors adoptez-la.",
+      "auteur": "Bouddha (Siddhartha Gautama)",
+      "classement": "Bouddha",
+      "annee": -400,
+      "vers": true,
+      "anneeNote": "recueil tardif",
+      "theme": "savoir",
+      "fiabilite": "attribuee",
+      "contexte": "Les Kalama, habitants d'une petite ville, demandent au Bouddha comment juger les enseignants religieux qui passent chez eux et se contredisent. Il leur répond de ne pas se fier à l'autorité, mais d'éprouver ce qu'on leur dit par ses effets sur la vie.",
+      "source": {
+        "oeuvre": "Anguttara Nikaya, Kalama Sutta",
+        "ref": "III, 65 (traduction libre)"
+      },
+      "note": "Ce passage est devenu un texte clé pour ceux qui lisent le bouddhisme comme un esprit d'examen. Les traditions n'en tirent pas toutes la même leçon : le Bouddha n'invite pas à rejeter tout enseignement, mais à le vérifier.",
+      "naissance": "pan_indien_bouddha"
+    },
+    {
+      "id": "cit_laozi_tao_dit",
+      "texte": "Le Tao que l'on peut dire n'est pas le Tao éternel.",
+      "original": "道可道，非常道。",
+      "langue": "chinois classique",
+      "auteur": "Laozi",
+      "annee": -300,
+      "vers": true,
+      "anneeNote": "date incertaine",
+      "theme": "savoir",
+      "fiabilite": "attribuee",
+      "contexte": "C'est la première phrase du Dao De Jing, le « Livre de la Voie et de la Vertu ». Elle dit que la réalité ultime ne se laisse pas enfermer dans des mots. Tout le livre cherche pourtant à la suggérer, par des paradoxes et des images.",
+      "source": {
+        "oeuvre": "Dao De Jing",
+        "ref": "chapitre 1"
+      },
+      "note": "On ne sait pas si Laozi a existé ni s'il est l'auteur du livre : les spécialistes y voient plutôt un recueil composé au IVᵉ ou au IIIᵉ siècle av. J.-C."
+    },
+    {
+      "id": "cit_laozi_eau",
+      "texte": "Le bien suprême est comme l'eau : l'eau est bienfaisante pour tous les êtres et ne lutte contre aucun.",
+      "original": "上善若水。水善利萬物而不爭。",
+      "langue": "chinois classique",
+      "auteur": "Laozi",
+      "annee": -300,
+      "vers": true,
+      "anneeNote": "date incertaine",
+      "theme": "humain",
+      "fiabilite": "attribuee",
+      "contexte": "Le Dao De Jing prend souvent pour modèle ce qui est doux et bas : l'eau, la vallée, l'enfant. L'eau, qui cède et épouse les formes, finit par user la pierre. Le sage, lui aussi, vaut par sa souplesse et non par sa force.",
+      "source": {
+        "oeuvre": "Dao De Jing",
+        "ref": "chapitre 8"
+      },
+      "note": "La traduction de la seconde moitié de la phrase varie : « ne lutte contre aucun » peut aussi se lire « ne cherche pas à être le premier ». Même incertitude sur l'auteur que pour toute l'œuvre."
+    },
+    {
+      "id": "cit_zhuangzi_papillon",
+      "texte": "Autrefois, Zhuang Zhou rêva qu'il était un papillon, un papillon qui voltigeait, heureux de son sort. Soudain il se réveilla, et il était bien Zhuang Zhou. Il ne savait plus si c'était Zhuang Zhou qui avait rêvé qu'il était un papillon, ou un papillon qui rêvait qu'il était Zhuang Zhou.",
+      "original": "昔者莊周夢為胡蝶，栩栩然胡蝶也。",
+      "langue": "chinois classique",
+      "auteur": "Zhuangzi",
+      "annee": -300,
+      "vers": true,
+      "anneeNote": "date incertaine",
+      "theme": "savoir",
+      "fiabilite": "attribuee",
+      "contexte": "Zhuangzi, penseur taoïste, s'interroge sur la distinction entre le rêve et l'éveil, et plus généralement sur la relativité des points de vue. L'original cité ici n'est que le début du passage.",
+      "source": {
+        "oeuvre": "Zhuangzi",
+        "ref": "chapitre 2 (« Discours sur l'égalité des êtres »), traduction libre"
+      },
+      "note": "Les sept premiers chapitres du livre, dits « intérieurs », sont généralement attribués à Zhuangzi lui-même ; les autres viennent de disciples. Seule la première phrase chinoise figure ci-dessus.",
+      "naissance": "pan_cn_zhuangzi"
+    },
+    {
+      "id": "cit_mozi_amour_universel",
+      "texte": "Qu'on s'aime les uns les autres sans distinction, et qu'on se serve mutuellement.",
+      "original": "兼相愛，交相利。",
+      "langue": "chinois classique",
+      "auteur": "Mozi",
+      "annee": -400,
+      "vers": true,
+      "anneeNote": "recueil tardif",
+      "theme": "guerre",
+      "fiabilite": "attribuee",
+      "contexte": "Mozi, artisan devenu philosophe, voit dans la partialité (aimer les siens plus que les autres) la source des guerres. Il propose un « amour sans distinction » (jian ai), fondé sur l'intérêt de tous, et s'oppose aux guerres d'agression tout en organisant la défense des petites cités.",
+      "source": {
+        "oeuvre": "Mozi",
+        "ref": "chapitres sur l'amour universel (traduction libre)"
+      },
+      "note": "Le livre rassemble des textes de l'école mohiste, composés par ses disciples sur plusieurs générations. Les confucéens, dont Mencius, ont violemment critiqué cette doctrine.",
+      "naissance": "pan_cn_mozi"
+    },
+    {
+      "id": "cit_ashoka_autres_religions",
+      "texte": "Celui qui exalte sa propre religion et dénigre celle des autres, par dévotion pour la sienne et pour la glorifier, nuit gravement à sa propre religion.",
+      "auteur": "Ashoka",
+      "annee": -258,
+      "vers": true,
+      "theme": "pouvoir",
+      "fiabilite": "attestee",
+      "contexte": "Empereur maurya, Ashoka fait graver ses édits sur des rochers et des piliers à travers l'Inde. Dans cet édit, il demande à ses sujets de se modérer dans leurs propos sur les religions et de respecter celles des autres, pour que toutes puissent croître.",
+      "source": {
+        "oeuvre": "Édits d'Ashoka sur rochers",
+        "ref": "édit XII (traduction libre)"
+      },
+      "note": "Les traductions varient (« dénigre » ou « condamne »), mais le sens est constant. Ashoka restait lui-même un bouddhiste engagé : l'édit ne dit pas que toutes les religions se valent.",
+      "naissance": "pan_indien_ashoka"
+    },
+    {
+      "id": "cit_kabir_deux_syllabes",
+      "texte": "À force de lire des livres, le monde est mort, et personne n'est devenu savant ; celui qui lit deux syllabes et demie, celles de l'amour, celui-là devient savant.",
+      "original": "पोथी पढ़ि पढ़ि जग मुआ, पंडित भया न कोय। ढाई आखर प्रेम का, पढ़े सो पंडित होय॥",
+      "langue": "hindi",
+      "auteur": "Kabir",
+      "annee": 1500,
+      "vers": true,
+      "anneeNote": "poème transmis oralement",
+      "theme": "savoir",
+      "fiabilite": "attribuee",
+      "contexte": "Kabir, tisserand de Bénarès, est vénéré par des hindous, des musulmans et des sikhs. Ses distiques (dohas) se moquent des pandits et des mollahs qui se contentent de rituels et de livres, et placent l'amour au-dessus des deux.",
+      "source": {
+        "oeuvre": "Dohas de Kabir",
+        "ref": "recueil traditionnel"
+      },
+      "note": "Kabir ne les a pas écrits : ils ont été chantés, transmis oralement et recueillis longtemps après lui, avec de nombreuses variantes. Tous les dohas qui lui sont prêtés ne sont pas de lui.",
+      "naissance": "pan_indien_kabir"
+    },
+    {
+      "id": "cit_nanak_ni_hindou_ni_musulman",
+      "texte": "Il n'y a ni hindou ni musulman.",
+      "auteur": "Guru Nanak",
+      "classement": "Nanak",
+      "annee": 1500,
+      "vers": true,
+      "anneeNote": "rapporté bien plus tard",
+      "theme": "humain",
+      "fiabilite": "attribuee",
+      "contexte": "La tradition sikhe raconte que Nanak, après une expérience mystique près de la rivière Bein, revint en disant ces mots avant de commencer sa prédication. Il refusait de s'enfermer dans une communauté et prêchait un Dieu unique, sans distinction de religions ni de castes.",
+      "source": {
+        "oeuvre": "Janamsakhis (récits de la vie de Nanak)",
+        "ref": "tradition rapportée"
+      },
+      "note": "Les Janamsakhis sont des récits écrits cinquante à quatre-vingts ans après sa mort et mêlent miracles et souvenirs. Les historiens les lisent avec prudence : cette phrase est surtout la devise d'une tradition, non un propos vérifié.",
+      "naissance": "pan_indien_gurunanak"
+    },
+    {
+      "id": "cit_dogen_oublier_soi",
+      "texte": "Étudier la Voie du Bouddha, c'est s'étudier soi-même ; s'étudier soi-même, c'est s'oublier soi-même.",
+      "original": "仏道をならふといふは、自己をならふなり。自己をならふといふは、自己をわするるなり。",
+      "langue": "japonais",
+      "auteur": "Dōgen",
+      "annee": 1233,
+      "theme": "savoir",
+      "fiabilite": "attestee",
+      "contexte": "Dōgen, fondateur de l'école Sōtō du zen au Japon, écrit le Genjōkōan à un disciple laïc. Il y explique que l'éveil n'est pas un but à atteindre en dehors de la pratique : la méditation assise elle-même en est l'expression.",
+      "source": {
+        "oeuvre": "Shōbōgenzō, Genjōkōan",
+        "ref": "1233"
+      },
+      "note": "La phrase continue : s'oublier soi-même, c'est être éveillé par toutes choses. Elle est l'une des plus citées de la littérature zen.",
+      "naissance": "pan_jp_dogen"
+    },
+    {
+      "id": "cit_vivekananda_tolerance",
+      "texte": "Je suis fier d'appartenir à une religion qui a enseigné au monde la tolérance et l'acceptation universelle.",
+      "original": "I am proud to belong to a religion which has taught the world both tolerance and universal acceptance.",
+      "langue": "anglais",
+      "auteur": "Swami Vivekananda",
+      "classement": "Vivekananda",
+      "annee": 1893,
+      "theme": "humain",
+      "fiabilite": "attestee",
+      "contexte": "Le 11 septembre 1893, au Parlement des religions du monde de Chicago, le moine indien Vivekananda prend la parole devant plusieurs milliers de personnes. Son discours d'ouverture (« Sœurs et frères d'Amérique ») est ovationné. Il y présente l'hindouisme comme accueillant toutes les voies.",
+      "source": {
+        "oeuvre": "Discours au Parlement des religions du monde, Chicago",
+        "ref": "11 septembre 1893"
+      },
+      "note": "Ce discours a fait connaître l'hindouisme aux États-Unis. Sa lecture de l'hindouisme comme religion unique et tolérante a été discutée par la suite : elle est surtout celle d'un courant réformateur.",
+      "naissance": "pan_indien_vivekananda"
+    },
+    {
+      "id": "cit_krishnamurti_pays_sans_chemin",
+      "texte": "Je soutiens que la vérité est un pays sans chemin, et qu'on ne peut s'en approcher par aucun chemin, par aucune religion, par aucune secte.",
+      "original": "I maintain that Truth is a pathless land, and you cannot approach it by any path whatsoever, by any religion, by any sect.",
+      "langue": "anglais",
+      "auteur": "Jiddu Krishnamurti",
+      "classement": "Krishnamurti",
+      "annee": 1929,
+      "theme": "savoir",
+      "fiabilite": "attestee",
+      "contexte": "Éduqué par la Société théosophique, qui le présentait comme le futur instructeur du monde, Krishnamurti a 34 ans quand il dissout, le 3 août 1929 à Ommen (Pays-Bas), l'Ordre de l'Étoile d'Orient créé pour le suivre. Il refuse d'être un chef spirituel.",
+      "source": {
+        "oeuvre": "Discours de dissolution de l'Ordre de l'Étoile d'Orient",
+        "ref": "Ommen, 3 août 1929"
+      },
+      "note": "Il passera le reste de sa vie à donner des causeries sur la liberté intérieure, sans fonder de mouvement. Ses détracteurs soulignent que cette position l'a quand même placé au centre d'un grand nombre de disciples.",
+      "naissance": "pan_indien_krishnamurti"
+    },
+    {
+      "id": "cit_coran_se_connaitre",
+      "texte": "Nous avons fait de vous des peuples et des tribus, afin que vous vous connaissiez les uns les autres.",
+      "original": "وَجَعَلْنَاكُمْ شُعُوبًا وَقَبَائِلَ لِتَعَارَفُوا",
+      "langue": "arabe",
+      "auteur": "Coran",
+      "annee": 650,
+      "vers": true,
+      "anneeNote": "mise par écrit",
+      "theme": "humain",
+      "fiabilite": "attestee",
+      "contexte": "Le verset s'adresse à tous les hommes, non seulement aux croyants. Il présente la diversité des peuples comme voulue, afin que les hommes apprennent à se connaître, et il ajoute que le plus noble auprès de Dieu est le plus pieux.",
+      "source": {
+        "oeuvre": "Coran",
+        "ref": "sourate 49 (Les Appartements), verset 13"
+      },
+      "note": "Le verset est souvent cité à propos de la diversité humaine et du dialogue entre les peuples. Les traductions rendent le verbe « se connaître » de façons variées."
+    },
+    {
+      "id": "cit_rabia_enfer_paradis",
+      "texte": "Ô mon Dieu, si je t'adore par crainte de l'Enfer, brûle-moi dans l'Enfer ; si je t'adore par espoir du Paradis, exclus-moi du Paradis ; mais si je t'adore pour toi seul, ne me prive pas de ta beauté éternelle.",
+      "auteur": "Rabia al-Adawiyya",
+      "classement": "Rabia",
+      "annee": 780,
+      "vers": true,
+      "anneeNote": "rapportée plus tard",
+      "theme": "humain",
+      "fiabilite": "attribuee",
+      "contexte": "Rabia, ancienne esclave de Bassora, est l'une des premières grandes figures du soufisme. Elle prêche un amour de Dieu désintéressé, détaché de la peur du châtiment et de l'attente d'une récompense.",
+      "source": {
+        "oeuvre": "Attar, Le Mémorial des saints (Tadhkirat al-Awliya)",
+        "ref": "chapitre sur Rabia, XIIᵉ-XIIIᵉ siècle"
+      },
+      "note": "Rabia n'a laissé aucun écrit. Ses paroles sont connues par des récits rédigés plus de trois siècles après sa mort, et la prière existe en plusieurs formes. Elle illustre l'idéal mystique plus qu'elle ne rapporte des mots certains."
+    },
+    {
+      "id": "cit_ibnarabi_religion_amour",
+      "texte": "Mon cœur est devenu capable de toute forme : pâturage pour les gazelles et couvent pour les moines, temple pour les idoles et Kaaba du pèlerin, tables de la Torah et livre du Coran. Je professe la religion de l'amour.",
+      "original": "لَقَدْ صَارَ قَلْبِي قَابِلاً كُلَّ صُورَةٍ فَمَرْعىً لِغِزْلانٍ وَدَيْرٌ لِرُهْبَانِ",
+      "langue": "arabe",
+      "auteur": "Ibn Arabi",
+      "annee": 1214,
+      "vers": true,
+      "theme": "humain",
+      "fiabilite": "attestee",
+      "contexte": "Ibn Arabi, mystique andalou, compose à La Mecque un recueil de poèmes d'amour, qui, selon lui, parlent de l'amour de Dieu. Dans ce poème, il écrit que le cœur du mystique accueille toutes les formes de croyance, parce que Dieu se manifeste dans chacune.",
+      "source": {
+        "oeuvre": "L'Interprète des désirs (Tarjuman al-ashwaq)",
+        "ref": "poème 11"
+      },
+      "note": "La suite du poème dit que l'amour est la religion de l'auteur, quelle que soit la direction de sa caravane. Seul le premier vers est cité en arabe ; la traduction regroupe les vers suivants. Ce texte est souvent lu comme un plaidoyer de tolérance, ce que certains spécialistes jugent trop moderne.",
+      "naissance": "pan_es_ibnarabi"
+    },
+    {
+      "id": "cit_rumi_blessure_lumiere",
+      "texte": "La blessure est l'endroit par où la lumière entre en toi.",
+      "original": "The wound is the place where the Light enters you.",
+      "langue": "anglais",
+      "auteur": "Rûmî",
+      "classement": "Rumi",
+      "annee": 1995,
+      "anneeNote": "traduction libre de Coleman Barks",
+      "theme": "humain",
+      "fiabilite": "attribuee",
+      "contexte": "Cette phrase est partagée à l'infini sur Internet sous le nom de Rûmî, poète persan du XIIIᵉ siècle, traduit en anglais par Coleman Barks puis rendu célèbre aux États-Unis.",
+      "source": {
+        "oeuvre": "Traductions de Coleman Barks (comme The Essential Rumi)",
+        "ref": "1995 ; aucun vers persan précis retrouvé"
+      },
+      "note": "Les recherches n'ont pas retrouvé cette phrase telle quelle dans l'œuvre de Rûmî. L'idée serait celle du Masnavi, mais la formule actuelle est un raccourci né de traductions libres. La tradition la lui prête, sans qu'on puisse citer le vers.",
+      "naissance": "pan_tr_rumi"
+    },
+    {
+      "id": "cit_levitique_prochain",
+      "texte": "Tu aimeras ton prochain comme toi-même.",
+      "original": "וְאָהַבְתָּ לְרֵעֲךָ כָּמוֹךָ",
+      "langue": "hébreu",
+      "auteur": "Livre du Lévitique",
+      "classement": "Lévitique",
+      "annee": -500,
+      "vers": true,
+      "anneeNote": "rédaction débattue",
+      "theme": "humain",
+      "fiabilite": "attestee",
+      "contexte": "Le verset conclut une série de commandements moraux : ne pas haïr son frère, ne pas se venger ni garder rancune. Plus loin dans le même chapitre, la loi étend l'amour à l'étranger qui vit parmi les Israélites, qu'il faut aimer « comme toi-même, car vous avez été étrangers au pays d'Égypte ».",
+      "source": {
+        "oeuvre": "Bible hébraïque, Lévitique",
+        "ref": "19, 18"
+      },
+      "note": "Jésus le cite comme l'un des deux commandements principaux, avec l'amour de Dieu, et l'on retrouve ce verset dans l'Évangile et chez Paul. Le rabbin Akiva y voyait le grand principe de la Torah."
+    },
+    {
+      "id": "cit_jesus_aimez_ennemis",
+      "texte": "Aimez vos ennemis, et priez pour ceux qui vous persécutent.",
+      "auteur": "Jésus de Nazareth",
+      "classement": "Jésus",
+      "annee": 30,
+      "vers": true,
+      "anneeNote": "rapporté par les Évangiles",
+      "theme": "humain",
+      "fiabilite": "attribuee",
+      "contexte": "Dans le Sermon sur la montagne, Jésus reprend la loi traditionnelle (« œil pour œil ») et la dépasse : au lieu de répondre à la violence par la violence, il demande d'aimer ses ennemis. Cette exigence est devenue un des repères de la pensée chrétienne sur la non-violence.",
+      "source": {
+        "oeuvre": "Évangile selon Matthieu",
+        "ref": "5, 44"
+      },
+      "note": "Jésus n'a rien écrit : ses paroles sont rapportées par les Évangiles, rédigés quarante à soixante-dix ans après sa mort, en grec et non en araméen, la langue qu'il parlait.",
+      "naissance": "pan_il_jesus"
+    },
+    {
+      "id": "cit_jesus_premiere_pierre",
+      "texte": "Que celui de vous qui est sans péché jette le premier la pierre.",
+      "original": "ὁ ἀναμάρτητος ὑμῶν πρῶτος ἐπ’ αὐτὴν βαλέτω λίθον",
+      "langue": "grec ancien",
+      "auteur": "Jésus de Nazareth",
+      "classement": "Jésus",
+      "annee": 30,
+      "vers": true,
+      "anneeNote": "rapporté par les Évangiles",
+      "theme": "humain",
+      "fiabilite": "attribuee",
+      "contexte": "Des scribes et des pharisiens amènent à Jésus une femme surprise en adultère et lui demandent s'il faut la lapider, comme le veut la Loi. Jésus répond par cette phrase. Les accusateurs s'en vont l'un après l'autre.",
+      "source": {
+        "oeuvre": "Évangile selon Jean",
+        "ref": "8, 7"
+      },
+      "note": "L'épisode de la femme adultère ne figure pas dans les plus anciens manuscrits de l'Évangile de Jean : il a été ajouté plus tard, bien que beaucoup de chrétiens le tiennent pour authentique. C'est pourquoi la parole est classée comme attribuée.",
+      "naissance": "pan_il_jesus",
+      "repere": true
+    },
+    {
+      "id": "cit_paul_ni_juif_ni_grec",
+      "texte": "Il n'y a plus ni Juif ni Grec, il n'y a plus ni esclave ni homme libre, il n'y a plus ni homme ni femme ; car tous vous êtes un en Jésus-Christ.",
+      "auteur": "Paul de Tarse",
+      "classement": "Paul",
+      "annee": 55,
+      "vers": true,
+      "theme": "liberte",
+      "fiabilite": "attestee",
+      "contexte": "Paul écrit aux communautés de Galatie pour défendre l'idée que les païens convertis n'ont pas à se soumettre à toute la Loi juive. Il affirme que, dans la foi, les différences de naissance, de statut et de sexe ne séparent plus les croyants.",
+      "source": {
+        "oeuvre": "Épître aux Galates",
+        "ref": "3, 28"
+      },
+      "note": "La phrase est considérée comme l'un des textes fondateurs de l'égalité spirituelle, mais Paul ne remet pas en cause l'esclavage ni la place des femmes dans la société. Les historiens et les théologiens la lisent de façon très différente."
+    },
+    {
+      "id": "cit_augustin_aime",
+      "texte": "Aime, et fais ce que tu voudras.",
+      "original": "Dilige, et quod vis fac.",
+      "langue": "latin",
+      "auteur": "Augustin d'Hippone",
+      "classement": "Augustin",
+      "annee": 407,
+      "vers": true,
+      "theme": "humain",
+      "fiabilite": "attestee",
+      "contexte": "Dans un sermon sur la première lettre de Jean, Augustin explique que l'amour est la règle de l'action : celui qui aime vraiment ne peut faire que le bien, qu'il se taise ou qu'il parle, qu'il corrige ou qu'il épargne.",
+      "source": {
+        "oeuvre": "Commentaire sur la première épître de Jean",
+        "ref": "traité 7, § 8"
+      },
+      "note": "La phrase est souvent coupée de ce qui la précède et la suit. Augustin ne dit pas que chacun peut faire ce qu'il veut : il dit que l'amour véritable rend les actes bons.",
+      "naissance": "pan_maghreb_augustin"
+    },
+    {
+      "id": "cit_therese_nada_te_turbe",
+      "texte": "Que rien ne te trouble, que rien ne t'effraie ; tout passe, Dieu ne change pas ; la patience obtient tout.",
+      "original": "Nada te turbe, nada te espante, todo se pasa, Dios no se muda, la paciencia todo lo alcanza.",
+      "langue": "espagnol",
+      "auteur": "Thérèse d'Avila",
+      "classement": "Thérèse d'Avila",
+      "annee": 1582,
+      "anneeNote": "trouvé à sa mort",
+      "theme": "humain",
+      "fiabilite": "attribuee",
+      "contexte": "Thérèse d'Avila, religieuse carmélite et mystique, a réformé son ordre. Après sa mort en 1582, des sœurs auraient trouvé ce poème dans son bréviaire. Il est devenu un chant et une prière très répandus.",
+      "source": {
+        "oeuvre": "Poésies de sainte Thérèse",
+        "ref": "poème trouvé dans son bréviaire"
+      },
+      "note": "L'attribution à Thérèse est la plus répandue, mais aucun manuscrit de sa main n'est conservé et certains y voient plutôt la plume de Jean de la Croix. Le court texte de neuf vers est à distinguer des versions plus longues.",
+      "naissance": "pan_es_therese"
+    },
+    {
+      "id": "cit_pascal_roseau",
+      "texte": "L'homme n'est qu'un roseau, le plus faible de la nature ; mais c'est un roseau pensant.",
+      "auteur": "Blaise Pascal",
+      "classement": "Pascal",
+      "annee": 1670,
+      "anneeNote": "publication posthume",
+      "theme": "humain",
+      "fiabilite": "attestee",
+      "contexte": "Dans ses notes pour une défense de la religion chrétienne, Pascal pose que l'univers n'a pas besoin de s'armer pour écraser l'homme, mais que l'homme est plus grand que lui parce qu'il sait qu'il meurt. Toute sa dignité consiste dans la pensée.",
+      "source": {
+        "oeuvre": "Pensées",
+        "ref": "fragment 347 (édition Brunschvicg), 200 (Lafuma)"
+      },
+      "note": "Les Pensées sont des fragments inachevés, publiés après la mort de Pascal en 1662 ; leur ordre varie selon les éditions, d'où la double numérotation.",
+      "naissance": "pan_fr_pascal",
+      "repere": true
+    },
+    {
+      "id": "cit_spinoza_comprendre",
+      "texte": "J'ai pris soin de ne pas rire des actions humaines, de ne pas les déplorer ni les détester, mais de les comprendre.",
+      "original": "Humanas actiones non ridere, non lugere, neque detestari, sed intelligere.",
+      "langue": "latin",
+      "auteur": "Baruch Spinoza",
+      "classement": "Spinoza",
+      "annee": 1677,
+      "anneeNote": "publication posthume",
+      "theme": "savoir",
+      "fiabilite": "attestee",
+      "contexte": "Spinoza ouvre son Traité politique en reprochant aux philosophes de peindre l'homme tel qu'il devrait être. Il veut l'étudier tel qu'il est, avec ses passions, comme on étudie des lignes et des surfaces en géométrie.",
+      "source": {
+        "oeuvre": "Traité politique",
+        "ref": "chapitre I, § 4"
+      },
+      "note": "Le traité est resté inachevé et a été publié après la mort de Spinoza, en 1677. Excommunié de la communauté juive d'Amsterdam en 1656, il a payé cher sa liberté de penser.",
+      "naissance": "pan_benelux_spinoza",
+      "repere": true
+    },
+    {
+      "id": "cit_spinoza_difficile_rare",
+      "texte": "Tout ce qui est remarquable est aussi difficile que rare.",
+      "original": "Sed omnia praeclara tam difficilia quam rara sunt.",
+      "langue": "latin",
+      "auteur": "Baruch Spinoza",
+      "classement": "Spinoza",
+      "annee": 1677,
+      "anneeNote": "publication posthume",
+      "theme": "savoir",
+      "fiabilite": "attestee",
+      "contexte": "C'est la dernière phrase de l'Éthique. Spinoza vient d'exposer le chemin de la liberté et de la béatitude, c'est-à-dire de la connaissance de Dieu, ou de la Nature. Il reconnaît que ce chemin est ardu, mais que c'est le seul qui mène à la paix de l'âme.",
+      "source": {
+        "oeuvre": "Éthique",
+        "ref": "livre V, proposition 42, scolie"
+      },
+      "note": "L'Éthique est écrite en latin selon la méthode géométrique : définitions, axiomes, propositions. La phrase conclut l'ouvrage entier.",
+      "naissance": "pan_benelux_spinoza"
+    },
+    {
+      "id": "cit_voltaire_inventer_dieu",
+      "texte": "Si Dieu n'existait pas, il faudrait l'inventer.",
+      "auteur": "Voltaire",
+      "annee": 1768,
+      "theme": "humain",
+      "fiabilite": "attestee",
+      "contexte": "Dans une épître en vers adressée à l'auteur du Traité des trois imposteurs, un livre qui prétendait que Moïse, Jésus et Mahomet étaient trois escrocs, Voltaire, déiste, répond qu'une société sans croyance en un Dieu qui punit et récompense serait vite livrée au crime.",
+      "source": {
+        "oeuvre": "Épître à l'auteur du livre des Trois imposteurs",
+        "ref": "1768"
+      },
+      "note": "Voltaire ne dit pas que Dieu est une invention : il dit que l'idée d'un Dieu est utile à la société. Le vers continue : « Mais toute la nature crie qu'il existe. »",
+      "naissance": "pan_fr_voltaire"
+    },
+    {
+      "id": "cit_buber_rencontre",
+      "texte": "Toute vie véritable est rencontre.",
+      "original": "Alles wirkliche Leben ist Begegnung.",
+      "langue": "allemand",
+      "auteur": "Martin Buber",
+      "classement": "Buber",
+      "annee": 1923,
+      "theme": "humain",
+      "fiabilite": "attestee",
+      "contexte": "Dans Je et Tu, Buber distingue deux manières de se rapporter au monde : le rapport « Je-Cela », où l'autre est un objet, et le rapport « Je-Tu », où l'on rencontre l'autre comme un être entier. Cette phrase en résume l'idée.",
+      "source": {
+        "oeuvre": "Je et Tu (Ich und Du)",
+        "ref": "1923"
+      },
+      "note": "Le livre est devenu une référence de la philosophie du dialogue. Buber y voit dans la rencontre humaine le chemin vers Dieu, le « Tu éternel ».",
+      "naissance": "pan_il_buber"
+    },
+    {
+      "id": "cit_mbiti_je_suis_parce",
+      "texte": "Je suis parce que nous sommes ; et puisque nous sommes, donc je suis.",
+      "original": "I am, because we are; and since we are, therefore I am.",
+      "langue": "anglais",
+      "auteur": "John Mbiti",
+      "classement": "Mbiti",
+      "annee": 1969,
+      "theme": "humain",
+      "fiabilite": "attestee",
+      "contexte": "Le théologien kényan John Mbiti résume ainsi la conception africaine traditionnelle de la personne : l'individu n'existe que par son appartenance au groupe, qui lui donne son nom, son rôle et sa place. Cette idée est proche de l'ubuntu des peuples bantous d'Afrique australe.",
+      "source": {
+        "oeuvre": "African Religions and Philosophy",
+        "ref": "1969, p. 108"
+      },
+      "note": "La formule est souvent associée au proverbe zoulou et xhosa « Umuntu ngumuntu ngabantu » (une personne est une personne par les autres personnes). Certains chercheurs jugent qu'elle généralise trop la diversité des cultures africaines."
+    },
+    {
+      "id": "cit_tutu_neutre_oppresseur",
+      "texte": "Si vous êtes neutre dans des situations d'injustice, vous avez choisi le camp de l'oppresseur.",
+      "original": "If you are neutral in situations of injustice, you have chosen the side of the oppressor.",
+      "langue": "anglais",
+      "auteur": "Desmond Tutu",
+      "classement": "Tutu",
+      "annee": 1984,
+      "anneeNote": "première trace connue",
+      "theme": "liberte",
+      "fiabilite": "attribuee",
+      "contexte": "Archevêque anglican du Cap et prix Nobel de la paix 1984, Tutu s'est opposé à l'apartheid par la non-violence. Il aurait ajouté une image : si un éléphant a le pied sur la queue d'une souris et que vous dites être neutre, la souris n'appréciera pas votre neutralité.",
+      "source": {
+        "oeuvre": "Robert McAfee Brown, Unexpected News: Reading the Bible with Third World Eyes",
+        "ref": "1984, p. 19 (page non vérifiée)"
+      },
+      "note": "La première trace connue est celle d'un théologien américain qui rapporte la parole de Tutu, sans qu'on ait retrouvé le discours d'origine. Les mots exacts sont donc incertains.",
+      "naissance": "pan_za_tutu"
+    },
+    {
+      "id": "cit_marley_esclavage_mental",
+      "texte": "Libérez-vous de l'esclavage mental ; nul autre que nous-mêmes ne peut libérer notre esprit.",
+      "original": "Emancipate yourselves from mental slavery; none but ourselves can free our minds.",
+      "langue": "anglais",
+      "auteur": "Bob Marley",
+      "classement": "Marley",
+      "annee": 1980,
+      "theme": "liberte",
+      "fiabilite": "attestee",
+      "contexte": "Bob Marley, chanteur jamaïcain et rastafari, enregistre « Redemption Song » sur l'album Uprising, quelques mois avant sa mort. C'est un morceau acoustique, où il reprend l'histoire de l'esclavage et l'appel à une libération intérieure.",
+      "source": {
+        "oeuvre": "Redemption Song",
+        "ref": "album Uprising, 1980"
+      },
+      "note": "Marley s'inspire d'un discours du militant panafricain Marcus Garvey, prononcé en 1937 au Canada, où celui-ci disait que, si d'autres peuvent libérer le corps, seuls nous-mêmes pouvons libérer l'esprit.",
+      "naissance": "pan_caraibes_marley"
+    }
+  ]
+}

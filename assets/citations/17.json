@@ -1,0 +1,470 @@
+{
+  "citations": [
+    {
+      "id": "cit_hesiode_sueur",
+      "texte": "Devant la vertu, les dieux immortels ont placé la sueur.",
+      "original": "τῆς δ᾽ ἀρετῆς ἱδρῶτα θεοὶ προπάροιθεν ἔθηκαν ἀθάνατοι",
+      "langue": "grec ancien",
+      "auteur": "Hésiode",
+      "annee": -700,
+      "vers": true,
+      "theme": "humain",
+      "fiabilite": "attestee",
+      "contexte": "Hésiode, paysan de Béotie, adresse son poème à son frère Persès, qui l'a lésé dans un partage d'héritage. Il lui explique que la réussite ne vient que par le travail : le chemin du vice est facile, mais celui de la vertu est long et rude, avant de devenir aisé.",
+      "source": {
+        "oeuvre": "Les Travaux et les Jours",
+        "ref": "vers 289-290 (traduction libre)"
+      },
+      "note": "Le poème est l'un des plus anciens textes sur le travail de la terre et le calendrier agricole. Hésiode y raconte aussi comment Zeus a caché la nourriture aux hommes, qui doivent dès lors la gagner à la peine."
+    },
+    {
+      "id": "cit_genese_sueur_visage",
+      "texte": "À la sueur de ton visage, tu mangeras du pain.",
+      "original": "בְּזֵעַת אַפֶּיךָ תֹּאכַל לֶחֶם",
+      "langue": "hébreu",
+      "auteur": "Livre de la Genèse",
+      "classement": "Genèse",
+      "annee": -500,
+      "vers": true,
+      "anneeNote": "rédaction débattue",
+      "theme": "humain",
+      "fiabilite": "attestee",
+      "contexte": "Après la faute d'Adam et Ève, Dieu condamne l'homme à tirer sa nourriture d'une terre devenue ingrate : il devra peiner jusqu'à son retour à la poussière. Le travail y apparaît comme une peine, mais aussi comme la condition de la vie humaine.",
+      "source": {
+        "oeuvre": "Bible hébraïque, Genèse",
+        "ref": "3, 19"
+      },
+      "note": "Le texte dit seulement que le travail est pénible. La tradition juive et chrétienne a aussi vu dans le travail une œuvre voulue par Dieu avant la faute : Adam est placé dans le jardin « pour le cultiver et le garder »."
+    },
+    {
+      "id": "cit_aristote_navettes",
+      "texte": "Si les navettes tissaient d'elles-mêmes, et si les plectres jouaient seuls de la cithare, les chefs d'atelier n'auraient pas besoin d'ouvriers, ni les maîtres d'esclaves.",
+      "auteur": "Aristote",
+      "annee": -330,
+      "vers": true,
+      "theme": "savoir",
+      "fiabilite": "attestee",
+      "contexte": "Aristote explique que l'esclave est un « instrument animé » de la maison. Il imagine alors que les outils puissent travailler seuls, comme les automates de la légende, et en conclut que l'esclavage deviendrait inutile. Il défend pourtant l'esclavage comme naturel, faute de telles machines.",
+      "source": {
+        "oeuvre": "Politique",
+        "ref": "livre I, chapitre 4, 1253b-1254a (traduction libre)"
+      },
+      "note": "Le passage est cité depuis le XIXᵉ siècle dans les débats sur la machine et le travail humain. Aristote ne l'écrit pas pour critiquer l'esclavage : il constate seulement que la technique ne le remplace pas encore.",
+      "naissance": "pan_gr_aristote"
+    },
+    {
+      "id": "cit_benoit_oisivete",
+      "texte": "L'oisiveté est l'ennemie de l'âme.",
+      "original": "Otiositas inimica est animae.",
+      "langue": "latin",
+      "auteur": "Benoît de Nursie",
+      "classement": "Benoît de Nursie",
+      "annee": 530,
+      "vers": true,
+      "theme": "humain",
+      "fiabilite": "attestee",
+      "contexte": "Au chapitre 48 de sa Règle, Benoît fixe l'emploi du temps des moines : des heures de travail manuel, des heures de lecture et de prière. Il commence par cette phrase pour justifier que chaque moment soit occupé.",
+      "source": {
+        "oeuvre": "Règle de saint Benoît",
+        "ref": "chapitre 48 : « Du travail manuel de chaque jour »"
+      },
+      "note": "La Règle ne contient pas la devise « Ora et labora » (voir la fiche suivante). Elle prévoit un équilibre entre prière, lecture et travail, et dit que les moines sont vraiment moines quand ils vivent du travail de leurs mains.",
+      "naissance": "pan_it_benoit"
+    },
+    {
+      "id": "cit_benoit_ora_et_labora",
+      "texte": "Prie et travaille.",
+      "original": "Ora et labora.",
+      "langue": "latin",
+      "auteur": "Benoît de Nursie",
+      "classement": "Benoît de Nursie",
+      "annee": 1850,
+      "anneeNote": "XIXᵉ siècle, date approximative",
+      "theme": "humain",
+      "fiabilite": "apocryphe",
+      "contexte": "La formule est présentée comme la devise de l'ordre bénédictin, et par extension de la vie monastique.",
+      "source": {
+        "oeuvre": "Tradition bénédictine moderne",
+        "ref": "absente de la Règle de saint Benoît"
+      },
+      "note": "Elle ne figure pas dans la Règle. Les spécialistes la datent plutôt du XIXᵉ siècle, d'après un livre de Maurus Wolter, premier abbé de Beuron, en Allemagne. L'abbaye de Solesmes préfère rappeler que la Règle place aussi la lecture au centre de la vie monastique. L'origine exacte de la formule reste discutée.",
+      "naissance": "pan_it_benoit"
+    },
+    {
+      "id": "cit_thess_ne_mange_pas",
+      "texte": "Si quelqu'un ne veut pas travailler, qu'il ne mange pas non plus.",
+      "original": "εἴ τις οὐ θέλει ἐργάζεσθαι, μηδὲ ἐσθιέτω",
+      "langue": "grec ancien",
+      "auteur": "Paul de Tarse (attribué)",
+      "classement": "Paul",
+      "annee": 51,
+      "vers": true,
+      "theme": "humain",
+      "fiabilite": "attribuee",
+      "contexte": "L'auteur écrit à la communauté chrétienne de Thessalonique, où certains vivent aux crochets des autres en attendant la fin du monde. Il leur rappelle qu'il a travaillé de ses mains parmi eux pour ne pas être à leur charge.",
+      "source": {
+        "oeuvre": "Deuxième épître aux Thessaloniciens",
+        "ref": "3, 10"
+      },
+      "note": "Beaucoup d'historiens doutent que cette lettre soit de Paul lui-même et la tiennent pour l'œuvre d'un disciple. La phrase est devenue célèbre en 1917, quand Lénine l'a reprise dans l'article « Les tâches immédiates » pour justifier l'obligation du travail."
+    },
+    {
+      "id": "cit_hadith_salaire_sueur",
+      "texte": "Donnez à l'ouvrier son salaire avant que sa sueur n'ait séché.",
+      "original": "أَعْطُوا الأَجِيرَ أَجْرَهُ قَبْلَ أَنْ يَجِفَّ عَرَقُهُ",
+      "langue": "arabe",
+      "auteur": "Muhammad (hadith)",
+      "classement": "Muhammad",
+      "annee": 632,
+      "vers": true,
+      "anneeNote": "date de la mort du Prophète",
+      "theme": "humain",
+      "fiabilite": "attribuee",
+      "contexte": "Cette parole attribuée au Prophète est citée par les juristes musulmans pour affirmer que le salaire est une dette qu'il faut régler sans retard. Elle sert aujourd'hui d'argument dans les débats sur le paiement des travailleurs, notamment dans le monde arabe.",
+      "source": {
+        "oeuvre": "Sunan Ibn Majah",
+        "ref": "livre des hypothèques (Rahn), hadith n° 2443"
+      },
+      "note": "La chaîne de transmission de ce hadith est discutée : certains spécialistes la jugent bonne, d'autres faible. Le principe d'un paiement rapide se retrouve aussi dans la Torah (Deutéronome 24, 15)."
+    },
+    {
+      "id": "cit_gournay_laissez_faire",
+      "texte": "Laissez faire, laissez passer.",
+      "auteur": "Vincent de Gournay",
+      "classement": "Gournay",
+      "annee": 1755,
+      "vers": true,
+      "anneeNote": "attribution traditionnelle",
+      "theme": "liberte",
+      "fiabilite": "attribuee",
+      "contexte": "La formule résume le libéralisme économique français du XVIIIᵉ siècle : laisser les producteurs fabriquer librement (« laissez faire ») et les marchandises circuler sans douanes intérieures (« laissez passer »). On la rattache aux physiocrates, disciples de Quesnay, et à leur ami Gournay, intendant du commerce.",
+      "source": {
+        "oeuvre": "Tradition rapportée par les physiocrates",
+        "ref": "attribution à Gournay ; aucun écrit de lui qui la contienne n'est certain"
+      },
+      "note": "Le marquis d'Argenson écrit dès 1751 « laissez faire, morguienne ! », et l'on racontait déjà que le négociant Legendre avait dit « Laissez-nous faire » à Colbert, sous Louis XIV. La formule est donc plus ancienne que Gournay, que la tradition ne cite que comme son propagateur."
+    },
+    {
+      "id": "cit_smith_boulanger",
+      "texte": "Ce n'est pas de la bienveillance du boucher, du brasseur ou du boulanger que nous attendons notre dîner, mais du soin qu'ils apportent à leur propre intérêt.",
+      "original": "It is not from the benevolence of the butcher, the brewer, or the baker that we expect our dinner, but from their regard to their own interest.",
+      "langue": "anglais",
+      "auteur": "Adam Smith",
+      "classement": "Smith",
+      "annee": 1776,
+      "theme": "humain",
+      "fiabilite": "attestee",
+      "contexte": "Au début de La Richesse des nations, Smith explique que la division du travail repose sur l'échange. Chacun a besoin de l'aide des autres, mais ne peut compter sur leur générosité : il doit leur montrer que son offre sert aussi leur intérêt.",
+      "source": {
+        "oeuvre": "La Richesse des nations",
+        "ref": "livre I, chapitre 2"
+      },
+      "note": "Smith est aussi l'auteur de la Théorie des sentiments moraux (1759), où il donne une place centrale à la sympathie. Il ne fait pas de l'égoïsme une vertu : il décrit comment l'échange fonctionne.",
+      "naissance": "pan_gb_smith",
+      "repere": true
+    },
+    {
+      "id": "cit_smith_main_invisible",
+      "texte": "Il est conduit par une main invisible à remplir une fin qui n'entrait nullement dans ses intentions.",
+      "original": "He is led by an invisible hand to promote an end which was no part of his intention.",
+      "langue": "anglais",
+      "auteur": "Adam Smith",
+      "classement": "Smith",
+      "annee": 1776,
+      "theme": "savoir",
+      "fiabilite": "attestee",
+      "contexte": "Smith parle du marchand qui préfère employer son capital dans son pays plutôt qu'à l'étranger, par souci de sa propre sécurité. En cherchant son gain, dit-il, il sert souvent l'intérêt général mieux que s'il l'avait voulu.",
+      "source": {
+        "oeuvre": "La Richesse des nations",
+        "ref": "livre IV, chapitre 2"
+      },
+      "note": "L'expression « main invisible » n'apparaît qu'une seule fois dans La Richesse des nations. Beaucoup d'économistes en ont fait un principe de leur discipline, ce que Smith n'a pas explicitement dit.",
+      "naissance": "pan_gb_smith"
+    },
+    {
+      "id": "cit_smith_conspiration",
+      "texte": "Les gens du même métier se rassemblent rarement, même pour se divertir, sans que la conversation ne finisse en conspiration contre le public ou en quelque moyen de faire monter les prix.",
+      "original": "People of the same trade seldom meet together, even for merriment and diversion, but the conversation ends in a conspiracy against the public, or in some contrivance to raise prices.",
+      "langue": "anglais",
+      "auteur": "Adam Smith",
+      "classement": "Smith",
+      "annee": 1776,
+      "theme": "pouvoir",
+      "fiabilite": "attestee",
+      "contexte": "Dans le chapitre sur les salaires et les profits, Smith note que les marchands et les maîtres s'entendent facilement pour faire monter les prix ou baisser les salaires, alors que la loi interdit aux ouvriers de s'associer.",
+      "source": {
+        "oeuvre": "La Richesse des nations",
+        "ref": "livre I, chapitre 10"
+      },
+      "note": "Ce passage montre que Smith n'était pas un défenseur aveugle des entreprises : il se méfiait des ententes et des privilèges.",
+      "naissance": "pan_gb_smith"
+    },
+    {
+      "id": "cit_lincoln_travail_capital",
+      "texte": "Le travail est antérieur au capital et en est indépendant. Le capital n'est que le fruit du travail, et n'aurait jamais existé si le travail n'avait d'abord existé.",
+      "original": "Labor is prior to, and independent of, capital. Capital is only the fruit of labor, and could never have existed if labor had not first existed.",
+      "langue": "anglais",
+      "auteur": "Abraham Lincoln",
+      "classement": "Lincoln",
+      "annee": 1861,
+      "theme": "liberte",
+      "fiabilite": "attestee",
+      "contexte": "Dans son premier message annuel au Congrès, en pleine guerre de Sécession, Lincoln répond à l'idée que le travail et le capital sont deux classes opposées. Il soutient que la plupart des Américains ne sont ni l'un ni l'autre exclusivement : un ouvrier peut devenir patron.",
+      "source": {
+        "oeuvre": "Premier message annuel au Congrès",
+        "ref": "3 décembre 1861"
+      },
+      "note": "Il ajoute que le travail « mérite une considération bien plus haute ». Karl Marx, qui l'admirait, lui écrivit au nom de l'Association internationale des travailleurs en 1864.",
+      "naissance": "pan_us_lincoln"
+    },
+    {
+      "id": "cit_proudhon_propriete_vol",
+      "texte": "La propriété, c'est le vol !",
+      "auteur": "Pierre-Joseph Proudhon",
+      "classement": "Proudhon",
+      "annee": 1840,
+      "theme": "liberte",
+      "fiabilite": "attestee",
+      "contexte": "Proudhon, ouvrier typographe devenu écrivain, répond à la question du titre en dénonçant la propriété qui permet de vivre du travail des autres (rentes, loyers, intérêts). La phrase fait scandale et lui vaut une célébrité immédiate.",
+      "source": {
+        "oeuvre": "Qu'est-ce que la propriété ?",
+        "ref": "1840, chapitre premier"
+      },
+      "note": "Proudhon a ensuite nuancé sa position : dans ses derniers écrits, il défend la petite propriété comme garantie de la liberté. Il ne condamne pas l'usage d'un champ ou d'un atelier par celui qui le travaille."
+    },
+    {
+      "id": "cit_marx_luttes_classes",
+      "texte": "L'histoire de toute société jusqu'à nos jours n'a été que l'histoire de luttes de classes.",
+      "original": "Die Geschichte aller bisherigen Gesellschaft ist die Geschichte von Klassenkämpfen.",
+      "langue": "allemand",
+      "auteur": "Karl Marx et Friedrich Engels",
+      "classement": "Marx",
+      "annee": 1848,
+      "theme": "pouvoir",
+      "fiabilite": "attestee",
+      "contexte": "La Ligue des communistes, une petite organisation d'ouvriers allemands exilés, demande à Marx et Engels de rédiger son programme. Le Manifeste paraît à Londres en février 1848, quelques jours avant la révolution de Paris. Il présente l'histoire comme une succession d'affrontements entre oppresseurs et opprimés.",
+      "source": {
+        "oeuvre": "Manifeste du Parti communiste",
+        "ref": "première partie, début"
+      },
+      "note": "Engels ajoutera en 1888 une note précisant qu'il parle de l'histoire écrite : il ne connaissait pas encore bien les sociétés sans classes de la préhistoire.",
+      "naissance": "pan_dach_marx"
+    },
+    {
+      "id": "cit_marx_capacites_besoins",
+      "texte": "De chacun selon ses capacités, à chacun selon ses besoins !",
+      "original": "Jeder nach seinen Fähigkeiten, jedem nach seinen Bedürfnissen!",
+      "langue": "allemand",
+      "auteur": "Karl Marx",
+      "classement": "Marx",
+      "annee": 1875,
+      "anneeNote": "écrit en 1875, publié en 1891",
+      "theme": "pouvoir",
+      "fiabilite": "attestee",
+      "contexte": "Marx critique le projet de programme du parti ouvrier allemand, réuni à Gotha. Il distingue deux étapes du communisme : d'abord un partage selon le travail fourni, puis, quand l'abondance est atteinte, un partage selon les besoins de chacun.",
+      "source": {
+        "oeuvre": "Critique du programme de Gotha",
+        "ref": "écrit en 1875, publié en 1891"
+      },
+      "note": "La formule n'est pas de Marx seul : on la trouve avant lui chez des socialistes français comme Louis Blanc. Elle devient une devise du mouvement ouvrier.",
+      "naissance": "pan_dach_marx",
+      "repere": true
+    },
+    {
+      "id": "cit_zola_germinal",
+      "texte": "Des hommes poussaient, une armée noire, vengeresse, qui germait lentement dans les sillons, grandissant pour les récoltes du siècle futur, et dont la germination allait faire bientôt éclater la terre.",
+      "auteur": "Émile Zola",
+      "classement": "Zola",
+      "annee": 1885,
+      "theme": "liberte",
+      "fiabilite": "attestee",
+      "contexte": "C'est la dernière phrase de Germinal, roman d'une grève de mineurs dans le Nord. Après l'échec de la grève et la mort de camarades, Étienne Lantier quitte la mine en entendant le travail souterrain de ses compagnons, et y devine une révolte à venir.",
+      "source": {
+        "oeuvre": "Germinal",
+        "ref": "dernière phrase, 1885"
+      },
+      "note": "Zola s'est documenté sur place, à Anzin, en 1884. Le livre est un tournant dans la représentation des ouvriers en littérature.",
+      "naissance": "pan_fr_zola",
+      "repere": true
+    },
+    {
+      "id": "cit_jaures_nuee_orage",
+      "texte": "Toujours votre société violente et chaotique, même quand elle veut la paix, même quand elle est à l'état d'apparent repos, porte en elle la guerre latente, comme la nuée dormante porte l'orage.",
+      "auteur": "Jean Jaurès",
+      "classement": "Jaurès",
+      "annee": 1895,
+      "theme": "guerre",
+      "fiabilite": "attestee",
+      "contexte": "Le 7 mars 1895, à la Chambre des députés, Jaurès défend les ouvriers de la verrerie de Carmaux, licenciés après une grève, puis oppose la société capitaliste à une société d'égalité. Il dit que la rivalité économique porte en germe la guerre.",
+      "source": {
+        "oeuvre": "Discours à la Chambre des députés",
+        "ref": "7 mars 1895, repris dans Action socialiste, 1899"
+      },
+      "note": "La version courante, « Le capitalisme porte en lui la guerre comme la nuée porte l'orage », est un raccourci inexact. Jaurès parle de « votre société » et pas du seul capitalisme. Le texte exact dépend de l'édition du compte rendu.",
+      "naissance": "pan_fr_jaures"
+    },
+    {
+      "id": "cit_keynes_long_terme",
+      "texte": "À long terme, nous serons tous morts.",
+      "original": "In the long run we are all dead.",
+      "langue": "anglais",
+      "auteur": "John Maynard Keynes",
+      "classement": "Keynes",
+      "annee": 1923,
+      "theme": "savoir",
+      "fiabilite": "attestee",
+      "contexte": "Dans un traité sur la monnaie, Keynes critique les économistes qui répondent à une crise par la promesse qu'à terme les marchés s'équilibreront. Il rappelle que les hommes vivent dans le présent : une politique monétaire doit s'occuper d'abord du court terme.",
+      "source": {
+        "oeuvre": "A Tract on Monetary Reform",
+        "ref": "1923, chapitre 3"
+      },
+      "note": "Keynes ne nie pas l'intérêt du long terme : il dit qu'on ne peut s'en servir pour ignorer les souffrances présentes. La phrase est très souvent citée pour justifier l'intervention de l'État dans les crises.",
+      "repere": true
+    },
+    {
+      "id": "cit_keynes_idees",
+      "texte": "Les idées des économistes et des philosophes politiques, qu'elles soient justes ou fausses, ont plus d'importance qu'on ne le pense généralement. À vrai dire, le monde n'est gouverné par rien d'autre.",
+      "original": "The ideas of economists and political philosophers, both when they are right and when they are wrong, are more powerful than is commonly understood. Indeed the world is ruled by little else.",
+      "langue": "anglais",
+      "auteur": "John Maynard Keynes",
+      "classement": "Keynes",
+      "annee": 1936,
+      "theme": "savoir",
+      "fiabilite": "attestee",
+      "contexte": "À la fin de sa Théorie générale, écrite pendant la crise des années 1930, Keynes dit que les hommes d'action, qui se croient indépendants de toute doctrine, sont souvent les esclaves de quelque économiste défunt.",
+      "source": {
+        "oeuvre": "Théorie générale de l'emploi, de l'intérêt et de la monnaie",
+        "ref": "1936, chapitre 24, dernier paragraphe"
+      },
+      "note": "Keynes ajoute que le pouvoir des intérêts particuliers est exagéré, comparé à celui des idées qui s'imposent peu à peu."
+    },
+    {
+      "id": "cit_schumpeter_destruction_creatrice",
+      "texte": "Ce processus de destruction créatrice est le fait essentiel du capitalisme.",
+      "original": "This process of Creative Destruction is the essential fact about capitalism.",
+      "langue": "anglais",
+      "auteur": "Joseph Schumpeter",
+      "classement": "Schumpeter",
+      "annee": 1942,
+      "theme": "savoir",
+      "fiabilite": "attestee",
+      "contexte": "Pour Schumpeter, le capitalisme vit par l'innovation : de nouvelles techniques, de nouveaux produits, de nouvelles entreprises détruisent les anciens et créent la croissance. Il en déduit que le capitalisme est un processus en mouvement perpétuel, jamais un état d'équilibre.",
+      "source": {
+        "oeuvre": "Capitalisme, socialisme et démocratie",
+        "ref": "1942, chapitre 7"
+      },
+      "note": "Schumpeter est pessimiste : il croit que le capitalisme finira par s'user de lui-même et céder la place à une forme de socialisme."
+    },
+    {
+      "id": "cit_kennedy_maree",
+      "texte": "La marée montante soulève tous les bateaux.",
+      "original": "A rising tide lifts all the boats.",
+      "langue": "anglais",
+      "auteur": "John F. Kennedy",
+      "classement": "Kennedy",
+      "annee": 1963,
+      "theme": "pouvoir",
+      "fiabilite": "attestee",
+      "contexte": "Le 3 octobre 1963, à l'inauguration d'un barrage en Arkansas, Kennedy défend sa politique économique : plus l'économie du pays croît, plus elle profite à tous. L'image est devenue l'argument-type de ceux qui défendent la croissance comme moyen de réduire la pauvreté.",
+      "source": {
+        "oeuvre": "Discours à Heber Springs (Arkansas), barrage de Greers Ferry",
+        "ref": "3 octobre 1963"
+      },
+      "note": "Kennedy n'est pas l'inventeur de l'image, qu'il reprend d'un conseiller économique. Les critiques rappellent que, selon les bateaux, la marée n'élève pas tout le monde de la même manière.",
+      "naissance": "pan_us_kennedy"
+    },
+    {
+      "id": "cit_buffett_peur_avidite",
+      "texte": "Soyez craintifs quand les autres sont avides, et soyez avides quand les autres sont craintifs.",
+      "original": "Be fearful when others are greedy, and be greedy when others are fearful.",
+      "langue": "anglais",
+      "auteur": "Warren Buffett",
+      "classement": "Buffett",
+      "annee": 2008,
+      "theme": "savoir",
+      "fiabilite": "attestee",
+      "contexte": "Le 16 octobre 2008, en pleine crise financière, Buffett publie dans le New York Times une tribune intitulée « Buy American. I Am. » Il y explique qu'il achète des actions américaines à bas prix, quand la majorité des investisseurs s'en éloigne par peur.",
+      "source": {
+        "oeuvre": "New York Times, tribune « Buy American. I Am. »",
+        "ref": "16 octobre 2008"
+      },
+      "note": "Buffett avait déjà employé la formule dans une lettre aux actionnaires, dans les années 1980. Elle résume l'idée d'investir à contre-courant."
+    },
+    {
+      "id": "cit_ford_chevaux_rapides",
+      "texte": "Si j'avais demandé aux gens ce qu'ils voulaient, ils auraient répondu : des chevaux plus rapides.",
+      "original": "If I had asked people what they wanted, they would have said faster horses.",
+      "langue": "anglais",
+      "auteur": "Henry Ford",
+      "classement": "Ford",
+      "annee": 1999,
+      "anneeNote": "première trace connue, sans Ford",
+      "theme": "savoir",
+      "fiabilite": "apocryphe",
+      "contexte": "La phrase est devenue un slogan des entrepreneurs et des publicitaires : les clients ne savent pas ce qu'ils veulent avant qu'on le leur propose. On la prête à Henry Ford, qui a lancé la Ford T en 1908.",
+      "source": {
+        "oeuvre": "The Cruise Industry News Quarterly, article de John McNeece",
+        "ref": "1999 (la première attribution explicite à Ford date de 2001)"
+      },
+      "note": "Aucun écrit ni propos de Ford ne la contient, et le musée Henry Ford le reconnaît. La première trace connue date de 1999, dans un article qui ne cite pas Ford ; elle ne lui est attribuée qu'en 2001, plus de cinquante ans après sa mort (1947).",
+      "naissance": "pan_us_ford"
+    },
+    {
+      "id": "cit_einstein_interets_composes",
+      "texte": "L'intérêt composé est la huitième merveille du monde. Celui qui le comprend le gagne ; celui qui ne le comprend pas le paie.",
+      "original": "Compound interest is the eighth wonder of the world. He who understands it, earns it; he who doesn't, pays it.",
+      "langue": "anglais",
+      "auteur": "Albert Einstein",
+      "classement": "Einstein",
+      "annee": 1988,
+      "anneeNote": "première attribution à Einstein",
+      "theme": "savoir",
+      "fiabilite": "apocryphe",
+      "contexte": "La phrase circule sur les sites de finance personnelle et dans les publicités de placements. On la prête à Einstein pour donner du poids à l'idée que l'argent investi croît de façon exponentielle.",
+      "source": {
+        "oeuvre": "Attribution sans source",
+        "ref": "absente des écrits et des archives d'Einstein"
+      },
+      "note": "Elle ne figure dans aucun écrit d'Einstein, et un recueil de ses citations authentiques la classe parmi les attributions improbables. La formule sur l'intérêt composé, « huitième merveille du monde », apparaît d'abord anonymement, puis a été prêtée à d'autres noms avant Einstein.",
+      "naissance": "pan_dach_einstein"
+    },
+    {
+      "id": "cit_friedman_repas_gratuit",
+      "texte": "Il n'y a pas de repas gratuit.",
+      "original": "There's no such thing as a free lunch.",
+      "langue": "anglais",
+      "auteur": "Milton Friedman",
+      "classement": "Friedman",
+      "annee": 1975,
+      "anneeNote": "titre de son livre",
+      "theme": "savoir",
+      "fiabilite": "attribuee",
+      "contexte": "L'économiste libéral Milton Friedman a repris cette formule comme titre d'un livre en 1975. Elle signifie que tout service a un coût, même quand il paraît gratuit : quelqu'un finit toujours par payer.",
+      "source": {
+        "oeuvre": "There's No Such Thing as a Free Lunch",
+        "ref": "1975, recueil d'essais"
+      },
+      "note": "La formule n'est pas de lui : elle vient des bars américains du XIXᵉ siècle, qui offraient un repas gratuit aux consommateurs de boissons. Elle circule dès 1938 sous forme de maxime économique, et Robert Heinlein la rend célèbre dans un roman de 1966."
+    },
+    {
+      "id": "cit_gandhi_besoin_avidite",
+      "texte": "La terre fournit assez pour les besoins de chacun, mais pas pour l'avidité de chacun.",
+      "original": "The world has enough for everyone's need, but not enough for everyone's greed.",
+      "langue": "anglais",
+      "auteur": "Mahatma Gandhi",
+      "classement": "Gandhi",
+      "annee": 1940,
+      "vers": true,
+      "anneeNote": "date incertaine",
+      "theme": "humain",
+      "fiabilite": "attribuee",
+      "contexte": "La phrase est souvent donnée comme le résumé de la pensée économique de Gandhi : une vie simple, qui limite ses besoins, et une propriété considérée comme une charge, dont on est le gardien pour les autres (le « dépositaire », trustee).",
+      "source": {
+        "oeuvre": "Attribution sans source précise",
+        "ref": "proche de ses propos sur la tutelle (trusteeship)"
+      },
+      "note": "Les mots exacts n'ont pas été retrouvés dans les œuvres de Gandhi. Le sens est proche de sa doctrine de la tutelle des riches sur leurs biens, mais d'autres noms circulent aussi, comme Frank Buchman, fondateur du Réarmement moral.",
+      "naissance": "pan_indien_gandhi"
+    }
+  ]
+}

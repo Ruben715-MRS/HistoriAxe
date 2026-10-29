@@ -1370,6 +1370,20 @@ textarea.form-input {
     color: var(--primary-blue);
 }
 
+.league-country-row {
+    text-align: center;
+    font-size: 13.5px;
+    margin-bottom: 12px;
+}
+
+.league-country-row select {
+    margin-left: 6px;
+    max-width: 100%;
+    font-size: 13.5px;
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+
 #league-list-container .leaderboard-row {
     display: grid;
     grid-template-columns: 28px 1fr auto;
@@ -1498,6 +1512,28 @@ textarea.form-input {
 .pip.spent {
     background: none;
     border: 1.5px solid var(--border-soft);
+}
+
+/* Réglages ouverts depuis la frise : seulement orientation, disposition en paysage et apparence. */
+#modal-settings.is-quick > .modal-content > .settings-group:not(.settings-quick) {
+    display: none !important;
+}
+
+.layout-btn {
+    flex: none;
+    min-width: 34px;
+    height: 28px;
+    padding: 0 8px;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    background: var(--surface);
+    font-size: 15px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.layout-btn:active {
+    background: var(--surface-2);
 }
 
 .type-size {
@@ -7240,6 +7276,163 @@ input:not([type="range"]), label, select, summary, textarea {
 
 /* L'en-tête de la galerie reste bas : les visages sont ce qu'on vient voir, et sur un téléphone
    chaque ligne de commandes repousse la première carte sous le pli. */
+/* =====================================================================
+   RENOMMÉE DES PERSONNAGES (js/renown.js) : le contour du portrait.
+   1 filet bronze = renommée locale · 2 filets argent = régionale · 3 filets or = mondiale.
+   La couleur ne porte jamais seule le sens : le nombre de filets et le libellé le disent aussi.
+   ===================================================================== */
+.renown-1 { --rn: #b0703c; }
+.renown-2 { --rn: #8d99a6; }
+.renown-3 { --rn: #d4a017; }
+
+/* Image libre (fiche, révélation d'une réponse) : les filets entourent le portrait, dessinés par des ombres sans flou ; les marges
+   laissent la place du dernier filet. */
+.renown-img.renown-1 {
+    box-shadow: 0 0 0 3px var(--rn);
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+.renown-img.renown-2 {
+    box-shadow: 0 0 0 3px var(--rn), 0 0 0 5px var(--surface), 0 0 0 8px var(--rn);
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.renown-img.renown-3 {
+    box-shadow: 0 0 0 3px var(--rn), 0 0 0 5px var(--surface), 0 0 0 8px var(--rn), 0 0 0 10px var(--surface), 0 0 0 13px var(--rn);
+    margin-top: 14px;
+    margin-bottom: 24px;
+}
+
+/* Vignette de la galerie : le cadre rogne ce qui dépasse, les filets sont donc posés à l'intérieur, par-dessus la photo. */
+.renown-frame {
+    position: relative;
+}
+
+.renown-frame::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.renown-frame.renown-1::after {
+    box-shadow: inset 0 0 0 3px var(--rn);
+}
+
+.renown-frame.renown-2::after {
+    box-shadow: inset 0 0 0 3px var(--rn), inset 0 0 0 5px rgba(255, 255, 255, 0.9), inset 0 0 0 8px var(--rn);
+}
+
+.renown-frame.renown-3::after {
+    box-shadow: inset 0 0 0 3px var(--rn), inset 0 0 0 5px rgba(255, 255, 255, 0.9), inset 0 0 0 8px var(--rn),
+        inset 0 0 0 10px rgba(255, 255, 255, 0.9), inset 0 0 0 13px var(--rn);
+}
+
+/* L'étiquette : trois pastilles dont autant sont pleines que de filets, puis le libellé. */
+.renown-chip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin: 2px auto 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.renown-chip.hidden {
+    display: none;
+}
+
+.renown-pips {
+    display: inline-flex;
+    gap: 3px;
+}
+
+.renown-pips i {
+    display: block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--rn);
+}
+
+.renown-1 .renown-pips i:nth-child(n + 2),
+.renown-2 .renown-pips i:nth-child(3) {
+    background: transparent;
+    box-shadow: inset 0 0 0 1.5px var(--rn);
+}
+
+/* La galerie : la case, les trois boutons du filtre, une ligne d'explication. */
+.gallery-renown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin: 4px 0 12px;
+    width: 100%;
+    max-width: 520px;
+}
+
+.gallery-renown-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-dark);
+    cursor: pointer;
+}
+
+.gallery-renown-toggle input {
+    width: 20px;
+    height: 20px;
+}
+
+.gallery-renown-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.gallery-renown-filter.hidden,
+.gallery-renown-help.hidden {
+    display: none;
+}
+
+.gallery-renown-btn {
+    min-height: 44px;
+    margin: 0;
+    padding: 0 12px;
+    border: 2px solid var(--rn);
+    border-radius: 999px;
+    background: var(--surface);
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-dark);
+    cursor: pointer;
+}
+
+.gallery-renown-btn[aria-pressed="true"] {
+    background: color-mix(in srgb, var(--rn) 22%, var(--surface));
+    box-shadow: 0 0 0 2px var(--rn);
+}
+
+.gallery-renown-help {
+    margin: 0;
+    max-width: 440px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--muted-text);
+}
+
 .gallery-header-title {
     font-size: 22px;
     margin-top: 12px;
@@ -7702,6 +7895,27 @@ input:not([type="range"]), label, select, summary, textarea {
 #atlas-map.atlas-map {
     position: absolute;
     inset: 0;
+}
+
+/* Point de la position du joueur sur l'Atlas (js/location.js, js/atlas.js). */
+.atlas-me-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #2f6fdb;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 4px rgba(47, 111, 219, 0.3);
+}
+
+.location-ctrl-btn {
+    width: 29px;
+    height: 29px;
+    font-size: 18px;
+    line-height: 1;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    color: var(--text-dark);
 }
 
 .atlas-status {
@@ -10537,6 +10751,123 @@ input:not([type="range"]), label, select, summary, textarea {
     display: none;
 }
 
+/* Flappy Clio : les deux événements de la prochaine porte, l'un pour l'ouverture du haut, l'autre pour celle du bas. */
+.flappy-choices {
+    flex: 0 0 auto;
+    width: min(100%, 360px);
+    margin: 0 0 8px;
+}
+
+.flappy-choices.hidden {
+    display: none;
+}
+
+.flappy-choices p {
+    margin: 3px 0;
+    padding: 6px 10px;
+    border: 1px solid var(--border-soft);
+    border-radius: 10px;
+    background: var(--surface);
+    color: var(--text-dark);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+/* La difficulté (facile / moyen / difficile) au-dessus du plateau d'un jeu. */
+.arcade-difficulty {
+    flex: 0 0 auto;
+    width: min(100%, 360px);
+    /* `auto` à gauche et à droite : centré aussi dans un conteneur plus large (écran de départ, écran de fin). */
+    margin: 0 auto 10px;
+    text-align: center;
+}
+
+.arcade-over .arcade-difficulty {
+    margin-top: 14px;
+}
+
+.arcade-difficulty.hidden {
+    display: none;
+}
+
+.arcade-difficulty-group {
+    display: flex;
+    gap: 6px;
+    width: 100%;
+}
+
+.arcade-difficulty-btn {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    min-height: 44px;
+    padding: 0 8px;
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    background: var(--surface);
+    color: var(--text-dark);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.arcade-difficulty-btn.is-active {
+    background: var(--text-dark);
+    color: var(--surface);
+    border-color: var(--text-dark);
+}
+
+.arcade-difficulty-hint {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    color: var(--muted-text);
+}
+
+/* « 3, 2, 1, Go ! » par-dessus le plateau : le chiffre arrive en grand et se pose (façon départ de course). */
+.arcade-countdown {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    font-size: 96px;
+    font-weight: 900;
+    line-height: 1;
+    color: #fde047;
+    text-shadow: 0 4px 0 #b45309, 0 0 24px rgba(0, 0, 0, 0.6);
+}
+
+.arcade-countdown.is-go {
+    font-size: 72px;
+    color: #4ade80;
+    text-shadow: 0 4px 0 #166534, 0 0 24px rgba(0, 0, 0, 0.6);
+}
+
+.arcade-countdown.hidden {
+    display: none;
+}
+
+.arcade-countdown.is-pop {
+    animation: arcade-count-pop 0.5s ease-out;
+}
+
+@keyframes arcade-count-pop {
+    from { transform: scale(2.4); opacity: 0; }
+    60% { opacity: 1; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .arcade-countdown.is-pop {
+        animation: none;
+    }
+}
+
 .snake-legend {
     flex: 0 0 auto;
     list-style: none;
@@ -10929,6 +11260,11 @@ input:not([type="range"]), label, select, summary, textarea {
     width: min(100%, 360px);
 }
 
+/* Difficile : dix-huit cartes, six rangées. */
+.memory-grid.is-dense .memory-card {
+    min-height: 64px;
+}
+
 .memory-card {
     min-height: 84px;
     padding: 6px;
@@ -10949,6 +11285,17 @@ input:not([type="range"]), label, select, summary, textarea {
     font-size: 12px;
     font-weight: 700;
     line-height: 1.25;
+}
+
+/* Facile : le dos de la carte dit si c'est un événement (bleu, 📜) ou une date (ambre, 📅). */
+.memory-card.is-back-date {
+    border-color: #92400e;
+    background: #92400e;
+}
+
+.memory-card.is-back-event {
+    border-color: var(--primary-blue);
+    background: var(--primary-blue);
 }
 
 .memory-card.is-up.is-date {
@@ -14299,6 +14646,46 @@ input:not([type="range"]), label, select, summary, textarea {
 .measures-mnemonic { font-weight: 700; color: var(--text-dark); }
 .measures-hebrew { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0 0 4px; font-size: 17px; font-weight: 700; color: var(--text-dark); }
 .measures-hebrew bdi { white-space: nowrap; }
+
+/* --- COMMANDEMENTS BIBLIQUES (js/app/commandments.js) --- */
+.cmd-panel { max-width: 640px; }
+.cmd-toolbar { display: flex; justify-content: flex-end; }
+.cmd-toolbar.hidden { display: none; }
+.cmd-full[dir="rtl"] { margin: 6px 0 0; font-size: 13px; font-weight: 400; line-height: 1.7; color: var(--muted-text); text-align: right; }
+.cmd-heb[dir="rtl"] { font-size: 18px; font-style: normal; font-weight: 600; color: var(--text-dark); }
+.cmd-subtitle[dir="rtl"] { font-size: 16px; letter-spacing: 0; text-transform: none; }
+.cmd-body { display: flex; flex-direction: column; gap: 18px; margin-top: 14px; }
+.cmd-head { display: flex; flex-direction: column; gap: 6px; }
+.cmd-title { margin-top: 0; font-size: 20px; }
+.cmd-subtitle { margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted-text); }
+.cmd-group { display: flex; flex-direction: column; gap: 8px; }
+.cmd-group-title { margin: 0; font-size: 15px; color: var(--text-dark); }
+.cmd-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.cmd-item { position: relative; padding: 10px 12px 10px 52px; background: var(--surface); border: 1px solid var(--border-soft); border-radius: 12px; }
+.cmd-item::before { content: counter(list-item); position: absolute; left: 12px; top: 10px; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--surface-2); color: var(--text-dark); font-size: 13px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.cmd-name { display: block; font-size: 15px; line-height: 1.35; color: var(--text-dark); }
+.cmd-heb { display: block; margin-top: 1px; font-size: 13px; color: var(--muted-text); }
+.cmd-text { margin: 4px 0 0; }
+.cmd-ref { margin: 6px 0 0; font-size: 12px; line-height: 1.4; color: var(--muted-text); }
+.cmd-ref span { font-weight: 700; }
+.cmd-know { border-top: 1px solid var(--border-soft); padding-top: 16px; display: flex; flex-direction: column; gap: 8px; }
+.cmd-know-list { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.45; color: var(--muted-text); }
+.cmd-note { font-style: italic; }
+.cmd-nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; }
+.cmd-nav-btn { flex: 1 1 200px; display: flex; flex-direction: column; gap: 2px; min-height: 44px; }
+.cmd-nav-btn small { font-size: 11px; font-weight: 600; opacity: 0.8; }
+.cmd-613-controls { display: flex; flex-direction: column; gap: 8px; }
+.cmd-613-list { display: flex; flex-direction: column; gap: 18px; }
+.cmd-613-list .cmd-group { scroll-margin-top: 12px; }
+/* Le défilement vers un thème laisse la place au bouton « retour », qui flotte en haut à gauche. */
+#tool-commandments-body .cmd-group { scroll-margin-top: 72px; }
+.cmd-group-summary { margin: -4px 0 4px; }
+.cmd-kind-title { margin: 6px 0 -6px; font-size: 18px; padding-top: 12px; border-top: 2px solid var(--border-soft); }
+.cmd-kind-title:first-child { border-top: 0; padding-top: 0; }
+.cmd-613-list .cmd-item { padding-top: 8px; padding-bottom: 8px; }
+.cmd-613-list .cmd-item::before { top: 8px; width: 34px; height: 24px; border-radius: 12px; font-size: 12px; }
+.cmd-613-list .cmd-item { padding-left: 58px; }
+.cmd-613-list .cmd-ref { margin-top: 3px; }
 
 /* --- Mini-jeux sur des axes choisis : cartes trop petites pour le vivier --- */
 .arcade-card.is-unavailable { opacity: 0.55; cursor: not-allowed; }

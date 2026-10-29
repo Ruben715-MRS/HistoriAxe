@@ -7,13 +7,14 @@
 //
 // Un événement du vivier : { id, title, date } (l'année, négative avant J.-C.).
 //
-//  - SNAKE : quatre événements sont posés sur la grille, des pastilles lettrées ; le serpent doit les manger du
+//  - SNAKE : trois événements (quatre en difficile) sont posés sur la grille, des pastilles lettrées ; le serpent doit les manger du
 //    plus ancien au plus récent. Dans le désordre : une vie en moins. Un mur ou sa queue : une vie en moins.
 //  - TETRIS : un événement tombe dans une des cinq colonnes (Antiquité, Moyen Âge, Temps modernes, 1789-1914,
 //    depuis 1914) ; on choisit la colonne. Un bloc bien rangé est vert, un autre est rouge et reste là. Une ligne
 //    de cinq blocs verts disparaît.
-//  - PAC-MAN : dans un labyrinthe, cinq pastilles portent des années ; la consigne nomme un événement, il faut manger
-//    la pastille de sa date. Une autre année, ou un fantôme : une vie en moins.
+//  - PAC-MAN : dans un labyrinthe, trois à cinq pastilles (selon le niveau) portent des années ; la consigne nomme un événement,
+//    il faut manger la pastille de sa date. Une autre année, ou un fantôme : une vie en moins. Un compte à rebours fige le jeu
+//    à chaque départ.
 //  - SPACE INVADERS : des cartes-événements descendent sur trois voies, sous l'intitulé d'une période. On tire sur
 //    celles qui n'en font PAS partie (les anachronismes) et on laisse passer les autres.
 
@@ -73,10 +74,28 @@
         return out;
     }
 
+    // --- Les niveaux de difficulté (communs à tous les jeux d'arcade et de réflexion) ---------------------
+    // Un seul score par jeu, pas un par niveau : le niveau pèse sur les points comptés pour le record (facile ×0,5, difficile ×1,5).
+    var DIFFICULTIES = ['easy', 'normal', 'hard'];
+    var DIFFICULTY_MULTIPLIER = { easy: 0.5, normal: 1, hard: 1.5 };
+
+    function normalizeDifficulty(difficulty) {
+        return DIFFICULTY_MULTIPLIER[difficulty] ? difficulty : 'normal';
+    }
+
+    function difficultyScore(score, difficulty) {
+        return Math.round((score || 0) * DIFFICULTY_MULTIPLIER[normalizeDifficulty(difficulty)]);
+    }
+
     // --- SNAKE ---------------------------------------------------------------------------------------
     var SNAKE_SIZE = 12;
-    var SNAKE_FOODS = 4;
     var SNAKE_LIVES = 3;
+    // Les niveaux : événements par manche, puis pas du serpent en ms : `start`, moins `step` par manche réussie, sans descendre sous `min`.
+    var SNAKE_LEVELS = {
+        easy: { foods: 3, start: 300, step: 8, min: 200 },
+        normal: { foods: 3, start: 220, step: 10, min: 120 },
+        hard: { foods: 4, start: 170, step: 10, min: 90 }
+    };
     var SNAKE_LETTERS = ['A', 'B', 'C', 'D'];
     var DIRS = { up: { x: 0, y: -1 }, down: { x: 0, y: 1 }, left: { x: -1, y: 0 }, right: { x: 1, y: 0 } };
 
@@ -108,7 +127,7 @@
 
     // Une manche : quatre événements, des lettres mélangées ; `order` est l'ordre chronologique attendu.
     function snakeNewRound(state, rng) {
-        var events = pickDistinct(state.pool, rng, SNAKE_FOODS);
+        var events = pickDistinct(state.pool, rng, state.level.foods);
         var letters = shuffle(SNAKE_LETTERS, rng);
         state.foods = [];
         state.items = events.map(function (event, i) { return { event: event, letter: letters[i], eaten: false }; });
@@ -119,15 +138,18 @@
         });
     }
 
-    function createSnake(pool, rng) {
+    // `options` : { difficulty: 'easy' | 'normal' | 'hard' } ; trois événements par manche (quatre en difficile).
+    function createSnake(pool, rng, options) {
+        var difficulty = normalizeDifficulty(options && options.difficulty);
         var state = {
+            difficulty: difficulty, level: SNAKE_LEVELS[difficulty],
             pool: playable(pool), rng: rng || Math.random, size: SNAKE_SIZE,
             snake: snakeStart(), dir: DIRS.right, nextDir: DIRS.right,
             foods: [], items: [], order: [], eaten: 0,
             lives: SNAKE_LIVES, score: 0, rounds: 0, over: false,
             mistakes: [], doneRounds: []
         };
-        if (pickDistinct(state.pool, state.rng, SNAKE_FOODS).length < SNAKE_FOODS) { state.over = true; state.empty = true; return state; }
+        if (pickDistinct(state.pool, state.rng, state.level.foods).length < state.level.foods) { state.over = true; state.empty = true; return state; }
         snakeNewRound(state, state.rng);
         return state;
     }
@@ -184,7 +206,7 @@
             state.score += 10;
             state.foods.splice(state.foods.indexOf(food), 1);
             events.push('ok');
-            if (state.eaten >= SNAKE_FOODS) {
+            if (state.eaten >= state.level.foods) {
                 state.rounds += 1;
                 state.score += 100;
                 state.doneRounds.push(state.order.map(function (it) { return it.event; }));
@@ -202,14 +224,20 @@
         return events;
     }
 
-    // Millisecondes entre deux pas : 220 au départ, 120 au mieux, une manche réussie accélère un peu.
+    // Millisecondes entre deux pas : 300 / 220 / 170 au départ selon le niveau ; une manche réussie accélère un peu (200 / 120 / 90 au mieux).
     function snakeInterval(state) {
-        return Math.max(120, 220 - state.rounds * 10);
+        return Math.max(state.level.min, state.level.start - state.rounds * state.level.step);
     }
 
     // --- TETRIS ---------------------------------------------------------------------------------------
     var TETRIS_COLS = PERIODS.length;
     var TETRIS_ROWS = 10;
+    // Les niveaux : millisecondes entre deux pas de gravité, `start` moins `step` par niveau, sans descendre sous `min`.
+    var TETRIS_LEVELS = {
+        easy: { start: 900, step: 40, min: 400 },
+        normal: { start: 700, step: 60, min: 250 },
+        hard: { start: 550, step: 70, min: 180 }
+    };
 
     function emptyRow() {
         var row = [];
@@ -217,8 +245,11 @@
         return row;
     }
 
-    function createTetris(pool, rng) {
+    // `options` : { difficulty: 'easy' | 'normal' | 'hard' } ; seule la vitesse de chute change.
+    function createTetris(pool, rng, options) {
+        var difficulty = normalizeDifficulty(options && options.difficulty);
         var state = {
+            difficulty: difficulty, level: TETRIS_LEVELS[difficulty],
             pool: playable(pool), rng: rng || Math.random, cols: TETRIS_COLS, rows: TETRIS_ROWS,
             grid: [], piece: null, byPeriod: [], bag: [], used: {},
             score: 0, cleared: 0, placed: 0, good: 0, mistakes: [], over: false
@@ -332,8 +363,8 @@
     }
 
     function tetrisLevel(state) { return 1 + Math.floor(state.cleared / 2); }
-    // Millisecondes entre deux pas de gravité : 700 au départ, 250 au mieux.
-    function tetrisInterval(state) { return Math.max(250, 700 - (tetrisLevel(state) - 1) * 60); }
+    // Millisecondes entre deux pas de gravité : 900 / 700 / 550 au départ selon le niveau, 400 / 250 / 180 au mieux.
+    function tetrisInterval(state) { return Math.max(state.level.min, state.level.start - (tetrisLevel(state) - 1) * state.level.step); }
 
 
     // --- PAC-MAN ---------------------------------------------------------------------------------------
@@ -354,8 +385,14 @@
     var PAC_SIZE = PAC_MAZE.length;
     var PAC_START = { x: 5, y: 9 };
     var PAC_GHOST_STARTS = [{ x: 1, y: 1 }, { x: 9, y: 1 }, { x: 1, y: 5 }];
-    var PAC_PELLETS = 5;
     var PAC_LIVES = 3;
+    // Les niveaux : nombre de dates à manger par manche ; un fantôme avance un pas sur `ghostEvery` ; `ghosts` au départ, puis `ghostsLater` à partir de
+    // la manche `laterFromRound` (0 = la première) ; pas de Pac-Man en ms : `start`, moins `step` par manche, sans descendre sous `min`.
+    var PAC_LEVELS = {
+        easy: { pellets: 3, ghostEvery: 3, ghosts: 1, ghostsLater: 1, laterFromRound: 0, start: 320, step: 6, min: 260 },
+        normal: { pellets: 4, ghostEvery: 2, ghosts: 1, ghostsLater: 2, laterFromRound: 2, start: 260, step: 8, min: 200 },
+        hard: { pellets: 5, ghostEvery: 2, ghosts: 2, ghostsLater: 3, laterFromRound: 1, start: 200, step: 12, min: 120 }
+    };
 
     function pacOpen(x, y) {
         return x >= 0 && y >= 0 && x < PAC_SIZE && y < PAC_SIZE && PAC_MAZE[y].charAt(x) === ' ';
@@ -381,14 +418,15 @@
         state.player = { x: PAC_START.x, y: PAC_START.y };
         state.dir = DIRS.left;
         state.nextDir = DIRS.left;
-        var count = Math.min(PAC_GHOST_STARTS.length, 1 + state.rounds);
+        var level = state.level;
+        var count = Math.min(PAC_GHOST_STARTS.length, state.rounds >= level.laterFromRound ? level.ghostsLater : level.ghosts);
         state.ghosts = [];
         for (var i = 0; i < count; i++) state.ghosts.push({ x: PAC_GHOST_STARTS[i].x, y: PAC_GHOST_STARTS[i].y, last: null });
     }
 
-    // Une manche : cinq événements aux années différentes, posés loin du départ ; la consigne les prend dans le désordre.
+    // Une manche : trois à cinq événements (selon le niveau) aux années différentes, posés loin du départ ; la consigne les prend dans le désordre.
     function pacNewRound(state) {
-        var events = pickDistinct(state.pool, state.rng, PAC_PELLETS);
+        var events = pickDistinct(state.pool, state.rng, state.level.pellets);
         var dist = pacDistances(PAC_START);
         var cells = [];
         for (var y = 0; y < PAC_SIZE; y++) {
@@ -403,13 +441,17 @@
         state.targetIndex = 0;
     }
 
-    function createPac(pool, rng) {
+    // `options` : { difficulty: 'easy' | 'normal' | 'hard' }. La partie démarre figée (`frozen`) : l'écran fait son compte à rebours, puis appelle
+    // pacRelease. Le jeu se fige de nouveau après chaque vie perdue et chaque manche réussie.
+    function createPac(pool, rng, options) {
+        var difficulty = normalizeDifficulty(options && options.difficulty);
         var state = {
+            difficulty: difficulty, level: PAC_LEVELS[difficulty], frozen: true,
             pool: playable(pool), rng: rng || Math.random, size: PAC_SIZE, maze: PAC_MAZE,
             player: null, dir: DIRS.left, nextDir: DIRS.left, ghosts: [], pellets: [], targets: [], targetIndex: 0,
             lives: PAC_LIVES, score: 0, rounds: 0, tick: 0, over: false, mistakes: []
         };
-        if (pickDistinct(state.pool, state.rng, PAC_PELLETS).length < PAC_PELLETS) { state.over = true; state.empty = true; return state; }
+        if (pickDistinct(state.pool, state.rng, state.level.pellets).length < state.level.pellets) { state.over = true; state.empty = true; return state; }
         pacResetPositions(state);
         pacNewRound(state);
         return state;
@@ -426,7 +468,13 @@
     function pacLoseLife(state, why, events) {
         state.lives -= 1;
         events.push(why);
-        if (state.lives <= 0) { state.over = true; events.push('over'); }
+        if (state.lives <= 0) { state.over = true; events.push('over'); return; }
+        state.frozen = true;
+    }
+
+    // Fin du compte à rebours : le jeu repart.
+    function pacRelease(state) {
+        state.frozen = false;
     }
 
     function pacCaught(state) {
@@ -453,10 +501,11 @@
         ghost.y = pick.y;
     }
 
-    // Un pas de temps. Renvoie : 'ok', 'wrong', 'caught', 'round', 'over'. Les fantômes avancent un pas sur deux.
+    // Un pas de temps. Renvoie : 'ok', 'wrong', 'caught', 'round', 'over'. Les fantômes avancent un pas sur deux (un sur trois en facile).
+    // Figé (départ, nouvelle manche, vie perdue), rien ne bouge jusqu'à pacRelease.
     function pacStep(state) {
         var events = [];
-        if (state.over) return events;
+        if (state.over || state.frozen) return events;
         state.tick += 1;
         var p = state.player;
         if (pacOpen(p.x + state.nextDir.x, p.y + state.nextDir.y)) state.dir = state.nextDir;
@@ -477,6 +526,7 @@
                     events.push('round');
                     pacResetPositions(state);
                     pacNewRound(state);
+                    state.frozen = true;
                 }
             } else {
                 state.mistakes.push({ ate: pellet.event, wanted: target });
@@ -491,7 +541,7 @@
             if (!state.over) pacResetPositions(state);
             return events;
         }
-        if (state.tick % 2 === 0) {
+        if (state.tick % state.level.ghostEvery === 0) {
             var dist = pacDistances(state.player);
             state.ghosts.forEach(function (g) { pacMoveGhost(state, g, dist); });
             if (pacCaught(state)) {
@@ -502,8 +552,8 @@
         return events;
     }
 
-    // Millisecondes entre deux pas : 200 au départ, 120 au mieux.
-    function pacInterval(state) { return Math.max(120, 200 - state.rounds * 12); }
+    // Millisecondes entre deux pas : 320 / 260 / 200 au départ selon le niveau, de moins en moins à chaque manche (120 au mieux en difficile).
+    function pacInterval(state) { return Math.max(state.level.min, state.level.start - state.rounds * state.level.step); }
 
     // --- SPACE INVADERS ----------------------------------------------------------------------------------
     var INV_LANES = 3;
@@ -665,15 +715,16 @@
 
     return {
         themePool: themePool, scopeKey: scopeKey,
-        PERIODS: PERIODS, SNAKE_SIZE: SNAKE_SIZE, SNAKE_FOODS: SNAKE_FOODS, SNAKE_LIVES: SNAKE_LIVES,
+        PERIODS: PERIODS, SNAKE_SIZE: SNAKE_SIZE, SNAKE_LIVES: SNAKE_LIVES,
         TETRIS_COLS: TETRIS_COLS, TETRIS_ROWS: TETRIS_ROWS, DIRS: DIRS,
         periodOf: periodOf, isAmbiguous: isAmbiguous, playable: playable, pickDistinct: pickDistinct, shuffle: shuffle,
-        createSnake: createSnake, snakeTurn: snakeTurn, snakeStep: snakeStep, snakeInterval: snakeInterval,
+        createSnake: createSnake, SNAKE_LEVELS: SNAKE_LEVELS, TETRIS_LEVELS: TETRIS_LEVELS, snakeTurn: snakeTurn, snakeStep: snakeStep, snakeInterval: snakeInterval,
         createTetris: createTetris, tetrisMove: tetrisMove, tetrisMoveTo: tetrisMoveTo, tetrisTick: tetrisTick,
         tetrisDrop: tetrisDrop, tetrisLevel: tetrisLevel, tetrisInterval: tetrisInterval,
         PAC_SIZE: PAC_SIZE, PAC_MAZE: PAC_MAZE, PAC_START: PAC_START, PAC_LIVES: PAC_LIVES, INV_LANES: INV_LANES, INV_BREACH: INV_BREACH,
         pacOpen: pacOpen, pacDistances: pacDistances, createPac: createPac, pacTurn: pacTurn, pacStep: pacStep, pacTarget: pacTarget,
-        pacInterval: pacInterval,
+        pacInterval: pacInterval, pacRelease: pacRelease, PAC_LEVELS: PAC_LEVELS,
+        DIFFICULTIES: DIFFICULTIES, DIFFICULTY_MULTIPLIER: DIFFICULTY_MULTIPLIER, normalizeDifficulty: normalizeDifficulty, difficultyScore: difficultyScore,
         createInvaders: createInvaders, invMove: invMove, invMoveTo: invMoveTo, invFire: invFire, invStep: invStep, invSpeed: invSpeed,
         normalizeBest: normalizeBest, recordBest: recordBest
     };

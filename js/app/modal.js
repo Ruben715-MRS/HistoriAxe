@@ -119,6 +119,9 @@ function renderModalPortrait(evt) {
     // deux fois la même phrase aux lecteurs d'écran.
     img.alt = '';
     img.src = image.src;
+    // Le contour de renommée et son étiquette : sur la fiche, la figure n'est plus à deviner.
+    renownFrameImage(img, evt, true);
+    renownFillChip(document.getElementById('modal-portrait-renown'), evt, true);
     document.getElementById('modal-portrait-caption').textContent = image.legende || '';
     fillPortraitCredit(document.getElementById('modal-portrait-credit'), image);
     figure.classList.remove('hidden');

@@ -26,15 +26,24 @@
 
     // --- MEMORY ---------------------------------------------------------------------------------------
     var MEMORY_PAIRS = 6;
+    // Les niveaux : paires (donc 12 ou 18 cartes) ; `colors` : le dos d'une carte dit déjà si c'est un événement ou une date.
+    var MEMORY_LEVELS = {
+        easy: { pairs: 6, colors: true },
+        normal: { pairs: 6, colors: false },
+        hard: { pairs: 9, colors: false }
+    };
     // 100 points par paire, 25 de moins par erreur.
     var MEMORY_PAIR_POINTS = 100;
     var MEMORY_ERROR_COST = 25;
 
-    // Un événement du vivier : { id, title, date }. Douze cartes : { pair, side: 'event' | 'date', event }.
-    function createMemory(pool, rng, pairs) {
-        var n = pairs || MEMORY_PAIRS;
+    // Un événement du vivier : { id, title, date }. Douze cartes (dix-huit en difficile) : { pair, side: 'event' | 'date', event }.
+    // `options` : { difficulty: 'easy' | 'normal' | 'hard' } ; `pairs`, s'il est donné, l'emporte sur le nombre du niveau.
+    function createMemory(pool, rng, pairs, options) {
+        var difficulty = Arcade.normalizeDifficulty(options && options.difficulty);
+        var level = MEMORY_LEVELS[difficulty];
+        var n = pairs || level.pairs;
         var events = Arcade.pickDistinct(Arcade.playable(pool), rng, n);
-        var state = { pairs: n, cards: [], flipped: [], matched: {}, moves: 0, errors: 0, over: false };
+        var state = { difficulty: difficulty, level: level, pairs: n, cards: [], flipped: [], matched: {}, moves: 0, errors: 0, over: false };
         if (events.length < n) { state.over = true; state.empty = true; return state; }
         var cards = [];
         events.forEach(function (event, pair) {
@@ -82,6 +91,35 @@
     // Points selon le nombre d'indices déjà montrés quand on trouve : 100, 80, 60, 40, 20.
     var WHO_POINTS = [100, 80, 60, 40, 20];
     var WHO_MAX_TEXT_CLUES = 2;
+    // Les niveaux : `stars`, la notoriété des figures à deviner (3 : connues presque partout ; 2 : moyennement ; 1 : peu connues dans le
+    // monde — voir scripts/pantheon_notoriete.py) ; `shown`, le nombre d'indices déjà montrés au départ d'une manche (ils comptent
+    // dans les points : 100, 80, 60, 40, 20) ; `distractors`, la notoriété des mauvaises réponses : des inconnus à côté d'un nom célèbre
+    // se repèrent vite, des figures aussi peu connues que la bonne, non.
+    var WHO_LEVELS = {
+        easy: { stars: 3, shown: 2, distractors: [1, 2, 3] },
+        normal: { stars: 2, shown: 1, distractors: [2, 3] },
+        hard: { stars: 1, shown: 1, distractors: [1] }
+    };
+    // En dessous, un niveau manquerait de figures différentes : on retombe sur toutes les figures.
+    var WHO_MIN_FIGURES = 20;
+    var WHO_MIN_DISTRACTORS = 30;
+
+    // La notoriété d'une figure (`etoiles`, de 1 à 3) ; une figure qui n'en a pas compte pour « moyennement connue ».
+    function whoStars(evt) {
+        return evt && evt.etoiles >= 1 && evt.etoiles <= 3 ? evt.etoiles : 2;
+    }
+
+    // Les figures d'un niveau : { correct : celles à deviner, distractors : celles dont on tire les mauvaises réponses }.
+    function whoSelect(candidates, difficulty) {
+        var level = WHO_LEVELS[Arcade.normalizeDifficulty(difficulty)];
+        var all = candidates || [];
+        var correct = all.filter(function (e) { return whoStars(e) === level.stars; });
+        var distractors = all.filter(function (e) { return level.distractors.indexOf(whoStars(e)) !== -1; });
+        return {
+            correct: correct.length >= WHO_MIN_FIGURES ? correct : all,
+            distractors: distractors.length >= WHO_MIN_DISTRACTORS ? distractors : all
+        };
+    }
 
     var ROMAN = [[1000, 'M'], [900, 'CM'], [500, 'D'], [400, 'CD'], [100, 'C'], [90, 'XC'], [50, 'L'], [40, 'XL'], [10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I']];
 
@@ -186,10 +224,18 @@
     }
 
     // `questions` : { correctId, name, options: [{ id, name }], clues }.
-    function createWho(questions) {
-        var state = { questions: questions, index: 0, shown: 1, disabled: {}, score: 0, found: 0, errors: 0, results: [], resolved: null, over: !questions.length };
+    // `options` : { difficulty: 'easy' | 'normal' | 'hard' }.
+    function createWho(questions, options) {
+        var difficulty = Arcade.normalizeDifficulty(options && options.difficulty);
+        var level = WHO_LEVELS[difficulty];
+        var state = { difficulty: difficulty, level: level, questions: questions, index: 0, shown: whoStartShown(level, questions[0]), disabled: {}, score: 0, found: 0, errors: 0, results: [], resolved: null, over: !questions.length };
         if (!questions.length) state.empty = true;
         return state;
+    }
+
+    // Les indices montrés d'emblée : ceux du niveau, sans dépasser le nombre d'indices de la question.
+    function whoStartShown(level, question) {
+        return question ? Math.max(1, Math.min(level.shown, question.clues.length)) : 1;
     }
 
     function whoQuestion(state) {
@@ -239,7 +285,7 @@
     function whoNext(state) {
         if (state.over || !state.resolved) return [];
         state.index += 1;
-        state.shown = 1;
+        state.shown = whoStartShown(state.level, state.questions[state.index]);
         state.disabled = {};
         state.resolved = null;
         if (state.index >= state.questions.length) { state.over = true; return ['done']; }
@@ -250,19 +296,37 @@
 
     // --- PENDU DES DATES -----------------------------------------------------------------------------------
     var HANGMAN_ROUNDS = 5;
-    var HANGMAN_LIVES = 6;
+    // Les niveaux : vies par manche ; `hint`, le « plus tôt / plus tard » donné après une année fausse ; `freeDigit`, le premier chiffre offert.
+    var HANGMAN_LEVELS = {
+        easy: { lives: 6, hint: true, freeDigit: true },
+        normal: { lives: 4, hint: true, freeDigit: false },
+        hard: { lives: 3, hint: false, freeDigit: false }
+    };
     var HANGMAN_BASE = 30;
     var HANGMAN_PER_LIFE = 10;
 
     // Cinq événements aux années différentes, de un à quatre chiffres. `digits` : l'année sans signe ; `bc` : avant J.-C.
-    function createHangman(pool, rng, rounds) {
+    // `options` : { difficulty: 'easy' | 'normal' | 'hard' }.
+    function createHangman(pool, rng, rounds, options) {
+        var difficulty = Arcade.normalizeDifficulty(options && options.difficulty);
+        var level = HANGMAN_LEVELS[difficulty];
         var n = rounds || HANGMAN_ROUNDS;
         var events = Arcade.pickDistinct((pool || []).filter(function (e) {
             return e && typeof e.date === 'number' && e.title && Math.abs(e.date) >= 1 && Math.abs(e.date) <= 9999;
         }), rng, n);
         var questions = events.map(function (event) { return { event: event, digits: String(Math.abs(event.date)), bc: event.date < 0 }; });
-        var state = { questions: questions, index: 0, guessed: {}, lives: HANGMAN_LIVES, resolved: null, hint: null, score: 0, found: 0, results: [], over: !questions.length, empty: !questions.length };
+        var state = { difficulty: difficulty, level: level, questions: questions, index: 0, guessed: {}, lives: level.lives, resolved: null, hint: null, score: 0, found: 0, results: [], over: !questions.length, empty: !questions.length };
+        hangmanOffer(state);
         return state;
+    }
+
+    // En facile, le premier chiffre de l'année est offert (sauf pour une année trop courte, ou faite d'un seul chiffre répété : la manche
+    // serait déjà gagnée).
+    function hangmanOffer(state) {
+        var q = state.questions[state.index];
+        if (!q || !state.level.freeDigit || q.digits.length < 3) return;
+        if (q.digits.split('').every(function (d) { return d === q.digits.charAt(0); })) return;
+        state.guessed[q.digits.charAt(0)] = true;
     }
 
     function hangmanQuestion(state) { return state.questions[state.index] || null; }
@@ -313,8 +377,8 @@
         var q = hangmanQuestion(state);
         if (state.over || !q || state.resolved || !Number.isInteger(year) || year === 0) return [];
         if (year === q.event.date) { hangmanResolve(state, 'solved'); state.hint = null; return ['solved']; }
-        state.hint = q.event.date < year ? 'earlier' : 'later';
-        var out = ['wrong', state.hint];
+        state.hint = state.level.hint ? (q.event.date < year ? 'earlier' : 'later') : null;
+        var out = state.hint ? ['wrong', state.hint] : ['wrong'];
         hangmanLoseLife(state, out);
         return out;
     }
@@ -323,10 +387,11 @@
         if (state.over || !state.resolved) return [];
         state.index += 1;
         state.guessed = {};
-        state.lives = HANGMAN_LIVES;
+        state.lives = state.level.lives;
         state.resolved = null;
         state.hint = null;
         if (state.index >= state.questions.length) { state.over = true; return ['done']; }
+        hangmanOffer(state);
         return ['next'];
     }
 
@@ -381,6 +446,13 @@
     // --- CHASSE AUX ANACHRONISMES --------------------------------------------------------------------------
     var SCENE_ROUNDS = 5;
     var SCENE_POINTS = 100;
+    // Les niveaux : `penalty`, ce que retire un élément désigné à tort (en anachronismes trouvés) ; `announce`, le nombre d'anachronismes
+    // dit au joueur (« 2 intrus à trouver ») au lieu de le laisser deviner.
+    var SCENE_LEVELS = {
+        easy: { penalty: 0.5, announce: true },
+        normal: { penalty: 1, announce: false },
+        hard: { penalty: 2, announce: false }
+    };
 
     function sceneTotal(scene) {
         return scene.elements.filter(function (e) { return e.anachronism; }).length;
@@ -388,14 +460,16 @@
 
     // `scenes` : { id, title, when, intro, elements: [{ icon, text, anachronism, why }] }. L'ordre d'affichage des éléments est
     // mêlé à chaque partie (sinon les anachronismes seraient toujours en dernier) ; `selected` : indices dans scene.elements.
-    function createScenes(scenes, rng, rounds) {
+    // `options` : { difficulty: 'easy' | 'normal' | 'hard' }.
+    function createScenes(scenes, rng, rounds, options) {
+        var difficulty = Arcade.normalizeDifficulty(options && options.difficulty);
         var random = rng || Math.random;
         var picks = Arcade.shuffle(scenes, random).slice(0, rounds || SCENE_ROUNDS);
         var list = picks.map(function (scene) {
             var order = Arcade.shuffle(scene.elements.map(function (e, i) { return i; }), random);
             return { scene: scene, order: order };
         });
-        return { rounds: list, index: 0, selected: {}, resolved: null, score: 0, results: [], over: !list.length, empty: !list.length };
+        return { difficulty: difficulty, level: SCENE_LEVELS[difficulty], rounds: list, index: 0, selected: {}, resolved: null, score: 0, results: [], over: !list.length, empty: !list.length };
     }
 
     function sceneRound(state) {
@@ -412,7 +486,7 @@
     }
 
     // Valide la sélection : anachronismes trouvés, éléments désignés à tort, anachronismes manqués. Les points : 100 si tout est trouvé
-    // sans erreur ; chaque erreur retire autant qu'un anachronisme trouvé en rapporte.
+    // sans erreur ; chaque erreur retire autant qu'un anachronisme trouvé en rapporte (la moitié en facile, le double en difficile).
     function sceneValidate(state) {
         var round = sceneRound(state);
         if (state.over || !round || state.resolved) return [];
@@ -424,7 +498,7 @@
             else if (e.anachronism) missed.push(i);
         });
         var total = sceneTotal(round.scene);
-        var points = Math.max(0, Math.round(SCENE_POINTS * (found.length - wrong.length) / total));
+        var points = Math.max(0, Math.round(SCENE_POINTS * (found.length - state.level.penalty * wrong.length) / total));
         state.score += points;
         state.resolved = { found: found, wrong: wrong, missed: missed, points: points, total: total };
         state.results.push({ id: round.scene.id, title: round.scene.title, found: found.length, total: total, wrong: wrong.length, points: points });
@@ -441,10 +515,10 @@
     }
 
     return {
-        MEMORY_PAIRS: MEMORY_PAIRS, WHO_ROUNDS: WHO_ROUNDS, WHO_POINTS: WHO_POINTS,
+        MEMORY_PAIRS: MEMORY_PAIRS, MEMORY_LEVELS: MEMORY_LEVELS, WHO_ROUNDS: WHO_ROUNDS, WHO_LEVELS: WHO_LEVELS, whoSelect: whoSelect, whoStars: whoStars, WHO_POINTS: WHO_POINTS,
         createMemory: createMemory, memoryFlip: memoryFlip, memoryHide: memoryHide, memoryScore: memoryScore,
         centuryLabel: centuryLabel, nameTokens: nameTokens, maskName: maskName, splitSentences: splitSentences, buildClues: buildClues,
-        HANGMAN_ROUNDS: HANGMAN_ROUNDS, HANGMAN_LIVES: HANGMAN_LIVES,
+        HANGMAN_ROUNDS: HANGMAN_ROUNDS, HANGMAN_LEVELS: HANGMAN_LEVELS, SCENE_LEVELS: SCENE_LEVELS,
         createHangman: createHangman, hangmanQuestion: hangmanQuestion, hangmanSlots: hangmanSlots, hangmanGuess: hangmanGuess,
         hangmanTryYear: hangmanTryYear, hangmanNext: hangmanNext,
         CAUSE_ROUNDS: CAUSE_ROUNDS, SCENE_ROUNDS: SCENE_ROUNDS,

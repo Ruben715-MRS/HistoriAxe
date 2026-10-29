@@ -2,17 +2,25 @@
 // Découpage mécanique : les fichiers se chargent dans l'ordre d'index.html, qui est celui du fichier d'origine
 // (tout reste global ; une fonction ou un `let` d'un fichier est visible des suivants).
 
-function openSettings() {
+// Les Réglages complets (menu principal). `quick` : seulement les trois réglages d'affichage, ouverts depuis la frise
+// (voir openLayoutSettings dans js/app/frise.js) ; les autres restent accessibles depuis le menu principal.
+function openSettings(quick) {
     if (typeof triggerHaptic === 'function') triggerHaptic('light');
     renderSettingsUI();
     if (typeof renderAccountSettings === 'function') renderAccountSettings();
     const modal = document.getElementById('modal-settings');
-    if (modal) modal.classList.remove('hidden');
+    if (modal) {
+        modal.classList.toggle('is-quick', quick === true);
+        modal.classList.remove('hidden');
+    }
 }
 
 function closeSettings() {
     const modal = document.getElementById('modal-settings');
-    if (modal) modal.classList.add('hidden');
+    if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('is-quick');
+    }
 }
 
 // Relance la séquence de coach-marks d'onboarding (voir js/onboarding.js)
@@ -149,6 +157,7 @@ try {
     largeScreenQuery.addEventListener('change', () => {
         applyOrientationLayout();
         renderSettingsUI();
+        if (typeof updateLayoutButton === 'function') updateLayoutButton();
     });
     // Les retours à la ligne de la frise changent avec la largeur, et ne se
     // mesurent qu'une fois l'écran de jeu affiché : on les recalcule dès que

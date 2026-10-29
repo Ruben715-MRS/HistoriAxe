@@ -204,6 +204,7 @@
     "xp_gain": "+{xp} XP",
     "duration_years": "{n} años",
     "decrease_text_aria": "Reducir el texto",
+    "layout_aria": "Cambiar la disposición de la cronología",
     "increase_text_aria": "Aumentar el texto",
     "hint_btn_full": "💡 Pista",
     "erase_btn": "Borrar",
@@ -469,7 +470,7 @@
     "notifications_hint": "Recordatorios para mantener tu racha y no perderte el Reto diario. Disponible en la app de iOS (no en la web).",
     "onboarding_btn": "🧭 Repetir el tutorial",
     "reset_hint": "Elimina permanentemente tus favoritos, todos tus temas y eventos personalizados creados, tu historial de repaso (puntos débiles) y el progreso de desbloqueo de los modos Cronometrado/Experto. Tus preferencias de visualización (orientación, apariencia) se conservan.",
-    "feedback_hint": "¿Quieres escribirme? Un cumplido, una observación, una pregunta u otra cosa: puedes enviarme un mensaje a historiaxe@gmail.com",
+    "feedback_hint": "¿Quieres escribirme? Un cumplido, una observación, una pregunta u otra cosa: puedes enviarme un mensaje a historiaxe.app@gmail.com",
     "reset_confirm_full": "Esta acción elimina permanentemente tus temas favoritos, todos tus temas y eventos personalizados, todo tu historial de repaso (puntos débiles, cajas de memorización) y el progreso de desbloqueo de los modos Cronometrado/Experto. Esta acción es irreversible. ¿Deseas continuar?",
     "reset_confirm_ok": "Reiniciar todo",
     "size_mb": "{val} MB",
@@ -672,6 +673,13 @@
     "collapse_all": "Plegar todo",
     "revise_axis": "Repasar este eje: {axe}"
   },
+  "location": {
+    "ask_body": "¿Dónde está tu historia? Permite la ubicación para ver de un vistazo los acontecimientos que ocurrieron cerca de ti. Tu posición se queda en tu dispositivo: nunca se guarda ni se comparte.",
+    "ask_ok": "Localizarme",
+    "locate_label": "Localizarme",
+    "unavailable": "Ubicación no disponible. Permite la ubicación de HistoriAxe en los ajustes de tu dispositivo para situarte en el mapa.",
+    "you_are_here": "Estás aquí"
+  },
   "notifications": {
     "review_title": "🧠 Repaso de hoy",
     "review_body": "{count} acontecimientos por repasar hoy: bastan cinco minutos.",
@@ -689,7 +697,9 @@
     "comeback3_title": "🌍 La Historia te espera",
     "comeback3_body": "Han pasado tres días. Una partida de cinco minutos basta para retomar el hilo.",
     "comeback7_title": "📜 Una semana sin ti",
-    "comeback7_body": "Vuelve cuando quieras: tu progreso y tus repasos siguen ahí."
+    "comeback7_body": "Vuelve cuando quieras: tu progreso y tus repasos siguen ahí.",
+    "ask_body": "Mantén tu racha diaria, recibe aviso cuando un amigo te rete a un duelo y recibe tus recordatorios de repaso a tiempo. Puedes cambiarlo en cualquier momento en los ajustes.",
+    "ask_ok": "Activar"
   },
   "scoring": {
     "title": "¿Cómo se calculan los puntos?",
@@ -799,8 +809,19 @@
   "home": {
     "start_aria": "Empezar"
   },
+  "renown": {
+    "title": "Renombre",
+    "local": "Renombre local",
+    "regional": "Renombre regional",
+    "world": "Renombre mundial",
+    "local_short": "Local",
+    "regional_short": "Regional",
+    "world_short": "Mundial"
+  },
   "gallery": {
     "title": "Galería de retratos",
+    "renown_show": "Mostrar el renombre",
+    "renown_help": "El contorno del retrato indica lo conocida que es una figura en el mundo: un filete (bronce) para un renombre local, dos (plata) para regional, tres (oro) para mundial.",
     "launcher_sub": "{count} rostros para hojear",
     "order_alpha": "Orden alfabético",
     "order_famille": "Por apellido",
@@ -1406,6 +1427,13 @@
     "card_kicker": "Minijuegos · Arcade · Reflexión",
     "best": "Mejor puntuación: {score}",
     "no_best": "Aún sin jugar",
+    "difficulty_label": "Dificultad",
+    "difficulty_easy": "Fácil",
+    "difficulty_normal": "Medio",
+    "difficulty_hard": "Difícil",
+    "difficulty_hint": "Los puntos cuentan ×{mult} para el récord.",
+    "weighted": "{level} ×{mult}: {total} pts contados.",
+    "go": "¡Ya!",
     "play": "Jugar",
     "replay": "Jugar de nuevo",
     "over": "Partida terminada",
@@ -1416,6 +1444,9 @@
   },
   "pacman": {
     "title": "Pac-Man de la línea de tiempo",
+    "level_easy": "3 fechas, un fantasma lento, Pac-Man tranquilo.",
+    "level_normal": "4 fechas, un segundo fantasma a partir de la ronda 3.",
+    "level_hard": "5 fechas, dos y luego tres fantasmas, cada vez más rápido.",
     "desc": "Come la fecha del acontecimiento pedido y huye de los fantasmas.",
     "board_aria": "Laberinto del Pac-Man",
     "status": "Ronda {round} · {lives} · {score} pts",
@@ -1446,6 +1477,9 @@
   },
   "snake": {
     "title": "Snake cronológico",
+    "level_easy": "3 hechos, serpiente lenta.",
+    "level_normal": "3 hechos, velocidad normal.",
+    "level_hard": "4 hechos, serpiente rápida.",
     "desc": "Come los acontecimientos del más antiguo al más reciente.",
     "entry": "🐍 Snake cronológico",
     "rule": "Come las bolitas en orden cronológico, del acontecimiento más antiguo al más reciente. Un error, una pared o tu propia cola: una vida menos.",
@@ -1461,6 +1495,9 @@
   },
   "tetris": {
     "title": "Tetris de los siglos",
+    "level_easy": "Los bloques caen despacio.",
+    "level_normal": "Los bloques caen a velocidad normal.",
+    "level_hard": "Los bloques caen rápido.",
     "desc": "Coloca cada acontecimiento que cae en su periodo.",
     "entry": "🧱 Minijuego: Tetris de los siglos",
     "status": "{score} pts · {rows} líneas · nivel {level}",
@@ -1633,7 +1670,7 @@
     "err_generic": "Se ha producido un error. Inténtalo de nuevo.",
     "sign_out_confirm": "¿Cerrar sesión? Tu progreso queda guardado en tu cuenta; este dispositivo empezará de cero hasta que vuelvas a iniciar sesión.",
     "delete_confirm": "¿Eliminar definitivamente tu cuenta, tus puntuaciones y tu progreso guardado? Esta acción es irreversible.",
-    "err_delete": "No se pudo eliminar. Comprueba tu conexión e inténtalo de nuevo, o escribe a ruben.arditti@gmail.com."
+    "err_delete": "No se pudo eliminar. Comprueba tu conexión e inténtalo de nuevo, o escribe a historiaxe.app@gmail.com."
   },
   "team": {
     "title": "Equipo",
@@ -1881,6 +1918,11 @@
     "grid_aria": "Cartas del Memory",
     "status": "Parejas: {matched} / {pairs} · Errores: {errors}",
     "card_hidden": "Carta {n}, boca abajo",
+    "card_hidden_event": "Carta {n}, boca abajo: hecho",
+    "card_hidden_date": "Carta {n}, boca abajo: fecha",
+    "level_easy": "Dorso de las cartas en color: azul para un hecho, ámbar para una fecha. 6 parejas.",
+    "level_normal": "6 parejas, todas las cartas se parecen.",
+    "level_hard": "9 parejas (18 cartas), todas las cartas se parecen.",
     "card_event": "Carta {n}: acontecimiento «{text}»",
     "card_date": "Carta {n}: fecha {text}",
     "match": "✓ {year} — {title}",
@@ -1891,6 +1933,9 @@
   },
   "who": {
     "title": "¿Quién soy?",
+    "level_easy": "Figuras conocidas casi en todas partes; dos pistas desde el principio (máximo 80 puntos).",
+    "level_normal": "Figuras medianamente conocidas en el mundo; una pista al principio.",
+    "level_hard": "Figuras poco conocidas en el mundo; las respuestas falsas lo son igual.",
     "loading": "Eligiendo las figuras…",
     "desc": "Adivina la figura histórica, con pistas que se añaden una a una.",
     "status": "Ronda {n} / {total} · {score} pts",
@@ -1927,6 +1972,10 @@
   },
   "scene": {
     "title": "Caza de anacronismos",
+    "level_easy": "Se anuncia el número de intrusos, un error resta solo medio punto.",
+    "level_normal": "Hay que adivinar cuántos intrusos hay.",
+    "level_hard": "Hay que adivinar cuántos intrusos hay, un error resta el doble.",
+    "count_hint": "Intrusos por encontrar: {count}.",
     "desc": "Detecta en una escena lo que no corresponde a esa época.",
     "status": "Escena {n} / {total} · {score} pts",
     "grid_aria": "Elementos de la escena",
@@ -1991,6 +2040,9 @@
   },
   "breakout": {
     "title": "Rompeladrillos de hitos",
+    "level_easy": "Pala ancha, bola lenta y predecible, de 4 a 6 ladrillos; el ladrillo por romper está rodeado.",
+    "level_normal": "Pala mediana, bola algo más lenta que antes, hasta 8 ladrillos.",
+    "level_hard": "Pala estrecha, bola rápida y rebotes en diagonal, hasta 8 ladrillos.",
     "desc": "Rompe los ladrillos del más antiguo al más reciente.",
     "board_aria": "Tablero del Rompeladrillos",
     "rule": "Rompe los ladrillos del más antiguo al más reciente. Otro ladrillo, o perder la bola: una vida menos. La bola se acelera con cada ladrillo.",
@@ -2007,18 +2059,21 @@
   },
   "flappy": {
     "title": "Flappy Clío",
-    "desc": "Vuela entre los pilares: pasa por la fecha que sigue al último hito.",
+    "level_easy": "Desplazamiento lento; el hecho falso está muy lejos en el tiempo.",
+    "level_normal": "Desplazamiento medio; el hecho falso está a distancia media.",
+    "level_hard": "Desplazamiento rápido; el hecho falso está muy cerca en el tiempo.",
+    "desc": "Vuela entre los pilares: pasa por el hecho que sigue al último hito.",
     "board_aria": "Tablero de Flappy Clío",
     "flap": "🐾 Volar",
-    "hint": "Toca la pantalla (o la barra espaciadora) para aletear. En cada puerta, pasa por la fecha que SIGUE al último hito.",
+    "hint": "Toca la pantalla (o la barra espaciadora) para aletear. En cada puerta se indican arriba dos hechos: pasa por el que SIGUE al último hito (↑ abertura de arriba, ↓ abertura de abajo). El decorado cambia con la época. Tras un choque, el juego espera tu próximo aleteo.",
     "status": "Ronda {round} · {lives} · {score} pts",
     "banner_start": "Primer hito: pasa por la abertura grande.",
     "banner_last": "Último hito: {year} — {title}",
     "good": "✓ {year} — {title}",
-    "wrong": "Este año es anterior al último hito: había que pasar por {expected_year}.",
+    "wrong": "Ese no: «{chosen}» ({chosen_year}) es anterior al último hito. Había que pasar por «{expected}» ({expected_year}).",
     "hit": "¡Ay! Un pilar, el suelo o el techo.",
     "over_text": "{passed} hitos superados, {score} puntos.",
-    "mistake": "Has tomado {chosen}, anterior al último hito, en lugar de {expected_year} («{expected}»).",
+    "mistake": "Has tomado «{chosen_title}» ({chosen}), anterior al último hito, en lugar de «{expected}» ({expected_year}).",
     "tap": "Toca para volar"
   },
   "race": {
@@ -2063,6 +2118,9 @@
   },
   "hangman": {
     "title": "Ahorcado de fechas",
+    "level_easy": "6 vidas, primera cifra regalada.",
+    "level_normal": "4 vidas.",
+    "level_hard": "3 vidas, sin pista «antes / después».",
     "desc": "Adivina el año cifra a cifra: cada error cuesta una vida.",
     "status": "Acontecimiento {n} / {total} · {score} pts",
     "prompt": "{title}: ¿en qué año?",
@@ -2168,7 +2226,8 @@
     "group_convert": "Convertir y calcular",
     "group_calendars": "Calendarios",
     "group_landmarks": "Referencias",
-    "group_maps": "Mapas y árboles",
+    "group_maps": "Mapas",
+    "group_bible": "Biblia y tradición",
     "card_kicker": "Conversores · Cálculos",
     "ad": "d. C.",
     "bc": "a. C.",

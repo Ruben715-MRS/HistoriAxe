@@ -12,9 +12,9 @@
 // 'install' recharge tout depuis le réseau. Un pack de langue ou un texte
 // d'UI modifié qui ne s'affiche pas malgré un déploiement réussi est
 // généralement le signe que l'un de ces deux numéros n'a pas été incrémenté.
-const CACHE_VERSION = '1.4.281';
+const CACHE_VERSION = '1.4.327';
 const APP_SHELL_CACHE = `historiaxe-shell-v${CACHE_VERSION}`;
-const DATA_CACHE = 'historiaxe-data-v1.0.121';
+const DATA_CACHE = 'historiaxe-data-v1.0.155';
 
 // Portraits des personnages (assets/portraits/*.jpg, champ `image` des
 // événements). Un cache À PART, et c'est tout l'objet : 'activate' purge tout
@@ -71,6 +71,7 @@ const APP_SHELL_FILES = [
     './js/arcadeExtraCore.js',
     './js/reflexionContent.js',
     './js/reflexionCore.js',
+    './js/renown.js',
     './js/rewardsCore.js',
     './js/clioCore.js',
     './js/clioArt.js',
@@ -86,6 +87,7 @@ const APP_SHELL_FILES = [
     './js/linkedEvents.js',
     './js/atlasCore.js',
     './js/geoPlace.js',
+    './js/location.js',
     './js/atlas.js',
     './js/gameModes.js',
     './js/classModes.js',
@@ -115,6 +117,7 @@ const APP_SHELL_FILES = [
     './js/app/frise.js',
     './js/app/motion.js',
     './js/app/session-end.js',
+    './js/app/renown.js',
     './js/app/modal.js',
     './js/app/play-mode.js',
     './js/app/expedition.js',
@@ -159,6 +162,9 @@ const APP_SHELL_FILES = [
     './js/app/biblical-measures.js',
     './js/biblicalMapsCore.js',
     './js/app/biblical-maps.js',
+    './js/commandments613Data.js',
+    './js/commandmentsCore.js',
+    './js/app/commandments.js',
     './js/app/rewards.js',
     './js/app/clio.js',
     './js/teamBadge.js',
@@ -189,7 +195,17 @@ const APP_SHELL_FILES = [
     './assets/citations/05.json',
     './assets/citations/06.json',
     './assets/citations/07.json',
-    './assets/citations/08.json'
+    './assets/citations/08.json',
+    './assets/citations/09.json',
+    './assets/citations/10.json',
+    './assets/citations/11.json',
+    './assets/citations/12.json',
+    './assets/citations/13.json',
+    './assets/citations/14.json',
+    './assets/citations/15.json',
+    './assets/citations/16.json',
+    './assets/citations/17.json',
+    './assets/citations/18.json'
 ];
 
 // --- INSTALLATION : Mise en cache de l'App Shell & Pack Français ---

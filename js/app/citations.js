@@ -225,7 +225,7 @@ function citRenderCard(c) {
 
 // Le code de langue de la version originale, pour que le lecteur d'écran la prononce correctement.
 function citLangCode(langue) {
-    return { latin: 'la', anglais: 'en', allemand: 'de', italien: 'it', 'chinois classique': 'zh', chinois: 'zh', grec: 'el', espagnol: 'es', arabe: 'ar', araméen: 'arc', russe: 'ru', hébreu: 'he', persan: 'fa', japonais: 'ja', vietnamien: 'vi', maori: 'mi', pali: 'pi' }[langue] || '';
+    return { latin: 'la', anglais: 'en', allemand: 'de', italien: 'it', 'chinois classique': 'zh', chinois: 'zh', grec: 'el', 'grec ancien': 'grc', tchèque: 'cs', espagnol: 'es', arabe: 'ar', araméen: 'arc', russe: 'ru', hébreu: 'he', persan: 'fa', japonais: 'ja', vietnamien: 'vi', maori: 'mi', pali: 'pi', portugais: 'pt', hindi: 'hi', sanskrit: 'sa' }[langue] || '';
 }
 
 // --- Les liens vers l'auteur ---------------------------------------------------------------------------

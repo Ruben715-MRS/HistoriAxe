@@ -18,16 +18,17 @@ async function ouvrir(page, texte) {
     await page.locator('#screen-tools .arcade-card', { hasText: texte }).click();
 }
 
-test('l\'Atelier s\'ouvre depuis les catégories, range ses quinze entrées en quatre groupes et revient', async ({ page }) => {
+test('l\'Atelier s\'ouvre depuis les catégories, range ses seize entrées en cinq groupes et revient', async ({ page }) => {
     await page.locator('#btn-tools').click();
     expect(await visibleScreen(page)).toBe('screen-tools');
-    await expect(page.locator('#screen-tools .arcade-card')).toHaveCount(15);
+    await expect(page.locator('#screen-tools .arcade-card')).toHaveCount(16);
     await expect(page.locator('#screen-tools .header-title')).toHaveText('Atelier');
-    await expect(page.locator('#screen-tools .tools-group')).toHaveCount(4);
-    await expect(page.locator('#screen-tools .tools-group .modes-group-title')).toHaveText(['Convertir et calculer', 'Calendriers', 'Repères', 'Cartes et arbres']);
-    await expect(page.locator('#screen-tools .tools-group').nth(0).locator('.arcade-card')).toHaveCount(5);
-    await expect(page.locator('#screen-tools .tools-group').nth(0).locator('.arcade-card', { hasText: 'Poids et mesures bibliques' })).toHaveCount(1);
-    await expect(page.locator('#screen-tools .tools-group').nth(3).locator('.arcade-card', { hasText: 'Généalogie biblique' })).toHaveCount(1);
+    await expect(page.locator('#screen-tools .tools-group')).toHaveCount(5);
+    await expect(page.locator('#screen-tools .tools-group .modes-group-title')).toHaveText(['Convertir et calculer', 'Calendriers', 'Repères', 'Cartes', 'Bible et tradition']);
+    await expect(page.locator('#screen-tools .tools-group').nth(0).locator('.arcade-card')).toHaveCount(4);
+    await expect(page.locator('#screen-tools .tools-group').nth(4).locator('.arcade-card')).toHaveCount(4);
+    await expect(page.locator('#screen-tools .tools-group').nth(4).locator('.arcade-card', { hasText: 'Poids et mesures bibliques' })).toHaveCount(1);
+    await expect(page.locator('#screen-tools .tools-group').nth(4).locator('.arcade-card', { hasText: 'Généalogie biblique' })).toHaveCount(1);
     await page.locator('#screen-tools .arcade-card', { hasText: 'Chiffres romains' }).click();
     expect(await visibleScreen(page)).toBe('screen-tool-roman');
     await page.locator('#screen-tool-roman .back-btn').click();
@@ -600,6 +601,10 @@ test('chronologie : les États-Unis proposent les vice-présidents, en couleur s
     await page.locator('#leaders-mode-vice').click();
     await expect(rows.first()).toContainText('John Adams');
     await expect(rows.last()).toContainText('JD Vance');
+    // Le sous-texte dit sous quel président chacun a servi.
+    await expect(rows.first()).toContainText('Vice-président sous George Washington');
+    await expect(rows.filter({ hasText: 'Kamala Harris' })).toContainText('Vice-présidente sous Joe Biden');
+    await expect(rows.filter({ hasText: 'George Clinton' })).toContainText('Vice-président sous Thomas Jefferson, puis James Madison');
     await expect(rows.filter({ hasText: 'Kamala Harris' })).toHaveCSS('background-color', 'rgb(191, 219, 254)');
     await expect(rows.filter({ hasText: 'Mike Pence' })).toHaveCSS('background-color', 'rgb(254, 202, 202)');
     await page.locator('#leaders-mode-etat').click();
@@ -659,6 +664,124 @@ test('généalogie biblique, à l\'horizontale : déplier une branche fait défi
         return r.left >= view.left - 1 && r.right <= view.right + 1;
     });
     expect(visible).toBe(true);
+});
+
+test('textes de référence : navigation entre les sections, par les onglets', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 900 });
+    await page.locator('#btn-tools').click();
+    await page.locator('#screen-tools .arcade-card', { hasText: 'Textes de référence' }).click();
+    expect(await visibleScreen(page)).toBe('screen-tool-commandments');
+    expect(await page.locator('#screen-tool-commandments').innerText()).not.toContain('tools.');
+
+    // La section s'ouvre sur les 54 parachiot.
+    await expect(page.locator('#tool-commandments-tab-parachiot')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(54);
+
+    // Puis les lois de Noé : sept, avec leur source.
+    await page.locator('#tool-commandments-tab-noah').click();
+    await expect(page.locator('#tool-commandments-tab-noah')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(7);
+    await expect(page.locator('#tool-commandments-body')).toContainText('Genèse 9:6');
+
+    // Le bouton « suivant » ouvre le Décalogue : dix paroles, deux tables.
+    await page.locator('#tool-commandments-tab-decalogue').click();
+    await expect(page.locator('#tool-commandments-tab-decalogue')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(10);
+    await expect(page.locator('#tool-commandments-body .cmd-group-title').first()).toContainText('Première table');
+
+    // Puis les travaux du Chabbat : trente-neuf, dans l'ordre de la Michna ; plus de bouton « suivant ».
+    await page.locator('#tool-commandments-tab-shabbat').click();
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(39);
+    await expect(page.locator('#tool-commandments-body .cmd-item').first()).toContainText('Semer');
+    await expect(page.locator('#tool-commandments-body .cmd-item').last()).toContainText('Transporter');
+
+    // Le bouton « A / א » remplace la transcription des noms par les lettres hébraïques (et se retire pour les 613).
+    await expect(page.locator('#tool-commandments-lang-fr')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-commandments-body .cmd-item').first().locator('.cmd-heb')).toHaveText('Zoré\'a');
+    await page.locator('#tool-commandments-lang-he').click();
+    await expect(page.locator('#tool-commandments-lang-he')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-commandments-body .cmd-item').first().locator('.cmd-heb')).toHaveText('זורע');
+    await expect(page.locator('#tool-commandments-body .cmd-item').first().locator('.cmd-heb')).toHaveAttribute('dir', 'rtl');
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(39);
+
+    // Enfin les 613 : « Tous » d'abord (à gauche de « Positifs »), avec le verset de chaque commandement ; plus de bouton « suivant ».
+    await page.locator('#tool-commandments-tab-mitzvot').click();
+    await expect(page.locator('#tool-commandments-lang')).toBeHidden();
+    await expect(page.locator('#tool-commandments-tab-mitzvot')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-commandments-kind-all')).toHaveAttribute('aria-pressed', 'true');
+    expect(await page.locator('#tool-commandments-kind-all').evaluate(b => b.nextElementSibling.id)).toBe('tool-commandments-kind-pos');
+    await expect(page.locator('#tool-commandments-613 .cmd-item')).toHaveCount(613);
+    await expect(page.locator('#tool-commandments-613 .cmd-item').first()).toContainText('Savoir qu\'il y a un Dieu');
+    await expect(page.locator('#tool-commandments-613 .cmd-item').first()).toContainText('Exode 20:2');
+    await expect(page.locator('#tool-commandments-count')).toContainText('613 commandements sur 613');
+
+    // Le menu des thèmes en compte 35, sous deux intitulés ; en choisir un y mène sans cacher les autres commandements.
+    await expect(page.locator('#tool-commandments-theme optgroup')).toHaveCount(2);
+    await expect(page.locator('#tool-commandments-theme option')).toHaveCount(36); // 35 thèmes + l'invite
+    await page.locator('#tool-commandments-theme').selectOption({ label: 'Relations interdites et mariages interdits' });
+    await expect(page.locator('#tool-commandments-613 .cmd-item')).toHaveCount(613);
+    await expect(page.locator('#cmd-613-group-neg-arayot')).toBeInViewport();
+    await expect(page.locator('#tool-commandments-theme')).toHaveValue('');
+
+    // Les 248 positifs : 15 thèmes seulement.
+    await page.locator('#tool-commandments-kind-pos').click();
+    await expect(page.locator('#tool-commandments-613 .cmd-item')).toHaveCount(248);
+    await expect(page.locator('#tool-commandments-count')).toContainText('248 commandements sur 248');
+    await expect(page.locator('#tool-commandments-theme option')).toHaveCount(16);
+    await expect(page.locator('#tool-commandments-theme optgroup')).toHaveCount(0);
+
+    // Les 365 négatifs, puis la recherche : un mot, ou un verset ; le numéro affiché reste celui du commandement.
+    await page.locator('#tool-commandments-kind-neg').click();
+    await expect(page.locator('#tool-commandments-613 .cmd-item')).toHaveCount(365);
+    await expect(page.locator('#tool-commandments-theme option')).toHaveCount(21);
+    await page.locator('#tool-commandments-search').fill('convoiter');
+    await expect(page.locator('#tool-commandments-613 .cmd-item')).toHaveCount(1);
+    await expect(page.locator('#tool-commandments-613 .cmd-item')).toContainText('Ne pas convoiter');
+    expect(await page.locator('#tool-commandments-613 .cmd-item').evaluate(li => li.value)).toBe(265);
+    await page.locator('#tool-commandments-search').fill('Exode 20:12');
+    await expect(page.locator('#tool-commandments-count')).toContainText('Aucun commandement');
+    await page.locator('#tool-commandments-kind-pos').click();
+    await expect(page.locator('#tool-commandments-613 .cmd-item')).toHaveCount(1);
+    await expect(page.locator('#tool-commandments-613 .cmd-item')).toContainText('Honorer son père et sa mère');
+    expect(await page.locator('#screen-tool-commandments').innerText()).not.toContain('tools.');
+
+    // Enfin les « Mitsvot pratiques » : dix mitsvot en trois listes ; le menu mène à chacune sans cacher les autres.
+    await page.locator('#tool-commandments-tab-pratiques').click();
+    await expect(page.locator('#tool-commandments-tab-pratiques')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(26);
+    await expect(page.locator('#tool-commandments-body .cmd-group-title').first()).toContainText('Les trois mitsvot des femmes');
+    await expect(page.locator('#tool-commandments-theme-pratiques option')).toHaveCount(8); // 7 thèmes + l'invite
+    await page.locator('#tool-commandments-theme-pratiques').selectOption({ label: 'Les quatre espèces de Soukkot' });
+    await expect(page.locator('#cmd-group-pratiques-soukkot')).toBeInViewport();
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(10);
+    await expect(page.locator('#cmd-group-pratiques-soukkot .cmd-item').first()).toContainText('L\'étrog');
+    await page.locator('#tool-commandments-lang-he').click();
+    await expect(page.locator('#cmd-group-pratiques-soukkot .cmd-item').first().locator('.cmd-heb')).toHaveText('אתרוג');
+    await page.locator('#tool-commandments-lang-fr').click();
+
+    // Enfin « Principes et textes » : cinq thèmes, 58 textes, et le menu mène à celui qu'on choisit.
+    await page.locator('#tool-commandments-tab-principes').click();
+    await expect(page.locator('#tool-commandments-tab-principes')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(58);
+    await expect(page.locator('#tool-commandments-body .cmd-group-title').first()).toContainText('attributs de miséricorde');
+    await expect(page.locator('#tool-commandments-theme-principes option')).toHaveCount(6); // 5 thèmes + l'invite
+    await page.locator('#tool-commandments-theme-principes').selectOption({ label: 'Les treize attributs de miséricorde' });
+    await expect(page.locator('#cmd-group-principes-mercy')).toBeInViewport();
+    await expect(page.locator('#cmd-group-principes-mercy .cmd-item').first()).toContainText('Adonaï');
+
+    // Enfin « Pirkei Avot » : trois thèmes, 65 textes ; le menu mène à la qualité voulue sans cacher les autres.
+    await page.locator('#tool-commandments-tab-avot').click();
+    await expect(page.locator('#tool-commandments-tab-avot')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(65);
+    await expect(page.locator('#tool-commandments-theme-avot option')).toHaveCount(4); // 3 thèmes + l'invite
+    await page.locator('#tool-commandments-theme-avot').selectOption({ label: 'Les qualités pour acquérir la Torah (6:6)' });
+    await expect(page.locator('#cmd-group-avot-qualites')).toBeInViewport();
+    await expect(page.locator('#cmd-group-avot-qualites .cmd-item').first()).toContainText("L'étude");
+
+    // Les onglets font aussi revenir en arrière ; le choix « א » suit : les lois de Noé s'affichent avec leur nom hébreu.
+    await page.locator('#tool-commandments-tab-noah').click();
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(7);
+    await expect(page.locator('#tool-commandments-body .cmd-item').first().locator('.cmd-heb')).toHaveText('עבודה זרה');
 });
 
 test('poids et mesures bibliques : distances, volumes et monnaies se convertissent, dans les deux sens, avec la leçon dessous', async ({ page }) => {
@@ -747,7 +870,7 @@ test('citations : recherche, filtre de fiabilité, tranches, fiche, lien vers la
     await page.locator('#cit-reliability').selectOption('all');
 
     await page.locator('#cit-era').selectOption('avant500');
-    await expect(items.first()).toContainText('Exode');
+    await expect(items.first()).toContainText('Hammurabi');
     await page.locator('#cit-era').selectOption('all');
 
     await page.locator('#cit-search').fill('je pense donc');
@@ -772,4 +895,62 @@ test('citations : une phrase apocryphe le dit sur sa fiche, sans lien quand l\'a
     await expect(page.locator('#cit-card-body .cit-status-apocryphe')).toContainText('Apocryphe');
     await expect(page.locator('#cit-card-body')).toContainText('Pourquoi ce statut');
     await expect(page.locator('#cit-card-body .cit-links')).toHaveCount(0);
+});
+
+test('54 parachiot : les cinq livres dans le menu, et la numérotation continue jusqu\'à 54', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 900 });
+    await page.locator('#btn-tools').click();
+    await page.locator('#screen-tools .arcade-card', { hasText: 'Textes de référence' }).click();
+    await page.locator('#tool-commandments-tab-parachiot').click();
+    await expect(page.locator('#tool-commandments-tab-parachiot')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(54);
+    await expect(page.locator('#tool-commandments-theme-parachiot option')).toHaveCount(6); // 5 livres + l'invite
+    await page.locator('#tool-commandments-theme-parachiot').selectOption({ label: 'Lévitique' });
+    await expect(page.locator('#cmd-group-parachiot-levitique')).toBeInViewport();
+    await expect(page.locator('#cmd-group-parachiot-levitique .cmd-item').first()).toContainText('Vayikra');
+    await expect(page.locator('#cmd-group-parachiot-levitique .cmd-item').first()).toContainText('24');
+    await expect(page.locator('.cmd-nav-btn')).toHaveCount(1); // « précédent » seulement : c'est la dernière section
+});
+
+test('La Michna : les six ordres dans le menu, et la numérotation continue jusqu\'à 63', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 900 });
+    await page.locator('#btn-tools').click();
+    await page.locator('#screen-tools .arcade-card', { hasText: 'Textes de référence' }).click();
+    await page.locator('#tool-commandments-tab-michna').click();
+    await expect(page.locator('#tool-commandments-tab-michna')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(63);
+    await expect(page.locator('#tool-commandments-body .cmd-group-summary').first()).toContainText('Les lois agricoles');
+    await expect(page.locator('#tool-commandments-theme-michna option')).toHaveCount(7); // 6 ordres + l'invite
+    await page.locator('#tool-commandments-theme-michna').selectOption({ label: 'Taharot (Pureté)' });
+    await expect(page.locator('#cmd-group-michna-tahorot')).toBeInViewport();
+    await expect(page.locator('#cmd-group-michna-tahorot .cmd-item').first()).toContainText('Kélim');
+    await expect(page.locator('.cmd-nav-btn')).toHaveCount(1); // « précédent » seulement : dernière section
+});
+
+test('Les dix épreuves d\'Abraham : les deux avis dans le menu, chacun numéroté de 1 à 10', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 900 });
+    await page.locator('#btn-tools').click();
+    await page.locator('#screen-tools .arcade-card', { hasText: 'Textes de référence' }).click();
+    await page.locator('#tool-commandments-tab-epreuves').click();
+    await expect(page.locator('#tool-commandments-tab-epreuves')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(20);
+    await expect(page.locator('#tool-commandments-theme-epreuves option')).toHaveCount(3); // 2 avis + l'invite
+    await page.locator('#tool-commandments-theme-epreuves').selectOption({ label: 'Avot de Rabbi Natan 33' });
+    await expect(page.locator('#cmd-group-epreuves-arn')).toBeInViewport();
+    await expect(page.locator('#cmd-group-epreuves-arn .cmd-item').first()).toContainText('Lekh lekha, première épreuve');
+    await expect(page.locator('.cmd-nav-btn')).toHaveCount(2); // « précédent » et « 5 méguilot »
+});
+
+test('5 méguilot : les cinq livres dans le menu, et les chapitres numérotés dans chaque livre', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 900 });
+    await page.locator('#btn-tools').click();
+    await page.locator('#screen-tools .arcade-card', { hasText: 'Textes de référence' }).click();
+    await page.locator('#tool-commandments-tab-megilot').click();
+    await expect(page.locator('#tool-commandments-tab-megilot')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#tool-commandments-body .cmd-item')).toHaveCount(39);
+    await expect(page.locator('#tool-commandments-theme-megilot option')).toHaveCount(6); // 5 livres + l'invite
+    await page.locator('#tool-commandments-theme-megilot').selectOption({ label: 'Ruth' });
+    await expect(page.locator('#cmd-group-megilot-ruth')).toBeInViewport();
+    await expect(page.locator('#cmd-group-megilot-ruth .cmd-item').first()).toContainText('retour de Naomi');
+    await expect(page.locator('.cmd-nav-btn')).toHaveCount(2); // « précédent » et « suivant » : le Chabbat
 });

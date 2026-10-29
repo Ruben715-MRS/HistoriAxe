@@ -204,6 +204,7 @@
     "xp_gain": "+{xp} XP",
     "duration_years": "{n} anni",
     "decrease_text_aria": "Riduci il testo",
+    "layout_aria": "Cambia la disposizione della linea del tempo",
     "increase_text_aria": "Ingrandisci il testo",
     "hint_btn_full": "💡 Suggerimento",
     "erase_btn": "Cancella",
@@ -469,7 +470,7 @@
     "notifications_hint": "Promemoria per mantenere la tua serie e non perdere la Sfida del giorno. Disponibile nell'app iOS (non sul web).",
     "onboarding_btn": "🧭 Rivedi il tutorial",
     "reset_hint": "Elimina definitivamente i tuoi preferiti, tutti i tuoi temi ed eventi personalizzati creati, la tua cronologia di revisione (punti deboli) e i progressi di sblocco delle modalità Cronometrata/Esperto. Le tue impostazioni di visualizzazione (orientamento, aspetto) vengono conservate.",
-    "feedback_hint": "Ti va di scrivermi? Un complimento, un'osservazione, una domanda o altro: puoi scrivermi a historiaxe@gmail.com",
+    "feedback_hint": "Ti va di scrivermi? Un complimento, un'osservazione, una domanda o altro: puoi scrivermi a historiaxe.app@gmail.com",
     "reset_confirm_full": "Questa azione elimina definitivamente i tuoi temi preferiti, tutti i tuoi temi ed eventi personalizzati, l'intera cronologia di revisione (punti deboli, caselle di memorizzazione) e i progressi di sblocco delle modalità Cronometrata/Esperto. Questa azione è irreversibile. Vuoi continuare?",
     "reset_confirm_ok": "Ripristina tutto",
     "size_mb": "{val} MB",
@@ -672,6 +673,13 @@
     "collapse_all": "Comprimi tutto",
     "revise_axis": "Ripassa questo asse: {axe}"
   },
+  "location": {
+    "ask_body": "Dov'è la tua storia? Consenti la localizzazione per individuare a colpo d'occhio gli eventi accaduti vicino a te. La tua posizione resta sul dispositivo: non viene mai salvata né condivisa.",
+    "ask_ok": "Localizzami",
+    "locate_label": "Localizzami",
+    "unavailable": "Posizione non disponibile. Consenti la localizzazione per HistoriAxe nelle impostazioni del dispositivo per comparire sulla mappa.",
+    "you_are_here": "Sei qui"
+  },
   "notifications": {
     "review_title": "🧠 Ripasso di oggi",
     "review_body": "{count} eventi da ripassare oggi: bastano cinque minuti.",
@@ -689,7 +697,9 @@
     "comeback3_title": "🌍 La Storia ti aspetta",
     "comeback3_body": "Sono passati tre giorni. Una partita di cinque minuti basta per riprendere il filo.",
     "comeback7_title": "📜 Una settimana senza di te",
-    "comeback7_body": "Torna quando vuoi: i tuoi progressi e i tuoi ripassi sono ancora qui."
+    "comeback7_body": "Torna quando vuoi: i tuoi progressi e i tuoi ripassi sono ancora qui.",
+    "ask_body": "Mantieni la tua serie di giorni, ricevi un avviso quando un amico ti sfida a un duello e ricevi i promemoria di ripasso al momento giusto. Puoi cambiarlo in qualsiasi momento nelle impostazioni.",
+    "ask_ok": "Attiva"
   },
   "scoring": {
     "title": "Come vengono calcolati i punti?",
@@ -799,8 +809,19 @@
   "home": {
     "start_aria": "Inizia"
   },
+  "renown": {
+    "title": "Fama",
+    "local": "Fama locale",
+    "regional": "Fama regionale",
+    "world": "Fama mondiale",
+    "local_short": "Locale",
+    "regional_short": "Regionale",
+    "world_short": "Mondiale"
+  },
   "gallery": {
     "title": "Galleria dei ritratti",
+    "renown_show": "Mostra la fama",
+    "renown_help": "Il contorno del ritratto indica quanto una figura è conosciuta nel mondo: un filetto (bronzo) per una fama locale, due (argento) per regionale, tre (oro) per mondiale.",
     "launcher_sub": "{count} volti da sfogliare",
     "order_alpha": "Ordine alfabetico",
     "order_famille": "Per cognome",
@@ -1406,6 +1427,13 @@
     "card_kicker": "Minigiochi · Arcade · Ragionamento",
     "best": "Miglior punteggio: {score}",
     "no_best": "Non ancora giocato",
+    "difficulty_label": "Difficoltà",
+    "difficulty_easy": "Facile",
+    "difficulty_normal": "Medio",
+    "difficulty_hard": "Difficile",
+    "difficulty_hint": "I punti contano ×{mult} per il record.",
+    "weighted": "{level} ×{mult}: {total} pt conteggiati.",
+    "go": "Via!",
     "play": "Gioca",
     "replay": "Rigioca",
     "over": "Partita terminata",
@@ -1416,6 +1444,9 @@
   },
   "pacman": {
     "title": "Pac-Man della linea del tempo",
+    "level_easy": "3 date, un fantasma lento, Pac-Man tranquillo.",
+    "level_normal": "4 date, un secondo fantasma dal turno 3.",
+    "level_hard": "5 date, due poi tre fantasmi, sempre più veloci.",
     "desc": "Mangia la data dell’evento richiesto, fuggi dai fantasmi.",
     "board_aria": "Labirinto di Pac-Man",
     "status": "Manche {round} · {lives} · {score} pt",
@@ -1446,6 +1477,9 @@
   },
   "snake": {
     "title": "Snake cronologico",
+    "level_easy": "3 eventi, serpente lento.",
+    "level_normal": "3 eventi, velocità normale.",
+    "level_hard": "4 eventi, serpente veloce.",
     "desc": "Mangia gli eventi dal più antico al più recente.",
     "entry": "🐍 Snake cronologico",
     "rule": "Mangia le pastiglie in ordine cronologico, dall’evento più antico al più recente. Un errore, un muro o la tua coda: una vita in meno.",
@@ -1461,6 +1495,9 @@
   },
   "tetris": {
     "title": "Tetris dei secoli",
+    "level_easy": "I blocchi cadono lentamente.",
+    "level_normal": "I blocchi cadono a velocità normale.",
+    "level_hard": "I blocchi cadono veloci.",
     "desc": "Sistema ogni evento che cade nel suo periodo.",
     "entry": "🧱 Minigioco: Tetris dei secoli",
     "status": "{score} pt · {rows} righe · livello {level}",
@@ -1633,7 +1670,7 @@
     "err_generic": "Si è verificato un errore. Riprova.",
     "sign_out_confirm": "Uscire? I tuoi progressi restano salvati nel tuo account; questo dispositivo ripartirà da zero fino al prossimo accesso.",
     "delete_confirm": "Eliminare definitivamente il tuo account, i tuoi punteggi e i progressi salvati? L'operazione è irreversibile.",
-    "err_delete": "Eliminazione non riuscita. Controlla la connessione e riprova, oppure scrivi a ruben.arditti@gmail.com."
+    "err_delete": "Eliminazione non riuscita. Controlla la connessione e riprova, oppure scrivi a historiaxe.app@gmail.com."
   },
   "team": {
     "title": "Squadra",
@@ -1881,6 +1918,11 @@
     "grid_aria": "Carte del Memory",
     "status": "Coppie: {matched} / {pairs} · Errori: {errors}",
     "card_hidden": "Carta {n}, coperta",
+    "card_hidden_event": "Carta {n}, coperta: evento",
+    "card_hidden_date": "Carta {n}, coperta: data",
+    "level_easy": "Dorso delle carte colorato: blu per un evento, ambra per una data. 6 coppie.",
+    "level_normal": "6 coppie, tutte le carte sono uguali.",
+    "level_hard": "9 coppie (18 carte), tutte le carte sono uguali.",
     "card_event": "Carta {n}: evento «{text}»",
     "card_date": "Carta {n}: data {text}",
     "match": "✓ {year} — {title}",
@@ -1891,6 +1933,9 @@
   },
   "who": {
     "title": "Chi sono?",
+    "level_easy": "Figure note quasi ovunque; due indizi fin dall’inizio (massimo 80 punti).",
+    "level_normal": "Figure mediamente note nel mondo; un indizio all’inizio.",
+    "level_hard": "Figure poco note nel mondo; anche le risposte sbagliate lo sono.",
     "loading": "Scelta dei personaggi…",
     "desc": "Indovina il personaggio storico, con indizi che si aggiungono uno alla volta.",
     "status": "Manche {n} / {total} · {score} pt",
@@ -1927,6 +1972,10 @@
   },
   "scene": {
     "title": "Caccia agli anacronismi",
+    "level_easy": "Il numero di intrusi è annunciato, un errore toglie solo mezzo punto.",
+    "level_normal": "Bisogna indovinare quanti sono gli intrusi.",
+    "level_hard": "Bisogna indovinare quanti sono gli intrusi, un errore toglie il doppio.",
+    "count_hint": "Intrusi da trovare: {count}.",
     "desc": "Individua in una scena ciò che non appartiene a quell’epoca.",
     "status": "Scena {n} / {total} · {score} pt",
     "grid_aria": "Elementi della scena",
@@ -1991,6 +2040,9 @@
   },
   "breakout": {
     "title": "Breakout dei riferimenti",
+    "level_easy": "Racchetta larga, palla lenta e prevedibile, da 4 a 6 mattoni; il mattone da rompere è cerchiato.",
+    "level_normal": "Racchetta media, palla un po' più lenta di prima, fino a 8 mattoni.",
+    "level_hard": "Racchetta stretta, palla veloce e rimbalzi in diagonale, fino a 8 mattoni.",
     "desc": "Rompi i mattoncini dal più antico al più recente.",
     "board_aria": "Campo del Breakout",
     "rule": "Rompi i mattoncini dal più antico al più recente. Un altro mattoncino, o la palla persa: una vita in meno. La palla accelera a ogni mattoncino.",
@@ -2007,18 +2059,21 @@
   },
   "flappy": {
     "title": "Flappy Clio",
-    "desc": "Vola tra i pilastri: passa dalla data che segue l’ultimo riferimento.",
+    "level_easy": "Scorrimento lento; l’evento sbagliato è molto lontano nel tempo.",
+    "level_normal": "Scorrimento medio; l’evento sbagliato è a distanza media.",
+    "level_hard": "Scorrimento veloce; l’evento sbagliato è vicinissimo nel tempo.",
+    "desc": "Vola tra i pilastri: passa dall’evento che segue l’ultimo riferimento.",
     "board_aria": "Campo di Flappy Clio",
     "flap": "🐾 Vola",
-    "hint": "Tocca lo schermo (o la barra spaziatrice) per battere le ali. A ogni porta passa dalla data che SEGUE l’ultimo riferimento.",
+    "hint": "Tocca lo schermo (o la barra spaziatrice) per battere le ali. A ogni porta, due eventi sono indicati in alto: passa da quello che SEGUE l’ultimo riferimento (↑ apertura in alto, ↓ apertura in basso). Lo sfondo cambia con l’epoca. Dopo uno scontro, il gioco aspetta il tuo prossimo battito.",
     "status": "Manche {round} · {lives} · {score} pt",
     "banner_start": "Primo riferimento: passa dall’apertura grande.",
     "banner_last": "Ultimo riferimento: {year} — {title}",
     "good": "✓ {year} — {title}",
-    "wrong": "Quest’anno è precedente all’ultimo riferimento: bisognava passare da {expected_year}.",
+    "wrong": "Non quello: «{chosen}» ({chosen_year}) è precedente all’ultimo riferimento. Bisognava passare da «{expected}» ({expected_year}).",
     "hit": "Ahi! Un pilastro, il suolo o il soffitto.",
     "over_text": "{passed} riferimenti superati, {score} punti.",
-    "mistake": "Hai preso {chosen}, precedente all’ultimo riferimento, invece di {expected_year} («{expected}»).",
+    "mistake": "Hai preso «{chosen_title}» ({chosen}), precedente all’ultimo riferimento, invece di «{expected}» ({expected_year}).",
     "tap": "Tocca per volare"
   },
   "race": {
@@ -2063,6 +2118,9 @@
   },
   "hangman": {
     "title": "Impiccato delle date",
+    "level_easy": "6 vite, prima cifra regalata.",
+    "level_normal": "4 vite.",
+    "level_hard": "3 vite, nessun indizio «prima / dopo».",
     "desc": "Indovina l’anno cifra per cifra: ogni errore costa una vita.",
     "status": "Evento {n} / {total} · {score} pt",
     "prompt": "{title}: in che anno?",
@@ -2168,7 +2226,8 @@
     "group_convert": "Convertire e calcolare",
     "group_calendars": "Calendari",
     "group_landmarks": "Riferimenti",
-    "group_maps": "Mappe e alberi",
+    "group_maps": "Mappe",
+    "group_bible": "Bibbia e tradizione",
     "card_kicker": "Convertitori · Calcoli",
     "ad": "d.C.",
     "bc": "a.C.",

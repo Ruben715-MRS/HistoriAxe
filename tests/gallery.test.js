@@ -128,3 +128,28 @@ test('un portrait est débloqué dès que le suivi de révision a une fiche pour
     // Une fiche pour un événement hors galerie (un thème d'histoire) ne compte pas.
     assert.equal(galleryUnlockedCount(entries, { thm_aut_quelquechose: { box: 2 } }), 0);
 });
+
+test('le filtre de renommée retient un ou plusieurs niveaux, et se combine avec la recherche', () => {
+    const entries = [
+        { level: 1, iso: 'FR', evt: { axe: 'A' }, haystack: 'a' },
+        { level: 2, iso: 'FR', evt: { axe: 'A' }, haystack: 'b' },
+        { level: 3, iso: 'DE', evt: { axe: 'B' }, haystack: 'c' },
+        { level: 0, iso: 'DE', evt: { axe: 'B' }, haystack: 'd' }
+    ];
+    const names = (opts) => filterGalleryEntries(entries, opts).map((e) => e.haystack);
+    assert.deepEqual(names({}), ['a', 'b', 'c', 'd'], 'sans filtre : tout, même sans niveau');
+    assert.deepEqual(names({ renown: [] }), ['a', 'b', 'c', 'd']);
+    assert.deepEqual(names({ renown: [3] }), ['c']);
+    assert.deepEqual(names({ renown: [1, 2] }), ['a', 'b']);
+    assert.deepEqual(names({ renown: [1, 2, 3], country: 'DE' }), ['c']);
+    assert.deepEqual(names({ renown: [2], query: 'a' }), []);
+});
+
+test('sur le pack français : chaque figure de la galerie a un niveau de renommée, et chaque niveau a des figures', () => {
+    const counts = { 1: 0, 2: 0, 3: 0, 0: 0 };
+    pantheon.themes.forEach((theme) => theme.events.forEach((evt) => {
+        if (evt.image && evt.image.src) counts[[1, 2, 3].includes(evt.etoiles) ? evt.etoiles : 0] += 1;
+    }));
+    assert.equal(counts[0], 0, 'figures sans niveau');
+    [1, 2, 3].forEach((n) => assert.ok(counts[n] > 100, `niveau ${n} : ${counts[n]} figures`));
+});

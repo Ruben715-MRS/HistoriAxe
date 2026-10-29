@@ -40,8 +40,13 @@ async function upsertPlayer(deviceId, pseudo) {
 }
 
 async function findPlayerByDeviceId(deviceId) {
-    const { rows } = await query('select id, pseudo from players where device_id = $1', [deviceId]);
+    const { rows } = await query('select id, pseudo, country from players where device_id = $1', [deviceId]);
     return rows[0] || null;
 }
 
-module.exports = { upsertPlayer, findPlayerByDeviceId, sanitizePseudo, isValidDeviceId };
+// Pays déclaré (classement national). '' retire le pays ; la validation (liste fermée) est faite par l'appelant.
+async function setPlayerCountry(deviceId, country) {
+    await query('update players set country = $2 where device_id = $1', [deviceId, country]);
+}
+
+module.exports = { upsertPlayer, findPlayerByDeviceId, setPlayerCountry, sanitizePseudo, isValidDeviceId };

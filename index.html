@@ -287,6 +287,21 @@
             <button type="button" class="gallery-reset hidden" id="gallery-reset"
                 data-i18n="gallery.filter_reset">Tout effacer</button>
         </div>
+        <!-- Renommée (voir js/renown.js) : la case affiche ou cache les contours de portrait et le filtre. -->
+        <div class="gallery-renown" id="gallery-renown">
+            <!-- La case à l'intérieur est le contrôle clavier de cette étiquette cliquable (data-kbd-proxy, voir e2e/clavier.spec.js). -->
+            <label class="gallery-renown-toggle" data-kbd-proxy>
+                <input type="checkbox" id="gallery-renown-show" checked>
+                <span data-i18n="gallery.renown_show">Afficher la renommée</span>
+            </label>
+            <div class="gallery-renown-filter" id="gallery-renown-filter" role="group" aria-label="Renommée"
+                data-i18n-attr="aria-label:renown.title">
+                <button type="button" class="gallery-renown-btn renown-chip renown-1" data-level="1" aria-pressed="false"></button>
+                <button type="button" class="gallery-renown-btn renown-chip renown-2" data-level="2" aria-pressed="false"></button>
+                <button type="button" class="gallery-renown-btn renown-chip renown-3" data-level="3" aria-pressed="false"></button>
+            </div>
+            <p class="gallery-renown-help" id="gallery-renown-help" data-i18n="gallery.renown_help">Le contour du portrait dit à quel point une figure est connue dans le monde : un filet (bronze) pour une renommée locale, deux (argent) pour régionale, trois (or) pour mondiale.</p>
+        </div>
         <div id="gallery-container" class="gallery-container"></div>
     </div>
 
@@ -898,6 +913,7 @@
         <button class="back-btn" onclick="snakeBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
         <h2 class="header-title" data-i18n="snake.title">Snake chronologique</h2>
         <p class="modes-header-subtitle" id="snake-status" role="status"></p>
+        <div class="arcade-difficulty" id="snake-difficulty"></div>
         <p class="arcade-rule" data-i18n="snake.rule">Mangez les pastilles dans l'ordre chronologique, de l'événement le plus ancien au plus récent. Une erreur, un mur ou votre queue : une vie en moins.</p>
         <div class="arcade-board" id="snake-board">
             <canvas id="snake-canvas" class="arcade-canvas" role="img" aria-label="Plateau du Snake" data-i18n-attr="aria-label:snake.board_aria"></canvas>
@@ -924,6 +940,7 @@
         <h2 class="header-title" data-i18n="tetris.title">Tetris des siècles</h2>
         <p class="modes-header-subtitle" id="tetris-status" role="status"></p>
         <p class="tetris-banner" id="tetris-banner" role="status"></p>
+        <div class="arcade-difficulty" id="tetris-difficulty"></div>
         <div class="tetris-heads" id="tetris-heads"></div>
         <div class="arcade-board" id="tetris-board">
             <canvas id="tetris-canvas" class="arcade-canvas" role="img" aria-label="Plateau du Tetris" data-i18n-attr="aria-label:tetris.board_aria"></canvas>
@@ -949,8 +966,10 @@
         <h2 class="header-title" data-i18n="pacman.title">Pac-Man de la frise</h2>
         <p class="modes-header-subtitle" id="pacman-status" role="status"></p>
         <p class="tetris-banner" id="pacman-banner" role="status"></p>
+        <div class="arcade-difficulty" id="pacman-difficulty"></div>
         <div class="arcade-board" id="pacman-board">
             <canvas id="pacman-canvas" class="arcade-canvas" role="img" aria-label="Labyrinthe du Pac-Man" data-i18n-attr="aria-label:pacman.board_aria"></canvas>
+            <div class="arcade-countdown hidden" id="pacman-countdown" role="status" aria-live="assertive"></div>
             <button type="button" class="btn arcade-start" id="pacman-start" onclick="pacmanStart()" data-i18n="arcade.play">Jouer</button>
         </div>
         <p class="wheel-feedback hidden arcade-message" id="pacman-message" role="status"></p>
@@ -999,11 +1018,16 @@
         <h2 class="header-title" data-i18n="memory.title">Memory chronologique</h2>
         <p class="modes-header-subtitle" id="memory-status" role="status"></p>
         <p class="arcade-rule" data-i18n="memory.rule">Retournez deux cartes : un événement et sa date forment une paire.</p>
+        <div id="memory-setup" class="race-setup">
+            <div class="arcade-difficulty" id="memory-difficulty"></div>
+            <button type="button" class="btn" onclick="memoryStart()" data-i18n="arcade.play">Jouer</button>
+        </div>
         <div class="memory-grid" id="memory-grid" role="group" aria-label="Cartes du Memory" data-i18n-attr="aria-label:memory.grid_aria"></div>
         <p class="wheel-feedback hidden arcade-message" id="memory-message" role="status"></p>
         <div class="arcade-over hidden" id="memory-over">
             <h3 data-i18n="memory.won">Toutes les paires !</h3>
             <p id="memory-over-text"></p>
+            <div class="arcade-difficulty" id="memory-difficulty-over"></div>
             <button type="button" class="btn" onclick="memoryStart()" data-i18n="arcade.replay">Rejouer</button>
         </div>
     </div>
@@ -1013,7 +1037,11 @@
         <button class="back-btn" onclick="whoBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
         <h2 class="header-title" data-i18n="who.title">Qui suis-je ?</h2>
         <p class="modes-header-subtitle" id="who-status" role="status"></p>
-        <div id="who-play">
+        <div id="who-setup" class="race-setup">
+            <div class="arcade-difficulty" id="who-difficulty"></div>
+            <button type="button" class="btn" onclick="whoStart()" data-i18n="arcade.play">Jouer</button>
+        </div>
+        <div id="who-play" class="hidden">
             <ol class="who-clues" id="who-clues" aria-live="polite"></ol>
             <figure class="whois-portrait hidden" id="who-portrait">
                 <img id="who-portrait-img" class="whois-portrait-img" alt="" width="200" height="250" decoding="async">
@@ -1024,6 +1052,7 @@
             <div class="wheel-feedback hidden" id="who-feedback" role="status">
                 <strong id="who-feedback-title"></strong>
                 <p id="who-feedback-text"></p>
+                <p id="who-feedback-renown" class="renown-chip hidden"></p>
                 <button type="button" class="btn" id="who-next" onclick="whoContinue()"></button>
             </div>
         </div>
@@ -1031,6 +1060,7 @@
             <h3 data-i18n="arcade.over">Partie terminée</h3>
             <p id="who-over-text"></p>
             <ul class="arcade-mistakes" id="who-over-list"></ul>
+            <div class="arcade-difficulty" id="who-difficulty-over"></div>
             <button type="button" class="btn" onclick="whoStart()" data-i18n="arcade.replay">Rejouer</button>
         </div>
     </div>
@@ -1062,7 +1092,11 @@
         <button class="back-btn" onclick="sceneBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
         <h2 class="header-title" data-i18n="scene.title">Chasse aux anachronismes</h2>
         <p class="modes-header-subtitle" id="scene-status" role="status"></p>
-        <div id="scene-play">
+        <div id="scene-setup" class="race-setup">
+            <div class="arcade-difficulty" id="scene-difficulty"></div>
+            <button type="button" class="btn" onclick="sceneStart()" data-i18n="arcade.play">Jouer</button>
+        </div>
+        <div id="scene-play" class="hidden">
             <h3 class="scene-title" id="scene-title"></h3>
             <p class="scene-intro" id="scene-intro"></p>
             <div class="scene-grid" id="scene-grid" role="group" aria-label="Éléments de la scène" data-i18n-attr="aria-label:scene.grid_aria"></div>
@@ -1077,6 +1111,7 @@
             <h3 data-i18n="arcade.over">Partie terminée</h3>
             <p id="scene-over-text"></p>
             <ul class="arcade-mistakes" id="scene-over-list"></ul>
+            <div class="arcade-difficulty" id="scene-difficulty-over"></div>
             <button type="button" class="btn" onclick="sceneStart()" data-i18n="arcade.replay">Rejouer</button>
         </div>
     </div>
@@ -1126,6 +1161,7 @@
         <button class="back-btn" onclick="breakoutBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
         <h2 class="header-title" data-i18n="breakout.title">Casse-briques des repères</h2>
         <p class="modes-header-subtitle" id="breakout-status" role="status"></p>
+        <div class="arcade-difficulty" id="breakout-difficulty"></div>
         <p class="arcade-rule" data-i18n="breakout.rule">Cassez les briques de la plus ancienne à la plus récente. Une autre brique, ou une balle perdue : une vie en moins. La balle accélère à chaque brique.</p>
         <div class="arcade-board" id="breakout-board">
             <canvas id="breakout-canvas" class="arcade-canvas arcade-canvas-wide" role="img" aria-label="Plateau du Casse-briques" data-i18n-attr="aria-label:breakout.board_aria"></canvas>
@@ -1152,6 +1188,11 @@
         <h2 class="header-title" data-i18n="flappy.title">Flappy Clio</h2>
         <p class="modes-header-subtitle" id="flappy-status" role="status"></p>
         <p class="tetris-banner" id="flappy-banner" role="status"></p>
+        <div class="flappy-choices hidden" id="flappy-choices" role="status" aria-live="polite">
+            <p id="flappy-choice-up"></p>
+            <p id="flappy-choice-down"></p>
+        </div>
+        <div class="arcade-difficulty" id="flappy-difficulty"></div>
         <div class="arcade-board" id="flappy-board">
             <canvas id="flappy-canvas" class="arcade-canvas arcade-canvas-wide" role="img" aria-label="Plateau de Flappy Clio" data-i18n-attr="aria-label:flappy.board_aria"></canvas>
             <button type="button" class="btn arcade-start" id="flappy-start" onclick="flappyStart()" data-i18n="arcade.play">Jouer</button>
@@ -1210,7 +1251,11 @@
         <button class="back-btn" onclick="hangmanBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
         <h2 class="header-title" data-i18n="hangman.title">Pendu des dates</h2>
         <p class="modes-header-subtitle" id="hangman-status" role="status"></p>
-        <div id="hangman-play">
+        <div id="hangman-setup" class="race-setup">
+            <div class="arcade-difficulty" id="hangman-difficulty"></div>
+            <button type="button" class="btn" onclick="hangmanStart()" data-i18n="arcade.play">Jouer</button>
+        </div>
+        <div id="hangman-play" class="hidden">
             <p class="cause-question" id="hangman-prompt"></p>
             <p class="hangman-bc hidden" id="hangman-bc" data-i18n="hangman.bc">av. J.-C.</p>
             <div class="hangman-slots" id="hangman-slots" aria-live="polite"></div>
@@ -1233,6 +1278,7 @@
             <h3 data-i18n="arcade.over">Partie terminée</h3>
             <p id="hangman-over-text"></p>
             <ul class="arcade-mistakes" id="hangman-over-list"></ul>
+            <div class="arcade-difficulty" id="hangman-difficulty-over"></div>
             <button type="button" class="btn" onclick="hangmanStart()" data-i18n="arcade.replay">Rejouer</button>
         </div>
     </div>
@@ -1301,10 +1347,6 @@
                 <span class="arcade-card-icon" aria-hidden="true">⏳</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.duration_title"></strong><small data-i18n="tools.duration_desc"></small></span>
             </button>
-            <button type="button" class="arcade-card" onclick="openTool('measures', 'screen-tools')">
-                <span class="arcade-card-icon" aria-hidden="true">⚖️</span>
-                <span class="arcade-card-text"><strong data-i18n="tools.measures_title"></strong><small data-i18n="tools.measures_desc"></small></span>
-            </button>
             </div>
         </section>
         <section class="tools-group" aria-labelledby="tools-group-calendars">
@@ -1352,13 +1394,26 @@
                 <span class="arcade-card-icon" aria-hidden="true">🗺️</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.history_title"></strong><small data-i18n="tools.history_desc"></small></span>
             </button>
+            </div>
+        </section>
+        <section class="tools-group" aria-labelledby="tools-group-bible">
+            <h3 class="modes-group-title modes-group-static" id="tools-group-bible" data-i18n="tools.group_bible"></h3>
+            <div class="arcade-menu">
+            <button type="button" class="arcade-card" onclick="openTool('genealogy', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">🌳</span>
+                <span class="arcade-card-text"><strong data-i18n="tools.genealogy_title"></strong><small data-i18n="tools.genealogy_desc"></small></span>
+            </button>
             <button type="button" class="arcade-card" onclick="openTool('biblical', 'screen-tools')">
                 <span class="arcade-card-icon" aria-hidden="true">📜</span>
                 <span class="arcade-card-text"><strong data-i18n="tools.biblical_title"></strong><small data-i18n="tools.biblical_desc"></small></span>
             </button>
-            <button type="button" class="arcade-card" onclick="openTool('genealogy', 'screen-tools')">
-                <span class="arcade-card-icon" aria-hidden="true">🌳</span>
-                <span class="arcade-card-text"><strong data-i18n="tools.genealogy_title"></strong><small data-i18n="tools.genealogy_desc"></small></span>
+            <button type="button" class="arcade-card" onclick="openTool('measures', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">⚖️</span>
+                <span class="arcade-card-text"><strong data-i18n="tools.measures_title"></strong><small data-i18n="tools.measures_desc"></small></span>
+            </button>
+            <button type="button" class="arcade-card" onclick="openTool('commandments', 'screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">🕎</span>
+                <span class="arcade-card-text"><strong data-i18n="tools.commandments_title"></strong><small data-i18n="tools.commandments_desc"></small></span>
             </button>
             </div>
         </section>
@@ -1915,6 +1970,22 @@
         </div>
     </div>
 
+    <div id="screen-tool-commandments" class="list-screen hidden">
+        <button class="back-btn" onclick="toolBack('commandments')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="tools.commandments_title">Textes de référence</h2>
+        <p class="modes-header-subtitle" data-i18n="tools.commandments_intro"></p>
+        <div class="tool-panel cmd-panel">
+            <div class="cmd-toolbar">
+                <div class="gen-lang" id="tool-commandments-lang" role="group" aria-label="Noms hébreux : en transcription (A) ou en lettres hébraïques (א)" data-i18n-attr="aria-label:tools.commandments_lang_aria">
+                    <button type="button" class="gen-lang-btn" id="tool-commandments-lang-fr" aria-pressed="true" lang="fr" onclick="commandmentsSetLang('fr')">A</button>
+                    <button type="button" class="gen-lang-btn" id="tool-commandments-lang-he" aria-pressed="false" lang="he" onclick="commandmentsSetLang('he')">א</button>
+                </div>
+            </div>
+            <div class="tool-history-chips" id="tool-commandments-tabs" role="group" aria-label="Choisir une liste de commandements" data-i18n-attr="aria-label:tools.commandments_tabs_aria"></div>
+            <div id="tool-commandments-body" class="cmd-body"></div>
+        </div>
+    </div>
+
     <div id="screen-tool-biblical" class="list-screen hidden">
         <button class="back-btn" onclick="toolBack('biblical')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
         <h2 class="header-title" data-i18n="tools.biblical_title">Cartes bibliques</h2>
@@ -2253,6 +2324,9 @@
                 <span class="bar-fill"></span>
                 <span id="hud-timer-container" class="timer-chip hidden"><span id="hud-timer">0,0</span> s</span>
                 <span class="lives-row" id="hud-lives"></span>
+                <button type="button" class="layout-btn hidden" id="hud-layout-btn" onclick="openLayoutSettings()"
+                    aria-label="Changer la disposition de la frise" data-i18n-attr="aria-label:game.layout_aria"
+                    title="Disposition de la frise"><span aria-hidden="true">📐</span></button>
                 <span class="type-size">
                     <button type="button" onclick="changeZoom(-0.15)" aria-label="Réduire le texte"
                         data-i18n-attr="aria-label:game.decrease_text_aria">A−</button>
@@ -2904,6 +2978,7 @@
             <figure id="modal-portrait" class="modal-portrait hidden">
                 <img id="modal-portrait-img" class="modal-portrait-img" alt="" width="160" height="200" decoding="async">
                 <figcaption>
+                    <span id="modal-portrait-renown" class="renown-chip hidden"></span>
                     <span id="modal-portrait-caption" class="modal-portrait-caption"></span>
                     <span id="modal-portrait-credit" class="modal-portrait-credit"></span>
                 </figcaption>
@@ -3135,6 +3210,11 @@
         <div class="modal-content" style="max-width: 460px;">
             <span class="close-btn" role="button" tabindex="0" aria-label="Fermer"
                 data-i18n-attr="aria-label:nav.close" onclick="closeLeagueModal()">×</span>
+            <div class="segmented" id="league-scope-tabs" style="margin: 0 auto 16px;">
+                <button type="button" data-value="group" data-i18n="league.tab_group">Ligue de la semaine</button>
+                <button type="button" data-value="country" data-i18n="league.tab_country">Classement national</button>
+                <button type="button" data-value="world" data-i18n="league.tab_world">Classement mondial</button>
+            </div>
             <h2 style="font-size:20px; margin-bottom:5px; color:var(--text-dark);" data-i18n="league.title">🥇 Ta ligue
                 de la semaine</h2>
             <div class="league-week-hint" id="league-week-hint">Ton total cette semaine : <strong
@@ -3328,7 +3408,7 @@
             <h2 style="font-size:20px; margin-bottom:24px; color:var(--text-dark);" data-i18n="settings.title">Réglages
             </h2>
 
-            <div class="settings-group">
+            <div class="settings-group settings-quick">
                 <div class="settings-label" data-i18n="settings.orientation_label">Orientation de la frise</div>
                 <div class="segmented" id="settings-orientation">
                     <button type="button" data-value="auto" data-i18n="settings.orientation_auto">Auto</button>
@@ -3340,7 +3420,7 @@
                 <p class="settings-hint" data-i18n="settings.orientation_hint">« Auto » suit la rotation de l'appareil :
                     portrait affiche la frise verticale, paysage l'affiche horizontale.</p>
             </div>
-            <div class="settings-group" id="settings-group-landscape">
+            <div class="settings-group settings-quick" id="settings-group-landscape">
                 <div class="settings-label" data-i18n="settings.landscape_flow_label">Disposition en paysage</div>
                 <div class="segmented" id="settings-landscape-flow">
                     <button type="button" data-value="line" data-i18n="settings.landscape_flow_line">Ligne</button>
@@ -3361,7 +3441,7 @@
                 </label>
                 <p class="settings-hint" data-i18n="settings.axis_under_events_hint">En Découverte, le nom de l'axe reste affiché sous chaque événement. En partie, seul le liseré de couleur de la carte l'indique, sauf si vous cochez cette option.</p>
             </div>
-            <div class="settings-group">
+            <div class="settings-group settings-quick">
                 <div class="settings-label" data-i18n="settings.appearance_label">Apparence</div>
                 <div class="segmented" id="settings-appearance">
                     <button type="button" data-value="auto" data-i18n="settings.appearance_auto">Auto</button>
@@ -3479,9 +3559,9 @@
             </div>
 
             <div class="settings-group">
-                <p class="settings-hint" style="margin:0; text-align:center;"><a href="mailto:historiaxe@gmail.com"
+                <p class="settings-hint" style="margin:0; text-align:center;"><a href="mailto:historiaxe.app@gmail.com"
                     data-i18n="settings.feedback_hint">Vous avez envie de m'adresser un message ? Compliment, remarque,
-                    question ou autre : vous pouvez m'écrire à historiaxe@gmail.com</a></p>
+                    question ou autre : vous pouvez m'écrire à historiaxe.app@gmail.com</a></p>
             </div>
         </div>
     </div>
@@ -3565,6 +3645,7 @@
     <script src="js/arcadeExtraCore.js"></script>
     <script src="js/reflexionContent.js"></script>
     <script src="js/reflexionCore.js"></script>
+    <script src="js/renown.js"></script>
     <script src="js/rewardsCore.js"></script>
     <script src="js/clioCore.js"></script>
     <script src="js/clioArt.js"></script>
@@ -3580,6 +3661,7 @@
     <script src="js/linkedEvents.js"></script>
     <script src="js/atlasCore.js"></script>
     <script src="js/geoPlace.js"></script>
+    <script src="js/location.js"></script>
     <script src="js/atlas.js"></script>
     <script src="js/gameModes.js"></script>
     <script src="js/classModes.js"></script>
@@ -3609,6 +3691,7 @@
     <script src="js/app/frise.js"></script>
     <script src="js/app/motion.js"></script>
     <script src="js/app/session-end.js"></script>
+    <script src="js/app/renown.js"></script>
     <script src="js/app/modal.js"></script>
     <script src="js/app/play-mode.js"></script>
     <script src="js/app/expedition.js"></script>
@@ -3653,6 +3736,9 @@
     <script src="js/app/biblical-measures.js"></script>
     <script src="js/biblicalMapsCore.js"></script>
     <script src="js/app/biblical-maps.js"></script>
+    <script src="js/commandments613Data.js"></script>
+    <script src="js/commandmentsCore.js"></script>
+    <script src="js/app/commandments.js"></script>
     <script src="js/app/rewards.js"></script>
     <script src="js/app/clio.js"></script>
     <script src="js/teamBadge.js"></script>
