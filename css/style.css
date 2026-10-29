@@ -14732,6 +14732,13 @@ input:not([type="range"]), label, select, summary, textarea {
 
 /* --- POIDS ET MESURES BIBLIQUES (js/app/biblical-measures.js) --- */
 .measures-toolbar { display: flex; justify-content: flex-end; }
+/* Mode hébreu : le convertisseur et ses lignes se lisent de droite à gauche. Les chiffres saisis restent de gauche à droite. */
+.measures-converter.is-he { direction: rtl; }
+.measures-converter.is-he .tool-h,
+.measures-converter.is-he .tool-small,
+.measures-converter.is-he .tool-field label,
+.measures-converter.is-he .tool-msg { text-align: right; }
+.measures-converter.is-he #tool-measures-value { direction: ltr; text-align: left; }
 .measures-body { display: flex; flex-direction: column; gap: 22px; margin-top: 14px; }
 .measures-lesson { border-top: 1px solid var(--border-soft); padding-top: 16px; }
 .measures-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 4px 0 8px; border: 1px solid var(--border-soft); border-radius: 12px; }

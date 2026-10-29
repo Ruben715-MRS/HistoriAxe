@@ -68,7 +68,8 @@ function toolMeasuresRender() {
 // --- Le convertisseur --------------------------------------------------------------------------------
 function measuresConverter(cat) {
     const panel = document.createElement('section');
-    panel.className = 'tool-panel measures-converter';
+    // En hébreu, le convertisseur et les lignes de résultats se lisent de droite à gauche : le nom à droite, la valeur à gauche.
+    panel.className = 'tool-panel measures-converter' + (measuresHe ? ' is-he' : '');
     const h = document.createElement('h3');
     h.className = 'tool-h';
     h.textContent = t('tools.measures_converter_title');
