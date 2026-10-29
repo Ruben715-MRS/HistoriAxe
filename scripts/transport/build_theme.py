@@ -21,13 +21,14 @@ THEME_ID = 'thm_catastrophes_transport'
 THEME_NAME = 'Grandes catastrophes de transport'
 PARENT = 'Société et Géopolitique'
 # Note importante affichée à l'ouverture du thème (écran des axes, js/app/axes-rounds.js).
-THEME_NOTE = ("Seuil de retenue : un évènement entre dans ce thème lorsqu'il a fait au moins 20 morts. "
-              "Deux exceptions sont assumées pour leur portée pédagogique : l'effondrement du pont de Tacoma (1940, "
-              "aucun mort) et l'accident de Brétigny-sur-Orge (2013, 7 morts). "
-              "Les bilans sont ceux connus à la date de rédaction (octobre 2026) et peuvent évoluer : ceux de 2025 et 2026 "
-              "sont souvent provisoires. Les lieux marqués « approximatif » ne sont pas des positions précises. "
-              "La liste n'est pas exhaustive : les catastrophes routières et maritimes sont les moins bien couvertes, "
-              "surtout entre 2015 et 2025.")
+THEME_NOTE = ("Seuil principal : un accident entre dans ce thème lorsqu'il a fait au moins 50 morts. "
+              "Un seuil élargi, de 20 à 25 morts, permet d'inclure des accidents très médiatisés ou importants dans l'histoire. "
+              "D'autres évènements plus petits sont conservés pour leur portée : l'effondrement du pont de Tacoma (1940, "
+              "aucun mort), l'accident de Brétigny-sur-Orge (2013, 7 morts) ou la catastrophe du vol Fuerza Aérea Uruguaya 571 "
+              "(1972, 29 morts). Les bilans sont ceux connus à la date de rédaction (octobre 2026) et peuvent évoluer : "
+              "ceux de 2025 et 2026 sont souvent provisoires. Les lieux marqués « approximatif » ne sont pas des positions "
+              "précises. La liste n'est pas exhaustive : les catastrophes routières et maritimes sont les moins bien "
+              "couvertes, surtout entre 2015 et 2025.")
 FR = os.path.join(ROOT, 'data', 'fr.json')
 GEO = os.path.join(ROOT, 'assets', 'geo', 'events-geo.json')
 
