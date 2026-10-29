@@ -3,7 +3,7 @@
   "lang": "fr",
   "name": "Français (Intégral)",
   "totalThemes": 853,
-  "totalEvents": 25816,
+  "totalEvents": 25822,
   "categories": [
     {
       "nom": "Culture générale",
@@ -44174,7 +44174,7 @@
               "id": "thm_catastrophes_transport",
               "nom": "Grandes catastrophes de transport",
               "difficulte": "Tous niveaux",
-              "note": "Seuil principal : ≥ 50 morts. Seuil élargi : ≥ 20 morts (événements significatifs mais sous le seuil principal). En dessous de 20 morts, quelques évènements sont conservés pour leur portée sur la sécurité des transports : l'accident de Brétigny-sur-Orge (7 morts, défaut de maintenance), les accidents d'Apollo 1, de Challenger et de Columbia (3 à 7 morts, sécurité des vols habités), l'incendie du tunnel du Saint-Gothard (11 morts, sécurité des tunnels) et l'accident de la gare Montparnasse (1 mort, image emblématique des débuts du chemin de fer). Les marées noires et l'effondrement du pont de Tacoma ne sont pas dans ce thème : elles sont traitées ailleurs, dans les thèmes sur le littoral et l'environnement. Les bilans sont ceux connus à la date de rédaction (octobre 2026) et peuvent évoluer : ceux de 2025 et 2026 sont souvent provisoires. Les lieux marqués « approximatif » ne sont pas des positions précises. La liste n'est pas exhaustive : les catastrophes routières et maritimes sont les moins bien couvertes, surtout entre 2015 et 2025.",
+              "note": "Seuil principal : ≥ 50 morts. Seuil élargi : ≥ 20 morts (événements significatifs mais sous le seuil principal). En dessous de 20 morts, quelques évènements sont conservés pour leur portée sur la sécurité des transports : l'accident de Brétigny-sur-Orge (7 morts, défaut de maintenance), les accidents d'Apollo 1, de Challenger et de Columbia (3 à 7 morts, sécurité des vols habités), l'incendie du tunnel du Saint-Gothard (11 morts, sécurité des tunnels) et l'accident de la gare Montparnasse (1 mort, image emblématique des débuts du chemin de fer). Les naufrages de migrants en mer ne figurent pas dans ce thème. Les marées noires et l'effondrement du pont de Tacoma ne sont pas dans ce thème : elles sont traitées ailleurs, dans les thèmes sur le littoral et l'environnement. Les bilans sont ceux connus à la date de rédaction (octobre 2026) et peuvent évoluer : ceux de 2025 et 2026 sont souvent provisoires. Les lieux marqués « approximatif » ne sont pas des positions précises. La liste n'est pas exhaustive : les catastrophes routières et maritimes sont les moins bien couvertes, surtout entre 2015 et 2025.",
               "axeOrder": [
                 "Catastrophes maritimes et fluviales",
                 "Catastrophes aériennes et spatiales",
@@ -44777,6 +44777,54 @@
                   "titre": "Naufrage du ferry MV Nyerere sur le lac Victoria",
                   "description": "Le 20 septembre 2018, le ferry MV Nyerere chavire sur le lac Victoria, au large de l'île d'Ukerewe, en Tanzanie. Le navire est surchargé, et le nombre exact de passagers reste incertain ; le bilan officiel atteint 224 morts. Le capitaine et d'autres responsables sont arrêtés.",
                   "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Naufrage+du+MV+Nyerere"
+                },
+                {
+                  "id": "cat79",
+                  "axe": "Catastrophes aériennes et spatiales",
+                  "date": 2014,
+                  "titre": "Disparition du vol MH370 de Malaysia Airlines",
+                  "description": "Le 8 mars 2014, un Boeing 777 de Malaysia Airlines disparaît des radars au-dessus du golfe de Thaïlande, peu après avoir quitté Kuala Lumpur pour Pékin. Les 239 personnes à bord sont présumées mortes. Des débris retrouvés à partir de 2015 sur les côtes de l'océan Indien confirment l'écrasement, mais l'épave principale n'a jamais été localisée, malgré plusieurs campagnes de recherche.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Vol+Malaysia+Airlines+370"
+                },
+                {
+                  "id": "cat80",
+                  "axe": "Catastrophes routières et terrestres",
+                  "date": 2019,
+                  "titre": "Accident d'un car touristique à Madère",
+                  "description": "Le 17 avril 2019, un car touristique transportant principalement des Allemands quitte la route à Caniço, sur l'île de Madère, au Portugal. Le bilan atteint 29 morts et 27 blessés. Le deuil national est décrété au Portugal, et une enquête est ouverte.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Accident+de+car+%C3%A0+Mad%C3%A8re+en+2019"
+                },
+                {
+                  "id": "cat81",
+                  "axe": "Catastrophes routières et terrestres",
+                  "date": 2017,
+                  "titre": "Bus précipité dans la rivière Trishuli, au Népal",
+                  "description": "Le 28 octobre 2017, un bus qui rentre vers Katmandou quitte la route de Prithvi, à l'aube, et tombe dans la rivière Trishuli, dans le district de Dhading. Au moins 31 personnes meurent, pour la plupart originaires de la région de Saptari, de retour de la fête de Chhath. Les accidents routiers sont fréquents au Népal, avec des véhicules souvent mal entretenus.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Accident+de+bus+de+la+Trishuli+en+2017"
+                },
+                {
+                  "id": "cat82",
+                  "axe": "Catastrophes routières et terrestres",
+                  "date": 2017,
+                  "titre": "Bus tombé dans un ravin à Carranglan, aux Philippines",
+                  "description": "Le 18 avril 2017, un bus tombe dans un ravin de près de 24 mètres à Carranglan, dans la province de Nueva Ecija, aux Philippines. Le bilan, selon les sources, est de 29 à 32 morts, le véhicule transportant plus de passagers que sa capacité. Les autorités évoquent des freins défaillants, avant que l'enquête ne retienne l'éclatement d'un pneu avant.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Accident+de+bus+de+Carranglan+en+2017"
+                },
+                {
+                  "id": "cat83",
+                  "axe": "Catastrophes routières et terrestres",
+                  "date": 2021,
+                  "titre": "Incendie d'un car à Bosnek, en Bulgarie",
+                  "description": "Le 23 novembre 2021, un car qui rentre de Turquie vers la Macédoine du Nord prend feu après avoir franchi une glissière de sécurité, près de Bosnek, dans l'ouest de la Bulgarie. Le bilan est d'au moins 45 morts, dont douze enfants. L'enquête sur la cause de l'accident est ouverte.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Accident+de+car+de+Bosnek+en+2021"
+                },
+                {
+                  "id": "cat84",
+                  "axe": "Catastrophes routières et terrestres",
+                  "date": 2025,
+                  "titre": "Incendie d'un bus de pèlerins près de Médine",
+                  "description": "Le 17 novembre 2025, un bus transportant des pèlerins indiens en Umrah, de La Mecque vers Médine, entre en collision avec un camion-citerne et prend feu, en Arabie saoudite. Le bilan est d'environ 45 morts, dont la plupart venaient de Hyderabad, avec un seul survivant. Le bilan officiel saoudien n'était pas encore publié à la date des premières informations.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Accident+de+bus+de+p%C3%A8lerins+pr%C3%A8s+de+M%C3%A9dine+en+2025"
                 }
               ]
             }

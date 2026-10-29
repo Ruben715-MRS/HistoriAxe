@@ -29,3 +29,10 @@ Seuils : principal ≥ 50 morts ; élargi ≥ 20 morts.
 ## Recommandation
 
 Traiter ces pistes en lot, comme pour les deux lots précédents : recherche, vérification sur deux sources au moins pour les bilans, puis ajout. Décider d'abord du sort des migrants en mer, et de MH370.
+
+## Mise à jour : lot 3
+
+- **MH370 (2014)** ajouté comme accident : disparition, épave principale non localisée.
+- **Routier, ajoutés** (tous au seuil élargi, 20 à 49 morts) : Madère (2019, 29), Trishuli au Népal (2017, 31), Carranglan aux Philippines (2017, 29 à 32), Bosnek en Bulgarie (2021, au moins 45), Médine (2025, environ 45).
+- **Migrants en mer** : exclus du thème, règle écrite dans la note.
+- **Restent à traiter** : EgyptAir 804, Yeti Airlines, Air India Express, Tara Air, Andria–Corato, Ghotki (Pakistan, 2019), le car de Shaanxi (36 morts, date à confirmer), et le balayage routier pays par pays.
