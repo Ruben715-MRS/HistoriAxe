@@ -33,14 +33,14 @@
         { id: 'km', group: 'modern', metres: 1000 }
     ];
 
-    // --- Volumes : l'unité de base est l'œuf (bétsa). 1 épha = 432 œufs = ≈ 22 L. ----------------------------------------------
-    // Les volumes se disent en œufs dans le Talmud ; un épha de 22 litres donne l'œuf à ≈ 51 mL, ce qui retombe sur les valeurs
-    // modernes usuelles (log ≈ 0,31 L ; kav ≈ 1,2 L ; omer = 2,2 L ; séa ≈ 7,3 L ; hin ≈ 3,7 L).
-    var EPHA_LITRES = 22;
+    // --- Volumes : l'unité de base est l'œuf (bétsa). 1 épha = 432 œufs. ----------------------------------------------------------
+    // Deux avis, chacun avec la valeur exacte de son œuf :
+    //  - Rav Naé : œuf = 57,6 mL, donc épha = 432 × 0,0576 L = 24,8832 L (log 0,3456 L, hin 4,1472 L, homer 248,832 L) ;
+    //  - 'Hazon Ich : épha = 43,0 L (œuf ≈ 99,5 mL, log ≈ 0,597 L, hin 7,2 L, homer 430 L).
+    // Les rapports entre unités bibliques restent exacts dans les deux cas ; seul le passage aux litres dépend de l'avis.
     var EGGS_PER_EPHA = 432;
-    // Deux avis sur l'épha : Rav Naé (≈ 22 L, œuf ≈ 51 mL, la valeur de la leçon) et 'Hazon Ich (≈ 40 à 43 L, œuf ≈ 90 à 100 mL) ;
-    // on prend le milieu de la fourchette, 41,5 L. Les rapports entre unités bibliques restent exacts dans les deux cas.
-    var VOLUME_OPINIONS = { nae: { id: 'nae', eppaLitres: EPHA_LITRES }, hazon: { id: 'hazon', eppaLitres: 41.5 } };
+    var EPHA_LITRES = 24.8832;
+    var VOLUME_OPINIONS = { nae: { id: 'nae', eppaLitres: EPHA_LITRES }, hazon: { id: 'hazon', eppaLitres: 43.0 } };
     var VOLUME_UNITS = [
         { id: 'betsa', group: 'biblical', size: 1 },
         { id: 'log', group: 'biblical', size: 6 },

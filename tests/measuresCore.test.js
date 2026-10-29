@@ -48,19 +48,27 @@ test('volumes : les relations du livre (en œufs, log, kav, omer, séa) se retro
     });
 });
 
-test('volumes : les valeurs modernes — épha 22 L, omer 2,2 L, séa ≈ 7,3 L, kav ≈ 1,2 L, hin ≈ 3,6 à 4 L, log ≈ 0,3 à 0,35 L, homer 220 L', () => {
+test('volumes : les valeurs modernes de Rav Naé, à partir de l\'œuf de 57,6 mL — épha 24,8832 L, omer 2,48832 L, séa 8,2944 L, kav 1,3824 L, hin 4,1472 L, log 0,3456 L, homer 248,832 L', () => {
     const L = id => M.factor('volumes', id);
-    close(L('epha'), 22);
-    close(L('bath'), 22);
-    close(L('omer'), 2.2);
-    close(L('homer'), 220);
-    close(L('lethech'), 110);
-    assert.ok(Math.abs(L('sea') - 7.3) < 0.05);
-    assert.ok(Math.abs(L('kav') - 1.2) < 0.05);
-    assert.ok(L('hin') >= 3.6 && L('hin') <= 4);
-    assert.ok(L('log') >= 0.3 && L('log') <= 0.35);
-    // Le log vaut 6 œufs de ≈ 51 mL.
-    assert.ok(Math.abs(L('betsa') - 0.0509) < 0.0005);
+    close(L('betsa'), 0.0576);
+    close(L('log'), 0.3456);
+    close(L('kav'), 1.3824);
+    close(L('omer'), 2.48832);
+    close(L('sea'), 8.2944);
+    close(L('epha'), 24.8832);
+    close(L('bath'), 24.8832);
+    close(L('hin'), 4.1472);
+    close(L('lethech'), 124.416);
+    close(L('homer'), 248.832);
+});
+
+test('volumes : avec l\'avis du \'Hazon Ich, l\'œuf vaut ≈ 99,5 mL, le log ≈ 0,597 L, le hin 7,2 L, l\'épha 43 L, le homer 430 L', () => {
+    const H = id => M.factor('volumes', id, 'hazon');
+    assert.ok(H('betsa') * 1000 >= 99.5 && H('betsa') * 1000 <= 100, 'œuf');
+    assert.ok(H('log') >= 0.597 && H('log') <= 0.600, 'log');
+    close(H('epha'), 43);
+    close(H('hin'), 7.2, 0.01);
+    close(H('homer'), 430);
 });
 
 test('volumes : l\'épha et le bath sont la même capacité, le homer et le cor aussi ; le hin vaut 12 log', () => {
@@ -111,12 +119,12 @@ test('convert : tolère une saisie invalide, marque les lignes approchées, gard
     const rows = M.convert('volumes', 1, 'epha');
     assert.equal(rows.length, M.unitsOf('volumes').length);
     assert.equal(rows.find(r => r.id === 'epha').isSource, true);
-    assert.equal(rows.find(r => r.id === 'l').value, 22);
+    close(rows.find(r => r.id === 'l').value, 24.8832);
     assert.equal(rows.find(r => r.id === 'l').approx, true);
-    assert.equal(rows.find(r => r.id === 'sea').value, 3);
+    close(rows.find(r => r.id === 'sea').value, 3);
     assert.equal(rows.find(r => r.id === 'sea').approx, false);
     // Des litres vers les éphas.
-    close(M.convert('volumes', 44, 'l').find(r => r.id === 'epha').value, 2);
+    close(M.convert('volumes', 44, 'l').find(r => r.id === 'epha').value, 44 / 24.8832);
 });
 
 test('formatNumber et formatDuration : lisibles', () => {
@@ -132,13 +140,13 @@ test('formatNumber et formatDuration : lisibles', () => {
     assert.equal(M.formatDuration(0.2), '< 1 min');
 });
 
-test('volumes : deux avis sur l\'épha, Rav Naé (≈ 22 L, par défaut) et \'Hazon Ich (≈ 41,5 L, milieu de 40 à 43 L)', () => {
-    close(M.factor('volumes', 'epha'), 22);
-    close(M.factor('volumes', 'epha', 'nae'), 22);
-    close(M.factor('volumes', 'epha', 'hazon'), 41.5);
+test('volumes : deux avis sur l\'épha, Rav Naé (≈ 24,88 L, par défaut) et \'Hazon Ich (43 L)', () => {
+    close(M.factor('volumes', 'epha'), 24.8832);
+    close(M.factor('volumes', 'epha', 'nae'), 24.8832);
+    close(M.factor('volumes', 'epha', 'hazon'), 43);
     // Les rapports entre unités bibliques restent exacts quel que soit l'avis.
     close(M.factor('volumes', 'log', 'hazon') / M.factor('volumes', 'betsa', 'hazon'), 6);
-    close(M.factor('volumes', 'epha', 'hazon') / M.factor('volumes', 'epha', 'nae'), 41.5 / 22);
+    close(M.factor('volumes', 'epha', 'hazon') / M.factor('volumes', 'epha', 'nae'), 43 / 24.8832);
 });
 
 test('volumes : avec l\'avis du \'Hazon Ich, l\'œuf vaut 90 à 100 mL, le log 0,55 à 0,60 L, et l\'épha 40 à 43 L (tableau de l\'avis)', () => {

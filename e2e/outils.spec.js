@@ -810,14 +810,14 @@ test('poids et mesures bibliques : distances, volumes et monnaies se convertisse
     await expect(page.locator('.measures-lesson .measures-table').first()).toBeVisible();
     await expect(page.locator('.measures-lesson')).toContainText('57,6 cm');
 
-    // Volumes : un épha ≈ 22 L, 3 séa, 432 œufs ; 44 litres font deux éphas.
+    // Volumes (Rav Naé) : un épha ≈ 24,88 L, 3 séa, 432 œufs ; 44 litres font ≈ 1,768 épha.
     await page.locator('#tool-measures-tab-volumes').click();
-    await expect(ligne('Litre')).toHaveText('≈ 22');
+    await expect(ligne('Litre')).toHaveText('≈ 24,88');
     await expect(ligne('Séa')).toHaveText('3');
     await expect(ligne('Œuf')).toHaveText('432');
     await page.locator('#tool-measures-unit').selectOption('l');
     await page.locator('#tool-measures-value').fill('44');
-    await expect(ligne('Épha')).toHaveText('≈ 2');
+    await expect(ligne('Épha')).toHaveText('≈ 1,768');
     await expect(page.locator('.measures-lesson')).toContainText('432');
 
     // Monnaies : un talent ≈ 17,1 kg d'argent, 1 500 chékels ; un talent pour usages sacrés ≈ 34,2 kg ; le tableau des équivalences.
