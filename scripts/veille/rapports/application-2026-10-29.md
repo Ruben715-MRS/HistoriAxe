@@ -46,3 +46,11 @@ Validation de l'utilisateur : tous les candidats du rapport `candidats-2026-10-2
 
 - Total de l'application : 25 813 évènements (25 797 auparavant, plus 16 ajoutés).
 - Les tests passent (908/908), et les vérifications des sources (`build_prix.py --check`) sont valides.
+
+## Mise à jour après la fiche de vérification
+
+- **Bus de Marrakech retiré** des données : une seule source, date et lieu non confirmés. À republier seulement après une seconde source indépendante.
+- **Colombie** : bilan officiel de 69 morts et 57 blessés ; coordonnées de la zone forestière (à 1,5–1,8 km de l'aéroport), marquées approximatives.
+- **Urda** : bilan marqué provisoire. **Adamuz** : 45 à 46 morts selon les bilans.
+- **Jeju Air, Air India, Potomac** : coordonnées précises ; bilan d'Air India (241 à bord, au moins 34 à 39 au sol, total le plus souvent cité d'environ 275 : la fiche indique plus de 260) ; conclusion du NTSB ajoutée pour le Potomac.
+- Total : 25 812 évènements.
