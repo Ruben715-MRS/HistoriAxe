@@ -111,9 +111,11 @@ function pathWorldTitle(world) {
 }
 
 // Barre de récompenses et salut de Clio, en tête de l'écran des catégories.
-function renderHomeHeader(container) {
-    if (typeof renderRewardsBar === 'function') renderRewardsBar(container, 'screen-categories');
-    const greeting = typeof clioHomeGreeting === 'function' ? clioHomeGreeting() : null;
+// `layout` : la disposition du profil d'accueil (js/viewProfileCore.js) ; le bandeau des pièces et la phrase de Clio
+// n'apparaissent que dans les profils qui les gardent.
+function renderHomeHeader(container, layout) {
+    if (layout.rewardsBar && typeof renderRewardsBar === 'function') renderRewardsBar(container, 'screen-categories');
+    const greeting = layout.greeting && typeof clioHomeGreeting === 'function' ? clioHomeGreeting() : null;
     if (greeting) container.appendChild(greeting);
 }
 

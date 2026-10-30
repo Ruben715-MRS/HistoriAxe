@@ -9072,6 +9072,18 @@ input:not([type="range"]), label, select, summary, textarea {
     box-shadow: var(--card-shadow);
 }
 
+/* Profil « Concours » : pas de Ligue sur l'accueil (elle reste dans « Profil et Trophées »). */
+body[data-view-profile="concours"] .league-btn {
+    display: none;
+}
+
+.profile-shortcuts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
 .class-share {
     display: flex;
     flex-direction: column;

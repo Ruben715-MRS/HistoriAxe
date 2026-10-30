@@ -1432,6 +1432,19 @@
             </button>
             </div>
         </section>
+        <section class="tools-group" aria-labelledby="tools-group-play">
+            <h3 class="modes-group-title modes-group-static" id="tools-group-play" data-i18n="viewprofile.group_play">Jeux et exploration</h3>
+            <div class="arcade-menu">
+            <button type="button" class="arcade-card" onclick="openArcade('screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">🕹️</span>
+                <span class="arcade-card-text"><strong data-i18n="arcade.title">Salle de jeux</strong><small data-i18n="viewprofile.arcade_desc">Tetris, Snake, Pac-Man et les autres jeux.</small></span>
+            </button>
+            <button type="button" class="arcade-card" onclick="openAtlasFrom('screen-tools')">
+                <span class="arcade-card-icon" aria-hidden="true">🗺️</span>
+                <span class="arcade-card-text"><strong data-i18n="categories.special_atlas">Atlas</strong><small data-i18n="viewprofile.atlas_desc">Les événements sur une carte du monde.</small></span>
+            </button>
+            </div>
+        </section>
     </div>
 
     <div id="screen-tool-eras" class="list-screen hidden">
@@ -3227,6 +3240,19 @@
                 onclick="closeProfileModal(); openRecapModal();" data-i18n="gamification.recap_btn">📊 Voir mon récap
                 hebdo/mensuel</button>
 
+            <div class="profile-shortcuts hidden" id="profile-shortcuts">
+                <div class="profile-section-title" data-i18n="viewprofile.shortcuts_title">Accès rapide</div>
+                <p class="settings-hint" data-i18n="viewprofile.shortcuts_hint">Ces éléments sont masqués sur l'accueil avec votre profil. Ils restent ici.</p>
+                <div class="profile-shortcuts-grid">
+                    <button type="button" class="btn btn-secondary" onclick="profileShortcut('path')" data-i18n="viewprofile.sc_path">Chemin du temps</button>
+                    <button type="button" class="btn btn-secondary" onclick="profileShortcut('shop')" data-i18n="viewprofile.sc_shop">Pièces et boutique</button>
+                    <button type="button" class="btn btn-secondary" onclick="profileShortcut('album')" data-i18n="viewprofile.sc_album">Album</button>
+                    <button type="button" class="btn btn-secondary" onclick="profileShortcut('friends')" data-i18n="viewprofile.sc_friends">Amis</button>
+                    <button type="button" class="btn btn-secondary" onclick="profileShortcut('team')" data-i18n="viewprofile.sc_team">Équipe</button>
+                    <button type="button" class="btn btn-secondary" onclick="profileShortcut('league')" data-i18n="viewprofile.sc_league">Ligue</button>
+                </div>
+            </div>
+
             <div class="profile-section-title" data-i18n="gamification.trophies_title">🏆 Trophées & Hauts Faits</div>
             <div class="trophies-grid fx-cascade" id="profile-trophies-container">
                 <!-- Badges générés dynamiquement -->
@@ -3437,6 +3463,15 @@
             <h2 style="font-size:20px; margin-bottom:24px; color:var(--text-dark);" data-i18n="settings.title">Réglages
             </h2>
 
+            <div class="settings-group settings-quick">
+                <div class="settings-label" data-i18n="viewprofile.settings_label">Mon profil d'accueil</div>
+                <div class="segmented" id="settings-view-profile">
+                    <button type="button" data-value="concours" data-i18n="viewprofile.choice_concours">Concours</button>
+                    <button type="button" data-value="scolaire" data-i18n="viewprofile.choice_scolaire">Scolaire</button>
+                    <button type="button" data-value="culture" data-i18n="viewprofile.choice_culture">Culture générale</button>
+                </div>
+                <p class="settings-hint" data-i18n="viewprofile.settings_hint">Ce choix change ce qui s'affiche en premier sur l'accueil. Toutes les parties et tous les modes restent accessibles avec chaque profil. Avec « Concours », Défis et Hasard se retrouvent avec « Culture générale ».</p>
+            </div>
             <div class="settings-group settings-quick">
                 <div class="settings-label" data-i18n="settings.orientation_label">Orientation de la frise</div>
                 <div class="segmented" id="settings-orientation">
@@ -3776,6 +3811,7 @@
     <script src="js/app/team-social.js"></script>
     <script src="js/app/friends.js"></script>
     <script src="js/app/ranks.js"></script>
+    <script src="js/viewProfileCore.js"></script>
     <script src="js/vendor/qrcode-generator.js"></script>
     <script src="js/classLink.js"></script>
     <script src="js/classroom.js"></script>

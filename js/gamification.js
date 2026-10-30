@@ -456,7 +456,24 @@ function closeProfileModal() {
     if (modal) modal.classList.add('hidden');
 }
 
+// Les accès que le profil d'accueil retire de l'écran d'accueil (voir js/viewProfileCore.js) : ils restent ici.
+function profileShortcut(key) {
+    closeProfileModal();
+    const from = 'screen-categories';
+    const go = {
+        path: () => openPath(),
+        shop: () => openShop(from),
+        album: () => openAlbum(from),
+        friends: () => openFriends(from),
+        team: () => openTeam(from),
+        league: () => openLeagueModal()
+    };
+    if (go[key]) go[key]();
+}
+
 function renderProfileModal() {
+    const shortcuts = document.getElementById('profile-shortcuts');
+    if (shortcuts) shortcuts.classList.toggle('hidden', ViewProfile.layout(currentViewProfile()).moreInProfile.length === 0);
     const data = gamificationLoad();
     const rankInfo = getRankInfo(data.xp);
     const streakData = streakLoad();

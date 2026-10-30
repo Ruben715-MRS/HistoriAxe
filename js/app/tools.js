@@ -18,6 +18,12 @@ function openTools() {
     showScreen('screen-tools', 'forward');
 }
 
+// L'Atlas proposé dans l'Atelier : « Retour » ramène à l'Atelier (voir backFromAtlas, js/atlas.js).
+function openAtlasFrom(from) {
+    atlasReturnScreen = from;
+    showScreen('screen-atlas', 'forward');
+}
+
 function toolsHubBack() {
     showScreen('screen-categories', 'back');
 }

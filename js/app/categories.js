@@ -28,9 +28,22 @@ function collapseImportantNote(box) {
 }
 
 // INIT CATÉGORIES (Dossiers)
+// Le profil d'accueil choisi dans les réglages (« culture » par défaut, voir js/viewProfileCore.js).
+function currentViewProfile() {
+    return ViewProfile.normalize(settingsLoad().viewProfile);
+}
+
+// Réaffiche l'accueil après un changement de profil : l'attribut du body sert au CSS (la Ligue, voir style.css).
+function applyViewProfile() {
+    initCategories();
+}
+
 function initCategories() {
     updateHeaderProfileBar();
     clearThemeSearch();
+    const profile = currentViewProfile();
+    const layout = ViewProfile.layout(profile);
+    document.body.dataset.viewProfile = profile;
     const container = document.getElementById('categories-container');
     if (!container) return;
     container.innerHTML = '';
@@ -58,7 +71,7 @@ function initCategories() {
     const weakCount = (typeof getDueSummary === 'function') ? getDueSummary().due : 0;
     const favCount = (typeof favoritesLoad === 'function') ? favoritesLoad().length : 0;
 
-    renderHomeHeader(container);
+    renderHomeHeader(container, layout);
     // « Reprendre » est un bouton rond permanent : sans dernier thème, il reste affiché mais renvoie un message.
     const resume = resumeTarget();
     const resumeAttrs = resume
@@ -66,16 +79,22 @@ function initCategories() {
         : '';
 
     // --- QUICK ACTION GRID ---
+    // Chaque bouton rond, par clé ; la disposition de chaque profil choisit lesquels s'affichent, et dans quel ordre.
+    const quick = {
+        favoris: quickAction('btn-favoris', '⭐', `${quickLabel('categories.special_favorites', 'Favoris')} (${favCount})`),
+        daily: quickAction('btn-daily', '🎯', quickLabel('categories.special_challenges', 'Défis'), 'aria-expanded="false" aria-controls="challenge-picker"'),
+        discover: quickAction('btn-discover', '🎲', quickLabel('categories.special_discover', 'Hasard'), 'aria-expanded="false" aria-controls="discover-picker"'),
+        resume: quickAction('btn-resume', '▶️', quickLabel('categories.resume', 'Reprendre'), resumeAttrs, !resume),
+        revision: quickAction('btn-reviser', '🧠', `${quickLabel('categories.special_revision', 'Réviser')} (${weakCount})`),
+        arcade: quickAction('btn-arcade', '🕹️', quickLabel('arcade.title', 'Salle de jeux')),
+        tools: quickAction('btn-tools', '🛠️', quickLabel('tools.title', 'Atelier')),
+        atlas: quickAction('btn-atlas', '🗺️', quickLabel('categories.special_atlas', 'Atlas'))
+    };
     const gridSection = document.createElement('section');
     gridSection.className = 'w-full';
     gridSection.style.marginTop = '24px';
     gridSection.innerHTML = `
-                <div class="quick-actions-row" id="quick-actions-1">
-                    ${quickAction('btn-favoris', '⭐', `${quickLabel('categories.special_favorites', 'Favoris')} (${favCount})`)}
-                    ${quickAction('btn-daily', '🎯', quickLabel('categories.special_challenges', 'Défis'), 'aria-expanded="false" aria-controls="challenge-picker"')}
-                    ${quickAction('btn-discover', '🎲', quickLabel('categories.special_discover', 'Hasard'), 'aria-expanded="false" aria-controls="discover-picker"')}
-                    ${quickAction('btn-resume', '▶️', quickLabel('categories.resume', 'Reprendre'), resumeAttrs, !resume)}
-                </div>
+                <div class="quick-actions-row" id="quick-actions-1">${layout.row1.map((key) => quick[key]).join('')}</div>
                 <div class="challenge-picker hidden" id="discover-picker">
                     <button type="button" class="challenge-picker-btn" id="btn-discover-event">
                         <span class="challenge-picker-icon" aria-hidden="true">🕰️</span>
@@ -111,12 +130,7 @@ function initCategories() {
                         </span>
                     </button>
                 </div>
-                <div class="quick-actions-row" id="quick-actions-2">
-                    ${quickAction('btn-reviser', '🧠', `${quickLabel('categories.special_revision', 'Réviser')} (${weakCount})`)}
-                    ${quickAction('btn-arcade', '🕹️', quickLabel('arcade.title', 'Salle de jeux'))}
-                    ${quickAction('btn-tools', '🛠️', quickLabel('tools.title', 'Atelier'))}
-                    ${quickAction('btn-atlas', '🗺️', quickLabel('categories.special_atlas', 'Atlas'))}
-                </div>
+                ${layout.row2.length ? `<div class="quick-actions-row" id="quick-actions-2">${layout.row2.map((key) => quick[key]).join('')}</div>` : ''}
             `;
     container.appendChild(gridSection);
 
@@ -200,7 +214,7 @@ function initCategories() {
     if (btnRev) btnRev.onclick = () => showScreen('screen-revision-hub');
 
     // Le bandeau des mondes / niveaux, entre les boutons ronds et les catégories.
-    renderPathBanner(container);
+    if (layout.pathCard) renderPathBanner(container);
 
     // --- BROWSE ARCHIVES (Categories) ---
     const catSection = document.createElement('section');
@@ -215,7 +229,9 @@ function initCategories() {
     catSection.appendChild(catGrid);
     container.appendChild(catSection);
 
-    currentBdd.forEach((cat, index) => {
+    ViewProfile.categoryOrder(profile, currentBdd.map((c) => c.nom))
+        .map((i) => ({ cat: currentBdd[i], index: i }))
+        .forEach(({ cat, index }) => {
         let bgImg = 'assets/images/cat_culture_generale.webp';
         if (cat.nom.toLowerCase().includes('culture')) bgImg = 'assets/images/cat_culture_generale.webp';
         if (cat.nom.toLowerCase().includes('illustres')) bgImg = 'assets/images/cat_personnages_illustres.webp';

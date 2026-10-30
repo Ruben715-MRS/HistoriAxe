@@ -175,8 +175,12 @@ function arcadeBindSwipe(el, onDir) {
 // --- La salle de jeux : le menu ----------------------------------------------------------------------
 // L'écran garde son ancien identifiant (`screen-arcade`). Trois sections — mini-jeux, arcade, réflexion — et, sur
 // chaque carte, ce que le joueur y a fait : meilleur score, étoiles, calendriers terminés.
-function openArcade() {
+// `from` : l'écran à retrouver au retour (l'accueil par défaut, l'Atelier depuis ses jeux).
+let arcadeReturnScreen = 'screen-categories';
+
+function openArcade(from) {
     arcadeScope = null;
+    arcadeReturnScreen = from || 'screen-categories';
     showScreen('screen-arcade', 'forward');
     renderGamesHub();
 }
@@ -261,7 +265,7 @@ function arcadeBack() {
         showScreen('screen-axes', 'back');
         return;
     }
-    showScreen('screen-categories', 'back');
+    showScreen(arcadeReturnScreen, 'back');
 }
 
 // « Mini-jeux » sur l'écran des axes : la salle s'ouvre sur les seuls événements des axes cochés, tous, incontournables ou non.

@@ -237,6 +237,9 @@ function markTimelineRows() {
 }
 
 function renderSettingsUI() {
+    document.querySelectorAll('#settings-view-profile button').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.value === currentViewProfile());
+    });
     document.querySelectorAll('#settings-landscape-flow button').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.value === (appSettings.landscapeFlow || 'wrap'));
     });
@@ -301,6 +304,14 @@ const NOTIF_TYPE_SETTINGS = {
 };
 
 function initSettingsControls() {
+    document.querySelectorAll('#settings-view-profile button').forEach(btn => {
+        btn.onclick = () => {
+            appSettings.viewProfile = btn.dataset.value;
+            settingsSave(appSettings);
+            applyViewProfile();
+            renderSettingsUI();
+        };
+    });
     document.querySelectorAll('#settings-landscape-flow button').forEach(btn => {
         btn.onclick = () => {
             appSettings.landscapeFlow = btn.dataset.value;
