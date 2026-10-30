@@ -1,7 +1,7 @@
 # Événements des thèmes « CAPES & Agrégation »
 
 Un fichier JSON par thème (`grc.json` pour `thm_grc`, `20s.json` pour `thm_20s`…). Ces fichiers sont la source de
-vérité des **événements** des 22 thèmes de la catégorie ; `python3 scripts/build_capes.py` les écrit dans
+vérité des **événements** des 23 thèmes de la catégorie ; `python3 scripts/build_capes.py` les écrit dans
 `data/fr.json`. Le sommaire (`carteMentale`), la difficulté et l'identifiant du thème ne sont pas touchés, à une
 exception près : le rattachement d'un repère chronologique à son événement (`reperes`, ci-dessous).
 

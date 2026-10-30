@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Écrit les événements des 22 thèmes de « CAPES & Agrégation » dans data/fr.json.
+"""Écrit les événements des 23 thèmes de « CAPES & Agrégation » dans data/fr.json.
 
     python3 scripts/build_capes.py            # écrit data/fr.json
     python3 scripts/build_capes.py --check    # valide, n'écrit rien

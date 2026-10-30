@@ -242,10 +242,10 @@ n'est requise.
 
 Un thème peut porter, à côté de ses événements, un **sommaire**
 (`js/mindMap.js`, écran `#screen-mindmap`) : une fiche de révision en
-branches et sous-branches dépliables. Les 22 thèmes de la catégorie
+branches et sous-branches dépliables. Les 23 thèmes de la catégorie
 « CAPES & Agrégation » en ont un ; leurs sources, ce que le cadrage du jury en dit et les points
 à revérifier sont dans `docs/sommaires-capes-agregation.md`.
-La frise de ces thèmes compte de 93 à 119 événements chacun (les incontournables ⭐ en tête) et reprend les
+La frise de ces thèmes compte de 26 à 119 événements chacun (les incontournables ⭐ en tête) et reprend les
 événements que le sommaire cite ; leurs descriptions suivent toutes la même forme, en trois phrases — ce
 qu'est l'événement et son contexte, puis ce qui le rend déterminant pour le concours, sans le dire en toutes
 lettres. Les sources sont dans `scripts/capes/` (voir son README).
