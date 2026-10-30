@@ -1,6 +1,6 @@
 # Sommaires CAPES & Agrégation : sources et points à revérifier
 
-Les 22 thèmes de la catégorie « CAPES & Agrégation » portent un sommaire (`carteMentale`, voir le README).
+Les 23 thèmes de la catégorie « CAPES & Agrégation » portent un sommaire (`carteMentale`, voir le README).
 Deux (Les Amériques, Vivre à la campagne) ont été écrits en premier ; les 20 autres l'ont été d'après les
 textes de cadrage du jury (programmes CAPES/CAFEP et agrégation, sessions 2026-2027) quand ils existent.
 Ce fichier dit, thème par thème, **ce qui est une question officielle** et ce qui n'est qu'un intitulé maison
@@ -33,6 +33,7 @@ Points communs à relire avant de s'en servir comme référence unique :
 | `thm_envgeo` Environnements, Anthropocène | proche de « Environnements : approches géographiques » (CAPES 2026-2027, agrégation 2026) | cadrage complet |
 | `thm_geopop` Mondialisation, populations, territoires | intitulé maison | quatre entrées du programme CAPES bac+3 ; rapport du jury CAPES 2025 (généralités) |
 | `thm_amlat` Amérique latine | question CAPES 2026 (Caraïbes exclues ; remplacée par « Le Pacifique » en 2027) | programme 2026-2027 |
+| `thm_conc` Histoire des concours de l’enseignement | intitulé maison (culture professionnelle, hors programme) | Condette (MEFRIM), Persée/INRP (rapport de 1871), Vie publique (rapport Bancel), Sénat (concours internes), Légifrance et Le Monde (IUFM, arrêté de 1991), devenirenseignant.gouv.fr (épreuves 2026) ; la date d’une première session du concours féminin d’histoire-géographie n’est pas établie (1885, 1894 ou 1895 selon les synthèses) |
 
 ## Audit factuel (octobre 2026)
 
