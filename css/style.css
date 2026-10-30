@@ -4266,11 +4266,15 @@ textarea.form-input {
     gap: 4px;
 }
 
+/* Le badge de série (🔥 ×1.1) ajoute de la largeur : sans retour à la ligne,
+   la rangée déborde sur le texte XP à droite et le masque. Les badges passent
+   alors sous le titre au lieu de recouvrir les points. */
 .player-rank-row {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 8px;
+    gap: 4px 8px;
 }
 
 .player-rank-title {
