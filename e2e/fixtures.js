@@ -79,6 +79,15 @@ const test = base.test.extend({
                     localStorage.setItem('historiaxe_settings', JSON.stringify(settings));
                 }
             } catch (e) { /* idem */ }
+            // La demande de localisation (une fois, à la première ouverture de l'Atlas) recouvrirait les clics des
+            // parcours qui passent par la carte : elle est donc déjà vue. atlas.spec.js le pose aussi, pour son cas.
+            try {
+                const settings = JSON.parse(localStorage.getItem('historiaxe_settings') || '{}');
+                if (!settings.locationPromptShown) {
+                    settings.locationPromptShown = true;
+                    localStorage.setItem('historiaxe_settings', JSON.stringify(settings));
+                }
+            } catch (e) { /* idem */ }
         });
 
         await page.goto('/index.html');

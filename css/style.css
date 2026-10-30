@@ -9115,7 +9115,7 @@ body[data-view-profile="concours"] .league-btn {
 .class-link-row input {
     flex: 1;
     min-width: 0;
-    font-size: 13px;
+    font-size: 16px; /* sous 16 px, iOS zoome à la saisie */
 }
 
 .class-code-kicker {
