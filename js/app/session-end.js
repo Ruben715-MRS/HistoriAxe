@@ -191,13 +191,13 @@ function endGame(isWin) {
         saveScoreToLeaderboard('geo:' + scopeSlug, geoYearVariant === 'slider' ? 'chronogeo' : 'carte', score);
     }
 
-    // Enregistrement de la série quotidienne (Défi du jour toujours, ou
-    // toute autre victoire hors Découverte/Entraînement) et de la série
-    // hebdomadaire (Défi hebdomadaire uniquement — cf. trophée
-    // « pilier_hebdomadaire », propre à ce défi et non à l'activité
-    // générale de la semaine, déjà suivie par ailleurs via la ligue XP).
-    if (currentMode === 'daily' || (isWin && currentMode !== 'discovery' && currentMode !== 'training')) {
-        streakRecordToday();
+    // Enregistrement de la série quotidienne : toute partie terminée compte, gagnée ou non, hors Découverte et
+    // Entraînement. La première du jour fait apparaître la carte des 7 jours (js/app/streak-card.js). Série
+    // hebdomadaire (Défi hebdomadaire uniquement — cf. trophée « pilier_hebdomadaire », propre à ce défi et non
+    // à l'activité générale de la semaine, déjà suivie par ailleurs via la ligue XP).
+    if (currentMode !== 'discovery' && currentMode !== 'training') {
+        const streakData = streakRecordToday();
+        if (typeof showStreakCard === 'function') showStreakCard(streakData);
     }
     if (currentMode === 'weekly') {
         weeklyChallengeStreakRecordThisWeek();

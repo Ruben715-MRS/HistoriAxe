@@ -507,8 +507,11 @@ function pathOnLevelFinish(exp, won) {
         if (info && typeof info.xpAwarded === 'number') xp = info.xpAwarded;
         if (typeof addRecapLogEntry === 'function') addRecapLogEntry(xp, won ? 1 : 0);
     }
-    // Finir un niveau compte pour la série quotidienne, comme n'importe quelle victoire.
-    if (won && typeof streakRecordToday === 'function') streakRecordToday();
+    // Finir un niveau compte pour la série quotidienne, gagné ou non, comme toute partie terminée.
+    if (typeof streakRecordToday === 'function') {
+        const streakData = streakRecordToday();
+        if (typeof showStreakCard === 'function') showStreakCard(streakData);
+    }
     if (typeof HistoriAxeNotifications !== 'undefined') HistoriAxeNotifications.askAfterFirstGame();
 
     // Pièces, série de victoires, cartes (js/app/rewards.js) : un niveau perdu paie quand même une consolation.

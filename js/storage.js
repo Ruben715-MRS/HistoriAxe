@@ -435,29 +435,54 @@ function getTodayStringUTC() {
     return `${year}-${month}-${day}`;
 }
 
-function streakRecordToday() {
-    const data = streakLoad();
-    const today = getTodayStringUTC();
+// Jour compté pour la série : la date locale du joueur (la carte des 7 jours montre des jours de calendrier ; le Défi
+// du jour garde sa frontière UTC, voir getTodayStringUTC, pour que tout le monde ait les mêmes questions).
+function getStreakDayString() {
+    return getLocalDateString();
+}
 
-    if (data.lastPlayedDate === today) {
-        return data;
+// js/streakCore.js : chargé avant ce fichier dans le navigateur, importé ici sous Node (tests).
+function streakCore() {
+    return (typeof StreakCore !== 'undefined') ? StreakCore : require('./streakCore.js');
+}
+
+// Les jours joués d'une série (le journal `days`, déduit des anciennes séries qui n'en avaient pas).
+function streakDays(data) {
+    const core = streakCore();
+    return Array.isArray(data.days) ? core.normalizeDays(data.days) : core.backfillDays(data);
+}
+
+// Enregistre une partie finie aujourd'hui. Renvoie la série à jour, avec `isNewDay` (non enregistré) à vrai quand c'est la
+// première partie du jour : c'est ce qui déclenche la carte des 7 jours (js/app/streak-card.js).
+function streakRecordToday() {
+    const core = streakCore();
+    const data = streakLoad();
+    const today = getStreakDayString();
+    data.days = streakDays(data);
+
+    const diff = data.lastPlayedDate ? getDaysDifference(data.lastPlayedDate, today) : null;
+    // Déjà compté aujourd'hui, ou horloge/fuseau revenus en arrière : rien à ajouter.
+    if (diff !== null && diff <= 0) {
+        if (diff === 0 && data.days.indexOf(today) === -1) {
+            data.days = core.addDay(data.days, today);
+            streakSave(data);
+        }
+        return Object.assign({}, data, { isNewDay: false });
     }
 
-    if (!data.lastPlayedDate) {
+    if (diff === null) {
         data.currentStreak = 1;
+    } else if (diff === 1) {
+        data.currentStreak += 1;
     } else {
-        const diff = getDaysDifference(data.lastPlayedDate, today);
-        if (diff === 1) {
-            data.currentStreak += 1;
-        } else if (diff > 1) {
-            data.currentStreak = 1;
-        }
+        data.currentStreak = 1;
     }
 
     data.maxStreak = Math.max(data.maxStreak || 0, data.currentStreak);
     data.lastPlayedDate = today;
+    data.days = core.addDay(data.days, today);
     streakSave(data);
-    return data;
+    return Object.assign({}, data, { isNewDay: true });
 }
 
 // Date locale (fuseau de l'appareil) au format YYYY-MM-DD — contrairement à
@@ -489,7 +514,7 @@ function getIsoWeekString(refDate) {
 
 function getStreakCount() {
     const data = streakLoad();
-    const today = getTodayStringUTC();
+    const today = getStreakDayString();
     if (!data.lastPlayedDate) return 0;
     const diff = getDaysDifference(data.lastPlayedDate, today);
     if (diff === 0 || diff === 1) {
@@ -770,6 +795,10 @@ function mergeStreaks(a, b, dateField) {
         : (da > db ? a : b);
     const out = Object.assign({}, b, a, latest);
     out.maxStreak = Math.max(a.maxStreak || 0, b.maxStreak || 0, latest.currentStreak || 0);
+    // Série quotidienne : les jours joués sur l'un ou l'autre appareil comptent tous pour la carte des 7 jours.
+    if (dateField === 'lastPlayedDate' && (Array.isArray(a.days) || Array.isArray(b.days))) {
+        out.days = streakCore().mergeDays(a.days, b.days);
+    }
     return out;
 }
 
@@ -907,7 +936,7 @@ function resetAllGameData() {
 // exposées ici.
 if (typeof module === 'object' && typeof module.exports === 'object') {
     module.exports = {
-        getIsoWeekString, getLocalDateString, getDaysDifference, getTodayStringUTC,
+        getIsoWeekString, getLocalDateString, getDaysDifference, getTodayStringUTC, getStreakDayString, streakRecordToday, streakLoad, getStreakCount,
         DEFAULT_SETTINGS, ROUND_LENGTH_CHOICES, resolveRoundLength, roundLengthChoicesFor,
         activeRoundLengthChoice, mergeSyncableStates, mergeValues, mergeStreaks,
         STREAK_KEY, WEEKLY_CHALLENGE_STREAK_KEY, GEOQUIZ_KEY, mergeGeoQuiz,
