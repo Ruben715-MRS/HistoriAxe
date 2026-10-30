@@ -217,7 +217,7 @@ function clioHomeGreeting() {
     clioSave(state);
 
     const streak = typeof streakLoad === 'function' ? streakLoad() : { currentStreak: 0, lastPlayedDate: null };
-    const days = streak.lastPlayedDate ? getDaysDifference(streak.lastPlayedDate, getTodayStringUTC()) : null;
+    const days = streak.lastPlayedDate ? getDaysDifference(streak.lastPlayedDate, getStreakDayString()) : null;
     const mood = ClioCore.streakState(streak.currentStreak, days);
     const event = mood === 'risk' ? 'streakRisk' : (mood === 'ok' ? 'greetStreak' : 'greet');
     const box = clioReaction(event, { n: streak.currentStreak }, 'clio-home');

@@ -149,7 +149,7 @@ var HistoriAxeNotifications = (function () {
         try {
             var streak = typeof getStreakCount === 'function' ? getStreakCount() : 0;
             var streakData = typeof streakLoad === 'function' ? streakLoad() : null;
-            var today = typeof getTodayStringUTC === 'function' ? getTodayStringUTC() : null;
+            var today = typeof getStreakDayString === 'function' ? getStreakDayString() : (typeof getTodayStringUTC === 'function' ? getTodayStringUTC() : null);
             var alreadyPlayedToday = !!(streakData && streakData.lastPlayedDate === today);
             if (alreadyPlayedToday) return;
 
@@ -260,7 +260,7 @@ var HistoriAxeNotifications = (function () {
         if (!isSupported() || !typeEnabled('milestone')) return;
         try {
             var streakData = typeof streakLoad === 'function' ? streakLoad() : null;
-            var today = typeof getTodayStringUTC === 'function' ? getTodayStringUTC() : null;
+            var today = typeof getStreakDayString === 'function' ? getStreakDayString() : (typeof getTodayStringUTC === 'function' ? getTodayStringUTC() : null);
             if (!streakData || streakData.lastPlayedDate !== today) return;
             var streak = typeof getStreakCount === 'function' ? getStreakCount() : 0;
             var goal = 0;
