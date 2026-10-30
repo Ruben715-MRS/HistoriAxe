@@ -12,7 +12,8 @@ const MEASURES_TABS = [
     { id: 'distances', icon: '📏' },
     { id: 'surfaces', icon: '📐' },
     { id: 'volumes', icon: '🏺' },
-    { id: 'money', icon: '🪙' }
+    { id: 'money', icon: '🪙' },
+    { id: 'temps', icon: '🕐' }
 ];
 
 function measuresLang() { return (typeof i18n !== 'undefined' && i18n.currentLang) || 'fr'; }
@@ -49,7 +50,7 @@ function toolMeasuresInit() {
         btn.onclick = () => {
             measuresTab = tab.id;
             // L'avis choisi reste le même d'une famille à l'autre, sauf s'il n'existe pas dans la nouvelle (ex. 'Hazon Ich pour les monnaies).
-            const ops = MeasuresCore.CATEGORIES[tab.id].opinions;
+            const ops = MeasuresCore.CATEGORIES[tab.id] ? MeasuresCore.CATEGORIES[tab.id].opinions : [];
             if (ops.length && ops.indexOf(measuresOpinion) < 0) measuresOpinion = ops[0];
             toolMeasuresInit();
         };
@@ -61,9 +62,46 @@ function toolMeasuresInit() {
 function toolMeasuresRender() {
     const body = toolEl('tool-measures-body');
     toolClear(body);
+    if (measuresTab === 'temps') { body.appendChild(measuresTemps()); return; }
     body.appendChild(measuresConverter(measuresTab));
     body.appendChild(measuresLesson(measuresTab));
     toolMeasuresUpdate();
+}
+
+// --- Le temps : un tableau comparatif des moments du jour, selon le Gra et le Magen Avraham -------------------------------------------
+function hm(minutes) {
+    const m = Math.round(minutes);
+    return String(Math.floor(m / 60)).padStart(2, '0') + ':' + String(m % 60).padStart(2, '0');
+}
+
+function measuresTemps() {
+    const box = document.createElement('div');
+    box.className = 'measures-temps';
+    measuresPara(box, 'tools.measures_temps_1');
+
+    // Les moments-clés, selon leurs formules (fr.json : measures_temps_<id>_*).
+    const rows = ['alot', 'misheyakir', 'netz', 'shema', 'tefila', 'chatzot', 'guedola', 'ketana', 'plag', 'shkia', 'tzet'];
+    measuresTable(box, [t('tools.measures_temps_col_moment'), t('tools.measures_temps_col_meaning'), t('tools.measures_temps_col_gra'), t('tools.measures_temps_col_ma'), t('tools.measures_temps_col_note')],
+        rows.map(id => [t('tools.measures_temps_' + id + '_name'), t('tools.measures_temps_' + id + '_meaning'),
+            t('tools.measures_temps_' + id + '_gra'), t('tools.measures_temps_' + id + '_ma'), t('tools.measures_temps_' + id + '_note')]),
+        { caption: t('tools.measures_temps_table') });
+
+    // L'exemple daté : lever 6 h, coucher 18 h (jour de 12 heures) ; aube 72 min avant le lever, sortie des étoiles 72 min après le coucher.
+    const netz = 6 * 60, shkia = 18 * 60, alot = netz - 72, tzet = shkia + 72;
+    const gra = MeasuresCore.zmanimOf(netz, shkia), ma = MeasuresCore.zmanimOf(alot, tzet);
+    const moments = ['shema', 'tefila', 'chatzot', 'guedola', 'ketana', 'plag'];
+    measuresPara(box, 'tools.measures_temps_ex');
+    measuresTable(box, [t('tools.measures_temps_col_moment'), t('tools.measures_temps_col_gra_ex'), t('tools.measures_temps_col_ma_ex')],
+        moments.map(id => [t('tools.measures_temps_' + id + '_name'), hm(gra[id]), hm(ma[id])]),
+        { caption: t('tools.measures_temps_example') });
+
+    // Les avis sur la durée après le coucher pour la nuit (Tzet haKokhavim).
+    const opinions = ['gueonim', 'cinquante', 'tam', 'quatre_vingt_dix'];
+    measuresTable(box, [t('tools.measures_temps_col_opinion'), t('tools.measures_temps_col_after'), t('tools.measures_temps_col_who')],
+        opinions.map(id => [t('tools.measures_temps_op_' + id + '_name'), t('tools.measures_temps_op_' + id + '_time'), t('tools.measures_temps_op_' + id + '_who')]),
+        { caption: t('tools.measures_temps_opinions') });
+    measuresPara(box, 'tools.measures_temps_2');
+    return box;
 }
 
 // --- Le convertisseur --------------------------------------------------------------------------------

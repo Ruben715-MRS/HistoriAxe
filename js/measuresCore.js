@@ -223,8 +223,25 @@
         { id: 'yom', per: 'parsa', n: 10 }
     ];
 
+    // --- Temps (tableau comparatif, pas un convertisseur) : les heures zmaniyot dépendent du jour et du lieu. Les moments se calculent
+    // à partir de l'aube et de la sortie des étoiles (Magen Avraham), ou du lever et du coucher du soleil (Gra), en minutes depuis minuit.
+    // Une heure zmanit = (fin − début) ÷ 12 ; les moments se lisent en minutes depuis minuit.
+    function zmanimOf(dawn, dusk) {
+        var z = (dusk - dawn) / 12;
+        return {
+            zmanit: z,
+            shema: dawn + 3 * z,                 // sof zman kriat chema
+            tefila: dawn + 4 * z,                // sof zman tefila
+            chatzot: dawn + 6 * z,               // midi solaire
+            guedola: dawn + 6 * z + z / 2,       // mincha guedola : chatzot + ½ heure zmanit
+            ketana: dawn + 9.5 * z,              // mincha ketana : shkia − 2½ heures zmaniyot
+            plag: dawn + 10.75 * z               // plag haMincha : shkia − 1¼ heure zmanit
+        };
+    }
+
     return {
         DISTANCE_OPINIONS: DISTANCE_OPINIONS,
+        zmanimOf: zmanimOf,
         MIL_WALK_MINUTES: MIL_WALK_MINUTES,
         EPHA_LITRES: EPHA_LITRES,
         MONEY_OPINIONS: MONEY_OPINIONS,

@@ -784,6 +784,29 @@ test('textes de référence : navigation entre les sections, par les onglets', a
     await expect(page.locator('#tool-commandments-body .cmd-item').first().locator('.cmd-heb')).toHaveText('עבודה זרה');
 });
 
+test('poids et mesures bibliques : l\'onglet Temps compare Gra et Magen Avraham, sans convertisseur', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 900 });
+    await page.locator('#btn-tools').click();
+    await page.locator('#screen-tools .arcade-card', { hasText: 'Poids et mesures bibliques' }).click();
+    expect(await visibleScreen(page)).toBe('screen-tool-measures');
+    await expect(page.locator('#tool-measures-tabs button')).toHaveCount(5);
+    await page.locator('#tool-measures-tab-temps').click();
+    await expect(page.locator('#tool-measures-tab-temps')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('.measures-converter')).toHaveCount(0);
+    // Exemple : lever 6 h, coucher 18 h (Gra) ; aube 72 min avant, nuit 72 min après (Magen Avraham).
+    // Chema 9 h / 8 h 24 ; Mincha ketana 15 h 30 / 16 h 12 ; Plag 16 h 45 / 17 h 42.
+    const temps = page.locator('.measures-temps');
+    await expect(temps).toContainText('09:00');
+    await expect(temps).toContainText('08:24');
+    await expect(temps).toContainText('15:30');
+    await expect(temps).toContainText('16:12');
+    await expect(temps).toContainText('16:45');
+    await expect(temps).toContainText('17:42');
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+    await page.locator('#screen-tool-measures .back-btn').click();
+    expect(await visibleScreen(page)).toBe('screen-tools');
+});
+
 test('poids et mesures bibliques : distances, volumes et monnaies se convertissent, dans les deux sens, avec la leçon dessous', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 900 });
     await page.locator('#btn-tools').click();

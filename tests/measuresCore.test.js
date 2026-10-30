@@ -224,3 +224,25 @@ test('superficies : les rapports du livre (beit rova = ¼ beit seah, beit kor = 
     assert.equal(ha.approx, true);
     close(M.convert('surfaces', 1, 'beitkor', 'nae').find(r => r.id === 'are').value, 172.8);
 });
+
+test('temps : zmanim Gra (netz 6 h, shkia 18 h → journée de 12 heures zmaniyot de 60 min)', () => {
+    const z = M.zmanimOf(360, 1080);
+    close(z.zmanit, 60);
+    close(z.shema, 540);      // 09:00
+    close(z.tefila, 600);     // 10:00
+    close(z.chatzot, 720);    // 12:00
+    close(z.guedola, 750);    // 12:30
+    close(z.ketana, 930);     // 15:30 = shkia − 2½ heures zmaniyot
+    close(z.plag, 1005);      // 16:45 = shkia − 1¼ heure zmanit
+});
+
+test('temps : zmanim Magen Avraham (alot 72 min avant le lever, tzet 72 min après le coucher)', () => {
+    const z = M.zmanimOf(288, 1152);
+    close(z.zmanit, 72);
+    close(z.shema, 504);      // 08:24
+    close(z.tefila, 576);     // 09:36
+    close(z.chatzot, 720);    // 12:00
+    close(z.guedola, 756);    // 12:36
+    close(z.ketana, 972);     // 16:12
+    close(z.plag, 1062);      // 17:42
+});
