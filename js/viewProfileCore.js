@@ -61,7 +61,7 @@
     // Les catégories mises en tête, dans l'ordre. Le reste garde l'ordre du pack.
     const CATEGORY_HEAD = {
         culture: [],
-        concours: ['CAPES & Agrégation', 'Programmes scolaires', 'Culture générale', 'Histoires nationales', 'Personnages illustres'],
+        concours: ['CAPES & Agrégation', 'Programmes scolaires', 'Histoires nationales', 'Culture générale', 'Personnages illustres'],
         scolaire: ['Programmes scolaires']
     };
 

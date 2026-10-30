@@ -44,7 +44,7 @@ test('« concours » : rien ne disparaît, chaque élément masqué a une porte 
 test('ordre des catégories : « concours » met les concours en tête, le reste garde l\'ordre du pack', () => {
     const pack = ['Culture générale', 'Personnages illustres', 'Histoires nationales', 'Programmes scolaires', 'CAPES & Agrégation', 'Mes thèmes'];
     const ordre = ViewProfile.categoryOrder('concours', pack).map((i) => pack[i]);
-    assert.deepEqual(ordre, ['CAPES & Agrégation', 'Programmes scolaires', 'Culture générale', 'Histoires nationales', 'Personnages illustres', 'Mes thèmes']);
+    assert.deepEqual(ordre, ['CAPES & Agrégation', 'Programmes scolaires', 'Histoires nationales', 'Culture générale', 'Personnages illustres', 'Mes thèmes']);
 });
 
 test('ordre des catégories : « scolaire » met seulement les programmes en tête ; « culture » ne change rien', () => {
