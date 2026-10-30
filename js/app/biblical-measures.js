@@ -185,11 +185,39 @@ function measuresConverter(cat) {
     msg.className = 'tool-msg';
     msg.id = 'tool-measures-msg';
     msg.setAttribute('role', 'status');
+    // Les résultats se répartissent en deux fenêtres : les unités bibliques (repliées) et les unités modernes (ouvertes).
     const rows = document.createElement('div');
-    rows.className = 'tool-rows';
     rows.id = 'tool-measures-rows';
+    rows.append(measuresFold('biblical', 'tools.measures_fold_biblical', false), measuresFold('modern', 'tools.measures_fold_modern', true));
     panel.append(msg, rows);
     return panel;
+}
+
+// Une fenêtre qui se déplie, sur le modèle des « Notes importantes » : un titre avec un « + », et une liste de résultats.
+function measuresFold(group, titleKey, open) {
+    const box = document.createElement('div');
+    box.className = 'subcategory-note measures-fold' + (open ? ' is-open' : '') + ' hidden';
+    box.id = 'tool-measures-fold-' + group;
+    const title = document.createElement('button');
+    title.type = 'button';
+    title.className = 'subcategory-note-title';
+    title.setAttribute('aria-expanded', String(open));
+    title.onclick = () => toggleImportantNote(title);
+    const label = document.createElement('span');
+    label.textContent = t(titleKey);
+    const plus = document.createElement('span');
+    plus.className = 'subcategory-note-toggle';
+    plus.setAttribute('aria-hidden', 'true');
+    plus.textContent = '+';
+    title.append(label, plus);
+    const body = document.createElement('div');
+    body.className = 'subcategory-note-body';
+    const list = document.createElement('div');
+    list.className = 'tool-rows';
+    list.id = 'tool-measures-rows-' + group;
+    body.appendChild(list);
+    box.append(title, body);
+    return box;
 }
 
 // Une longueur lisible : en centimètres sous le mètre, en kilomètres au-delà de mille mètres.
@@ -212,7 +240,11 @@ function toolMeasuresUpdate() {
     const rows = toolEl('tool-measures-rows');
     const msg = toolEl('tool-measures-msg');
     if (!rows || !msg) return;
-    toolClear(rows);
+    const lists = { biblical: toolEl('tool-measures-rows-biblical'), modern: toolEl('tool-measures-rows-modern') };
+    const folds = { biblical: toolEl('tool-measures-fold-biblical'), modern: toolEl('tool-measures-fold-modern') };
+    Object.keys(lists).forEach(group => { toolClear(lists[group]); folds[group].classList.add('hidden'); });
+    // Une fenêtre n'apparaît que si elle a au moins une ligne ; son état replié ou déplié reste celui choisi.
+    const place = (group, row) => { toolRow(lists[group], row); folds[group].classList.remove('hidden'); };
     msg.textContent = '';
     const raw = measuresInputs[cat].value.trim().replace(/\s/g, '').replace(',', '.');
     if (!raw) { msg.textContent = t('tools.measures_empty'); return; }
@@ -220,8 +252,9 @@ function toolMeasuresUpdate() {
     if (!isFinite(n) || n < 0) { msg.textContent = t('tools.measures_invalid'); return; }
     const result = MeasuresCore.convert(cat, n, measuresInputs[cat].unit, measuresOpinion);
     if (!result) { msg.textContent = t('tools.measures_invalid'); return; }
+    const groupOf = id => { const u = MeasuresCore.unitsOf(cat).find(x => x.id === id); return u && u.group === 'biblical' ? 'biblical' : 'modern'; };
     result.filter(r => !r.isSource).forEach(r => {
-        toolRow(rows, {
+        place(groupOf(r.id), {
             name: measuresName(r.id),
             text: (r.approx ? '≈ ' : '') + measuresFmt(r.value),
             note: r.approx ? t('tools.measures_approx_note') : ''
@@ -231,7 +264,7 @@ function toolMeasuresUpdate() {
     if (cat === 'distances') {
         const metres = n * MeasuresCore.factor('distances', measuresInputs[cat].unit, measuresOpinion);
         const walk = MeasuresCore.formatDuration(MeasuresCore.walkMinutes(metres, measuresOpinion));
-        if (walk) toolRow(rows, { icon: '🚶', name: t('tools.measures_walk'), text: (walk.charAt(0) === '<' ? '' : '≈ ') + walk, note: t('tools.measures_walk_note') });
+        if (walk) place('modern', { icon: '🚶', name: t('tools.measures_walk'), text: (walk.charAt(0) === '<' ? '' : '≈ ') + walk, note: t('tools.measures_walk_note') });
     }
 }
 

@@ -4695,6 +4695,11 @@ textarea.form-input {
     transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.26s ease 0.04s, visibility 0.3s;
 }
 
+.measures-fold .subcategory-note-body > .tool-rows {
+    min-height: 0;
+    overflow: hidden;
+}
+
 .subcategory-note-body > p {
     min-height: 0;
     overflow: hidden;

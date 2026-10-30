@@ -995,10 +995,10 @@ test('mesures : le bouton A / א passe les noms d\'unités et des avis en hébre
     await expect(page.locator('#tool-measures-opinion-label')).toHaveText('משקל הסלע');
     await expect(page.locator('.measures-converter')).toHaveCSS('direction', 'rtl');
     // Les lignes de résultats : le nom à droite, la valeur à gauche.
-    const ligneRtl = page.locator('#tool-measures-rows .tool-row').first().locator('.tool-row-head');
+    const ligneRtl = page.locator('#tool-measures-rows-modern .tool-row').first().locator('.tool-row-head');
     expect(await ligneRtl.evaluate(el => getComputedStyle(el).flexDirection)).toBe('row');
-    const nomX = await page.locator('#tool-measures-rows .tool-row').first().locator('strong').evaluate(el => el.getBoundingClientRect().left);
-    const valX = await page.locator('#tool-measures-rows .tool-row').first().locator('.tool-row-value').evaluate(el => el.getBoundingClientRect().left);
+    const nomX = await page.locator('#tool-measures-rows-modern .tool-row').first().locator('strong').evaluate(el => el.getBoundingClientRect().left);
+    const valX = await page.locator('#tool-measures-rows-modern .tool-row').first().locator('.tool-row-value').evaluate(el => el.getBoundingClientRect().left);
     expect(nomX).toBeGreaterThan(valX);
     await page.locator('#measures-lang-fr').click();
     await expect(page.locator('#tool-measures-opinion-label')).toHaveText("Poids de la sela (argent)");
