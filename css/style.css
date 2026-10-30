@@ -9072,6 +9072,40 @@ input:not([type="range"]), label, select, summary, textarea {
     box-shadow: var(--card-shadow);
 }
 
+.class-share {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Fond blanc même en mode sombre : un QR code se scanne mieux en noir sur blanc. */
+.class-qr {
+    width: min(220px, 70vw);
+    padding: 10px;
+    border-radius: 12px;
+    background: #fff;
+    line-height: 0;
+}
+
+.class-qr svg {
+    width: 100%;
+    height: auto;
+}
+
+.class-link-row {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    max-width: 420px;
+}
+
+.class-link-row input {
+    flex: 1;
+    min-width: 0;
+    font-size: 13px;
+}
+
 .class-code-kicker {
     font-size: 12px;
     font-weight: 700;

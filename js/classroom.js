@@ -466,6 +466,50 @@ function classApplyState(state) {
     if (state.status === 'ended') classStopPolling();
 }
 
+// --- Lien et QR code (enseignant) ------------------------------------------------
+// Le lien pointe vers le site web, y compris depuis l'app native (dont l'adresse n'est pas http).
+const CLASS_WEB_ORIGIN = 'https://histori-axe.vercel.app';
+
+function classRenderShare(code) {
+    const block = document.getElementById('class-share-block');
+    block.classList.toggle('hidden', !code);
+    if (!code || block.dataset.code === code) return; // le salon se redessine toutes les 2,5 s
+    block.dataset.code = code;
+    const origin = /^https?:$/.test(location.protocol) ? location.origin : CLASS_WEB_ORIGIN;
+    const link = ClassLink.joinLink(origin, code);
+    const qr = qrcode(0, 'M');
+    qr.addData(link);
+    qr.make();
+    // Le SVG ne contient que la matrice du QR code : rien de saisi par un élève n'y entre.
+    document.getElementById('class-qr').innerHTML = qr.createSvgTag({ cellSize: 4, margin: 2, scalable: true });
+    document.getElementById('class-link').value = link;
+}
+
+function classCopyLink() {
+    const input = document.getElementById('class-link');
+    const btn = document.getElementById('class-copy-btn');
+    const done = () => {
+        btn.innerText = t('classroom.link_copied');
+        setTimeout(() => { btn.innerText = t('classroom.copy_link'); }, 2000);
+    };
+    input.select();
+    const copied = navigator.clipboard && window.isSecureContext
+        ? navigator.clipboard.writeText(input.value).then(() => true, () => document.execCommand('copy'))
+        : Promise.resolve(document.execCommand('copy'));
+    copied.then(ok => { if (ok) done(); });
+}
+
+// --- Élève : arrivée par le lien ou le QR code ---------------------------------
+// Le salon s'ouvre avec le code déjà saisi ; le paramètre est retiré de l'adresse pour qu'un rechargement
+// ne rouvre pas le salon sans raison.
+function classOpenFromLink() {
+    const code = ClassLink.codeFromSearch(location.search);
+    if (!code) return;
+    history.replaceState(null, '', location.pathname);
+    openClassJoin();
+    document.getElementById('class-code-input').value = code;
+}
+
 function classRenderLobby(state) {
     const teacher = classState.role === 'teacher';
     const code = classState.code || '';
@@ -473,6 +517,7 @@ function classRenderLobby(state) {
     codeEl.innerText = code; // l'espacement des lettres est du CSS : une seule ligne, même sur un petit écran
     codeEl.setAttribute('aria-label', t('classroom.code_aria', { code: code.split('').join(' ') }));
     document.getElementById('class-code-block').classList.toggle('hidden', !teacher);
+    classRenderShare(teacher ? code : '');
     document.getElementById('class-lobby-hint').innerText = teacher ? t('classroom.lobby_teacher') : t('classroom.lobby_student');
     document.getElementById('class-start-btn').classList.toggle('hidden', !teacher);
     const list = document.getElementById('class-lobby-players');

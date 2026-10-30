@@ -361,3 +361,39 @@ test('élève : quiz, remise en ordre, curseur, blitz et intrus s\'enchaînent s
     expect(logs.blitz.every(r => r.answer === true)).toBe(true);
     expect((logs.intrus || []).length).toBe(manches.intrus);
 });
+
+test('enseignant : le salon affiche un QR code et un lien vers la séance, que l\'on peut copier', async ({ page }) => {
+    await openThemeModes(page, 'thm_be');
+    const etat = { courant: {}, reponses: { create: { body: { code: 'ABC234' } } } };
+    await fauxServeur(page, etat);
+
+    await page.locator('#mode-card-class').click();
+    await page.locator('#class-size-picker button', { hasText: '10' }).click();
+    etat.courant = { code: 'ABC234', status: 'lobby', total: 9, isTeacher: true, players: [] };
+    await page.locator('#class-create-btn').click();
+    await expect(page.locator('#class-panel-lobby')).toBeVisible();
+
+    await expect(page.locator('#class-share-block')).toBeVisible();
+    await expect(page.locator('#class-qr svg')).toBeVisible();
+    await expect(page.locator('#class-link')).toHaveValue(/\/\?classe=ABC234$/);
+    await page.locator('#class-copy-btn').click();
+    await expect(page.locator('#class-copy-btn')).toHaveText(/copié/);
+});
+
+test('élève : le lien de la classe ouvre le salon avec le code déjà saisi, et le paramètre disparaît de l\'adresse', async ({ page }) => {
+    await fauxServeur(page, { courant: {}, reponses: {} });
+    await page.goto('/index.html?classe=abc-234');
+
+    await expect(page.locator('#screen-class')).toBeVisible();
+    await expect(page.locator('#class-panel-join')).toBeVisible();
+    await expect(page.locator('#class-code-input')).toHaveValue('ABC234');
+    expect(page.url()).not.toContain('classe=');
+});
+
+test('un lien de classe avec un code invalide ne change rien : l\'accueil reste affiché', async ({ page }) => {
+    await fauxServeur(page, { courant: {}, reponses: {} });
+    await page.goto('/index.html?classe=ABCDE');
+
+    await expect(page.locator('#screen-categories')).toBeVisible();
+    await expect(page.locator('#screen-class')).toBeHidden();
+});

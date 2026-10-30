@@ -2244,6 +2244,14 @@
                 <div class="class-code-kicker" data-i18n="classroom.code_kicker">Code à saisir sur les téléphones</div>
                 <div class="class-code" id="class-code" role="img"></div>
             </div>
+            <div id="class-share-block" class="class-share hidden">
+                <p class="class-help" data-i18n="classroom.share_help">Les élèves scannent ce code ou ouvrent ce lien : leur code est déjà saisi.</p>
+                <div class="class-qr" id="class-qr" role="img" data-i18n-attr="aria-label:classroom.qr_aria" aria-label="QR code pour rejoindre la séance"></div>
+                <div class="class-link-row">
+                    <input type="text" readonly id="class-link" class="form-input" data-i18n-attr="aria-label:classroom.link_aria" aria-label="Lien pour rejoindre la séance">
+                    <button type="button" class="btn" id="class-copy-btn" onclick="classCopyLink()" data-i18n="classroom.copy_link">Copier le lien</button>
+                </div>
+            </div>
             <p class="class-help" id="class-lobby-hint"></p>
             <p class="class-count" id="class-lobby-count" role="status"></p>
             <ul class="class-players" id="class-lobby-players"></ul>
@@ -3768,6 +3776,8 @@
     <script src="js/app/team-social.js"></script>
     <script src="js/app/friends.js"></script>
     <script src="js/app/ranks.js"></script>
+    <script src="js/vendor/qrcode-generator.js"></script>
+    <script src="js/classLink.js"></script>
     <script src="js/classroom.js"></script>
     <script src="js/app.js"></script>
 
