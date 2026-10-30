@@ -4,16 +4,18 @@
   "conc2",
   "conc4",
   "conc6",
-  "conc13",
   "conc14",
   "conc15",
   "conc19",
   "conc21",
   "conc24",
-  "conc26"
+  "conc26",
+  "conc27",
+  "conc29",
+  "conc32"
  ],
  "axes": [
-  "Agrégation et élitisme disciplinaire (1764-1883)",
+  "Agrégation et élitisme disciplinaire (1764-1894)",
   "Du CAEC au CAPES : massification du secondaire (1941-1963)",
   "Unification et professionnalisation (1975-1991)",
   "Réformes du XXIe siècle (2010-2026)"
@@ -21,7 +23,7 @@
  "events": [
   {
    "id": "conc1",
-   "axe": "Agrégation et élitisme disciplinaire (1764-1883)",
+   "axe": "Agrégation et élitisme disciplinaire (1764-1894)",
    "date": 1764,
    "titre": "Suppression de la Compagnie de Jésus en France",
    "description": "Condamnés par le Parlement de Paris en 1762, les jésuites sont supprimés dans le royaume par un édit de Louis XV de novembre 1764. Leurs nombreux collèges passent à des maîtres séculiers, et il faut en trouver en nombre. Cette pénurie de professeurs est le contexte immédiat de la création de l’agrégation, pensée pour doter les collèges d’un corps de maîtres choisis par concours.",
@@ -29,7 +31,7 @@
   },
   {
    "id": "conc2",
-   "axe": "Agrégation et élitisme disciplinaire (1764-1883)",
+   "axe": "Agrégation et élitisme disciplinaire (1764-1894)",
    "date": 1766,
    "titre": "Création de l’agrégation",
    "description": "Par lettres patentes de 1766, le roi institue à l’université de Paris un concours d’agrégation pour trois classes : philosophie, belles-lettres et grammaire. Il s’agit de sélectionner les maîtres jugés les plus capables pour les collèges laissés vacants par les jésuites ; un peu plus de deux cents agrégés sont recrutés avant l’interruption du concours. Ni l’histoire ni la géographie n’y figurent encore, mais le principe d’un recrutement fondé sur le savoir disciplinaire date de là.",
@@ -37,7 +39,7 @@
   },
   {
    "id": "conc3",
-   "axe": "Agrégation et élitisme disciplinaire (1764-1883)",
+   "axe": "Agrégation et élitisme disciplinaire (1764-1894)",
    "date": 1791,
    "titre": "Interruption de l’agrégation sous la Révolution",
    "description": "Le concours d’agrégation s’interrompt dans la tourmente révolutionnaire, en 1791 selon la plupart des historiens, en 1795 pour d’autres. Les universités et les collèges d’Ancien Régime sont désorganisés, puis remplacés au milieu des années 1790 par des écoles centrales. La coupure montre que le concours n’a rien d’une évidence : c’est un choix politique, rétabli ensuite par un pouvoir soucieux de contrôler la formation des maîtres.",
@@ -45,7 +47,7 @@
   },
   {
    "id": "conc4",
-   "axe": "Agrégation et élitisme disciplinaire (1764-1883)",
+   "axe": "Agrégation et élitisme disciplinaire (1764-1894)",
    "date": 1808,
    "titre": "Rétablissement de l’agrégation dans l’Université impériale",
    "description": "Le décret du 17 mars 1808 organise l’Université impériale, monopole d’État sur l’enseignement, et rétablit le titre d’agrégé pour les professeurs des lycées. Napoléon veut un corps enseignant hiérarchisé, discipliné et recruté selon des règles uniformes. L’agrégation devient ainsi la voie d’élite de l’enseignement secondaire d’État, un rôle qu’elle conserve tout au long du XIXe siècle.",
@@ -53,7 +55,7 @@
   },
   {
    "id": "conc5",
-   "axe": "Agrégation et élitisme disciplinaire (1764-1883)",
+   "axe": "Agrégation et élitisme disciplinaire (1764-1894)",
    "date": 1821,
    "titre": "Statut organisant les concours d’agrégation",
    "description": "Un statut du 6 février 1821 organise les concours d’agrégation par spécialités pour les collèges royaux. Il fixe des épreuves écrites et orales passées devant un jury et distingue les agrégés selon la discipline qu’ils enseigneront. Cette spécialisation ouvre la voie à une agrégation propre à l’histoire, qui voit le jour dix ans plus tard.",
@@ -61,7 +63,7 @@
   },
   {
    "id": "conc6",
-   "axe": "Agrégation et élitisme disciplinaire (1764-1883)",
+   "axe": "Agrégation et élitisme disciplinaire (1764-1894)",
    "date": 1831,
    "titre": "Création de l’agrégation d’histoire et de géographie",
    "description": "En 1831, sous la monarchie de Juillet, un concours d’agrégation réunit pour la première fois l’histoire et la géographie, souvent confiées jusque-là à des professeurs de lettres. Les premières promotions sont minuscules, quelques admis seulement. Le couple histoire-géographie, qui structure encore la discipline scolaire et les concours du CAPES, naît donc ici, avec une géographie placée dans l’ombre de l’histoire.",
@@ -69,23 +71,23 @@
   },
   {
    "id": "conc7",
-   "axe": "Agrégation et élitisme disciplinaire (1764-1883)",
+   "axe": "Agrégation et élitisme disciplinaire (1764-1894)",
    "date": 1852,
-   "titre": "Suppression du concours d’agrégation d’histoire",
-   "description": "Sous le Second Empire naissant, le concours est supprimé en 1852 et remplacé par un examen professionnel, au moment où le pouvoir reprend en main un enseignement qu’il juge trop libre. L’histoire, discipline politiquement sensible, est particulièrement surveillée. L’épisode rappelle que le statut du concours dépend étroitement de la politique scolaire du moment, avant que l’agrégation ne s’impose durablement.",
+   "titre": "Suppression du concours d’agrégation d’histoire-géographie",
+   "description": "Le concours d’agrégation d’histoire-géographie, dont la première session s’est tenue en 1831, est supprimé par l’arrêté du 14 avril 1852 et transformé en examen professionnel. Il est rétabli en 1860, ce qui montre que l’existence du concours, et non celle du titre d’agrégé dans son ensemble, était en jeu. L’épisode rappelle que le statut du concours dépend de la politique scolaire du moment, avant que l’agrégation ne s’installe durablement.",
    "wp": "Agrégation d'histoire"
   },
   {
    "id": "conc8",
-   "axe": "Agrégation et élitisme disciplinaire (1764-1883)",
+   "axe": "Agrégation et élitisme disciplinaire (1764-1894)",
    "date": 1871,
-   "titre": "Rapport Himly-Levasseur sur l’enseignement de la géographie",
-   "description": "Au lendemain de la défaite de 1870, Auguste Himly et Émile Levasseur plaident pour un enseignement sérieux de la géographie, de l’école à l’université, dans l’idée très répandue alors que la défaite tenait aussi à l’ignorance géographique. La discipline, jusque-là simple appendice de l’histoire, commence à gagner en autonomie et en postes. Cette revalorisation prépare, sur le long terme, l’affirmation d’une agrégation de géographie distincte.",
-   "ws": "Émile Levasseur géographie enseignement Himly"
+   "titre": "Rapport Himly-Levasseur sur l’enseignement de l’histoire et de la géographie",
+   "description": "Le rapport général du 3 septembre 1871, rédigé par Émile Levasseur et Auguste Himly à la demande du ministre Jules Simon, dresse un état critique de l’enseignement de l’histoire et de la géographie, et particulièrement de l’insuffisance des études géographiques. Il s’agit d’une enquête sur les deux disciplines, non d’un texte consacré aux seuls concours de recrutement. Il prépare, sur le long terme, la reconnaissance de la géographie comme discipline à part entière, jusque-là simple appendice de l’histoire.",
+   "ws": "Rapport sur l'enseignement de l'histoire et de la géographie Levasseur Himly 1871"
   },
   {
    "id": "conc9",
-   "axe": "Agrégation et élitisme disciplinaire (1764-1883)",
+   "axe": "Agrégation et élitisme disciplinaire (1764-1894)",
    "date": 1881,
    "titre": "Fondation de l’École normale supérieure de Sèvres",
    "description": "Dans le prolongement de la loi Camille Sée de décembre 1880, qui ouvre des lycées de jeunes filles, l’École normale supérieure de Sèvres est créée en 1881 pour former leurs professeures. Les jeunes filles ne suivent pas le même programme que les garçons, et leurs maîtresses ne sont pas recrutées sur les mêmes concours. Il se constitue ainsi une filière parallèle, féminine, qui dure jusqu’à la fusion des concours dans les années 1970.",
@@ -93,10 +95,10 @@
   },
   {
    "id": "conc10",
-   "axe": "Agrégation et élitisme disciplinaire (1764-1883)",
+   "axe": "Agrégation et élitisme disciplinaire (1764-1894)",
    "date": 1883,
-   "titre": "Premier concours d’agrégation féminin",
-   "description": "Le premier concours d’agrégation féminin a lieu en 1883 : six agrégées en lettres et six en sciences sont reçues, et l’histoire-géographie suit peu après, dès 1884 selon certaines sources. Il est distinct du concours masculin, avec ses propres épreuves et ses propres programmes. Il ouvre aux femmes la carrière des lycées de jeunes filles et pose la question, longtemps débattue, de l’équivalence entre les deux concours.",
+   "titre": "Premières agrégations féminines",
+   "description": "Les premières agrégations féminines sont organisées au début des années 1880, dans de grandes catégories : en 1883, six agrégées en lettres et six en sciences sont reçues, mais d’autres travaux datent de 1884 la création des agrégations de lettres. Ces concours sont distincts de ceux des hommes, avec leurs propres épreuves et leurs propres programmes. Ils ouvrent aux femmes la carrière des lycées de jeunes filles et posent la question, longtemps débattue, de l’équivalence entre les deux filières.",
    "ws": "Agrégation féminine 1883"
   },
   {
@@ -168,15 +170,15 @@
    "axe": "Unification et professionnalisation (1975-1991)",
    "date": 1989,
    "titre": "Loi d’orientation et création des IUFM",
-   "description": "La loi d’orientation du 10 juillet 1989, portée par Lionel Jospin, crée les instituts universitaires de formation des maîtres (IUFM), qui remplacent notamment les écoles normales. Elle veut rapprocher la formation des enseignants du premier et du second degré, dans un cadre universitaire. La distinction entre le savoir disciplinaire du concours et la formation professionnelle prend dès lors une forme institutionnelle nouvelle.",
+   "description": "L’article 17 de la loi d’orientation du 10 juillet 1989, portée par Lionel Jospin, prévoit la création des instituts universitaires de formation des maîtres (IUFM) à partir du 1er septembre 1990, avec trois académies pilotes : Grenoble, Lille et Reims. Les IUFM remplacent notamment les écoles normales et veulent rapprocher la formation des enseignants du premier et du second degré dans un cadre universitaire. La distinction entre le savoir disciplinaire du concours et la formation professionnelle prend dès lors une forme institutionnelle nouvelle.",
    "wp": "Institut universitaire de formation des maîtres"
   },
   {
    "id": "conc20",
    "axe": "Unification et professionnalisation (1975-1991)",
    "date": 1991,
-   "titre": "Le CAPES en deux ans avec les IUFM",
-   "description": "À partir de 1991, le CAPES s’obtient en deux ans après la licence : une première année en IUFM, où l’on prépare le concours externe, puis une seconde année associant formation et stage en responsabilité. Le concours externe reste ouvert aux titulaires d’une licence. Ce schéma, en vigueur jusqu’en 2009, donne à la formation professionnelle une place durable, que la masterisation viendra remettre en cause.",
+   "titre": "Généralisation des IUFM et parcours en deux ans",
+   "description": "À la rentrée 1991, les IUFM sont généralisés à toutes les académies, après la phase pilote de 1990. Ils organisent un parcours de formation en deux ans : une première année de préparation, qui s’achève par le concours externe ouvert aux titulaires d’une licence, puis une seconde année de formation professionnelle et de stage pour les lauréats. Ce schéma, en vigueur jusqu’en 2009, donne à la formation professionnelle une place durable que la masterisation remettra en cause.",
    "wp": "Institut universitaire de formation des maîtres"
   },
   {
@@ -224,8 +226,64 @@
    "axe": "Réformes du XXIe siècle (2010-2026)",
    "date": 2026,
    "titre": "Premiers concours à bac+3",
-   "description": "Les inscriptions aux concours réformés ouvrent en octobre 2025 et les épreuves se déroulent de mars à juin 2026, pour des étudiants de troisième année de licence. Les anciennes modalités à bac+5 subsistent pendant une période de transition qui court jusqu’en 2027. Le CAPES doit désormais s’adresser à un public plus jeune, ce qui oblige à repenser l’équilibre entre savoirs disciplinaires et préparation au métier.",
+   "description": "Les inscriptions aux concours réformés ouvrent en octobre 2025 et les épreuves se déroulent de mars à juin 2026, pour des étudiants de troisième année de licence. Le CAPES externe bac+3 d’histoire-géographie comprend deux écrits, l’un en histoire et l’autre en géographie, de même durée et de même coefficient, puis un oral disciplinaire et un entretien ; les concours externes à bac+5 subsistent pendant la transition, aux sessions 2026 et 2027. L’agrégation reste un concours de niveau master, et le CAPES doit s’adresser à un public plus jeune.",
    "ws": "Certificat d'aptitude au professorat de l'enseignement du second degré"
+  },
+  {
+   "id": "conc27",
+   "axe": "Agrégation et élitisme disciplinaire (1764-1894)",
+   "date": 1877,
+   "titre": "Vidal de la Blache à l’École normale supérieure",
+   "description": "Paul Vidal de la Blache est maître de conférences à l’École normale supérieure de la rue d’Ulm de 1877 à 1898, avant d’entrer à la Sorbonne et d’y intituler sa chaire « de géographie » et non plus « de géographie historique ». Pendant vingt ans, il y forme les futurs agrégés d’histoire-géographie et installe une géographie universitaire fondée sur le terrain et l’étude des régions. Son école donne à la discipline les bases scientifiques dont se réclamera l’agrégation de géographie, séparée de celle d’histoire en 1943.",
+   "wp": "Paul Vidal de la Blache"
+  },
+  {
+   "id": "conc28",
+   "axe": "Agrégation et élitisme disciplinaire (1764-1894)",
+   "date": 1894,
+   "titre": "Un recrutement féminin spécifique en histoire-géographie",
+   "description": "Un recrutement féminin consacré à l’histoire-géographie se différencie après les premières agrégations de lettres et de sciences : Jean-François Condette date sa fondation de 1894, une autre synthèse évoquant une section historique dès 1885 et un concours distinct à partir de 1895. Les sources ne permettent pas de ramener ces jalons à une seule première session. La filière féminine d’histoire-géographie a donc sa propre chronologie, parallèle à celle des hommes, jusqu’à la fusion des concours en 1976.",
+   "ws": "Agrégation d'histoire et géographie"
+  },
+  {
+   "id": "conc29",
+   "axe": "Unification et professionnalisation (1975-1991)",
+   "date": 1986,
+   "titre": "Création juridique des concours internes",
+   "description": "Deux décrets du 14 mars 1986 créent le CAPES interne (n° 86-488) et l’agrégation interne (n° 86-489), qui s’adressent aux enseignants déjà en poste. Il faut distinguer cette création juridique de la première session effective : elle intervient en 1987 pour le CAPES et en 1989 pour l’agrégation, après plusieurs reports. Ces concours ouvrent au corps enseignant une voie de promotion en cours de carrière, à côté des concours externes.",
+   "ws": "Agrégation interne"
+  },
+  {
+   "id": "conc30",
+   "axe": "Unification et professionnalisation (1975-1991)",
+   "date": 1987,
+   "titre": "Première session du CAPES interne",
+   "description": "Le CAPES interne, créé par le décret du 14 mars 1986, a sa première session au printemps 1987. Il permet aux enseignants non titulaires ou titulaires d’un autre corps de devenir certifiés sans repasser par le concours externe. Il élargit ainsi les voies d’accès au métier, en dehors du parcours étudiant classique.",
+   "ws": "CAPES interne"
+  },
+  {
+   "id": "conc31",
+   "axe": "Unification et professionnalisation (1975-1991)",
+   "date": 1989,
+   "titre": "Première session de l’agrégation interne",
+   "description": "L’agrégation interne, créée par un décret de 1986, était prévue pour la session 1987, puis reportée à 1988 et enfin à 1989, année où elle est effectivement organisée. Il ne faut donc pas confondre la date de création juridique et celle de la première session. Elle offre aux certifiés une voie de promotion vers le corps des agrégés, sans repasser par le concours externe.",
+   "ws": "Agrégation interne"
+  },
+  {
+   "id": "conc32",
+   "axe": "Unification et professionnalisation (1975-1991)",
+   "date": 1989,
+   "titre": "Rapport Bancel sur la formation des maîtres",
+   "description": "Daté du 10 octobre 1989 et intitulé Créer une nouvelle dynamique de la formation des maîtres, le rapport de Daniel Bancel suit de peu la loi d’orientation du 10 juillet 1989 et ne l’a donc pas provoquée. Il précise les orientations de la formation dans les futurs IUFM, en proposant notamment une formation professionnelle globale en deux ans. Il articule ainsi formation disciplinaire et formation professionnelle, cadre dans lequel s’inscrit la réforme du CAPES de 1991.",
+   "ws": "Rapport Bancel formation des maîtres 1989"
+  },
+  {
+   "id": "conc33",
+   "axe": "Unification et professionnalisation (1975-1991)",
+   "date": 1991,
+   "titre": "Épreuve professionnelle du CAPES",
+   "description": "L’arrêté du 30 avril 1991 fixe de nouvelles modalités du CAPES et introduit à l’oral une épreuve professionnelle intitulée, dans l’exemple de la philosophie, « analyse d’une situation d’enseignement ». Cette épreuve est remplacée par une épreuve sur dossier à partir de la session 1994. Elle marque la première entrée explicite de la dimension professionnelle dans le concours lui-même, et non plus seulement dans la formation qui suit.",
+   "wp": "Certificat d'aptitude au professorat de l'enseignement du second degré"
   }
  ]
 }

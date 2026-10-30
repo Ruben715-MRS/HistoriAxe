@@ -33,7 +33,7 @@ Points communs à relire avant de s'en servir comme référence unique :
 | `thm_envgeo` Environnements, Anthropocène | proche de « Environnements : approches géographiques » (CAPES 2026-2027, agrégation 2026) | cadrage complet |
 | `thm_geopop` Mondialisation, populations, territoires | intitulé maison | quatre entrées du programme CAPES bac+3 ; rapport du jury CAPES 2025 (généralités) |
 | `thm_amlat` Amérique latine | question CAPES 2026 (Caraïbes exclues ; remplacée par « Le Pacifique » en 2027) | programme 2026-2027 |
-| `thm_conc` Histoire des concours de l’enseignement | intitulé maison (culture professionnelle, hors programme) | recoupement de sources sur Wikipédia, Slate/Lelièvre, MEFRIM, education.gouv.fr (session 2026) ; rapport Bancel, CAPES et agrégations internes 1986-1987, épreuve professionnelle de 1991 non confirmés, donc absents |
+| `thm_conc` Histoire des concours de l’enseignement | intitulé maison (culture professionnelle, hors programme) | Condette (MEFRIM), Persée/INRP (rapport de 1871), Vie publique (rapport Bancel), Sénat (concours internes), Légifrance et Le Monde (IUFM, arrêté de 1991), devenirenseignant.gouv.fr (épreuves 2026) ; la date d’une première session du concours féminin d’histoire-géographie n’est pas établie (1885, 1894 ou 1895 selon les synthèses) |
 
 ## Audit factuel (octobre 2026)
 
